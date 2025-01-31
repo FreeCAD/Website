@@ -10,15 +10,14 @@ cover:
   caption: a cover caption
   alt: a cover alternative title
 params:
-  links:
-    article: false
+  hero:
+    articleLink: false
     customText: See what's new
-    custom: releases/1-0
-    download: true
-  hero: true
+    customLink: releases/1-0
+    downloadLink: true
 tags:
   - release
-  - 1
+  - 1.0
 ---
 # This is the first heading
 

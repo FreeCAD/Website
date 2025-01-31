@@ -4,22 +4,20 @@ description: "C'est finalement sorti !"
 date: 2024-06-16T15:27:48+12:00
 author: "FreeCAD"
 draft: false
-
 categories: announcement
-tags:
-  - release
-  - 1.0
 cover:
   image: space_14.jpg
   caption: "a cover caption"
   alt: "a cover alternative title"
 params:
-  hero: true
-  links:
-    download: true
-    custom: releases/1-0
+  hero:
+    downloadLink: true
+    customLink: releases/1-0
     customText: "Découvre les nouveautés"
-    article: false
+    articleLink: false
+tags:
+  - release
+  - 1.0
 ---
 
 # This is the first heading

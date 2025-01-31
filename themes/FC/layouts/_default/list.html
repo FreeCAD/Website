@@ -29,7 +29,7 @@
 
 {{- if .IsHome }}
   {{/* get the 6 latest regular pages in the main section (defined in hugo.yaml or number of pages, currently "news"), except the ones with the "hero" parameters in front matter */}}
-  {{- $pages = where (where (site.RegularPages | lang.Merge .Sites.Default.RegularPages) "Section" "in" site.Params.mainSections) "Params.hero" "!=" true | first 6 }}
+  {{- $pages = where (where (site.RegularPages | lang.Merge .Sites.Default.RegularPages) "Section" "in" site.Params.mainSections) "Params.hero" "=" nil | first 6 }}
 {{- end }}
 
 {{- if eq .Kind "term" -}}

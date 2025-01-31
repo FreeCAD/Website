@@ -1,5 +1,5 @@
 {{/* get the latest article with the "hero" parameters in front matter */}}
-{{ with (index (where (site.RegularPages | lang.Merge .Sites.Default.RegularPages) "Params.hero" true) 0) }}
+{{ with (index (where (site.RegularPages | lang.Merge .Sites.Default.RegularPages) "Params.hero" "!=" nil) 0) }}
 <header>
     <h1 class="title">
         {{ .LinkTitle | .RenderString }}
@@ -10,23 +10,23 @@
         </h2>
     {{- end }}
     <div class="buttons">
-    {{- if .Params.links.download }}
+    {{- if .Params.hero.downloadLink }}
     {{ $download := .Site.GetPage "download" }}
     <p>
         <a class="hero-button download" href="{{ $download.RelPermalink }}">{{ $download.LinkTitle | .RenderString }}</a>
     </p>
     {{- end }}
-    {{- if .Params.links.custom }}
+    {{- if .Params.hero.customLink }}
     <p>
         <a class="hero-button custom" href="{{ .Params.links.custom | relLangURL }}">
-        {{- with .Params.links.customText }}
+        {{- with .Params.hero.customText }}
             {{ . | $.Page.RenderString }}
         {{- else }}
-            {{ .Params.links.custom.LinkTitle | .RenderString }}
+            {{ .Params.hero.customLink.LinkTitle | .RenderString }}
         {{- end }}</a>
     </p>
     {{- end }}
-    {{- if .Params.links.article }}
+    {{- if .Params.hero.articleLink }}
     <p>
         <a class="hero-button article" href="{{ .RelPermalink }}">{{ .LinkTitle | .RenderString }}</a>
     </p>

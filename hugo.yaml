@@ -63,6 +63,7 @@ params:
       structure: multiple_files
       locales: [en, fr]
       default_locale: en
+      save_all_locales: false
     collections:
       - name: news
         label: News
@@ -71,21 +72,32 @@ params:
         thumbnail: cover.image
         create: true
         folder: content/news
-        media_folder: ''
-        public_folder: ''
+        media_folder: "/content/news/{{categories}}"
+        public_folder: ""
         format: frontmatter
-        slug: "{{slug}}"
+        slug: "{{categories}}/{{slug}}"
         i18n:
           structure: multiple_files
         fields:
-          - {label: "Article Title", name: "title", widget: "string", i18n: true, hint: "Use a similar structure as existing articles for coherence", pattern: ['.{3,}', "Must have at least 3 characters"]}
-          - {label: "Article Description", name: "description", widget: "string", i18n: true}
+          - {label: "Article Title", name: "title", widget: "string", i18n: true, required: [en], hint: "Use a similar structure as existing articles for coherence"}
+          - {label: "Article Description", name: "description", i18n: true, required: [en], widget: "string"}
           - {label: "Publish Date", name: "date", widget: "datetime", i18n: duplicate}
           - {label: "Article Author", name: "author", widget: "string", i18n: duplicate, hint: "Use a similar author name as existing ones for coherence", pattern: ['.{3,}', "Must have at least 3 characters"]}
           - {label: "Draft", name: "draft", widget: "boolean", default: true, i18n: duplicate}
           - {label: "Article Category", name: "categories", widget: "select", options: ["announcement", "event", "highlight", "showcase", "tutorial", "update"], i18n: duplicate}
           - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
-          - {label: "Content", name: "body", widget: "markdown", i18n: true}
+          - label: "Hero"
+            name: "params.hero"
+            widget: "object"
+            default: false
+            i18n: duplicate
+            required: false
+            fields:
+            - {label: "Link to article on homepage hero", name: "articleLink", widget: "boolean", default: false, i18n: duplicate}
+            - {label: "Link to custom page on homepage hero", name: "customLink", widget: "string", default: "", i18n: duplicate}
+            - {label: "Text for custom page on homepage hero", name: "customText", widget: "string", default: "", i18n: true, required: [en]}
+            - {label: "Link to download page on homepage hero", name: "downloadLink", widget: "boolean", default: true, i18n: duplicate}
+          - {label: "Content", name: "body", widget: "markdown", i18n: true, required: [en], hint: "Use +++ between blocks"}
       - divider: true
         name: 1
         files: []
@@ -102,7 +114,7 @@ params:
         fields:
           - {label: "Homepage Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
           - {label: "Homepage Description", name: "description", widget: "string", i18n: true}
-          - {label: "Content", name: "body", widget: "markdown", i18n: true}
+          - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"]}
       - name: features
         label: Features
         icon: bolt
@@ -118,7 +130,7 @@ params:
           - {label: "Features Page Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
           - {label: "Features Page Description", name: "description", widget: "string", i18n: true}
           - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
-          - {label: "Content", name: "body", widget: "markdown", i18n: true}
+          - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"]}
       - name: download
         label: Download
         icon: downloading
@@ -134,7 +146,7 @@ params:
           - {label: "Download Page Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
           - {label: "Download Page Description", name: "description", widget: "string", i18n: true}
           - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
-          - {label: "Content", name: "body", widget: "markdown", i18n: true}
+          - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"]}
       - name: releases
         label: Releases
         icon: celebration
@@ -151,7 +163,7 @@ params:
           - {label: "Release Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
           - {label: "Release Description", name: "description", widget: "string", i18n: true}
           - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
-          - {label: "Content", name: "body", widget: "markdown", i18n: true}
+          - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"]}
       - name: community
         label: Community
         icon: hub
@@ -167,7 +179,7 @@ params:
           - {label: "Community Page Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
           - {label: "Community Page Description", name: "description", widget: "string", i18n: true}
           - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
-          - {label: "Content", name: "body", widget: "markdown", i18n: true}
+          - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"]}
       - name: documentation
         label: Documentation
         icon: local_library
@@ -183,7 +195,7 @@ params:
           - {label: "Documentation Page Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
           - {label: "Documentation Page Description", name: "description", widget: "string", i18n: true}
           - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
-          - {label: "Content", name: "body", widget: "markdown", i18n: true}
+          - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"]}
       - name: contribute
         label: Contribute
         icon: code_blocks
@@ -199,7 +211,7 @@ params:
           - {label: "Contribute Page Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
           - {label: "Contribute Page Description", name: "description", widget: "string", i18n: true}
           - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
-          - {label: "Content", name: "body", widget: "markdown", i18n: true}
+          - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"]}
       - name: donate
         label: Donate
         icon: volunteer_activism
@@ -213,7 +225,7 @@ params:
           - {label: "Donate Page Title", name: "title", widget: "string", pattern: ['.{3,}', "Must have at least 3 characters"]}
           - {label: "Donate Page Description", name: "description", widget: "string"}
           - {label: "Featured Image", name: "cover.image", widget: "image"}
-          - {label: "Content", name: "body", widget: "markdown"}
+          - {label: "Content", name: "body", widget: "markdown", hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"]}
 
 permalinks:
   page:
