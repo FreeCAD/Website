@@ -10,7 +10,7 @@ tags:
   - privacy
   - example
 cover:
-  image: space_1.jpg
+  image: /gradients/1.png
   caption: "a cover caption"
   alt: "a cover alternative title"
 ---
@@ -19,11 +19,11 @@ cover:
 
 internal image:
 
-[link to internal image](space_1.jpg)
+[link to internal image](/gradients/1.png)
 
 [link to external youtube video](https://www.youtube.com/watch?v=YyBzEpantQ8)
 
-![](space_1.jpg)
+![](/gradients/1.png)
 
 third party image:
 

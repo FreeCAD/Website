@@ -2,7 +2,7 @@
 description: Rejoindre la communauté
 author: FreeCAD
 cover:
-  image: space_1.jpg
+  image: /gradients/1.png
   caption: a cover caption
   alt: a cover alternative title
 title: Communauté
@@ -13,7 +13,7 @@ menus:
   footer:
     weight: 4
 ---
-[![LINK TO GITHUB](space_1.jpg "Link to GitHub")](https://github.com/freecad)
+[![LINK TO GITHUB](/gradients/1.png "Link to GitHub")](https://github.com/freecad)
 
 ## First Community Block
 
@@ -25,11 +25,11 @@ This is a text in the first block to go in the right. This is a text in the firs
 
 This is a text in the second block to go in the left. This is a text in the second block. This is a text in the second block to go in the left. This is a text in the second block to go in the left. This is a text in the second block to go in the left. This is a text in the second block.
 
-![](space_1.jpg)
+![](/gradients/1.png)
 
 +++
 
-![](space_1.jpg)
+![](/gradients/1.png)
 
 ## Third Community Block
 
@@ -41,4 +41,4 @@ This is a text in the third block to go in the right. This is a text in the thir
 
 This is a text in the fourth block to go in the left. This is a text in the fourth block. This is a text in the fourth block to go in the left. This is a text in the fourth block to go in the left. This is a text in the fourth block to go in the left. This is a text in the fourth block.
 
-![](space_1.jpg)
+![](/gradients/1.png)

@@ -6,7 +6,7 @@ author: "FreeCAD"
 draft: false
 
 cover:
-  image: space_3.jpg
+  image: /gradients/3.png
   caption: "a cover caption"
   alt: "a cover alternative title"
 ---

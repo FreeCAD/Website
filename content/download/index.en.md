@@ -3,7 +3,7 @@ description: Let the FreeCAD adventure unfolds !
 author: FreeCAD
 type: download
 cover:
-  image: space_4.jpg
+  image: /gradients/4.png
   caption: a cover caption
   alt: a cover alternative title
 title: Download
@@ -14,7 +14,7 @@ menus:
   footer:
     weight: 2
 ---
-[![LINK TO GITHUB](space_4.jpg "Link to GitHub")](https://github.com/freecad)
+[![LINK TO GITHUB](/gradients/4.png "Link to GitHub")](https://github.com/freecad)
 
 ## First Download Block
 
@@ -26,11 +26,11 @@ This is a text in the first block to go in the right. This is a text in the firs
 
 This is a text in the second block to go in the left. This is a text in the second block. This is a text in the second block to go in the left. This is a text in the second block to go in the left. This is a text in the second block to go in the left. This is a text in the second block.
 
-![](space_4.jpg)
+![](/gradients/4.png)
 
 +++
 
-![](space_4.jpg)
+![](/gradients/4.png)
 
 ## Third Download Block
 
@@ -42,4 +42,4 @@ This is a text in the third block to go in the right. This is a text in the thir
 
 This is a text in the fourth block to go in the left. This is a text in the fourth block. This is a text in the fourth block to go in the left. This is a text in the fourth block to go in the left. This is a text in the fourth block to go in the left. This is a text in the fourth block.
 
-![](space_4.jpg)
+![](/gradients/4.png)

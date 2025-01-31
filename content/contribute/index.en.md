@@ -2,7 +2,7 @@
 cover:
   alt: a cover alternative title
   caption: a cover caption
-  image: space_2.jpg
+  image: /gradients/2.png
 author: FreeCAD
 description: Help and develop FreeCAD
 title: Contribute
@@ -13,7 +13,7 @@ menus:
   footer:
     weight: 6
 ---
-[![LINK TO GITHUB](space_2.jpg "Link to GitHub")](https://github.com/freecad)
+[![LINK TO GITHUB](/gradients/2.png "Link to GitHub")](https://github.com/freecad)
 
 ## First Contribute Block
 
@@ -25,11 +25,11 @@ This is a text in the first block to go in the right. This is a text in the firs
 
 This is a text in the second block to go in the left. This is a text in the second block. This is a text in the second block to go in the left. This is a text in the second block to go in the left. This is a text in the second block to go in the left. This is a text in the second block.
 
-![](space_2.jpg)
+![](/gradients/2.png)
 
 +++
 
-![](space_2.jpg)
+![](/gradients/2.png)
 
 ## Third Contribute Block
 
@@ -41,4 +41,4 @@ This is a text in the third block to go in the right. This is a text in the thir
 
 This is a text in the fourth block to go in the left. This is a text in the fourth block. This is a text in the fourth block to go in the left. This is a text in the fourth block to go in the left. This is a text in the fourth block to go in the left. This is a text in the fourth block.
 
-![](space_2.jpg)
+![](/gradients/2.png)

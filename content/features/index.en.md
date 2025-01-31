@@ -2,7 +2,7 @@
 title: Features
 description: Discover FreeCAD features
 cover:
-  image: space_5.jpg
+  image: /gradients/5.png
   caption: a cover caption
   alt: a cover alternative title
 author: FreeCAD
@@ -13,7 +13,7 @@ menus:
   footer:
     weight: 1
 ---
-[![LINK TO GITHUB](space_5.jpg "Link to GitHub")](https://github.com/freecad)
+[![LINK TO GITHUB](/gradients/5.png "Link to GitHub")](https://github.com/freecad)
 
 ## First Feature Block
 
@@ -25,11 +25,11 @@ This is a text in the first block to go in the right. This is a text in the firs
 
 This is a text in the second block to go in the left. This is a text in the second block. This is a text in the second block to go in the left. This is a text in the second block to go in the left. This is a text in the second block to go in the left. This is a text in the second block.
 
-![](space_5.jpg)
+![](/gradients/5.png)
 
 +++
 
-![](space_5.jpg)
+![](/gradients/5.png)
 
 ## Third Feature Block
 
@@ -41,4 +41,4 @@ This is a text in the third block to go in the right. This is a text in the thir
 
 This is a text in the fourth block to go in the left. This is a text in the fourth block. This is a text in the fourth block to go in the left. This is a text in the fourth block to go in the left. This is a text in the fourth block to go in the left. This is a text in the fourth block.
 
-![](space_5.jpg)
+![](/gradients/5.png)

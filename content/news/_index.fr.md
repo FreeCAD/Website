@@ -10,7 +10,7 @@ menus:
   footer:
     weight: 3
 cover:
-  image: space_6.jpg
+  image: /gradients/6.png
   caption: "a cover caption"
   alt: "a cover alternative title"
 ---

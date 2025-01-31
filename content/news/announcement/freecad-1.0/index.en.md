@@ -6,7 +6,7 @@ author: FreeCAD
 draft: false
 categories: announcement
 cover:
-  image: space_14.jpg
+  image: /gradients/8.png
   caption: a cover caption
   alt: a cover alternative title
 params:
@@ -29,7 +29,7 @@ tags:
 
 This is **bold** text, and this is _italic_ text.
 
-![Image alternative text](space_14.jpg "This is an image title")
+![Image alternative text](/gradients/8.png "This is an image title")
 
 > This is a quote
 

@@ -8,7 +8,7 @@ draft: false
 tags:
   - example
 cover:
-  image: space_4.jpg
+  image: /gradients/4.png
   caption: "a cover caption"
   alt: "a cover alternative title"
 ---
