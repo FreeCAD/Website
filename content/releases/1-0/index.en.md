@@ -11,7 +11,7 @@ params:
   macos: https://github.com/FreeCAD/FreeCAD/releases/download/
   linux: https://github.com/FreeCAD/FreeCAD/releases/download/
 cover:
-  image: /gradients/9.png
+  image: 9.png
   caption: "a cover caption"
   alt: "a cover alternative title"
 ---

@@ -2,7 +2,7 @@
 cover:
   alt: a cover alternative title
   caption: a cover caption
-  image: /gradients/8.png
+  image: 8.png
 author: FreeCAD
 description: Démarrer vos projets avec FreeCAD
 title: Documentation
@@ -13,7 +13,7 @@ menus:
   footer:
     weight: 5
 ---
-[![LINK TO GITHUB](/gradients/8.png "Link to GitHub")](https://github.com/freecad)
+[![LINK TO GITHUB](8.png "Link to GitHub")](https://github.com/freecad)
 
 ## First Documentation Block
 
@@ -25,11 +25,11 @@ This is a text in the first block to go in the right. This is a text in the firs
 
 This is a text in the second block to go in the left. This is a text in the second block. This is a text in the second block to go in the left. This is a text in the second block to go in the left. This is a text in the second block to go in the left. This is a text in the second block.
 
-![](/gradients/8.png)
+![](8.png)
 
 +++
 
-![](/gradients/8.png)
+![](8.png)
 
 ## Third Documentation Block
 
@@ -41,4 +41,4 @@ This is a text in the third block to go in the right. This is a text in the thir
 
 This is a text in the fourth block to go in the left. This is a text in the fourth block. This is a text in the fourth block to go in the left. This is a text in the fourth block to go in the left. This is a text in the fourth block to go in the left. This is a text in the fourth block.
 
-![](/gradients/8.png)
+![](8.png)

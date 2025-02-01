@@ -10,7 +10,7 @@ tags:
   - syntax
   - example
 cover:
-  image: /gradients/2.png
+  image: 2.png
   caption: "a cover caption"
   alt: "a cover alternative title"
 ---

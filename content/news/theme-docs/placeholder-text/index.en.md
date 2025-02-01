@@ -8,7 +8,7 @@ draft: false
 tags:
   - example
 cover:
-  image: /gradients/4.png
+  image: 4.png
   caption: "a cover caption"
   alt: "a cover alternative title"
 ---

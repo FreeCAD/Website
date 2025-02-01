@@ -10,7 +10,7 @@ tags:
   - first
   - update
 cover:
-  image: /gradients/8.png
+  image: 4.png
   caption: "a cover caption"
   alt: "a cover alternative title"
 ---
@@ -25,7 +25,7 @@ cover:
 
 This is **bold** text, and this is *italic* text.
 
-![Image alternative text](/gradients/8.png "This is an image title")
+![Image alternative text](4.png "This is an image title")
 
 > This is a quote
 
