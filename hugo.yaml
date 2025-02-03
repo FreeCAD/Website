@@ -85,6 +85,7 @@ params:
           - {label: "Article Author", name: "author", widget: "string", i18n: duplicate, hint: "Use a similar author name as existing ones for coherence", pattern: ['.{3,}', "Must have at least 3 characters"]}
           - {label: "Draft", name: "draft", widget: "boolean", default: true, i18n: duplicate}
           - {label: "Article Category", name: "categories", widget: "select", options: ["announcement", "event", "highlight", "showcase", "tutorial", "update"], i18n: duplicate}
+          - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
           - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
           - label: "Hero"
             name: "params.hero"
@@ -129,6 +130,7 @@ params:
         fields:
           - {label: "Features Page Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
           - {label: "Features Page Description", name: "description", widget: "string", i18n: true}
+          - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
           - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
           - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"]}
       - name: download
@@ -162,6 +164,7 @@ params:
         fields:
           - {label: "Release Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
           - {label: "Release Description", name: "description", widget: "string", i18n: true}
+          - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
           - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
           - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"]}
       - name: community
@@ -178,6 +181,7 @@ params:
         fields:
           - {label: "Community Page Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
           - {label: "Community Page Description", name: "description", widget: "string", i18n: true}
+          - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
           - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
           - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"]}
       - name: documentation
@@ -194,6 +198,7 @@ params:
         fields:
           - {label: "Documentation Page Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
           - {label: "Documentation Page Description", name: "description", widget: "string", i18n: true}
+          - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
           - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
           - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"]}
       - name: contribute
@@ -210,6 +215,7 @@ params:
         fields:
           - {label: "Contribute Page Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
           - {label: "Contribute Page Description", name: "description", widget: "string", i18n: true}
+          - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
           - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
           - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"]}
       - name: donate
