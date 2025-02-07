@@ -18,7 +18,7 @@
     {{- end }}
     {{- if .Params.hero.customLink }}
     <p>
-        <a class="hero-button custom" href="{{ .Params.links.custom | relLangURL }}">
+        <a class="hero-button custom" href="{{ .Params.hero.customLink | relLangURL }}">
         {{- with .Params.hero.customText }}
             {{ . | $.Page.RenderString }}
         {{- else }}
