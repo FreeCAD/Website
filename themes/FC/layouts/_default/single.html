@@ -25,19 +25,17 @@
     {{ end }}
   {{- end -}}
 
-  {{- if (eq .Params.Toc true) -}}
-    <div class="header-bottom">
-      {{- if eq .Type "news" -}}
-        <div class="single-meta">
-          {{- partial "meta.html" . -}}
-        </div>
-      {{- end -}}
+  <div class="header-bottom">
+    {{- if eq .Type "news" -}}
+      <div class="single-meta">
+        {{- partial "meta.html" . -}}
+      </div>
+    {{- end -}}
 
-      {{- if .Params.ToC -}}
-        {{ .TableOfContents -}}
-      {{- end -}}
-    </div>
-  {{- end -}}
+    {{- if .Params.ToC -}}
+      {{ .TableOfContents -}}
+    {{- end -}}
+  </div>
 
   {{- partial "cover.html" . }}
 </header>

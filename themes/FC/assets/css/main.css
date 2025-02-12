@@ -40,7 +40,7 @@ h2 {
 
 h3 {
     font-size: var(--l);
-    margin: 1.5rem auto;
+    margin: 1.25rem auto;
     scroll-margin-top: 25vh;
 }
 
@@ -49,7 +49,7 @@ h5,
 h6,
 p {
     font-size: var(--m);
-    margin: 1.5rem auto;
+    margin: 1.25rem auto;
     scroll-margin-top: 25vh;
 }
 
@@ -130,12 +130,11 @@ main header {
 .description,
 .download-box .release,
 .download-box .date,
-.single-meta,
 .hero-button,
 .header-bottom {
-    display: inline-block;
+    display: inline-flex;
     padding: 0.75rem 1.5rem;
-    max-width: calc(var(--width) - (4 * var(--gap)));
+    max-width: calc(var(--width) - (2 * var(--gap)));
     color: var(--cover);
     text-shadow: var(--shadow);
     z-index: 2;
@@ -178,31 +177,20 @@ main header {
 
 .header-bottom {
     position: absolute;
-    bottom: 3rem;
+    bottom: 2rem;
     display: flex;
     flex-direction: column;
-    gap: calc(2*var(--gap));
+    gap: var(--gap);
 }
 
-.single-meta {
-    color: var(--secondary);
-    background: var(--theme);
-    border-radius: var(--radius);
+:is(.single-meta, .single-meta a) {
+    color: var(--cover);
     font-size: var(--s);
-}
-
-.single-meta a {
-    color: var(--secondary);
 }
 
 .meta-item {
     display: inline-block;
-}
-
-.meta-item:not(:last-of-type):after {
-    content: "·";
-    margin-inline-start: 0.5rem;
-    margin-inline-end: 0.5rem;
+    padding: 0.125rem 0.5rem;
 }
 
 .meta-item svg {
@@ -216,12 +204,8 @@ main header {
     color: var(--link-hover-color);
 }
 
-.meta-item .tags a:not(:last-of-type) {
-    margin-inline-end: 0.5rem;
-}
-
 .meta-item .tags a:not(:last-of-type):after {
-    content: ",";
+    content: " · ";
 }
 
 #TableOfContents {
@@ -233,19 +217,20 @@ main header {
     display: inline-block;
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 0.125rem 0 0;
 }
 
 #TableOfContents a {
-    color: var(--secondary);
-    background: var(--theme);
-    border-radius: var(--radius);
-    margin: 0.5rem;
-    padding: 0.75rem 1.5rem;
+    color: var(--cover);
+    padding: 0.5rem;
 }
 
 #TableOfContents a:hover {
     color: var(--link-hover-color);
+}
+
+#TableOfContents a:before {
+    content: "# ";
 }
 
 main header .entry-cover img {
@@ -318,12 +303,10 @@ main header .entry-cover img {
 }
 
 .entry-date time {
-    background: var(--theme);
-    backdrop-filter: blur(0.3rem);
     padding: 0.5rem;
-    border-radius: var(--radius);
-    color: var(--secondary);
+    color: var(--cover);
     font-size: var(--s);
+    text-shadow: var(--shadow);
 }
 
 .entry-title {
