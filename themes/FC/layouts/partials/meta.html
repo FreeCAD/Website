@@ -1,7 +1,7 @@
 {{- if not .Date.IsZero -}}
 <span class="meta-item">
   {{ safeHTML (index site.Data.svg "date") }}
-  <time datetime="{{ .Date }}">{{ .Date | time.Format ":date_full" }}</time>
+  <time datetime="{{ .Date }}">{{ .Date | time.Format ":date_long" }}</time>
 </span>
 {{- end }}
 

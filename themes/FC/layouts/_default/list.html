@@ -52,7 +52,7 @@
     {{- partial "cover.html" . }}
   <div class="entry-date">
     {{- if not .Date.IsZero -}}
-      <time datetime="{{ .Date }}">{{ .Date | time.Format ":date_full" }}</time>
+      <time datetime="{{ .Date }}">{{ .Date | time.Format ":date_long" }}</time>
     {{- end }}
   </div>
   <div>

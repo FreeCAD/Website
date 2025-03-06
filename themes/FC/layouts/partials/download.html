@@ -7,7 +7,7 @@
         {{ print "var is falsy" }}
     {{- end }}
     {{- with .Date }}
-    <p><time datetime="{{ . }}" class="date">Released {{ . | time.Format ":date_full" }}</time></p>
+    <p><time datetime="{{ . }}" class="date">Released {{ . | time.Format ":date_long" }}</time></p>
     {{ else }}
         {{ print "var is falsy" }}
     {{- end }}
