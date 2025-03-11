@@ -668,8 +668,8 @@ iframe {
     align-items: center;
     align-content: space-between;
     justify-content: center;
-    gap: var(--gap);
-    max-height: calc((var(--width) / 4) + (var(--gap) * 4));
+    gap: calc(2*var(--gap));
+    max-height: calc((var(--width) / 4) + (var(--gap) * 6));
     text-align: center;
 }
 
@@ -687,11 +687,11 @@ iframe {
 
 /* Tricks to have 2 side-by-side columns */
 .block :not([popover]) img:has(+ h2), .block :not([popover]) img:not(:has(+ h2)), .block p:has(+ h2) {
-    width: calc((var(--width) / 2) - (var(--gap) * 2));
+    width: calc((var(--width) / 2) - (2 * var(--gap)));
 }
 
 .block h2:not(:has(+ img)), .block p:not(:has(+ h2)) {
-    width: calc((var(--width) / 2) - (var(--gap) * 2));
+    width: calc((var(--width) / 2) - (2 * var(--gap)));
 }
 
 .column {
@@ -709,7 +709,7 @@ iframe {
 }
 
 .block img:not([popover] img) {
-    max-height: calc((var(--width)/4) - (2 * var(--gap)));
+    max-height: calc((var(--width)/4) - var(--gap));
     margin: calc(var(--gap) * 2) auto;
 }
 
