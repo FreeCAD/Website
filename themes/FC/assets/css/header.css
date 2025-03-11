@@ -188,8 +188,8 @@ body:not(.dark) #sun {
     color: var(--tertiary);
 }
 
-body:is(:has(#menu-list:popover-open),:has(#lang-list:popover-open)) :is(main, .site-footer) {
-    filter: opacity(20%);
+body:is(:has(#menu-list:popover-open),:has(#lang-list:popover-open)) :is(#menu-list,#lang-list)::backdrop {
+    background: var(--backdrop);
 }
 
 .language-list {
