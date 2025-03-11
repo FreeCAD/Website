@@ -29,7 +29,7 @@ tags:
 
 This is **bold** text, and this is _italic_ text.
 
-![Image alternative text](8.png "This is an image title")
+![Image alternative text](motor.png "This is an image title")
 
 > This is a quote
 
@@ -40,3 +40,5 @@ This is **bold** text, and this is _italic_ text.
 1. First number of the list
 2. Second number of the list
 3. Third number of the list
+
+![Image alternative text](part.png "This is an image title")
