@@ -12,7 +12,7 @@
     <a href="{{ .RelPermalink }}#top" alt="PREVIOUS ARTICLE" title="{{- i18n "previous_article" | default "Previous article" }}">◀ {{ .LinkTitle | .RenderString }}</a>
   </div>
   {{- end }}
-  <a class="top-link" id="top-link" href="#top" accesskey="g" alt="TOP" aria-label="{{- i18n "go_top" | default "Go to Top" }}" title="{{- i18n "go_top" | default "Go to Top" }} (Alt + G)" >▲</a>
+  <a id="top-link" href="#top" accesskey="g" alt="TOP" aria-label="{{- i18n "go_top" | default "Go to Top" }}" title="{{- i18n "go_top" | default "Go to Top" }} (Alt + G)" >▲</a>
   {{- with .NextInSection }}
   <div class="next">
     <a href="{{ .RelPermalink }}#top" alt="NEXT ARTICLE" title="{{- i18n "next_article" | default "Next article" }}">{{ .LinkTitle | .RenderString }} ▶</a>

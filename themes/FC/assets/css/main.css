@@ -643,14 +643,19 @@ iframe {
     position: absolute;
     top: 2rem;
     right: 1rem;
-    border-radius: 50%;
     width: 4rem;
     height: 4rem;
-    padding: 1rem;
-    font-size: 1.25rem;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: rgba(255, 255, 255, 0.5);
     color: var(--cover);
-    text-align: center;
+}
+
+.content .close:hover {
+    background: var(--link-hover-color);
 }
 
 /* Single page Blocks (defined in-between +++ in Markdown files) */
@@ -895,7 +900,7 @@ iframe {
     text-align: left;
 }
 
-.single-pagination a {
+.single-pagination :is(.prev, .next) a {
     padding: 0.75rem 1.5rem;
     color: var(--cover);
     background: var(--link-color);
@@ -907,17 +912,22 @@ iframe {
     background: var(--link-hover-color);
 }
 
-.top-link {
+#top-link {
+    color: var(--cover);
+    background: var(--link-color);
     z-index: 2;
     height: 3rem;
     width: 3rem;
-    padding: 0.75rem 0 !important;
+    border-radius: 50%;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: visibility 0.3s ease, opacity 0.3s ease;
-    font-size: var(--l);
 }
 
-.top-link:hover {
-    color: var(--entry);
+#top-link:hover {
+    background: var(--link-hover-color);
 }
 
 .full-width {
