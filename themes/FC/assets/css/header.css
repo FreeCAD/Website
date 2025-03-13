@@ -175,11 +175,12 @@ body:not(.dark) #sun {
 #lang-list:popover-open {
     position: fixed;
     display: flex;
-    inset: unset;
+    inset: auto;
     flex-direction: column;
-    width: 15rem;
+    min-width: 15rem;
     max-height: calc(100vh - (var(--header-height) + (4 * var(--gap))));
     top: calc(var(--header-height) + var(--gap));
+    right: calc(var(--side) - (3*var(--gap)));
     text-align: center;
     background: var(--entry);
     border: none;
