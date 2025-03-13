@@ -143,21 +143,22 @@
 
     .menu-list a {
         text-align: center;
-        padding: 0.5rem 1rem;
-        display: block;
+        margin: 0.5rem;
+        padding: 0;
+        display: inline-block;
     }
 
     .menu-list #menu-active:not(.button) {
-        background: var(--theme);
-        border-radius: var(--radius);
-        padding: 1rem;
+        margin: 0.5rem;
+        padding: 0;
         color: var(--primary);
         font-weight: 700;
-        box-shadow: none;
+        box-shadow: 0 var(--line)0 var(--primary);
     }
 
     .menu-list #menu-active:hover {
         color: var(--link-hover-color);
+        box-shadow: var(--link-hover-underline-shadow);
     }
 
     .articles {

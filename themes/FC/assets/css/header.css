@@ -182,7 +182,7 @@ body:not(.dark) #sun {
     top: calc(var(--header-height) + var(--gap));
     right: calc(var(--side) - (3*var(--gap)));
     text-align: center;
-    background: var(--entry);
+    background: var(--theme);
     border: none;
     border-radius: var(--radius);
     padding: 1rem;
@@ -199,20 +199,22 @@ body:is(:has(#menu-list:popover-open),:has(#lang-list:popover-open)) :is(#menu-l
 
 .language-list li a {
     text-align: center;
-    padding: 0.5rem 1rem;
-    display: block;
+    margin: 0.5rem;
+    padding: 0;
+    display: inline-block;
 }
 
 .language-list li .language-active {
-    background: var(--theme);
-    border-radius: var(--radius);
-    padding: 1rem;
+    margin: 0.5rem;
+    padding: 0;
     color: var(--primary);
+    box-shadow: 0 var(--line)0 var(--primary);
     font-weight: 700;
 }
 
 .language-list li .language-active:hover {
     color: var(--link-hover-color);
+    box-shadow: var(--link-hover-underline-shadow);
 }
 
 .language-list li .language-not-active {
