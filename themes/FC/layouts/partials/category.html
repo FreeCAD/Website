@@ -1,7 +1,7 @@
 {{- if .Params.categories -}}
     {{- with index (.GetTerms "categories") 0 -}}
     <span class="category">
-        <a href="{{ .RelPermalink | relLangURL }}">{{- .LinkTitle | .RenderString -}}</a>
+        <a href="{{ .RelPermalink }}">{{- .LinkTitle | .RenderString -}}</a>
     </span>
     {{- end }}
 {{- end -}}
