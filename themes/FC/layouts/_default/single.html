@@ -6,11 +6,7 @@
 
 <header>
   {{- if eq .Type "news" -}}
-    <div class="category">
-      {{- range ($.GetTerms "categories") -}}
-        <a href="{{ .Permalink }}">{{- .LinkTitle | .RenderString -}}</a>
-      {{- end -}}
-    </div>
+    {{- partial "category.html" . -}}
   {{- end -}}
 
   <h1 class="title">

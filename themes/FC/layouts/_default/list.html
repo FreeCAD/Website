@@ -48,14 +48,14 @@
 {{- range $index, $page := $paginator.Pages }}
 
 <article>
+  {{- partial "category.html" . }}
   <a href="{{ .Permalink }}" alt="ARTICLE" aria-label="{{ .Title | plainify }}" title="{{ .Title | plainify }}">
     {{- partial "cover.html" . }}
-  <div class="entry-date">
     {{- if not .Date.IsZero -}}
-      <time datetime="{{ .Date }}">{{ .Date | time.Format ":date_long" }}</time>
+      <span class="entry-date">
+        <time datetime="{{ .Date }}">{{ .Date | time.Format ":date_long" }}</time>
+      </span>
     {{- end }}
-  </div>
-  <div>
     <h3 class="entry-title">
       <span>{{- .Title | .RenderString }}</span>
       {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[{{- i18n "draft" | default "Draft" }}]</span></sup>{{- end }}
@@ -69,7 +69,6 @@
       {{ end }}
     </p>
     {{- end }}
-  </div>
   </a>
 </article>
 

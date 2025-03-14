@@ -127,7 +127,6 @@ main header {
     position: relative;
 }
 
-.category,
 .title,
 .description,
 .download-box .date,
@@ -144,7 +143,10 @@ main header {
 .category {
     position: absolute;
     top: 1rem;
+    right: 0;
+    width: 100%;
     color: var(--cover);
+    z-index: 2;
 }
 
 .category a {
@@ -255,7 +257,7 @@ main header .entry-cover img {
     position: relative;
 }
 
-.articles article a {
+.articles article :not(.category) :is(a, h3) {
     color: var(--secondary);
 }
 
@@ -289,9 +291,9 @@ main header .entry-cover img {
 
 .entry-date {
     position: absolute;
-    margin-top: 1rem;
+    right: 0;
     width: 100%;
-    top: 0%;
+    top: calc((clamp(9rem, 2rem + 8.75vw, 12.5rem)) - (2 * var(--gap)));
 }
 
 .entry-date time {
