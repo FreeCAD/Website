@@ -17,8 +17,9 @@
     </p>
     {{- end }}
     {{- if .Params.hero.customLink }}
+    {{ $customLink := .Site.GetPage .Params.hero.customLink }}
     <p>
-        <a class="hero-button custom" href="{{ .Params.hero.customLink }}">
+        <a class="hero-button custom" href="{{ $customLink.RelPermalink }}">
         {{- with .Params.hero.customText }}
             {{ . | $.Page.RenderString }}
         {{- else }}
