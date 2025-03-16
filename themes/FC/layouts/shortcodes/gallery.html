@@ -3,8 +3,8 @@
 {{- $images := .Page.Resources.Match (printf "%s/*" $directory) -}}
 {{- range $images -}}
   {{- $imagetitle := .Name -}}
-    <li>
-        <img src="{{ .RelPermalink }}" alt="{{ $imagetitle }}" title="{{ $imagetitle }}">
-    </li>
+  <li>
+    <img src="{{ .RelPermalink }}" alt="{{ $imagetitle }}" title="{{ $imagetitle }}">
+  </li>
 {{- end -}}
 </ul>

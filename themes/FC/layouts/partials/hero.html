@@ -1,43 +1,43 @@
 {{/* get the latest article with the "hero" parameters in front matter */}}
 {{- with (index (where (site.RegularPages | lang.Merge .Sites.Default.RegularPages) "Params.hero" "!=" nil) 0) -}}
 <header>
-    <h1 class="title">
+  <h1 class="title">
+    {{ .LinkTitle | .RenderString }}
+  </h1>
+  {{- with .Description -}}
+    <h2 class="description">
+      {{ . | $.Page.RenderString }}
+    </h2>
+  {{- end -}}
+  <div class="buttons">
+  {{- if .Params.hero.downloadLink -}}
+  {{- $download := .Site.GetPage "download" -}}
+  <p>
+    <a class="hero-button download" href="{{ $download.RelPermalink }}">
+      {{ $download.LinkTitle | .RenderString }}
+    </a>
+  </p>
+  {{- end -}}
+  {{- if .Params.hero.customLink -}}
+  {{- $customLink := .Site.GetPage .Params.hero.customLink -}}
+  <p>
+    <a class="hero-button custom" href="{{ $customLink.RelPermalink }}">
+      {{- with .Params.hero.customText -}}
+        {{ . | $.Page.RenderString }}
+      {{- else -}}
+        {{ .Params.hero.customLink.LinkTitle | .RenderString }}
+      {{- end }}
+    </a>
+  </p>
+  {{- end -}}
+  {{- if .Params.hero.articleLink -}}
+    <p>
+      <a class="hero-button article" href="{{ .RelPermalink }}">
         {{ .LinkTitle | .RenderString }}
-    </h1>
-    {{- with .Description -}}
-        <h2 class="description">
-            {{ . | $.Page.RenderString }}
-        </h2>
-    {{- end -}}
-    <div class="buttons">
-    {{- if .Params.hero.downloadLink -}}
-    {{- $download := .Site.GetPage "download" -}}
-    <p>
-        <a class="hero-button download" href="{{ $download.RelPermalink }}">
-            {{ $download.LinkTitle | .RenderString }}
-        </a>
+      </a>
     </p>
-    {{- end -}}
-    {{- if .Params.hero.customLink -}}
-    {{- $customLink := .Site.GetPage .Params.hero.customLink -}}
-    <p>
-        <a class="hero-button custom" href="{{ $customLink.RelPermalink }}">
-            {{- with .Params.hero.customText -}}
-                {{ . | $.Page.RenderString }}
-            {{- else -}}
-                {{ .Params.hero.customLink.LinkTitle | .RenderString }}
-            {{- end }}
-        </a>
-    </p>
-    {{- end -}}
-    {{- if .Params.hero.articleLink -}}
-        <p>
-            <a class="hero-button article" href="{{ .RelPermalink }}">
-                {{ .LinkTitle | .RenderString }}
-            </a>
-        </p>
-    {{- end -}}
-    </div>
-    {{- partial "cover.html" . -}}
+  {{- end -}}
+  </div>
+  {{- partial "cover.html" . -}}
 </header>
 {{- end -}}

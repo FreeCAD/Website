@@ -6,33 +6,33 @@
 
 {{- if .Title -}}
 <header>
-    <h1>
-        {{ .Title | .RenderString }}
-    </h1>
-    {{- if .Description -}}
-    <p class="single-description">
-        {{ .Description | .RenderString }}
-    </p>
-    {{- end -}}
+  <h1>
+    {{ .Title | .RenderString }}
+  </h1>
+  {{- if .Description -}}
+  <p class="single-description">
+    {{ .Description | .RenderString }}
+  </p>
+  {{- end -}}
 </header>
 {{- end -}}
 
 <ul class="terms-tags">
-    {{- $type := .Type -}}
-    {{- range $key, $value := .Data.Terms.Alphabetical -}}
-        {{- $name := .Name -}}
-        {{- $count := .Count -}}
-        {{- with site.GetPage (printf "/%s/%s" $type $name) -}}
-        <li>
-            <a href="{{ .RelPermalink }}">
-                {{ .Name -}}
-                <sup>
-                    {{ $count }}
-                </sup>
-            </a>
-        </li>
-        {{- end -}}
+  {{- $type := .Type -}}
+  {{- range $key, $value := .Data.Terms.Alphabetical -}}
+    {{- $name := .Name -}}
+    {{- $count := .Count -}}
+    {{- with site.GetPage (printf "/%s/%s" $type $name) -}}
+    <li>
+      <a href="{{ .RelPermalink }}">
+        {{ .Name -}}
+        <sup>
+          {{ $count }}
+        </sup>
+      </a>
+    </li>
     {{- end -}}
+  {{- end -}}
 </ul>
 
 {{- end -}}

@@ -2,37 +2,37 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 {{- if hugo.IsProduction | or (eq site.Params.env "production") -}}
-    <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow">
 {{- else -}}
-    <meta name="robots" content="noindex, nofollow">
+  <meta name="robots" content="noindex, nofollow">
 {{- end -}}
 
 {{- /* Title */}}
 {{- $pageTitle := site.Title -}}
 {{- if (and .Title (not .IsHome)) -}}
-    {{- $pageTitle = printf "%s | %s" $pageTitle .Title -}}
+  {{- $pageTitle = printf "%s | %s" $pageTitle .Title -}}
 {{- end -}}
 <title>
-    {{ $pageTitle | plainify }}
+  {{ $pageTitle | plainify }}
 </title>
 
 {{- /* Meta */}}
 {{- if .IsHome -}}
-    {{- with site.Params.keywords -}}
-        <meta name="keywords" content="{{ range $i, $e := . -}}{{- if $i -}}, {{- end -}}{{- $e -}}{{- end }}">
-    {{- end -}}
+  {{- with site.Params.keywords -}}
+    <meta name="keywords" content="{{ range $i, $e := . -}}{{- if $i -}}, {{- end -}}{{- $e -}}{{- end }}">
+  {{- end -}}
 {{- else -}}
-    <meta name="keywords" content="{{ if .Params.keywords -}}
-    {{- range $i, $e := .Params.keywords -}}{{- if $i -}}, {{- end -}}{{- $e -}}{{- end -}} {{- else -}}
-    {{- range $i, $e := .Params.tags -}}{{- if $i -}}, {{- end -}}{{- $e -}}{{- end -}} {{- end }}">
+  <meta name="keywords" content="{{ if .Params.keywords -}}
+  {{- range $i, $e := .Params.keywords -}}{{- if $i -}}, {{- end -}}{{- $e -}}{{- end -}} {{- else -}}
+  {{- range $i, $e := .Params.tags -}}{{- if $i -}}, {{- end -}}{{- $e -}}{{- end -}} {{- end }}">
 {{- end -}}
 <meta name="description" content="{{ with .Description -}}{{ . | plainify }}{{- else -}}{{- if or .IsPage .IsSection}}
-    {{ .Summary | default (printf "%s - %s" .Title  site.Title) | plainify }}{{- else -}}
-    {{- with site.Params.description -}}{{ . | plainify }}{{- end -}}{{- end -}}{{- end }}">
+  {{ .Summary | default (printf "%s - %s" .Title  site.Title) | plainify }}{{- else -}}
+  {{- with site.Params.description -}}{{ . | plainify }}{{- end -}}{{- end -}}{{- end }}">
 <meta name="author" content="{{ (partial "author.html" . ) }}">
 <link rel="canonical" href="{{ .Permalink }}">
 {{- if site.Params.analytics.googlesiteVerificationTag -}}
-    <meta name="google-site-verification" content="{{ site.Params.analytics.googlesiteVerificationTag }}">
+  <meta name="google-site-verification" content="{{ site.Params.analytics.googlesiteVerificationTag }}">
 {{- end -}}
 
 {{- /* Styles */}}
@@ -52,10 +52,10 @@
 {{- $stylesheet := (slice $theme_vars $404 $archive $footer $header $main $gallery $terms $lightbox $highlight $media) | resources.Concat "assets/css/stylesheet.css" | minify -}}
 
 {{- if not site.Params.assets.disableFingerprinting -}}
-    {{- $stylesheet := $stylesheet | fingerprint -}}
-    <link crossorigin="anonymous" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}" rel="preload stylesheet" as="style">
+  {{- $stylesheet := $stylesheet | fingerprint -}}
+  <link crossorigin="anonymous" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}" rel="preload stylesheet" as="style">
 {{- else -}}
-    <link crossorigin="anonymous" href="{{ $stylesheet.RelPermalink }}" rel="preload stylesheet" as="style">
+  <link crossorigin="anonymous" href="{{ $stylesheet.RelPermalink }}" rel="preload stylesheet" as="style">
 {{- end -}}
 
 {{- /* Favicons */}}
@@ -63,40 +63,40 @@
 <link rel="apple-touch-icon" href="{{ site.Sites.Default.Home.Permalink -}}apple-touch-icon.png">
 
 {{- range .AllTranslations -}}
-    <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
+  <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
 {{- end -}}
 
 {{- /* Misc */}}
 {{- if hugo.IsProduction | or (eq site.Params.env "production") -}}
   {{- if site.Config.Services.GoogleAnalytics.ID -}}
-    {{- template "_internal/google_analytics.html" . -}}
+  {{- template "_internal/google_analytics.html" . -}}
   {{- end -}}
 {{- end -}}
 
 {{- template "partials/opengraph.html" (dict "page" . "pageTitle" $pageTitle) -}}
 
 <noscript>
-    <style>
-        #theme-toggle {
-            display: none;
-        }
-    </style>
-    {{- if (and (ne site.Params.defaultTheme "light") (ne site.Params.defaultTheme "dark")) -}}
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(32, 32, 32);
-                --entry: rgb(64, 64, 64);
-                --primary: rgb(240, 240, 240);
-                --secondary: rgb(224, 224, 224);
-                --tertiary: rgb(208, 208, 208);
-                --link-color: #f00000;
-            }
+  <style>
+    #theme-toggle {
+      display: none;
+    }
+  </style>
+  {{- if (and (ne site.Params.defaultTheme "light") (ne site.Params.defaultTheme "dark")) -}}
+  <style>
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --theme: rgb(32, 32, 32);
+        --entry: rgb(64, 64, 64);
+        --primary: rgb(240, 240, 240);
+        --secondary: rgb(224, 224, 224);
+        --tertiary: rgb(208, 208, 208);
+        --link-color: #f00000;
+      }
 
-            main {
-                background: var(--theme);
-            }
-        }
-    </style>
-    {{- end -}}
+      main {
+        background: var(--theme);
+      }
+    }
+  </style>
+  {{- end -}}
 </noscript>

@@ -1,15 +1,15 @@
 {{/* allows to open external links in a new browser tab */}}
 <a href="{{ .Destination | safeURL }}"
-    {{- with .Title}}
-        title="{{ . | plainify }}"
-    {{- end -}}
-    {{- if strings.HasPrefix .Destination "http" -}}
-        target="_blank" rel="noopener"
-    {{- end -}}>
-    {{ .Text | safeHTML }}
-    {{- if strings.HasPrefix .Destination "http" -}}
-        <span class="external-link">
-            {{ safeHTML (index site.Data.svg "external-link") }}
-        </span>
-    {{- end -}}
+  {{- with .Title}}
+    title="{{ . | plainify }}"
+  {{- end -}}
+  {{- if strings.HasPrefix .Destination "http" -}}
+    target="_blank" rel="noopener"
+  {{- end -}}>
+  {{ .Text | safeHTML }}
+  {{- if strings.HasPrefix .Destination "http" -}}
+    <span class="external-link">
+      {{ safeHTML (index site.Data.svg "external-link") }}
+    </span>
+  {{- end -}}
 </a>
