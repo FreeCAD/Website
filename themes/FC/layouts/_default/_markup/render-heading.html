@@ -1,9 +1,15 @@
 {{/* Allows to set custom CSS style and a class for content headings, and display an anchor next to it. */}}
-{{ $class := index .Attributes "class" }}
-{{ $style := index .Attributes "style" }}
+{{- $class := index .Attributes "class" -}}
+{{- $style := index .Attributes "style" -}}
 <h{{ .Level }} id="{{ .Anchor | safeURL }}"
-    {{ if ne $class nil }} class="{{ $class }}" {{ end }}
-    {{ if ne $style nil }} style="{{ $style }}" {{ end }}>
-    {{- .Text | safeHTML -}}
-    <a class="heading-anchor" href="#{{ .Anchor | safeURL }}">{{ safeHTML (index site.Data.svg "heading-anchor") }}</a>
+    {{- if ne $class nil -}}
+        class="{{ $class }}"
+    {{- end -}}
+    {{- if ne $style nil -}}
+        style="{{ $style }}"
+    {{- end -}}>
+    {{ .Text | safeHTML }}
+    <a class="heading-anchor" href="#{{ .Anchor | safeURL }}">
+        {{ safeHTML (index site.Data.svg "heading-anchor") }}
+    </a>
 </h{{ .Level }}>

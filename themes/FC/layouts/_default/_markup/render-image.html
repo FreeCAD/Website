@@ -1,17 +1,20 @@
 {{- $url := urls.Parse .Destination -}}
-{{- $sizes := (slice "1312") }}
+{{- $sizes := (slice "1312") -}}
 {{- if $url.Scheme -}}
 
   {{/* third party image */}}
-  {{ with resources.GetRemote .Destination }}
-    {{ with .Err }}
-      {{ errorf "%s" . }}
-    {{ else }}
-      <img loading="lazy" src="{{ .RelPermalink | safeURL }}" alt="{{ $.Text }}" {{ with $.Title}} title="{{ . | plainify }}" {{ end }} />
-    {{ end }}
-  {{ else }}
-    {{ errorf "Unable to get remote resource %q" .Destination }}
-  {{ end }}
+  {{- with resources.GetRemote .Destination -}}
+    {{- with .Err -}}
+      {{- errorf "%s" . -}}
+    {{- else -}}
+      <img loading="lazy" src="{{ .RelPermalink | safeURL }}" alt="{{ $.Text }}"
+        {{- with $.Title -}}
+          title="{{ . | plainify }}"
+        {{- end -}} />
+    {{- end -}}
+  {{- else -}}
+    {{- errorf "Unable to get remote resource %q" .Destination -}}
+  {{- end -}}
 {{- else -}}
 
   {{/* internal image */}}
@@ -29,25 +32,30 @@
       </video>
       </figure>
     {{- else -}}
-      {{ $id := delimit (shuffle (seq 1 9)) "" }}
-      <button popovertarget="img{{ $id }}">
+      {{- $id := delimit (shuffle (seq 1 9)) "" -}}
+      <button popovertarget="img{{- $id }}">
         <img loading="lazy"
-          srcset="{{- range $size := $sizes -}}
+          srcset="{{ range $size := $sizes -}}
                     {{- if (ge $img.Width $size) -}}
-                      {{ printf "%s %s" (($img.Resize (printf "%sx" $size)).RelPermalink | safeURL) (printf "%sw ," $size) -}}
-                    {{ end }}
+                      {{- printf "%s %s" (($img.Resize (printf "%sx" $size)).RelPermalink | safeURL) (printf "%sw ," $size) -}}
+                    {{- end -}}
                   {{- end -}}
-                  {{$img.Permalink }} {{printf "%dw" ($img.Width)}}"
+                  {{$img.Permalink -}} {{printf "%dw" ($img.Width)}}"
           sizes="(min-width: 1024px) 1312px, 100vw" src="{{ $img.RelPermalink | safeURL }}"
           width="{{ $img.Width }}" height="{{ $img.Height }}"
-          type="" alt="{{ $.Text }}" {{ with $.Title}} title="{{ . | plainify }}" {{ end }} >
+          type="" alt="{{ $.Text }}"
+          {{- with $.Title -}}
+            title="{{ . | plainify }}"
+          {{- end -}} >
       </button>
-      <div id="img{{ $id }}" popover>
+      <div id="img{{- $id }}" popover>
         <img loading="lazy" src="{{ $img.RelPermalink | safeURL }}">
-        <button class="close" popovertarget="img{{ $id }}" popovertargetaction="hide">✕</button>
+        <button class="close" popovertarget="img{{- $id }}" popovertargetaction="hide">
+          ✕
+        </button>
       </div>
     {{- end -}}
   {{- else -}}
-    {{- warnf "No image found for %s from %s" .Destination .Page.File }}
+    {{- warnf "No image found for %s from %s" .Destination .Page.File -}}
   {{- end -}}
 {{- end -}}

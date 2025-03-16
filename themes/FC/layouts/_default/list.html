@@ -1,92 +1,106 @@
-{{- define "main" }}
+{{- define "main" -}}
 
-{{ if not hugo.IsProduction }}
+{{- if not hugo.IsProduction -}}
   {{- partial "debug.html" . -}}
-{{ end }}
+{{- end -}}
 
-{{- if .IsHome | and .Title }}
-  {{- partial "hero.html" . }}
-{{- end }}
+{{- if .IsHome | and .Title -}}
+  {{- partial "hero.html" . -}}
+{{- end -}}
 
-{{- if not .IsHome | and .Title }}
+{{- if not .IsHome | and .Title -}}
 <header>
   {{- if eq .Section "news" -}}
     <ul class="category-list">
-      {{- range .Sites.Default.Taxonomies.categories }}
+      {{- range .Sites.Default.Taxonomies.categories -}}
         <li>
           <a href="{{ .Page.RelPermalink }}">
-            {{- .Page.LinkTitle -}}
+            {{ .Page.LinkTitle }}
           </a>
         </li>
-      {{- end }}
+      {{- end -}}
     </ul>
-  {{- end }}
+  {{- end -}}
 
   <h1 class="title">
-    {{- if eq .Kind "term" -}}{{- .Data.Singular }}: {{ end -}}
-    {{ .Title | .RenderString -}}
+    {{- if eq .Kind "term" -}}
+      {{ .Data.Singular }}: {{ end }}
+    {{ .Title | .RenderString }}
   </h1>
 
-  {{- if .Description }}
+  {{- if .Description -}}
   <h2 class="description">
     {{ .Description | .RenderString }}
   </h2>
-  {{- end }}
+  {{- end -}}
 
-  {{- partial "cover.html" . }}
+  {{- partial "cover.html" . -}}
 </header>
-{{- end }}
+{{- end -}}
 
 <section class="articles">
 {{/* get the latest pages from the current section, and fill in the missing translated pages from the first site (currently English) */}}
-{{- $pages := where (.RegularPages | lang.Merge .Sites.Default.RegularPages) "Section" .Section }}
+{{- $pages := where (.RegularPages | lang.Merge .Sites.Default.RegularPages) "Section" .Section -}}
 
-{{- if .IsHome }}
+{{- if .IsHome -}}
   {{/* get the 6 latest regular pages in the main section (defined in hugo.yaml or number of pages, currently "news"), except the ones with the "hero" parameters in front matter */}}
-  {{- $pages = where (where (site.RegularPages | lang.Merge .Sites.Default.RegularPages) "Section" "in" site.Params.mainSections) "Params.hero" "ne" true | first 6 }}
-{{- end }}
+  {{- $pages = where (where (site.RegularPages | lang.Merge .Sites.Default.RegularPages) "Section" "in" site.Params.mainSections) "Params.hero" "ne" true | first 6 -}}
+{{- end -}}
 
 {{- if eq .Kind "term" -}}
   {{- $pages = .RegularPages -}}
 {{- end -}}
 
 {{/* related issue: https://github.com/gohugoio/hugo/issues/9003 */}}
-{{ $paginator := "" }}
-{{ if (.Param "paginate") }}
-  {{- $paginator = .Paginate $pages (.Param "paginate") }}
-{{ else }}
-  {{- $paginator = .Paginate $pages }}
-{{ end }}
+{{- $paginator := "" -}}
+{{- if (.Param "paginate") -}}
+  {{- $paginator = .Paginate $pages (.Param "paginate") -}}
+{{- else -}}
+  {{- $paginator = .Paginate $pages -}}
+{{- end -}}
 
-{{- $term := .Data.Term }}
-{{- range $index, $page := $paginator.Pages }}
+{{- $term := .Data.Term -}}
+{{- range $index, $page := $paginator.Pages -}}
 
 <article>
-  {{- partial "category.html" . }}
+  {{- partial "category.html" . -}}
   <a href="{{ .Permalink }}" alt="ARTICLE" aria-label="{{ .Title | plainify }}" title="{{ .Title | plainify }}">
-    {{- partial "cover.html" . }}
+    {{- partial "cover.html" . -}}
     {{- if not .Date.IsZero -}}
       <span class="entry-date">
-        <time datetime="{{ .Date }}">{{ .Date | time.Format ":date_long" }}</time>
+        <time datetime="{{ .Date }}">
+          {{ .Date | time.Format ":date_long" }}
+        </time>
       </span>
-    {{- end }}
+    {{- end -}}
     <h3 class="entry-title">
-      <span>{{- .Title | .RenderString }}</span>
-      {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[{{- i18n "draft" | default "Draft" }}]</span></sup>{{- end }}
+      <span>
+        {{ .Title | .RenderString }}
+      </span>
+      {{- if .Draft }}
+        <sup>
+          <span class="entry-isdraft">
+            &nbsp;&nbsp;[{{- i18n "draft" | default "Draft" -}}]
+          </span>
+        </sup>
+      {{- end -}}
     </h3>
-    {{- if (ne (.Param "hideSummary") true) }}
+    {{- if (ne (.Param "hideSummary") true) -}}
     <p class="entry-description">
-      {{ if .Description }}
+      {{- if .Description -}}
         {{ .Description | .RenderString }}
-      {{ else }}
-        {{ .Summary | .RenderString }}{{ if .Truncated }}...{{ end }}
-      {{ end }}
+      {{- else -}}
+        {{ .Summary | .RenderString }}
+        {{- if .Truncated -}}
+          ...
+        {{- end -}}
+      {{- end -}}
     </p>
-    {{- end }}
+    {{- end -}}
   </a>
 </article>
 
-{{- end }}
+{{- end -}}
 </section>
 
 {{/* Get the content for the Homepage. */}}
@@ -96,17 +110,22 @@
   {{- end -}}
 {{- end -}}
 
-{{- if gt $paginator.TotalPages 1 }}
+{{- if gt $paginator.TotalPages 1 -}}
 <footer class="list-footer">
   <nav class="list-pagination">
-    {{- if $paginator.HasPrev }}
-    <a class="prev" href="{{ $paginator.Prev.URL }}" alt="PREVIOUS" aria-label="{{- i18n "prev_page" | default "Prev Page" }}" title="{{- i18n "prev_page" | default "Prev Page" }}">◀ {{ i18n "prev_page" | default "Prev Page" }}</a>
-    {{- end }}
-    {{- if $paginator.HasNext }}
-    <a class="next" href="{{ $paginator.Next.URL }}" alt="NEXT" aria-label="{{- i18n "next_page" | default "Next Page" }}" title="{{- i18n "next_page" | default "Next Page" }}">{{ i18n "next_page" | default "Next Page" }} ▶</a>
-    {{- end }}
+    {{- if $paginator.HasPrev -}}
+    <a class="prev" href="{{ $paginator.Prev.URL }}" alt="PREVIOUS" aria-label="{{ i18n "prev_page" | default "Prev Page" }}" title="{{ i18n "prev_page" | default "Prev Page" }}">
+      ◀ {{- i18n "prev_page" | default "Prev Page" }}
+    </a>
+    {{- end -}}
+    {{- if $paginator.HasNext -}}
+    <a class="next" href="{{ $paginator.Next.URL }}" alt="NEXT" aria-label="{{ i18n "next_page" | default "Next Page" }}" title="{{ i18n "next_page" | default "Next Page" }}">
+      {{ i18n "next_page" | default "Next Page" -}} ▶
+    </a>
+    {{- end -}}
   </nav>
 </footer>
-{{- end }}
+{{- end -}}
 
-{{- end }}{{- /* end main */ -}}
+{{- end -}}
+{{- /* end main */ -}}

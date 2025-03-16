@@ -1,11 +1,15 @@
-{{- $width := .Get 1 }}
-{{- $height := .Get 2 }}
+{{- $width := .Get 1 -}}
+{{- $height := .Get 2 -}}
 <figure class="center align-center">
   <div class="image-size-control" style="
-    {{- with $width }}max-width: {{ . }};{{ end -}}
-    {{- with $height }}height: {{ . }};{{ end -}}">
+    {{- with $width -}}max-width: {{ . }};{{- end -}}
+    {{- with $height -}}height: {{ . }};{{- end }}">
     {{ .Page.RenderString .Inner }}
   </div>
 
-  <figcaption><p>{{ .Get 0 | $.Page.RenderString }}</p></figcaption>
+  <figcaption>
+    <p>
+      {{ .Get 0 | $.Page.RenderString }}
+    </p>
+  </figcaption>
 </figure>

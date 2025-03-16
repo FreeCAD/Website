@@ -1,5 +1,9 @@
 <figure class="center align-center">
   {{ .Page.RenderString .Inner }}
 
-  <figcaption><p>{{ .Get 0 | $.Page.RenderString }}</p></figcaption>
+  <figcaption>
+    <p>
+      {{ .Get 0 | $.Page.RenderString }}
+    </p>
+  </figcaption>
 </figure>

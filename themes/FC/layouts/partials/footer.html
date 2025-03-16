@@ -1,18 +1,31 @@
 <footer class="site-footer">
-  {{- if site.Copyright }}
-  <span>{{ site.Copyright | .RenderString }}</span>
-  {{- else }}
-  <span>&copy; {{ now.Year }} <a href="{{ "" | relLangURL }}">{{ site.Title | .RenderString }}</a></span>
+  {{- if site.Copyright -}}
+    <span>
+      {{ site.Copyright | .RenderString }}
+    </span>
+  {{- else -}}
+    <span>
+      &copy; {{- now.Year -}} <a href="{{ "" | relLangURL }}">
+        {{ site.Title | .RenderString }}
+      </a>
+    </span>
   {{- end -}}
-  <span><a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a></span>
-  <span>Made with ♥︎ thanks to
-  <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
+  <span>
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+      CC BY-SA
+    </a>
+  </span>
+  <span>
+    Made with ♥︎ thanks to <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">
+      Hugo
+    </a>
+  </span>
 </footer>
 
 <script>
   (function() {
     /* theme toggle */
-    const disableThemeToggle = '{{ if site.Params.disableThemeToggle }}1{{ end }}' == '1';
+    const disableThemeToggle = '{{- if site.Params.disableThemeToggle -}}1{{- end -}}' == '1';
     if (disableThemeToggle) {
       return;
     }
@@ -61,44 +74,44 @@
 
 {{/* Load mediumZoom script */}}
 {{/* It has to be loaded here because of the data-no-instant attribute */}}
-{{- if (.Param "EnableImageZoom") }}
-  {{- $imagezoom := resources.Get "js/medium-zoom.js" }}
-  {{- if hugo.IsProduction }}
-    {{- $imagezoom = minify $imagezoom }}
-  {{- end }}
+{{- if (.Param "EnableImageZoom") -}}
+  {{- $imagezoom := resources.Get "js/medium-zoom.js" -}}
+  {{- if hugo.IsProduction -}}
+    {{- $imagezoom = minify $imagezoom -}}
+  {{- end -}}
   <script src="{{ $imagezoom.RelPermalink }}" data-no-instant
-    {{- if site.Params.assets.disableFingerprinting }}integrity="{{ $imagezoom.Data.Integrity }}"{{- end }}>
+    {{- if site.Params.assets.disableFingerprinting -}}integrity="{{ $imagezoom.Data.Integrity }}"{{- end -}}>
   </script>
-{{- end }}
+{{- end -}}
 
 {{- /* Script to detect User Agent and provide corresponding download options. */}}
 {{- if or (eq .Type "download") (eq .Type "releases") -}}
-  {{- if (.Param "EnableUA") }}
-    {{- $DownloadUA := resources.Get "js/DownloadUACheck.js" }}
-    {{- if hugo.IsProduction }}
-      {{- $DownloadUA = minify $DownloadUA }}
-    {{- end }}
+  {{- if (.Param "EnableUA") -}}
+    {{- $DownloadUA := resources.Get "js/DownloadUACheck.js" -}}
+    {{- if hugo.IsProduction -}}
+      {{- $DownloadUA = minify $DownloadUA -}}
+    {{- end -}}
     <script type="text/javascript" src="{{ $DownloadUA.RelPermalink }}">
     </script>
-  {{- end }}
-{{- end }}
+  {{- end -}}
+{{- end -}}
 
-{{- if .IsPage }}
+{{- if .IsPage -}}
 
   {{- /* Copy Code script */}}
-  {{- if (and (eq .Kind "page") (ne .Layout "archives") (.Param "ShowCopyCodeButton")) }}
+  {{- if (and (eq .Kind "page") (ne .Layout "archives") (.Param "ShowCopyCodeButton")) -}}
   <script>
   document.querySelectorAll('pre > code').forEach((codeblock) => {
     const container = codeblock.parentNode.parentNode;
 
     const copybutton = document.createElement('button');
     copybutton.classList.add('copy-code');
-    copybutton.innerText = '{{- i18n "code_copy" | default "copy" }}';
+    copybutton.innerText = '{{- i18n "code_copy" | default "copy" -}}';
 
     function copyingDone() {
-      copybutton.innerText = '{{- i18n "code_copied" | default "copied!" }}';
+      copybutton.innerText = '{{- i18n "code_copied" | default "copied!" -}}';
       setTimeout(() => {
-        copybutton.innerText = '{{- i18n "code_copy" | default "copy" }}';
+        copybutton.innerText = '{{- i18n "code_copy" | default "copy" -}}';
       }, 2000);
     }
 
@@ -134,24 +147,24 @@
     }
   });
   </script>
-  {{- end }}
+  {{- end -}}
 
   {{- end}}
 
-{{- if (.Param "EnableImageZoom") }}
+{{- if (.Param "EnableImageZoom") -}}
   <script>
   mediumZoom('.content :not(:is(a)) > img:not(:is([no-zoom]))');
   </script>
-{{- end }}
+{{- end -}}
 
 {{- /* InstantClick.js */}}
-{{- if (.Param "EnableInstantClick") }}
-{{- $InstantClick := resources.Get "js/InstantClick.js" }}
-{{- if hugo.IsProduction }}
-  {{- $InstantClick = minify $InstantClick }}
-{{- end }}
+{{- if (.Param "EnableInstantClick") -}}
+{{- $InstantClick := resources.Get "js/InstantClick.js" -}}
+{{- if hugo.IsProduction -}}
+  {{- $InstantClick = minify $InstantClick -}}
+{{- end -}}
 <script type="text/javascript" src="{{ $InstantClick.RelPermalink }}" data-no-instant
-  {{- if site.Params.assets.disableFingerprinting }}integrity="{{ $InstantClick.Data.Integrity }}"{{- end }}>
+  {{- if site.Params.assets.disableFingerprinting -}}integrity="{{ $InstantClick.Data.Integrity }}"{{- end -}}>
 </script>
 
 <script data-no-instant>
@@ -163,14 +176,14 @@
   // });
   InstantClick.init();
 </script>
-{{- end }}
+{{- end -}}
 
 {{- /* Lightbox for external images and Youtube links. NOTE: disabled for now in config hugo.yaml */}}
-{{- if (.Param "EnableLightbox") }}
-{{- $Lightbox := resources.Get "js/Lightbox.js" }}
-{{- if hugo.IsProduction }}
-  {{- $Lightbox = minify $Lightbox }}
-{{- end }}
+{{- if (.Param "EnableLightbox") -}}
+{{- $Lightbox := resources.Get "js/Lightbox.js" -}}
+{{- if hugo.IsProduction -}}
+  {{- $Lightbox = minify $Lightbox -}}
+{{- end -}}
 <script type="text/javascript" src="{{ $Lightbox.RelPermalink }}">
 </script>
-{{- end }}
+{{- end -}}

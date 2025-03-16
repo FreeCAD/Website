@@ -1,31 +1,39 @@
-{{- define "main" }}
+{{- define "main" -}}
 
-{{ if not hugo.IsProduction }}
+{{- if not hugo.IsProduction -}}
   {{- partial "debug.html" . -}}
-{{ end }}
+{{- end -}}
 
-{{- if .Title }}
+{{- if .Title -}}
 <header>
-    <h1>{{ .Title | .RenderString }}</h1>
-    {{- if .Description }}
+    <h1>
+        {{ .Title | .RenderString }}
+    </h1>
+    {{- if .Description -}}
     <p class="single-description">
         {{ .Description | .RenderString }}
     </p>
-    {{- end }}
+    {{- end -}}
 </header>
-{{- end }}
+{{- end -}}
 
 <ul class="terms-tags">
-    {{- $type := .Type }}
-    {{- range $key, $value := .Data.Terms.Alphabetical }}
-        {{- $name := .Name }}
-        {{- $count := .Count }}
-        {{- with site.GetPage (printf "/%s/%s" $type $name) }}
+    {{- $type := .Type -}}
+    {{- range $key, $value := .Data.Terms.Alphabetical -}}
+        {{- $name := .Name -}}
+        {{- $count := .Count -}}
+        {{- with site.GetPage (printf "/%s/%s" $type $name) -}}
         <li>
-            <a href="{{ .RelPermalink }}">{{ .Name }} <sup><strong><sup>{{ $count }}</sup></strong></sup> </a>
+            <a href="{{ .RelPermalink }}">
+                {{ .Name -}}
+                <sup>
+                    {{ $count }}
+                </sup>
+            </a>
         </li>
-        {{- end }}
-    {{- end }}
+        {{- end -}}
+    {{- end -}}
 </ul>
 
-{{- end }}{{/* end main */ -}}
+{{- end -}}
+{{/* end main */ -}}

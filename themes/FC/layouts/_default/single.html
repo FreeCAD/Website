@@ -1,8 +1,8 @@
 {{- define "main" -}}
 
-{{ if not hugo.IsProduction }}
+{{- if not hugo.IsProduction -}}
   {{- partial "debug.html" . -}}
-{{ end }}
+{{- end -}}
 
 <header>
   {{- if eq .Type "news" -}}
@@ -10,31 +10,33 @@
   {{- end -}}
 
   {{- if eq .Section "releases" -}}
-    {{- with .Site.GetPage "releases" }}
+    {{- with .Site.GetPage "releases" -}}
       <span class="releases">
-        <a href="{{ .RelPermalink }}">{{- .LinkTitle | .RenderString -}}</a>
+        <a href="{{ .RelPermalink }}">
+          {{ .LinkTitle | .RenderString }}
+        </a>
       </span>
-    {{- end }}
+    {{- end -}}
   {{- end -}}
 
   <h1 class="title">
-    {{- .Title | .RenderString -}}
+    {{ .Title | .RenderString }}
     {{- if .Draft -}}
-      <sup><span class="entry-isdraft">&nbsp;&nbsp;[{{- i18n "draft" | default "Draft" }}]</span></sup>
+      <sup><span class="entry-isdraft">&nbsp;&nbsp;[{{- i18n "draft" | default "Draft" -}}]</span></sup>
     {{- end -}}
   </h1>
 
-  {{- if .Description }}
+  {{- if .Description -}}
     <h2 class="description">
-      {{- .Description | .RenderString -}}
+      {{ .Description | .RenderString }}
     </h2>
-  {{- end }}
+  {{- end -}}
 
   {{/* For Download pages, call the download partial to provide download links from the latest release. */}}
   {{- if eq .Type "download" -}}
-    {{ with (index (where site.RegularPages "Type" "releases") 0) }}
+    {{- with (index (where site.RegularPages "Type" "releases") 0) -}}
       {{- partial "download.html" . -}}
-    {{ end }}
+    {{- end -}}
   {{- end -}}
 
   {{- if eq .Type "news" -}}
@@ -43,12 +45,12 @@
     </div>
   {{- end -}}
 
-  {{- partial "cover.html" . }}
+  {{- partial "cover.html" . -}}
 </header>
 
 {{/* Get the Table Of Contents. */}}
 {{- if .Params.ToC -}}
-  {{ .TableOfContents -}}
+  {{ .TableOfContents }}
 {{- end -}}
 
 {{/* Get the content of a Page. */}}
@@ -62,9 +64,10 @@
 {{- end -}}
 
 <footer class="single-footer">
-  {{- if (.Param "ShowPaginationLinks") }}
-    {{- partial "pagination_links.html" . }}
-  {{- end }}
+  {{- if (.Param "ShowPaginationLinks") -}}
+    {{- partial "pagination_links.html" . -}}
+  {{- end -}}
 </footer>
 
-{{- end -}}{{/* end main */}}
+{{- end -}}
+{{/* end main */}}

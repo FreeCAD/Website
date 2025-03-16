@@ -2,8 +2,8 @@
     {{- with index (.GetTerms "categories") 0 -}}
     <span class="category">
         <a href="{{ .RelPermalink }}">
-            {{- .LinkTitle | .RenderString -}}
+            {{ .LinkTitle | .RenderString }}
         </a>
     </span>
-    {{- end }}
+    {{- end -}}
 {{- end -}}

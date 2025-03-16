@@ -1,58 +1,75 @@
-{{- define "main" }}
+{{- define "main" -}}
 
-{{ if not hugo.IsProduction }}
+{{- if not hugo.IsProduction -}}
   {{- partial "debug.html" . -}}
-{{ end }}
+{{- end -}}
 
 <section class="archives">
 
 <header>
-  <h1>{{ .Title | .RenderString }}</h1>
-  {{- if .Description }}
+  <h1>
+    {{ .Title | .RenderString }}
+  </h1>
+  {{- if .Description -}}
   <p class="archives-description">
     {{ .Description | .RenderString }}
   </p>
-  {{- end }}
+  {{- end -}}
 </header>
 
 {{/* get pages from the current page's section */}}
 {{/* in this way, archives.html could be used for section archives other than the only one archives of the whole site */}}
-{{- $sections := site.Params.mainSections }}
-{{- if .Section }}
-  {{- $sections = slice .Section }}
-{{- end }}
-{{- $pages := where site.RegularPages "Section" "in" $sections }}
+{{- $sections := site.Params.mainSections -}}
+{{- if .Section -}}
+  {{- $sections = slice .Section -}}
+{{- end -}}
+{{- $pages := where site.RegularPages "Section" "in" $sections -}}
 
-{{- range $pages.GroupByPublishDate "2006" }}
-{{- if ne .Key "0001" }}
+{{- range $pages.GroupByPublishDate "2006" -}}
+{{- if ne .Key "0001" -}}
 <div class="archive-year">
   <h2 class="archive-year-header">
-    {{- replace .Key "0001" "" }}<sup class="archive-count">&nbsp;&nbsp;{{ len .Pages }}</sup>
+    {{- replace .Key "0001" "" }}
+    <sup class="archive-count">
+      &nbsp;&nbsp;{{- len .Pages }}
+    </sup>
   </h2>
-  {{- range .Pages.GroupByDate "January" }}
+  {{- range .Pages.GroupByDate "January" -}}
   <div class="archive-month">
-    <h3 class="archive-month-header">{{- .Key }}<sup class="archive-count">&nbsp;&nbsp;{{ len .Pages }}</sup></h3>
+    <h3 class="archive-month-header">
+      {{ .Key }}
+      <sup class="archive-count">
+        &nbsp;&nbsp;{{- len .Pages }}
+      </sup>
+    </h3>
     <div class="archive-month-list">
-      {{- range .Pages }}
+      {{- range .Pages -}}
       <article class="archive-entry">
         <a href="{{ .Permalink }}" alt="ARTICLE" aria-label="{{ .Title | plainify }}" title="{{ .Title | plainify }}">
           <h3 class="archive-entry-title">
-          {{- .Title | .RenderString }}
-          {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[{{- i18n "draft" | default "Draft" }}]</span></sup>{{- end }}
+          {{ .Title | .RenderString }}
+          {{- if .Draft }}
+            <sup>
+              <span class="entry-isdraft">
+                &nbsp;&nbsp;[{{- i18n "draft" | default "Draft" -}}]
+              </span>
+            </sup>
+          {{- end -}}
           </h3>
         </a>
         <div class="archive-meta">
           {{- partial "meta.html" . -}}
         </div>
       </article>
-      {{- end }}
+      {{- end -}}
     </div>
   </div>
-  {{- end }}
+  {{- end -}}
 </div>
-{{- end }}
-{{- end }}
+{{- end -}}
+{{- end -}}
 
 </section>
 
-{{- end }}{{/* end main */}}
+{{- end -}}
+{{/* end main */}}

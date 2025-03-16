@@ -1,77 +1,79 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-{{- if hugo.IsProduction | or (eq site.Params.env "production") }}
-<meta name="robots" content="index, follow">
-{{- else }}
-<meta name="robots" content="noindex, nofollow">
-{{- end }}
+{{- if hugo.IsProduction | or (eq site.Params.env "production") -}}
+    <meta name="robots" content="index, follow">
+{{- else -}}
+    <meta name="robots" content="noindex, nofollow">
+{{- end -}}
 
 {{- /* Title */}}
-{{- $pageTitle := site.Title }}
-{{- if (and .Title (not .IsHome)) }}
-  {{- $pageTitle = printf "%s | %s" $pageTitle .Title }}
-{{- end }}
-<title>{{ $pageTitle | plainify }}</title>
+{{- $pageTitle := site.Title -}}
+{{- if (and .Title (not .IsHome)) -}}
+    {{- $pageTitle = printf "%s | %s" $pageTitle .Title -}}
+{{- end -}}
+<title>
+    {{ $pageTitle | plainify }}
+</title>
 
 {{- /* Meta */}}
-{{- if .IsHome }}
-    {{ with site.Params.keywords -}}
-        <meta name="keywords" content="{{- range $i, $e := . }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}">
-    {{ end }}
-{{- else }}
+{{- if .IsHome -}}
+    {{- with site.Params.keywords -}}
+        <meta name="keywords" content="{{ range $i, $e := . -}}{{- if $i -}}, {{- end -}}{{- $e -}}{{- end }}">
+    {{- end -}}
+{{- else -}}
     <meta name="keywords" content="{{ if .Params.keywords -}}
-    {{- range $i, $e := .Params.keywords }}{{ if $i }}, {{ end }}{{ $e }}{{ end }} {{- else }}
-    {{- range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }} {{- end -}}">
-{{- end }}
-<meta name="description" content="{{- with .Description }}{{ . | plainify }}{{- else }}{{- if or .IsPage .IsSection}}
-    {{- .Summary | default (printf "%s - %s" .Title  site.Title) | plainify }}{{- else }}
-    {{- with site.Params.description }}{{ . | plainify }}{{- end }}{{- end }}{{- end -}}">
+    {{- range $i, $e := .Params.keywords -}}{{- if $i -}}, {{- end -}}{{- $e -}}{{- end -}} {{- else -}}
+    {{- range $i, $e := .Params.tags -}}{{- if $i -}}, {{- end -}}{{- $e -}}{{- end -}} {{- end }}">
+{{- end -}}
+<meta name="description" content="{{ with .Description -}}{{ . | plainify }}{{- else -}}{{- if or .IsPage .IsSection}}
+    {{ .Summary | default (printf "%s - %s" .Title  site.Title) | plainify }}{{- else -}}
+    {{- with site.Params.description -}}{{ . | plainify }}{{- end -}}{{- end -}}{{- end }}">
 <meta name="author" content="{{ (partial "author.html" . ) }}">
 <link rel="canonical" href="{{ .Permalink }}">
-{{- if site.Params.analytics.googlesiteVerificationTag }}
+{{- if site.Params.analytics.googlesiteVerificationTag -}}
     <meta name="google-site-verification" content="{{ site.Params.analytics.googlesiteVerificationTag }}">
-{{- end }}
+{{- end -}}
 
 {{- /* Styles */}}
-{{- $theme_vars := (resources.Get "css/theme_vars.css") }}
-{{- $404 := (resources.Get "css/404.css") }}
-{{- $archive := (resources.Get "css/archive.css") }}
-{{- $footer := (resources.Get "css/footer.css") }}
-{{- $header := (resources.Get "css/header.css") }}
-{{- $main := (resources.Get "css/main.css") }}
-{{- $gallery := (resources.Get "css/gallery.css") }}
-{{- $terms := (resources.Get "css/terms.css") }}
-{{- $lightbox := (resources.Get "css/lightbox.css") }}
-{{- $highlight := (resources.Get "css/highlight.css") }}
-{{- $media := (resources.Get "css/media.css") }}
+{{- $theme_vars := (resources.Get "css/theme_vars.css") -}}
+{{- $404 := (resources.Get "css/404.css") -}}
+{{- $archive := (resources.Get "css/archive.css") -}}
+{{- $footer := (resources.Get "css/footer.css") -}}
+{{- $header := (resources.Get "css/header.css") -}}
+{{- $main := (resources.Get "css/main.css") -}}
+{{- $gallery := (resources.Get "css/gallery.css") -}}
+{{- $terms := (resources.Get "css/terms.css") -}}
+{{- $lightbox := (resources.Get "css/lightbox.css") -}}
+{{- $highlight := (resources.Get "css/highlight.css") -}}
+{{- $media := (resources.Get "css/media.css") -}}
 
 {{- /* bundle all required css, order is important */}}
-{{- $stylesheet := (slice $theme_vars $404 $archive $footer $header $main $gallery $terms $lightbox $highlight $media) | resources.Concat "assets/css/stylesheet.css" | minify }}
+{{- $stylesheet := (slice $theme_vars $404 $archive $footer $header $main $gallery $terms $lightbox $highlight $media) | resources.Concat "assets/css/stylesheet.css" | minify -}}
 
-{{- if not site.Params.assets.disableFingerprinting }}
-    {{- $stylesheet := $stylesheet | fingerprint }}
+{{- if not site.Params.assets.disableFingerprinting -}}
+    {{- $stylesheet := $stylesheet | fingerprint -}}
     <link crossorigin="anonymous" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}" rel="preload stylesheet" as="style">
-{{- else }}
+{{- else -}}
     <link crossorigin="anonymous" href="{{ $stylesheet.RelPermalink }}" rel="preload stylesheet" as="style">
-{{- end }}
+{{- end -}}
 
 {{- /* Favicons */}}
-<link rel="icon" href="{{ site.Sites.Default.Home.Permalink }}favicon.ico">
-<link rel="apple-touch-icon" href="{{ site.Sites.Default.Home.Permalink }}apple-touch-icon.png">
+<link rel="icon" href="{{ site.Sites.Default.Home.Permalink -}}favicon.ico">
+<link rel="apple-touch-icon" href="{{ site.Sites.Default.Home.Permalink -}}apple-touch-icon.png">
 
 {{- range .AllTranslations -}}
     <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
-{{ end -}}
+{{- end -}}
 
 {{- /* Misc */}}
-{{- if hugo.IsProduction | or (eq site.Params.env "production") }}
-  {{- if site.Config.Services.GoogleAnalytics.ID }}
-    {{- template "_internal/google_analytics.html" . }}
+{{- if hugo.IsProduction | or (eq site.Params.env "production") -}}
+  {{- if site.Config.Services.GoogleAnalytics.ID -}}
+    {{- template "_internal/google_analytics.html" . -}}
   {{- end -}}
 {{- end -}}
 
-{{- template "partials/opengraph.html" (dict "page" . "pageTitle" $pageTitle) }}
+{{- template "partials/opengraph.html" (dict "page" . "pageTitle" $pageTitle) -}}
 
 <noscript>
     <style>
@@ -79,7 +81,7 @@
             display: none;
         }
     </style>
-    {{- if (and (ne site.Params.defaultTheme "light") (ne site.Params.defaultTheme "dark")) }}
+    {{- if (and (ne site.Params.defaultTheme "light") (ne site.Params.defaultTheme "dark")) -}}
     <style>
         @media (prefers-color-scheme: dark) {
             :root {
@@ -96,5 +98,5 @@
             }
         }
     </style>
-    {{- end }}
+    {{- end -}}
 </noscript>

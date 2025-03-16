@@ -1,8 +1,8 @@
 {{- /* Switch Theme script */}}
-{{- $SwitchTheme := resources.Get "js/SwitchTheme.js" }}
-{{- if hugo.IsProduction }}
-  {{- $SwitchTheme = minify $SwitchTheme }}
-{{- end }}
+{{- $SwitchTheme := resources.Get "js/SwitchTheme.js" -}}
+{{- if hugo.IsProduction -}}
+  {{- $SwitchTheme = minify $SwitchTheme -}}
+{{- end -}}
 <script type="text/javascript" data-no-instant src="{{ $SwitchTheme.RelPermalink }}">
 </script>
 
@@ -19,92 +19,102 @@
 
 <header class="site-header" role="banner">
   <div class="logo">
-    {{- if site.Title }}
-    {{- $logoText := site.Title | .RenderString }}
-    <a href="{{ "" | relLangURL }}" {{ if .IsHome }}class="active"{{ end }} accesskey="h" title="{{ $logoText }} {{ i18n "home" | default "Home" }} (Alt + H)">
-      {{- if site.Params.logo }}
-        {{- $img := resources.Get site.Params.logo }}
-        {{- if $img }}
+    {{- if site.Title -}}
+    {{- $logoText := site.Title | .RenderString -}}
+    <a href="{{ "" | relLangURL }}" {{- if .IsHome -}}class="active"{{- end -}} accesskey="h" title="{{ $logoText -}} {{- i18n "home" | default "Home" -}} (Alt + H)">
+      {{- if site.Params.logo -}}
+        {{- $img := resources.Get site.Params.logo -}}
+        {{- if $img -}}
           {{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif") -}}
             {{- if (in $processableFormats $img.MediaType.SubType)}}
-              {{- $img = $img.Resize "x32" }}
+              {{- $img = $img.Resize "x32" -}}
               <img src="{{ $img.RelPermalink }}" alt="LOGO" aria-label="logo">
             {{- else if (eq $img.MediaType.SubType "svg")}}
-              {{- $img.Content | safeHTML }}
-            {{- else }}
-              {{ $logoText | plainify }}
-              {{ errorf "Unable to get logo file" }}
-            {{- end }}
+              {{- $img.Content | safeHTML -}}
+            {{- else -}}
+              {{- $logoText | plainify -}}
+              {{- errorf "Unable to get logo file" -}}
+            {{- end -}}
         {{- end -}}
-      {{- else }}
-        {{ $logoText | plainify  }}
+      {{- else -}}
+        {{- $logoText | plainify  -}}
       {{- end -}}
     </a>
-    {{- end }}
+    {{- end -}}
   </div>
 
   <div class="site-nav">
-    {{- $currentPage := . }}
+    {{- $currentPage := . -}}
     {{- $menuMain := site.Menus.main -}}
     {{- if not $menuMain -}}
       {{- $menuMain = site.Sites.Default.Menus.main -}}
     {{- end -}}
 
     <nav class="menu">
-      <button popovertarget="menu-list" popovertargetaction="toggle" class="menu-toggle" title="{{- i18n "menu" | default "Menu" }}"><span class="hamburger">☰</span>
+      <button popovertarget="menu-list" popovertargetaction="toggle" class="menu-toggle" title="{{ i18n "menu" | default "Menu" }}"><span class="hamburger">☰</span>
         <span class="cross">✕</span>
       </button>
       <ul popover id="menu-list" class="menu-list">
-        {{- range $menuMain }}
-        {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL)) }}
-        {{- $page_url := $currentPage.RelPermalink }}
+        {{- range $menuMain -}}
+        {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL)) -}}
+        {{- $page_url := $currentPage.RelPermalink -}}
         <li>
             <a href="{{ $menu_item_url }}" title="{{ .Title | default .Name | plainify }}"
-            {{ with .Params.style }} class="{{ . }}" {{ end }}
-            {{- if strings.HasPrefix $page_url $menu_item_url }}
+            {{- with .Params.style -}} class="{{ . }}" {{- end -}}
+            {{- if strings.HasPrefix $page_url $menu_item_url -}}
               id="menu-active" aria-current="page"
-            {{- end }}
-            {{- if .Params.External }}
+            {{- end -}}
+            {{- if .Params.External -}}
               target="_blank"
-            {{- end }} >
-              {{- .Title | $.Page.RenderString -}}
-              {{- if .Params.External }}
-                <span class="external-link">{{ safeHTML (index $.Site.Data.svg "external-link") }}</span>
-              {{- end }}
+            {{- end -}} >
+              {{ .Title | $.Page.RenderString }}
+              {{- if .Params.External -}}
+                <span class="external-link">
+                  {{ safeHTML (index $.Site.Data.svg "external-link") }}
+                </span>
+              {{- end -}}
             </a>
         </li>
-        {{- end }}
+        {{- end -}}
       </ul>
     </nav>
 
-    {{- if .Site.IsMultiLingual }}
+    {{- if .Site.IsMultiLingual -}}
     <div class="language-dropdown">
-      <button popovertarget="lang-list" popovertargetaction="toggle" class="lang-toggle" accesskey="l" title="{{- i18n "choose_language" | default "Choose language" }} (Alt + L)">
-        {{ safeHTML (index site.Data.svg "language") }}
+      <button popovertarget="lang-list" popovertargetaction="toggle" class="lang-toggle" accesskey="l" title="{{ i18n "choose_language" | default "Choose language" -}} (Alt + L)">
+        {{- safeHTML (index site.Data.svg "language") -}}
       </button>
       <ul popover id="lang-list" class="language-list">
         {{- $siteLanguages := site.Languages}}
         {{- $pageLang := .Page.Lang}}
-        {{- range .Page.AllTranslations }}
-          {{ $translation := . }}
-          {{- range sort $siteLanguages "Weight" "asc" }}
-            {{- if eq $translation.Lang .Lang }}
+        {{- range .Page.AllTranslations -}}
+          {{- $translation := . -}}
+          {{- range sort $siteLanguages "Weight" "asc" -}}
+            {{- if eq $translation.Lang .Lang -}}
               {{- if eq $pageLang .Lang}}
-                <li><a class="language-active" href="{{ $translation.RelPermalink }}">{{ .LanguageName }} {{ .Params.languageFlag }}</a></li>
-              {{- else }}
-                <li><a class="language-not-active" href="{{ $translation.RelPermalink }}">{{ .LanguageName }} {{ .Params.languageFlag }}</a></li>
-              {{- end }}
-            {{- end }}
-          {{- end }}
-        {{- end }}
+                <li>
+                  <a class="language-active" href="{{ $translation.RelPermalink }}">
+                    {{ .LanguageName }} {{ .Params.languageFlag }}
+                  </a>
+                </li>
+              {{- else -}}
+                <li>
+                  <a class="language-not-active" href="{{ $translation.RelPermalink }}">
+                    {{ .LanguageName }} {{ .Params.languageFlag }}
+                  </a>
+                </li>
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
       </ul>
     </div>
-    {{- end }}
+    {{- end -}}
 
     <div class="theme-switch">
-      <button id="theme-toggle" accesskey="t" title="{{- i18n "switch_theme" | default "Switch theme chroma" }} (Alt + T)">
-        {{ safeHTML (index site.Data.svg "moon") }}
-        {{ safeHTML (index site.Data.svg "sun") }}
+      <button id="theme-toggle" accesskey="t" title="{{ i18n "switch_theme" | default "Switch theme chroma" -}} (Alt + T)">
+        {{- safeHTML (index site.Data.svg "moon") -}}
+        {{- safeHTML (index site.Data.svg "sun") -}}
       </button>
     </div>
   </div>
