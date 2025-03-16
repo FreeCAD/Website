@@ -12,7 +12,7 @@
 <header>
   {{- if eq .Section "news" -}}
     <ul class="category-list">
-      {{- range .Site.Taxonomies.categories }}
+      {{- range .Sites.Default.Taxonomies.categories }}
         <li>
           <a href="{{ .Page.RelPermalink }}">
             {{- .Page.LinkTitle -}}
