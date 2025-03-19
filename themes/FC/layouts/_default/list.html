@@ -10,7 +10,7 @@
 
 {{- if not .IsHome | and .Title -}}
 <header>
-  {{- if eq .Section "news" -}}
+  {{- if or (eq .Section "news") (eq .Kind "term") -}}
     <ul class="category-list">
       {{- range .Sites.Default.Taxonomies.categories -}}
         <li>
