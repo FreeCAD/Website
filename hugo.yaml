@@ -11,8 +11,6 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 
-googleAnalytics: # Sets Google Analytics G-MEASUREMENT_ID
-
 # FC Theme parameters
 
 params:
@@ -405,9 +403,13 @@ outputs:
     - HTML
     - HeadlessCMSConfig
 
+services:
+  googleAnalytics:
+    id: # Sets Google Analytics G-MEASUREMENT_ID
+
 privacy: # See https://gohugo.io/about/privacy/
   googleAnalytics:
-    disable: false
+    disable: true
     respectDoNotTrack: true
   vimeo:
     disabled: false
