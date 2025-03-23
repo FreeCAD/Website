@@ -377,11 +377,16 @@ ul pre {
     padding: 0.5rem 1rem;
     font-size: var(--s);
     user-select: none;
+    cursor: copy;
 }
 
 div.highlight:hover .copy-code,
 pre:hover .copy-code {
     display: block;
+}
+
+.copy-code:hover {
+    background: var(--link-hover-color);
 }
 
 div.highlight,
@@ -515,10 +520,15 @@ sup:target {
     justify-content: center;
     background: rgba(255, 255, 255, 0.5);
     color: var(--cover);
+    cursor: zoom-out;
 }
 
 .content .close:hover {
     background: var(--link-hover-color);
+}
+
+.content button[popovertarget]:has(img):not(a button) {
+    cursor: zoom-in;
 }
 
 
