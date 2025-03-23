@@ -1,0 +1,152 @@
+/* Defines the most general elements.
+For specific classes, header, main, footer, see main.ccs, header.css, footer.css, theme_vars.css, media.css stylesheets. */
+
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: clamp(0.8rem, 0.333vw + 0.6rem, 1.2rem);
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica, 'Helvetica Neue', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+    color: var(--secondary);
+    margin: 0;
+    overflow-x: clip;
+}
+
+h1 {
+    font-size: var(--xxl);
+    margin: 1.5rem auto;
+    scroll-margin-top: 25vh;
+}
+
+h2 {
+    font-size: var(--xl);
+    margin: 1.5rem auto;
+    scroll-margin-top: 25vh;
+}
+
+h3 {
+    font-size: var(--l);
+    margin: 1.25rem auto;
+    scroll-margin-top: 25vh;
+}
+
+h4,
+h5,
+h6,
+p {
+    font-size: var(--m);
+    margin: 1rem auto;
+    scroll-margin-top: 25vh;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: var(--link-transition);
+}
+
+a:hover {
+    color: var(--link-hover-color);
+}
+
+figure {
+    margin: 0;
+}
+
+img {
+    object-fit: cover;
+}
+
+table {
+    display: block;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    overflow-x: auto;
+    word-break: keep-all;
+    margin-bottom: 2rem;
+}
+
+button,
+input,
+textarea {
+    padding: 0;
+    font: inherit;
+    background: 0;
+    border: 0;
+    outline: 0;
+}
+
+button,
+input[type=button],
+input[type=submit] {
+    cursor: pointer;
+}
+
+del {
+    text-decoration: line-through;
+    color: var(--tertiary);
+    background: #fbb;
+}
+
+ins {
+    text-decoration: none;
+    background-color: #d4fcbc;
+}
+
+dl,
+ol,
+ul {
+    margin: 1rem auto;
+}
+
+li,
+li > :is(ol, ul) {
+    margin: 0.25rem 0;
+}
+
+dl {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+dt {
+    width: 25%;
+    font-weight: 700;
+}
+
+dd {
+    width: 75%;
+    margin-inline-start: 0;
+    padding-inline-start: 0.5rem;
+}
+
+dd ~ dd,
+dt ~ dt {
+    margin-top: 1rem;
+}
+
+hr {
+    border-top: var(--border);
+}
+
+iframe {
+    max-width: 100%;
+}
+
+mark {
+    color: var(--entry);
+    padding: 0.2rem 0.4rem;
+    border-radius: var(--radius);
+    background: var(--tertiary);
+}
