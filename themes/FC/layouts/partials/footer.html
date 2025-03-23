@@ -48,7 +48,6 @@
       }
     }
 
-    const disableSmoothScroll = '{{- if (.Param "DisableSmoothScroll") -}}1{{- end -}}' == '1';
     const enableInstantClick = '{{- if (.Param "EnableInstantClick") -}}1{{- end -}}' == '1';
     // instant click and smooth scroll are mutually exclusive
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || disableSmoothScroll || enableInstantClick) {
