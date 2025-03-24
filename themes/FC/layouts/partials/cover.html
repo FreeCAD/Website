@@ -12,7 +12,7 @@
     {{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif") -}}
     {{- $prod := (hugo.IsProduction | or (eq site.Params.env "production")) -}}
     {{- if (and (in $processableFormats $cover.MediaType.SubType) ($responsiveImages) (eq $prod true)) -}}
-      <img loading="lazy" srcset="{{ range $size := $sizes -}}
+      <img srcset="{{ range $size := $sizes -}}
         {{- if (ge $cover.Width $size) -}}
           {{- printf "%s %s" (($cover.Resize (printf "%sx" $size)).Permalink) (printf "%sw ," $size) -}}
         {{- end -}}
@@ -21,13 +21,13 @@
       sizes="(min-width: 1024px) 1920px, 100vw" src="{{ $cover.Permalink }}" alt="{{ $alt }}"
       width="{{ $cover.Width }}" height="{{ $cover.Height }}">
     {{- else -}}{{/* Unprocessable image or responsive images disabled */}}
-      <img loading="lazy" src="{{ (path.Join .RelPermalink .Params.cover.image) }}" alt="{{ $alt }}">
+      <img src="{{ (path.Join .RelPermalink .Params.cover.image) }}" alt="{{ $alt }}">
     {{- end -}}
   {{- else -}}{{/* For absolute urls and external links, no img processing here */}}
     {{- if $addLink }}
       <a href="{{ (.Params.cover.image) | absURL }}" target="_blank" rel="noopener noreferrer">
     {{- end -}}
-    <img loading="lazy" src="{{ (.Params.cover.image) | absURL }}" alt="{{ $alt }}">
+    <img src="{{ (.Params.cover.image) | absURL }}" alt="{{ $alt }}">
   {{- end -}}
   {{- if $addLink }}
     </a>
