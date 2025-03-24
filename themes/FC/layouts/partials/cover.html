@@ -12,14 +12,18 @@
     {{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif") -}}
     {{- $prod := (hugo.IsProduction | or (eq site.Params.env "production")) -}}
     {{- if (and (in $processableFormats $cover.MediaType.SubType) ($responsiveImages) (eq $prod true)) -}}
-      <img srcset="{{ range $size := $sizes -}}
-        {{- if (ge $cover.Width $size) -}}
-          {{- printf "%s %s" (($cover.Resize (printf "%sx" $size)).Permalink) (printf "%sw ," $size) -}}
-        {{- end -}}
-        {{- end -}}
-          {{ $cover.Permalink }} {{ printf "%dw" ($cover.Width) }}"
-      sizes="(min-width: 1024px) 1920px, 100vw" src="{{ $cover.Permalink }}" alt="{{ $alt }}"
-      width="{{ $cover.Width }}" height="{{ $cover.Height }}">
+      <img
+        srcset="{{ range $size := $sizes -}}
+                  {{- if (ge $cover.Width $size) -}}
+                    {{- printf "%s %s" (($cover.Resize (printf "%sx" $size)).Permalink) (printf "%sw ," $size) -}}
+                  {{- end -}}
+                {{- end -}}
+                {{ $cover.Permalink }} {{ printf "%dw" ($cover.Width) }}"
+        sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 100vw"
+        src="{{ $cover.Permalink }}"
+        alt="{{ $alt }}"
+        width="{{ $cover.Width }}"
+        height="{{ $cover.Height }}">
     {{- else -}}{{/* Unprocessable image or responsive images disabled */}}
       <img src="{{ (path.Join .RelPermalink .Params.cover.image) }}" alt="{{ $alt }}">
     {{- end -}}
