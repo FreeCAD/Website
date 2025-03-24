@@ -9,7 +9,7 @@
     style="{{ $style }}"
   {{- end -}}>
   {{ .Text | safeHTML }}
-  <a class="heading-anchor" href="#{{ .Anchor | safeURL }}">
+  <a class="heading-anchor" href="#{{ .Anchor | safeURL }}" title="{{- .Text | safeHTML -}}" aria-label="{{- .Text | safeHTML -}}">
     {{ safeHTML (index site.Data.svg "heading-anchor") }}
   </a>
 </h{{ .Level }}>

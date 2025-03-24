@@ -33,7 +33,7 @@
       </figure>
     {{- else -}}
       {{- $id := delimit (shuffle (seq 1 9)) "" -}}
-      <button popovertarget="img{{- $id -}}">
+      <button aria-label="{{- i18n "zoom" | default "Zoom image" -}}" popovertarget="img{{- $id -}}">
         <img loading="lazy"
           srcset="{{ range $size := $sizes -}}
                     {{- if (ge $img.Width $size) -}}

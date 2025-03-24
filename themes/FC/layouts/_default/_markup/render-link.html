@@ -2,6 +2,10 @@
 <a href="{{ .Destination | safeURL }}"
   {{- with .Title -}}
     title="{{ . | plainify }}"
+    aria-label="{{ . | plainify }}"
+  {{- else -}}
+    title="{{- i18n "link" | default "Open link" -}}"
+    aria-label="{{- i18n "link" | default "Open link" -}}"
   {{- end -}}
   {{- if strings.HasPrefix .Destination "http" -}}
     target="_blank" rel="noopener"
