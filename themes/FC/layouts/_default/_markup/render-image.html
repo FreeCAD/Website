@@ -35,13 +35,19 @@
       {{- $id := delimit (shuffle (seq 1 9)) "" -}}
       <button aria-label="{{- i18n "zoom" | default "Zoom image" -}}" popovertarget="img{{- $id -}}">
         <img loading="lazy"
-          srcset="{{ range $size := $sizes -}}
-                    {{- if (ge $img.Width $size) -}}
-                      {{- printf "%s %s" (($img.Resize (printf "%sx" $size)).RelPermalink | safeURL) (printf "%sw ," $size) -}}
-                    {{- end -}}
-                  {{- end -}}
-                  {{ $img.Permalink }} {{ printf "%dw" ($img.Width) }}"
-          sizes="(max-width: 560px) 500px, (max-width: 1376px) 1000px, 70vw"
+          srcset="
+            {{ range $size := $sizes -}}
+              {{- if (ge $img.Width $size) -}}
+                {{- printf "%s %s" (($img.Resize (printf "%sx" $size)).RelPermalink | safeURL) (printf "%sw ," $size) -}}
+              {{- end -}}
+            {{- end -}}
+            {{ $img.Permalink }} {{ printf "%dw" ($img.Width) }}"
+          sizes="
+            {{- if .Page.Store.Get "blocks" -}}
+              (max-width: {{ index $sizes 1 }}px) {{ index $sizes 0 }}px, 35vw
+            {{- else -}}
+              (max-width: {{ index $sizes 0 }}px) {{ index $sizes 0 }}px, (max-width: {{ index $sizes 1 }}px) {{ index $sizes 1 }}px, 70vw
+            {{- end -}}"
           src="{{ $img.RelPermalink | safeURL }}"
           width="{{ $img.Width }}"
           height="{{ $img.Height }}"

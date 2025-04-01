@@ -4,6 +4,7 @@
   {{- if in .RawContent "+++" -}}
     {{- $count := 0 -}}
     {{- $blocks := split .RawContent "+++" -}}
+    {{ .Store.Set "blocks" true }}
     {{- range $blocks -}}
       {{- $count = add $count 1 -}}
       <section class="block" id="N{{- $count -}}">
