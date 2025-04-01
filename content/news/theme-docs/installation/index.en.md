@@ -6,7 +6,7 @@ author: "FreeCAD"
 draft: false
 
 cover:
-  image: 3.png
+  image: 3.webp
   caption: "a cover caption"
   alt: "a cover alternative title"
 ---
@@ -141,7 +141,7 @@ params:
 
     label:
         text: Home
-        icon: /apple-touch-icon.png
+        icon: /apple-touch-icon.webp
         iconHeight: 35
 
     analytics:

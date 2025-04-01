@@ -2,7 +2,7 @@
 cover:
   alt: a cover alternative title
   caption: a cover caption
-  image: 0.png
+  image: 0.webp
 author: FreeCAD
 description: Get started with FreeCAD
 title: Documentation
@@ -13,7 +13,7 @@ menus:
   footer:
     weight: 5
 ---
-[![LINK TO GITHUB](0.png "Link to GitHub")](https://github.com/freecad)
+[![LINK TO GITHUB](0.webp "Link to GitHub")](https://github.com/freecad)
 
 ## First Documentation Block
 
@@ -25,11 +25,11 @@ This is a text in the first block to go in the right. This is a text in the firs
 
 This is a text in the second block to go in the left. This is a text in the second block. This is a text in the second block to go in the left. This is a text in the second block to go in the left. This is a text in the second block to go in the left. This is a text in the second block.
 
-![](0.png)
+![](0.webp)
 
 +++
 
-![](0.png)
+![](0.webp)
 
 ## Third Documentation Block
 
@@ -41,4 +41,4 @@ This is a text in the third block to go in the right. This is a text in the thir
 
 This is a text in the fourth block to go in the left. This is a text in the fourth block. This is a text in the fourth block to go in the left. This is a text in the fourth block to go in the left. This is a text in the fourth block to go in the left. This is a text in the fourth block.
 
-![](0.png)
+![](0.webp)

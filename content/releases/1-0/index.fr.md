@@ -14,7 +14,7 @@ params:
   linux_x86: https://github.com/FreeCAD/FreeCAD/releases/
   linux_aarch64: https://github.com/FreeCAD/FreeCAD/releases/
 cover:
-  image: 9.png
+  image: 9.webp
   caption: "a cover caption"
   alt: "a cover alternative title"
 ---

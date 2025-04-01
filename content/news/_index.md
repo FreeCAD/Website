@@ -10,7 +10,7 @@ menus:
   footer:
     weight: 3
 cover:
-  image: 6.png
+  image: 6.webp
   caption: "a cover caption"
   alt: "a cover alternative title"
 ---

@@ -6,7 +6,7 @@ author: "FreeCAD"
 draft: false
 
 cover:
-  image: 6.png
+  image: 6.webp
   caption: "a cover caption"
   alt: "a cover alternative title"
 ---
@@ -140,9 +140,9 @@ We support the following paths under `/static` directory
 and can be added accordingly.
 
 -   `favicon.ico`
--   `favicon-16x16.png`
--   `favicon-32x32.png`
--   `apple-touch-icon.png`
+-   `favicon-16x16.webp`
+-   `favicon-32x32.webp`
+-   `apple-touch-icon.webp`
 -   `safari-pinned-tab.svg`
 
 ---
@@ -152,7 +152,7 @@ and can be added accordingly.
 Add `#center` after image to center align an image
 
 ```md
-![name](path/to/image.png#center)
+![name](path/to/image.webp#center)
 ```
 
 **When using [`figure`](https://gohugo.io/content-management/shortcodes/) shortcode**

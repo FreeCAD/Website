@@ -8,7 +8,7 @@ draft: false
 tags:
   - example
 cover:
-  image: 4.png
+  image: 4.webp
   caption: "a cover caption"
   alt: "a cover alternative title"
 ---

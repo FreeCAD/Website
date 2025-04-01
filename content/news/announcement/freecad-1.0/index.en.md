@@ -6,7 +6,7 @@ author: FreeCAD
 draft: false
 categories: announcement
 cover:
-  image: 8.png
+  image: 8.webp
   caption: a cover caption
   alt: a cover alternative title
 params:
@@ -29,7 +29,7 @@ tags:
 
 This is **bold** text, and this is _italic_ text.
 
-![Image alternative text](motor.png "This is an image title")
+![Image alternative text](motor.webp "This is an image title")
 
 > This is a quote
 
@@ -41,4 +41,4 @@ This is **bold** text, and this is _italic_ text.
 2. Second number of the list
 3. Third number of the list
 
-![Image alternative text](part.png "This is an image title")
+![Image alternative text](part.webp "This is an image title")

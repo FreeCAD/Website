@@ -10,7 +10,7 @@ tags:
   - first
   - tutorial
 cover:
-  image: 3.png
+  image: 3.webp
   caption: "a cover caption"
   alt: "a cover alternative title"
 ---
@@ -25,7 +25,7 @@ cover:
 
 This is **bold** text, and this is *italic* text.
 
-![Image alternative text](3.png "This is an image title")
+![Image alternative text](3.webp "This is an image title")
 
 > This is a quote
 

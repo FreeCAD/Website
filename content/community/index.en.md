@@ -2,7 +2,7 @@
 description: Get in touch with the community
 author: FreeCAD
 cover:
-  image: 1.png
+  image: 1.webp
   caption: a cover caption
   alt: a cover alternative title
 title: Community
@@ -13,7 +13,7 @@ menus:
   footer:
     weight: 4
 ---
-[![LINK TO GITHUB](1.png "Link to GitHub")](https://github.com/freecad)
+[![LINK TO GITHUB](1.webp "Link to GitHub")](https://github.com/freecad)
 
 ## First Community Block
 
@@ -25,11 +25,11 @@ This is a text in the first block to go in the right. This is a text in the firs
 
 This is a text in the second block to go in the left. This is a text in the second block. This is a text in the second block to go in the left. This is a text in the second block to go in the left. This is a text in the second block to go in the left. This is a text in the second block.
 
-![](1.png)
+![](1.webp)
 
 +++
 
-![](1.png)
+![](1.webp)
 
 ## Third Community Block
 
@@ -41,4 +41,4 @@ This is a text in the third block to go in the right. This is a text in the thir
 
 This is a text in the fourth block to go in the left. This is a text in the fourth block. This is a text in the fourth block to go in the left. This is a text in the fourth block to go in the left. This is a text in the fourth block to go in the left. This is a text in the fourth block.
 
-![](1.png)
+![](1.webp)

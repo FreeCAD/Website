@@ -6,7 +6,7 @@ author: "FreeCAD"
 draft: false
 categories: announcement
 cover:
-  image: 8.png
+  image: 8.webp
   caption: "a cover caption"
   alt: "a cover alternative title"
 params:
@@ -30,7 +30,7 @@ tags:
 
 This is **bold** text, and this is *italic* text.
 
-![Image alternative text](8.png "This is an image title")
+![Image alternative text](8.webp "This is an image title")
 
 > This is a quote
 

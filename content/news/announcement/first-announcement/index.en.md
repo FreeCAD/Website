@@ -7,7 +7,7 @@ draft: false
 categories: announcement
 ToC: true
 cover:
-  image: 0.png
+  image: 0.webp
   caption: a cover caption
   alt: a cover alternative title
 tags:
@@ -24,7 +24,7 @@ tags:
 
 This is **bold** text, and this is _italic_ text.
 
-![Image alternative text](0.png "This is an image title")
+![Image alternative text](0.webp "This is an image title")
 
 > This is a quote
 

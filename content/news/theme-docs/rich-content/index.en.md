@@ -10,7 +10,7 @@ tags:
   - privacy
   - example
 cover:
-  image: 1.png
+  image: 1.webp
   caption: "a cover caption"
   alt: "a cover alternative title"
 ---
@@ -19,11 +19,11 @@ cover:
 
 internal image:
 
-[link to internal image](1.png)
+[link to internal image](1.webp)
 
 [link to external youtube video](https://www.youtube.com/watch?v=YyBzEpantQ8)
 
-![](1.png)
+![](1.webp)
 
 third party image:
 

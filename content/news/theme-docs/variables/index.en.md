@@ -6,7 +6,7 @@ author: "FreeCAD"
 draft: false
 
 cover:
-  image: 7.png
+  image: 7.webp
   caption: "a cover caption"
   alt: "a cover alternative title"
 ---
@@ -23,7 +23,7 @@ cover:
 | `title`                                | string        | "My Blog"                | To set title                                                                              |
 | `description`                          | string        | "This is a blog of mine" | To set site description                                                                   |
 | `author`                               | string \|list | "Me" \| ["Me","You"]     | To show multiple Authors                                                                  |
-| `images`                               | string        | "myimage.png"            | Link or path of image for opengraph                                        |
+| `images`                               | string        | "myimage.webp"            | Link or path of image for opengraph                                        |
 | `keywords`                             | list          | [blog, page]             | Add keywords for Home page                                                                |
 | `DateFormat`                           | string        | January 2, 2006        | The format of date strings in the website. [Details](https://gohugo.io/functions/format/) |
 | `languageAltTitle`                     | string        | English                | Alternate title in Multilingual Mode                                                      |
@@ -51,7 +51,7 @@ cover:
 | name               | type    | example                 | Description                                      |
 | ------------------ | ------- | ----------------------- | ------------------------------------------------ |
 | `label.text`       | string  | "Home"                  | To display different label text other than title |
-| `label.icon`       | string  | "/apple-touch-icon.png" | To display a logo image in label                 |
+| `label.icon`       | string  | "/apple-touch-icon.webp" | To display a logo image in label                 |
 | `label.iconHeight` | integer | 35                      | To set size of label logo image                  |
 
 

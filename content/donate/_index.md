@@ -11,7 +11,7 @@ menus:
   footer:
     weight: 7
 cover:
-  image: 3.png
+  image: 3.webp
   caption: "a cover caption"
   alt: "a cover alternative title"
 ---

@@ -10,7 +10,7 @@ tags:
   - first
   - event
 cover:
-  image: 6.png
+  image: 6.webp
   caption: "a cover caption"
   alt: "a cover alternative title"
 ---
@@ -25,7 +25,7 @@ cover:
 
 This is **bold** text, and this is *italic* text.
 
-![Image alternative text](6.png "This is an image title")
+![Image alternative text](6.webp "This is an image title")
 
 > This is a quote
 

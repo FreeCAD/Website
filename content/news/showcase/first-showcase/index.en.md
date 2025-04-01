@@ -10,7 +10,7 @@ tags:
   - first
   - showcase
 cover:
-  image: 2.png
+  image: 2.webp
   caption: "a cover caption"
   alt: "a cover alternative title"
 ---
@@ -25,7 +25,7 @@ cover:
 
 This is **bold** text, and this is *italic* text.
 
-![Image alternative text](2.png "This is an image title")
+![Image alternative text](2.webp "This is an image title")
 
 > This is a quote
 
