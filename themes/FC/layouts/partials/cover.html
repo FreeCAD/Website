@@ -1,38 +1,41 @@
+{{- $cover := (.Resources.ByType "image").GetMatch (printf "*%s*" (.Params.cover.image)) -}}
+{{- $addLink := (and site.Params.cover.linkFullImages (not $.IsHome)) -}}
 {{- $alt := (.Params.cover.alt | default .Params.cover.caption | plainify) -}}
-<figure class="entry-cover">
-  {{- $responsiveImages := (.Params.cover.responsiveImages | default site.Params.cover.responsiveImages) | default true -}}
-  {{- $addLink := (and site.Params.cover.linkFullImages (not $.IsHome)) -}}
-  {{- $cover := (.Resources.ByType "image").GetMatch (printf "*%s*" (.Params.cover.image)) -}}
+{{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif" "webp") -}}
+{{- $prod := (hugo.IsProduction | or (eq site.Params.env "production")) -}}
+{{- $responsiveImages := (.Params.cover.responsiveImages | default site.Params.cover.responsiveImages) | default true -}}
+{{- $sizes := (slice "500" "1000") -}}
+{{- $resizeQuality := "webp q90 drawing lanczos" -}}
 
+<figure class="entry-cover">
   {{- if $cover -}}{{/* i.e it is present in page bundle */}}
     {{- if $addLink }}
       <a href="{{ (path.Join .RelPermalink .Params.cover.image) }}" target="_blank" rel="noopener noreferrer">
     {{- end -}}
-    {{- $sizes := (slice "500" "1000") -}}
-    {{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif") -}}
-    {{- $prod := (hugo.IsProduction | or (eq site.Params.env "production")) -}}
     {{- if (and (in $processableFormats $cover.MediaType.SubType) ($responsiveImages) (eq $prod true)) -}}
       <img
         srcset="
-          {{ range $size := $sizes -}}
-            {{- if (ge $cover.Width $size) -}}
-              {{- printf "%s %s" (($cover.Resize (printf "%sx" $size)).Permalink) (printf "%sw ," $size) -}}
-            {{- end -}}
+          {{- if (ge $cover.Width (index $sizes 0)) -}}
+            {{- printf "%s %s" (($cover.Crop (printf "%sx%s center %s" (index $sizes 0) (index $sizes 0) $resizeQuality)).RelPermalink) (printf "%sw, " (index $sizes 0)) -}}
           {{- end -}}
-          {{ $cover.Permalink }} {{ printf "%dw" ($cover.Width) }}"
+          {{- if (ge $cover.Width (index $sizes 1)) -}}
+            {{- printf "%s %s" (($cover.Resize (printf "%sx %s" (index $sizes 1) $resizeQuality)).RelPermalink) (printf "%sw, " (index $sizes 1)) -}}
+          {{- end -}}
+          {{ $cover.RelPermalink }} {{ printf "%dw" ($cover.Width) }}"
         sizes="
           {{- if .Store.Get "articles" -}}
             {{ index $sizes 0 }}px
           {{- else -}}
-            (max-width: {{ index $sizes 0 }}px) {{ index $sizes 0 }}px, (max-width: {{ index $sizes 1 }}px) {{ index $sizes 1 }}px, 100vw
+            (max-width: {{ index $sizes 1 }}px) {{ index $sizes 1 }}px, 100vw
           {{- end -}}"
-        src="{{ $cover.Permalink }}"
+        src="{{ $cover.RelPermalink }}"
         alt="{{ $alt }}"
         width="{{ $cover.Width }}"
         height="{{ $cover.Height }}">
     {{- else -}}{{/* Unprocessable image or responsive images disabled */}}
       <img src="{{ (path.Join .RelPermalink .Params.cover.image) }}" alt="{{ $alt }}">
     {{- end -}}
+
   {{- else -}}{{/* For absolute urls and external links, no img processing here */}}
     {{- if $addLink }}
       <a href="{{ (.Params.cover.image) | absURL }}" target="_blank" rel="noopener noreferrer">

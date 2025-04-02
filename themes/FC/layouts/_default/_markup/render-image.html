@@ -1,5 +1,8 @@
 {{- $url := urls.Parse .Destination -}}
 {{- $sizes := (slice "500" "1000") -}}
+{{- $resizeQuality := "webp q90 drawing lanczos" -}}
+{{- $id := delimit (shuffle (seq 1 9)) "" -}}
+
 {{- if $url.Scheme -}}
 
   {{/* third party image */}}
@@ -22,7 +25,6 @@
   {{- if not $img -}}
     {{- $img = resources.Get .Destination -}}
   {{- end -}}
-
   {{- if $img -}}
     {{- if eq $img.MediaType.MainType "video" -}}
       <figure>
@@ -32,16 +34,15 @@
       </video>
       </figure>
     {{- else -}}
-      {{- $id := delimit (shuffle (seq 1 9)) "" -}}
       <button aria-label="{{- i18n "zoom" | default "Zoom image" -}}" popovertarget="img{{- $id -}}">
         <img loading="lazy"
           srcset="
-            {{ range $size := $sizes -}}
-              {{- if (ge $img.Width $size) -}}
-                {{- printf "%s %s" (($img.Resize (printf "%sx" $size)).RelPermalink | safeURL) (printf "%sw ," $size) -}}
+            {{ range $sizeImage := $sizes -}}
+              {{- if (ge $img.Width $sizeImage) -}}
+                {{- printf "%s %s" (($img.Resize (printf "%sx %s" $sizeImage $resizeQuality)).RelPermalink | safeURL) (printf "%sw, " $sizeImage) -}}
               {{- end -}}
             {{- end -}}
-            {{ $img.Permalink }} {{ printf "%dw" ($img.Width) }}"
+            {{ $img.RelPermalink }} {{ printf "%dw" ($img.Width) }}"
           sizes="
             {{- if .Page.Store.Get "blocks" -}}
               (max-width: {{ index $sizes 1 }}px) {{ index $sizes 0 }}px, 35vw

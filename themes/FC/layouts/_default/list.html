@@ -73,6 +73,7 @@
   <a href="{{ .Permalink }}" alt="ARTICLE" aria-label="{{ .Title | plainify }}" title="{{ .Title | plainify }}">
     {{ .Store.Set "articles" true }}
     {{- partial "cover.html" . -}}
+    {{ .Store.Delete "articles" }}
     {{- if not .Date.IsZero -}}
       <span class="entry-date">
         <time datetime="{{ .Date }}">
