@@ -47,6 +47,18 @@ headless_cms:
     locales: [en, fr, tr]
     default_locale: en
     initial_locales: default
+  media_libraries:
+    default:
+      config:
+        max_file_size: 2048000 # in bytes
+        transformations:
+          raster_image: # original format
+            format: webp # new format, only `webp` is supported with sveltia v0.68
+            quality: 90
+            width: 2000
+            height: 2000
+          svg:
+            optimize: true
   collections:
     - name: news
       label: News
