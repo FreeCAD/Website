@@ -116,7 +116,6 @@ article .category {
 .single-meta {
     position: absolute;
     bottom: 2rem;
-    display: flex;
 }
 
 :is(.single-meta, .single-meta a) {
@@ -124,23 +123,23 @@ article .category {
     font-size: var(--s);
 }
 
-.meta-item {
+.meta {
     display: inline-block;
     padding: 0.25rem 0.5rem;
 }
 
-.meta-item svg {
+.meta svg {
     width: 1rem;
     height: 1rem;
     display: inline-block;
     vertical-align: -0.2rem;
 }
 
-.meta-item a:hover {
+.meta a:hover {
     color: var(--link-hover-color);
 }
 
-.meta-item :is(.categories, .tags) a:not(:last-of-type):after {
+.meta :is(.categories, .tags) a:not(:last-of-type):after {
     content: " · ";
 }
 

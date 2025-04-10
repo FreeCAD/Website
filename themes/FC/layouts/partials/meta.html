@@ -1,5 +1,5 @@
 {{- if not .Date.IsZero -}}
-  <span class="meta-item">
+  <span class="meta">
     {{- safeHTML (index site.Data.svg "date") -}}
     <time datetime="{{ .Date }}">
       {{ .Date | time.Format ":date_long" }}
@@ -9,7 +9,7 @@
 
 {{- if .Page.Store.Get "archives" -}}
   {{- if .Params.categories -}}
-    <span class="meta-item">
+    <span class="meta">
       {{- safeHTML (index site.Data.svg "categories") -}}
       <span class="categories">
         {{- range ($.GetTerms "categories") -}}
@@ -23,7 +23,7 @@
 {{- end -}}
 
 {{- if .Params.tags -}}
-  <span class="meta-item">
+  <span class="meta">
     {{- safeHTML (index site.Data.svg "tags") -}}
     <span class="tags">
       {{- range ($.GetTerms "tags") -}}
@@ -37,7 +37,7 @@
 
 
 {{- if (.Param "ShowWordCount") -}}
-  <span class="meta-item">
+  <span class="meta">
     {{- safeHTML (index site.Data.svg "words-count") -}}
     <span>
       {{- i18n "words" .WordCount | default (printf "%d words" .WordCount) -}}
@@ -47,7 +47,7 @@
 
 
 {{- if (.Param "ShowReadingTime") -}}
-  <span class="meta-item">
+  <span class="meta">
     {{- safeHTML (index site.Data.svg "reading-time") -}}
     <span>
       {{- i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime) -}}
@@ -57,7 +57,7 @@
 
 
 {{- if (.Param "ShowAuthor") -}}
-  <span class="meta-item">
+  <span class="meta">
     {{- safeHTML (index site.Data.svg "author") -}}
     <span>
       {{- partial "author.html" . -}}
@@ -67,7 +67,7 @@
 
 
 {{- if .IsTranslated -}}
-  <span class="meta-item">
+  <span class="meta">
     {{- safeHTML (index site.Data.svg "translations") -}}
     <span class="i18n-links">
       {{- range $i, $e := .Translations -}}
