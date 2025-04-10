@@ -12,7 +12,6 @@ cover:
   alt: a cover alternative title
 tags:
   - first
-  - announcement
 ---
 # This is the first heading
 

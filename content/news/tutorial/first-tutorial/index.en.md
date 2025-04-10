@@ -4,11 +4,9 @@ description: "This is the first tutorial article !"
 date: 2024-05-16T15:27:48+12:00
 author: "FreeCAD"
 draft: false
-
 categories: tutorial
 tags:
   - first
-  - tutorial
 cover:
   image: 3.webp
   caption: "a cover caption"

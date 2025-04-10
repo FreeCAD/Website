@@ -7,7 +7,7 @@ draft: true
 
 categories: category
 tags:
-  - news
+  - "your custom tag"
 cover:
   image: relative_path_for_cover_image
   caption: "a cover caption"

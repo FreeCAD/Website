@@ -4,11 +4,9 @@ description: "This is the first event article !"
 date: 2024-05-16T15:27:48+12:00
 author: "FreeCAD"
 draft: false
-
 categories: event
 tags:
   - first
-  - event
 cover:
   image: 6.webp
   caption: "a cover caption"

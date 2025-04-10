@@ -4,11 +4,9 @@ description: "This is the first showcase article !"
 date: 2024-05-16T15:27:48+12:00
 author: "FreeCAD"
 draft: false
-
 categories: showcase
 tags:
   - first
-  - showcase
 cover:
   image: 2.webp
   caption: "a cover caption"
