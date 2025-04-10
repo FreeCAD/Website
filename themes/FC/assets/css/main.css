@@ -282,7 +282,7 @@ main header .entry-cover img {
 }
 
 .content > :not(.block, .column) {
-    padding: var(--gap) var(--side);
+    padding: var(--gap) calc(2* (var(--side) - var(--gap)));
     text-align: justify;
 }
 
@@ -427,7 +427,7 @@ pre code {
 
 blockquote {
     margin: 1rem 0;
-    padding: 0 1rem;
+    padding-left: 1rem;
     border-inline-start: var(--border);
 }
 
@@ -846,7 +846,7 @@ sup:target {
 }
 
 .footnotes ol li {
-    margin: 0 0 0.5rem 0;
+    margin-bottom: 0.5rem;
 }
 
 .footnotes ol li p {

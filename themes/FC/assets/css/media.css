@@ -75,6 +75,10 @@
         flex-direction: column;
     }
 
+    .content > :not(.block, .column) {
+        padding: var(--gap) var(--side);
+    }
+
     .content img:not([popover] img) {
         max-height: var(--width);
         width: 100%;
