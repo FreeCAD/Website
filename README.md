@@ -109,7 +109,7 @@ To understand how Hugo works, read its [Official documentation](https://gohugo.i
 
 To simply change or create content, such as news articles, read first the [Guidelines](#guidelines), then read about the [Content Management System](#content-management-system) or [Archetypes](#archetypes). If curious how content is organized, carry on reading below.
 
-There are two main types of content files : **Single** (`index.md`) and **List** (`_index.md`) pages. The former are where most changes will be made. The latter gathers content from **Single** pages to form a **List** and should not be changed in most cases. All linked resources for a specific page (e.g. images, translations, download assets) can be stored in the same folder as the page itself ([leaf bundle](https://gohugo.io/content-management/page-bundles/) method), making relative links easy and content tidy.
+There are two main types of content files : **Single** (`index.md`) and **List** (`_index.md`) pages. **Single** pages are where most changes will be made.**List** pages gathers content from **Single** pages and should not be changed in most cases. All linked resources for a specific page (e.g. illustrations, translations, assets) can be stored in the same folder as the page itself ([leaf bundle](https://gohugo.io/content-management/page-bundles/) method), making relative links easy and content tidy.
 
 These files are mostly written with Markdown and contain a metadata header called the Front Matter, at the top of the file in-between the YAML `---` characters. How content from **Single** and **List** pages generated into HTML is defined by templates actions used by the [Theme](#theme).
 
