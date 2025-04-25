@@ -1,18 +1,19 @@
 ---
-cover:
-  alt: a cover alternative title
-  caption: a cover caption
-  image: 2.webp
-author: FreeCAD
-description: Aider le développement de FreeCAD
-title: Contributer
+title: "Contributer"
+description: "Aider le développement de FreeCAD"
 date: 2024-05-22T08:04:23+12:00
+author: "FreeCAD"
+cover:
+  image: 2.webp
+  caption: "a cover caption"
+  alt: "a cover alternative title"
 menus:
   main:
     weight: 6
   footer:
     weight: 6
 ---
+
 [![LINK TO GITHUB](2.webp "Link to GitHub")](https://github.com/freecad)
 
 ## First Contribute Block

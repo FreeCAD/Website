@@ -3,7 +3,6 @@ title: "Versions"
 description: "Lire les notes de versions"
 date: 2024-05-22T08:04:23+12:00
 author: "FreeCAD"
-menus:
 cover:
   image: 7.webp
   caption: "a cover caption"

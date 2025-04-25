@@ -1,19 +1,20 @@
 ---
-title: Fonctionnalités
-description: Découvrir les fonctionnalités de FreeCAD
+title: "Fonctionnalités"
+description: "Découvrir les fonctionnalités de FreeCAD"
+date: 2024-05-22T08:04:23+12:00
+author: "FreeCAD"
 ToC: true
 cover:
   image: 5.webp
-  caption: a cover caption
-  alt: a cover alternative title
-author: FreeCAD
-date: 2024-05-22T08:04:23+12:00
+  caption: "a cover caption"
+  alt: "a cover alternative title"
 menus:
   main:
     weight: 1
   footer:
     weight: 1
 ---
+
 [![LINK TO GITHUB](5.webp "Link to GitHub")](https://github.com/freecad)
 
 ## First Feature Block

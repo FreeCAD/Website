@@ -1,23 +1,23 @@
 ---
-title: Download
-description: Let the FreeCAD adventure unfold!
-author: FreeCAD
+title: "Download"
+description: "Let the FreeCAD adventure unfold!"
+date: 2024-05-22T08:04:23+12:00
+author: "FreeCAD"
 type: download
 cover:
   image: 4.webp
-  caption: a cover caption
-  alt: a cover alternative title
-date: 2024-05-22T08:04:23+12:00
-params:
-  thanksText: "Thank you for downloading FreeCAD!"
-  donateText: "♥︎ Sponsor its development"
-
+  caption: "a cover caption"
+  alt: "a cover alternative title"
 menus:
   main:
     weight: 2
   footer:
     weight: 2
+params:
+  thanksText: "Thank you for downloading FreeCAD!"
+  donateText: "♥︎ Sponsor its development"
 ---
+
 [![LINK TO GITHUB](4.webp "Link to GitHub")](https://github.com/freecad)
 
 ## First Download Block

@@ -1,18 +1,19 @@
 ---
-cover:
-  alt: a cover alternative title
-  caption: a cover caption
-  image: 0.webp
-author: FreeCAD
-description: Démarrer vos projets avec FreeCAD
-title: Documentation
+title: "Documentation"
+description: "Démarrer vos projets avec FreeCAD"
 date: 2024-05-22T08:04:23+12:00
+author: "FreeCAD"
+cover:
+  image: 0.webp
+  caption: "a cover caption"
+  alt: "a cover alternative title"
 menus:
   main:
     weight: 5
   footer:
     weight: 5
 ---
+
 [![LINK TO GITHUB](0.webp "Link to GitHub")](https://github.com/freecad)
 
 ## First Documentation Block

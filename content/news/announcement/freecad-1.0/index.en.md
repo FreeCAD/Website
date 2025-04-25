@@ -1,24 +1,25 @@
 ---
-title: FreeCAD 1.0 is here!
-description: It's finally here!
+title: "FreeCAD 1.0 is here!"
+description: "It's finally here!"
 date: 2024-06-16T05:27:00
-author: FreeCAD
+author: "FreeCAD"
 draft: false
 categories: announcement
-cover:
-  image: 8.webp
-  caption: a cover caption
-  alt: a cover alternative title
-params:
-  hero:
-    articleLink: false
-    customText: See what's new
-    customLink: releases/1-0
-    downloadLink: true
 tags:
   - release
   - 1.0
+cover:
+  image: 8.webp
+  caption: "a cover caption"
+  alt: "a cover alternative title"
+params:
+  hero:
+    articleLink: false
+    customText: "See what's new"
+    customLink: releases/1-0
+    downloadLink: true
 ---
+
 # This is the first heading
 
 ## This is the second heading

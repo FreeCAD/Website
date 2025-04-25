@@ -1,10 +1,11 @@
 ---
-title: FreeCAD Homepage highlights
-description: FreeCAD highlights on the Homepage
-author: FreeCAD
-type: homepage
+title: "FreeCAD Homepage highlights"
+description: "FreeCAD highlights on the Homepage"
 date: 2024-05-22T08:04:23+12:00
+author: "FreeCAD"
+type: homepage
 ---
+
 [![LINK TO GITHUB](assembly2.webp "Link to GitHub")](https://github.com/freecad)
 
 ## First Highlight Block

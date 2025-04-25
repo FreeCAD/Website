@@ -1,18 +1,19 @@
 ---
-title: First Announcement is updated
-description: This is the first announcement article!
+title: "First Announcement is updated"
+description: "This is the first announcement article!"
 date: 2024-05-16T05:27:00
-author: FreeCAD
+author: "FreeCAD"
 draft: false
 categories: announcement
 ToC: true
-cover:
-  image: 0.webp
-  caption: a cover caption
-  alt: a cover alternative title
 tags:
   - first
+cover:
+  image: 0.webp
+  caption: "a cover caption"
+  alt: "a cover alternative title"
 ---
+
 # This is the first heading
 
 ## This is the second heading

@@ -228,6 +228,10 @@ date: yyyy-mm-dd
 author: "FreeCAD"
 tags:
   - X.Y
+cover:
+  image: splashscreen-x-y.jpg
+  caption: "the X.Y splashscreen"
+  alt: "the X.Y splashscreen"
 params:
   release: X.Y
   windows_msi: link-to-windows-msi-build
@@ -236,10 +240,6 @@ params:
   mac_arm: link-to-mac-arm-build
   linux_x86: link-to-linux-x86-build
   linux_aarch64: link-to-linux-aarch64-build
-cover:
-  image: splashscreen-x-y.jpg
-  caption: "the X.Y splashscreen"
-  alt: "the X.Y splashscreen"
 ---
 ```
 

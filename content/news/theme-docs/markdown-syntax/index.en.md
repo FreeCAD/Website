@@ -4,7 +4,6 @@ description: "Sample article showcasing basic Markdown syntax and formatting for
 date: 2019-03-11
 author: "FreeCAD"
 draft: false
-
 tags:
   - markdown
   - syntax

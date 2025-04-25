@@ -4,7 +4,6 @@ description: "A brief description of Hugo Shortcodes"
 date: 2019-03-10
 author: "FreeCAD"
 draft: false
-
 tags:
   - shortcodes
   - privacy

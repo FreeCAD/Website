@@ -1,18 +1,19 @@
 ---
-description: Get in touch with the community
-author: FreeCAD
+title: "Community"
+description: "Get in touch with the community"
+date: 2024-05-22T08:04:23+12:00
+author: "FreeCAD"
 cover:
   image: 1.webp
-  caption: a cover caption
-  alt: a cover alternative title
-title: Community
-date: 2024-05-22T08:04:23+12:00
+  caption: "a cover caption"
+  alt: "a cover alternative title"
 menus:
   main:
     weight: 4
   footer:
     weight: 4
 ---
+
 [![LINK TO GITHUB](1.webp "Link to GitHub")](https://github.com/freecad)
 
 ## First Community Block

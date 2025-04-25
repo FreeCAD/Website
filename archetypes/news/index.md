@@ -4,10 +4,9 @@ description: "Please fill the description here"
 date: {{ .Date }}
 author: "FreeCAD"
 draft: true
-
 categories: category
 tags:
-  - "your custom tag"
+  - tag
 cover:
   image: relative_path_for_cover_image
   caption: "a cover caption"

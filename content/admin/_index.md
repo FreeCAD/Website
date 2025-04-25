@@ -1,4 +1,4 @@
 ---
-title: FreeCAD Admin - Sveltia CMS
+title: "FreeCAD Admin - Sveltia CMS"
 layout: headless-cms
 ---

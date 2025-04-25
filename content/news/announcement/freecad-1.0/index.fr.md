@@ -5,6 +5,9 @@ date: 2024-06-16T15:27:48+12:00
 author: "FreeCAD"
 draft: false
 categories: announcement
+tags:
+  - release
+  - 1.0
 cover:
   image: 8.webp
   caption: "a cover caption"
@@ -15,9 +18,6 @@ params:
     customLink: releases/1-0
     customText: "Découvre les nouveautés"
     articleLink: false
-tags:
-  - release
-  - 1.0
 ---
 
 # This is the first heading
