@@ -1,6 +1,6 @@
 ---
 title: Download
-description: Let the FreeCAD adventure unfolds !
+description: Let the FreeCAD adventure unfold!
 author: FreeCAD
 type: download
 cover:
@@ -9,7 +9,7 @@ cover:
   alt: a cover alternative title
 date: 2024-05-22T08:04:23+12:00
 params:
-  thanksText: "Thank you for downloading FreeCAD !"
+  thanksText: "Thank you for downloading FreeCAD!"
   donateText: "♥︎ Sponsor its development"
 
 menus:

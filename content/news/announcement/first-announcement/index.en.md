@@ -1,6 +1,6 @@
 ---
 title: First Announcement is updated
-description: This is the first announcement article !
+description: This is the first announcement article!
 date: 2024-05-16T05:27:00
 author: FreeCAD
 draft: false

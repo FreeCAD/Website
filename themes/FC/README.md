@@ -4,7 +4,7 @@ FC Theme is a forked version of [PaperModX](https://github.com/reorx/hugo-PaperM
 
 ## Theme Overview
 
-The `FC` theme is based on a standard Hugo theme structure : it uses a set of `HTML` wrapping template actions to transform content, data and resources (in `layout` folder), some `CSS` stylesheets and `JavaScript` (in `assets` folder). Translations tables for theme strings are in `i18n` folder. Some SVG icons are available in `data` folder.
+The `FC` theme is based on a standard Hugo theme structure: it uses a set of `HTML` wrapping template actions to transform content, data and resources (in `layout` folder), some `CSS` stylesheets and `JavaScript` (in `assets` folder). Translations tables for theme strings are in `i18n` folder. Some SVG icons are available in `data` folder.
 
 ## Features
 
@@ -22,7 +22,7 @@ The style of the theme is defined in `CSS` stylesheets in `assets/css`. Reusable
 
 Each layout inherits from `layouts/_default/baseof.html` which contains the main structure of the page, including the head and meta tags.
 
-Default layouts use either :
+Default layouts use either:
 
 - `list.html` for **List** pages, such as the Homepage `_index.md`, the Releases list, the News list, the Categories lists and the Donate page.
 

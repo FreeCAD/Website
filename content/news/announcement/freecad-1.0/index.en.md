@@ -1,6 +1,6 @@
 ---
-title: FreeCAD 1.0 is here !
-description: It's finally here !
+title: FreeCAD 1.0 is here!
+description: It's finally here!
 date: 2024-06-16T05:27:00
 author: FreeCAD
 draft: false
