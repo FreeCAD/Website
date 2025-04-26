@@ -87,7 +87,7 @@ Testing builds deployment to GitHub Pages is done automatically by GitHub Action
 
 ### Use and navigation overview
 
-The website uses a simple folder-based structure. The homepage links to main sections (e.g. Features, Download, News) which may contain sub-sections (e.g. News articles, Categories, Release notes). All content is stored in files and the structure is kept to three levels for clarity, making a search function unnecessary.
+The website uses a simple folder-based structure. The Homepage links to main sections (e.g. Features, Download, News) which may contain sub-sections (e.g. News articles, Categories, Release notes). All content is stored in files and the structure is kept to three levels for clarity, making a search function unnecessary.
 
 The website is multilingual, with English being the default language. That means that available translated content in any enabled language is accessible using the language dropdown in the header.
 
@@ -253,7 +253,7 @@ Translations of the content are stored in the same folder ([leaf bundle](https:/
 
 Translations of the theme are handled by translations tables in `themes/FC/i18n`.
 
-Before a new language is enabled, the main navigation pages (homepage, features, download, news, community, documentation, contribute and donate) and the theme strings have to be translated. If willing to add a new language, please use the provided GitHub issue template indicating who will translate and who will proofread.
+Before a new language is enabled, the main navigation pages (Homepage, features, download, news, community, documentation, contribute and donate) and the theme strings have to be translated. If willing to add a new language, please use the provided GitHub issue template indicating who will translate and who will proofread.
 
 ### Content Management System
 
@@ -267,7 +267,7 @@ Configuration for the CMS is defined in `config/params.yaml` in the `headless_cm
 ### Archetypes
 
 > [!NOTE]
-> Currently archetypes are only partially set up and not really useful for now, only the basic `default.md` and `news/index.md` can be used. It is recommended to use the [Content Management System](#content-management-system) instead.
+> Currently Archetypes are only partially set up and not really useful for now, only the basic `default.md` and `news/index.md` can be used. It is recommended to use the [Content Management System](#content-management-system) instead.
 
 Archetypes are templates for new content, making creation of new content easier and consistent. The following command creates a new content file named Base-Name.md with the specified PATH:
 
@@ -300,8 +300,8 @@ This repository is licensed under the [GNU Lesser General Public License Version
 
 ### Content
 
-Content of the website (folder "/content/") is licensed under [Creative Commons Attribution ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/ "Read the license").
-By default, it is copyrighted by and attributed to "FreeCAD contributors". If they wish so, authors can specify the respective attribution for the content they produce. For Markdown files, the attribution is specified in the "author" field of the Front Matter.
+Content of the website (`content` folder) is licensed under [Creative Commons Attribution ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/ "Read the license").
+By default, it is copyrighted by and attributed to "FreeCAD". If they wish so, authors can specify the respective attribution for the content they produce. For Markdown files, the attribution is specified in the `author` field of the Front Matter.
 
 By submitting Pull Requests to this repository, please make sure you are the author of the content uploaded, or otherwise that you have right to share it here under the CC-BY-SA 4.0 license and make sure the original author is mentioned. Also note that sharing images with people is subject to obtaining appropriate consent.
 
@@ -311,4 +311,4 @@ The trademark of FreeCAD branded resources (e.g. FreeCAD logo) is registered and
 
 ### Theme
 
-The FC Theme folder is licensed under the [MIT License](https://github.com/marcuspollio/FreeCAD-website/blob/testing/themes/FC/LICENSE "Read the license text").
+The `FC` Theme folder is licensed under the [MIT License](https://github.com/marcuspollio/FreeCAD-website/blob/testing/themes/FC/LICENSE "Read the license text").
