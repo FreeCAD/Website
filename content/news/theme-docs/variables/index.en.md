@@ -53,7 +53,6 @@ cover:
 | `label.icon`       | string  | "/apple-touch-icon.webp" | To display a logo image in label                 |
 | `label.iconHeight` | integer | 35                      | To set size of label logo image                  |
 
-
 #### cover
 
 | name                     | type    | example       | Description                                             |
@@ -67,7 +66,6 @@ cover:
 | ---------------------- | ------ | ---------------- | ----------------------------- |
 | `schema.publisherType` | string | "Organization"   | https://schema.org/publisher  |
 | `schema.sameAs`        | list   | [URL1, URL2] | Set https://schema.org/sameAs |
-
 
 ---
 
