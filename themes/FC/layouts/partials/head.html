@@ -22,13 +22,25 @@
     <meta name="keywords" content="{{- range $i, $e := . -}}{{- if $i -}}, {{- end -}}{{- $e -}}{{- end -}}">
   {{- end -}}
 {{- else -}}
-  <meta name="keywords" content="{{- if .Params.keywords -}}
-  {{- range $i, $e := .Params.keywords -}}{{- if $i -}}, {{- end -}}{{- $e -}}{{- end -}} {{- else -}}
-  {{- range $i, $e := .Params.tags -}}{{- if $i -}}, {{- end -}}{{- $e -}}{{- end -}} {{- end -}}">
+  <meta name="keywords" content="
+    {{- if .Params.keywords -}}
+      {{- range $i, $e := .Params.keywords -}}{{- if $i -}}, {{- end -}}{{- $e -}}{{- end -}}
+    {{- else -}}
+      {{- range $i, $e := .Params.tags -}}{{- if $i -}}, {{- end -}}{{- $e -}}{{- end -}}
+    {{- end -}}">
 {{- end -}}
-<meta name="description" content="{{- with .Description -}}{{ . | plainify }}{{- else -}}{{- if or .IsPage .IsSection -}}
-  {{ .Summary | default (printf "%s - %s" .Title  site.Title) | plainify }}{{- else -}}
-  {{- with site.Params.description -}}{{ . | plainify }}{{- end -}}{{- end -}}{{- end -}}">
+<meta name="description" content="
+  {{- with .Description -}}
+    {{ . | plainify }}
+  {{- else -}}
+    {{- if or .IsPage .IsSection -}}
+      {{ .Summary | default (printf "%s - %s" .Title  site.Title) | plainify }}
+    {{- else -}}
+      {{- with site.Params.description -}}
+        {{ . | plainify }}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}">
 <meta name="author" content="{{ (partial "author.html" . ) }}">
 <link rel="canonical" href="{{ .Permalink }}">
 
@@ -66,7 +78,7 @@
 {{- /* Misc */}}
 {{- if hugo.IsProduction | or (eq site.Params.env "production") -}}
   {{- if site.Config.Services.GoogleAnalytics.ID -}}
-  {{- template "_internal/google_analytics.html" . -}}
+    {{- template "_internal/google_analytics.html" . -}}
   {{- end -}}
 {{- end -}}
 
@@ -79,21 +91,21 @@
     }
   </style>
   {{- if (and (ne site.Params.defaultTheme "light") (ne site.Params.defaultTheme "dark")) -}}
-  <style>
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --theme: rgb(32, 32, 32);
-        --entry: rgb(64, 64, 64);
-        --primary: rgb(240, 240, 240);
-        --secondary: rgb(224, 224, 224);
-        --tertiary: rgb(208, 208, 208);
-        --link-color: rgb(65, 143, 222);
-      }
+    <style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(64, 64, 64);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --link-color: rgb(65, 143, 222);
+        }
 
-      main {
-        background: var(--theme);
+        main {
+          background: var(--theme);
+        }
       }
-    }
-  </style>
+    </style>
   {{- end -}}
 </noscript>

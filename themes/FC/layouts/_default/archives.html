@@ -26,48 +26,48 @@
 {{- $pages := where site.RegularPages "Section" "in" $sections -}}
 
 {{- range $pages.GroupByPublishDate "2006" -}}
-{{- if ne .Key "0001" -}}
-<div class="archive-year">
-  <h2 class="archive-year-header">
-    {{- replace .Key "0001" "" }}
-    <sup class="archive-count">
-      &nbsp;&nbsp;{{- len .Pages }}
-    </sup>
-  </h2>
-  {{- range .Pages.GroupByDate "January" -}}
-  <div class="archive-month">
-    <h3 class="archive-month-header">
-      {{ .Key }}
-      <sup class="archive-count">
-        &nbsp;&nbsp;{{- len .Pages }}
-      </sup>
-    </h3>
-    <div class="archive-month-list">
-      {{- range .Pages -}}
-      <article class="archive-entry">
-        <a href="{{ .Permalink }}" alt="ARTICLE" aria-label="{{ .Title | plainify }}" title="{{ .Title | plainify }}">
-          <h3 class="archive-entry-title">
-          {{ .Title | .RenderString }}
-          {{- if .Draft }}
-            <sup>
-              <span class="entry-isdraft">
-                &nbsp;&nbsp;[{{- i18n "draft" | default "Draft" -}}]
-              </span>
-            </sup>
+  {{- if ne .Key "0001" -}}
+    <div class="archive-year">
+      <h2 class="archive-year-header">
+        {{- replace .Key "0001" "" }}
+        <sup class="archive-count">
+          &nbsp;&nbsp;{{- len .Pages }}
+        </sup>
+      </h2>
+      {{- range .Pages.GroupByDate "January" -}}
+      <div class="archive-month">
+        <h3 class="archive-month-header">
+          {{ .Key }}
+          <sup class="archive-count">
+            &nbsp;&nbsp;{{- len .Pages }}
+          </sup>
+        </h3>
+        <div class="archive-month-list">
+          {{- range .Pages -}}
+          <article class="archive-entry">
+            <a href="{{ .Permalink }}" alt="ARTICLE" aria-label="{{ .Title | plainify }}" title="{{ .Title | plainify }}">
+              <h3 class="archive-entry-title">
+              {{ .Title | .RenderString }}
+              {{- if .Draft }}
+                <sup>
+                  <span class="entry-isdraft">
+                    &nbsp;&nbsp;[{{- i18n "draft" | default "Draft" -}}]
+                  </span>
+                </sup>
+              {{- end -}}
+              </h3>
+            </a>
+            <div class="archive-meta">
+              {{ .Store.Set "archives" true }}
+              {{- partial "meta.html" . -}}
+            </div>
+          </article>
           {{- end -}}
-          </h3>
-        </a>
-        <div class="archive-meta">
-          {{ .Store.Set "archives" true }}
-          {{- partial "meta.html" . -}}
         </div>
-      </article>
+      </div>
       {{- end -}}
     </div>
-  </div>
   {{- end -}}
-</div>
-{{- end -}}
 {{- end -}}
 
 </section>

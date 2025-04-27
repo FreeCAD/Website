@@ -9,39 +9,39 @@
 {{- end -}}
 
 {{- if not .IsHome | and .Title -}}
-<header>
-  {{- if or (eq .Section "news") (eq .Kind "term") -}}
-    <ul class="category-list">
-      {{- range .Sites.Default.Taxonomies.categories -}}
-        <li>
-          <a href="{{ .Page.RelPermalink }}">
-            {{ .Page.LinkTitle }}
-          </a>
-        </li>
-      {{- end -}}
-    </ul>
-  {{- end -}}
+  <header>
+    {{- if or (eq .Section "news") (eq .Kind "term") -}}
+      <ul class="category-list">
+        {{- range .Sites.Default.Taxonomies.categories -}}
+          <li>
+            <a href="{{ .Page.RelPermalink }}">
+              {{ .Page.LinkTitle }}
+            </a>
+          </li>
+        {{- end -}}
+      </ul>
+    {{- end -}}
 
-  <h1 class="title">
+    <h1 class="title">
+      {{- if eq .Kind "term" -}}
+        {{ .Data.Singular }}: {{ end }}
+      {{ .Title | .RenderString }}
+    </h1>
+
+    {{- if .Description -}}
+      <h2 class="description">
+        {{ .Description | .RenderString }}
+      </h2>
+    {{- end -}}
+
     {{- if eq .Kind "term" -}}
-      {{ .Data.Singular }}: {{ end }}
-    {{ .Title | .RenderString }}
-  </h1>
-
-  {{- if .Description -}}
-  <h2 class="description">
-    {{ .Description | .RenderString }}
-  </h2>
-  {{- end -}}
-
-  {{- if eq .Kind "term" -}}
-    {{- with .Site.GetPage "news" -}}
+      {{- with .Site.GetPage "news" -}}
+        {{- partial "cover.html" . -}}
+      {{- end -}}
+    {{- else -}}
       {{- partial "cover.html" . -}}
     {{- end -}}
-  {{- else -}}
-    {{- partial "cover.html" . -}}
-  {{- end -}}
-</header>
+  </header>
 {{- end -}}
 
 <section class="articles">

@@ -1,89 +1,91 @@
 <div class="download-box">
   {{- if .Params.release -}}
-  <a class="hero-button download" href="{{ .RelPermalink }}" alt="{{ upper site.Title -}} {{ .Params.release }} RELEASE"
-    aria-label="{{ site.Title }} {{ .Params.release }} {{ i18n "release_notes" | default "Release Notes" }}">
-    {{ site.Title }} {{ .Params.release }} {{ i18n "release_notes" | default "Release Notes" }}
-  </a>
+    <a class="hero-button download" href="{{ .RelPermalink }}" alt="{{ upper site.Title -}} {{ .Params.release }} RELEASE"
+      aria-label="{{ site.Title }} {{ .Params.release }} {{ i18n "release_notes" | default "Release Notes" }}">
+      {{ site.Title }} {{ .Params.release }} {{ i18n "release_notes" | default "Release Notes" }}
+    </a>
   {{- else -}}
     {{- print "var is falsy" -}}
   {{- end -}}
+
   {{- with .Date -}}
-  <p>
-    <time datetime="{{ . }}" class="date">
-      Released {{ . | time.Format ":date_long" }}
-    </time>
-  </p>
+    <p>
+      <time datetime="{{ . }}" class="date">
+        Released {{ . | time.Format ":date_long" }}
+      </time>
+    </p>
   {{- else -}}
     {{- print "var is falsy" -}}
   {{- end -}}
+
   <form>
     {{- if or .Params.windows_msi .Params.windows_zip -}}
-    <div id="windows" style="order: 1;">
-      <button class="arch-icon" type="submit" formaction="{{ .Params.windows_msi }}" alt="WINDOWS-MSI" aria-label="Windows Installer" title="Windows Installer" download>
-        {{- safeHTML (index site.Data.svg "msi") -}}
-      </button>
-      <button popovertarget="windows-arch" type="button" title="{{ i18n "Windows" | default "Windows" }}">
-        {{- safeHTML (index site.Data.svg "windows") -}}
-      </button>
-      <span popover id="windows-arch"></span>
-      <button class="arch-icon" type="submit" formaction="{{ .Params.windows_zip }}" alt="WINDOWS-7Z" aria-label="Windows Portable" title="Windows Portable" download>
-        {{- safeHTML (index site.Data.svg "zip") -}}
-      </button>
-    </div>
+      <div id="windows" style="order: 1;">
+        <button class="arch-icon" type="submit" formaction="{{ .Params.windows_msi }}" alt="WINDOWS-MSI" aria-label="Windows Installer" title="Windows Installer" download>
+          {{- safeHTML (index site.Data.svg "msi") -}}
+        </button>
+        <button popovertarget="windows-arch" type="button" title="{{ i18n "Windows" | default "Windows" }}">
+          {{- safeHTML (index site.Data.svg "windows") -}}
+        </button>
+        <span popover id="windows-arch"></span>
+        <button class="arch-icon" type="submit" formaction="{{ .Params.windows_zip }}" alt="WINDOWS-7Z" aria-label="Windows Portable" title="Windows Portable" download>
+          {{- safeHTML (index site.Data.svg "zip") -}}
+        </button>
+      </div>
     {{- else -}}
       {{- print "var is falsy" -}}
     {{- end -}}
     {{- if or .Params.mac_x86 .Params.mac_arm -}}
-    <div id="mac" style="order: 2;">
-      <button class="arch-icon" type="submit" formaction="{{ .Params.mac_x86 }}" alt="MACOS-X86" aria-label="Intel X86" title="Intel X86" download>
-        {{- safeHTML (index site.Data.svg "x86") -}}
-      </button>
-      <button popovertarget="mac-arch" type="button" title="{{ i18n "macOS" | default "macOS" }}">
-        {{- safeHTML (index site.Data.svg "mac") -}}
-      </button>
-      <span popover id="mac-arch"></span>
-      <button class="arch-icon" type="submit" formaction="{{ .Params.mac_arm }}" alt="MACOS-ARM" aria-label="Apple Silicon ARM" title="Apple Silicon ARM" download>
-        {{- safeHTML (index site.Data.svg "arm") -}}
-      </button>
-    </div>
+      <div id="mac" style="order: 2;">
+        <button class="arch-icon" type="submit" formaction="{{ .Params.mac_x86 }}" alt="MACOS-X86" aria-label="Intel X86" title="Intel X86" download>
+          {{- safeHTML (index site.Data.svg "x86") -}}
+        </button>
+        <button popovertarget="mac-arch" type="button" title="{{ i18n "macOS" | default "macOS" }}">
+          {{- safeHTML (index site.Data.svg "mac") -}}
+        </button>
+        <span popover id="mac-arch"></span>
+        <button class="arch-icon" type="submit" formaction="{{ .Params.mac_arm }}" alt="MACOS-ARM" aria-label="Apple Silicon ARM" title="Apple Silicon ARM" download>
+          {{- safeHTML (index site.Data.svg "arm") -}}
+        </button>
+      </div>
     {{- else -}}
       {{- print "var is falsy" -}}
     {{- end -}}
     {{- if or .Params.linux_x86 .Params.linux_aarch64 -}}
-    <div id="linux" style="order: 3;">
-      <button class="arch-icon" type="submit" formaction="{{ .Params.linux_x86 }}" alt="LINUX-X86" aria-label="X86 AppImage" title="X86 AppImage" download>
-        {{- safeHTML (index site.Data.svg "x86") -}}
-      </button>
-      <button popovertarget="linux-arch" type="button" title="{{ i18n "GNU/Linux" | default "GNU/Linux" }}">
-        {{- safeHTML (index site.Data.svg "linux") -}}
-      </button>
-      <span popover id="linux-arch"></span>
-      <button class="arch-icon" type="submit" formaction="{{ .Params.linux_aarch64 }}" alt="LINUX-AArch64" aria-label="AArch64 AppImage" title="AArch64 AppImage" download>
-        {{- safeHTML (index site.Data.svg "arm") -}}
-      </button>
-    </div>
+      <div id="linux" style="order: 3;">
+        <button class="arch-icon" type="submit" formaction="{{ .Params.linux_x86 }}" alt="LINUX-X86" aria-label="X86 AppImage" title="X86 AppImage" download>
+          {{- safeHTML (index site.Data.svg "x86") -}}
+        </button>
+        <button popovertarget="linux-arch" type="button" title="{{ i18n "GNU/Linux" | default "GNU/Linux" }}">
+          {{- safeHTML (index site.Data.svg "linux") -}}
+        </button>
+        <span popover id="linux-arch"></span>
+        <button class="arch-icon" type="submit" formaction="{{ .Params.linux_aarch64 }}" alt="LINUX-AArch64" aria-label="AArch64 AppImage" title="AArch64 AppImage" download>
+          {{- safeHTML (index site.Data.svg "arm") -}}
+        </button>
+      </div>
     {{- else -}}
       {{- print "var is falsy" -}}
     {{- end -}}
   </form>
   {{- with .Site.GetPage "download" -}}
     {{- if or .Params.thanksText .Params.donateText -}}
-    <div class="thanks">
-      <p>
-        {{- with .Params.thanksText -}}
-          {{ . }}
-        {{- else -}}
-          Thank you for downloading FreeCAD!
-        {{- end -}}
-      </p>
-      <a class="donate" href="{{ .Site.Home.Permalink -}}donate">
-        {{- with .Params.donateText -}}
-          {{ . }}
-        {{- else -}}
-          Donate for its development
-        {{- end -}}
-      </a>
-    </div>
+      <div class="thanks">
+        <p>
+          {{- with .Params.thanksText -}}
+            {{ . }}
+          {{- else -}}
+            Thank you for downloading FreeCAD!
+          {{- end -}}
+        </p>
+        <a class="donate" href="{{ .Site.Home.Permalink -}}donate">
+          {{- with .Params.donateText -}}
+            {{ . }}
+          {{- else -}}
+            Donate for its development
+          {{- end -}}
+        </a>
+      </div>
     {{- end -}}
   {{- end -}}
 </div>

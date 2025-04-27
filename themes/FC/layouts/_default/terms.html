@@ -5,16 +5,16 @@
 {{- end -}}
 
 {{- if .Title -}}
-<header>
-  <h1>
-    {{ .Title | .RenderString }}
-  </h1>
-  {{- if .Description -}}
-  <p class="single-description">
-    {{ .Description | .RenderString }}
-  </p>
-  {{- end -}}
-</header>
+  <header>
+    <h1>
+      {{ .Title | .RenderString }}
+    </h1>
+    {{- if .Description -}}
+    <p class="single-description">
+      {{ .Description | .RenderString }}
+    </p>
+    {{- end -}}
+  </header>
 {{- end -}}
 
 <ul class="terms">
@@ -23,14 +23,14 @@
     {{- $name := .Name -}}
     {{- $count := .Count -}}
     {{- with site.GetPage (printf "/%s/%s" $type $name) -}}
-    <li>
-      <a href="{{ .RelPermalink }}">
-        {{ .Name -}}
-        <sup>
-          {{ $count }}
-        </sup>
-      </a>
-    </li>
+      <li>
+        <a href="{{ .RelPermalink }}">
+          {{ .Name -}}
+          <sup>
+            {{ $count }}
+          </sup>
+        </a>
+      </li>
     {{- end -}}
   {{- end -}}
 </ul>

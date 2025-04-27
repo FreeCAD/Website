@@ -1,27 +1,27 @@
 {{- if .Content -}}
-<div class="content">
-  {{/* If using blocks (with +++ in Markdown), loops through and assigns an incremented id for each block, useful for styling. */}}
-  {{- if in .RawContent "+++" -}}
-    {{- $count := 0 -}}
-    {{- $blocks := split .RawContent "+++" -}}
-    {{ .Store.Set "blocks" true }}
-    {{- range $blocks -}}
-      {{- $count = add $count 1 -}}
-      <section class="block" id="N{{- $count -}}">
-        {{ . | $.Page.RenderString }}
-      </section>
-    {{- end -}}
-  {{- else if in .RawContent "||" -}}
-    {{- $columns := split .RawContent "||" -}}
-    {{- range $columns -}}
-      <section class="column">
-        {{ . | $.Page.RenderString }}
-      </section>
-    {{- end -}}
-  {{- else -}}
+  <div class="content">
+    {{/* If using blocks (with +++ in Markdown), loops through and assigns an incremented id for each block, useful for styling. */}}
+    {{- if in .RawContent "+++" -}}
+      {{- $count := 0 -}}
+      {{- $blocks := split .RawContent "+++" -}}
+      {{ .Store.Set "blocks" true }}
+      {{- range $blocks -}}
+        {{- $count = add $count 1 -}}
+        <section class="block" id="N{{- $count -}}">
+          {{ . | $.Page.RenderString }}
+        </section>
+      {{- end -}}
+    {{- else if in .RawContent "||" -}}
+      {{- $columns := split .RawContent "||" -}}
+      {{- range $columns -}}
+        <section class="column">
+          {{ . | $.Page.RenderString }}
+        </section>
+      {{- end -}}
+    {{- else -}}
       <section>
-      {{ .Content }}
+        {{ .Content }}
       </section>
-  {{- end -}}
-</div>
+    {{- end -}}
+  </div>
 {{- end -}}
