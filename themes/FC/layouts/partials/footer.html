@@ -150,13 +150,3 @@
   InstantClick.init();
 </script>
 {{- end -}}
-
-{{- /* Lightbox for external images and Youtube links. NOTE: disabled for now in config hugo.yaml */}}
-{{- if (.Param "EnableLightbox") -}}
-{{- $Lightbox := resources.Get "js/Lightbox.js" -}}
-{{- if hugo.IsProduction -}}
-  {{- $Lightbox = minify $Lightbox -}}
-{{- end -}}
-<script type="text/javascript" src="{{ $Lightbox.RelPermalink }}">
-</script>
-{{- end -}}

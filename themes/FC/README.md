@@ -16,7 +16,7 @@ TODO
 
 ## Style
 
-The style of the theme is defined in `CSS` stylesheets in `assets/css`. Reusable variables are found in `theme_vars.css` in both `Light` and `Dark` variants. General selectors and properties are in `body.css`. Style for the `Main` content area for both **List** and **Single** pages are defined in `main.css`. The site Header is defined in `header.css` and the site Footer is defined is `footer.css`. The `404.css`, `archive.css` and `term.css` define the style for the Main area of these special pages respectively. The `gallery.css`, `highlight.css` and `lightbox.css` (currently unused) define the style for these particular features. The `media.css` defines the style for different devices and screen sizes via media queries (flex and responsive changes).
+The style of the theme is defined in `CSS` stylesheets in `assets/css`. Reusable variables are found in `theme_vars.css` in both `Light` and `Dark` variants. General selectors and properties are in `body.css`. Style for the `Main` content area for both **List** and **Single** pages are defined in `main.css`. The site Header is defined in `header.css` and the site Footer is defined is `footer.css`. The `404.css`, `archive.css` and `term.css` define the style for the Main area of these special pages respectively. The `gallery.css` and `highlight.css` define the style for these particular features. The `media.css` defines the style for different devices and screen sizes via media queries (flex and responsive changes).
 
 ## Layouts
 

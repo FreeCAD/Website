@@ -42,12 +42,11 @@
 {{- $main := (resources.Get "css/main.css") -}}
 {{- $gallery := (resources.Get "css/gallery.css") -}}
 {{- $terms := (resources.Get "css/terms.css") -}}
-{{- $lightbox := (resources.Get "css/lightbox.css") -}}
 {{- $highlight := (resources.Get "css/highlight.css") -}}
 {{- $media := (resources.Get "css/media.css") -}}
 
 {{- /* bundle all required css, order is important */}}
-{{- $stylesheet := (slice $theme_vars $body $404 $archive $footer $header $main $gallery $terms $lightbox $highlight $media) | resources.Concat "assets/css/stylesheet.css" | minify -}}
+{{- $stylesheet := (slice $theme_vars $body $404 $archive $footer $header $main $gallery $terms $highlight $media) | resources.Concat "assets/css/stylesheet.css" | minify -}}
 
 {{- if not site.Params.assets.disableFingerprinting -}}
   {{- $stylesheet := $stylesheet | fingerprint -}}
