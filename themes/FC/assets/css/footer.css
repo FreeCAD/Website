@@ -2,18 +2,19 @@
 
 
 .site-footer {
-    background: var(--theme);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: var(--gap);
     min-height: var(--footer-height);
     margin: auto;
     padding: calc((var(--footer-height) - var(--gap)) * 0.5) var(--gap);
     font-size: var(--s);
-    color: var(--tertiary);
     text-align: center;
-}
-
-.site-footer span {
-    margin-inline-start: 1rem;
-    margin-inline-end: 1rem;
+    color: var(--tertiary);
+    background: var(--theme);
 }
 
 .site-footer span:last-child {
@@ -26,9 +27,4 @@
 
 .site-footer a:hover {
     color: var(--link-hover-color);
-}
-
-/* InstantClick css */
-#instantclick-bar {
-    background: var(--entry);
 }
