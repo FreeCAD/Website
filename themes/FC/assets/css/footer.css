@@ -1,7 +1,7 @@
 /* This CSS stylesheet defines the style of the site footer */
 
 
-.site-footer {
+.footer-row {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -17,14 +17,53 @@
     background: var(--theme);
 }
 
-.site-footer span:last-child {
+.footer-row span:last-child {
     white-space: nowrap;
 }
 
-.site-footer a {
+.footer-row a {
     color: var(--link-color);
 }
 
-.site-footer a:hover {
+.footer-row a:hover {
     color: var(--link-hover-color);
+}
+
+.footer-sitemap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    flex: 1 1 200px;
+    margin: 0;
+    padding-right: 1rem;
+    text-align: left;
+}
+
+.footer-column h4 {
+    color: var(--tertiary);
+    margin-bottom: 0.5rem;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column li {
+    margin-bottom: 0.3rem;
+}
+
+.footer-column a {
+    color: var(--tertiary);
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
 }

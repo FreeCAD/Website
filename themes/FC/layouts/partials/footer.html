@@ -1,25 +1,44 @@
 <footer class="site-footer">
-  {{- if site.Copyright -}}
+  <div class="footer-row">
+    <div class="footer-sitemap">
+      {{ range .Site.Sections }}
+        {{ $excluded := slice "donate" "admin" }}
+        {{ if not (in $excluded .Section) }}
+          <div class="footer-column">
+            <h4><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+            <ul>
+              {{ range first 5 .Pages }}
+                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+              {{ end }}
+            </ul>
+          </div>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+  <div class="footer-row">
+    {{- if site.Copyright -}}
+      <span>
+        {{ site.Copyright | .RenderString }}
+      </span>
+    {{- else -}}
+      <span>
+        &copy; {{ now.Year }} <a href="{{ "" | relLangURL }}">
+          {{ site.Title | .RenderString }}
+        </a>
+      </span>
+    {{- end -}}
     <span>
-      {{ site.Copyright | .RenderString }}
-    </span>
-  {{- else -}}
-    <span>
-      &copy; {{ now.Year }} <a href="{{ "" | relLangURL }}">
-        {{ site.Title | .RenderString }}
+      <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+        CC BY-SA
       </a>
     </span>
-  {{- end -}}
-  <span>
-    <a href="https://creativecommons.org/licenses/by-sa/4.0/">
-      CC BY-SA
-    </a>
-  </span>
-  <span>
-    Made with ♥︎ thanks to <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">
-      Hugo
-    </a>
-  </span>
+    <span>
+      Made with ♥︎ thanks to <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">
+        Hugo
+      </a>
+    </span>
+  </div>
 </footer>
 
 <script>
