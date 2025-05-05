@@ -1,21 +1,51 @@
+{{- $currentPage := . -}}
+{{- $menuFooter := site.Menus.footer -}}
+{{- if not $menuFooter -}}
+  {{- $menuFooter = site.Sites.Default.Menus.footer -}}
+{{- end -}}
+
 <footer class="site-footer">
   <div class="footer-row">
     <div class="footer-sitemap">
-      {{ range .Site.Sections }}
-        {{ $excluded := slice "donate" "admin" }}
-        {{ if not (in $excluded .Section) }}
+      {{- range $menuFooter -}}
+      {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL)) -}}
+      {{- $page_url := $currentPage.RelPermalink -}}
           <div class="footer-column">
-            <h4><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
-            <ul>
-              {{ range first 5 .Pages }}
-                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-              {{ end }}
-            </ul>
+            <h4>
+              <a href="{{ if in .URL "homepage" }}{{ "" | relLangURL }}{{- else -}}{{ .URL }}{{- end -}}" title="{{ .Title | default .Name | plainify }}"
+              {{- with .Params.style -}} class="{{ . }}" {{- end -}}
+              {{- if or (strings.HasPrefix $page_url $menu_item_url) (and ($currentPage.IsHome) (in .URL "homepage")) -}}
+                class="menu-active" aria-current="page"
+              {{- end -}}
+              {{- if .Params.External -}}
+                target="_blank"
+              {{- end -}} >
+                {{ .Title | $.Page.RenderString }}
+                {{- if .Params.External -}}
+                  <span class="external-link">
+                    {{ safeHTML (index $.Site.Data.svg "external-link") }}
+                  </span>
+                {{- end -}}
+              </a>
+            </h4>
+            {{- with .Page.CurrentSection -}}
+              {{- if not .IsHome -}}
+                <ul>
+                  {{ range first 5 .RegularPages }}
+                    <li>
+                      <a href="{{ .RelPermalink }}" title="{{ .Title | default .Name | plainify }}">
+                        {{ .Title | $.Page.RenderString }}
+                      </a>
+                    </li>
+                  {{ end }}
+                </ul>
+              {{- end -}}
+            {{- end -}}
           </div>
-        {{ end }}
-      {{ end }}
+      {{- end -}}
     </div>
   </div>
+
   <div class="footer-row">
     {{- if site.Copyright -}}
       <span>
