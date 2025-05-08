@@ -61,19 +61,6 @@ paginate: 6
 ---
 ```
 
-## Menus external link
-
-You can add `external: true` to a menu item's params to mark it as an external link, this will add a small icon to the end, and make the link open in new tab when clicked.
-
-```yaml
-menu:
-  main:
-    - name: "External site"
-      url: "https://www.url-to-external-site.com"
-      params:
-        external: true
-```
-
 ## Highlight code with Chroma
 
 FC Theme uses Chroma as per Hugo's [official docs](https://gohugo.io/content-management/syntax-highlighting/), so changing the code highlight is easy.

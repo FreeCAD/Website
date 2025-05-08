@@ -20,7 +20,7 @@
 {{- end -}}
 type-{{ .Type }} kind-{{ .Kind }} layout-{{ .Layout }}"
 id="top">
-  {{- partialCached "header.html" . .Page -}}
+  {{- partial "header.html" . -}}
   <main class="{{ .Kind }}">
     {{- block "main" . -}}
     {{- end -}}

@@ -63,16 +63,8 @@
             {{- with .Params.style -}} class="{{ . }}" {{- end -}}
             {{- if strings.HasPrefix $page_url $menu_item_url -}}
               class="menu-active" aria-current="page"
-            {{- end -}}
-            {{- if .Params.External -}}
-              target="_blank"
             {{- end -}} >
               {{ .Title | $.Page.RenderString }}
-              {{- if .Params.External -}}
-                <span class="external-link">
-                  {{ safeHTML (index $.Site.Data.svg "external-link") }}
-                </span>
-              {{- end -}}
             </a>
         </li>
         {{- end -}}
