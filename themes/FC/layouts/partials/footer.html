@@ -8,12 +8,12 @@
   <div class="footer-row">
     <div class="footer-sitemap">
       {{- range $menuFooter -}}
-        {{- $page_url := $currentPage.RelPermalink -}}
+        {{- $pageUrl := $currentPage.RelPermalink -}}
         {{- $classes := slice -}}
         {{- with .Params.style -}}
           {{- $classes = $classes | append . -}}
         {{- end -}}
-        {{- if or (strings.HasPrefix $page_url .URL) (and ($currentPage.IsHome) (in .URL "homepage")) -}}
+        {{- if or (strings.HasPrefix $pageUrl .URL) (and ($currentPage.IsHome) (in .URL "homepage")) -}}
           {{- $classes = $classes | append "menu-active" -}}
         {{- end -}}
         <div class="footer-column">
@@ -21,7 +21,7 @@
             <a href="{{ if in .URL "homepage" }}{{ "" | relLangURL }}{{- else -}}{{ .URL }}{{- end -}}"
               title="{{ .Title | default .Name | plainify }}"
               class="{{ delimit $classes " " }}"
-              {{- if or (strings.HasPrefix $page_url .URL) (and ($currentPage.IsHome) (in .URL "homepage")) -}}
+              {{- if or (strings.HasPrefix $pageUrl .URL) (and ($currentPage.IsHome) (in .URL "homepage")) -}}
                 aria-current="page"
               {{- end -}}
               {{- if .Params.External -}}
@@ -97,11 +97,11 @@
 {{- /* Script to detect User Agent and provide corresponding download options. */}}
 {{- if or (eq .Type "download") (eq .Type "releases") -}}
   {{- if (.Param "EnableUA") -}}
-    {{- $DownloadUA := resources.Get "js/DownloadUACheck.js" -}}
+    {{- $downloadUA := resources.Get "js/DownloadUACheck.js" -}}
     {{- if hugo.IsProduction -}}
-      {{- $DownloadUA = minify $DownloadUA -}}
+      {{- $downloadUA = minify $downloadUA -}}
     {{- end -}}
-    <script type="text/javascript" src="{{ $DownloadUA.RelPermalink }}">
+    <script type="text/javascript" src="{{ $downloadUA.RelPermalink }}">
     </script>
   {{- end -}}
 {{- end -}}
@@ -188,13 +188,13 @@
 </script>
 
 {{- if (.Param "EnableInstantClick") -}}
-  {{- $InstantClick := resources.Get "js/InstantClick.js" -}}
+  {{- $instantClick := resources.Get "js/InstantClick.js" -}}
   {{- if hugo.IsProduction -}}
-    {{- $InstantClick = minify $InstantClick -}}
+    {{- $instantClick = minify $instantClick -}}
   {{- end -}}
-  <script type="text/javascript" src="{{ $InstantClick.RelPermalink }}" data-no-instant
+  <script type="text/javascript" src="{{ $instantClick.RelPermalink }}" data-no-instant
     {{- if site.Params.assets.disableFingerprinting -}}
-      integrity="{{ $InstantClick.Data.Integrity }}"
+      integrity="{{ $instantClick.Data.Integrity }}"
     {{- end -}}>
   </script>
 

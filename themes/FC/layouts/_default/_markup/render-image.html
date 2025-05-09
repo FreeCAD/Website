@@ -37,9 +37,9 @@
       <button aria-label="{{- i18n "zoom" | default "Zoom image" -}}" popovertarget="img{{- $id -}}">
         <img loading="lazy"
           srcset="
-            {{ range $sizeImage := $sizes -}}
-              {{- if (ge $img.Width $sizeImage) -}}
-                {{- printf "%s %s" (($img.Resize (printf "%sx %s" $sizeImage $resizeFormat)).RelPermalink | safeURL) (printf "%sw, " $sizeImage) -}}
+            {{ range $imgSize := $sizes -}}
+              {{- if (ge $img.Width $imgSize) -}}
+                {{- printf "%s %s" (($img.Resize (printf "%sx %s" $imgSize $resizeFormat)).RelPermalink | safeURL) (printf "%sw, " $imgSize) -}}
               {{- end -}}
             {{- end -}}
             {{ $img.RelPermalink }} {{ printf "%dw" ($img.Width) }}"

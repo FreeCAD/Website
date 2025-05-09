@@ -1,9 +1,9 @@
 {{- /* Switch Theme script */}}
-{{- $SwitchTheme := resources.Get "js/SwitchTheme.js" -}}
+{{- $switchTheme := resources.Get "js/SwitchTheme.js" -}}
 {{- if hugo.IsProduction -}}
-  {{- $SwitchTheme = minify $SwitchTheme -}}
+  {{- $switchTheme = minify $switchTheme -}}
 {{- end -}}
-<script type="text/javascript" data-no-instant src="{{ $SwitchTheme.RelPermalink }}">
+<script type="text/javascript" data-no-instant src="{{ $switchTheme.RelPermalink }}">
 </script>
 
 <script>
@@ -56,19 +56,19 @@
       </button>
       <ul popover id="menu-list" class="menu-list">
         {{- range $menuMain -}}
-          {{- $page_url := $currentPage.RelPermalink -}}
+          {{- $pageUrl := $currentPage.RelPermalink -}}
           {{- $classes := slice -}}
           {{- with .Params.style -}}
             {{- $classes = $classes | append . -}}
           {{- end -}}
-          {{- if strings.HasPrefix $page_url .URL -}}
+          {{- if strings.HasPrefix $pageUrl .URL -}}
             {{- $classes = $classes | append "menu-active" -}}
           {{- end -}}
           <li>
               <a href="{{ .URL }}"
                 title="{{ .Title | default .Name | plainify }}"
                 class="{{ delimit $classes " " }}"
-                {{- if strings.HasPrefix $page_url .URL -}}
+                {{- if strings.HasPrefix $pageUrl .URL -}}
                   aria-current="page"
                 {{- end -}}>
                 {{ .Title | $.Page.RenderString }}
