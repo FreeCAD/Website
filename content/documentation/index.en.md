@@ -31,17 +31,3 @@ params:
       link: "https://wiki.freecad.org/Power_users_hub"
       weight: 3
 ---
-
-![](0.webp)
-
-## Tutorials
-
-Find recommended tutorials to get started with FreeCAD:
-
-+++
-
-## Publications
-
-Find recommended publications to get started with FreeCAD:
-
-![](0.webp)
