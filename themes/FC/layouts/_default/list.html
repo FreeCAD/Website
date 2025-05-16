@@ -58,7 +58,11 @@
 {{- end -}}
 
 {{- if eq .Type "contribute" }}
-  {{- $pages = .Sections -}}
+  {{ $lang := slice }}
+  {{ range .Translations }}
+    {{ $lang = $lang | append .Sections }}
+  {{ end }}
+  {{- $pages = where (lang.Merge .Sections $lang) "Type" "guide" -}}
 {{- end -}}
 
 {{- if or (eq .Kind "term") (eq .Type "guide") -}}
