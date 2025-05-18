@@ -170,7 +170,7 @@ main header .entry-cover img {
 }
 
 .articles article {
-    width: clamp(18rem, 4rem + 17.5vw, 25rem);
+    width: var(--article);
     text-align: center;
     position: relative;
 }
@@ -180,7 +180,7 @@ main header .entry-cover img {
 }
 
 .articles article figure {
-    height: clamp(9rem, 2rem + 8.75vw, 12.5rem);
+    height: calc(var(--article) * 0.5);
     background: var(--entry);
     border-radius: var(--radius);
     transition: var(--link-transition);
@@ -211,7 +211,7 @@ main header .entry-cover img {
     position: absolute;
     right: 0;
     width: 100%;
-    top: calc((clamp(9rem, 2rem + 8.75vw, 12.5rem)) - (var(--gap) * 2));
+    top: calc((var(--article) * 0.5) - 2rem);
 }
 
 .entry-date time {

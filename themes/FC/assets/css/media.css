@@ -16,6 +16,7 @@
         --footer-height: 4rem;
         --radius: 0.5rem;
         --gap: 1rem;
+        --article: calc(var(--width) - (var(--gap) * 2));
         --s: 0.75rem;
         --m: 1rem;
         --l: 1.25rem;
@@ -41,7 +42,7 @@
     #menu-list:popover-open,
     #lang-list:popover-open {
         right: var(--gap);
-        width: calc(100vw - (var(--gap) * 2));
+        width: var(--article);
     }
 
     .theme-switch {
@@ -87,8 +88,8 @@
 
     .content [popover] img {
         max-height: 50vh;
-        width: 100vw;
-        max-width: 100vw;
+        width: var(--width);
+        max-width: var(--width);
         border-radius: 0;
     }
 
@@ -107,12 +108,12 @@
     .block p,
     .block a:not(:has(svg)) {
         max-height: var(--width);
-        width: calc(var(--width) - (var(--gap) * 2));
+        width: var(--article);
     }
 
     .block img:not([popover] img) {
         max-height: calc((var(--width) * 0.5) - var(--gap));
-        width: calc(var(--width) - (var(--gap) * 2));
+        width: var(--article);
     }
 
     .block button {
