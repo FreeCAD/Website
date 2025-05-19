@@ -35,7 +35,7 @@ main header {
     display: inline-flex;
     gap: var(--gap);
     padding: 0.75rem 1.5rem;
-    max-width: calc(var(--width) - (var(--gap) * 2));
+    max-width: var(--width);
     color: var(--cover);
     text-shadow: var(--shadow);
     z-index: 2;
@@ -166,7 +166,7 @@ main header .entry-cover img {
     flex-wrap: wrap;
     justify-content: space-between;
     align-content: space-evenly;
-    gap: calc(var(--gap) * 2);
+    gap: var(--gap);
 }
 
 .articles article {
@@ -570,8 +570,8 @@ sup:target {
 .block a:not(:has(svg)),
 .block img:not([popover] img) {
     margin: 0 auto;
-    max-height: calc((var(--width) * 0.25) - (var(--gap) * 2));
-    width: calc((var(--width) * 0.5) - (var(--gap) * 4));
+    max-height: calc((var(--width) * 0.25) - var(--gap));
+    width: calc((var(--width) * 0.5) - (var(--gap) * 2));
 }
 
 .block p {
@@ -599,7 +599,7 @@ sup:target {
 }
 
 .download-box form {
-    width: calc(var(--width) - (var(--gap) * 2));
+    width: var(--width);
     margin: auto;
     display: flex;
     justify-content: center;
