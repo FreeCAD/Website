@@ -1,70 +1,84 @@
+{{/*
+  Render images or videos from local or remote sources.
+  - Resize local images and builds responsive set.
+  - Add popover lightbox.
+*/}}
+
 {{- $url := urls.Parse .Destination -}}
-{{- $sizes := (slice "500" "1000") -}}
-{{- $resizeFormat := "webp" -}}
-{{- $id := delimit (shuffle (seq 1 9)) "" -}}
+{{- $sizes := slice "500" "1000" -}}
+{{- $format := "webp" -}}
+{{- $id := printf "img-%s" (sha1 .Destination) -}}
+{{- $alt := .Text | default (i18n "image_fallback" | default "Image") -}}
+{{- $title := .Title | plainify -}}
+{{- $video_fallback := i18n "video_fallback" | default "A video should have been here, but your browser does not support it." -}}
+{{- $zoom := i18n "zoom" | default "Zoom image" -}}
+{{- $close := i18n "close" | default "Close image viewer" -}}
 
 {{- if $url.Scheme -}}
-
-  {{/* third party image */}}
+  {{/* Remote image */}}
   {{- with try (resources.GetRemote .Destination) -}}
     {{- with .Err -}}
       {{- errorf "%s" . -}}
     {{- else with .Value -}}
-      <img loading="lazy" src="{{ .RelPermalink | safeURL }}" alt="{{ $.Text }}"
-        {{- with $.Title -}}
-          title="{{ . | plainify }}"
-        {{- end -}} />
+      <img loading="lazy"
+           src="{{ .RelPermalink | safeURL }}"
+           alt="{{ $alt }}"
+           {{ with $title }} title="{{ . }}"{{ end }} />
     {{- end -}}
   {{- else -}}
     {{- errorf "Unable to get remote resource %q" .Destination -}}
   {{- end -}}
 {{- else -}}
 
-  {{/* internal image */}}
-  {{- $img := .Page.Resources.GetMatch .Destination -}}
-  {{- if not $img -}}
-    {{- $img = resources.Get .Destination -}}
-  {{- end -}}
+  {{/* Local (bundled/static) image or video */}}
+  {{- $img := .Page.Resources.GetMatch .Destination | default (resources.Get .Destination) -}}
+
   {{- if $img -}}
     {{- if eq $img.MediaType.MainType "video" -}}
       <figure>
-      <video class="video-shortcode" preload="metadata" controls>
-        <source src="{{ $img.RelPermalink }}">
-        There should have been a video here but your browser does not seem to support it.
-      </video>
+        <video class="video-shortcode" preload="metadata" controls>
+          <source src="{{ $img.RelPermalink }}">
+          {{ $video_fallback }}
+        </video>
       </figure>
     {{- else -}}
-      <button aria-label="{{- i18n "zoom" | default "Zoom image" -}}" popovertarget="img{{- $id -}}">
+
+      {{/* Responsive image with popover */}}
+      <button aria-label="{{ $zoom }}" popovertarget="{{ $id }}">
         <img loading="lazy"
           srcset="
-            {{ range $imgSize := $sizes -}}
-              {{- if (ge $img.Width $imgSize) -}}
-                {{- printf "%s %s" (($img.Resize (printf "%sx %s" $imgSize $resizeFormat)).RelPermalink | safeURL) (printf "%sw, " $imgSize) -}}
+            {{- range $imgSize := $sizes -}}
+              {{- if ge $img.Width $imgSize -}}
+                {{ printf "%s %sw, " (($img.Resize (printf "%sx %s" $imgSize $format)).RelPermalink | safeURL) $imgSize }}
               {{- end -}}
             {{- end -}}
-            {{ $img.RelPermalink }} {{ printf "%dw" ($img.Width) }}"
+            {{ $img.RelPermalink | safeURL }} {{ printf "%dw" $img.Width }}"
           sizes="
             {{- if .Page.Store.Get "blocks" -}}
               (max-width: {{ index $sizes 1 }}px) {{ index $sizes 0 }}px, 35vw
             {{- else -}}
-              (max-width: {{ index $sizes 0 }}px) {{ index $sizes 0 }}px, (max-width: {{ index $sizes 1 }}px) {{ index $sizes 1 }}px, 70vw
+              (max-width: {{ index $sizes 0 }}px) {{ index $sizes 0 }}px,
+              (max-width: {{ index $sizes 1 }}px) {{ index $sizes 1 }}px,
+              70vw
             {{- end -}}"
           src="{{ $img.RelPermalink | safeURL }}"
           width="{{ $img.Width }}"
           height="{{ $img.Height }}"
-          alt="{{ $.Text }}"
-          {{- with $.Title -}}
-            title="{{ . | plainify }}"
-          {{- end -}} >
+          alt="{{ $alt }}"
+          {{- with $title -}} title="{{ . }}"{{- end -}}>
       </button>
-      <div id="img{{- $id -}}" popover>
-        <img loading="lazy" src="{{ $img.RelPermalink | safeURL }}">
-        <button class="close" popovertarget="img{{- $id -}}" popovertargetaction="hide">
+
+      <div id="{{ $id }}" popover>
+        <img loading="lazy" src="{{ $img.RelPermalink | safeURL }}" alt="{{ $alt }}">
+        <button class="close"
+          popovertarget="{{ $id }}"
+          popovertargetaction="hide"
+          aria-label="{{ $close }}">
           ✕
         </button>
       </div>
     {{- end -}}
   {{- else -}}
-    {{- warnf "No image found for %s from %s" .Destination .Page.File -}}
+    {{- warnf "No image found for %q in page %q" .Destination .Page.File -}}
   {{- end -}}
 {{- end -}}

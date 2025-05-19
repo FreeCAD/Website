@@ -1,19 +1,29 @@
-{{/* allows to open external links in a new browser tab */}}
-<a href="{{ .Destination | safeURL }}"
-  {{- with .Title -}}
-    title="{{ . | plainify }}"
-    aria-label="{{ . | plainify }}"
+{{/*
+  Custom rendering for markdown content links.
+  - External links open in new tab and icon next to it.
+  - Icon next to external links.
+*/}}
+
+{{- $href := .Destination | safeURL -}}
+{{- $external := strings.HasPrefix .Destination "http" -}}
+{{- $title := .Title | plainify -}}
+{{- $fallback := i18n "link" | default "Open link" -}}
+{{- $text := .Text | safeHTML -}}
+{{- $icon := site.Data.svg.external | safeHTML -}}
+
+<a href="{{ $href }}"
+  {{- if $title -}}
+    title="{{ $title }}"
   {{- else -}}
-    title="{{- i18n "link" | default "Open link" -}}"
-    aria-label="{{- i18n "link" | default "Open link" -}}"
+    title="{{ $fallback }}"
   {{- end -}}
-  {{- if strings.HasPrefix .Destination "http" -}}
+  {{- if $external -}}
     target="_blank" rel="noopener"
   {{- end -}}>
-  {{ .Text | safeHTML }}
-  {{- if strings.HasPrefix .Destination "http" -}}
-    <span class="external-link">
-      {{ safeHTML (index site.Data.svg "external-link") }}
+  {{ $text }}
+  {{- if $external -}}
+    <span class="external">
+      {{ $icon }}
     </span>
   {{- end -}}
 </a>

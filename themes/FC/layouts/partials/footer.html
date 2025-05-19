@@ -28,8 +28,8 @@
               {{- end -}}>
               {{ .Title | $.Page.RenderString }}
               {{- if .Params.External -}}
-                <span class="external-link">
-                  {{ safeHTML (index $.Site.Data.svg "external-link") }}
+                <span class="external">
+                  {{ safeHTML (index $.Site.Data.svg "external") }}
                 </span>
               {{- end -}}
             </a>

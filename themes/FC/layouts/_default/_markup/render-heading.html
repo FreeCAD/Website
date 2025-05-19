@@ -1,15 +1,25 @@
-{{/* Allows to set custom CSS style and a class for content headings, and display an anchor next to it. */}}
-{{- $class := index .Attributes "class" -}}
-{{- $style := index .Attributes "style" -}}
-<h{{ .Level }} id="{{ .Anchor | safeURL }}"
-  {{- if ne $class nil -}}
-    class="{{ $class }}"
-  {{- end -}}
-  {{- if ne $style nil -}}
-    style="{{ $style }}"
-  {{- end -}}>
-  {{ .Text | safeHTML }}
-  <a class="heading-anchor" href="#{{ .Anchor | safeURL }}" title="{{- .Text | safeHTML -}}" aria-label="{{- .Text | safeHTML -}}">
-    {{ safeHTML (index site.Data.svg "heading-anchor") }}
+{{/*
+  Custom rendering for markdown content headings.
+  - Support for CSS class` and `style` attributes.
+  - Anchor link next to heading.
+*/}}
+
+{{- $class := .Attributes.class -}}
+{{- $style := .Attributes.style -}}
+{{- $level := .Level -}}
+{{- $anchor := .Anchor | safeURL -}}
+{{- $text := .Text | safeHTML -}}
+{{- $icon := site.Data.svg.anchor | safeHTML -}}
+
+<h{{ $level }}
+  id="{{ $anchor }}"
+  {{- with $class -}} class="{{ . }}"{{- end -}}
+  {{- with $style -}} style="{{ . }}"{{- end -}}>
+  {{ $text }}
+  <a class="heading-anchor"
+     href="#{{ $anchor }}"
+     title="{{ $text }}"
+     aria-label="{{ $text }}">
+    {{ $icon }}
   </a>
-</h{{ .Level }}>
+</h{{ $level }}>
