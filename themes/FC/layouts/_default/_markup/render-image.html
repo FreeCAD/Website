@@ -41,8 +41,15 @@
           {{ $video_fallback }}
         </video>
       </figure>
-    {{- else -}}
 
+    {{- else if not (in (slice "jpeg" "jpg" "png" "webp" "gif") $img.MediaType.SubType) -}}
+      {{/* SVG, AVIF, TIFF, BMP, ICO cannot be resized or processed */}}
+      <img loading="lazy"
+          src="{{ $img.RelPermalink | safeURL }}"
+          alt="{{ $alt }}"
+          {{ with $title }} title="{{ . }}"{{ end }} />
+
+    {{- else -}}
       {{/* Responsive image with popover */}}
       <button aria-label="{{ $zoom }}" popovertarget="{{ $id }}">
         <img loading="lazy"
