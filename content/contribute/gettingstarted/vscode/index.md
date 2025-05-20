@@ -30,7 +30,7 @@ ms-python.python
 
 ## Select build configuration
 
-<video autoplay muted playsinline loop src="configure.mp4" type="video/mp4"></video>
+<video controls muted playsinline loop src="configure.mp4" type="video/mp4"></video>
 
 First on the bottom left corner, in the status bar, select the build type. Options are:
 - debug
@@ -44,7 +44,7 @@ Cmake should automatically configure the project with the selected configuration
 
 ## First build
 
-<video autoplay muted playsinline loop src="build.mp4" type="video/mp4"></video>
+<video controls muted playsinline loop src="build.mp4" type="video/mp4"></video>
 
 To build, either:
 
@@ -59,7 +59,7 @@ To build, either:
 
 ## Launching the built executable and debugging
 
-<video autoplay muted playsinline loop src="debug.mp4" type="video/mp4"></video>
+<video controls muted playsinline loop src="debug.mp4" type="video/mp4"></video>
 
 On the left panel go to the debug section and click the little green play button. Alternatively press `F5`. Every time you launch the debugger a build is triggered, to ensure all the latest changes you made to the code are compiled in.
 
@@ -76,7 +76,7 @@ To debug please refer to the [documentation](https://code.visualstudio.com/docs/
 
 ## Running tests
 
-<video autoplay muted playsinline loop src="testing.mp4" type="video/mp4"></video>
+<video controls muted playsinline loop src="testing.mp4" type="video/mp4"></video>
 
 The IDE supports running FreeCAD tests as well. On the left panel go to the testing section and click the play button. A build takes place and then all the tests are run and results reported.
 
