@@ -1,74 +1,80 @@
 {{- define "main" -}}
 
+{{/* Debug only in non-production environments */}}
 {{- if not hugo.IsProduction -}}
   {{- partial "debug.html" . -}}
 {{- end -}}
 
 <section class="archives">
 
-<header>
-  <h1>
-    {{ .Title | .RenderString }}
-  </h1>
-  {{- if .Description -}}
-  <p class="archives-description">
-    {{ .Description | .RenderString }}
-  </p>
+  <header>
+    <h1>
+      {{ .Title | .RenderString }}
+    </h1>
+    {{- with .Description -}}
+      <p class="archives-description">
+        {{ . | .RenderString }}
+      </p>
+    {{- end -}}
+  </header>
+
+  {{/* Set sections to include in archive (as defined by mainSection config or in current section) */}}
+  {{- $sections := site.Params.mainSections | default (slice "news") -}}
+  {{- with .Section -}}
+    {{- $sections = slice . -}}
   {{- end -}}
-</header>
+  {{- $pages := where site.RegularPages "Section" "in" $sections -}}
 
-{{/* get pages from the current page's section */}}
-{{/* in this way, archives.html could be used for section archives other than the only one archives of the whole site */}}
-{{- $sections := site.Params.mainSections -}}
-{{- if .Section -}}
-  {{- $sections = slice .Section -}}
-{{- end -}}
-{{- $pages := where site.RegularPages "Section" "in" $sections -}}
-
-{{- range $pages.GroupByPublishDate "2006" -}}
-  {{- if ne .Key "0001" -}}
-    <div class="archive-year">
-      <h2 class="archive-year-header">
-        {{- replace .Key "0001" "" }}
-        <sup class="archive-count">
-          &nbsp;&nbsp;{{- len .Pages }}
-        </sup>
-      </h2>
-      {{- range .Pages.GroupByDate "January" -}}
-      <div class="archive-month">
-        <h3 class="archive-month-header">
-          {{ .Key }}
+  {{/* Group pages by year and then by month */}}
+  {{- range $year := $pages.GroupByPublishDate "2006" -}}
+    {{- if ne $year .Key "0001" -}}
+      <div class="archive-year">
+        <h2 class="archive-year-header">
+          {{ $year.Key }}
           <sup class="archive-count">
-            &nbsp;&nbsp;{{- len .Pages }}
+            {{- len $year.Pages -}}
           </sup>
-        </h3>
-        <div class="archive-month-list">
-          {{- range .Pages -}}
-          <article class="archive-entry">
-            <a href="{{ .Permalink }}" alt="ARTICLE" aria-label="{{ .Title | plainify }}" title="{{ .Title | plainify }}">
-              <h3 class="archive-entry-title">
-              {{ .Title | .RenderString }}
-              {{- if .Draft }}
-                <sup>
-                  <span class="entry-isdraft">
-                    &nbsp;&nbsp;[{{- i18n "draft" | default "Draft" -}}]
-                  </span>
-                </sup>
-              {{- end -}}
-              </h3>
-            </a>
-            <div class="archive-meta">
-              {{ .Store.Set "archives" true }}
-              {{- partial "meta.html" . -}}
-            </div>
-          </article>
-          {{- end -}}
+        </h2>
+
+        {{- range $month := $year.Pages.GroupByDate "January" -}}
+        <div class="archive-month">
+          <h3 class="archive-month-header">
+            {{ $month.Key }}
+            <sup class="archive-count">
+              {{- len $month.Pages -}}
+            </sup>
+          </h3>
+
+          <div class="archive-month-list">
+            {{- range $month.Pages -}}
+            <article class="archive-entry">
+              <a href="{{ .Permalink }}"
+                alt="ARTICLE"
+                aria-label="{{ .Title | plainify }}"
+                title="{{ .Title | plainify }}">
+                <h3 class="archive-entry-title">
+                {{ .Title | .RenderString }}
+                {{- if .Draft -}}
+                  <sup>
+                    <span class="entry-isdraft">
+                      [{{- i18n "draft" | default "Draft" -}}]
+                    </span>
+                  </sup>
+                {{- end -}}
+                </h3>
+              </a>
+              <div class="archive-meta">
+                {{ .Store.Set "archives" true }}
+                {{- partial "meta.html" . -}}
+              </div>
+            </article>
+            {{- end -}}
+          </div>
         </div>
+        {{- end -}}
       </div>
-      {{- end -}}
-    </div>
+    {{- end -}}
   {{- end -}}
-{{- end -}}
 
 </section>
 

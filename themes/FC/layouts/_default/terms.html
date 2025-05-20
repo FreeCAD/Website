@@ -1,37 +1,46 @@
 {{- define "main" -}}
 
+{{/* Debug only in non-production environments */}}
 {{- if not hugo.IsProduction -}}
   {{- partial "debug.html" . -}}
 {{- end -}}
 
-{{- if .Title -}}
+{{- $title := .Title | .RenderString -}}
+{{- $description := .Description | .RenderString -}}
+{{- $type := .Type -}}
+{{- $terms := .Data.Terms.Alphabetical -}}
+
+{{- with $title -}}
   <header>
     <h1>
-      {{ .Title | .RenderString }}
+      {{ . }}
     </h1>
-    {{- if .Description -}}
-    <p class="single-description">
-      {{ .Description | .RenderString }}
-    </p>
+    {{- with $description -}}
+      <p class="single-description">
+        {{ . }}
+      </p>
     {{- end -}}
   </header>
 {{- end -}}
 
 <ul class="terms">
-  {{- $type := .Type -}}
-  {{- range $key, $value := .Data.Terms.Alphabetical -}}
-    {{- $name := .Name -}}
-    {{- $count := .Count -}}
-    {{- with site.GetPage (printf "/%s/%s" $type $name) -}}
-      <li>
-        <a href="{{ .RelPermalink }}">
-          {{ .Name -}}
-          <sup>
-            {{ $count }}
-          </sup>
-        </a>
-      </li>
+  {{- with $terms -}}
+    {{- range . -}}
+      {{- $name := .Name -}}
+      {{- $count := .Count -}}
+      {{- with site.GetPage (printf "/%s/%s" $type $name) -}}
+        <li>
+          <a href="{{ .RelPermalink }}">
+            {{ .Name -}}
+            <sup>
+              {{ $count }}
+            </sup>
+          </a>
+        </li>
+      {{- end -}}
     {{- end -}}
+  {{- else -}}
+    {{- i18n "noterms" | default (printf "No %s found." $type) -}}
   {{- end -}}
 </ul>
 
