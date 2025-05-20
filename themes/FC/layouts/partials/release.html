@@ -1,0 +1,70 @@
+<div class="download-box">
+  {{- with .Title -}}
+    <a class="hero-button download" href="{{ $.RelPermalink }}" alt="{{ upper site.Title -}} RELEASE"
+      aria-label="{{ site.Title }} {{ i18n "release_notes" | default "Release Notes" }}">
+      {{ printf "%s %s" . (i18n "release_notes" | default "Release Notes") }}
+    </a>
+  {{- else -}}
+    {{- print "var is falsy" -}}
+  {{- end -}}
+  {{- with .Date -}}
+    <p>
+      <time datetime="{{ . }}" class="date">
+        {{ . | time.Format ":date_long" }}
+      </time>
+    </p>
+  {{- else -}}
+    {{- print "var is falsy" -}}
+  {{- end -}}
+
+  {{- $params := .Params -}}
+  {{- $platforms := site.Data.platforms -}}
+
+  <form>
+    {{- range $platform := $platforms -}}
+      <div id="{{ $platform.id }}" style="order: {{ $platform.order }};">
+        {{- range $download := $platform.downloads -}}
+          {{- with index $params (printf "%s_%s" $platform.id $download.key) -}}
+            <button class="arch-icon"
+              type="submit"
+              formaction="{{ . }}"
+              alt="{{ $download.alt }}"
+              aria-label="{{ $download.label }}"
+              title="{{ $download.label }}"
+              download>
+              {{- safeHTML (index site.Data.svg $download.key) -}}
+            </button>
+          {{- end -}}
+        {{- end -}}
+
+        <button type="button"
+          popovertarget="{{ $platform.id }}-arch"
+          title="{{ $platform.label }}">
+          {{- safeHTML (index site.Data.svg $platform.id) -}}
+        </button>
+        <span popover id="{{ $platform.id }}-arch"></span>
+      </div>
+    {{- end -}}
+  </form>
+
+  {{- with .Site.GetPage "download" -}}
+    {{- if or .Params.thanksText .Params.donateText -}}
+      <div class="thanks">
+        <p>
+          {{- with .Params.thanksText -}}
+            {{ . }}
+          {{- else -}}
+            Thank you for downloading FreeCAD!
+          {{- end -}}
+        </p>
+        <a class="donate" href="{{ .Site.Home.Permalink -}}donate">
+          {{- with .Params.donateText -}}
+            {{ . }}
+          {{- else -}}
+            Donate for its development
+          {{- end -}}
+        </a>
+      </div>
+    {{- end -}}
+  {{- end -}}
+</div>

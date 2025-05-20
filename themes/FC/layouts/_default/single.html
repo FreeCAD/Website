@@ -35,7 +35,7 @@
   {{/* For Download pages, call the download partial to provide download links from the latest release. */}}
   {{- if eq .Type "download" -}}
     {{- with (index (where site.RegularPages "Type" "releases") 0) -}}
-      {{- partial "download.html" . -}}
+      {{- partial "release.html" . -}}
     {{- end -}}
   {{- end -}}
 
@@ -63,7 +63,7 @@
 {{/* For Release pages, call the download partial to provide download links from the current release page. */}}
 {{- if eq .Type "releases" -}}
   <section class="download-release">
-    {{- partial "download.html" . -}}
+    {{- partial "release.html" . -}}
   </section>
 {{- end -}}
 
