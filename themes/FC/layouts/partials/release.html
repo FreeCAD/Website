@@ -1,3 +1,19 @@
+{{- $params := .Params -}}
+{{- $platforms := slice -}}
+{{- $thanks := "" | default "Thank you for downloading FreeCAD!" -}}
+{{- $donate := "" | default "Donate for its development" -}}
+{{- with .Site.GetPage "download" -}}
+  {{- with .Params.platforms -}}
+    {{- $platforms = . -}}
+  {{- end -}}
+  {{- with .Params.thanksText -}}
+    {{- $thanks = . -}}
+  {{- end -}}
+  {{- with .Params.donateText -}}
+    {{- $donate = . -}}
+  {{- end -}}
+{{- end -}}
+
 <div class="download-box">
   {{- with .Title -}}
     <a class="hero-button download" href="{{ $.RelPermalink }}" alt="{{ upper site.Title -}} RELEASE"
@@ -16,9 +32,6 @@
   {{- else -}}
     {{- print "var is falsy" -}}
   {{- end -}}
-
-  {{- $params := .Params -}}
-  {{- $platforms := site.Data.platforms -}}
 
   <form>
     {{- range $platform := $platforms -}}
@@ -47,24 +60,14 @@
     {{- end -}}
   </form>
 
-  {{- with .Site.GetPage "download" -}}
-    {{- if or .Params.thanksText .Params.donateText -}}
-      <div class="thanks">
-        <p>
-          {{- with .Params.thanksText -}}
-            {{ . }}
-          {{- else -}}
-            Thank you for downloading FreeCAD!
-          {{- end -}}
-        </p>
-        <a class="donate" href="{{ .Site.Home.Permalink -}}donate">
-          {{- with .Params.donateText -}}
-            {{ . }}
-          {{- else -}}
-            Donate for its development
-          {{- end -}}
-        </a>
-      </div>
-    {{- end -}}
+  {{- if or $thanks $donate -}}
+    <div class="thanks">
+      <p>
+        {{ $thanks }}
+      </p>
+      <a class="donate" href="{{ .Site.Home.Permalink -}}donate">
+        {{ $donate }}
+      </a>
+    </div>
   {{- end -}}
 </div>

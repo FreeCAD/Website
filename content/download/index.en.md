@@ -16,6 +16,37 @@ menus:
 params:
   thanksText: "Thank you for downloading FreeCAD!"
   donateText: "♥︎ Sponsor its development"
+  platforms:
+    - id: windows
+      label: Windows
+      order: 1
+      downloads:
+        - key: msi
+          label: Windows Installer
+          alt: WINDOWS-MSI
+        - key: zip
+          label: Windows Portable
+          alt: WINDOWS-ZIP
+    - id: mac
+      label: macOS
+      order: 2
+      downloads:
+        - key: x86
+          label: Apple Intel X86
+          alt: MACOS-X86
+        - key: arm
+          label: Apple Silicon ARM
+          alt: MACOS-ARM
+    - id: linux
+      label: GNU/Linux
+      order: 3
+      downloads:
+        - key: x86
+          label: Linux X86 AppImage
+          alt: LINUX-X86
+        - key: arm
+          label: Linux AArch64 AppImage
+          alt: LINUX-AARCH64
 ---
 
 [![LINK TO GITHUB](4.webp "Link to GitHub")](https://github.com/freecad)
