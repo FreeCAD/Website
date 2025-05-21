@@ -1,54 +1,124 @@
+{{/*
+  Footer Partial, used by 'baseof.html'
+  - Render footer menu with section links
+  - Add active class and handle external links
+*/}}
+
 {{- $currentPage := . -}}
-{{- $menuFooter := site.Menus.footer -}}
-{{- if not $menuFooter -}}
-  {{- $menuFooter = site.Sites.Default.Menus.footer -}}
-{{- end -}}
+{{- $menuFooter := site.Menus.footer | default site.Sites.Default.Menus.footer -}}
+{{- $pageUrl := $currentPage.RelPermalink -}}
+{{- $links := site.Params.footerSectionLinks | default 6 -}}
+{{- $customLinks := site.Data.footer | default slice -}}
+{{- $icon := site.Data.svg.external | safeHTML -}}
 
 <footer>
   <div class="footer-row">
-      {{- range $menuFooter -}}
-        {{- $pageUrl := $currentPage.RelPermalink -}}
+    {{- range $menuFooter }}
+      {{- $isActive := or (strings.HasPrefix $pageUrl .URL) (and $currentPage.IsHome (in .URL "homepage")) -}}
+      {{- $isExternal := and (strings.HasPrefix $pageUrl "http") (not (strings.HasPrefix $pageUrl site.BaseURL)) -}}
+      {{- $sectionKey := path.Base .Page.File.Dir -}}
+      {{- $classes := slice -}}
+      {{- with .Params.style -}}
+        {{ $classes = $classes | append . }}
+      {{- end -}}
+      {{- if $isActive -}}
+        {{ $classes = $classes | append "menu-active" }}
+      {{- end -}}
+
+      {{/* Section */}}
+      <div class="footer-column">
+        <h4>
+          <a href="{{- if in .URL "homepage" -}}{{ "" | relLangURL }}{{- else -}}{{ .URL }}{{- end -}}"
+            title="{{ .Title | default .Name | plainify }}"
+            class="{{ delimit $classes " " }}"
+            {{- if $isActive -}}
+              aria-current="page"
+            {{- end -}}
+            {{- if $isExternal -}}
+              target="_blank"
+            {{- end -}}>
+            {{ .Title | $.Page.RenderString }}
+            {{- if $isExternal -}}
+              <span class="external">
+                {{ $icon }}
+              </span>
+            {{- end -}}
+          </a>
+        </h4>
+
+        {{/* Children in section */}}
+        <ul>
+        {{- with .Page.CurrentSection -}}
+          {{- if not .IsHome -}}
+            {{- range first $links .RegularPages -}}
+            {{- $active := eq .RelPermalink $currentPage.RelPermalink -}}
+              <li>
+                <a href="{{ .RelPermalink }}"
+                  title="{{ .Title | default .Name | plainify }}"
+                  class="{{ if $active }}menu-active{{ end }}">
+                  {{ .Title | $.Page.RenderString }}
+                </a>
+              </li>
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+
+        {{/* Custom children in section from data/footer.yaml */}}
+        {{- range $customLinks -}}
+          {{- if eq .parent $sectionKey -}}
+            {{- $isExternal := and (strings.HasPrefix .url "http") (not (strings.HasPrefix .url site.BaseURL)) -}}
+            {{- $active := eq (urls.Parse .url).Path $currentPage.RelPermalink -}}
+            <li>
+              <a href="{{ cond $isExternal .url (.url | relURL) }}"
+                title="{{ .Title | plainify }}"
+                class="{{ if $active }}menu-active{{ end }}"
+                {{- if $isExternal -}}
+                  target="_blank" rel="noopener"
+                {{- end -}}>
+                {{ .title }}
+                {{- if $isExternal -}}
+                  <span class="external">
+                    {{ $icon }}
+                  </span>
+                {{- end -}}
+              </a>
+            </li>
+          {{- end -}}
+        {{- end -}}
+        </ul>
+      </div>
+    {{- end -}}
+  </div>
+
+  {{/* Custom links from data/footer.yaml */}}
+  <div class="footer-row">
+    {{- range $customLinks -}}
+      {{- if not .parent -}}
+        {{- $isExternal := and (strings.HasPrefix .url "http") (not (strings.HasPrefix .url site.BaseURL)) -}}
         {{- $classes := slice -}}
-        {{- with .Params.style -}}
-          {{- $classes = $classes | append . -}}
+        {{- with .style -}}
+          {{ $classes = $classes | append . }}
         {{- end -}}
-        {{- if or (strings.HasPrefix $pageUrl .URL) (and ($currentPage.IsHome) (in .URL "homepage")) -}}
-          {{- $classes = $classes | append "menu-active" -}}
-        {{- end -}}
-        <div class="footer-column">
+        <div class="footer-colum">
           <h4>
-            <a href="{{ if in .URL "homepage" }}{{ "" | relLangURL }}{{- else -}}{{ .URL }}{{- end -}}"
-              title="{{ .Title | default .Name | plainify }}"
+            <a
+              href="{{ .url }}"
+              title="{{ .Title | plainify }}"
               class="{{ delimit $classes " " }}"
-              {{- if or (strings.HasPrefix $pageUrl .URL) (and ($currentPage.IsHome) (in .URL "homepage")) -}}
-                aria-current="page"
-              {{- end -}}
-              {{- if .Params.External -}}
-                target="_blank"
+              {{- if $isExternal -}}
+                target="_blank" rel="noopener"
               {{- end -}}>
-              {{ .Title | $.Page.RenderString }}
-              {{- if .Params.External -}}
+              {{ .title }}
+              {{- if $isExternal -}}
                 <span class="external">
-                  {{ safeHTML (index $.Site.Data.svg "external") }}
+                  {{ $icon }}
                 </span>
               {{- end -}}
             </a>
           </h4>
-          {{- with .Page.CurrentSection -}}
-            {{- if not .IsHome -}}
-              <ul>
-                {{ range first 5 .RegularPages }}
-                  <li>
-                    <a href="{{ .RelPermalink }}" title="{{ .Title | default .Name | plainify }}">
-                      {{ .Title | $.Page.RenderString }}
-                    </a>
-                  </li>
-                {{ end }}
-              </ul>
-            {{- end -}}
-          {{- end -}}
         </div>
       {{- end -}}
+    {{- end -}}
   </div>
 
   <div class="footer-row">

@@ -5,7 +5,7 @@
 */}}
 
 {{- $href := .Destination | safeURL -}}
-{{- $external := strings.HasPrefix .Destination "http" -}}
+{{- $isExternal := and (strings.HasPrefix .Destination "http") (not (strings.HasPrefix .Destination site.BaseURL)) -}}
 {{- $title := .Title | plainify -}}
 {{- $fallback := i18n "link" | default "Open link" -}}
 {{- $text := .Text | safeHTML -}}
@@ -17,11 +17,11 @@
   {{- else -}}
     title="{{ $fallback }}"
   {{- end -}}
-  {{- if $external -}}
+  {{- if $isExternal -}}
     target="_blank" rel="noopener"
   {{- end -}}>
   {{ $text }}
-  {{- if $external -}}
+  {{- if $isExternal -}}
     <span class="external">
       {{ $icon }}
     </span>
