@@ -9,7 +9,7 @@ menus:
     weight: 1
 ---
 
-[![LINK TO GITHUB](assembly2.webp "Link to GitHub")](https://github.com/freecad)
+![An assembly text](assembly2.webp "An assembly caption")
 
 ## First Highlight Block
 

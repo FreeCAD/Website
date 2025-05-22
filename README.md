@@ -205,8 +205,10 @@ Texts in illustrations are to be avoided if possible. Attribution and license ha
 It is highly recommended to add illustrations files along the page Markdown file ([leaf bundle](https://gohugo.io/content-management/page-bundles/) method), so they can be processed by the static site generator templates. Relative links have to be used instead of absolute links. Alternate `alt` text and tooltip `title` text have to be added as well.
 
 ```markdown
-![alt](img.webp “image title”)
+![alternative text for image](img.webp “image caption”)
 ```
+
+Please avoid adding links to images (e.g. `[![alt](img.webp)](link)`) as the Markdown parser and render hooks make that mix HTML block-level with inline elements, which is invalid. You can use the `figure` shortcode instead, or add links to nearby heading or text.
 
 Currently, only static images (no animations) are used. A minimum width of about 2000 pixels is recommended. The WebP graphics file format is recommended as well. AVIF is currently not supported.
 

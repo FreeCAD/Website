@@ -49,7 +49,7 @@ params:
           alt: LINUX-AARCH64
 ---
 
-[![LINK TO GITHUB](4.webp "Link to GitHub")](https://github.com/freecad)
+![An image text](4.webp "An image caption")
 
 ## First Download Block
 

@@ -15,7 +15,7 @@ menus:
     weight: 2
 ---
 
-[![LINK TO GITHUB](5.webp "Link to GitHub")](https://github.com/freecad)
+![An image text](5.webp "An image caption")
 
 ## First Feature Block
 
