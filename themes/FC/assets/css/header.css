@@ -2,205 +2,205 @@
 
 
 .site-header {
-    background: var(--theme);
-    height: var(--header-height);
-    margin: auto;
-    padding: 0 var(--side);
-    position: sticky;
-    top: 0;
-    z-index: 5;
+  background: var(--theme);
+  height: var(--header-height);
+  margin: auto;
+  padding: 0 var(--side);
+  position: sticky;
+  top: 0;
+  z-index: 5;
 }
 
 .site-header,
 .site-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--gap);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
 }
 
 .logo,
 .menu-list,
 .language-dropdown,
 .theme-switch {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
 }
 
 .logo a {
-    color: var(--secondary);
+  color: var(--secondary);
 }
 
 .logo :is(img, svg) {
-    float: inline-start;
-    height: 2rem;
-    margin-inline-end: var(--gap);
+  float: inline-start;
+  height: 2rem;
+  margin-inline-end: var(--gap);
 }
 
 .logo .active {
-    color: var(--primary);
+  color: var(--primary);
 }
 
 .logo:hover :is(a, img, svg) {
-    color: var(--link-hover-color);
+  color: var(--link-hover-color);
 }
 
 .menu-toggle,
 .lang-toggle,
 #theme-toggle {
-    padding: 0.25rem;
-    color: var(--tertiary);
+  padding: 0.25rem;
+  color: var(--tertiary);
 }
 
 :is(.menu-toggle, .lang-toggle, #theme-toggle):hover  {
-    color: var(--link-hover-color);
+  color: var(--link-hover-color);
 }
 
 :is(.lang-toggle, #theme-toggle) svg {
-    height: 1.5rem;
+  height: 1.5rem;
 }
 
 body.dark #moon {
-    display: none;
+  display: none;
 }
 
 body:not(.dark) #sun {
-    display: none;
+  display: none;
 }
 
 /* Menu in non-media mode */
 
 .menu-toggle {
-    font-size: var(--l);
-    display: block;
-    width: 2rem;
+  font-size: var(--l);
+  display: block;
+  width: 2rem;
 }
 
 .menu:has(#menu-list:popover-open) .hamburger {
-    display: none;
+  display: none;
 }
 
 .menu .cross {
-    display: none;
+  display: none;
 }
 
 .menu:has(#menu-list:popover-open) .cross {
-    display: block;
+  display: block;
 }
 
 .menu-list {
-    position: sticky;
-    word-break: keep-all;
-    white-space: nowrap;
-    gap: var(--gap);
-    border: none;
-    background: none;
+  position: sticky;
+  word-break: keep-all;
+  white-space: nowrap;
+  gap: var(--gap);
+  border: none;
+  background: none;
 }
 
 .menu-list li {
-    margin: 0;
+  margin: 0;
 }
 
 .menu-list a {
-    font-size: var(--m);
-    color: var(--secondary);
+  font-size: var(--m);
+  color: var(--secondary);
 }
 
 .menu-list a:hover {
-    color: var(--link-hover-color);
+  color: var(--link-hover-color);
 }
 
 .menu-active:not(.button) {
-    color: var(--primary);
-    box-shadow: 0 var(--line) 0 var(--primary);
+  color: var(--primary);
+  box-shadow: 0 var(--line) 0 var(--primary);
 }
 
 .menu-active:hover {
-    color: var(--link-hover-color);
-    box-shadow: var(--link-hover-underline-shadow)
+  color: var(--link-hover-color);
+  box-shadow: var(--link-hover-underline-shadow)
 }
 
 .menu-list .button {
-    padding: var(--padding);
-    line-height: 2.5;
-    box-shadow: none;
-    color: var(--cover);
-    background: var(--link-color);
-    border-radius: var(--radius);
-    box-shadow: none;
-    transition: none;
+  padding: var(--padding);
+  line-height: 2.5;
+  box-shadow: none;
+  color: var(--cover);
+  background: var(--link-color);
+  border-radius: var(--radius);
+  box-shadow: none;
+  transition: none;
 }
 
 .menu-list :is(.button:hover, .button.menu-active:hover) {
-    color: var(--cover);
-    background: var(--link-hover-color);
-    box-shadow: none;
+  color: var(--cover);
+  background: var(--link-hover-color);
+  box-shadow: none;
 }
 
 .button.menu-active  {
-    color: var(--cover);
-    background: black;
+  color: var(--cover);
+  background: black;
 }
 
 /* Languages switcher and Menu in media mode */
 
 #lang-list {
-    display: none;
-    inset: 0;
+  display: none;
+  inset: 0;
 }
 
 #menu-list:popover-open,
 #lang-list:popover-open {
-    position: fixed;
-    display: flex;
-    inset: auto;
-    flex-direction: column;
-    min-width: 15rem;
-    max-height: calc(100vh - (var(--header-height) + (var(--gap) * 4)));
-    top: calc(var(--header-height) + var(--gap));
-    right: calc(var(--side) - (var(--gap) * 3));
-    text-align: center;
-    background: var(--theme);
-    border: none;
-    border-radius: var(--radius);
-    padding: var(--gap);
-    color: var(--tertiary);
+  position: fixed;
+  display: flex;
+  inset: auto;
+  flex-direction: column;
+  min-width: 15rem;
+  max-height: calc(100vh - (var(--header-height) + (var(--gap) * 4)));
+  top: calc(var(--header-height) + var(--gap));
+  right: calc(var(--side) - (var(--gap) * 3));
+  text-align: center;
+  background: var(--theme);
+  border: none;
+  border-radius: var(--radius);
+  padding: var(--gap);
+  color: var(--tertiary);
 }
 
 body:is(:has(#menu-list:popover-open),:has(#lang-list:popover-open)) :is(#menu-list,#lang-list)::backdrop {
-    background: linear-gradient(transparent, transparent var(--header-height), var(--backdrop) var(--header-height), var(--backdrop));
+  background: linear-gradient(transparent, transparent var(--header-height), var(--backdrop) var(--header-height), var(--backdrop));
 }
 
 .language-list {
-    list-style: none;
+  list-style: none;
 }
 
 .language-list li a {
-    text-align: center;
-    margin: 0.5rem;
-    padding: 0;
-    display: inline-block;
+  text-align: center;
+  margin: 0.5rem;
+  padding: 0;
+  display: inline-block;
 }
 
 .language-list li .language-active {
-    margin: 0.5rem;
-    padding: 0;
-    color: var(--primary);
-    box-shadow: 0 var(--line)0 var(--primary);
-    font-weight: 700;
+  margin: 0.5rem;
+  padding: 0;
+  color: var(--primary);
+  box-shadow: 0 var(--line)0 var(--primary);
+  font-weight: 700;
 }
 
 .language-list li .language-active:hover {
-    color: var(--link-hover-color);
-    box-shadow: var(--link-hover-underline-shadow);
+  color: var(--link-hover-color);
+  box-shadow: var(--link-hover-underline-shadow);
 }
 
 .language-list li .language-not-active {
-    color: var(--tertiary);
+  color: var(--tertiary);
 }
 
 .language-list li .language-not-active:hover {
-    color: var(--link-hover-color);
+  color: var(--link-hover-color);
 }

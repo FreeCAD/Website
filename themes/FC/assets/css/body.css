@@ -5,148 +5,148 @@ For specific classes, header, main, footer, see main.ccs, header.css, footer.css
 *,
 ::after,
 ::before {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    font-size: clamp(0.8rem, 0.333vw + 0.6rem, 1.2rem);
-    overflow-y: auto;
-    scroll-behavior: smooth;
-    text-rendering: optimizeLegibility;
+  font-size: clamp(0.8rem, 0.333vw + 0.6rem, 1.2rem);
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, Helvetica, 'Helvetica Neue', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
-    color: var(--secondary);
-    margin: 0;
-    overflow-x: clip;
-    background: var(--theme);
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica, 'Helvetica Neue', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+  color: var(--secondary);
+  margin: 0;
+  overflow-x: clip;
+  background: var(--theme);
 }
 
 h1 {
-    font-size: var(--xxl);
-    margin: 1.5rem auto;
-    scroll-margin-top: 25vh;
+  font-size: var(--xxl);
+  margin: 1.5rem auto;
+  scroll-margin-top: 25vh;
 }
 
 h2 {
-    font-size: var(--xl);
-    margin: 1.5rem auto;
-    scroll-margin-top: 25vh;
+  font-size: var(--xl);
+  margin: 1.5rem auto;
+  scroll-margin-top: 25vh;
 }
 
 h3 {
-    font-size: var(--l);
-    margin: 1.25rem auto;
-    scroll-margin-top: 25vh;
+  font-size: var(--l);
+  margin: 1.25rem auto;
+  scroll-margin-top: 25vh;
 }
 
 h4,
 h5,
 h6,
 p {
-    font-size: var(--m);
-    margin: var(--gap) auto;
-    scroll-margin-top: 25vh;
+  font-size: var(--m);
+  margin: var(--gap) auto;
+  scroll-margin-top: 25vh;
 }
 
 a {
-    color: var(--link-color);
-    text-decoration: none;
-    transition: var(--link-transition);
+  color: var(--link-color);
+  text-decoration: none;
+  transition: var(--link-transition);
 }
 
 a:hover {
-    color: var(--link-hover-color);
+  color: var(--link-hover-color);
 }
 
 figure {
-    margin: 0;
+  margin: 0;
 }
 
 img {
-    object-fit: cover;
+  object-fit: cover;
 }
 
 table {
-    display: block;
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-    overflow-x: auto;
-    word-break: keep-all;
-    margin-bottom: 2rem;
+  display: block;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  overflow-x: auto;
+  word-break: keep-all;
+  margin-bottom: 2rem;
 }
 
 button,
 input,
 textarea {
-    padding: 0;
-    font: inherit;
-    background: 0;
-    border: 0;
-    outline: 0;
+  padding: 0;
+  font: inherit;
+  background: 0;
+  border: 0;
+  outline: 0;
 }
 
 button,
 input[type=button],
 input[type=submit] {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 del {
-    text-decoration: line-through;
-    color: var(--tertiary);
-    background: #fbb;
+  text-decoration: line-through;
+  color: var(--tertiary);
+  background: #fbb;
 }
 
 ins {
-    text-decoration: none;
-    background: #d4fcbc;
+  text-decoration: none;
+  background: #d4fcbc;
 }
 
 dl, ol, ul {
-    margin: var(--gap) auto;
-    padding-left: var(--gap);
+  margin: var(--gap) auto;
+  padding-left: var(--gap);
 }
 
 li,
 li > :is(ol, ul) {
-    margin: 0.25rem 0;
+  margin: 0.25rem 0;
 }
 
 dl {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 dt {
-    width: 25%;
-    font-weight: 700;
+  width: 25%;
+  font-weight: 700;
 }
 
 dd {
-    width: 75%;
-    margin-inline-start: 0;
-    padding-inline-start: 0.5rem;
+  width: 75%;
+  margin-inline-start: 0;
+  padding-inline-start: 0.5rem;
 }
 
 dd ~ dd,
 dt ~ dt {
-    margin-top: var(--gap);
+  margin-top: var(--gap);
 }
 
 hr {
-    border-top: var(--border);
+  border-top: var(--border);
 }
 
 iframe {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 mark {
-    color: var(--entry);
-    padding: 0.125rem 0.25rem;
-    border-radius: 0.25rem;
-    background: var(--tertiary);
+  color: var(--entry);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  background: var(--tertiary);
 }
