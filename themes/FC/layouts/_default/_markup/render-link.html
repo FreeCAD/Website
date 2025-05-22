@@ -20,7 +20,9 @@
   {{- if $isExternal -}}
     target="_blank" rel="external noreferrer"
   {{- end -}}>
-  {{ $text }}
+  {{- with $text -}}
+    {{ . }}
+  {{- end -}}
   {{- if $isExternal -}}
     <span class="external">
       {{ $icon }}
