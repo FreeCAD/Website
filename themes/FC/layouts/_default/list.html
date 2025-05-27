@@ -84,9 +84,13 @@
 <article>
   {{- partial "category.html" . -}}
   <a href="{{ .Permalink }}" alt="ARTICLE" aria-label="{{ .Title | plainify }}" title="{{ .Title | plainify }}">
-    {{ .Store.Set "articles" true }}
+    {{- with .Store -}}
+      {{- .Set "articles" true -}}
+    {{- end -}}
     {{- partial "cover.html" . -}}
-    {{ .Store.Delete "articles" }}
+    {{- with .Store -}}
+      {{- .Delete "articles" -}}
+    {{- end -}}
     {{- if not .Date.IsZero -}}
       <span class="entry-date">
         <time datetime="{{ .Date }}">
