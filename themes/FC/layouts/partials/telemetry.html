@@ -56,7 +56,8 @@
         .legend-item.segment-{{ $i }}:hover {
           font-weight: bold;
         }
-        .chart:has(.legend-item.segment-{{ $i }}:hover) .donut-segment.segment-{{ $i }} {
+        .chart:has(.legend-item.segment-{{ $i }}:hover) .donut-segment.segment-{{ $i }},
+        .donut-segment.segment-{{ $i }}:hover {
           stroke-width: 6;
         }
       {{- end -}}
