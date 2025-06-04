@@ -1,5 +1,7 @@
 {{/* Telemetry Chart Partial */}}
 
+{{- $maxEntries := site.Params.telemetryMaxEntries | default 20 -}}
+
 {{/* Fetch and Unmarshal Telemetry JSON Data. */}}
 {{- $data := dict -}}
 {{- $path := "data.json" -}}
@@ -15,92 +17,117 @@
   {{- errorf "Unable to get page resource %q" $path -}}
 {{- end -}}
 
-{{/* Set array of data keys for legend. */}}
-{{- $keys := slice -}}
-{{- range $k1, $v1 := $data -}}
-  {{- $keys = $keys | append $k1 -}}
-{{- end -}}
-
-{{/* Calculate total sum of values. */}}
-{{- $total := 0 -}}
-{{- range $k2, $v2 := $data.language -}}
-    {{- $total = add $total $v2 -}}
-{{- end -}}
-
-{{/* Set entries with names, values and percentages. */}}
-{{- $entries := slice -}}
-{{- range $k3, $v3 := $data.language -}}
-  {{- $percentage := div (math.Round (mul (div $v3 $total) 1000)) 10 -}}
-  {{- $entries = $entries | append (dict "name" $k3 "value" $v3 "percentage" $percentage) -}}
-{{- end -}}
-
-{{- $entries = sort $entries "percentage" "desc" -}}
-{{- $totalEntries := len $entries -}}
-
-{{/* Assign colors to chart segments using hue gradient. */}}
-{{- $coloredEntries := slice -}}
-{{- range $i, $entry := $entries -}}
-  {{/* Define hue: from Blue (240) to Red (0) */}}
-  {{- $hue := sub 300 (div (mul 300 $i) (sub $totalEntries 1)) -}}
-  {{- $color := printf "hsl(%d, 100%%, 50%%)" $hue -}}
-  {{- $entry = merge $entry (dict "color" $color) -}}
-  {{- $coloredEntries = $coloredEntries | append $entry -}}
-{{- end -}}
-
 <div class="content">
-  <figure class="chart">
-    <style>
-      {{/* Generate inline CSS for chart and legend hover. */}}
-      {{- range $i, $_ := $entries -}}
-        .chart:has(.donut-segment.segment-{{ $i }}:hover) .legend-item.segment-{{ $i }},
-        .legend-item.segment-{{ $i }}:hover {
-          font-weight: bold;
-        }
-        .chart:has(.legend-item.segment-{{ $i }}:hover) .donut-segment.segment-{{ $i }},
-        .donut-segment.segment-{{ $i }}:hover {
-          stroke-width: 6;
-        }
-      {{- end -}}
-    </style>
+  {{/* Set array of data keys for legend. */}}
+  {{- range $key, $slice := $data -}}
+    {{- $cleanKey := replaceRE "[^a-zA-Z0-9]+" " " (replace $key "$" "") -}}
+    {{- if not (hasSuffix $cleanKey "s") -}}
+      {{- $cleanKey = printf "%ss" $cleanKey -}}
+    {{- end -}}
 
-    <svg class="donut" width="100%" height="100%" viewBox="0 0 40 40" role="img">
-      <title>
-        {{- add (index $keys 2) "s" -}}
-      </title>
-      <circle class="donut-hole" cx="20" cy="20" r="15.9" fill="#fff" role="presentation"></circle>
-      <circle class="donut-ring" cx="20" cy="20" r="15.9" fill="transparent" stroke="#d2d3d4" stroke-width="4" role="presentation"></circle>
-      {{- $offset := 0 -}}
-      {{- range $i, $entry2 := $coloredEntries -}}
-        <circle class="donut-segment segment-{{ $i }}" cx="20" cy="20" r="15.9" fill="transparent" transform="rotate(-90 20 20)"
-          stroke="{{ $entry2.color }}"
-          stroke-width="4" stroke-dasharray="{{ $entry2.percentage }} 100" stroke-dashoffset="{{ $offset }}">
-          <title>
-            {{ $entry2.name }} — {{ $entry2.value }} ({{ $entry2.percentage }}%)
-          </title>
-        </circle>
-        {{- $offset = sub $offset $entry2.percentage -}}
-      {{- end -}}
-      <g class="donut-text">
-        <text x="50%" y="50%" class="donut-number">
-          {{ $totalEntries }}
-        </text>
-        <text x="50%" y="50%" class="donut-label">
-          {{- add (index $keys 2) "s" -}}
-        </text>
-      </g>
-    </svg>
+    {{/* Calculate total sum of values. */}}
+    {{- $total := 0 -}}
+    {{- range $k1, $v1 := $slice -}}
+      {{- $total = add $total $v1 -}}
+    {{- end -}}
 
-    <ul class="donut-legend" aria-hidden="true" role="presentation" style="text-align: left;">
-      {{- range $i, $entry3 := $coloredEntries -}}
-        <li class="legend-item segment-{{ $i }}">
-          <span class="circle" style="background:{{ $entry3.color | safeCSS }}"></span>
-          {{ $entry3.name }}: {{ $entry3.value }} users ({{ $entry3.percentage }} %)
-        </li>
+    {{/* Set entries with names, values and percentages. */}}
+    {{- $entries := slice -}}
+    {{- range $k2, $v2 := $slice -}}
+      {{- $percentage := div (math.Round (mul (div $v2 $total) 1000)) 10 -}}
+      {{- $entries = $entries | append (dict "name" $k2 "value" $v2 "percentage" $percentage) -}}
+    {{- end -}}
+
+    {{/* Sort by percentage and limit entries shown. */}}
+    {{- $entries = sort $entries "percentage" "desc" -}}
+    {{- $limitEntries := first $maxEntries $entries -}}
+
+    {{/* Aggregate other entries. */}}
+    {{- $value2 := 0 -}}
+    {{- $percentage2 := 0 -}}
+    {{- range $k3, $v3 := after $maxEntries $entries -}}
+      {{- $value2 = add $value2 $v3.value -}}
+      {{- $percentage2 = div (math.Round (mul (add $percentage2 $v3.percentage) 10)) 10 -}}
+    {{- end -}}
+    {{- $others := slice | append (dict "name" "Others" "value" $value2 "percentage" $percentage2 "color" "hsl(0, 0%, 70%)") -}}
+
+
+    {{/* Assign colors to chart segments using hue gradient. */}}
+    {{- $coloredEntries := slice -}}
+    {{- range $i, $entry := $limitEntries -}}
+      {{/* Define hue: from Blue (240) to Red (0) */}}
+      {{- $hue := sub 300 (div (mul 300 $i) (sub (len $limitEntries) 1)) -}}
+      {{- $color := printf "hsl(%d, 100%%, 50%%)" $hue -}}
+      {{- $entry = merge $entry (dict "color" $color) -}}
+      {{- $coloredEntries = $coloredEntries | append $entry -}}
+    {{- end -}}
+    {{ range $i, $v4 := $others }}
+      {{- if ne $v4.value 0 -}}
+        {{- $coloredEntries = $coloredEntries | append $others -}}
       {{- end -}}
-        <li>
-          <span class="circle"></span>
-          Total: {{ $total }} users
-        </li>
-    </ul>
-  </figure>
+    {{- end -}}
+
+    <figure class="chart">
+      <style>
+        {{/* Generate inline CSS for chart and legend hover. */}}
+        {{- range $i, $_ := $coloredEntries -}}
+          .chart:has(.donut-segment.segment-{{ $i }}:hover) .legend-item.segment-{{ $i }},
+          .legend-item.segment-{{ $i }}:hover {
+            font-weight: bold;
+          }
+          .chart:has(.legend-item.segment-{{ $i }}:hover) .donut-segment.segment-{{ $i }},
+          .donut-segment.segment-{{ $i }}:hover {
+            stroke-width: 6;
+          }
+        {{- end -}}
+      </style>
+
+      <svg class="donut" width="100%" height="100%" viewBox="0 0 40 40" role="img">
+        <title>
+          {{- strings.Title $cleanKey -}}
+        </title>
+        <circle class="donut-hole" cx="20" cy="20" r="15.9" fill="#fff" role="presentation"></circle>
+        <circle class="donut-ring" cx="20" cy="20" r="15.9" fill="transparent" stroke="#d2d3d4" stroke-width="4" role="presentation"></circle>
+        {{- $offset := 0 -}}
+        {{- range $i, $entry2 := $coloredEntries -}}
+          <circle class="donut-segment segment-{{ $i }}" cx="20" cy="20" r="15.9" fill="transparent" transform="rotate(-90 20 20)"
+            stroke="{{ $entry2.color }}"
+            stroke-width="4" stroke-dasharray="{{ $entry2.percentage }} 100" stroke-dashoffset="{{ $offset }}">
+            <title>
+              {{- printf "%s: %v users (%v %%)" $entry2.name $entry2.value $entry2.percentage -}}
+            </title>
+          </circle>
+          {{- $offset = sub $offset $entry2.percentage -}}
+        {{- end -}}
+        <g class="donut-text">
+          <text x="50%" y="50%" class="donut-number">
+            {{ len $entries }}
+          </text>
+          <text x="50%" y="50%" class="donut-label">
+            {{- $lines := split $cleanKey " " -}}
+            {{- range $i, $line := $lines -}}
+              {{- if eq $i 0 -}}
+                <tspan x="50%" dy="0em">{{ $line }}</tspan>
+              {{- else -}}
+                <tspan x="50%" dy="0.2rem">{{ $line }}</tspan>
+              {{- end -}}
+            {{- end -}}
+          </text>
+        </g>
+      </svg>
+
+      <ul class="donut-legend" aria-hidden="true" role="presentation" style="text-align: left;">
+        {{- range $i, $entry3 := $coloredEntries -}}
+          <li class="legend-item segment-{{ $i }}">
+            <span class="circle" style="background:{{ $entry3.color | safeCSS }}"></span>
+            {{- printf "%s: %v users (%v %%)" $entry3.name $entry3.value $entry3.percentage -}}
+          </li>
+        {{- end -}}
+          <li>
+            <span class="circle"></span>
+            Total: {{ $total }} users
+          </li>
+      </ul>
+    </figure>
+  {{- end -}}
 </div>
