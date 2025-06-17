@@ -114,11 +114,6 @@
     <p class="entry-description">
       {{- if .Description -}}
         {{ .Description | .RenderString }}
-      {{- else -}}
-        {{ .Summary | .RenderString }}
-        {{- if .Truncated -}}
-          ...
-        {{- end -}}
       {{- end -}}
     </p>
     {{- end -}}
