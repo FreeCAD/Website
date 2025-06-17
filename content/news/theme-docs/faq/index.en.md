@@ -4,6 +4,7 @@ description: "Frequently Asked Questions"
 date: 2021-01-20
 author: "FreeCAD"
 draft: false
+categories: docs
 cover:
   image: 6.webp
   caption: "a cover caption"

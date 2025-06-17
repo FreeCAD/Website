@@ -4,6 +4,7 @@ description: "Lorem Ipsum Dolor Si Amet"
 date: 2019-03-09
 author: "FreeCAD"
 draft: false
+categories: docs
 tags:
   - example
 cover:

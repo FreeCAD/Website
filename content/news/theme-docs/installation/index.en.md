@@ -4,6 +4,7 @@ description: "Read Install and Update instructions here"
 date: 2021-01-20
 author: "FreeCAD"
 draft: false
+categories: docs
 cover:
   image: 3.webp
   caption: "a cover caption"

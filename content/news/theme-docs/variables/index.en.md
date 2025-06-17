@@ -4,6 +4,7 @@ description: "List of Front Matter variables used by FC Theme"
 date: 2021-01-20
 author: "FreeCAD"
 draft: false
+categories: docs
 cover:
   image: 7.webp
   caption: "a cover caption"
