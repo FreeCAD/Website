@@ -14,13 +14,23 @@
 {{- end -}}
 
 {{- if not $cover -}}
-  {{- $section := .Section | default "default" -}}
-  {{- $sectionPage := site.GetPage (printf "/%s" $section) -}}
-  {{- if $sectionPage -}}
-    {{- with $sectionPage.Params.cover.image -}}
-      {{- $cover = ($sectionPage.Resources.ByType "image").GetMatch (printf "*%s*" .) -}}
+  {{- $sectionPage := site.GetPage (printf "/%s" .Section) -}}
+  {{- $category := .Params.categories -}}
+  {{- if $category -}}
+    {{- with $sectionPage -}}
+      {{- $cover = ($sectionPage.Resources.ByType "image").GetMatch (printf "*%s*" $category) -}}
     {{- end -}}
-    {{- $alt = ($sectionPage.Params.cover.alt | default $alt) -}}
+    {{- if $cover -}}
+      {{- $alt = printf "%s cover" $category -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if not $cover -}}
+    {{- if $sectionPage -}}
+      {{- with $sectionPage.Params.cover.image -}}
+        {{- $cover = ($sectionPage.Resources.ByType "image").GetMatch (printf "*%s*" .) -}}
+      {{- end -}}
+      {{- $alt = ($sectionPage.Params.cover.alt | default $alt) -}}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
 
