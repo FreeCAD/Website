@@ -77,7 +77,7 @@ Some of the other changes are:
 
 - **farleyrunkel** fixed a bug where searching a model tree wouldn't work for numbers.
 
-- **PaddleStroke** moved the '+'' tab of the TabBar workbench selector to the left so that it wouldn't be hidden by default with many workbenches enabled.
+- **PaddleStroke** moved the '+' tab of the TabBar workbench selector to the left so that it wouldn't be hidden by default with many workbenches enabled.
 
 - **realthunder** fixed a problem with incorrect referencing of App::Part child object's CopyOnChangeGroup.
 

@@ -1,5 +1,5 @@
 ---
-title: 'Forged In FreeCAD: Erika''s ''Not a Moon'''
+title: "Forged In FreeCAD: Erika's 'Not a Moon'"
 date: 2023-11-09
 author: Jo Hinchliffe
 draft: false

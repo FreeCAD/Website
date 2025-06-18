@@ -27,7 +27,7 @@ This week in FreeCAD development:
 
 - maxwxyz updated the context menu with a toggle for suppress and updated the icon for assembly's recompute command.
 
-- PaddleStroke did a small reorganization of toolbars in Sketcher, fixed an issue with the TabBar workspace switcher, and removed "Project Shape"" from TechDraw's toolbar.
+- PaddleStroke did a small reorganization of toolbars in Sketcher, fixed an issue with the TabBar workspace switcher, and removed "Project Shape" from TechDraw's toolbar.
 
 - MisterMakerNL contributed an overlay fix for default windows style and various light themes.
 
