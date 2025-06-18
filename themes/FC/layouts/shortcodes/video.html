@@ -6,7 +6,7 @@
 {{- else -}}
   {{- $name := replace $src (printf ".%s" (path.Ext $src)) "" -}}
   {{- range $extension := slice "jpg" "jpeg" "png" "webp" -}}
-    {{- with .Page.Resources.Match (printf "%s-*.%s" $name $extension) | first -}}
+    {{- with (first 1 ($.Page.Resources.Match (printf "%s-*.%s" $name $extension))) -}}
       {{- $poster = . -}}
       {{- break -}}
     {{- end -}}
