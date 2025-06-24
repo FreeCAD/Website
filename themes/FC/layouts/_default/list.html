@@ -53,8 +53,14 @@
 {{- $pages := where (.RegularPages | lang.Merge .Sites.Default.RegularPages) "Section" .Section -}}
 
 {{- if .IsHome -}}
-  {{/* get the 6 latest regular pages in the main section (defined in hugo.yaml or number of pages, currently "news"), except the ones with the "hero" parameters in front matter */}}
-  {{- $pages = where (where (site.RegularPages | lang.Merge .Sites.Default.RegularPages) "Section" "in" site.Params.mainSections) "Params.hero" "ne" true | first 6 -}}
+  {{/* get the latest news articles by category except the ones with "hero" parameters in front matter */}}
+  {{- $homePages := slice -}}
+  {{- range .Site.Taxonomies.categories.ByCount -}}
+    {{- range first 1 (where .Pages "Params.hero" "ne" true) -}}
+      {{- $homePages = $homePages | append . -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $pages = $homePages -}}
 {{- end -}}
 
 {{- if eq .Type "contribute" }}
