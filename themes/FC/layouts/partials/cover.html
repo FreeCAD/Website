@@ -1,5 +1,6 @@
 {{- $cover := false -}}
 {{- $alt := "" -}}
+{{- $anchor := "" -}}
 
 {{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif" "webp") -}}
 {{- $prod := (hugo.IsProduction | or (eq site.Params.env "production")) -}}
@@ -10,7 +11,8 @@
 {{- $pageCover := .Params.cover.image -}}
 {{- if $pageCover -}}
   {{- $cover = (.Resources.ByType "image").GetMatch (printf "*%s*" $pageCover) -}}
-  {{- $alt = (.Params.cover.alt | default .Params.cover.caption | plainify) -}}
+  {{- $anchor = .Params.cover.anchor | default "Smart" | plainify -}}
+  {{- $alt = .Params.cover.alt | default .Params.cover.caption | plainify -}}
 {{- end -}}
 
 {{- if not $cover -}}
@@ -39,12 +41,12 @@
       <img
         srcset="
           {{- if (ge $cover.Width (index $sizes 1)) -}}
-            {{- printf "%s %s" (($cover.Crop (printf "%sx%s Smart %s" (index $sizes 1) (index $sizes 0) $resizeFormat)).RelPermalink) (printf "%sw, " (index $sizes 0)) -}}
+            {{- printf "%s %s" (($cover.Fill (printf "%sx%s %s %s" (index $sizes 1) (index $sizes 0) $anchor $resizeFormat)).RelPermalink) (printf "%sw, " (index $sizes 0)) -}}
           {{- end -}}
           {{- if (ge $cover.Width (index $sizes 2)) -}}
-            {{- printf "%s %s" (($cover.Crop (printf "%sx%s Smart %s" (index $sizes 1) (index $sizes 2) $resizeFormat)).RelPermalink) (printf "%sw, " (index $sizes 1)) -}}
-            {{- printf "%s %s" (($cover.Crop (printf "%sx%s Smart %s" (index $sizes 2) (index $sizes 1) $resizeFormat)).RelPermalink) (printf "%sw, " (index $sizes 2)) -}}
-            {{- printf "%s %s" (($cover.Crop (printf "%sx%s Smart %s" (index $sizes 3) (index $sizes 2) $resizeFormat)).RelPermalink) (printf "%sw, " (index $sizes 3)) -}}
+            {{- printf "%s %s" (($cover.Fill (printf "%sx%s %s %s" (index $sizes 1) (index $sizes 2) $anchor $resizeFormat)).RelPermalink) (printf "%sw, " (index $sizes 1)) -}}
+            {{- printf "%s %s" (($cover.Fill (printf "%sx%s %s %s" (index $sizes 2) (index $sizes 1) $anchor $resizeFormat)).RelPermalink) (printf "%sw, " (index $sizes 2)) -}}
+            {{- printf "%s %s" (($cover.Fill (printf "%sx%s %s %s" (index $sizes 3) (index $sizes 2) $anchor $resizeFormat)).RelPermalink) (printf "%sw, " (index $sizes 3)) -}}
           {{- end -}}
           {{ $cover.RelPermalink }} {{ printf "%dw" ($cover.Width) }}"
         sizes="
