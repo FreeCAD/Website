@@ -101,12 +101,14 @@ headless_cms:
       fields:
         - {label: "Article Title", name: "title", widget: "string", i18n: true, required: [en], hint: "Use a similar title structure as existing articles for coherence"}
         - {label: "Article Description", name: "description", i18n: true, widget: "string"}
-        - {label: "Publish Date", name: "date", widget: "datetime", i18n: duplicate}
+        - {label: "Publication Date", name: "date", widget: "datetime", i18n: duplicate}
         - {label: "Article Author", name: "author", widget: "string", default: "FreeCAD", i18n: duplicate, hint: "Use a similar author name as existing ones for coherence", pattern: ['.{3,}', "Must have at least 3 characters"]}
         - {label: "Draft", name: "draft", widget: "boolean", default: true, i18n: duplicate}
         - {label: "Article Category", name: "categories", widget: "select", options: ["announcement", "event", "feature", "showcase", "tutorial", "update"], i18n: duplicate}
         - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
-        - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
+        - {label: "Cover image", name: "cover.image", widget: "image", i18n: duplicate}
+        - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
+        - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
         - label: "Hero"
           name: "params.hero"
           widget: "object"
@@ -133,12 +135,13 @@ headless_cms:
         - name: homepage
           label: Homepage
           file: content/homepage/index.{{locale}}.md
+          icon: home
           media_folder: ""
           public_folder: ""
           i18n: true
           fields:
-            - {label: "Homepage Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
-            - {label: "Homepage Description", name: "description", widget: "string", i18n: true}
+            - {label: "Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
+            - {label: "Description", name: "description", widget: "string", i18n: true}
             - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
             - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
     - name: features
@@ -156,10 +159,12 @@ headless_cms:
           public_folder: ""
           i18n: true
           fields:
-            - {label: "Features Page Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
-            - {label: "Features Page Description", name: "description", widget: "string", i18n: true}
+            - {label: "Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
+            - {label: "Description", name: "description", widget: "string", i18n: true}
             - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
-            - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
+            - {label: "Cover image", name: "cover.image", widget: "image", i18n: duplicate}
+            - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
+            - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
             - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
     - name: download
       label: Download
@@ -176,10 +181,12 @@ headless_cms:
           public_folder: ""
           i18n: true
           fields:
-            - {label: "Download Page Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
-            - {label: "Download Page Description", name: "description", widget: "string", i18n: true}
+            - {label: "Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
+            - {label: "Description", name: "description", widget: "string", i18n: true}
             - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
-            - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
+            - {label: "Cover image", name: "cover.image", widget: "image", i18n: duplicate}
+            - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
+            - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
             - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
     - name: releases
       label: Releases
@@ -198,7 +205,9 @@ headless_cms:
         - {label: "Release Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
         - {label: "Release Description", name: "description", widget: "string", i18n: true}
         - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
-        - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
+        - {label: "Cover image", name: "cover.image", widget: "image", i18n: duplicate}
+        - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
+        - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
         - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
     - name: community
       label: Community
@@ -215,10 +224,12 @@ headless_cms:
           public_folder: ""
           i18n: true
           fields:
-            - {label: "Community Page Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
-            - {label: "Community Page Description", name: "description", widget: "string", i18n: true}
+            - {label: "Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
+            - {label: "Description", name: "description", widget: "string", i18n: true}
             - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
-            - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
+            - {label: "Cover image", name: "cover.image", widget: "image", i18n: duplicate}
+            - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
+            - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
             - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
     - name: documentation
       label: Documentation
@@ -235,10 +246,12 @@ headless_cms:
           public_folder: ""
           i18n: true
           fields:
-            - {label: "Documentation Page Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
-            - {label: "Documentation Page Description", name: "description", widget: "string", i18n: true}
+            - {label: "Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
+            - {label: "Description", name: "description", widget: "string", i18n: true}
             - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
-            - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
+            - {label: "Cover image", name: "cover.image", widget: "image", i18n: duplicate}
+            - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
+            - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
             - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
     - name: contribute
       label: Contribute
@@ -256,10 +269,12 @@ headless_cms:
           public_folder: ""
           i18n: true
           fields:
-            - {label: "Contribute Page Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
-            - {label: "Contribute Page Description", name: "description", widget: "string", i18n: true}
+            - {label: "Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
+            - {label: "Description", name: "description", widget: "string", i18n: true}
             - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
-            - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
+            - {label: "Cover image", name: "cover.image", widget: "image", i18n: duplicate}
+            - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
+            - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
             - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
     - name: donate
       label: Donate
@@ -274,5 +289,7 @@ headless_cms:
       fields:
         - {label: "Donate Page Title", name: "title", widget: "string", pattern: ['.{3,}', "Must have at least 3 characters"]}
         - {label: "Donate Page Description", name: "description", widget: "string"}
-        - {label: "Featured Image", name: "cover.image", widget: "image"}
+        - {label: "Cover image", name: "cover.image", widget: "image", i18n: duplicate}
+        - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
+        - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
         - {label: "Content", name: "body", widget: "markdown", hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
