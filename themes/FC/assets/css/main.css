@@ -289,7 +289,7 @@ main header .entry-cover img {
 .content > :not(.block, .column) {
   padding: var(--gap) calc(var(--side) + (var(--gap) * 16));
   text-align: justify;
-  text-align-last: center;
+  text-align-last: auto;
 }
 
 .heading-anchor {
@@ -313,7 +313,7 @@ main header .entry-cover img {
 blockquote {
   margin: var(--gap) 0;
   padding: var(--gap);
-  border-inline-start: var(--border);
+  border-inline-start: calc(var(--line) * 2) solid var(--tone);
   background: var(--entry);
 }
 
@@ -411,11 +411,6 @@ pre:hover .copy-code {
 div.highlight,
 pre {
   position: relative;
-}
-
-.chroma {
-  border-radius: var(--radius);
-  background: var(--entry);
 }
 
 code {
@@ -542,6 +537,9 @@ sup:target {
 
 .content button[popovertarget]:has(img):not(a button) {
   cursor: zoom-in;
+  display: block;
+  margin: auto;
+  text-align: center;
 }
 
 

@@ -151,3 +151,28 @@ mark {
   border-radius: 0.25rem;
   background: var(--tertiary);
 }
+
+details {
+  margin: auto;
+  padding: var(--gap);
+  background: var(--entry);
+  border-radius: var(--radius);
+}
+
+details summary {
+  cursor: zoom-in;
+  margin-inline-start: var(--gap);
+  font-weight: bold;
+}
+
+details[open] summary {
+  cursor: zoom-out;
+}
+
+details p {
+  margin-bottom: 0;
+}
+
+details :is(code, blockquote, .chroma) {
+  background: var(--theme);
+}
