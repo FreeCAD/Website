@@ -12,9 +12,9 @@
     <span class="meta">
       {{- safeHTML (index site.Data.svg "categories") -}}
       <span class="categories">
-        {{- range ($.GetTerms "categories") -}}
+        {{- range (.GetTerms "categories") -}}
           <a href="{{ .Permalink }}">
-            {{ .LinkTitle | .RenderString }}
+            {{ .LinkTitle }}
           </a>
         {{- end -}}
       </span>
@@ -26,9 +26,9 @@
   <span class="meta">
     {{- safeHTML (index site.Data.svg "tags") -}}
     <span class="tags">
-      {{- range ($.GetTerms "tags") -}}
+      {{- range (.GetTerms "tags") -}}
         <a href="{{ .Permalink }}">
-          {{ .LinkTitle | .RenderString }}
+          {{ .LinkTitle }}
         </a>
       {{- end -}}
     </span>

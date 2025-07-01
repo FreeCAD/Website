@@ -75,6 +75,22 @@
 {{- end -}}
 
 <footer class="single-footer">
+  {{- if .Params.tags -}}
+    <ul class="terms">
+      {{- $taxonomy := site.Taxonomies.tags -}}
+      {{- range .GetTerms "tags" -}}
+        {{- $count := len ($taxonomy.Get .Title) -}}
+        <li>
+          <a href="{{ .Permalink }}">
+            {{ .LinkTitle }}
+            <sup>
+              {{ $count }}
+            </sup>
+          </a>
+        </li>
+      {{- end -}}
+    </ul>
+  {{- end -}}
   {{- if (.Param "ShowPaginationLinks") -}}
     {{- partial "pagination_links.html" . -}}
   {{- end -}}
