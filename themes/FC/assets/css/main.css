@@ -443,7 +443,8 @@ pre code {
   font-family: var(--monospace);
 }
 
-sup a {
+sup:has(a) {
+  margin-inline-start: 0.5rem;
   box-shadow: none;
   font-family: var(--monospace);
   color: var(--link-hover-color);
@@ -455,7 +456,7 @@ sup a:hover {
 }
 
 sup a:before {
-  content: " [";
+  content: "[";
 }
 
 sup a:after {
@@ -466,6 +467,7 @@ sup:target {
   padding: 0.5rem;
   background: var(--theme);
   border-radius: var(--radius);
+  scroll-margin-top: 25vh;
 }
 
 
@@ -904,6 +906,7 @@ sup:target {
   padding: 0.5rem;
   background: var(--theme);
   border-radius: var(--radius);
+  scroll-margin-top: 25vh;
 }
 
 .footnotes ol:before {
