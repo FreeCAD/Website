@@ -328,6 +328,10 @@ blockquote p {
   margin: 0.5rem 0 0;
 }
 
+blockquote :is(code, blockquote, .chroma) {
+  background: var(--theme);
+}
+
 table th,
 table:not(.highlighttable, .highlight table, .gist .highlight) td {
   min-width: 5rem;
