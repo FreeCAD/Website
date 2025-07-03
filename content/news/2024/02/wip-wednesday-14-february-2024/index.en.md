@@ -1,10 +1,11 @@
 ---
-title: 'WIP Wednesday: 14 February 2024'
+title: 'WIP Wednesday: 14 February 2024'
 date: 2024-02-14
 author: Aleksandr Prokudin
 draft: false
 categories: update
-tags: []
+tags:
+- WIP
 cover:
   image:
   caption:
@@ -29,7 +30,7 @@ This week in FreeCAD development:
 
 - **LemonBoy** added an option to dim the navigation cube when it's not in the focus. He also fixed the extrusion behavior when the height is zero.
 
-- **Zolko-123** improved the LCS representation in the 3D window to make it easier to select the point/vertex on which the LCS is attached.
+- **Zolko-123** improved the LCS representation in the  window to make it easier to select the point/vertex on which the LCS is attached.
 
 - **marioalexis84** made further improvements in the FEM workbench: added support for cyclic symmetry and fixed several issues.
 

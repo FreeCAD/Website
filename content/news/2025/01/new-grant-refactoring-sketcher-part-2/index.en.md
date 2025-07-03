@@ -1,5 +1,5 @@
 ---
-title: 'New grant: refactoring Sketcher, part 2'
+title: 'New Grant: refactoring Sketcher, part 2'
 date: 2025-01-31
 author: Aleksandr Prokudin
 draft: false

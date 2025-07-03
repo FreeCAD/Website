@@ -1,5 +1,5 @@
 ---
-title: 'New in 0.20: Improved OpenSCAD Compatibility'
+title: 'New in 0.20: Improved OpenSCAD compatibility'
 date: 2022-12-14
 author: Chris Hennes
 draft: false

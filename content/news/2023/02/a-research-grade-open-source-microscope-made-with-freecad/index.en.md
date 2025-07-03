@@ -1,11 +1,12 @@
 ---
-title: A Research Grade Open Source Microscope - Made with FreeCAD
+title: A Research Grade Open Source Microscope
 date: 2023-02-13
 author: Chris Hennes
 draft: false
 categories: showcase
 tags:
 - user story
+- 3D printing
 - research
 - microscope
 cover:

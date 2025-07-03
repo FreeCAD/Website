@@ -1,5 +1,5 @@
 ---
-title: FreeCAD Forum Performance Issues
+title: FreeCAD Forum performance issues
 date: 2025-01-30
 author: Jo Hinchliffe
 draft: false

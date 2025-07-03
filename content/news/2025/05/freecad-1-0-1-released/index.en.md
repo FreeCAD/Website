@@ -1,5 +1,5 @@
 ---
-title: FreeCAD 1.0.1 released
+title: FreeCAD 1.0.1 Released
 date: 2025-05-16
 author: Aleksandr Prokudin
 draft: false

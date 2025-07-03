@@ -81,7 +81,7 @@
       {{- range .GetTerms "tags" -}}
         {{- $count := len ($taxonomy.Get .Title) -}}
         <li>
-          <a href="{{ .Permalink }}">
+          <a href="{{ .RelPermalink }}">
             {{ .LinkTitle }}
             <sup>
               {{ $count }}

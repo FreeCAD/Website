@@ -1,5 +1,5 @@
 ---
-title: 'New grants approved: variant parts, debugging with CLion and VSCode, homebrew build update'
+title: 'New Grants approved: Variant Parts, debugging with CLion and VSCode, Homebrew build update'
 date: 2024-09-24
 author: Aleksandr Prokudin
 draft: false

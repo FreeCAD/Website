@@ -1,5 +1,5 @@
 ---
-title: 'Forged in FreeCAD: Boat Hull Hydrostatic and Stability Analysis'
+title: 'Forged in FreeCAD: Boat hull hydrostatic and stability analysis'
 date: 2024-06-21
 author: Jo Hinchliffe
 draft: false

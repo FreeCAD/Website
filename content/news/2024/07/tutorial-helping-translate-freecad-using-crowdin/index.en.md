@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Helping Translate FreeCAD using Crowdin'
+title: 'Tutorial: Helping translate FreeCAD using Crowdin'
 date: 2024-07-04
 author: Jo Hinchliffe
 draft: false

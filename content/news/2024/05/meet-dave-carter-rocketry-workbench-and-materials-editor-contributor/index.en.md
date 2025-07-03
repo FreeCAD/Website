@@ -1,10 +1,11 @@
 ---
-title: Meet Dave Carter, Rocketry Workbench and Materials Editor Contributor
+title: Meet Dave Carter, Rocketry Workbench and Materials Editor contributor
 date: 2024-05-27
 author: Jo Hinchliffe
 draft: false
-categories: announcement
-tags: []
+categories: showcase
+tags:
+- contributor
 cover:
   image: rocket_WB.png
   caption: Rocket WB

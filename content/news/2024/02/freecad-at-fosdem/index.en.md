@@ -4,7 +4,8 @@ date: 2024-02-01
 author: Jo Hinchliffe
 draft: false
 categories: announcement
-tags: []
+tags:
+- FOSDEM
 cover:
   image: K_Level_One.png
   caption: FreeCAD at FOSDEM

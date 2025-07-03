@@ -1,10 +1,11 @@
 ---
-title: "Forged In FreeCAD: Angharad's Bin Repair"
+title: "Forged In FreeCAD: Angharad's bin repair"
 date: 2024-01-16
 author: Jo Hinchliffe
 draft: false
 categories: announcement
-tags: []
+tags:
+- 3D printing
 cover:
   image:
   caption:

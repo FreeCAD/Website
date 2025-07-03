@@ -31,7 +31,7 @@
       {{- with site.GetPage (printf "/%s/%s" $type $name) -}}
         <li>
           <a href="{{ .RelPermalink }}">
-            {{ .Name -}}
+            {{ .LinkTitle -}}
             <sup>
               {{ $count }}
             </sup>

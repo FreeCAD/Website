@@ -4,7 +4,7 @@ description: "Un nouveau chapitre pour le CAD libre et open-source !"
 date: 2024-05-18T21:22:57+12:00
 author: "FreeCAD"
 tags:
-  - 1.0
+  - "1.0"
 cover:
   image: 9.webp
   caption: "a cover caption"

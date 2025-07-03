@@ -1,5 +1,5 @@
 ---
-title: 'New grants: electromagnetic system simulations and bug triage'
+title: 'New Grants: electromagnetic system simulations and bug triage'
 date: 2024-02-27
 author: Aleksandr Prokudin
 draft: false

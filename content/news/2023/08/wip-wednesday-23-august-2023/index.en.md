@@ -1,10 +1,11 @@
 ---
-title: 'WIP Wednesday: 23 August 2023'
+title: 'WIP Wednesday: 23 August 2023'
 date: 2023-08-23
 author: Chris Hennes
 draft: false
 categories: update
-tags: []
+tags:
+- WIP
 cover:
   image:
   caption:

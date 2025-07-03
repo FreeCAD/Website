@@ -1,5 +1,5 @@
 ---
-title: 'Forged in FreeCAD: STEMFIE, 3D Printable Open Source Construction Kit'
+title: 'Forged in FreeCAD: STEMFIE, 3D printable Open Source construction kit'
 date: 2024-07-13
 author: Jo Hinchliffe
 draft: false

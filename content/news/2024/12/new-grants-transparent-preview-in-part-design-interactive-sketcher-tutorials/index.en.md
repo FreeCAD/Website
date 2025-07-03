@@ -1,5 +1,5 @@
 ---
-title: 'New grants: transparent preview in Part Design, interactive Sketcher tutorials'
+title: 'New Grants: transparent preview in Part Design, interactive Sketcher tutorials'
 date: 2024-12-02
 author: Aleksandr Prokudin
 draft: false

@@ -7,7 +7,7 @@ draft: false
 categories: announcement
 tags:
   - release
-  - 1.0
+  - "1.0"
 cover:
   image: 8.webp
   caption: "a cover caption"

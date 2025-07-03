@@ -1,5 +1,5 @@
 ---
-title: Bringing Stability to the FreeCAD Release Process
+title: Bringing stability to the FreeCAD Release process
 date: 2023-10-30
 author: Chris Hennes
 draft: false

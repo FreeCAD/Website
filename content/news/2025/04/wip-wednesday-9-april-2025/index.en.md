@@ -1,10 +1,11 @@
 ---
-title: 'WIP wednesday: 9 April 2025'
+title: 'WIP Wednesday: 9 April 2025'
 date: 2025-04-09
 author: Aleksandr Prokudin
 draft: false
 categories: update
-tags: []
+tags:
+- WIP
 cover:
   image:
   caption:

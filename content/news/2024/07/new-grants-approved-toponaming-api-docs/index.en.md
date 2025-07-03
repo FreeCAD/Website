@@ -1,5 +1,5 @@
 ---
-title: 'New grants: further toponaming work, better API documentation'
+title: 'New Grants: further Toponaming work, better API documentation'
 date: 2024-07-02
 author: Aleksandr Prokudin
 draft: false

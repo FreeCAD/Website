@@ -1,10 +1,11 @@
 ---
-title: 'Tutorial: Create Custom TechDraw Templates.'
+title: 'Tutorial: Create custom TechDraw Templates.'
 date: 2023-12-19
 author: Jo Hinchliffe
 draft: false
 categories: tutorial
-tags: []
+tags:
+- TechDraw
 cover:
   image: techdrawing_wedge_labelled-1.png
   caption: Techdrawing wedge

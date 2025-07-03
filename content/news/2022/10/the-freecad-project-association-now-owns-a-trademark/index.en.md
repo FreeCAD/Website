@@ -6,6 +6,7 @@ draft: false
 categories: announcement
 tags:
 - FPA
+- logo
 cover:
   image: Screenshot-from-2022-10-07-12-45-06.png
   caption: Registration certificate

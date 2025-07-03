@@ -1,5 +1,5 @@
 ---
-title: Toponaming and 0.21 status update
+title: Toponaming and 0.21 Status Update
 date: 2023-07-14
 author: Chris Hennes
 draft: false

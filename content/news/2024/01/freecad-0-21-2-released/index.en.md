@@ -6,6 +6,7 @@ draft: false
 categories: announcement
 tags:
 - release
+- "0.21"
 cover:
   image:
   caption:

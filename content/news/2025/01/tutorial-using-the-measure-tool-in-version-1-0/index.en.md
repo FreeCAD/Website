@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Using the Measure tool in Version 1.0'
+title: 'Tutorial: Using the Measure Tool in Version 1.0'
 date: 2025-01-20
 author: Jo Hinchliffe
 draft: false

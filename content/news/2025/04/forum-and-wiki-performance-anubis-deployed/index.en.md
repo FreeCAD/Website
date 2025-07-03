@@ -1,5 +1,5 @@
 ---
-title: 'Forum and Wiki Performance: Anubis Deployed'
+title: 'Forum and Wiki Performance: Anubis deployed'
 date: 2025-04-30
 author: Jo Hinchliffe
 draft: false

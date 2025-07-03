@@ -1,5 +1,5 @@
 ---
-title: The annual grant program is live
+title: The annual Grant program is live
 date: 2024-03-01
 author: Aleksandr Prokudin
 draft: false

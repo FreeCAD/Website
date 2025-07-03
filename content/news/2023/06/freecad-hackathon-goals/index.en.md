@@ -4,7 +4,8 @@ date: 2023-06-20
 author: Chris Hennes
 draft: false
 categories: announcement
-tags: []
+tags:
+- hackathon
 cover:
   image:
   caption:

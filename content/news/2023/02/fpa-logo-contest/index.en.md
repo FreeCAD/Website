@@ -7,6 +7,7 @@ categories: announcement
 tags:
 - FPA
 - contest
+- logo
 cover:
   image:
   caption:

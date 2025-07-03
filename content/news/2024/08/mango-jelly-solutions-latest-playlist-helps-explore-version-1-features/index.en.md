@@ -1,5 +1,5 @@
 ---
-title: Mango Jelly Solutions Latest Playlist Helps Explore Version 1 Features
+title: MangoJelly Solutions latest playlist explores Version 1.0 Features
 date: 2024-08-27
 author: Jo Hinchliffe
 draft: false

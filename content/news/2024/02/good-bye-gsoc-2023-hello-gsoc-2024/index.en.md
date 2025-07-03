@@ -1,5 +1,5 @@
 ---
-title: Good bye GSoC 2023, hello GSoC 2024
+title: Good bye GSoC 2023, Hello GSoC 2024
 date: 2024-02-29
 author: Yorik van Havre
 draft: false

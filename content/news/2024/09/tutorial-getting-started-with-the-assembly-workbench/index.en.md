@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Getting Started with the Assembly Workbench'
+title: 'Tutorial: Getting started with the Assembly Workbench'
 date: 2024-09-30
 author: Jo Hinchliffe
 draft: false

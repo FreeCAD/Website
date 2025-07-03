@@ -3,8 +3,9 @@ title: 'Meet Max: Working on Bug Triage'
 date: 2024-03-22
 author: Jo Hinchliffe
 draft: false
-categories: announcement
-tags: []
+categories: showcase
+tags:
+- contributor
 cover:
   image: clip_mount.png
   caption: Clip mount

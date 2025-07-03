@@ -6,6 +6,7 @@ draft: false
 categories: showcase
 tags:
 - user story
+- 3D printing
 - PCB
 cover:
   image: PCB_solder_fren.jpg

@@ -4,7 +4,8 @@ date: 2024-11-06
 author: Aleksandr Prokudin
 draft: false
 categories: announcement
-tags: []
+tags:
+- WIP
 cover:
   image:
   caption:

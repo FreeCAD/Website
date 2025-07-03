@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Getting Started with Spreadsheets and Parametric Design'
+title: 'Tutorial: Getting started with Spreadsheets and Parametric Design'
 date: 2025-04-08
 author: Jo Hinchliffe
 draft: false

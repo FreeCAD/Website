@@ -1,10 +1,11 @@
 ---
-title: Design for 3D Printing, An Excellent Article
+title: Design for 3D Printing, an Excellent Article
 date: 2025-05-08
 author: Jo Hinchliffe
 draft: false
 categories: tutorial
-tags: []
+tags:
+- 3D printing
 cover:
   image: rahix_design_header.png
   caption: Rahix design

@@ -4,7 +4,8 @@ date: 2023-08-14
 author: Chris Hennes
 draft: false
 categories: event
-tags: []
+tags:
+- hackathon
 cover:
   image:
   caption:

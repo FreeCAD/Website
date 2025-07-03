@@ -1,10 +1,11 @@
 ---
-title: Major FEM workbench improvements for FreeCAD 1.0
+title: Major FEM Workbench improvements for FreeCAD 1.0
 date: 2024-09-28
 author: NewJoker
 draft: false
 categories: announcement
-tags: []
+tags:
+- FEM
 cover:
   image:
   caption:

@@ -1,5 +1,5 @@
 ---
-title: The second release candidate of FreeCAD 1.0 is out
+title: The second Release Candidate of FreeCAD 1.0 is out
 date: 2024-09-24
 author: Aleksandr Prokudin
 draft: false

@@ -4,7 +4,9 @@ date: 2024-03-28
 author: Aleksandr Prokudin
 draft: false
 categories: announcement
-tags: []
+tags:
+- contest
+- logo
 cover:
   image:
   caption:

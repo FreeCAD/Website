@@ -1,5 +1,5 @@
 ---
-title: Q2 2025 grant program deadline
+title: Q2 2025 Grant program deadline
 date: 2025-05-09
 author: Aleksandr Prokudin
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: 'New grant: fixes and improvements in TechDraw and PartDesign'
+title: 'New Grant: fixes and improvements in TechDraw and PartDesign'
 date: 2025-04-29
 author: Aleksandr Prokudin
 draft: false

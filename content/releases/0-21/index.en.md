@@ -1,10 +1,10 @@
 ---
-title: "FreeCAD 0.21.2"
+title: "FreeCAD 0.21"
 description: "The good old days..."
 date: 2024-04-18T21:22:57+12:00
 author: "FreeCAD"
 tags:
-  - 0.21.2
+  - 0.21
 cover:
   image: 8.webp
   caption: "a cover caption"
