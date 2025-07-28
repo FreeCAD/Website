@@ -15,7 +15,7 @@
 {{- end -}}
 
 {{- if not $cover -}}
-  {{- $sectionPage := .Site.Sites.Default.GetPage (printf "/%s" .Section) -}}
+  {{- $sectionPage := site.Sites.Default.GetPage (printf "/%s" .Section) -}}
   {{- $category := .Params.categories -}}
   {{- if $category -}}
     {{- with $sectionPage -}}
