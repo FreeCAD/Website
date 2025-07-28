@@ -19,3 +19,5 @@ params:
 ---
 
 ## This is the 1.0 release notes page.
+
+{{< toot instance="fosstodon.org" id="114907731424491143" >}}

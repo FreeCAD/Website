@@ -1,0 +1,168 @@
+/* Based partly on https://github.com/astro-community/astro-embed/tree/main/packages/astro-embed-twitter */
+
+.toot-blockquote {
+  line-height: 1.5rem;
+  border: var(--border);
+  border-radius: var(--radius);
+}
+
+.toot-header {
+  display: flex;
+  margin: var(--gap);
+  gap: var(--gap);
+}
+
+.toot-profile {
+  flex-shrink: 0;
+}
+
+.toot-profile img {
+  border-radius: 50%;
+  width: 3rem;
+  height: auto;
+}
+
+.toot-author {
+  display: flex;
+  flex-direction: column;
+}
+
+.toot-author-name {
+  font-weight: bold;
+}
+
+.toot-footer {
+  margin-top: var(--gap);
+  display: flex;
+  align-items: center;
+}
+
+[class^='toot-img-grid'],
+.toot-video-wrapper,
+.toot-media-video {
+  margin-top: var(--gap);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: calc(var(--gap) * 0.5);
+}
+
+.toot-media-img {
+  width: 100%;
+  max-height: calc(var(--width) * 0.25);
+  object-fit: cover;
+}
+
+.toot-video-wrapper {
+  border-radius: var(--radius);
+  display: block;
+  position: relative;
+}
+
+.toot-img-grid-3 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.toot-img-grid-3 img {
+  height: auto;
+}
+
+.toot-img-grid-2,
+.toot-img-grid-4 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+:is(.toot-img-grid-2, .toot-img-grid-4) img {
+  height: calc(var(--width) * 0.25);
+}
+
+.toot-sens-blur {
+  filter: blur(5rem);
+  position: relative;
+}
+
+.toot-sens-blur-no {
+  filter: none !important;
+  z-index: 9999 !important;
+  position: relative;
+}
+
+[class^='toot-img-grid'] {
+  position: relative;
+}
+
+.blur-text {
+  position: absolute;
+  font-weight: bold;
+  text-shadow: 0.125rem 0.125rem 0.1rem var(--black);
+  width: 100%;
+  top: 40%;
+  color: var(--cover);
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+
+.blur-text-no {
+  display: none !important;
+}
+
+.toot-poll-wrapper {
+  margin-top: 1rem;
+  line-height: 1rem;
+}
+
+.toot-poll-meter {
+  margin: 1rem auto;
+  position: relative;
+}
+
+.toot-poll-count {
+  position: absolute;
+  left: 2.5%;
+  top: 0.3rem;
+}
+
+.toot-poll-title {
+  position: absolute;
+  left: 12.5%;
+  top: 0.3rem;
+}
+
+.toot-poll-total {
+  margin-top: 0.5rem;
+}
+
+.toot-reply-to {
+  margin-top: 0;
+  padding-top: 0;
+  line-height: 1.5rem;
+}
+
+.toot-card {
+  margin: calc(var(--gap) * 2);
+  position: relative;
+  border: var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--secondary);
+}
+
+.toot-card:hover {
+  color: var(--link-hover-color);
+}
+
+.toot-card-image img {
+  width: 100%;
+  max-height: calc((var(--width) * 0.25) + 2rem);
+}
+
+.toot-card-content {
+  padding: var(--gap);
+}
+
+.card-title {
+  margin-top: 0;
+  font-weight: bold;
+}

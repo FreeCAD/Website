@@ -1,0 +1,158 @@
+{{/* Original code from https://github.com/mandaris/stoot */}}
+
+{{- $masIns := .Get "instance" -}}
+{{- $id := .Get "id" -}}
+{{- $enableOGCard := .Get "enableOGCard" | default "true" -}}
+{{- $urlToGet := print "https://" $masIns "/api/v1/statuses/" $id -}}
+
+{{- with try (resources.GetRemote $urlToGet) -}}
+  {{- with .Err -}}
+    <blockquote class="toot-blockquote">
+      <p class="ctr legal">[Source not online at time of site build.]</p>
+    </blockquote>
+  {{- else  with .Value -}}
+    {{- $json := unmarshal .Content -}}
+    {{- $acct := $json.account.acct -}}
+    {{- $tootLink := printf "https://%s/@%s/status/%s" $masIns $acct $id -}}
+    {{- $handleInst := printf "@%s@%s" $acct $masIns -}}
+
+    <blockquote class="toot-blockquote" cite="{{ $tootLink }}">
+      <div class="toot-header">
+        <a class="toot-profile"
+          href="https://{{ $masIns }}/@{{ $acct }}"
+          rel="noopener">
+          <img
+            src="{{ $json.account.avatar }}"
+            alt="Mastodon avatar for {{ $handleInst }}"
+            loading="lazy"
+            aria-hidden="true"
+          />
+        </a>
+        <div class="toot-author">
+          <a class="toot-author-name"
+            href="https://{{ $masIns }}/@{{ $acct }}"
+            rel="noopener">
+            {{ $json.account.display_name }}
+          </a>
+          <a class="toot-author-handle"
+            href="https://{{ $masIns }}/@{{ $acct }}"
+            rel="noopener">
+            {{ $handleInst }}
+          </a>
+        </div>
+      </div>
+
+      {{- $json.content | safeHTML -}}
+
+      {{- $images := slice -}}
+      {{- with $json.media_attachments -}}
+        {{- range . -}}
+          {{- if eq .type "image" -}}
+            {{- $images = $images | append . -}}
+          {{- end -}}
+        {{- end -}}
+
+        {{- if gt (len $images) 0 -}}
+          <div class="toot-img-grid-{{ len $images }}">
+            {{- range $img := $images -}}
+              <img
+                src="{{ $img.url }}"
+                alt="Image {{ $img.id }} from toot {{ $id }} on {{ $masIns }}"
+                class="toot-media-img {{ if $json.sensitive }}toot-sens-blur{{ end }}"
+                loading="lazy"
+                {{- if $json.sensitive }}onclick="this.classList.toggle('toot-sens-blur-no')"{{- end }}
+              />
+              {{- if $json.sensitive -}}
+                <div class="blur-text">
+                  Sensitive content<br />
+                  (flagged at origin)
+                </div>
+              {{- end -}}
+            {{- end -}}
+          </div>
+        {{- end -}}
+
+        {{- range . -}}
+          {{- if or (eq .type "video") (eq .type "gifv") -}}
+            <div class="ctr toot-video-wrapper">
+              <video {{ if eq .type "gifv" }}loop autoplay{{ end }}
+                muted playsinline controls
+                class="ctr toot-media-img {{ if $json.sensitive }} toot-sens-blur{{ end }}"
+                {{- if $json.sensitive }}onclick="this.classList.toggle('toot-sens-blur-no')"{{- end }}>
+                <source src="{{ .url }}">
+                <p class="legal ctr">
+                  (Your browser doesn't support the <code>video</code> tag.)
+                </p>
+              </video>
+              {{- if $json.sensitive -}}
+                <div class="blur-text">
+                  Sensitive content<br />
+                  (flagged at origin)
+                </div>
+              {{- end -}}
+            </div>
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- if eq $enableOGCard "true" -}}
+        {{- with $json.card -}}
+          {{- with .image -}}
+            <a href="{{ $json.card.url }}" rel="'noopener">
+              <div class="toot-card">
+                <div class="toot-card-image">
+                  <img src="{{ . }}"
+                    alt="Card image from {{ $masIns }} toot {{ $id }}"
+                    loading="lazy"
+                    class="toot-card-image-image" />
+                </div>
+                <div class="toot-card-content">
+                  <p class="card-title">
+                    {{ $json.card.title }}
+                  </p>
+                  <p class="card-description">
+                    {{ $json.card.description }}
+                  </p>
+                </div>
+              </div>
+            </a>
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- with $json.poll -}}
+        {{- $votesTotal := 0 -}}
+        {{- range .options -}}
+          {{- $votesTotal = add $votesTotal .votes_count -}}
+        {{- end -}}
+        <div class="toot-poll-wrapper">
+          {{- range .options -}}
+            <div class="toot-poll-meter">
+              <meter id="vote-count"
+                max="{{ $votesTotal }}"
+                value="{{ .votes_count }}">
+              </meter>
+              <span class="toot-poll-count">
+                {{ (mul 100 (div .votes_count $votesTotal)) | lang.FormatPercent 1 }}
+              </span>
+              <span class="toot-poll-title">
+                {{ .title }}
+              </span>
+            </div>
+          {{- end -}}
+        </div>
+        <p class="legal toot-poll-total">
+          {{ $votesTotal }} people
+        </p>
+      {{- end -}}
+
+      <div class="toot-footer">
+        <a href="https://{{ $masIns }}/@{{ $acct }}/{{ $json.id }}"
+          class="toot-date"
+          rel="noopener">
+          {{ dateFormat "3:04 PM • January 2, 2006" $json.created_at }} (UTC)
+        </a>
+      </div>
+    </blockquote>
+  {{- end -}}
+{{- end -}}
