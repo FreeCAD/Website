@@ -4,7 +4,6 @@
 
 {{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif" "webp") -}}
 {{- $prod := (hugo.IsProduction | or (eq site.Params.env "production")) -}}
-{{- $responsiveImages := (.Params.cover.responsiveImages | default site.Params.cover.responsiveImages) | default true -}}
 {{- $sizes := (slice "250" "500" "1000" "2000") -}}
 {{- $resizeFormat := "webp" -}}
 
@@ -16,7 +15,7 @@
 {{- end -}}
 
 {{- if not $cover -}}
-  {{- $sectionPage := site.GetPage (printf "/%s" .Section) -}}
+  {{- $sectionPage := .Site.Sites.Default.GetPage (printf "/%s" .Section) -}}
   {{- $category := .Params.categories -}}
   {{- if $category -}}
     {{- with $sectionPage -}}
@@ -37,7 +36,7 @@
 {{- if $cover -}}
 <figure class="entry-cover">
   {{- if $cover -}}{{/* i.e it is present in page bundle */}}
-    {{- if (and (in $processableFormats $cover.MediaType.SubType) ($responsiveImages) (eq $prod true)) -}}
+    {{- if (and (in $processableFormats $cover.MediaType.SubType) (eq $prod true)) -}}
       <img
         srcset="
           {{- if (ge $cover.Width (index $sizes 1)) -}}
