@@ -19,47 +19,7 @@
 
 <section class="articles">
   {{- range $index, $page := $pages -}}
-    <article>
-      {{- partial "category.html" . -}}
-      <a href="{{ .Permalink }}"
-        alt="ARTICLE"
-        aria-label="{{ .Title | plainify }}"
-        title="{{ .Title | plainify }}">
-        {{- with .Store -}}
-          {{- .Set "articles" true -}}
-        {{- end -}}
-        {{- partial "cover.html" . -}}
-        {{- with .Store -}}
-          {{- .Delete "articles" -}}
-        {{- end -}}
-        {{- if not .Date.IsZero -}}
-          <span class="entry-date">
-            <time datetime="{{ .Date }}">
-              {{ .Date | time.Format ":date_long" }}
-            </time>
-          </span>
-        {{- end -}}
-        <h3 class="entry-title">
-          <span>
-            {{ .Title | .RenderString }}
-          </span>
-          {{- if .Draft }}
-            <sup>
-              <span class="entry-isdraft">
-                [{{- i18n "draft" | default "Draft" -}}]
-              </span>
-            </sup>
-          {{- end -}}
-        </h3>
-        {{- if (ne (.Param "hideSummary") true) -}}
-        <p class="entry-description">
-          {{- if .Description -}}
-            {{ .Description | .RenderString }}
-          {{- end -}}
-        </p>
-        {{- end -}}
-      </a>
-    </article>
+    {{- partial "article_card.html" . -}}
   {{- end -}}
 </section>
 
