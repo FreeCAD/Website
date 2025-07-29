@@ -349,7 +349,7 @@ table:not(.highlighttable) td code:only-child {
 }
 
 .highlight:not(table) {
-  margin: var(--gap) auto;
+  margin: calc(var(--gap) * 0.5) auto;
   border-radius: var(--radius);
 }
 
@@ -862,11 +862,6 @@ sup:target {
   background: var(--entry);
   border-radius: var(--radius);
   color: var(--tertiary);
-  font-size: var(--s);
-}
-
-.footnotes a {
-  color: var(--tertiary);
 }
 
 .footnotes hr {
@@ -905,7 +900,7 @@ sup:target {
   scroll-margin-top: 25vh;
 }
 
-.footnotes ol:before {
+.footnotes ol::before {
   content: "Footnotes";
   font-size: var(--l);
   margin-inline: -1rem;

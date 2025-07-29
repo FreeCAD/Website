@@ -154,23 +154,44 @@ mark {
 
 details {
   margin: auto;
-  padding: var(--gap);
   background: var(--entry);
   border-radius: var(--radius);
 }
 
-details summary {
+details[open] {
+  padding-bottom: calc(var(--gap) * 0.5);
+}
+
+details > * {
+  padding: 0 var(--gap);
+}
+
+details .copy-code {
+  margin-inline-end: var(--gap);
+}
+
+details:not(:has(> summary)) {
+  padding: var(--gap);
+}
+
+details:not(:has(> summary)):not([open]) {
   cursor: zoom-in;
-  margin-inline-start: var(--gap);
+}
+
+details:not(:has(> summary))[open] {
+  cursor: zoom-out;
+}
+
+details summary {
+  padding: var(--gap);
+  border-radius: var(--radius);
+  cursor: zoom-in;
   font-weight: bold;
 }
 
 details[open] summary {
   cursor: zoom-out;
-}
-
-details p {
-  margin-bottom: 0;
+  background: var(--tone);
 }
 
 details :is(code, blockquote, .chroma, details) {
