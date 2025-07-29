@@ -7,6 +7,14 @@ menus:
   footer:
     weight: 1
 date: 2024-05-22T08:04:23+12:00
+params:
+  buttons:
+    - label: "Télécharger"
+      url: download
+    - label: "Découvre les nouveautés"
+      url: releases/1-0
+    - label: "♥ Parrainer"
+      url: donate
 ---
 ![An assembly text](assembly2.webp "An assembly caption")
 

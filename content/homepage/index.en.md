@@ -7,6 +7,12 @@ menus:
   footer:
     weight: 1
 date: 2024-05-22T08:04:23+12:00
+params:
+  buttons:
+    - label: "Download"
+      url: download
+    - label: "See what's new"
+      url: releases/1-0
 ---
 ![An assembly text](assembly2.webp "An assembly caption")
 

@@ -13,11 +13,7 @@ cover:
   caption: "a cover caption"
   alt: "a cover alternative title"
 params:
-  hero:
-    downloadLink: true
-    customLink: releases/1-0
-    customText: "Découvre les nouveautés"
-    articleLink: false
+  hero: true
 ---
 
 # This is the first heading

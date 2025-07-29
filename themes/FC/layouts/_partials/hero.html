@@ -1,3 +1,11 @@
+{{/* get the buttons parameters from the homepage files */}}
+{{- $homepageButtons := slice -}}
+{{- with (index (where (.RegularPages | lang.Merge .Sites.Default.RegularPages) "Type" "homepage") 0) -}}
+  {{- with .Params.buttons -}}
+    {{- $homepageButtons = . -}}
+  {{- end -}}
+{{- end -}}
+
 {{/* get the latest article with the "hero" parameters in front matter */}}
 {{- with (index (where (site.RegularPages | lang.Merge .Sites.Default.RegularPages) "Params.hero" "!=" nil) 0) -}}
   <header>
@@ -9,35 +17,18 @@
         {{ . | $.Page.RenderString }}
       </h2>
     {{- end -}}
-    <div class="buttons">
-    {{- if .Params.hero.downloadLink -}}
-      {{- $download := .Site.GetPage "download" -}}
-      <p>
-        <a class="hero-button download" href="{{ $download.RelPermalink }}">
-          {{ $download.LinkTitle | .RenderString }}
-        </a>
-      </p>
-    {{- end -}}
-    {{- if .Params.hero.customLink -}}
-      {{- $customLink := .Site.GetPage .Params.hero.customLink -}}
-      <p>
-        <a class="hero-button custom" href="{{ $customLink.RelPermalink }}">
-          {{- with .Params.hero.customText -}}
-            {{ . | $.Page.RenderString }}
-          {{- else -}}
-            {{ .Params.hero.customLink.LinkTitle | .RenderString }}
+    {{- with $homepageButtons -}}
+      <div class="buttons">
+        {{- range $buttons := . -}}
+          {{- with $buttons.url -}}
+            {{- $page := site.GetPage . | default (site.Sites.Default.GetPage .) -}}
+            {{- if $page -}}
+              <a class="hero-button" href="{{ $page.RelPermalink }}">{{ $buttons.label }}</a>
+            {{- end -}}
           {{- end -}}
-        </a>
-      </p>
+        {{- end -}}
+      </div>
     {{- end -}}
-    {{- if .Params.hero.articleLink -}}
-      <p>
-        <a class="hero-button article" href="{{ .RelPermalink }}">
-          {{ .LinkTitle | .RenderString }}
-        </a>
-      </p>
-    {{- end -}}
-    </div>
     {{- partial "cover.html" . -}}
   </header>
 {{- end -}}
