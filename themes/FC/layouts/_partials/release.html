@@ -2,72 +2,45 @@
 {{- $platforms := slice -}}
 {{- $thanks := "" | default "Thank you for downloading FreeCAD!" -}}
 {{- $donate := "" | default "Donate for its development" -}}
-{{- with .Site.GetPage "download" -}}
+{{- $downloadPage := site.GetPage "download" | default (site.Sites.Default.GetPage "download") -}}
+{{- with $downloadPage -}}
   {{- with .Params.platforms -}}
     {{- $platforms = . -}}
   {{- end -}}
   {{- with .Params.thanksText -}}
     {{- $thanks = . -}}
   {{- end -}}
-  {{- with .Params.donateText -}}
-    {{- $donate = . -}}
-  {{- end -}}
 {{- end -}}
 
-<div class="download-box">
-  {{- with .Title -}}
-    <a class="hero-button download" href="{{ $.RelPermalink }}" alt="{{ upper site.Title -}} RELEASE"
-      aria-label="{{ site.Title }} {{ i18n "release_notes" | default "Release Notes" }}">
-      {{ printf "%s %s" . (i18n "release_notes" | default "Release Notes") }}
-    </a>
-  {{- else -}}
-    {{- print "var is falsy" -}}
-  {{- end -}}
-  {{- with .Date -}}
-    <p>
-      <time datetime="{{ . }}" class="date">
-        {{ . | time.Format ":date_long" }}
-      </time>
-    </p>
-  {{- else -}}
-    {{- print "var is falsy" -}}
-  {{- end -}}
-
-  <form>
-    {{- range $platform := $platforms -}}
-      <div id="{{ $platform.id }}" style="order: {{ $platform.order }};">
-        {{- range $download := $platform.downloads -}}
-          {{- with index $params (printf "%s_%s" $platform.id $download.key) -}}
-            <button class="arch-icon"
-              type="submit"
-              formaction="{{ . }}"
-              alt="{{ $download.alt }}"
-              aria-label="{{ $download.label }}"
-              title="{{ $download.label }}"
-              download>
-              {{- safeHTML (index site.Data.svg $download.key) -}}
-            </button>
-          {{- end -}}
+<form class="download-box">
+  {{- range $platform := $platforms -}}
+    <div class="cards-column" id="{{ $platform.id }}" style="order: {{ $platform.order }};">
+      {{- range $download := $platform.downloads -}}
+        {{- with index $params (printf "%s_%s" $platform.id $download.key) -}}
+          <button class="arch-icon"
+            type="submit"
+            formaction="{{ . }}"
+            alt="{{ $download.alt }}"
+            aria-label="{{ $download.label }}"
+            title="{{ $download.label }}"
+            download>
+            {{- safeHTML (index site.Data.svg $download.key) -}}<br>
+            <span>
+              {{ $download.label }}
+            </span>
+          </button>
         {{- end -}}
+      {{- end -}}
 
-        <button type="button"
-          popovertarget="{{ $platform.id }}-arch"
-          title="{{ $platform.label }}">
-          {{- safeHTML (index site.Data.svg $platform.id) -}}
-        </button>
-        <span popover id="{{ $platform.id }}-arch"></span>
-      </div>
-    {{- end -}}
-  </form>
-
-  {{- if or $thanks $donate -}}
-    <div class="thanks">
-      <p>
-        {{ $thanks }}
-      </p>
-      <a class="donate" href="{{ .Site.Home.Permalink -}}donate">
-        {{ $donate }}
-      </a>
+      <button type="button"
+        popovertarget="{{ $platform.id }}-arch"
+        title="{{ $platform.label }}">
+        {{- safeHTML (index site.Data.svg $platform.id) -}}<br>
+        <span>
+          {{ $platform.label }}
+        </span>
+      </button>
+      <span popover id="{{ $platform.id }}-arch"></span>
     </div>
   {{- end -}}
-</div>
+</form>

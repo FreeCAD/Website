@@ -28,16 +28,13 @@ main header {
 
 .title,
 .description,
-.download-box .date,
 .hero-button,
 .single-meta,
-.docs-box {
+.cards-box {
   display: inline-flex;
   gap: var(--gap);
-  padding: var(--padding);
   max-width: var(--width);
   color: var(--cover);
-  text-shadow: var(--shadow);
   z-index: 2;
 }
 
@@ -87,18 +84,22 @@ article .category {
 
 .buttons {
   display: flex;
+  align-items: center;
   gap: var(--gap);
   z-index: 3;
 }
 
-.hero-button {
+.hero-button, .release-button {
+  padding: var(--padding);
+  color: var(--cover);
   font-size: var(--m);
   background: var(--link-color);
   border-radius: var(--radius);
   transition: var(--link-transition);
+  z-index: 2;
 }
 
-.hero-button:hover {
+:is(.hero-button, .release-button):hover {
   background: var(--link-hover-color);
   color: var(--cover);
 }
@@ -222,7 +223,6 @@ main header .entry-cover img {
   padding: 0.5rem;
   color: var(--cover);
   font-size: var(--s);
-  text-shadow: var(--shadow);
 }
 
 .entry-title {
@@ -603,50 +603,48 @@ sup:target {
 /* Download box */
 
 .download-box {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-evenly;
+  text-align: center;
+  gap: var(--gap);
   z-index: 2;
 }
 
-.download-box p {
-  margin: 0 auto var(--gap);
-}
-
-.download-box .date {
-  font-size: var(--s);
-}
-
-.download-box form {
-  width: var(--width);
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-content: space-evenly;
+.download-box .cards-column {
+  width: calc(var(--width) * 0.25);
+  display: inline-flex;
+  flex-direction: row;
   gap: var(--gap);
 }
 
+.download-box [popovertarget] {
+ padding: 0 calc((var(--width) * .075) - var(--gap));
+}
+
 .download-box svg {
-  color: var(--cover);
-  height: calc(var(--width) * 0.05);
   transition: var(--link-transition);
 }
 
-.download-box svg:hover {
+.download-box .cards-column:has([popovertarget]):hover :not(.arch-icon) svg,
+.download-box .arch-icon:hover svg {
   color: var(--link-hover-color);
   transform: scale(1.05);
+}
+
+.download-box .arch-icon:hover span {
+  color: var(--link-hover-color);
 }
 
 .download-box svg:active {
   transform: scale(0.90);
 }
 
-.download-box [id] {
-  flex: 0 1 12rem;
-}
-
 :is(#windows:has(#windows-arch:popover-open),
 #mac:has(#mac-arch:popover-open),
 #linux:has(#linux-arch:popover-open)) .arch-icon {
   display: inline-block;
-  width: 4rem;
 }
 
 :is(#windows:has(#windows-arch:popover-open),
@@ -655,86 +653,58 @@ sup:target {
 [id*="arch"],
 .arch-icon {
   display: none;
-  width: 0;
-}
-
-.thanks {
-  margin-top: 1.5rem;
-}
-
-.thanks p {
-  margin-bottom: 1.5rem;
-  color: var(--cover);
-}
-
-.donate {
-  color: var(--cover);
-  padding: var(--padding);
-  background: var(--link-color);
-  border-radius: var(--radius);
-  transition: var(--link-transition);
-}
-
-.donate:hover {
-  color: var(--cover);
-  background: var(--link-hover-color);
 }
 
 .download-release {
-  margin: auto;
-  padding: var(--gap) var(--side);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-evenly;
+  align-items: center;
   text-align: center;
-}
-
-.download-release .date {
-  color: var(--secondary);
-}
-
-.download-release svg {
-  color: var(--secondary);
-}
-
-.download-release svg:hover {
-  color: var(--link-hover-color);
-}
-
-.download-release .thanks p {
-  color: var(--secondary);
+  gap: var(--gap);
+  margin: auto;
+  padding: var(--gap) var(--side) calc(var(--gap) * 2);
+  background: var(--backdrop);
+  z-index: 2;
 }
 
 
 /* Documentation box */
 
-.docs-column {
+.cards-column {
   display: inline-flex;
   flex-direction: column;
-  flex: 1 1 8rem;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--gap);
+  gap: calc(var(--gap) * 0.5);
+  flex: 1 1;
   margin: 0 auto;
+  padding: var(--padding);
   text-align: center;
+  background: var(--entry);
+  border-radius: var(--radius);
 }
 
-.docs-column :is(button, svg, h3, p) {
-  color: var(--cover);
+.cards-column :is(button, svg, h3, p) {
+  color: var(--secondary);
   margin: 0 auto;
 }
 
-.docs-box svg {
+.cards-column svg {
   height: calc(var(--width) * 0.075);
   transition: var(--link-transition);
 }
 
-.docs-box a:hover svg {
-  transform: scale(1.05);
-}
-
-.docs-box a:hover :is(h3, svg) {
+.cards-column:hover > :is(button, svg, p, h3):not(.arch-icon) {
   color: var(--link-hover-color);
 }
 
-.docs-box svg:active {
+.cards-column:hover > svg {
+  transform: scale(1.05);
+}
+
+.cards-column svg:active {
   transform: scale(0.90);
 }
 

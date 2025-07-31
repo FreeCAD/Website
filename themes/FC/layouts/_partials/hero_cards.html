@@ -1,0 +1,27 @@
+{{- with .Params.cards -}}
+  <div class="cards-box">
+    {{- range $key, $value := . -}}
+      <a class="cards-column"
+        {{ if and $value.link $value.text }}
+          {{ printf "href=%q alt=%q title=%q" $value.link $key $value.text | safeHTMLAttr }}
+        {{ end }}
+        {{ with $value.weight }}
+          style="order: {{ . }}"
+        {{ end }}>
+        {{- with (index site.Data.svg (printf "%s" $key)) -}}
+            {{- safeHTML . -}}
+        {{- end -}}
+        {{- with $value.text -}}
+          <h3>
+            {{- . | safeHTMLAttr -}}
+          </h3>
+        {{- end -}}
+        {{- with $value.description -}}
+          <p>
+            {{- . | safeHTMLAttr -}}
+          </p>
+        {{- end -}}
+      </a>
+    {{- end -}}
+  </div>
+{{- end -}}

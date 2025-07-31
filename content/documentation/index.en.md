@@ -14,20 +14,25 @@ menus:
   footer:
     weight: 7
 params:
-  docs:
+  cards:
     manual:
       text: "User manual"
       description: "Explore FreeCAD workbenches, workflows and essential features available in several languages."
       link: "https://wiki.freecad.org/User_hub"
       weight: 1
+    tutorial:
+      text: "Tutorials"
+      description: "Improve your workflow with specialized tutorials and curated guides provided by the community."
+      link: "https://wiki.freecad.org/Power_users_hub"
+      weight: 2
     dev:
       text: "Developer handbook"
-      description: "Dive into FreeCAD's architecture and codebase to build new features, fix bugs and extend functionality."
+      description: "Dive into FreeCAD's architecture and codebase to build new features and fix bugs."
       link: "https://wiki.freecad.org/Developer_hub"
-      weight: 2
+      weight: 3
     api:
       text: "Python API"
       description: "Automate workflows and customize FreeCAD with its built-in Python scripting API."
       link: "https://wiki.freecad.org/Power_users_hub"
-      weight: 3
+      weight: 4
 ---

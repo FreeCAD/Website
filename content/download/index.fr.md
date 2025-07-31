@@ -1,6 +1,6 @@
 ---
 title: "Télécharger"
-description: "L'aventure FreeCAD commence !"
+description: "Donnez vie à vos projets !"
 date: 2024-05-22T08:04:23+12:00
 author: "FreeCAD"
 type: download
@@ -14,8 +14,37 @@ menus:
   footer:
     weight: 3
 params:
-  thanksText: "Merci de télécharger FreeCAD !"
-  donateText: "♥︎ Parrainer son dévelopement"
+  platforms:
+    - id: windows
+      label: Windows
+      order: 1
+      downloads:
+        - key: msi
+          label: Windows Installer
+          alt: WINDOWS-MSI
+        - key: zip
+          label: Windows Portable
+          alt: WINDOWS-ZIP
+    - id: mac
+      label: macOS
+      order: 2
+      downloads:
+        - key: x86
+          label: Apple Intel X86
+          alt: MACOS-X86
+        - key: arm
+          label: Apple Silicon ARM
+          alt: MACOS-ARM
+    - id: linux
+      label: GNU/Linux
+      order: 3
+      downloads:
+        - key: x86
+          label: Linux X86
+          alt: LINUX-X86
+        - key: arm
+          label: Linux AArch64
+          alt: LINUX-AARCH64
 ---
 
 ![An image text](4.webp "An image caption")

@@ -27,28 +27,43 @@
   </h1>
 
   {{- if .Description -}}
-    <h2 class="description">
+    <h3 class="description">
       {{ .Description | .RenderString }}
-    </h2>
+    </h3>
   {{- end -}}
 
-  {{/* For Download pages, call the download partial to provide download links from the latest release. */}}
+  {{/* For Download pages, call the release partial to provide download links from the latest release. */}}
   {{- if eq .Type "download" -}}
-    {{- with (index (where site.RegularPages "Type" "releases") 0) -}}
+    {{- $latest_release := index (where site.RegularPages "Type" "releases") 0 | default (index (where site.Sites.Default.RegularPages "Type" "releases") 0) -}}
+    {{- with $latest_release -}}
       {{- partial "release.html" . -}}
+      {{- if .Title -}}
+        <a class="release-button" href="{{ .RelPermalink }}" alt="{{ upper .Title -}} RELEASE"
+          aria-label="{{ .Title }} {{ i18n "release_notes" | default "Release Notes" }}">
+          {{ printf "%s %s · " .Title (i18n "release_notes" | default "Release Notes") }}
+          {{- with .Date -}}
+            <time datetime="{{ . }}" class="date">
+              {{ . | time.Format ":date_long" }}
+            </time>
+          {{- else -}}
+            {{- print "Release Date is falsy" -}}
+          {{- end -}}
+        </a>
+      {{- else -}}
+        {{- print "Release Title is falsy" -}}
+      {{- end -}}
     {{- end -}}
   {{- end -}}
 
   {{- if eq .Type "documentation" -}}
-    {{- partial "documentation.html" . -}}
+    {{- partial "hero_cards.html" . -}}
   {{- end -}}
 
-  {{- if eq .Type "news" -}}
+  {{- if or (eq .Type "news") (eq .Type "releases") -}}
     <div class="single-meta">
       {{- partial "meta.html" . -}}
     </div>
   {{- end -}}
-
   {{- partial "cover.html" . -}}
 </header>
 
@@ -60,9 +75,10 @@
 {{/* Get the content of a Page. */}}
 {{- partial "content.html" . -}}
 
-{{/* For Release pages, call the download partial to provide download links from the current release page. */}}
+{{/* Provide download links from the current release page. */}}
 {{- if eq .Type "releases" -}}
   <section class="download-release">
+    <h3>{{ printf "%s %s" (i18n "download" | default "Download") .Title }}</h3>
     {{- partial "release.html" . -}}
   </section>
 {{- end -}}

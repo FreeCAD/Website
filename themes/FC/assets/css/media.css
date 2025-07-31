@@ -69,9 +69,8 @@
 
   .buttons,
   .single-meta,
-  .docs-column {
+  .cards-column {
     flex-direction: column;
-    gap: 0;
   }
 
   .content > :not(.block, .column) {
@@ -120,26 +119,27 @@
     order: -1;
   }
 
-  .download-box svg {
-    height: calc(var(--width) * 0.125);
-  }
-
-  .download-box [id] {
-    flex: 0 1 5rem;
-  }
-
-  :is(#windows:has(#windows-arch:popover-open),
-  #mac:has(#mac-arch:popover-open),
-  #linux:has(#linux-arch:popover-open)) .arch-icon {
-    width: 2.5rem;
-  }
-
-  .docs-box {
+  .download-box {
     flex-direction: column;
-    padding: 0;
   }
 
-  .docs-box svg {
+  .download-box .cards-column {
+    width: var(--width);
+  }
+
+  .download-box [popovertarget] {
+    padding: 0 calc((var(--width) * 0.35) - var(--gap));
+  }
+
+  .download-box svg {
+    height: calc(var(--width) * 0.2);
+  }
+
+  .cards-box {
+    flex-direction: column;
+  }
+
+  .cards-box svg {
     height: calc(var(--width) * 0.2);
   }
 

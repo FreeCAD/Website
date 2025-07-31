@@ -1,6 +1,6 @@
 ---
 title: "Download"
-description: "Let the FreeCAD adventure unfold!"
+description: "Launch Into Design!"
 date: 2024-05-22T08:04:23+12:00
 author: "FreeCAD"
 type: download
@@ -14,8 +14,6 @@ menus:
   footer:
     weight: 3
 params:
-  thanksText: "Thank you for downloading FreeCAD!"
-  donateText: "♥︎ Sponsor its development"
   platforms:
     - id: windows
       label: Windows
@@ -42,10 +40,10 @@ params:
       order: 3
       downloads:
         - key: x86
-          label: Linux X86 AppImage
+          label: Linux X86
           alt: LINUX-X86
         - key: arm
-          label: Linux AArch64 AppImage
+          label: Linux AArch64
           alt: LINUX-AARCH64
 ---
 

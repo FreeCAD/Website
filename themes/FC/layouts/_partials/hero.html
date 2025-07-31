@@ -13,9 +13,9 @@
       {{ .LinkTitle | .RenderString }}
     </h1>
     {{- with .Description -}}
-      <h2 class="description">
+      <h3 class="description">
         {{ . | $.Page.RenderString }}
-      </h2>
+      </h3>
     {{- end -}}
     {{- with $homepageButtons -}}
       <div class="buttons">
