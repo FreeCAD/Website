@@ -12,23 +12,25 @@
   {{- end -}}
 {{- end -}}
 
-<form class="download-box">
+<div class="download-box">
   {{- range $platform := $platforms -}}
     <div class="cards-column" id="{{ $platform.id }}" style="order: {{ $platform.order }};">
       {{- range $download := $platform.downloads -}}
         {{- with index $params (printf "%s_%s" $platform.id $download.key) -}}
-          <button class="arch-icon"
-            type="submit"
-            formaction="{{ . }}"
+          <a class="arch-icon"
+            href="{{ . }}"
+            data-url="{{ . }}"
             alt="{{ $download.alt }}"
             aria-label="{{ $download.label }}"
             title="{{ $download.label }}"
-            download>
+            target="_blank"
+            rel="noopener noreferrer"
+            >
             {{- safeHTML (index site.Data.svg $download.key) -}}<br>
             <span>
               {{ $download.label }}
             </span>
-          </button>
+          </a>
         {{- end -}}
       {{- end -}}
 
@@ -43,4 +45,23 @@
       <span popover id="{{ $platform.id }}-arch"></span>
     </div>
   {{- end -}}
-</form>
+  </div>
+
+{{- $thanks := site.GetPage "thanks" | default (site.Sites.Default.GetPage "thanks") -}}
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('.arch-icon').forEach(function(link) {
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+
+        const fileUrl = link.dataset.url || link.href;
+        window.open(fileUrl, '_blank');
+
+        const thanksUrl = "{{ $thanks.RelPermalink }}";
+        setTimeout(function() {
+          window.location.href = thanksUrl;
+        }, 1000);
+      });
+    });
+  });
+</script>

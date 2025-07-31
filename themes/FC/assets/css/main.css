@@ -614,9 +614,9 @@ sup:target {
 
 .download-box .cards-column {
   width: calc(var(--width) * 0.25);
-  display: inline-flex;
   flex-direction: row;
-  gap: var(--gap);
+  justify-content: space-around;
+  align-content: space-evenly;
 }
 
 .download-box [popovertarget] {
@@ -625,6 +625,10 @@ sup:target {
 
 .download-box svg {
   transition: var(--link-transition);
+}
+
+.download-box .cards-column a {
+  color: var(--secondary);
 }
 
 .download-box .cards-column:has([popovertarget]):hover :not(.arch-icon) svg,
@@ -677,7 +681,7 @@ sup:target {
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
-  gap: calc(var(--gap) * 0.5);
+  gap: var(--gap);
   flex: 1 1;
   margin: 0 auto;
   padding: var(--padding);

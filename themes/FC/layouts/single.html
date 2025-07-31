@@ -55,7 +55,7 @@
     {{- end -}}
   {{- end -}}
 
-  {{- if eq .Type "documentation" -}}
+  {{- if or (eq .Type "documentation") (eq .Type "thanks") -}}
     {{- partial "hero_cards.html" . -}}
   {{- end -}}
 
