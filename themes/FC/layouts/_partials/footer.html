@@ -10,7 +10,7 @@
 {{- $customLinks := site.Data.footer | default slice -}}
 {{- $icon := site.Data.svg.external | safeHTML -}}
 
-<footer>
+<footer class="site-footer">
   <div class="footer-row">
     {{- range $menuFooter }}
       {{- $isActive := or (strings.HasPrefix $pageUrl .URL) (and $currentPage.IsHome (in .URL "homepage")) -}}

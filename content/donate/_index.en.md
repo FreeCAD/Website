@@ -13,7 +13,7 @@ menus:
     params:
       style: button
   footer:
-    weight: 9
+    weight: 10
 ---
 
 [comment]: # (Please do not add content in this Donate _index file. The layout of the Donate page is generated from template rules by the theme.)

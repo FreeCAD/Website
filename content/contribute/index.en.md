@@ -45,5 +45,4 @@ params:
       description: "Dive into FreeCAD's architecture and codebase to build new features and fix bugs."
       link: "../dev"
       weight: 6
-
 ---
