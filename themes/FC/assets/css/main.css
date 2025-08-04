@@ -86,6 +86,7 @@ article .category {
   display: flex;
   align-items: center;
   gap: var(--gap);
+  margin-top: calc(var(--gap) * 2);
   z-index: 3;
 }
 
@@ -148,6 +149,10 @@ article .category {
 
 .meta :is(.categories, .tags) a:not(:last-of-type):after {
   content: " · ";
+}
+
+.cards-box {
+  margin-top: calc(var(--gap) * 2);
 }
 
 main header .entry-cover img {
@@ -609,6 +614,7 @@ sup:target {
   align-content: space-evenly;
   text-align: center;
   gap: var(--gap);
+  margin-top: calc(var(--gap) * 2);
   z-index: 2;
 }
 
