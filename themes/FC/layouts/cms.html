@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.LanguageCode }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>
+      {{ .Title }}
+    </title>
+    {{- with site.Home.OutputFormats.Get "CMS_Config" -}}
+      <link
+        href="{{ .RelPermalink }}"
+        type="application/yaml"
+        rel="cms-config-url" />
+    {{- end -}}
+  </head>
+  <body>
+    <!-- Use Sveltia CMS -->
+    {{- if eq site.Data.cms_config.engine "sveltia" -}}
+      {{- $url_sveltia := "https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js" -}}
+      {{- with try (resources.GetRemote $url_sveltia (dict "key" "sveltia-cms.css")) -}}
+        {{- warnf "Fetching remote resource: %q" $url_sveltia -}}
+        {{- with .Err -}}
+            {{- errorf "%s" . -}}
+        {{- else with .Value -}}
+          {{- warnf "Serving cached resource: %q" .RelPermalink -}}
+          <script
+            src="{{ .RelPermalink | absURL }}"
+            onload="SVELTIA.start()"
+            onerror="document.body.innerHTML='Failed to load Sveltia CMS'"></script>
+        {{- else -}}
+          {{- errorf "Unable to get remote resource: %q" $url_sveltia -}}
+        {{- end -}}
+      {{- end -}}
+      <script>
+          CMS.registerPreviewStyle("/css/site.css")
+      </script>
+
+    {{- else -}}
+      <h1>
+        Error
+      </h1>
+      <p>
+          You have configured your Hugo site to use an invalid CMS.<br>
+          Only <code>Sveltia</code> is supported.
+      </p>
+    {{- end -}}
+  </body>
+</html>

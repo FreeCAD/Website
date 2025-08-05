@@ -1,0 +1,291 @@
+# CMS parameters
+
+engine: "sveltia"
+site_url: "https://marcuspollio.github.io/FreeCAD-website/"
+logo_url: "https://marcuspollio.github.io/FreeCAD-website/FreeCAD-symbol.svg"
+
+backend:
+  name: "github"
+  repo: "marcuspollio/FreeCAD-website"
+  branch: testing
+  base_url: https://sveltia-github-auth.marcus-pollio.workers.dev/
+  commit_messages:
+    create: "{{collection}}: create {{slug}}"
+    update: "{{collection}}: update {{slug}}"
+    delete: "{{collection}}: delete {{slug}}"
+    uploadMedia: "Media: upload {{path}}"
+    deleteMedia: "Media: delete {{path}}"
+    openAuthoring: "{{message}}"
+
+# publish_mode: editorial_workflow # NOTE: not supported yet, see
+# https://github.com/sveltia/sveltia-cms?tab=readme-ov-file#current-limitations
+# https://decapcms.org/docs/editorial-workflows/
+
+i18n:
+  structure: multiple_files
+  locales: [en, fr, tr]
+  default_locale: en
+  initial_locales: default
+
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+
+media_folder: "static"
+public_folder: "/"
+media_libraries:
+  default:
+    config:
+      max_file_size: 2048000 # in bytes
+      slugify_filename: true
+      transformations:
+        raster_image: # original format
+          format: webp # new format, only `webp` is supported with sveltia v0.68
+          quality: 90
+          width: 2000
+          height: 2000
+        svg:
+          optimize: true
+
+collections:
+  - name: news
+    label: News
+    description: This is the News blog collection with FreeCAD articles
+    icon: brand_awareness
+    thumbnail: cover.image
+    create: true
+    folder: content/news
+    path: "{{year}}/{{month}}/{{slug}}/index"
+    media_folder: ""
+    public_folder: ""
+    format: frontmatter
+    slug: "{{slug}}"
+    i18n: true
+    fields:
+      - {label: "Article Title", name: "title", widget: "string", i18n: true, required: [en], hint: "Use a similar title structure as existing articles for coherence"}
+      - {label: "Article Description", name: "description", i18n: true, widget: "string"}
+      - {label: "Publication Date", name: "date", widget: "datetime", i18n: duplicate}
+      - {label: "Article Author", name: "author", widget: "string", default: "FreeCAD", i18n: duplicate, hint: "Use a similar author name as existing ones for coherence", pattern: ['.{3,}', "Must have at least 3 characters"]}
+      - {label: "Draft", name: "draft", widget: "boolean", default: true, i18n: duplicate, required: false}
+      - {label: "Article Category", name: "categories", widget: "select", options: ["announcement", "event", "feature", "showcase", "tutorial", "update"], i18n: duplicate}
+      - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
+      - {label: "Cover image", name: "cover.image", widget: "image", i18n: duplicate}
+      - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
+      - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
+      - {label: "Hero", name: "params.hero", widget: "boolean", default: false, i18n: duplicate, required: false, hint: "Article featured on top of the Homepage"}
+      - {label: "Content", name: "body", widget: "markdown", i18n: true, required: [en], hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
+    index_file:
+      name: _index
+      label: News Index
+      icon: brand_awareness
+      editor:
+        preview: true
+      fields:
+        - {label: "Title", name: "title", widget: "string", i18n: true, required: [en], pattern: ['.{3,}', "Must have at least 3 characters"]}
+        - {label: "Description", name: "description", widget: "string", i18n: true}
+        - {label: "Pagination", name: "paginate", widget: "number", default: 12, value_type: "int", min: 1, max: 30, i18n: duplicate, hint: "Integer between 1 and 30"}
+        - {label: "Cover image", name: "cover.image", widget: "image", i18n: duplicate}
+        - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
+        - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
+
+  - divider: true
+    name: d1
+    files: []
+
+  - name: homepage
+    label: Homepage
+    icon: home
+    format: frontmatter
+    i18n: true
+    files:
+      - name: homepage
+        label: Homepage
+        file: content/homepage/index.{{locale}}.md
+        icon: home
+        media_folder: ""
+        public_folder: ""
+        i18n: true
+        fields:
+          - {label: "Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
+          - {label: "Description", name: "description", widget: "string", i18n: true}
+          - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
+          - label: "Params"
+            name: "params"
+            widget: "object"
+            i18n: true
+            summary: "{{fields.buttons}}"
+            fields:
+              - label: "Buttons"
+                name: "buttons"
+                widget: "list"
+                i18n: true
+                summary: "{{fields.label}}"
+                fields:
+                  - {label: "Label", name: "label", widget: "string", i18n: true}
+                  - {label: "URL", name: "url", widget: "string", i18n: duplicate}
+          - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
+
+  - name: features
+    label: Features
+    icon: bolt
+    format: frontmatter
+    i18n: true
+    files:
+      - name: features
+        label: Features
+        file: content/features/index.{{locale}}.md
+        icon: bolt
+        media_folder: ""
+        public_folder: ""
+        i18n: true
+        fields:
+          - {label: "Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
+          - {label: "Description", name: "description", widget: "string", i18n: true}
+          - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
+          - {label: "Cover image", name: "cover.image", widget: "image", i18n: duplicate}
+          - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
+          - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
+          - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
+
+  - name: download
+    label: Download
+    icon: downloading
+    format: frontmatter
+    i18n: true
+    files:
+      - name: download
+        label: Download
+        file: content/download/index.{{locale}}.md
+        icon: downloading
+        media_folder: ""
+        public_folder: ""
+        i18n: true
+        fields:
+          - {label: "Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
+          - {label: "Description", name: "description", widget: "string", i18n: true}
+          - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
+          - {label: "Cover image", name: "cover.image", widget: "image", i18n: duplicate}
+          - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
+          - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
+          - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
+
+  - name: releases
+    label: Releases
+    icon: celebration
+    thumbnail: cover.image
+    create: true
+    folder: content/releases
+    path: "{{slug}}/index"
+    media_folder: ""
+    public_folder: ""
+    format: frontmatter
+    slug: "{{slug}}"
+    i18n: true
+    fields:
+      - {label: "Release Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
+      - {label: "Release Description", name: "description", widget: "string", i18n: true}
+      - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
+      - {label: "Cover image", name: "cover.image", widget: "image", i18n: duplicate}
+      - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
+      - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
+      - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
+    index_file:
+      name: _index
+      label: Releases Index
+      icon: celebration
+      editor:
+        preview: true
+      fields:
+        - {label: "Title", name: "title", widget: "string", i18n: true, required: [en], pattern: ['.{3,}', "Must have at least 3 characters"]}
+        - {label: "Description", name: "description", widget: "string", i18n: true}
+        - {label: "Pagination", name: "paginate", widget: "number", default: 6, value_type: "int", min: 1, max: 30, i18n: duplicate, hint: "Integer between 1 and 30"}
+        - {label: "Cover image", name: "cover.image", widget: "image", i18n: duplicate}
+        - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
+        - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
+
+  - name: community
+    label: Community
+    icon: hub
+    format: frontmatter
+    i18n: true
+    files:
+      - name: community
+        label: Community
+        file: content/community/index.{{locale}}.md
+        icon: hub
+        media_folder: ""
+        public_folder: ""
+        i18n: true
+        fields:
+          - {label: "Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
+          - {label: "Description", name: "description", widget: "string", i18n: true}
+          - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
+          - {label: "Cover image", name: "cover.image", widget: "image", i18n: duplicate}
+          - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
+          - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
+          - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
+
+  - name: documentation
+    label: Documentation
+    icon: local_library
+    format: frontmatter
+    i18n: true
+    files:
+      - name: documentation
+        label: Documentation
+        file: content/documentation/index.{{locale}}.md
+        icon: local_library
+        media_folder: ""
+        public_folder: ""
+        i18n: true
+        fields:
+          - {label: "Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
+          - {label: "Description", name: "description", widget: "string", i18n: true}
+          - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
+          - {label: "Cover image", name: "cover.image", widget: "image", i18n: duplicate}
+          - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
+          - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
+          - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
+
+  - name: contribute
+    label: Contribute
+    icon: code_blocks
+    format: frontmatter
+    slug: "{{slug}}"
+    i18n: true
+    files:
+      - name: contribute
+        label: Contribute
+        file: content/contribute/index.{{locale}}.md
+        icon: code_blocks
+        media_folder: ""
+        public_folder: ""
+        i18n: true
+        fields:
+          - {label: "Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
+          - {label: "Description", name: "description", widget: "string", i18n: true}
+          - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
+          - {label: "Cover image", name: "cover.image", widget: "image", i18n: duplicate}
+          - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
+          - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
+          - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
+
+  - name: donate
+    label: Donate
+    icon: volunteer_activism
+    thumbnail: cover.image
+    folder: content/donate
+    path: "{{slug}}/index"
+    media_folder: ""
+    public_folder: ""
+    format: frontmatter
+    slug: "{{slug}}"
+    i18n: true
+    fields:
+      - {label: "Donate Page Title", name: "title", widget: "string", pattern: ['.{3,}', "Must have at least 3 characters"]}
+      - {label: "Donate Page Description", name: "description", widget: "string"}
+      - {label: "Cover image", name: "cover.image", widget: "image", i18n: duplicate}
+      - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
+      - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
+      - {label: "Content", name: "body", widget: "markdown", hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}

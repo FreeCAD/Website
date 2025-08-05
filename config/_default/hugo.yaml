@@ -72,14 +72,19 @@ module:
       target: assets
     - source: static # Allows to perform modifications via pipes on files in static folder
       target: assets
-  imports:
-    - path: github.com/privatemaker/headless-cms
-      disable: false
 
 outputs:
   home:
     - HTML
-    - HeadlessCMSConfig
+    - CMS_Config
+
+outputFormats:
+  CMS_Config:
+    baseName: "cms-config"
+    isHTML: false
+    isPlainText: true
+    notAlternative: true
+    mediaType: "application/yaml"
 
 services:
   googleAnalytics:
