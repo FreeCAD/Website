@@ -7,7 +7,7 @@
 <header>
   {{- if or (eq .Section "news") (eq .Kind "term") -}}
     <ul class="category-list">
-      {{- range .Sites.Default.Taxonomies.categories -}}
+      {{- range site.Sites.Default.Taxonomies.categories -}}
         <li>
           <a href="{{ .Page.RelPermalink }}">
             {{ .Page.LinkTitle }}
@@ -47,7 +47,7 @@
 {{- end -}}
 
 {{/* get the latest pages from the current section, and fill in the missing translated pages from the first site (currently English) */}}
-{{- $pages := where (.RegularPages | lang.Merge .Sites.Default.RegularPages) "Section" .Section -}}
+{{- $pages := where (.RegularPages | lang.Merge site.Sites.Default.RegularPages) "Section" .Section -}}
 
 {{- if eq .Type "contribute" }}
   {{- $lang := slice -}}

@@ -8,7 +8,7 @@
 
 {{/* get the latest news articles by category except the ones with "hero" parameters in front matter */}}
 {{- $pages := slice -}}
-{{- with .Site.Sites.Default -}}
+{{- with site.Sites.Default -}}
   {{- range .Taxonomies.categories.ByCount -}}
     {{- range first 1 (where .Pages "Params.hero" "ne" true) -}}
       {{- $pages = $pages | append . -}}
@@ -23,7 +23,7 @@
   {{- end -}}
 </section>
 
-{{- with (index (where (.RegularPages | lang.Merge .Sites.Default.RegularPages) "Type" "homepage") 0) -}}
+{{- with (index (where (.RegularPages | lang.Merge site.Sites.Default.RegularPages) "Type" "homepage") 0) -}}
   {{- partial "content.html" . -}}
 {{- end -}}
 
