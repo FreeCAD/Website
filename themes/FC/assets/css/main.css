@@ -999,7 +999,7 @@ sup:target {
   gap: calc(var(--gap) * 0.5);
 }
 
-#shareForm :is(input:not([type="checkbox"]), textarea) {
+#shareForm :is(input:not([type="checkbox"]), textarea):not([readonly]) {
   width: 100%;
   padding: var(--gap);
   border-radius: var(--radius);
@@ -1008,7 +1008,11 @@ sup:target {
 }
 
 #shareForm [readonly] {
+  width: 100%;
+  padding: var(--gap);
+  border-radius: var(--radius);
   color: var(--tertiary);
+  background: var(--theme);
 }
 
 #shareForm :is(.fedishare-instance-container, [for="rememberInstance"]) {
