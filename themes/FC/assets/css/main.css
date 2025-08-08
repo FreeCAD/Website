@@ -979,12 +979,12 @@ sup:target {
 
 #shareForm {
   width: 80%;
-  padding: var(--gap);
+  padding: calc(var(--gap) * 1.5);
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: calc(var(--gap) * 0.5);
+  gap: calc(var(--gap) * 1.5);
   border-radius: var(--radius);
   background: var(--entry);
 }
@@ -992,7 +992,6 @@ sup:target {
 #shareForm label {
   width: 100%;
   margin: 0;
-  padding: var(--gap);
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1001,7 +1000,7 @@ sup:target {
 
 #shareForm :is(input:not([type="checkbox"]), textarea):not([readonly]) {
   width: 100%;
-  padding: var(--gap);
+  padding: calc(var(--gap) * 0.75);
   border-radius: var(--radius);
   color: var(--secondary);
   background: var(--theme);
@@ -1009,7 +1008,7 @@ sup:target {
 
 #shareForm [readonly] {
   width: 100%;
-  padding: var(--gap);
+  padding: calc(var(--gap) * 0.75);
   border-radius: var(--radius);
   color: var(--tertiary);
   background: var(--theme);
@@ -1024,7 +1023,7 @@ sup:target {
 }
 
 #shareForm [for="rememberInstance"] {
-  padding: 0 var(--gap);
+  padding: 0 calc(var(--gap) * 0.5);
 }
 
 #shareForm .fedishare-instance {
