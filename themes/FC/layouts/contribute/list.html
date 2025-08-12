@@ -1,0 +1,39 @@
+{{- define "main" -}}
+
+{{- if not hugo.IsProduction -}}
+  {{- partial "debug.html" . -}}
+{{- end -}}
+
+<header>
+  <h1 class="title">
+    {{ .Title | .RenderString }}
+    {{- if .Draft -}}
+      <sup><span class="entry-isdraft">[{{- i18n "draft" | default "Draft" -}}]</span></sup>
+    {{- end -}}
+  </h1>
+
+  {{- if .Description -}}
+    <h3 class="description">
+      {{ .Description | .RenderString }}
+    </h3>
+  {{- end -}}
+
+  {{- with .Params.cards -}}
+    {{- partial "hero_cards.html" . -}}
+  {{- end -}}
+
+  {{- partial "hero_cover.html" . -}}
+</header>
+
+{{/* Get the Table Of Contents. */}}
+{{- if .Params.ToC -}}
+  {{ .TableOfContents }}
+{{- end -}}
+
+{{/* Get page content. */}}
+{{- partial "content.html" . -}}
+
+{{- partial "share/share.html" . -}}
+
+{{- end -}}
+{{/* end main */}}

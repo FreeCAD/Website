@@ -62,46 +62,7 @@
   {{- $pages = .RegularPages -}}
 {{- end -}}
 
-{{/* related issue: https://github.com/gohugoio/hugo/issues/9003 */}}
-{{- $paginator := "" -}}
-{{- if (.Param "paginate") -}}
-  {{- $paginator = .Paginate $pages (.Param "paginate") -}}
-{{- else -}}
-  {{- $paginator = .Paginate $pages -}}
-{{- end -}}
-
-{{- with $paginator.Pages -}}
-  <section class="articles">
-    {{- range $index, $page := . -}}
-      {{- partial "article_card.html" . -}}
-    {{- end -}}
-  </section>
-{{- end -}}
-
-{{- if gt $paginator.TotalPages 1 -}}
-  <footer class="list-footer">
-    <nav class="list-pagination">
-      {{- if $paginator.HasPrev -}}
-        <a class="prev"
-          href="{{ $paginator.Prev.URL }}"
-          alt="PREVIOUS"
-          aria-label="{{ i18n "prev_page" | default "Prev Page" }}"
-          title="{{ i18n "prev_page" | default "Prev Page" }}">
-          ◀ {{ i18n "prev_page" | default "Prev Page" }}
-        </a>
-      {{- end -}}
-      {{- if $paginator.HasNext -}}
-        <a class="next"
-          href="{{ $paginator.Next.URL }}"
-          alt="NEXT"
-          aria-label="{{ i18n "next_page" | default "Next Page" }}"
-          title="{{ i18n "next_page" | default "Next Page" }}">
-          {{ i18n "next_page" | default "Next Page" }} ▶
-        </a>
-      {{- end -}}
-    </nav>
-  </footer>
-{{- end -}}
+{{- partial "list_paginator.html" (dict "pages" $pages "context" .) -}}
 
 {{- end -}}
 {{- /* end main */ -}}

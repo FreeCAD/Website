@@ -767,15 +767,11 @@ sup:target {
 }
 
 .share-links {
-  margin: var(--gap) 0;
-  padding-inline-start: var(--radius);
+  margin: auto;
+  padding: calc(var(--gap) * 2);
   display: flex;
   justify-content: center;
-  overflow-x: auto;
-}
-
-.share-links a:not(:last-of-type) {
-  margin-inline-end: var(--gap);
+  gap: var(--gap);
 }
 
 .share-links a svg {

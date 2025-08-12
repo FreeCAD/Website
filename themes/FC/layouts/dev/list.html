@@ -1,0 +1,46 @@
+{{- define "main" -}}
+
+{{- if not hugo.IsProduction -}}
+  {{- partial "debug.html" . -}}
+{{- end -}}
+
+<header>
+  <h1 class="title">
+    {{- if eq .Kind "term" -}}
+      {{ .Data.Singular | title }}: {{ end }}
+    {{ .Title | .RenderString }}
+  </h1>
+
+  {{- if .Description -}}
+    <h3 class="description">
+      {{ .Description | .RenderString }}
+    </h3>
+  {{- end -}}
+
+  {{- with .Params.cards -}}
+    {{- partial "hero_cards.html" . -}}
+  {{- end -}}
+
+  {{- partial "hero_cover.html" . -}}
+</header>
+
+{{/* get the latest pages from the current section, and fill in the missing translated pages from the first site (currently English) */}}
+{{- $pages := where (.RegularPages | lang.Merge site.Sites.Default.RegularPages) "Section" .Section -}}
+
+{{- $lang := slice -}}
+{{- range .Translations -}}
+  {{- $lang = $lang | append .Sections -}}
+{{- end -}}
+{{- $pages = where (lang.Merge .Sections $lang) "Type" "guide" -}}
+{{- $pages = $pages | append (.Site.GetPage "telemetry")}}
+
+{{- if eq .Type "guide" -}}
+  {{- $pages = .RegularPages -}}
+{{- end -}}
+
+{{- partial "list_paginator.html" (dict "pages" $pages "context" .) -}}
+
+{{- partial "share/share.html" . -}}
+
+{{- end -}}
+{{- /* end main */ -}}
