@@ -73,7 +73,9 @@
               <a href="{{ $taxonomyTerm.Page.RelPermalink }}"
                 title="{{ title $category | plainify }}"
                 class="{{- if $isActive -}}menu-active{{- end -}}">
-                {{ title $category }} ({{ len $taxonomyTerm.Pages }})
+                <span>
+                  {{ title $category }} ({{ len $taxonomyTerm.Pages }})
+                </span>
               </a>
             </li>
           {{- end -}}
@@ -87,7 +89,9 @@
                   <a href="{{ .RelPermalink }}"
                     title="{{ .Title | default .Name | plainify }}"
                     class="{{ if $active }}menu-active{{ end }}">
-                    {{ .Title | $.Page.RenderString }}
+                    <span>
+                      {{ .Title | $.Page.RenderString }}
+                    </span>
                   </a>
                 </li>
               {{- end -}}
@@ -107,7 +111,9 @@
                 {{- if $isExternal -}}
                   target="_blank" rel="external noreferrer"
                 {{- end -}}>
-                {{ .title }}
+                <span>
+                  {{ .title }}
+                </span>
                 {{- if $isExternal -}}
                   <span class="external">
                     {{ $icon }}

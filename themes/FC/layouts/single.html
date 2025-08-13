@@ -5,8 +5,8 @@
 {{- end -}}
 
 <header>
-  {{- if eq .Type "news" -}}
-    {{- partial "category.html" . -}}
+  {{- if eq .Section "news" -}}
+    {{- partial "categories_list.html" . -}}
   {{- end -}}
 
   {{- if eq .Section "releases" -}}

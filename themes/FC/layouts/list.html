@@ -5,16 +5,8 @@
 {{- end -}}
 
 <header>
-  {{- if or (eq .Section "news") (eq .Kind "term") -}}
-    <ul class="category-list">
-      {{- range site.Sites.Default.Taxonomies.categories -}}
-        <li>
-          <a href="{{ .Page.RelPermalink }}">
-            {{ .Page.LinkTitle }}
-          </a>
-        </li>
-      {{- end -}}
-    </ul>
+  {{- if or (eq .Section "news") (eq .Kind "term") (eq .Kind "taxonomy") -}}
+    {{- partial "categories_list.html" . -}}
   {{- end -}}
 
   <h1 class="title">

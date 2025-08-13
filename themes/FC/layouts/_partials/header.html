@@ -90,7 +90,9 @@
                 {{- if $isActive -}}
                   aria-current="page"
                 {{- end -}}>
-                {{ .Title | $.Page.RenderString }}
+                <span>
+                  {{ .Title | $.Page.RenderString }}
+                </span>
               </a>
           </li>
         {{- end -}}

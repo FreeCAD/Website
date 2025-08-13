@@ -39,7 +39,7 @@ main header {
   z-index: 2;
 }
 
-.releases, .category, .category-list {
+.releases, .category, .categories-list {
   position: absolute;
   top: 2rem;
   right: 0;
@@ -48,7 +48,7 @@ main header {
   z-index: 2;
 }
 
-.category-list {
+.categories-list {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -65,12 +65,12 @@ article .category {
   top: var(--gap);
 }
 
-:is(.releases, .category, .category-list) a {
-  padding: 0.5rem;
+:is(.releases, .category, .categories-list) a {
+  padding: var(--padding);
   color: var(--cover);
 }
 
-:is(.releases, .category, .category-list) a:hover {
+:is(.releases, .category, .categories-list) a:hover {
   color: var(--link-hover-color);
 }
 
@@ -872,7 +872,7 @@ sup:target {
 }
 
 .footnotes a:hover {
-  box-shadow: var(--link-hover-underline-shadow);
+  text-decoration: var(--underline);
 }
 
 .footnotes ol {

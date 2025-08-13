@@ -112,14 +112,13 @@ body:not(.dark) #sun {
   color: var(--link-hover-color);
 }
 
-.menu-active:not(.button) {
-  color: var(--primary);
-  box-shadow: 0 var(--line) 0 var(--primary);
+.menu-active:not(.button) span {
+  font-weight: 700;
+  text-decoration: var(--underline);
 }
 
-.menu-active:hover {
+.menu-active:hover span {
   color: var(--link-hover-color);
-  box-shadow: var(--link-hover-underline-shadow)
 }
 
 .menu-list .button {
@@ -133,7 +132,7 @@ body:not(.dark) #sun {
   transition: none;
 }
 
-.menu-list :is(.button:hover, .button.menu-active:hover) {
+.menu-list :is(.button, .button.menu-active):hover {
   color: var(--cover);
   background: var(--link-hover-color);
   box-shadow: none;
@@ -188,13 +187,12 @@ body:is(:has(#menu-list:popover-open),:has(#lang-list:popover-open)) :is(#menu-l
   margin: 0.5rem;
   padding: 0;
   color: var(--primary);
-  box-shadow: 0 var(--line)0 var(--primary);
+  text-decoration: var(--underline);
   font-weight: 700;
 }
 
 .language-list li .language-active:hover {
   color: var(--link-hover-color);
-  box-shadow: var(--link-hover-underline-shadow);
 }
 
 .language-list li .language-not-active {
