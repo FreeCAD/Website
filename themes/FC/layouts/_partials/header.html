@@ -65,7 +65,21 @@
           {{- with .Params.style -}}
             {{- $classes = $classes | append . -}}
           {{- end -}}
+          {{- $sectionKey := trim (.URL | relURL) "/" | lower -}}
+          {{- $isActive := false -}}
           {{- if strings.HasPrefix $.RelPermalink .URL -}}
+            {{- $isActive = true -}}
+          {{- else if strings.HasSuffix $sectionKey "news" -}}
+            {{- if and
+              (or (eq $.Kind "term")
+              (eq $.Kind "taxonomy"))
+              (or (eq $.Type "categories")
+              (eq $.Type "tags")
+              (eq $.Type "series")) -}}
+              {{- $isActive = true -}}
+            {{- end -}}
+          {{- end -}}
+          {{- if $isActive -}}
             {{- $classes = $classes | append "menu-active" -}}
           {{- end -}}
           <li>
@@ -73,7 +87,7 @@
                 title="{{ .Title | default .Name | plainify }}"
                 aria-label="{{ .Title | default .Name | plainify }}"
                 class="{{ delimit $classes " " }}"
-                {{- if strings.HasPrefix $.RelPermalink .URL -}}
+                {{- if $isActive -}}
                   aria-current="page"
                 {{- end -}}>
                 {{ .Title | $.Page.RenderString }}
