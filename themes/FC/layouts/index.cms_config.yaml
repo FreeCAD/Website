@@ -1,6 +1,6 @@
 {{- $params := site.Data.cms_config | default dict -}}
 {{- $config := newScratch -}}
-{{- $excluded := slice "engine" "site_url" -}}
+{{- $excluded := slice "cms" "cms_url" "site_url" -}}
 
 {{/* Reading settings from configuration but skip excluded. */}}
 {{- range $key, $value := $params -}}
