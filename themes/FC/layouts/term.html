@@ -1,0 +1,49 @@
+{{- define "main" -}}
+
+{{/* Debug only in non-production environments */}}
+{{- if not hugo.IsProduction -}}
+  {{- partial "debug.html" . -}}
+{{- end -}}
+
+<header>
+  {{- if eq .Kind "term" -}}
+    {{- partial "categories_list.html" . -}}
+  {{- end -}}
+
+  <h1 class="title">
+    {{ .Data.Singular | title }}: {{ .Title | .RenderString }}
+  </h1>
+
+  {{- if .Description -}}
+    <h3 class="description">
+      {{ .Description | .RenderString }}
+    </h3>
+  {{- end -}}
+
+  {{- with site.GetPage "news" -}}
+    {{- partial "hero_cover.html" . -}}
+  {{- end -}}
+</header>
+
+{{/* Get the latest pages from the current section */}}
+{{- $pages := .RegularPages -}}
+
+{{/* Pages in the default language site for this term */}}
+{{- $defaultTerm := index (index site.Sites.Default.Taxonomies .Data.Plural) .Data.Term -}}
+
+{{/* Merge current language term pages and fallback from default site. */}}
+{{- $fallbackPages := slice -}}
+{{- if $defaultTerm -}}
+  {{- range $p := $defaultTerm.Pages -}}
+    {{- if not (in $pages $p.Translations) -}}
+      {{- $fallbackPages = $fallbackPages | append $p -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $pages = sort (union $pages $fallbackPages) "Date" "desc" -}}
+
+{{- partial "list_paginator.html" (dict "pages" $pages "context" .) -}}
+
+{{- end -}}
+{{- /* end main */ -}}

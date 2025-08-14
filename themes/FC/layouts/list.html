@@ -1,17 +1,16 @@
 {{- define "main" -}}
 
+{{/* Debug only in non-production environments */}}
 {{- if not hugo.IsProduction -}}
   {{- partial "debug.html" . -}}
 {{- end -}}
 
 <header>
-  {{- if or (eq .Section "news") (eq .Kind "term") (eq .Kind "taxonomy") -}}
+  {{- if eq .Section "news" -}}
     {{- partial "categories_list.html" . -}}
   {{- end -}}
 
   <h1 class="title">
-    {{- if eq .Kind "term" -}}
-      {{ .Data.Singular | title }}: {{ end }}
     {{ .Title | .RenderString }}
   </h1>
 
@@ -25,23 +24,17 @@
     {{- partial "hero_cards.html" . -}}
   {{- end -}}
 
-  {{- if eq .Kind "term" -}}
-    {{- with .Site.GetPage "news" -}}
-      {{- partial "hero_cover.html" . -}}
-    {{- end -}}
-  {{- else -}}
-    {{- partial "hero_cover.html" . -}}
-  {{- end -}}
+  {{- partial "hero_cover.html" . -}}
 </header>
 
-{{- if eq .Type "guide" }}
+{{- if eq .Type "guide" -}}
   {{- partial "content.html" . -}}
 {{- end -}}
 
 {{/* get the latest pages from the current section, and fill in the missing translated pages from the first site (currently English) */}}
 {{- $pages := where (.RegularPages | lang.Merge site.Sites.Default.RegularPages) "Section" .Section -}}
 
-{{- if eq .Type "contribute" }}
+{{- if eq .Type "contribute" -}}
   {{- $lang := slice -}}
   {{- range .Translations -}}
     {{- $lang = $lang | append .Sections -}}
@@ -50,7 +43,7 @@
   {{- $pages = $pages | append (.Site.GetPage "telemetry")}}
 {{- end -}}
 
-{{- if or (eq .Kind "term") (eq .Type "guide") -}}
+{{- if eq .Type "guide" -}}
   {{- $pages = .RegularPages -}}
 {{- end -}}
 

@@ -1,6 +1,6 @@
 <ul class="categories-list">
   {{- $pageCategories := or .Params.categories (slice) -}}
-  {{- range site.Taxonomies.categories -}}
+  {{- range site.Sites.Default.Taxonomies.categories -}}
     {{- $term := .Page -}}
     {{- $isActive := false -}}
 
@@ -8,7 +8,7 @@
       {{- if eq $.Title $term.Title -}}
         {{- $isActive = true -}}
       {{- end -}}
-    {{- else if in $pageCategories ( lower $term.Title) -}}
+    {{- else if in $pageCategories (lower $term.Title) -}}
       {{- $isActive = true -}}
     {{- end -}}
 

@@ -1,0 +1,49 @@
+{{- define "main" -}}
+
+{{/* Debug only in non-production environments */}}
+{{- if not hugo.IsProduction -}}
+  {{- partial "debug.html" . -}}
+{{- end -}}
+
+{{- $title := .Title | .RenderString -}}
+{{- $description := .Description | .RenderString -}}
+{{- $type := .Type -}}
+{{- $terms := .Data.Terms.Alphabetical -}}
+
+{{- with $title -}}
+  <header>
+    <h1 class="title">
+      {{ . }}
+    </h1>
+    {{- with $description -}}
+      <p class="description">
+        {{ . }}
+      </p>
+    {{- end -}}
+
+    {{- with $terms -}}
+      <ul class="terms">
+        {{- range . -}}
+          {{- $name := .Name -}}
+          {{- $count := .Count -}}
+          {{- with site.GetPage (printf "/%s/%s" $type $name) -}}
+            <li>
+              <a href="{{ .RelPermalink }}">
+                {{ .LinkTitle }} ({{ $count }})
+              </a>
+            </li>
+          {{- end -}}
+        {{- end -}}
+      </ul>
+    {{- else -}}
+      {{- i18n "noterms" | default (printf "No %s found." $type) -}}
+    {{- end -}}
+
+    {{- with site.GetPage "news" -}}
+      {{- partial "hero_cover.html" . -}}
+    {{- end -}}
+  </header>
+{{- end -}}
+
+{{- end -}}
+{{/* end main */ -}}
