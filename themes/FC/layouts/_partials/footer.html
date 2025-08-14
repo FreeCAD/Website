@@ -32,7 +32,7 @@
           (eq $currentPage.Kind "term")
           (gt (len (default slice $currentPage.Params.categories)) 0))) -}}
       {{- if $isActive -}}
-        {{ $classes = $classes | append "menu-active" }}
+        {{- $classes = $classes | append "menu-active" -}}
       {{- end -}}
 
       {{/* Section */}}
@@ -58,7 +58,7 @@
 
         {{/* Children in section */}}
         <ul>
-        {{- if eq $sectionKey "news" }}
+        {{- if eq $sectionKey "news" -}}
         {{/* List Categories instead of RegularPages */}}
           {{- range $category, $taxonomyTerm := site.Taxonomies.categories -}}
             {{- $isActive = false -}}
@@ -68,7 +68,7 @@
               {{- if in $currentPage.Params.categories $category -}}
                 {{- $isActive = true -}}
               {{- end -}}
-            {{- end }}
+            {{- end -}}
             <li>
               <a href="{{ $taxonomyTerm.Page.RelPermalink }}"
                 title="{{ title $category | plainify }}"
@@ -88,7 +88,7 @@
                 <li>
                   <a href="{{ .RelPermalink }}"
                     title="{{ .Title | default .Name | plainify }}"
-                    class="{{ if $active }}menu-active{{ end }}">
+                    class="{{- if $active -}}menu-active{{- end -}}">
                     <span>
                       {{ .Title | $.Page.RenderString }}
                     </span>
@@ -107,7 +107,7 @@
             <li>
               <a href="{{ cond $isExternal .url (.url | relURL) }}"
                 title="{{ .title | plainify }}"
-                class="{{ if $active }}menu-active{{ end }}"
+                class="{{- if $active -}}menu-active{{- end -}}"
                 {{- if $isExternal -}}
                   target="_blank" rel="external noreferrer"
                 {{- end -}}>

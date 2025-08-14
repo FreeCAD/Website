@@ -7,11 +7,11 @@
         ICONS
       </h2>
     </summary>
-    {{- range sort (resources.Match "svg/*.svg") "Name" }}
+    {{- range sort (resources.Match "svg/*.svg") "Name" -}}
       <span class="meta">
         {{ (. | resources.Minify).Content | safeHTML }}
         {{ .Name | replaceRE ".svg$" "" }}
       </span>
-    {{- end }}
+    {{- end -}}
   </details>
 </div>

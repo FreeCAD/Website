@@ -1,6 +1,6 @@
 
 {{/* theme toggle */}}
-{{- if not site.Params.disableThemeToggle }}
+{{- if not site.Params.disableThemeToggle -}}
   <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {
       if (document.body.className.includes("dark")) {
@@ -12,7 +12,7 @@
       }
     })
   </script>
-{{- end }}
+{{- end -}}
 
 {{- /* Script to detect User Agent and provide corresponding download options. */}}
 {{- if or (eq .Section "download") (eq .Section "releases") -}}

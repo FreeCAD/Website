@@ -76,7 +76,7 @@
       {{- $entry = merge $entry (dict "color" $color) -}}
       {{- $coloredEntries = $coloredEntries | append $entry -}}
     {{- end -}}
-    {{ range $i, $v4 := $others }}
+    {{- range $i, $v4 := $others -}}
       {{- if ne $v4.value 0 -}}
         {{- $coloredEntries = $coloredEntries | append $others -}}
       {{- end -}}
