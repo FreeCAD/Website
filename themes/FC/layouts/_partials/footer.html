@@ -60,7 +60,7 @@
         <ul>
         {{- if eq $sectionKey "news" -}}
         {{/* List Categories instead of RegularPages */}}
-          {{- range $category, $taxonomyTerm := site.Taxonomies.categories -}}
+          {{- range $category, $taxonomyTerm := site.Sites.Default.Taxonomies.categories -}}
             {{- $isActive = false -}}
             {{- if eq $currentPage.RelPermalink $taxonomyTerm.Page.RelPermalink -}}
               {{- $isActive = true -}}

@@ -72,7 +72,7 @@
 <footer class="single-footer">
   {{- if .Params.tags -}}
     <ul class="terms">
-      {{- $taxonomy := site.Taxonomies.tags -}}
+      {{- $taxonomy := site.Sites.Default.Taxonomies.tags -}}
       {{- range .GetTerms "tags" -}}
         {{- $count := len ($taxonomy.Get .Title) -}}
         <li>
