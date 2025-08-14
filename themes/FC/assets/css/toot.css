@@ -2,7 +2,7 @@
 
 .toot-blockquote {
   line-height: 1.5rem;
-  border: var(--border);
+  border: none;
   border-radius: var(--radius);
 }
 
@@ -144,10 +144,10 @@
 .toot-card {
   margin: var(--gap);
   position: relative;
-  border: var(--border);
   border-radius: var(--radius);
   text-decoration: none;
   color: var(--secondary);
+  background: var(--theme);
 }
 
 .toot-card:hover {
@@ -157,6 +157,7 @@
 .toot-card-image img {
   width: 100%;
   max-height: calc((var(--width) * 0.25) + 2rem);
+  border-radius: var(--radius);
 }
 
 .toot-card-content {
