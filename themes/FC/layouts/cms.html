@@ -1,46 +1,57 @@
-<!DOCTYPE html>
-<html lang="{{ .Site.Language.LanguageCode }}">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="noindex" />
-    <title>
-      {{ .Title }}
-    </title>
-    {{- with site.Home.OutputFormats.Get "CMS_Config" -}}
-      <link
-        href="{{ .RelPermalink }}"
-        type="application/yaml"
-        rel="cms-config-url" />
-    {{- end -}}
-  </head>
+{{/* CMS Admin index page.
+  - Get CMS config setup.
+  - Fetch external CMS script resource.
+  - Load CMS script.
+*/}}
 
-  <body>
-    {{- if and site.Data.cms_config.cms site.Data.cms_config.cms_url -}}
-      {{- $cms := site.Data.cms_config.cms -}}
-      {{- $cms_url := site.Data.cms_config.cms_url -}}
-      {{- with try (resources.GetRemote $cms_url (dict "key" (printf "%s-cms.css" $cms))) -}}
-        {{- warnf "Fetching remote resource: %q" $cms_url -}}
-        {{- with .Err -}}
-          {{- errorf "%s" . -}}
-        {{- else with .Value -}}
-          {{- warnf "Serving cached resource: %q" .RelPermalink -}}
-          <script
-            src="{{ .RelPermalink }}"
-            onload="{{ printf "%s.start()" (upper $cms) | safeJS }}"
-            onerror="document.body.innerHTML='Failed to load {{ title $cms }} CMS'"></script>
-        {{- else -}}
-          {{- errorf "Unable to get remote resource: %q" $cms_url -}}
-        {{- end -}}
+{{- if site.Params.enableCMS -}}
+
+  <!DOCTYPE html>
+  <html lang="{{ .Site.Language.LanguageCode }}">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="robots" content="noindex" />
+      <title>
+        {{ .Title }}
+      </title>
+      {{- with site.Home.OutputFormats.Get "CMS_Config" -}}
+        <link
+          href="{{ .RelPermalink }}"
+          type="application/yaml"
+          rel="cms-config-url" />
       {{- end -}}
+    </head>
 
-    {{- else -}}
-      <h1>
-        Error
-      </h1>
-      <p>
-        Invalid CMS configuration.
-      </p>
-    {{- end -}}
-  </body>
-</html>
+    <body>
+      {{- if and site.Data.cms_config.cms site.Data.cms_config.cms_url -}}
+        {{- $cms := site.Data.cms_config.cms -}}
+        {{- $cms_url := site.Data.cms_config.cms_url -}}
+        {{- with try (resources.GetRemote $cms_url (dict "key" (printf "%s-cms.css" $cms))) -}}
+          {{- warnf "Fetching remote resource: %q" $cms_url -}}
+          {{- with .Err -}}
+            {{- errorf "%s" . -}}
+          {{- else with .Value -}}
+            {{- warnf "Serving cached resource: %q" .RelPermalink -}}
+            <script
+              src="{{ .RelPermalink }}"
+              onload="{{ printf "%s.start()" (upper $cms) | safeJS }}"
+              onerror="document.body.innerHTML='Failed to load {{ title $cms }} CMS'">
+            </script>
+          {{- else -}}
+            {{- errorf "Unable to get remote resource: %q" $cms_url -}}
+          {{- end -}}
+        {{- end -}}
+
+      {{- else -}}
+        <h1>
+          Error
+        </h1>
+        <p>
+          Invalid CMS configuration.
+        </p>
+      {{- end -}}
+    </body>
+  </html>
+
+{{- end -}}
