@@ -7,9 +7,13 @@
 
 {{- if not site.Params.assets.disableFingerprinting -}}
   {{- $stylesheet := $stylesheet | fingerprint -}}
-  <link href="{{ $stylesheet.RelPermalink }}" rel="preload" as="style">
-  <link crossorigin="anonymous" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}" rel="stylesheet">
+  <link href="{{ $stylesheet.RelPermalink }}" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="{{ $stylesheet.Data.Integrity }}" crossorigin="anonymous">
+  <noscript>
+    <link href="{{ $stylesheet.RelPermalink }}" rel="stylesheet" integrity="{{ $stylesheet.Data.Integrity }}" crossorigin="anonymous">
+  </noscript>
 {{- else -}}
-  <link href="{{ $stylesheet.RelPermalink }}" rel="preload" as="style">
-  <link crossorigin="anonymous" href="{{ $stylesheet.RelPermalink }}" rel="stylesheet">
+  <link href="{{ $stylesheet.RelPermalink }}" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link href="{{ $stylesheet.RelPermalink }}" rel="stylesheet">
+  </noscript>
 {{- end -}}
