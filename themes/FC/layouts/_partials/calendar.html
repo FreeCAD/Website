@@ -1,56 +1,50 @@
 {{- with .Params.calendar -}}
-  {{- $host := .host_url | safeURL -}}
+
+  {{- $cal := . -}}
+  {{- $host := .host | safeURL -}}
   {{- $query := slice -}}
-  {{- with .ics_url -}}
-    {{- $query = $query | append (printf "url=%s" (urlquery . )) -}}
+
+  {{- range $key := slice "url" "title" "skin" "target" -}}
+    {{- with index $cal $key -}}
+      {{- $query = $query | append (printf "%s=%s" $key (urlquery .)) -}}
+    {{- end -}}
   {{- end -}}
-  {{- with .title -}}
-    {{- $query = $query | append (printf "title=%s" (urlquery . )) -}}
-  {{- end -}}
+
   {{- with .tabs -}}
     {{- range . -}}
       {{- $query = $query | append (printf "tabs=%s" (urlquery .)) -}}
     {{- end -}}
   {{- end -}}
-  {{- with .skin -}}
-    {{- $query = $query | append (printf "skin=%s" (urlquery .)) -}}
-  {{- end -}}
-  {{- with .target -}}
-    {{- $query = $query | append (printf "target=%s" (urlquery .)) -}}
-  {{- end -}}
+
   {{- $menu := .menu | default false -}}
-  {{- $menuFlags := dict
-    "calendar_names" $menu
-    "description" $menu
-    "title" $menu
-  -}}
-  {{- range $key, $val := $menuFlags -}}
-    {{- $query = $query | append (printf "menu_shows_%s=%t" $key $val) -}}
+  {{- range $menus := slice "calendar_names" "description" "title" -}}
+    {{- $query = $query | append (printf "menu_shows_%s=%t" $menus $menu) -}}
   {{- end -}}
+
   {{- $css := urlquery ".hamburger-menu,.status-window{display:none;}" -}}
   {{- $query = $query | append (printf "css=%s" $css) -}}
+
   {{- $query = $query | append "prefer_browser_language=true" -}}
   {{- $query = $query | append "loader=" -}}
+
   {{- $query := delimit $query "&" -}}
 
   <iframe id="open-web-calendar"
     class="calendar"
     src="{{ printf "%s?%s" $host $query }}"
-
     sandbox="allow-scripts allow-same-origin allow-top-navigation"
     allowTransparency="true"
     scrolling="no"
     frameborder="0">
   </iframe>
 
-  {{- $ics_url := .ics_url -}}
+  {{- $url := .url -}}
   {{- $base_url := "https://calendar.google.com/calendar/embed?src=" -}}
-  {{- $re := findRE `/ical/([^/]+)/` $ics_url -}}
-  {{- if gt (len $re) 0 -}}
-    {{- $id := index $re 0 | replaceRE `/ical/([^/]+)/` "${1}" -}}
+  {{- with findRE `/ical/([^/]+)/` $url -}}
+    {{- $id := index . 0 | replaceRE `/ical/([^/]+)/` "${1}" -}}
     <a href="{{ printf "%s%s" $base_url $id }}" target="_blank">Open ICS Calendar</a>
   {{- else -}}
-    <a href="{{ $ics_url }}" target="_blank" download>Save ICS Calendar</a>
+    <a href="{{ $url }}" target="_blank" download>Save ICS Calendar</a>
   {{- end -}}
 
 {{- end -}}

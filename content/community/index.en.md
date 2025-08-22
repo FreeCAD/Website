@@ -14,8 +14,8 @@ menus:
     weight: 6
 params:
   calendar:
-    host_url: "https://open-web-calendar.hosted.quelltext.eu/calendar.html"
-    ics_url: "https://calendar.google.com/calendar/ical/6e6cc81260051a3c49fdf915c472f2d62576820129f0e0b2cacb7025ed62f960%40group.calendar.google.com/public/basic.ics"
+    host: "https://open-web-calendar.hosted.quelltext.eu/calendar.html"
+    url: "https://calendar.google.com/calendar/ical/6e6cc81260051a3c49fdf915c472f2d62576820129f0e0b2cacb7025ed62f960%40group.calendar.google.com/public/basic.ics"
     title: "FreeCAD Calendar"
     tabs: ["month", "week", "agenda"]
     skin: "terrace"
