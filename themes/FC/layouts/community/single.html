@@ -32,6 +32,19 @@
   {{ .TableOfContents }}
 {{- end -}}
 
+{{/* Get latest event article. */}}
+{{- $pages := where site.RegularPages "Section" "news" | default (where site.Sites.Default.RegularPages "Section" "news") -}}
+{{- $events := where $pages "Params.categories" "in" "event" -}}
+{{- $latest := first 3 (sort $events "Date" "desc") -}}
+
+{{- with $latest -}}
+  <section class="articles">
+    {{- range . -}}
+      {{- partial "article_card.html" . -}}
+    {{- end -}}
+  </section>
+{{- end -}}
+
 {{/* Get the content of a Page. */}}
 {{- partial "content.html" . -}}
 
