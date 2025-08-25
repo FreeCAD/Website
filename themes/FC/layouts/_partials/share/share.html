@@ -6,14 +6,16 @@
       <a href="{{ $url }}"
         title="{{ i18n $social | default $social | title }}"
         target="_blank" rel="noopener">
-        {{- with printf "svg/%s.svg" $social | resources.Get | resources.Minify -}}
-          {{ .Content | safeHTML }}
-        {{- end -}}
+        {{- partial "icon.html" $social -}}
       </a>
     {{- end -}}
   {{- end -}}
 
-  {{- if and site.Params.shareOnFediverse (not .IsHome) -}}
+  {{- if and
+    site.Params.shareOnFediverse
+    (not (in (slice "home" "taxonomy" "term") .Kind))
+    (not (and (eq .Kind "section") (eq .Section "news"))) -}}
+
     {{- $path := (strings.TrimPrefix "/" (printf `%s/fedishare.html` .Site.LanguagePrefix)) -}}
     {{- $page := resources.Get "html/fedishare.html" -}}
     {{- $page := $page | resources.ExecuteAsTemplate $path (.GetPage "/") -}}
@@ -44,9 +46,7 @@
     <a href="{{ $url }}"
       title="{{ i18n "shareOn" | default "Share on" }} {{ i18n "fediverse" | default "Fediverse" }}"
       target="_blank" rel="noopener">
-      {{- with printf "svg/%s.svg" "fediverse" | resources.Get | resources.Minify -}}
-        {{ .Content | safeHTML }}
-      {{- end -}}
+      {{- partial "icon.html" "fediverse" -}}
     </a>
   {{- end -}}
 </section>

@@ -768,16 +768,20 @@ sup:target {
 
 .share-links {
   margin: auto;
-  padding: calc(var(--gap) * 2) var(--gap);
+  padding: calc(var(--gap) * 2) var(--side);
   display: flex;
   justify-content: center;
   gap: var(--gap);
+  flex-wrap: wrap;
 }
 
-.share-links a svg {
-  height: 2rem;
+.share-links svg {
+  color: var(--tertiary);
   width: 2rem;
-  fill: currentColor;
+}
+
+.share-links svg:hover {
+  color: var(--link-hover-color);
 }
 
 .share-links svg:active {

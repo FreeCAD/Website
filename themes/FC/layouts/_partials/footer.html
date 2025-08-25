@@ -11,10 +11,7 @@
 {{- with (site.GetPage "footer") -}}
   {{- $customLinks = .Params.customLinks -}}
 {{- end -}}
-{{- $icon := "" -}}
-{{- with printf "svg/%s.svg" "external" | resources.Get | resources.Minify -}}
-  {{- $icon = .Content | safeHTML -}}
-{{- end -}}
+{{- $external_icon := partial "icon.html" "external" -}}
 
 <footer class="site-footer">
   <div class="footer-row">
@@ -50,7 +47,7 @@
             {{ .Title | $.Page.RenderString }}
             {{- if $isExternal -}}
               <span class="external">
-                {{ $icon }}
+                {{- $external_icon -}}
               </span>
             {{- end -}}
           </a>
@@ -116,7 +113,7 @@
                 </span>
                 {{- if $isExternal -}}
                   <span class="external">
-                    {{ $icon }}
+                    {{- $external_icon -}}
                   </span>
                 {{- end -}}
               </a>
@@ -127,6 +124,8 @@
       </div>
     {{- end -}}
   </div>
+
+  {{- partial "share/share.html" . -}}
 
   {{/* Custom links from data/footer.yaml */}}
   <div class="footer-row">
@@ -149,7 +148,7 @@
               {{ .title }}
               {{- if $isExternal -}}
                 <span class="external">
-                  {{ $icon }}
+                  {{- $external_icon -}}
                 </span>
               {{- end -}}
             </a>

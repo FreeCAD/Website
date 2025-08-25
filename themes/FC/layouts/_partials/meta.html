@@ -1,16 +1,6 @@
-{{- $icons := dict -}}
-{{- $iconsNames := slice "date" "categories" "tags" "words-count" "reading-time" "author" "translations" -}}
-{{- range $iconsNames -}}
-  {{- $name := . -}}
-  {{- with printf "svg/%s.svg" $name | resources.Get | resources.Minify -}}
-    {{- $svg := .Content | safeHTML -}}
-    {{- $icons = merge $icons (dict $name $svg) -}}
-  {{- end -}}
-{{- end -}}
-
 {{- if not .Date.IsZero -}}
   <span class="meta">
-    {{- index $icons "date" -}}
+    {{- partial "icon.html" "date" -}}
     <time datetime="{{ .Date }}">
       {{ .Date | time.Format ":date_long" }}
     </time>
@@ -20,7 +10,7 @@
 {{- if .Page.Store.Get "archives" -}}
   {{- if .Params.categories -}}
     <span class="meta">
-      {{- index $icons "categories" -}}
+      {{- partial "icon.html" "categories" -}}
       <span class="categories">
         {{- range (.GetTerms "categories") -}}
           <a href="{{ .Permalink }}">
@@ -34,7 +24,7 @@
 
 {{- if .Params.tags -}}
   <span class="meta">
-    {{- index $icons "tags" -}}
+    {{- partial "icon.html" "tags" -}}
     <span class="tags">
       {{- range (.GetTerms "tags") -}}
         <a href="{{ .Permalink }}">
@@ -47,7 +37,7 @@
 
 {{- if (.Param "showWordCount") -}}
   <span class="meta">
-    {{- index $icons "words-count" -}}
+    {{- partial "icon.html" "words-count" -}}
     <span>
       {{ i18n "words" .WordCount | default (printf "%d words" .WordCount) }}
     </span>
@@ -56,7 +46,7 @@
 
 {{- if (.Param "showReadingTime") -}}
   <span class="meta">
-    {{- index $icons "reading-time" -}}
+    {{- partial "icon.html" "reading-time" -}}
     <span>
       {{ i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime) }}
     </span>
@@ -65,7 +55,7 @@
 
 {{- if (.Param "showAuthor") -}}
   <span class="meta">
-    {{- index $icons "author" -}}
+    {{- partial "icon.html" "author" -}}
     <span>
       {{ partial "author.html" . }}
     </span>
@@ -74,7 +64,7 @@
 
 {{- if .IsTranslated -}}
   <span class="meta">
-    {{- index $icons "translations" -}}
+    {{- partial "icon.html" "translations" -}}
     <span class="i18n-links">
       {{- range $i, $e := .Translations -}}
         {{- if $i -}}

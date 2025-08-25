@@ -9,10 +9,6 @@
 {{- $title := .Title | plainify -}}
 {{- $fallback := i18n "link" | default "Open link" -}}
 {{- $text := .Text | safeHTML -}}
-{{- $icon := "" -}}
-{{- with printf "svg/%s.svg" "external" | resources.Get | resources.Minify -}}
-  {{- $icon = .Content | safeHTML -}}
-{{- end -}}
 
 <a href="{{ $href }}"
   {{- if $title -}}
@@ -28,7 +24,7 @@
   {{- end -}}
   {{- if $isExternal -}}
     <span class="external">
-      {{ $icon }}
+      {{- partial "icon.html" "external" -}}
     </span>
   {{- end -}}
 </a>

@@ -9,10 +9,6 @@
 {{- $level := .Level -}}
 {{- $anchor := .Anchor | safeURL -}}
 {{- $text := .Text | safeHTML -}}
-{{- $icon := "" -}}
-{{- with printf "svg/%s.svg" "anchor" | resources.Get | resources.Minify -}}
-  {{- $icon = .Content | safeHTML -}}
-{{- end -}}
 
 <h{{ $level }}
   id="{{ $anchor }}"
@@ -23,6 +19,6 @@
      href="#{{ $anchor }}"
      title="{{ $text }}"
      aria-label="{{ $text }}">
-    {{ $icon }}
+    {{- partial "icon.html" "anchor" -}}
   </a>
 </h{{ $level }}>

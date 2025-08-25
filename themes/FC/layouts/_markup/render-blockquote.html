@@ -11,9 +11,7 @@
   {{- $type := .AlertType -}}
   <blockquote class="alert-{{ $type }}">
     <span>
-      {{- with printf "svg/%s.svg" $type | resources.Get | resources.Minify -}}
-        {{ .Content | safeHTML }}
-      {{- end -}}
+      {{- partial "icon.html" $type -}}
     </span>
     {{- with .AlertTitle -}}
       {{ . }}
@@ -26,9 +24,7 @@
   <figure>
     <blockquote {{- with .Attributes.cite -}}cite="{{ . }}"{{- end -}}>
       <span>
-        {{- with printf "svg/%s.svg" "quote" | resources.Get | resources.Minify -}}
-          {{ .Content | safeHTML }}
-        {{- end -}}
+        {{- partial "icon.html" "quote" -}}
       </span>
       {{ $text }}
     </blockquote>

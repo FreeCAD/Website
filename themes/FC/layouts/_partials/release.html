@@ -23,9 +23,7 @@
               {{ $platform.label }}
             </span>
             <br>
-            {{- with printf "svg/%s.svg" $download.key | resources.Get | resources.Minify -}}
-              {{ .Content | safeHTML }}
-            {{- end -}}
+            {{- partial "icon.html" $download.key -}}
           </a>
         {{- end -}}
       {{- end -}}
@@ -33,9 +31,7 @@
       <button type="button"
         popovertarget="{{ $platform.id }}-arch"
         title="{{ $platform.label }}">
-        {{- with printf "svg/%s.svg" $platform.id | resources.Get | resources.Minify -}}
-          {{ .Content | safeHTML }}
-        {{- end -}}
+        {{- partial "icon.html" $platform.id -}}
         <br>
         <span>
           {{ $platform.label }}
