@@ -104,8 +104,37 @@ jobs:
           python3 - "$FILE" <<EOF
           import json
           import sys
+          import xml.etree.ElementTree as ET
 
           file_path = sys.argv[1]
+
+          def extract_metadata(package_xml):
+              try:
+                  root = ET.fromstring(package_xml)
+              except ET.ParseError:
+                  return {}
+
+              def find_text(tag):
+                  elem = root.find(tag)
+                  return elem.text.strip() if elem is not None and elem.text else None
+
+              def find_attr_text(tag, attr=None, attr_value=None):
+                  for elem in root.findall(tag):
+                      if attr and attr_value:
+                          if elem.attrib.get(attr) == attr_value:
+                              return elem.text.strip() if elem.text else None
+                      elif not attr:
+                          return elem.text.strip() if elem.text else None
+                  return None
+
+              return {
+                  "name": find_text("name"),
+                  "description": find_text("description"),
+                  "version": find_text("version"),
+                  "maintainer": find_text("maintainer"),
+                  "license": find_text("license"),
+                  "icon": root.findtext(".//icon") or None
+              }
 
           try:
               with open(file_path, "r") as f:
@@ -118,13 +147,16 @@ jobs:
           for key, entries in data.items():
               cleaned_entries = []
               for entry in entries:
+                  metadata = (entry.get("metadata") or {})
+                  package_xml = metadata.get("package_xml")
+                  cleaned_metadata = extract_metadata(package_xml) if package_xml else {}
+
                   cleaned_entry = {
                       "repository": entry.get("repository"),
                       "last_update_time": entry.get("last_update_time"),
-                      "metadata": {
-                          "package_xml": (entry.get("metadata") or {}).get("package_xml")
-                      }
+                      "metadata": cleaned_metadata
                   }
+
                   cleaned_entries.append(cleaned_entry)
               cleaned_data[key] = cleaned_entries
 
