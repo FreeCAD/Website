@@ -1,0 +1,1454 @@
+{
+  "3D_Printing_Tools": [
+    {
+      "repository": "https://github.com/mark1791/3D_Printing_Tools",
+      "last_update_time": "2019-06-30T23:01:34+01:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "3DfindIT": [
+    {
+      "repository": "https://github.com/cadenasgmbh/3dfindit-freecad-integration",
+      "last_update_time": "2022-09-08T13:58:17+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\">\n  <name>3DfindIT for FreeCAD</name>\n  <description>3DfindIT.com, the engineering search engine for 3D components from CADENAS, provides users with easy access to millions of CAD models from thousands of international manufacturers and a range of intuitive search methods.</description>\n  <version>1.2</version>\n  <maintainer email=\"t.sielaff@cadenas.de\">Tobias Sielaff</maintainer>\n  <license file=\"LICENSE\">LGPL-3.0</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/cadenasgmbh/3dfindit-freecad-integration</url>\n  <url type=\"readme\">https://github.com/cadenasgmbh/3dfindit-freecad-integration/blob/master/README.md</url>\n\n  <content>\n    <workbench>\n      <classname>CADENAS3DfinditWorkbench</classname>\n      <subdirectory>./</subdirectory>\n      <icon>freecad/cadenas3dfindit/resources/icons/3dfindit.svg</icon>\n      <freecadmin>0.19.0</freecadmin>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "A2plus": [
+    {
+      "repository": "https://github.com/kbwbe/A2plus",
+      "last_update_time": "2025-01-11T17:43:16+01:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>A2plus</name>\n  <description>Another assembly workbench for FreeCAD, following and extending Hamish's Assembly 2 workbench hence Assembly2plus. The main goal of A2plus is to create a very simple, easy to use, and not over-featured workbench for FreeCAD assemblies. Using the KISS principle: KEEP IT SIMPLE, STUPID</description>\n  <version>0.4.68</version>\n  <date>2024-10-01</date>\n  <maintainer email=\"kbwbe@gmx.de\">kbwbe</maintainer>\n  <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/kbwbe/A2plus</url>\n  <url type=\"bugtracker\">https://github.com/kbwbe/A2plus/issues</url>\n  <icon>icons/a2p_Workbench.svg</icon>\n\n  <content>\n    <workbench>\n      <classname>A2plusWorkbench</classname>\n      <subdirectory>./</subdirectory>\n      <tag>assembly</tag>\n      <freecadmin>0.19</freecadmin>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "addFC": [
+    {
+      "repository": "https://github.com/GS90/addFC",
+      "last_update_time": "2025-08-20T18:21:27+03:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>AddFC Workbench</name>\n  <description>Additional tools for FreeCAD.</description>\n  <version>1.9.1</version>\n  <date>2025-08-20</date>\n  <maintainer email=\"nn19051990@gmail.com\">Golodnikov Sergey</maintainer>\n  <author email=\"nn19051990@gmail.com\">Golodnikov Sergey</author>\n  <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n  <url type=\"repository\" branch=\"main\">https://github.com/GS90/addFC</url>\n  <url type=\"readme\">https://github.com/GS90/addFC/blob/main/README.md</url>\n  <url type=\"documentation\">https://github.com/GS90/addFC/blob/main/repo/doc</url>\n  <icon>repo/icon/workbench.svg</icon>\n  <content>\n    <workbench>\n      <classname>AddFC</classname>\n      <subdirectory>./</subdirectory>\n      <freecadmin>0.20.2</freecadmin>\n      <!-- dependencies -->\n      <depend optional=\"true\" type=\"addon\">sheetmetal</depend>\n      <depend optional=\"true\" type=\"python\">numpy</depend>\n      <depend optional=\"true\" type=\"python\">ezdxf</depend>\n      <!-- tags -->\n      <tag>bom</tag>\n      <tag>library</tag>\n      <tag>exploded</tag>\n      <tag>sheetmetal</tag>\n    </workbench>\n  </content>\n</package>"
+      }
+    }
+  ],
+  "AddonManager": [
+    {
+      "repository": "https://github.com/FreeCAD/AddonManager",
+      "last_update_time": "2025-08-23T22:56:59-05:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<!-- NOTE: The Addon Manager still uses the original xmlns entry so that older versions of FreeCAD can upgrade\n to the newest Addon Manager. This can be changed when FreeCAD v1.0 is no longer supported. -->\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n    <name>Addon Manager</name>\n    <description>Tool to install workbenches, macros, themes, etc.</description>\n    <icon>Resources/icons/addon_manager.svg</icon>\n    <version>2025.08.23</version>\n    <date>2025-08-23</date>\n    <maintainer email='chennes@freecad.org'>Chris Hennes</maintainer>\n    <author email = 'yorik@uncreated.net'>Yorik van Havre</author>\n    <author>Jonathan Wiedemann</author>\n    <author>Kurt Kremitzki</author>\n    <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n    <url type='repository' branch='main'>https://github.com/FreeCAD/AddonManager</url>\n    <url type='bugtracker'>https://github.com/FreeCAD/AddonManager/issues</url>\n    <url type='readme'>https://github.com/FreeCAD/AddonManager/blob/main/README.md</url>\n\n    <content>\n        <workbench>\n            <!-- Even though the Addon Manager is not a workbench, it declares itself as one so that versions of\n            FreeCAD prior to 1.1 can see the InitGui.py file and run it. -->\n            <name>AddonManager</name>\n            <subdirectory>./</subdirectory>\n        </workbench>\n    </content>\n</package>\n"
+      }
+    },
+    {
+      "repository": "https://github.com/FreeCAD/AddonManager",
+      "last_update_time": "2025-08-23T22:56:34-05:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<!-- NOTE: The Addon Manager still uses the original xmlns entry so that older versions of FreeCAD can upgrade\n to the newest Addon Manager. This can be changed when FreeCAD v1.0 is no longer supported. -->\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n    <name>Addon Manager</name>\n    <description>Development branch of a tool to install workbenches, macros, themes, etc.</description>\n    <icon>Resources/icons/addon_manager.svg</icon>\n    <version>2025.08.23dev</version>\n    <date>2025-08-23</date>\n    <maintainer email='chennes@freecad.org'>Chris Hennes</maintainer>\n    <author email = 'yorik@uncreated.net'>Yorik van Havre</author>\n    <author>Jonathan Wiedemann</author>\n    <author>Kurt Kremitzki</author>\n    <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n    <url type='repository' branch='dev'>https://github.com/FreeCAD/AddonManager</url>\n    <url type='bugtracker'>https://github.com/FreeCAD/AddonManager/issues</url>\n    <url type='readme'>https://github.com/FreeCAD/AddonManager/blob/dev/README.md</url>\n\n    <content>\n        <workbench>\n            <!-- Even though the Addon Manager is not a workbench, it declares itself as one so that versions of\n            FreeCAD prior to 1.1 can see the InitGui.py file and run it. -->\n            <name>AddonManager</name>\n            <subdirectory>./</subdirectory>\n        </workbench>\n    </content>\n</package>\n"
+      }
+    }
+  ],
+  "AirPlaneDesign": [
+    {
+      "repository": "https://github.com/FredsFactory/FreeCAD_AirPlaneDesign",
+      "last_update_time": "2024-06-28T22:56:41+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\">\n  <name>AirplaneDesign</name>\n  <description>A FreeCAD workbench dedicated to Airplane Design.</description>\n  <version>0.4.1</version>\n  <maintainer email=\"@fredsfactory.fr\">FredsFactory</maintainer>\n  <license file=\"LICENSE\">LGPL-2.1</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/FredsFactory/FreeCAD_AirPlaneDesign</url>\n  <url type=\"readme\">https://github.com/FredsFactory/FreeCAD_AirPlaneDesign/blob/master/README.md</url>\n\n  <content>\n    <workbench>\n      <classname>AirPlaneDesignWorkbench</classname>\n      <subdirectory>./</subdirectory>\n      <icon>resources/icons/appicon.svg</icon>\n      <freecadmin>0.18.0</freecadmin>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "Alternate_OpenSCAD": [
+    {
+      "repository": "https://github.com/KeithSloan/OpenSCAD_Alt_Import",
+      "last_update_time": "2025-08-26T08:59:54+01:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\">\n\n  <name>OpenSCAD alternate importer</name>\n\n  <description>An alternate OpenSCAD importer - with some experimental features</description>\n\n  <version>1.0.0</version>\n\n  <maintainer email=\"keith@sloan-home.co.uk\">Keith Sloan</maintainer>\n\n  <license file=\"LICENSE\">LGPL-2.1</license>\n\n  <url branch=\"master\" type=\"repository\">https://github.com/KeithSloan/OpenSCAD_Alt_Import</url>\n\n  <url type=\"readme\">https://github.com/KeithSloan/OpenSCAD_Alt_Import/blob/master/README.md</url>\n\n  <url type=\"documentation\">https://github.com/KeithSloan/OpenSCAD_Alt_Import/wiki</url>\n\n  <icon>freecad/OpenSCAD_Alt_Import/Resources/icons/OpenSCAD_Alternate.png</icon>\n\n  <date>2022-08-18</date>\n\n  <content>\n    <workbench>\n      <freecadmin>0.20.0</freecadmin>\n      <tag>openscad</tag>\n      <tag>scripting</tag>\n      <tag>programming</tag>\n      <icon>freecad/OpenSCAD_Alt_Import/Resources/icons/OpenSCAD_Alternate.png</icon>\n      <classname>OpenSCAD_Alt_Import</classname>\n      <subdirectory>./</subdirectory>\n      <depend type=\"python\">ply</depend>\n      <depend type=\"python\">ezdxf</depend>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "animation": [
+    {
+      "repository": "https://github.com/microelly2/Animation",
+      "last_update_time": "2019-10-14T12:51:43+02:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "AnimationFreeCAD": [
+    {
+      "repository": "https://github.com/QuentinTournier40/AnimationFreeCAD",
+      "last_update_time": "2025-03-03T12:00:37+01:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\">\n  <name>Animation FreeCAD</name>\n  <description>The FreeCAD Animation workbench allows users to animate any object easily through visual scripting Nodes thanks to PyFlow.</description>\n  <version>1.0-beta</version>\n  <date>2022-04-30</date>\n  <license file=\"LICENSE\">Apache-2.0</license>\n  <url type=\"repository\" branch=\"main\">https://github.com/QuentinTournier40/AnimationFreeCAD</url>\n  <url type=\"readme\">https://github.com/QuentinTournier40/AnimationFreeCAD/blob/main/README.md</url>\n  <maintainer email=\"qttournier@gmail.com\">Quentin Tournier</maintainer>\n  <maintainer email=\"andrecot2502@gmail.com\">Andr\u00e9as Cottet</maintainer>\n  <author email=\"qttournier@gmail.com\">Quentin Tournier</author>\n  <author email=\"andrecot2502@gmail.com\">Andr\u00e9as Cottet</author>\n  <icon>icons/clapCinema.svg</icon>\n  <content>\n    <workbench>\n      <classname>AnimationFreeCAD</classname>\n      <subdirectory>./</subdirectory>\n      <freecadmin>0.19</freecadmin>\n      <!-- Python package dependencies !-->\n      <depend eq=\"1.4.0\">blinker</depend>\n      <depend eq=\"0.18.1\">docutils</depend>\n      <depend eq=\"1.4\">nine</depend>\n    </workbench>\n  </content>\n</package>\n"
+      }
+    }
+  ],
+  "ArchTextures": [
+    {
+      "repository": "https://github.com/furti/FreeCAD-ArchTextures",
+      "last_update_time": "2022-02-01T16:11:07+01:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "assembly2": [
+    {
+      "repository": "https://github.com/hamish2014/FreeCAD_assembly2",
+      "last_update_time": "2019-05-27T09:31:18+02:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "Assembly2MuJoCo": [
+    {
+      "repository": "https://github.com/AnesBenmerzoug/FreeCAD-Assembly2MuJoCo",
+      "last_update_time": "2025-06-08T14:10:24+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n\n    <name>Assembly2MuJoCo</name>\n    <description>An addon for exporting FreeCAD builtin Assemblies to MuJoCo.</description>\n    <icon>freecad/assembly2mujoco/resources/icons/assembly2mujoco-icon.svg</icon>\n    <version>0.2.0</version>\n    <date>2025-06-08</date>\n\n    <author email=\"anes.benmerzoug@gmail.com\">Anes Benmerzoug</author>\n    <maintainer email=\"anes.benmerzoug@gmail.com\">Anes Benmerzoug</maintainer>\n    <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n\n    <url branch=\"main\" type=\"repository\">https://github.com/AnesBenmerzoug/FreeCAD-Assembly2MuJoCo</url>\n    <url type=\"bugtracker\">https://github.com/AnesBenmerzoug/FreeCAD-Assembly2MuJoCo/issues</url>\n    <url type=\"readme\">https://github.com/AnesBenmerzoug/FreeCAD-Assembly2MuJoCo/blob/main/README.md</url>\n\n    <content>\n        <workbench>\n            <name>AssemblyToMuJoCo</name>\n            <freecadmin>1.0.0</freecadmin>\n            <python_min>3.10.0</python_min>\n            <subdirectory>freecad/assembly2mujoco</subdirectory>\n            <classname>AssemblyExportToMuJoCoWorkbench</classname>\n            <tag>Assembly</tag>\n            <tag>MuJoCo</tag>\n            <tag>export</tag>\n            <tag>simulation</tag>\n        </workbench>\n    </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "Assembly3": [
+    {
+      "repository": "https://github.com/realthunder/FreeCAD_assembly3",
+      "last_update_time": "2024-12-02T08:32:50-05:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>Assembly3</name>\n  <description>Assembly3 workbench an attempt to bring assembly capability to FreeCAD using SolveSpace constraint solver</description>\n  <version>0.12.2</version>\n  <date>2022-11-09</date>\n  <maintainer email=\"realthunder.dev@gmail.com\">RealThunder</maintainer>\n  <license file=\"LICENSE\">GPL-3.0-only</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/realthunder/FreeCAD_assembly3</url>\n  <url type=\"readme\">https://github.com/realthunder/FreeCAD_assembly3/blob/master/Readme.md</url>\n  <url type=\"documentation\">https://github.com/realthunder/FreeCAD_assembly3/wiki</url>\n  <icon>freecad/asm3/Gui/Resources/icons/AssemblyWorkbench.svg</icon>\n\n  <content>\n    <workbench>\n      <name>Assembly3 Workbench</name>\n      <classname>AssemblyWorkbench</classname>\n      <subdirectory>./</subdirectory>\n      <icon>freecad/asm3/Gui/Resources/icons/AssemblyWorkbench.svg</icon>\n      <tag>assembly</tag>\n      <freecadmin>0.19.0</freecadmin>\n      <depend>numpy</depend>\n      <depend>py-slvs</depend>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "Assembly4": [
+    {
+      "repository": "https://codeberg.org/Zolko/Assembly4",
+      "last_update_time": "2025-07-27T20:31:52+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<package format=\"1\">\n\t<name>Assembly4</name>\n\t<description>This assembly workbench allows you to assemble various FreeCAD parts (of type Part or Body) into a standard assembly container using links, and place them relative to the assembly and to each other.</description>\n\t<version>0.60.2</version>\n\t<date>2025.mm.dd</date>\n\t<maintainer email=\"zolko@zzaero.com\">Zolko-123</maintainer>\n\t<license file=\"LICENSE\">LGPL-2.1-only</license>\n\t<url type=\"repository\" branch=\"main\">https://codeberg.org/Zolko/Assembly4</url>\n\t<url type=\"documentation\">https://wiki.freecadweb.org/Assembly4_Workbench</url>\n\t<url type=\"readme\">https://codeberg.org/Zolko/Assembly4/src/branch/main/README.md</url>\n\t<content>\n\t\t<workbench>\n\t\t\t<classname>Assembly4Workbench</classname>\n\t\t\t<subdirectory>./Code</subdirectory>\n\t\t\t<icon>../Resources/icons/Assembly4.svg</icon>\n\t\t\t<tag>assembly</tag>\n\t\t\t<freecadmin>0.19.0</freecadmin>\n\t\t</workbench>\n\t</content>\n</package>\n"
+      }
+    }
+  ],
+  "Assembly4.1": [
+    {
+      "repository": "https://github.com/leoheck/FreeCAD_Assembly4.1",
+      "last_update_time": "2025-06-23T16:42:39-03:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\">\n  <name>Assembly4</name>\n  <description>This assembly workbench use lets you put FreeCAD parts (Part and Body) together inside a standard assembly container.</description>\n  <version>0.50.18</version>\n  <date>2025.03.11</date>\n  <maintainer email=\"leoheck@gmail.com\">leoheck</maintainer>\n  <license file=\"LICENSE\">LGPL-2.1-only</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/leoheck/FreeCAD_Assembly4</url>\n  <url type=\"documentation\">https://wiki.freecadweb.org/Assembly4_Workbench</url>\n  <url type=\"readme\">https://github.com/leoheck/FreeCAD_Assembly4/blob/main/README.md</url>\n  <content>\n    <workbench>\n      <classname>Assembly4Workbench</classname>\n      <subdirectory>./</subdirectory>\n      <icon>Resources/icons/Assembly4.svg</icon>\n      <tag>assembly</tag>\n      <freecadmin>0.19.0</freecadmin>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    },
+    {
+      "repository": "https://github.com/leoheck/FreeCAD_Assembly4.1",
+      "last_update_time": "2025-06-25T10:05:00-03:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<package format=\"1\">\n  <name>Assembly4</name>\n  <description>This assembly workbench use lets you put FreeCAD parts (Part and Body) together inside a standard assembly container.</description>\n  <version>0.50.19-dev</version>\n  <date>2025.mm.dd</date>\n  <maintainer email=\"leoheck@gmail.com\">Leandro Heck</maintainer>\n  <license file=\"LICENSE\">LGPL-2.1-only</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/leoheck/FreeCAD_Assembly4</url>\n  <url type=\"documentation\">https://wiki.freecadweb.org/Assembly4_Workbench</url>\n  <url type=\"readme\">https://github.com/leoheck/FreeCAD_Assembly4/blob/main/README.md</url>\n  <content>\n    <workbench>\n      <classname>Assembly4Workbench</classname>\n      <subdirectory>./</subdirectory>\n      <icon>Resources/icons/Assembly4.svg</icon>\n      <tag>assembly</tag>\n      <freecadmin>0.19.0</freecadmin>\n    </workbench>\n  </content>\n</package>\n"
+      }
+    }
+  ],
+  "Autoload": [
+    {
+      "repository": "https://github.com/triplus/Autoload",
+      "last_update_time": "2020-01-30T21:39:12+01:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "BCFPlugin": [
+    {
+      "repository": "https://github.com/podestplatz/BCF-Plugin-FreeCAD",
+      "last_update_time": "2022-03-26T08:02:14+01:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>BCF Plugin</name>\n  <description>Integrate collaboration in the BIM space through support of the BCF (BIM Collaboration Format).</description>\n  <version>1.0.0</version>\n  <date>2020-01-22</date>\n  <maintainer email=\"podestplatz@somewhere.com\">Patrick Podest (podestplatz)</maintainer>\n  <license file=\"Licence.txt\">LGPLv2.1</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/podestplatz/BCF-Plugin-FreeCAD</url>\n  <url type=\"website\">https://podestplatz.github.io/FreeCAD-blog/</url>\n  <icon>icons/BCFPlugin_workbench_icon.svg</icon>\n\n  <content>\n    <workbench>\n      <classname>BCF Plugin</classname>\n      <subdirectory>./</subdirectory>\n      <tag>Arch</tag>\n      <tag>BIM</tag>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "Behave-Dark-Colors": [
+    {
+      "repository": "https://github.com/Chrismettal/FreeCAD-Behave-Dark-Preference-Pack",
+      "last_update_time": "2024-07-22T08:52:20+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>Behave-Dark Colors</name>\n  <description>A preference pack including GUI color information to extend the Behave Dark stylesheet</description>\n  <version>0.1.1</version>\n  <maintainer email=\"chrismettal@binary-6.de\">Chrismettal</maintainer>\n  <license file=\"LICENSE\">GPL-3.0-only</license>\n  <url type=\"repository\" branch=\"main\">https://github.com/Chrismettal/FreeCAD-Behave-Dark-Preference-Pack</url>\n  <icon>resources/icons/Behave-Dark.svg</icon>\n\n  <content>\n    <preferencepack>\n      <name>Behave-Dark Colors</name>\n      <description>Behave-Dark color scheme</description>\n      <tag>color</tag>\n      <tag>dark</tag>\n      <tag>behave</tag>\n      <tag>eye-friendly</tag>\n    </preferencepack>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "Beltrami": [
+    {
+      "repository": "https://github.com/Simturb/Beltrami",
+      "last_update_time": "2024-08-04T16:59:42-04:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>Beltrami</name>\n  <description>A workbench for designing turbomachine blades.</description>\n  <version>1.1-alpha</version>\n  <maintainer email=\"simturbweb@gmail.com\">Michel Sabourin (Sabm01)</maintainer>\n  <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n  <url type=\"repository\" branch=\"main\">https://github.com/Simturb/Beltrami</url>\n  <url type=\"bugtracker\">https://github.com/Simturb/Beltrami/issues</url>\n  <url type=\"readme\">https://github.com/Simturb/Beltrami/blob/main/README.md</url>\n  <url type=\"documentation\">https://https://michelsabourin.scenari-community.org/Outils/Manuel_utilisateur/co/Manuel_utilisateur.html</url>\n  <icon>Resources/icons/Beltrami_workbench_icon.svg</icon>\n\n  <content>\n    <workbench>\n      <classname>BeltramiWB</classname>\n      <subdirectory>./</subdirectory>\n      <freecadmin>0.21.2</freecadmin>\n      <tag>curves</tag>\n      <tag>nurbs</tag>\n      <depend>Curves workbench</depend>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "BillOfMaterials": [
+    {
+      "repository": "https://github.com/APEbbers/BillOfMaterials-WB",
+      "last_update_time": "2025-08-02T12:50:15+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n\n  <name>Bill of Materials Workbench</name>\n\n  <description>A workbench to create Bill of Materials (BoM) independent of the assembly workbench of your choice.</description>\n\n  <version>1.1.0.1</version>\n\n  <date>2024-01-03</date>\n\n  <maintainer email=\"business@apebbers.nl\">Paul Ebbers</maintainer>\n\n  <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n\n  <pythonmin>3.8.0</pythonmin>\n\n  <url type=\"website\">https://github.com/APEbbers/BillOfMaterials-WB/wiki</url>\n\n  <url branch=\"main\" type=\"repository\">https://github.com/APEbbers/BillOfMaterials-WB</url>\n\n  <url type=\"readme\">https://github.com/APEbbers/BillOfMaterials-WB/blob/main/README.md</url>\n\n  <icon>Resources/Icons/BillOfMaterialsWB.svg</icon>\n\n  <content>\n    <workbench>\n      <freecadmin>0.21.0</freecadmin>\n      <icon>Resources/Icons/BillOfMaterialsWB.svg</icon>\n      <depend optional=\"False\" type=\"automatic\">Spreadsheet</depend>\n      <depend optional=\"False\" type=\"automatic\">TechDraw</depend>\n      <depend optional=\"True\" type=\"python\">openpyxl</depend>\n      <depend optional=\"False\" type=\"python\">inspect</depend>\n      <depend optional=\"False\" type=\"python\">tkinter</depend>\n      <depend optional=\"False\" type=\"python\">getpass</depend>\n      <depend optional=\"False\" type=\"python\">matplotlib</depend>\n      <depend optional=\"False\" type=\"python\">math</depend>\n      <classname>BillOfMaterialsWB</classname>\n      <subdirectory>./</subdirectory>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "btl": [
+    {
+      "repository": "https://github.com/knipknap/better-tool-library",
+      "last_update_time": "2025-06-06T19:32:09+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\">\n  <name>Better Tool Library</name>\n  <description>A FreeCAD Path Addon to manage your tool library.</description>\n  <version>0.9.9</version>\n  <maintainer email=\"knipknap@gmail.com\">Samuel Abels</maintainer>\n  <license file=\"LICENSE\">MIT</license>\n  <url type=\"repository\" branch=\"main\">https://github.com/knipknap/better-tool-library</url>\n  <url type=\"readme\">https://github.com/knipknap/better-tool-library/blob/main/README.md</url>\n\n  <content>\n    <workbench>\n      <classname>BetterToolLibrary</classname>\n      <subdirectory>./</subdirectory>\n      <icon>resources/icons/tool-library.svg</icon>\n      <freecadmin>0.19.0</freecadmin>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "BIMBots": [
+    {
+      "repository": "https://github.com/opensourceBIM/BIMbots-FreeCAD",
+      "last_update_time": "2024-06-06T15:39:38+02:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "BIM": [
+    {
+      "repository": "https://github.com/yorikvanhavre/BIM_Workbench",
+      "last_update_time": "2024-09-02T13:14:06+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>BIM</name>\n  <description>This is a workbench for FreeCAD that implements a complete set of Building Information Modeling (BIM) tools and allows a proper BIM workflow similar to professional BIM applications like Revit, ArchiCAD, Tekla, AllPlan or BricsCAD.</description>\n  <version>2021.12</version>\n  <maintainer email=\"yorik@uncreated.net\">Yorik van Havre</maintainer>\n  <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/yorikvanhavre/BIM_Workbench</url>\n  <url type=\"website\">https://wiki.freecadweb.org/BIM_Workbench</url>\n  <icon>icons/IFC.svg</icon>\n\n  <content>\n    <workbench>\n      <classname>BIMWorkbench</classname>\n      <subdirectory>./</subdirectory>\n      <depend kind=\"freecad\">Arch</depend>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "bimtester": [
+    {
+      "repository": "https://github.com/bimtester/bimtesterfc",
+      "last_update_time": "2021-11-30T23:24:13+01:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "boltsfc": [
+    {
+      "repository": "https://github.com/boltsparts/boltsfc",
+      "last_update_time": "2022-11-08T15:30:21+01:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n\n  <name>boltsfc</name>\n\n  <description>Installable FreeCAD package of BOLTS, an Open Library for Technical Specifications.</description>\n\n  <version>2022.11.5</version>\n\n  <date>2022-11-05</date>\n\n  <maintainer email=\"bernd@bimstatik.org\">Bernd Hahnebach</maintainer>\n\n  <license file=\"BOLTS/LICENSE\">LGPLv2.1</license>\n\n  <pythonmin>3.5.0</pythonmin>\n\n  <url branch=\"main\" type=\"repository\">https://github.com/boltsparts/boltsfc</url>\n\n  <url type=\"readme\">https://github.com/boltsparts/boltsfc/raw/main/README.md</url>\n\n  <icon>BOLTS/icons/BOLTS_logo.svg</icon>\n\n</package>\n"
+      }
+    }
+  ],
+  "Cables": [
+    {
+      "repository": "https://github.com/sargo-devel/Cables",
+      "last_update_time": "2025-06-29T20:58:55+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>Cables Workbench</name>\n  <description>Electrical cables drawing tools workbench for FreeCAD.</description>\n  <version>0.2.1</version>\n  <date>2025-06-30</date>\n  <maintainer email=\"sargo-devel@o2.pl\">SargoDevel</maintainer>\n  <license file=\"LICENSE\">LGPL-3.0-or-later</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/sargo-devel/Cables</url>\n  <url type=\"readme\">https://github.com/sargo-devel/Cables/blob/master/README.md</url>\n  <url type=\"documentation\">https://wiki.freecad.org/Cables_Workbench</url>\n  <icon>freecad/cables/resources/icons/CablesLogo.svg</icon>\n\n  <content>\n    <workbench>\n      <classname>CablesWorkbench</classname>\n      <subdirectory>./</subdirectory>\n      <tag>cables</tag>\n      <tag>electric</tag>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "CadbaseLibrary": [
+    {
+      "repository": "https://github.com/mnnxp/cadbaselibrary-freecad",
+      "last_update_time": "2025-02-01T17:27:36+00:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>CADBase Library</name>\n  <description>The workbench is designed to use components (parts) from CADBase in the FreeCAD interface.\nComponent modifications contain sets of files for various CAD systems.\nThis workbench will work with data from the FreeCAD set, without downloading documentation and data from other file sets.</description>\n  <version>2.0.0</version>\n  <date>2025-01-25</date>\n  <maintainer email=\"in@cadbase.rs\">mnnxp</maintainer>\n  <license file=\"LICENSE\">LGPL-3.0-or-later</license>\n  <url branch=\"master\" type=\"repository\">https://github.com/mnnxp/cadbaselibrary-freecad</url>\n  <url type=\"readme\">https://github.com/mnnxp/cadbaselibrary-freecad/blob/master/README.md</url>\n  <url type=\"discussion\">https://forum.freecadweb.org/viewtopic.php?t=69389</url>\n\n  <content>\n    <workbench>\n      <name>CADBase Library</name>\n      <classname>CADBaseLibrary</classname>\n      <description>Designed to works with CADBase Platform in the FreeCAD interface.</description>\n      <subdirectory>./</subdirectory>\n      <icon>Icons/CadbaseLibrary.svg</icon>\n      <freecadmin>0.19.0</freecadmin>\n      <tag>cadbase</tag>\n      <tag>database</tag>\n      <tag>cloud</tag>\n      <tag>storage</tag>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "CADExchanger": [
+    {
+      "repository": "https://github.com/yorikvanhavre/CADExchanger",
+      "last_update_time": "2024-09-17T09:45:43+02:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "cadquery_module": [
+    {
+      "repository": "https://github.com/jmwright/cadquery-freecad-module",
+      "last_update_time": "2025-07-28T17:10:16-04:00",
+      "metadata": {
+        "package_xml": "<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n    <name>CadQuery</name>\n    <description>Workbench which makes CadQuery models executable within FreeCAD</description>\n    <version>2.1.0</version>\n    <date>2024-12-10</date>\n    <license file=\"LICENSE\">Apache-2.0</license>\n    <url type=\"repository\" branch=\"master\">https://github.com/CadQuery/cadquery-freecad-workbench</url>\n    <icon>CQGui/icons/CQ_Logo.svg</icon>\n\n    <content>\n        <workbench>\n            <name>CadQuery</name>\n            <description>Workbench which makes CadQuery models executable within FreeCAD</description>\n            <classname>CadQueryWorkbench</classname>\n            <subdirectory>./</subdirectory>\n            <icon>CQGui/icons/CQ_Logo.svg</icon>\n            <depend version_eq=\"2.5.2\">cadquery</depend>\n            <depend version_eq=\"7.7.2\">cadquery-ocp</depend>\n        </workbench>\n    </content>\n</package>\n"
+      }
+    }
+  ],
+  "CamScripts": [
+    {
+      "repository": "https://github.com/spanner888/CamScripts",
+      "last_update_time": "2024-09-25T09:12:52+10:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n\n  <name>CamScripts</name>\n\n  <description>CamScripts ToolBit import or script creation and configure *every* step of FreeCAD CAM process.</description>\n\n  <version>V0.0.5  2024/09/25</version>\n\n  <author email=\"spanner888@usabledevices.com\">spanner888</author>\n\n  <maintainer email=\"spanner888@usabledevices.com\">spanner888</maintainer>\n\n  <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n\n  <url branch=\"main\" type=\"repository\">https://github.com/spanner888/CamScripts.git</url>\n\n  <url type=\"bugtracker\">https://github.com/spanner888/CamScripts/issues</url>\n\n  <url type=\"readme\">https://github.com/spanner888/CamScripts.git/raw/main/README.md</url>\n\n  <content>\n    <workbench>\n      <name>CamScripts</name>\n      <description>Automation of ToolBit import and scripted creation, with very flexible naming rules.\n        Automation of every step of the CAM process, from tool creation to G-code generation.\n        Demonstrate speeds and feeds calculations using the newly released Machinability Materials.\n        Additional demonstration of Materials Machinability model to provide data for Speeds and Feeds,\n        including exploring of fz (chipload) tables.</description>\n      <freecadmin>0.22.0</freecadmin>\n      <tag>CAM</tag>\n      <tag>Import</tag>\n      <tag>CSV</tag>\n      <tag>Library</tag>\n      <tag>ToolBits</tag>\n      <tag>Job</tag>\n      <tag>Operations</tag>\n      <tag>Library</tag>\n      <tag>ToolControllers</tag>\n      <tag>Materials</tag>\n      <tag>Calculate</tag>\n      <tag>Speeds</tag>\n      <tag>Feeds</tag>\n      <tag>Sanity</tag>\n      <tag>Report</tag>\n      <tag>Gcode</tag>\n    </workbench>\n    <macro>\n      <name>CamScripts CSV Import</name>\n      <description>CSV bulk Import with naming rules</description>\n      <subdirectory>./</subdirectory>\n      <file>script_run_macros/CamScripts_1CSV_Import.FCMacro</file>\n    </macro>\n    <macro>\n      <name>CamScripts Add Tool Bits</name>\n      <description>Create ranges of ToolBits with naming rules</description>\n      <subdirectory>./</subdirectory>\n      <file>script_run_macros/CamScripts_2TbAddExample.FCMacro</file>\n    </macro>\n    <macro>\n      <name>CamScripts Full Process Example</name>\n      <description>Create and recreate every step of the CAM process, from tool creation to G-code generation</description>\n      <subdirectory>./</subdirectory>\n      <file>script_run_macros/CamScripts_3FullProcessExample.FCMacro</file>\n    </macro>\n    <macro>\n      <name>READMEs</name>\n      <description>Readmes and also find naming rules and CSV files</description>\n      <subdirectory>./</subdirectory>\n      <file>script_run_macros/CamScripts_4READMEs.FCMacro</file>\n    </macro>\n    <macro>\n      <name>SetupCustomToolShapes</name>\n      <description></description>\n      <subdirectory>./</subdirectory>\n      <file>script_run_macros/CamScripts_5Setup_CustomToolShapes.FCMacro</file>\n    </macro>\n    <macro>\n      <name>SetupCustomMaterialCfg</name>\n      <description></description>\n      <subdirectory>./</subdirectory>\n      <file>script_run_macros/CamScripts_6Setup_CustomMaterialCfg.FCMacro</file>\n    </macro>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "CfdOF": [
+    {
+      "repository": "https://github.com/jaheyns/CfdOF",
+      "last_update_time": "2025-08-26T07:38:40+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\">\n    <name>CfdOF</name>\n    <description>Computational Fluid Dynamics (CFD) for FreeCAD based on OpenFOAM</description>\n    <version>1.31.9</version>\n    <maintainer email=\"oliveroxtoby@gmail.com\">Oliver Oxtoby</maintainer>\n    <license file=\"LICENSE\">LGPL-2.0-or-later</license>\n    <url type=\"repository\" branch=\"master\">https://github.com/jaheyns/CfdOF</url>\n    <url type=\"documentation\">https://github.com/jaheyns/CfdOF/README.md</url>\n    <freecadmin>0.20.0</freecadmin>\n    <content>\n        <workbench>\n            <classname>CfdOFWorkbench</classname>\n            <subdirectory>./</subdirectory>\n            <icon>Gui/Icons/cfd.svg</icon>\n            <depend>matplotlib</depend>\n        </workbench>\n    </content>\n</package>\n"
+      }
+    }
+  ],
+  "Cfd": [
+    {
+      "repository": "https://github.com/qingfengxia/Cfd",
+      "last_update_time": "2021-12-16T22:34:39+08:00",
+      "metadata": {
+        "package_xml": ""
+      }
+    }
+  ],
+  "Channels": [
+    {
+      "repository": "https://github.com/mnesarco/Channels",
+      "last_update_time": "2025-08-21T10:10:36-05:00",
+      "metadata": {
+        "package_xml": "<package format=\"1\">\n    <name>Channels</name>\n    <description>FreeCAD Channels</description>\n    <version>0.1.0.dev2</version>\n    <content>\n\n    </content>\n    <date>2025-06-02</date>\n    <pythonmin>3.10</pythonmin>\n    <icon>freecad/channels/resources/icons/preferences-channels.svg</icon>\n    <license file=\"LICENSE\">LGPL-3.0-or-later</license>\n    <freecadmin>1.0</freecadmin>\n    <maintainer email=\"mnesarco@gmail.com\">Frank David Mart\u00ednez Mu\u00f1oz</maintainer>\n    <author email=\"mnesarco@gmail.com\">Frank David Mart\u00ednez Mu\u00f1oz</author>\n    <tag>2d</tag>\n    <tag>addons</tag>\n    <tag>blender</tag>\n    <tag>freecad</tag>\n    <tag>mesh</tag>\n    <tag>svg</tag>\n    <tag>workbench</tag>\n    <url type=\"documentation\">https://github.com/mnesarco/Channels/wiki/</url>\n    <url type=\"readme\">https://github.com/mnesarco/Channels/blob/main/README.md</url>\n    <url type=\"repository\" branch=\"main\">https://github.com/mnesarco/Channels</url>\n    <depend type=\"internal\">part</depend>\n</package>"
+      }
+    }
+  ],
+  "CommandPanel": [
+    {
+      "repository": "https://github.com/triplus/CommandPanel",
+      "last_update_time": "2019-03-18T22:31:13+01:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "Color-Palette-Theme": [
+    {
+      "repository": "https://github.com/altangarts/FreeCAD-Themes-ColorPalette",
+      "last_update_time": "2025-08-26T01:40:47+03:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n <name>ColorPaletteTheme</name>\n <version>1.2.2</version>\n <date>2025.08.16</date>\n <description>2D-3D ColorPalette theme</description>\n <maintainer email=\"\">altangarts@gmail</maintainer>\n <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n <url type=\"repository\" branch=\"main\">https://github.com/altangarts/FreeCAD-Themes-ColorPalette</url>\n <icon>resources/icons/ColorPaletteTheme.svg</icon>\n\n<content>\n  <preferencepack>\n    <name>ColorPalette 2D-1</name>\n    <description>2D buttons and Color palette background</description>\n    <tag>Your Color</tag>\n    <type>Theme</type>\n    <tag>Colorful</tag>\n    <subdirectory>./ColorPalette 2D-1/</subdirectory>\n    <file>ColorPalette 2D-1.qss</file>\n    <file>ColorPalette 2D-1 Overlay.qss</file>\n  </preferencepack>\n  <preferencepack>\n    <name>ColorPalette 2D-2</name>\n    <description>3D buttons and Color palette background</description>\n    <tag>Your Color</tag>\n    <type>Theme</type>\n    <tag>Colorful</tag>\n    <subdirectory>./ColorPalette 2D-2/</subdirectory>\n    <file>ColorPalette 2D-2.qss</file>\n    <file>ColorPalette 2D-2 Overlay.qss</file>\n  </preferencepack>  \n  <preferencepack>\n    <name>ColorPalette 3D-1</name>\n    <description>3D buttons and Color palette background</description>\n    <tag>Your Color</tag>\n    <type>Theme</type>\n    <tag>Colorful</tag>\n    <subdirectory>./ColorPalette 3D-1/</subdirectory>\n    <file>ColorPalette 3D-1.qss</file>\n    <file>ColorPalette 3D-1 Overlay.qss</file>\n  </preferencepack>\n  <preferencepack>\n    <name>ColorPalette 3D-2</name>\n    <description>3D buttons and Color palette background</description>\n    <tag>Your Color</tag>\n    <type>Theme</type>\n    <tag>Colorful</tag>\n    <subdirectory>./ColorPalette 3D-2/</subdirectory>\n    <file>ColorPalette 3D-2.qss</file>\n    <file>ColorPalette 3D-2 Overlay.qss</file>\n  </preferencepack>\n</content>\n</package>\n"
+      }
+    }
+  ],
+  "CubeMenu": [
+    {
+      "repository": "https://github.com/triplus/CubeMenu",
+      "last_update_time": "2020-04-25T17:49:33+02:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "cura_engine": [
+    {
+      "repository": "https://github.com/cblt2l/FreeCAD-CuraEngine-Plugin",
+      "last_update_time": "2014-06-08T23:57:54-04:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "CurvedShapes": [
+    {
+      "repository": "https://github.com/chbergmann/CurvedShapesWorkbench",
+      "last_update_time": "2024-11-09T14:22:54+01:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>Curved Shapes</name>\n  <description>Create 3D shapes from 2D curves.</description>\n  <version>1.00.13</version>\n  <date>2024-11-09</date>\n  <maintainer email=\"christian.bergmann@mailbox.org\">Christi</maintainer>\n  <license file=\"LICENSE\">LGPL-2.1</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/chbergmann/CurvedShapesWorkbench</url>\n  <url type=\"documentation\">https://github.com/chbergmann/CurvedShapesWorkbench/README.md</url>\n  <icon>Resources/icon/curvedArray.svg</icon>\n\n  <content>\n    <workbench>\n      <name>Curved Shapes</name>\n      <classname>CurvedShapesWorkbench</classname>\n      <subdirectory>./</subdirectory>\n      <freecadmin>0.19.0</freecadmin>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "Curves": [
+    {
+      "repository": "https://github.com/tomate44/CurvesWB",
+      "last_update_time": "2025-08-20T18:40:28+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\">\n  <name>Curves workbench</name>\n  <description>A collection of tools mainly dedicated to NURBS curves and surfaces modeling.</description>\n  <version>0.6.70</version>\n  <maintainer email=\"cg@grellier.fr\">Christophe Grellier</maintainer>\n  <license file=\"LICENSE\">LGPL-2.1</license>\n  <url type=\"repository\" branch=\"main\">https://github.com/tomate44/CurvesWB</url>\n  <url type=\"documentation\">https://wiki.freecad.org/Curves_Workbench</url>\n\n  <content>\n    <workbench>\n      <name>Curves workbench</name>\n      <classname>CurvesWorkbench</classname>\n      <description>A collection of tools mainly dedicated to NURBS curves and surfaces modeling.</description>\n      <version>0.6.70</version>\n      <subdirectory>./</subdirectory>\n      <icon>freecad/Curves/resources/icons/blendSurf.svg</icon>\n      <freecadmin>0.21.2</freecadmin>\n      <depend>numpy</depend>\n      <depend>scipy</depend>\n      <tag>curves</tag>\n      <tag>nurbs</tag>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "Defeaturing": [
+    {
+      "repository": "https://github.com/easyw/Defeaturing_WB",
+      "last_update_time": "2025-04-24T12:38:52+02:00",
+      "metadata": {
+        "package_xml": "\ufeff<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>Defeaturing Workbench</name>\n  <description>A set of tools to edit a Shape or a STEP model.</description>\n  <version>1.2.6</version>\n  <maintainer email=\"easyw@katamail.com\">Maui</maintainer>\n  <license file=\"LICENSE\">AGPLv3.0</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/easyw/Defeaturing_WB</url>\n  <icon>Resources/icons/Defeaturing-icon.svg</icon> <!-- If you include your icon here, you don't have to submit it to the main FreeCAD repo -->\n\n  <content>\n    <workbench>\n      <classname>DefeaturingWB</classname>\n      <subdirectory>./</subdirectory>\n      <freecadmin>0.18.0</freecadmin>\n      <tag>defeaturing</tag>\n      <tag>fuzzy</tag>\n      <tag>step</tag>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "Design456": [
+    {
+      "repository": "https://github.com/MariwanJ/Design456",
+      "last_update_time": "2025-05-26T13:46:11+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\">\n  <name>Design456 workbench</name>\n  <description>Direct Modeling Workbench for FreeCAD</description>\n  <version>0.00.1</version>\n  <date>2022-01-20</date>\n  <maintainer email=\"mariwan.jalal@gmail.com\">Mariwan Jalal</maintainer>\n  <license file=\"LICENSE\">GPL-3.0-or-later</license>\n  <url type=\"repository\" branch=\"main\">https://github.com/MariwanJ/Design456</url>\n  <url type=\"documentation\">https://wiki.freecadweb.org/Design456_Workbench</url>\n\n\n  <content>\n    <workbench>\n      <name>Design456 workbench</name>\n      <classname>Design456</classname>\n      <description>Direct Modeling Workbench for FreeCAD</description>\n      <version>0.00.1</version>\n      <subdirectory>./</subdirectory>\n      <icon>Resources/icons/WorkbenchIcon.svg</icon>\n      <freecadmin>0.20.0</freecadmin>\n      <tag>direct-modeling</tag>\n    </workbench>\n  </content>\n</package>\n"
+      }
+    }
+  ],
+  "DesignSPHysics": [
+    {
+      "repository": "https://github.com/DualSPHysics/DesignSPHysics",
+      "last_update_time": "2025-06-09T16:46:50+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>DesignSPHysics</name>\n  <description>DesignSPHysics is a macro/addon for FreeCAD that provides a Graphical User Interface for fluid and multi-physics solver DualSPHysics</description>\n  <version>0.8.1 (29-05-2025)</version>\n  <date>29-05-2025</date>\n  <maintainer email=\"ivan.martinez.estevez@uvigo.es\">Iv\u00e1n Mart\u00ednez Est\u00e9vez</maintainer>\n  <license file=\"LICENSE\">GPL-3.0-or-later</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/DualSPHysics/DesignSPHysics</url>\n  <icon>images/icon.svg</icon>\n\n  <content>\n    <macro>\n      <subdirectory>./</subdirectory>\n      <freecadmin>0.21</freecadmin>\n      <icon>images/icon.svg</icon>\n    </macro>\n  </content>\n</package>\n"
+      }
+    }
+  ],
+  "dodo": [
+    {
+      "repository": "https://github.com/oddtopus/dodo",
+      "last_update_time": "2024-05-25T13:08:02+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>Dodo</name>\n  <description>A set of commands and objects that help to speed-up the drawing of frames and pipelines. Py3/Qt5 port of flamingo.</description>\n  <version>1.0.1</version>\n  <maintainer email=\"unknown\">Riccardo Treu (oddtopus)</maintainer>\n  <license file=\"LICENSE\">LGPLv3</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/oddtopus/dodo</url>\n  <url type=\"readme\">https://github.com/oddtopus/dodo/blob/master/README.md</url>\n  <url type=\"bugtracker\">https://github.com/oddtopus/dodo/issues</url>\n  <icon>iconz/dodo.svg</icon>\n\n  <content>\n    <workbench>\n      <classname>dodo</classname>\n      <subdirectory>./</subdirectory>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "Dracula": [
+    {
+      "repository": "https://github.com/dracula/freecad",
+      "last_update_time": "2025-07-23T12:46:39-05:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>Dracula</name>\n  <description>Dracula dark theme for FreeCAD</description>\n  <version>0.0.9</version>\n  <maintainer email=\"eleanor@clifford.lol\">Eleanor Clifford</maintainer>\n  <license file=\"LICENSE\">MIT</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/dracula/freecad</url>\n  <icon>resources/icons/Dracula.svg</icon>\n\n  <content>\n    <preferencepack>\n      <name>Dracula</name>\n      <description>Dracula dark theme for FreeCAD</description>\n      <tag>color</tag>\n      <tag>dark</tag>\n      <tag>dracula</tag>\n    </preferencepack>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "drawing_dimensioning": [
+    {
+      "repository": "https://github.com/hamish2014/FreeCAD_drawing_dimensioning",
+      "last_update_time": "2019-05-16T15:56:23+02:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "dxf-library": [
+    {
+      "repository": "https://github.com/yorikvanhavre/Draft-dxf-importer",
+      "last_update_time": "2023-12-11T10:30:08+01:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "DynamicData": [
+    {
+      "repository": "https://github.com/mwganson/DynamicData",
+      "last_update_time": "2025-04-12T18:35:27-05:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\" ?>\n<package format=\"1\">\n  <name>DynamicData</name>\n  <description>Container object for holding custom properties, alternative to spreadsheet</description>\n  <version>2.74</version>\n  <date>2025.04.12</date>\n  <maintainer email=\"mwganson@gmail.com\">TheMarkster</maintainer>\n  <license file=\"LICENSE\">LGPL-2.1</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/mwganson/DynamicData</url>\n  <url type=\"documentation\">https://wiki.freecad.org/DynamicData_Workbench</url>\n    <content>\n    <workbench>\n      <name>DynamicData</name>\n      <classname>DynamicDataWorkbench</classname>\n      <description>Container object for holding custom properties, alternative to spreadsheet</description>\n        <version>2.74</version>\n      <subdirectory>./</subdirectory>\n      <icon>Resources/icons/DynamicDataLogo.svg</icon>\n      <freecadmin>0.18.0</freecadmin>\n    </workbench>\n  </content>\n</package>\n"
+      }
+    }
+  ],
+  "EasyProfileFrame": [
+    {
+      "repository": "https://github.com/ovo-Tim/EasyProfileFrame",
+      "last_update_time": "2025-04-11T07:11:40+08:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n\n  <name>EasyProfileFrame</name>\n\n  <description>Simplifies the creation of frames using profiles, such as aluminum profiles. It also includes support for exporting Bill of Materials (BOM).</description>\n\n  <version>0.0.1</version>\n\n  <date>2025-01-25</date>\n\n  <license file=\"LICENSE\">LGPL-3.0-or-later</license>\n\n  <url branch=\"main\" type=\"repository\">https://github.com/ovo-Tim/EasyProfileFrame.git</url>\n\n  <url type=\"readme\">https://github.com/ovo-Tim/EasyProfileFrame/raw/main/README.md</url>\n\n  <author email=\"ovo-tim@qq.com\">ovo-Tim</author>\n\n  <icon>freecad/easy_profile_frame/resources/icons/MakerWorkbench_Aluproft_Cmd.svg</icon>\n\n  <content>\n    <workbench>\n      <name>EasyProfileFrame</name>\n      <classname>EasyProfileFrame</classname>\n      <subdirectory>./</subdirectory>\n    </workbench>\n  </content>\n      \n\n</package>\n"
+      }
+    }
+  ],
+  "EM": [
+    {
+      "repository": "https://github.com/ediloren/EM-Workbench-for-FreeCAD",
+      "last_update_time": "2024-04-12T12:32:19+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>ElectroMagnetic Workbench</name>\n  <description>This project is dedicated to building an ElectroMagnetic workbench for FreeCAD, with support for inductance and capacitance solvers.</description>\n  <version>2.1.1</version>\n  <date>2024-04-11</date>\n  <maintainer email=\"enrico dot di_lorenzo at fastfieldsolvers dot com\">Enrico Di Lorenzo</maintainer>\n  <license file=\"LICENSE\">LGPLv2.1</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/ediloren/EM-Workbench-for-FreeCAD</url>\n  <url type=\"website\">https://github.com/ediloren/EM-Workbench-for-FreeCAD</url>\n  <url type=\"bugtracker\">https://github.com/ediloren/EM-Workbench-for-FreeCAD/issues</url>\n  <icon>Resources/EMWorkbench.svg</icon>\n\n  <content>\n    <workbench>\n      <classname>ElectroMagnetic Workbench</classname>\n      <subdirectory>./</subdirectory>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "Estimate": [
+    {
+      "repository": "https://github.com/erroronline1/estimateWB",
+      "last_update_time": "2025-02-02T22:23:50+01:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>estimateWB</name>\n  <version>0.1.2</version>\n  <date>2022-03-18</date>\n  <description>estimate material quantity</description>\n  <maintainer email=\"dev@erroronline.one\">error on line 1</maintainer>\n  <license file=\"LICENSE\">LGPL-3.0-or-later</license>\n  <icon>freecad/estimateWB/resources/icon.svg</icon>\n  <url type=\"repository\" branch=\"master\">https://github.com/erroronline1/estimateWB</url>\n  <url type=\"readme\">https://github.com/erroronline1/estimateWB/blob/master/README.md</url>\n\n  <content>\n    <workbench>\n      <icon>freecad/estimateWB/resources/icon.svg</icon>\n      <subdirectory>./</subdirectory>\n      <classname>estimateWB</classname>\n      <name>estimateWB</name>\n      <description>estimate material quantity</description>\n      <version>0.1.2</version>\n      <freecadmin>0.19.0</freecadmin>\n      <!--depend>numpy</depend-->\n      <tag>estimate</tag>\n      <tag>volume</tag>\n      <tag>weight</tag>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "ExplodedAssembly": [
+    {
+      "repository": "https://github.com/JMG1/ExplodedAssembly",
+      "last_update_time": "2024-02-24T13:34:46+01:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "ExtMan": [
+    {
+      "repository": "https://github.com/mnesarco/FreeCAD_ExtMan",
+      "last_update_time": "2021-12-19T09:45:20-05:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "fasteners": [
+    {
+      "repository": "https://github.com/shaise/FreeCAD_FastenersWB",
+      "last_update_time": "2025-08-11T15:30:09+03:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>Fasteners Workbench</name>\n  <description>Some common fasteners and fastener tools for FreeCAD.</description>\n  <version>0.5.41</version>\n  <date>2025-08-11</date>\n  <maintainer email=\"shaise@gmail.com\">Shai Seger</maintainer>\n  <license file=\"LICENSE\">GPL-2.0-or-later</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/shaise/FreeCAD_FastenersWB</url>\n  <url type=\"readme\">https://github.com/shaise/FreeCAD_FastenersWB/blob/master/README.md</url>\n  <icon>Icons/FNLogo.svg</icon>\n\n  <content>\n    <workbench>\n      <classname>FastenersWorkbench</classname>\n      <subdirectory>./</subdirectory>\n      <tag>fasteners</tag>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "Fcmcua": [
+    {
+      "repository": "https://github.com/heissgetraenk/fcmcua",
+      "last_update_time": "2024-04-21T11:44:23+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>FCMCUA Motion Control Workbench</name>\n  <description>Link a motion controller to a FreeCAD assembly using OPC UA</description>\n  <version>1.0.0</version>\n  <date>2023-01-16</date>\n  <maintainer email=\"heissgetraenk@gmx.de\">heissgetraenk</maintainer>\n  <license file=\"LICENSE\">GPL-3.0-or-later</license>\n  <url type=\"repository\" branch=\"main\">https://github.com/heissgetraenk/fcmcua</url>\n  <url type=\"readme\">https://github.com/heissgetraenk/fcmcua/blob/main/README.md</url>\n  <icon>freecad/fcmcua/resources/fcmcua_wb.svg</icon>\n\n  <content>\n    <workbench>\n      <classname>Fcmcua</classname>\n      <subdirectory>./</subdirectory>\n      <!-- Python package dependencies-->\n      <depend>asyncua</depend>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "fcVM": [
+    {
+      "repository": "https://github.com/HarryvL/fcVM-workbench",
+      "last_update_time": "2025-07-27T16:06:20+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>fcVM-workbench</name>\n  <description>Finite element collapse analysis based on the von Mises plasticity model for use with FreeCAD</description>\n  <version>2024.9.5</version>\n  <date>2024-09-05</date>\n  <maintainer email=\"hvlanalysis@gmail.com\">HarryvL</maintainer>\n  <url branch=\"main\" type=\"repository\">https://github.com/HarryvL/fcVM-workbench.git</url>\n  <url type=\"readme\">https://github.com/HarryvL/fcVM-workbench.git/raw/main/README.md</url>\n  <icon>icons/fcFEM.svg</icon>\n\n  <content>\n    <workbench>\n      <classname>fcVMWorkbench</classname>\n      <subdirectory>./</subdirectory>\n      <depend>numpy</depend>\n      <depend>numba</depend>\n      <depend>matplotlib</depend>\n      <depend>meshio</depend>\n      <depend>pyvista</depend>\n      <depend>scikit-sparse</depend>\n      <depend version_eq=\"1.11.3\">scipy</depend>\n      <tag>FEM</tag>\n      <tag>FEA</tag>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "FoamCut": [
+    {
+      "repository": "https://github.com/Shkolik/Foamcut",
+      "last_update_time": "2025-07-28T15:49:50-05:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n\n  <name>FoamCut</name>\n\n  <description>Foamcut workbench provide functionality to prepare job and generate Gcode for 4 or 5 axis cnc hotwire cutter.</description>\n\n  <version>0.1.9</version>\n\n  <date>2025-07-28</date>\n\n  <maintainer email=\"shkolik@gmail.com\">Andrew Shkolik</maintainer>\n\n  <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n\n  <url branch=\"main\" type=\"repository\">https://github.com/Shkolik/Foamcut</url>\n\n  <url type=\"readme\">https://github.com/Shkolik/Foamcut/blob/main/README.md</url>\n\n  <url type=\"changelog\">https://github.com/Shkolik/Foamcut/blob/main/CHANGELOG.md</url>\n\n  <author>Andrew Shkolik (https://github.com/Shkolik)</author>\n\n  <icon>Resources/icons/foamcut.svg</icon>\n\n  <content>\n    <workbench>\n      <classname>FoamcutWB</classname>\n      <subdirectory>./</subdirectory>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "FreeCAD-Beginner-Assistant": [
+    {
+      "repository": "https://github.com/alekssadowski95/FreeCAD-Beginner-Assistant",
+      "last_update_time": "2024-12-29T17:00:13+01:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>FreeCAD-Beginner-Assistant</name>\n  <description>Best practices modeling assistant for the Part and Sketcher workbench.</description>\n  <version>1.0</version>\n  <date>2024-05-19</date>\n  <author>Aleksander Sadowski(https://github.com/alekssadowski95/FreeCAD-Beginner-Assistant)</author>\n  <maintainer email=\"alekey@hotmail.de\">Aleksander Sadowski</maintainer>\n  <maintainer email=\"elizabethharasymiw@gmail.com\">Elizabeth Harasymiw</maintainer>\n  <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n  <url type=\"repository\" branch=\"main\">https://github.com/alekssadowski95/FreeCAD-Beginner-Assistant</url>\n  <url type=\"bugtracker\">https://github.com/alekssadowski95/FreeCAD-Beginner-Assistant/issues</url>\n  <icon>Icons/FreeCAD-Beginner-Assistant.svg</icon>\n\n  <content>\n    <workbench>\n      <classname>FreeCAD-Beginner-Assistant</classname>\n      <subdirectory>./</subdirectory>\n      <icon>Icons/FreeCAD-Beginner-Assistant.svg</icon>\n      <depend type=\"python\">fpdf2</depend>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "freecad.gears": [
+    {
+      "repository": "https://github.com/looooo/freecad.gears",
+      "last_update_time": "2025-01-09T00:09:16+01:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>freecad.gears workbench</name>\n  <description>A gear workbench for FreeCAD</description>\n  <version>1.3</version>\n  <date>2024-09-11</date>\n  <maintainer email=\"sppedflyer@gmail.com\">looooo</maintainer>\n  <license file=\"LICENSE\">GPL-3.0-or-later</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/looooo/freecad.gears</url>\n  <url type=\"bugtracker\">https://github.com/looooo/freecad.gears/issues</url>\n  <url type=\"documentation\">https://wiki.freecad.org/FCGear_Workbench</url>\n  <icon>freecad/gears/icons/gearworkbench.svg</icon>\n\n  <content>\n    <workbench>\n      <classname>GearWorkbench</classname>\n      <subdirectory>./</subdirectory>\n      <freecadmin>0.19</freecadmin>\n      <tag>gear</tag>\n      <tag>gears</tag>\n    </workbench>\n    <depend>scipy</depend>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "FreecadDiscordPresence": [
+    {
+      "repository": "https://github.com/TzurSoffer/FreecadDiscordPresence",
+      "last_update_time": "2024-12-31T22:17:21-08:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n\n  <name>DiscordPresence</name>\n\n  <description>Shows FreeCAD Status on discord.</description>\n\n  <version>1.0.2</version>\n\n  <date>2024-12-09</date>\n\n  <maintainer email=\"tzur.soffer@gmail.com\">Tzur Soffer</maintainer>\n\n  <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n\n  <url branch=\"main\" type=\"repository\">https://github.com/TzurSoffer/FreecadDiscordPresence</url>\n\n  <url type=\"readme\">https://github.com/TzurSoffer/FreecadDiscordPresence/blob/main/README.md</url>\n\n  <icon>icons/discord.svg</icon>\n\n  <content>\n    <workbench>\n      <classname>DiscordPresence</classname>\n      <subdirectory>./</subdirectory>\n      <tag>Discord</tag>\n      <freecadmin>0.19</freecadmin>\n      <depend>pypresence</depend>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "FreeCAD-Documentation-html": [
+    {
+      "repository": "https://github.com/Reqrefusion/FreeCAD-Documentation-html",
+      "last_update_time": "2025-08-26T11:15:17+03:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>FreeCAD HTML documentation</name>\n  <description>The FreeCAD documentation for offline use</description>\n  <version>1.0.0-alpha</version>\n  <date>2024-12-15</date>\n  <maintainer email=\"reqrefusio@uncreated.net\">Turan Furkan Topak</maintainer>\n  <license file=\"LICENSE\">CC0-1.0</license>\n  <url type=\"repository\" branch=\"main\">https://github.com/Reqrefusion/FreeCAD-Documentation-html</url>\n  <!-- No icon yet <icon></icon> -->\n\n  <content>\n    <workbench>\n      <classname>Documentation</classname>\n      <subdirectory>./</subdirectory>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "Freecad-Built-in-themes-beta": [
+    {
+      "repository": "https://github.com/MisterMakerNL/Freecad-Built-in-themes-beta",
+      "last_update_time": "2024-05-21T22:36:04+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\">\n  <name>Built-In Preference Packs beta</name>\n  <description>Beta versions of the preference Packs included with the FreeCAD distribution</description>\n  <version>1.2.2</version>\n  <maintainer email=\"email@freecad.org\">MisterMaker</maintainer>\n  <license file=\"../../LICENSE\">LGPL-2.0-or-later</license>\n  <url type=\"repository\" branch=\"main\">https://github.com/MisterMakerNL/Freecad-Built-in-themes-beta</url>\n <icon>resources/icons/Freecad-Built-in-themes-beta.svg</icon>\n\n  <content>\n    <preferencepack>\n      <name>Classic theme beta</name>\n      <description>Removes stylesheets, and applies the classic purple/gray background. Resets all colors to default</description>\n      <version>1.5.0</version>\n      <tag>built-in</tag>\n      <tag>background</tag>\n      <tag>no stylesheet</tag>\n      <tag>classic theme</tag>\n      <tag>beta</tag>\n      <tag>Theme</tag>\n    </preferencepack>\n    <preferencepack>\n\t\t  <name>Classic light</name>\n      <type>Theme</type>\n      <description>Applies the classic purple/gray background. Uses Opentheme colors.</description>\n      <version>0.1.0</version>\n      <tag>built-in</tag>\n      <tag>background</tag>\n\t     <tag>light</tag>\n      <tag>classic theme</tag>\n    </preferencepack>\n    <preferencepack>\n\t    <name>Classic dark</name>\n      <type>Theme</type>\n      <description>Applies the classic purple/gray background. Uses Opentheme colors.</description>\n      <version>1.0.0</version>\n      <tag>built-in</tag>\n      <tag>background</tag>\n\t    <tag>dark</tag>\n      <tag>classic theme</tag>\n    </preferencepack>\n\t  <preferencepack>\n      <name>Dark theme beta</name>\n      <description>Applies a dark background and a dark stylesheet, you can choose other stylesheets as you wish.</description>\n      <version>0.6.7</version>\n      <tag>built-in</tag>\n      <tag>dark</tag>\n      <tag>background</tag>\n      <tag>stylesheet</tag>\n      <tag>Theme</tag>\n      <tag>beta</tag>\n    </preferencepack>\n    <preferencepack>\n      <name>Darker theme beta</name>\n      <description>Applies a dark background and a darker stylesheet, you can choose other stylesheets as you wish.</description>\n      <version>0.6.7</version>\n      <tag>built-in</tag>\n      <tag>dark</tag>\n      <tag>background</tag>\n      <tag>stylesheet</tag>\n      <tag>Theme</tag>\n      <tag>beta</tag>\n    </preferencepack>\n    <preferencepack>\n      <name>Dark modern theme beta</name>\n      <description>Applies a dark background and a darker more modern stylesheet, you can choose other stylesheets as you wish.</description>\n      <version>0.6.7</version>\n      <tag>built-in</tag>\n      <tag>dark</tag>\n      <tag>background</tag>\n      <tag>stylesheet</tag>\n      <tag>Theme</tag>\n      <tag>beta</tag>\n    </preferencepack>\n    <preferencepack>\n      <name>Light theme beta</name>\n      <description>Applies a light background and a light stylesheet, you can choose other stylesheets as you wish.</description>\n      <version>0.6.7</version>\n      <tag>built-in</tag>\n      <tag>light</tag>\n      <tag>background</tag>\n      <tag>stylesheet</tag>\n      <tag>Theme</tag>\n      <tag>beta</tag>\n    </preferencepack>\n    <preferencepack>\n      <name>Light modern theme beta</name>\n      <description>Applies a light background and a light more modern stylesheet, you can choose other stylesheets as you wish.</description>\n      <version>0.6.7</version>\n      <tag>built-in</tag>\n      <tag>light</tag>\n      <tag>background</tag>\n      <tag>stylesheet</tag>\n      <tag>Theme</tag>\n      <tag>beta</tag>\n    </preferencepack>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "freecad.optics_design_workbench": [
+    {
+      "repository": "https://github.com/zaphB/freecad.optics_design_workbench",
+      "last_update_time": "2025-08-24T20:34:42+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>Optics Design Workbench</name>\n  <description>Physically accurate forward ray tracing for optics simulation and optimization with FreeCAD workbench frontend.</description>\n  <version>0.6.2</version>\n  <date>2025-04-04</date>\n  <maintainer email=\"philipp.bredol@rwth-aachen.de\">Philipp Bredol</maintainer>\n  <depend>numpy</depend>\n  <depend>scipy</depend>\n  <depend>sympy</depend>\n  <depend>matplotlib</depend>\n  <depend>atomicwrites</depend>\n  <license file=\"LICENSE\">LGPL-3.0-or-later</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/zaphB/freecad.optics_design_workbench</url>\n  <url type=\"readme\">https://github.com/zaphB/freecad.optics_design_workbench/blob/master/README.md</url>\n  <icon>workbench.svg</icon>\n  <content>\n    <workbench>\n      <classname>OpticsDesignWorkbench</classname>\n    </workbench>\n  </content>\n</package>\n"
+      }
+    }
+  ],
+  "FreeCAD-Ribbon": [
+    {
+      "repository": "https://github.com/APEbbers/FreeCAD-Ribbon",
+      "last_update_time": "2025-08-15T08:38:36+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n\n  <name>FreeCAD Ribbon</name>\n\n  <description>A Ribbon interface for FreeCAD</description>\n\n  <version>1.9.1.14</version>\n\n  <date>2024-07-28</date>\n\n  <maintainer>Paul Ebbers</maintainer>\n\n  <license file=\"LICENSE\">GPL-3.0-or-later</license>\n\n  <pythonmin>3.8.0</pythonmin>\n\n  <url type=\"website\">https://github.com/APEbbers/FreeCAD-Ribbon/wiki</url>\n\n  <url branch=\"main\" type=\"repository\">https://github.com/APEbbers/FreeCAD-Ribbon</url>\n\n  <url type=\"readme\">https://github.com/APEbbers/FreeCAD-Ribbon/blob/main/README.md</url>\n\n  <content>\n    <workbench>\n      <freecadmin>0.21.0</freecadmin>\n      <icon>Resources/icons/FreecadNew.svg</icon>\n      <subdirectory>./</subdirectory>\n      <!-- Optional install of 3rd-party SearchBar to streamline ability to Search and find commands -->\n      <depend type=\"addon\" optional=\"true\">SearchBar</depend>\n      <depend type=\"addon\" optional=\"true\">SaveAndRestore</depend>\n      <depend type=\"python\" optional=\"true\">git</depend>\n      <depend type=\"python\" optional=\"true\">gitpython</depend>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "FreeCAD-themes": [
+    {
+      "repository": "https://github.com/FreeCAD/FreeCAD-themes",
+      "last_update_time": "2025-08-11T17:44:54-05:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n    <name>FreeCAD-themes</name>\n    <version>2025.06.04</version>\n    <date>2025.06.04</date>\n    <description>Additional themes for FreeCAD</description>\n    <maintainer email=\"themes@freecad.org\">The FreeCAD Team</maintainer>\n    <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n    <url type=\"repository\" branch=\"main\">https://github.com/FreeCAD/FreeCAD-themes</url>\n    <icon>resources/icons/themes.svg</icon>\n\n    <content>\n        <preferencepack>\n            <name>Behave-dark</name>\n            <type>Theme</type>\n            <tag>dark</tag>\n            <file>Behave-dark.qss</file>\n            <file>Behave-dark-overlay.qss</file>\n        </preferencepack>\n        <preferencepack>\n            <name>Dark-contrast</name>\n            <type>Theme</type>\n            <tag>dark</tag>\n            <file>Dark-contrast.qss</file>\n        </preferencepack>\n        <preferencepack>\n            <name>Darker</name>\n            <type>Theme</type>\n            <tag>dark</tag>\n            <file>Darker.qss</file>\n            <file>Darker-overlay.qss</file>\n        </preferencepack>\n        <preferencepack>\n            <name>ProDark</name>\n            <type>Theme</type>\n            <tag>dark</tag>\n            <file>ProDark.qss</file>\n        </preferencepack>\n        <preferencepack>\n            <name>Dark-modern</name>\n            <type>Theme</type>\n            <tag>dark</tag>\n            <file>Dark-modern.qss</file>\n            <file>Dark-modern-overlay.qss</file>\n        </preferencepack>\n        <preferencepack>\n            <name>Light-modern</name>\n            <type>Theme</type>\n            <tag>light</tag>\n            <file>Light-modern.qss</file>\n            <file>Light-modern-overlay.qss</file>\n        </preferencepack>\n    </content>\n</package>\n"
+      }
+    }
+  ],
+  "freecad-xr-workbench": [
+    {
+      "repository": "https://github.com/kwahoo2/freecad-xr-workbench",
+      "last_update_time": "2025-08-13T23:13:45+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n\n  <name>XR Virtual Reality Workbench</name>\n\n  <description>A Virtual Reality (OpenXR) workbench. View your models with VR goggles.</description>\n\n  <version>0.9.96</version>\n\n  <date>2025-08-13</date>\n\n  <maintainer email=\"adrian.v.przekwas@gmail.com\">Adrian Przekwas</maintainer>\n\n  <license file=\"LICENSE\">LGPL-3.0-or-later</license>\n\n  <pythonmin>3.11.0</pythonmin>\n\n  <url branch=\"main\" type=\"repository\">https://github.com/kwahoo2/freecad-xr-workbench</url>\n\n  <url type=\"readme\">https://github.com/kwahoo2/freecad-xr-workbench/blob/main/README.md</url>\n\n  <icon>Gui/Resources/icons/preferences-xrworkbench.svg</icon>\n\n  <content>\n    <workbench>\n      <classname>XRWorkbench</classname>\n      <subdirectory>./</subdirectory>\n      <depend>pyopenxr</depend>\n      <depend>PyOpenGL</depend>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "freecad_streamdeck_addon": [
+    {
+      "repository": "https://github.com/Giraut/freecad_streamdeck_addon",
+      "last_update_time": "2024-03-08T10:22:39+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n\n  <name>Stream Deck Addon</name>\n  <description>FreeCAD addon to use an Elgato Stream Deck macropad as an input device.</description>\n  <version>0.1.7</version>\n  <date>2024-03-06</date>\n  <license file=\"LICENSE\">GPL-3.0-or-later</license>\n  <url branch=\"main\" type=\"repository\">https://github.com/Giraut/freecad_streamdeck_addon</url>\n  <url type=\"readme\">https://github.com/Giraut/freecad_streamdeck_addon/raw/main/README.md</url>\n  <author>Giraut</author>\n  <icon>logo.svg</icon>\n\n  <depend optional=\"false\" type=\"python\">streamdeck</depend>\n  <depend optional=\"false\" type=\"python\">pillow</depend>\n\n  <content>\n    <workbench/>\t<!-- This addon is neither a workbench, a macro or a preference pack, but FreeCAD requires at least one content entry to load it -->\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "FeedsAndSpeeds": [
+    {
+      "repository": "https://github.com/dubstar-04/FeedsAndSpeeds",
+      "last_update_time": "2024-12-12T20:32:51+00:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\">\n  <name>FeedsAndSpeeds</name>\n  <description>A FreeCAD CAM Addon to help generate basic feeds and speeds for machining.</description>\n  <version>0.6</version>\n  <maintainer email=\"s.d.wood.82@googlemail.com\">Daniel Wood</maintainer>\n  <license file=\"LICENSE\">LGPL-2.1</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/dubstar-04/FeedsAndSpeeds</url>\n  <url type=\"readme\">https://github.com/dubstar-04/FeedsAndSpeeds/blob/master/README.md</url>\n\n  <content>\n    <workbench>\n      <classname>FeedsAndSpeeds</classname>\n      <subdirectory>./</subdirectory>\n      <icon>Icons/CAM_FeedsAndSpeeds.svg</icon>\n      <freecadmin>1.0.0</freecadmin>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "FEM_FrontISTR": [
+    {
+      "repository": "https://github.com/FrontISTR/FEM_FrontISTR",
+      "last_update_time": "2025-07-28T11:47:56+09:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>FEM_FrontISTR Workbench</name>\n  <version>0.2.0</version>\n  <date>2023-06-24</date>\n  <description>A FreeCAD addon that enables a parallel nonliner FEM solver FrontISTR.</description>\n  <maintainer email=\"freecad_support@frontistr.org\">FrontISTR-Commons</maintainer>\n  <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/FrontISTR/FEM_FrontISTR</url>\n  <url type=\"bugtracker\">https://github.com/FrontISTR/FEM_FrontISTR/issues</url>\n  <url type=\"documentation\">https://frontistr-commons.gitlab.io/FEM_FrontISTR/en/</url>\n  <icon>Resources/FrontISTR.svg</icon>\n  <depend>FEM</depend>\n  <freecadmin>0.19</freecadmin>\n\n  <content>\n    <workbench>\n      <icon>Resources/FrontISTR.svg</icon>\n      <subdirectory>./</subdirectory>\n      <classname>FrontISTR</classname>\n      <tag>FEM</tag>\n      <tag>solver</tag>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "FEMbyGEN": [
+    {
+      "repository": "https://github.com/Serince/FEMbyGEN",
+      "last_update_time": "2025-05-22T19:07:05+03:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n    <name>FEMbyGEN</name>\n    <description>Parametric Finite Element Analysis(FEM)</description>\n    <version>2.5.1</version>\n    <maintainer email=\"serince@outlook.com\">Serdar T. Ince</maintainer>\n    <license file=\"LICENSE\">LGPL-2.1</license>\n    <url type=\"repository\" branch=\"master\">https://github.com/Serince/FEMbyGEN</url>\n    <freecadmin>0.20</freecadmin>\n    <content>\n        <workbench>\n            <classname>FEMbyGEN</classname>\n            <subdirectory>./</subdirectory>\n            <icon>fembygen/icons/icon.svg</icon>\n            <tag>FEM</tag>\n            <tag>FEA</tag>\n            <tag>solver</tag>\n            <tag>spreadsheet</tag>\n        </workbench>\n        <depend>scipy</depend>\n    </content>\n</package>\n"
+      }
+    }
+  ],
+  "flamingo": [
+    {
+      "repository": "https://github.com/oddtopus/flamingo",
+      "last_update_time": "2019-03-30T19:01:04+01:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "frame": [
+    {
+      "repository": "https://github.com/looooo/freecad_frame",
+      "last_update_time": "2024-02-09T21:51:52+00:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n\n  <name>Frame and beams workbench</name>\n\n  <description>A workbench for beams and frames</description>\n\n  <version>0.1.1</version>\n\n  <date>2023-08-08</date>\n\n  <maintainer email=\"sppedflyer@gmail.com\">looooo</maintainer>\n\n  <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n\n  <url branch=\"master\" type=\"repository\">https://github.com/looooo/freecad.frametools</url>\n\n  <url type=\"bugtracker\">https://github.com/looooo/freecad.frametools/issues</url>\n\n  <url type=\"readme\">https://github.com/looooo/freecad.frametools/blob/master/README.md</url>\n\n  <url type=\"documentation\">https://github.com/looooo/freecad.frametools</url>\n\n  <icon>freecad/frametools/icons/beam.svg</icon>\n\n  <content>\n    <workbench>\n      <freecadmin>0.19.0</freecadmin>\n      <depend optional=\"False\" type=\"automatic\">scipy</depend>\n      <tag>frame</tag>\n      <tag>beam</tag>\n      <classname>FrameWorkbench</classname>\n      <subdirectory>./</subdirectory>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "FrameForge": [
+    {
+      "repository": "https://github.com/lukh/frameforge",
+      "last_update_time": "2025-07-14T10:13:08+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n\n  <name>FrameForge</name>\n  <description>FrameForge is dedicated for creating Frames and Beams, and apply operations (miter cuts, trim cuts) on these profiles.</description>\n  <version>0.1.3</version>\n  <date>2025-03-10</date>\n  <maintainer email=\"vivien.henry@inductivebrain.fr\">Vivien Henry</maintainer>\n  <license file=\"LICENSE\">LGPLv3</license>\n  <url branch=\"main\" type=\"repository\">https://github.com/lukh/frameforge.git</url>\n  <url type=\"readme\">https://github.com/lukh/frameforge.git/-/raw/main/README.md</url>\n  <icon>freecad/frameforge/resources/icons/metalwb.svg</icon>\n\n  <content>\n    <workbench>\n      <classname>FrameForge</classname>\n      <subdirectory>freecad/frameforge</subdirectory>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "free2ki": [
+    {
+      "repository": "https://github.com/30350n/free2ki",
+      "last_update_time": "2025-06-08T12:43:56+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>free2ki</name>\n  <description>Export your 3D models to VRML files, with correctly applied rotation and scaling, for use in KiCad as well as Blender.</description>\n  <version>1.1.1</version>\n  <freecadmin>1.0.0</freecadmin>\n  <date>2025-06-03</date>\n  <maintainer email=\"mail@30350n.de\">30350n</maintainer>\n  <license file=\"LICENSE\">GPL-3.0-or-later</license>\n  <url type=\"repository\" branch=\"freecad-addons\">https://github.com/30350n/free2ki</url>\n  <url type=\"readme\">https://github.com/30350n/free2ki/blob/freecad-addons/README.md</url>\n  <icon>freecad/free2ki/icons/kicad-export.svg</icon>\n  <content>\n    <workbench>\n      <name>free2ki</name>\n      <classname>Free2KiWorkbench</classname>\n      <subdirectory>freecad/free2ki</subdirectory>\n    </workbench>\n  </content>\n</package>\n"
+      }
+    }
+  ],
+  "FreeGrid": [
+    {
+      "repository": "https://github.com/instancezero/in3dca-freegrid.git",
+      "last_update_time": "2025-01-28T13:42:45-06:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n\n  <name>FreeGrid Workbench</name>\n\n  <description>A simple tools workbench for generating FreeGrid storage system components.</description>\n\n  <version>2.2.0</version>\n\n  <date>2025-01-22</date>\n\n  <maintainer>Alan Langford</maintainer>\n\n  <maintainer>Michael K Johnson</maintainer>\n\n  <maintainer email=\"hasecilu@tuta.io\">hasecilu</maintainer>\n\n  <license file=\"LICENSE\">AGPL-3.0-or-later</license>\n\n  <pythonmin>3.6.0</pythonmin>\n\n  <url type=\"website\">https://in3d.ca/freegrid-an-open-grid-based-3d-printed-storage-system/</url>\n\n  <url branch=\"main\" type=\"repository\">https://github.com/instancezero/in3dca-freegrid</url>\n\n  <url type=\"bugtracker\">https://github.com/instancezero/in3dca-freegrid/issues</url>\n\n  <url type=\"readme\">https://github.com/instancezero/in3dca-freegrid/blob/main/README.md</url>\n\n  <url type=\"documentation\">https://wiki.freecad.org/FreeGrid_Workbench</url>\n\n  <url type=\"discussion\">https://forum.freecad.org/viewtopic.php?p=613002</url>\n\n  <author>Alan Langford</author>\n\n  <tag>storage</tag>\n\n  <tag>parametric</tag>\n\n  <tag>3d-printing</tag>\n\n  <icon>freecad/freegrid/resources/icons/FreeGrid.svg</icon>\n\n  <content>\n    <workbench>\n      <name>FreeGrid Workbench</name>\n      <icon>resources/icons/FreeGrid.svg</icon>\n      <subdirectory>freecad/freegrid</subdirectory>\n      <classname>FreeGridWorkbench</classname>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "FusedFilamentDesign": [
+    {
+      "repository": "https://github.com/rahix/FusedFilamentDesign.git",
+      "last_update_time": "2025-06-17T14:04:25+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>FusedFilamentDesign</name>\n  <description>PartDesign addon for FFF/FDM 3D-printing design</description>\n  <!-- We use innovative calender-derived zero-versioning. See CHANGELOG.md for more info. -->\n  <version>0.25.250</version>\n  <date>2025-06-17</date>\n  <maintainer email=\"freecad@rahix.de\">rahix</maintainer>\n  <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n  <url type=\"repository\" branch=\"release\">https://github.com/Rahix/FusedFilamentDesign</url>\n  <url type=\"readme\">https://github.com/Rahix/FusedFilamentDesign/blob/release/README.md</url>\n  <icon>Resources/icons/ffDesign_Logo.svg</icon>\n\n  <content>\n    <!-- Technically FusedFilamentDesign does not include a workbench and is instead just an addon to PartDesign.\n\n    It seems FreeCAD 1.1 will support a `other` type of addon which would suit us.  But to make this\n    work on FreeCAD 1.0, we have to pretend being a workbench for the time being... -->\n    <workbench>\n      <classname>ffDesignWB</classname>\n      <subdirectory>./</subdirectory>\n    </workbench>\n  </content>\n</package>\n"
+      }
+    }
+  ],
+  "GDML": [
+    {
+      "repository": "https://github.com/KeithSloan/GDML",
+      "last_update_time": "2025-07-29T20:31:38+01:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>GDML workbench</name>\n  <description>An external workbench for creating GDML models for Geant4 and Root</description>\n  <version>2.0.1 Beta</version>\n  <date>2024-27-11</date>\n  <maintainer email=\"keith@sloan-home.co.uk\">Keith Sloan</maintainer>\n  <license file=\"LICENSE\">LGPL-2.1</license>\n  <url type=\"repository\" branch=\"Main\">https://github.com/KeithSloan/GDML</url>\n  <url type=\"documentation\">https://github.com/KeithSloan/GDML/wiki</url>\n  <url type=\"readme\">https://github.com/KeithSloan/GDML/blob/Main/README.md</url>\n\n  <content>\n    <workbench>\n      <classname>GDMLWorkbench</classname>\n      <subdirectory>./</subdirectory>\n      <icon>freecad/gdml/Resources/icons/GDMLWorkbench.svg</icon>\n      <freecadmin>0.20.0</freecadmin>\n    </workbench>\n  </content>\n<depend>lxml</depend>\n<depend>gmsh</depend>\n</package>\n"
+      }
+    }
+  ],
+  "GDT": [
+    {
+      "repository": "https://github.com/juanvanyo/FreeCAD-GDT",
+      "last_update_time": "2024-07-23T18:48:31+06:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "Glass": [
+    {
+      "repository": "https://github.com/triplus/Glass",
+      "last_update_time": "2020-04-26T21:27:01+02:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "Gridfinity": [
+    {
+      "repository": "https://github.com/Stu142/FreeCAD-Gridfinity-Workbench",
+      "last_update_time": "2025-04-27T13:51:08-03:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n\n  <name>Gridfinity Workbench</name>\n\n  <description>This Workbench will generate several variations of parametric Gridfinity bins and baseplates that can be easily customized. </description>\n\n  <version>0.11.9</version>\n\n  <date>2025-04-27</date>\n\n  <license file=\"LICENSE\">lgpl-2.1-or-later</license>\n\n  <url branch=\"master\" type=\"repository\">https://github.com/Stu142/FreeCAD-Gridfinity-Workbench</url>\n\n  <url type=\"readme\">https://github.com/Stu142/FreeCAD-Gridfinity-Workbench/blob/master/README.md</url>\n\n  <author email=\"stu142design@gmail.com\">Stuart</author>\n\n  <icon>freecad/gridfinity_workbench/icons/gridfinity_workbench_icon.svg</icon>\n\n  <content>\n    <workbench>\n      <classname>GridfinityWorkbench</classname>\n      <subdirectory>./</subdirectory>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "Help": [
+    {
+      "repository": "https://github.com/FreeCAD/FreeCAD-Help",
+      "last_update_time": "2024-02-27T13:12:59+01:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>Help</name>\n  <description>A help system for displaying FreeCAD documentation.</description>\n  <version>1.0.3</version>\n  <date>2022-06-14</date>\n  <maintainer email=\"yorik@uncreated.net\">Yorik van Havre</maintainer>\n  <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n  <url type=\"repository\" branch=\"main\">https://github.com/FreeCAD/FreeCAD-Help</url>\n  <icon>icons/help.svg</icon>\n\n  <content>\n    <workbench>\n      <classname>Help</classname>\n      <subdirectory>./</subdirectory>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "IconThemes": [
+    {
+      "repository": "https://github.com/triplus/IconThemes",
+      "last_update_time": "2020-05-27T00:09:46+02:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "ImportNURBS": [
+    {
+      "repository": "https://github.com/KeithSloan/ImportNURBS",
+      "last_update_time": "2025-03-20T06:30:54+00:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>ImportNurbs workbench</name>\n  <description>An external workbench for add importer for 3dm></description>\n  <version>1.1 Beta</version>\n  <date>2022-07-04</date>\n  <maintainer email=\"keith@sloan-home.co.uk\">Keith Sloan</maintainer>\n  <license file=\"LICENSE\">LGPL-2.1</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/KeithSloan/ImportNURBS</url>\n  <url type=\"documentation\">https://github.com/KeithSloan/ImportNURBS/wiki</url>\n  <url type=\"readme\">https://github.com/KeithSloan/ImportNURBS/blob/master/README.md</url>\n\n  <content>\n    <workbench>\n      <classname>ImportNURBSWorkbench</classname>\n      <subdirectory>./</subdirectory>\n      <icon>freecad/ImportNURBS/Resources/icons/ImportNURBSworkbench.svg</icon>\n      <freecadmin>0.19.3</freecadmin>\n      <depend>rhino3dm</depend>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "InventorLoader": [
+    {
+      "repository": "https://github.com/jmplonka/InventorLoader",
+      "last_update_time": "2024-12-17T16:15:05+01:00",
+      "metadata": {
+        "package_xml": "<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n<name>InventorLoader</name>\n<version>1.5.1</version>\n<date>2024-12-12</date>\n<maintainer email=\"jens.m.plonka@gmail.com\">jmplonka</maintainer>\n<license>LGPL-3.0-or-later</license>\n<description>This plugin enables FreeCAD to import Inventor part files (*.IPT), ACIS files (*.SAT, *.SAB), 3D-Solids from DXF files and Fusion360 (*.f3d) files.</description>\n<icon>Icon.png</icon>\n<url type=\"bugtracker\">https://github.com/jmplonka/InventorLoader/issues</url>\n<url type=\"repository\" branch=\"master\">https://github.com/jmplonka/InventorLoader</url>\n<content>\n\t<workbench>\n\t\t<classname>InventorWorkbench</classname>\n\t\t<subdirectory>./</subdirectory>\n\t</workbench>\n</content>\n<tag>Autodesk</tag>\n<tag>Inventor</tag>\n<tag>IPT</tag>\n<tag>ACIS</tag>\n<tag>SAT</tag>\n<tag>DXF</tag>\n<tag>F3D</tag>\n<tag>3D-Solids</tag>\n<tag>Fusion360</tag>\n<depend>Part</depend>\n<depend>Draft</depend>\n<depend>Sketcher</depend>\n<depend>SheetMetal Workbench</depend>\n<depend>olefile</depend>\n<depend>xlrd</depend>\n<depend>xlwt</depend>\n<depend>xlutils</depend>\n<depend>ezdxf</depend>\n</package>\n"
+      }
+    }
+  ],
+  "kerkythea": [
+    {
+      "repository": "https://github.com/marmni/FreeCAD-Kerkythea",
+      "last_update_time": "2020-01-27T23:27:38+01:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "kicadStepUpMod": [
+    {
+      "repository": "https://github.com/easyw/kicadStepUpMod",
+      "last_update_time": "2025-07-21T18:40:02+02:00",
+      "metadata": {
+        "package_xml": "\ufeff<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>KicadStepUp Workbench</name>\n  <description>A bidirectional ECAD/MCAD collaboration between KiCAD and FreeCAD.</description>\n  <version>11.07.3</version>\n  <maintainer email=\"easyw@katamail.com\">Maui</maintainer>\n  <license file=\"LICENSE\">AGPLv3.0</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/easyw/kicadStepUpMod</url>\n  <icon>Resources/icons/kicad-StepUp-tools-WB.svg</icon> <!-- If you include your icon here, you don't have to submit it to the main FreeCAD repo -->\n\n  <content>\n    <workbench>\n      <classname>KiCadStepUpWB</classname>\n      <subdirectory>./</subdirectory>\n      <freecadmin>0.19.0</freecadmin>\n      <tag>kicad</tag>\n      <tag>pcb</tag>\n      <tag>step</tag>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "lattice2": [
+    {
+      "repository": "https://github.com/DeepSOIC/Lattice2",
+      "last_update_time": "2025-08-16T18:06:06+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>Lattice2 Workbench</name>\n  <description>Tools and arrays of all sorts and kinds, and local coordinate systems</description>\n  <version>1.0</version>\n  <date>2022-03-12</date>\n  <maintainer email=\"vv.titov@gmail.com\">DeepSOIC</maintainer>\n  <license file=\"LICENSE\">LGPL-2.0-or-later</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/DeepSOIC/Lattice2</url>\n  <url type=\"bugtracker\">https://github.com/DeepSOIC/Lattice2/issues</url>\n  <url type=\"documentation\" branch=\"master\">https://github.com/DeepSOIC/Lattice2/wiki</url>\n  <icon>PyResources/icons/Lattice2.svg</icon> <!-- If you include your icon here, you don't have to submit it to the main FreeCAD repo -->\n\n  <content>\n    <workbench>\n      <classname>Lattice2Workbench</classname>\n      <subdirectory>./</subdirectory>\n      <tag>array</tag>\n      <tag>assembly</tag>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "Launcher": [
+    {
+      "repository": "https://github.com/triplus/Launcher",
+      "last_update_time": "2019-11-23T07:21:07+01:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "LCInterlocking": [
+    {
+      "repository": "https://github.com/execuc/LCInterlocking",
+      "last_update_time": "2020-01-28T13:40:11+01:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "parts_library": [
+    {
+      "repository": "https://github.com/FreeCAD/FreeCAD-library",
+      "last_update_time": "",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "Lithophane": [
+    {
+      "repository": "https://github.com/furti/FreeCAD-Lithophane",
+      "last_update_time": "2021-11-04T19:03:27+01:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "MakerWorkbench": [
+    {
+      "repository": "https://github.com/URJCMakerGroup/MakerWorkbench",
+      "last_update_time": "2024-12-10T13:36:23+01:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>Maker Workbench</name> <!-- What the Addon Manager displays to users -->\n  <description>A mechatronic components system + optic components system</description>\n  <version>1.0.1</version> <!-- Semantic versioning (1.2.3-beta) or CalVer-based, (2022.01.07), don't omit or non-git installations won't see your updates -->\n  <date>2022-01-07</date> <!-- Date of the last update to the version number -->\n  <maintainer email=\"43390350+davidmubernal@users.noreply.github.com\">David Mu\u00f1oz</maintainer>\n  <license file=\"LICENSE\">LGPL-3</license> <!-- Make sure you actually have this file in your Addon repo if the license requires it -->\n  <url type=\"repository\" branch=\"master\">https://github.com/URJCMakerGroup/MakerWorkbench</url> <!-- Don't forget to update the branch name here -->\n  <url type=\"readme\">https://github.com/URJCMakerGroup/MakerWorkbench/blob/master/README.md</url> <!-- Link to the HTML-rendered README page -->\n  <icon>Resources/icons/Maker_workbench_icon.svg</icon> <!-- If you include your icon here, you don't have to submit it to the main FreeCAD repo -->\n\n  <content>\n    <workbench>\n      <classname>MakerWorkbench</classname> <!-- Must match class name in InitGui.py -->\n      <subdirectory>./</subdirectory>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "Manipulator": [
+    {
+      "repository": "https://github.com/easyw/Manipulator",
+      "last_update_time": "2025-04-22T21:58:15+02:00",
+      "metadata": {
+        "package_xml": "\ufeff<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>Manipulator Workbench</name>\n  <description>A handy way to Move and Align objects in FreeCAD.</description>\n  <version>1.6.0</version>\n  <maintainer email=\"easyw@katamail.com\">Maui</maintainer>\n  <license file=\"LICENSE\">GPLv3.0</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/easyw/Manipulator</url>\n  <icon>Resources/icons/Manipulator-icon.svg</icon> <!-- If you include your icon here, you don't have to submit it to the main FreeCAD repo -->\n\n  <content>\n    <workbench>\n      <classname>ManipulatorWB</classname>\n      <subdirectory>./</subdirectory>\n      <freecadmin>0.18</freecadmin>\n      <tag>Move</tag>\n      <tag>Align</tag>\n      <tag>3D</tag>\n      <tag>step</tag>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "Marz": [
+    {
+      "repository": "https://github.com/mnesarco/MarzWorkbench",
+      "last_update_time": "2025-07-14T12:15:19-05:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\">\n  <name>Marz Workbench</name>\n  <description>Parametric Guitar design workbench</description>\n  <version>0.1.16</version>\n  <maintainer email=\"twitter: @mnesarco\">Frank Martinez</maintainer>\n  <license file=\"LICENSE\">GPL-3.0</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/mnesarco/MarzWorkbench</url>\n  <url type=\"documentation\">https://github.com/mnesarco/MarzWorkbench/wiki</url>\n\n  <content>\n    <workbench>\n      <name>Marz Workbench</name>\n      <classname>MarzWorkbench</classname>\n      <description>Parametric Guitar design workbench.</description>\n      <version>0.1.16</version>\n      <subdirectory>./</subdirectory>\n      <icon>Resources/icons/Marz.svg</icon>\n      <freecadmin>0.21.0</freecadmin>\n      <depend>numpy</depend>\n      <tag>guitar</tag>\n    </workbench>\n  </content>\n\n</package>"
+      }
+    }
+  ],
+  "MeshRemodel": [
+    {
+      "repository": "https://github.com/mwganson/MeshRemodel",
+      "last_update_time": "2025-07-30T21:04:52-05:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\" ?>\n<package format=\"1\">\n  <name>MeshRemodel</name>\n  <description>Workbench for aid in remodeling mesh objects into FreeCAD format</description>\n  <version>1.10.38</version>\n  <date>2025.07.30</date> <!-- YYYY.MM.DD of new release goes here -->\n  <maintainer email=\"mwganson@gmail.com\">TheMarkster</maintainer>\n  <license file=\"LICENSE\">LGPL-2.1</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/mwganson/MeshRemodel</url>\n  <url type=\"documentation\">https://github.com/mwganson/MeshRemodel</url>\n\n  <content>\n    <workbench>\n      <name>MeshRemodel</name>\n      <classname>MeshRemodelWorkbench</classname>\n      <description>Workbench for aid in remodeling and repairing mesh objects into FreeCAD format</description>\n      <version>1.10.38</version>\n      <subdirectory>./</subdirectory>\n      <icon>Resources/icons/MeshRemodel_workbench_icon.svg</icon>\n      <freecadmin>0.20.0</freecadmin>\n      <tag>mesh</tag>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "MnesarcoUtils": [
+    {
+      "repository": "https://github.com/mnesarco/FreeCAD_Utils",
+      "last_update_time": "2025-08-21T10:19:19-05:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<package format=\"1\">\n    <name>Mnesarco Utils</name>\n    <description>A collection of tools mainly dedicated to scripting and experiments.</description>\n    <version>0.2.16</version>\n    <maintainer email=\"twitter: @mnesarco\">Frank Martinez</maintainer>\n    <license file=\"LICENSE\">GPL-3.0</license>\n    <url type=\"repository\" branch=\"main\">https://github.com/mnesarco/FreeCAD_Utils</url>\n    <url type=\"documentation\">https://github.com/mnesarco/FreeCAD_Utils/blob/main/README.md</url>\n    <icon>freecad/mnesarco/resources/icons/MnesarcoUtils.svg</icon>\n    <content>\n        <!-- No Workbench or macros. This package contains some functions and general utilities -->\n    </content>\n</package>"
+      }
+    }
+  ],
+  "ModernUI": [
+    {
+      "repository": "https://github.com/HakanSeven12/Modern-UI",
+      "last_update_time": "2021-05-15T11:52:59+03:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "MOOC": [
+    {
+      "repository": "https://github.com/j-wiedemann/mooc-workbench",
+      "last_update_time": "2022-05-31T17:28:18+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>MOOC</name>\n  <description>Learn FreeCAD</description>\n  <version>2022.04.21</version>\n  <maintainer email=\"contact@freecad-france.com\">Jonathan Wiedemann</maintainer>\n  <license file=\"LICENSE\">GPLv2.1</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/j-wiedemann/mooc-workbench</url>\n  <url type=\"website\">https://www.fun-mooc.fr/fr/cours/modeliser-en-3d-avec-freecad/</url>\n  <icon>medias/icons/mooc-workbench.svg</icon>\n\n  <content>\n    <workbench>\n      <name>MOOC</name>\n      <classname>MoocWorkbench</classname>\n      <subdirectory>./</subdirectory>\n      <freecadmin>0.19.0</freecadmin>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "Movie": [
+    {
+      "repository": "https://github.com/Francisco-Rosa/FreeCAD-Movie",
+      "last_update_time": "2025-07-07T15:13:39-03:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n\n  <name>Movie Workbench</name>\n  <description>Workbench to create and animate the movie camera, create and play videos of animations</description>\n  <version>2025.01.04</version>\n  <date>2025.01.04</date>\n  <author email=\"fco.rosa@yahoo.com.br\">F_Rosa</author>  \n  <maintainer email=\"fco.rosa@yahoo.com.br\">F_Rosa</maintainer>  \n  <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n  <freecadmin>0.20.0</freecadmin>\n  <url type=\"repository\" branch=\"master\">https://github.com/Francisco-Rosa/FreeCAD-Movie</url>\n  <url type=\"readme\">https://github.com/Francisco-Rosa/FreeCAD-Movie/blob/master/README.md</url>\n  <url type=\"discussion\">https://forum.freecadweb.org/viewtopic.php?f=8&amp;t=74432</url>\n  <icon>icons/CreateVideoIcon.svg</icon>\n\n  <content>\n    <workbench>\n      <depend optional=\"true\" type=\"python\">opencv-python</depend>\n      <tag>freecad</tag>\n      <tag>addons</tag>\n      <tag>workbench</tag>\n      <tag>movie</tag>\n      <classname>Movie</classname>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "NavigationIndicator": [
+    {
+      "repository": "https://github.com/triplus/NavigationIndicator",
+      "last_update_time": "2017-06-09T16:41:42+02:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "NikraDAP": [
+    {
+      "repository": "https://github.com/NikraDAP/FreeCAD-NikraDAP",
+      "last_update_time": "2023-03-14T10:55:54+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>NikraDAP</name> <!-- What the Addon Manager displays to users -->\n  <description>Multibody Planar Dynamics Workbench based on a DAP solver algorithm developed by P.E. Nikravesh.</description>\n  <version>2.0-alpha</version> <!-- Semantic versioning (1.2.3-beta) or CalVer-based, (2022.01.07), don't omit or non-git installations won't see your updates -->\n  <date>2023-03-03</date> <!-- Date of the last update to the version number -->\n  <maintainer email=\"lukas.duplessis.up.ac.za\">Lukas du Plessis</maintainer>\n  <license file=\"LICENSE\">GPL-3</license> <!-- Make sure you actually have this file in your Addon repo if the license requires it -->\n  <url type=\"repository\" branch=\"main\">https://github.com/NikraDAP/FreeCAD-NikraDAP</url> <!-- Don't forget to update the branch name here -->\n  <url type=\"readme\">https://github.com/NikraDAP/FreeCAD-NikraDAP/blob/main/README.md</url> <!-- Link to the HTML-rendered README page -->\n  <icon>icons/Icon1n.png</icon> <!-- If you include your icon here, you don't have to submit it to the main FreeCAD repo -->\n\n  <content>\n    <workbench>\n      <classname>DapWorkbenchC</classname> <!-- Must match class name in InitGui.py -->\n      <subdirectory>./</subdirectory>\n\n      <depend type=\"addon\">Assembly4</depend>\n\n      <tag>MBD</tag>\n      <tag>Solver</tag>\n      <tag>Assembly</tag>\n    </workbench>\n  </content>\n</package> <!-- package.xml kindly submitted to FreeCAD-NikraDAP  by @luzpaz on GitHub 03-03-2023 -->\n"
+      }
+    }
+  ],
+  "Nodes": [
+    {
+      "repository": "https://github.com/j8sr0230/Nodes",
+      "last_update_time": "2024-10-04T06:38:40+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>Nodes</name>\n  <description>Visual scripting workbench for FreeCAD</description>\n  <version>0.1.36</version>\n  <date>2022-12-14</date>\n  <maintainer email=\"ronny.scharf08@gmail.com\">Ronny Scharf-Wildenhain</maintainer>\n  <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n  <url type=\"repository\" branch=\"main\">https://github.com/j8sr0230/Nodes</url>\n  <url type=\"issues\" branch=\"main\">https://github.com/j8sr0230/Nodes/issues</url>\n  <icon>icons/nodes_wb_icon.svg</icon>\n\n  <content>\n    <workbench>\n      <name>Nodes</name>\n      <description>Visual scripting workbench for FreeCAD</description>\n      <classname>InitGui</classname>\n      <subdirectory>./</subdirectory>\n      <icon>icons/nodes_wb_icon.svg</icon>\n\n      <tag>nodes</tag>\n      <tag>node editor</tag>\n      <tag>geometry nodes</tag>\n      <tag>scripting</tag>\n\n      <freecadmin>0.21.0</freecadmin>\n      <depend>awkward</depend>\n      <depend>blinker</depend>\n      <depend>numpy</depend>\n      <depend>qtpy</depend>\n    </workbench>\n  </content>\n</package>\n"
+      }
+    }
+  ],
+  "nurbs": [
+    {
+      "repository": "https://github.com/microelly2/freecad-nurbs",
+      "last_update_time": "2019-07-11T22:50:26+02:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "offline-documentation": [
+    {
+      "repository": "https://github.com/FreeCAD/FreeCAD-documentation",
+      "last_update_time": "2025-01-15T10:43:00+01:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>FreeCAD documentation</name>\n  <description>The FreeCAD documentation for offline use</description>\n  <version>1.0.0-alpha</version>\n  <date>2022-03-14</date>\n  <maintainer email=\"yorik@uncreated.net\">Yorik van Havre</maintainer>\n  <license file=\"LICENSE\">CC0-1.0</license>\n  <url type=\"repository\" branch=\"main\">https://github.com/FreeCAD/FreeCAD-documentation</url>\n  <!-- No icon yet <icon></icon> -->\n\n  <content>\n    <workbench>\n      <classname>Documentation</classname>\n      <subdirectory>./</subdirectory>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "Ondsel-Lens": [
+    {
+      "repository": "https://github.com/Ondsel-Development/Ondsel-Lens-Addon",
+      "last_update_time": "2024-11-29T18:16:20+00:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n\n<!--\nSPDX-FileCopyrightText: 2024 Ondsel <development@ondsel.com>\n\nSPDX-License-Identifier: LGPL-2.0-or-later\n-->\n\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>Ondsel Lens Addon</name>\n  <description>Workspace manager for Ondsel Lens workspaces</description>\n  <version>2024.11.29.01</version>\n  <date>2024-11-29</date>\n  <maintainer email=\"development@ondsel.com\">Ondsel Development</maintainer>\n  <license file=\"LICENSE\">LGPL-2.0-or-later</license>\n  <url type=\"repository\" branch=\"main\">https://github.com/Ondsel-Development/Ondsel-Lens-Addon</url>\n  <url type=\"readme\">https://github.com/Ondsel-Development/Ondsel-Lens-Addon/blob/main/README.md</url>\n  <icon>Resources/icons/OndselWorkbench.svg</icon>\n\n  <content>\n    <workbench>\n      <classname>WorkspaceView</classname>\n      <name>Ondsel Lens Addon</name>\n      <subdirectory>./</subdirectory>\n      <description>Workspace manager for Ondsel workspaces</description>\n      <icon>Resources/icons/OndselWorkbench.svg</icon>\n      <tag>developers</tag>\n\n      <!-- Python package dependencies (no support for version information) -->\n      <depend>pyjwt</depend>\n      <depend>requests</depend>\n      <depend>tzlocal</depend>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "OpenTheme": [
+    {
+      "repository": "https://github.com/obelisk79/OpenTheme",
+      "last_update_time": "2025-05-22T15:11:55-04:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n <name>OpenTheme</name>\n <version>2025.05.20</version>\n <date>2025.05.20</date>\n <description>An accessible and coordinated set of Light and Dark themes for FreeCAD</description>\n <maintainer email=\"nomail@freecad.org\">Obelisk79</maintainer>\n <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n <url type=\"repository\" branch=\"main\">https://github.com/obelisk79/OpenTheme</url>\n <icon>resources/icons/openthemes.svg</icon>\n\n<content>\n  <preferencepack>\n    <name>OpenDark</name>\n    <description>A modern Dark theme for FreeCAD based on the Open-Color palette</description>\n    <tag>2024</tag>\n    <type>Theme</type>\n    <tag>dark</tag>\n    <subdirectory>./OpenDark/</subdirectory>\n    <file>OpenDark.qss</file>\n  </preferencepack>\n  <preferencepack>\n    <name>OpenLight</name>\n    <description>A modern Light theme for FreeCAD based on the Open-Color palette</description>\n    <tag>2024</tag>\n    <type>Theme</type>\n    <tag>light</tag>\n    <subdirectory>./OpenLight/</subdirectory>\n    <file>OpenLight.qss</file>\n  </preferencepack>\n  <preferencepack>\n    <name>OpenPreferences</name>\n    <description>A set of recommended preferences to complement OpenThemes.</description>\n    <tag>OpenThemes recommended settings</tag>\n    <subdirectory>./OpenPreferences/</subdirectory>\n    <file>OpenPreferences.cfg</file>\n  </preferencepack>\n</content>\n</package>\n"
+      }
+    }
+  ],
+  "OpticsWorkbench": [
+    {
+      "repository": "https://github.com/chbergmann/OpticsWorkbench",
+      "last_update_time": "2025-06-01T10:17:43+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>Optics</name>\n  <description>Geometrical optics for FreeCAD. Performs simple raytracing through your FreeCAD objects.</description>\n  <version>1.2.2</version>\n  <date>2025-06-01</date>\n  <maintainer email=\"christian.bergmann@mailbox.org\">Christi</maintainer>\n  <license file=\"LICENSE\">LGPL-2.1</license>\n  <url type=\"repository\" branch=\"main\">https://github.com/chbergmann/OpticsWorkbench</url>\n  <url type=\"documentation\">https://github.com/chbergmann/OpticsWorkbench/README.md</url>\n  <icon>optics_workbench_icon.svg</icon>\n\n  <content>\n    <workbench>\n      <name>Optics</name>\n      <classname>OpticsWorkbench</classname>\n      <subdirectory>./</subdirectory>\n      <freecadmin>0.19.0</freecadmin>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "OSAFE": [
+    {
+      "repository": "https://github.com/ebrahimraeyat/OSAFE",
+      "last_update_time": "2025-08-25T15:40:58+03:30",
+      "metadata": {
+        "package_xml": "<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>OSAFE</name>\n  <description>This is a workbench for FreeCAD that creates foundation model from CSI ETABS model results.</description>\n  <version>2022.05.29</version>\n  <maintainer email=\"ebe79442114@gmail.com\">Raeyat Roknabadi Ebrahim</maintainer>\n  <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/ebrahimraeyat/OSAFE</url>\n  <url type=\"website\">https://github.com/ebrahimraeyat/OSAFE/wiki</url>\n  <icon>osafe_images/safe.png</icon>\n\n  <content>\n    <workbench>\n      <classname>OSAFE</classname>\n      <subdirectory>./</subdirectory>\n      <depend type=\"python\" optional=\"False\">comtypes</depend>\n      <depend type=\"python\" optional=\"False\">etabs-api</depend>\n      <depend type=\"python\" optional=\"True\">pydocx</depend>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "ose-piping": [
+    {
+      "repository": "https://github.com/rkrenzler/ose-piping-workbench",
+      "last_update_time": "2022-12-11T18:09:28+01:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "OSE3dPrinter": [
+    {
+      "repository": "https://github.com/gbroques/ose-3d-printer-workbench",
+      "last_update_time": "2024-04-19T23:36:34-05:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>OSE 3D Printer Workbench</name>\n  <description>A FreeCAD workbench for designing 3D printers by Open Source Ecology for Distributive Enterprise.</description>\n  <version>0.1.0</version>\n  <date>2020-06-08</date>\n  <maintainer email=\"groques360@gmail.com\">G Roques</maintainer>\n  <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n  <url type=\"repository\" branch=\"main\">https://github.com/chennes/FreeCAD-Package</url>\n  <url type=\"website\">https://github.com/gbroques/ose-3d-printer-workbench/</url>\n  <url type=\"bugtracker\">https://github.com/gbroques/ose-3d-printer-workbench/issues</url>\n  <icon>freecad/ose3dprinter/icon/Frame.svg</icon>\n\n  <content>\n    <workbench>\n      <classname>OSE 3D Printer Workbench</classname>\n      <subdirectory>./</subdirectory>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "osh-autodoc-workbench": [
+    {
+      "repository": "https://codeberg.org/osh-autodoc/osh-autodoc-workbench",
+      "last_update_time": "2024-09-09T12:53:37+00:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n\n<!--\nSPDX-FileCopyrightText: 2024 Pieter Hijma <info@pieterhijma.net>\n\nSPDX-License-Identifier: CC0-1.0\n-->\n\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n\n  <name>OSH Automated Documentation</name>\n\n  <description>A workbench that support the creation of assembly manuals of open source hardware.</description>\n\n  <version>0.2.3</version>\n\n  <date>2024-02-14</date>\n\n  <license>LGPL-3.0-or-later</license>\n\n  <maintainer email=\"info@pieterhijma.net\">Pieter Hijma</maintainer>\n\n  <url type=\"website\">https://osh-autodoc.org</url>\n\n  <url branch=\"main\" type=\"repository\">https://codeberg.org/osh-autodoc/osh-autodoc-workbench</url>\n\n  <url type=\"bugtracker\">https://codeberg.org/osh-autodoc/osh-autodoc-workbench/issues</url>\n\n  <url type=\"readme\">https://codeberg.org/osh-autodoc/osh-autodoc-workbench/src/branch/main/README.md</url>\n\n  <url type=\"documentation\">https://osh-autodoc.org</url>\n\n  <author email=\"jc@hsu-hh.de\">J.C. Mariscal-Melgar</author>\n\n  <author email=\"info@pieterhijma.net\">Pieter Hijma</author>\n\n  <icon>freecad/OSHAutoDocWorkbench/resources/main-icon.svg</icon>\n\n  <content>\n    <workbench>\n      <classname>OSHAutoDocWorkbench</classname>\n      <freecadmin>0.22.0</freecadmin>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "Part-o-magic": [
+    {
+      "repository": "https://github.com/DeepSOIC/Part-o-magic",
+      "last_update_time": "2025-06-10T11:08:43+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>Part-o-magic Workbench</name>\n  <description>Experiment on FreeCAD-wide automation of Part container management </description>\n  <version>1.1.0</version>\n  <date>2023-03-29</date>\n  <maintainer email=\"vv.titov@gmail.com\">DeepSOIC</maintainer>\n  <license file=\"LICENSE\">LGPL-2.0-or-later</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/DeepSOIC/Part-o-magic</url>\n  <url type=\"bugtracker\">https://github.com/DeepSOIC/Part-o-magic/issues</url>\n  <icon>PartOMagic/Gui/Icons/icons/PartOMagic.svg</icon> <!-- If you include your icon here, you don't have to submit it to the main FreeCAD repo -->\n\n  <content>\n    <workbench>\n      <classname>PartOMagicWorkbench</classname>\n      <subdirectory>./</subdirectory>\n      <tag></tag>\n      <tag></tag>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "pcb": [
+    {
+      "repository": "https://github.com/marmni/FreeCAD-PCB",
+      "last_update_time": "2024-11-03T15:48:15+01:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>FreeCAD-PCB</name>\n  <description>Printed Circuit Board (PCB) Workbench for FreeCAD</description>\n  <version>6.2023.1</version>\n  <maintainer email=\"marmni@onet.eu\">marmni</maintainer>\n  <license file=\"LICENSE\">AGPLv3.0</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/marmni/FreeCAD-PCB</url>\n  <url type=\"readme\">https://github.com/marmni/FreeCAD-PCB/blob/master/README.md</url>\n  <url type=\"bugtracker\">https://github.com/marmni/FreeCAD-PCB/issues</url>\n  <icon>data/FreeCAD-PCB_workbench_icon.svg</icon>\n\n  <content>\n    <workbench>\n      <classname>PCB</classname>\n      <subdirectory>./</subdirectory>\n      <freecadmin>0.18.0</freecadmin>\n      <tag>eagle</tag>\n      <tag>pcb</tag>\n      <tag>kicad</tag>\n\t  <tag>electronics</tag>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "persistenttoolbars": [
+    {
+      "repository": "https://github.com/triplus/PersistentToolbars",
+      "last_update_time": "2018-01-10T20:26:44+01:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "PieMenu": [
+    {
+      "repository": "https://github.com/Grubuntu/PieMenu",
+      "last_update_time": "2025-05-22T13:53:29+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>PieMenu</name>\n  <description>The PieMenu module is a tool to accelerate and simplify your workflow in usage of FreeCAD.</description>\n  <version>1.12</version>\n  <date>2025-05-22</date>\n  <maintainer>Grubuntu</maintainer>\n  <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/Grubuntu/PieMenu</url>\n  <url type=\"bugtracker\">https://github.com/Grubuntu/PieMenu/issues</url>\n\n  <icon>Resources/icons/PieMenu_Logo.svg</icon>\n\n  <content>\n    <workbench>\n      <name>PieMenu</name>\n      <subdirectory>./</subdirectory>\n      <icon>Resources/icons/PieMenu_Logo.svg</icon>\n      <tag>pie</tag>\n\t  <tag>menu</tag>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "pivy_trackers": [
+    {
+      "repository": "https://github.com/joelgraff/pivy_trackers",
+      "last_update_time": "2019-12-31T07:29:21-06:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "Plot": [
+    {
+      "repository": "https://github.com/FreeCAD/freecad.plot",
+      "last_update_time": "2024-11-26T20:43:53-05:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>Plot Workbench</name>\n  <description>Some tools to manipulate the FreeCAD plots</description>\n  <version>2024.11.26</version>\n  <date>2024-11-26</date>\n  <maintainer email=\"jlcercos@gmail.com\">Jose Luis Cerc\u00f3s Pita</maintainer>\n  <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/FreeCAD/freecad.plot</url>\n  <url type=\"bugtracker\">https://github.com/FreeCAD/freecad.pot/issues</url>\n  <url type=\"documentation\">https://wiki.freecad.org/Plot_Workbench</url>\n\n  <icon>freecad/plot/resources/icons/Plot_Icon.svg</icon>\n\n  <content>\n    <workbench>\n      <name>Plot Workbench</name>\n      <classname>PlotWorkbench</classname>\n      <subdirectory>./</subdirectory>\n      <icon>freecad/plot/resources/icons/Plot_Icon.svg</icon>\n      <depend>matplotlib</depend>\n      <tag>plot</tag>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "POV-Ray-Rendering": [
+    {
+      "repository": "https://github.com/TheRaytracers/freecad-povray-render",
+      "last_update_time": "2023-08-17T18:47:08+02:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "ProDarkThemePreferencePack": [
+    {
+      "repository": "https://github.com/turn211/ProDarkThemePreferencePack",
+      "last_update_time": "2024-02-09T18:03:38-08:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>ProDarkThemePack</name>\n  <version>1.0.0</version>\n  <date>2022-05-17</date>\n  <description>ProDark preference pack including a stylesheet and othe GUI colour information for a complete ProDark experience</description>\n  <maintainer>turn211</maintainer>\n  <license file=\"LICENSE\">GPL-2.0-or-later</license>\n  <url type=\"repository\" branch=\"main\">https://github.com/turn211/ProDarkThemePreferencePack</url>\n  <icon>resources/icons/ProDark.svg</icon>\n  \n  <content>\n    <preferencepack>\n      <name>ProDarkThemePack</name>\n      <description>ProDark stylesheet and Colour scheme</description>\n      <version>1.0.0</version>\n      <tag>stylesheet</tag>\n      <tag>dark</tag>\n      <tag>professional</tag>\n      <file>ProDark.qss</file>\n    </preferencepack>\n  </content>\n  \n</package>\n"
+      }
+    }
+  ],
+  "Pyramids-and-Polyhedrons": [
+    {
+      "repository": "https://github.com/eddyverl/FreeCAD-Pyramids-and-Polyhedrons",
+      "last_update_time": "2025-02-21T18:40:37+01:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "pyOpToolsWorkbench": [
+    {
+      "repository": "https://github.com/cihologramas/freecad-pyoptools",
+      "last_update_time": "2024-11-29T16:48:54-05:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>pyOpTools Workbench</name>\n  <description>An optics ray-tracing workbench based on pyOpTools</description>\n  <version>0.0.3</version>\n  <date>2023-03-20</date>\n  <maintainer email=\"ramezquitao@cihologramas.com\">Ricardo Am\u00e9zquita Orozco</maintainer>\n  <license file=\"LICENSE\">GPL-3.0-or-later</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/cihologramas/freecad-pyoptools</url>\n  <url type=\"readme\">https://github.com/cihologramas/freecad-pyoptools/blob/master/README.md</url> \n  <depend>pyoptools</depend>\n  <icon>freecad/pyoptools/resources/pyoptools.png</icon>\n  <content>\n    <workbench>\n      <classname>PyOpToolsWorkbench</classname> \n      <subdirectory>./freecad/pyoptools/</subdirectory>\n      <depend>pyoptools</depend>\n      <freecadmin>0.21.0</freecadmin>\n      <tag>raytracing</tag>\n      <tag>optics</tag>\n    </workbench>\n  </content>\n</package>\n"
+      }
+    }
+  ],
+  "pyrate": [
+    {
+      "repository": "https://salsa.debian.org/mess42/pyrate",
+      "last_update_time": "2024-11-28T21:53:24+01:00",
+      "metadata": {
+        "package_xml": ""
+      }
+    }
+  ],
+  "Quetzal": [
+    {
+      "repository": "https://github.com/EdgarJRobles/quetzal",
+      "last_update_time": "2025-08-24T12:58:57-06:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n\n  <name>Quetzal</name>\n\n  <description>A set of commands and objects that help to speed-up the drawing of frames and pipelines. Dodo successor.</description>\n\n  <version>1.5.6</version>\n\n  <date>2025-01-15</date>\n\n  <maintainer email=\"tgo.edrobles@gmail.com\">Edgar J Robles</maintainer>\n\n  <license file=\"LICENSE\">LGPL-3.0-or-later</license>\n\n  <pythonmin>3.7.0</pythonmin>\n\n  <url branch=\"master\" type=\"repository\">https://github.com/EdgarJRobles/quetzal</url>\n\n  <url type=\"bugtracker\">https://github.com/EdgarJRobles/quetzal/issues</url>\n\n  <url type=\"readme\">https://github.com/EdgarJRobles/quetzal/blob/master/README.md</url>\n\n  <url type=\"documentation\">https://wiki.freecad.org/Quetzal_Workbench</url>\n\n  <url type=\"discussion\">https://forum.freecad.org/viewtopic.php?t=22711</url>\n\n  <author>Riccardo Treu (oddtopus)</author>\n\n  <icon>iconz/quetzal.svg</icon>\n\n  <content>\n    <workbench>\n      <depend optional=\"false\" type=\"python\">typing-extensions</depend>\n      <depend optional=\"false\" type=\"internal\">Draft</depend>\n      <tag>beams</tag>\n      <tag>frames</tag>\n      <tag>pipe</tag>\n      <tag>pipelines</tag>\n      <icon>iconz/quetzal.svg</icon>\n      <classname>QuetzalWorkbench</classname>\n      <subdirectory>./</subdirectory>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "QuickMeasure": [
+    {
+      "repository": "https://github.com/DanMiel/QuickMeasure",
+      "last_update_time": "2025-08-06T22:54:43-07:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n\n  <name>Quick Measure</name>\n\n  <description>Measures selected features.</description>\n\n  <version>2022.10.28</version>\n\n  <date>2022-10-28</date>\n\n  <url branch=\"main\" type=\"repository\">https://github.com/DanMiel/QuickMeasure</url>\n\n  <url type=\"readme\">https://github.com/DanMiel/QuickMeasure/blob/main/README.md</url>\n\n  <icon>Icons/QuickMeasure.svg</icon>\n\n  <content>\n    <workbench>\n      <classname>QuickMeasure</classname>\n      <subdirectory>./</subdirectory>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "reconstruction": [
+    {
+      "repository": "https://github.com/microelly2/reconstruction",
+      "last_update_time": "2017-04-23T13:22:20+02:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "Reinforcement": [
+    {
+      "repository": "https://github.com/amrit3701/FreeCAD-Reinforcement",
+      "last_update_time": "2025-04-26T12:20:59+05:30",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>Reinforcement</name>\n  <description>A workbench that provides tools for Reinforcement Generation and its Detailing.</description>\n  <version>v0.4</version>\n  <maintainer email=\"amrit3701@gmail.com\">Amritpal Singh (amrit3701)</maintainer>\n  <license>LGPL-2.1-or-later</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/amrit3701/FreeCAD-Reinforcement</url>\n  <icon>icons/Reinforcement.svg</icon>\n\n  <content>\n    <workbench>\n      <classname>ReinforcementWorkbench</classname>\n      <subdirectory>./</subdirectory>\n      <url type=\"documentation\">https://wiki.freecadweb.org/Reinforcement_Workbench</url>\n      <url type=\"website\">https://www.patreon.com/amrit3701</url>\n      <tag>rebar</tag>\n      <tag>reinforcement</tag>\n      <tag>detailing</tag>\n    </workbench>\n  </content>\n</package>\n"
+      }
+    }
+  ],
+  "RemBench": [
+    {
+      "repository": "https://github.com/triplus/RemBench",
+      "last_update_time": "2020-02-15T12:13:06+01:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "Render": [
+    {
+      "repository": "https://github.com/FreeCAD/FreeCAD-render",
+      "last_update_time": "2025-07-03T13:40:51+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>Render</name>\n  <description>A workbench to produce high-quality rendered images from your FreeCAD document, using open-source external rendering engines.\n\nDesigned as a modern replacement for deprecated internal Raytracing Workbench.</description>\n  <version>2024.12.15</version>\n  <date>2024-12-15</date>\n  <maintainer email=\"@howetuft\">howetuft</maintainer>\n  <maintainer email=\"@yorikvanhavre\">Yorik Van Havre</maintainer>\n  <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/FreeCAD/FreeCAD-render</url>\n  <url type=\"bugtracker\">https://github.com/FreeCAD/FreeCAD-render/issues</url>\n  <url type=\"readme\">https://github.com/FreeCAD/FreeCAD-render/blob/master/README.md</url>\n  <icon>Render/resources/icons/Render.svg</icon>\n  <pythonmin>3.8</pythonmin>\n\n  <content>\n    <workbench>\n      <name>Render Workbench</name>\n      <subdirectory>./</subdirectory>\n      <icon>Render/resources/icons/Render.svg</icon>\n      <classname>RenderWorkbench</classname>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "Reporting": [
+    {
+      "repository": "https://github.com/furti/FreeCAD-Reporting",
+      "last_update_time": "2023-09-03T20:23:00+02:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "retr3d": [
+    {
+      "repository": "https://github.com/Maaphoo/Retr3d",
+      "last_update_time": "2018-12-16T20:56:02-08:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "Road": [
+    {
+      "repository": "https://github.com/HakanSeven12/Road",
+      "last_update_time": "2025-04-19T14:28:40+03:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>Road</name>\n  <description>Road is the Transportation and Geomatics Engineering workbench for FreeCAD.</description>\n  <version>2025.02.22</version>\n  <date>2025.02.22</date>\n  <maintainer email=\"hakanseven12@gmail.com\">Hakan Seven</maintainer>\n  <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n  <url type=\"repository\" branch=\"main\">https://github.com/HakanSeven12/Road</url>\n  <url type=\"bugtracker\">https://github.com/HakanSeven12/Road/issues</url>\n  <icon>Road/resources/icons/RoadWorkbench.svg</icon>\n\n  <content>\n    <workbench>\n      <classname>RoadWorkbench</classname>\n      <subdirectory>./</subdirectory>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "Rocket": [
+    {
+      "repository": "https://github.com/davesrocketshop/Rocket",
+      "last_update_time": "2024-01-18T17:06:17-05:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>Rocket</name>\n  <description>A workbench for designing model rockets.</description>\n  <version>3.3.0</version>\n  <date>2024-01-18</date>\n  <maintainer email=\"dcarter@davidcarter.ca\">David Carter</maintainer>\n  <license file=\"LICENSE\">LGPLv2.1</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/davesrocketshop/Rocket</url>\n  <icon>Resources/icons/RocketWorkbench.svg</icon>\n\n  <content>\n    <workbench>\n      <classname>RocketWorkbench</classname>\n      <subdirectory>./</subdirectory>\n      <tag>rocket</tag>\n\n      <!-- Required by the atmospheric model -->\n      <depend>numpy</depend>\n\n      <depend>Fem</depend>\n      <depend>Material</depend>\n      <depend>matplotlib</depend>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    },
+    {
+      "repository": "https://github.com/davesrocketshop/Rocket",
+      "last_update_time": "2025-01-18T02:24:03-05:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>Rocket</name>\n  <description>A workbench for designing model rockets.</description>\n  <version>4.1.1</version>\n  <date>2025-01-18</date>\n  <maintainer email=\"dcarter@davidcarter.ca\">David Carter</maintainer>\n  <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/davesrocketshop/Rocket</url>\n  <icon>Resources/icons/RocketWorkbench.svg</icon>\n  <freecadmin>1.0</freecadmin>\n\n  <content>\n    <workbench>\n      <classname>RocketWorkbench</classname>\n      <subdirectory>./</subdirectory>\n      <tag>rocket</tag>\n\n      <!-- Required by the atmospheric model -->\n      <depend>numpy</depend>\n      <depend>shapely</depend>\n\n      <depend>Fem</depend>\n      <depend>Material</depend>\n      <depend>MeshPart</depend>\n      <depend>matplotlib</depend>\n\n      <!-- Optional install of 3rd-party CfdOF workbench if utilizing CFD studies -->\n      <depend type=\"addon\" optional=\"true\">CfdOF</depend>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "SearchBar": [
+    {
+      "repository": "https://github.com/APEbbers/SearchBar",
+      "last_update_time": "2025-07-30T19:02:11+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n\n  <name>SearchBar</name>\n\n  <description>Adds a search bar widget for tools, document objects, and preferences</description>\n\n  <version>1.5.0</version>\n\n  <date>2022-06-01</date>\n\n  <maintainer>Paul Ebbers</maintainer>\n\n  <license file=\"LICENSE\">CCOv1</license>\n\n  <url type=\"repository\" branch=\"main\">https://github.com/APEbbers/SearchBar</url>\n\n  <url type=\"bugtracker\">https://github.com/APEbbers/SearchBar/issues</url>\n\n  <url type=\"documentation\">https://github.com/APEbbers/SearchBar</url>\n\n  <depend type=\"python\">lxml</depend>\n  <content>\n    <workbench>\n      <name>SearchBar</name>\n      <icon>Resources/Icons/Tango-System-search.svg</icon>\n      <subdirectory>./</subdirectory>\n      <tag>search</tag>\n      <tag>widget</tag>\n      <tag>ui/ux</tag>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "SelectorToolbar": [
+    {
+      "repository": "https://github.com/triplus/SelectorToolbar",
+      "last_update_time": "2019-05-26T21:32:49+02:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "sheetmetal": [
+    {
+      "repository": "https://github.com/shaise/FreeCAD_SheetMetal",
+      "last_update_time": "2025-08-18T09:50:19+03:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>SheetMetal Workbench</name>\n  <description>A simple sheet metal tools workbench for FreeCAD.</description>\n  <version>0.7.24</version>\n  <date>2025-07-03</date>\n  <maintainer email=\"shaise@gmail.com\">Shai Seger</maintainer>\n  <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/shaise/FreeCAD_SheetMetal</url>\n  <url type=\"readme\">https://github.com/shaise/FreeCAD_SheetMetal/blob/master/README.md</url>\n  <icon>Resources/icons/SMLogo.svg</icon>\n\n  <content>\n    <workbench>\n      <classname>SMWorkbench</classname>\n      <subdirectory>./</subdirectory>\n      <tag>sheetmetal</tag>\n      <depend>networkx</depend>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "Ship": [
+    {
+      "repository": "https://github.com/FreeCAD/freecad.ship",
+      "last_update_time": "2025-07-04T10:30:35+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>Ship Workbench</name>\n  <description>Naval ship design (architecture, seakeeping, and ship resistance)</description>\n  <version>2024.11.26</version>\n  <date>2024.11.26</date>\n  <maintainer email=\"jlcercos@gmail.com\">Jose Luis Cerc\u00f3s Pita</maintainer>\n  <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/FreeCAD/freecad.ship</url>\n  <url type=\"bugtracker\">https://github.com/FreeCAD/freecad.ship/issues</url>\n  <url type=\"documentation\">https://wiki.freecad.org/Ship_Workbench</url>\n\n  <icon>freecad/ship/resources/icons/Ship_Logo.svg</icon>\n\n  <content>\n    <workbench>\n      <name>Ship Workbench</name>\n      <classname>ShipWorkbench</classname>\n      <subdirectory>./</subdirectory>\n      <icon>freecad/ship/resources/icons/Ship_Logo.svg</icon>\n      <depend>capytaine</depend>\n      <depend>plot</depend>\n      <tag>ship</tag>\n      <tag>naval</tag>\n      <tag>fem</tag>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "ShortCuts": [
+    {
+      "repository": "https://github.com/triplus/ShortCuts",
+      "last_update_time": "2020-01-18T22:23:17+01:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "Silk": [
+    {
+      "repository": "https://github.com/edwardvmills/Silk",
+      "last_update_time": "2025-06-28T10:39:23-07:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\">\n  <name>Silk workbench</name>\n  <description>NURBS Surface modeling tools focused on low degree and seam continuity</description>\n  <version>0.2.0</version>\n  <date>2023-09-17</date>\n  <maintainer email=\"@edwardvmills\">edwardvmills</maintainer>\n  <license file=\"LICENSE\">GPL-3.0-or-later</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/edwardvmills/Silk</url>\n  <url type=\"documentation\">http://edwardvmills.github.io/NURBSlib_EVM/</url>\n  <url type=\"documentation\">https://github.com/edwardvmills/Silk/wiki</url>\n  <url type=\"documentation\">https://wiki.freecad.org/Silk_Workbench</url>\n\n  <content>\n    <workbench>\n      <name>Silk workbench</name>\n      <classname>Silk</classname>\n      <description>NURBS Surface modeling tools focused on low degree and seam continuity</description>\n      <subdirectory>./</subdirectory>\n      <icon>Resources/Icons/Silk.svg</icon>\n      <freecadmin>0.18.0</freecadmin>\n      <tag>curves</tag>\n      <tag>nurbs</tag>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "slic3r-tools": [
+    {
+      "repository": "https://github.com/limikael/freecad-slic3r-tools",
+      "last_update_time": "2020-01-11T14:14:00+08:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "SlopedPlanesMacro": [
+    {
+      "repository": "https://github.com/luzpaz/SlopedPlanesMacro",
+      "last_update_time": "2020-02-29T19:12:42-05:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "SteelColumn": [
+    {
+      "repository": "https://github.com/ebrahimraeyat/momen",
+      "last_update_time": "2025-01-04T10:33:09+03:30",
+      "metadata": {
+        "package_xml": ""
+      }
+    }
+  ],
+  "STEMFIE": [
+    {
+      "repository": "https://github.com/bilbaomakers/StemfieWB",
+      "last_update_time": "2025-01-15T16:28:44+00:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n\n  <name>STEMFIE Workbench</name>\n\n  <description>A simple workbench for generating STEMFIE system components.</description>\n\n  <version>0.3.1</version>\n\n  <date>2025-01-15</date>\n\n  <maintainer email=\"hasecilu@tuta.io\">hasecilu</maintainer>\n\n  <license file=\"LICENSE\">GPL-2.0-or-later</license>\n\n  <pythonmin>3.6.0</pythonmin>\n\n  <url type=\"website\">https://stemfie.org</url>\n\n  <url branch=\"main\" type=\"repository\">https://github.com/bilbaomakers/StemfieWB.git</url>\n\n  <url type=\"bugtracker\">https://github.com/bilbaomakers/StemfieWB/issues</url>\n\n  <url type=\"readme\">https://github.com/bilbaomakers/StemfieWB/blob/main/README.md</url>\n\n  <url type=\"documentation\">https://wiki.freecad.org/Stemfie_Workbench</url>\n\n  <url type=\"discussion\">https://forum.freecad.org/viewtopic.php?t=59951</url>\n\n  <author>Bilbao Makers</author>\n\n  <tag>stem</tag>\n\n  <tag>construction</tag>\n\n  <tag>toy</tag>\n\n  <tag>parametric</tag>\n\n  <tag>3d-printing</tag>\n\n  <icon>freecad/stemfie/resources/icons/STEMFIE.svg</icon>\n\n  <content>\n    <workbench>\n      <name>STEMFIE Workbench</name>\n      <icon>resources/icons/STEMFIE.svg</icon>\n      <subdirectory>freecad/stemfie</subdirectory>\n      <classname>StemfieWorkbench</classname>\n      <depend type=\"addon\" optional=\"true\">freecad.gears workbench</depend>`\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "SvgWorkbench": [
+    {
+      "repository": "https://github.com/mnesarco/SvgWorkbench",
+      "last_update_time": "2025-08-21T10:11:52-05:00",
+      "metadata": {
+        "package_xml": "<package format=\"1\">\n    <name>SvgWorkbench</name>\n    <description>FreeCAD Svg Workbench</description>\n    <version>1.0.0.dev6</version>\n    <content>\n        <workbench>\n            <name>Svg</name>\n            <classname>SvgWorkbenchClass</classname>\n            <description>Svg advanced import/export and manipulation</description>\n            <subdirectory>./</subdirectory>\n            <icon>freecad/svgwb/resources/icons/svgwb.svg</icon>\n        </workbench>\n    </content>\n    <date>2025-06-02</date>\n    <pythonmin>3.10</pythonmin>\n    <icon>freecad/svgwb/resources/icons/svgwb.svg</icon>\n    <license file=\"LICENSE\">LGPL-3.0-or-later</license>\n    <freecadmin>1.0</freecadmin>\n    <name>SvgWorkbench</name>\n    <description>FreeCAD Svg Workbench</description>\n    <maintainer email=\"mnesarco@gmail.com\">Frank David Mart\u00ednez Mu\u00f1oz</maintainer>\n    <author email=\"mnesarco@gmail.com\">Frank David Mart\u00ednez Mu\u00f1oz</author>\n    <tag>2d</tag>\n    <tag>addons</tag>\n    <tag>freecad</tag>\n    <tag>svg</tag>\n    <tag>workbench</tag>\n    <url type=\"documentation\">https://github.com/mnesarco/SvgWorkbench/wiki/</url>\n    <url type=\"readme\">https://github.com/mnesarco/SvgWorkbench/blob/main/README.md</url>\n    <url type=\"repository\" branch=\"main\">https://github.com/mnesarco/SvgWorkbench</url>\n    <depend type=\"internal\">draft</depend>\n    <depend type=\"internal\">part</depend>\n    <depend type=\"internal\">techdraw</depend>\n</package>"
+      }
+    }
+  ],
+  "symbols_library": [
+    {
+      "repository": "https://github.com/FreeCAD/FreeCAD-symbols",
+      "last_update_time": "2025-03-06T14:42:49+01:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "TabBar": [
+    {
+      "repository": "https://github.com/triplus/TabBar",
+      "last_update_time": "2019-03-18T22:38:49+01:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "Telemetry": [
+    {
+      "repository": "https://github.com/FreeCAD/FreeCAD-Telemetry",
+      "last_update_time": "2025-08-11T17:43:02-05:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>Telemetry</name>\n  <description>Help improve FreeCAD by sending basic metrics to the development team.</description>\n  <version>1.0.2</version>\n  <date>2025-07-22</date>\n  <maintainer email=\"telemetry@freecad.org\">The FreeCAD project association AISBL</maintainer>\n  <license file=\"LICENSE.md\">LGPL-2.1-or-later</license>\n  <url type=\"repository\" branch=\"main\">https://github.com/FreeCAD/FreeCAD-Telemetry</url>\n  <url type=\"readme\">https://github.com/FreeCAD/FreeCAD-Telemetry/blob/main/README.md</url>\n  <icon>Resources/icons/telemetryLogo.svg</icon>\n\n  <content>\n    <workbench>\n      <classname>Telemetry</classname>\n      <subdirectory>./</subdirectory>\n      <tag>telemetry</tag>\n      <depend type=\"python\">posthog</depend>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "ThreadProfile": [
+    {
+      "repository": "https://github.com/mwganson/ThreadProfile",
+      "last_update_time": "2025-05-04T11:36:30-05:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>ThreadProfile</name>\n  <description>ThreadProfile object for creating internal/external threads</description>\n  <version>1.96</version>\n  <date>2025.05.04</date>\n  <maintainer email=\"mwganson@gmail.com\">TheMarkster</maintainer>\n  <license file=\"LICENSE\">LGPL-2.1</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/mwganson/ThreadProfile</url>\n  <url type=\"documentation\">https://wiki.freecad.org/ThreadProfile_Workbench</url>\n  <icon>Resources/icons/ThreadProfileLogo.svg</icon>\n\n  <content>\n    <workbench>\n      <name>ThreadProfile</name>\n      <classname>ThreadProfileWorkbench</classname>\n      <description>ThreadProfile object for creating internal/external threads</description>\n      <version>1.96</version>\n      <subdirectory>./</subdirectory>\n      <icon>Resources/icons/ThreadProfileLogo.svg</icon>\n      <freecadmin>0.19.0</freecadmin>\n      <tag>thread</tag>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "TitleBlock": [
+    {
+      "repository": "https://github.com/APEbbers/TitleBlock-WB",
+      "last_update_time": "2024-08-01T19:59:40+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n\n  <name>Titleblock Workbench</name>\n\n  <description>An extension for the TechDraw workbench to fill a TitleBlock with the aid of the Spreadsheet workbench.</description>\n\n  <version>0.5.2.2</version>\n\n  <date>2023-10-08</date>\n\n  <maintainer email=\"paul.ebbers@gmail.com\">Paul Ebbers</maintainer>\n\n  <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n\n  <pythonmin>3.8.0</pythonmin>\n\n  <url branch=\"main\" type=\"repository\">https://github.com/APEbbers/TitleBlock-WB</url>\n\n  <url type=\"readme\">https://github.com/APEbbers/TitleBlock-WB/blob/main/README.md</url>\n\n  <url type=\"wiki\">https://github.com/APEbbers/TitleBlock-WB/wiki</url>\n\n  <icon>Resources/icons/TitleBlockWB.svg</icon>\n\n  <content>\n    <workbench>\n      <depend optional=\"False\" type=\"automatic\">Spreadsheet</depend>\n      <depend optional=\"False\" type=\"automatic\">TechDraw</depend>\n      <depend optional=\"False\" type=\"python\">openpyxl</depend>\n      <depend optional=\"False\" type=\"python\">inspect</depend>\n      <depend optional=\"False\" type=\"python\">tkinter</depend>\n      <depend optional=\"False\" type=\"python\">matplotlib</depend>\n      <classname>TitleBlockWB</classname>\n      <subdirectory>./</subdirectory>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "timber": [
+    {
+      "repository": "https://github.com/wood-galaxy/FreeCAD-Timber",
+      "last_update_time": "2019-07-11T10:15:45+02:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "toSketch": [
+    {
+      "repository": "https://github.com/KeithSloan/toSketch",
+      "last_update_time": "2025-04-27T07:36:43+01:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>toSketch</name>\n  <description>Add toSketch facility for FreeCAD. This WB help with remodelling of existing models.</description>\n  <version>1.0.1</version>\n  <maintainer email=\"keith@sloan-home.co.uk\">Keith Sloan</maintainer>\n  <license file=\"LICENSE\">GPL-2.0</license>\n  <url type=\"repository\" branch=\"main\">https://github.com/KeithSloan/toSketch</url>\n  <url type=\"readme\">https://github.com/KeithSloan/toSketch/blob/main/README.md</url>\n\n  <content>\n    <workbench>\n      <classname>toSketch_Workbench</classname>\n      <subdirectory>./</subdirectory>\n      <icon>freecad/toSketch/Resources/icons/toSketchlogo.svg</icon>\n      <freecadmin>0.19.0</freecadmin>\n      <tag>sketcher</tag>\n      <depend>geomdl</depend>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "taack-plm-freecad": [
+    {
+      "repository": "https://github.com/Taack/taack-plm-freecad",
+      "last_update_time": "2025-02-22T04:36:02+01:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n\n  <name>Taack PLM</name>\n\n  <description>This workbench contains tools to interact with Taack Plm Intranet server app you can find under the https://github.com/Taack/plm  </description>\n\n  <version>2024.12.25</version>\n\n  <date>2024-12-25</date>\n\n  <maintainer email=\"adrien.guichard@citel.fr\">Adrien GUICHARD</maintainer>\n\n  <license file=\"LICENSE\">GPL-2.0-or-later</license>\n\n  <url branch=\"main\" type=\"repository\">https://github.com/Taack/taack-plm-freecad</url>\n\n  <url type=\"readme\">https://github.com/Taack/taack-plm-freecad/blob/main/README.md</url>\n\n  <url type=\"discussion\">https://forum.freecad.org/viewtopic.php?t=75937</url>\n\n  <icon>icons/logo_taack.svg</icon>\n\n  <content>\n    <workbench>\n      <classname>TaackPLMWorkbench</classname>\n      <subdirectory>./</subdirectory>\n      <depend type=\"python\">protobuf</depend>\n      <depend type=\"python\">requests</depend>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "ToolbarStyle": [
+    {
+      "repository": "https://github.com/triplus/ToolbarStyle",
+      "last_update_time": "2019-03-18T22:40:05+01:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "freecad-wakatime": [
+    {
+      "repository": "https://github.com/Pegoku/freecad-wakatime",
+      "last_update_time": "2025-08-12T16:14:51+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>FreeCAD-WakaTime</name>\n  <description>A simple FreeCAD WakaTime extension.</description>\n  <version>0.5.1</version>\n  <date>2025-8-12</date>\n  <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n  <url branch=\"main\" type=\"repository\">https://github.com/Pegoku/freecad-wakatime.git</url>\n  <url type=\"bugtracker\">https://github.com/Pegoku/freecad-wakatime/issues</url>\n  <url type=\"readme\">https://github.com/Pegoku/freecad-wakatime/blob/main/README.md</url>\n\n  <author email=\"pegoku08@gmail.com\">Pegoku</author>\n  <maintainer email=\"pegoku08@gmail.com\">Pegoku</maintainer>\n  <tag>wakatime</tag>\n  <content>\n    <workbench>\n      <classname>FreeCAD-WakaTime</classname>\n      <icon>resources/Logo.svg</icon>\n    </workbench>\n  </content>\n</package>\n"
+      }
+    }
+  ],
+  "Vars": [
+    {
+      "repository": "https://github.com/mnesarco/Vars",
+      "last_update_time": "2025-08-21T10:07:07-05:00",
+      "metadata": {
+        "package_xml": "<package format=\"1\">\n    <name>Vars</name>\n    <description>FreeCAD Vars</description>\n    <version>0.0.2.beta4</version>\n    <license file=\"LICENSE\">LGPL-3.0-or-later</license>\n    <date>2025-07-24</date>\n    <pythonmin>3.10</pythonmin>\n    <icon>freecad/vars/resources/icons/vars.svg</icon>\n    <freecadmin>1.0</freecadmin>\n    <content />\n    <maintainer email=\"mnesarco@gmail.com\">Frank David Mart\u00ednez Mu\u00f1oz</maintainer>\n    <author email=\"mnesarco@gmail.com\">Frank David Mart\u00ednez Mu\u00f1oz</author>\n    <tag>addons</tag>\n    <tag>dynamic</tag>\n    <tag>freecad</tag>\n    <tag>vars</tag>\n    <tag>workbench</tag>\n    <url type=\"documentation\">https://github.com/mnesarco/Vars/wiki/</url>\n    <url type=\"readme\">https://github.com/mnesarco/Vars/blob/main/README.md</url>\n    <url type=\"repository\" branch=\"main\">https://github.com/mnesarco/Vars</url>\n</package>"
+      }
+    }
+  ],
+  "WebTools": [
+    {
+      "repository": "https://github.com/yorikvanhavre/WebTools",
+      "last_update_time": "2025-08-25T12:00:20+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n\n  <name>WebTools</name>\n  <description>A collection of tools to work with web services</description>\n  <version>1.0.0</version>\n  <date>2022-06-29</date>\n  <maintainer email=\"yorik@uncreated.net\">Yorik van Havre</maintainer>\n\n  <license file=\"LICENSE\">LGPL-2.1-or-later</license>\n\n  <url branch=\"master\" type=\"repository\">https://github.com/yorikvanhavre/WebTools</url>\n\n  <icon>icons/webTools.svg</icon>\n\n  <content>\n    <workbench>\n      <icon>icons/webTools.svg</icon>\n      <classname>WebTools</classname>\n      <subdirectory>./</subdirectory>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "WB_Organizer": [
+    {
+      "repository": "https://github.com/Palmstroemen/WB_Organizer",
+      "last_update_time": "2024-03-25T11:53:08+01:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n\n  <name>A Workbench Organizer</name>\n\n  <description>A workbench organizer widget for FreeCAD.\nAllows you to group your long list of workbenches into smaller meaningful groups.\nAllows you to rename some workbenches for better understanding or translation.\nAllows to show the workbench selector as tabbar.</description>\n\n  <version>2024.1.29</version>\n\n  <date>2024-01-29</date>\n\n  <maintainer email=\"19696982+Palmstroemen@users.noreply.github.com\">Palmstroemen</maintainer>\n\n  <license file=\"License/lgpl-2.1.txt\">LGPL-2.1-or-later</license>\n\n  <pythonmin>3.6.0</pythonmin>\n\n  <url type=\"website\">https://github.com/Palmstroemen/WB_Organizer/wiki</url>\n\n  <url branch=\"main\" type=\"repository\">https://github.com/Palmstroemen/WB_Organizer.git</url>\n\n  <url type=\"bugtracker\">https://github.com/Palmstroemen/WB_Organizer/issues</url>\n\n  <url type=\"readme\">https://github.com/Palmstroemen/WB_Organizer/blob/main/README.md</url>\n\n  <url type=\"documentation\">https://github.com/Palmstroemen/WB_Organizer/wiki</url>\n\n  <url type=\"discussion\">https://forum.freecad.org/viewtopic.php?t=84740</url>\n\n  <icon>Resources/icons/WBO_icon.svg</icon>\n\n  <content>\n    <workbench>\n      <freecadmin>0.20.0</freecadmin>\n      <tag>\"Workbench\"</tag>\n      <tag>\"Organizer\"</tag>\n      <tag>\"Groups\"</tag>\n      <tag>\"Workbench groups\"</tag>\n      <icon>Resources/icons/WBO_icon.svg</icon>\n      <classname>WBO</classname>\n      <subdirectory>./</subdirectory>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "woodworking": [
+    {
+      "repository": "https://github.com/dprojects/Woodworking",
+      "last_update_time": "2025-08-23T20:19:24+02:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>Woodworking</name>\n  <description>FreeCAD workbench for woodworking purposes.</description>\n  \n  <!-- \n  Syntax: 1.1.0.dev.1.1.1.2025.08.23\n  1.1.0.dev - current development FreeCAD kernel version\n  1.1 - Woodworking workebench version\n  1 or 0 - current state, development 1 or stable release 0\n  2025.08.23 - last commit date\n  -->\n  <version>1.1.0.dev.1.1.1.2025.08.23</version>\n  \n  <!--\n  This date tag is not used by Woodworking workbench but it is good to keep it up-to-date\n  -->\n  <date>2025-08-23</date>\n  \n  <!--\n  Keep it for author rights purposes \n  -->\n  <author>Darek L (https://github.com/dprojects)</author>\n  \n  <maintainer email=\"you@null.com\">FreeCAD updates appear every week. Unfortunately, I do not have the ability to consistently follow the changes and wonder if something has been broken.</maintainer>\n  <license file=\"LICENSE\">MIT, keep author tag without change.</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/dprojects/Woodworking</url>\n  <icon>Icons/Woodworking.png</icon>\n\n  <content>\n    <workbench>\n      <classname>WoodworkingWorkbench</classname>\n      <subdirectory>./</subdirectory>\n    </workbench>\n  </content>\n\n</package>\n"
+      }
+    }
+  ],
+  "workfeature-macro": [
+    {
+      "repository": "https://github.com/Rentlau/WorkFeature",
+      "last_update_time": "2024-12-18T21:12:15+01:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "workfeature": [
+    {
+      "repository": "https://github.com/Rentlau/WorkFeature-WB",
+      "last_update_time": "2025-01-01T10:05:50+01:00",
+      "metadata": {
+        "package_xml": null
+      }
+    }
+  ],
+  "yaml-workspace": [
+    {
+      "repository": "https://github.com/Mambix/FreeCAD-yaml-workbench",
+      "last_update_time": "2022-08-16T10:12:37+07:00",
+      "metadata": {
+        "package_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<package format=\"1\" xmlns=\"https://wiki.freecad.org/Package_Metadata\">\n  <name>Yaml Workbench</name>\n  <version>0.1.2</version>\n  <date>2022-09-08</date>\n  <description>A FreeCAD addon that loads and manipulates objects via YAML files.</description>\n  <maintainer email=\"ledi.mambix@gmail.com\">MambiX Ltd.</maintainer>\n  <license file=\"LICENSE\">LGPLv2.1</license>\n  <url type=\"repository\" branch=\"master\">https://github.com/Mambix/FreeCAD-yaml-workbench</url>\n  <url type=\"bugtracker\">https://github.com/Mambix/FreeCAD-yaml-workbench/issues</url>\n  <url type=\"documentation\">https://github.com/Mambix/FreeCAD-yaml-workbench/blob/master/README.md</url>\n  <icon>Resources/YAML_workbench_icon.svg</icon>\n  <depend>PyYaml</depend>\n  <freecadmin>0.19</freecadmin>\n\n  <content>\n    <workbench>\n      <icon>Resources/YAML_workbench_icon.svg</icon>\n      <subdirectory>./</subdirectory>\n      <classname>Import_Yml</classname>\n      <tag>Mambix</tag>\n      <tag>import</tag>\n      <tag>yaml</tag>\n    </workbench>\n  </content>\n</package>"
+      }
+    }
+  ]
+}
