@@ -8,9 +8,6 @@ cover:
   image: 7.webp
   caption: "a cover caption"
   alt: "a cover alternative title"
-menus:
-  footer:
-    weight: 4
 ---
 
 [comment]: # (Please do not add content in this Releases _index file. The layout of the Releases page is generated from template rules by the theme.)

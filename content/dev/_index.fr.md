@@ -7,7 +7,4 @@ cover:
   image: 2.webp
   caption: "a cover caption"
   alt: "a cover alternative title"
-menus:
-  footer:
-    weight: 9
 ---

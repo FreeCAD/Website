@@ -9,9 +9,9 @@ cover:
   alt: "a cover alternative title"
 menus:
   main:
-    weight: 8
+    weight: 7
   footer:
-    weight: 8
+    weight: 7
 params:
   cards:
     tip:

@@ -9,9 +9,9 @@ cover:
   alt: "a cover alternative title"
 menus:
   main:
-    weight: 6
+    weight: 5
   footer:
-    weight: 6
+    weight: 5
 ---
 
 ![An image text](1.webp "An image caption")
