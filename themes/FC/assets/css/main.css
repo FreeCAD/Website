@@ -187,38 +187,38 @@ main header .entry-cover img {
   gap: var(--gap);
 }
 
-.articles article {
+.articles .article-card  {
   width: var(--article);
   text-align: center;
   position: relative;
 }
 
-.articles article :not(.category) :is(a, h3) {
+.articles .article-card  :not(.category) :is(a, h3) {
   color: var(--secondary);
 }
 
-.articles article figure {
+.articles .article-card  figure {
   height: calc(var(--article) * 0.5);
   background: var(--entry);
   border-radius: var(--radius);
   transition: var(--link-transition);
 }
 
-.articles article:hover figure {
+.articles .article-card :hover figure {
   filter: brightness(1.1) saturate(110%);
   transform: scale(1.02);
 }
 
-.articles article:hover .entry-title,
-.articles article:hover .entry-description {
+.articles .article-card :hover .entry-title,
+.articles .article-card :hover .entry-description {
   color: var(--link-color);
 }
 
-.articles article a:active figure {
+.articles .article-card  a:active figure {
   transform: scale(0.95);
 }
 
-.articles article .entry-cover img {
+.articles .article-card  .entry-cover img {
   border-radius: var(--radius);
   margin: auto;
   height: 100%;
@@ -1058,4 +1058,86 @@ sup:target {
   border: none;
   border-radius: var(--radius);
   z-index: 3;
+}
+
+
+/* Addons catalog */
+
+.addons-list {
+  margin: auto;
+  padding: calc(var(--gap) * 2) var(--side);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+
+.addons-list a {
+  flex: 1 0 var(--article);
+  color: var(--secondary);
+}
+
+.addons-list a:hover * {
+  color: var(--link-hover-color);
+}
+
+.addon-entry {
+  padding: var(--gap) var(--gap) calc(var(--gap) * 2);
+  background: var(--entry);
+  border-radius: var(--radius);
+  min-height: calc(var(--article) * 0.6);
+  position: relative;
+}
+
+.addon-header {
+  display: flex;
+  gap: var(--gap);
+  align-items: flex-start;
+}
+
+.addon-icon {
+  display: grid;
+  place-items: center;
+  width: 4rem;
+  height: 4rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: var(--theme);
+}
+
+.addon-icon img {
+  width: 3rem;
+  height: auto;
+  max-height: 3rem;
+  object-fit: contain;
+  text-align: center;
+  border-radius: 10%;
+}
+
+.addon-title {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--gap) * 0.5);
+  text-align: start;
+}
+
+.addon-title :is(h3, p) {
+  margin: 0;
+}
+
+.addon-author {
+  color: var(--tertiary);
+}
+
+.addon-description {
+  text-align: justify;
+}
+
+.addon-meta {
+  position: absolute;
+  bottom: var(--gap);
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--gap) * 0.5);
+  font-size: var(--s);
+  color: var(--tertiary);
 }
