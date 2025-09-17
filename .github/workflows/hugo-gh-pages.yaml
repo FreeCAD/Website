@@ -9,6 +9,10 @@ on:
       - "README.md"
     branches:
       - testing
+  workflow_run:
+    workflows: ["Get Addon Catalogue", "Get Funded Grants List"]
+    types:
+      - completed
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -37,7 +41,7 @@ jobs:
     env:
       HUGO_VERSION: 0.148.2
       HUGO_ENVIRONMENT: production
-      TZ: America/Los_Angeles
+      TZ: Europe/Berlin
     steps:
       - name: Install Hugo CLI
         run: |
