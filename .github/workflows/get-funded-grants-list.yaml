@@ -16,13 +16,13 @@ jobs:
     - name: Checkout repo
       uses: actions/checkout@v3
 
-    - name: Restore List cache
+    - name: Restore Grants List cache
       uses: actions/cache@v4
       with:
         path: .cache
-        key: list-cache-${{ github.ref_name }}
+        key: grants-cache-${{ github.ref_name }}
         restore-keys: |
-          list-cache-
+          grants-cache-
 
     - name: Get issues with funded label and store data in JSON
       run: |
@@ -42,7 +42,7 @@ jobs:
 
         echo "$all_issues" > funded_grants_list_raw.json
 
-    - name: Check if list data has changed
+    - name: Check if grants list has changed
       run: |
         mkdir -p .cache
 
@@ -51,7 +51,7 @@ jobs:
         if [ -f .cache/funded_grants_list.hash ]; then
           old_hash=$(cat .cache/funded_grants_list.hash)
           if [ "$current_hash" = "$old_hash" ]; then
-            echo "No change in list data since last run."
+            echo "No change in grants list since last run."
             exit 0
           fi
         fi
@@ -69,7 +69,7 @@ jobs:
           author: .user.login
         }]' funded_grants_list_raw.json > data/funded_grants_list.json
 
-    - name: Commit and push updated list
+    - name: Commit and push updated grants list
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -89,4 +89,4 @@ jobs:
       uses: actions/cache/save@v4
       with:
         path: .cache
-        key: list-cache-${{ github.ref_name }}
+        key: grants-cache-${{ github.ref_name }}
