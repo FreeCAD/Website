@@ -95,12 +95,10 @@ jobs:
             to_entries
             | map(
               select(.key != "totalUsers")
-              | debug("Processing key-value:", .)
               | {
                   key: .key,
                   value: (
                     .value
-                    | debug("Original value (before transformation):", .)
                     | select(
                       (.value | type == "object") and
                       .value.labels != null and
@@ -108,14 +106,12 @@ jobs:
                       (.value.labels | length) == (.value.data | length)
                     )
                     | (.value.labels | map(
-                        . as $label |
-                        { ($label): (.value.data[(.value.labels | index($label))]) }
-                      ) | add)
-                    | debug("Transformed value (labels to data):", .)
+                      . as $label |
+                      { ($label): (.value.data[(.value.labels | index($label))]) }
+                    ) | add)
                   )
                 }
               )
-            | debug("Intermediate JSON (after transformation):", .)
             | from_entries
             | . + { totalUsers: $totalUsers }
           ' chart_data_raw.json > data/telemetry_chart_data.json
