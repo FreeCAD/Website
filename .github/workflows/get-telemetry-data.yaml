@@ -100,10 +100,6 @@ jobs:
                   value: (
                     .value
                     | debug("Processing value: ", .)
-                    | select(
-                        .value.labels != null and
-                        .value.data != null
-                      )
                     | debug("Transformed value: ",
                       [range(0; (.value.labels | length))]
                       | map({
