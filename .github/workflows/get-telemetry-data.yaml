@@ -101,20 +101,16 @@ jobs:
                   value: (
                     .value
                     | debug("Original value (before transformation):", .)
-                    select(
+                    | select(
                       (.value | type == "object") and
                       .value.labels != null and
                       .value.data != null and
                       (.value.labels | length) == (.value.data | length)
                     )
-                    | {
-                        (.value.labels | map(
-                          . as $label |
-                          {
-                            ($label): (.value.data[(.value.labels | index($label))])
-                          }
-                        ) | add)
-                    }
+                    | (.value.labels | map(
+                        . as $label |
+                        { ($label): (.value.data[(.value.labels | index($label))]) }
+                      ) | add)
                     | debug("Transformed value (labels to data):", .)
                   )
                 }
