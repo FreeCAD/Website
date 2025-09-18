@@ -100,8 +100,14 @@ jobs:
                   value: (
                     .value
                     | debug("Processing value: ", .)
-                    | debug("Transformed value: ",
-                      [range(0; (.value.labels | length))]
+                    | debug("Type of .value: ", (type))
+                    | select(
+                        type == "object" and
+                        .labels != null and
+                        .data != null
+                      )
+                    | debug("After select (labels/data): ", .)
+                    | [range(0; (.value.labels | length))]
                       | map({
                           key: .value.labels[.],
                           value: .value.data[.]
