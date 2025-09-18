@@ -95,8 +95,12 @@ jobs:
             to_entries
             | map(
                 select(.key != "totalUsers")
-                | select(.value.labels != null and .value.data != null)
-                | select((.value.labels | length) == (.value.data | length))
+                | select(
+                    (.value | type == "object")
+                    and (.value.labels != null)
+                    and (.value.data != null)
+                    and ((.value.labels | length) == (.value.data | length))
+                  )
                 | {
                     key: .key,
                     value: (
