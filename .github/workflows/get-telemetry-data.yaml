@@ -99,16 +99,13 @@ jobs:
                   key: .key,
                   value: (
                     .value
+                    | debug("Processing value: ", .)
                     | select(
                         type == "object" and
                         .labels != null and
                         .data != null and
                         (.labels | length) == (.data | length)
                       )
-                    | {
-                        labels: .labels,
-                        data: .data
-                      }
                     | [range(0; (.labels | length))]
                       | map({
                           key: .labels[.],
