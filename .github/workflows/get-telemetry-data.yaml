@@ -101,21 +101,22 @@ jobs:
                     .value
                     | debug("Processing value: ", .)
                     | debug("Type of .value: ", (type))
+                    | del(.totalUsers)
                     | select(
                         type == "object" and
                         .labels != null and
                         .data != null
                       )
                     | debug("After select (labels/data): ", .)
-                    | [range(0; (.value.labels | length))]
+                    | [range(0; (.labels | length))]
                       | map({
-                          key: .value.labels[.],
-                          value: .value.data[.]
+                          key: .labels[.],
+                          value: .data[.]
                         })
-                      | from_entries
                   )
                 }
               )
+            | debug("Mapped result (before from_entries): ", .)
             | from_entries
             | . + { totalUsers: $totalUsers }
           ' chart_data_raw.json > data/telemetry_chart_data.json
