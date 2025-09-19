@@ -92,34 +92,23 @@ jobs:
       - name: Clean and transform JSON
         run: |
           jq --argjson totalUsers "${{ steps.extract_total.outputs.totalUsers }}" '
-            to_entries
-            | map(
-              select(.key != "totalUsers")
-              | {
-                  key: .key,
+            with_entries(
+              if (.value.labels and .value.data) then
+                . as {key: $k, value: $v} |
+                {
+                  key: $k,
                   value: (
-                    .value
-                    | debug("Processing value: ", .)
-                    | debug("Type of .value: ", (type))
-                    | del(.totalUsers)
-                    | select(
-                        type == "object" and
-                        .labels != null and
-                        .data != null
-                      )
-                    | debug("After select (labels/data): ", .)
-                    | [range(0; (.value.labels | length))]
-                      | map({
-                          key: .value.labels[.],
-                          value: .value.data[.]
-                        })
+                    [range(0; ($v.labels | length))]
+                    | map({ ("\($v.labels[.])"): $v.data[.] })
+                    | add
                   )
                 }
-              )
-            | debug("Mapped result (before from_entries): ", .)
-            | from_entries
+              else
+                .
+              end
+            )
             | . + { totalUsers: $totalUsers }
-          ' chart_data_raw.json > data/telemetry_chart_data.json
+          ' chart_data_raw.json > data/telemetry_chart_data.jso
 
       - name: Commit and push cleaned Telemetry Data
         run: |
