@@ -1,0 +1,51 @@
+{{/* Funded Grants list:
+  - Get Funded Grants List from Data JSON file.
+  - Sort by last update.
+  - Display Grants data in cards.
+  - Link to all grants at the bottom. */}}
+
+{{- $list := site.Data.funded_grants_list -}}
+{{- with $list -}}
+  {{- $sorted := sort $list "created_at" "desc" -}}
+
+  <section class="grants">
+    <h3 class="grant-list-title">{{ i18n "grant_list" | default "Current Funded Projects" }}</h3>
+
+    <div class="grants-list">
+      {{- range (first 6 $sorted) -}}
+          <a href="{{ .url }}">
+            <article class="grant-entry">
+              <div class="addon-header">
+                <div class="addon-title">
+                  {{- with .title -}}
+                    <h3>{{ . | title }}</h3>
+                  {{- end -}}
+                  {{- with .author  -}}
+                    <p class="addon-author">{{ truncate 40 . }}</p>
+                  {{- end -}}
+                </div>
+              </div>
+
+              <div class="addon-meta">
+                {{- with .labels -}}
+                  {{- range . }}
+                    <span>{{ . | title }}</span>
+                  {{- end -}}
+                {{- end -}}
+              </div>
+            </article>
+          </a>
+      {{- end -}}
+    </div>
+
+    {{- $grantsLink := i18n "all_grants" | default "See All Funded Grants" -}}
+    <p><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues"
+      class="grants-link"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="{{ $grantsLink }}"
+      title="{{ $grantsLink }}">
+      {{ $grantsLink }}
+    </a></p>
+  </section>
+{{- end -}}

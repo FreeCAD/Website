@@ -16,6 +16,8 @@
     </h3>
   {{- end -}}
 
+  {{- partial "donate_box.html" . -}}
+
   {{- with .Params.cards -}}
     {{- partial "hero_cards.html" . -}}
   {{- end -}}
@@ -28,11 +30,14 @@
   {{ .TableOfContents }}
 {{- end -}}
 
-{{/* Get Addons catalog. */}}
-{{- partial "addons_catalog.html" . -}}
+{{/* Get Funded Grants List. */}}
+{{- partial "grants_list.html" . -}}
+
+{{/* Get Sponsors List. */}}
+{{- partial "sponsors_list.html" . -}}
 
 {{/* Get page content. */}}
 {{- partial "content.html" . -}}
 
 {{- end -}}
-{{/* end main */}}
+{{- /* end main */ -}}

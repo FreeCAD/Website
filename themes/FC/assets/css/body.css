@@ -99,6 +99,16 @@ input[type=submit] {
   cursor: pointer;
 }
 
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 del {
   text-decoration: line-through;
   color: var(--tertiary);
@@ -160,7 +170,7 @@ mark {
 }
 
 details {
-  margin: auto;
+  margin: 0.5rem auto;
   background: var(--entry);
   border-radius: var(--radius);
 }
@@ -201,6 +211,10 @@ details[open] summary {
   background: var(--tone);
 }
 
+details summary:hover {
+  background: var(--link-hover-color);
+}
+
 details :is(code, blockquote, .chroma, details) {
   background: var(--theme);
 }
@@ -235,4 +249,17 @@ meter::-webkit-meter-optimum-value {
 
 .dark meter::-webkit-meter-optimum-value {
   background: var(--link-color);
+}
+
+.screenreader-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }

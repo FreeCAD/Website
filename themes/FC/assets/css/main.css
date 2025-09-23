@@ -1076,7 +1076,12 @@ sup:target {
   color: var(--secondary);
 }
 
-.addons-list a:hover * {
+.addons-list a:hover .addon-entry {
+  filter: brightness(1.05) saturate(105%);
+  transform: scale(1.02);
+}
+
+.addons-list a:hover h3 {
   color: var(--link-hover-color);
 }
 
@@ -1086,6 +1091,7 @@ sup:target {
   border-radius: var(--radius);
   min-height: calc(var(--article) * 0.6);
   position: relative;
+  transition: var(--link-transition);
 }
 
 .addon-header {
@@ -1140,4 +1146,336 @@ sup:target {
   gap: calc(var(--gap) * 0.5);
   font-size: var(--s);
   color: var(--tertiary);
+}
+
+
+/* Funded Grants list */
+
+.grants {
+  margin: auto;
+  padding: calc(var(--gap) * 2) var(--side);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.grants-list {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+
+.grants-list a {
+  flex: 1 0 var(--article);
+  color: var(--secondary);
+}
+
+.grant-entry {
+  padding: var(--gap);
+  background: var(--entry);
+  border-radius: var(--radius);
+  min-height: calc(var(--article) * 0.5);
+  position: relative;
+  transition: var(--link-transition);
+}
+
+.grants-list a:hover .grant-entry {
+  filter: brightness(1.05) saturate(105%);
+  transform: scale(1.02);
+}
+
+.grants-list a:hover .grant-entry h3 {
+  color: var(--link-hover-color);
+}
+
+.grants-link {
+  padding: var(--padding);
+  color: var(--cover);
+  background: var(--link-color);
+  border-radius: var(--radius);
+}
+
+.grants-link:hover {
+  color: var(--cover);
+  background: var(--link-hover-color);
+}
+
+
+/* Donate box */
+
+#donation-form {
+  width: calc(var(--width) * 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--gap) * 1.5);
+  padding: var(--gap);
+  align-items: center;
+  background: var(--entry);
+  border-radius: var(--radius);
+  z-index: 3;
+}
+
+#donation-type {
+  width: 100%;
+  display: flex;
+  gap: calc(var(--gap) * 0.5);
+  border: none;
+  padding: 0;
+}
+
+#donation-amount {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: calc(var(--gap) * 0.5);
+  border: none;
+  padding: 0;
+}
+
+.tiers,
+#donation-type input,
+#donation-amount input:not([type="number"]) {
+  display: none;
+}
+
+#donation-type label,
+.tiers label:not([for="custom-amount"]) {
+  flex: 1 1 0;
+  padding: var(--padding);
+  background: var(--theme);
+  border-radius: var(--radius);
+  cursor: pointer;
+  user-select: none;
+  transition: var(--link-transition);
+}
+
+:is(#donation-type, #donation-amount) input:checked + label {
+  background: var(--link-color);
+  color: var(--theme);
+}
+
+:is(#donation-type, #donation-amount) label:hover,
+:is(#donation-type, #donation-amount) input:checked + label:hover {
+  background: var(--link-hover-color);
+  color: var(--theme);
+}
+
+[id^="message-monthly-"],
+#donation-form:has(#once:checked) :is(#corporate-sponsor, #message-monthly-default),
+#donation-form:has(#once:checked):has(#donate-checkbox:disabled) #message-once-choice,
+#donation-form:has(#once:checked):not(:has(#donate-checkbox:disabled)) #message-once-default,
+#donation-form:has(#once:checked):has(#custom-amount:invalid) :is(#message-once-default, #message-once-choice),
+#message-once-error,
+#donation-form:has(#monthly:checked) :is(#custom-amount-box, #message-once-default, #message-once-choice) {
+  display: none;
+}
+
+#donation-form:has(#monthly:checked):not(:has([id^="monthly-"]:checked)) #message-monthly-default {
+  display: block;
+}
+
+#donation-form:has(#once:checked):has(#custom-amount:invalid) #message-once-error {
+  display: block;
+  color: red;
+}
+
+#custom-amount:not(:valid) {
+  color: red;
+}
+
+#donation-form:has(#once:checked) .once,
+#donation-form:has(#monthly:checked) .monthly {
+  display: contents;
+}
+
+#donation-form:has(#once:checked) #custom-amount-box,
+#donation-form:has(#monthly:checked) #corporate-sponsor {
+  grid-column: span 3;
+}
+
+#custom-amount-box,
+#corporate-sponsor {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: var(--padding);
+  background: var(--theme);
+  border-radius: var(--radius);
+  color: var(--secondary);
+  text-align: center;
+  transition: var(--link-transition);
+}
+
+#custom-amount-box.active:has(#custom-amount:valid:not(:placeholder-shown)) {
+  background: var(--link-color);
+}
+
+#corporate-sponsor:hover,
+:is(#custom-amount-box.active, #custom-amount-box:hover):has(#custom-amount:valid:not(:placeholder-shown)):hover {
+  background: var(--link-hover-color);
+  color: var(--theme);
+}
+
+:is(#custom-amount-box.active, #custom-amount-box:hover):has(#custom-amount:valid:not(:placeholder-shown))
+  :is([for="custom-amount"], #custom-amount) {
+  color: var(--theme);
+}
+
+#custom-amount-box:hover:has(#custom-amount:placeholder-shown)
+  :is([for="custom-amount"], #custom-amount) {
+  color: var(--link-color);
+}
+
+#custom-amount,
+#corporate-sponsor {
+  width: 100%;
+  color: var(--secondary);
+  text-align: center;
+}
+
+#currency-toggle {
+  grid-column: span 1;
+  padding: var(--padding);
+  color: var(--secondary);
+  text-align: center;
+  font-size: var(--m);
+  border: none;
+  background: var(--theme);
+  border-radius: var(--radius);
+  cursor: pointer;
+  user-select: none;
+  transition: var(--link-transition);
+}
+
+#currency-toggle:hover {
+  background: var(--link-hover-color);
+  color: var(--theme);
+}
+
+#donation-message {
+  line-height: var(--m);
+}
+
+#donation-payment {
+  width: 100%;
+  display: flex;
+  gap: calc(var(--gap) * 0.5);
+  border: none;
+  padding: 0;
+}
+
+[for="donate-checkbox"], [id^="payment-"] {
+  width: 100%;
+  padding: var(--padding);
+  font-weight: bold;
+  border: none;
+  background: var(--link-color);
+  color: var(--theme);
+  border-radius: var(--radius);
+  cursor: pointer;
+  user-select: none
+}
+
+:is([for="donate-checkbox"], [id^="payment-"]):hover:not(:disabled) {
+  background: var(--link-hover-color);
+}
+
+#donation-payment:has(#donate-checkbox:disabled) [for="donate-checkbox"],
+:is([for="donate-checkbox"], [id^="payment-"]):disabled {
+  background: var(--tone);
+  cursor: not-allowed;
+}
+
+#donation-payment:has(#donate-checkbox:checked) [id^="payment-"],
+#donation-payment:has(#donate-checkbox:disabled) [for="donate-checkbox"] {
+  display: block;
+}
+
+#donate-checkbox,
+#donation-payment:has(#donate-checkbox:not(:disabled):checked) [for="donate-checkbox"],
+#donation-payment:has(:is(#donate-checkbox:not(:checked), #donate-checkbox:disabled)) [id^="payment-"],
+#donation-form:has(#monthly:checked) [id="payment-stripe"] {
+  display: none;
+}
+
+#donation-popover {
+  padding: calc(var(--gap) * 3);
+  color: var(--secondary);
+  background: var(--theme);
+  border: none;
+  border-radius: var(--radius);
+}
+
+#donation-popover::backdrop {
+  background: var(--backdrop);
+}
+
+#donation-popover .close {
+  position: absolute;
+  top: var(--gap);
+  right: var(--gap);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--link-color);
+  color: var(--cover);
+  cursor: zoom-out;
+}
+
+#donation-popover .close:hover {
+  background: var(--link-hover-color);
+}
+
+
+/* Sponsors list */
+
+.sponsors {
+  margin: auto;
+  padding: calc(var(--gap) * 2) var(--side);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  background: var(--entry);
+}
+
+.sponsors-tier {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.sponsor-entry {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  padding: var(--gap);
+  background: var(--theme);
+  border-radius: var(--radius);
+  transition: var(--link-transition);
+}
+
+.sponsors-tier a:hover .sponsor-entry {
+  filter: brightness(1.05) saturate(105%);
+  transform: scale(1.05);
+}
+
+:is(.gold, .corporate) {
+  height: calc(4rem + (var(--gap) * 2));
+}
+
+.sponsor-entry svg,
+.sponsor-logo {
+  height: 4rem;
+  width: auto;
+  color: var(--secondary);
 }

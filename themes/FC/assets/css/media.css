@@ -183,6 +183,23 @@
     height: calc(var(--width) * 1.8);
   }
 
+  #donation-form {
+    width: var(--width);
+  }
+
+  #donation-amount,
+  #donation-payment {
+    grid-template-columns: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #donation-form:has(#one-time:checked) #custom-amount-box,
+  #donation-form:has(#monthly:checked) #corporate-sponsor,
+  #currency-toggle {
+    grid-column: span 1;
+  }
+
   /* Archive */
   .archive-month {
     flex-direction: column;

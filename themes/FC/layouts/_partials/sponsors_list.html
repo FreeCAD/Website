@@ -1,0 +1,58 @@
+{{/* Sponsors list:
+  - Get Sponsors List from Data file.
+  - Display Sponsors data grouped by tiers.
+*/}}
+
+
+{{- $sponsors := slice -}}
+{{- range site.Data.sponsors_list -}}
+  {{- if and (ne .label nil) (ne .startDate nil) (eq .status "active") -}}
+    {{- $sponsors = $sponsors | append . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $tiers := slice "corporate" "gold" "silver" "bronze" -}}
+
+{{- with $sponsors -}}
+  <section class="sponsors">
+    <h2 class="sponsors-list-title">{{ i18n "sponsors_list" | default "Current Sponsors" }}</h2>
+
+    {{- range $tier := $tiers -}}
+      {{- $tierSponsors := where $sponsors "tier" $tier -}}
+      {{- if gt (len $tierSponsors) 0 -}}
+        <h3>{{ $tier | title }}</h3>
+        <section class="sponsors-tier">
+          {{- range $sponsor := sort $tierSponsors "label" -}}
+            {{- with $sponsor.link }}
+              <a href="{{ . }}" target="_blank">
+            {{- end -}}
+              <article class="sponsor-entry {{ $tier }}" title="{{- printf "%s %s" $sponsor.label (default "" $sponsor.description) -}}">
+                {{- if or (eq $tier "corporate") (eq $tier "gold") -}}
+                  {{- with $sponsor.logo -}}
+                    {{- $logoPath := print "sponsors/" . -}}
+                    {{- with resources.Get $logoPath -}}
+                      {{- if eq .MediaType.SubType "svg" -}}
+                        {{- $svg := . | resources.Minify -}}
+                        {{- $svg.Content | safeHTML -}}
+                      {{- else -}}
+                        <img class="sponsor-logo" src="{{ .RelPermalink }}" alt="{{ $sponsor.label }} logo"/>
+                      {{- end -}}
+                    {{- end -}}
+                  {{- else -}}
+                    <h3>{{ $sponsor.label }}</h3>
+                  {{- end -}}
+                {{- else if eq $tier "silver" -}}
+                  <strong>{{ $sponsor.label }}</strong>
+                {{- else -}}
+                  {{ $sponsor.label }}
+                {{- end -}}
+              </article>
+            {{- with $sponsor.link -}}
+              </a>
+            {{- end -}}
+          {{- end -}}
+        </section>
+      {{- end -}}
+    {{- end -}}
+  </section>
+{{- end -}}

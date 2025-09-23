@@ -1,0 +1,146 @@
+{{- $selectedCurrency := true -}}
+{{- with .Params.currencies -}}
+  {{- range . -}}
+    {{- if .selected -}}
+      {{- $selectedCurrency = .currencySymbol -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+<form id="donation-form" method="get" action="">
+
+  <div id="donation-type">
+    <input type="radio" id="once" name="donation-type" value="once" checked>
+    {{- with .Params.onceLabel -}}
+      <label for="once">{{ . }}</label>
+    {{- end -}}
+
+    <input type="radio" id="monthly" name="donation-type" value="monthly">
+    {{- with .Params.monthlyLabel -}}
+      <label for="monthly">{{ . }}</label>
+    {{- end -}}
+  </div>
+
+  <div id="donation-amount">
+    {{- with .Params.once -}}
+      <div class="tiers once">
+        {{- range $index, $tier := sort . "amount" -}}
+          <input type="radio" id="once-{{ $index }}" name="amount" value="{{ $tier.amount }}" {{ if $tier.default }}checked{{ end }}>
+          <label for="once-{{ $index }}">
+            {{- printf "%s %v" $selectedCurrency $tier.amount -}}
+          </label>
+        {{- end -}}
+
+        <div id="custom-amount-box">
+          <label for="custom-amount">€</label>
+          <input
+            type="number"
+            id="custom-amount"
+            min="1"
+            step="1"
+            inputmode="numeric"
+            pattern="[0-9]+"
+            placeholder="{{ i18n "amount" | default "Amount" }}"
+            >
+        </div>
+      </div>
+    {{- end -}}
+
+    {{- with .Params.monthly -}}
+      <div class="tiers monthly" hidden>
+        {{- range $index, $tier := sort . "amount" -}}
+          <input type="radio" id="monthly-{{ $index }}" name="amount" value="{{ $tier.amount }}" {{ if $tier.default }}checked{{ end }}>
+          <label for="monthly-{{ $index }}">
+            {{- printf "%s %v /mo" $selectedCurrency $tier.amount -}}
+          </label>
+        {{- end -}}
+
+        {{- with $.Params.corporateLabel -}}
+          <a href="#corporate" id="corporate-sponsor" data-details-link>{{ . }}</a>
+        {{- end -}}
+      </div>
+    {{- end -}}
+
+    {{- with .Params.currencies -}}
+      <select id="currency-toggle" name="currency" aria-label="Currency">
+        {{- range . -}}
+          <option value="{{ .currencyCode }}" {{ if .selected }}selected{{ end }}>
+            {{- printf "%s %v" .currencySymbol .currencyCode -}}
+          </option>
+        {{- end -}}
+      </select>
+    {{- end -}}
+  </div>
+
+  <div id="donation-message">
+    {{- with .Params.onceDefaultMessage -}}
+      <p id="message-once-default">{{ . | safeHTML }}</p>
+    {{- end -}}
+    {{- with .Params.onceChoiceMessage -}}
+      <p id="message-once-choice">{{ . | safeHTML }}</p>
+    {{- end -}}
+    {{- with .Params.onceErrorMessage -}}
+      <p id="message-once-error">{{ . | safeHTML }}</p>
+    {{- end -}}
+    {{- with .Params.monthlyDefaultMessage -}}
+      <p id="message-monthly-default">
+        {{ . | safeHTML }} <a href="#tiers" title="Tiers info" data-details-link>🛈</a>
+      </p>
+    {{- end -}}
+    {{- with .Params.monthly -}}
+      {{- range $index, $tier := sort . "amount" }}
+        <p id="message-monthly-{{ $index }}">
+          {{ $tier.message | safeHTML }} <a href="#tiers" title="Tiers info" data-details-link>🛈</a>
+        </p>
+      {{- end -}}
+    {{- end -}}
+  </div>
+
+  <div id="donation-payment">
+    <input type="checkbox" id="donate-checkbox" name="donate" value="donate" required>
+    {{- with .Params.donateLabel -}}
+      <label for="donate-checkbox">{{ . }}</label>
+    {{- end -}}
+
+    {{- with .Params.payment -}}
+      {{- range $index, $platform := sort . "weight" -}}
+        {{- with $platform.url -}}
+          <button type="submit"
+            id="payment-{{ lower $platform.platform }}"
+            formaction="{{ . }}"
+            formmethod="get">
+            {{ $platform.platform }}
+          </button>
+
+        {{- else -}}
+          <button type="button"
+            id="payment-{{ lower $platform.platform }}"
+            popovertarget="donation-popover"
+            popovertargetaction="toggle">
+            {{ $platform.platform }}
+          </button>
+          <div id="donation-popover" popover>
+            {{ $platform.info | safeHTML }}
+            <button class="close"
+              popovertarget="donation-popover"
+              popovertargetaction="hide">
+              ✕
+            </button>
+          </div>
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  </div>
+
+  <!-- Fallback for users without JS. -->
+  <noscript>
+    <!-- Nothing for now. -->
+  </noscript>
+</form>
+
+<!-- Generates Style for Custom messages. -->
+{{- with .Params.monthly -}}
+  {{- range $index, $item := sort . "amount" -}}
+    <style>#donation-form:has(#monthly-{{ $index }}:checked) #message-monthly-{{ $index }} { display: block; }</style>
+  {{- end -}}
+{{- end -}}
