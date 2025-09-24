@@ -30,19 +30,6 @@
             {{- printf "%s %v" $selectedCurrency $tier.amount -}}
           </label>
         {{- end -}}
-
-        <div id="custom-amount-box">
-          <label for="custom-amount">€</label>
-          <input
-            type="number"
-            id="custom-amount"
-            min="1"
-            step="1"
-            inputmode="numeric"
-            pattern="[0-9]+"
-            placeholder="{{ i18n "amount" | default "Amount" }}"
-            >
-        </div>
       </div>
     {{- end -}}
 
@@ -54,22 +41,36 @@
             {{- printf "%s %v /mo" $selectedCurrency $tier.amount -}}
           </label>
         {{- end -}}
-
-        {{- with $.Params.corporateLabel -}}
-          <a href="#corporate" id="corporate-sponsor" data-details-link>{{ . }}</a>
-        {{- end -}}
       </div>
     {{- end -}}
 
-    {{- with .Params.currencies -}}
-      <select id="currency-toggle" name="currency" aria-label="Currency">
-        {{- range . -}}
-          <option value="{{ .currencyCode }}" {{ if .selected }}selected{{ end }}>
-            {{- printf "%s %v" .currencySymbol .currencyCode -}}
-          </option>
-        {{- end -}}
-      </select>
-    {{- end -}}
+    <div class="custom">
+      <div id="custom-amount-box">
+        <label for="custom-amount">€</label>
+        <input
+          type="number"
+          id="custom-amount"
+          min="1"
+          step="1"
+          inputmode="numeric"
+          pattern="[0-9]+"
+          placeholder="{{ i18n "amount" | default "Amount" }}">
+      </div>
+
+      {{- with .Params.corporateLabel -}}
+        <a href="#corporate" id="corporate-sponsor" data-details-link>{{ . }}</a>
+      {{- end -}}
+
+      {{- with .Params.currencies -}}
+        <select id="currency-toggle" name="currency" aria-label="Currency">
+          {{- range . -}}
+            <option value="{{ .currencyCode }}" {{ if .selected }}selected{{ end }}>
+              {{- printf "%s %v" .currencySymbol .currencyCode -}}
+            </option>
+          {{- end -}}
+        </select>
+      {{- end -}}
+    </div>
   </div>
 
   <div id="donation-message">

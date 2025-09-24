@@ -1227,16 +1227,27 @@ sup:target {
 #donation-amount {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: calc(var(--gap) * 0.5);
   border: none;
   padding: 0;
 }
 
-.tiers,
 #donation-type input,
 #donation-amount input:not([type="number"]) {
   display: none;
+}
+
+#donation-amount .tiers {
+  display: none;
+  grid-template-columns: repeat(4, 1fr);
+  gap: calc(var(--gap) * 0.5);
+}
+
+#donation-amount .custom {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: calc(var(--gap) * 0.5);
 }
 
 #donation-type label,
@@ -1248,6 +1259,7 @@ sup:target {
   cursor: pointer;
   user-select: none;
   transition: var(--link-transition);
+  align-content: center;
 }
 
 :is(#donation-type, #donation-amount) input:checked + label {
@@ -1286,16 +1298,12 @@ sup:target {
 
 #donation-form:has(#once:checked) .once,
 #donation-form:has(#monthly:checked) .monthly {
-  display: contents;
-}
-
-#donation-form:has(#once:checked) #custom-amount-box,
-#donation-form:has(#monthly:checked) #corporate-sponsor {
-  grid-column: span 3;
+  display: grid;
 }
 
 #custom-amount-box,
 #corporate-sponsor {
+  grid-column: span 3;
   display: flex;
   justify-content: center;
   width: 100%;
