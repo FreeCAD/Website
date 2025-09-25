@@ -1030,6 +1030,14 @@ sup:target {
   flex-grow: 1;
 }
 
+#shareForm #instance:invalid {
+  color: red;
+}
+
+#shareForm #instance:placeholder-shown {
+  color: var(--tone);
+}
+
 #shareForm #rememberInstance {
   margin-inline-end: calc(var(--gap) * 2);
 }
@@ -1046,6 +1054,11 @@ sup:target {
 
 #shareForm #submit:hover {
   background: var(--link-hover-color);
+}
+
+:is(#shareForm #submit:disabled, #shareForm:has(#instance:invalid) #submit) {
+  background: var(--tone);
+  cursor: not-allowed;
 }
 
 
