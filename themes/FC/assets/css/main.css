@@ -295,16 +295,25 @@ main header .entry-cover img {
 /* Single page content */
 
 .content {
+  max-width: 90ch;
+  margin: auto;
   font-size: var(--m);
   color: var(--secondary);
-}
-
-.content > :not(.box, [popover]) {
-  margin: var(--gap) auto;
-  padding: var(--gap);
-  max-width: 90ch;
   text-align: justify;
   text-align-last: auto;
+}
+
+.content > .box {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.content > :is(:first-child, .box + *):not(.box) {
+  padding-top: var(--gap);
+}
+
+.content > :is(:last-child, :has(+ .box)):not(.box) {
+  padding-bottom: var(--gap);
 }
 
 .heading-anchor {
@@ -1503,6 +1512,13 @@ sup:target {
 .column-inner {
   width: 100%;
   text-align: inherit;
+}
+
+.column-link {
+  color: var(--secondary);
+}
+
+.column-link:hover {
 }
 
 .box img:not([popover] img, blockquote img) {

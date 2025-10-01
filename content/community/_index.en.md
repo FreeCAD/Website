@@ -1,6 +1,6 @@
 ---
-title: "Communauté"
-description: "Rejoindre la communauté"
+title: "Community"
+description: "Get in touch with the community"
 date: 2024-05-22T08:04:23+12:00
 author: "FreeCAD"
 cover:
@@ -16,17 +16,17 @@ menus:
 
 {{< box text-align="center" background="var(--entry)" >}}
 
-{{< column >}}
+{{< column url="https://fpa.freecad.org" >}}
 
-[![FreeCAD Project Association](fpa.svg)](https://fpa.freecad.org)
+![FreeCAD Project Association](fpa.svg)
 
 The Association supporting the development of FreeCAD.
 
 {{< /column >}}
 
-{{< column >}}
+{{< column url="fpn" >}}
 
-[![FreeCAD Professional Network](fpn.svg)](fpn)
+![FreeCAD Professional Network](fpn.svg)
 
 The Network of professional users contributing to FreeCAD development.
 

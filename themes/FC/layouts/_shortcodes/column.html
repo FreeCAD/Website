@@ -4,9 +4,11 @@
   - Support content via argument "content" or inner content.
 */}}
 
-{{- $inner := or (.Get "content" | .Page.RenderString) (strings.TrimSpace .Inner | .Page.RenderString) "" }}
+{{- $inner := or (.Get "content" | .Page.RenderString) (strings.TrimSpace .Inner | .Page.RenderString) "" -}}
 
 {{- $title := .Get "title" | replaceRE "^#+\\s*" "" -}}
+{{- $url := .Get "url" -}}
+{{- $isExternal := and (strings.HasPrefix $url "http") (not (strings.HasPrefix $url site.BaseURL)) -}}
 {{- $extraStyle := .Get "style" -}}
 
 {{- $styleKeys := slice "background" "border" "color" "text-align" "width" -}}
@@ -30,11 +32,23 @@
     </div>
   {{- end -}}
   {{- with $inner -}}
+    {{- with $url -}}
+      <a class="column-link" href="{{ . }}"
+        {{- with $title -}}
+          title="{{ . | $.Page.RenderString | plainify | htmlEscape }}"
+        {{- end -}}
+        {{- if $isExternal -}}
+          target="_blank" rel="external noreferrer"
+        {{- end -}}>
+    {{- end -}}
     <div class="column-content"
       {{ with $columnStyle }}style="{{ . }}"{{ end }}>
       <div class="column-inner">
         {{ . }}
       </div>
     </div>
+    {{- with $url -}}
+      </a>
+    {{- end -}}
   {{- end -}}
 </section>
