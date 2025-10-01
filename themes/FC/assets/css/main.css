@@ -299,8 +299,8 @@ main header .entry-cover img {
   color: var(--secondary);
 }
 
-.content > :not(.block, .column) {
-  margin: auto;
+.content > :not(.box, [popover]) {
+  margin: var(--gap) auto;
   padding: var(--gap);
   max-width: 90ch;
   text-align: justify;
@@ -368,7 +368,7 @@ table:not(.highlighttable) td code:only-child {
 }
 
 .highlight:not(table) {
-  margin: calc(var(--gap) * 0.5) auto;
+  margin: calc(var(--gap) * 0.5) 0;
   border-radius: var(--radius);
 }
 
@@ -522,6 +522,7 @@ sup:target {
 }
 
 .content [popover] {
+  margin: auto;
   background: none;
   border: none;
 }
@@ -562,54 +563,6 @@ sup:target {
   margin: auto;
   text-align: center;
 }
-
-
-/* Single page Blocks (defined in-between +++ in Markdown files) */
-
-.block {
-  padding: calc(var(--gap) * 4) var(--side);
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  align-content: space-between;
-  justify-content: center;
-  gap: calc(var(--gap) * 2);
-  max-height: calc((var(--width) * 0.25) + (var(--gap) * 6));
-  text-align: center;
-}
-
-#N1.block, #N4.block, #N7.block {
-  background: var(--theme);
-}
-
-#N2.block, #N5.block #N8.block {
-  background: var(--bg-grid-s);
-}
-
-#N3.block, #N6.block #N9.block {
-  background: var(--entry);
-}
-
-/* Tricks to have 2 side-by-side columns */
-.block h2,
-.block p,
-.block a:not(:has(svg)),
-.block img:not([popover] img, blockquote img) {
-  margin: 0 auto;
-  max-height: calc((var(--width) * 0.25) - var(--gap));
-  width: calc((var(--width) * 0.5) - (var(--gap) * 2));
-}
-
-.block p {
-  text-align: justify;
-  text-align-last: auto;
-}
-
-.column {
-  background: crimson;
-}
-
 
 /* Download box */
 
@@ -1499,4 +1452,62 @@ sup:target {
   height: 4rem;
   width: auto;
   color: var(--secondary);
+}
+
+
+/* Box and column shortcodes */
+
+.box {
+  padding: calc(var(--gap) * 2);
+}
+
+.box-title,
+.column-title {
+  text-align: center;
+  max-width: var(--width);
+  margin: auto;
+}
+
+.box-content {
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap);
+  margin: auto;
+  max-width: var(--width);
+  border-radius: var(--radius);
+  align-items: stretch;
+}
+
+.box-content > * {
+  flex: 1;
+  min-width: calc(var(--width) * 0.2);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.column-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  padding: var(--gap);
+  border-radius: var(--radius);
+}
+
+.column-inner {
+  width: 100%;
+  text-align: inherit;
+}
+
+.box img:not([popover] img, blockquote img) {
+  margin: 0 auto;
+  max-height: calc((var(--width) * 0.25) - var(--gap) * 1);
+  max-width: calc((var(--width) * 0.5) - (var(--gap) * 2));
+  width: revert-layer;
 }

@@ -1,0 +1,40 @@
+{{/* Column Shortcode:
+  - Useful when nested in a box shortcode to clearly separate content in columns.
+  - Optional custom CSS styles and Markdown title.
+  - Support content via argument "content" or inner content.
+*/}}
+
+{{- $inner := or (.Get "content" | .Page.RenderString) (strings.TrimSpace .Inner | .Page.RenderString) "" }}
+
+{{- $title := .Get "title" | replaceRE "^#+\\s*" "" -}}
+{{- $extraStyle := .Get "style" -}}
+
+{{- $styleKeys := slice "background" "border" "color" "text-align" "width" -}}
+
+{{/* Build column style */}}
+{{- $styleColumn := slice -}}
+{{- range $styleKey := $styleKeys -}}
+  {{- with $.Get $styleKey }}
+    {{- $styleColumn = $styleColumn | append (printf "%s: %s;" $styleKey .) -}}
+  {{- end -}}
+{{- end -}}
+{{- with $extraStyle -}}
+  {{- $styleColumn = $styleColumn | append . -}}
+{{- end -}}
+{{- $columnStyle := delimit $styleColumn " " | safeCSS -}}
+
+<section class="column">
+  {{- with $title -}}
+    <div class="column-title">
+      {{ printf "## %s" . | $.Page.RenderString }}
+    </div>
+  {{- end -}}
+  {{- with $inner -}}
+    <div class="column-content"
+      {{ with $columnStyle }}style="{{ . }}"{{ end }}>
+      <div class="column-inner">
+        {{ . }}
+      </div>
+    </div>
+  {{- end -}}
+</section>

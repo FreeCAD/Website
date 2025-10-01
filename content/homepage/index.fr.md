@@ -16,32 +16,62 @@ params:
     - label: "♥ Parrainer"
       url: donate
 ---
-![An assembly text](assembly2.webp "An assembly caption")
 
-## First Highlight Block
+{{< box text-align="center" background="var(--entry)" >}}
 
-This is a text in the first block to go in the right. This is a text in the first block. This is a text in the first block to go in the right. This is a text in the first block to go in the right. This is a text in the first block to go in the right.
+{{< column content="![An image text](assembly2.webp 'An image caption')" />}}
 
-+++
+{{< column >}}
 
-## Second Highlight Block
+## First Box
 
-This is a text in the second block to go in the left. This is a text in the second block. This is a text in the second block to go in the left. This is a text in the second block to go in the left. This is a text in the second block to go in the left. This is a text in the second block.
+This is a text in the first box.
 
-![](bulb.webp)
+{{< /column >}}
 
-+++
+{{< /box >}}
 
-![](assembly1.webp)
 
-## Third Highlight Block
+{{< box text-align="center" background="var(--theme)" >}}
 
-This is a text in the third block to go in the right. This is a text in the third block. This is a text in the third block to go in the right. This is a text in the third block to go in the right. This is a text in the third block to go in the right. This is a text in the third block.
+{{< column >}}
 
-+++
+## Second Box
 
-## Fourth Highlight Block
+This is a text in the second box.
 
-This is a text in the fourth block to go in the left. This is a text in the fourth block. This is a text in the fourth block to go in the left. This is a text in the fourth block to go in the left. This is a text in the fourth block to go in the left. This is a text in the fourth block.
+{{< /column >}}
 
-![](fem.webp)
+{{< column content="![An image text](bulb.webp 'An image caption')" />}}
+
+{{< /box >}}
+
+
+{{< box text-align="center" background="var(--entry)" >}}
+
+{{< column content="![An image text](assembly1.webp 'An image caption')" />}}
+
+{{< column >}}
+
+## Third Box
+
+This is a text in the third box.
+
+{{< /column >}}
+
+{{< /box >}}
+
+
+{{< box text-align="center" background="var(--theme)" >}}
+
+{{< column >}}
+
+## Fourth Box
+
+This is a text in the fourth box.
+
+{{< /column >}}
+
+{{< column content="![An image text](fem.webp 'An image caption')" />}}
+
+{{< /box >}}

@@ -47,32 +47,31 @@ params:
           alt: LINUX-AARCH64
 ---
 
-![An image text](4.webp "An image caption")
+{{< box text-align="justify" background="var(--tone)" >}}
 
-## First Download Block
+{{< column content="![A image text alt text](4.webp 'An image caption')" />}}
 
-This is a text in the first block to go in the right. This is a text in the first block. This is a text in the first block to go in the right. This is a text in the first block to go in the right. This is a text in the first block to go in the right.
+{{< column >}}
 
-+++
+## Column shortcode in first box shortcode
 
-## Second Download Block
+This is a text in first column of the second box with `text-align="justify" background="var(--tone)"`. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-This is a text in the second block to go in the left. This is a text in the second block. This is a text in the second block to go in the left. This is a text in the second block to go in the left. This is a text in the second block to go in the left. This is a text in the second block.
+{{< /column >}}
 
-![](4.webp)
+{{< /box >}}
 
-+++
 
-![](4.webp)
+{{< box title="Title of the second box shortcode with `text-align=\"center\"`, `background=\"gold\"` and `color=\"red\"`" text-align="center" background="gold" color="red" >}}
 
-## Third Download Block
+{{< column >}}
 
-This is a text in the third block to go in the right. This is a text in the third block. This is a text in the third block to go in the right. This is a text in the third block to go in the right. This is a text in the third block to go in the right. This is a text in the third block.
+## First column shortcode in second box shortcode
 
-+++
+This is a text in the first column shortcode of the second box shortcode with `text-align="center"`.
 
-## Fourth Download Block
+{{< /column >}}
 
-This is a text in the fourth block to go in the left. This is a text in the fourth block. This is a text in the fourth block to go in the left. This is a text in the fourth block to go in the left. This is a text in the fourth block to go in the left. This is a text in the fourth block.
+{{< column content="![An image in the second column of the second box alt text](4.webp 'An image in the second column shortcode of the second box shortcode caption')" />}}
 
-![](4.webp)
+{{< /box >}}

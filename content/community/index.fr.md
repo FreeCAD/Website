@@ -14,32 +14,22 @@ menus:
     weight: 5
 ---
 
-![An image text](1.webp "An image caption")
+{{< box text-align="center" background="var(--entry)" >}}
 
-## First Community Block
+{{< column >}}
 
-This is a text in the first block to go in the right. This is a text in the first block. This is a text in the first block to go in the right. This is a text in the first block to go in the right. This is a text in the first block to go in the right.
+[![FreeCAD Project Association](fpa.svg)](https://fpa.freecad.org)
 
-+++
+The Association supporting the development of FreeCAD.
 
-## Second Community Block
+{{< /column >}}
 
-This is a text in the second block to go in the left. This is a text in the second block. This is a text in the second block to go in the left. This is a text in the second block to go in the left. This is a text in the second block to go in the left. This is a text in the second block.
+{{< column >}}
 
-![](1.webp)
+[![FreeCAD Professional Network](fpn.svg)](fpn)
 
-+++
+The Network of professional users contributing to FreeCAD development.
 
-![](1.webp)
+{{< /column >}}
 
-## Third Community Block
-
-This is a text in the third block to go in the right. This is a text in the third block. This is a text in the third block to go in the right. This is a text in the third block to go in the right. This is a text in the third block to go in the right. This is a text in the third block.
-
-+++
-
-## Fourth Community Block
-
-This is a text in the fourth block to go in the left. This is a text in the fourth block. This is a text in the fourth block to go in the left. This is a text in the fourth block to go in the left. This is a text in the fourth block to go in the left. This is a text in the fourth block.
-
-![](1.webp)
+{{< /box >}}

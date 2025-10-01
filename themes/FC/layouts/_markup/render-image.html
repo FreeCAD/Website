@@ -69,23 +69,14 @@
         <figure>
           <img loading="lazy"
             srcset="
-                {{- range $imgSize := $sizes -}}
-                  {{- if ge $img.Width $imgSize -}}
-                    {{- if $.Page.Store.Get "blocks" -}}
-                      {{ printf "%s %dw, " (($img.Fill (printf "%dx%d %s" $imgSize (div $imgSize 2) $format)).RelPermalink | safeURL) $imgSize }}
-                    {{- else -}}
-                      {{ printf "%s %dw, " (($img.Resize (printf "%dx %s" $imgSize $format)).RelPermalink | safeURL) $imgSize }}
-                    {{- end -}}
-                  {{- end -}}
-                {{- end -}}"
-            sizes="
-              {{- if .Page.Store.Get "blocks" -}}
-                (max-width: {{ index $sizes 1 }}px) {{ index $sizes 0 }}px,
-                {{ index $sizes 1 }}px
-              {{- else -}}
-                (max-width: {{ index $sizes 0 }}px) {{ index $sizes 0 }}px,
-                {{ index $sizes 1 }}px
+              {{- range $imgSize := $sizes -}}
+                {{- if ge $img.Width $imgSize -}}
+                  {{ printf "%s %dw, " (($img.Resize (printf "%dx %s" $imgSize $format)).RelPermalink | safeURL) $imgSize }}
+                {{- end -}}
               {{- end -}}"
+            sizes="
+              (max-width: {{ index $sizes 0 }}px) {{ index $sizes 0 }}px,
+              {{ index $sizes 1 }}px"
             src="{{ $img.RelPermalink | safeURL }}"
             width="{{ $img.Width }}"
             height="{{ $img.Height }}"

@@ -76,7 +76,7 @@ collections:
       - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
       - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
       - {label: "Hero", name: "params.hero", widget: "boolean", default: false, i18n: duplicate, required: false, hint: "Article featured on top of the Homepage"}
-      - {label: "Content", name: "body", widget: "markdown", i18n: true, required: [en], hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
+      - {label: "Content", name: "body", widget: "markdown", i18n: true, required: [en], pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
     index_file:
       name: _index
       label: News Index
@@ -124,7 +124,7 @@ collections:
                 fields:
                   - {label: "Label", name: "label", widget: "string", i18n: true}
                   - {label: "URL", name: "url", widget: "string", i18n: duplicate}
-          - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
+          - {label: "Content", name: "body", widget: "markdown", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
 
   - name: features
     label: Features
@@ -146,7 +146,7 @@ collections:
           - {label: "Cover image", name: "cover.image", widget: "image", i18n: duplicate}
           - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
           - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
-          - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
+          - {label: "Content", name: "body", widget: "markdown", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
 
   - name: download
     label: Download
@@ -168,7 +168,7 @@ collections:
           - {label: "Cover image", name: "cover.image", widget: "image", i18n: duplicate}
           - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
           - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
-          - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
+          - {label: "Content", name: "body", widget: "markdown", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
 
   - name: releases
     label: Releases
@@ -189,7 +189,7 @@ collections:
       - {label: "Cover image", name: "cover.image", widget: "image", i18n: duplicate}
       - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
       - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
-      - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
+      - {label: "Content", name: "body", widget: "markdown", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
     index_file:
       name: _index
       label: Releases Index
@@ -224,7 +224,7 @@ collections:
           - {label: "Cover image", name: "cover.image", widget: "image", i18n: duplicate}
           - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
           - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
-          - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
+          - {label: "Content", name: "body", widget: "markdown", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
 
   - name: documentation
     label: Documentation
@@ -246,7 +246,7 @@ collections:
           - {label: "Cover image", name: "cover.image", widget: "image", i18n: duplicate}
           - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
           - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
-          - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
+          - {label: "Content", name: "body", widget: "markdown", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
 
   - name: contribute
     label: Contribute
@@ -269,7 +269,7 @@ collections:
           - {label: "Cover image", name: "cover.image", widget: "image", i18n: duplicate}
           - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
           - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
-          - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
+          - {label: "Content", name: "body", widget: "markdown", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
 
   - name: donate
     label: Donate
@@ -288,7 +288,7 @@ collections:
       - {label: "Cover image", name: "cover.image", widget: "image", i18n: duplicate}
       - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
       - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
-      - {label: "Content", name: "body", widget: "markdown", hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
+      - {label: "Content", name: "body", widget: "markdown", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
 
 singletons:
     - name: footer

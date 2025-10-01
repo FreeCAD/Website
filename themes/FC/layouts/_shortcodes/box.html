@@ -1,0 +1,56 @@
+{{/* Box Shortcode:
+  - Full-width box layout.
+  - Optional custom CSS styles and Markdown title.
+*/}}
+
+{{- $inner := .Inner -}}
+{{- $title := .Get "title" | replaceRE "^#+\\s*" "" -}}
+{{- $extraStyleBox := .Get "style" -}}
+{{- $extraStyleContent := .Get "content-style" -}}
+
+{{- $boxStyleKeys := slice "background" "color" "text-align" "width" -}}
+{{- $contentStyleKeys := slice "border" "content-background" -}}
+
+{{/* Build box style */}}
+{{- $styleBox := slice -}}
+{{- range $styleKey := $boxStyleKeys -}}
+  {{- with $.Get $styleKey }}
+    {{- $styleBox = $styleBox | append (printf "%s: %s;" $styleKey .) -}}
+  {{- end -}}
+{{- end -}}
+{{- with $extraStyleBox -}}
+  {{- $styleBox = $styleBox | append . -}}
+{{- end -}}
+{{- $boxStyle := delimit $styleBox " " | safeCSS -}}
+
+{{/* Build inner box content style */}}
+{{- $styleContent := slice -}}
+{{- range $styleKey := $contentStyleKeys -}}
+  {{- $cssProp := cond (eq $styleKey "content-background") "background" $styleKey -}}
+  {{- with $.Get $styleKey -}}
+    {{- $styleContent = $styleContent | append (printf "%s: %s;" $cssProp .) -}}
+  {{- end -}}
+{{- end -}}
+{{- if or (.Get "border") (.Get "content-background") -}}
+  {{- $styleContent = $styleContent | append "padding: var(--gap);" -}}
+{{- end -}}
+{{- with $extraStyleContent -}}
+  {{- $styleContent = $styleContent | append . -}}
+{{- end -}}
+{{- $contentStyle := delimit $styleContent " " | safeCSS -}}
+
+
+<section class="box"
+  {{ with $boxStyle }}style="{{ . }}"{{ end }}>
+  {{- with $title -}}
+    <div class="box-title">
+      {{ printf "## %s" . | $.Page.RenderString }}
+    </div>
+  {{- end -}}
+  {{- with $inner -}}
+    <div class="box-content"
+      {{ with $contentStyle }}style="{{ . }}"{{ end }}>
+      {{ . }}
+    </div>
+  {{- end -}}
+</section>

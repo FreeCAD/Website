@@ -101,26 +101,21 @@
     height: 3rem;
   }
 
-  .block {
-    padding: calc(var(--gap) * 2) var(--gap);
-    flex-wrap: nowrap;
-    max-height: calc(var(--width) * 2);
+  .box {
+    padding: calc(var(--gap) * 2) 0;
   }
 
-  .block h2,
-  .block p,
-  .block a:not(:has(svg)) {
-    max-height: var(--width);
-    width: var(--width);
+  .box-content {
+    flex-direction: column;
   }
 
-  .block img:not([popover] img, blockquote img) {
-    max-height: calc(var(--width) * 0.5);
-    width: var(--width);
+  .box img:not([popover] img, blockquote img) {
+    max-height: calc(var(--width) * 0.75);
+    max-width: var(--width);
   }
 
-  .block button {
-    order: -1;
+  .column-content:has(.column-inner [popovertarget]) {
+    padding: 0;
   }
 
   .download-box {
