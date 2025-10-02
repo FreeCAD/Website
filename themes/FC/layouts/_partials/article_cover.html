@@ -1,27 +1,43 @@
-{{/* Processable article card cover image */}}
+{{/* Processable article cover image */}}
 
 {{- $img := partial "cover_utils.html" . -}}
-{{- with $img.cover -}}
-  <figure class="entry-cover">
+{{- if not (in (slice "category" "section") $img.kind) -}}
+  {{- with $img.cover -}}
+    <figure class="article-cover">
 
-    {{/* Cover image is present in page bundle */}}
-    {{- if in $img.processableFormats .MediaType.SubType -}}
-      <img
-        srcset="{{ printf "%s %dw" ((.Fill (printf "%dx%d %s %s" $img.w1 $img.w0 $img.anchor $img.resizeFormat)).RelPermalink) $img.w0 }}"
-        sizes="{{ $img.w0 }}px"
-        src="{{ .RelPermalink }}"
-        alt="{{ $img.alt }}"
-        width="{{ .Width }}"
-        height="{{ .Height }}"
-        loading="lazy">
+      {{/* Cover image is present in page bundle */}}
+      {{- if in $img.processableFormats .MediaType.SubType -}}
+        <img
+          srcset="
+            {{ printf "%s %dw, " ((.Resize (printf "%dx %s %s" $img.w1 $img.anchor $img.resizeFormat)).RelPermalink) $img.w1 }}
+            {{ printf "%s %dw, " ((.Resize (printf "%dx %s %s" $img.w2 $img.anchor $img.resizeFormat)).RelPermalink) $img.w2 }}
+            {{ printf "%s %dw" .RelPermalink .Width }}"
+          sizes="
+              (max-width: {{ $img.w1 }}px) {{ $img.w1 }}px,
+              ((min-width: {{ $img.w1 }}px) and (max-width: {{ $img.w2 }}px)) {{ $img.w1 }}px,
+              (min-width: {{ $img.w2 }}px) {{ $img.w2 }}px,
+              100vw"
+          src="{{ .RelPermalink }}"
+          alt="{{ $img.alt }}"
+          width="{{ .Width }}"
+          height="{{ .Height }}"
+          fetchpriority="high">
 
-    {{/* Unprocessable image or responsive images disabled */}}
-    {{- else if .RelPermalink -}}
-      <img src="{{ path.Join $.RelPermalink . }}" alt="{{ $img.alt }}">
+      {{/* Unprocessable image or responsive images disabled */}}
+      {{- else if .RelPermalink -}}
+        <img src="{{ path.Join $.RelPermalink . }}" alt="{{ $img.alt }}">
 
-    {{/* For absolute urls and external links, no img processing here */}}
-    {{- else -}}
-      <img src="{{ . | absURL }}" alt="{{ $img.alt }}">
-    {{- end -}}
-  </figure>
+      {{/* For absolute urls and external links, no img processing here */}}
+      {{- else -}}
+        <img src="{{ . | absURL }}" alt="{{ $img.alt }}">
+      {{- end -}}
+
+      {{/*  Display Caption  */}}
+      {{- with $.Params.cover.caption -}}
+        <p>
+          {{ . | $.Page.RenderString }}
+        </p>
+      {{- end -}}
+    </figure>
+  {{- end -}}
 {{- end -}}

@@ -11,8 +11,6 @@ cover:
   alt: Ethel Lois Payne press pin Asian African Conference 1955
 ---
 
-![Ethel Lois Payne press pin Asian African Conference 1955](Ethel_Lois_Payne_press_pin_Asian-African_Conference_1955.jpg "Ethel Lois Payne press pin Asian African Conference 1955")
-
 In a new initiative aimed at improving the quantity and quality of online writing about FreeCAD, the FreeCAD Project Association is happy to announce that honoraria are now available for article writers here on FreeCAD News.
 
 - The FPA will allocate $5000/yr to pay for original blog content.

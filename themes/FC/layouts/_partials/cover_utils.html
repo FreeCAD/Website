@@ -1,6 +1,7 @@
 {{- $cover := false -}}
 {{- $alt := "" -}}
 {{- $anchor := "" -}}
+{{- $kind := "" -}}
 
 {{- $processableFormats := site.Params.processableFormats -}}
 {{- $sizes := site.Params.resizeSizes -}}
@@ -23,6 +24,7 @@
   {{- if $category -}}
     {{- with $sectionPage -}}
       {{- $cover = (.Resources.ByType "image").GetMatch (printf "*%s*" $category) -}}
+      {{- $kind = "category" -}}
     {{- end -}}
     {{- if $cover -}}
       {{- $alt = printf "%s cover" $category -}}
@@ -32,6 +34,7 @@
     {{- with $sectionPage -}}
       {{- $cover = (.Resources.ByType "image").GetMatch (printf "*%s*" .Params.cover.image) -}}
       {{- $alt = (.Params.cover.alt | default $alt) -}}
+      {{- $kind = "section" -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}
@@ -40,6 +43,7 @@
   "cover" $cover
   "alt" $alt
   "anchor" $anchor
+  "kind" $kind
   "processableFormats" $processableFormats
   "w0" $w0
   "w1" $w1

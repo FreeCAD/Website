@@ -12,8 +12,6 @@ cover:
   alt: Assembly Workbench
 ---
 
-![Assembly Workbench](2_parts.png "Assembly Workbench")
-
 With the [Version 1.0 release candidates coming thick and fast](https://blog.freecad.org/2024/09/24/the-second-release-candidate-of-freecad-1-0-is-out/) it's a good time to explore some of the new features that Version 1.0 will have to offer. One of the most eagerly anticipated new features is the Assembly workbench. Documentation and a great tutorial can be found for the Assembly workbench[ here](https://wiki.freecad.org/Assembly_Workbench) but it can be fun to just quickly work through the most minimal viable example to get a quick idea of a basic workflow.
 
 In our tutorials we always refer to tools by the name of the tool that appears in the tool tip when you roll over the tool icons. Rolling over tool icons and reading tool tips is a great way to learn what functionality a workbench offers.

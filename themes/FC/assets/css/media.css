@@ -61,6 +61,10 @@
     min-height: calc(100vh - var(--header-height));
   }
 
+  .article-header {
+    min-height: calc(var(--width) * 0.5);
+  }
+
   .title,
   .description,
   .single-meta {
@@ -80,6 +84,12 @@
 
   main header .entry-cover img {
     height: calc(100vh - var(--header-height));
+  }
+
+  main header .article-cover img {
+    width: 100%;
+    height: auto;
+    max-height: var(--width);
   }
 
   .content {

@@ -14,8 +14,6 @@ cover:
   alt: 4Axis
 ---
 
-![4Axis](4thaxis.png "4Axis")
-
 We've featured a few projects under the "Forged In FreeCAD" title but what caught our eye with this one is that FreeCAD was used to not only create an innovative solution, but also was used to then help operate the created machine.
 
 Project creator Jordan Poles had a burgeoning interest in lathes and wanted to make an engraved brass ring. The lathe aspects were covered as Jordan owned a small 7*14 style lathe and so turning a ring blank from a piece of brass bar stock was no problem.

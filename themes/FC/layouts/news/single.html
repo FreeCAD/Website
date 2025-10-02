@@ -4,23 +4,14 @@
   {{- partial "debug.html" . -}}
 {{- end -}}
 
-<header>
-  {{- if eq .Section "releases" -}}
-    {{- with .Site.GetPage "releases" -}}
-      <span class="releases">
-        <a href="{{ .RelPermalink }}">
-          {{ .LinkTitle | .RenderString }}
-        </a>
-      </span>
-    {{- end -}}
-  {{- end -}}
+<header class="article-header">
 
-  <h1 class="title">
+  <h2 class="title">
     {{ .Title | .RenderString }}
     {{- if .Draft -}}
       <sup><span class="entry-isdraft">[{{- i18n "draft" | default "Draft" -}}]</span></sup>
     {{- end -}}
-  </h1>
+  </h2>
 
   {{- if .Description -}}
     <h3 class="description">
@@ -32,11 +23,9 @@
     {{- partial "hero_cards.html" . -}}
   {{- end -}}
 
-  {{- if eq .Type "releases" -}}
-    {{- partial "meta.html" . -}}
-  {{- end -}}
+  {{- partial "meta.html" . -}}
 
-  {{- partial "hero_cover.html" . -}}
+  {{- partial "article_cover.html" . -}}
 </header>
 
 {{/* Get the Table Of Contents. */}}
@@ -46,21 +35,6 @@
 
 {{/* Get the content of a Page. */}}
 {{- partial "content.html" . -}}
-
-{{/* Provide download links from the current release page. */}}
-{{- if eq .Type "releases" -}}
-  <section class="download-release">
-    <h3>{{ printf "%s %s" (i18n "download" | default "Download") .Title }}</h3>
-    {{- partial "release.html" . -}}
-  </section>
-{{- end -}}
-
-{{/* For Telemetry page, call the telemetry partial to transform and parse serialized data. */}}
-{{- if eq .Type "telemetry" -}}
-  <section class="telemetry">
-    {{- partial "telemetry.html" . -}}
-  </section>
-{{- end -}}
 
 <footer class="single-footer">
   {{- if .Params.tags -}}

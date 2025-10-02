@@ -11,8 +11,6 @@ cover:
   alt: Freecad day 2023 at Brussels Grote Markt
 ---
 
-![Freecad day 2023 at Brussels Grote Markt](freecad_day_2023_header.jpg "Freecad day 2023 at Brussels Grote Markt")
-
 The [FreeCAD project association (FPA)](https://github.com/FreeCAD/FPA) is organizing a meeting day in Brussels, Belgium, one day prior to [FOSDEM 2023](https://fosdem.org/2023/). The event will be held at [Atelier des Tanneurs](https://www.ateliersdestanneurs.be/), on Friday, February 3rd from 9:00 to 17:30. The event is open to anyone interested in meeting other FreeCAD developers and users and discuss about FreeCAD. No registration is required.
 
 **The Program**

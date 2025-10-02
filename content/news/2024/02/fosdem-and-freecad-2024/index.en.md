@@ -11,8 +11,6 @@ cover:
   alt: FOSDEM and FreeCAD 2024
 ---
 
-![FOSDEM and FreeCAD 2024](IMG_20240203_100009.jpg "FOSDEM and FreeCAD 2024")
-
 [FOSDEM](https://fosdem.org/2024/), the finest opensource conference in the world recently took place and, [aside from cheekily saving the toilet system](https://blog.freecad.org/2024/02/08/freecad-ondsel-and-prusa-save-fosdem/), FreeCAD had a presence in numerous ways.
 
 We had a shared stand over in the K building right by the entrance which was excellent in terms of footfall and people coming to chat and say hello. We shared our stand with [Ondsel](https://ondsel.com/), the excellent opensource company building on FreeCAD commercially, and our wider open source family members like [KiCad](https://www.kicad.org/), and [Open Toolchain Foundation](https://opentoolchain.org/). We also shared the stand with FreeCAD sponsors and power users the [Libre Space Foundation](https://libre.space/).

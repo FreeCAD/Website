@@ -11,8 +11,6 @@ cover:
   alt: Path Workbench
 ---
 
-![Path Workbench](main.png "Path Workbench")
-
 In the [first part of this tutorial](https://blog.freecad.org/2023/11/24/tutorial-getting-started-with-the-path-workbench-part-one/) we looked at setting up the Tool Bit Library when running the Path WB for the first time and creating a custom 3mm endmill tool. As a reminder in these tutorials we will describe tool icons by the text description that is displayed when you rollover an icon. This means you'll have to explore the rollover texts which is a great way to explore the basics of what tools are on each workbench. Also, as a reminder, this tutorial was written using FreeCAD version 0.21.1.
 
 Continuing from where we were at the end of the first section, in the combo view you can now see the TC:3mmEndmill object. In the TC:3mmEndmill dropdown you can see the 3mm_Endmill object. If you double click on this you will see the shape and attributes dialogue where you can make changes, although its probably more common practice to change shape and attributes in a new tool in the tool library editor. You'll see in the preview window that you have a basic model representation of your 3mm_Endmill tool bit. You can toggle the visibility of this in the preview window in the usual way by highlighting the 3mm_Endmill object in the combo view and clicking the space bar.

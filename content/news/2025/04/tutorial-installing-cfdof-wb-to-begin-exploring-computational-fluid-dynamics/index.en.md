@@ -11,8 +11,6 @@ cover:
   alt: CfdOF WB
 ---
 
-![CfdOF WB](cfdof_header.png "CfdOF WB")
-
 FreeCAD does many amazing things, allows us to create all kinds of geometries and assemblies, but we can also use FreeCAD for analysis of the things we make. One fascinating approach is Computational Fluid Dynamics or CFD.
 
 CFD is essentially a tool to show how fluids interact with objects. You could model and assess water flowing through a pipe, or a boat in the sea, or for flying objects, airflow over a part and much more. Of course CFD can also help analyse and perform complex calculations on data so it's not uncommon to use CFD to work out the drag coefficient of an object or it's centre of pressure and much more.
@@ -38,19 +36,19 @@ To begin, open the FreeCAD app image (if it's the first time you might need to r
 Once FreeCAD has opened, install the CfdOF workbench in the usual way. Click _tools-addon manager_ and then select and install the CfdOF workbench. Once the CfdOF workbench is installed and you've restarted FreeCAD, you can then click _edit - preferences _and you should see a CfdOF tab appear in the preferences dialogue. Select the CfdOF tab. You will see that it has numerous input boxes into which you can set paths to the directories where the various other pieces of software are installed. If you leave these blank then CfdOF workbench will use the default most common locations for the install locations which worked perfectly for us. So on our Debian 12 machine we used a the terminal application to first run an update to update all packages with
 
 ```py
-    sudo apt update
+sudo apt update
 ```
 
 we then ran;
 
 ```py
-    sudo apt-get install openfoam
+sudo apt-get install openfoam
 ```
 
 and after OpenFOAM had installed we ran;
 
 ```py
-    sudo apt-get install paraview
+sudo apt-get install paraview
 ```
 
 to install Paraview.
@@ -60,7 +58,7 @@ For the rest of the setup we needed to install docker. In the CfdOF FreeCAD docu
 One thing that slightly tripped us up was that not only do we need to add our username to the dialout group, but we also need to log out and log back in to our computer having done so! Again in a terminal we used;
 
 ```py
-    sudo usermod -aG dialout "YOURUSERNAMEHERE"
+sudo usermod -aG dialout "YOURUSERNAMEHERE"
 ```
 
 and then (after having some problems we eventually remembered to) re login to the computer. Now with docker installed and OpenFOAM and Paraview installed we can fire up the FreeCAD app image, move back to the CfdOF preferences tab and then click the _Install Docker Image _button. Another quick tip is that it can be useful to have the report view panel open in FreeCAD at this point so you can see messages relating to the docker container and any potential problems . To open that panel you can click _view - panels _and then check the _Report view_ box. There is also a small report window if you scroll to the bottom of the CfdOF preferences tab which yields useful information about the install process. Eventually you should be rewarded with a completion message indicating the docker image download has been successful.

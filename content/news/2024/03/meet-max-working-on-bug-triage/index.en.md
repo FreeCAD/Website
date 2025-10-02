@@ -12,8 +12,6 @@ cover:
   alt: Clip mount
 ---
 
-![Clip mount](clip_mount.png "Clip mount")
-
 Based in Germany, Max is a mechanical engineer in the automotive industry working on electric drive systems for vehicles. In his work life Catia seats are more the norm but Max was interested in alternatives he could use at home to fuel his passion for 3D printing. Of course this led Max to FreeCAD. Max has some lovely personal projects he has created using FreeCAD which you can check out over on [Max's Printables Page](https://www.printables.com/@maxwxyz/models).
 
 Having got to grips with using FreeCAD, excellently Max became interested in contributing to the project. Max taught himself, with help from the community, to build FreeCAD and began to contribute simple fixes to documentation and tool tips and more.

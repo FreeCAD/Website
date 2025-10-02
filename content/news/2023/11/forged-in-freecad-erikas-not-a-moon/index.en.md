@@ -13,8 +13,6 @@ cover:
   alt: Erika not a moon
 ---
 
-![Erika not a moon](erika_no_moon_double.png "Erika not a moon")
-
 Spotted online, FreeCAD user [Erika Heidi](https://twitter.com/erikaheidi/status/1719071492791521344) was keen to explore sketching on round surfaces using the [Curves WB](https://wiki.freecad.org/Curves_Workbench). As a fan of Star Wars her learning project leaned into the idea of a desktop death star as a small desktop organiser box. It's a lovely object and a great example of sketching onto near spherical objects.
 
 Erika says;

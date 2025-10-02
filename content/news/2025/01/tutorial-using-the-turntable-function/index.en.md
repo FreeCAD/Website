@@ -11,8 +11,6 @@ cover:
   alt: FreeCAD turntable
 ---
 
-![FreeCAD turntable](fc_turntable.png "FreeCAD turntable")
-
 It's fair to say FreeCAD has a lot of tools and features and it's common to focus on learning the tools that help you realise your designs. As such it's also common to miss features that have been available in FreeCAD for quite some time. It's noticeable online sometimes that people often post small video screen captures of their projects with the project preview revolving. Often you then see questions or comments on "how do you animate/revolve your part like that?"
 
 The turntable tool is available from every workbench in FreeCAD and can be found by clicking "Tools - View Turntable...". When you select the tool a small dialogue appears where you can set the speed of rotation and also the angle of rotation. You can also set a timer and also enable full screen. Once you have created your settings you simple click the "play" button to start the turntable rotation.

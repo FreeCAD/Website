@@ -4,7 +4,7 @@
   alt="ARTICLE"
   aria-label="{{ .Title | plainify }}"
   title="{{ .Title | plainify }}">
-    {{- partial "article_cover.html" . -}}
+    {{- partial "card_cover.html" . -}}
     {{- if not .Date.IsZero -}}
       <span class="entry-date">
         <time datetime="{{ .Date }}">

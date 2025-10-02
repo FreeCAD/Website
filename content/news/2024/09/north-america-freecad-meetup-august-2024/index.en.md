@@ -11,8 +11,6 @@ cover:
   alt: North America FreeCAD Meetup 2024
 ---
 
-![North America FreeCAD Meetup 2024](FCNA24.webp "North America FreeCAD Meetup 2024")
-
 Between August the 15<sup>th</sup> and 18<sup>th</sup> Springfield Illinois played host to a North American FreeCAD meetup. This excellent event drew together a group of active FreeCAD contributors for a 4 day hackathon, incorporating various meetings, presentations and, of course, social activities.
 
 The event drew representatives from all 4 coasts of the US and was graciously hosted by the [University of Illinois Innovation Center](https://www.uis.edu/innovation) . The Thursday saw people arriving throughout the day and was kept as an informal day for people to meet, chat and catch up. Springfield proved a fantastic venue for this event with plenty of interesting places to visit around the area. Just south of the venue for example is the statehouse where Abraham Lincoln gave his famous "Divided House" speech.

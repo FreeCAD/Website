@@ -12,8 +12,6 @@ cover:
   alt: Main Light Source
 ---
 
-![Main Light Source](main_lightsource.png "Main Light Source")
-
 We've written numerous tutorials recently looking at some of the larger changes and developments in the upcoming FreeCAD version 1.0 which can already be found in the current release candidate and the weekly developer versions of FreeCAD. The recent tutorials include the [On View Parameter](https://blog.freecad.org/2024/10/20/tutorial-on-view-parameters/) features in the Sketcher workbench and the new [Assembly workbench](https://blog.freecad.org/2024/09/30/tutorial-getting-started-with-the-assembly-workbench/).
 
 A smaller, but perhaps quite noticeable feature, is that we now have an adjustable light source in our preview window to provide some light and shade on our models. Let's look at how to adjust this new feature.

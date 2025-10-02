@@ -7,9 +7,9 @@ categories: announcement
 tags:
 - FOSDEM
 cover:
-  image: K_Level_One.png
-  caption: FreeCAD at FOSDEM
-  alt: FreeCAD at FOSDEM
+  image:
+  caption:
+  alt:
 ---
 
 ![FreeCAD at FOSDEM](K_Level_One.png "FreeCAD at FOSDEM")

@@ -14,8 +14,6 @@ cover:
   alt: Freecad day 2025
 ---
 
-![Freecad day 2025](freecad-day-2025.jpg "Freecad day 2025")
-
 It's happening again! [FOSDEM 2025](https://fosdem.org "Fosdem") has been announced and, like the previous years, the [FPA](https://fpa.freecad.org) are thrilled to organise once again our world-famous **FreeCAD events**. These will take place in Brussels, from January 28th to February the 2nd 2025, together with FOSDEM. Be ready for several days full of coding, open-sourceness and fun!
 
 This year, we will once again do the event together with our friends from [KiCAD](https://kicad.org), and we're preparing even more stuff for developers of both projects to have a look at the other side of the mirror. Let's see what crazy joint ideas can come to life...

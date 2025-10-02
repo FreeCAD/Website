@@ -11,8 +11,6 @@ cover:
   alt: Freecad 2024
 ---
 
-![Freecad 2024](Freecad_2024.png "Freecad 2024")
-
 Happy New Year to the FreeCAD community!
 
 We wanted to take this opportunity to wish everyone a happy new year and best wishes for 2024. We'd particularly like to thank the wonderful developers contributing their time and code to FreeCAD, increasing the functionality and usefulness of the platform.

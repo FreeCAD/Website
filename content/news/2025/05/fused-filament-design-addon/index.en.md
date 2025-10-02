@@ -13,8 +13,6 @@ cover:
   alt: Fused Filament Addon
 ---
 
-![Fused Filament Addon](fused_filament_addon_rahix.png "Fused Filament Addon")
-
 A short while ago we posted here about an [excellent article by Rahix describing some really interesting and useful design approaches for fused filament style 3D printing](https://blog.freecad.org/2025/05/08/design-for-3d-printing-an-excellent-article/). If you haven't checked out that article it's really worth a read.
 
 Brilliantly Rahix has worked on some macros which make it trivial to apply some of the excellent design techniques to your FreeCAD project, furthermore they have compiled this into an addon available via the addon manager.

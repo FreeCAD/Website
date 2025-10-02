@@ -13,8 +13,6 @@ cover:
   alt: General Arrangement
 ---
 
-![General Arrangement](General-Arrangement.png "General Arrangement")
-
 Pretty much everyday someone somewhere is doing something spectacular with FreeCAD!
 
 Spotted last week over on the[ FreeCAD forum](https://forum.freecad.org/viewtopic.php?t=88520&sid=b2d6cf127e3d87e02417b63d3cb8b845) BlueHorizon posted about a proof of concept project to model a boat hull and then perform a hydrostatic and stability analysis to work out how well the design performs.

@@ -25,8 +25,6 @@ This year a big theme was people saying how pleased they were to see version 1.0
 
 Another significant set of conversations reported from the FreeCAD stand team was perhaps led by the fact that the stand was clearly a linked KiCad and FreeCAD venture. There were lots of conversations about the step up to KiCad workbench and a heap of conversations around using FreeCAD to design KiCad enclosures. It's really clear from FOSDEM we have a reasonable overlap in userbase and it led to some great conversations.
 
-![FreeCAD at FOSDEM 2025 3](IMG_20250202_115245.jpg "FreeCAD at FOSDEM 2025 3")
-
 The other wonderful thing to happen at the stand is that people arrive with hardware made in FreeCAD, KiCad or both. Some really notable projects this year included the MNT Reform V2 laptop making an appearance, on which wonderfully the owner was going through FreeCAD tutorials! We also saw Arya with a Beepy variant which became FreeCAD stickered! Also the very fabulous Wee Noise Makers PGB-1, a very cool sequencer/synthesiser groovebox. We'd also like to take a moment to thank [Libre SPace Foundation](https://libre.space/) for loaning us a full scale model of their Picobus V2, a satellite launching system built entirely in FreeCAD and KiCad and a wonderful example of building high end technology with these opensource tools.
 
 ![FreeCAD at FOSDEM 2025 4](IMG_20250201_143026.jpg "FreeCAD at FOSDEM 2025 4")

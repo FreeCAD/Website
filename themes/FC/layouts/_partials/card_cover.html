@@ -1,0 +1,27 @@
+{{/* Processable article card cover image */}}
+
+{{- $img := partial "cover_utils.html" . -}}
+{{- with $img.cover -}}
+  <figure class="entry-cover">
+
+    {{/* Cover image is present in page bundle */}}
+    {{- if in $img.processableFormats .MediaType.SubType -}}
+      <img
+        srcset="{{ printf "%s %dw" ((.Fill (printf "%dx%d %s %s" $img.w1 $img.w0 $img.anchor $img.resizeFormat)).RelPermalink) $img.w0 }}"
+        sizes="{{ $img.w0 }}px"
+        src="{{ .RelPermalink }}"
+        alt="{{ $img.alt }}"
+        width="{{ .Width }}"
+        height="{{ .Height }}"
+        loading="lazy">
+
+    {{/* Unprocessable image or responsive images disabled */}}
+    {{- else if .RelPermalink -}}
+      <img src="{{ path.Join $.RelPermalink . }}" alt="{{ $img.alt }}">
+
+    {{/* For absolute urls and external links, no img processing here */}}
+    {{- else -}}
+      <img src="{{ . | absURL }}" alt="{{ $img.alt }}">
+    {{- end -}}
+  </figure>
+{{- end -}}

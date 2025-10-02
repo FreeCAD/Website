@@ -13,8 +13,6 @@ cover:
   alt: Royal Decree
 ---
 
-![Royal Decree](RoyalDecree.png "Royal Decree")
-
 The FreeCAD Project Association (FPA) was founded on the ideals of transparency and accountability: to that end, we've been working hard on making our website a useful source of information about the organization, its goals, and its initiatives.
 
 This past week we launched a [revamped version of our website](https://fpa.freecad.org) that includes the organization's charter, budget, and [our new Handbook](https://fpa.freecad.org/handbook/). The Handbook is based on the ideas from [GitLab's "Handbook First" scheme](https://about.gitlab.com/company/culture/all-remote/handbook-first-documentation/), in which anytime someone has a question about the organization it should be answerable by a reference to a specific part of the handbook. When we encounter questions that aren't answered by the handbook, a new entry is added to it with the answer, so it always provides the most authoritative, up-to-date information about our activities.

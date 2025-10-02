@@ -13,8 +13,6 @@ cover:
   alt: Thor Opensource Robotic Arm
 ---
 
-![Thor Opensource Robotic Arm](thor_header.png "Thor Opensource Robotic Arm")
-
 We imagine most visitors to this blog will already know that amazing things can be achieved or designed using opensource tools like FreeCAD. [The Thor opensource robotic arm](http://thor.angel-lm.com/) is a great example of a complex opensource project built using a totally opensource tool chain.
 
 It's a primarily 3D printed 6 degrees of freedom robotic arm which looks, and performs much like it's industrial counterparts. Once printed and assembled the 625mm tall arm is able to handle around 750 grams which means it's pretty capable and could well be tasked with useful work.

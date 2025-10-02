@@ -11,8 +11,6 @@ cover:
   alt: FreeCAD 2024 North American Meetup
 ---
 
-![FreeCAD 2024 North American Meetup](FCNA24.webp "FreeCAD 2024 North American Meetup")
-
 In case you don't read [the forum](https://forum.freecad.org/viewtopic.php?t=85180), I'd like to announce FreeCAD's 2024 North American Meetup!
 
 In Springfield, Illinois, on August 15th - 18th, we will be hosted by [Innovate Springfield](https://www.innovatespringfield.org/), just south of the Old State Capitol downtown (pictured above.)

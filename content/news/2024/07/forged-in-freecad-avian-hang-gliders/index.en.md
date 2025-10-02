@@ -13,8 +13,6 @@ cover:
   alt: Avian Hang Gliders
 ---
 
-![Avian Hang Gliders](avian_fc_1.png "Avian Hang Gliders")
-
 Hang gliders are mesmerising when you see them in the sky. Silently cutting through the sky smoothly, often spotted in fine weather and in beautiful locations there's a lot to be said for them. Over on fosstodon we've seen a UK based hang glide company [Avian Hang Gliders ](https://www.avianonline.co.uk/index.php?osCsid=1c2e1500a740b436df943e614dd407de)mentioning how they use [FreeCAD](https://www.freecad.org/) to develop their newest generation of gliders using clever simulation and advanced manufacturing techniques. We caught up with the owner of Avian, Tim Swait to chat about their process.
 
 Tim explains that he took over the company some years ago and they still sell a range of gliders from before his tenure, and have added to the roster of gliders with a newer design "RioT". The older designs had some components designed in CAD but this was limited to individual components, usually those that needed CAD for Computer Aided Machining (CAM) and the proprietary CAD used for this was limited in that it didn't have any type of analysis tools and no real approach that could be used to help design the wing sail panels critical to the performance of a glider.

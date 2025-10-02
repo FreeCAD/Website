@@ -6,12 +6,10 @@ draft: false
 categories: tutorial
 tags: []
 cover:
-  image:
-  caption:
-  alt:
+  image: comnosecone.png
+  caption: Comnosecone
+  alt: Comnosecone
 ---
-
-![Comnosecone](comnosecone.png "Comnosecone")
 
 Amongst the many changes you may have noticed in version 1, the Standard Measure tool icon has changed from an image of a tape measure to a set of Vernier Calipers. It's not just the icon that's changed though, the underlying measuring tools have been improved and expanded.
 

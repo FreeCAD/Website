@@ -12,8 +12,6 @@ cover:
   alt: Tech Draw Aligned Section example
 ---
 
-![Tech Draw Aligned Section example](TechDraw_AlignedSection_example.png "Tech Draw Aligned Section example")
-
 After [many person-hours of effort](https://forum.freecadweb.org/viewtopic.php?f=35&t=72026), last week a new type of section view, [Complex Section](https://wiki.freecadweb.org/TechDraw_ComplexSection), was added to the TechDraw workbench. This new type of section allows essentially arbitrary cross-sections to be extracted from 3D geometry and displayed in TechDraw by specifying a specific object as the "profile object" to use.
 
 According to TechDraw's lead developer, "wandererfan":

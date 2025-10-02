@@ -173,6 +173,55 @@ main header .entry-cover img {
   z-index: 1;
 }
 
+.article-header {
+  gap: calc(var(--gap) * 2);
+  background: var(--entry);
+  min-height: calc(var(--width) * 0.25);
+}
+
+.article-header :is(.title,
+.description,
+.hero-button,
+.single-meta) {
+  display: inline-flex;
+  gap: var(--gap);
+  max-width: var(--width);
+  color: var(--secondary);
+  z-index: 2;
+}
+
+.article-header :is(.category, .categories-list) {
+  position: relative;
+  top: 0;
+  width: 100%;
+  color: var(--secondary);
+  z-index: 2;
+}
+
+.article-header :is(.category, .categories-list) a {
+  padding: calc(var(--gap) * 0.5);
+  color: var(--secondary);
+}
+
+.article-header .single-meta {
+  gap: 0;
+  position: relative;
+  bottom: 0;
+}
+
+.article-header :is(.single-meta, .single-meta a) {
+  color: var(--secondary);
+}
+
+main header .article-cover img {
+  margin: auto;
+  width: 90ch;
+  height: auto;
+  max-height: calc(var(--width) * 0.5);
+  z-index: 1;
+  border-radius: var(--radius);
+}
+
 
 /* List page article entries */
 
@@ -516,13 +565,10 @@ sup:target {
 }
 
 .content figure > figcaption {
-  position: absolute;
-  bottom: var(--gap);
   width: 100%;
-  padding: 0 var(--gap);
-  color: var(--cover);
+  margin: var(--gap) auto;
+  color: var(--tertiary);
   text-align: center;
-  z-index: 2;
 }
 
 .content a img:not(blockquote img, .column-content img):hover {
@@ -761,7 +807,7 @@ sup:target {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  margin: auto;
+  margin: 0 auto var(--gap);
   padding: var(--gap) var(--side);
   text-align: center;
   gap: var(--gap);

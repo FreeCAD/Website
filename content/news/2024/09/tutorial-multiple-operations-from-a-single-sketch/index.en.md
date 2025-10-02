@@ -13,8 +13,6 @@ cover:
   alt: Multi extruded sketch
 ---
 
-![Multi extruded sketch](multi_extruded_sketch.png "Multi extruded sketch")
-
 With the [release candidates for version 1 appearing](https://github.com/FreeCAD/FreeCAD-Bundle/releases/tag/1.0rc1) it's a nice time to explore some of the new features and functionality that FreeCAD now offers. You can read a long detailed list of new features here, and it's fair to note that many areas and workbenches of FreeCAD have received improvements.
 
 The Sketcher workbench has numerous improvements, one of which is that we can now perform multiple operations within a single sketch whereas in older versions each operation would require a different sketch containing geometry. As a simple example of this we've opened up a new project in the Part Design workbench, created a new body and then created a sketch in the XY plane which takes us to a blank sketch in the sketcher workbench.

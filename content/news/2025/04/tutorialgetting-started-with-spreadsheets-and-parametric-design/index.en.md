@@ -7,12 +7,10 @@ categories: tutorial
 tags:
 - spreadsheet
 cover:
-  image: expression_editor.png
-  caption: Expression editor
-  alt: Expression editor
+  image: freecad_spreadsheet.png
+  caption: Freecad spreadsheet
+  alt: Freecad spreadsheet
 ---
-
-![Freecad spreadsheet](freecad_spreadsheet.png "Freecad spreadsheet")
 
 Amongst the built in collection of FreeCAD workbenches, you may have noticed one for creating and working with spreadsheets. Whilst you could use this to track your expenses, let's look at an example project where a spreadsheet is really useful! As a quick reminder, when we write tutorials we call tools by the tool tip names that appear when you rollover tools and show them as italic text in the article.
 

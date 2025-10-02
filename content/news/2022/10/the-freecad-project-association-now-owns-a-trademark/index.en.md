@@ -13,8 +13,6 @@ cover:
   alt: Registration certificate
 ---
 
-![Registration certificate](Screenshot-from-2022-10-07-12-45-06.png "Registration certificate")
-
 The [FreeCAD Project Association](https://github.com/FreeCAD/FPA) (FPA) has registered a trademark on the FreeCAD logo! The trademark is public and can be seen [here](https://www.boip.int/en/trademarks-register?app=%2Fitem%2Fbx1466186).
 
 The trademark is registered in Benelux only, but it still prevents anyone else in the European Union from registering the same trademark.
