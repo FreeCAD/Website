@@ -204,17 +204,17 @@ main header .entry-cover img {
   transition: var(--link-transition);
 }
 
-.articles .article-card :hover figure {
-  filter: brightness(1.1) saturate(110%);
+.articles .article-card:hover figure {
+  filter: brightness(1.05) saturate(105%);
   transform: scale(1.02);
 }
 
-.articles .article-card :hover .entry-title,
-.articles .article-card :hover .entry-description {
+.articles .article-card:hover .entry-title,
+.articles .article-card:hover .entry-description {
   color: var(--link-color);
 }
 
-.articles .article-card  a:active figure {
+.articles .article-card a:active figure {
   transform: scale(0.95);
 }
 
@@ -309,11 +309,11 @@ main header .entry-cover img {
 }
 
 .content > :is(:first-child, .box + *):not(.box) {
-  padding-top: var(--gap);
+  margin-top: calc(var(--gap) * 2);
 }
 
 .content > :is(:last-child, :has(+ .box)):not(.box) {
-  padding-bottom: var(--gap);
+  margin-bottom: calc(var(--gap) * 2);
 }
 
 .heading-anchor {
@@ -525,8 +525,8 @@ sup:target {
   z-index: 2;
 }
 
-.content a img:not(blockquote img):hover {
-  filter: brightness(1.1) saturate(110%);
+.content a img:not(blockquote img, .column-content img):hover {
+  filter: brightness(1.05) saturate(105%);
   transform: scale(1.02);
 }
 
@@ -671,6 +671,7 @@ sup:target {
   text-align: center;
   background: var(--entry);
   border-radius: var(--radius);
+  transition: var(--link-transition);
 }
 
 .cards-column :is(button, svg, h3, p) {
@@ -683,12 +684,13 @@ sup:target {
   transition: var(--link-transition);
 }
 
-.cards-column:hover > :is(button, svg, p, h3):not(.arch-icon) {
+.cards-column:hover > * {
   color: var(--link-hover-color);
 }
 
-.cards-column:hover > svg {
-  transform: scale(1.05);
+.cards-column:hover {
+  filter: brightness(1.05) saturate(105%);
+  transform: scale(1.02);
 }
 
 .cards-column svg:active {
@@ -1519,6 +1521,8 @@ sup:target {
 }
 
 .column-link:hover {
+  filter: brightness(1.05) saturate(105%);
+  transform: scale(1.02);
 }
 
 .box img:not([popover] img, blockquote img) {
