@@ -1,9 +1,9 @@
 {{/* A bunch of JS to load at the end. */}}
 
 {{/* Theme toggle. */}}
-{{- if not site.Params.disableThemeToggle -}}
+{{- if not site.Params.disableChromaToggle -}}
   <script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
+    document.getElementById("chroma-toggle").addEventListener("click", () => {
       if (document.body.className.includes("dark")) {
         document.body.classList.remove('dark');
         localStorage.setItem("pref-theme", 'light');

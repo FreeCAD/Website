@@ -1,9 +1,9 @@
-{{- if or .Params.author site.Params.author -}}
-  {{- $author := (.Params.author | default site.Params.author) -}}
-  {{- $authorType := (printf "%T" $author) -}}
-  {{- if (or (eq $authorType "[]string") (eq $authorType "[]interface {}")) -}}
-    {{- (delimit $author ", " ) -}}
+{{- $authors := .Params.author | default site.Params.author -}}
+
+{{- with $authors -}}
+  {{- if reflect.IsSlice . -}}
+    {{- delimit . ", " -}}
   {{- else -}}
-    {{- $author -}}
+    {{- . -}}
   {{- end -}}
 {{- end -}}

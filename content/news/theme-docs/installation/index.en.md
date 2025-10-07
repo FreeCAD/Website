@@ -130,8 +130,8 @@ params:
     # author: [Me, You] # multiple authors
     images: [<link or path of image for opengraph>]
     DateFormat: January 2, 2006
-    defaultTheme: auto # dark, light
-    disableThemeToggle: false
+    defaultChroma: auto # dark, light
+    disableChromaToggle: false
 
     showReadingTime: true
     showShareButtons: true

@@ -1,46 +1,24 @@
-{{- /* Title */ -}}
-{{- $pageTitle := site.Title -}}
-{{- if (and .Title (not .IsHome)) -}}
-  {{- $pageTitle = printf "%s | %s" $pageTitle .Title -}}
-{{- end -}}
+{{/* Page Head:
+  - Set page meta and links.
+  - Set analytics and theme toggle script. */}}
 
-{{- /* Description */ -}}
-{{- $description := "" -}}
-{{- with .Description -}}
-  {{ $description = . }}
-{{- else with or .IsPage .IsSection -}}
-  {{ $description = $.Summary }}
-{{- else with site.Params.description -}}
-  {{ $description = . }}
+{{- $pageTitle := cond (and .Title (not .IsHome)) (printf "%s | %s" site.Title .Title) site.Title -}}
+{{- $description := .Description | default (cond (or .IsPage .IsSection) .Summary site.Params.description) -}}
+{{- $keywords := .Params.tags | default site.Params.keywords -}}
+{{- if reflect.IsSlice $keywords -}}
+  {{- $keywords = delimit $keywords ", " -}}
 {{- end -}}
-
-{{- /* Meta */ -}}
-{{- $keywords := slice -}}
-{{- with .Params.tags -}}
-  {{- $keywords = delimit .  ", " -}}
-{{- end -}}
-{{- if .IsHome  -}}
-  {{- with site.Params.keywords -}}
-    {{- $keywords = delimit .  ", " -}}
-  {{- end -}}
-{{- end -}}
+{{- $isProd := or hugo.IsProduction (eq site.Params.env "production") -}}
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="robots" content="
-{{- if hugo.IsProduction | or (eq site.Params.env "production") -}}
-  index, follow
-{{- else -}}
-  noindex, nofollow
-{{- end -}}">
+<meta name="robots" content="{{ cond $isProd "index, follow" "noindex, nofollow" }}">
 
-<title>
-  {{ $pageTitle | plainify }}
-</title>
+<title>{{ $pageTitle | plainify }}</title>
 <meta name="description" content="{{ $description | default $pageTitle | plainify }}">
-<meta name="keywords" content="{{- $keywords | default $pageTitle -}}">
-<meta name="author" content="{{ (partial "author.html" . ) }}">
+<meta name="keywords" content="{{ $keywords | default $pageTitle }}">
+<meta name="author" content="{{ partial "author.html" . }}">
 <link rel="canonical" href="{{ .Permalink }}">
 
 {{- partialCached "styles.html" . -}}
@@ -53,13 +31,12 @@
   <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
 {{- end -}}
 
-{{- /* Misc */ -}}
-{{- if hugo.IsProduction | or (eq site.Params.env "production") -}}
+{{- if $isProd -}}
   {{- if site.Config.Services.GoogleAnalytics.ID -}}
     {{- partial "google_analytics.html" . -}}
   {{- end -}}
+
+  {{- partial "opengraph.html" . -}}
 {{- end -}}
 
-{{- partial "opengraph.html" . -}}
-
-{{- partial "theme_toggle.html" . -}}
+{{- partial "chroma_toggle.html" . -}}

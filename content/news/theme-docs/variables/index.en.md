@@ -30,8 +30,8 @@ cover:
 | `showReadingTime`                      | boolean       | true \| false            | To show read time in post meta                                                            |
 | `showShareButtons`                     | boolean       | true \| false            | To show/hide share buttons under post                                                     |
 | `showCopyCodeButton`                  | boolean       | true \| false            | To show/hide Code Copy button                                                             |
-| `defaultTheme`                         | string        | light \| dark \| auto    | To set default theme                                                                      |
-| `disableThemeToggle`                   | boolean       | true \| false            | To disable theme toggle icon shown besides label                                          |
+| `defaultChroma`                         | string        | light \| dark \| auto    | To set default theme                                                                      |
+| `disableChromaToggle`                   | boolean       | true \| false            | To disable theme toggle icon shown besides label                                          |
 | `hideSummary`                          | boolean       | true \| false            | To Hide summary being shown in list pages                                                 |
 | `showPaginationLinks`                     | boolean       | true \| false            | Show Previous and Next Posts below a Post                                                 |
 | `analytics.google.SiteVerificationTag` | string        | XYZabc                 | Site Verification Tag for Google Analytics                                                |
