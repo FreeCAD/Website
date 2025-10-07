@@ -200,7 +200,7 @@ main header .entry-cover img {
 
 main header .article-cover img {
   margin: auto;
-  width: 90ch;
+  width: var(--content-width);
   height: auto;
   max-height: calc(var(--width) * 0.5);
   z-index: 1;
@@ -329,7 +329,7 @@ main header .article-cover img {
 /* Single page content */
 
 .content {
-  max-width: 90ch;
+  max-width: var(--content-width);
   margin: auto;
   font-size: var(--m);
   color: var(--secondary);
@@ -722,32 +722,6 @@ figure > figcaption {
 }
 
 
-/* List page footer */
-
-.list-pagination {
-  width: var(--width);
-  display: flex;
-  margin: var(--gap) auto;
-  font-size: var(--s);
-}
-
-.list-pagination a {
-  padding: var(--padding);
-  color: var(--cover);
-  background: var(--link-color);
-  border-radius: 2rem;
-  text-transform: capitalize;
-}
-
-.list-pagination a:hover {
-  background: var(--link-hover-color);
-}
-
-.list-pagination .next {
-  margin-inline-start: auto;
-}
-
-
 /* Single page footer */
 
 .single-footer {
@@ -779,68 +753,38 @@ figure > figcaption {
 
 /* Pagination links to next and previous pages */
 
-.single-pagination {
+.pagination {
   width: var(--width);
+  margin: var(--gap) auto;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  margin: var(--gap) auto calc(var(--gap) * 2);
-  text-align: center;
   gap: var(--gap);
 }
 
-.single-pagination .next, .single-pagination .prev {
+.pagination a {
   padding: var(--padding);
+  color: var(--cover);
+  font-size: var(--s);
+  text-transform: capitalize;
   background: var(--link-color);
   border-radius: var(--radius);
   transition: var(--link-transition);
-  font-size: var(--s);
 }
 
-.single-pagination .next {
+.pagination a:hover {
+  background: var(--link-hover-color);
+}
+
+.pagination .next {
+  margin-inline-start: auto;
   text-align: end;
 }
 
-.single-pagination .prev {
+.pagination .prev {
+  margin-inline-end: auto;
   text-align: start;
-}
-
-.single-pagination :is(.prev, .next) a {
-  color: var(--cover);
-  text-transform: capitalize;
-}
-
-.single-pagination a:hover {
-  background: var(--link-hover-color);
-}
-
-#top-link {
-  color: var(--cover);
-  background: var(--link-color);
-  z-index: 2;
-  height: 3rem;
-  width: 3rem;
-  border-radius: 50%;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: visibility 0.3s ease, opacity 0.3s ease;
-}
-
-#top-link:hover {
-  background: var(--link-hover-color);
-}
-
-.full-width {
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-inline: -50vw;
-  margin-inline-end: -50vw;
-  max-width: 100vw;
-  width: 100vw;
 }
 
 
@@ -1558,4 +1502,17 @@ figure > figcaption {
   width: 1rem;
   height: 1rem;
   vertical-align: -0.125rem;
+}
+
+
+/* Other stuff: random or temporary for development purposes */
+
+.full-width {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-inline: -50vw;
+  margin-inline-end: -50vw;
+  max-width: 100vw;
+  width: 100vw;
 }

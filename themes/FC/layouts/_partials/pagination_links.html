@@ -6,21 +6,22 @@
 {{- $pages := where site.RegularPages "Section" "in" $sections -}}
 
 {{- if and (gt (len $pages) 1) (in $pages . ) -}}
-  <nav class="single-pagination">
+  <nav class="pagination">
     {{- with .PrevInSection -}}
-      <div class="prev">
-        <a href="{{ .RelPermalink -}}#top" alt="PREVIOUS ARTICLE" title="{{ i18n "previous_article" | default "Previous article" }}">
-          ◀ {{ .LinkTitle | .RenderString }}
-        </a>
-      </div>
+      <a class="prev"
+        href="{{ .RelPermalink -}}#top"
+        alt="PREVIOUS ARTICLE"
+        title="{{ i18n "previous_article" | default "Previous article" }}">
+        ◀ {{ .LinkTitle | .RenderString }}
+      </a>
     {{- end -}}
-    <a id="top-link" href="#top" accesskey="g" alt="TOP" aria-label="{{ i18n "go_top" | default "Go to Top" }}" title="{{ i18n "go_top" | default "Go to Top" }} (Alt + G)" >▲</a>
     {{- with .NextInSection -}}
-      <div class="next">
-        <a href="{{ .RelPermalink -}}#top" alt="NEXT ARTICLE" title="{{ i18n "next_article" | default "Next article" }}">
-          {{ .LinkTitle | .RenderString }} ▶
-        </a>
-      </div>
+      <a class="next"
+        href="{{ .RelPermalink -}}#top"
+        alt="NEXT ARTICLE"
+        title="{{ i18n "next_article" | default "Next article" }}">
+        {{ .LinkTitle | .RenderString }} ▶
+      </a>
     {{- end -}}
   </nav>
 {{- end -}}

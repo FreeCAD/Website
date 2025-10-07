@@ -3,8 +3,20 @@
 
 .site-footer {
   min-height: var(--footer-height);
-  padding: var(--gap);
   background: var(--tone);
+}
+
+#top-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--cover);
+  transition: var(--link-transition);
+}
+
+#top-link:hover {
+  color: var(--link-hover-color);
 }
 
 .footer-menu {
@@ -72,7 +84,7 @@
   text-decoration: var(--underline);
 }
 
-.footer-menu .meta :is(svg, #sun, #moon) {
+.footer-menu .meta svg {
   color: var(--tertiary);
   margin: 0.6rem;
   display: block;
@@ -101,4 +113,18 @@
 
 .footer-custom a:hover {
   color: var(--link-hover-color);
+}
+
+.copyright {
+  max-width: var(--width);
+  margin: auto;
+  padding-bottom: var(--gap);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  gap: var(--gap);
+  font-size: var(--s);
+  color: var(--tertiary);
 }
