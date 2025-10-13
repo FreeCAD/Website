@@ -1559,3 +1559,42 @@ figure > figcaption {
 .tabs input[type="radio"]:checked + label + .tabs-content {
   display: block;
 }
+
+
+/* Link render hook tooltip. */
+
+.has-tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.has-tooltip .tooltip {
+  display: none;
+  flex-direction: column;
+  text-align: center;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  background: var(--header);
+  color: var(--secondary);
+  padding: var(--gap);
+  border: 1px solid var(--tone);
+  border-radius: var(--radius);
+  font-size: var(--s);
+  line-height: 1.5;
+  width: max-content;
+  max-width: var(--content-width);
+}
+
+:is(.has-tooltip:hover, .has-tooltip:focus) .tooltip {
+  display: flex;
+}
+
+.has-tooltip .tooltip strong {
+  font-size: var(--m);
+  margin-bottom: calc(var(--gap) * 0.5);
+}

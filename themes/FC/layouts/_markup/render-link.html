@@ -1,7 +1,7 @@
 {{/*
-  Custom rendering for markdown content links.
-  - External links open in new tab and icon next to it.
-  - Icon next to external links.
+  Custom rendering hook for content links.
+  - External links open in new tab and include icon.
+  - Internal links show tooltip preview on hover.
 */}}
 
 {{- $href := .Destination | safeURL -}}
@@ -11,8 +11,11 @@
 {{- $text := .Text | safeHTML -}}
 
 <a href="{{ $href }}"
-  {{- if $title -}}
-    title="{{ $title }}"
+  {{- if not $isExternal -}}
+    class="has-tooltip"
+  {{- end -}}
+  {{- with $title -}}
+    title="{{ . }}"
   {{- else -}}
     title="{{ $fallback }}"
   {{- end -}}
@@ -26,5 +29,14 @@
     <span class="external">
       {{- partial "icon.html" "external" -}}
     </span>
+  {{- else -}}
+    {{- with .Page.GetPage .Destination -}}
+      <span class="tooltip">
+        <strong>
+          {{- .Title -}}
+        </strong>
+        {{- .Description -}}
+      </span>
+    {{- end -}}
   {{- end -}}
 </a>
