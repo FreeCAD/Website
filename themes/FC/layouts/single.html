@@ -50,13 +50,6 @@
   </section>
 {{- end -}}
 
-{{/* For Telemetry page, call the telemetry partial to transform and parse serialized data. */}}
-{{- if eq .Type "telemetry" -}}
-  <section class="telemetry">
-    {{- partial "telemetry.html" . -}}
-  </section>
-{{- end -}}
-
 {{- if (.Param "showPaginationLinks") -}}
   {{- partial "pagination_links.html" . -}}
 {{- end -}}

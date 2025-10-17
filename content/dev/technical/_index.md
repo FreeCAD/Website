@@ -1,17 +1,12 @@
 ---
 title: "Technical guide"
 description: "Technical information of interest to Contributors."
-type: guide
 paginate: 24
 cover:
   image: 0.webp
   caption: "a cover caption"
   alt: "a cover alternative title"
 ---
-
-# Technical
-
-Technical information of interest to Contributors.
 
 ## The Basics
 
@@ -43,8 +38,7 @@ Technical information of interest to Contributors.
 
 - Contributing to FreeCAD
 
-    - The process for submitting changes to FreeCAD is described in the [CONTRIBUTING](https://github.com/FreeCAD/FreeCAD/blob/master/CONTRIBUTING)
-    file in the root of the source tree.
+    - The process for submitting changes to FreeCAD is described in the [CONTRIBUTING](https://github.com/FreeCAD/FreeCAD/blob/master/CONTRIBUTING) file in the root of the source tree.
 
 - [Creating a WorkBench](https://wiki.freecad.org/Workbench_creation)
 
@@ -78,6 +72,6 @@ Technical information of interest to Contributors.
 
 - [OpenCascade Tutorials](http://opencascade.wikidot.com/romansarticles)
 - [OpenCascade overview presentation](https://dev.opencascade.org/sites/default/files/pdf/Topology.pdf)
-- [OpenCasacde_online_documentation](https://dev.opencascade.org/doc/overview/html/index.html)
+- [OpenCasacde online documentation](https://dev.opencascade.org/doc/overview/html/index.html)
 
 - [Scripted Objects](https://wiki.freecad.org/Scripted_objects)

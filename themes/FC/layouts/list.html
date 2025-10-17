@@ -24,6 +24,13 @@
 
 {{- partial "content.html" . -}}
 
+{{/* For Telemetry page, call the telemetry partial to transform and parse serialized data. */}}
+{{- if eq .Type "telemetry" -}}
+  <section class="telemetry">
+    {{- partial "telemetry.html" . -}}
+  </section>
+{{- end -}}
+
 {{/* Get latest current sub-Sections or RegularPages, and fill in missing translated pages from default language Site. */}}
 {{- $default := site.Sites.Default.GetPage .Path -}}
 {{- $pages := slice -}}
