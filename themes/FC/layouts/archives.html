@@ -22,19 +22,13 @@
     {{- if ne $year .Key "0001" -}}
       <div class="archive-year">
         <h2 class="archive-year-header">
-          {{ $year.Key }}
-          <sup class="archive-count">
-            {{- len $year.Pages -}}
-          </sup>
+          {{ $year.Key }} ({{ len $year.Pages -}})
         </h2>
 
         {{- range $month := $year.Pages.GroupByDate "January" -}}
         <div class="archive-month">
           <h3 class="archive-month-header">
-            {{ $month.Key }}
-            <sup class="archive-count">
-              {{- len $month.Pages -}}
-            </sup>
+            {{ $month.Key }} ({{- len $month.Pages -}})
           </h3>
 
           <div class="archive-month-list">
@@ -44,7 +38,7 @@
                 alt="ARTICLE"
                 aria-label="{{ .Title | plainify }}"
                 title="{{ .Title | plainify }}">
-                <h3 class="archive-entry-title">
+                <h4 class="archive-entry-title">
                 {{ .Title | .RenderString }}
                 {{- if .Draft -}}
                   <sup>
@@ -53,7 +47,7 @@
                     </span>
                   </sup>
                 {{- end -}}
-                </h3>
+                </h4>
               </a>
               {{- partial "meta.html" . -}}
             </article>
