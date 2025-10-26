@@ -1,8 +1,8 @@
 ---
 name: "Bug report"
-about: "Create a report to help us improve"
-title: "[BUG]"
-labels: bug
+description: "Report a bug to help improve the project"
+title: "Bug: <short description>"
+labels: Bug
 assignees: ""
 ---
 
@@ -15,7 +15,8 @@ Please fill the template below
 
 -->
 
-**Describe the bug**
+### Describe the bug
+
 <!-- Clear and concise description of the bug. -->
 
  - Device/Os: [e.g. Android 14, iOS 17]
@@ -24,7 +25,8 @@ Please fill the template below
  - Hugo Version [ >=0.148.2 expected]:
  - Theme Version [e.g. v4.0, branch, or commit-id ]:
 
-**Steps to reproduce the behavior:**
+### Steps to reproduce the behavior
+
 <!--
 1. Go to "..."
 2. Click on "...."
@@ -32,11 +34,14 @@ Please fill the template below
 4. See error
 -->
 
-**Expected behavior**:
+### Expected behavior
+
 <!-- Clear and concise description of what is expected. -->
 
-**Screenshots**
+### Screenshots
+
 <!-- If applicable, add screenshots to help explain the problem. -->
 
-**Additional context**
+### Additional context
+
 <!--Add any other context about the problem here. -->
