@@ -1,10 +1,10 @@
-{{/* Processable page hero cover image */}}
+{{- /* Processable page hero cover image. */ -}}
 
 {{- $img := partial "cover_utils.html" . -}}
 {{- with $img.cover -}}
   <figure class="entry-cover">
 
-    {{/* Cover image is present in page bundle */}}
+    {{- /* Cover image is present in page bundle. */ -}}
     {{- if in $img.processableFormats .MediaType.SubType -}}
       <img
         srcset="
@@ -23,16 +23,16 @@
         height="{{ .Height }}"
         fetchpriority="high">
 
-    {{/* Unprocessable image or responsive images disabled */}}
+    {{- /* Unprocessable image or responsive images disabled. */ -}}
     {{- else if .RelPermalink -}}
       <img src="{{ path.Join $.RelPermalink . }}" alt="{{ $img.alt }}">
 
-    {{/* For absolute urls and external links, no img processing here */}}
+    {{- /* For absolute urls and external links, no img processing here. */ -}}
     {{- else -}}
       <img src="{{ . | absURL }}" alt="{{ $img.alt }}">
     {{- end -}}
 
-    {{/*  Display Caption  */}}
+    {{- /* Display Caption. */ -}}
     {{- if $.IsHome -}}
       {{- with $.Params.cover.caption -}}
         <p>

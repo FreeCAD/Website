@@ -2,7 +2,7 @@
 
 {{- partial "hero.html" . -}}
 
-{{/* get the latest news articles by category except the ones with "hero" parameters in front matter */}}
+{{- /* get the latest news articles by category except the ones with "hero" parameters in front matter. */ -}}
 {{- $pages := slice -}}
 {{- with site.Sites.Default -}}
   {{- range .Taxonomies.categories.ByCount -}}
@@ -20,8 +20,8 @@
 </section>
 
 {{- with (index (where (.RegularPages | lang.Merge site.Sites.Default.RegularPages) "Type" "homepage") 0) -}}
-  {{- partial "content.html" . -}}
+  {{- partial "content/content.html" . -}}
 {{- end -}}
 
 {{- end -}}
-{{/* End main. */}}
+{{- /* End main. */ -}}

@@ -1,7 +1,0 @@
-{{- $path := (strings.TrimPrefix "/" (printf `%s/js/fedishare.js` .Site.LanguagePrefix)) -}}
-{{- $script := resources.Get "js/fedishare.js" | resources.ExecuteAsTemplate $path . | resources.Minify | resources.Fingerprint -}}
-
-<script defer src="{{ $script.RelPermalink }}"
-  integrity="{{ $script.Data.Integrity }}"
-  crossorigin="anonymous">
-</script>

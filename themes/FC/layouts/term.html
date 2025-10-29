@@ -1,12 +1,12 @@
 {{- define "main" -}}
 
-{{/* Get pages from current Section */}}
+{{- /* Get pages from current Section. */ -}}
 {{- $pages := .RegularPages -}}
 
-{{/* Get pages from default language Site for this Term. */}}
+{{- /* Get pages from default language Site for this Term. */ -}}
 {{- $defaultTerm := index (index site.Sites.Default.Taxonomies .Data.Plural) .Data.Term -}}
 
-{{/* Merge current language Term pages and default language Site fallback. */}}
+{{- /* Merge current language Term pages and default language Site fallback. */ -}}
 {{- $fallbackPages := slice -}}
 {{- if $defaultTerm -}}
   {{- range $p := $defaultTerm.Pages -}}
@@ -20,7 +20,7 @@
 {{- $count := len $pages -}}
 
 <header>
-  {{- partial "categories_list.html" . -}}
+  {{- partial "categories.html" . -}}
 
   <h1 class="title">
     {{ .Data.Singular | title }}: {{ .Title | .RenderString }} ({{ $count }})
@@ -37,7 +37,7 @@
   {{- end -}}
 </header>
 
-{{- partial "list_paginator.html" (dict "pages" $pages "context" .) -}}
+{{- partial "paginator.html" (dict "pages" $pages "context" .) -}}
 
 {{- end -}}
-{{/* End main. */}}
+{{- /* End main. */ -}}

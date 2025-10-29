@@ -1,9 +1,0 @@
-{{- $authors := .Params.author | default site.Params.author -}}
-
-{{- with $authors -}}
-  {{- if reflect.IsSlice . -}}
-    {{- delimit . ", " -}}
-  {{- else -}}
-    {{- . -}}
-  {{- end -}}
-{{- end -}}

@@ -41,7 +41,7 @@
 
   {{- if .Param "showWordCount" -}}
     <span class="meta">
-      {{- partial "icon.html" "words-count" -}}
+      {{- partial "icon.html" "words" -}}
       <span>
         {{ i18n "words" .WordCount | default (printf "%d words" .WordCount) }}
       </span>
@@ -50,7 +50,7 @@
 
   {{- if .Param "showReadingTime" -}}
     <span class="meta">
-      {{- partial "icon.html" "reading-time" -}}
+      {{- partial "icon.html" "time" -}}
       <span>
         {{ i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime) }}
       </span>
@@ -60,8 +60,14 @@
   {{- if .Param "showAuthor" -}}
     <span class="meta">
       {{- partial "icon.html" "author" -}}
-      <span>
-        {{ partial "author.html" . }}
+      <span class="authors">
+        {{- with (.Params.author | default site.Params.author) -}}
+          {{- if reflect.IsSlice . -}}
+            {{- delimit . " · " -}}
+          {{- else -}}
+            {{- . -}}
+          {{- end -}}
+        {{- end -}}
       </span>
     </span>
   {{- end -}}
@@ -69,20 +75,11 @@
   {{- if .IsTranslated -}}
     <span class="meta">
       {{- partial "icon.html" "translations" -}}
-      <span class="i18n-links">
-        {{- range $i, $e := .Translations -}}
-          {{- if $i -}}
-            |
-          {{- end -}}
-          {{- with $e -}}
-            <a href="{{ .Permalink }}">
-              {{- if (and site.Params.displayFullLangName (.Language.LanguageName)) -}}
-                {{ .Language.LanguageName | emojify }}
-              {{- else -}}
-                {{ .Lang | title }}
-              {{- end -}}
-            </a>
-          {{- end -}}
+      <span class="langs">
+        {{- range .Translations -}}
+          <a href="{{ .RelPermalink }}">
+            {{ .Language.LanguageName }}
+          </a>
         {{- end -}}
       </span>
     </span>

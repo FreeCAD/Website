@@ -1,8 +1,15 @@
-{{/* Copyright notice at very bottom of site footer. */}}
+{{- /* Copyright on site footer:
+
+  - Add year and homepage link.
+  - Add license link.
+  - Add notice about Hugo SSG.
+*/ -}}
 
 <section class="copyright">
   {{- if site.Copyright -}}
-    <span>{{- site.Copyright | .RenderString -}}</span>
+    <span>
+      {{ site.Copyright | .RenderString }}
+    </span>
   {{- else -}}
     <span>
       &copy; {{ now.Year }} <a href="{{ "" | relLangURL }}">{{ site.Title | .RenderString }}</a>

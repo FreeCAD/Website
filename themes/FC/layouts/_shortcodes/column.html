@@ -1,8 +1,9 @@
-{{/* Column Shortcode:
+{{- /* Column Shortcode:
+
   - Useful when nested in a box shortcode to clearly separate content in columns.
   - Optional custom CSS styles and Markdown title.
   - Support content via argument "content" or inner content.
-*/}}
+*/ -}}
 
 {{- $inner := or (.Get "content" | .Page.RenderString) (strings.TrimSpace .Inner | .Page.RenderString) "" -}}
 
@@ -13,7 +14,7 @@
 
 {{- $styleKeys := slice "background" "border" "color" "text-align" "width" -}}
 
-{{/* Build column style */}}
+{{- /* Build column style. */ -}}
 {{- $styleColumn := slice -}}
 {{- range $styleKey := $styleKeys -}}
   {{- with $.Get $styleKey }}

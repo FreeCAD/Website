@@ -1,4 +1,4 @@
-{{/* Share on Social medias. */}}
+{{- /* Share on Social medias. */ -}}
 
 <section class="share-links">
   {{- with site.Params.socials -}}
@@ -16,7 +16,9 @@
   {{- if and
     site.Params.shareOnFediverse
     (not (in (slice "home" "taxonomy" "term") .Kind))
-    (not (and (eq .Kind "section") (eq .Section "news"))) -}}
+    (not (and (eq .Kind "section") (eq .Section "news"))
+    )
+  -}}
 
     {{- $path := (strings.TrimPrefix "/" (printf `%s/fedishare.html` .Site.LanguagePrefix)) -}}
     {{- $page := resources.Get "html/fedishare.html" -}}
@@ -43,7 +45,8 @@
       $page.RelPermalink
       (.Title | urlquery | safeURL)
       ($desc | safeURL)
-      (.Permalink | safeURL) -}}
+      (.Permalink | safeURL)
+    -}}
 
     <a href="{{ $url }}"
       title="{{ i18n "shareOn" | default "Share on" }} {{ i18n "fediverse" | default "Fediverse" }}"

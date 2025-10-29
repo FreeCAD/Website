@@ -1,0 +1,32 @@
+{{- /* Custom Footer links:
+
+  - Get links from 'data/footer_links.yaml' without parent section.
+  - Handle external links.
+*/ -}}
+
+{{- $externalIcon := partial "icon.html" "external" -}}
+
+<section class="footer-custom">
+  {{- range . -}}
+    {{- $url := .url -}}
+    {{- $title := .title | default "Link" -}}
+    {{- $isExternal := and
+      (strings.HasPrefix $url "http")
+      (not (strings.HasPrefix $url site.BaseURL)
+      )
+    -}}
+
+    {{- if $url -}}
+      <a href="{{ cond $isExternal ($url | safeURL) ($url | relURL | safeURL) }}"
+        title="{{ $title | plainify }}"
+        {{ if $isExternal }}target="_blank" rel="noopener noreferrer external"{{ end }}>
+        {{ $title }}
+        {{- if $isExternal -}}
+          <span class="external">
+            {{ $externalIcon }}
+          </span>
+        {{- end -}}
+      </a>
+    {{- end -}}
+  {{- end -}}
+</section>

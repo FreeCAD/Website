@@ -1,8 +1,10 @@
-{{/* Addons catalog:
+{{- /* Addons catalog:
+
   - Get Addon Catalog Cache from Data JSON file.
   - Sort by last update.
   - Get Addon metadata, clean some (specially for icon).
-  - Display Addon data in cards. */}}
+  - Display Addon data in cards.
+*/ -}}
 
 {{- $catalog := site.Data.addon_catalog_cache -}}
 {{- with $catalog -}}

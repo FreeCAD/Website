@@ -1,0 +1,62 @@
+{{- /* Chroma init script:
+
+  - Get user preference in localStorage (pref-theme)
+  - Get default config (light, dark, auto)
+  - Get system preference (prefers-color-scheme)
+*/ -}}
+
+{{- $defaultChroma := site.Params.defaultChroma | default "auto" -}}
+
+{{- if eq $defaultChroma "light" -}}
+  <script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+      document.body.classList.add('dark');
+    }
+  </script>
+{{- else if eq $defaultChroma "dark" -}}
+  <script>
+    if (localStorage.getItem("pref-theme") === "light") {
+      document.body.classList.remove('dark')
+    }
+  </script>
+{{- else -}}
+  {{- /* Chroma is auto. */ -}}
+  <script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+      document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+      document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.body.classList.add('dark');
+    }
+  </script>
+{{- end -}}
+
+{{- /* Fallback for user without JS. */ -}}
+<noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style>
+  {{- if and (ne site.Params.defaultChroma "light") (ne site.Params.defaultChroma "dark") -}}
+    <style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(64, 64, 64);
+          --tone: rgb(96, 96, 96);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+        }
+
+        main {
+          background: var(--theme);
+        }
+      }
+    </style>
+  {{- end -}}
+</noscript>

@@ -23,24 +23,23 @@
   {{- partial "article_cover.html" . -}}
 </header>
 
-{{/* Get Table Of Contents. */}}
+{{- /* Get Table Of Contents. */ -}}
 {{- if .Params.ToC -}}
   {{ .TableOfContents }}
 {{- end -}}
 
-{{- partial "content.html" . -}}
+{{- partial "content/content.html" . -}}
 
-{{/* Provide download links from the current release page. */}}
+{{- /* For Releases, get Download release form. */ -}}
 {{- if eq .Type "releases" -}}
   <section class="download-release">
-    <h3>{{ printf "%s %s" (i18n "download" | default "Download") .Title }}</h3>
-    {{- partial "release.html" . -}}
+    {{- partial "headers/download.html" . -}}
   </section>
 {{- end -}}
 
-{{- if (.Param "showPaginationLinks") -}}
-  {{- partial "pagination_links.html" . -}}
+{{- if .Param "showPagination" -}}
+  {{- partial "pagination.html" . -}}
 {{- end -}}
 
 {{- end -}}
-{{/* End main. */}}
+{{- /* End main. */ -}}

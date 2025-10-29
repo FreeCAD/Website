@@ -1,18 +1,27 @@
 {{- define "main" -}}
 
 <header>
-  {{- if (eq .Section "news") -}}
-    {{- partial "categories_list.html" . -}}
+  {{- if eq .Section "news" -}}
+    {{- partial "categories.html" . -}}
   {{- end -}}
 
   <h1 class="title">
     {{ .Title | .RenderString }}
+    {{- if .Draft -}}
+      <sup><span class="entry-isdraft">[{{- i18n "draft" | default "Draft" -}}]</span></sup>
+    {{- end -}}
   </h1>
 
-  {{- if .Description -}}
+  {{- with .Description -}}
     <h3 class="description">
-      {{ .Description | .RenderString }}
+      {{ . | $.RenderString }}
     </h3>
+  {{- end -}}
+
+  {{/* Dynamically include header partial based on Type */}}
+  {{- $partialPath := printf "headers/%s.html" .Type -}}
+  {{- if templates.Exists ( printf "_partials/%s" $partialPath ) -}}
+    {{- partial $partialPath . -}}
   {{- end -}}
 
   {{- with .Params.cards -}}
@@ -22,16 +31,26 @@
   {{- partial "hero_cover.html" . -}}
 </header>
 
-{{- partial "content.html" . -}}
-
-{{/* For Telemetry page, call the telemetry partial to transform and parse serialized data. */}}
-{{- if eq .Type "telemetry" -}}
-  <section class="telemetry">
-    {{- partial "telemetry.html" . -}}
-  </section>
+{{- /* Get Table Of Contents. */ -}}
+{{- if .Params.ToC -}}
+  {{ .TableOfContents }}
 {{- end -}}
 
-{{/* Get latest current sub-Sections or RegularPages, and fill in missing translated pages from default language Site. */}}
+{{- /* For Donate, get Funded Grants and Sponsors lists. */ -}}
+{{- if eq .Type "donate" -}}
+  {{- partial "content/grants.html" . -}}
+  {{- partial "content/sponsors.html" . -}}
+{{- end -}}
+
+{{- partial "content/content.html" . -}}
+
+{{/* Dynamically include content partial based on Type */}}
+{{- $partialPath := printf "content/%s.html" .Type -}}
+{{- if templates.Exists ( printf "_partials/%s" $partialPath ) -}}
+  {{- partial $partialPath . -}}
+{{- end -}}
+
+{{- /* Get latest current sub-Sections or RegularPages, and fill in missing translated pages from default language Site. */ -}}
 {{- $default := site.Sites.Default.GetPage .Path -}}
 {{- $pages := slice -}}
 
@@ -49,7 +68,14 @@
   {{- $pages = .RegularPages | lang.Merge $default.RegularPages -}}
 {{- end -}}
 
-{{- partial "list_paginator.html" (dict "pages" $pages "context" .) -}}
+{{- /* For Community, get 3 latest Event articles. */ -}}
+{{- if eq .Type "community" -}}
+  {{- $news := where .RegularPages "Section" "news" | lang.Merge (where site.Sites.Default.RegularPages "Section" "news") -}}
+  {{- $events := where $news "Params.categories" "eq" "event" -}}
+  {{- $pages = first 3 (sort $events "Date" "desc") -}}
+{{- end -}}
+
+{{- partial "paginator.html" (dict "pages" $pages "context" .) -}}
 
 {{- end -}}
-{{/* End main. */}}
+{{- /* End main. */ -}}

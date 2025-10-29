@@ -1,0 +1,82 @@
+{{- /* Centralize JavaScript dependencies and custom scripts:
+
+  - Defer load of JS after HTML is fully parsed and DOM elements available (also performance).
+  - Set Chroma toggle listener.
+  - Load User Agent script for download options.
+  - Load Copy Code button and interaction script.
+  - Load Open Details script.
+  - Load Donate Box script.
+*/ -}}
+
+{{- /* Theme Chroma toggle. */ -}}
+<script>
+  document.getElementById("chroma-toggle").addEventListener("click", () => {
+    if (document.body.className.includes("dark")) {
+      document.body.classList.remove('dark');
+      localStorage.setItem("pref-theme", 'light');
+    } else {
+      document.body.classList.add('dark');
+      localStorage.setItem("pref-theme", 'dark');
+    }
+  })
+</script>
+
+{{- /* Detect User Agent and provide corresponding download options. */ -}}
+{{- if and (in (slice "download" "releases") .Section) site.Params.enableUA -}}
+  {{- with resources.Get "js/ua-download.js" }}
+    {{- $ua := . -}}
+    {{- if hugo.IsProduction -}}
+      {{- $ua = $ua | minify | fingerprint -}}
+    {{- end -}}
+    <script src="{{ $ua.RelPermalink }}"
+      type="text/javascript"
+      {{ if hugo.IsProduction }}integrity="{{ $ua.Data.Integrity }}" crossorigin="anonymous"{{ end }}
+      defer>
+    </script>
+  {{- end -}}
+{{- end -}}
+
+{{- /* Copy Code block content to clipboard. */ -}}
+{{- if and (eq .Kind "page") (ne .Layout "archives") site.Params.showCopyCodeButton -}}
+  {{- with resources.Get "js/copy-code.js" -}}
+    {{- $codeCopy := resources.ExecuteAsTemplate "js/code-copy.js" $ . -}}
+    {{- if hugo.IsProduction -}}
+      {{- $codeCopy = $codeCopy | minify | fingerprint -}}
+    {{- end -}}
+    <script src="{{ $codeCopy.RelPermalink }}"
+      type="text/javascript"
+      {{ if hugo.IsProduction }}integrity="{{ $codeCopy.Data.Integrity }}" crossorigin="anonymous"{{ end }}
+      defer>
+    </script>
+  {{- end -}}
+{{- end -}}
+
+{{- /* Open Details block with anchor link. */ -}}
+{{- if and (in .Content "<details") site.Params.enableOpenDetails -}}
+  {{- with resources.Get "js/open-details.js" -}}
+    {{- $detailsToggle := . -}}
+    {{- if hugo.IsProduction -}}
+      {{- $detailsToggle = $detailsToggle | minify | fingerprint -}}
+    {{- end -}}
+    <script src="{{ $detailsToggle.RelPermalink }}"
+      type="text/javascript"
+      {{ if hugo.IsProduction }}integrity="{{ $detailsToggle.Data.Integrity }}" crossorigin="anonymous"{{ end }}
+      defer>
+    </script>
+  {{- end -}}
+{{- end -}}
+
+{{- /* Validate and submit Donation Box form. */ -}}
+{{- if and (eq .Section "donate") site.Params.enableDonateBox -}}
+  {{- with resources.Get "js/donate-box.js" -}}
+    {{- $donateBox := . -}}
+    {{- if hugo.IsProduction -}}
+      {{- $donateBox = $donateBox | minify | fingerprint -}}
+    {{- end -}}
+    <script src="{{ $donateBox.RelPermalink }}"
+      type="text/javascript"
+      {{ if hugo.IsProduction }}integrity="{{ $donateBox.Data.Integrity }}" crossorigin="anonymous"{{ end }}
+      defer>
+    </script>
+  {{- end -}}
+{{- end -}}

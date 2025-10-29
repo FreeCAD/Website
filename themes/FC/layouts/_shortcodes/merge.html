@@ -1,8 +1,9 @@
-{{/* Merge Shortcode:
+{{- /* Merge Shortcode:
+
   - Useful for linking Git changes like Pull Requests and Commits.
   - Add a merge icon and display PR/MR number or short commit hash.
   - Use: {{< merge "https://github.com/project/project/pull/123456" >}}
-*/}}
+*/ -}}
 
 {{- $url := .Get 0 | default "" | lower -}}
 {{- $text := "" -}}
@@ -15,7 +16,7 @@
     {{- $text = $fallback -}}
   {{- end -}}
 
-{{/* Fallback to commit hash */}}
+{{- /* Fallback to commit hash. */ -}}
 {{- else with findRE `(?:commits?|commit)/([0-9a-f]+)(?:$|[^0-9a-fA-F])` $url -}}
   {{- with index . 0 | replaceRE `.*?/([0-9a-f]+)(?:$|[^0-9a-fA-F])` "$1" -}}
     {{- $text = slicestr . 0 8 -}}

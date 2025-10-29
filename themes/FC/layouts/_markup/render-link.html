@@ -1,8 +1,8 @@
-{{/*
-  Custom rendering hook for content links.
+{{- /* Custom rendering hook for content links:
+
   - External links open in new tab and include icon.
   - Internal links show tooltip preview on hover.
-*/}}
+*/ -}}
 
 {{- $href := .Destination | safeURL -}}
 {{- $isExternal := and (strings.HasPrefix .Destination "http") (not (strings.HasPrefix .Destination site.BaseURL)) -}}

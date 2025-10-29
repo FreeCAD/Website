@@ -1,6 +1,6 @@
-{{/* Paginate current Section:
+{{- /* Paginate current Section:
      - Provide links to Previous and Next pages in Section.
-     - Fallback to default language Site if missing. */}}
+     - Fallback to default language Site if missing. */ -}}
 
 {{- $section := .CurrentSection -}}
 {{- $pages := $section.RegularPages | lang.Merge (where site.Sites.Default.RegularPages "CurrentSection.Path" "eq" $section.Path) -}}

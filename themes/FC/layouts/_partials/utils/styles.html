@@ -1,0 +1,18 @@
+{{- /* Styles:
+
+  - Get stylesheet files from site config.
+  - Concatenate, minify and add fingerprinting.
+*/ -}}
+
+{{- $styles := slice -}}
+{{- range site.Params.assets.stylesheets -}}
+  {{- $styles = $styles | append (resources.Get .) -}}
+{{- end -}}
+{{- $stylesheet := $styles | resources.Concat "assets/css/stylesheet.css" -}}
+{{- if hugo.IsProduction -}}
+  {{- $stylesheet = $stylesheet | minify | fingerprint -}}
+{{- end -}}
+
+<link href="{{ $stylesheet.RelPermalink }}"
+  rel="stylesheet"
+  {{ if hugo.IsProduction }}integrity="{{ $stylesheet.Data.Integrity }}" crossorigin="anonymous"{{ end }}>

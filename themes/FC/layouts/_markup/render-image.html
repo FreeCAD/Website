@@ -1,8 +1,8 @@
-{{/*
-  Render images or videos from local or remote sources.
+{{- /* Render images or videos from local or remote sources:
+
   - Resize local images and builds responsive set.
   - Add popover lightbox.
-*/}}
+*/ -}}
 
 {{- $url := urls.Parse .Destination -}}
 {{- $sizes := slice 500 1000 -}}
@@ -15,7 +15,7 @@
 {{- $close := i18n "close" | default "Close image viewer" -}}
 
 {{- if $url.Scheme -}}
-  {{/* Remote image */}}
+  {{- /* Remote image. */ -}}
   {{- with try (resources.GetRemote .Destination) -}}
     {{- with .Err -}}
       {{- errorf "%s" . -}}
@@ -37,7 +37,7 @@
   {{- end -}}
 {{- else -}}
 
-  {{/* Local (bundled/static) image or video */}}
+  {{- /* Local (bundled/static) image or video. */ -}}
   {{- $img := .Page.Resources.GetMatch .Destination | default (resources.Get .Destination) -}}
 
   {{- if $img -}}
@@ -50,7 +50,7 @@
       </figure>
 
     {{- else if not (in (slice "jpeg" "jpg" "png" "webp" "gif") $img.MediaType.SubType) -}}
-      {{/* SVG, AVIF, TIFF, BMP, ICO cannot be resized or processed */}}
+      {{- /* SVG, AVIF, TIFF, BMP, ICO cannot be resized or processed. */ -}}
         <figure>
           <img loading="lazy"
             src="{{ $img.RelPermalink | safeURL }}"
@@ -64,7 +64,7 @@
         </figure>
 
     {{- else -}}
-      {{/* Responsive image with popover */}}
+      {{- /* Responsive image with popover. */ -}}
       <button aria-label="{{ $zoom }}" popovertarget="{{ $id }}">
         <figure>
           <img loading="lazy"

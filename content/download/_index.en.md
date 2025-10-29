@@ -13,7 +13,6 @@ menus:
   footer:
     weight: 3
 params:
-  subtitle: "Current stable version"
   platforms:
     - id: windows
       label: Windows

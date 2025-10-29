@@ -18,7 +18,7 @@ main header {
   overflow: visible;
   width: 100vw;
   margin: auto;
-  padding: calc(var(--gap) * 4) var(--gap) calc(var(--gap) * 2);
+  padding: calc(var(--gap) * 2) var(--gap);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -80,7 +80,7 @@ article .category {
 
 .title,
 .description {
-  margin: 0;
+  margin: 0 auto;
 }
 
 .buttons {
@@ -144,7 +144,7 @@ article .category {
   color: var(--link-hover-color);
 }
 
-.meta :is(.categories, .tags) a:not(:last-of-type):after {
+.meta :is(.categories, .tags, .authors, .langs) a:not(:last-of-type):after {
   content: " · ";
 }
 
@@ -682,7 +682,10 @@ figure > figcaption {
 .download-release {
   display: flex;
   flex-direction: column;
-  background: var(--backdrop);
+}
+
+.download-release h4 {
+  color: var(--secondary);
 }
 
 

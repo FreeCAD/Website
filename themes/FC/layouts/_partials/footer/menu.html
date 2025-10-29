@@ -1,9 +1,10 @@
-{{/* Footer Menu by section:
+{{- /* Footer Menu by section:
+
   - Render parent section and children links.
-  - Add custom links defined in 'data/footer_links.yaml'.
+  - Add custom links from 'data/footer_links.yaml'.
   - Set active class for current page.
   - Handle external links.
-*/}}
+*/ -}}
 
 {{- $section := .Section -}}
 {{- $currentPage := .CurrentPage -}}
@@ -13,20 +14,23 @@
 
 {{- $isExternal := and
   (strings.HasPrefix $currentUrl "http")
-  (not (strings.HasPrefix $currentUrl site.BaseURL))
+  (not (strings.HasPrefix $currentUrl site.BaseURL)
+  )
 -}}
 {{- $externalIcon := partial "icon.html" "external" -}}
 
 {{- $sectionKey := path.Base $section.Page.File.Dir -}}
 {{- $classes := slice -}}
 
-{{/* Determine active page */}}
+{{- /* Determine active page. */ -}}
 {{- $isActive := or
   (strings.HasPrefix $currentUrl $section.URL)
   (and $currentPage.IsHome (in $section.URL "homepage"))
   (and (eq $sectionKey "news") (or
     (eq $currentPage.Kind "term")
-    (gt (len (default slice $currentPage.Params.categories)) 0)))
+    (gt (len (default slice $currentPage.Params.categories)) 0)
+    )
+  )
 -}}
 
 {{- if $isActive -}}
@@ -42,25 +46,30 @@
       {{ if $isExternal }}target="_blank"{{ end }}>
       {{ $section.Title | $.CurrentPage.RenderString }}
       {{- if $isExternal -}}
-        <span class="external">{{ $externalIcon }}</span>
+        <span class="external">
+          {{ $externalIcon }}
+        </span>
       {{- end -}}
     </a>
   </h4>
 
-  {{/* Children in current section. */}}
+  {{- /* Children in current section. */ -}}
   <ul>
     {{- if eq $sectionKey "news" -}}
-      {{/* List Categories instead of RegularPages. */}}
+      {{- /* List Categories instead of RegularPages. */ -}}
       {{- range $category, $term := site.Sites.Default.Taxonomies.categories -}}
         {{- $active := or
           (eq $currentUrl $term.Page.RelPermalink)
-          (and (eq $currentPage.Kind "page") (in $currentPage.Params.categories $category))
-          -}}
+          (and (eq $currentPage.Kind "page") (in $currentPage.Params.categories $category)
+          )
+        -}}
         <li>
           <a href="{{ $term.Page.RelPermalink }}"
             title="{{ title $category | plainify }}"
             class="{{ if $active }}menu-active{{ end }}">
-            <span>{{ title $category }} ({{ len $term.Pages }})</span>
+            <span>
+              {{ title $category }} ({{ len $term.Pages }})
+            </span>
           </a>
         </li>
       {{- end -}}
@@ -74,7 +83,9 @@
               <a href="{{ .RelPermalink }}"
                 title="{{ .Title | plainify }}"
                 class="{{ if $active }}menu-active{{ end }}">
-                <span>{{ .Title | $.CurrentPage.RenderString }}</span>
+                <span>
+                  {{ .Title | $.CurrentPage.RenderString }}
+                </span>
               </a>
             </li>
           {{- end -}}
@@ -82,7 +93,7 @@
       {{- end -}}
     {{- end -}}
 
-    {{/* Custom children */}}
+    {{- /* Custom children. */ -}}
     {{- range $customLinks -}}
       {{- if eq .parent $sectionKey -}}
         {{- $external := and
@@ -95,9 +106,13 @@
             title="{{ .title | plainify }}"
             class="{{ if $active }}menu-active{{ end }}"
             {{ if $external }}target="_blank" rel="external noreferrer"{{ end }}>
-            <span>{{ .title }}</span>
+            <span>
+              {{ .title }}
+            </span>
             {{- if $external -}}
-              <span class="external">{{ $externalIcon }}</span>
+              <span class="external">
+                {{ $externalIcon }}
+              </span>
             {{- end -}}
           </a>
         </li>

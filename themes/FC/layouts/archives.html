@@ -13,11 +13,11 @@
     {{- end -}}
   </header>
 
-  {{/* Get current Section or fallback to default language Site if missing */}}
+  {{- /* Get current Section or fallback to default language Site if missing. */ -}}
   {{- $section := .CurrentSection -}}
   {{- $pages := $section.RegularPages | lang.Merge (where site.Sites.Default.RegularPages "CurrentSection.Path" "eq" $section.Path) -}}
 
-  {{/* Group pages by year and then by month */}}
+  {{- /* Group pages by year and then by month. */ -}}
   {{- range $year := $pages.GroupByPublishDate "2006" -}}
     {{- if ne $year .Key "0001" -}}
       <div class="archive-year">
@@ -62,4 +62,4 @@
 </section>
 
 {{- end -}}
-{{/* End main. */}}
+{{- /* End main. */ -}}

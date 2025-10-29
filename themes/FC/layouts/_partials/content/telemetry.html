@@ -1,13 +1,19 @@
-{{/* Telemetry Chart Partial */}}
+{{- /* Telemetry Charts:
+
+  - Get Telemetry data from JSON file.
+  - Transform and parse serialized data.
+  - Display Telemetry data in SVG charts.
+  - Add inline CSS style, color and hover interaction.
+ */ -}}
 
 {{- $maxEntries := site.Params.telemetryMaxEntries | default 20 -}}
 
-{{/* Fetch and Unmarshal Telemetry JSON Data. */}}
+{{- /* Fetch and Unmarshal Telemetry JSON Data. */ -}}
 {{- $data := site.Data.telemetry_chart_data -}}
 {{- with $data -}}
 
   <div class="content">
-    {{/* Get total user number */}}
+    {{- /* Get total user number. */ -}}
     {{- $totalUsers := .totalUsers -}}
 
     {{- $filtered := dict -}}
@@ -17,20 +23,20 @@
       {{- end -}}
     {{- end -}}
 
-    {{/* Set array of data keys for legend. */}}
+    {{- /* Set array of data keys for legend. */ -}}
     {{- range $key, $slice := $filtered -}}
       {{- $cleanKey := replaceRE "[^a-zA-Z0-9]+" " " (replace $key "$" "") -}}
       {{- if not (hasSuffix $cleanKey "s") -}}
         {{- $cleanKey = printf "%ss" $cleanKey -}}
       {{- end -}}
 
-      {{/* Calculate total sum of values. */}}
+      {{- /* Calculate total sum of values. */ -}}
       {{- $total := 0 -}}
       {{- range $k1, $v1 := $slice -}}
         {{- $total = add $total $v1 -}}
       {{- end -}}
 
-      {{/* Set entries with names, values and percentages. */}}
+      {{- /* Set entries with names, values and percentages. */ -}}
       {{- $entries := slice -}}
       {{- $percentage := 0 -}}
       {{- $percentage2 := 0 -}}
@@ -42,11 +48,11 @@
         {{- $entries = $entries | append (dict "name" $k2 "value" $v2 "percentage" $percentage "percentage2" $percentage2) -}}
       {{- end -}}
 
-      {{/* Sort by percentage and limit entries shown. */}}
+      {{- /* Sort by percentage and limit entries shown. */ -}}
       {{- $entries = sort $entries "percentage" "desc" -}}
       {{- $limitEntries := first $maxEntries $entries -}}
 
-      {{/* Aggregate other entries. */}}
+      {{- /* Aggregate other entries. */ -}}
       {{- $value2 := 0 -}}
       {{- $percentage3 := 0 -}}
       {{- range $k3, $v3 := after $maxEntries $entries -}}
@@ -56,10 +62,10 @@
       {{- $others := slice | append (dict "name" "Others" "value" $value2 "percentage" $percentage3 "percentage2" 0 "color" "hsl(0, 0%, 70%)") -}}
 
 
-      {{/* Assign colors to chart segments using hue gradient. */}}
+      {{- /* Assign colors to chart segments using hue gradient. */ -}}
       {{- $coloredEntries := slice -}}
       {{- range $i, $entry := $limitEntries -}}
-        {{/* Define hue: from Blue (240) to Red (0) */}}
+        {{- /* Define hue: from Blue (240) to Red (0). */ -}}
         {{- $hue := sub 300 (div (mul 300 $i) (sub (len $limitEntries) 1)) -}}
         {{- $color := printf "hsl(%d, 100%%, 50%%)" $hue -}}
         {{- $entry = merge $entry (dict "color" $color) -}}
@@ -73,7 +79,7 @@
 
       <figure class="chart">
         <style>
-          {{/* Generate inline CSS for chart and legend hover. */}}
+          {{- /* Generate inline CSS for chart and legend hover. */ -}}
           {{- range $i, $_ := $coloredEntries -}}
             .chart:has(.donut-segment.segment-{{ $i }}:hover) .legend-item.segment-{{ $i }},
             .legend-item.segment-{{ $i }}:hover {
@@ -136,7 +142,7 @@
 
       <figure class="chart">
         <style>
-          {{/* Generate inline CSS for chart and legend hover. */}}
+          {{- /* Generate inline CSS for chart and legend hover. */ -}}
           {{- range $i, $_ := $coloredEntries -}}
             .chart:has(:is(.donut-segment.segment-{{ $i }}:hover, .legend.segment-{{ $i }}:hover)) .legend.segment-{{ $i }} {
               font-weight: bold;

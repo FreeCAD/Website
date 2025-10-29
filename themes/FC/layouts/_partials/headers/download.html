@@ -1,4 +1,11 @@
-{{- $params := .Params -}}
+{{- $release := slice -}}
+{{- if eq .Type "release" -}}
+  {{- $release = . -}}
+{{- else -}}
+  {{- $release = index (where site.RegularPages "Type" "releases") 0 | default (index (where site.Sites.Default.RegularPages "Type" "releases") 0) -}}
+{{- end -}}
+
+{{- $params := $release.Params -}}
 {{- $platforms := slice -}}
 {{- $downloadPage := site.GetPage "download" | default (site.Sites.Default.GetPage "download") -}}
 {{- with $downloadPage.Params.platforms -}}
@@ -40,7 +47,27 @@
       <span popover id="{{ $platform.id }}-arch"></span>
     </div>
   {{- end -}}
-  </div>
+</div>
+
+<h4 class="description">
+  {{- printf "%s %s · %s"
+    (i18n "download" | default "Download")
+    $params.version
+    ($params.version_date | time.Format ":date_long")
+  -}}
+</h4>
+
+{{- if eq .Type "download" -}}
+  <a href="{{ $release.RelPermalink }}"
+    class="release-button"
+    alt="{{ upper $release.Title -}} RELEASE"
+    aria-label="{{ $release.Title }} {{ i18n "release_notes" | default "Release Notes" }}">
+    {{- printf "%s %s"
+      $release.Title
+      (i18n "release_notes" | default "Release Notes")
+    -}}
+  </a>
+{{- end -}}
 
 {{- $thanks := site.GetPage "thanks" | default (site.Sites.Default.GetPage "thanks") -}}
 <script>

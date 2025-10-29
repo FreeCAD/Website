@@ -1,5 +1,14 @@
 <article class="article-card">
-  {{- partial "category_card.html.html" . -}}
+  {{- if .Params.categories -}}
+    {{- with index (.GetTerms "categories") 0 -}}
+      <span class="category">
+        <a href="{{ .RelPermalink }}">
+          {{ .LinkTitle | .RenderString }}
+        </a>
+      </span>
+    {{- end -}}
+  {{- end -}}
+
   <a href="{{ .Permalink }}"
   alt="ARTICLE"
   aria-label="{{ .Title | plainify }}"
@@ -24,7 +33,7 @@
         </sup>
       {{- end -}}
     </h3>
-    {{- if (ne (.Param "hideSummary") true) -}}
+    {{- if not (.Param "hideSummary") -}}
       <p class="entry-description">
         {{- if .Description -}}
           {{ .Description | .RenderString }}

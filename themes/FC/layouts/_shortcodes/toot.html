@@ -1,4 +1,4 @@
-{{/* Original code from https://github.com/mandaris/stoot */}}
+{{- /* Original code from https://github.com/mandaris/stoot. */ -}}
 
 {{- $url := .Get 0 | default "" | lower -}}
 {{- $url = cond (gt (len (findRE "^https?://" $url)) 0) $url (print "https://" $url) -}}

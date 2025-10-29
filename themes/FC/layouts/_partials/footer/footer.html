@@ -1,16 +1,18 @@
-{{/* Site Footer:
+{{- /* Site Footer:
+
   - Render footer menu by section.
   - Add social media links.
-  - Add custom links.
-  - Small notice with copyright.
-  - Get Scripts partial.
-*/}}
+  - Add custom links without parent section.
+  - Add copyright notice.
+  - Add Scripts.
+*/ -}}
 
 {{- $currentPage := . -}}
 {{- $menuFooter := site.Menus.footer | default site.Sites.Default.Menus.footer -}}
 {{- $pageUrl := $currentPage.RelPermalink -}}
 {{- $linksMax := site.Params.footerSectionLinksMax | default 6 -}}
 {{- $customLinks := site.Data.footer_links | default slice -}}
+{{- $standalone := where $customLinks "parent" "eq" nil -}}
 
 <footer class="site-footer">
   <a id="top-link"
@@ -22,32 +24,34 @@
     ▲
   </a>
 
-  {{/* Footer Menu Sections */}}
+  {{- /* Footer Menu Sections. */ -}}
   <section class="footer-menu">
     {{- range $menuFooter -}}
       {{- partial "footer/menu.html" (dict
-          "Section" .
-          "CurrentPage" $currentPage
-          "CustomLinks" $customLinks
-          "MaxLinks" $linksMax
-      ) -}}
+        "Section" .
+        "CurrentPage" $currentPage
+        "CustomLinks" $customLinks
+        "MaxLinks" $linksMax
+        )
+      -}}
     {{- end -}}
   </section>
 
-  {{/* Social media share links. */}}
+  {{- /* Social media share links. */ -}}
   {{- partial "share/share.html" . -}}
 
-  {{/* Standalone custom links without parent sections. */}}
-  {{- partial "footer/custom_links.html" $customLinks -}}
-
-  {{- if not hugo.IsProduction -}}
-    {{- partial "icons" . -}}
+  {{- /* Standalone custom links without parent sections. */ -}}
+  {{- with $standalone -}}
+    {{- partial "footer/custom.html" . -}}
   {{- end -}}
 
-  {{/* Small notice with copyright. */}}
-  {{- partial "footer/copyright.html" . -}}
+  {{- if not hugo.IsProduction -}}
+    {{- partial "utils/icons.html" . -}}
+  {{- end -}}
 
+  {{- /* Small notice with copyright. */ -}}
+  {{- partial "footer/copyright.html" . -}}
 </footer>
 
-{{/* A bunch of JS to load at the end. */}}
-{{- partial "footer/footer_scripts.html" . -}}
+{{- /* A bunch of JS to load at the end. */ -}}
+{{- partial "scripts/scripts.html" . -}}

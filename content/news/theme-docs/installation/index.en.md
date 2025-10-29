@@ -131,11 +131,10 @@ params:
     images: [<link or path of image for opengraph>]
     DateFormat: January 2, 2006
     defaultChroma: auto # dark, light
-    disableChromaToggle: false
 
     showReadingTime: true
     showShareButtons: true
-    showPaginationLinks: true
+    showPagination: true
     showCopyCodeButton: false
     hideSummary: false
 
@@ -168,7 +167,7 @@ description: "Desc Text."
 disableShare: false
 hideSummary: false
 showReadingTime: true
-showPaginationLinks: true
+showPagination: true
 cover:
     image: <image path/url> # image path/url
     alt: <alt text> # alt text

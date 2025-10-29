@@ -1,4 +1,5 @@
-{{/* get the buttons parameters from the homepage files */}}
+{{- /* get the buttons parameters from the homepage files. */ -}}
+
 {{- $homepageButtons := slice -}}
 {{- with (index (where (.RegularPages | lang.Merge site.Sites.Default.RegularPages) "Type" "homepage") 0) -}}
   {{- with .Params.buttons -}}
@@ -6,7 +7,7 @@
   {{- end -}}
 {{- end -}}
 
-{{/* get the latest article with the "hero" parameters in front matter */}}
+{{- /* get the latest article with the "hero" parameters in front matter. */ -}}
 {{- with (index (where (site.RegularPages | lang.Merge site.Sites.Default.RegularPages) "Params.hero" "!=" nil) 0) -}}
   <header>
     <h1 class="title">

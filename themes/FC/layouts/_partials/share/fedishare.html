@@ -8,7 +8,19 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
   {{- partial "head.html" . -}}
-  {{- partial "share/fedishare_script.html" . -}}
+
+  {{- /* Load Fedishare JS. */ -}}
+  {{- with resources.Get "js/fedishare.js" -}}
+    {{- $fedishare := resources.ExecuteAsTemplate "js/fedishare.js" $ . -}}
+    {{- if hugo.IsProduction -}}
+      {{- $fedishare = $fedishare | minify | fingerprint -}}
+    {{- end -}}
+    <script src="{{ $fedishare.RelPermalink }}"
+      type="text/javascript"
+      {{ if hugo.IsProduction }}integrity="{{ $fedishare.Data.Integrity }}" crossorigin="anonymous"{{ end }}
+      defer>
+    </script>
+  {{- end -}}
 
   <body data-projects="{{ $projects | jsonify }}">
     <datalist id="fediverse-domains">
@@ -16,7 +28,13 @@
         <option value="{{ . }}">{{ . }}</option>
       {{- end -}}
     </datalist>
+
     {{- partial "header.html" . -}}
+
+    {{- /* Debug info in non-production environments. */ -}}
+    {{- if not hugo.IsProduction -}}
+      {{- partial "utils/debug.html" . -}}
+    {{- end -}}
 
     <main class="fedishare">
       <noscript>
