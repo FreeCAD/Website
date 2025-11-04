@@ -1,0 +1,110 @@
+name: Get Funded Grant List
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 21 * * 0"  # Weekly on Sunday 21:00 UTC
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-grant:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+
+    - name: Restore Grant cache
+      id: cache-restore
+      uses: actions/cache/restore@v4
+      with:
+        path: ${{ runner.temp }}/grant_cache
+        key: grant-${{ github.ref_name }}
+        restore-keys: |
+          grant-${{ github.ref_name }}-
+          grant-
+
+    - name: Get issues with funded label and store data in JSON
+      run: |
+        set -euo pipefail
+
+        page=1
+        all_issues=$(jq -n '[]')
+
+        while true; do
+          response=$(curl -s \
+                          -H "Accept: application/vnd.github.v3+json" \
+                          "https://api.github.com/repos/FreeCAD/FPA-grant-proposals/issues?labels=funded&state=all&per_page=100&page=$page")
+          if [ "$(echo "$response" | jq 'length')" -eq 0 ]; then
+            break
+          fi
+          all_issues=$(jq -s '.[0] + .[1]' <(echo "$all_issues") <(echo "$response"))
+          page=$((page + 1))
+        done
+
+        echo "$all_issues" > grant_list_raw.json
+
+    - name: Check if Grant list has changed
+      id: check-change
+      run: |
+        set -euo pipefail
+
+        JSON_FILE="grant_list_raw.json"
+        CACHE_DIR="${{ runner.temp }}/grant_cache"
+        HASH_FILE="$CACHE_DIR/hash.txt"
+
+        mkdir -p "$CACHE_DIR"
+
+        NEW_HASH=$(sha256sum "$JSON_FILE" | awk '{print $1}')
+        echo "New hash: $NEW_HASH"
+
+        if [ -f "$HASH_FILE" ] && [ "$(cat "$HASH_FILE")" = "$NEW_HASH" ]; then
+          echo "No change detected."
+          echo "changed=false" >> "$GITHUB_OUTPUT"
+        else
+          echo "$NEW_HASH" > "$HASH_FILE"
+          echo "Change detected."
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+        fi
+
+    - name: Extract useful data (title, url, labels, creation date and author)
+      if: steps.check-change.outputs.changed == 'true'
+      run: |
+        set -euo pipefail
+
+        mkdir -p data
+
+        jq '[.[] | {
+          title: .title,
+          url: .html_url,
+          labels: (.labels | map(.name) // [])
+          created_at: .created_at,
+          author: (.user.login // "Unknown Author"),
+        }]' grant_list_raw.json > data/grant_list.json
+
+    - name: Commit and push cleaned Grant JSON
+      if: steps.check-change.outputs.changed == 'true'
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+        git add data/grant_list.json
+
+        if git diff --cached --quiet; then
+          echo "No changes to commit."
+          exit 0
+        fi
+
+        DATE=$(date -u +"%Y-%m-%d")
+        git commit -m "Action: update Funded Grant List - $DATE"
+        git push
+
+    - name: Save Grant cache
+      if: steps.check-change.outputs.changed == 'true'
+      id: cache-save
+      uses: actions/cache/save@v4
+      with:
+        path: ${{ runner.temp }}/grant_cache
+        key: grant-${{ github.ref_name }}

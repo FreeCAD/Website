@@ -9,7 +9,7 @@
 {{- $maxEntries := site.Params.telemetryMaxEntries | default 20 -}}
 
 {{- /* Fetch and Unmarshal Telemetry JSON Data. */ -}}
-{{- $data := site.Data.telemetry_chart_data -}}
+{{- $data := site.Data.telemetry_data -}}
 {{- with $data -}}
 
   <div class="content">

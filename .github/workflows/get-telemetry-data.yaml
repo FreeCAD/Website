@@ -9,68 +9,83 @@ permissions:
   contents: write
 
 jobs:
-  telemetry_data:
+  fetch-telemetry:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Restore Telemetry cache
-        uses: actions/cache@v4
+      - name: Restore Telemetry Cache
+        id: cache-restore
+        uses: actions/cache/restore@v4
         with:
-          path: .cache
-          key: telemetry-cache-${{ github.ref_name }}
+          path: ${{ runner.temp }}/telemetry_cache
+          key: telemetry-${{ github.ref_name }}
           restore-keys: |
-            telemetry-cache-
+            telemetry-${{ github.ref_name }}-
+            telemetry-
 
-      - name: Fetch JSON file
+      - name: Fetch and validate remote Telemetry JSON
+        id: fetch-validate
         run: |
-          curl -sSL https://www.freecad.org/chart_data.json -o chart_data_raw.json
+          set -euo pipefail
 
-      - name: Check fetched JSON
-        run: |
-          cat chart_data_raw.json
+          JSON_FILE="chart_data_raw.json"
+          CACHE_DIR="${{ runner.temp }}/telemetry_cache"
+          HASH_FILE="$CACHE_DIR/hash.txt"
 
-      - name: Ensure the JSON file is not empty
-        run: |
-          if [ ! -s chart_data_raw.json ]; then
-            echo "❌ chart_data_raw.json is empty or not found"
+          mkdir -p "$CACHE_DIR"
+
+          echo "Fetching JSON..."
+          curl -sSL --fail https://www.freecad.org/chart_data.json -o "$JSON_FILE"
+
+          if [ ! -s "$JSON_FILE" ]; then
+            echo "❌ $JSON_FILE missing or empty"
             exit 1
-          else
-            echo "✅ chart_data_raw.json fetched successfully"
           fi
 
-      - name: Validate JSON file (with lenient jq)
-        run: |
-          jq --ascii-output empty chart_data_raw.json || exit 1
+          NEW_HASH=$(sha256sum "$JSON_FILE" | awk '{print $1}')
+          echo "New hash: $NEW_HASH"
 
-      - name: Validate JSON file
-        run: |
-          if ! jq empty chart_data_raw.json; then
-            echo "❌ Invalid JSON format"
-            exit 1
+          if [ -f "$HASH_FILE" ] && [ "$(cat "$HASH_FILE")" = "$NEW_HASH" ]; then
+            echo "No change detected."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
           else
-            echo "✅ Valid JSON format"
+            echo "$NEW_HASH" > "$HASH_FILE"
+            echo "Change detected."
+            echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
+
+          if ! jq empty "$JSON_FILE"; then
+            echo "❌ Invalid $JSON_FILE format"
+            exit 1
+          fi
+
+          echo "✅ $JSON_FILE is valid and non-empty"
 
       - name: Extract most common totalUsers
+        if: steps.fetch-validate.outputs.changed == 'true'
         id: extract_total
         run: |
+          set -euo pipefail
+
           TOTAL_USERS=$(jq -r '
             to_entries
             | map(select(.value.totalUsers != null) | .value.totalUsers)
+            | sort
             | group_by(.)
-            | sort_by(length)
-            | reverse
-            | .[0][0]
+            | last | .[0] // "No totalUsers found"
           ' chart_data_raw.json)
 
           echo "totalUsers=$TOTAL_USERS"
           echo "totalUsers=$TOTAL_USERS" >> "$GITHUB_OUTPUT"
 
       - name: Log invalid keys
+        if: steps.fetch-validate.outputs.changed == 'true'
         run: |
+          set -euo pipefail
+
           INVALID=$(jq -r '
             to_entries
             | map(select(.key != "totalUsers"))
@@ -89,9 +104,14 @@ jobs:
             echo "✅ No invalid keys found."
           fi
 
-      - name: Clean and transform JSON
+      - name: Clean and transform Telemetry JSON
+        if: steps.fetch-validate.outputs.changed == 'true'
         run: |
-          jq --argjson totalUsers "${{ steps.extract_total.outputs.totalUsers }}" '
+          set -euo pipefail
+
+          mkdir -p data
+
+          jq --arg totalUsers "${{ steps.extract_total.outputs.totalUsers }}" '
             with_entries(
               if (.value.labels and .value.data) then
                 . as {key: $k, value: $v} |
@@ -108,14 +128,15 @@ jobs:
               end
             )
             | . + { totalUsers: $totalUsers }
-          ' chart_data_raw.json > data/telemetry_chart_data.json
+          ' chart_data_raw.json > data/telemetry_data.json
 
       - name: Commit and push cleaned Telemetry Data
+        if: steps.fetch-validate.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add data/telemetry_chart_data.json
+          git add data/telemetry_data.json
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
@@ -126,8 +147,10 @@ jobs:
           git commit -m "Action: update Telemetry Data - $DATE"
           git push
 
-      - name: Save updated cache
+      - name: Save Telemetry Cache
+        id: cache-save
+        if: steps.fetch-validate.outputs.changed == 'true'
         uses: actions/cache/save@v4
         with:
-          path: .cache
-          key: telemetry-cache-${{ github.ref_name }}
+          path: ${{ runner.temp }}/telemetry_cache
+          key: telemetry-${{ github.ref_name }}

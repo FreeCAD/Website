@@ -9,20 +9,22 @@ permissions:
   contents: write
 
 jobs:
-  fetch-remote-json:
+  fetch-addon:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Restore ETag/hash cache
-        uses: actions/cache@v4
+      - name: Restore Addon Cache
+        id: cache-restore
+        uses: actions/cache/restore@v4
         with:
-          path: .cache
-          key: addon-cache-${{ github.ref_name }}
+          path: ${{ runner.temp }}/addon_cache
+          key: addon-${{ github.ref_name }}
           restore-keys: |
-            addon-cache-
+            addon-${{ github.ref_name }}-
+            addon-
 
       - name: Fetch remote ZIP with ETag + Hash fallback
         id: fetch_zip
@@ -31,9 +33,9 @@ jobs:
 
           URL="https://addons.freecad.org/addon_catalog_cache.zip"
           ZIP_FILE="addon_catalog_cache.zip"
-          ETAG_FILE=".cache/etag.txt"
-          HASH_FILE=".cache/hash.txt"
-          CACHE_DIR=".cache"
+          CACHE_DIR="${{ runner.temp }}/addon_cache"
+          ETAG_FILE="$CACHE_DIR/etag.txt"
+          HASH_FILE="$CACHE_DIR/hash.txt"
           DATA_DIR="data"
 
           mkdir -p "$CACHE_DIR" "$DATA_DIR"
@@ -45,12 +47,12 @@ jobs:
           }
 
           download_and_extract() {
-            curl -L --fail "$URL" -o "$ZIP_FILE"
-            unzip -o "$ZIP_FILE" '*.json' -d "$DATA_DIR" >/dev/null
-            unzip -Z1 "$ZIP_FILE" '*.json'
+            curl -L --fail "$URL" -o "$ZIP_FILE" || { echo "Download failed"; exit 1; }
+            unzip -o "$ZIP_FILE" '*.json' -d "$DATA_DIR" >/dev/null || { echo "Unzip failed"; exit 1; }
+            unzip -Z1 "$ZIP_FILE" '*.json' || { echo "Unzip failed or no JSON files found"; exit 1; }
           }
 
-          ETAG=$(get_etag || true)
+          ETAG=$(get_etag)
 
           if [ -n "${ETAG:-}" ]; then
             echo "ETag found: $ETAG"
@@ -68,7 +70,9 @@ jobs:
             echo "$ETAG" > "$ETAG_FILE"
             echo "changed=true" >> "$GITHUB_OUTPUT"
             exit 0
+
           else
+
             echo "No ETag header. Falling back to hash comparison..."
             EXTRACTED_JSON=$(download_and_extract)
             NEW_HASH=$(sha256sum "$ZIP_FILE" | awk '{print $1}')
@@ -86,21 +90,29 @@ jobs:
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Check JSON validity
+      - name: Validate Addon JSON
         if: steps.fetch_zip.outputs.changed == 'true'
         run: |
+          set -euo pipefail
+
           FILE="${{ steps.fetch_zip.outputs.json_file }}"
+
           echo "Validating $FILE..."
-          if ! python3 -m json.tool "$FILE" >/dev/null 2>&1; then
+
+          if ! python3 -m json.tool "$FILE"; then
             echo "Error: $FILE is not valid JSON."
             exit 1
           fi
 
-      - name: Cleanup JSON
+      - name: Cleanup Addon JSON
         if: steps.fetch_zip.outputs.changed == 'true'
         run: |
+          set -euo pipefail
+
           FILE="${{ steps.fetch_zip.outputs.json_file }}"
+
           echo "Cleaning JSON: $FILE"
+
           python3 - "$FILE" <<EOF
           import json
           import sys
@@ -183,7 +195,7 @@ jobs:
               sys.exit(1)
           EOF
 
-      - name: Commit and push updated JSON
+      - name: Commit and push cleaned Addon JSON
         if: steps.fetch_zip.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
@@ -200,9 +212,10 @@ jobs:
           git commit -m "Action: update Addon catalog - $DATE"
           git push
 
-      - name: Save updated cache
+      - name: Save Addon Cache
+        id: cache-save
         if: steps.fetch_zip.outputs.changed == 'true'
         uses: actions/cache/save@v4
         with:
-          path: .cache
-          key: addon-cache-${{ github.ref_name }}
+          path: ${{ runner.temp }}/addon_cache
+          key: addon-${{ github.ref_name }}

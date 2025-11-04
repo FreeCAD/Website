@@ -1,0 +1,50 @@
+name: Links Validator
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 23 * * 0"  # Weekly on Sunday 23:00 UTC
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  validate-links:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v3
+      with:
+        hugo-version: '0.148.2'
+        extended: true
+
+    - name: Build Hugo site
+      run: hugo --minify
+
+    - name: Validate links
+      uses: JustinBeckwith/linkinator-action@v2
+      with:
+        paths: ./public
+        recurse: true
+        retry: true
+        checkFragments: true
+        cleanUrls: true
+        redirects: warn
+        requireHttps: warn
+
+  trigger-deploy:
+    needs: fetch-addon
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Hugo deployment
+        run: |
+          curl -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            https://api.github.com/repos/${{ github.repository }}/dispatches \
+            -d '{"event_type": "trigger-hugo-deploy"}'

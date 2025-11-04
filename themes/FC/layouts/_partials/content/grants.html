@@ -4,7 +4,7 @@
   - Display Grants data in cards.
   - Link to all grants at the bottom. */ -}}
 
-{{- $list := site.Data.funded_grants_list -}}
+{{- $list := site.Data.grant_list -}}
 {{- with $list -}}
   {{- $sorted := sort $list "created_at" "desc" -}}
 
