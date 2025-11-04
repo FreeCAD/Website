@@ -36,10 +36,8 @@ jobs:
         cleanUrls: true
         redirects: warn
         requireHttps: warn
-        statusCodes:
-          "403": "warn"
-        skip:
-          - 'https?://[^"<>]*fedishare[^"<>]*'
+        statusCodes: '{"403": "warn"}'
+        skip: ['https?://[^"<>]*fedishare[^"<>]*']
 
   trigger-deploy:
     needs: validate-links
