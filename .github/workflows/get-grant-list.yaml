@@ -79,7 +79,7 @@ jobs:
         jq '[.[] | {
           title: .title,
           url: .html_url,
-          labels: (.labels | map(.name) // [])
+          labels: (.labels | map(.name) // []),
           created_at: .created_at,
           author: (.user.login // "Unknown Author"),
         }]' grant_list_raw.json > data/grant_list.json
