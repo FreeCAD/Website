@@ -15,7 +15,7 @@
         {{- range $dimensions := site.Params.resizeDimensions.article -}}
           {{- $width := int (index (split $dimensions "x") 0) -}}
           {{- if lt $width $img.cover.Width -}}
-            {{- $resized := $img.cover.Resize (printf "%dx %s %s" $width $img.resizeFormat) -}}
+            {{- $resized := $img.cover.Resize (printf "%dx %s" $width $img.resizeFormat) -}}
             {{- $srcset = $srcset | append (printf "%s %dw" $resized.RelPermalink $width) -}}
             {{- $widths = $widths | append $width -}}
           {{- end -}}

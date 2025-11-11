@@ -9,7 +9,7 @@ date: 2024-05-22T08:04:23+12:00
 params:
   buttons:
     - url: download
-      style: "background: var(--secondary); color: var(--theme); box-shadow: 0 0 0 0.25em var(--theme); margin-right: 2rem;"
+      style: "background: var(--secondary); color: var(--theme); box-shadow: 0 0 0 0.25em var(--theme);"
     - url: releases/1-0
       label: "See what's new"
 ---
