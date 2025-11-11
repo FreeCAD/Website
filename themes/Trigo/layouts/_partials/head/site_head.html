@@ -23,8 +23,6 @@
   <meta name="keywords" content="{{ $keywords | default $pageTitle }}">
   <link rel="canonical" href="{{ .Permalink }}">
 
-  {{- partialCached "utils/styles.html" . -}}
-
   {{- /* Favicons. */ -}}
   <link rel="icon" href="{{ "favicon.ico" | absURL }}">
   <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}">
@@ -32,6 +30,12 @@
   {{- range .AllTranslations -}}
     <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
   {{- end -}}
+
+  {{- /* Get chroma script to change between light and dark theme. */ -}}
+  {{- partial "scripts/chroma.html" . -}}
+
+  {{- /* Get stylesheets. */ -}}
+  {{- partialCached "utils/styles.html" . -}}
 
   {{- if $isProd -}}
     {{- /* Get google analytics. */ -}}
@@ -43,6 +47,3 @@
     {{- partial "opengraph.html" . -}}
   {{- end -}}
 </head>
-
-{{- /* Get chroma script to change between light and dark theme. */ -}}
-{{- partial "scripts/chroma.html" . -}}
