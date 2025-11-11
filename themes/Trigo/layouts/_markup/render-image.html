@@ -86,8 +86,7 @@
       <div class="image-with-popover">
         <figure>
           <button aria-label="{{ $zoom }}" popovertarget="{{ $id }}">
-            <img loading="lazy"
-              srcset="{{ delimit $srcset ", " }}"
+            <img srcset="{{ delimit $srcset ", " }}"
               sizes="{{ delimit $sizes ", " }}"
               src="{{ $img.RelPermalink | safeURL }}"
               width="{{ $img.Width }}"
@@ -104,8 +103,7 @@
         </figure>
         {{- if site.Params.imagePopover -}}
           <div id="{{ $id }}" popover>
-            <img loading="lazy"
-              src="{{ $img.RelPermalink | safeURL }}"
+            <img src="{{ $img.RelPermalink | safeURL }}"
               {{- with $alt -}} alt="{{ . }}" title="{{ . }}"{{- end -}}
               loading="lazy"
               fetchpriority="low">
