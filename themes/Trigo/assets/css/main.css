@@ -373,20 +373,14 @@ blockquote p {
   margin: 0.5rem 0 0;
 }
 
-table th,
-table:not(.highlighttable, .highlight table, .gist .highlight) td {
-  min-width: 5rem;
-  padding: 0.5rem var(--gap);
+table tr {
   border-bottom: var(--border);
 }
 
-table th {
-  font-size: var(--m);
-  text-align: start;
-}
-
-table:not(.highlighttable) td code:only-child {
-  margin: auto 0;
+table th,
+table:not(.highlighttable, .highlight table, .gist .highlight) td {
+  min-width: 2rem;
+  padding: calc(var(--gap) * 0.5);
 }
 
 .highlight table {
@@ -469,7 +463,7 @@ pre code {
   padding: var(--gap);
   overflow-x: auto;
   border-radius: var(--radius);
-  word-break: break-all;
+  word-break: break-word;
   font-family: var(--monospace);
 }
 

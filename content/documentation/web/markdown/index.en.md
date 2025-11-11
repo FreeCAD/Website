@@ -181,14 +181,14 @@ For more advanced functionality, use Hugo's built-in [Figure shortcode](https://
 
 ## Styling Text
 
-| Style       | Syntax          | Example output               |
-| ----------- | --------------- | ---------------------------- |
-| Bold        | `**bold**`      | This is a **bold** text      |
-| Italic      | `*italic*`      | This is an *italic* text     |
-| Deleted     | `~~deleted~~`   | This is a ~~deleted~~ text   |
-| Inserted    | `++inserted++`  | This is a ++inserted++ text  |
-| Subscript   | `~subscript~`   | This is a ~subscript~ text   |
-| Superscript | `^superscript^` | This is a ^superscript^ text |
+| Style       | Syntax          | Example output          |
+| ----------- | --------------- | ----------------------- |
+| Bold        | `**bold**`      | Some **bold** text      |
+| Italic      | `*italic*`      | Some *italic* text      |
+| Deleted     | `~~deleted~~`   | Some ~~deleted~~ text   |
+| Inserted    | `++inserted++`  | Some ++inserted++ text  |
+| Subscript   | `~subscript~`   | Some ~subscript~ text   |
+| Superscript | `^superscript^` | Some ^superscript^ text |
 
 ## Blockquotes
 
