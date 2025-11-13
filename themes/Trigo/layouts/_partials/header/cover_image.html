@@ -1,0 +1,113 @@
+{{- /* Hero and article cover image:
+
+  - Get BundleType to define custom logic for hero or article.
+  - Get hero cover with fallbacks to category or section cover.
+  - Get article cover from front-matter only.
+  - Resize supported images.
+*/ -}}
+
+{{- $cover := false -}}
+{{- $alt := "" -}}
+{{- $caption := "" -}}
+{{- $anchor := "" -}}
+
+{{- $processableFormats := site.Params.processableFormats | default (slice "jpeg" "jpg" "png" "webp" "gif") -}}
+{{- $resizeFormat := site.Params.resizeFormat | default "webp" -}}
+
+{{- $type := cond (eq .BundleType "branch") "list" "single" -}}
+{{- $hero := index (where (site.RegularPages | lang.Merge site.Sites.Default.RegularPages) "Params.hero" "!=" nil) 0 -}}
+{{- $page := cond .IsHome $hero . -}}
+
+{{- with $page.Params.cover.image -}}
+  {{- $cover = ($page.Resources.ByType "image").GetMatch (printf "*%s*" .) -}}
+{{- end -}}
+
+{{- /* Cover fallbacks. */ -}}
+{{- if and (eq $type "list") (not $cover) -}}
+  {{- $section := site.GetPage (printf "/%s" .Section) | default (site.Sites.Default.GetPage (printf "/%s" .Section)) -}}
+  {{- $category := lower .Params.categories -}}
+
+  {{- /* Category cover fallback. */ -}}
+  {{- if and $section $category -}}
+    {{- $cover = ($section.Resources.ByType "image").GetMatch (printf "*%s*" $category) -}}
+    {{- $page = $section -}}
+  {{- end -}}
+
+  {{- /* Section cover fallback. */ -}}
+  {{- if and (not $cover) $section -}}
+    {{- $cover = ($section.Resources.ByType "image").GetMatch (printf "*%s*" $section.Params.cover.image) -}}
+    {{- $page = $section -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* Get cover alternative text, title and anchor. */ -}}
+{{- with $page.Params.cover -}}
+  {{- $alt = .alt | default .caption | plainify -}}
+  {{- $caption = .caption | default .alt | plainify -}}
+  {{- $anchor = .anchor | default "Smart" | plainify -}}
+{{- end -}}
+
+{{- with $cover -}}
+
+  {{- $loading := "eager" -}}
+  {{- $priority := "high" -}}
+  {{- $figureClass := cond (eq $type "single") "article-cover" "entry-cover" -}}
+  {{- $resizeDims := cond (eq $type "single")
+    (site.Params.resizeDimensions.single | default (slice "500x250" "1000x500"))
+    (site.Params.resizeDimensions.list | default (slice "500x1000" "2000x1000")) -}}
+
+  <figure class="{{ $figureClass }}">
+
+    {{- /* Cover image is present in page bundle. */ -}}
+    {{- if in $processableFormats .MediaType.SubType -}}
+
+      {{- $srcset := slice -}}
+      {{- $sizes := slice -}}
+
+      {{- range $dim := $resizeDims -}}
+        {{- $width := int (index (split $dim "x") 0) -}}
+        {{- if lt $width $cover.Width -}}
+          {{- $resized := cond (eq $type "single")
+            ($cover.Resize (printf "%dx %s" $width $resizeFormat))
+            ($cover.Fill (printf "%s %s %s" $dim $anchor $resizeFormat)) -}}
+          {{- $srcset = $srcset | append (printf "%s %dw" $resized.RelPermalink $width) -}}
+          {{- if eq $type "single" -}}
+            {{- $sizes = $sizes | append (printf "(max-width: %dpx) %dpx" $width $width) -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- $srcset = $srcset | append (printf "%s %dw" .RelPermalink .Width) -}}
+      {{- $sizes = cond (eq $type "single") ($sizes | append "75vw") "100vw" -}}
+
+      <img srcset="{{ delimit $srcset ", " }}"
+        sizes="{{ delimit $sizes ", " }}"
+        src="{{ .RelPermalink }}"
+        alt="{{ $alt }}"
+        width="{{ .Width }}"
+        height="{{ .Height }}"
+        loading="{{ $loading }}"
+        fetchpriority="{{ $priority }}">
+
+    {{- /* Unprocessable image, absolute urls and external links (no img processing). */ -}}
+    {{- else -}}
+      <img src="{{ with .RelPermalink }}{{ . }}{{ else }}{{ . | absURL }}{{ end }}"
+        alt="{{ $alt }}"
+        loading="{{ $loading }}"
+        fetchpriority="{{ $priority }}">
+    {{- end -}}
+
+    {{- /* Display Caption. */ -}}
+    {{- with $caption -}}
+      <figcaption>
+        <div class="tooltip">
+          {{- partial "utils/icon.html" "important" -}}
+          <span>
+            {{- . | $.Page.RenderString -}}
+          </span>
+        </div>
+      </figcaption>
+    {{- end -}}
+
+  </figure>
+{{- end -}}

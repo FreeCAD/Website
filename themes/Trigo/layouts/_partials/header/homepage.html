@@ -14,43 +14,41 @@
 {{- end -}}
 
 {{- /* Get the latest article with the "hero" parameters in front matter. */ -}}
-{{- with (index (where (site.RegularPages | lang.Merge site.Sites.Default.RegularPages) "Params.hero" "!=" nil) 0) -}}
-  <header>
+{{- $hero := index (where (site.RegularPages | lang.Merge site.Sites.Default.RegularPages) "Params.hero" "!=" nil) 0 -}}
+{{- $heroTitle := $hero.LinkTitle | .RenderString -}}
+{{- $heroDesc := $hero.Description | .RenderString -}}
 
-    <h1 class="title">
-      {{ .LinkTitle | .RenderString }}
-    </h1>
+<header>
 
-    {{- with .Description -}}
-      <h3 class="description">{{ . | $.RenderString }}</h3>
-    {{- end -}}
+  <h1 class="title">{{- $heroTitle -}}</h1>
 
-    {{- with $homepageButtons -}}
-      <div class="buttons">
-        {{- range $buttons := . -}}
-          {{- $href := $buttons.url -}}
-          {{- $page := site.GetPage $href | default (site.Sites.Default.GetPage $href) -}}
-          {{- $label := $buttons.label | default "" -}}
+  <h3 class="description">{{- $heroDesc -}}</h3>
 
-          {{- with $page -}}
-            {{- $href = .RelPermalink -}}
-            {{- $label = cond (ne (trim $label " ") "") $label (.LinkTitle | .RenderString) -}}
-          {{- else -}}
-            {{- $label = cond (ne (trim $label " ") "") $label (i18n "explore" | default "Explore") -}}
-          {{- end -}}
+  {{- with $homepageButtons -}}
+    <div class="buttons">
+      {{- range $buttons := . -}}
+        {{- $href := $buttons.url -}}
+        {{- $page := site.GetPage $href | default (site.Sites.Default.GetPage $href) -}}
+        {{- $label := $buttons.label | default "" -}}
 
-          <a href="{{ $href }}"
-            title="{{ $label }}"
-            class="hero-button"
-            {{ with $buttons.style }}style="{{ . | safeCSS }}"{{ end }}>
-            {{ $label }}
-          </a>
+        {{- with $page -}}
+          {{- $href = .RelPermalink -}}
+          {{- $label = cond (ne (trim $label " ") "") $label (.LinkTitle | .RenderString) -}}
+        {{- else -}}
+          {{- $label = cond (ne (trim $label " ") "") $label (i18n "explore" | default "Explore") -}}
         {{- end -}}
-      </div>
-    {{- end -}}
 
-    {{- /* Get hero cover image. */ -}}
-    {{- partial "cover/hero.html" . -}}
+        <a href="{{ $href }}"
+          title="{{ $label }}"
+          class="hero-button"
+          {{ with $buttons.style }}style="{{ . | safeCSS }}"{{ end }}>
+          {{ $label }}
+        </a>
+      {{- end -}}
+    </div>
+  {{- end -}}
 
-  </header>
-{{- end -}}
+  {{- /* Get cover image. */ -}}
+  {{- partial "header/cover_image.html" . -}}
+
+</header>

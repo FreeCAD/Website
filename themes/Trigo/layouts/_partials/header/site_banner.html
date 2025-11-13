@@ -8,7 +8,7 @@
 
 {{- $logo := resources.Get site.Params.logo -}}
 {{- $logoType := $logo.MediaType.SubType -}}
-{{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif") -}}
+{{- $processableFormats := site.Params.processableFormats | default (slice "jpeg" "jpg" "png" "webp" "gif") -}}
 {{- $logoText := site.Title | .RenderString -}}
 {{- $menuMain := site.Menus.main | default site.Sites.Default.Menus.main -}}
 {{- $pageLang := .Page.Lang -}}

@@ -37,9 +37,9 @@
     {{- i18n "noterms" | default (printf "No %s found." $type) -}}
   {{- end -}}
 
-  {{- /* Get news section hero cover image. */ -}}
+  {{- /* Get news section cover image. */ -}}
   {{- with site.GetPage "news" -}}
-    {{- partial "cover/hero.html" . -}}
+    {{- partial "header/cover_image.html" . -}}
   {{- end -}}
 
 </header>

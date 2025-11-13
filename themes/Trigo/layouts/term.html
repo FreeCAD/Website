@@ -37,9 +37,9 @@
     <h3 class="description">{{ . | $.RenderString }}</h3>
   {{- end -}}
 
-  {{- /* Get news Section hero cover image. */ -}}
+  {{- /* Get news section cover image. */ -}}
   {{- with site.GetPage "news" -}}
-    {{- partial "cover/hero.html" . -}}
+    {{- partial "header/cover_image.html" . -}}
   {{- end -}}
 
 </header>

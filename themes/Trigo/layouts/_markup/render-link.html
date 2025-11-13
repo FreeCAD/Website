@@ -12,7 +12,7 @@
 
 <a href="{{ $href }}"
   {{- if not $isExternal -}}
-    class="has-tooltip"
+    class="tooltip"
   {{- end -}}
   {{- with $title -}}
     title="{{ . }}"
@@ -32,7 +32,7 @@
 
   {{- else -}}
     {{- with .Page.GetPage .Destination -}}
-      <span class="tooltip">
+      <span>
         <strong>
           {{- .Title -}}
         </strong>

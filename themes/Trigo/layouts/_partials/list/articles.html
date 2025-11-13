@@ -14,7 +14,7 @@
   title="{{ .Title | plainify }}">
 
     {{- /* Get article card cover image. */ -}}
-    {{- partial "cover/card.html" . -}}
+    {{- partial "list/card_image.html" . -}}
 
     {{- if not .Date.IsZero -}}
       <span class="entry-date">
