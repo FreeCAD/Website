@@ -7,7 +7,6 @@
 
 {{- $classes := slice
     (cond (eq .BundleType "branch") "list" (cond (eq .BundleType "leaf") "single" "unknown-BundleType"))
-    (cond (eq site.Params.defaultChroma "dark") "dark" "")
     (printf "type-%s" .Type)
     (printf "kind-%s" .Kind)
     (cond .Layout (printf "layout-%s" .Layout) "")

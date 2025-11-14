@@ -10,15 +10,15 @@
 
 {{- /* Theme Chroma toggle. */ -}}
 <script>
-  document.getElementById("chroma-toggle").addEventListener("click", () => {
-    if (document.body.className.includes("dark")) {
-      document.body.classList.remove('dark');
-      localStorage.setItem("pref-theme", 'light');
-    } else {
-      document.body.classList.add('dark');
-      localStorage.setItem("pref-theme", 'dark');
-    }
-  })
+  document.addEventListener("DOMContentLoaded", function () {
+    const button = document.getElementById("chroma-toggle");
+    if (!button) return;
+
+    button.addEventListener("click", () => {
+      const dark = document.documentElement.classList.toggle("dark");
+      localStorage.setItem("pref-theme", dark ? "dark" : "light");
+    });
+  });
 </script>
 
 {{- /* Detect User Agent and provide corresponding download options. */ -}}

@@ -9,25 +9,28 @@
 
 {{- if eq $defaultChroma "light" -}}
   <script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-      document.body.classList.add('dark');
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
     }
   </script>
 {{- else if eq $defaultChroma "dark" -}}
   <script>
-    if (localStorage.getItem("pref-theme") === "light") {
-      document.body.classList.remove('dark')
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "light") {
+      document.documentElement.classList.remove('dark')
     }
   </script>
 {{- else -}}
   {{- /* Chroma is auto. */ -}}
   <script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-      document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-      document.body.classList.remove('dark')
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
     } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.body.classList.add('dark');
+      document.documentElement.classList.add('dark');
     }
   </script>
 {{- end -}}
