@@ -47,9 +47,23 @@
 
 .archive-entry {
   margin: var(--gap) auto;
+  padding: 0 var(--gap) var(--gap);
+  background: var(--entry);
+  border-radius: var(--radius);
+  transition: var(--link-transition);
 }
 
-.archive-entry:hover .archive-entry-title {
+.archive-entry:hover {
+  filter: var(--filter);
+  transform: var(--transform-hover);
+}
+
+.archive-entry-title {
+  margin: 0 auto;
+  padding: calc(var(--gap) * 1.5) 0;
+}
+
+.archive-entry-title:hover {
   color: var(--link-hover-color);
 }
 

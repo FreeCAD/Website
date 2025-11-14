@@ -29,11 +29,7 @@
         {{ .Title | .RenderString }}
       </span>
       {{- if .Draft }}
-        <sup>
-          <span class="entry-isdraft">
-            [{{- i18n "draft" | default "Draft" -}}]
-          </span>
-        </sup>
+        <sup><span class="entry-isdraft">[{{- i18n "draft" | default "Draft" -}}]</span></sup>
       {{- end -}}
     </h3>
 

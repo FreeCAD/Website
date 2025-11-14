@@ -40,9 +40,7 @@
                     <h4 class="archive-entry-title">
                       {{ .Title | .RenderString }}
                       {{- if .Draft -}}
-                        <sup>
-                          <span class="entry-isdraft">[{{- i18n "draft" | default "Draft" -}}]</span>
-                        </sup>
+                        <sup><span class="entry-isdraft">[{{- i18n "draft" | default "Draft" -}}]</span></sup>
                       {{- end -}}
                     </h4>
                   </a>
