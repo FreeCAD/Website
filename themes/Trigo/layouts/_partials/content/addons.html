@@ -1,85 +1,90 @@
 {{- /* Addons catalog:
 
   - Get Addon Catalog Cache from Data JSON file.
+  - Pick versions (main/master branch).
   - Sort by last update.
   - Get Addon metadata, clean some (specially for icon).
   - Display Addon data in cards.
 */ -}}
 
+{{- $defaultIcon := resources.Get .Params.defaultIcon -}}
 {{- $catalog := site.Data.addon_catalog_cache -}}
-{{- with $catalog -}}
-  {{- $entries := slice -}}
 
-  {{- range $key, $versions := $catalog -}}
-    {{- $match := where $versions "git_ref" "in" (slice "main" "master") -}}
-    {{- $item := (index $match 0) | default (index $versions 0) -}}
-    {{- $entries = $entries | append (dict "key" $key "item" $item) -}}
+{{- if not $catalog -}}{{- return -}}{{- end -}}
+
+{{- $entries := slice -}}
+{{- range $versions := $catalog -}}
+  {{- $main := where $versions "git_ref" "in" (slice "main" "master") -}}
+  {{- $item := (index $main 0) | default (index $versions 0) -}}
+  {{- if $item.metadata -}}
+    {{- $entries = $entries | append (dict "item" $item) -}}
   {{- end -}}
-
-  {{- $sorted := sort $entries "item.last_update_time" "desc" -}}
-
-  <section class="addons-list">
-    {{- range $sorted -}}
-      {{- $key := .key -}}
-      {{- $item := .item -}}
-
-      {{- with $item.metadata -}}
-        <a href="{{ $item.repository }}">
-          <article class="addon-entry">
-            <div class="addon-header">
-              <div class="addon-icon">
-                {{- with .icon -}}
-                  {{- $repo := $item.repository | default "" -}}
-                  {{- if strings.HasSuffix $repo ".git" -}}
-                    {{- $repo = replace $repo ".git" "" -}}
-                  {{- end -}}
-                  {{- if strings.Contains $repo "github" }}
-                    {{- $repo = replace $repo "https://github.com/" "" -}}
-                    {{- $repo = printf "https://raw.githubusercontent.com/%s/refs/heads/%s" $repo $item.git_ref -}}
-                  {{- else if strings.Contains $repo "gitlab" -}}
-                    {{- $repo = printf "%s/raw/%s" $repo $item.git_ref -}}
-                  {{- else if strings.Contains $repo "codeberg" -}}
-                    {{- $repo = printf "%s/raw/branch/%s" $repo $item.git_ref -}}
-                  {{- end -}}
-                  {{- $icon := replaceRE "(\\.\\.?/)+" "" . -}}
-                  {{- $icon = printf "%s/%s" $repo $icon -}}
-                  <img
-                    src="{{ $icon }}"
-                    alt="{{ i18n "icon" | default "icon" }}">
-                {{- else -}}
-                  <img src="{{ (resources.Get "FreeCAD-symbol-mono.svg").RelPermalink }}" alt="Default icon">
-                {{- end -}}
-              </div>
-
-              <div class="addon-title">
-                {{- with .name -}}
-                  <h3>{{ . }}</h3>
-                {{- end -}}
-                {{- with .maintainer  -}}
-                  <p class="addon-author">{{ truncate 40 . }}</p>
-                {{- end -}}
-              </div>
-            </div>
-
-            {{- with .description -}}
-              <p class="addon-description">{{ truncate 240 . }}</p>
-            {{- end -}}
-
-            <div class="addon-meta">
-              {{- with .version -}}
-                <span>{{ . }}</span>
-              {{- end -}}
-              {{- with $item.last_update_time -}}
-                {{- $time := time . -}}
-                <span>{{ $time | time.Format ":date_medium" }}</span>
-              {{- end -}}
-              {{- with .license -}}
-                <span>{{ . }}</span>
-              {{- end -}}
-            </div>
-          </article>
-        </a>
-      {{- end -}}
-    {{- end -}}
-  </section>
 {{- end -}}
+
+{{- $sorted := sort $entries "item.last_update_time" "desc" -}}
+
+<section class="addons-list">
+  {{- range $sorted -}}
+
+    {{- $item := .item -}}
+    {{- $meta := $item.metadata -}}
+
+    {{- /* Clean repository name. */ -}}
+    {{- $repo := $item.repository | default "" -}}
+    {{- if strings.HasSuffix $repo ".git" -}}
+      {{- $repo = replace $repo ".git" "" -}}
+    {{- end -}}
+
+    {{- /* Repository provider detection. */ -}}
+    {{- $isGitHub   := strings.Contains $repo "github" -}}
+    {{- $isGitLab   := strings.Contains $repo "gitlab" -}}
+    {{- $isCodeberg := strings.Contains $repo "codeberg" -}}
+
+    {{- /* Get base raw file URL. */ -}}
+    {{- $raw := cond $isGitHub
+      (printf "https://raw.githubusercontent.com/%s/refs/heads/%s"
+        (replace $repo "https://github.com/" "") $item.git_ref)
+      (cond $isGitLab
+        (printf "%s/raw/%s" $repo $item.git_ref)
+        (cond $isCodeberg
+          (printf "%s/raw/branch/%s" $repo $item.git_ref)
+          "")) -}}
+
+    {{- /* Clean icon path. */ -}}
+    {{- $icon := $meta.icon -}}
+    {{- if $icon -}}
+      {{- $cleanIcon := replaceRE "(\\.\\.?/)+" "" $icon -}}
+      {{- $icon = cond (ne $raw "")
+          (printf "%s/%s" $raw $cleanIcon)
+          $cleanIcon -}}
+    {{- else -}}
+      {{- $icon = $defaultIcon.RelPermalink -}}
+    {{- end -}}
+
+    <a href="{{ $item.repository }}">
+      <article class="addon-entry">
+
+        <div class="addon-header">
+          <div class="addon-icon">
+            <img src="{{ $icon }}" alt="{{ i18n "icon" | default "icon" }}">
+          </div>
+
+          <div class="addon-title">
+            {{- with $meta.name -}}<h3>{{- . -}}</h3>{{- end -}}
+            {{- with $meta.maintainer  -}}<p class="addon-author">{{- truncate 40 . -}}</p>{{- end -}}
+          </div>
+        </div>
+
+        {{- with $meta.description -}}<p class="addon-description">{{- truncate 240 . -}}</p>{{- end -}}
+
+        <div class="addon-meta">
+          {{- with $meta.version -}}<span>{{- . -}}</span>{{- end -}}
+          {{- with $item.last_update_time -}}<span>{{- time . | time.Format ":date_medium" -}}</span>{{- end -}}
+          {{- with $meta.license -}}<span>{{- . -}}</span>{{- end -}}
+        </div>
+
+      </article>
+    </a>
+
+  {{- end -}}
+</section>

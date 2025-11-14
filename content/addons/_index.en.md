@@ -7,4 +7,6 @@ cover:
   image: 2.webp
   caption: "a cover caption"
   alt: "a cover alternative title"
+params:
+  defaultIcon: FreeCAD-symbol-mono.svg
 ---
