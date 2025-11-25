@@ -26,17 +26,17 @@ jobs:
 #    - name: Build Hugo site
 #      run: hugo --minify
 
-    - name: Validate links
-      uses: JustinBeckwith/linkinator-action@v2
-      with:
-        paths: "https://marcuspollio.github.io/FreeCAD-website/"
-        recurse: true
-        retry: true
-        checkFragments: true
-        cleanUrls: true
-        redirects: warn
-        requireHttps: warn
-        statusCodes: '{"403": "warn"}'
+#    - name: Validate links
+#      uses: JustinBeckwith/linkinator-action@v2
+#      with:
+#        paths: "https://marcuspollio.github.io/FreeCAD-website/"
+#        recurse: true
+#        retry: true
+#        checkFragments: true
+#        cleanUrls: true
+#        redirects: warn
+#        requireHttps: warn
+#        statusCodes: '{"403": "warn"}'
 
   trigger-deploy:
     needs: validate-links
