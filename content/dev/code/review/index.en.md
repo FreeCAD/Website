@@ -47,7 +47,7 @@ In this document the **bolded** text will indicate how important each suggestion
 1. Commit message **should** include prefix with module name, e.g. `Part: `
 2. Commit message **should** use imperative mode - just like git does, e.g. `Part: Add fillet feature`
 
-<details>
+{{< details summary="Git commit message" >}}
 
 A properly formed Git commit subject line should always be able to complete the following sentence:
 
@@ -55,7 +55,7 @@ If applied, this commit will **your commit message**,
 
 e.g. If applied, this commit will add fillet feature.
 
-</details>
+{{< /details >}}
 
 3. If changeset is big and spans across multiple modules it **should** be split into one commit per module.
 4. Every commit in the PR **must** compile and run properly. `git bisect` workflow does not work if some commits are not possible to compile.
@@ -73,8 +73,7 @@ e.g. If applied, this commit will add fillet feature.
 7. (C++ only) C++ libraries/structures **should** be preferred over C ones. i.e. `std::array/vector` should be used instead of C array.
 8. (C++ only) C++ standard library **should** be utilized if possible, especially the `<algorithms>` one.
 
-<details>
-<summary>Example #1</summary>
+{{< details summary="Example 1" >}}
 
 Consider following code:
 ```c++
@@ -108,7 +107,7 @@ You can rewrite it in a following way:
 
 This way you split the responsibility of computing unique set with result preparation.
 
-</details>
+{{< /details >}}
 
 9. (C++ only) Return values **should** be preferred over out arguments.
     a. For methods that can fail `std::optional` should be used
@@ -124,33 +123,30 @@ This way you split the responsibility of computing unique set with result prepar
     b. the type is not clear from context, method name or template arguments
 14. If expression is not obvious - it **should** be given a name by using variable.
 
-<details>
-<summary>Example #1</summary>
+{{< details summary="Example 1" >}}
 
 TODO: Find some good example
 
-</details>
+{{< /details >}}
 
 15. (C++ only) Code **should not** be put in anonymous namespace.
 16. All members **must** be initialized.
 
-<details>
-<summary>Rationale</summary>
+{{< details summary="Rationale" >}}
 
 Not initialized members can easily cause undefined behaviors that are really hard to find.
 
-</details>
+{{< /details >}}
 
 17. If possible, functions / methods **should** not use more than 3 indentation levels.
 
-<details>
-<summary>Rationale</summary>
+{{< details summary="Rationale" >}}
 
 Main path of code should be the least indented, exceptional cases should be handled as early-exit if statements.
 Code that is highly indented is harder to process and often has large cognitive load -
 if something is not possible to write within 3 indentation levels it is a good signal that it might require splitting into smaller methods.
 
-</details>
+{{< /details >}}
 
 18. (C++ only) dedicated casts should be preferred over `dynamic_cast` due to performance
     a. QObjects should use `qobject_cast`
@@ -162,13 +158,12 @@ if something is not possible to write within 3 indentation levels it is a good s
 3. Functions / Methods **should** be pure i.e. their result should only depend on arguments (and object state in case of method). This helps with reusability, predictability and testing.
 4. Immutable data **should** be used whenever possible, (For C++ use `const`)
 
-<details>
-<summary>Rationale</summary>
+{{< details summary="Rationale" >}}
 
 It is much easier to reason about code that deals with data that does not change.
 Using const modifier ensures that the object will stay unmodified and compiler will make sure that it is the case.
 
-</details>
+{{< /details >}}
 
 5. (C++ only) If possible `constexpr` **should** be used for storing constant data.
 5. Long methods **should** be split into smaller, better described ones.
@@ -176,8 +171,7 @@ Using const modifier ensures that the object will stay unmodified and compiler w
 7. Integers **must not** be used to express anything other than numbers. For enumerations enums **must** be used.
 8. Code **should** be written in a way that it expresses intent, i.e. what should be done, rather than just how it is done.
 
-<details>
-<summary>Example #1</summary>
+{{< details summary="Rationale" >}}
 
 Consider this code:
 
@@ -240,13 +234,12 @@ auto findClosestDockWidget = []() { ... }
 
 That way reading through code of `setOverlayMode` we don't need to care about the details of finding the closest dock widget.
 
-</details>
+{{< /details >}}
 
 10. Boolean arguments **must** be avoided. Use enumerations instead - enum with 2 values is absolutely fine.
     For python boolean arguments are ok, but they **must** forced to be keyword ones.
 
-<details>
-<summary>example #1 (c++)</summary>
+{{< details summary="Example 1 (C++)" >}}
 
 consider following example:
 
@@ -263,7 +256,7 @@ mapper.populate(mappingstatus::modified, it.key(), it.value());
 
 now the intent is clear
 
-</details>
+{{< /details >}}
 
 11. (C++ only) Code **should** prefer uniform initialization `{ }` (also called brace initialization). Prevents narrowing.
 12. (C++ only) Class member variables **should** be initialized at declaration, not in constructors

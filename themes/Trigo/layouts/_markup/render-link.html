@@ -36,7 +36,7 @@
         <strong>
           {{- .Title -}}
         </strong>
-        {{- .Description -}}
+        {{- .Description | default .Summary | .RenderString -}}
       </span>
     {{- end -}}
   {{- end -}}

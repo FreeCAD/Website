@@ -1,22 +1,20 @@
 /* This CSS stylesheet defines the style for different media devices to have a responsive and fluid layout */
 
-/* For small-screen devices such as smartphones */
-@media screen and (max-width: 750px) {
+
+/* Small screen devices in portrait orientation (e.g. smartphones). */
+@media screen and (orientation: portrait) and (width <= 500px) {
 
   /* For fluid typography and layout */
   html {
     font-size: clamp(0.9rem, 2vw + 0.5rem, 1.5rem);
   }
 
-
   /* Theme-vars */
   :root {
     --width: calc(100vw - (var(--gap) * 2));
-    --header-height: 4rem;
-    --footer-height: 4rem;
-    --radius: 0.5rem;
-    --gap: 1rem;
-    --article: var(--width);
+    --content-width: var(--width);
+    --card-width: var(--width);
+
     --s: 0.75rem;
     --m: 1rem;
     --l: 1.25rem;
@@ -25,7 +23,7 @@
   }
 
   main {
-    min-height: calc(var(--width) * 1.5);
+    min-height: auto;
   }
 
   .site-nav {
@@ -55,7 +53,7 @@
 
   /* List and Single pages */
   main header {
-    min-height: calc(100vh - var(--header-height));
+    min-height: calc(100dvh - var(--header-height));
   }
 
   .article-header {
@@ -64,16 +62,16 @@
 
   .buttons,
   .metadata,
-  .cards-column {
+  .card {
     flex-direction: column;
   }
 
-  .cards-column {
+  .card {
     min-height: calc(var(--width) * 0.25);
   }
 
   main header .entry-cover img {
-    height: calc(100vh - var(--header-height));
+    height: calc(100dvh - var(--header-height));
   }
 
   main header .article-cover img {
@@ -87,7 +85,7 @@
   }
 
   .content img:not([popover] img, blockquote img) {
-    max-height: calc(var(--width) * 1.25);
+    max-height: var(--width);
   }
 
   .content div[popover] {
@@ -95,7 +93,8 @@
   }
 
   .content [popover] img {
-    max-height: 80vh;
+    height: auto;
+    max-height: 80dvh;
     max-width: 100vw;
     border-radius: 0;
   }
@@ -125,23 +124,11 @@
     flex-direction: column;
   }
 
-  .download-box .cards-column {
-    width: var(--width);
-  }
-
-  .download-box [popovertarget] {
-    padding: 0 calc((var(--width) * 0.35) - var(--gap));
-  }
-
-  .download-box svg {
-    height: calc(var(--width) * 0.2);
-  }
-
-  .cards-box {
+  .cards {
     grid-template-columns: 1fr;
   }
 
-  .cards-box svg {
+  :is(.card-icon, .download-box) svg {
     height: calc(var(--width) * 0.2);
   }
 
@@ -214,9 +201,20 @@
 }
 
 
-@media screen and (max-width: 1249px) {
+/* Small screen devices in landscape orientation (e.g. smartphones). */
+@media screen and (orientation: landscape) and (height <= 500px) {
 
-  /* NOTE: horizontal navigation menu is hidden on "small-screen" desktops and tablets, vertical popover menu is displayed instead */
+  :root {
+    --width: calc(100vw - (var(--gap) * 2));
+    --content-width: var(--width);
+    --card-width: calc((var(--width) * 0.5) - var(--gap));
+  }
+}
+
+
+/* Medium screen devices (e.g. tablets and old desktops). */
+/* NOTE: horizontal navigation menu is hidden, vertical popover menu is displayed instead. */
+@media screen and (width <= 999px) {
 
   .menu-list {
     display: none;
@@ -236,20 +234,20 @@
 }
 
 
-/* For devices with medium and high screen resolutions such as desktops and laptops */
-@media screen and (min-width: 1250px) {
+/* Bigger screen devices (e.g. desktops, laptops, high-end tablets). */
+@media screen and (width >= 1000px) {
 
   .menu-toggle {
     display: none;
   }
 }
 
+
+/* Reduced motion devices. */
 @media (prefers-reduced-motion) {
-  .terms a:active,
-  .button:active,
-  .share-links svg:active,
-  article:active,
-  #top-link {
-    transform: none;
+
+  :root {
+    --transform-hover: none;
+    --transform-active: none;
   }
 }

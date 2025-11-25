@@ -23,7 +23,7 @@
 
 {{- $sorted := sort $entries "item.last_update_time" "desc" -}}
 
-<section class="addons-list">
+<section class="cards">
   {{- range $sorted -}}
 
     {{- $item := .item -}}
@@ -48,36 +48,50 @@
           (printf "%s/raw/branch/%s" $repo $item.git_ref)
           "")) -}}
 
-    {{- /* Clean icon path. */ -}}
-    {{- $icon := $meta.icon | default $defaultIcon.RelPermalink -}}
-    {{- $icon = replaceRE "(\\.\\.?/)+" "" $icon -}}
-    {{- if ne $raw "" }}
-      {{- $icon = printf "%s/%s" $raw $icon -}}
-    {{- end -}}
+    {{- /* Clean icon path or get default icon. */ -}}
+    {{- $icon := cond (and $meta.icon (ne $raw ""))
+      (printf "%s/%s" $raw (replaceRE "(\\.\\.?/)+" "" $meta.icon))
+      $defaultIcon.RelPermalink -}}
 
-    <a href="{{ $item.repository }}">
-      <article class="addon-entry">
+    <a class="card"
+      href="{{ $item.repository }}">
 
-        <div class="addon-header">
-          <div class="addon-icon">
-            <img src="{{ $icon }}" alt="{{ i18n "icon" | default "icon" }}">
-          </div>
-
-          <div class="addon-title">
-            {{- with $meta.name -}}<h3>{{- . -}}</h3>{{- end -}}
-            {{- with $meta.maintainer  -}}<p class="addon-author">{{- truncate 40 . -}}</p>{{- end -}}
-          </div>
+      <div class="card-title">
+        <div class="addon-icon">
+          <img src="{{ $icon }}" alt="{{ i18n "icon" | default "icon" }}">
         </div>
 
-        {{- with $meta.description -}}<p class="addon-description">{{- truncate 240 . -}}</p>{{- end -}}
+        {{- with $meta.name -}}
+          <h3 class="addon-title">{{- . | title -}}</h3>
+        {{- end -}}
+      </div>
 
-        <div class="addon-meta">
-          {{- with $meta.version -}}<span>{{- . -}}</span>{{- end -}}
-          {{- with $item.last_update_time -}}<span>{{- time . | time.Format ":date_medium" -}}</span>{{- end -}}
-          {{- with $meta.license -}}<span>{{- . -}}</span>{{- end -}}
-        </div>
+      {{- with $meta.description -}}
+        <p class="card-description">{{- truncate 240 . -}}</p>
+      {{- end -}}
 
-      </article>
+      <div class="card-metadata">
+        {{- with $meta.version -}}
+          <span class="meta">
+            {{- partial "utils/icon.html" "tags" -}}
+            {{- . -}}
+          </span>
+        {{- end -}}
+
+        {{- with $item.last_update_time -}}
+          <span class="meta">
+            {{- partial "utils/icon.html" "date" -}}
+            {{- time . | time.Format ":date_medium" -}}
+          </span>
+        {{- end -}}
+
+        {{- with $meta.maintainer -}}
+          <span class="meta">
+            {{- partial "utils/icon.html" "authors" -}}
+            {{- truncate 30 . -}}
+          </span>
+        {{- end -}}
+      </div>
     </a>
 
   {{- end -}}

@@ -3,9 +3,7 @@
   {{- if not .Date.IsZero -}}
     <span class="meta">
       {{- partial "utils/icon.html" "date" -}}
-      <time datetime="{{ .Date.UTC.Format "2006-01-02T15:04:05Z" }}">
-        {{ .Date | time.Format ":date_long" }}
-      </time>
+      <time datetime="{{ .Date.UTC.Format "2006-01-02T15:04:05Z" }}">{{ .Date | time.Format ":date_long" }}</time>
     </span>
   {{- end -}}
 
@@ -13,14 +11,10 @@
     {{- $categories := site.Sites.Default.Taxonomies.categories -}}
     <span class="meta">
       {{- partial "utils/icon.html" "categories" -}}
-      <span class="categories">
         {{- range .GetTerms "categories" -}}
           {{- $count := len ($categories.Get .Title) -}}
-          <a href="{{ .RelPermalink }}">
-            {{ .LinkTitle }} ({{ $count }})
-          </a>
+          <a href="{{ .RelPermalink }}">{{ .LinkTitle }} ({{ $count }})</a>
         {{- end -}}
-      </span>
     </span>
   {{- end -}}
 
@@ -28,32 +22,24 @@
     {{- $tags := site.Sites.Default.Taxonomies.tags -}}
     <span class="meta">
       {{- partial "utils/icon.html" "tags" -}}
-      <span class="tags">
         {{- range .GetTerms "tags" -}}
           {{- $count := len ($tags.Get .Title) -}}
-          <a href="{{ .RelPermalink }}">
-            {{ .LinkTitle }} ({{ $count }})
-          </a>
+          <a href="{{ .RelPermalink }}">{{ .LinkTitle }} ({{ $count }})</a>
         {{- end -}}
-      </span>
     </span>
   {{- end -}}
 
   {{- if site.Params.showWordCount -}}
     <span class="meta">
       {{- partial "utils/icon.html" "words" -}}
-      <span>
-        {{ i18n "words" .WordCount | default (printf "%d words" .WordCount) }}
-      </span>
+      {{ i18n "words" .WordCount | default (printf "%d words" .WordCount) }}
     </span>
   {{- end -}}
 
   {{- if site.Params.showReadingTime -}}
     <span class="meta">
       {{- partial "utils/icon.html" "time" -}}
-      <span>
-        {{ i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime) }}
-      </span>
+      {{ i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime) }}
     </span>
   {{- end -}}
 
@@ -61,27 +47,19 @@
     {{- $authors := site.Sites.Default.Taxonomies.authors -}}
     <span class="meta">
       {{- partial "utils/icon.html" "authors" -}}
-      <span class="authors">
         {{- range .GetTerms "authors" -}}
           {{- $count := len ($authors.Get .Title) -}}
-          <a href="{{ .RelPermalink }}">
-            {{ .LinkTitle }} ({{ $count }})
-          </a>
+          <a href="{{ .RelPermalink }}">{{ .LinkTitle }} ({{ $count }})</a>
         {{- end -}}
-      </span>
     </span>
   {{- end -}}
 
   {{- if .IsTranslated -}}
     <span class="meta">
       {{- partial "utils/icon.html" "translations" -}}
-      <span class="langs">
         {{- range .Translations -}}
-          <a href="{{ .RelPermalink }}">
-            {{ .Language.LanguageName }}
-          </a>
+          <a href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a>
         {{- end -}}
-      </span>
     </span>
   {{- end -}}
 

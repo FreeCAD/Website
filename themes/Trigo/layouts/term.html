@@ -34,7 +34,7 @@
   </h1>
 
   {{- with .Description -}}
-    <h3 class="description">{{ . | $.RenderString }}</h3>
+    <h3 class="description">{{- . | $.RenderString -}}</h3>
   {{- end -}}
 
   {{- /* Get news section cover image. */ -}}
@@ -45,7 +45,7 @@
 </header>
 
 {{- /* List RegularPages for Term. */ -}}
-{{- partial "list/paginator.html" (dict "pages" $pages "context" .) -}}
+{{- partial "content/paginator.html" (dict "pages" $pages "context" .) -}}
 
 {{- end -}}
 {{- /* End main. */ -}}

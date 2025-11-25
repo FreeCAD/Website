@@ -16,7 +16,7 @@
 
 {{- with $sponsors -}}
   <section class="sponsors">
-    <h2 class="sponsors-list-title">{{ i18n "sponsors_list" | default "Current Sponsors" }}</h2>
+    <h2 class="sponsors-title">{{ i18n "sponsors_list" | default "Current Sponsors" }}</h2>
 
     {{- range $tier := $tiers -}}
       {{- $tierSponsors := where $sponsors "tier" $tier -}}
@@ -61,5 +61,6 @@
         </section>
       {{- end -}}
     {{- end -}}
+
   </section>
 {{- end -}}

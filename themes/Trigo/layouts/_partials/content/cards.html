@@ -1,0 +1,69 @@
+<section class="cards">
+  {{- range . -}}
+
+    {{- /* Detect if current object is page or map. */ -}}
+    {{- $isMap := reflect.IsMap . -}}
+    {{- $href := "" -}}
+    {{- $title := "" -}}
+    {{- $description := "" -}}
+
+    {{- if $isMap -}}
+      {{- $href = index . "link" -}}
+      {{- $title = index . "title" -}}
+      {{- $description = index . "description" -}}
+    {{- else -}}
+      {{- $href = .RelPermalink -}}
+      {{- $title = .Title -}}
+      {{- $description = .Description -}}
+    {{- end -}}
+
+    <a class="card"
+      href="{{ $href }}"
+      alt="{{ $title | plainify }}"
+      title="{{ $title | plainify }}">
+
+      {{- /* Get article card cover image. */ -}}
+      {{- partial "content/card_image.html" . -}}
+
+      {{- if $isMap -}}
+        <span class="card-icon">
+          {{- partial "utils/icon.html" .icon -}}
+        </span>
+      {{- end -}}
+
+      <h3 class="card-title">
+        {{- $title -}}
+        {{- if .Draft }}
+          <sup><span>[{{- i18n "draft" | default "Draft" -}}]</span></sup>
+        {{- end -}}
+      </h3>
+
+      {{- with $description -}}
+        <p class="card-description">{{- . -}}</p>
+      {{- end -}}
+
+      {{- if not $isMap -}}
+        <div class="card-metadata">
+          {{- if not .Date.IsZero -}}
+            <span class="meta">
+              {{- partial "utils/icon.html" "date" -}}
+              <time datetime="{{ .Date.UTC.Format "2006-01-02T15:04:05Z" }}">
+                {{- .Date | time.Format ":date_long" -}}
+              </time>
+            </span>
+          {{- end -}}
+
+          {{- if .Params.categories -}}
+            {{- with index (.GetTerms "categories") 0 -}}
+              <span class="meta">
+                {{- partial "utils/icon.html" "categories" -}}
+                {{ .LinkTitle }}
+              </span>
+            {{- end -}}
+          {{- end -}}
+        </div>
+      {{- end -}}
+    </a>
+
+  {{- end -}}
+</section>

@@ -21,9 +21,7 @@ The day will be organized as an [unconference](https://en.wikipedia.org/wiki/Unc
 
 The even will happen at[Atelier des Tanneurs](https://www.ateliersdestanneurs.be/), located [rue des Tanneurs 60A in Brussels](https://goo.gl/maps/G3syvCLQA6SraZ3r9), inside the city centre inner ring. It is easy to reach by foot (10 minute walk from [Brussels grote markt](https://goo.gl/maps/ayZELhBRmnzah25L6) or by public transport (10 minutes walk from [Zuid Station subway station](https://goo.gl/maps/mGU4bfU2nfv2nPL36).
 
-![map](freecad_day_2023_map.jpg
-
-Map data is courtesy of OpenStreetMap. OpenStreetMap<sup>[®](https://www.openstreetmap.org/copyright#trademarks)</sup> is open data, licensed under the [Open Data Commons Open Database License](https://opendatacommons.org/licenses/odbl/) (ODbL) by the  [OpenStreetMap Foundation](https://osmfoundation.org/)(OSMF).)
+![map](freecad_day_2023_map.jpg "Map by OpenStreetMap")
 
 We'll dispose on a room with tables and seats for about 30 people, wall sockets (220V, EU model) and a projector, and an attending space with coffee, drinks and snacks. The space will be open and available to us from 9:00 to 17:30.
 

@@ -15,14 +15,14 @@
 
 {{- /* Get the latest article with the "hero" parameters in front matter. */ -}}
 {{- $hero := index (where (site.RegularPages | lang.Merge site.Sites.Default.RegularPages) "Params.hero" "!=" nil) 0 -}}
-{{- $heroTitle := $hero.LinkTitle | .RenderString -}}
-{{- $heroDesc := $hero.Description | .RenderString -}}
 
 <header>
 
-  <h1 class="title">{{- $heroTitle -}}</h1>
+  <h1 class="title">{{- $hero.LinkTitle | .RenderString -}}</h1>
 
-  <h3 class="description">{{- $heroDesc -}}</h3>
+  {{- with $hero.Description -}}
+    <h3 class="description">{{- . | $.RenderString -}}</h3>
+  {{- end -}}
 
   {{- with $homepageButtons -}}
     <div class="buttons">

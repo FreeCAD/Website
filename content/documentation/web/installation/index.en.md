@@ -111,7 +111,6 @@ params:
   showShareButtons: true
   showPagination: true
   showCopyCodeButton: false
-  hideSummary: false
 
   label:
     text: Home
@@ -137,7 +136,6 @@ authors: [Me, You, Tom Sawyer]
 draft: false
 description: "Desc Text."
 disableShare: false
-hideSummary: false
 showReadingTime: true
 showPagination: true
 cover:

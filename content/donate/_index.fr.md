@@ -14,6 +14,9 @@ menus:
       style: button
   footer:
     weight: 9
+params:
+  grantsLink: https://github.com/FreeCAD/FPA-grant-proposals/issues
+  grantsTitle: Projets parrainés par un grant
 ---
 
 [comment]: # (Please do not add content in this Donate _index file. The layout of the Donate page is generated from template rules by the theme.)

@@ -20,12 +20,9 @@
 {{- end -}}
 {{- $pages = first (.Params.paginate | default 6) $pages -}}
 
-<section class="articles">
-  {{- range $index, $page := $pages -}}
-    {{- /* List News articles. */ -}}
-    {{- partial "list/articles.html" . -}}
-  {{- end -}}
-</section>
+{{- with $pages -}}
+  {{- partial "content/cards.html" . -}}
+{{- end -}}
 
 {{- /* Get homepage content. */ -}}
 {{- with (site.GetPage "section" "homepage" | default (site.Sites.Default.GetPage "section" "homepage")) -}}

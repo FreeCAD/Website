@@ -11,17 +11,17 @@
   <h2 class="title">
     {{ .Title | .RenderString }}
     {{- if .Draft -}}
-      <sup><span class="entry-isdraft">[{{- i18n "draft" | default "Draft" -}}]</span></sup>
+      <sup><span>[{{- i18n "draft" | default "Draft" -}}]</span></sup>
     {{- end -}}
   </h2>
 
-  {{- with .Description -}}
-    <h3 class="description">{{ . | $.RenderString }}</h3>
+  {{- with .Description  -}}
+    <h3 class="description">{{- . | $.RenderString -}}</h3>
   {{- end -}}
 
   {{- /* List custom params cards. */ -}}
   {{- with .Params.cards -}}
-    {{- partial "header/cards.html" . -}}
+    {{- partial "content/cards.html" . -}}
   {{- end -}}
 
   {{- /* Get article metadata. */ -}}

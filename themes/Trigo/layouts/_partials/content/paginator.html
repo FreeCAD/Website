@@ -6,11 +6,7 @@
   {{- $paginator = .Paginate $pages (.Param "paginate" | default 12) -}}
 
   {{- with $paginator.Pages -}}
-    <section class="articles">
-      {{- range $index, $page := . -}}
-        {{- partial "list/articles.html" . -}}
-      {{- end -}}
-    </section>
+    {{- partial "content/cards.html" . -}}
   {{- end -}}
 
   {{- if gt $paginator.TotalPages 1 -}}

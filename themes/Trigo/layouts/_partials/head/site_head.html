@@ -4,9 +4,9 @@
   - Set analytics and theme toggle script.
 */ -}}
 
-{{- $pageTitle := cond (and .Title (not .IsHome)) (printf "%s | %s" site.Title .Title) site.Title -}}
-{{- $description := .Description | default (cond (or .IsPage .IsSection) .Summary site.Params.description) -}}
-{{- $keywords := .Params.tags | default site.Params.keywords -}}
+{{- $pageTitle := cond (and .Title (not .IsHome)) (printf "%s | %s" site.Title .Title) site.Title | plainify -}}
+{{- $description := .Description | default (cond (or .IsPage .IsSection) .Summary site.Params.description) | plainify -}}
+{{- $keywords := .Keywords | default .Params.tags | default site.Params.keywords -}}
 {{- if reflect.IsSlice $keywords -}}
   {{- $keywords = delimit $keywords ", " -}}
 {{- end -}}
@@ -18,9 +18,9 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="robots" content="{{ cond $isProd "index, follow" "noindex, nofollow" }}">
 
-  <title>{{ $pageTitle | plainify }}</title>
-  <meta name="description" content="{{ $description | default $pageTitle | plainify }}">
-  <meta name="keywords" content="{{ $keywords | default $pageTitle }}">
+  <title>{{- $pageTitle -}}</title>
+  <meta name="description" content="{{ $description }}">
+  <meta name="keywords" content="{{ $keywords }}">
   <link rel="canonical" href="{{ .Permalink }}">
 
   {{- /* Favicons. */ -}}

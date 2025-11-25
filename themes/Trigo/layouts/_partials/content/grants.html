@@ -5,47 +5,55 @@
   - Link to all grants at the bottom. */ -}}
 
 {{- $list := site.Data.grant_list -}}
+{{- $grantsLink := .Params.grantsLink -}}
+{{- $grantsTitle := .Params.grantsTitle | default "Funded Grants Projects" -}}
+
 {{- with $list -}}
   {{- $sorted := sort $list "created_at" "desc" -}}
 
   <section class="grants">
-    <h3 class="grant-list-title">{{ i18n "grant_list" | default "Current Funded Projects" }}</h3>
 
-    <div class="grants-list">
+    {{- with $grantsLink -}}
+      <a href="{{ . }}"
+        class="grants-link"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="{{ $grantsTitle }}"
+        title="{{ $grantsTitle }}">
+        {{- $grantsTitle -}}
+      </a>
+    {{- end -}}
+
+    <div class="cards">
       {{- range (first 6 $sorted) -}}
-          <a href="{{ .url }}">
-            <article class="grant-entry">
-              <div class="addon-header">
-                <div class="addon-title">
-                  {{- with .title -}}
-                    <h3>{{ . | title }}</h3>
-                  {{- end -}}
-                  {{- with .author  -}}
-                    <p class="addon-author">{{ truncate 40 . }}</p>
-                  {{- end -}}
-                </div>
-              </div>
+          <a class="card"
+            href="{{ .url }}">
+            {{- with .title -}}
+              <h3 class="card-title">{{- . | title -}}</h3>
+            {{- end -}}
 
-              <div class="addon-meta">
-                {{- with .labels -}}
-                  {{- range . }}
-                    <span>{{ . | title }}</span>
-                  {{- end -}}
-                {{- end -}}
-              </div>
-            </article>
+            <div class="card-metadata">
+              {{- with .author  -}}
+                <span class="meta">
+                  {{- partial "utils/icon.html" "authors" -}}
+                  {{- truncate 40 . -}}
+                </span>
+              {{- end -}}
+
+              {{- with .labels -}}
+                <span class="meta">
+                  {{- partial "utils/icon.html" "tags" -}}
+                  <span class="tags">
+                    {{- range . -}}
+                      <span>{{- . | title -}}</span>
+                    {{- end -}}
+                  </span>
+                </span>
+              {{- end -}}
+            </div>
           </a>
       {{- end -}}
     </div>
 
-    {{- $grantsLink := i18n "all_grants" | default "See All Funded Grants" -}}
-    <a href="https://github.com/FreeCAD/FPA-grant-proposals/issues"
-      class="grants-link"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="{{ $grantsLink }}"
-      title="{{ $grantsLink }}">
-      {{ $grantsLink }}
-    </a>
   </section>
 {{- end -}}

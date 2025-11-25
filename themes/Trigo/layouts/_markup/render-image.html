@@ -6,7 +6,7 @@
 
 {{- $processableFormats := site.Params.processableFormats | default (slice "jpeg" "jpg" "png" "webp" "gif") -}}
 {{- $format := site.Params.resizeFormat | default "webp" -}}
-{{- $resizeDimensions := site.Params.resizeDimensions.article | default (slice "500x250" "1000x500") -}}
+{{- $resizeDimensions := site.Params.resizeDimensions.single | default (slice "500x250" "1000x500") -}}
 {{- $zoom := i18n "zoom" | default "Zoom image" -}}
 {{- $close := i18n "close" | default "Close image viewer" -}}
 {{- $video_fallback := i18n "video_fallback" | default "Your browser does not support the video tag." -}}
@@ -71,19 +71,22 @@
 
   {{- else -}}
     {{- /* Responsive image with popover. */ -}}
+    {{- $resizeDimensions := site.Params.resizeDimensions.single | default (slice "500x250" "1000x500") -}}
+
     {{- $srcset := slice -}}
-    {{- $widths := slice -}}
+    {{- $sizes := slice -}}
 
     {{- range $resizeDimensions -}}
       {{- $width := int (index (split . "x") 0) -}}
       {{- if lt $width $img.Width -}}
         {{- $resized := $img.Resize (printf "%dx %s" $width $format) -}}
         {{- $srcset = $srcset | append (printf "%s %dw" ($resized.RelPermalink | safeURL) $width) -}}
-        {{- $widths = $widths | append $width -}}
+        {{- $sizes = $sizes | append (printf "(max-width: %dpx) %dpx" $width $width) -}}
       {{- end -}}
     {{- end -}}
 
-    {{- $sizes := apply $widths "printf" "(max-width: %dpx) %dpx" "." "." | append "75vw" -}}
+    {{- $srcset = $srcset | append (printf "%s %dw" ($img.RelPermalink | safeURL) $img.Width) -}}
+    {{- $sizes := $sizes | append "75vw" -}}
 
     <div class="image-with-popover">
       <figure>

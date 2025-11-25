@@ -14,19 +14,19 @@ menus:
     weight: 6
 params:
   cards:
-    manual:
-      text: "User manual"
+    - title: "User manual"
       description: "Explore FreeCAD workbenches, workflows and essential features available in several languages."
       link: "https://wiki.freecad.org/User_hub"
       weight: 1
-    tutorial:
-      text: "Tutorials"
+      icon: manual
+    - title: "Tutorials"
       description: "Improve your workflow with specialized tutorials and curated guides provided by the community."
       link: "https://wiki.freecad.org/Power_users_hub"
       weight: 2
-    api:
-      text: "Python API"
+      icon: tutorial
+    - title: "Python API"
       description: "Automate workflows and customize FreeCAD with its built-in Python scripting API."
       link: "https://wiki.freecad.org/Power_users_hub"
       weight: 3
+      icon: api
 ---

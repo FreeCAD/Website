@@ -14,7 +14,7 @@
 
 <div class="download-box">
   {{- range $platform := $platforms -}}
-    <div class="cards-column" id="{{ $platform.id }}" style="order: {{ $platform.order }};">
+    <div class="card" id="{{ $platform.id }}" style="order: {{ $platform.order }};">
       {{- range $download := $platform.downloads -}}
         {{- with index $params (printf "%s_%s" $platform.id $download.key) -}}
           <a class="arch-icon"

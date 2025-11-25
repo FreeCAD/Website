@@ -16,12 +16,12 @@
   <h1 class="title">
     {{ .Title | .RenderString }}
     {{- if .Draft -}}
-      <sup><span class="entry-isdraft">[{{- i18n "draft" | default "Draft" -}}]</span></sup>
+      <sup><span>[{{- i18n "draft" | default "Draft" -}}]</span></sup>
     {{- end -}}
   </h1>
 
-  {{- with .Description -}}
-    <h3 class="description">{{ . | $.RenderString }}</h3>
+  {{- with .Description  -}}
+    <h3 class="description">{{- . | $.RenderString -}}</h3>
   {{- end -}}
 
   {{/* Dynamically include header partial based on Type */}}
@@ -32,7 +32,7 @@
 
   {{- /* List custom params cards. */ -}}
   {{- with .Params.cards -}}
-    {{- partial "header/cards.html" . -}}
+    {{- partial "content/cards.html" . -}}
   {{- end -}}
 
   {{- /* Get cover image. */ -}}
@@ -86,7 +86,7 @@
 {{- end -}}
 
 {{- /* List RegularPages, sub-Sections or custom pages. */ -}}
-{{- partial "list/paginator.html" (dict "pages" $pages "context" .) -}}
+{{- partial "content/paginator.html" (dict "pages" $pages "context" .) -}}
 
 {{- end -}}
 {{- /* End main. */ -}}

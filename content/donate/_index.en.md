@@ -61,6 +61,8 @@ params:
     - platform: "SEPA"
       weight: 4
       info: "<strong>SEPA Bank transfer</strong><br><br><strong>Beneficiary:</strong> The FreeCAD Project Association<br><strong>IBAN:</strong> BE04 0019 2896 4531<br><strong>BIC/SWIFT:</strong> GEBABEBBXXX<br><strong>Bank agency:</strong> BNP Paribas Fortis<br><strong>Address:</strong> Rue de la Station 64, 1360 Perwez, Belgium"
+  grantsLink: https://github.com/FreeCAD/FPA-grant-proposals/issues
+  grantsTitle: Funded Grants Projects
 ---
 
 ### Donations Frequently Asked Questions

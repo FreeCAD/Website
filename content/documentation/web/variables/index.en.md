@@ -28,7 +28,6 @@ cover:
 | `showShareButtons`                     | boolean       | true \| false            | To show/hide share buttons under post                                                     |
 | `showCopyCodeButton`                  | boolean       | true \| false            | To show/hide Code Copy button                                                             |
 | `defaultChroma`                         | string        | light \| dark \| auto    | To set default theme                                                                      |
-| `hideSummary`                          | boolean       | true \| false            | To Hide summary being shown in list pages                                                 |
 | `showPagination`                     | boolean       | true \| false            | Show Previous and Next Posts below a Post                                                 |
 | `analytics.google.SiteVerificationTag` | string        | XYZabc                 | Site Verification Tag for Google Analytics                                                |
 | `schema`                               | -             | -                        | [Details](#schema)                                                                        |
@@ -71,7 +70,6 @@ cover:
 | ------------------------- | ------------- | ------------------------------- | ----------------------------------------------------------------------------------- |
 | `description`             | string        | "description text"              | Show Post Description under Title                                                   |
 | `disableShare`            | boolean       | true \| false                   | To hide/show share icons under a page                                               |
-| `hideSummary`             | boolean       | true \| false                   | To Hide summary being shown in list pages                                           |
 | `showReadingTime`         | boolean       | true \| false                   | To show read time in post meta                                                      |
 | `showPagination`        | boolean       | true \| false                   | Show Previous and Next Posts below a Post                                           |
 | `author`                  | string \|list | "Me" \| ["Me","You"]            | To show multiple Authors                                                            |

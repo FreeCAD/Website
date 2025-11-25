@@ -12,7 +12,7 @@
     <h1 class="title">{{ .Title | .RenderString }}</h1>
 
     {{- with .Description -}}
-      <h3 class="description">{{ . | $.RenderString }}</h3>
+      <h3 class="description">{{- . | $.RenderString -}}</h3>
     {{- end -}}
   </header>
 
@@ -40,7 +40,7 @@
                     <h4 class="archive-entry-title">
                       {{ .Title | .RenderString }}
                       {{- if .Draft -}}
-                        <sup><span class="entry-isdraft">[{{- i18n "draft" | default "Draft" -}}]</span></sup>
+                        <sup><span>[{{- i18n "draft" | default "Draft" -}}]</span></sup>
                       {{- end -}}
                     </h4>
                   </a>

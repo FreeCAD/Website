@@ -5,26 +5,25 @@
 */ -}}
 
 {{- /* Get arguments. */ -}}
-{{- $class := or (.Get "class") "" }}
-{{- $id := or (.Get "id") "" }}
-{{- $name := or (.Get "name") "" }}
-{{- $summary := or (.Get "summary") "Details" }}
-{{- $title := or (.Get "title") "" }}
-{{- $open := false }}
-{{- if in (slice "false" false 0) (.Get "open") }}
-  {{- $open = false }}
-{{- else if in (slice "true" true 1) (.Get "open") }}
-  {{- $open = true }}
-{{- end }}
+{{- $class := or (.Get "class") "" -}}
+{{- $id := or (.Get "id") "" -}}
+{{- $name := or (.Get "name") "" -}}
+{{- $summary := or (.Get "summary") (i18n "details" | default "Details") -}}
+{{- $title := or (.Get "title") "" -}}
+{{- $open := false -}}
+{{- if in (slice "false" false 0) (.Get "open") -}}
+  {{- $open = false -}}
+{{- else if in (slice "true" true 1) (.Get "open") -}}
+  {{- $open = true -}}
+{{- end -}}
 
 {{- /* Render. */ -}}
 <details
-  {{- with $class }} class="{{ . }}" {{- end }}
-  {{- with $id }} id="{{ . }}" {{- end }}
-  {{- with $name }} name="{{ . }}" {{- end }}
-  {{- with $open }} open {{- end }}
-  {{- with $title }} title="{{ . }}" {{- end -}}
->
-  <summary>{{ $summary | .Page.RenderString }}</summary>
-  {{ .Inner | .Page.RenderString (dict "display" "block") -}}
+  {{ with $class }}class="{{ . }}"{{ end }}
+  {{ with $id }}id="{{ . }}"{{ end }}
+  {{ with $name }}name="{{ . }}"{{ end }}
+  {{ with $open }}open{{ end }}
+  {{ with $title }}title="{{ . }}"{{ end }}>
+  <summary>{{- $summary | .Page.RenderString -}}</summary>
+  {{- .Inner | .Page.RenderString (dict "display" "block") -}}
 </details>

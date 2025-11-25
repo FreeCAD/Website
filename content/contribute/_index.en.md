@@ -14,34 +14,34 @@ menus:
     weight: 7
 params:
   cards:
-    tip:
-      text: "Show and share your projects"
+    - title: "Show and share your projects"
       description: "Show and share your projects. Show and share your projects. Show and share your projects."
       link: "../features"
       weight: 1
-    warning:
-      text: "Report bugs"
+      icon: tip
+    - title: "Report bugs"
       description: "Report bugs."
       link: "https://github.com/FreeCAD/FreeCAD/issues"
       weight: 2
-    caution:
-      text: "Test and review the future"
+      icon: warning
+    - title: "Test and review the future"
       description: "Test and review the future."
       link: "https://github.com/FreeCAD/FreeCAD/pulls"
       weight: 3
-    language:
-      text: "Documentation and Translations"
+      icon: caution
+    - title: "Documentation and Translations"
       description: "Documentation and Translations. Documentation and Translations. Documentation and Translations."
       link: "https://wiki.freecad.org"
       weight: 4
-    author:
-      text: "Education and Community support"
+      icon: language
+    - title: "Education and Community support"
       description: "Education and Community support."
       link: "../community"
       weight: 5
-    dev:
-      text: "Developer handbook"
+      icon: authors
+    - title: "Developer handbook"
       description: "Dive into FreeCAD's architecture and codebase to build new features and fix bugs."
       link: "../dev"
       weight: 6
+      icon: dev
 ---

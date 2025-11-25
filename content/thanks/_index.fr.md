@@ -9,17 +9,17 @@ cover:
 params:
   cards:
     tip:
-      text: "Enjoy!"
+      title: "Enjoy!"
       description: "Have fun with FreeCAD, design great projects and share them with the world!"
       link: "donate"
       weight: 1
     cv:
-      text: "Documentation"
+      title: "Documentation"
       description: "Get started with the user manual, tutorials and guides."
       link: "documentation"
       weight: 2
     external:
-      text: "Donate"
+      title: "Donate"
       description: "Want to see FreeCAD improve? Let's sponsor it!"
       link: "documentation"
       weight: 2

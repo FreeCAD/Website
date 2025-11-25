@@ -5,7 +5,6 @@
 
 {{- define "main" -}}
 
-{{- $description := .Description | .RenderString -}}
 {{- $type := .Type -}}
 {{- $terms := .Data.Terms.Alphabetical -}}
 
@@ -17,7 +16,7 @@
   </h1>
 
   {{- with .Description -}}
-    <h3 class="description">{{ . | $.RenderString }}</h3>
+    <h3 class="description">{{- . | $.RenderString -}}</h3>
   {{- end -}}
 
   {{- with $terms -}}
