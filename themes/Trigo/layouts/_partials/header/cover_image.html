@@ -78,7 +78,7 @@
       {{- end -}}
 
       {{- $srcset = $srcset | append (printf "%s %dw" .RelPermalink .Width) -}}
-      {{- $sizes = cond (eq $type "single") ($sizes | append "75vw") "100vw" -}}
+      {{- $sizes = cond (eq $type "single") ($sizes | append "75vw") (slice "100vw") -}}
 
       <img srcset="{{ delimit $srcset ", " }}"
         sizes="{{ delimit $sizes ", " }}"
