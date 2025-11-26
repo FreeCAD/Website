@@ -82,7 +82,7 @@ Your new site preview is available at `http://localhost:1313/`.
 
 {{% /steps %}}
 
-{{% details summary="How to update the Theme?" %}}
+{{< details summary="How to update the Theme?" open="false" >}}
 
 To update all Hugo modules in your project to their latest versions, run the following command:
 
@@ -104,7 +104,7 @@ hugo mod get -u github.com/FreeCAD/website@main
 
 See [Hugo Modules](https://gohugo.io/hugo-modules/use-modules/#update-all-modules) for more details.
 
-{{% /details %}}
+{{< /details >}}
 
 ---
 
@@ -175,7 +175,7 @@ git submodule update --init
 Failure to run this command results in the theme folder not being populated with Trigo theme files, leading to a build failure.
 
 
-{{% details summary="How to update the Theme?" %}}
+{{< details summary="How to update the Theme?" open="false" >}}
 
 To update all submodules in your repository to their latest commits, run the following command:
 
@@ -191,4 +191,4 @@ git submodule update --remote themes/Trigo
 
 See [Git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) for more details.
 
-{{% /details %}}
+{{< /details >}}
