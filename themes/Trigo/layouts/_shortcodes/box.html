@@ -2,6 +2,7 @@
 
   - Full-width box layout.
   - Optional custom CSS styles and Markdown title.
+
 */ -}}
 
 {{- $content := .InnerDeindent | default (cond (.IsNamedParams) (.Get "content") (.Get 0)) | default "No content provided" | strings.TrimSpace -}}

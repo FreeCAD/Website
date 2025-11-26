@@ -1,0 +1,15 @@
+{{- /* PDF Shortcode:
+
+  - Include a PDF file in a page.
+
+  @param {string} 0 The path to the PDF file.
+
+  @example {{< pdf "path/to/file.pdf" >}}
+
+*/ -}}
+
+{{- $path := cond (.IsNamedParams) (.Get "path") (.Get 0) -}}
+
+<div class="pdf">
+  <iframe src="{{ $path | safeURL }}" width="100%" style="min-height: 50dvh; max-width: var(--width);" frameborder="0"></iframe>
+</div>

@@ -1,12 +1,13 @@
 {{- /* Branch shortcode:
 
-@param {string} name The name of the branch.
-@param {string} type The type of the branch, i.e. container for nesting (can be opened and closed):
-folder, document, container, group, part, assembly, arrow, branch, fork, merge. Default is folder.
-@param {string} state The state of the branch, open or closed. Default is open.
-@param {string} style The CSS style of the branch.
+  @param {string} name The name of the branch.
+  @param {string} type The type of the branch, i.e. container for nesting (can be opened and closed):
+  folder, document, container, group, part, assembly, arrow, branch, fork, merge. Default is folder.
+  @param {string} state The state of the branch, open or closed. Default is open.
+  @param {string} style The CSS style of the branch.
 
-@example {{< branch name="docs" type="folder" state="closed" style="color: red;" >}}
+  @example {{< branch name="docs" type="folder" state="closed" style="color: red;" >}}
+
 */ -}}
 
 {{- $name := cond (.IsNamedParams) (.Get "name") (.Get 0) | default "folder" -}}

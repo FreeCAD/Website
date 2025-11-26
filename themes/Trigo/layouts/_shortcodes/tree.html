@@ -1,9 +1,10 @@
 {{- /* Tree shortcode:
 
-@param {string} name The name of the tree.
-@param {string} style The CSS style of the tree.
+  @param {string} name The name of the tree.
+  @param {string} style The CSS style of the tree.
 
-@example {{< tree name="Tutorials" style="background: green;" >}}
+  @example {{< tree name="Tutorials" style="background: green;" >}}
+
 */ -}}
 
 {{- $name := cond (.IsNamedParams) (.Get "name") (.Get 0) -}}
