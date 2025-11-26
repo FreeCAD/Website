@@ -83,6 +83,7 @@
       <img srcset="{{ delimit $srcset ", " }}"
         sizes="{{ delimit $sizes ", " }}"
         src="{{ .RelPermalink }}"
+        title="{{ $alt }}"
         alt="{{ $alt }}"
         width="{{ .Width }}"
         height="{{ .Height }}"
@@ -92,6 +93,7 @@
     {{- /* Unprocessable image, absolute urls and external links (no img processing). */ -}}
     {{- else -}}
       <img src="{{ with .RelPermalink }}{{ . }}{{ else }}{{ . | absURL }}{{ end }}"
+        title="{{ $alt }}"
         alt="{{ $alt }}"
         loading="{{ $loading }}"
         fetchpriority="{{ $priority }}">

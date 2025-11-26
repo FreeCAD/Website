@@ -8,7 +8,7 @@ tags:
 - 3D printing
 cover:
   image: rahix_cover.jpg
-  caption: Rahix design
+  caption: "**Rahix design** Design for 3D Printing, an Excellent Article."
   alt: Rahix design
 ---
 

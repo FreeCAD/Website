@@ -49,8 +49,12 @@
         class="menu-toggle"
         title="{{ i18n "menu" | default "Menu" }}"
         aria-label="{{ i18n "menu" | default "Menu" }}">
-        <span class="hamburger">☰</span>
-        <span class="cross">✕</span>
+        <span class="hamburger">
+          {{- partial "utils/icon.html" "hamburger" -}}
+        </span>
+        <span class="cross">
+          {{- partial "utils/icon.html" "cross" -}}
+        </span>
       </button>
 
       <ul popover id="menu-list" class="menu-list">

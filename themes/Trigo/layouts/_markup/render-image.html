@@ -25,8 +25,8 @@
     {{- else with .Value -}}
       <figure>
         <img src="{{ .RelPermalink | safeURL }}"
-          alt="{{ $alt }}"
           title="{{ $title }}"
+          alt="{{ $alt }}"
           loading="lazy"
           fetchpriority="low">
         {{- with $title -}}
@@ -60,8 +60,8 @@
     {{- /* Non-processable and non-resizable formats (e.g. SVG, AVIF, TIFF, BMP, ICO). */ -}}
       <figure>
         <img src="{{ $img.RelPermalink | safeURL }}"
-          alt="{{ $alt }}"
           title="{{ $title }}"
+          alt="{{ $alt }}"
           loading="lazy"
           fetchpriority="low">
         {{- with $title -}}
@@ -96,8 +96,8 @@
             src="{{ $img.RelPermalink | safeURL }}"
             width="{{ $img.Width }}"
             height="{{ $img.Height }}"
-            alt="{{ $alt }}"
             title="{{ $title }}"
+            alt="{{ $alt }}"
             loading="lazy"
             fetchpriority="low">
         </button>
@@ -109,15 +109,15 @@
       {{- if site.Params.imagePopover -}}
         <div id="{{ $id }}" popover>
           <img src="{{ $img.RelPermalink | safeURL }}"
-            alt="{{ $alt }}"
             title="{{ $title }}"
+            alt="{{ $alt }}"
             loading="lazy"
             fetchpriority="low">
           <button class="close"
             popovertarget="{{ $id }}"
             popovertargetaction="hide"
             aria-label="{{ $close }}">
-            ✕
+            {{- partial "utils/icon.html" "cross" -}}
           </button>
         </div>
       {{- end -}}

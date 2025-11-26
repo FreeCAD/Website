@@ -122,8 +122,7 @@ article .category {
 }
 
 .meta svg {
-  width: 1rem;
-  height: 1rem;
+  height: var(--m);
   display: inline-block;
   vertical-align: calc(var(--gap) * -0.25);
   margin-inline-end: calc(var(--gap) * 0.25);
@@ -357,8 +356,8 @@ main header .entry-cover img {
 .heading-anchor {
   position: absolute;
   margin: 0.25rem;
-  width: 0.75em;
-  min-width: 0.75rem;
+  width: 0.75em; /* NOTE: use size relative to parent (instead of root html), so it also scales with headers. */
+  min-width: var(--s);
   opacity: 0;
 }
 
@@ -372,8 +371,9 @@ main header .entry-cover img {
 
 .external svg {
   display: inline-block;
+  margin-inline-start: calc(var(--gap) * 0.25);
   width: 0.75em; /* NOTE: use size relative to parent (instead of root html), so it also scales with headers. */
-  min-width: 0.75rem;
+  min-width: var(--s);
 }
 
 blockquote {
@@ -387,8 +387,7 @@ blockquote {
 blockquote svg {
   display: inline-block;
   margin-inline-end: 0.25rem;
-  width: 1rem;
-  height: 1rem;
+  height: var(--m);
 }
 
 blockquote p {
@@ -568,8 +567,7 @@ figure .tooltip {
 }
 
 figcaption svg {
-  width: 1rem;
-  height: 1rem;
+  height: var(--m);
   display: inline-block;
 }
 
@@ -594,14 +592,13 @@ figcaption svg {
   border-radius: var(--radius);
 }
 
-.content .close {
+.close {
   position: absolute;
   top: var(--gap);
   right: var(--gap);
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
-  font-size: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -610,13 +607,16 @@ figcaption svg {
   cursor: zoom-out;
 }
 
-.content .close:hover {
+.close svg {
+  height: var(--l);
+}
+
+.close:hover {
   background: var(--link-hover-color);
 }
 
 .content button[popovertarget^="img-"] {
   cursor: zoom-in;
-  display: block;
   margin: auto;
   text-align: center;
   transition: var(--link-transition);
@@ -713,7 +713,7 @@ figcaption svg {
 
 .share-links svg {
   color: var(--tertiary);
-  width: 1.5rem;
+  width: var(--l);
 }
 
 .share-links svg:hover {
@@ -763,8 +763,7 @@ figcaption svg {
 }
 
 .pagination :is(.next, .prev) svg {
-  width: 1rem;
-  height: 1rem;
+  height: var(--m);
   display: inline-block;
   vertical-align: -.25rem;
 }
@@ -1221,26 +1220,6 @@ figcaption svg {
   background: var(--backdrop);
 }
 
-#donation-popover .close {
-  position: absolute;
-  top: var(--gap);
-  right: var(--gap);
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--link-color);
-  color: var(--cover);
-  cursor: zoom-out;
-}
-
-#donation-popover .close:hover {
-  background: var(--link-hover-color);
-}
-
 
 /* Sponsors list */
 
@@ -1321,9 +1300,6 @@ figcaption svg {
   flex-direction: column;
   text-align: center;
   position: absolute;
-  top: 100%;
-  right: 50%;
-  transform: translateX(50%);
   z-index: 10;
   background: var(--entry);
   color: var(--secondary);
@@ -1334,6 +1310,17 @@ figcaption svg {
   line-height: 1.5;
   width: max-content;
   max-width: min(90vw, var(--content-width));
+}
+
+figcaption > .tooltip span {
+  bottom: -50%;
+  right: calc(var(--gap) * 2);
+}
+
+:not(figcaption) > .tooltip span {
+  top: calc(var(--gap) * 2);
+  right: 50%;
+  transform: translateX(50%);
 }
 
 :is(.tooltip:hover, .tooltip:focus) span {
@@ -1364,8 +1351,7 @@ figcaption svg {
   display: inline-block;
   margin-inline-end: 0.25rem;
   vertical-align: -0.125rem;
-  width: 1rem;
-  height: 1rem;
+  height: var(--m);
 }
 
 :is(details, blockquote, .tabs-content) :is(details, code, blockquote, .chroma, .codeblock) {

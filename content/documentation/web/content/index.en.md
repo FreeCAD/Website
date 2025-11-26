@@ -29,14 +29,6 @@ third party image:
 
 ![](https://upload.wikimedia.org/wikipedia/commons/e/ec/Mongolfi%C3%A8re.jpg)
 
-<br>
-
 ## YouTube Privacy Enhanced Shortcode
 
 {{< youtube YyBzEpantQ8 >}}
-
-<br>
-
-## Gallery
-
-{{< gallery gallery_directory="1" >}}

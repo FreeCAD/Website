@@ -4,20 +4,36 @@
   - Internal links show tooltip preview on hover.
 */ -}}
 
-{{- $href := .Destination | safeURL -}}
-{{- $isExternal := and (strings.HasPrefix .Destination "http") (not (strings.HasPrefix .Destination site.BaseURL)) -}}
-{{- $title := .Title | plainify -}}
-{{- $fallback := i18n "link" | default "Open link" -}}
+{{- $url := urls.Parse .Destination -}}
+{{- $href := $url.String -}}
+{{- if strings.HasPrefix $url.String "#" -}}
+  {{- $href = printf "%s#%s" .PageInner.RelPermalink $url.Fragment -}}
+{{- else if and $href (not $url.IsAbs) -}}
+  {{- $path := strings.TrimPrefix "./" $url.Path -}}
+  {{- with or
+    ($.PageInner.GetPage $path)
+    ($.PageInner.Resources.Get $path)
+    (resources.Get $path)
+  -}}
+    {{- $href = .RelPermalink -}}
+    {{- with $url.RawQuery -}}
+      {{- $href = printf "%s?%s" $href . -}}
+    {{- end -}}
+    {{- with $url.Fragment -}}
+      {{- $href = printf "%s#%s" $href . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $isExternal := and (strings.HasPrefix $href "http") (not (strings.HasPrefix $href site.BaseURL)) -}}
+{{- $title := .Title | plainify | default (i18n "link" | default "Open link") -}}
 {{- $text := .Text | safeHTML -}}
 
 <a href="{{ $href }}"
   {{- if not $isExternal -}}
     class="tooltip"
-  {{- end -}}
-  {{- with $title -}}
-    title="{{ . }}"
   {{- else -}}
-    title="{{ $fallback }}"
+    title="{{ $title }}"
   {{- end -}}
   {{- if $isExternal -}}
     target="_blank" rel="external noreferrer"
@@ -25,6 +41,7 @@
   {{- with $text -}}
     {{ . }}
   {{- end -}}
+
   {{- if $isExternal -}}
     <span class="external">
       {{- partial "utils/icon.html" "external" -}}

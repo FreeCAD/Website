@@ -35,7 +35,7 @@
 
 .logo :is(img, svg) {
   float: inline-start;
-  height: 2rem;
+  height: var(--xl);
   margin-inline-end: var(--gap);
 }
 
@@ -58,8 +58,8 @@
   color: var(--link-hover-color);
 }
 
-:is(.lang-toggle, #chroma-toggle) svg {
-  height: 1.5rem;
+:is(.lang-toggle, #chroma-toggle, .cross, .hamburger) svg {
+  height: var(--l);
 }
 
 body.dark #dark {
@@ -75,14 +75,13 @@ body:not(.dark) #light {
 .menu-toggle {
   font-size: var(--l);
   display: block;
-  width: 2rem;
 }
 
 .menu:has(#menu-list:popover-open) .hamburger {
   display: none;
 }
 
-.menu .cross {
+.cross {
   display: none;
 }
 
@@ -155,7 +154,6 @@ body:not(.dark) #light {
   display: flex;
   inset: auto;
   flex-direction: column;
-  min-width: 15rem;
   max-height: calc(100vh - (var(--header-height) + (var(--gap) * 4)));
   top: calc(var(--header-height) + var(--gap));
   right: calc((100vw - var(--width)) * 0.5);

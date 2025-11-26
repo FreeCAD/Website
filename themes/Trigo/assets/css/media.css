@@ -37,6 +37,14 @@
     order: 2;
   }
 
+  .logo :is(img, svg) {
+    height: var(--xxl);
+  }
+
+  :is(.lang-toggle, #chroma-toggle, .cross, .hamburger) svg {
+    height: var(--xl);
+  }
+
   :is(#menu-list, #lang-list):popover-open {
     width: var(--width);
   }
