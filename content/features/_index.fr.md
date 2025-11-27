@@ -81,9 +81,7 @@ Mixed **Markdown** and <u>HTML underline</u>.
 
 ### Column Two
 
-Here’s a quote:
-
-> "Markdown is great."
+> Markdown is great.
 
 ```python
 def hello():

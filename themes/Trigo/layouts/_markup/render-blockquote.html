@@ -3,36 +3,61 @@
   - Add citation and caption attributes.
   - Add alert callouts.
   - Add icons for quote and alerts.
+
+  @param {string} [cite] Citation reference (e.g. url or file path).
+  @param {string} [caption] Caption to display below the quotation.
+
+  @returns {template.HTML}
+
+  @examples
+
+    > Don't communicate by sharing memory, share memory by communicating.
+    >
+    > — <cite>Rob Pike[^1]</cite>
+    [^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
+
+    > Programs must be written for people to read, and only incidentally for machines to execute.
+    {cite="https://web.mit.edu/6.001/6.037/sicp.pdf" caption="**Harold Abelson & Gerald Jay Sussman**, *Structure and Interpretation of Computer Programs*"}
+
+    > [!NOTE]
+    > Useful information.
+
 */ -}}
 
-{{- $text := .Text | safeHTML -}}
+{{- $text := .Text -}}
+{{- $cite := .Attributes.cite -}}
+{{- $caption := .Attributes.caption | markdownify -}}
+{{- $isAlert := eq .Type "alert" -}}
+{{- $type := cond $isAlert .AlertType "quote" -}}
 
-{{- if eq .Type "alert" -}}
-  {{- $type := .AlertType -}}
-  <blockquote class="alert-{{ $type }}">
-    <span>
-      {{- partial "utils/icon.html" $type -}}
-    </span>
-    {{- with .AlertTitle -}}
-      {{ . }}
-    {{- else -}}
-      {{ or (i18n $type) (title $type) }}
+<figure>
+  <blockquote class="{{ $type }}"
+    {{ with $cite }}cite="{{ . | safeURL }}"{{ end }}>
+    {{- with (partial "utils/icon.html" $type) -}}
+      <span class="icon">{{ . }}</span>
     {{- end -}}
-    {{ $text }}
+
+    {{- i18n $type | default ($type | title) -}}
+    {{- $text -}}
   </blockquote>
 
-{{- else -}}
-  <figure>
-    <blockquote {{- with .Attributes.cite -}}cite="{{ . }}"{{- end -}}>
-      <span>
-        {{- partial "utils/icon.html" "quote" -}}
-      </span>
-      {{ $text }}
-    </blockquote>
-    {{- with .Attributes.caption -}}
-      <figcaption class="blockquote-caption">
-        {{ . | safeHTML }}
-      </figcaption>
-    {{- end -}}
-  </figure>
-{{- end -}}
+  {{- if $caption -}}
+    <figcaption class="blockquote-caption">
+      {{- if strings.HasPrefix $cite "http"}}
+        <a href="{{ $cite }}"
+          title="{{ $caption | plainify }}"
+          target="_blank"
+          rel="external noreferrer noopener">
+      {{- end -}}
+
+      {{ $caption }}
+
+      {{- if strings.HasPrefix $cite "http"}}
+        <span class="external">
+          {{- partial "utils/icon.html" "external" -}}
+        </span>
+        </a>
+      {{- end -}}
+    </figcaption>
+  {{- end -}}
+</figure>

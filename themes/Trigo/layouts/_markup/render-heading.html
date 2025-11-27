@@ -1,14 +1,24 @@
-{{- /* Custom rendering for markdown content headings:
+{{- /* Custom rendering for headings:
 
-  - Support for CSS class` and `style` attributes.
+  - Support for CSS class and style attributes.
   - Anchor link next to heading.
+
+  @param {string} [class] CSS class to use.
+  @param {string} [style] CSS style properties to use.
+
+  @returns {template.HTML}
+
+  @examples
+
+    ## Heading with custom style {style="color: red;"}
+
 */ -}}
 
 {{- $class := .Attributes.class -}}
 {{- $style := .Attributes.style -}}
 {{- $level := .Level -}}
-{{- $anchor := .Anchor | safeURL -}}
-{{- $text := .Text | safeHTML -}}
+{{- $anchor := .Anchor -}}
+{{- $text := .Text -}}
 
 <h{{ $level }}
   id="{{ $anchor }}"

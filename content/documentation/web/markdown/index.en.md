@@ -19,6 +19,7 @@ Hugo supports [Markdown](https://en.wikipedia.org/wiki/Markdown) syntax for form
 
 This article offers a sample of basic Markdown syntax that can be used in Hugo content files and its rendered output with the current Theme.
 
+
 ## Headings
 
 ```text {file=Markdown}
@@ -29,7 +30,7 @@ This article offers a sample of basic Markdown syntax that can be used in Hugo c
 ##### Heading 5
 ###### Heading 6
 
-### Heading with custom style {style="color: red"}
+### Heading with custom style {style="color: purple; background: coral; padding: 0.5rem;"}
 
 ### Heading with a custom id {#custom-id}
 ```
@@ -43,9 +44,10 @@ This article offers a sample of basic Markdown syntax that can be used in Hugo c
 ##### Heading 5
 ###### Heading 6
 
-### Heading with custom style {style="color: red"}
+### Heading with custom style {style="color: purple; background: coral; padding: 0.5rem;"}
 
 ### Heading with a custom id {#custom-id}
+
 
 ## Emphasis
 
@@ -70,6 +72,7 @@ _This will also be italic_
 __This will also be bold__
 
 _You **can** combine them_
+
 
 ## Lists
 
@@ -139,6 +142,7 @@ First Term
 Second Term
 : This is the definition of the second term.
 
+
 ## Images
 
 ```text {file=Markdown}
@@ -161,6 +165,7 @@ With caption:
 
 For more advanced functionality, use Hugo's built-in [Figure shortcode](https://gohugo.io/shortcodes/figure/).
 
+
 ## Links
 
 ```text {file=Markdown}
@@ -179,6 +184,7 @@ For more advanced functionality, use Hugo's built-in [Figure shortcode](https://
 
 [Heading ID](#custom-id)
 
+
 ## Styling Text
 
 | Style       | Syntax          | Example output          |
@@ -189,6 +195,7 @@ For more advanced functionality, use Hugo's built-in [Figure shortcode](https://
 | Inserted    | `++inserted++`  | Some ++inserted++ text  |
 | Subscript   | `~subscript~`   | Some ~subscript~ text   |
 | Superscript | `^superscript^` | Some ^superscript^ text |
+
 
 ## Blockquotes
 
@@ -213,13 +220,21 @@ For more advanced functionality, use Hugo's built-in [Figure shortcode](https://
 [^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
 ```
 
+```text {file=Markdown}
+> Programs must be written for people to read, and only incidentally for machines to execute.
+{cite="https://web.mit.edu/6.001/6.037/sicp.pdf" caption="**Harold Abelson & Gerald Jay Sussman**, *Structure and Interpretation of Computer Programs*"}
+```
+
 <u>How it renders:</u>
 
 > Don't communicate by sharing memory, share memory by communicating.
 >
 > — <cite>Rob Pike[^1]</cite>
-
 [^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
+
+> Programs must be written for people to read, and only incidentally for machines to execute.
+{cite="https://web.mit.edu/6.001/6.037/sicp.pdf" caption="**Harold Abelson & Gerald Jay Sussman**, *Structure and Interpretation of Computer Programs*"}
+
 
 ## Inline Code
 
@@ -230,6 +245,7 @@ Inline `code` has `back-ticks around` it.
 <u>How it renders:</u>
 
 Inline `code` has `back-ticks around` it.
+
 
 ## Code Blocks
 
@@ -323,6 +339,7 @@ func main() {
 
 {{< /highlight >}}
 
+
 ## Tables
 
 ```text {file=Markdown}
@@ -352,6 +369,7 @@ func main() {
 | Italics   | Bold     | Code   |
 | :-------- | :------: | -----: |
 | _italics_ | **bold** | `code` |
+
 
 ## Alerts
 
@@ -393,6 +411,7 @@ Please make sure you are using [Hugo v0.146.0](https://github.com/gohugoio/hugo/
 > [!CAUTION]
 > Advises about risks or negative outcomes of certain actions.
 
+
 ## Other Elements
 
 ```text {file=Markdown}
@@ -423,12 +442,14 @@ Most ==reptiles and salamanders== are nocturnal and hunt for insects, worms and 
 
 Most ==reptiles and salamanders== are nocturnal and hunt for insects, worms and other small creatures.
 
+
 ## Configuration
 
 Hugo uses [Goldmark](https://github.com/yuin/goldmark) for Markdown parsing.
 Markdown rendering can be configured in `hugo.yaml` under `markup.goldmark`.
 
 See Hugo documentation on [Configure Markup](https://gohugo.io/getting-started/configuration-markup/).
+
 
 ## Learning Resources
 

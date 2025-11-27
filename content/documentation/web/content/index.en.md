@@ -31,4 +31,4 @@ third party image:
 
 ## YouTube Privacy Enhanced Shortcode
 
-{{< youtube YyBzEpantQ8 >}}
+{{< youtube id="x5oXSGhK7EY" loading="lazy" >}}

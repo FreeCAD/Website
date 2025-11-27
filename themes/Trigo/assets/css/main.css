@@ -369,9 +369,10 @@ main header .entry-cover img {
   opacity: 1;
 }
 
-.external svg {
+:is(.external, .hash) svg {
   display: inline-block;
-  margin-inline-start: calc(var(--gap) * 0.25);
+  margin-inline-start: calc(var(--gap) * 0.125);
+  margin-inline-end: calc(var(--gap) * 0.125);
   width: 0.75em; /* NOTE: use size relative to parent (instead of root html), so it also scales with headers. */
   min-width: var(--s);
 }
@@ -394,61 +395,61 @@ blockquote p {
   margin: 0.5rem 0 0;
 }
 
-.alert-note {
+.note {
   background: #ddeeff;
   color: #334466;
   border-inline-start: calc(var(--line) * 2) solid #334466;
 }
 
-.alert-tip {
+.tip {
   background: #ddffcc;
   color: #226633;
   border-inline-start: calc(var(--line) * 2) solid #226633;
 }
 
-.alert-important {
+.important {
   background: #eeddff;
   color: #552244;
   border-inline-start: calc(var(--line) * 2) solid #552244;
 }
 
-.alert-warning {
+.warning {
   background: #ffffcc;
   color: #665533;
   border-inline-start: calc(var(--line) * 2) solid #665533;
 }
 
-.alert-caution {
+.caution {
   background: #ffdddd;
   color: #441111;
   border-inline-start: calc(var(--line) * 2) solid #441111;
 }
 
-.dark .alert-note {
+.dark .note {
   background: #334466;
   color: #ddeeff;
   border-inline-start: calc(var(--line) * 2) solid #ddeeff;
 }
 
-.dark .alert-tip {
+.dark .tip {
   background: #226633;
   color: #ddffcc;
   border-inline-start: calc(var(--line) * 2) solid #ddffcc;
 }
 
-.dark .alert-important {
+.dark .important {
   background: #662244;
   color: #eeddff;
   border-inline-start: calc(var(--line) * 2) solid #eeddff;
 }
 
-.dark .alert-warning {
+.dark .warning {
   background: #665533;
   color: #ffffcc;
   border-inline-start: calc(var(--line) * 2) solid #ffffcc;
 }
 
-.dark .alert-caution {
+.dark .caution {
   background: #441111;
   color: #ffdddd;
   border-inline-start: calc(var(--line) * 2) solid #ffdddd;
@@ -609,7 +610,7 @@ sup:target {
   position: relative;
 }
 
-figure > figcaption:not(:has(.tooltip)) {
+figure > figcaption:not(:has(.internal-tooltip)) {
   width: 100%;
   margin: var(--gap) auto;
   font-size: var(--s);
@@ -618,7 +619,7 @@ figure > figcaption:not(:has(.tooltip)) {
   z-index: 1;
 }
 
-figure .tooltip {
+figure .internal-tooltip {
   position: absolute;
   bottom: calc(var(--gap) * 1);
   right: var(--gap);
@@ -1348,14 +1349,14 @@ figcaption svg {
 
 /* Link render hook tooltip. */
 
-.tooltip {
+.internal-tooltip {
   position: relative;
   display: inline-block;
   cursor: pointer;
   text-decoration: underline;
 }
 
-.tooltip span {
+.tooltip {
   display: none;
   flex-direction: column;
   text-align: center;
@@ -1372,22 +1373,22 @@ figcaption svg {
   max-width: min(90vw, var(--content-width));
 }
 
-figcaption > .tooltip span {
+figcaption > .internal-tooltip .tooltip {
   bottom: -50%;
   right: calc(var(--gap) * 2);
 }
 
-:not(figcaption) > .tooltip span {
+:not(figcaption) > .internal-tooltip .tooltip {
   top: calc(var(--gap) * 2);
   right: 50%;
   transform: translateX(50%);
 }
 
-:is(.tooltip:hover, .tooltip:focus) span {
+:is(.internal-tooltip:hover, .internal-tooltip:focus) .tooltip {
   display: flex;
 }
 
-.tooltip span strong {
+.internal-tooltip .tooltip strong {
   font-size: var(--m);
   margin-bottom: calc(var(--gap) * 0.5);
 }

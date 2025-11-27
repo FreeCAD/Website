@@ -1,7 +1,15 @@
-{{- /* Render images or videos from local or remote sources:
+{{- /* Custom rendering for images and videos:
 
+  - Support local or remote resources.
   - Resize local images and builds responsive set.
   - Add popover lightbox.
+
+  @returns {template.HTML}
+
+  @examples
+
+    ![caption](path/to/image.jpg "image description")
+
 */ -}}
 
 {{- $processableFormats := site.Params.processableFormats | default (slice "jpeg" "jpg" "png" "webp" "gif") -}}

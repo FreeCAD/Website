@@ -1,12 +1,22 @@
 {{- /* Custom rendering hook for content links:
 
+  - Support relative, absolute, internal, external and fragment link destination path or url.
   - External links open in new tab and include icon.
   - Internal links show tooltip preview on hover.
+  - Internal hash links include icon.
+
+  @returns {template.HTML}
+
+  @examples
+
+    [Link description text](link/destination "Link title")
+
 */ -}}
 
 {{- $url := urls.Parse .Destination -}}
 {{- $href := $url.String -}}
-{{- if strings.HasPrefix $url.String "#" -}}
+
+{{- if strings.HasPrefix .Destination "#" -}}
   {{- $href = printf "%s#%s" .PageInner.RelPermalink $url.Fragment -}}
 {{- else if and $href (not $url.IsAbs) -}}
   {{- $path := strings.TrimPrefix "./" $url.Path -}}
@@ -25,19 +35,34 @@
   {{- end -}}
 {{- end -}}
 
-{{- $isExternal := and (strings.HasPrefix $href "http") (not (strings.HasPrefix $href site.BaseURL)) -}}
+{{- $base := strings.TrimSuffix "/" site.BaseURL -}}
+{{- $isExternal := and
+  (strings.HasPrefix $href "http")
+  (not (strings.HasPrefix (strings.TrimSuffix "/" $href) $base))
+-}}
+
 {{- $title := .Title | plainify | default (i18n "link" | default "Open link") -}}
-{{- $text := .Text | safeHTML -}}
+{{- $text := .Text -}}
+
+{{- $classes := slice (cond $isExternal "external-link" "internal-tooltip") -}}
+{{- if strings.HasPrefix $url "#" -}}
+  {{- $classes = $classes | append "hash-link" -}}
+{{- end -}}
 
 <a href="{{ $href }}"
-  {{- if not $isExternal -}}
-    class="tooltip"
-  {{- else -}}
-    title="{{ $title }}"
-  {{- end -}}
+  class="{{ delimit $classes " " }}"
   {{- if $isExternal -}}
-    target="_blank" rel="external noreferrer"
+    title="{{ $title }}"
+    target="_blank"
+    rel="external noreferrer noopener"
   {{- end -}}>
+
+  {{- if strings.HasPrefix $url "#" -}}
+    <span class="hash">
+      {{- partial "utils/icon.html" "hash" -}}
+    </span>
+  {{- end -}}
+
   {{- with $text -}}
     {{ . }}
   {{- end -}}
@@ -46,13 +71,12 @@
     <span class="external">
       {{- partial "utils/icon.html" "external" -}}
     </span>
+  {{- end -}}
 
-  {{- else -}}
+  {{- if not $isExternal -}}
     {{- with .Page.GetPage .Destination -}}
-      <span>
-        <strong>
-          {{- .Title -}}
-        </strong>
+      <span class="tooltip">
+        <strong>{{- .Title -}}</strong>
         {{- .Description | default .Summary | .RenderString -}}
       </span>
     {{- end -}}

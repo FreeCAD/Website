@@ -237,12 +237,12 @@ Embed a YouTube video.
 
 ### Example
 
-{{< youtube id=dQw4w9WgXcQ loading=lazy >}}
+{{< youtube id="x5oXSGhK7EY" loading="lazy" >}}
 
 ### Usage
 
 ```html {file="markdown"}
-{{</* youtube VIDEO_ID */>}}
+{{</* youtube id="VIDEO_ID" loading="lazy" */>}}
 ```
 
 For more information, see [Hugo's YouTube Shortcode](https://gohugo.io/content-management/shortcodes/#youtube).
