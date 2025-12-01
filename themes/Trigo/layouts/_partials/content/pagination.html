@@ -51,7 +51,8 @@
           {{- end -}}
           {{- with (partial "utils/icon.html" "arrow-right") -}}
             <span class="icon">{{ . }}</span>
-          {{- end -}}          {{- if not hugo.IsProduction -}}
+          {{- end -}}
+          {{- if not hugo.IsProduction -}}
             {{- with .Weight -}}
               <span style="color: red;">{{ . }}</span>
             {{- end -}}

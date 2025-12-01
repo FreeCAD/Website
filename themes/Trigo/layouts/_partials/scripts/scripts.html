@@ -95,3 +95,35 @@
     </script>
   {{- end -}}
 {{- end -}}
+
+
+{{- /* Images carousel shortcode script. */ -}}
+{{- if and (.HasShortcode "carousel") site.Params.enableJScarousel -}}
+  {{- with resources.Get "js/carousel.js" -}}
+    {{- $carousel := . -}}
+    {{- if hugo.IsProduction -}}
+      {{- $carousel = $carousel | minify | fingerprint -}}
+    {{- end -}}
+    <script src="{{ $carousel.RelPermalink }}"
+      type="text/javascript"
+      {{ if hugo.IsProduction }}integrity="{{ $carousel.Data.Integrity }}" crossorigin="anonymous"{{ end }}
+      defer>
+    </script>
+  {{- end -}}
+{{- end -}}
+
+
+{{- /* Compare shortcode script. */ -}}
+{{- if and (.HasShortcode "compare") site.Params.enableJScompare -}}
+  {{- with resources.Get "js/compare.js" -}}
+    {{- $compare := . -}}
+    {{- if hugo.IsProduction -}}
+      {{- $compare = $compare | minify | fingerprint -}}
+    {{- end -}}
+    <script src="{{ $compare.RelPermalink }}"
+      type="text/javascript"
+      {{ if hugo.IsProduction }}integrity="{{ $compare.Data.Integrity }}" crossorigin="anonymous"{{ end }}
+      defer>
+    </script>
+  {{- end -}}
+{{- end -}}

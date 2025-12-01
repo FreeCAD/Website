@@ -214,6 +214,56 @@ Trigo shortcode to display a filetree with branches and leaves.
 | `state`   | The state of the branch: can be `open` or `closed`. Default is `open`. |
 
 
+## Carousel
+
+Trigo shortcode to display a carousel of images with drag, scroll support and optional automatic mode.
+
+### Example
+
+{{< carousel dir="dir" mode="auto" images="/android-chrome-512x512.png" >}}
+
+### Usage
+
+Specify a directory where all image resources are used for the carousel:
+
+```html {file="markdown"}
+{{</* carousel dir="path/to/directory" mode="auto" */>}}
+```
+
+Specify a list of images to use with an `images` parameter:
+
+```html {file="markdown"}
+{{</* carousel images="1.webp, 2.webp, 3.webp" */>}}
+```
+
+Specify a list of images to use:
+
+```html {file="markdown"}
+{{</* carousel "1.webp" "2.webp" "3.webp" */>}}
+```
+
+The path is relative to the current page bundle. To use resources in the `static` or `assets` directories of the site, prefix the path with a `/` slash. The URL of an external image can be use as well.
+
+
+## Compare
+
+Trigo shortcode to display two stacked images with a movable vertical clipping path.
+
+### Example
+
+{{< compare "dir/1.webp" "dir/3.webp" >}}
+
+### Usage
+
+Specify two image paths:
+
+```html {file="markdown"}
+{{</* compare "1.webp" "2.webp" */>}}
+```
+
+The path is relative to the current page bundle. To use resources in the `static` directory of the site, prefix the path with a `/` slash. The URL of an external image can be use as well.
+
+
 ## PDF
 
 Trigo shortcode to display a PDF file.

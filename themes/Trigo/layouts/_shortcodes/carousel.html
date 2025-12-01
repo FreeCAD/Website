@@ -1,0 +1,150 @@
+{{- /* Carousel Shortcode:
+
+  - Display a carousel of images with navigation arrows and dots, and optional auto mode with duration.
+  - Support images resources from page bundles, static/assets directories, or external URLs.
+  - Support positional params or named params (images and/or dir).
+  - Support resizing for processable formats.
+
+  @param {string[]} [unnamed] List of image paths or URLs.
+  @param {string} [images] Comma-separated list of image paths or URLs.
+  @param {string} [dir] Directory to load images from. Can be page bundle or static/assets directories.
+  @param {string} [mode="fixed"] Carousel mode: "fixed" (manual) or "auto" (automatic rotation).
+  @param {int} [duration=5000] Slide rotation time in milliseconds (only used in "auto" mode).
+
+  @example {{< carousel "image1.jpg" "image2.jpg" >}}
+
+  @example {{< carousel images="img1.jpg, img2.jpg, img3.jpg" mode="auto" duration="3000" >}}
+
+  @example {{< carousel dir="gallery" >}}
+
+*/ -}}
+
+{{- $page := .Page -}}
+{{- $ordinal := .Ordinal -}}
+{{- $images := slice -}}
+{{- $mode := or (.Get "mode") "fixed" -}}
+{{- $duration := or (.Get "duration") 5000 -}}
+{{- $processableFormats := site.Params.processableFormats | default (slice "jpeg" "jpg" "png" "webp" "gif") -}}
+{{- $format := site.Params.resizeFormat | default "webp" -}}
+{{- $resizeDimensions := site.Params.resizeDimensions.single | default (slice "500x250" "1000x500") -}}
+
+{{- if and (not .IsNamedParams) (not (.Get "dir")) (gt (len .Params) 0) -}}
+  {{- range .Params -}}
+    {{- $images = $images | append . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- with .Get "images" -}}
+  {{- $list := split . "," -}}
+  {{- range $list -}}
+    {{- $trim := trim . " \t\r\n" -}}
+    {{- $images = $images | append $trim -}}
+  {{- end -}}
+{{- end -}}
+
+{{- with .Get "dir" -}}
+  {{- $dir := trim . " \t\r\n/" -}}
+  {{- $files := slice -}}
+  {{- $bundle := try ($page.Resources.Match (printf "%s/*" $dir)) -}}
+  {{- if not $bundle.Err -}}
+    {{- $files = $bundle.Value -}}
+  {{- else -}}
+    {{- $global = try (resources.Match (printf "%s/*" $dir)) -}}
+    {{- if not $global.Err -}}
+      {{- $files = $global.Value -}}
+    {{- else -}}
+      {{- warnf "Carousel shortcode: no images found for dir %q on page %s" $dir $page.File.Path -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- if gt (len $files) 0 -}}
+    {{- range sort $files "Name" -}}
+      {{- $images = $images | append .Name -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $images = uniq $images -}}
+{{- if eq (len $images) 0 -}}
+  {{- warnf "Carousel shortcode: no images found (params: %v) on page %s" .Params $page.File.Path -}}
+  {{- return -}}
+{{- end -}}
+
+<div id="carousel{{ $ordinal }}"
+  class="carousel"
+  data-duration="{{ $duration }}"
+  data-mode="{{ $mode }}">
+
+  <ul>
+    {{- range $index, $src := $images -}}
+
+      {{- $img := $page.Resources.GetMatch $src -}}
+      {{- if not $img -}}
+        {{- $img = resources.Get $src -}}
+      {{- end -}}
+
+      {{- if and (not $img) (strings.HasPrefix $src "http") -}}
+        {{- $remote := try (resources.GetRemote $src) -}}
+        {{- with $remote.Err -}}
+          {{- warnf "Carousel: failed to fetch remote resource %q: %s" $src . -}}
+        {{- else -}}
+          {{- $img = $remote.Value -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- if and $img (in $processableFormats $img.MediaType.SubType) -}}
+        {{- $srcset := slice -}}
+        {{- $sizes := slice -}}
+
+        {{- range $resizeDimensions -}}
+          {{- $width := int (index (split . "x") 0) -}}
+          {{- if lt $width $img.Width -}}
+            {{- $resized := $img.Resize (printf "%dx %s" $width $format) -}}
+            {{- $srcset = $srcset | append (printf "%s %dw" $resized.RelPermalink $width) -}}
+            {{- $sizes = $sizes | append (printf "(max-width: %dpx) %dpx" $width $width) -}}
+          {{- end -}}
+        {{- end -}}
+
+        {{- $srcset = $srcset | append (printf "%s %dw" $img.RelPermalink $img.Width) -}}
+        {{- $sizes = $sizes | append "75vw" -}}
+
+        <li id="carousel{{ $ordinal }}-slide{{ $index }}">
+          <img
+            srcset="{{ delimit $srcset ", " }}"
+            sizes="{{ delimit $sizes ", " }}"
+            src="{{ $img.RelPermalink }}"
+            width="{{ $img.Width }}"
+            height="{{ $img.Height }}"
+            alt="Slide-{{ $index }}"
+            loading="lazy"
+            fetchpriority="low">
+        </li>
+
+      {{- else -}}
+        <li id="carousel{{ $ordinal }}-slide{{ $index }}">
+          <img src="{{ $src }}"
+            alt="Slide-{{ $index }}"
+            loading="lazy"
+            fetchpriority="low">
+        </li>
+      {{- end -}}
+    {{- end -}}
+  </ul>
+
+  <ol>
+    {{- range $index, $src := $images -}}
+      <li><a href="#carousel{{ $ordinal }}-slide{{ $index }}"></a></li>
+    {{- end -}}
+  </ol>
+
+  <div class="prev">
+    {{- with (partial "utils/icon.html" "arrow-left") -}}
+      <span class="icon">{{- . -}}</span>
+    {{- end -}}
+  </div>
+  <div class="next">
+    {{- with (partial "utils/icon.html" "arrow-right") -}}
+      <span class="icon">{{- . -}}</span>
+    {{- end -}}
+  </div>
+</div>

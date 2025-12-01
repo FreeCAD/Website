@@ -204,3 +204,200 @@
   transform: translateX(-1rem);
   flex-shrink: 0;
 }
+
+
+/* Images carousel shortcode. */
+
+.carousel {
+  position: relative;
+  margin: var(--gap) 0;
+}
+
+.carousel ul {
+  overflow: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  background: var(--tone);
+  scrollbar-width: none;
+  margin: 0;
+  padding: 0;
+  cursor: ew-resize;
+  user-select: none;
+  border-radius: var(--radius);
+}
+
+.carousel ul.grabbing {
+  cursor: grabbing;
+  scroll-snap-type: none;
+}
+
+/* Hide scrollbar for Chrome, Safari, Opera, etc. */
+.carousel ul::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel ul li {
+  position: relative;
+  margin: 0;
+  min-width: 100%;
+  list-style: none;
+  background: url() center center / cover no-repeat;
+  scroll-snap-align: start;
+  pointer-events: none;
+}
+
+.carousel ul li > img {
+  border-radius: 0;
+}
+
+.carousel ol {
+  position: absolute;
+  bottom: var(--gap);
+  display: flex;
+  justify-content: center;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  margin: 0;
+}
+
+.carousel ol li {
+  list-style: none;
+  padding: 0 calc(var(--gap) * 0.5);
+}
+
+.carousel ol li a {
+  display: block;
+  height: var(--m);
+  width: var(--m);
+  border: var(--line) solid var(--entry);
+  border-radius: 100%;
+  transition: var(--link-transition);
+}
+
+.carousel ol li.selected a {
+  background: var(--entry);
+  transform: scale(1.5);
+}
+
+.carousel ol li a:hover {
+  border: var(--line) solid var(--link-hover-color);
+  background: var(--link-hover-color);
+}
+
+.carousel .prev, .carousel .next {
+  position: absolute;
+  top: 50%;
+  left: var(--gap);
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  height: 3.5rem;
+  width: 3.5rem;
+  padding: var(--gap);
+  opacity: 0;
+  background: var(--backdrop);
+  border-radius: 50%;
+  pointer-events: none;
+  user-select: none;
+  cursor: pointer;
+  transition: var(--link-transition);
+  z-index: 3;
+}
+
+.carousel .next {
+  left: auto;
+  right: var(--gap);
+}
+
+.carousel:hover .prev,
+.carousel:hover .next {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.carousel :is(.prev, .next):hover {
+  background: var(--link-hover-color);
+}
+
+.carousel :is(.prev, .next) svg {
+  height: var(--l);
+}
+
+
+/* Compare shortcode. */
+
+.compare {
+  position: relative;
+  margin: var(--gap) 0;
+  width: 100%;
+  max-width: var(--width);
+  cursor: ew-resize;
+  user-select: none;
+  touch-action: none;
+}
+
+.compare .before {
+  position: relative;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+  display: block;
+}
+
+.compare .after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 3;
+  overflow: visible;
+  clip-path: inset(0 0 0 50%);
+  display: block;
+}
+
+.compare .divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--line);
+  background: var(--theme);
+  z-index: 4;
+  pointer-events: none;
+}
+
+.compare .handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  touch-action: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: var(--xl);
+  height: var(--xl);
+  pointer-events: none;
+  transition: transform 0.2s ease;
+}
+
+.compare:hover .handle {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+.compare:has(.handle.active) {
+  cursor: grabbing;
+}
+
+.compare .handle svg {
+  width: 100%;
+  height: 100%;
+  color: var(--theme);
+  pointer-events: none;
+}

@@ -1,0 +1,92 @@
+{{- /* Compare Slider Shortcode:
+
+  - Display a before/after comparison slider with divider and arrows handle.
+  - Support images from page bundles, static/assets directories, or external URLs.
+  - Support positional params or named params (before/after or left/right).
+  - Support resizing for processable formats.
+
+  @param {string} before/left – Before image filename/resource/URL
+  @param {string} after/right – After image filename/resource/URL
+
+  @example {{< compare "before.jpg" "after.jpg" >}}
+
+*/ -}}
+
+{{- $page := .Page -}}
+{{- $ordinal := .Ordinal -}}
+{{- $processableFormats := site.Params.processableFormats | default (slice "jpeg" "jpg" "png" "webp" "gif") -}}
+{{- $format := site.Params.resizeFormat | default "webp" -}}
+{{- $resizeDimensions := site.Params.resizeDimensions.single | default (slice "500x250" "1000x500") -}}
+
+{{- $before := or (.Get "before") (.Get "left") (.Get 0) -}}
+{{- $after := or (.Get "after") (.Get "right") (.Get 1) -}}
+
+{{- if not (and $before $after) -}}
+  {{- warnf "Compare shortcode: no images found on page %s" $page.File.Path -}}
+  {{- return -}}
+{{- end -}}
+
+{{- $images := slice (dict "src" $before "class" "before") (dict "src" $after "class" "after") -}}
+
+<div id="compare{{ $ordinal }}" class="compare">
+
+  {{- range $images -}}
+
+    {{- $img := $page.Resources.GetMatch .src -}}
+    {{- if not $img -}}
+      {{- $img = resources.Get .src -}}
+    {{- end -}}
+    {{- if and (not $img) (strings.HasPrefix .src "http") -}}
+      {{- $remote := try (resources.GetRemote .src) -}}
+      {{- with $remote.Err -}}
+        {{- warnf "Compare shortcode: failed to fetch remote resource %q: %s" .src . -}}
+      {{- else -}}
+        {{- $img = $remote.Value -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{- if and $img (in $processableFormats $img.MediaType.SubType) -}}
+      {{- $srcset := slice -}}
+      {{- $sizes := slice -}}
+
+      {{- range $resizeDimensions -}}
+        {{- $width := int (index (split . "x") 0) -}}
+        {{- if lt $width $img.Width -}}
+          {{- $resized := $img.Resize (printf "%dx %s" $width $format) -}}
+          {{- $srcset = $srcset | append (printf "%s %dw" $resized.RelPermalink $width) -}}
+          {{- $sizes = $sizes | append (printf "(max-width: %dpx) %dpx" $width $width) -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- $srcset = $srcset | append (printf "%s %dw" $img.RelPermalink $img.Width) -}}
+      {{- $sizes = $sizes | append "75vw" -}}
+
+      <img class="{{ .class }}"
+        srcset="{{ delimit $srcset ", " }}"
+        sizes="{{ delimit $sizes ", " }}"
+        src="{{ $img.RelPermalink }}"
+        width="{{ $img.Width }}"
+        height="{{ $img.Height }}"
+        alt="Compare"
+        loading="lazy"
+        fetchpriority="low">
+
+    {{- else -}}
+      <img class="{{ .class }}"
+        src="{{ if $img }}{{ $img.RelPermalink }}{{ else }}{{ .src }}{{ end }}"
+        alt="Compare"
+        loading="lazy"
+        fetchpriority="low">
+    {{- end -}}
+  {{- end -}}
+
+  <div class="divider"></div>
+  <div class="handle">
+    {{- with (partial "utils/icon.html" "arrow-left") -}}
+      <span class="icon arrow-left">{{- . -}}</span>
+    {{- end -}}
+    {{- with (partial "utils/icon.html" "arrow-right") -}}
+      <span class="icon arrow-right">{{- . -}}</span>
+    {{- end -}}
+  </div>
+</div>
