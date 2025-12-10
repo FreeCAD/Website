@@ -14,5 +14,13 @@
 {{- end -}}
 
 <link href="{{ $stylesheet.RelPermalink }}"
-  rel="stylesheet"
+  rel="preload"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
   {{ if hugo.IsProduction }}integrity="{{ $stylesheet.Data.Integrity }}" crossorigin="anonymous"{{ end }}>
+
+<noscript>
+  <link href="{{ $stylesheet.RelPermalink }}"
+    rel="stylesheet"
+    {{ if hugo.IsProduction }}integrity="{{ $stylesheet.Data.Integrity }}" crossorigin="anonymous"{{ end }}>
+</noscript>
