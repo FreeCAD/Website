@@ -318,7 +318,7 @@ params:
   showReadingTime: true
   showShareButtons: true
   showPagination: true
-  showCopyCodeButton: false
+  showCopy: false
 
   label:
     text: Home

@@ -19,16 +19,20 @@
   {{- $type = "folder" -}}
 {{- end -}}
 {{- $isRoot := not .Parent -}}
+{{- .Page.Store.Add "branchCounter" 1 -}}
+{{- $id := printf "branch-%03d" (.Page.Store.Get "branchCounter") -}}
 
 {{- if $isRoot -}}
   <ul class="tree">
 {{- end -}}
 
 <li>
-  <span
-    class="branch"
-    data-state="{{ $state }}"
-    tabindex="0"
+  <input type="checkbox"
+    id="{{ $id }}"
+    {{ if eq $state "open" }}checked{{ end }}
+    hidden>
+  <label class="branch"
+    for="{{ $id }}"
     {{ with $style }}style="{{ . }}"{{ end }}>
     <span class="branch-open">
       {{- with (partial "utils/icon.html" (printf "%s-open" $type)) -}}
@@ -41,7 +45,7 @@
       {{- end -}}
     </span>
     {{- $name | $.Page.RenderString -}}
-  </span>
+  </label>
   {{- with .InnerDeindent -}}
     <ul>
       {{ . }}

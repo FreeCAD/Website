@@ -117,7 +117,7 @@ Didn't find what you were looking for? Feel free to [open a discussion](https://
 | `languageAltTitle`                     | string        | English                | Alternate title in Multilingual Mode                                                      |
 | `showReadingTime`                      | boolean       | true \| false            | To show read time in post meta                                                            |
 | `showShareButtons`                     | boolean       | true \| false            | To show/hide share buttons under post                                                     |
-| `showCopyCodeButton`                  | boolean       | true \| false            | To show/hide Code Copy button                                                             |
+| `showCopy`                  | boolean       | true \| false            | To show/hide Code Copy button                                                             |
 | `defaultChroma`                         | string        | light \| dark \| auto    | To set default theme                                                                      |
 | `showPagination`                     | boolean       | true \| false            | Show Previous and Next Posts below a Post                                                 |
 | `analytics.google.SiteVerificationTag` | string        | XYZabc                 | Site Verification Tag for Google Analytics                                                |

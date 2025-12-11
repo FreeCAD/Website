@@ -10,13 +10,12 @@
 {{- if reflect.IsSlice $keywords -}}
   {{- $keywords = delimit $keywords ", " -}}
 {{- end -}}
-{{- $isProd := or hugo.IsProduction (eq site.Params.env "production") -}}
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="robots" content="{{ cond $isProd "index, follow" "noindex, nofollow" }}">
+  <meta name="robots" content="{{ cond hugo.IsProduction "index, follow" "noindex, nofollow" }}">
 
   <title>{{- $pageTitle -}}</title>
   <meta name="description" content="{{ $description }}">
@@ -45,7 +44,7 @@
   {{- /* Get stylesheets. */ -}}
   {{- partialCached "utils/styles.html" . -}}
 
-  {{- if $isProd -}}
+  {{- if hugo.IsProduction -}}
     {{- /* Get google analytics. */ -}}
     {{- if site.Config.Services.GoogleAnalytics.ID -}}
       {{- partial "google_analytics.html" . -}}

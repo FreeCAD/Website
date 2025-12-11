@@ -37,15 +37,15 @@
 {{- end -}}
 
 {{- /* Copy Code block content to clipboard. */ -}}
-{{- if and (eq .Kind "page") (ne .Layout "archives") site.Params.showCopyCodeButton -}}
+{{- if and (eq .Kind "page") (ne .Layout "archives") site.Params.showCopy -}}
   {{- with resources.Get "js/copy.js" -}}
-    {{- $codeCopy := resources.ExecuteAsTemplate "js/code-copy.js" $ . -}}
+    {{- $copy := resources.ExecuteAsTemplate "js/code.js" $ . -}}
     {{- if hugo.IsProduction -}}
-      {{- $codeCopy = $codeCopy | minify | fingerprint -}}
+      {{- $copy = $copy | minify | fingerprint -}}
     {{- end -}}
-    <script src="{{ $codeCopy.RelPermalink }}"
+    <script src="{{ $copy.RelPermalink }}"
       type="text/javascript"
-      {{ if hugo.IsProduction }}integrity="{{ $codeCopy.Data.Integrity }}" crossorigin="anonymous"{{ end }}
+      {{ if hugo.IsProduction }}integrity="{{ $copy.Data.Integrity }}" crossorigin="anonymous"{{ end }}
       defer>
     </script>
   {{- end -}}
@@ -53,14 +53,14 @@
 
 {{- /* Open Details block with anchor link. */ -}}
 {{- if and (in .Content "<details") site.Params.enableJSdetails -}}
-  {{- with resources.Get "js/open-details.js" -}}
-    {{- $detailsToggle := . -}}
+  {{- with resources.Get "js/details.js" -}}
+    {{- $details := . -}}
     {{- if hugo.IsProduction -}}
-      {{- $detailsToggle = $detailsToggle | minify | fingerprint -}}
+      {{- $details = $details | minify | fingerprint -}}
     {{- end -}}
-    <script src="{{ $detailsToggle.RelPermalink }}"
+    <script src="{{ $details.RelPermalink }}"
       type="text/javascript"
-      {{ if hugo.IsProduction }}integrity="{{ $detailsToggle.Data.Integrity }}" crossorigin="anonymous"{{ end }}
+      {{ if hugo.IsProduction }}integrity="{{ $details.Data.Integrity }}" crossorigin="anonymous"{{ end }}
       defer>
     </script>
   {{- end -}}
@@ -81,22 +81,6 @@
   {{- end -}}
 {{- end -}}
 
-{{- /* Branch shortcode script. */ -}}
-{{- if .HasShortcode "branch" -}}
-  {{- with resources.Get "js/shortcode-branch.js" -}}
-    {{- $branch := . -}}
-    {{- if hugo.IsProduction -}}
-      {{- $branch = $branch | minify | fingerprint -}}
-    {{- end -}}
-    <script src="{{ $branch.RelPermalink }}"
-      type="text/javascript"
-      {{ if hugo.IsProduction }}integrity="{{ $branch.Data.Integrity }}" crossorigin="anonymous"{{ end }}
-      defer>
-    </script>
-  {{- end -}}
-{{- end -}}
-
-
 {{- /* Images carousel shortcode script. */ -}}
 {{- if and (.HasShortcode "carousel") site.Params.enableJScarousel -}}
   {{- with resources.Get "js/carousel.js" -}}
@@ -111,7 +95,6 @@
     </script>
   {{- end -}}
 {{- end -}}
-
 
 {{- /* Compare shortcode script. */ -}}
 {{- if and (.HasShortcode "compare") site.Params.enableJScompare -}}

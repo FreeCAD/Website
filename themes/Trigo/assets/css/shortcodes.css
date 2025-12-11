@@ -12,14 +12,22 @@
   margin-left: calc(-50vw + 50%);
 }
 
-.content > :is(:first-child, .box + *):not(.box) {
-  padding-top: calc(var(--gap) * 2);
-  margin-top: 0;
+.content:has(> :first-child:not(.box)) {
+  padding-block-start: var(--gap);
 }
 
-.content > :is(:last-child, :has(+ .box)):not(.box) {
-  padding-bottom: calc(var(--gap) * 2);
-  margin-bottom: 0;
+.content:has(> :last-child:not(.box)) {
+  padding-block-end: var(--gap);
+}
+
+.content > :not(.box):first-child,
+.content > .box + :not(.box) {
+  margin-block-start: calc(var(--gap) * 2);
+}
+
+.content > :not(.box):last-child,
+.content > :not(.box):has( + .box) {
+  margin-block-end: calc(var(--gap) * 2);
 }
 
 .box:nth-child(3n + 1) {
@@ -31,7 +39,7 @@
 }
 
 .box:nth-child(3n) {
-  background: var(--theme);
+  background: var(--footer);
 }
 
 .box-title {
@@ -146,19 +154,14 @@
   list-style: none;
 }
 
-.branch[data-state="open"] + ul {
-  display: block;
-}
-
-.branch[data-state="open"] .branch-open,
-.branch[data-state="closed"] .branch-closed {
-  display: inline;
-}
-
-.branch[data-state="closed"] + ul,
-.branch[data-state="closed"] .branch-open,
-.branch[data-state="open"] .branch-closed {
+.branch-open,
+input:checked + .branch .branch-closed,
+input:not(:checked) + .branch + ul {
   display: none;
+}
+
+input:checked + .branch :is(+ ul, .branch-open) {
+  display: block;
 }
 
 .branch + ul {
