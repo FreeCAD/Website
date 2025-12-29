@@ -419,3 +419,65 @@ input:checked + .branch :is(+ ul, .branch-open) {
   color: var(--theme);
   pointer-events: none;
 }
+
+
+/* Canvas shortcode. */
+
+.canvas {
+  position: relative;
+  display: block;
+}
+
+.canvas canvas {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  border-radius: var(--radius);
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.canvas.grabbing canvas {
+  cursor: grabbing;
+}
+
+.canvas .controls {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--gap);
+  align-items: center;
+  background: var(--backdrop);
+  padding: var(--padding);
+  border-radius: var(--radius);
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--link-transition);
+}
+
+.canvas .controls svg {
+  color: var(--secondary);
+  height: var(--m);
+  display: inline-block;
+  vertical-align: calc(var(--gap) * -0.125);
+}
+
+.canvas .controls svg:hover {
+  color: var(--link-hover-color);
+}
+
+.canvas:hover .controls {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.canvas .controls .pause,
+.canvas.playing .controls .play {
+  display: none;
+}
+
+.canvas.playing .controls .pause {
+  display: inline-block;
+}

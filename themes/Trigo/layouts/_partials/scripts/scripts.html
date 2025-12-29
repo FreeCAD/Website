@@ -110,3 +110,18 @@
     </script>
   {{- end -}}
 {{- end -}}
+
+{{- /* Canvas shortcode script. */ -}}
+{{- if and (.HasShortcode "canvas") site.Params.enableJScanvas -}}
+  {{- with resources.Get "js/canvas.js" -}}
+    {{- $canvas := . -}}
+    {{- if hugo.IsProduction -}}
+      {{- $canvas = $canvas | minify | fingerprint -}}
+    {{- end -}}
+    <script src="{{ $canvas.RelPermalink }}"
+      type="text/javascript"
+      {{ if hugo.IsProduction }}integrity="{{ $canvas.Data.Integrity }}" crossorigin="anonymous"{{ end }}
+      defer>
+    </script>
+  {{- end -}}
+{{- end -}}

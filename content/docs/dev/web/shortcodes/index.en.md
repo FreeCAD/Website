@@ -261,6 +261,25 @@ Specify two image paths:
 The path is relative to the current page bundle. To use resources in the `static` directory of the site, prefix the path with a `/` slash. The URL of an external image can be use as well.
 
 
+## Canvas
+
+Trigo shortcode to display an animated canvas based on a sequence of images with screen, mouse and keyboard controls.
+
+### Example
+
+{{< canvas path="frames" fps="12" title="Hi, I'm caddy! Press spacebar to animate me! Or grab, scroll and use keyboard arrows too!" >}}
+
+### Usage
+
+Specify a directory path with the sequence of named images, optionally the animation speed as FPS and a title.
+
+```html {file="markdown"}
+{{</* canvas path="frames-dir" fps="12" title="Animation title" */>}}
+```
+
+The path is relative to the current page bundle. To use resources in the `static` directory of the site, prefix the path with a `/` slash. External resources (defined from a URL) are not supported at this time. The animation takes the image filenames as order, e.g. `001.webp`, `002.webp` or other named sorted schema.
+
+
 ## PDF
 
 Trigo shortcode to display a PDF file.

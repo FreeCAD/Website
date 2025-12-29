@@ -1,0 +1,81 @@
+{{- /* Canvas Shortcode:
+
+  - Display a sequence of ordered images as an animated canvas with screen, mouse and keyboard controls via JS.
+  - Support image sequence resources from page bundles and static/assets directories.
+  - Support positional params or named params.
+  - Support resizing for processable formats.
+  - Support optional animation speed and title.
+  - Add noscript fallback.
+
+  Note: the animation order is based on image filenames sorting, e.g. `01.webp`, `02.webp`, etc.
+
+  @param {string} [path] Path to image sequence. Can be page bundle or static/assets directories.
+  @param {int} [fps=12] Animation speed in frames per second when playing.
+  @param {string} [title] Title to show on canvas hover.
+
+  @example {{< canvas path="directory-path" fps="24" title="An animated canvas." >}}
+
+*/ -}}
+
+{{- $path := cond (.IsNamedParams) (.Get "path") (.Get 0) -}}
+{{- $fps := int (cond (.IsNamedParams) (.Get "fps") (.Get 1) | default 12) -}}
+{{- $title := cond (.IsNamedParams) (.Get "title") (.Get 2) -}}
+{{- $id := printf "canvas-%d" .Ordinal -}}
+{{- $processableFormats := site.Params.processableFormats | default (slice "jpeg" "jpg" "png" "webp" "gif") -}}
+{{- $format := site.Params.resizeFormat | default "webp" -}}
+{{- $resizeDimensions := index site.Params.resizeDimensions.single 0 | default "500x250" -}}
+{{- $frames := slice -}}
+
+{{- range sort (.Page.Resources.Match (printf "%s/*" $path)) "Name" -}}
+  {{- $img := . -}}
+  {{- if in $processableFormats $img.MediaType.SubType -}}
+    {{- $width := int (index (split $resizeDimensions "x") 0) -}}
+    {{- if lt $width $img.Width -}}
+      {{- $img = $img.Resize (printf "%dx %s" $width $format) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $frames = $frames | append $img.RelPermalink -}}
+{{- end -}}
+
+{{- if eq (len $frames) 0 -}}
+  {{ errorf "canvas shortcode: no frames found in %q for page %q" $path .Page.File.Path }}
+{{- end -}}
+
+<div class="canvas"
+  id="{{ $id }}"
+  tabindex="0"
+  {{ with $title }}title="{{ . }}"{{ end }}>
+  <canvas role="img" aria-label="Canvas animation">
+    <img src="{{ index $frames 0 }}" alt="Canvas animation">
+  </canvas>
+
+  <div class="controls">
+    <button class="play" aria-label="Play animation">
+      {{- with (partial "utils/icon.html" "arrow-right") -}}
+        <span class="icon">{{- . -}}</span>
+      {{- end -}}
+    </button>
+    <button class="pause" aria-label="Pause animation">
+      {{- with (partial "utils/icon.html" "pause") -}}
+        <span class="icon">{{- . -}}</span>
+      {{- end -}}
+    </button>
+    <input class="slider" type="range" min="0" max="{{ sub (len $frames) 1 }}" value="0" aria-label="Animation frame">
+  </div>
+
+  <script type="application/json" class="canvas-data">
+  {
+    "fps": {{ $fps }},
+    "frames": {{ $frames | jsonify | safeJS }}
+  }
+  </script>
+
+  <noscript>
+    <figure>
+      <img src="{{ index $frames 0 }}"
+        alt="Static preview of animation"
+        style="max-width:100%; border-radius:var(--radius);">
+      <figcaption>Enable JavaScript to view the canvas animation.</figcaption>
+    </figure>
+  </noscript>
+</div>
