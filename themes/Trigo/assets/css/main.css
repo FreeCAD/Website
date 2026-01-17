@@ -643,6 +643,7 @@ sup:target {
 .content img:not([popover] img, blockquote img) {
   display: inherit;
   max-width: 100%;
+  height: auto;
   max-height: calc(var(--width) * 0.5);
   border-radius: var(--radius);
   margin: auto;
@@ -654,6 +655,7 @@ sup:target {
 
 .content figure {
   position: relative;
+  text-align: center;
 }
 
 figure > figcaption:not(:has(.internal-tooltip)) {
@@ -723,7 +725,6 @@ figcaption svg {
 }
 
 .content button[popovertarget^="img-"] {
-  width: 100%;
   cursor: zoom-in;
   margin: auto;
   text-align: center;
