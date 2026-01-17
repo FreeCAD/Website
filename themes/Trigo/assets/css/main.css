@@ -643,7 +643,7 @@ sup:target {
 .content img:not([popover] img, blockquote img) {
   display: inherit;
   max-width: 100%;
-  max-height: calc(var(--width) * 0.25);
+  max-height: calc(var(--width) * 0.5);
   border-radius: var(--radius);
   margin: auto;
 }
@@ -723,6 +723,7 @@ figcaption svg {
 }
 
 .content button[popovertarget^="img-"] {
+  width: 100%;
   cursor: zoom-in;
   margin: auto;
   text-align: center;
