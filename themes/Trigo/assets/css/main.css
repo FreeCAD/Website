@@ -696,8 +696,9 @@ figcaption svg {
 }
 
 .content [popover] img {
-  height: 90vh;
-  max-width: 90vw;
+  height: auto;
+  max-height: calc(100vh - (var(--gap) * 2));
+  max-width: calc(100vw - (var(--gap) * 2));
   border-radius: var(--radius);
 }
 
