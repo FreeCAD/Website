@@ -74,7 +74,7 @@
         {{- with $meta.version -}}
           <span class="meta">
             {{- partial "utils/icon.html" "tags" -}}
-            {{- . -}}
+            {{- truncate 12 . -}}
           </span>
         {{- end -}}
 
@@ -89,6 +89,13 @@
           <span class="meta">
             {{- partial "utils/icon.html" "authors" -}}
             {{- truncate 30 . -}}
+          </span>
+        {{- end -}}
+
+        {{- with $item.total_downloads -}}
+          <span class="meta">
+            {{- partial "utils/icon.html" "download" -}}
+            {{- partial "utils/format_number.html" . -}}
           </span>
         {{- end -}}
       </div>

@@ -1,0 +1,23 @@
+{{- $number := int . -}}
+
+{{- if lt $number 1000 -}}
+  {{- $number -}}
+{{- else -}}
+  {{- $units := slice
+      (dict "value" 1000000000 "scale" "B")
+      (dict "value" 1000000    "scale" "M")
+      (dict "value" 1000       "scale" "K")
+  -}}
+
+  {{- range $units -}}
+    {{- if ge $number .value -}}
+      {{- $scale := div (float $number) .value -}}
+      {{- if lt $scale 100 -}}
+        {{- printf "%.1f%s" $scale .scale -}}
+      {{- else -}}
+        {{- printf "%.0f%s" $scale .scale -}}
+      {{- end -}}
+      {{- break -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
