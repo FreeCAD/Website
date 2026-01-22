@@ -101,6 +101,15 @@ jobs:
 
           jq empty "$FILE" || (echo "Error: $FILE is not valid JSON." && exit 1)
 
+      - name: Fetch Addons Total Download Counts
+        if: steps.fetch_zip.outputs.changed == 'true'
+        id: fetch_downloads
+        run: |
+          set -euo pipefail
+
+          curl -sSf https://www.freecad.org/matomo-all-addons-downloads \
+            -o data/addons_total_downloads.json
+
       - name: Cleanup Addon JSON
         if: steps.fetch_zip.outputs.changed == 'true'
         run: |
@@ -116,6 +125,13 @@ jobs:
           import xml.etree.ElementTree as ET
 
           file_path = sys.argv[1]
+
+          downloads_path = "data/addons_total_downloads.json"
+          try:
+              with open(downloads_path, "r") as file:
+                  download_counts = json.load(file)
+          except Exception:
+              download_counts = {}
 
           def extract_metadata(package_xml):
               try:
@@ -173,10 +189,12 @@ jobs:
                   metadata = (entry.get("metadata") or {})
                   package_xml = metadata.get("package_xml")
                   cleaned_metadata = extract_metadata(package_xml) if package_xml else {}
+                  addon_key_normalized = key.lower()
 
                   cleaned_entry = {
                       "repository": entry.get("repository"),
                       "git_ref": entry.get("git_ref"),
+                      "total_downloads": download_counts.get(addon_key_normalized),
                       "last_update_time": entry.get("last_update_time"),
                       "metadata": cleaned_metadata
                   }
