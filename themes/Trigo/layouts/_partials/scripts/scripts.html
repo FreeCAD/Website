@@ -36,8 +36,23 @@
   {{- end -}}
 {{- end -}}
 
+{{- /* Provide sorting options on Addons page. */ -}}
+{{- if and (hasSuffix .Path "addons") site.Params.enableJSaddons -}}
+  {{- with resources.Get "js/addons.js" }}
+    {{- $addons := . -}}
+    {{- if hugo.IsProduction -}}
+      {{- $addons = $addons | minify | fingerprint -}}
+    {{- end -}}
+    <script src="{{ $addons.RelPermalink }}"
+      type="text/javascript"
+      {{ if hugo.IsProduction }}integrity="{{ $addons.Data.Integrity }}" crossorigin="anonymous"{{ end }}
+      defer>
+    </script>
+  {{- end -}}
+{{- end -}}
+
 {{- /* Copy Code block content to clipboard. */ -}}
-{{- if and (eq .Kind "page") (ne .Layout "archives") site.Params.showCopy -}}
+{{- if and (eq .Kind "page") (ne .Layout "archives") .Content site.Params.showCopy -}}
   {{- with resources.Get "js/copy.js" -}}
     {{- $copy := resources.ExecuteAsTemplate "js/code.js" $ . -}}
     {{- if hugo.IsProduction -}}

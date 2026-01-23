@@ -23,6 +23,50 @@
 
 {{- $sorted := sort $entries "item.last_update_time" "desc" -}}
 
+{{- if site.Params.enableJSaddons -}}
+  {{- $sorts := slice
+    (dict
+      "key" "title"
+      "order" "asc"
+      "pressed" false
+      "labelAsc" (i18n "sort_title_asc" | default "Title A–Z")
+      "labelDesc" (i18n "sort_title_desc" | default "Title Z–A")
+    )
+    (dict
+      "key" "date"
+      "order" "desc"
+      "pressed" true
+      "labelAsc" (i18n "sort_date_asc" | default "Oldest update")
+      "labelDesc" (i18n "sort_date_desc" | default "Latest update")
+    )
+    (dict
+      "key" "downloads"
+      "order" "desc"
+      "pressed" false
+      "labelAsc" (i18n "sort_downloads_asc" | default "Least downloads")
+      "labelDesc" (i18n "sort_downloads_desc" | default "Most downloads")
+    )
+  -}}
+
+  <div class="catalog-sort">
+    {{- range $sorts -}}
+      <button
+        data-sort="{{ .key }}"
+        data-order="{{ .order }}"
+        aria-pressed="{{ .pressed }}">
+        <span class="label-asc">
+          {{- partial "utils/icon.html" "tri-up" -}}
+          {{- .labelAsc -}}
+        </span>
+        <span class="label-desc">
+          {{- partial "utils/icon.html" "tri-down" -}}
+          {{- .labelDesc -}}
+        </span>
+      </button>
+    {{- end -}}
+  </div>
+{{- end -}}
+
 <div class="cards">
   {{- range $sorted -}}
 
@@ -54,11 +98,17 @@
       $defaultIcon.RelPermalink -}}
 
     <a class="card"
-      href="{{ $item.repository }}">
+      href="{{ $item.repository }}"
+      data-title="{{ $meta.name | lower | replaceRE "[^a-z0-9]+" "" }}"
+      data-date="{{ (time.AsTime $item.last_update_time).Unix }}"
+      data-downloads="{{ $item.total_downloads | default 0 }}">
 
       <div class="card-title">
         <div class="addon-icon">
-          <img src="{{ $icon }}" alt="{{ i18n "icon" | default "icon" }}">
+          <img src="{{ $icon }}"
+            loading="lazy"
+            decoding="async"
+            alt="{{ i18n "icon" | default "icon" }}">
         </div>
 
         {{- with $meta.name -}}
@@ -88,7 +138,7 @@
         {{- with $meta.maintainer -}}
           <span class="meta">
             {{- partial "utils/icon.html" "authors" -}}
-            {{- truncate 30 . -}}
+            {{- truncate 24 . -}}
           </span>
         {{- end -}}
 

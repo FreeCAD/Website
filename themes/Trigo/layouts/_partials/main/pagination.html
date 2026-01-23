@@ -27,7 +27,7 @@
           href="{{ .RelPermalink -}}#top"
           alt="PREVIOUS ARTICLE"
           title="{{ i18n "previous_article" | default "Previous article" }}">
-          {{- partial "utils/icon.html" "arrow-left" -}}
+          {{- partial "utils/icon.html" "tri-left" -}}
           {{- .LinkTitle | .RenderString -}}
 
           {{- if not (eq .Lang $.Lang) -}}
@@ -57,7 +57,7 @@
             {{ .Lang | upper -}}
           {{- end -}}
 
-          {{- partial "utils/icon.html" "arrow-right" -}}
+          {{- partial "utils/icon.html" "tri-right" -}}
 
           {{- if not hugo.IsProduction -}}
             {{- with .Weight -}}

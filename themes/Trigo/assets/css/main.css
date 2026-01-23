@@ -303,6 +303,47 @@ main > :is(.hero:only-child, .not-found) {
 
 /* Addons catalog */
 
+.catalog-sort {
+  width: var(--content-width);
+  margin: var(--gap) auto;
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap);
+  justify-content: center;
+}
+
+.catalog-sort button {
+  width: 30%;
+  padding: var(--padding);
+  color: var(--secondary);
+  background: var(--entry);
+  border-radius: var(--radius);
+}
+
+.catalog-sort button .label-asc,
+.catalog-sort button .label-desc {
+  display: none;
+}
+
+.catalog-sort button[data-order="asc"] .label-asc,
+.catalog-sort button[data-order="desc"] .label-desc {
+  display: inline;
+}
+
+.catalog-sort button.active {
+  font-weight: bold;
+  background: var(--link-color);
+  color: var(--entry);
+}
+
+.catalog-sort :is(button, button.active):hover {
+  background: var(--link-hover-color);
+}
+
+.catalog-sort svg {
+  vertical-align: calc(var(--gap) * -0.125);
+}
+
 .addon-icon {
   display: grid;
   place-items: center;

@@ -3,7 +3,7 @@
   {{- if not .Date.IsZero -}}
     <span class="meta">
       {{- partial "utils/icon.html" "date" -}}
-      <time datetime="{{ .Date.UTC.Format "2006-01-02T15:04:05Z" }}">{{ .Date | time.Format ":date_long" }}</time>
+      <time datetime="{{ .Date.UTC.Format "2006-01-02T15:04:05Z" }}">{{- .Date | time.Format ":date_long" -}}</time>
     </span>
   {{- end -}}
 
@@ -25,17 +25,17 @@
     {{- end -}}
   {{- end -}}
 
-  {{- if site.Params.showWordCount -}}
+  {{- if and site.Params.showWordCount (gt .WordCount 0) -}}
     <span class="meta">
       {{- partial "utils/icon.html" "words" -}}
-      {{ i18n "words" .WordCount | default (printf "%d words" .WordCount) }}
+      {{- i18n "words" .WordCount | default (printf "%d words" .WordCount) -}}
     </span>
   {{- end -}}
 
-  {{- if site.Params.showReadingTime -}}
+  {{- if and site.Params.showReadingTime (gt .ReadingTime 0) -}}
     <span class="meta">
       {{- partial "utils/icon.html" "time" -}}
-      {{ i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime) }}
+      {{- i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime) -}}
     </span>
   {{- end -}}
 
@@ -43,7 +43,7 @@
     <span class="meta">
       {{- partial "utils/icon.html" "translations" -}}
       {{- range .Translations -}}
-        <a href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a>
+        <a href="{{ .RelPermalink }}">{{- .Language.LanguageName -}}</a>
       {{- end -}}
     </span>
   {{- end -}}
