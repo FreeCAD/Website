@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 Last week in FreeCAD development:

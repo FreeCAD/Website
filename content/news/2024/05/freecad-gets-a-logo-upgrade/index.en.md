@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 Just in time for upcoming FreeCAD 1.0, the project got a major logo refresh.

@@ -10,7 +10,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 The FreeCAD Project Association has just approved several more grants:

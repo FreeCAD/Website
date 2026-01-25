@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 This past week was a very busy one for code merges, with almost 80 pull requests completed. Developers plan on continuing the high pace this next week:

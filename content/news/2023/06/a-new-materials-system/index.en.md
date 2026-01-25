@@ -8,7 +8,6 @@ tags: []
 cover:
   image:
   caption:
-  alt:
 ---
 
 Last week [Alexandre Prokoudine](https://github.com/prokoudine) and [Dave Carter](https://github.com/davesrocketshop) published an article at the [Ondsel Blog](https://ondsel.com/blog) called "[FreeCAD Needs A Better Materials System](https://ondsel.com/blog/freecad-needs-a-better-materials-system/)" -- we at the FPA couldn't agree more! The article gives a great overview of the current state of the materials system in FreeCAD, and the things that a new materials system needs to address.

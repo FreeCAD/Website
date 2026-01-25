@@ -15,7 +15,6 @@
         {{- if $paginator.HasPrev -}}
           <a class="prev"
             href="{{ $paginator.Prev.URL }}"
-            alt="PREVIOUS"
             aria-label="{{ i18n "prev_page" | default "Prev Page" }}"
             title="{{ i18n "prev_page" | default "Prev Page" }}">
             ◀ {{ i18n "prev_page" | default "Prev Page" }}
@@ -27,7 +26,6 @@
         {{- if $paginator.HasNext -}}
           <a class="next"
             href="{{ $paginator.Next.URL }}"
-            alt="NEXT"
             aria-label="{{ i18n "next_page" | default "Next Page" }}"
             title="{{ i18n "next_page" | default "Next Page" }}">
             {{ i18n "next_page" | default "Next Page" }} ▶

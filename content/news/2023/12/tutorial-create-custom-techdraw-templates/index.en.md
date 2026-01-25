@@ -9,7 +9,6 @@ tags:
 cover:
   image: techdrawing_wedge_labelled-1.png
   caption: Techdrawing wedge
-  alt: Techdrawing wedge
 ---
 
 The Technical Drawing or [TechDraw workbench](https://wiki.freecad.org/TechDraw_Workbench) is an integral part of FreeCAD allowing us to create beautiful technical drawings of our parts or assemblies. In a world of CNC milling and 3D printing it's still essential at times to be able to supply someone with a technical drawing to help plan the making of a part. A technical drawing can also be extremely useful as part of documentation and could form part of a technical standard for a project or product, so it's important to be able to create technical drawings that meet our needs.

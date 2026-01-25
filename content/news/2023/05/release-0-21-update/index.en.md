@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 Since our editor-in-chief @chennes is away today, and we're lost without him, we have no WIP Wednesday! So let's have a look at the progresses towards the forthcoming 0.21 release. Things are going well and we are on track. The [0.21 project](https://github.com/orgs/FreeCAD/projects/4) summarizes everything that needs to be done and where we stand. About 45% of the issues are fixed already, and another 15% is being addressed now. In the remaining 40% are many long-standing issues that might get reported to the next release if need be. But we are now all trying to process a maximum of it.

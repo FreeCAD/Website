@@ -8,7 +8,6 @@ tags: []
 cover:
   image: main.png
   caption: Path Workbench
-  alt: Path Workbench
 ---
 
 In the [first part of this tutorial](https://blog.freecad.org/2023/11/24/tutorial-getting-started-with-the-path-workbench-part-one/) we looked at setting up the Tool Bit Library when running the Path WB for the first time and creating a custom 3mm endmill tool. As a reminder in these tutorials we will describe tool icons by the text description that is displayed when you rollover an icon. This means you'll have to explore the rollover texts which is a great way to explore the basics of what tools are on each workbench. Also, as a reminder, this tutorial was written using FreeCAD version 0.21.1.

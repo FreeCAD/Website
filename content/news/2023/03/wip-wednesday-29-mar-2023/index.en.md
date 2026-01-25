@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 This past week saw the removal of the old Image workbench and the[ integration of its functionality into the core of FreeCAD](https://github.com/FreeCAD/FreeCAD/pull/8955), the merge of a significant [usability improvement to fillets and chamfers](https://github.com/FreeCAD/FreeCAD/pull/8990) in the Part Design workbench, the merge of the [last of the Topological Naming Problem mitigation Stage 1 PRs](https://github.com/FreeCAD/FreeCAD/pull/8974), and the consolidation of some [Workbench-related options into the Workbenches preference pane](https://github.com/FreeCAD/FreeCAD/pull/9026).

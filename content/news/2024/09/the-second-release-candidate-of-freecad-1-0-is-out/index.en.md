@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 We've just released FreeCAD 1.0rc2, builds are already available for [downloading on GitHub](https://github.com/FreeCAD/FreeCAD/releases/tag/1.0rc2). The update is coming with just bugfixes.

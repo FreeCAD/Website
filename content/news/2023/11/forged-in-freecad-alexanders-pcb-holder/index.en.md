@@ -11,7 +11,6 @@ tags:
 cover:
   image: PCB_solder_fren.jpg
   caption: PCB solder fren
-  alt: PCB solder fren
 ---
 
 Spotted over on Mastodon, we thought Alexander's (AKA [@PistonPin](https://mastodon.online/@PistonPin)) PCB holder design was an excellent tool and a great example of functional 3D printing and FreeCAD. Chatting with Alexander it's clear he is an experienced CAD user with lots of previous projects under his belt.

@@ -8,7 +8,6 @@ tags: []
 cover:
   image: FCNA24.webp
   caption: North America FreeCAD Meetup 2024
-  alt: North America FreeCAD Meetup 2024
 ---
 
 Between August the 15<sup>th</sup> and 18<sup>th</sup> Springfield Illinois played host to a North American FreeCAD meetup. This excellent event drew together a group of active FreeCAD contributors for a 4 day hackathon, incorporating various meetings, presentations and, of course, social activities.

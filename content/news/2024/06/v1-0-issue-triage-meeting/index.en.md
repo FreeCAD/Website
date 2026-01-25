@@ -8,7 +8,6 @@ tags: []
 cover:
   image:
   caption:
-  alt:
 ---
 
 This coming Monday, 1 July 2024, immediately following the regular PR Review meeting, we are going to meet to discuss the outstanding issues in the GitHub tracker, and decide which ones to prioritize in the final push to the 1.0 release.

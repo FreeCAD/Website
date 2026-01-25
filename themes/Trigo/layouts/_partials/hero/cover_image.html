@@ -7,8 +7,8 @@
 */ -}}
 
 {{- $cover := false -}}
-{{- $alt := "" -}}
 {{- $caption := "" -}}
+{{- $alt := i18n "image_fallback" | default "Image" -}}
 {{- $anchor := "" -}}
 
 {{- $processableFormats := site.Params.processableFormats | default (slice "jpeg" "jpg" "png" "webp" "gif") -}}
@@ -40,10 +40,9 @@
   {{- end -}}
 {{- end -}}
 
-{{- /* Get cover alternative text, title and anchor. */ -}}
+{{- /* Get cover caption and anchor. */ -}}
 {{- with $page.Params.cover -}}
-  {{- $alt = .alt | default .caption | plainify -}}
-  {{- $caption = .caption | default .alt | plainify -}}
+  {{- $caption = .caption | plainify -}}
   {{- $anchor = .anchor | default "Smart" | plainify -}}
 {{- end -}}
 
@@ -83,7 +82,7 @@
       <img srcset="{{ delimit $srcset ", " }}"
         sizes="{{ delimit $sizes ", " }}"
         src="{{ .RelPermalink }}"
-        title="{{ $alt }}"
+        title="{{ $caption }}"
         alt="{{ $alt }}"
         width="{{ .Width }}"
         height="{{ .Height }}"
@@ -93,19 +92,19 @@
     {{- /* Unprocessable image, absolute urls and external links (no img processing). */ -}}
     {{- else -}}
       <img src="{{ with .RelPermalink }}{{ . }}{{ else }}{{ . | absURL }}{{ end }}"
-        title="{{ $alt }}"
+        title="{{ $caption }}"
         alt="{{ $alt }}"
         loading="{{ $loading }}"
         fetchpriority="{{ $priority }}">
     {{- end -}}
 
     {{- /* Display Caption. */ -}}
-    {{- with $caption -}}
+    {{- if $caption -}}
       <figcaption>
         <div class="internal-tooltip">
           {{- partial "utils/icon.html" "important" -}}
           <span class="tooltip">
-            {{- . | $.RenderString -}}
+            {{- $caption | $.RenderString -}}
           </span>
         </div>
       </figcaption>

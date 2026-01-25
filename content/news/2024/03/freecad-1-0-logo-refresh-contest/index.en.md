@@ -10,7 +10,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 With FreeCAD 1.0 on the horizon, it's time to refresh the official FreeCAD logo. At the request of the project maintainers, the intent here is to follow a similar approach to corporate logos and evolve/iterate the current FreeCAD symbol instead of completely reinventing the symbology of it.

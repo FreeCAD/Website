@@ -6,8 +6,7 @@
 */ -}}
 
 {{- $cover := false -}}
-{{- $alt := "" -}}
-{{- $anchor := "" -}}
+{{- $alt := i18n "image_fallback" | default "Image" -}}
 
 {{- $processableFormats := site.Params.processableFormats | default (slice "jpeg" "jpg" "png" "webp" "gif") -}}
 {{- $resizeFormat := site.Params.resizeFormat | default "webp" -}}
@@ -24,12 +23,6 @@
   {{- $section := site.GetPage (printf "/%s" .Section) | default (site.Sites.Default.GetPage (printf "/%s" .Section)) -}}
   {{- $category := lower .Params.categories -}}
 
-  {{- /* Category cover fallback. CSS gradients are used instead.
-  {{- if and $section $category -}}
-    {{- $cover = ($section.Resources.ByType "image").GetMatch (printf "*%s*" $category) -}}
-    {{- $page = $section -}}
-  {{- end -}} */ -}}
-
   {{- /* Section cover fallback. */ -}}
   {{- if not $cover -}}
     {{- $cover = ($section.Resources.ByType "image").GetMatch (printf "*%s*" $section.Params.cover.image) -}}
@@ -37,17 +30,12 @@
   {{- end -}}
 {{- end -}}
 
-{{- /* Get cover alternative text and anchor. */ -}}
-{{- with $page.Params.cover -}}
-  {{- $alt = .alt | default .caption | plainify -}}
-  {{- $anchor = .anchor | default "Smart" | plainify -}}
-{{- end -}}
-
 {{- with $cover -}}
 
   {{- $loading := "lazy" -}}
   {{- $priority := "low" -}}
   {{- $resizeDims := site.Params.resizeDimensions.card | default (slice "500x250") -}}
+  {{- $anchor := $page.Params.cover.anchor | default "Smart" | plainify -}}
 
   <figure class="card-cover">
 
@@ -71,7 +59,6 @@
       <img srcset="{{ delimit $srcset ", " }}"
         sizes="{{ delimit $sizes ", " }}"
         src="{{ .RelPermalink }}"
-        title="{{ $alt }}"
         alt="{{ $alt }}"
         width="{{ .Width }}"
         height="{{ .Height }}"
@@ -81,7 +68,6 @@
     {{- /* Unprocessable image, absolute urls and external links (no img processing). */ -}}
     {{- else -}}
       <img src="{{ with .RelPermalink }}{{ . }}{{ else }}{{ . | absURL }}{{ end }}"
-        title="{{ $alt }}"
         alt="{{ $alt }}"
         loading="{{ $loading }}"
         fetchpriority="{{ $priority }}">

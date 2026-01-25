@@ -8,7 +8,6 @@ tags: []
 cover:
   image:
   caption:
-  alt:
 ---
 
 This is a small announcement for who is using Git to work with the FreeCAD source code. More and more of the Git world is switching to the new convention to use "main" as their main branch name, instead of "master". We think it's a good time for FreeCAD to rename its main branch too.

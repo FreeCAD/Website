@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 (The new unit system menu in FreeCAD 0.21dev.)

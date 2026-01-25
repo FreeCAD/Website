@@ -10,7 +10,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 The FPA General Assembly has finalized the list of approved grant applications for the first quarter of 2025.

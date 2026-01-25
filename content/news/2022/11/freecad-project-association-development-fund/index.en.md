@@ -9,7 +9,6 @@ tags:
 cover:
   image: Monedas_Varias.jpg
   caption: Monedas Varias
-  alt: Monedas Varias
 ---
 
 The FPA development fund won't pay in a pile of coins. But you could always buy them yourself! (Image courtesy of [ViajeroExtraviado](https://commons.wikimedia.org/wiki/File:Monedas_Varias.jpg))

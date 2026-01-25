@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 Lots of interesting development happening this week as everyone gets ready for [FreeCAD Day 2023](https://blog.freecad.org/2023/01/04/freecad-meeting-day-2023/) in Brussels next week.

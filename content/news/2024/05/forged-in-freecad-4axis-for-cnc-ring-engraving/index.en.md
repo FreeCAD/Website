@@ -11,7 +11,6 @@ tags:
 cover:
   image: 4thaxis.png
   caption: 4Axis
-  alt: 4Axis
 ---
 
 We've featured a few projects under the "Forged In FreeCAD" title but what caught our eye with this one is that FreeCAD was used to not only create an innovative solution, but also was used to then help operate the created machine.

@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 In the past week we continued merging translation fixes, plus a significant visual cleanup of the Navigation Cube.

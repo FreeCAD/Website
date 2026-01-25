@@ -10,7 +10,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 Since its inception in late 2021, the FreeCAD Project Association (FPA) has been collecting the community's donations with the intention of spending them on improving FreeCAD and its ecosystem. In 2024, the FPA launched its first annual grant program. Here is a recap of how this went.

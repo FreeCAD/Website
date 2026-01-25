@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 There have been a number of exciting changes to FreeCAD in the past week, most notably the merge of a new notification system from Sketcher developer @abdullah. It's still a work-in-progress, so expect to see significant refinement of this feature in the coming weeks. The FreeCAD Project Association also released its first [Annual Report](https://fpa.freecad.org/reports/2022), so big kudos to the team that worked on that document (especially @wandererfan and @yorik), and to the whole FPA for an amazing inaugural year.

@@ -10,7 +10,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 The FreeCAD Project Association now has three open positions, each with a 1-year long contract and a compensation of up to $500 a month:

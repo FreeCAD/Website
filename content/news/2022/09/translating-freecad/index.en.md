@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 FreeCAD is an international project featuring contributors from dozens of countries, and users around the globe. One way we work to improve the usefulness of FreeCAD is by making it available in many different user-interface languages using the crowd-sourced translation platform [CrowdIn](http://crowdin.com/project/freecad).

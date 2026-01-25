@@ -8,7 +8,6 @@ tags: []
 cover:
   image:
   caption:
-  alt:
 ---
 
 This is a small glimpse to what happened on the FreeCAD meeting day 2023 in Brussels in February. Captions available under the gear icon.

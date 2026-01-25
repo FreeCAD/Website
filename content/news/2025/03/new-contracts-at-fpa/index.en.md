@@ -10,7 +10,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 The FreeCAD project association has filled three [previously announced](https://blog.freecad.org/2025/01/24/job-openings-at-the-fpa/) developer-support roles:

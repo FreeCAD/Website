@@ -11,7 +11,6 @@ versions: "1.0"
 cover:
   image: motor.webp
   caption: "a cover caption"
-  alt: "a cover alternative title"
 params:
   hero: true
 ---

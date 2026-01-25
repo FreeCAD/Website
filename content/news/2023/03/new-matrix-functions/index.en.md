@@ -10,7 +10,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 ![Matrix](MatrixLabelled.svg "Matrix")

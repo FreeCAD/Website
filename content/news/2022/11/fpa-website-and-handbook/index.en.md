@@ -10,7 +10,6 @@ tags:
 cover:
   image: RoyalDecree.png
   caption: Royal Decree
-  alt: Royal Decree
 ---
 
 The FreeCAD Project Association (FPA) was founded on the ideals of transparency and accountability: to that end, we've been working hard on making our website a useful source of information about the organization, its goals, and its initiatives.

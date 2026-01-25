@@ -9,7 +9,6 @@ tags:
 cover:
   image: Editing-a-spline-1.gif
   caption: Editing a spline in Sketcher
-  alt: Editing a spline in Sketcher
 ---
 
 The [FreeCAD Project Association](https://github.com/FreeCAD/FPA) (FPA) was created to further the development of the FreeCAD application by providing a legal entity that can receive and dispurse donations.

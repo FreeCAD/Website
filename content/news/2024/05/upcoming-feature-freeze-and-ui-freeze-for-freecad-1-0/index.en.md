@@ -10,7 +10,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 During the planned online developers meeting today, we agreed on the following plan towards FreeCAD 1.0.

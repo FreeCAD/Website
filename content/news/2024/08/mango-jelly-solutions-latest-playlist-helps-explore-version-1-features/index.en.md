@@ -8,7 +8,6 @@ tags: []
 cover:
   image:
   caption:
-  alt:
 ---
 
 {{< youtube id=g-olVnKbdvU title="YouTube video" loading=lazy >}}

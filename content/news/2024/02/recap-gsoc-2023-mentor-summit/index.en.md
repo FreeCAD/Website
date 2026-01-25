@@ -8,7 +8,6 @@ tags: []
 cover:
   image:
   caption:
-  alt:
 ---
 
 On the weekend of October 13, for the first time since 2019, participants gathered in person for the 2023 Google Summer of Code Mentors Summit in Sunnyvale, California. I was fortunate enough to be able to attend as a mentor and org admin for the FreeCAD project, so thanks to those involved, of course including Google, as well as the FPA.

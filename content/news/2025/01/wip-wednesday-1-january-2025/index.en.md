@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 This week not much has been happening in FreeCAD development due to the winter holiday season. Nevertheless:

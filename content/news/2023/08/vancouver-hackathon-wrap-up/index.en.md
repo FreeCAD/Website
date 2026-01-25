@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 As I write this we are just wrapping up the [FreeCAD Hackathon 2023](https://blog.freecad.org/2023/05/24/freecad-hackathon-11-13-august-2023/) in Vancouver, BC. The coffee is gone, the laptop batteries are drained, and everyone present (physically and virtually) is winding up their weekend projects.

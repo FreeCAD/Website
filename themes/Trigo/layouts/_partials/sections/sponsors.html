@@ -38,7 +38,9 @@
                         {{- $svg := . | resources.Minify -}}
                         {{- $svg.Content | safeHTML -}}
                       {{- else -}}
-                        <img class="sponsor-logo" src="{{ .RelPermalink }}" alt="{{ $sponsor.label }} logo"/>
+                        <img class="sponsor-logo"
+                          src="{{ .RelPermalink }}"
+                          alt="{{ $sponsor.label }} logo"/>
                       {{- end -}}
                     {{- end -}}
                   {{- else -}}

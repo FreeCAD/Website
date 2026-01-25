@@ -10,7 +10,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 The FreeCAD Project Association collects corporate and personal donations and distributes the funds to contributors who improve FreeCAD and its ecosystem.

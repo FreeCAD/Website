@@ -8,7 +8,6 @@ tags: []
 cover:
   image:
   caption:
-  alt:
 ---
 
 ![Ondsel](ondsel.png "Ondsel")

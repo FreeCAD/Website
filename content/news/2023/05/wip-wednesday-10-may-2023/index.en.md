@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 Our first-ever full-developer-community meetup was this past Sunday, and we had excellent attendance. Thanks to everyone who joined us, and thanks to the folks at [Blender](https://developer.blender.org/), whose own meetups inspired the launch of ours. Over the past week we've squashed dozens of translation-related bugs, as well a several other things causing crashes or bad geometry. We are approaching a feature freeze in anticipation of our 0.21 release, which is coming soon.

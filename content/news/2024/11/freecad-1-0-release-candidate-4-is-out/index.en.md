@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 We've just released the fourth v1.0 release candidate, you can [download it on GitHub](https://github.com/FreeCAD/FreeCAD-Bundle/releases/tag/1.0rc4). There was no official announcement of RC3 yesterday because we discovered a regression immediately after releasing the builds.

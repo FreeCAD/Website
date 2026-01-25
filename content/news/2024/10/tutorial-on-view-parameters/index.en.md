@@ -9,7 +9,6 @@ tags:
 cover:
   image: main.png
   caption: On View Parameters
-  alt: On View Parameters
 ---
 
 One of the excellent new features in the upcoming version 1.0 release is the addition of "On View Parameters" for many of the tools in the sketcher workbench. These are parameter inputs boxes that appear automatically when you use sketcher tools mean to add dimensions and more as you create the geometry.

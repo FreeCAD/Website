@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 Chris Hennes developed an _opt-in_ [Telemetry addon](https://github.com/FreeCAD/FreeCAD-Telemetry) to help the development team make good decisions and help answer questions like:

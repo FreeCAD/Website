@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 In the past week we merged quite a few minor translation fixes, as well as a new layout for several Preferences pages, and we feel like we've finally squashed a five-year-old "massive" memory leak report in Draft.

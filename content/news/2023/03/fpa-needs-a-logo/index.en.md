@@ -11,7 +11,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 [The FreeCAD Project Association](https://fpa.freecad.org/) (FPA)'s Mission is to support and protect the FreeCAD project. As an organization independent of the community FreeCAD project, the FPA would like to have a logo that is visually distinct. To that end, last month [we held open submissions for a new logo](https://forum.freecad.org/viewtopic.php?t=76211). Over the last week, FPA members have been voting for their favorites, and we have it narrowed to five final candidates.

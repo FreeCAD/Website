@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 During this past week work continued on getting FreeCAD ready for Qt6, plus some bug fixes to OpenSCAD file import, UI tweaks to the Workbenches preferences page, and the File and Clipboard toolbars were split to improve customization. In the upcoming week:

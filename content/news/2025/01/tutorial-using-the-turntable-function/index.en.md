@@ -8,7 +8,6 @@ tags: []
 cover:
   image: fc_turntable.png
   caption: FreeCAD turntable
-  alt: FreeCAD turntable
 ---
 
 It's fair to say FreeCAD has a lot of tools and features and it's common to focus on learning the tools that help you realise your designs. As such it's also common to miss features that have been available in FreeCAD for quite some time. It's noticeable online sometimes that people often post small video screen captures of their projects with the project preview revolving. Often you then see questions or comments on "how do you animate/revolve your part like that?"

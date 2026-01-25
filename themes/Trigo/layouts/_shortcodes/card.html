@@ -75,10 +75,14 @@
           {{- if eq .MediaType.SubType "svg" -}}
             {{ .Content | safeHTML }}
           {{- else -}}
-            <img src="{{ .RelPermalink }}" alt="Icon" loading="lazy">
+            <img src="{{ .RelPermalink }}"
+              alt="{{ i18n "icon" | default "Icon" }}"
+              loading="lazy">
           {{- end -}}
         {{- else with $iconExternal -}}
-          <img src="{{ . }}" alt="Icon" loading="lazy">
+          <img src="{{ . }}"
+            alt="{{ i18n "icon" | default "Icon" }}"
+            loading="lazy">
         {{- end -}}
       </span>
     </span>

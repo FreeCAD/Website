@@ -9,7 +9,6 @@ tags:
 cover:
   image: rocket_WB.png
   caption: Rocket WB
-  alt: Rocket WB
 ---
 
 ![Dave saturn](dave_saturn.jpg "Dave saturn")

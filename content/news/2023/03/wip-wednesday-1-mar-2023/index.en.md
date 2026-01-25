@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 This past week saw the epic grid system merge in Sketcher, plus many other smaller projects (by my count this was the largest number of FreeCAD pull requests _ever_ merged in a single week!). In the coming week:

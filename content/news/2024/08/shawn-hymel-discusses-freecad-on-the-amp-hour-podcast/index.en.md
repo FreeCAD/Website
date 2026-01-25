@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 ![Shawn Hymel](675-ShawnHymel.jpg "Shawn Hymel")

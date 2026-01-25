@@ -10,7 +10,6 @@ tags:
 cover:
   image: STEMFIE.org-SPS-000001-Rubber-band-driven-car.webp
   caption: STEMFIE
-  alt: STEMFIE
 ---
 
 [STEMFIE](https://www.stemfie.org/) is an amazing, unique project that feels a little like an imaginative 3D printed hybrid of LEGO Mindstorms and Meccano. All the part designs are freely shared and available. This means people can 3D print locally building their own part collection, it's mind boggling how many parts and projects there are!

@@ -8,7 +8,6 @@ tags: []
 cover:
   image:
   caption:
-  alt:
 ---
 
 As I write this it is 10:15pm here in Brussels. I'm at a bar surrounded by crazy FOSDEM people. It is fantastic, and that's not just the beer, fries, and waffles talking. Well, maybe a little...

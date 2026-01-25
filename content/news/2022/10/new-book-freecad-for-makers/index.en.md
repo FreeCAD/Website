@@ -8,7 +8,6 @@ tags: []
 cover:
   image:
   caption:
-  alt:
 ---
 
 In September 2022 the makers of [Hackspace Magazine](https://hackspace.raspberrypi.com) published a new book by Jo Hinchliffe (with a foreword by FreeCAD core developer Yorik van Havre), _FreeCAD for Makers_, presenting an introduction and pedagogical approach to learning FreeCAD. It's available as a [free PDF download at on their website](https://hackspace.raspberrypi.com/books/freecad).

@@ -9,7 +9,6 @@ tags:
 cover:
   image: kicon.png
   caption: KiCon
-  alt: KiCon
 ---
 
 We have a great relationship with many opensource projects non more so than KiCad. As such we'd like to take this opportunity to highlight that this years [KiCon North America](https://kicon.kicad.org/na2025/) is taking place in a little over 14 days. This time it's in San Diego CA in the Qualcomm institute.

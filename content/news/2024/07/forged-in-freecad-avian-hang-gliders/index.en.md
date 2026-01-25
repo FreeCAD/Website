@@ -10,7 +10,6 @@ tags:
 cover:
   image: avian_fc_1.png
   caption: Avian Hang Gliders
-  alt: Avian Hang Gliders
 ---
 
 Hang gliders are mesmerising when you see them in the sky. Silently cutting through the sky smoothly, often spotted in fine weather and in beautiful locations there's a lot to be said for them. Over on fosstodon we've seen a UK based hang glide company [Avian Hang Gliders ](https://www.avianonline.co.uk/index.php?osCsid=1c2e1500a740b436df943e614dd407de)mentioning how they use [FreeCAD](https://www.freecad.org/) to develop their newest generation of gliders using clever simulation and advanced manufacturing techniques. We caught up with the owner of Avian, Tim Swait to chat about their process.

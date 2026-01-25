@@ -8,7 +8,6 @@ tags: []
 cover:
   image:
   caption:
-  alt:
 ---
 
 ![Freecad header](freecad_header.png "Freecad header")

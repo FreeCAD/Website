@@ -8,7 +8,6 @@ tags: []
 cover:
   image:
   caption:
-  alt:
 ---
 
 ("[Magic Book](https://www.flickr.com/photos/7964019@N04/2941691931)" by [Mike Haufe](https://www.flickr.com/photos/7964019@N04) is licensed under [CC BY-NC 2.0](https://creativecommons.org/licenses/by-nc/2.0/?ref=openverse).)

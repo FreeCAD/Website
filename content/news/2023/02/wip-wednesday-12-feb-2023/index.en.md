@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 Lots of small pull requests merged in this past week (which is as it should be!). Nothing Earth-shattering, just continued incremental improvement. In the next week:

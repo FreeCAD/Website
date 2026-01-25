@@ -8,7 +8,6 @@ tags: []
 cover:
   image: Screenshot-from-2023-10-10-14-23-31.png
   caption: FreeCAD day and hackathon 2024
-  alt: FreeCAD day and hackathon 2024
 ---
 
 [FOSDEM](https://fosdem.org) is coming soon and the [FPA](https://fpa.freecad.org) is already planning to make our corresponding FreeCAD event bigger and better than last year. FOSDEM happens in Brussels on Saturday February 3rd and Sunday February 4th, 2024. We propose to,[ once again](https://www.youtube.com/watch?v=C0u1FBUsILE&lc=UgzpDh_0yfrwfINIbr14AaABAg), realize a public FreeCAD day, open to all,[ unconference](https://en.wikipedia.org/wiki/Unconference) style, and a hackathon, also open to anyone interested but focused on doing actual coding, together with FOSDEM.

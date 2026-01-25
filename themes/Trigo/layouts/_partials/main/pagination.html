@@ -25,7 +25,6 @@
       {{- with $pages.Prev . -}}
         <a class="prev"
           href="{{ .RelPermalink -}}#top"
-          alt="PREVIOUS ARTICLE"
           title="{{ i18n "previous_article" | default "Previous article" }}">
           {{- partial "utils/icon.html" "tri-left" -}}
           {{- .LinkTitle | .RenderString -}}
@@ -48,7 +47,6 @@
       {{- with $pages.Next . -}}
         <a class="next"
           href="{{ .RelPermalink -}}#top"
-          alt="NEXT ARTICLE"
           title="{{ i18n "next_article" | default "Next article" }}">
           {{- .LinkTitle | .RenderString -}}
 

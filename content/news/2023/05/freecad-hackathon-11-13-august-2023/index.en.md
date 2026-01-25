@@ -8,7 +8,6 @@ tags: []
 cover:
   image:
   caption:
-  alt:
 ---
 
 Vancouver skyline image by Kyle Pearce/ DIY Genius, CC BY-SA 2.0, via Wikimedia Commons.

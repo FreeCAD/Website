@@ -8,7 +8,6 @@ tags: []
 cover:
   image:
   caption:
-  alt:
 ---
 
 Anyone notice that there's a LOT more happening in the FreeCAD ecosystem lately? We were finding it harder to keep up with all the meetings, events, and milestones so we consolidated everything into a master events calendar.

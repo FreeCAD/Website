@@ -8,7 +8,6 @@ tags: []
 cover:
   image: Freecad_2024.png
   caption: Freecad 2024
-  alt: Freecad 2024
 ---
 
 Happy New Year to the FreeCAD community!

@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 "[Releasing JAXA's HTV7 cargo vehicle from the ISS](https://www.flickr.com/photos/72482589@N07/45052467584)" by [Astro_Alex](https://www.flickr.com/photos/72482589@N07) is licensed under [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/?ref=openverse).

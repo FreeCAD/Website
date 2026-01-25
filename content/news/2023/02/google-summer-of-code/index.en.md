@@ -8,7 +8,6 @@ tags: []
 cover:
   image:
   caption:
-  alt:
 ---
 
 We are very excited that FreeCAD has been [selected as a program for the 2023 Google Summer of Code](https://summerofcode.withgoogle.com/programs/2023/organizations/freecad). While we've participated in partnership with other organizations in the past, this is the first time we've submitted an application directly ourselves. We received some great assistance from a number of folks at FOSDEM 2023, so a huge THANK YOU to everyone who has made this possible.

@@ -8,7 +8,6 @@ tags: []
 cover:
   image: freecadday_group2025.jpg
   caption: FreeCAD Day group 2025
-  alt: FreeCAD Day group 2025
 ---
 
 Each year on the Friday before the FOSDEM event, FreeCAD held a "FreeCAD Day" where, after working for a few days directly on FreeCAD in a hackathon style, the day is set up as an Un-conference meaning any presentation or activity can be attached to the agenda. It's a lovely format that allows for really interesting things to happen. Again this year the pre FOSDEM FreeCAD Day took place in the Ateliers Des Tanneurs building which we share with the KiCad team for a few days before FOSDEM.

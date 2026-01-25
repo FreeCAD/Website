@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 This week we're introducing a new blog feature: "WIP Wednesday". I'm collecting input from anyone currently working on any kind of FreeCAD development, and letting all of you know what they are working on _right now_, so you can stay abreast of the very latest developments in the FreeCAD world. Of course, a lot of this is pretty mundane (I've been working on unit tests for the Addon Manager, for example), but sometimes it's pretty exciting stuff (for example @wmayer has been working on getting FreeCAD working with Qt6). Developers: if you are working on anything you'd like featured here, drop me a line at [chennes@freecad.org](mailto:chennes@freecad.org), or on the [FreeCAD Forum](https://forum.freecadweb.org/viewtopic.php?f=10&t=75141).

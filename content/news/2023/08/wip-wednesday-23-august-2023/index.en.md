@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 The UI and code cleanup continued this week, but the real excitement is that work has begun on an integrated Assembly workbench.

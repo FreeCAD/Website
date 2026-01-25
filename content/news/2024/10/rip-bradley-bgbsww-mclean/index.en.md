@@ -8,7 +8,6 @@ tags: []
 cover:
   image:
   caption:
-  alt:
 ---
 
 We are sad to announce that last week, Bradley McLean passed away due to unforeseen health complications.

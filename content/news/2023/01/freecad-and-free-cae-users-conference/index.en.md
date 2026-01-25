@@ -8,7 +8,6 @@ tags: []
 cover:
   image:
   caption:
-  alt:
 ---
 
 _This guest post is by Varnu01. Editor's note: The User's Conference is an independent event and is not run by or affiliated with the FreeCAD Project Association, but we are happy to spread the word about opportunities for FreeCAD users to meet up and collaborate!_

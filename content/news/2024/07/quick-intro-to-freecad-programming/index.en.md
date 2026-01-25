@@ -8,7 +8,6 @@ tags: []
 cover:
   image:
   caption:
-  alt:
 ---
 
 Ajinkya Dahale and Yorik van Havre recently did a live introduction to FreeCAD programming for participants of [FOSS Hack 2024](https://fossunited.org/fosshack/2024), an upcoming hackathon that aims to promote conribution to FOSS software.

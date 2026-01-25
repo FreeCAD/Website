@@ -10,7 +10,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 _This guest post is by Ed Williams (edwilliams16). Interested in contributing an article? Contact Chris Hennes at chennes@freecad.org with your idea!_

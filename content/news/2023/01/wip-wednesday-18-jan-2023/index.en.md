@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 Things are relatively quiet in the FreeCAD development world this week. There's a lot of bug-hunting going on, of course, and many developers are preparing to meet at FOSDEM 2023 in a couple of weeks for the FreeCAD Day meetup. There's still time to [apply for a grant](https://fpa.freecad.org/programs/fosdem-travel-grants) to join us if you are interested!

@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 This week in FreeCAD development there has been more bugfixing in preparation for FreeCAD v1.0 release later this summer. Disclaimer: this report's data is offset by 1 day due to traveling.

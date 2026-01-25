@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 I am hopelessly biased, but as far as I am concerned the big news this week is the merge of the first piece of the puzzle to mitigating the Topological Naming Problem, with the merge of [PR 8776](https://github.com/FreeCAD/FreeCAD/pull/8776). It's not a large or complicated piece of code, but it forms the very innermost core of the TNP solution created by FreeCAD developer @**realthunder**, and it's now in the main FreeCAD codebase 🎉. No user-visible changes yet, but you eat an elephant one bite at a time!

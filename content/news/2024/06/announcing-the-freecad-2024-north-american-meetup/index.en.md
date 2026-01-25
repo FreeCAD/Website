@@ -8,7 +8,6 @@ tags: []
 cover:
   image: FCNA24.webp
   caption: FreeCAD 2024 North American Meetup
-  alt: FreeCAD 2024 North American Meetup
 ---
 
 In case you don't read [the forum](https://forum.freecad.org/viewtopic.php?t=85180), I'd like to announce FreeCAD's 2024 North American Meetup!

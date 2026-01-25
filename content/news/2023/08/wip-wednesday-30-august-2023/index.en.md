@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 As the new development cycle begins in earnest, there are _many_ projects going on in the FreeCAD world that will soon be making their way into the development builds:

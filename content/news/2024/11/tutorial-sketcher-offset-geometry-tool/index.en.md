@@ -9,7 +9,6 @@ tags:
 cover:
   image: main.png
   caption: Sketcher Offset Geometry
-  alt: Sketcher Offset Geometry
 ---
 
 In the version 1.0 release candidates and the upcoming version 1.0 a new "[Offset Geometry](https://wiki.freecad.org/Sketcher_Offset)" tool can be spotted on the sketcher workbench. Let's have a look at how this tool can be used to help create sketch geometry more efficiently.

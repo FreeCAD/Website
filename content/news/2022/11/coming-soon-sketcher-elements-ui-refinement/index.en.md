@@ -9,7 +9,6 @@ tags:
 cover:
   image: SketcherElementsStaticShot.png
   caption: Sketcher Elements Static Shot
-  alt: Sketcher Elements Static Shot
 ---
 
 FreeCAD is constantly under development, with people across the world contributing code, documentation, ideas, and more. Recently developer "paddle" has been working closely with Sketcher lead developer abdullah to refine a [new feature in the Sketcher UI](https://forum.freecadweb.org/viewtopic.php?f=8&t=72239), and it was merged into the main branch of development this past week. In the new interface, an additional mechanism for selecting and deselecting the points defining geometry elements was created, making it easier to select specific points on a busy sketch.

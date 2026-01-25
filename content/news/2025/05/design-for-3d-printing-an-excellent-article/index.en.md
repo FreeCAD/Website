@@ -9,7 +9,6 @@ tags:
 cover:
   image: rahix_cover.jpg
   caption: "**Rahix design** Design for 3D Printing, an Excellent Article."
-  alt: Rahix design
 ---
 
 It's wonderful when people take the time to share the expertise they've developed. Even more so when the resulting article is filled with FreeCAD screenshots.

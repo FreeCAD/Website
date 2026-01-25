@@ -8,7 +8,6 @@ tags: []
 cover:
   image:
   caption:
-  alt:
 ---
 
 ![Custom tb header](custom_tb_header.png "Custom tb header")

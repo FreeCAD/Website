@@ -8,7 +8,6 @@ tags: []
 cover:
   image:
   caption:
-  alt:
 ---
 
 The FreeCAD project association is proud to present its annual report of the year 2023, and its plans for 2024. Find the report here:

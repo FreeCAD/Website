@@ -10,7 +10,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 The FreeCAD Project Association has awarded a grant of EURO 5,000 to the CAD Working Group (CWG) for allocation towards bounty projects.

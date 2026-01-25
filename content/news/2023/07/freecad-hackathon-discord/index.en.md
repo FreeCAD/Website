@@ -8,7 +8,6 @@ tags: []
 cover:
   image:
   caption:
-  alt:
 ---
 
 The [FreeCAD Hackathon 2023](https://blog.freecad.org/2023/05/24/freecad-hackathon-11-13-august-2023/) is only a few weeks away. The in-person event is in Vancouver, BC, and the major nexus of the virtual component will be in the [FreeCAD Discord](https://discord.gg/w2cTKGzccC). We've created a [new channel](https://discord.gg/umhm9AnGJc) to begin coordinating what's going to happen at the event, and that channel will be the main communication channel during the Hackathon itself. If you plan on attending, either in-person or virtually, please join the discussion there.

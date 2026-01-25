@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 This year, we have two students working on FreeCAD as part of the annual Google Summer of Code program.

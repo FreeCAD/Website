@@ -10,7 +10,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 _TL;DR: the FreeCAD Project Association studied best practices of other organizations that have grant programs and is now working towards improving its own program._

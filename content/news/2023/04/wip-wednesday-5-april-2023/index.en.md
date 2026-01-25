@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 Last week a number of exciting things happened: first, @wwmayer finished porting TechDraw to Qt6, so we are almost ready to have end-users testing Qt6 builds of FreeCAD. Second, @xtemp09 implemented a radial gradient background that is sure so make some users very happy. In addition, @PaddleStroke has been working to refine several different preferences pages to improve their usability.

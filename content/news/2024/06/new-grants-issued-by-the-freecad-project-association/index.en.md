@@ -10,7 +10,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 The FPA has issued several more grants. The first three are part of the new annual program.

@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 FreeCAD is in a "feature freeze" as developers prepare for the 0.21 release. For those of you running development versions of FreeCAD, please help us test! If you think you've got a bug, please search the [GitHub Issues](https://github.com/FreeCAD/FreeCAD/issues) to see if it's a new one, and if so, help us out by writing it up.

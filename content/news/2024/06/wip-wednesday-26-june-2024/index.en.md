@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 The development of new features is pretty much done. Some larger changes, such as the BOM tool in Assembly last week, are still landing to the main development branch. But they are simply patches that were submitted prior to feature freeze a few weeks back and finally passed review.

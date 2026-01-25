@@ -25,6 +25,7 @@
 {{- $format := site.Params.resizeFormat | default "webp" -}}
 {{- $resizeDimensions := index site.Params.resizeDimensions.single 0 | default "500x250" -}}
 {{- $frames := slice -}}
+{{- $alt := i18n "image_fallback" | default "Image" -}}
 
 {{- range sort (.Page.Resources.Match (printf "%s/*" $path)) "Name" -}}
   {{- $img := . -}}
@@ -46,7 +47,7 @@
   tabindex="0"
   {{ with $title }}title="{{ . }}"{{ end }}>
   <canvas role="img" aria-label="Canvas animation">
-    <img src="{{ index $frames 0 }}" alt="Canvas animation">
+    <img src="{{ index $frames 0 }}" alt="{{ $alt }}">
   </canvas>
 
   <div class="controls">
@@ -69,7 +70,7 @@
   <noscript>
     <figure>
       <img src="{{ index $frames 0 }}"
-        alt="Static preview of animation"
+        alt="{{ $alt }}"
         style="max-width:100%; border-radius:var(--radius);">
       <figcaption>Enable JavaScript to view the canvas animation.</figcaption>
     </figure>

@@ -10,7 +10,6 @@ tags:
 cover:
   image: multi_extruded_sketch.png
   caption: Multi extruded sketch
-  alt: Multi extruded sketch
 ---
 
 With the [release candidates for version 1 appearing](https://github.com/FreeCAD/FreeCAD-Bundle/releases/tag/1.0rc1) it's a nice time to explore some of the new features and functionality that FreeCAD now offers. You can read a long detailed list of new features here, and it's fair to note that many areas and workbenches of FreeCAD have received improvements.

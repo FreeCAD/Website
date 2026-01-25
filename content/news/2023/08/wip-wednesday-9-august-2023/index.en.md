@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 Welcome back to WIP Wednesday! After a short hiatus while we prepared for the [0.21.0 release](https://blog.freecad.org/2023/08/02/freecad-0-21-released/), we're back out of the feature freeze, and FreeCAD development continues apace. Actually, it's accelerating, and fast! We're still working through the PR backlog that built up over the freeze, but expect to make major progress during the [FreeCAD Hackathon this Friday-Sunday](https://blog.freecad.org/2023/07/27/freecad-hackathon-discord/).

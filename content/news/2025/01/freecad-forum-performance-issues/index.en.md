@@ -8,7 +8,6 @@ tags: []
 cover:
   image: forum.png
   caption: Forum
-  alt: Forum
 ---
 
 You may have noticed that recently there have been intermittent issues with the FreeCAD forum. The main reason for this is that the forum is being repeatedly overwhelmed by AI scrapers. Obviously the FreeCAD forum is a valuable resource and we aim to make it as robust as possible.

@@ -10,7 +10,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 The current 0.20 release of FreeCAD does not include a built-in workbench for assembling individual components into a more complex system: instead, several 3rd-party addons are available through the Addon Manager, allowing individual users to choose the type of assembly procedure they prefer. Three popular options are A2+, Assembly 3, and Assembly 4. This article will briefly overview each. Note that although the names make it sound like one might be the successor of the other, in fact all three are "spiritual successors" to the no-longer-maintained Assembly 2 workbench. The order they are presented here (and in the Addon Manager) is alphabetical, not an indication of popularity or "official" endorsement.

@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 The team accelerated after the winter holidays and did a serious PR queue cleanup:

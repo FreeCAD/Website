@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 The past week saw developers working on a large number of UI improvement projects, as well as quite a bit of behind-the-scenes code updating and cleanup.

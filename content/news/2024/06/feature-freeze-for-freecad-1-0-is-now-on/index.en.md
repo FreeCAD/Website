@@ -8,7 +8,6 @@ tags: []
 cover:
   image:
   caption:
-  alt:
 ---
 
 Since the pull request merge meeting yesterday we are in feature freeze. Here are the general rules:

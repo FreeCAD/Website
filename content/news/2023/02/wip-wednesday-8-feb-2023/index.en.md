@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 As everyone makes their way back home from FreeCAD Day 2023, we still have a few things going on in the FreeCAD development world:

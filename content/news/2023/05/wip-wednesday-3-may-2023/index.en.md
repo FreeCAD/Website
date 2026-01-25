@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 It was a relatively quiet week for FreeCAD developers, with only 32 merged pull requests, mostly related to small translation problems and minor bugfixes (though one of the fixed bugs prevented Windows builds from starting if the splashscreen was disabled, so I'm sure there are going to be some happy Windows users out there!). We also finally removed the Raytracing workbench from the repository: it has long since been superseded by the Render addon and had not been maintained for many years.

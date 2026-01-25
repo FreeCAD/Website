@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 In the _toponaming project_, **bgbsww** added more tests and updated existing ones, and **CalligaroV** fixed two bugs.

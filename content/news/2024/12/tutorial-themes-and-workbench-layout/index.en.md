@@ -9,7 +9,6 @@ tags:
 cover:
   image: freecad_lite_theme.png
   caption: Freecad lite theme
-  alt: Freecad lite theme
 ---
 
 With the arrival of version 1.0 it's a good time to take a look at some of the basic appearance options available to adjust to our preferences. So let's look at the basics of switching themes and changing the listing and appearance of workbenches in FreeCAD.

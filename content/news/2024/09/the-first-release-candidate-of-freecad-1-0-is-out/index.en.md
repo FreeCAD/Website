@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 We've just published builds of the first release candidate for FreeCAD 1.0. You can download them [here](https://github.com/FreeCAD/FreeCAD-Bundle/releases/tag/1.0rc1).

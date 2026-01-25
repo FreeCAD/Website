@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 FreeCAD has supported importing *.scad and *.csg files from [OpenSCAD ](http://openscad.org/)for several years, but supporting the full range of features provided by OpenSCAD is an ongoing project. The FreeCAD 0.20 release brings improved compatibility with several more commands, as well as bug fixes to several existing commands.

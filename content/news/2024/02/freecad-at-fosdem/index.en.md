@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 ![FreeCAD at FOSDEM](K_Level_One.png "FreeCAD at FOSDEM")

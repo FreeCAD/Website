@@ -8,7 +8,6 @@ tags: []
 cover:
   image:
   caption:
-  alt:
 ---
 
 We [recently announced](https://wordpress.com/post/blog.freecad.org/868) that FreeCAD 0.21 would be released soon, and developers are now in the final stretch leading up to that release. We're hunting bugs, polishing new features, and generally making sure that version 0.21 is the best version of FreeCAD yet -- we anticipate it being most people's primary version while we work to integrate the Topological Naming Problem mitigation code, which is likely to result in some slowdowns and other miscellaneous issues.

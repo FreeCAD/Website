@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 Since its inception, FreeCAD's build and release process has been an entirely volunteer effort. As the project has grown, however, this has resulted in ever more work for the volunteers. Maintaining the various builds and releases is a mostly invisible, thankless process; but also one that is mission-critical. The FreeCAD Project Association is pleased to announce that we have contracted with long-time FreeCAD developer Adrián Insaurralde (@adrianinsaval) to maintain FreeCAD's build and release infrastructure. Adrián will be the main point of contact for all official builds and releases for the next year.

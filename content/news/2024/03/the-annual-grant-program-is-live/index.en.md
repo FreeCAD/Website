@@ -10,7 +10,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 The FPA is launching an annual grant program following [last year's research](https://blog.freecad.org/2023/09/28/revamping-the-freecad-project-associations-grant-program/). The goal is to foster rapid development of FreeCAD. To do that, the FPA will use the community's donations to pay developers and non-programming contributors. We reserved a fund of 50,000 EUR for this in 2024. We aso encourage work on items from the [general roadmap](https://freecad.github.io/DevelopersHandbook/roadmap/), but are also interested in grant applications exploring other possibilities.

@@ -8,6 +8,7 @@
 {{- $id := index $parts (sub (len $parts) 1) -}}
 {{- $apiURL := printf "https://%s/api/v1/statuses/%s" $host $id -}}
 {{- $enableOGCard := .Get "enableOGCard" | default "true" -}}
+{{- $alt := i18n "image_fallback" | default "Image" -}}
 
 {{- with try (resources.GetRemote $apiURL) -}}
   {{- with .Err -}}
@@ -26,7 +27,7 @@
           href="https://{{ $host }}/@{{ $acct }}"
           rel="noopener">
           <img src="{{ $json.account.avatar }}"
-            alt="Mastodon avatar for {{ $handleInst }}"
+            alt="{{ $alt }}"
             loading="lazy"
             aria-hidden="true"
           />
@@ -59,7 +60,7 @@
           <div class="toot-img-grid-{{ len $images }}">
             {{- range $img := . -}}
               <img src="{{ $img.url }}"
-                alt="Image {{ $img.id }} from toot {{ $id }} on {{ $host }}"
+                alt="{{ $alt }}"
                 class="toot-media-img {{ if $json.sensitive }}toot-sens-blur{{ end }}"
                 loading="lazy"
                 {{- if $json.sensitive }}onclick="this.classList.toggle('toot-sens-blur-no')"{{- end }}
@@ -104,7 +105,7 @@
               <div class="toot-card">
                 <div class="toot-card-image">
                   <img src="{{ . }}"
-                    alt="Card image from {{ $host }} toot {{ $id }}"
+                    alt="{{ $alt }}"
                     loading="lazy"
                     class="toot-card-image-image" />
                 </div>

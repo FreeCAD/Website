@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 FreeCAD 1.0 brings a true revolution. But apart from the TNP mitigation, built-in Assembly workbench, material handling rework, and major Sketcher improvements, there's a less common module that received many updates - **FEM**.

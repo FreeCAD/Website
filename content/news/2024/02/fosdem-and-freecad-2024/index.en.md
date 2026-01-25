@@ -8,7 +8,6 @@ tags: []
 cover:
   image: IMG_20240203_100009.jpg
   caption: FOSDEM and FreeCAD 2024
-  alt: FOSDEM and FreeCAD 2024
 ---
 
 [FOSDEM](https://fosdem.org/2024/), the finest opensource conference in the world recently took place and, [aside from cheekily saving the toilet system](https://blog.freecad.org/2024/02/08/freecad-ondsel-and-prusa-save-fosdem/), FreeCAD had a presence in numerous ways.

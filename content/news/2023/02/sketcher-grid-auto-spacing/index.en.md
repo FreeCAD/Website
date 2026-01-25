@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 This week saw the merge of a long-awaited Sketcher feature that has been in progress by a team of developers for several months: the Sketcher Workbench now features a massively-refactored grid view that includes automatic-resizing when you zoom in and out, with a refined user interface for turning it on and off and changing the scaling parameters.

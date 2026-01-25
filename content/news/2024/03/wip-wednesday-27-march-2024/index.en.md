@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 This week in FreeCAD development, the four most actively worked-on parts of FreeCAD have been the toponaming project, TechDraw, Sketcher, and FEM.

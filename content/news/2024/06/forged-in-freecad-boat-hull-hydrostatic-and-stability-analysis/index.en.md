@@ -10,7 +10,6 @@ tags:
 cover:
   image: General-Arrangement.png
   caption: General Arrangement
-  alt: General Arrangement
 ---
 
 Pretty much everyday someone somewhere is doing something spectacular with FreeCAD!

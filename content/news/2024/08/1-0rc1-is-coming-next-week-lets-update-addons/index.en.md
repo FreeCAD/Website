@@ -8,7 +8,6 @@ tags: []
 cover:
   image:
   caption:
-  alt:
 ---
 
 Thanks to the work of contributors we have made really good progress fixing blockers, we are down to just 14. That's why early next week we are planning to create a Git branch for the v1.0 release and issue the first release candidate.

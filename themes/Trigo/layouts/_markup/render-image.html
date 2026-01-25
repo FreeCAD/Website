@@ -21,8 +21,8 @@
 
 {{- .Page.Store.Add "imageCounter" 1 -}}
 {{- $id := printf "img-%03d" (.Page.Store.Get "imageCounter") -}}
-{{- $alt := or .PlainText .Text .Title (i18n "image_fallback" | default "Image") | plainify -}}
-{{- $title := or .Title .PlainText | plainify -}}
+{{- $alt := i18n "image_fallback" | default "Image" -}}
+{{- $title := or .Title .PlainText .Text | plainify -}}
 {{- $url := urls.Parse .Destination -}}
 
 {{- if $url.Scheme -}}

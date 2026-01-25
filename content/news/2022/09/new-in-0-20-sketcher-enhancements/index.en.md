@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 Of all the [new features](https://wiki.freecad.org/Release_notes_0.20) in the recently-released [FreeCAD 0.20](https://github.com/FreeCAD/FreeCAD/releases/tag/0.20), it's likely that the ones that will affect the most users are the improved tools in the [Sketcher workbench](https://wiki.freecadweb.org/Sketcher_Workbench).

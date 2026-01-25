@@ -9,7 +9,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 On the weekend of 11-13 August, 2023, the FPA is hosting the [first ever FreeCAD Hackathon](https://blog.freecad.org/2023/05/24/freecad-hackathon-11-13-august-2023/). The in-person event is being held at [The Garden Strathcona](https://www.google.com/maps/place/The+Garden+Strathcona/@49.280944,-123.0882035,17z/data=!3m1!4b1!4m6!3m5!1s0x5486717710f193e1:0xcb1f27ee3a5c6db0!8m2!3d49.280944!4d-123.0856286!16s%2Fg%2F11f9gzznp9?entry=ttu) in Vancouver, BC, and we hope to be joined by many virtual attendees across the world helping us work on a few specific FreeCAD projects. But not only do we need your attendance at the event to make it a success (whether in-person or virtually), but we also need your ideas for what the top projects are that could benefit from the focused efforts of a team of developers all working synchronously.

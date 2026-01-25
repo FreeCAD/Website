@@ -10,7 +10,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 ![Cad 1](CAD_1.jpg "Cad 1")

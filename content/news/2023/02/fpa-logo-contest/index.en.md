@@ -11,7 +11,6 @@ tags:
 cover:
   image:
   caption:
-  alt:
 ---
 
 _(Pen-and-paper [logo design image](https://commons.wikimedia.org/wiki/File:Logo_designer_using_pen_and_paper.jpg) courtesy of [https://customneon.co.uk/](https://customneon.co.uk/).)_

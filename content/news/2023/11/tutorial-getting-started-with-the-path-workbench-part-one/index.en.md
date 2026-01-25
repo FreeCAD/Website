@@ -8,7 +8,6 @@ tags: []
 cover:
   image: path_header.png
   caption: Path header
-  alt: Path header
 ---
 
 The [Path workbench](https://wiki.freecad.org/Path_Workbench) in FreeCAD can help you create tool paths for CAM for a wide variety of CNC machines and G-code families. Let's walk through how to begin using this workbench in this first part creating and curating custom tool bits. In part two we'll continue setting up cutting operations and look at exporting G-codes for our machines.
