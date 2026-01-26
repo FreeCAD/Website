@@ -26,7 +26,7 @@
 {{- $duration := or (.Get "duration") 5000 -}}
 {{- $processableFormats := site.Params.processableFormats | default (slice "jpeg" "jpg" "png" "webp" "gif") -}}
 {{- $format := site.Params.resizeFormat | default "webp" -}}
-{{- $resizeDimensions := site.Params.resizeDimensions.single | default (slice "500x250" "1000x500") -}}
+{{- $resizeDimensions := site.Params.resizeDimensions.cover | default (slice "500x250" "1000x500") -}}
 
 {{- if and (not .IsNamedParams) (not (.Get "dir")) (gt (len .Params) 0) -}}
   {{- range .Params -}}

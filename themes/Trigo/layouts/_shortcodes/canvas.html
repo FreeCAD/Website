@@ -23,7 +23,7 @@
 {{- $id := printf "canvas-%d" .Ordinal -}}
 {{- $processableFormats := site.Params.processableFormats | default (slice "jpeg" "jpg" "png" "webp" "gif") -}}
 {{- $format := site.Params.resizeFormat | default "webp" -}}
-{{- $resizeDimensions := index site.Params.resizeDimensions.single 0 | default "500x250" -}}
+{{- $resizeDimensions := index site.Params.resizeDimensions.cover 0 | default "500x250" -}}
 {{- $frames := slice -}}
 {{- $alt := i18n "image_fallback" | default "Image" -}}
 

@@ -51,9 +51,7 @@
   {{- $loading := "eager" -}}
   {{- $priority := "high" -}}
   {{- $figureClass := cond (eq $type "single") "article-cover" "entry-cover" -}}
-  {{- $resizeDims := cond (eq $type "single")
-    (site.Params.resizeDimensions.single | default (slice "500x250" "1000x500"))
-    (site.Params.resizeDimensions.list | default (slice "500x1000" "2000x1000")) -}}
+  {{- $resizeDims := site.Params.resizeDimensions.cover | default (slice "500x250" "1000x500") -}}
 
   <figure class="{{ $figureClass }}">
 

@@ -16,7 +16,7 @@
 {{- $ordinal := .Ordinal -}}
 {{- $processableFormats := site.Params.processableFormats | default (slice "jpeg" "jpg" "png" "webp" "gif") -}}
 {{- $format := site.Params.resizeFormat | default "webp" -}}
-{{- $resizeDimensions := site.Params.resizeDimensions.single | default (slice "500x250" "1000x500") -}}
+{{- $resizeDimensions := site.Params.resizeDimensions.cover | default (slice "500x250" "1000x500") -}}
 {{- $alt := i18n "image_fallback" | default "Image" -}}
 
 {{- $before := or (.Get "before") (.Get "left") (.Get 0) -}}

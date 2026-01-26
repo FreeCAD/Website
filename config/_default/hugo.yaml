@@ -10,7 +10,7 @@ theme: Trigo
 taxonomies:
   category: categories
   tag: tags
-  series: series
+  # series: series
   author: authors
   version: versions
 
@@ -58,6 +58,15 @@ outputs:
   home:
     - HTML
     - CMS_Config
+  section:
+    - HTML
+  taxonomy:
+    - HTML
+  term:
+    - HTML
+
+disableKinds:
+  - rss
 
 outputFormats:
   CMS_Config:
@@ -68,7 +77,6 @@ outputFormats:
     mediaType: application/yaml
 
 minify:
-  disableXML: true
   minifyOutput: false
 
 markup:
@@ -110,9 +118,12 @@ markup:
     ordered: false
 
 imaging:
-  hint: drawing
-  quality: 80
-  resampleFilter: lanczos
+  hint: photo
+  quality: 75
+  resampleFilter: catmullrom
+  exif:
+    disableDate: true
+    disableLatLong: true
 
 services:
   googleAnalytics:
