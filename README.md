@@ -1,6 +1,3 @@
-> [!NOTE]
-> This is a temporary development repository: the [official repository](https://github.com/FreeCAD) will be available at a later time. More documentation will be added later as well.
-
 [Contributing](#contributing) • [Development](#development) • [Structure](#structure) • [Guidelines](#guidelines) • [Theme](#theme) • [Resources](#resources) • [License](#license)
 
 # FreeCAD Website
@@ -21,11 +18,11 @@ For other parts of FreeCAD web ecosystem, head to:
 
 Contributions are always welcome! FreeCAD website is free and open source just like FreeCAD.
 
-When contributing to the website, keep in mind that it acts as the public face of the FreeCAD organization and community. Thus, substantial changes have to be discussed beforehand via its usual communication channels (e.g. [GitHub issues](https://github.com/marcuspollio/FreeCAD-website/issues), [Matrix chat](https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im), [Forum](https://forum.freecad.org/), [Discord](https://discord.com/invite/F4hdxzYZfc)). [FreeCAD's code of conduct](https://github.com/FreeCAD/FreeCAD/blob/main/CODE_OF_CONDUCT.md) have to be observed at any time. Please also read the [Guidelines](#guidelines) below.
+When contributing to the website, keep in mind that it acts as the public face of the FreeCAD organization and community. Thus, substantial changes have to be discussed beforehand via its usual communication channels (e.g. [GitHub issues](https://github.com/FreeCAD/website/issues), [Matrix chat](https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im), [Forum](https://forum.freecad.org/), [Discord](https://discord.com/invite/F4hdxzYZfc)). [FreeCAD's code of conduct](https://github.com/FreeCAD/FreeCAD/blob/main/CODE_OF_CONDUCT.md) have to be observed at any time. Please also read the [Guidelines](#guidelines) below.
 
-Contributions of all kind can be accepted: content, translations, bug fixes and theme improvements. Depending on the scope, some basic know-how of Git, YAML, Markdown, HTML, CSS, Javascript and Hugo template syntax is recommended. Create appropriate [repository issues](https://github.com/marcuspollio/FreeCAD-website/issues) discussing your changes before submitting Pull Requests.
+Contributions of all kind can be accepted: content, translations, bug fixes and theme improvements. Depending on the scope, some basic know-how of Git, YAML, Markdown, HTML, CSS, Javascript and Hugo template syntax is recommended. Create appropriate [repository issues](https://github.com/FreeCAD/website/issues) discussing your changes before submitting Pull Requests.
 
-For bug report, please use the provided [repository issue](https://github.com/marcuspollio/FreeCAD-website/issues) template.
+For bug report, please use the provided [repository issue](https://github.com/FreeCAD/website/issues) template.
 
 ### Browser support
 
@@ -78,7 +75,7 @@ To view the website locally, open your web browser at the indicated address, by 
 This project uses a `development` > `testing` > `production` environments logic:
 
 - The `development` environment is your local clone. The result can be seen on your web browser after following the [Building instructions above](#building).
-- The `testing` environment is this current repository. The result can be seen on [GitHub Pages](https://marcuspollio.github.io/FreeCAD-website/).
+- The `testing` environment is this current repository. The result can be seen on [GitHub Pages](https://freecad.github.io/FreeCAD-website/).
 - The `production` environment is hosted on FreeCAD's sever. The result can be seen on [FreeCAD website](https://www.freecad.org).
 
 Testing builds deployment to GitHub Pages is done automatically by GitHub Actions whenever the `testing` branch receives a new commit. The `testing` branch itself should not be deployed, as it only contains the source files. The built version of the website is in the `public` folder, generated from the `hugo` command. The official website version is built from the `production` branch instead.
@@ -296,7 +293,7 @@ Currently the Trigo Theme is used. It is included directly in the `themes/Trigo`
 
 ## License
 
-This repository is licensed under the [GNU Lesser General Public License Version 2.1](https://github.com/marcuspollio/FreeCAD-website/blob/testing/LICENSE "Read the license text").
+This repository is licensed under the [GNU Lesser General Public License Version 2.1](https://github.com/FreeCAD/website/blob/testing/LICENSE "Read the license text").
 
 ### Content
 
@@ -311,4 +308,4 @@ The trademark of FreeCAD branded resources (e.g. FreeCAD logo) is registered and
 
 ### Theme
 
-The `Trigo` Theme folder is licensed under the [MIT License](https://github.com/marcuspollio/FreeCAD-website/blob/testing/themes/Trigo/LICENSE "Read the license text").
+The `Trigo` Theme folder is licensed under the [MIT License](https://github.com/FreeCAD/website/blob/testing/themes/Trigo/LICENSE "Read the license text").
