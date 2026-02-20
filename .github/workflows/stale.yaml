@@ -1,0 +1,31 @@
+name: Close stale issues and pull requests
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * 1"  # Weekly on Monday 00:00 UTC
+
+permissions:
+  contents: read
+
+jobs:
+  stale:
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v10
+        with:
+          days-before-stale: 90
+          days-before-close: 60
+          exempt-all-assignees: true
+          exempt-draft-pr: true
+          exempt-issue-labels: Keep
+          exempt-pr-labels: Keep
+          operations-per-run: 100
+          stale-issue-message: >
+            This issue has been inactive and will close soon unless updated.
+          stale-pr-message: >
+            This pull request has been inactive and will close soon unless updated.
