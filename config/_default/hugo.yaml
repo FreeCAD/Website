@@ -1,0 +1,209 @@
+# General Hugo config. For Theme and CMS see params.yaml.
+
+baseURL: https://www.freecad.org/
+title: FreeCAD
+
+defaultContentLanguage: en
+
+menus:
+  main:
+  - pageRef: /features
+    weight: 20
+  - pageRef: /download
+    weight: 30
+  - pageRef: /news
+    weight: 40
+  - pageRef: /community
+    weight: 50
+  - pageRef: /docs
+    weight: 60
+  - pageRef: /donate
+    weight: 70
+    params:
+      class: button
+  footer:
+  - pageRef: /
+    weight: 10
+  - pageRef: /features
+    weight: 20
+  - pageRef: /download
+    weight: 30
+  - pageRef: /news
+    weight: 40
+  - pageRef: /community
+    weight: 50
+  - pageRef: /docs
+    weight: 60
+  - pageRef: /donate
+    weight: 70
+
+taxonomies:
+  category: categories
+  tag: tags
+  author: authors
+  version: versions
+
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+enableEmoji: true
+
+mainSections: news
+
+summaryLength: 20
+
+# Max number of listed pages (splits).
+pagination:
+  pagerSize: 12
+
+# Override url scheme (e.g. omit top-level section on docs to have /api instead of /docs/api).
+permalinks:
+  page:
+    docs: /:sections[1:]/:slugorcontentbasename
+    news: /:sections[0]/:slugorcontentbasename
+  section:
+    docs: /:sections[1:]
+
+cascade:
+  - params:
+      breadcrumbs: true
+    target:
+      path: /docs/*/**
+  - url: docs
+    target:
+      path: /docs
+
+module:
+  mounts:
+    - source: assets
+      target: assets
+    - source: static # Allow to pipe process static files.
+      target: assets
+
+    - source: content/zh
+      target: content
+      sites:
+        matrix:
+          languages:
+            - zh
+    - source: content/es
+      target: content
+      sites:
+        matrix:
+          languages:
+            - es
+    - source: content/fr
+      target: content
+      sites:
+        matrix:
+          languages:
+            - fr
+    - source: content/pt
+      target: content
+      sites:
+        matrix:
+          languages:
+            - pt
+    - source: content/de
+      target: content
+      sites:
+        matrix:
+          languages:
+            - de
+    - source: content/ja
+      target: content
+      sites:
+        matrix:
+          languages:
+            - ja
+# Keep default English fallback at end of mounts list.
+    - source: content/en
+      target: content
+      sites:
+        matrix:
+          languages:
+            - "*"
+
+outputs:
+  home:
+    - HTML
+  section:
+    - HTML
+  taxonomy:
+    - HTML
+  term:
+    - HTML
+
+disableKinds:
+  - rss
+
+# Keep for local dev. Production build uses --minify.
+minify:
+  minifyOutput: false
+
+markup:
+  goldmark:
+    duplicateResourceFiles: false
+    parser:
+      attribute:
+        block: true
+        title: true
+      autoDefinitionTermID: true
+      wrapStandAloneImageWithinParagraph: false
+    renderer:
+      unsafe: true
+    extensions:
+      strikethrough: false
+      extras:
+        delete:
+          enable: true
+        insert:
+          enable: true
+        mark:
+          enable: true
+        subscript:
+          enable: true
+        superscript:
+          enable: true
+  highlight:
+    style: dracula # NOTE: Currently overridden by highlight.css. Keep for now.
+    lineNos: false
+    noClasses: false
+  tableOfContents:
+    startLevel: 1
+    endLevel: 3
+    ordered: false
+
+imaging:
+  quality: 75
+  resampleFilter: mitchellNetravali
+  exif:
+    disableDate: true
+    disableLatLong: true
+
+enableGitInfo: true
+
+services:
+  googleAnalytics:
+    id: # Google Analytics G-MEASUREMENT_ID.
+
+privacy:
+  googleAnalytics:
+    disable: true
+    respectDoNotTrack: true
+  youtube:
+    disabled: false
+    privacyEnhanced: true
+
+caches:
+  getresource:
+    dir: :cacheDir/:project
+    maxAge: 24h
+  modules:
+    dir: :cacheDir/modules
+    maxAge: 24h
+  images:
+    dir: :cacheDir/images
