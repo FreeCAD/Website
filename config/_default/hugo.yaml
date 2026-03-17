@@ -8,34 +8,32 @@ defaultContentLanguage: en
 menus:
   main:
   - pageRef: /features
-    weight: 20
   - pageRef: /download
-    weight: 30
   - pageRef: /news
-    weight: 40
   - pageRef: /community
-    weight: 50
   - pageRef: /docs
-    weight: 60
   - pageRef: /donate
-    weight: 70
     params:
       class: button
+
   footer:
   - pageRef: /
-    weight: 10
   - pageRef: /features
-    weight: 20
   - pageRef: /download
-    weight: 30
   - pageRef: /news
-    weight: 40
+    identifier: news
+  - pageRef: /news/archives
+    parent: news
   - pageRef: /community
-    weight: 50
   - pageRef: /docs
-    weight: 60
+    identifier: docs
+  - pageRef: /manual
+    parent: docs
+  - pageRef: /dev
+    parent: docs
+  - pageRef: /reference
+    parent: docs
   - pageRef: /donate
-    weight: 70
 
 taxonomies:
   category: categories
@@ -59,22 +57,76 @@ summaryLength: 20
 pagination:
   pagerSize: 12
 
-# Override url scheme (e.g. omit top-level section on docs to have /api instead of /docs/api).
+# Override url scheme (e.g. omit news section sub-folders).
 permalinks:
   page:
-    docs: /:sections[1:]/:slugorcontentbasename
     news: /:sections[0]/:slugorcontentbasename
-  section:
-    docs: /:sections[1:]
 
 cascade:
+  - weight: 10
+    target:
+      kind: home
+      path: "{/}"
+
+  - weight: 20
+    target:
+      kind: section
+      path: "{/features}"
+
+  - weight: 30
+    target:
+      kind: section
+      path: "{/download}"
+
+  - weight: 40
+    target:
+      kind: section
+      path: "{/news}"
+
+  - weight: 50
+    target:
+      kind: section
+      path: "{/community}"
+
+  - weight: 60
+    target:
+      kind: section
+      path: "{/docs}"
+
+  - weight: 70
+    target:
+      kind: section
+      path: "{/manual}"
+
+  - weight: 80
+    target:
+      kind: section
+      path: "{/dev}"
+
+  - weight: 90
+    target:
+      kind: section
+      path: "{/reference}"
+
+  - weight: 100
+    target:
+      kind: section
+      path: "{/donate}"
+
+  - weight: 110
+    target:
+      kind: section
+      path: "{/admin}"
+
   - params:
       breadcrumbs: true
     target:
-      path: /docs/*/**
-  - url: docs
+      path: /dev/*/**
+
+  - params:
+      no_listing: true
     target:
-      path: /docs
+      path: /donate
 
 module:
   mounts:
@@ -129,13 +181,13 @@ module:
 
 outputs:
   home:
-    - HTML
+    - html
   section:
-    - HTML
+    - html
   taxonomy:
-    - HTML
+    - html
   term:
-    - HTML
+    - html
 
 disableKinds:
   - rss

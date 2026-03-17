@@ -68,7 +68,7 @@ When using and making changes, keep in mind this website only supports *evergree
 ### Building
 
 > [!IMPORTANT]
-> Currently compatible with Hugo 0.148.2
+> Currently compatible with Hugo 0.158.0
 
 To build the website locally:
 

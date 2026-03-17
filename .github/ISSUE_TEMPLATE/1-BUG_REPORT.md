@@ -57,6 +57,6 @@ body:
         - Viewport size: e.g. 1920x1080px, 360x800px
         - Operating system: e.g. Android 16, iOS 26
         - Browser: e.g. Chrome 145.0, Firefox 147.0
-        - Hugo Version: e.g. 0.156.0 if applicable
+        - Hugo Version: e.g. 0.158.0 if applicable
     validations:
       required: true
