@@ -1,0 +1,66 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Custom rendering for blockquotes:
+
+  - Add citation and caption attributes.
+  - Add alert callouts.
+  - Add icons for quote and alerts.
+
+  @param {string} [cite] Citation reference (e.g. url or file path).
+  @param {string} [caption] Caption to display below the quotation.
+
+  @returns {template.HTML}
+
+  @examples
+
+    > Don't communicate by sharing memory, share memory by communicating.
+    >
+    > — <cite>Rob Pike[^1]</cite>
+    [^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
+
+    > Programs must be written for people to read, and only incidentally for machines to execute.
+    {cite="https://web.mit.edu/6.001/6.037/sicp.pdf" caption="**Harold Abelson & Gerald Jay Sussman**, *Structure and Interpretation of Computer Programs*"}
+
+    > [!NOTE]
+    > Useful information.
+
+*/ -}}
+
+
+{{- $text := .Text -}}
+{{- $cite := .Attributes.cite -}}
+{{- $is_external := strings.HasPrefix $cite "http" -}}
+{{- $caption := .Attributes.caption | markdownify -}}
+{{- $is_alert := eq .Type "alert" -}}
+{{- $type := cond $is_alert .AlertType "quote" -}}
+
+<figure>
+  <blockquote class="{{ $type }}"
+    {{ with $cite }}cite="{{ . | safeURL }}"{{ end }}>
+    {{- partialCached "utils/icon.html" $type (lower $type) -}}
+    {{- i18n $type | default ($type | title) -}}
+    {{- $text -}}
+  </blockquote>
+
+  {{- if $caption -}}
+    <figcaption class="blockquote-caption">
+      {{- if $is_external -}}
+        <a href="{{ $cite }}"
+          title="{{ $caption | plainify }}"
+          target="_blank"
+          rel="external noreferrer noopener">
+      {{- end -}}
+
+      {{ $caption }}
+
+      {{- if $is_external -}}
+        {{- partialCached "utils/icon.html" "external" "external" -}}
+        </a>
+      {{- end -}}
+    </figcaption>
+  {{- end -}}
+</figure>

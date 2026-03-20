@@ -1,0 +1,72 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Custom highlight rendering for code blocks:
+
+  - Use default highlight with options and attributes.
+  - Add file name option above rendered code.
+  - Add trim option to remove leading and trailing whitespaces.
+
+  @param {string} [file] File name or URL to display above the rendered code.
+  @param {bool} [trim=true] Whether to trim leading and trailing whitespaces.
+
+  @returns {template.HTML}
+
+  @examples
+
+    ```go {file="https://github.com/user/repo/blob/main/main.go" linenos=true}
+    fmt.Println("Hello world!")
+    ```
+
+*/ -}}
+
+
+{{- $content := .Inner -}}
+{{- $file_path := .Attributes.file -}}
+{{- $trim := .Attributes.trim | default true -}}
+
+{{- if $trim -}}
+  {{- $content = strings.TrimSpace $content -}}
+{{- end -}}
+
+{{- $is_url := and $file_path (strings.HasPrefix $file_path "http") -}}
+{{- $is_external := and $is_url (not (strings.HasPrefix $file_path site.BaseURL)) -}}
+{{- $file := cond $is_url (path.Base $file_path) $file_path -}}
+
+{{- $lang := or .Type .Attributes.lang (strings.TrimPrefix "." (path.Ext $file)) "text" -}}
+{{- if in (slice "html" "gotmpl") $lang -}}
+  {{- $lang = "go-html-template" -}}
+{{- end -}}
+
+<div class="codeblock">
+  {{- with $file -}}
+    <div class="codeblock-file">
+      {{- if $is_url -}}
+        <a class="codeblock-link"
+          href="{{ $file_path }}"
+          target="_blank"
+          rel="noopener noreferrer">
+      {{- end -}}
+
+      {{- partialCached "utils/icon.html" "words" "words" -}}
+      {{- . -}}
+
+      {{- if $is_external -}}
+        {{- partialCached "utils/icon.html" "external" "external" -}}
+      {{- end -}}
+
+      {{- if $is_url -}}
+        </a>
+      {{- end -}}
+    </div>
+  {{- end -}}
+
+{{- if transform.CanHighlight $lang -}}
+  {{- highlight $content $lang (.Options | default dict) -}}
+{{- else -}}
+  <pre><code>{{- $content -}}</code></pre>
+{{- end -}}
+</div>
