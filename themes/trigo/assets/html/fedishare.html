@@ -1,0 +1,8 @@
+{{- /* Assets do not have autoescaping enabled.
+  Adding content to this template is unsafe.
+  Delegate to a partial.
+*/ -}}
+
+{{- if site.Params.enable_fediverse -}}
+  {{- partialCached "utils/fedishare.html" . "fedishare" -}}
+{{- end -}}
