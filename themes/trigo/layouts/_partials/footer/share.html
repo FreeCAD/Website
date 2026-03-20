@@ -1,0 +1,44 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Share on Social medias. */ -}}
+
+
+{{- $path := (strings.TrimPrefix "/" (printf `%s/fedishare.html` site.LanguagePrefix)) -}}
+{{- $page := resources.Get "html/fedishare.html" -}}
+{{- $page := $page | resources.ExecuteAsTemplate $path (.GetPage "/") -}}
+{{- $desc := .Description |
+  default (.Content |
+  replaceRE `<button[^>]*>[^<]*</button>` "" |
+  replaceRE `<title[^>]*>[^<]*</title>` "" |
+  replaceRE `<figcaption[^>]*>[^<]*</figcaption>` "") |
+  htmlUnescape |
+  plainify |
+  truncate 200
+-}}
+
+{{- $tags := slice -}}
+{{- with .Params.tags -}}
+  {{- range . -}}
+    {{- $tag := printf "#%s" . | urlize -}}
+    {{- $tags = $tags | append $tag -}}
+  {{- end -}}
+  {{- $tags = printf "\n%s" (delimit $tags " ") -}}
+  {{- $desc = printf "%s%s" $desc $tags | urlquery -}}
+{{- end -}}
+
+{{- $url := printf "%s#title=%s&description=%s&url=%s"
+  $page.RelPermalink
+  (.Title | urlquery | safeURL)
+  ($desc | safeURL)
+  (.Permalink | safeURL)
+-}}
+
+<a href="{{ $url }}"
+  title="{{ i18n "share_on" | default "Share on" }} {{ i18n "fediverse" | default "Fediverse" }}"
+  target="_blank" rel="noopener">
+  {{- partialCached "utils/icon.html" "fediverse" "fediverse" -}}
+</a>

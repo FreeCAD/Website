@@ -1,0 +1,21 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+
+{{- $ancestors := where .Ancestors "IsHome" "!=" true -}}
+
+<nav class="breadcrumb">
+  <ol>
+    {{- range $ancestors.Reverse -}}
+      <li>
+        <a href="{{ .RelPermalink }}">{{- .LinkTitle -}}</a>
+      </li>
+    {{- end -}}
+    <li>
+      <a class="active" href="{{ .RelPermalink }}" aria-current="page">{{- .LinkTitle -}}</a>
+    </li>
+  </ol>
+</nav>

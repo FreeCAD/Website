@@ -1,0 +1,74 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Chroma init script:
+
+  - Get user preference in localStorage (pref-theme)
+  - Get default config (light, dark, auto)
+  - Get system preference (prefers-color-scheme)
+*/ -}}
+
+
+{{- $default_chroma := site.Params.default_chroma | default "auto" -}}
+
+{{- if eq $default_chroma "light" -}}
+  <script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+{{- else if eq $default_chroma "dark" -}}
+  <script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    }
+  </script>
+{{- else -}}
+  {{- /* Chroma is auto. */ -}}
+  <script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+{{- end -}}
+
+{{- /* Fallback for user without JS. */ -}}
+<noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style>
+  {{- if and (ne site.Params.default_chroma "light") (ne site.Params.default_chroma "dark") -}}
+    <style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --link-color: rgb(102, 177, 255);
+          --link-hover-color: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style>
+  {{- end -}}
+</noscript>

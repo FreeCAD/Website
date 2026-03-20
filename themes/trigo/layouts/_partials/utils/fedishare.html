@@ -1,0 +1,120 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+
+{{- $projects := dict
+    "lemmy" "create_post?url={url}&title={title}&body={description}"
+    "mastodon" "share?text={text}"
+    "misskey" "share?text={text}"
+-}}
+{{- $domains := hugo.Data.fediverse | default slice -}}
+
+<!DOCTYPE html>
+<html lang="{{ site.Language.Locale }}">
+  {{- /* Get site head. */ -}}
+  {{- partial "head/page_head.html" . -}}
+
+  {{- /* Load Fedishare JS. */ -}}
+  {{- with resources.Get "js/fedishare.js" -}}
+    {{- $fedishare := resources.ExecuteAsTemplate "js/fedishare.js" $ . -}}
+    {{- if hugo.IsProduction -}}
+      {{- $fedishare = $fedishare | minify | fingerprint -}}
+    {{- end -}}
+    <script src="{{ $fedishare.RelPermalink }}"
+      type="text/javascript"
+      {{ if hugo.IsProduction }}integrity="{{ $fedishare.Data.Integrity }}" crossorigin="anonymous"{{ end }}
+      defer>
+    </script>
+  {{- end -}}
+
+  <body data-projects="{{ $projects | jsonify }}">
+    <datalist id="fediverse-domains">
+      {{- range $domains -}}
+        <option value="{{ . }}">{{ . }}</option>
+      {{- end -}}
+    </datalist>
+
+    {{- /* Get site top banner header. */ -}}
+    {{- partial "header/site_header.html" . -}}
+
+    {{- /* Debug info for current page. */ -}}
+    {{- if not hugo.IsProduction -}}
+      {{- partial "utils/debug_info.html" . -}}
+    {{- end -}}
+
+    <main class="fedishare">
+      <noscript>
+        <div class="warning">
+          {{ i18n "javascript_required" | default "Javascript is required" }}
+        </div>
+      </noscript>
+
+      <h2>
+        {{ i18n "share_on" | default "Share on" }} {{ i18n "fediverse" | default "Fediverse" }}
+      </h2>
+
+      <form id="shareForm">
+        <label>
+          <strong>
+            {{ i18n "title" | default "Title" }}
+          </strong>
+          <input type="text" id="title" class="fedishare-title" readonly>
+          <small>
+            This field is readonly.
+          </small>
+        </label>
+
+        <label>
+          <strong>
+            {{ i18n "description" | default "Description" }}
+          </strong>
+          <textarea id="description" class="fedishare-description" rows="5"></textarea>
+        </label>
+
+        <label>
+          <strong>
+            {{ i18n "url" | default "URL" }}
+          </strong>
+          <input type="url" id="url" class="fedishare-url" readonly>
+          <small>
+            This field is readonly.
+          </small>
+        </label>
+
+        <label for="instance">
+          <strong>
+            {{ i18n "instance" | default "Instance" }}
+          </strong>
+          <span class="fedishare-instance-container">
+            https://
+            <input type="text"
+              id="instance"
+              class="fedishare-instance"
+              inputmode="url"
+              autocomplete="url"
+              pattern="^[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)+$"
+              placeholder="e.g. mastodon.social"
+              autofocus
+              required
+              list="fediverse-domains">
+          </span>
+        </label>
+
+        <label for="rememberInstance">
+          <input type="checkbox" id="rememberInstance">
+          {{ i18n "remember_instance" | default "Remember instance" }}
+        </label>
+
+        <button type="submit" id="submit">
+          {{ i18n "share_on" | default "Share on" }} {{ i18n "fediverse" | default "Fediverse" }}
+        </button>
+      </form>
+    </main>
+
+    {{- /* Debug site bottom footer. */ -}}
+    {{- partial "footer/page_footer.html" . -}}
+  </body>
+</html>

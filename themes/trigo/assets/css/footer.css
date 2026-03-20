@@ -1,0 +1,126 @@
+/* This CSS stylesheet defines the style of the site footer */
+
+
+.site-footer {
+  min-height: var(--footer-height);
+  background: var(--footer);
+}
+
+#top-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--tertiary);
+  transition: var(--link-transition);
+}
+
+#top-link:hover {
+  color: var(--link-hover-color);
+}
+
+.footer-menu, .footer-menu > ul {
+  max-width: var(--width);
+  margin: var(--gap) auto;
+  padding-inline-start: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: center;
+  gap: var(--gap);
+  font-size: var(--m);
+  color: var(--tertiary);
+  list-style: none;
+}
+
+.footer-menu span {
+  font-size: var(--s);
+}
+
+.footer-menu span:last-child {
+  white-space: nowrap;
+}
+
+.footer-menu a {
+  color: var(--link-color);
+}
+
+.footer-menu a:hover {
+  color: var(--link-hover-color);
+}
+
+.footer-menu > ul > li {
+  flex: 1 1 auto;
+  min-width: calc(var(--width) * 0.1);
+}
+
+.footer-menu li {
+  margin: 0 auto;
+  text-align: start;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.footer-menu > ul > li > a {
+  margin: 0.25rem auto;
+  color: var(--secondary);
+  font-size: var(--m);
+  font-weight: bold;
+}
+
+.footer-menu ul li ul {
+  padding: 0;
+  margin: 0;
+}
+
+.footer-menu ul li ul li a {
+  font-size: var(--s);
+}
+
+.footer-menu ul li ul li a {
+  color: var(--tertiary);
+}
+
+.share-links {
+  max-width: var(--width);
+  margin: var(--gap) auto;
+  display: flex;
+  justify-content: center;
+  gap: var(--gap);
+}
+
+.share-links svg {
+  height: var(--l);
+  width: var(--l);
+  color: var(--tertiary);
+}
+
+.share-links svg:hover {
+  color: var(--link-hover-color);
+}
+
+.copyright {
+  max-width: var(--width);
+  margin: var(--gap) auto 0;
+  padding-bottom: var(--gap);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  gap: var(--gap);
+  font-size: var(--s);
+  color: var(--tertiary);
+}
+
+.debug-icon {
+  display: inline-grid;
+  margin: calc(var(--gap) * 0.5);
+}
+
+.debug-icon svg {
+  margin: calc(var(--gap) * 0.5);
+  height: var(--xxl);
+  width: var(--xxl);
+}

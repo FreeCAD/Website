@@ -1,0 +1,29 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Icons list:
+
+  - Only for Debug purposes (not in production environment)
+  - Get all theme svg icons with name.
+  - See red collapsible block in site footer.
+*/ -}}
+
+
+<div class="footer-menu">
+  <details title="Click to display info" class="debug">
+    <summary>
+      <h3>
+        ICONS
+      </h3>
+    </summary>
+    {{- range sort (resources.Match "svg/*.svg") "Name" -}}
+      <span class="debug-icon">
+        {{- (. | resources.Minify).Content | safeHTML -}}
+        {{- .Name | path.Base | strings.TrimSuffix ".svg" -}}
+      </span>
+    {{- end -}}
+  </details>
+</div>

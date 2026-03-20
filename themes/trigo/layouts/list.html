@@ -1,0 +1,116 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* List template:
+
+  - Set hero with custom partials.
+  - Set main content with custom partials.
+  - List RegularPages or sub-Sections for current Section.
+*/ -}}
+
+
+{{- define "main" -}}
+
+  {{/* Hero cards on top-level sections. */}}
+  {{- $hero_cards := slice -}}
+  {{- if and .IsSection .Parent.IsHome -}}
+    {{- range site.Menus.footer -}}
+      {{- if and (gt (len .Children) 1) (eq .Identifier $.Section) -}}
+        {{- range .Children -}}
+          {{- with .Page -}}
+            {{- $hero_cards = $hero_cards | append . -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- /* Get cover image. */ -}}
+  {{- $cover_image := partialCached "main/cover.html" . .RelPermalink -}}
+
+  {{- $section_hue := "" -}}
+  {{- if not $cover_image}}
+    {{- $section_hue = partialCached "utils/color_hue.html" . .RelPermalink -}}
+  {{- end -}}
+
+  <section class="hero"
+    {{ if $section_hue }}style="--hue: {{ $section_hue }};"{{ end }}>
+
+    <h1 class="title">
+      {{ .Title | .RenderString }}
+      {{- if .Draft -}}
+        <sup><span>[{{- i18n "draft" | default "Draft" -}}]</span></sup>
+      {{- end -}}
+    </h1>
+
+    {{- with .Description  -}}
+      <h3 class="description">{{- . | $.RenderString -}}</h3>
+    {{- end -}}
+
+    {{- if not hugo.IsProduction -}}
+      {{- with .Page.Menus.main -}}
+        <h2 style="color: crimson; z-index:2;">Weight: {{ .Weight }}</h2>
+      {{- end -}}
+    {{- end -}}
+
+    {{/* Dynamically include hero partials. */}}
+    {{- partial "utils/include_custom_partials.html" (dict "page" . "where" "hero" "auto" true) -}}
+
+    {{- if and (in site.MainSections .Section) (or site.Taxonomies site.Menus.footer) -}}
+      <div class="buttons">
+        {{- range $taxonomy, $terms := site.Taxonomies -}}
+          {{- with $terms -}}
+            {{- $title := i18n (lower .Page.LinkTitle) | default .Page.LinkTitle -}}
+            <a href="{{ .Page.RelPermalink }}" class="hero-button">
+              {{ partialCached "utils/icon.html" .Page.Title (lower .Page.Title) }}
+              {{ title $title }} ({{ len . }})</a>
+          {{- end -}}
+        {{- end -}}
+        {{- range site.Menus.footer -}}
+          {{- if and .HasChildren (eq .Identifier $.Section) -}}
+            {{- range .Children -}}
+              <a href="{{ .URL }}" class="hero-button">{{ .Name }}</a>
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+      </div>
+    {{- end -}}
+
+    {{- with $hero_cards -}}
+      <div class="card-list wide">
+        <div class="cards">
+          {{- range . -}}
+            {{- partialCached "main/cards.html" . .RelPermalink -}}
+          {{- end -}}
+        </div>
+      </div>
+    {{- end -}}
+
+    {{- $cover_image -}}
+
+  </section>
+
+  {{- /* Get Breadcrumbs. */ -}}
+  {{- if .Params.breadcrumbs -}}
+    {{- partial "main/breadcrumbs.html" . -}}
+  {{- end -}}
+
+  {{- /* Get Table Of Contents. */ -}}
+  {{- if .Params.ToC -}}
+    {{ .TableOfContents }}
+  {{- end -}}
+
+  {{/* Dynamically include content partials. */}}
+  {{- partial "utils/include_custom_partials.html" (dict "page" . "where" "content") -}}
+
+  {{- /* Get page content. */ -}}
+  {{- partial "main/content.html" . -}}
+
+  {{- /* List RegularPages, or Sections. */ -}}
+  {{- partial "main/paginator.html" . -}}
+
+{{- end -}}
+{{- /* End main. */ -}}

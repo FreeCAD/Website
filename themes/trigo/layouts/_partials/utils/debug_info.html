@@ -1,0 +1,100 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Debug Info:
+
+  - Details box at the top of each page.
+  - Prints useful info for current page, parent and children.
+*/ -}}
+
+
+<details class="debug">
+  <summary><h3>DEBUG INFOS</h3></summary>
+
+  {{- $debug := slice
+    (slice "Kind"             .Kind)
+    (slice "Type"             .Type)
+    (slice "Section"          .Section)
+    (slice "CurrentSection"   .CurrentSection)
+    (slice "Parent"           .Parent)
+    (slice "BundleType"       .BundleType)
+    (slice "Layout"           .Layout)
+    (slice "Path"             .Path)
+    (slice "RelPermalink"     .RelPermalink)
+    (slice "Slug"             .Slug)
+    (slice "Language"         .Language.Name)
+    (slice "Weight"           .Weight)
+  -}}
+
+  {{- with .File -}}
+    {{- $file_debug := slice
+      (slice "File BaseFileName" .BaseFileName)
+      (slice "File ContentBaseName" .ContentBaseName)
+      (slice "File Dir" .Dir)
+      (slice "File Ext" .Ext)
+      (slice "File Filename" .Filename)
+      (slice "File IsContentAdapter" .IsContentAdapter)
+      (slice "File LogicalName" .LogicalName)
+      (slice "File Path" .Path)
+      (slice "File Section" .Section)
+      (slice "File TranslationBaseName" .TranslationBaseName)
+      (slice "File UniqueID" .UniqueID)
+    -}}
+    {{- $debug = $debug | append $file_debug -}}
+  {{- end -}}
+
+  {{- range $debug -}}
+    {{- $pair := . -}}
+    {{- if and (reflect.IsSlice $pair) (ge (len $pair) 2) -}}
+      {{- $key := index $pair 0 -}}
+      {{- $val := index $pair 1 -}}
+      <p class="{{ if $val }}ok{{ else }}fail{{ end }}">
+        {{ $key }}: <b>{{ if $val }}{{ printf "%v" $val }}{{ else }}<i>nil</i>{{ end }}</b>
+      </p>
+    {{- end -}}
+  {{- end -}}
+
+  <hr>
+
+  <p class="{{ if or .IsHome .Parent.IsHome }}ok{{ else }}fail{{ end }}">
+    Is Top-Level: <b>{{ if or .IsHome .Parent.IsHome }}true{{ else }}false{{ end }}</b>
+  </p>
+
+  {{- $counts := slice
+    (slice "SubSections Count"                         (len .Sections))
+    (slice "RegularPages Count"                        (len .RegularPages))
+  -}}
+
+  {{- range $counts -}}
+    <p class="{{ if gt (index . 1) 0 }}ok{{ else }}fail{{ end }}">
+      {{ index . 0 }}: <b>{{ if gt (index . 1) 0 }}{{ index . 1 }}{{ else }}<i>0</i>{{ end }}</b>
+    </p>
+  {{- end -}}
+
+  <style>
+  .debug {
+    text-align: center;
+    width: var(--width);
+    margin: auto;
+    border: 2px solid crimson;
+    line-height: 1rem;
+  }
+
+  .debug summary {
+    list-style: none;
+  }
+
+  .debug h3,
+  .debug p.fail {
+    color: crimson;
+  }
+
+  .debug p.ok {
+    color: green;
+  }
+  </style>
+
+</details>

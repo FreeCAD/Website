@@ -1,0 +1,86 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+
+{{- $hue := 0 -}}
+{{- $step := 10 -}}
+{{- $section := .FirstSection -}}
+{{- $base := cond $section.Weight $section.Weight $step -}}
+{{- $max_section := mul (len site.Sections) $step -}}
+
+{{- if .IsHome -}}
+  {{- with .Weight -}}
+    {{- $hue = . -}}
+  {{- else -}}
+    {{- $hue = 1 -}}
+  {{- end -}}
+
+{{- else if eq .Kind "taxonomy" -}}
+  {{- $hue = add $max_section $step -}}
+
+{{- else if eq .Kind "term" -}}
+  {{- $hue = add $max_section (mul 2 $step) -}}
+
+{{- else if .Parent.IsHome -}}
+  {{- with .Weight -}}
+    {{- $hue = . -}}
+
+  {{- else with $section.Weight -}}
+    {{- $hue = . -}}
+
+  {{- else -}}
+    {{- range $index, $sec := site.Sections -}}
+      {{- if eq $.RelPermalink $sec.RelPermalink -}}
+        {{- $hue = mul (add $index 1) $step -}}
+        {{- break -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+{{- else if .IsSection -}}
+  {{- with .Weight -}}
+    {{- $hue = add $base (mul . $step) -}}
+
+  {{- else with .CurrentSection.Sections -}}
+    {{- range $index, $sec := . -}}
+      {{- if eq $.RelPermalink $sec.RelPermalink -}}
+        {{- $hue = add $base (mul (add $index 1) $step) -}}
+        {{- break -}}
+      {{- end -}}
+    {{- end -}}
+
+  {{- else -}}
+    {{- range $index, $sec := .FirstSection.Sections -}}
+      {{- if eq $.RelPermalink $sec.RelPermalink -}}
+        {{- $hue = add $base (mul (add $index 1) $step) -}}
+        {{- break -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+{{- else if .IsPage -}}
+  {{- if .Weight -}}
+    {{- $hue = add $base (mul .Weight $step) -}}
+
+  {{- else if in site.MainSections .Section -}}
+    {{- $data := partialCached "utils/taxonomy_counts.html" . "taxonomy_counts" -}}
+    {{- $categories := .Params.categories | default "" -}}
+    {{- $category := cond (reflect.IsSlice $categories) (index $categories 0) $categories -}}
+    {{- $category = replace (string $category) " " "-" -}}
+    {{- $index := index $data.categories_index $category | default 0 -}}
+    {{- $hue = mul 2 (add $index 1) $step -}}
+
+  {{- else -}}
+    {{- range $index, $page := $section.Pages -}}
+      {{- if eq $.RelPermalink $page.RelPermalink -}}
+        {{- $hue = mul (add $index 1) $step -}}
+        {{- break -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return $hue -}}

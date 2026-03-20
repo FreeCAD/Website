@@ -1,0 +1,304 @@
+/* Defines the most general elements.
+For specific classes, header, main, footer, see main.ccs, header.css, footer.css, theme_vars.css, media.css stylesheets. */
+
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: clamp(0.8rem, 0.333vw + 0.6rem, 1.2rem);
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--sans);
+  color: var(--secondary);
+  margin: 0;
+  overflow-x: clip;
+}
+
+main {
+  white-space: normal;
+  background: var(--theme);
+  overflow-wrap: break-word;
+}
+
+h1 {
+  font-size: var(--xxl);
+  margin: calc(var(--gap) * 1.5) auto;
+  scroll-margin-top: 25vh;
+}
+
+h2 {
+  font-size: var(--xl);
+  margin: calc(var(--gap) * 1.25) auto;
+  scroll-margin-top: 25vh;
+}
+
+h3 {
+  font-size: var(--l);
+  margin: var(--gap) auto;
+  scroll-margin-top: 25vh;
+}
+
+h4, h5,h6 {
+  font-size: var(--m);
+  margin: calc(var(--gap) * 0.75) auto;
+  scroll-margin-top: 25vh;
+}
+
+p {
+  font-size: var(--m);
+  margin: calc(var(--gap) * 0.5) auto;
+  scroll-margin-top: 25vh;
+  text-align-last: auto;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: var(--link-transition);
+}
+
+a:hover {
+  color: var(--link-hover-color);
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  object-fit: cover;
+}
+
+[class^="icon-"] {
+  height: var(--m);
+  width: var(--m);
+  margin-inline: calc(var(--gap) * 0.125);
+  color: inherit;
+  transition: var(--link-transition);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+  margin-bottom: 2rem;
+}
+
+button,
+input,
+textarea {
+  padding: 0;
+  font: inherit;
+  background: 0;
+  border: 0;
+  outline: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button,
+input[type=button],
+input[type=submit] {
+  cursor: pointer;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+del {
+  text-decoration: line-through;
+  padding: 0.125rem 0.25rem;
+  color: rgb(128, 8, 32);
+  background: rgb(255, 224, 224);
+  border-radius: 0.25rem;
+}
+
+ins {
+  text-decoration: none;
+  padding: 0.125rem 0.25rem;
+  color: rgb(16, 96, 48);
+  background: rgb(224, 255, 224);
+  border-radius: 0.25rem;
+}
+
+kbd {
+  padding: 0.125rem 0.25rem;
+  color: var(--entry);
+  background: var(--tertiary);
+  border: var(--line) solid var(--secondary);
+  border-radius: 0.25rem;
+}
+
+dl, ol, ul {
+  margin: var(--gap) auto;
+  padding-inline-start: calc(var(--gap) * 1.5);
+}
+
+li,
+li > :is(ol, ul) {
+  margin: 0.25rem 0;
+}
+
+li:has(input[type="checkbox"]) {
+  list-style-type: none;
+}
+
+dt {
+  margin: calc(var(--gap) * 0.5) auto;
+  font-weight: bold;
+}
+
+dd {
+  margin-inline-start: var(--gap);
+}
+
+dt ~ dt {
+  margin-top: calc(var(--gap) * 1.5);
+}
+
+hr {
+  margin: calc(var(--gap) * 2) auto;
+  border: none;
+  height: var(--line);
+  color: var(--tone);
+  background: var(--tone);
+}
+
+iframe {
+  max-width: 100%;
+}
+
+mark {
+  color: var(--entry);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  background: var(--tertiary);
+}
+
+details {
+  margin: 0.5rem auto;
+  background: var(--entry);
+  border-radius: var(--radius);
+}
+
+details[open] {
+  padding-bottom: calc(var(--gap) * 0.5);
+}
+
+details > * {
+  padding: 0 var(--gap);
+}
+
+details .copy {
+  margin-inline-end: var(--gap);
+}
+
+details:not(:has(> summary)) {
+  padding: var(--gap);
+}
+
+details:not(:has(> summary)):not([open]) {
+  cursor: zoom-in;
+}
+
+details:not(:has(> summary))[open] {
+  cursor: zoom-out;
+}
+
+details summary {
+  padding: var(--gap);
+  border-radius: var(--radius);
+  cursor: zoom-in;
+  font-weight: bold;
+}
+
+details[open] summary {
+  cursor: zoom-out;
+  background: var(--tone);
+  margin-block-end: var(--gap);
+}
+
+details summary:hover {
+  background: var(--link-hover-color);
+}
+
+meter {
+  width: 100%;
+  height: 1.5rem;
+  background: var(--theme);
+  border-radius: var(--radius);
+}
+
+meter::-moz-meter-bar {
+  background: var(--link-hover-color);
+  border-radius: var(--radius);
+}
+
+.dark meter::-moz-meter-bar {
+  background: var(--link-color);
+}
+
+meter::-webkit-meter-bar {
+  background: var(--theme);
+  border-radius: var(--radius);
+  height: 1.5rem;
+  box-shadow: none;
+}
+
+meter::-webkit-meter-optimum-value {
+  background: var(--link-hover-color);
+  border-radius: var(--radius);
+}
+
+.dark meter::-webkit-meter-optimum-value {
+  background: var(--link-color);
+}
+
+.screenreader-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+
+/* Unsupported Internet Explorer browsers. */
+
+.unsupported-browser {
+  display: none;
+  background: #900;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* IE10–11 hack */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .unsupported-browser {
+    display: block;
+  }
+}

@@ -1,0 +1,186 @@
+/* This CSS stylesheet defines the style of the site header (navigation menu) */
+
+
+.site-header {
+  background: var(--header);
+  height: var(--header-height);
+  margin: auto;
+  padding: 0 calc((100vw - var(--width)) * 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.site-header,
+.site-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
+}
+
+.logo,
+.menu-list,
+.language-dropdown,
+.chroma-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.logo a {
+  color: var(--secondary);
+}
+
+.logo :is(img, svg) {
+  float: inline-start;
+  height: auto;
+  width: 8.5rem;
+  margin-inline-end: var(--gap);
+}
+
+.active,
+.logo .active,
+.menu-list .active,
+.footer-menu .active {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.logo:hover :is(a, img, svg) {
+  color: var(--link-hover-color);
+}
+
+.menu-toggle,
+.lang-toggle,
+#chroma-toggle {
+  padding: 0.25rem;
+  color: var(--tertiary);
+}
+
+:is(.menu-toggle, .lang-toggle, #chroma-toggle):hover {
+  color: var(--link-hover-color);
+}
+
+:is(.menu-toggle, .lang-toggle, #chroma-toggle) svg {
+  height: var(--l);
+  width: var(--l);
+}
+
+html.dark .site-nav .icon-dark {
+  display: none;
+}
+
+html:not(.dark) .site-nav .icon-light {
+  display: none;
+}
+
+/* Menu in non-media mode */
+
+.menu-toggle {
+  font-size: var(--l);
+  display: block;
+}
+
+.menu:has(#menu-list:popover-open) .icon-hamburger,
+.menu:has(:not(#menu-list:popover-open)) .icon-cross {
+  display: none;
+}
+
+.menu:has(#menu-list:popover-open) .icon-cross {
+  display: block;
+}
+
+.menu-list {
+  position: sticky;
+  word-break: keep-all;
+  white-space: nowrap;
+  gap: var(--gap);
+  border: none;
+  background: none;
+}
+
+.menu-list a {
+  margin: 0;
+  font-size: var(--m);
+  color: var(--secondary);
+}
+
+li .active:not(.button) {
+  text-decoration: var(--underline);
+}
+
+.menu-list a:hover,
+li .active:not(.button):hover {
+  color: var(--link-hover-color);
+}
+
+.menu-list .button {
+  padding: var(--padding);
+  line-height: 2.5;
+  box-shadow: none;
+  color: var(--cover);
+  background: var(--link-color);
+  border-radius: var(--radius);
+  box-shadow: none;
+  transition: none;
+}
+
+.menu-list :is(.button, .button.active):hover {
+  color: var(--cover);
+  background: var(--link-hover-color);
+  box-shadow: none;
+}
+
+.button.active  {
+  color: var(--entry);
+  background: var(--primary);
+}
+
+/* Languages and Menu in media mode */
+
+#lang-list {
+  display: none;
+  inset: 0;
+}
+
+:is(#menu-list, #lang-list):popover-open {
+  position: fixed;
+  display: flex;
+  inset: auto;
+  flex-direction: column;
+  max-height: calc(100vh - (var(--header-height) + (var(--gap) * 4)));
+  min-width: calc(var(--width) * 0.25);
+  top: calc(var(--header-height) + var(--gap));
+  right: calc((100vw - var(--width)) * 0.5);
+  text-align: center;
+  background: var(--entry);
+  border: none;
+  border-radius: var(--radius);
+  padding: var(--gap);
+  color: var(--tertiary);
+}
+
+:is(#menu-list:popover-open, #lang-list:popover-open)::backdrop {
+  background: linear-gradient(transparent, transparent var(--header-height), var(--backdrop) var(--header-height), var(--backdrop));
+}
+
+.language-list {
+  list-style: none;
+}
+
+.language-list li a {
+  text-align: center;
+  margin: 0.5rem;
+  padding: 0;
+  display: inline-block;
+}
+
+.language-list li a:not(.active) {
+  color: var(--tertiary);
+}
+
+.language-list li a:not(.active):hover {
+  color: var(--link-hover-color);
+}

@@ -1,0 +1,28 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+
+{{- with .Content -}}
+  <div class="content">
+
+    {{- with $.File -}}
+      {{- $default := hugo.Sites.Default.Language.Name -}}
+      {{- if and
+        (ne $.Language.Name $default)
+        (in .Filename (printf "/content/%s/" $default))
+        (not (in site.MainSections $.Section))
+      -}}
+        {{- $note := i18n "note_notranslation" |
+          default "This page is not translated yet so the English version is used instead. Interested in helping out?" -}}
+        {{- $contrib := i18n "contributing" | default "Contributing" -}}
+        {{- $repo := site.Params.git_repository | default "" -}}
+        {{- printf "> [!NOTE]\n> %s\n> [%s](%s)" $note $contrib $repo | $.Page.RenderString -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{ . }}
+  </div>
+{{- end -}}

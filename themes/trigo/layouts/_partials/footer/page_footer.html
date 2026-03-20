@@ -1,0 +1,61 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Page Footer:
+
+  - Render footer menu by section.
+  - Add social media links.
+  - Add copyright notice.
+  - Add Scripts.
+*/ -}}
+
+
+<footer class="site-footer">
+
+  {{- partialCached "footer/top.html" . "top" -}}
+
+  {{- /* Get Footer Menu. */ -}}
+  {{- partialCached "footer/menu_footer.html" .FirstSection (printf "%s_%s" .Kind .Section) -}}
+
+  {{- /* Social media and share links. */ -}}
+  {{- if site.Params.show_share -}}
+    <div class="share-links">
+      {{- partialCached "footer/social.html" . "social" -}}
+
+      {{- if and
+        site.Params.enable_fediverse
+        (not (in (slice "home" "taxonomy" "term") .Kind))
+        (not (and
+          (eq .Kind "section")
+          (in site.MainSections .Section)
+      )) -}}
+        {{- partial "footer/share.html" . -}}
+      {{- end -}}
+    </div>
+  {{- end -}}
+
+  {{- /* List bundled icons for dev/debug purpose. */ -}}
+  {{- if not hugo.IsProduction -}}
+    {{- partialCached "utils/debug_icons.html" . "debug_icons" -}}
+  {{- end -}}
+
+  {{- /* Get copyright notice and last modification info. */ -}}
+  <div class="copyright">
+    {{- partialCached "footer/copyright.html" . "copyright" -}}
+
+    {{- if and
+      (not (in (slice "taxonomy" "term") .Kind))
+      (not (and
+        (eq .Kind "section")
+        (in site.MainSections .Section)
+    )) -}}
+      {{- partial "footer/mod_info.html" . -}}
+    {{- end -}}
+  </div>
+</footer>
+
+{{- /* Load bunch of JS at end of DOM. */ -}}
+{{- partial "scripts/scripts.html" . -}}

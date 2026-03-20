@@ -1,0 +1,29 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* LastMod and Git data on site footer:
+
+  - Get last modification date.
+  - Get Git data, hash and repo link.
+*/ -}}
+
+
+{{- with .Lastmod -}}
+  <span>
+    Modified: {{ .Format "2006-01-02" }}
+  </span>
+{{- end -}}
+
+{{- if and hugo.IsProduction site.Params.git_repository -}}
+  {{- with .GitInfo -}}
+    <span>
+      Commit: <a href="{{ printf "%s/commit/%s" (trim site.Params.git_repository "/") .Hash }}">
+        {{ .AbbreviatedHash }}
+        {{- partialCached "utils/icon.html" "external" "external" -}}
+      </a>
+    </span>
+  {{- end -}}
+{{- end -}}

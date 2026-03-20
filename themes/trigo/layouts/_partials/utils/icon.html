@@ -1,0 +1,20 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* SVG icon partial. */ -}}
+
+
+{{- $name := lower . -}}
+
+{{- with resources.Get (printf "svg/%s.svg" $name) -}}
+  <svg class="icon-{{ $name }}"
+    aria-hidden="true"
+    focusable="false">
+    <use href="{{ .RelPermalink }}#{{ $name }}"></use>
+  </svg>
+{{- else -}}
+  {{- warnf "SVG icon not found: %s" ($name | default "unknown") -}}
+{{- end -}}

@@ -1,0 +1,67 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+
+<div class="metadata">
+
+  {{- $params := site.Params -}}
+  {{- $taxonomy_counts := partialCached "utils/taxonomy_counts.html" . "taxonomy_counts" -}}
+
+  {{- $date := .Date -}}
+  {{- if not $date.IsZero -}}
+    <span class="meta">
+      {{- partialCached "utils/icon.html" "date" "date" -}}
+      <time datetime="{{ $date.UTC.Format "2006-01-02T15:04:05Z" }}">{{- $date | time.Format ":date_long" -}}</time>
+    </span>
+  {{- end -}}
+
+  {{- range $taxonomy, $terms := site.Taxonomies -}}
+    {{- $show := index $params (printf "show_%s" (lower $taxonomy)) | default false -}}
+
+    {{- if and $show (index $.Params $taxonomy) -}}
+      {{- with $.GetTerms $taxonomy -}}
+        <span class="meta {{ $taxonomy }}">
+          {{- partialCached "utils/icon.html" $taxonomy (lower $taxonomy) -}}
+
+          {{- range . -}}
+            {{- $count := index (index $taxonomy_counts $taxonomy) (.Data.Term | urlize) -}}
+            <a href="{{ .RelPermalink }}">{{ .LinkTitle }} ({{ $count }})</a>
+          {{- end -}}
+        </span>
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- $words := .WordCount -}}
+  {{- if and $params.show_word_count (gt $words 0) -}}
+    <span class="meta">
+      {{- partialCached "utils/icon.html" "words" "words" -}}
+      {{- i18n "words" $words | default (printf "%d words" $words) -}}
+    </span>
+  {{- end -}}
+
+  {{- $reading := .ReadingTime -}}
+  {{- if and $params.show_reading_time (gt $reading 0) -}}
+    <span class="meta">
+      {{- partialCached "utils/icon.html" "time" "time" -}}
+      {{- i18n "read_time" $reading | default (printf "%d min" $reading) -}}
+    </span>
+  {{- end -}}
+
+  {{- if $params.show_translations -}}
+    {{- with .Translations -}}
+      <span class="meta">
+        {{- partialCached "utils/icon.html" "translations" "translations" -}}
+        {{- range . -}}
+          <a href="{{ .RelPermalink }}" hreflang="{{ .Language.Locale }}">
+            {{ .LinkTitle }} ({{ .Language.Label }})
+          </a>
+        {{- end -}}
+      </span>
+    {{- end -}}
+  {{- end -}}
+
+</div>

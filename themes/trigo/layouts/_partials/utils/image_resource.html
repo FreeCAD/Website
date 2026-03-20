@@ -1,0 +1,65 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Custom image resource processing:
+
+  - Support local or remote resources.
+  - Resize supported processable images and builds responsive set.
+  - Support non-resizable images with or without metadata.
+
+  @returns {template.HTML}
+
+*/ -}}
+
+
+{{- $img := .image -}}
+{{- $alt := .alt -}}
+{{- $attributes := .attributes -}}
+{{- $format := site.Params.resize_format | default "webp" -}}
+{{- $resize_dimensions := site.Params.resize_dimensions.cover | default (slice "500x250" "1000x500") -}}
+
+
+{{- /* Responsive and processable image (e.g. bmp, gif, jpg, png, tif, webp). */ -}}
+{{- if reflect.IsImageResourceProcessable $img -}}
+  {{- $srcset := slice -}}
+  {{- $sizes := slice -}}
+
+  {{- range $resize_dimensions -}}
+    {{- $width := int (index (split . "x") 0) -}}
+    {{- if lt $width $img.Width -}}
+      {{- $resized := $img.Resize (printf "%dx %s" $width $format) -}}
+      {{- $srcset = $srcset | append (printf "%s %dw" ($resized.RelPermalink | safeURL) $width) -}}
+      {{- $sizes = $sizes | append (printf "(max-width: %dpx) %dpx" $width $width) -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- $srcset = $srcset | append (printf "%s %dw" ($img.RelPermalink | safeURL) $img.Width) -}}
+  {{- $sizes := $sizes | append "75vw" -}}
+
+<img srcset="{{ delimit $srcset ", " }}"
+  sizes="{{ delimit $sizes ", " }}"
+  width="{{ $img.Width }}"
+  height="{{ $img.Height }}"
+
+{{- /* Non-processable and non-resizable image with metadata (e.g. avif, heic, heif). */ -}}
+{{- else if reflect.IsImageResourceWithMeta $img -}}
+<img width="{{ $img.Width }}"
+  height="{{ $img.Height }}"
+
+{{- /* Other non-processable and non-resizable image (e.g. svg). */ -}}
+{{- else -}}
+<img
+{{- end -}}
+
+src="{{ $img.RelPermalink | safeURL }}"
+alt="{{ $alt }}"
+loading="lazy"
+fetchpriority="low"
+{{- range $key, $value := $attributes -}}
+  {{- if $value -}}
+    {{- printf " %s=%q" $key ($value | transform.HTMLEscape) | safeHTMLAttr -}}
+  {{- end -}}
+{{- end -}}>

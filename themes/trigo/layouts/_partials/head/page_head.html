@@ -1,0 +1,46 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Page head:
+
+  - Set page meta, title, description, keywords, canonical, and alternate links.
+  - Set analytics and opengraph.
+*/ -}}
+
+
+{{- $title := cond .IsHome site.Title (printf "%s | %s" site.Title .Title) -}}
+{{- $description := or .Description site.Params.site_description -}}
+
+<head>
+
+  {{- partialCached "head/static_head.html" . "static_head" -}}
+
+  <title>{{ $title }}</title>
+  <meta name="description" content="{{ $description }}">
+  {{- with .Params.tags -}}
+    <meta name="keywords" content="{{ delimit . ", " }}">
+  {{- else with site.Params.site_keywords -}}
+    <meta name="keywords" content="{{ delimit . ", " }}">
+  {{- end -}}
+  <link rel="canonical" href="{{ .Permalink }}">
+
+  {{- range .AllTranslations -}}
+    <link rel="alternate" hreflang="{{ .Language.Locale }}" href="{{ .Permalink }}">
+  {{- end -}}
+  <link rel="alternate" hreflang="x-default" href="{{ site.Home.Permalink }}">
+
+  {{- if hugo.IsProduction -}}
+    {{- /* Get google analytics. */ -}}
+    {{- if site.Config.Services.GoogleAnalytics.ID -}}
+      {{- partial "google_analytics.html" . -}}
+    {{- end -}}
+
+    {{- /* Get open graph protocol. */ -}}
+    {{- if or .IsHome .IsSection .IsPage -}}
+      {{- partial "opengraph.html" . -}}
+    {{- end -}}
+  {{- end -}}
+</head>

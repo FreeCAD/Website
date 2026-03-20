@@ -1,0 +1,104 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Centralize JavaScript dependencies and custom scripts:
+
+  - Defer load of JS after HTML is fully parsed and DOM elements available (also performance).
+  - Set Chroma toggle listener.
+  - Load User Agent script for download options.
+  - Load Copy Code button and interaction script.
+  - Load Open Details script.
+  - Load Donate Box script.
+*/ -}}
+
+
+{{- /* Theme Chroma toggle. */ -}}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const button = document.getElementById("chroma-toggle");
+    if (!button) return;
+
+    button.addEventListener("click", () => {
+      const dark = document.documentElement.classList.toggle("dark");
+      localStorage.setItem("pref-theme", dark ? "dark" : "light");
+    });
+  });
+</script>
+
+{{- /* Detect User Agent and provide corresponding download options. */ -}}
+{{- if and (in (slice "download") .Section) site.Params.enable_js_ua -}}
+  {{- with resources.Get "js/ua-download.js" }}
+    {{- $ua := . -}}
+    {{- if hugo.IsProduction -}}
+      {{- $ua = $ua | minify | fingerprint -}}
+    {{- end -}}
+    <script src="{{ $ua.RelPermalink }}"
+      type="text/javascript"
+      {{ if hugo.IsProduction }}integrity="{{ $ua.Data.Integrity }}" crossorigin="anonymous"{{ end }}
+      defer>
+    </script>
+  {{- end -}}
+{{- end -}}
+
+{{- /* Provide sorting options on Addons page. */ -}}
+{{- if and (hasSuffix .Path "addons") site.Params.enable_js_addons -}}
+  {{- with resources.Get "js/addons.js" }}
+    {{- $addons := . -}}
+    {{- if hugo.IsProduction -}}
+      {{- $addons = $addons | minify | fingerprint -}}
+    {{- end -}}
+    <script src="{{ $addons.RelPermalink }}"
+      type="text/javascript"
+      {{ if hugo.IsProduction }}integrity="{{ $addons.Data.Integrity }}" crossorigin="anonymous"{{ end }}
+      defer>
+    </script>
+  {{- end -}}
+{{- end -}}
+
+{{- /* Copy Code block content to clipboard. */ -}}
+{{- if and (eq .Kind "page") (ne .Layout "archives") .Content site.Params.show_copy -}}
+  {{- with resources.Get "js/copy.js" -}}
+    {{- $copy := resources.ExecuteAsTemplate "js/code.js" $ . -}}
+    {{- if hugo.IsProduction -}}
+      {{- $copy = $copy | minify | fingerprint -}}
+    {{- end -}}
+    <script src="{{ $copy.RelPermalink }}"
+      type="text/javascript"
+      {{ if hugo.IsProduction }}integrity="{{ $copy.Data.Integrity }}" crossorigin="anonymous"{{ end }}
+      defer>
+    </script>
+  {{- end -}}
+{{- end -}}
+
+{{- /* Open Details block with anchor link. */ -}}
+{{- if and (in .Content "<details") site.Params.enable_js_details -}}
+  {{- with resources.Get "js/details.js" -}}
+    {{- $details := . -}}
+    {{- if hugo.IsProduction -}}
+      {{- $details = $details | minify | fingerprint -}}
+    {{- end -}}
+    <script src="{{ $details.RelPermalink }}"
+      type="text/javascript"
+      {{ if hugo.IsProduction }}integrity="{{ $details.Data.Integrity }}" crossorigin="anonymous"{{ end }}
+      defer>
+    </script>
+  {{- end -}}
+{{- end -}}
+
+{{- /* Validate and submit Donation Box form. */ -}}
+{{- if and (eq .Section "donate") site.Params.enable_js_donate -}}
+  {{- with resources.Get "js/donate.js" -}}
+    {{- $donate_box := . -}}
+    {{- if hugo.IsProduction -}}
+      {{- $donate_box = $donate_box | minify | fingerprint -}}
+    {{- end -}}
+    <script src="{{ $donate_box.RelPermalink }}"
+      type="text/javascript"
+      {{ if hugo.IsProduction }}integrity="{{ $donate_box.Data.Integrity }}" crossorigin="anonymous"{{ end }}
+      defer>
+    </script>
+  {{- end -}}
+{{- end -}}

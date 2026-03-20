@@ -1,0 +1,56 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Archives template:
+
+  - Get current Section RegularPages.
+  - Sort by date, grouped by year then month.
+*/ -}}
+
+
+{{- define "main" -}}
+
+  <section class="hero">
+    <h1 class="title">{{ .Title }}</h1>
+
+    {{- with .Description -}}
+      <h3 class="description">{{ . }}</h3>
+    {{- end -}}
+  </section>
+
+  {{- range $year := .CurrentSection.RegularPages.GroupByPublishDate "2006" -}}
+    {{- if ne $year .Key "0001" -}}
+      <div class="archive-year">
+        <h2 class="archive-year-header">{{ $year.Key }} ({{ len $year.Pages -}})</h2>
+
+        {{- range $month := $year.Pages.GroupByDate "January" -}}
+          <div class="archive-month">
+            <h3 class="archive-month-header">{{ $month.Key }} ({{ len $month.Pages }})</h3>
+            <div class="archive-month-list">
+
+              {{- range $month.Pages -}}
+                <article class="archive-entry">
+                  <a href="{{ .RelPermalink }}"
+                    title="{{ .Title | plainify }}">
+                    <h4 class="archive-entry-title">
+                      {{ .Title }}
+                      {{- if .Draft -}}<sup><span>[{{ i18n "draft" | default "Draft" }}]</span></sup>{{- end -}}
+                    </h4>
+                  </a>
+                  {{- partialCached "main/metadata.html" . .RelPermalink -}}
+                </article>
+              {{- end -}}
+
+            </div>
+          </div>
+        {{- end -}}
+
+      </div>
+    {{- end -}}
+  {{- end -}}
+
+{{- end -}}
+{{- /* End main. */ -}}
