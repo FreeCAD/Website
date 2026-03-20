@@ -1,0 +1,255 @@
+/* This CSS stylesheet defines the style for different media devices to have a responsive and fluid layout */
+
+
+/* Small screen devices in portrait orientation (e.g. smartphones). */
+@media screen and (max-width: 500px) {
+
+  /* For fluid typography and layout */
+  html {
+    font-size: clamp(0.9rem, 2vw + 0.5rem, 1.5rem);
+  }
+
+  /* Theme-vars */
+  :root {
+    --width: calc(100vw - (var(--gap) * 2));
+    --content-width: var(--width);
+    --card-width: var(--width);
+
+    --s: 0.75rem;
+    --m: 1rem;
+    --l: 1.25rem;
+    --xl: 1.5rem;
+    --xxl: 2.25rem;
+    --xxxl: 3.5rem;
+  }
+
+  main {
+    min-height: auto;
+  }
+
+  .site-nav {
+  }
+
+  .menu {
+    order: 3;
+  }
+
+  .language-dropdown {
+    order: 2;
+  }
+
+  :is(.menu-toggle, .lang-toggle, #chroma-toggle) svg {
+    height: var(--xl);
+    width: var(--xl);
+  }
+
+  :is(#menu-list, #lang-list):popover-open {
+    width: var(--width);
+  }
+
+  .chroma-toggle {
+    order: 1;
+    margin: auto 0;
+  }
+
+  .menu-list .button {
+    line-height: normal;
+  }
+
+
+  /* List and Single pages */
+  .kind-home .hero {
+    min-height: calc(100vh - var(--header-height));
+    flex-direction: column;
+  }
+
+  .hero {
+    min-height: 50vh;
+    padding: calc(var(--gap) * 2) var(--gap);
+  }
+
+  .hero-column {
+    max-width: var(--width);
+    flex: none;
+  }
+
+  .metadata,
+  .card {
+    flex-direction: column;
+  }
+
+  .card {
+    min-height: calc(var(--width) * 0.25);
+  }
+
+  .hero .entry-cover img {
+    height: calc(100vh - var(--header-height));
+  }
+
+  .hero .article-cover img {
+    width: 100%;
+    height: auto;
+    max-height: var(--width);
+  }
+
+  .content {
+    max-width: var(--width);
+  }
+
+  .content img:not([popover] img, blockquote img) {
+    max-height: var(--width);
+  }
+
+  .content div[popover] {
+    padding: 0;
+  }
+
+  .content [popover] img {
+    max-width: 100vw ;
+  }
+
+  .content .close {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .breadcrumb li {
+    display: inline-block;
+  }
+
+  .footer-menu > ul > li {
+    flex: 1;
+    min-width: calc(var(--width) * 0.4);
+  }
+
+  .footer-menu > ul {
+    flex-wrap: wrap;
+  }
+
+  .block {
+    padding: calc(var(--gap) * 2) 0;
+  }
+
+  .download-box {
+    flex-direction: column;
+  }
+
+    .catalog-sort {
+    flex-direction: column;
+  }
+
+  .catalog-sort button {
+    width: 100%;
+  }
+
+  .chart {
+    flex-direction: column;
+    gap: var(--gap);
+  }
+
+  .donut,
+  .donut-legend {
+    align-self: auto;
+  }
+
+  .toot-card {
+    margin: var(--gap) 0;
+  }
+
+  #shareForm {
+    width: 100%;
+    padding: var(--gap);
+  }
+
+  .calendar {
+    height: calc(var(--width) * 1.5);
+  }
+
+  #donation-form {
+    width: var(--width);
+  }
+
+  #donation-amount {
+    grid-template-rows: calc(2fr + var(--gap)) 1fr;
+  }
+
+  #donation-amount .tiers {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #custom-amount-box,
+  #corporate-sponsor,
+  #currency-toggle {
+    grid-column: span 2;
+  }
+
+  #donation-payment {
+    flex-direction: column;
+  }
+
+  /* Archive */
+  .archive-month {
+    flex-direction: column;
+  }
+
+  .archive-month-header {
+    text-align: center;
+    width: var(--width);
+  }
+
+  .archive-year {
+    margin-top: var(--gap);
+  }
+}
+
+
+/* Small screen devices in landscape orientation (e.g. smartphones). */
+@media screen and (orientation: landscape) and (min-width: 500px) and (max-height: 750px) {
+
+  :root {
+    --width: calc(100vw - (var(--gap) * 2));
+    --content-width: var(--width);
+    --card-width: calc((var(--width) * 0.5) - var(--gap));
+  }
+}
+
+
+/* Medium screen devices (e.g. tablets and old desktops). */
+/* NOTE: horizontal navigation menu is hidden, vertical popover menu is displayed instead. */
+@media screen and (max-width: 999px) {
+
+  .menu-list {
+    display: none;
+  }
+
+  .menu-list a {
+    text-align: center;
+    margin: 0.5rem;
+    padding: 0;
+    display: inline-block;
+  }
+
+  .menu-list .active:not(.button) {
+    margin: 0.5rem;
+    padding: 0;
+  }
+}
+
+
+/* Bigger screen devices (e.g. desktops, laptops, high-end tablets). */
+@media screen and (min-width: 1000px) {
+
+  .menu-toggle {
+    display: none;
+  }
+}
+
+
+/* Reduced motion devices. */
+@media (prefers-reduced-motion) {
+
+  :root {
+    --transform-hover: none;
+    --transform-active: none;
+  }
+}

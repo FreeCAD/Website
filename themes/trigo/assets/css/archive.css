@@ -1,0 +1,58 @@
+/* This CSS stylesheet defines the style of archive pages */
+
+.archive-year {
+  max-width: var(--width);
+  margin: auto;
+  font-size: var(--l);
+}
+
+.archive-year:not(:last-of-type) {
+  border-bottom: var(--border);
+}
+
+.archive-month {
+  display: flex;
+  align-items: flex-start;
+  font-size: var(--l);
+}
+
+.archive-month-header {
+  margin: var(--gap) auto;
+  width: calc(var(--width) * 0.25);
+}
+
+.archive-month:not(:last-of-type) {
+  border-bottom: var(--border);
+}
+
+.archive-month-list {
+  width: 100%;
+  font-size: var(--m);
+}
+
+.archive-entry {
+  margin: var(--gap) auto;
+  padding: 0 var(--gap) var(--gap);
+  background: var(--entry);
+  border-radius: var(--radius);
+  transition: var(--link-transition);
+}
+
+.archive-entry:hover {
+  filter: var(--filter);
+  transform: var(--transform-hover);
+}
+
+.archive-entry-title {
+  margin: 0 auto;
+  padding: calc(var(--gap) * 1.5) 0;
+  color: var(--secondary);
+}
+
+.archive-entry-title:hover {
+  color: var(--link-hover-color);
+}
+
+.archive-entry h3 {
+  margin: 1.25rem auto 0.5rem;
+}

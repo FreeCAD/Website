@@ -1,0 +1,142 @@
+/* Defines the top hero section. */
+
+.hero {
+  min-height: calc(var(--width) * 0.25);
+  height: auto;
+  overflow: visible;
+  width: 100vw;
+  margin: auto;
+  padding: calc(var(--gap) * 2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: var(--gap);
+  text-align: center;
+  position: relative;
+  --section-hue: calc(var(--hue) * 3deg);
+  background: radial-gradient(90% 90% at top left, hsl(calc(var(--section-hue)), 60%, 60%), transparent),
+    radial-gradient(90% 90% at top right, hsl(calc(var(--section-hue) + 30deg), 60%, 60%), transparent),
+    radial-gradient(90% 90% at bottom right, hsl(calc(var(--section-hue)), 60%, 60%), transparent),
+    radial-gradient(90% 90% at bottom left, hsl(calc(var(--section-hue) + 30deg), 60%, 60%), transparent);
+  transition: var(--link-transition);
+}
+
+.hero-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  flex: 1;
+  max-width: calc(var(--width) * 0.5);
+  color: var(--secondary);
+}
+
+a.hero-column:hover {
+  filter: var(--filter);
+  transform: var(--transform-hover);
+  color: var(--link-color);
+}
+
+.dark .hero {
+  background: radial-gradient(90% 90% at top left, hsl(calc(var(--section-hue)), 60%, 40%), transparent),
+    radial-gradient(90% 90% at top right, hsl(calc(var(--section-hue) + 30deg), 60%, 40%), transparent),
+    radial-gradient(90% 90% at bottom right, hsl(calc(var(--section-hue)), 60%, 40%), transparent),
+    radial-gradient(90% 90% at bottom left, hsl(calc(var(--section-hue) + 30deg), 60%, 40%), transparent);
+}
+
+main > :is(.hero:only-child, .not-found) {
+  min-height: calc(100vh - var(--header-height) - (var(--footer-height) * 4));
+}
+
+.kind-home .hero {
+  min-height: calc(var(--width) * 0.5);
+  flex-direction: row;
+}
+
+.kind-page .hero {
+  background: var(--footer);
+}
+
+.title,
+.description,
+.hero-button,
+.metadata {
+  margin: 0 auto;
+  display: inline-flex;
+  max-width: var(--width);
+  z-index: 2;
+}
+
+.kind-page:not(.layout-archives) :is(.title, .description) {
+  color: var(--secondary);
+}
+
+.description {
+  font-weight: normal;
+}
+
+.title svg {
+  height: var(--xxl);
+  width: var(--xxl);
+}
+
+.hero-button {
+  margin: calc(var(--gap) * 0.5);
+  padding: var(--padding);
+  color: var(--entry);
+  font-size: var(--m);
+  background: var(--link-color);
+  border-radius: var(--radius);
+  transition: var(--link-transition);
+  z-index: 2;
+}
+
+.hero-button:hover {
+  filter: var(--filter);
+  transform: var(--transform-hover);
+  color: var(--cover);
+}
+
+.meta {
+  display: inline-block;
+  padding: calc(var(--gap) * 0.5);
+  color: var(--tertiary);
+  font-size: var(--s);
+}
+
+.meta svg {
+  vertical-align: calc(var(--gap) * -0.25);
+}
+
+.meta a {
+  color: var(--tertiary);
+}
+
+.meta a:hover {
+  color: var(--link-hover-color);
+}
+
+.meta :is(a, span):not([class*="icon-"], :last-of-type):after {
+  content: " · ";
+}
+
+.hero .entry-cover img {
+  margin: auto;
+  width: 100%;
+  height: calc(var(--width) * 0.3);
+  z-index: 1;
+}
+
+.article-cover {
+  position: relative;
+}
+
+.article-cover img {
+  margin: auto;
+  width: var(--content-width);
+  max-width: 100%;
+  height: auto;
+  max-height: calc(var(--width) * 0.5);
+  z-index: 1;
+  border-radius: var(--radius);
+}
