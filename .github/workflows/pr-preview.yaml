@@ -1,0 +1,280 @@
+name: PR Preview (build PR, deploy to pages branch, and clean with cache)
+
+on:
+  pull_request:
+    types: [closed]
+  issue_comment:
+    types: [created]
+
+# Sets permissions to allow to write to branches (e.g. pages) and comment on PR
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: "pr-preview"
+  cancel-in-progress: true
+
+jobs:
+  action:
+    runs-on: ubuntu-latest
+    outputs:
+      action: ${{ steps.determine-action.outputs.action }}
+      pr: ${{ steps.determine-action.outputs.pr }}
+      sha: ${{ steps.pr.outputs.sha }}
+      draft: ${{ steps.pr.outputs.draft }}
+
+    steps:
+      - name: Determine action (deploy or clean)
+        id: determine-action
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const isPRComment = !!context.payload.issue?.pull_request;
+            const isPRClose = context.eventName === 'pull_request' && context.payload.action === 'closed';
+            const allowed = ['MEMBER', 'OWNER', 'COLLABORATOR'];
+            const association = context.payload.comment?.author_association;
+
+            let action = 'none';
+            let prNumber;
+
+            if (isPRComment && allowed.includes(association)) {
+              prNumber = context.payload.issue.number;
+              const body = context.payload.comment.body.trim();
+              if (body === '/preview') action = 'deploy';
+              if (body === '/clean') action = 'clean';
+            }
+
+            if (isPRComment && !allowed.includes(association)) {
+              core.info(`Ignoring comment from ${association} as not allowed.`);
+            }
+
+            if (isPRClose) {
+              prNumber = context.payload.pull_request.number;
+              action = 'clean';
+            }
+
+            if (!prNumber) {
+              core.info("No PR number detected; skipping workflow.");
+            }
+
+            core.setOutput('action', action);
+            core.setOutput('pr', prNumber ?? '');
+
+      - name: Fetch PR details
+        id: pr
+        if: steps.determine-action.outputs.pr != ''
+        uses: actions/github-script@v8
+        env:
+          PR_NUMBER: ${{ steps.determine-action.outputs.pr }}
+        with:
+          script: |
+            const prNumber = Number(process.env.PR_NUMBER);
+            const pr = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: prNumber
+            });
+            core.setOutput('draft', pr.data.draft);
+            core.setOutput('sha', pr.data.head.sha);
+
+  deploy-preview:
+    runs-on: ubuntu-latest
+    if: ${{ needs.action.outputs.action == 'deploy' && needs.action.outputs.draft != 'true' }}
+    env:
+      HUGO_VERSION: 0.158.0
+      HUGO_ENVIRONMENT: production
+      TZ: Europe/Berlin
+    needs: action
+    steps:
+
+      - name: Checkout PR branch
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ needs.action.outputs.sha }}
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Create dirs for executables and cache
+        run: |
+          mkdir -p "${HOME}/.local"
+          mkdir -p "${{ runner.temp }}/hugo_cache"
+          mkdir -p "resources/_gen"
+
+      - name: Cache Hugo binary
+        id: cache-hugo
+        uses: actions/cache@v5
+        with:
+          path: ~/.local/hugo
+          key: hugo-bin-${{ env.HUGO_VERSION }}
+
+      - name: Add Hugo to PATH
+        run: echo "${HOME}/.local/hugo" >> $GITHUB_PATH
+
+      - name: Install Hugo (if cache miss)
+        if: steps.cache-hugo.outputs.cache-hit != 'true'
+        run: |
+          curl -sLJO "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-amd64.tar.gz"
+          mkdir -p "${HOME}/.local/hugo"
+          tar -C "${HOME}/.local/hugo" -xf "hugo_${HUGO_VERSION}_linux-amd64.tar.gz"
+          rm "hugo_${HUGO_VERSION}_linux-amd64.tar.gz"
+
+      - name: Verify installations
+        run: |
+          echo "Hugo: $(hugo version)"
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config core.quotepath false
+
+      - name: Cache restore
+        id: cache-restore
+        uses: actions/cache/restore@v5
+        with:
+          path: ${{ runner.temp }}/preview_cache
+          key: preview-pr-${{ needs.action.outputs.pr }}-${{ env.HUGO_VERSION }}-${{ hashFiles('content/**', 'layouts/**', 'assets/**', 'static/**', 'config/**', 'themes/**') }}
+          restore-keys:
+            preview-pr-${{ needs.action.outputs.pr }}-${{ env.HUGO_VERSION }}-
+
+      - name: Set PREVIEW_BASE_URL
+        env:
+          BASE_URL_SECRET: ${{ secrets.BASE_URL }}
+          REPO_OWNER: ${{ github.repository_owner }}
+          REPO_NAME: ${{ github.event.repository.name }}
+          PR_NUMBER: ${{ needs.action.outputs.pr }}
+        run: |
+          BASE="${BASE_URL_SECRET:-https://${REPO_OWNER}.github.io/${REPO_NAME}/}"
+          BASE="${BASE%/}/"
+          PR_NUMBER="${PR_NUMBER:-unknown}"
+          echo "PREVIEW_BASE_URL=${BASE}pr-${PR_NUMBER}/" >> $GITHUB_ENV
+
+      - name: Build Hugo project
+        run: |
+          hugo \
+            --gc \
+            --minify \
+            --enableGitInfo \
+            --environment "$HUGO_ENVIRONMENT" \
+            --baseURL "$PREVIEW_BASE_URL" \
+            --destination "./public/pr-${{ needs.action.outputs.pr }}" \
+            --cacheDir "${{ runner.temp }}/preview_cache"
+
+      - name: Commit message
+        id: commit-message
+        run: |
+          message="PR #${{ needs.action.outputs.pr }} preview update (${{ needs.action.outputs.sha }})"
+          message=${message:-"Deploy PR preview to pages branch"}
+          message=$(echo "$message" | tr '\n\r' ' ' | sed "s/['\"]/ /g")
+          echo "message=$message" >> $GITHUB_OUTPUT
+
+      - name: Deploy preview to pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: pages
+          publish_dir: ./public/pr-${{ needs.action.outputs.pr }}
+          destination_dir: pr-${{ needs.action.outputs.pr }}
+          keep_files: true
+          commit_message: "${{ steps.commit-message.outputs.message }}"
+
+      - name: Cache save
+        id: cache-save
+        uses: actions/cache/save@v5
+        with:
+          path: ${{ runner.temp }}/preview_cache
+          key: ${{ steps.cache-restore.outputs.cache-primary-key }}
+
+      - name: Post or update PR preview comment
+        uses: actions/github-script@v8
+        env:
+          PR_NUMBER: ${{ needs.action.outputs.pr }}
+          PREVIEW_BASE_URL: ${{ env.PREVIEW_BASE_URL }}
+          REPO_OWNER: ${{ github.repository_owner }}
+          REPO_NAME: ${{ github.event.repository.name }}
+        with:
+          script: |
+            const prNumber = process.env.PR_NUMBER;
+            const previewUrl = process.env.PREVIEW_BASE_URL;
+            const repoOwner = process.env.REPO_OWNER;
+            const repoName = process.env.REPO_NAME;
+            const body = `**PR #${prNumber} preview:**\n\n${previewUrl}`;
+
+            const comments = await github.rest.issues.listComments({
+              owner: repoOwner,
+              repo: repoName,
+              issue_number: Number(prNumber)
+            });
+
+            const botComment = comments.data.find(
+              c => c.user.login === 'github-actions[bot]' && c.body.includes(`PR #${prNumber} preview`)
+            );
+
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner: repoOwner,
+                repo: repoName,
+                comment_id: botComment.id,
+                body
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: repoOwner,
+                repo: repoName,
+                issue_number: Number(prNumber),
+                body
+              });
+            }
+
+  clean-preview:
+    runs-on: ubuntu-latest
+    if: ${{ needs.action.outputs.action == 'clean' }}
+    needs: action
+    steps:
+
+      - name: Checkout pages branch for cleanup
+        uses: actions/checkout@v6
+        with:
+          ref: pages
+          fetch-depth: 0
+
+      - name: Remove preview directory
+        run: |
+          PREVIEW_DIR="pr-${{ needs.action.outputs.pr }}"
+          if [ -d "$PREVIEW_DIR" ]; then
+            rm -rf "$PREVIEW_DIR"
+            echo "Removed $PREVIEW_DIR"
+          else
+            echo "No preview directory found"
+          fi
+
+      - name: Commit and push cleanup
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          if git diff --quiet; then
+            echo "Nothing to commit for cleanup."
+          else
+            git add -A
+            git commit -m "Cleanup preview for PR #${{ needs.action.outputs.pr }}"
+            git push origin pages
+          fi
+
+      - name: Comment cleanup confirmation
+        uses: actions/github-script@v8
+        if: github.event_name == 'issue_comment'
+        env:
+          PR_NUMBER: ${{ needs.action.outputs.pr }}
+        with:
+          script: |
+            const prNumber = process.env.PR_NUMBER;
+            const body = `**PR #${prNumber} preview cleaned up from pages branch**.`;
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: Number(prNumber),
+              body
+            });
