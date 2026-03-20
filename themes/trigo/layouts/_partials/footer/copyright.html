@@ -1,0 +1,35 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Copyright on site footer:
+
+  - Add year and homepage link.
+  - Add license link.
+  - Add notice about Hugo SSG.
+*/ -}}
+
+
+{{- with site.Copyright -}}
+  <span>{{ . }}</span>
+{{- else with site.Home -}}
+  <span>
+    &copy; {{ now.Year }} <a href="{{ .RelPermalink }}" title="{{ .LinkTitle }}">{{ .Title }}</a>
+  </span>
+{{- end -}}
+
+<span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA
+    {{- partialCached "utils/icon.html" "external" "external" -}}
+  </a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo
+    {{- partialCached "utils/icon.html" "external" "external" -}}
+  </a>
+</span>

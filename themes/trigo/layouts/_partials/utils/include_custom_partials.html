@@ -1,0 +1,22 @@
+{{- $page := .page -}}
+{{- $where := .where -}}
+{{- $auto := .auto | default false -}}
+
+{{- if not (in site.MainSections $page.Section) -}}
+  {{- $partials := index $page.Params.partials $where | default slice -}}
+
+  {{- if or $auto (eq $partials "auto") -}}
+    {{- with $page.File -}}
+      {{- $partials = $partials | append .ContentBaseName -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- $partials = $partials | uniq -}}
+
+  {{- range $partials -}}
+    {{- $partial := printf "custom/%s.html" . -}}
+    {{- if templates.Exists (printf "_partials/%s" $partial) -}}
+      {{- partial $partial $page -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

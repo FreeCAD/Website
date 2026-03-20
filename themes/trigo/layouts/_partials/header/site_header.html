@@ -1,0 +1,80 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Site Banner:
+
+  - Logo and Site Title.
+  - Navigation menu, horizontal list on desktop, dropdown hamburger on mobile.
+  - Languages dropdown.
+  - Theme chroma toggle.
+*/ -}}
+
+
+{{- $page := . -}}
+{{- $home_title := i18n "home" | default "Homepage" -}}
+
+<header class="site-header">
+
+  <div class="logo">
+    <a href="{{ "" | relLangURL }}"
+      {{- if .IsHome -}}class="active"{{- end -}}
+      accesskey="h"
+      title="{{ $home_title }} (Alt + H)"
+      aria-label="{{ $home_title }}">
+      {{- partialCached "header/logo.html" . "logo" -}}
+    </a>
+  </div>
+
+  <div class="site-nav">
+
+    {{- partialCached "header/menu_main.html" .FirstSection (printf "%s_%s" .Kind .Section) -}}
+
+    {{- if hugo.IsMultilingual -}}
+      {{- $button_title := i18n "choose_language" | default "Choose language" -}}
+      <div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="{{ $button_title }} (Alt + L)"
+          aria-label="{{ $button_title }}">
+          {{- partialCached "utils/icon.html" "language" "language" -}}
+        </button>
+
+        <ul popover id="lang-list" class="language-list">
+          {{- range .Rotate "language" -}}
+
+            {{- $attrs := dict
+              "href" .RelPermalink
+              "title" .LinkTitle
+              "style" .Params.style
+            -}}
+            {{- if eq $page . -}}
+              {{- $attrs = merge $attrs (dict
+                "class" "active"
+                "aria-current" "page"
+              ) -}}
+            {{- end -}}
+
+            <li>
+              <a
+                {{- range $key, $value := $attrs -}}
+                  {{- with $value -}}
+                    {{- printf " %s=%q" $key $value | safeHTMLAttr -}}
+                  {{- end -}}
+                {{- end -}}>
+                {{ .Language.Label }} {{ .Language.Params.locale_flag }}
+              </a>
+            </li>
+          {{- end -}}
+        </ul>
+      </div>
+    {{- end -}}
+
+    {{- partialCached "header/chroma.html" . "chroma" -}}
+
+  </div>
+</header>

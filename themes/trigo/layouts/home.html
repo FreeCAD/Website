@@ -1,0 +1,93 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Homepage template:
+
+  - Render title, description and custom buttons from homepage front matter.
+  - Render hero article with its title and cover (fall back to homepage cover).
+  - Render homepage content.
+*/ -}}
+
+
+{{- define "main" -}}
+
+  {{- $buttons := .Params.buttons -}}
+  {{- $hero := .Params.hero | default hugo.Sites.Default.Params.hero -}}
+  {{- $section_hue := partialCached "utils/color_hue.html" . .RelPermalink -}}
+
+  <section class="hero"
+    {{ if $section_hue }}style="--hue: {{ $section_hue }};"{{ end }}>
+
+    <div class="hero-column">
+      <h1 class="title">{{- .Title | .RenderString -}}</h1>
+
+      {{- with .Description -}}
+        <h3 class="description">{{- . | $.RenderString -}}</h3>
+      {{- end -}}
+
+      {{- with $buttons -}}
+        <div class="buttons">
+          {{- range . -}}
+            {{- $href := .link -}}
+            {{- $label := .label -}}
+
+            {{- if and $href (not (hasPrefix $href "http")) -}}
+              {{- with (site.GetPage $href) -}}
+                {{- $href = .RelPermalink -}}
+                {{- if not $label -}}
+                  {{- $label = .LinkTitle -}}
+                {{- end -}}
+              {{- end -}}
+            {{- end -}}
+
+            {{- if not $label -}}
+              {{- $label = i18n "explore" | default "Explore" -}}
+            {{- end -}}
+
+            <a href="{{ $href }}"
+              title="{{ trim $label " " }}"
+              class="hero-button"
+              {{- with .style -}}style="{{ . | safeCSS }}"{{- end -}}>
+              {{ $label }}
+            </a>
+          {{- end -}}
+        </div>
+      {{- end -}}
+    </div>
+
+    {{- if $hero -}}
+
+      {{- $hero_link := $hero.link -}}
+      {{- $hero_page := site.GetPage $hero_link -}}
+      {{- $is_external := not $hero_page -}}
+      {{- $hero_cover := . -}}
+
+      {{- if $hero_page -}}
+        {{- $hero_link = $hero_page.RelPermalink -}}
+        {{- $hero_cover = $hero_page -}}
+      {{- end -}}
+
+      {{- $hero_title := $hero.title -}}
+      {{- if and $hero_page (not $hero_title) -}}
+        {{- $hero_title = $hero_page.LinkTitle -}}
+      {{- end -}}
+
+      <a class="hero-column"
+        href="{{ $hero_link }}"
+        {{ if $is_external }}rel="noopener noreferrer"{{ end }}>
+
+        <h2 class="title">{{- $hero_title | .RenderString -}}</h2>
+
+        {{- partialCached "main/cover.html" $hero_cover $hero_cover -}}
+      </a>
+    {{- end -}}
+
+  </section>
+
+  {{- partial "main/content.html" . -}}
+
+{{- end -}}
+{{- /* End main. */ -}}

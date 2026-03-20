@@ -1,0 +1,32 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+
+{{- $logo := resources.Get site.Params.site_logo -}}
+{{- $logo_text := title site.Title | plainify -}}
+
+{{- with $logo -}}
+  {{- if eq .MediaType.SubType "svg" -}}
+    <svg class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+      <use href="{{ .RelPermalink }}#logo"></use>
+    </svg>
+
+  {{- else if reflect.IsImageResourceProcessable . -}}
+    {{- $src = .Resize "x32" -}}
+    <img src="{{ $logo.RelPermalink }}"
+      alt="LOGO">
+
+  {{- else -}}
+    {{- $logo_text -}}
+    {{- warnf "Unsupported logo format: %s" .MediaType.SubType -}}
+  {{- end -}}
+
+{{- else -}}
+  {{- $logo_text -}}
+  {{- warnf "Unable to get logo file" -}}
+{{- end -}}

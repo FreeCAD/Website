@@ -1,0 +1,50 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Paginate current Section:
+
+  - Provide links to Previous and Next pages in Section.
+*/ -}}
+
+
+{{- $page := . -}}
+
+{{- with .CurrentSection.RegularPages -}}
+
+  <footer class="single-footer">
+    <nav class="pagination">
+      {{- with .Prev $page -}}
+        <a class="page-item prev"
+          href="{{ .RelPermalink -}}"
+          title="{{ i18n "prev_article" | default "Previous article" }}">
+          {{- partialCached "utils/icon.html" "tri_left" "tri_left" -}}
+          {{- .LinkTitle -}}
+
+          {{- if not hugo.IsProduction -}}
+            {{- with .Weight -}}
+              <span style="color: crimson;">Weight: {{ . }}</span>
+            {{- end -}}
+          {{- end -}}
+        </a>
+      {{- end -}}
+
+      {{- with .Next $page -}}
+        <a class="page-item next"
+          href="{{ .RelPermalink -}}"
+          title="{{ i18n "next_article" | default "Next article" }}">
+          {{- .LinkTitle -}}
+          {{- partialCached "utils/icon.html" "tri_right" "tri_right" -}}
+
+          {{- if not hugo.IsProduction -}}
+            {{- with .Weight -}}
+              <span style="color: crimson;">Weight: {{ . }}</span>
+            {{- end -}}
+          {{- end -}}
+        </a>
+      {{- end -}}
+    </nav>
+  </footer>
+{{- end -}}

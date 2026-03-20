@@ -1,0 +1,18 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+
+{{- $title := i18n "toggle_theme" | default "Switch theme chroma" -}}
+
+<div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="{{ $title }} (Alt + T)"
+    aria-label="{{ $title }}">
+    {{- partialCached "utils/icon.html" "dark" "dark" -}}
+    {{- partialCached "utils/icon.html" "light" "light" -}}
+  </button>
+</div>

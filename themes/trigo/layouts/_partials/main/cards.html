@@ -1,0 +1,58 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+
+<a class="card"
+  href="{{ .RelPermalink }}"
+  title="{{ .Title }}">
+
+  {{- /* Get article card cover image. */ -}}
+  {{- with (partialCached "main/card_image.html" . .RelPermalink) -}}
+    {{- . -}}
+  {{- else with .Params.icon -}}
+    <span class="card-icon">
+      {{- partialCached "utils/icon.html" . (lower .) -}}
+    </span>
+  {{- else -}}
+    {{- $card_hue := partialCached "utils/color_hue.html" . .RelPermalink -}}
+    <div class="card-color" style="--hue: {{ $card_hue }};"></div>
+  {{- end -}}
+
+  <h3 class="card-title">
+    {{- .Title -}}
+    {{- if .Draft }}
+      <sup><span>[{{- i18n "draft" | default "Draft" -}}]</span></sup>
+    {{- end -}}
+  </h3>
+
+  {{- with .Description -}}
+    <p class="card-description">{{ . }}</p>
+  {{- end -}}
+
+  {{- if not hugo.IsProduction -}}
+    {{- with .Weight -}}
+      <h2 style="color: crimson;">Weight: {{ . }}</h2>
+    {{- end -}}
+  {{- end -}}
+
+  {{- if not .Date.IsZero -}}
+    <div class="card-metadata">
+      <span class="meta">
+        {{- partialCached "utils/icon.html" "date" "date" -}}
+        <time datetime="{{ .Date.UTC.Format "2006-01-02T15:04:05Z" }}">
+          {{- .Date | time.Format ":date_long" -}}
+        </time>
+      </span>
+
+      {{- with index (.GetTerms "categories") 0 -}}
+        <span class="meta">
+          {{- partialCached "utils/icon.html" "categories" "categories" -}}
+          {{ .LinkTitle }}
+        </span>
+      {{- end -}}
+    </div>
+  {{- end -}}
+</a>

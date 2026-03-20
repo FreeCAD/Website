@@ -1,0 +1,56 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Taxonomy template:
+
+  - Set hero with title, description and list of Terms for current Taxonomy.
+*/ -}}
+
+
+{{- define "main" -}}
+
+  {{- $taxonomy := .Type -}}
+  {{- $title := i18n $taxonomy | default $taxonomy -}}
+  {{- $terms := .Data.Terms -}}
+
+  {{- $cover_image := partialCached "main/cover.html" . .RelPermalink -}}
+  {{- $section_hue := "" -}}
+  {{- if not $cover_image}}
+    {{- $section_hue = partialCached "utils/color_hue.html" . .RelPermalink -}}
+  {{- end -}}
+  {{- $taxonomy_counts := partialCached "utils/taxonomy_counts.html" . "taxonomy_counts" -}}
+
+  <section class="hero"
+    {{ if $section_hue }}style="--hue: {{ $section_hue }};"{{ end }}>
+
+    <h1 class="title">
+      {{ partialCached "utils/icon.html" .Title (lower .Title) }}
+      {{ title $title }} ({{ len $terms }})
+    </h1>
+
+    {{- with .Description -}}
+      <h3 class="description">{{- . -}}</h3>
+    {{- end -}}
+
+    {{- with $terms -}}
+      <ul class="terms">
+        {{- range .Alphabetical -}}
+          {{- with .Page -}}
+            {{- $count := index (index $taxonomy_counts $taxonomy) (.Data.Term | urlize) -}}
+            <a href="{{ .RelPermalink }}">
+              {{ .LinkTitle }} ({{ $count }})
+            </a>
+          {{- end -}}
+        {{- end -}}
+      </ul>
+    {{- end -}}
+
+    {{- $cover_image -}}
+
+  </section>
+
+{{- end -}}
+{{- /* End main. */ -}}

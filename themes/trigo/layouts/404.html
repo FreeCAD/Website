@@ -1,0 +1,23 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Error 404 template with Homepage return link. */ -}}
+
+
+{{- define "main" -}}
+
+  {{- $title := i18n "return_homepage" | default "Return to Homepage" -}}
+
+  <div class="not-found">
+    <a href="{{ site.Home.RelPermalink }}"
+      title="{{ $title }}"
+      aria-label="{{ $title }}">
+      🦄
+    </a>
+  </div>
+
+{{- end -}}
+{{- /* End main. */ -}}

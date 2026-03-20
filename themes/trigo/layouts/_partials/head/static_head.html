@@ -1,0 +1,49 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Static head cached:
+
+  - Set charset, viewport, referrer and robots.
+  - Concatenate, minify and fingerprint stylesheets.
+  - Load theme chroma script, stylesheets, and favicons.
+*/ -}}
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="{{ cond hugo.IsProduction "index, follow" "noindex, nofollow" }}">
+
+{{- /* Chroma script to change between light and dark theme. */ -}}
+{{- partialCached "scripts/theme.html" . "theme" -}}
+
+{{- with resources.Get "css/main_stylesheet.css" -}}
+  {{- $opts := dict
+    "loaders" (dict ".png" "dataurl" ".svg" "dataurl")
+    "minify" (cond hugo.IsDevelopment false true)
+    "sourceMap" (cond hugo.IsDevelopment "linked" "none")
+  -}}
+  {{- with . | css.Build $opts -}}
+    {{- if hugo.IsDevelopment -}}
+      <link rel="stylesheet" href="{{ .RelPermalink }}">
+    {{- else -}}
+      {{- with . | fingerprint -}}
+        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* Favicons. */ -}}
+{{- if fileExists "static/favicon.svg" -}}
+    <link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | relURL }}">
+{{- end -}}
+{{- if fileExists "static/favicon.ico" -}}
+    <link rel="shortcut icon" type="image/x-icon" href="{{ "favicon.ico" | relURL }}">
+{{- end -}}
+{{- if fileExists "static/apple-touch-icon.png" -}}
+    <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
+{{- end -}}

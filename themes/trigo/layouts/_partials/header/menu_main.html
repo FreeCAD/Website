@@ -1,0 +1,65 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+
+{{- $first_section := . -}}
+{{- $menu_label := i18n "menu" | default "Menu" -}}
+
+<nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="{{ $menu_label }}"
+    aria-label="{{ $menu_label }}">
+    {{- partialCached "utils/icon.html" "hamburger" "hamburger" -}}
+    {{- partialCached "utils/icon.html" "cross" "cross" -}}
+  </button>
+
+  <ul popover id="menu-list" class="menu-list">
+    {{- range site.Menus.main -}}
+
+      {{- $name := .Name -}}
+      {{- with .Identifier -}}
+        {{- with T . -}}
+          {{- $name = . -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- $class := slice -}}
+      {{- $aria := "" -}}
+      {{- if or
+        ($first_section.IsMenuCurrent .Menu .)
+        ($first_section.HasMenuCurrent .Menu .)
+      -}}
+        {{- $class = $class | append "active" -}}
+        {{- $aria = "page" -}}
+      {{- end -}}
+      {{- with .Params.class -}}
+        {{- $class = $class | append . -}}
+      {{- end -}}
+
+      {{- $is_external := and (hasPrefix .URL "http") (not (hasPrefix .URL site.BaseURL)) -}}
+
+      {{- if or .Page $is_external -}}
+        <li>
+          <a href="{{ .URL }}"
+            title="{{ $name }}"
+            {{ with $class }}class="{{ delimit . " " }}"{{ end }}
+            {{ with $aria }}aria-current="{{ . }}"{{ end }}
+            {{ with .Params.style }}style="{{ . }}"{{ end }}
+            {{ if $is_external }}target="_blank" rel="noopener noreferrer"{{ end }}>
+            {{- $name -}}
+            {{- if $is_external -}}
+              {{- partialCached "utils/icon.html" "external" "external" -}}
+            {{- end -}}
+          </a>
+        </li>
+      {{- end -}}
+    {{- end -}}
+  </ul>
+</nav>

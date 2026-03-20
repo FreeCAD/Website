@@ -1,0 +1,103 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Footer Menu by section:
+
+  - Render parent section and children links.
+  - Set active class for current page.
+  - Handle external links.
+*/ -}}
+
+
+{{- $first_section := . -}}
+
+{{- with site.Menus.footer -}}
+  <nav class="footer-menu">
+    <ul>
+      {{- range . -}}
+
+        {{- $name := .Name -}}
+        {{- with .Identifier -}}
+          {{- with T . -}}
+            {{- $name = . -}}
+          {{- end -}}
+        {{- end -}}
+
+        {{- $class := slice -}}
+        {{- $aria := "" -}}
+        {{- if or
+          ($first_section.IsMenuCurrent .Menu .)
+          ($first_section.HasMenuCurrent .Menu .)
+        -}}
+          {{- $class = $class | append "active" -}}
+          {{- $aria = "page" -}}
+        {{- end -}}
+        {{- with .Params.class -}}
+          {{- $class = $class | append . -}}
+        {{- end -}}
+
+        {{- $is_external := and (hasPrefix .URL "http") (not (hasPrefix .URL site.BaseURL)) -}}
+
+        <li>
+          <a href="{{ .URL }}"
+            title="{{ $name }}"
+            {{ with $class }}class="{{ delimit . " " }}"{{ end }}
+            {{ with $aria }}aria-current="{{ . }}"{{ end }}
+            {{ with .Params.style }}style="{{ . }}"{{ end }}
+            {{ if $is_external }}target="_blank" rel="noopener noreferrer"{{ end }}>
+            {{- $name -}}
+            {{- if $is_external -}}
+              {{- partialCached "utils/icon.html" "external" "external" -}}
+            {{- end -}}
+          </a>
+
+          {{- /* Children or sub-sections. */ -}}
+          {{- if or .Children .Page -}}
+            <ul>
+              {{- range .Children  -}}
+                {{- $name := .Name -}}
+                {{- $is_external := and (hasPrefix .URL "http") (not (hasPrefix .URL site.BaseURL)) -}}
+                <li>
+                  <a href="{{ .URL }}"
+                    title="{{ $name }}"
+                    {{ with .Params.style }}style="{{ . }}"{{ end }}
+                    {{ if $is_external }}target="_blank" rel="noopener noreferrer"{{ end }}>
+                    {{- $name -}}
+                    {{- if $is_external -}}
+                      {{- partialCached "utils/icon.html" "external" "external" -}}
+                    {{- end -}}
+                  </a>
+                </li>
+              {{- end -}}
+
+              {{- with .Page -}}
+                {{- if and
+                  (not .IsHome)
+                  (not (in site.MainSections .Section))
+                  (not .Params.no_listing)
+                -}}
+                  {{- range .Pages.ByWeight -}}
+                    {{- $name := .LinkTitle -}}
+                    <li>
+                      <a href="{{ .RelPermalink }}"
+                        title="{{ $name }}"
+                        {{ with .Params.class }}class="{{ delimit . " " }}"{{ end }}
+                        {{ with .Params.style }}style="{{ . }}"{{ end }}>
+                        {{- $name -}}
+                      </a>
+                    </li>
+                  {{- end -}}
+                {{- end -}}
+              {{- end -}}
+            </ul>
+          {{- end -}}
+
+        </li>
+      {{- end -}}
+
+    </ul>
+  </nav>
+{{- end -}}
