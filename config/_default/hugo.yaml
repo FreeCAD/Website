@@ -1,9 +1,13 @@
-# General Hugo config. For Theme and CMS see params.yaml.
+# General Hugo default config.
+# For custom Params Theme-related and CMS see params.yaml.
+# For Theme default config, see hugo.yaml in themes dir.
 
 baseURL: https://www.freecad.org/
 title: FreeCAD
 
 defaultContentLanguage: en
+
+theme: trigo
 
 menus:
   main:
@@ -41,14 +45,6 @@ taxonomies:
   author: authors
   version: versions
 
-buildDrafts: false
-buildFuture: false
-buildExpired: false
-
-enableInlineShortcodes: true
-enableRobotsTXT: true
-enableEmoji: true
-
 mainSections: news
 
 summaryLength: 20
@@ -57,13 +53,23 @@ summaryLength: 20
 pagination:
   pagerSize: 12
 
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+enableEmoji: true
+enableGitInfo: true
+
+
 # Override url scheme (e.g. omit news section sub-folders).
 permalinks:
   page:
     news: /:sections[0]/:slugorcontentbasename
 
 cascade:
-  - weight: 10
+  - weight: 1
     target:
       kind: home
       path: "{/}"
@@ -118,67 +124,6 @@ cascade:
       kind: section
       path: "{/admin}"
 
-  - params:
-      breadcrumbs: true
-    target:
-      path: /dev/*/**
-
-  - params:
-      no_listing: true
-    target:
-      path: /donate
-
-module:
-  mounts:
-    - source: assets
-      target: assets
-    - source: static # Allow to pipe process static files.
-      target: assets
-
-    - source: content/zh
-      target: content
-      sites:
-        matrix:
-          languages:
-            - zh
-    - source: content/es
-      target: content
-      sites:
-        matrix:
-          languages:
-            - es
-    - source: content/fr
-      target: content
-      sites:
-        matrix:
-          languages:
-            - fr
-    - source: content/pt
-      target: content
-      sites:
-        matrix:
-          languages:
-            - pt
-    - source: content/de
-      target: content
-      sites:
-        matrix:
-          languages:
-            - de
-    - source: content/ja
-      target: content
-      sites:
-        matrix:
-          languages:
-            - ja
-# Keep default English fallback at end of mounts list.
-    - source: content/en
-      target: content
-      sites:
-        matrix:
-          languages:
-            - "*"
-
 outputs:
   home:
     - html
@@ -195,6 +140,10 @@ disableKinds:
 # Keep for local dev. Production build uses --minify.
 minify:
   minifyOutput: false
+
+services:
+  googleAnalytics:
+    id: # Google Analytics G-MEASUREMENT_ID.
 
 markup:
   goldmark:
@@ -235,12 +184,6 @@ imaging:
   exif:
     disableDate: true
     disableLatLong: true
-
-enableGitInfo: true
-
-services:
-  googleAnalytics:
-    id: # Google Analytics G-MEASUREMENT_ID.
 
 privacy:
   googleAnalytics:

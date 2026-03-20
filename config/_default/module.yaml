@@ -1,0 +1,87 @@
+# Module default config
+
+mounts:
+  - source: assets
+    target: assets
+  - source: static # Allow to pipe process static files.
+    target: assets
+
+  - source: content/zh
+    target: content
+    sites:
+      matrix:
+        languages:
+          - zh
+  - source: content/es
+    target: content
+    sites:
+      matrix:
+        languages:
+          - es
+  - source: content/fr
+    target: content
+    sites:
+      matrix:
+        languages:
+          - fr
+  - source: content/pt
+    target: content
+    sites:
+      matrix:
+        languages:
+          - pt
+  - source: content/de
+    target: content
+    sites:
+      matrix:
+        languages:
+          - de
+  - source: content/ja
+    target: content
+    sites:
+      matrix:
+        languages:
+          - ja
+  - source: content/ru
+    target: content
+    sites:
+      matrix:
+        languages:
+          - ru
+  - source: content/tr
+    target: content
+    sites:
+      matrix:
+        languages:
+          - tr
+  - source: content/it
+    target: content
+    sites:
+      matrix:
+        languages:
+          - it
+  - source: content/pl
+    target: content
+    sites:
+      matrix:
+        languages:
+          - pl
+  - source: content/nl
+    target: content
+    sites:
+      matrix:
+        languages:
+          - nl
+  - source: content/ar
+    target: content
+    sites:
+      matrix:
+        languages:
+          - ar
+  # Keep default English fallback at end of mounts list.
+  - source: content/en
+    target: content
+    sites:
+      matrix:
+        languages:
+          - "*"
