@@ -4,7 +4,11 @@ SPDX-FileCopyrightText: 2026 FreeCAD
 SPDX-FileNotice: Part of the Trigo theme for Hugo.
 */ -}}
 
-{{- /* SVG icon partial. */ -}}
+{{- /* SVG icon partial:
+
+  - Get bundled SVG file and rely on sprite technique to lower DOM bloat.
+  - Note: SVG files must have named fragment ID attribute on <svg> root to work on all web browsers.
+*/ -}}
 
 
 {{- $name := lower . -}}

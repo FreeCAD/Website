@@ -173,6 +173,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: pages
           publish_dir: ./public/pr-${{ needs.action.outputs.pr }}
           destination_dir: pr-${{ needs.action.outputs.pr }}
           keep_files: true

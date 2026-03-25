@@ -4,6 +4,12 @@ SPDX-FileCopyrightText: 2026 FreeCAD
 SPDX-FileNotice: Part of the Trigo theme for Hugo.
 */ -}}
 
+{{- /* Fedishare form:
+
+  - Get Fediverse instances and JavaScript.
+  - Set HTML structure and form fields.
+*/ -}}
+
 
 {{- $projects := dict
     "lemmy" "create_post?url={url}&title={title}&body={description}"
@@ -14,7 +20,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 <!DOCTYPE html>
 <html lang="{{ site.Language.Locale }}">
-  {{- /* Get site head. */ -}}
+  {{- /* Get page head. */ -}}
   {{- partial "head/page_head.html" . -}}
 
   {{- /* Load Fedishare JS. */ -}}
@@ -37,8 +43,8 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
       {{- end -}}
     </datalist>
 
-    {{- /* Get site top banner header. */ -}}
-    {{- partial "header/site_header.html" . -}}
+    {{- /* Get page header. */ -}}
+    {{- partial "header/page_header.html" . -}}
 
     {{- /* Debug info for current page. */ -}}
     {{- if not hugo.IsProduction -}}
@@ -114,7 +120,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
       </form>
     </main>
 
-    {{- /* Debug site bottom footer. */ -}}
+    {{- /* Get page footer. */ -}}
     {{- partial "footer/page_footer.html" . -}}
   </body>
 </html>

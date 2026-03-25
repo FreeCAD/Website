@@ -4,6 +4,11 @@ SPDX-FileCopyrightText: 2026 FreeCAD
 SPDX-FileNotice: Part of the Trigo theme for Hugo.
 */ -}}
 
+{{- /* Format division of two floats into compact human-readable percentage:
+
+  - Compute (number / total * 100) and return a rounded percentage with configurable decimal precision.
+*/ -}}
+
 
 {{- $total := float (.total | default 0) -}}
 {{- $number := float (.number | default 0) -}}

@@ -4,6 +4,12 @@ SPDX-FileCopyrightText: 2026 FreeCAD
 SPDX-FileNotice: Part of the Trigo theme for Hugo.
 */ -}}
 
+{{- /* Format big integers into compact human-readable strings:
+
+  - Values < 1000 are unchanged.
+  - Larger values are rounded and scaled to K (thousands), M (millions), or B (billions) with up to one decimal.
+*/ -}}
+
 
 {{- $number := int . -}}
 

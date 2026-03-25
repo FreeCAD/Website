@@ -4,7 +4,7 @@ SPDX-FileCopyrightText: 2026 FreeCAD
 SPDX-FileNotice: Part of the Trigo theme for Hugo.
 */ -}}
 
-{{- /* Site Banner:
+{{- /* Page Header as top banner:
 
   - Logo and Site Title.
   - Navigation menu, horizontal list on desktop, dropdown hamburger on mobile.
@@ -30,7 +30,9 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
   <div class="site-nav">
 
-    {{- partialCached "header/menu_main.html" .FirstSection (printf "%s_%s" .Kind .Section) -}}
+    {{- if site.Menus.main -}}
+      {{- partialCached "header/menu_main.html" .FirstSection (printf "%s_%s" .Kind .Section) -}}
+    {{- end -}}
 
     {{- if hugo.IsMultilingual -}}
       {{- $button_title := i18n "choose_language" | default "Choose language" -}}

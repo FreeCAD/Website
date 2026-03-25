@@ -18,10 +18,12 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   {{- partialCached "footer/top.html" . "top" -}}
 
   {{- /* Get Footer Menu. */ -}}
-  {{- partialCached "footer/menu_footer.html" .FirstSection (printf "%s_%s" .Kind .Section) -}}
+  {{- if site.Menus.footer -}}
+    {{- partialCached "footer/menu_footer.html" .FirstSection (printf "%s_%s" .Kind .Section) -}}
+  {{- end -}}
 
   {{- /* Social media and share links. */ -}}
-  {{- if site.Params.show_share -}}
+  {{- if or site.Params.socials site.Params.enable_fediverse -}}
     <div class="share-links">
       {{- partialCached "footer/social.html" . "social" -}}
 

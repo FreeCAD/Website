@@ -1,3 +1,16 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Custom partials inclusion:
+
+  - Dynamically render page-specific partials defined in front matter or inferred from page filename.
+  - Support only existing `layouts/_partials/custom/` templates.
+*/ -}}
+
+
 {{- $page := .page -}}
 {{- $where := .where -}}
 {{- $auto := .auto | default false -}}

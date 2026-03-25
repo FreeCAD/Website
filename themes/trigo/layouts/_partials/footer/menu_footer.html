@@ -4,43 +4,44 @@ SPDX-FileCopyrightText: 2026 FreeCAD
 SPDX-FileNotice: Part of the Trigo theme for Hugo.
 */ -}}
 
-{{- /* Footer Menu by section:
+{{- /* Footer navigation Menu:
 
-  - Render parent section and children links.
-  - Set active class for current page.
-  - Handle external links.
+  - Footer entries by Parent or Section.
+  - Support Children or direct RegularPages.
+  - Set active for current Section.
+  - Handle external links, optional classes, and style support.
 */ -}}
 
 
 {{- $first_section := . -}}
 
-{{- with site.Menus.footer -}}
-  <nav class="footer-menu">
-    <ul>
-      {{- range . -}}
+<nav class="footer-menu">
+  <ul>
+    {{- range site.Menus.footer -}}
 
-        {{- $name := .Name -}}
-        {{- with .Identifier -}}
-          {{- with T . -}}
-            {{- $name = . -}}
-          {{- end -}}
+      {{- $name := .Name -}}
+      {{- with .Identifier -}}
+        {{- with T . -}}
+          {{- $name = . -}}
         {{- end -}}
+      {{- end -}}
 
-        {{- $class := slice -}}
-        {{- $aria := "" -}}
-        {{- if or
-          ($first_section.IsMenuCurrent .Menu .)
-          ($first_section.HasMenuCurrent .Menu .)
-        -}}
-          {{- $class = $class | append "active" -}}
-          {{- $aria = "page" -}}
-        {{- end -}}
-        {{- with .Params.class -}}
-          {{- $class = $class | append . -}}
-        {{- end -}}
+      {{- $class := slice -}}
+      {{- $aria := "" -}}
+      {{- if or
+        ($first_section.IsMenuCurrent .Menu .)
+        ($first_section.HasMenuCurrent .Menu .)
+      -}}
+        {{- $class = $class | append "active" -}}
+        {{- $aria = "page" -}}
+      {{- end -}}
+      {{- with .Params.class -}}
+        {{- $class = $class | append . -}}
+      {{- end -}}
 
-        {{- $is_external := and (hasPrefix .URL "http") (not (hasPrefix .URL site.BaseURL)) -}}
+      {{- $is_external := and (hasPrefix .URL "http") (not (hasPrefix .URL site.BaseURL)) -}}
 
+      {{- if or .Page $is_external -}}
         <li>
           <a href="{{ .URL }}"
             title="{{ $name }}"
@@ -55,7 +56,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
           </a>
 
           {{- /* Children or sub-sections. */ -}}
-          {{- if or .Children .Page -}}
+          {{- if or .Page .Children -}}
             <ul>
               {{- range .Children  -}}
                 {{- $name := .Name -}}
@@ -97,7 +98,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
         </li>
       {{- end -}}
+    {{- end -}}
 
-    </ul>
-  </nav>
-{{- end -}}
+  </ul>
+</nav>
