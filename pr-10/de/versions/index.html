@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="de-DE"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --link-color: rgb(102, 177, 255);
+          --link-hover-color: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-10/css/main_stylesheet.414dd4e37e7d472dec833484130e95b289aacf0248b32b32430f4c051130fc54.css" integrity="sha256-QU3U4359Ry3sgzSEEw6VsomqzwJIsysyQw9MBREw/FQ=" crossorigin="anonymous"><title>FreeCAD | Versions</title>
+  <meta name="description" content="Dein eigener freier und Open-Source parametrischer Modellierer"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-10/de/versions/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-10/versions/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-10/zh/versions/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-10/es/versions/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-10/fr/versions/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-10/pt/versions/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-10/de/versions/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-10/ja/versions/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-10/de/"></head><body class="list type-versions kind-taxonomy "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-10/de/"accesskey="h"
+      title="Home (Alt + H)"
+      aria-label="Home">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menü"
+    aria-label="Menü"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-10/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-10/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Sprache auswählen (Alt + L)"
+          aria-label="Sprache auswählen"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-10/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-10/versions/" title="Versions">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-10/zh/versions/" title="Versions">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-10/es/versions/" title="Versions">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-10/fr/versions/" title="Versions">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-10/pt/versions/" title="Versions">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-10/de/versions/" title="Versions">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-10/ja/versions/" title="Versions">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Design wechseln (Alt + T)"
+    aria-label="Design wechseln"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-10/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-10/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero"
+    style="--hue: 10;">
+
+    <h1 class="title">
+      <svg class="icon-versions"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-10/svg/versions.svg#versions"></use>
+  </svg>
+      Versionen (0)
+    </h1></section></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Nach oben"
+  title="Nach oben (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-10/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-10/de/"
+            title="FreeCAD"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li></ul>
+</nav>
+<div class="share-links"></div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-10/de/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-10/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-10/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+</div>
+</footer><script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const button = document.getElementById("chroma-toggle");
+    if (!button) return;
+
+    button.addEventListener("click", () => {
+      const dark = document.documentElement.classList.toggle("dark");
+      localStorage.setItem("pref-theme", dark ? "dark" : "light");
+    });
+  });
+</script></body>
+
+</html>
