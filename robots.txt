@@ -1,1 +1,25 @@
-User-agent: *
+# Disallow all by default
+User-Agent: *
+Disallow: /
+Disallow: *
+DisallowAITraining: /
+
+# Allow known search engines except for AI
+User-Agent: Googlebot
+User-Agent: Googlebot-Mobile
+User-Agent: Googlebot-Image
+User-Agent: Googlebot-Video
+User-Agent: DuckDuckBot
+User-Agent: AppleBot
+User-Agent: BingBot
+User-Agent: Kagibot
+User-Agent: Slurp
+User-Agent: Yeti
+User-Agent: YandexBot
+User-Agent: Baiduspider
+User-Agent: LinkedInBot
+User-Agent: TwitterBot
+User-Agent: archive.org_bot
+Content-Signal: search=yes, ai-train=no, ai-input=no
+Content-Usage: search=y, train-ai=n
+Allow: /
