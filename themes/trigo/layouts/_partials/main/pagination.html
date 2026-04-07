@@ -15,7 +15,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 {{- $page := . -}}
 {{- $current_section := .CurrentSection -}}
-{{- $pages := $current_section.RegularPages -}}
+{{- $pages := $current_section.RegularPages | default $page.Parent.Sections -}}
 
 {{- with $pages -}}
   <footer class="single-footer">
@@ -35,7 +35,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
           {{- $item = $pages.Next $page -}}
         {{- end -}}
 
-        {{- if $item -}}
+        {{- if and $item $page.IsPage -}}
           {{- $type = "article" -}}
 
         {{- else if not $current_section.Parent.IsHome -}}

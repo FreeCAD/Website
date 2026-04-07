@@ -46,7 +46,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   {{- partial "utils/include_custom_partials.html" (dict "page" . "where" "content" "auto" true) -}}
 
   {{- /* Get pagination to previous and next pages. */ -}}
-  {{- if .Param "show_pagination" -}}
+  {{- if site.Params.show_pagination -}}
     {{- partial "main/pagination.html" . -}}
   {{- end -}}
 

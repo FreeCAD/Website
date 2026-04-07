@@ -96,11 +96,21 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   {{/* Dynamically include content partials. */}}
   {{- partial "utils/include_custom_partials.html" (dict "page" . "where" "content") -}}
 
+  {{- /* Get Table Of Contents. */ -}}
+  {{- if and .Params.toc .Content (not .Pages) -}}
+    {{- partial "main/table_contents.html" . -}}
+  {{- end -}}
+
   {{- /* Get page content. */ -}}
   {{- partial "main/content.html" . -}}
 
   {{- /* List RegularPages, or Sections. */ -}}
   {{- partial "main/paginator.html" . -}}
+
+  {{- /* Get pagination to previous and next pages. */ -}}
+  {{- if and site.Params.show_pagination .Content (not .Pages) -}}
+    {{- partial "main/pagination.html" . -}}
+  {{- end -}}
 
 {{- end -}}
 {{- /* End main. */ -}}
