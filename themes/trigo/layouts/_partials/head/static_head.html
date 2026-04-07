@@ -21,13 +21,14 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 {{- partialCached "scripts/theme.html" . "theme" -}}
 
 {{- with resources.Get "css/main.css" -}}
-  {{- $opts := dict
+  {{- $options := dict
     "loaders" (dict ".png" "dataurl" ".svg" "dataurl")
-    "minify" (cond hugo.IsDevelopment false true)
+    "minify" (not hugo.IsDevelopment)
     "sourceMap" (cond hugo.IsDevelopment "linked" "none")
     "targetPath" "css/styles.css"
+    "vars" (site.Params.style | default dict)
   -}}
-  {{- with . | css.Build $opts -}}
+  {{- with . | css.Build $options -}}
     {{- if hugo.IsDevelopment -}}
       <link rel="stylesheet" href="{{ .RelPermalink }}">
     {{- else -}}

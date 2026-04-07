@@ -26,8 +26,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 {{- $zoom := i18n "image_zoom" | default "Zoom image" -}}
 {{- $close := i18n "image_close" | default "Close image viewer" -}}
 {{- $video_fallback := i18n "video_fallback" | default "Your browser does not support the video tag." -}}
-{{- .Page.Store.Add "imageCounter" 1 -}}
-{{- $id := printf "img-%03d" (.Page.Store.Get "imageCounter") -}}
+{{- $id := printf "img-%03d" .Ordinal -}}
 
 {{- $resource := "" -}}
 {{- /* Remote resource. */ -}}

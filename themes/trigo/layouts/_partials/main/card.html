@@ -14,7 +14,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 
 <a class="card"
-  href="{{ .RelPermalink }}"
+  href="{{ with .Params.redirect }}{{ . }}{{ else }}{{ .RelPermalink }}{{ end }}"
   title="{{ .Title }}">
 
   {{- /* Get article card cover image. */ -}}

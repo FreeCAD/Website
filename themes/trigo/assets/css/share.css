@@ -26,7 +26,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 }
 
 .toot-profile img {
-  border-radius: 50%;
+  border-radius: calc(var(--radius) * 10);
   width: 3rem;
   height: auto;
   background: var(--theme);
@@ -160,7 +160,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 }
 
 .toot-card:hover {
-  color: var(--link-hover-color);
+  color: var(--accent-hover);
 }
 
 .toot-card-image img {
@@ -257,12 +257,12 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   padding: var(--padding);
   color: var(--cover);
   font-weight: bold;
-  background: var(--link-color);
+  background: var(--accent);
   border-radius: var(--radius);
 }
 
 #shareForm #submit:hover {
-  background: var(--link-hover-color);
+  background: var(--accent-hover);
 }
 
 :is(#shareForm #submit:disabled, #shareForm:has(#instance:invalid) #submit) {

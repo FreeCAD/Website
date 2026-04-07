@@ -22,7 +22,7 @@ html {
 }
 
 body {
-  font-family: var(--sans);
+  font-family: var(--font-sans);
   color: var(--secondary);
   margin: 0;
   overflow-x: clip;
@@ -66,13 +66,13 @@ p {
 }
 
 a {
-  color: var(--link-color);
+  color: var(--accent);
   text-decoration: none;
-  transition: var(--link-transition);
+  transition: var(--transition);
 }
 
 a:hover {
-  color: var(--link-hover-color);
+  color: var(--accent-hover);
 }
 
 figure {
@@ -88,7 +88,7 @@ img {
   width: var(--m);
   margin-inline: calc(var(--gap) * 0.125);
   color: inherit;
-  transition: var(--link-transition);
+  transition: var(--transition);
 }
 
 table {
@@ -133,7 +133,7 @@ del {
   padding: 0.125rem 0.25rem;
   color: rgb(128, 8, 32);
   background: rgb(255, 224, 224);
-  border-radius: 0.25rem;
+  border-radius: calc(var(--radius) * 0.5);
 }
 
 ins {
@@ -141,7 +141,7 @@ ins {
   padding: 0.125rem 0.25rem;
   color: rgb(16, 96, 48);
   background: rgb(224, 255, 224);
-  border-radius: 0.25rem;
+  border-radius: calc(var(--radius) * 0.5);
 }
 
 kbd {
@@ -149,7 +149,7 @@ kbd {
   color: var(--entry);
   background: var(--tertiary);
   border: var(--line) solid var(--secondary);
-  border-radius: 0.25rem;
+  border-radius: calc(var(--radius) * 0.5);
 }
 
 dl, ol, ul {
@@ -194,7 +194,7 @@ iframe {
 mark {
   color: var(--entry);
   padding: 0.125rem 0.25rem;
-  border-radius: 0.25rem;
+  border-radius: calc(var(--radius) * 0.5);
   background: var(--tertiary);
 }
 
@@ -243,7 +243,7 @@ details[open] summary {
 }
 
 details summary:hover {
-  background: var(--link-hover-color);
+  background: var(--accent-hover);
 }
 
 meter {
@@ -254,12 +254,12 @@ meter {
 }
 
 meter::-moz-meter-bar {
-  background: var(--link-hover-color);
+  background: var(--accent-hover);
   border-radius: var(--radius);
 }
 
 .dark meter::-moz-meter-bar {
-  background: var(--link-color);
+  background: var(--accent);
 }
 
 meter::-webkit-meter-bar {
@@ -270,12 +270,12 @@ meter::-webkit-meter-bar {
 }
 
 meter::-webkit-meter-optimum-value {
-  background: var(--link-hover-color);
+  background: var(--accent-hover);
   border-radius: var(--radius);
 }
 
 .dark meter::-webkit-meter-optimum-value {
-  background: var(--link-color);
+  background: var(--accent);
 }
 
 .screenreader-only {

@@ -171,7 +171,7 @@ pre:hover .copy {
 }
 
 .copy:hover {
-  background: var(--link-hover-color);
+  background: var(--accent-hover);
 }
 
 div.highlight,
@@ -183,9 +183,9 @@ code {
   background: var(--entry);
   margin: 0;
   padding: 0.125rem 0.25rem;
-  border-radius: 0.25rem;
+  border-radius: calc(var(--radius) * 0.5);
   font-size: var(--m);
-  font-family: var(--mono);
+  font-family: var(--font-mono);
   direction: ltr;
 }
 
@@ -196,7 +196,7 @@ pre code {
   overflow-x: auto;
   border-radius: var(--radius);
   word-break: break-word;
-  font-family: var(--mono);
+  font-family: var(--font-mono);
 }
 
 pre code:has(.lnt) {
@@ -205,12 +205,12 @@ pre code:has(.lnt) {
 
 .chroma code {
   background: inherit;
-  font-family: var(--mono);
+  font-family: var(--font-mono);
 }
 
 sup a {
-  font-family: var(--mono);
-  color: var(--link-color);
+  font-family: var(--font-mono);
+  color: var(--accent);
   text-decoration: none;
   box-shadow: none;
 }
@@ -220,7 +220,7 @@ sup:has(a) {
 }
 
 sup a:hover {
-  color: var(--link-hover-color);
+  color: var(--accent-hover);
 
 }
 
@@ -271,7 +271,7 @@ sup:target {
   height: 2rem;
   color: var(--tertiary);
   background: var(--backdrop);
-  border-radius: 50%;
+  border-radius: calc(var(--radius) * 10);
   padding: calc(var(--gap) * 0.25);
   display: flex;
   align-items: center;
@@ -281,7 +281,7 @@ sup:target {
 }
 
 .content button[popovertarget^="img-"]:hover [class^="icon-"] {
-  color: var(--link-color);
+  color: var(--accent);
 }
 
 figure > figcaption:not(:has(.internal-tooltip)) {
@@ -327,7 +327,7 @@ figure .internal-tooltip {
   cursor: zoom-in;
   margin: auto;
   text-align: center;
-  transition: var(--link-transition);
+  transition: var(--transition);
 }
 
 .content button[popovertarget^="img-"].close {
@@ -403,7 +403,7 @@ figure .internal-tooltip {
   color: var(--tertiary);
   background: var(--entry);
   border-radius: var(--radius);
-  transition: var(--link-transition);
+  transition: var(--transition);
 }
 
 .card:has(.app-build) {
@@ -522,13 +522,13 @@ figure .internal-tooltip {
   display: block;
   padding: 0.5rem var(--gap);
   color: var(--cover);
-  background: var(--link-color);
+  background: var(--accent);
   border-radius: var(--radius);
-  transition: var(--link-transition);
+  transition: var(--transition);
 }
 
 .terms a:hover {
-  background: var(--link-hover-color);
+  background: var(--accent-hover);
 }
 
 .terms a:active {
@@ -593,7 +593,7 @@ figure .internal-tooltip {
 
 .toc-toggle:hover,
 .toc-toggle-checkbox:checked + .toc-toggle:hover {
-  background: var(--link-hover-color);
+  background: var(--accent-hover);
 }
 
 .toc-toggle-checkbox:checked + .toc-toggle {
@@ -614,7 +614,7 @@ figure .internal-tooltip {
 
 .toc a:hover,
 #TableOfContents a.toc-active:hover {
-  color: var(--link-hover-color);
+  color: var(--accent-hover);
 }
 
 .section-nav {
@@ -684,14 +684,14 @@ figure .internal-tooltip {
   color: var(--cover);
   font-size: var(--s);
   text-transform: capitalize;
-  background: var(--link-color);
+  background: var(--accent);
   border-radius: var(--radius);
-  transition: var(--link-transition);
+  transition: var(--transition);
 }
 
 .page-item:hover {
   color: var(--cover);
-  background: var(--link-hover-color);
+  background: var(--accent-hover);
 }
 
 .page-item.active {
@@ -718,7 +718,7 @@ figure .internal-tooltip {
 }
 
 .footnotes a {
-  color: var(--link-color);
+  color: var(--accent);
 }
 
 .footnotes a:hover {
@@ -779,7 +779,11 @@ figure .internal-tooltip {
 }
 
 .internal-tooltip:has(.tooltip) {
-  color: var(--link-color);
+  color: var(--accent);
+}
+
+.internal-tooltip:has(.tooltip):hover {
+  color: var(--accent-hover);
 }
 
 .tooltip {
