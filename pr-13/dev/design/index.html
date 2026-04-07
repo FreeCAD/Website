@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en-US"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-13/css/styles.c8eee209de8ffe4c90d55c604cca8e5fc3f46a05523f438003b135e7845ad3ea.css" integrity="sha256-yO7iCd6P/kyQ1VxgTMqOX8P0agVSP0OAA7E154Ra0&#43;o=" crossorigin="anonymous"><title>FreeCAD | Design Guide</title>
+  <meta name="description" content="Guidelines for designers and developers about FreeCAD design."><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-13/dev/design/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-13/dev/design/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-13/zh/dev/design/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-13/es/dev/design/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-13/fr/dev/design/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-13/pt/dev/design/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-13/de/dev/design/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-13/ja/dev/design/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-13/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-13/dev/design/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Design Guide">
+  <meta property="og:description" content="Guidelines for designers and developers about FreeCAD design.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+</head><body class="list type-dev kind-section "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-13/"accesskey="h"
+      title="Homepage (Alt + H)"
+      aria-label="Homepage">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-13/docs/"
+            title="Documentation"
+            
+            
+            
+            >Documentation</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choose language (Alt + L)"
+          aria-label="Choose language"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a aria-current="page" class="active" href="/Website/pr-13/dev/design/" title="Design Guide">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/zh/dev/design/" title="Design Guide">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/es/dev/design/" title="Design Guide">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/fr/dev/design/" title="Design Guide">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/pt/dev/design/" title="Design Guide">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/de/dev/design/" title="Design Guide">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/ja/dev/design/" title="Design Guide">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Switch theme chroma (Alt + T)"
+    aria-label="Switch theme chroma"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero"
+    style="--hue: 130;">
+
+    <h1 class="title">
+      Design Guide</h1><h3 class="description">Guidelines for designers and developers about FreeCAD design.</h3></section>
+
+  <div class="content"><p>FreeCAD is a highly modular, complex piece of design software which has been developed for over <a href="https://wiki.freecad.org/History"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">20 years<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a> by volunteer contributors from across the globe. Due to the nature of this organic growth, individuals have injected their own ideas and implementations without following a uniform design language for how the application should present itself to users as well as flow through its many features. As a result user feedback regarding aesthetic and usability were generally poor, despite a robust set of features.</p>
+<p>This <em>Design Guide</em> is intended to present developers/designers a series of concepts and guidelines through which they may expand, extend and improve FreeCAD through improved user interactions and general consistency of appearance, structure, and behavior. As such, this should be considered a living document which may change to meet the needs of developers, designers, and users. It can potentially also help those who write documentation use consistent terminology.</p>
+<p>This guide is the product of a Design Working Group consisting of community members; ensuring decisions made regarding the User Interface and User Experience are consistent with the needs of people who actually use FreeCAD in both professional and hobbyist environments. This working group will also be involved with review of interface/experience related changes to FreeCAD to provide input to developers and maintainers regarding the merits and consistency of features which may impact interaction and/or workflows.</p>
+<p><em>The key words &ldquo;MUST&rdquo;, &ldquo;MUST NOT&rdquo;, &ldquo;REQUIRED&rdquo;, &ldquo;SHALL&rdquo;, &ldquo;SHALL NOT&rdquo;, &ldquo;SHOULD&rdquo;, &ldquo;SHOULD NOT&rdquo;, &ldquo;RECOMMENDED&rdquo;, &ldquo;MAY&rdquo;, and &ldquo;OPTIONAL&rdquo; in this document are to be interpreted as described in <a href="https://www.rfc-editor.org/rfc/rfc2119.txt"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">RFC 2119<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>.</em></p>
+<h3
+  id="how-to-use-this-guide">
+  How to use this guide:
+  <a class="heading-anchor"
+     href="#how-to-use-this-guide"
+     title="How to use this guide:"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>This guide is organized into multiple documents as outlined above, for the purpose of aiding developers in finding relevant content without excess information. Newcomers to FreeCAD, and this Design Guide, should familiarize themselves with the principles and assumptions which were used as the foundation on which these guidelines were built before progressing to more targeted content. The rest of the sections are organized in a manner of logical hierarchy of concepts and guidelines starting with more conceptual matter and moving on towards greater levels of detail.</p>
+<h3
+  id="assumptions">
+  Assumptions:
+  <a class="heading-anchor"
+     href="#assumptions"
+     title="Assumptions:"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>The interface is tailored around a 1920 x 1080 standard resolution.</p>
+<p>According to the <a href="https://store.steampowered.com/hwsurvey/Steam-Hardware-Software-Survey-Welcome-to-Steam"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener"><em>Steam monthly hardware survey</em><svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>, over 90% of all computer displays utilize 1920x1080 or higher resolution. The user interface for FreeCAD shall be optimized for this recommended resolution at 100% scaling. This shall be the &ldquo;reference resolution&rdquo; for the remainder of this design guide.</p>
+<p><strong>Note:</strong> For operating system specific elements Windows is considered the standard due to market share (70% in 2023). Every effort should be made to maintain a uniform appearance across platforms.</p>
+<p><strong>Note:</strong> Deviations from the prescriptive guidelines in this design document require justification utilizing sound reasoning and require a design review that such deviation(s) are both warranted and fit within the needs of the user without degrading the overall consistency of the user experience.</p>
+<h3
+  id="todo">
+  TODO
+  <a class="heading-anchor"
+     href="#todo"
+     title="TODO"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><ul>
+<li>
+<p>Interactive Controls (Still under development)</p>
+</li>
+<li>
+<p>Colors and Accessibility (Still under development)</p>
+</li>
+<li>
+<p>Theme/Styling (Still under development)</p>
+</li>
+<li>
+<p>Icons/Art (Still under development)</p>
+</li>
+</ul>
+
+  </div><div class="card-list wide">
+    <div class="cards"><a class="card"
+  href="/Website/pr-13/dev/design/principles/"
+  title="Design Principles"><div class="card-color" style="--hue: 90;"></div><h3 class="card-title">Design Principles</h3><p class="card-description">Design Principles.</p></a><a class="card"
+  href="/Website/pr-13/dev/design/naming/"
+  title="Naming Convention"><div class="card-color" style="--hue: 100;"></div><h3 class="card-title">Naming Convention</h3><p class="card-description">Naming Convention and Writing Style.</p></a><a class="card"
+  href="/Website/pr-13/dev/design/ux/"
+  title="Principles and Laws of UI/UX"><div class="card-color" style="--hue: 110;"></div><h3 class="card-title">Principles and Laws of UI/UX</h3><p class="card-description">Principles and Laws of UI/UX.</p></a><a class="card"
+  href="/Website/pr-13/dev/design/ui-glossary/"
+  title="Glossary of Terms"><div class="card-color" style="--hue: 120;"></div><h3 class="card-title">Glossary of Terms</h3><p class="card-description">Glossary of Terms.</p></a><a class="card"
+  href="/Website/pr-13/dev/design/ui-elements/"
+  title="Interface Primary Elements"><div class="card-color" style="--hue: 130;"></div><h3 class="card-title">Interface Primary Elements</h3><p class="card-description">Interface Primary Elements.</p></a><a class="card"
+  href="/Website/pr-13/dev/design/zones/"
+  title="Zones"><div class="card-color" style="--hue: 140;"></div><h3 class="card-title">Zones</h3><p class="card-description">Zones.</p></a><a class="card"
+  href="/Website/pr-13/dev/design/hints/"
+  title="Input Hints"><div class="card-color" style="--hue: 150;"></div><h3 class="card-title">Input Hints</h3><p class="card-description">Input Hints Guidelines.</p></a><a class="card"
+  href="/Website/pr-13/dev/design/branding/"
+  title="FreeCAD Brand guidelines"><div class="card-color" style="--hue: 160;"></div><h3 class="card-title">FreeCAD Brand guidelines</h3><p class="card-description">FreeCAD Brand guidelines.</p></a></div></div></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Go to Top"
+  title="Go to Top (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-13/"
+            title="FreeCAD"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-13/docs/"
+            title="Documentation"
+            class="active"
+            aria-current="page"
+            
+            >Documentation</a><ul><li>
+                  <a href="/Website/pr-13/manual/"
+                    title="User manual"
+                    
+                    >User manual</a>
+                </li><li>
+                  <a href="/Website/pr-13/dev/"
+                    title="Development Handbook"
+                    
+                    >Development Handbook</a>
+                </li><li>
+                  <a href="/Website/pr-13/reference/"
+                    title="Technical Reference"
+                    
+                    >Technical Reference</a>
+                </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-13/fedishare.html#title=Design&#43;Guide&amp;description=Guidelines%20for%20designers%20and%20developers%20about%20FreeCAD%20design.&amp;url=https://FreeCAD.github.io/Website/pr-13/dev/design/"
+  title="Share on Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-13/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-07
+  </span></div>
+</footer><script src="/Website/pr-13/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-13/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-13/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en-US"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-13/css/styles.c8eee209de8ffe4c90d55c604cca8e5fc3f46a05523f438003b135e7845ad3ea.css" integrity="sha256-yO7iCd6P/kyQ1VxgTMqOX8P0agVSP0OAA7E154Ra0&#43;o=" crossorigin="anonymous"><title>FreeCAD | Dependencies</title>
+  <meta name="description" content="Information about the dependencies in FreeCAD."><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-13/dev/setup/dependencies/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-13/dev/setup/dependencies/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-13/zh/dev/setup/dependencies/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-13/es/dev/setup/dependencies/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-13/fr/dev/setup/dependencies/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-13/pt/dev/setup/dependencies/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-13/de/dev/setup/dependencies/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-13/ja/dev/setup/dependencies/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-13/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-13/dev/setup/dependencies/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Dependencies">
+  <meta property="og:description" content="Information about the dependencies in FreeCAD.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dev">
+    <meta property="article:modified_time" content="2026-04-07T13:51:15+02:00">
+</head><body class="single type-dev kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-13/"accesskey="h"
+      title="Homepage (Alt + H)"
+      aria-label="Homepage">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-13/docs/"
+            title="Documentation"
+            
+            
+            
+            >Documentation</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choose language (Alt + L)"
+          aria-label="Choose language"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a aria-current="page" class="active" href="/Website/pr-13/dev/setup/dependencies/" title="Dependencies">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/zh/dev/setup/dependencies/" title="Dependencies">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/es/dev/setup/dependencies/" title="Dependencies">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/fr/dev/setup/dependencies/" title="Dependencies">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/pt/dev/setup/dependencies/" title="Dependencies">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/de/dev/setup/dependencies/" title="Dependencies">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/ja/dev/setup/dependencies/" title="Dependencies">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Switch theme chroma (Alt + T)"
+    aria-label="Switch theme chroma"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero">
+
+    <h2 class="title">
+      Dependencies</h1><h3 class="description">Information about the dependencies in FreeCAD.</h3><div class="metadata"><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/words.svg#words"></use>
+  </svg>1675 words</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/time.svg#time"></use>
+  </svg>8 min</span></div></section><nav class="toc">
+  <input type="checkbox" id="toc-toggle-checkbox" class="toc-toggle-checkbox">
+  <label for="toc-toggle-checkbox" class="toc-toggle" title="Table of Contents"><svg class="icon-toc"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/toc.svg#toc"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg><span>Table of Contents</span>
+  </label>
+
+  <div id="toc-content" class="toc-content">
+    <ul class="section-nav"><li>
+          <a href="/Website/pr-13/dev/"
+            class="current-section"><svg class="icon-tri_tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_tri_left.svg#tri_tri_left"></use>
+  </svg> Development Handbook</a>
+        </li><li>
+          <a href="/Website/pr-13/dev/setup/"
+            class="current-section"><svg class="icon-folder"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/folder.svg#folder"></use>
+  </svg> Development Setup</a>
+        </li><li>
+        <ul><li>
+              <a href="/Website/pr-13/dev/setup/build/"
+                >Build environment</a>
+            </li><li>
+              <a href="/Website/pr-13/dev/setup/workflow/"
+                >Contribution workflow and process</a>
+            </li><li>
+              <a href="/Website/pr-13/dev/setup/dependencies/"
+                id="current-page" class="active" aria-current="page">Dependencies</a>
+            </li><li>
+              <a href="/Website/pr-13/dev/setup/vscode/"
+                >VSCode guide</a>
+            </li><li>
+              <a href="/Website/pr-13/dev/setup/clion/"
+                >CLion guide</a>
+            </li></ul>
+      </li>
+    </ul><p class="toc-label"><svg class="icon-file"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/file.svg#file"></use>
+  </svg>
+        <span>On this page</span>
+      </p><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#supported-versions">Supported versions</a></li>
+        <li><a href="#major-dependencies">Major dependencies</a>
+          <ul>
+            <li><a href="#opencascade">OpenCASCADE</a></li>
+            <li><a href="#python">Python</a></li>
+            <li><a href="#qt">Qt</a></li>
+            <li><a href="#pyside-and-shiboken">PySide and Shiboken</a></li>
+            <li><a href="#coin3d">Coin3D</a></li>
+            <li><a href="#boost">Boost</a></li>
+            <li><a href="#xerces-c">Xerces-C++</a></li>
+            <li><a href="#eigen3">Eigen3</a></li>
+            <li><a href="#zipios">Zipios++</a></li>
+            <li><a href="#zlib">Zlib</a></li>
+          </ul>
+        </li>
+        <li><a href="#dependency-management">Dependency management</a>
+          <ul>
+            <li><a href="#linux">Linux</a></li>
+            <li><a href="#windows">Windows</a></li>
+            <li><a href="#mac-os">Mac OS</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+</nav><div class="content"><h2
+  id="overview">
+  Overview
+  <a class="heading-anchor"
+     href="#overview"
+     title="Overview"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Like most software projects, FreeCAD depends on many other packages. Most critical among these is <a href="https://www.opencascade.com/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">OpenCASCADE<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>,
+the actual CAD kernel that FreeCAD is built upon. Of course, OpenCASCADE itself has its own dependencies. Many of which have <em>their</em> own
+dependencies, etc. The dependency graph quickly become overwhelming if you have to manually install each one. This is where package managers come
+in. Depending on what platform you are developing on, you have a variety of tools at your disposal to resolve these dependencies. A brief overview
+of the most common ones is included below. The main purpose of this document is to highlight the primary dependencies and describe what they do and
+why FreeCAD needs them.</p>
+<h2
+  id="supported-versions">
+  Supported versions
+  <a class="heading-anchor"
+     href="#supported-versions"
+     title="Supported versions"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>The head of the main branch of FreeCAD, currently used for the development of FreeCAD 1.2, can be compiled from source on systems as old as the oldest currently-supported <a href="https://packages.ubuntu.com/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Ubuntu LTS<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a> at the time of its expected release, Ubuntu 24.04 LTS. This ties FreeCAD development to the C++23 standard, Python 3.11 and later (we plan to swtich to 3.12 or later once Blender updates their dependencies in mid-2026), Qt 6.4, and the versions of the required libraries available on that system. Note that Qt does not support PySide6 <code>pip</code> installation on this system, so use of a PPA is required for that dependency. The decision to stop support for Qt5 was <a href="https://forum.freecad.org/viewtopic.php?t=102292"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">announced 5 January 2026<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>.</p>
+<h2
+  id="major-dependencies">
+  Major dependencies
+  <a class="heading-anchor"
+     href="#major-dependencies"
+     title="Major dependencies"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>The following is a brief overview of what each of FreeCAD&rsquo;s most critical 3rd-party library dependencies provide.</p>
+<h3
+  id="opencascade">
+  OpenCASCADE
+  <a class="heading-anchor"
+     href="#opencascade"
+     title="OpenCASCADE"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>OpenCASCADE Technology (OCCT) is a full-featured, professional grade CAD kernel. It was developed in 1993 and originally called
+CAS.CADE, by Matra Datavision in France for the Strim (Styler) and Euclid Quantum applications. In 1999 it was released as open
+source software, and since then it&rsquo;s been called OpenCASCADE.</p>
+<p>OCCT is a big and complex set of C++ libraries that provide functionality required by a CAD application:</p>
+<ul>
+<li>A complete STEP compliant geometry kernel.</li>
+<li>A topological data model and needed functions to work with shapes (cut, fuse, extrude, and many others).</li>
+<li>Standard import and export processors for files like STEP, IGES, VRML.</li>
+<li>A 2D and 3D viewer with selection support.</li>
+<li>A document and project data structure with support for save and restore, external linking of documents, recalculation of design history (parametric modeling) and a facility to load new data types as an extension package dynamically.</li>
+</ul>
+<p>Note that the &ldquo;Community Edition&rdquo; of OpenCASCADE is no longer supported by FreeCAD, you must install the first-party library.
+The current minimum supported version is OCCT 7.3.</p>
+<h3
+  id="python">
+  Python
+  <a class="heading-anchor"
+     href="#python"
+     title="Python"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>Python is a popular all-purpose scripting language that is widely used in Linux and open source software.
+In FreeCAD, Python is used during compilation and also at runtime in different ways. FreeCAD itself contains
+hundreds of thousands of lines of Python code, and all FreeCAD Addons and Macros are written in Python.</p>
+<p>The current minimum supported version is 3.11.</p>
+<h3
+  id="qt">
+  Qt
+  <a class="heading-anchor"
+     href="#qt"
+     title="Qt"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>Qt is one of the most popular graphical user interface (GUI) toolkits available in the open source world.
+FreeCAD uses this toolkit to draw the interface of the program, as well as to provide some advanced networking functionality
+and translation facilities. FreeCAD currently provides primary support for Qt v5.14 - v5.15, and Qt 6.4 and later.</p>
+<p>Further information about Qt libraries and their programming documentation are available at <a href="https://doc.qt.io/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Qt Documentation<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>.</p>
+<h3
+  id="pyside-and-shiboken">
+  PySide and Shiboken
+  <a class="heading-anchor"
+     href="#pyside-and-shiboken"
+     title="PySide and Shiboken"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>Shiboken is the Python binding generator that Qt for Python uses to create the PySide module, in other words, it is the system that
+is used to expose the Qt C++ API to the Python language. FreeCAD&rsquo;s Python code uses the PySide library to draw its user interface elements.
+FreeCAD provides primary support for PySide2 (corresponding to Qt5) and PySide6 (corresponding to Qt6).
+Python developers should import <code>PySide</code> (with no numeric suffix) &ndash; at compile-time FreeCAD&rsquo;s build system will generate the appropriate
+version.</p>
+<h3
+  id="coin3d">
+  Coin3D
+  <a class="heading-anchor"
+     href="#coin3d"
+     title="Coin3D"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>The dependencies Coin, Quarter, and Pivy are collectively part of the Coin3D library system. Coin3D is a high-level 3D graphics library
+with a C++ application programming interface. It uses scenegraph data structures to render real-time graphics suitable for all kinds
+of scientific and engineering visualization applications.</p>
+<p>Coin3D (Open Inventor) is used as the 3D viewer in FreeCAD because the OpenCASCADE viewer (AIS and Graphics3D) has limitations and performance
+bottlenecks, especially with large-scale engineering rendering; other things like textures or volumetric rendering are not entirely supported
+by the OpenCASCADE viewer.</p>
+<h3
+  id="boost">
+  Boost
+  <a class="heading-anchor"
+     href="#boost"
+     title="Boost"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>The Boost C++ libraries are collections of peer-reviewed, open source libraries that extend the functionality of C++. They are intended to
+be widely useful across a broad spectrum of applications, and to work well with the C++ Standard Library. The Boost license is designed
+to encourage their use in both open source and closed source projects. Over time, many Boost libraries end up incorporated into the C++ standard
+library itself. As this happens, developers should work to transition their code to the <code>std::</code> variant rather than the <code>boost::</code> variant. Note
+that exception is made for <code>boost::regex</code>, which as of this writing is still considerably faster than its <code>std::regex</code> counterpart.</p>
+<h3
+  id="xerces-c">
+  Xerces-C++
+  <a class="heading-anchor"
+     href="#xerces-c"
+     title="Xerces-C&#43;&#43;"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>Xerces-C++ is a validating XML parser written in a portable subset of C++. Xerces-C++ makes it easy to give your application the ability to
+read and write XML data. A shared library is provided for parsing, generating, manipulating, and validating XML documents. Xerces-C++ is
+faithful to the XML 1.0 recommendation and associated standards. The parser is used for saving and restoring parameters in FreeCAD.</p>
+<h3
+  id="eigen3">
+  Eigen3
+  <a class="heading-anchor"
+     href="#eigen3"
+     title="Eigen3"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>Eigen is a C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms. If you just want to use Eigen,
+you can use the header files right away. There is no binary library to link to, and no configured header file. Eigen is a pure template library
+defined in the headers. Eigen is used in FreeCAD for many vector operations in 3D space.</p>
+<h3
+  id="zipios">
+  Zipios++
+  <a class="heading-anchor"
+     href="#zipios"
+     title="Zipios&#43;&#43;"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>Zipios++ is a C++ library for reading and writing .zip files. Access to individual entries is provided through standard C++ iostreams. A
+simple read-only virtual file system that mounts regular directories and .zip files is also provided. The structure and public interface
+of Zipios++ are loosely based on the java.util.zip package of Java.</p>
+<p>FreeCAD&rsquo;s native file format .FCstd is in reality a .zip file that stores and compresses other types of data within it, such as BREP
+and XML files. Therefore, Zipios++ is used to save and open compressed archives, including FreeCAD files.</p>
+<p>A copy of Zipios++ is included in the source code of FreeCAD so it is compiled together with it. If you want to use an external Zipios++
+library, provided by your operating system, you may set <code>-DFREECAD_USE_EXTERNAL_ZIPIOS=ON</code> with cmake.</p>
+<p>Zipios++ uses the Zlib library to perform the actual decompression of files.</p>
+<h3
+  id="zlib">
+  Zlib
+  <a class="heading-anchor"
+     href="#zlib"
+     title="Zlib"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>Zlib is designed to be a free, general-purpose, lossless data-compression library for use on any computer hardware and operating system.
+It implements the DEFLATE compression algorithm commonly used in .zip and .gzip files.</p>
+<p>A copy of this library is included in the source code of FreeCAD so it is compiled together with it.</p>
+<h2
+  id="dependency-management">
+  Dependency management
+  <a class="heading-anchor"
+     href="#dependency-management"
+     title="Dependency management"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Each OS uses different mechanisms to supply dependencies. These mechanisms are typically designed such that installing a single dependency
+also automatically installs all of <em>its</em> dependencies, eliminating the need for you to manually install every single dependency by hand.</p>
+<h3
+  id="linux">
+  Linux
+  <a class="heading-anchor"
+     href="#linux"
+     title="Linux"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>As a general rule in Linux, you should use your system&rsquo;s package manager to install dependencies, including Python libraries, rather than using <code>pip</code>.
+Unfortunately, different distributions use different names for the various packages, so it is sometime challenging to determine exactly what needs
+to be installed. It is very common to have to adjust the one-line command below for your system by removing failing packages and locating alternates
+(usually provided under a different name).</p>
+<p>A single command to install the dependencies on 22.04.3 LTS Ubuntu-based systems:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo apt install cmake cmake-gui libboost-date-time-dev libboost-dev libboost-filesystem-dev libboost-graph-dev libboost-iostreams-dev libboost-program-options-dev libboost-python-dev libboost-regex-dev libboost-serialization-dev libboost-thread-dev libcoin-dev libeigen3-dev libgts-bin libgts-dev libkdtree++-dev libmedc-dev libocct-data-exchange-dev libocct-ocaf-dev libocct-visualization-dev libopencv-dev libproj-dev libpyside2-dev libqt5opengl5-dev libqt5svg5-dev qtwebengine5-dev libqt5x11extras5-dev libqt5xmlpatterns5-dev libshiboken2-dev libspnav-dev libvtk7-dev libx11-dev libxerces-c-dev libzipios++-dev occt-draw pyside2-tools python3-dev python3-matplotlib python3-packaging python3-pivy python3-ply python3-pyside2.qtcore python3-pyside2.qtgui python3-pyside2.qtsvg python3-pyside2.qtwidgets python3-pyside2.qtnetwork python3-pyside2.qtwebengine python3-pyside2.qtwebenginecore python3-pyside2.qtwebenginewidgets python3-pyside2.qtwebchannel python3-markdown python3-git qtbase5-dev qttools5-dev swig libyaml-cpp-dev</span></span></code></pre></div></div><p>A single command to install the dependencies on 24.04 LTS Ubuntu-based systems:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo apt install cmake cmake-qt-gui libboost-date-time-dev libboost-dev libboost-filesystem-dev libboost-graph-dev libboost-iostreams-dev libboost-program-options-dev libboost-python-dev libboost-regex-dev libboost-serialization-dev libboost-thread-dev libcoin-dev libeigen3-dev libgts-bin libgts-dev libkdtree++-dev libmedc-dev libocct-data-exchange-dev libocct-ocaf-dev libocct-visualization-dev libopencv-dev libproj-dev libpyside2-dev libqt5opengl5-dev libqt5svg5-dev qtwebengine5-dev libqt5x11extras5-dev libqt5xmlpatterns5-dev libshiboken2-dev libspnav-dev libvtk9-dev libx11-dev libxerces-c-dev libzipios++-dev occt-draw pyside2-tools python3-dev python3-matplotlib python3-packaging python3-pivy python3-ply python3-pyside2.qtcore python3-pyside2.qtgui python3-pyside2.qtsvg python3-pyside2.qtwidgets python3-pyside2.qtnetwork qtbase5-dev qttools5-dev swig libyaml-cpp-dev</span></span></code></pre></div></div><p>To install dependencies on Fedora systems (Derived from the <a href="https://src.fedoraproject.org/rpms/freecad"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">RPM spec<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>):</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo dnf install clang cmake gcc-c++ gettext dos2unix doxygen swig graphviz gcc-gfortran desktop-file-utils freeimage-devel libXmu-devel mesa-libGL-devel mesa-libGLU-devel libglvnd-devel opencascade-devel Coin4-devel python3-devel python3-matplotlib python3-pivy boost-devel eigen3-devel tbb-devel qt5-qtbase-devel qt5-qtsvg-devel qt5-qtxmlpatterns-devel qt5-qttools-devel qt5-qttools-static qt5-qtwebengine-devel xerces-c xerces-c-devel libspnav-devel python3-shiboken2-devel python3-pyside2-devel pyside2-tools smesh-devel zipios++-devel python3-pycxx-devel libicu-devel vtk-devel med-devel libkdtree++-devel libappstream-glib python3-pivy python3-matplotlib python3-collada python3-pyside2 qt5-assistant</span></span></code></pre></div></div><p>To install dependencies on Arch Linux based systems:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo pacman -S boost boost-libs cgns cmake coin eigen fmt git glew graphviz jsoncpp libharu liblas libspnav med-openmpi netcdf ninja nlohmann-json openmpi openvdb opencascade openvr ospray pdal pugixml pyside2 pyside2-tools python-gitpython python-markdown python-matplotlib python-mpi4py python-pip python-pivy python-ply python-shiboken2 python-yaml qt5-svg qt5-tools qt5-webengine qt5-x11extras qt5-xmlpatterns shiboken2 swig utf8cpp verdict xerces-c</span></span></code></pre></div></div><h3
+  id="windows">
+  Windows
+  <a class="heading-anchor"
+     href="#windows"
+     title="Windows"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>By far the easiest way to install the dependencies for Windows is to download the pre-packaged &ldquo;LibPack&rdquo; from <a href="https://github.com/FreeCAD/FreeCAD-LibPack/releases"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">https://github.com/FreeCAD/FreeCAD-LibPack/releases<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>. This
+download provides a single source for all of FreeCAD&rsquo;s library dependencies.</p>
+<h3
+  id="mac-os">
+  Mac OS
+  <a class="heading-anchor"
+     href="#mac-os"
+     title="Mac OS"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>Mac OS does not have a built-in package management system, but it is possible to use <a href="https://brew.sh"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Homebrew<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a> to install FreeCAD&rsquo;s dependencies. Note however that
+this can be a very challenging process because Homebrew often updates libraries to new versions before downstream packages are updated to accomodate them:
+it is usually necessary for a developer to manually extract an old dependency for installation as a custom &ldquo;tap&rdquo;.</p>
+<p>An alternative is to use Conda to create your Mac OS build system. Documentation of this process is a <a href="https://forum.freecad.org/viewtopic.php?t=70038"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">work-in-progress by several users on the FreeCAD Forum<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>.</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-13/dev/setup/workflow/"
+             title="Next article"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_left.svg#tri_left"></use>
+  </svg>Contribution workflow and process</a><a class="page-item prev"
+             href="/Website/pr-13/dev/setup/vscode/"
+             title="Previous article">VSCode guide<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Go to Top"
+  title="Go to Top (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-13/"
+            title="FreeCAD"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-13/docs/"
+            title="Documentation"
+            class="active"
+            aria-current="page"
+            
+            >Documentation</a><ul><li>
+                  <a href="/Website/pr-13/manual/"
+                    title="User manual"
+                    
+                    >User manual</a>
+                </li><li>
+                  <a href="/Website/pr-13/dev/"
+                    title="Development Handbook"
+                    
+                    >Development Handbook</a>
+                </li><li>
+                  <a href="/Website/pr-13/reference/"
+                    title="Technical Reference"
+                    
+                    >Technical Reference</a>
+                </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-13/fedishare.html#title=Dependencies&amp;description=Information%20about%20the%20dependencies%20in%20FreeCAD.&amp;url=https://FreeCAD.github.io/Website/pr-13/dev/setup/dependencies/"
+  title="Share on Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-13/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-07
+  </span></div>
+</footer><script src="/Website/pr-13/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-13/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-13/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

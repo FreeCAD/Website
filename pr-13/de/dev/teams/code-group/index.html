@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="de-DE"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-13/css/styles.c8eee209de8ffe4c90d55c604cca8e5fc3f46a05523f438003b135e7845ad3ea.css" integrity="sha256-yO7iCd6P/kyQ1VxgTMqOX8P0agVSP0OAA7E154Ra0&#43;o=" crossorigin="anonymous"><title>FreeCAD | Code Quality Working Group (CQWG)</title>
+  <meta name="description" content="Code Quality Working Group (CQWG)"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-13/de/dev/teams/code-group/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-13/dev/teams/code-group/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-13/zh/dev/teams/code-group/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-13/es/dev/teams/code-group/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-13/fr/dev/teams/code-group/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-13/pt/dev/teams/code-group/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-13/de/dev/teams/code-group/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-13/ja/dev/teams/code-group/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-13/de/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-13/de/dev/teams/code-group/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Code Quality Working Group (CQWG)">
+  <meta property="og:description" content="Code Quality Working Group (CQWG)">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dev">
+    <meta property="article:modified_time" content="2026-04-07T13:51:15+02:00">
+</head><body class="single type-dev kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-13/de/"accesskey="h"
+      title="Home (Alt + H)"
+      aria-label="Home">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menü"
+    aria-label="Menü"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-13/de/docs/"
+            title="Documentation"
+            
+            
+            
+            >Documentation</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Sprache auswählen (Alt + L)"
+          aria-label="Sprache auswählen"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-13/dev/teams/code-group/" title="Code Quality Working Group (CQWG)">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/zh/dev/teams/code-group/" title="Code Quality Working Group (CQWG)">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/es/dev/teams/code-group/" title="Code Quality Working Group (CQWG)">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/fr/dev/teams/code-group/" title="Code Quality Working Group (CQWG)">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/pt/dev/teams/code-group/" title="Code Quality Working Group (CQWG)">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-13/de/dev/teams/code-group/" title="Code Quality Working Group (CQWG)">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/ja/dev/teams/code-group/" title="Code Quality Working Group (CQWG)">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Design wechseln (Alt + T)"
+    aria-label="Design wechseln"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero">
+
+    <h2 class="title">
+      Code Quality Working Group (CQWG)</h1><h3 class="description">Code Quality Working Group (CQWG)</h3><div class="metadata"><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/words.svg#words"></use>
+  </svg>5 Wörter</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/time.svg#time"></use>
+  </svg>1 Minuten</span></div></section><nav class="toc">
+  <input type="checkbox" id="toc-toggle-checkbox" class="toc-toggle-checkbox">
+  <label for="toc-toggle-checkbox" class="toc-toggle" title="Table of Contents"><svg class="icon-toc"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/toc.svg#toc"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg><span>Inhaltsverzeichnis</span>
+  </label>
+
+  <div id="toc-content" class="toc-content">
+    <ul class="section-nav"><li>
+          <a href="/Website/pr-13/de/dev/"
+            class="current-section"><svg class="icon-tri_tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_tri_left.svg#tri_tri_left"></use>
+  </svg> Development Handbook</a>
+        </li><li>
+          <a href="/Website/pr-13/de/dev/teams/"
+            class="current-section"><svg class="icon-folder"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/folder.svg#folder"></use>
+  </svg> Teams</a>
+        </li><li>
+        <ul><li>
+              <a href="/Website/pr-13/de/dev/teams/maintainers/"
+                >Maintainers guide</a>
+            </li><li>
+              <a href="/Website/pr-13/de/dev/teams/cad-group/"
+                >CAD Working Group (CWG)</a>
+            </li><li>
+              <a href="/Website/pr-13/de/dev/teams/design-group/"
+                >Design Working Group (DWG)</a>
+            </li><li>
+              <a href="/Website/pr-13/de/dev/teams/code-group/"
+                id="current-page" class="active" aria-current="page">Code Quality Working Group (CQWG)</a>
+            </li><li>
+              <a href="/Website/pr-13/de/dev/teams/addons-group/"
+                >Addons Coordinators</a>
+            </li><li>
+              <a href="/Website/pr-13/de/dev/teams/git/"
+                >Git and Github</a>
+            </li></ul>
+      </li>
+    </ul><p class="toc-label"><svg class="icon-file"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/file.svg#file"></use>
+  </svg>
+        <span>On this page</span>
+      </p><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#mission">Mission</a></li>
+            <li><a href="#contact-info">Contact Info</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+</nav><div class="content"><figure>
+  <blockquote class="note"
+    ><svg class="icon-note"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/note.svg#note"></use>
+  </svg>Hinweis<p>Diese Seite wurde noch nicht übersetzt, daher wird stattdessen die englische Version verwendet. Möchtest du mithelfen?
+<a href=""
+  class="internal-tooltip">Mitwirken<span class="tooltip">
+        <strong>FreeCAD</strong></span></a></p></blockquote></figure><h3
+  id="mission">
+  Mission
+  <a class="heading-anchor"
+     href="#mission"
+     title="Mission"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>&lt;&ndash;TBD&ndash;&gt;</p>
+<h3
+  id="contact-info">
+  Contact Info
+  <a class="heading-anchor"
+     href="#contact-info"
+     title="Contact Info"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>&lt;&ndash;TBD&ndash;&gt;</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-13/de/dev/teams/design-group/"
+             title="Nächster Artikel"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_left.svg#tri_left"></use>
+  </svg>Design Working Group (DWG)</a><a class="page-item prev"
+             href="/Website/pr-13/de/dev/teams/addons-group/"
+             title="Vorheriger Artikel">Addons Coordinators<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Nach oben"
+  title="Nach oben (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-13/de/"
+            title="FreeCAD"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-13/de/docs/"
+            title="Documentation"
+            class="active"
+            aria-current="page"
+            
+            >Documentation</a><ul><li>
+                  <a href="/Website/pr-13/de/manual/"
+                    title="User manual"
+                    
+                    >User manual</a>
+                </li><li>
+                  <a href="/Website/pr-13/de/dev/"
+                    title="Development Handbook"
+                    
+                    >Development Handbook</a>
+                </li><li>
+                  <a href="/Website/pr-13/de/reference/"
+                    title="Technical Reference"
+                    
+                    >Technical Reference</a>
+                </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-13/de/fedishare.html#title=Code&#43;Quality&#43;Working&#43;Group&#43;%28CQWG%29&amp;description=Code%20Quality%20Working%20Group%20%28CQWG%29&amp;url=https://FreeCAD.github.io/Website/pr-13/de/dev/teams/code-group/"
+  title="Teilen auf Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-13/de/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-07
+  </span></div>
+</footer><script src="/Website/pr-13/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-13/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-13/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

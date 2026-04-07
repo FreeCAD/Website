@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ja-JP"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-13/css/styles.c8eee209de8ffe4c90d55c604cca8e5fc3f46a05523f438003b135e7845ad3ea.css" integrity="sha256-yO7iCd6P/kyQ1VxgTMqOX8P0agVSP0OAA7E154Ra0&#43;o=" crossorigin="anonymous"><title>FreeCAD | Major Releases</title>
+  <meta name="description" content="Guide for Major Releases."><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-13/ja/dev/tech/major-release/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-13/dev/tech/major-release/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-13/zh/dev/tech/major-release/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-13/es/dev/tech/major-release/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-13/fr/dev/tech/major-release/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-13/pt/dev/tech/major-release/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-13/de/dev/tech/major-release/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-13/ja/dev/tech/major-release/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-13/ja/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-13/ja/dev/tech/major-release/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Major Releases">
+  <meta property="og:description" content="Guide for Major Releases.">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dev">
+    <meta property="article:modified_time" content="2026-04-07T13:51:15+02:00">
+</head><body class="single type-dev kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-13/ja/"accesskey="h"
+      title="ホームページ (Alt + H)"
+      aria-label="ホームページ">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="メニュー"
+    aria-label="メニュー"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-13/ja/docs/"
+            title="Documentation"
+            
+            
+            
+            >Documentation</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="言語を選択 (Alt + L)"
+          aria-label="言語を選択"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-13/dev/tech/major-release/" title="Major Releases">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/zh/dev/tech/major-release/" title="Major Releases">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/es/dev/tech/major-release/" title="Major Releases">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/fr/dev/tech/major-release/" title="Major Releases">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/pt/dev/tech/major-release/" title="Major Releases">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/de/dev/tech/major-release/" title="Major Releases">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-13/ja/dev/tech/major-release/" title="Major Releases">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="テーマchromaに切り替える (Alt + T)"
+    aria-label="テーマchromaに切り替える"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero">
+
+    <h2 class="title">
+      Major Releases</h1><h3 class="description">Guide for Major Releases.</h3><div class="metadata"><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/words.svg#words"></use>
+  </svg>978 語</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/time.svg#time"></use>
+  </svg>5 分</span></div></section><nav class="toc">
+  <input type="checkbox" id="toc-toggle-checkbox" class="toc-toggle-checkbox">
+  <label for="toc-toggle-checkbox" class="toc-toggle" title="Table of Contents"><svg class="icon-toc"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/toc.svg#toc"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg><span>目次</span>
+  </label>
+
+  <div id="toc-content" class="toc-content">
+    <ul class="section-nav"><li>
+          <a href="/Website/pr-13/ja/dev/"
+            class="current-section"><svg class="icon-tri_tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_tri_left.svg#tri_tri_left"></use>
+  </svg> Development Handbook</a>
+        </li><li>
+          <a href="/Website/pr-13/ja/dev/tech/"
+            class="current-section"><svg class="icon-folder"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/folder.svg#folder"></use>
+  </svg> Technical guide</a>
+        </li><li>
+        <ul><li>
+              <a href="/Website/pr-13/ja/dev/tech/app/"
+                >Application Module</a>
+            </li><li>
+              <a href="/Website/pr-13/ja/dev/tech/tests/"
+                >Automated Testing</a>
+            </li><li>
+              <a href="/Website/pr-13/ja/dev/tech/packages/"
+                >Building release packages</a>
+            </li><li>
+              <a href="/Website/pr-13/ja/dev/tech/translations/"
+                >Code for Translation</a>
+            </li><li>
+              <a href="/Website/pr-13/ja/dev/tech/signing/"
+                >Code signing</a>
+            </li><li>
+              <a href="/Website/pr-13/ja/dev/tech/cli/"
+                >Command Line Interface</a>
+            </li><li>
+              <a href="/Website/pr-13/ja/dev/tech/glossary/"
+                >Developer&#39;s Glossary</a>
+            </li><li>
+              <a href="/Website/pr-13/ja/dev/tech/checklist/"
+                >Feature checklist</a>
+            </li><li>
+              <a href="/Website/pr-13/ja/dev/tech/major-release/"
+                id="current-page" class="active" aria-current="page">Major Releases</a>
+            </li><li>
+              <a href="/Website/pr-13/ja/dev/tech/minor-release/"
+                >Minor Releases</a>
+            </li><li>
+              <a href="/Website/pr-13/ja/dev/tech/deletion/"
+                >Object deletion</a>
+            </li><li>
+              <a href="/Website/pr-13/ja/dev/tech/preferences/"
+                >Preferences</a>
+            </li><li>
+              <a href="/Website/pr-13/ja/dev/tech/properties/"
+                >Property Changes</a>
+            </li><li>
+              <a href="/Website/pr-13/ja/dev/tech/python-binding/"
+                >Python Binding</a>
+            </li><li>
+              <a href="/Website/pr-13/ja/dev/tech/python-stubs/"
+                >Python stubs</a>
+            </li><li>
+              <a href="/Website/pr-13/ja/dev/tech/references/"
+                >Reference Library</a>
+            </li><li>
+              <a href="/Website/pr-13/ja/dev/tech/release/"
+                >Release Process</a>
+            </li><li>
+              <a href="/Website/pr-13/ja/dev/tech/snap/"
+                >Snap package</a>
+            </li><li>
+              <a href="/Website/pr-13/ja/dev/tech/src/"
+                >Source Tree</a>
+            </li><li>
+              <a href="/Website/pr-13/ja/dev/tech/libpack/"
+                >Windows LibPack</a>
+            </li></ul>
+      </li>
+    </ul><p class="toc-label"><svg class="icon-file"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/file.svg#file"></use>
+  </svg>
+        <span>On this page</span>
+      </p><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#announcement-preparation">Announcement Preparation</a></li>
+        <li><a href="#announcment-milestone">Announcment milestone</a></li>
+        <li><a href="#final-feature-submission-stage">Final Feature Submission Stage</a></li>
+        <li><a href="#pr-review-milestone">PR Review Milestone</a></li>
+        <li><a href="#pr-merge-phase">PR Merge Phase</a></li>
+        <li><a href="#release-candidates">Release Candidates</a></li>
+        <li><a href="#final-release">Final Release</a></li>
+        <li><a href="#release-announcment">Release Announcment</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+</nav><div class="content"><figure>
+  <blockquote class="note"
+    ><svg class="icon-note"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/note.svg#note"></use>
+  </svg>注記<p>このページはまだ翻訳されていないため、代わりに英語版が表示されます。協力していただけませんか？
+<a href=""
+  class="internal-tooltip">貢献<span class="tooltip">
+        <strong>FreeCAD</strong></span></a></p></blockquote></figure><p>Each major release goes through the following milestones and stages:</p>
+<h2
+  id="announcement-preparation">
+  Announcement Preparation
+  <a class="heading-anchor"
+     href="#announcement-preparation"
+     title="Announcement Preparation"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>A release may be triggered for several reasons.</p>
+<ul>
+<li>An event or dependency in the development roadmap may require a release.</li>
+<li>There may be a desire to have a major release included in a major platform release like the next version of Ubuntu.</li>
+<li>Or it may be that a significant set of features has matured to the point that they are ready for general usage.</li>
+</ul>
+<p>Whatever the reason, the first step in the determination by the maintainers that a release is needed.</p>
+<p>The maintainers will create a Github project to track the release.
+The maintainers will schedule a meeting to review outstanding Pull Requests.</p>
+<h2
+  id="announcment-milestone">
+  Announcment milestone
+  <a class="heading-anchor"
+     href="#announcment-milestone"
+     title="Announcment milestone"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Next, the maintainers will make a formal announcment on the forum. The announcement will layout the expected timeline for the release and call for final submissions.  The announcment should be further communicated through official and unofficial channels like Twitter and Reddit.</p>
+<h2
+  id="final-feature-submission-stage">
+  Final Feature Submission Stage
+  <a class="heading-anchor"
+     href="#final-feature-submission-stage"
+     title="Final Feature Submission Stage"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>The purpose of the announcment is to let contributors know that a feature freeze is imminent. Any work in process should be finalized and a Pull Request submitted.</p>
+<p>At this point, a PR may not be ready to merge and can be marked as <em>draft</em>.  Creating the PR makes the maintainer community aware of pending changes that the contributor would like to have considered for the release. The maintainers will allow time (typically 1-2 weeks) for Pull Requests to be submitted.</p>
+<p>The announcment should include a date for the PR Review meeting.</p>
+<p>The announcment should also announce a splash-screen contest and provide a forum thread for submissions.</p>
+<h2
+  id="pr-review-milestone">
+  PR Review Milestone
+  <a class="heading-anchor"
+     href="#pr-review-milestone"
+     title="PR Review Milestone"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>After the Submission Stage is closed, the maintainers will review all outstanding Pull Requests. For each one, they will determine if the feature is sufficiently mature to include in the release. Specifically they will consider:</p>
+<ul>
+<li>How significant is the feature</li>
+<li>How likely is the feature to negatively impact user workflow</li>
+<li>How well documented is the new feature</li>
+<li>How much additional testing and stabilization is likely required</li>
+</ul>
+<p>Maintainers will strive to include as many mature features as possible while minimizing the time needed to resolve bugs, complete documentation, and stabilize the release.</p>
+<p>Each PR will be tagged with the current release if it is to be included.</p>
+<p>Following the PR Review, any new feature Pull Requests will be held for a later version.  Contributors should adjust their expectations about code reviews.</p>
+<h2
+  id="pr-merge-phase">
+  PR Merge Phase
+  <a class="heading-anchor"
+     href="#pr-merge-phase"
+     title="PR Merge Phase"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>During this phase, development focus will turn towards merging the remaining tagged outstanding PRs.
+After the PR Merge phase, only bug-fix PRs will be merged.</p>
+<h2
+  id="release-candidates">
+  Release Candidates
+  <a class="heading-anchor"
+     href="#release-candidates"
+     title="Release Candidates"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>After all outstanding PRs are merged and all critical bugs are resolved, a Release Candidate (RC) version will be created and a public announcment made.  This is a request to the community for intentional and deliberate testing with the goal of uncovering as many bugs as possible. This is the point at which the formal branch is created for the releases. First, create a branch called &ldquo;releases/FreeCAD-X-Y&rdquo; where X and Y are the major and minor release numbers. Next use the GitHub &ldquo;Draft new release&rdquo; button on the Releases page to create a new release. Set it up to create a new tag with the release number in it, e.g. &ldquo;0.21rc1&rdquo; and ensure that the release is based on the &ldquo;releases/FreeCAD-X-Y&rdquo; branch. Mark the release as a &ldquo;pre-release&rdquo; so that it does not display as the latest version. Attach all of the necessary installers, appimages, packages, etc. to this release. Note that the release can be edited after creation, so assets can be added as they become available.</p>
+<p>Translation files will be pushed to CrowdIn and a public call for translation assistance should be made.</p>
+<p>Release notes should be reviewed at this point and any ommisions corrected.</p>
+<p>Any problems identified with the release candidate should be addressed via PRs made to the release branch. If necessary, multiple release candidates may be tagged using the same &ldquo;Draft new release&rdquo; process described above, and incrementing the release candidate number.</p>
+<h2
+  id="final-release">
+  Final Release
+  <a class="heading-anchor"
+     href="#final-release"
+     title="Final Release"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><ul>
+<li>The result of the splash screen contest is announced and the new splash screen is added to the source, if that was not done in earlier stages.</li>
+<li>Update all versions in a number of source code locations where they are not automatically generated:
+<ul>
+<li>README</li>
+<li>CMakeLists.txt</li>
+</ul>
+</li>
+<li>Manually tag the release on the appropriate branch using semantic versioning for the tag name, e.g. &ldquo;1.2.3&rdquo;. Launch the various build-creation tasks based on this tag.
+<ul>
+<li>Conda builds for all platforms</li>
+<li>Manual compilation of a Windows LibPack-based binary and NSIS-created installer</li>
+<li>Sign and notarize the Mac OS Conda builds once they are complete (See <a href="../signing"
+  class="internal-tooltip">Code signing</a>)</li>
+<li>(Future work) Sign the Windows builds</li>
+</ul>
+</li>
+<li>Create a new release on GitHub, this time marking the &ldquo;Set as latest release&rdquo; box and not marking it as a pre-release, and setting the release to use the tag created above. It&rsquo;s best to ensure all assets are attached prior to publication of the final release, so save the release as a draft as necessary until all builds are completed. The release contains a release announcement text that should be appropriate for the general user audience (not targeted at developers).</li>
+<li>Prepare a packager&rsquo;s release files and alert the packagers.</li>
+<li>Update the website <a href="https://www.freecad.org/downloads.php"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">downloads page<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a> to point to the new files</li>
+<li>Update the website <a href="https://www.freecad.org/features.php"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">features page<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a> to point to the new release notes</li>
+<li>Update the stable branch of the <a href="https://github.com/freecad/freecad-snap"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Snap package<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a> to the new version number by editing snap/snapcraft.yaml</li>
+</ul>
+<h2
+  id="release-announcment">
+  Release Announcment
+  <a class="heading-anchor"
+     href="#release-announcment"
+     title="Release Announcment"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Once all release files are in place, a release announcement should be posted to all &ldquo;official&rdquo; FreeCAD channels:</p>
+<ul>
+<li>FreeCAD News (<a href="https://blog.freecad.org"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">https://blog.freecad.org<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>)</li>
+<li>The FreeCAD Forum (<a href="https://forum.freecad.org"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">https://forum.freecad.org<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>)</li>
+<li>Facebook</li>
+<li>X</li>
+<li>Mastodon (automatic from the blog post)</li>
+<li>Discord</li>
+<li>LinkedIn</li>
+</ul>
+<p>There are also other active communities where FreeCAD does not maintain any sort of official presence, but where nevertheless users are likely to benefit from an announcement:</p>
+<ul>
+<li>Yorik&rsquo;s blog</li>
+<li>Ondsel blog</li>
+<li>Reddit</li>
+</ul>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-13/ja/dev/tech/checklist/"
+             title="次の記事"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_left.svg#tri_left"></use>
+  </svg>Feature checklist</a><a class="page-item prev"
+             href="/Website/pr-13/ja/dev/tech/minor-release/"
+             title="前の記事">Minor Releases<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="トップへ"
+  title="トップへ (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-13/ja/"
+            title="FreeCAD"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-13/ja/docs/"
+            title="Documentation"
+            class="active"
+            aria-current="page"
+            
+            >Documentation</a><ul><li>
+                  <a href="/Website/pr-13/ja/manual/"
+                    title="User manual"
+                    
+                    >User manual</a>
+                </li><li>
+                  <a href="/Website/pr-13/ja/dev/"
+                    title="Development Handbook"
+                    
+                    >Development Handbook</a>
+                </li><li>
+                  <a href="/Website/pr-13/ja/reference/"
+                    title="Technical Reference"
+                    
+                    >Technical Reference</a>
+                </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-13/ja/fedishare.html#title=Major&#43;Releases&amp;description=Guide%20for%20Major%20Releases.&amp;url=https://FreeCAD.github.io/Website/pr-13/ja/dev/tech/major-release/"
+  title="共有 Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-13/ja/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-07
+  </span></div>
+</footer><script src="/Website/pr-13/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-13/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-13/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

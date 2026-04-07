@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en-US"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-13/css/styles.c8eee209de8ffe4c90d55c604cca8e5fc3f46a05523f438003b135e7845ad3ea.css" integrity="sha256-yO7iCd6P/kyQ1VxgTMqOX8P0agVSP0OAA7E154Ra0&#43;o=" crossorigin="anonymous"><title>FreeCAD | Building release packages</title>
+  <meta name="description" content="How to build FreeCAD packages for the different supported platforms."><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-13/dev/tech/packages/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-13/dev/tech/packages/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-13/zh/dev/tech/packages/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-13/es/dev/tech/packages/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-13/fr/dev/tech/packages/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-13/pt/dev/tech/packages/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-13/de/dev/tech/packages/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-13/ja/dev/tech/packages/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-13/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-13/dev/tech/packages/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Building release packages">
+  <meta property="og:description" content="How to build FreeCAD packages for the different supported platforms.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dev">
+    <meta property="article:modified_time" content="2026-04-07T13:51:15+02:00">
+</head><body class="single type-dev kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-13/"accesskey="h"
+      title="Homepage (Alt + H)"
+      aria-label="Homepage">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-13/docs/"
+            title="Documentation"
+            
+            
+            
+            >Documentation</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choose language (Alt + L)"
+          aria-label="Choose language"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a aria-current="page" class="active" href="/Website/pr-13/dev/tech/packages/" title="Building release packages">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/zh/dev/tech/packages/" title="Building release packages">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/es/dev/tech/packages/" title="Building release packages">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/fr/dev/tech/packages/" title="Building release packages">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/pt/dev/tech/packages/" title="Building release packages">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/de/dev/tech/packages/" title="Building release packages">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/ja/dev/tech/packages/" title="Building release packages">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Switch theme chroma (Alt + T)"
+    aria-label="Switch theme chroma"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero">
+
+    <h2 class="title">
+      Building release packages</h1><h3 class="description">How to build FreeCAD packages for the different supported platforms.</h3><div class="metadata"><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/words.svg#words"></use>
+  </svg>1048 words</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/time.svg#time"></use>
+  </svg>5 min</span></div></section><nav class="toc">
+  <input type="checkbox" id="toc-toggle-checkbox" class="toc-toggle-checkbox">
+  <label for="toc-toggle-checkbox" class="toc-toggle" title="Table of Contents"><svg class="icon-toc"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/toc.svg#toc"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg><span>Table of Contents</span>
+  </label>
+
+  <div id="toc-content" class="toc-content">
+    <ul class="section-nav"><li>
+          <a href="/Website/pr-13/dev/"
+            class="current-section"><svg class="icon-tri_tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_tri_left.svg#tri_tri_left"></use>
+  </svg> Development Handbook</a>
+        </li><li>
+          <a href="/Website/pr-13/dev/tech/"
+            class="current-section"><svg class="icon-folder"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/folder.svg#folder"></use>
+  </svg> Technical guide</a>
+        </li><li>
+        <ul><li>
+              <a href="/Website/pr-13/dev/tech/app/"
+                >Application Module</a>
+            </li><li>
+              <a href="/Website/pr-13/dev/tech/tests/"
+                >Automated Testing</a>
+            </li><li>
+              <a href="/Website/pr-13/dev/tech/packages/"
+                id="current-page" class="active" aria-current="page">Building release packages</a>
+            </li><li>
+              <a href="/Website/pr-13/dev/tech/translations/"
+                >Code for Translation</a>
+            </li><li>
+              <a href="/Website/pr-13/dev/tech/signing/"
+                >Code signing</a>
+            </li><li>
+              <a href="/Website/pr-13/dev/tech/cli/"
+                >Command Line Interface</a>
+            </li><li>
+              <a href="/Website/pr-13/dev/tech/glossary/"
+                >Developer&#39;s Glossary</a>
+            </li><li>
+              <a href="/Website/pr-13/dev/tech/checklist/"
+                >Feature checklist</a>
+            </li><li>
+              <a href="/Website/pr-13/dev/tech/major-release/"
+                >Major Releases</a>
+            </li><li>
+              <a href="/Website/pr-13/dev/tech/minor-release/"
+                >Minor Releases</a>
+            </li><li>
+              <a href="/Website/pr-13/dev/tech/deletion/"
+                >Object deletion</a>
+            </li><li>
+              <a href="/Website/pr-13/dev/tech/preferences/"
+                >Preferences</a>
+            </li><li>
+              <a href="/Website/pr-13/dev/tech/properties/"
+                >Property Changes</a>
+            </li><li>
+              <a href="/Website/pr-13/dev/tech/python-binding/"
+                >Python Binding</a>
+            </li><li>
+              <a href="/Website/pr-13/dev/tech/python-stubs/"
+                >Python stubs</a>
+            </li><li>
+              <a href="/Website/pr-13/dev/tech/references/"
+                >Reference Library</a>
+            </li><li>
+              <a href="/Website/pr-13/dev/tech/release/"
+                >Release Process</a>
+            </li><li>
+              <a href="/Website/pr-13/dev/tech/snap/"
+                >Snap package</a>
+            </li><li>
+              <a href="/Website/pr-13/dev/tech/src/"
+                >Source Tree</a>
+            </li><li>
+              <a href="/Website/pr-13/dev/tech/libpack/"
+                >Windows LibPack</a>
+            </li></ul>
+      </li>
+    </ul><p class="toc-label"><svg class="icon-file"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/file.svg#file"></use>
+  </svg>
+        <span>On this page</span>
+      </p><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#windows-installer">Windows Installer</a>
+          <ul>
+            <li><a href="#creating-a-windows-installer-for-freecad">Creating a Windows installer for FreeCAD</a></li>
+          </ul>
+        </li>
+        <li><a href="#conda-builds-for-linux-mac-and-windows">Conda builds for Linux, Mac, and Windows</a></li>
+        <li><a href="#macos">MacOS</a>
+          <ul>
+            <li><a href="#conda">Conda</a></li>
+          </ul>
+        </li>
+        <li><a href="#linux">Linux</a>
+          <ul>
+            <li><a href="#conda-1">Conda</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+</nav><div class="content"><h2
+  id="windows-installer">
+  Windows Installer
+  <a class="heading-anchor"
+     href="#windows-installer"
+     title="Windows Installer"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>The main entry point to build a Windows installer is within the FreeCAD sources. To build the installer:</p>
+<h3
+  id="creating-a-windows-installer-for-freecad">
+  Creating a Windows installer for FreeCAD
+  <a class="heading-anchor"
+     href="#creating-a-windows-installer-for-freecad"
+     title="Creating a Windows installer for FreeCAD"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>These are instructions for building an NSIS-based installer for FreeCAD. They were designed for FreeCAD 0.21 and later,
+and presume that you have cloned a copy of FreeCAD&rsquo;s source code.</p>
+<h4
+  id="install-nsis">
+  Install NSIS
+  <a class="heading-anchor"
+     href="#install-nsis"
+     title="Install NSIS"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h4><p>To set up your system for building an NSIS installer:</p>
+<ol>
+<li>Install the latest version 3.x of NSIS (<a href="https://nsis.sourceforge.io/Download"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">https://nsis.sourceforge.io/Download<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>)</li>
+<li>Download these special release files of NSIS that support large strings:</br>
+<a href="https://nsis.sourceforge.io/Special_Builds#Large_strings"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">https://nsis.sourceforge.io/Special_Builds#Large_strings<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a></br>
+and copy the contained files into the corresponding NSIS installation folders</li>
+<li>Download these special release files of NSIS that support logging:</br>
+<a href="https://nsis.sourceforge.io/Special_Builds#Advanced_logging"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">https://nsis.sourceforge.io/Special_Builds#Advanced_logging<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a></br>
+and copy the contained files into the corresponding NSIS installation folders</li>
+<li>Download and install the nsProcess plugin from <a href="https://nsis.sourceforge.io/NsProcess_plugin"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">https://nsis.sourceforge.io/NsProcess_plugin<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a> &ndash; you will need the version that supports Unicode, so make sure to follow the appropriate instructions on their site to install that one (as of this writing it involves manually copying and renaming the plugin DLL file).</li>
+</ol>
+<h4
+  id="build-the-installer">
+  Build the installer
+  <a class="heading-anchor"
+     href="#build-the-installer"
+     title="Build the installer"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h4><p>Next, update the installer settings for the current version of FreeCAD. Starting from the <em>src/WindowsInstaller</em> folder in the FreeCAD source tree:</p>
+<ol>
+<li>Set the appropriate version strings for the release you are creating. These are used to construct the filename of the installer, among other things. If you have to upload a new version of the installer for the exact same release of FreeCAD, increment <code>APP_VERSION BUILD</code> as needed.</li>
+</ol>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">!define APP_VERSION_MAJOR 0
+</span></span><span class="line"><span class="cl">!define APP_VERSION_MINOR 21
+</span></span><span class="line"><span class="cl">!define APP_VERSION_REVISION 0
+</span></span><span class="line"><span class="cl">!define APP_VERSION_EMERGENCY &#34;RC1&#34;
+</span></span><span class="line"><span class="cl">!define APP_VERSION_BUILD 1</span></span></code></pre></div></div><ol start="2">
+<li>Within the folder <em>src/WindowsInstaller</em>, create a new folder called MSVCRedist and copy the following files from your MSVC installation into it:</li>
+</ol>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">vcruntime140.dll
+</span></span><span class="line"><span class="cl">concrt140.dll
+</span></span><span class="line"><span class="cl">msvcp140.dll
+</span></span><span class="line"><span class="cl">vcamp140.dll
+</span></span><span class="line"><span class="cl">vccorlib140.dll
+</span></span><span class="line"><span class="cl">vcomp140.dll</span></span></code></pre></div></div><ol start="3">
+<li>Open the file <em>Settings.nsh</em> with a text editor (both jEdit and Visual Studio Code are good editors for NSIS files). Edit the following paths to correspond to your system: <code>FILES_FREECAD</code> corresponds to your installation directory (e.g. <code>CMAKE_INSTALL_PREFIX</code> if you self-compiled) and <code>FILES_DEPS</code> is the folder you created with the MSVC redistributable files in it.</li>
+</ol>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">!define FILES_FREECAD &#34;C:\FreeCAD\Installer\FreeCAD&#34;
+</span></span><span class="line"><span class="cl">!define FILES_DEPS &#34;C:\FreeCAD\Installer\MSVCRedist&#34;</span></span></code></pre></div></div><ol start="4">
+<li>Ensure the FreeCAD files are in place. Here you have two options:
+<ul>
+<li>If you are working from an already-compiled version of FreeCAD provided to you by an outside source: in this case, simply ensure that <code>FILES_FREECAD</code> is set to the directory containing those files.</li>
+<li>If you compiled FreeCAD on your own as described <a href="https://wiki.freecad.org/Compile_on_Windows"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">here<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a> (and using the Install option outlined there). Then:
+<ul>
+<li>Open the file <em>Settings.nsh</em> as described in step 3. above and set there</br>
+<code>!define FILES_FREECAD</code> to the folder you specified as <code>CMAKE_INSTALL_PREFIX</code></li>
+<li>Copy into that folder the file <em>Delete.bat</em> that is part of the installer</li>
+<li>open a command line in Windows and change to the folder</li>
+<li>run the comamand</br>
+<code>Delete.bat</code></li>
+<li>(These steps assure that the installer only contains files users need. Moreover it assures that the
+overall files size is below 2 GB and we can use the most compact compression for the installer.)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Right-click on the file <em>FreeCAD-installer.nsi</em> and choose <strong>Compile NSIS script</strong>
+to compile the installer.</li>
+</ol>
+<p>NOTE: For test builds of the installer you can turn off the LZMA compression and use the much faster default compression. This speeds up
+the build time for the installer but significantly increases the final installer file size. The LZMA compression is turned off by commenting
+out the line</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">!SetCompressor lzma</span></span></code></pre></div></div><p>in the file <em>Settings.nsh</em>.</p>
+<h2
+  id="conda-builds-for-linux-mac-and-windows">
+  Conda builds for Linux, Mac, and Windows
+  <a class="heading-anchor"
+     href="#conda-builds-for-linux-mac-and-windows"
+     title="Conda builds for Linux, Mac, and Windows"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>The same system that builds the &ldquo;Development Weekly&rdquo; builds is used to build the release versions of the Linux AppImages, Mac app bundles, and a standalone Windows executable (e.g. a non-installer version).</p>
+<p><strong>To be expanded</strong></p>
+<p>It is also possible to build a FreeCAD package for Windows with <a href="https://conda.io"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">conda<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>. This is produced as a .7z package that can be unzipped and run directly, without installation. The scripts needed to produce such a package are located in a separate Git repository at <a href="https://github.com/freecad/freecad-bundle"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">FreeCAD/FreeCAD-Bundle<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>. The main script to run is <a href="https://github.com/freecad/freecad-bundle/blob/master/conda/win/create_bundle.bat"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">conda/win/create_bundle.bat<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>.</p>
+<p>You will need:</p>
+<ol>
+<li><strong>Mambaforge</strong> from <a href="https://github.com/conda-forge/miniforge"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">GitHub - conda-forge/miniforge: A conda-forge distribution.<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a></li>
+<li><strong>7zip</strong> from <a href="https://www.7-zip.org/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">https://www.7-zip.org/<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a></li>
+</ol>
+<p>To use the script:</p>
+<ol>
+<li>TODO document how to install Mambaforge</li>
+<li>Clone the FreeCAD-Bundle repository</li>
+<li>Run the create_bundle.bat script</li>
+</ol>
+<h2
+  id="macos">
+  MacOS
+  <a class="heading-anchor"
+     href="#macos"
+     title="MacOS"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><h3
+  id="conda">
+  Conda
+  <a class="heading-anchor"
+     href="#conda"
+     title="Conda"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p><strong>To be expanded</strong></p>
+<p>MacOS packages are also built with <a href="https://conda.io"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">conda<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>.</p>
+<h2
+  id="linux">
+  Linux
+  <a class="heading-anchor"
+     href="#linux"
+     title="Linux"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><h3
+  id="conda-1">
+  Conda
+  <a class="heading-anchor"
+     href="#conda-1"
+     title="Conda"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>On Linux, we mostly let distributions produce packages themselves from the FreeCAD source code. However, we also produce an <a href="https://appimage.org/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">AppImage<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a> package, that runs on (hopefully) all Linux distributions. AppImages achieve that by embedding the largest part of the libraries FreeCAD depends on, and rely only on a few very standard system libraries.</p>
+<p>The most complex part, when building an AppImage, is therefore to gather those libraries. FreeCAD therefor uses <a href="https://conda.io"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">conda<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a> which is at the same time a build system and a package manager, to locate, download and organize these libraries. After this is done, the official AppImage tool is used to actually build the AppImage. Note that FreeCAD itself is built and made available on conda, so the process of building an AppImage does not compile FreeCAD. It rather uses a compiled version of FreeCAD already available on the conda platform.</p>
+<p>The main structure used to gather FreeCAD and its dependencies and build appimages is located in a separate Git repository at <a href="https://github.com/freecad/freecad-Bundle"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">FreeCAD/FreeCAD-Bundle<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>. The main script to run is <a href="https://github.com/freecad/freecad-Bundle/blob/master/conda/linux/create_bundle.sh"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">conda/linux/create_bundle.sh<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>. This script will do all the process of assembling and producing an AppImage.</p>
+<p>You will need:</p>
+<ol>
+<li><strong>Mambaforge</strong> from <a href="https://github.com/conda-forge/miniforge"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">https://github.com/conda-forge/miniforge<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a></li>
+<li><strong>appimagetool</strong> from <a href="https://appimage.github.io/appimagetool/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">https://appimage.github.io/appimagetool/<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a></li>
+</ol>
+<p>To use the script:</p>
+<ol>
+<li>Clone the FreeCAD-Bundle repository</li>
+<li>Download and place the appimagetool Appimage in the root of the repo, make it executable with <code>chmod +x</code></li>
+<li>If you chose to not install the conda environment when installing Mambaforge, you will need to enable a conda environment now. Do it by running the following in your terminal: <code>eval &quot;$(/$USER/Mambaforge/bin/conda shell.sh hook)&quot;</code> (replace the Mambaforge path by yours if you installed it somewhere else and sh by your shell name if not sh). This will make the <strong>conda</strong> and <strong>mamba</strong> commands available in this terminal session</li>
+<li>Run <code>create_bundle.sh</code></li>
+</ol>
+<p>Note that appimages produced by that script are by default not signed. It is generally seen on the AppImage website as not very widely used to sign AppImages. If you wish to sign the package, add <code>--sign-key you@yourdomain.com</code> to the appimage line in the create_bundle.sh script. You will need to have a gpg key configured for that email.</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-13/dev/tech/tests/"
+             title="Next article"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_left.svg#tri_left"></use>
+  </svg>Automated Testing</a><a class="page-item prev"
+             href="/Website/pr-13/dev/tech/translations/"
+             title="Previous article">Code for Translation<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Go to Top"
+  title="Go to Top (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-13/"
+            title="FreeCAD"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-13/docs/"
+            title="Documentation"
+            class="active"
+            aria-current="page"
+            
+            >Documentation</a><ul><li>
+                  <a href="/Website/pr-13/manual/"
+                    title="User manual"
+                    
+                    >User manual</a>
+                </li><li>
+                  <a href="/Website/pr-13/dev/"
+                    title="Development Handbook"
+                    
+                    >Development Handbook</a>
+                </li><li>
+                  <a href="/Website/pr-13/reference/"
+                    title="Technical Reference"
+                    
+                    >Technical Reference</a>
+                </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-13/fedishare.html#title=Building&#43;release&#43;packages&amp;description=How%20to%20build%20FreeCAD%20packages%20for%20the%20different%20supported%20platforms.&amp;url=https://FreeCAD.github.io/Website/pr-13/dev/tech/packages/"
+  title="Share on Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-13/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-07
+  </span></div>
+</footer><script src="/Website/pr-13/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-13/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-13/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

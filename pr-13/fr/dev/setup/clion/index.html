@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="fr-FR"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-13/css/styles.c8eee209de8ffe4c90d55c604cca8e5fc3f46a05523f438003b135e7845ad3ea.css" integrity="sha256-yO7iCd6P/kyQ1VxgTMqOX8P0agVSP0OAA7E154Ra0&#43;o=" crossorigin="anonymous"><title>FreeCAD | CLion guide</title>
+  <meta name="description" content="Guide for getting started with CLion."><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-13/fr/dev/setup/clion/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-13/dev/setup/clion/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-13/zh/dev/setup/clion/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-13/es/dev/setup/clion/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-13/fr/dev/setup/clion/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-13/pt/dev/setup/clion/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-13/de/dev/setup/clion/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-13/ja/dev/setup/clion/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-13/fr/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-13/fr/dev/setup/clion/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="CLion guide">
+  <meta property="og:description" content="Guide for getting started with CLion.">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dev">
+    <meta property="article:modified_time" content="2026-04-07T13:51:15+02:00">
+</head><body class="single type-dev kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-13/fr/"accesskey="h"
+      title="Accueil (Alt + H)"
+      aria-label="Accueil">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-13/fr/docs/"
+            title="Documentation"
+            
+            
+            
+            >Documentation</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choisir la langue (Alt + L)"
+          aria-label="Choisir la langue"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-13/dev/setup/clion/" title="CLion guide">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/zh/dev/setup/clion/" title="CLion guide">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/es/dev/setup/clion/" title="CLion guide">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-13/fr/dev/setup/clion/" title="CLion guide">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/pt/dev/setup/clion/" title="CLion guide">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/de/dev/setup/clion/" title="CLion guide">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/ja/dev/setup/clion/" title="CLion guide">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Changer le thème (Alt + T)"
+    aria-label="Changer le thème"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero">
+
+    <h2 class="title">
+      CLion guide</h1><h3 class="description">Guide for getting started with CLion.</h3><div class="metadata"><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/words.svg#words"></use>
+  </svg>1447 mots</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/time.svg#time"></use>
+  </svg>7 min</span></div></section><nav class="toc">
+  <input type="checkbox" id="toc-toggle-checkbox" class="toc-toggle-checkbox">
+  <label for="toc-toggle-checkbox" class="toc-toggle" title="Table of Contents"><svg class="icon-toc"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/toc.svg#toc"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg><span>Table des matières</span>
+  </label>
+
+  <div id="toc-content" class="toc-content">
+    <ul class="section-nav"><li>
+          <a href="/Website/pr-13/fr/dev/"
+            class="current-section"><svg class="icon-tri_tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_tri_left.svg#tri_tri_left"></use>
+  </svg> Development Handbook</a>
+        </li><li>
+          <a href="/Website/pr-13/fr/dev/setup/"
+            class="current-section"><svg class="icon-folder"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/folder.svg#folder"></use>
+  </svg> Development Setup</a>
+        </li><li>
+        <ul><li>
+              <a href="/Website/pr-13/fr/dev/setup/build/"
+                >Build environment</a>
+            </li><li>
+              <a href="/Website/pr-13/fr/dev/setup/workflow/"
+                >Contribution workflow and process</a>
+            </li><li>
+              <a href="/Website/pr-13/fr/dev/setup/dependencies/"
+                >Dependencies</a>
+            </li><li>
+              <a href="/Website/pr-13/fr/dev/setup/vscode/"
+                >VSCode guide</a>
+            </li><li>
+              <a href="/Website/pr-13/fr/dev/setup/clion/"
+                id="current-page" class="active" aria-current="page">CLion guide</a>
+            </li></ul>
+      </li>
+    </ul><p class="toc-label"><svg class="icon-file"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/file.svg#file"></use>
+  </svg>
+        <span>On this page</span>
+      </p><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#checking-out-freecad">Checking out FreeCAD</a></li>
+            <li><a href="#configure-pixi-toolchain-optional">Configure Pixi Toolchain (Optional)</a></li>
+            <li><a href="#building-cmake">Building CMake</a></li>
+            <li><a href="#building-application">Building Application</a></li>
+            <li><a href="#running-application">Running Application</a></li>
+          </ul>
+        </li>
+        <li><a href="#debugging">Debugging</a>
+          <ul>
+            <li><a href="#basic-c-concept">Basic C++ concept</a></li>
+            <li><a href="#basic-python-concept">Basic Python concept</a></li>
+            <li><a href="#technique-for-getting-python-testing-working">Technique for getting Python testing working</a></li>
+            <li><a href="#running-a-basic-c-debug">Running a basic c++ debug</a></li>
+            <li><a href="#setting-up-for-python-debugging-in-clion">Setting up for python debugging in CLion</a></li>
+            <li><a href="#running-a-python-or-simultaneous-debug-using-the-non-intrusive-procedure">Running a python or simultaneous debug using the non-intrusive procedure</a></li>
+            <li><a href="#running-a-python-or-simultaneous-debug-using-updated-clion-or-the-patched-attach_pydevdpy">Running a python or simultaneous debug using updated CLion or the patched attach_pydevd.py</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+</nav><div class="content"><figure>
+  <blockquote class="note"
+    ><svg class="icon-note"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/note.svg#note"></use>
+  </svg>Remarque<p>Cette page na pas encore été traduite en français, la version anglaise est donc utilisée. Envie de contribuer à la traduction ?
+<a href=""
+  class="internal-tooltip">Contribuer<span class="tooltip">
+        <strong>FreeCAD</strong></span></a></p></blockquote></figure><p>If you don&rsquo;t already have CLion installed, download it, license it, install it per JetBrains instructions.</p>
+<h3
+  id="checking-out-freecad">
+  Checking out FreeCAD
+  <a class="heading-anchor"
+     href="#checking-out-freecad"
+     title="Checking out FreeCAD"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p><strong>Command line:</strong>   <code>git clone --recurse-submodules https://github.com/freecad/freecad</code> and then File -&gt; Open or New Project on that directory.</p>
+<p><strong>IDE:</strong> From upper left, choose Project from Version Control.   Use <a href="https://github.com/freecad/freecad"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">https://github.com/freecad/freecad<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-13/dev/setup/clion/CLionPythonDebug8.webp"
+  alt="Pict8"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="721"
+  height="310"
+    srcset="/Website/pr-13/dev/setup/clion/CLionPythonDebug8_hu_f5e2a596ba9ebaa7.webp 500w, /Website/pr-13/dev/setup/clion/CLionPythonDebug8.webp 721w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Pict8</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-13/dev/setup/clion/CLionPythonDebug8.webp"
+              title="Pict8"
+              alt="Pict8"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div></p>
+<h3
+  id="configure-pixi-toolchain-optional">
+  Configure Pixi Toolchain (Optional)
+  <a class="heading-anchor"
+     href="#configure-pixi-toolchain-optional"
+     title="Configure Pixi Toolchain (Optional)"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>If you choose to use Pixi to get the dependencies then you need to configure a CLion toolchain and assign it to your CMake profile.</p>
+<ol>
+<li>Run <code>pixi shell</code> in the local FreeCAD directory to get all packages, this is also needed to update the environment after the <code>pixi.toml</code> has been changed.</li>
+<li>Go to Settings → Build, Execution, Deployment → Toolchains.</li>
+<li>Create a new &ldquo;System&rdquo; toolchain.</li>
+<li>Click on &ldquo;Add environment&rdquo; and select &ldquo;From file&rdquo;.</li>
+<li>Enter the location of the <code>pixi-default.bat</code> for Windows or otherwise the <code>pixi-default.bash</code> script in the &ldquo;Environment file&rdquo; field. The file can be found in the FreeCAD repository in contrib/clion/pixi</li>
+</ol>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-13/dev/setup/clion/CLionPixi1.webp"
+  alt="PixiPict1"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="713"
+  height="361"
+    srcset="/Website/pr-13/dev/setup/clion/CLionPixi1_hu_530e22abcad4494b.webp 500w, /Website/pr-13/dev/setup/clion/CLionPixi1.webp 713w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>PixiPict1</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-13/dev/setup/clion/CLionPixi1.webp"
+              title="PixiPict1"
+              alt="PixiPict1"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><ol start="6">
+<li>Go to Settings → Build, Execution, Deployment → CMake.</li>
+<li>Select the &ldquo;conda-[your os]-debug&rdquo; or &ldquo;conda-[your os]-release&rdquo; preset and duplicate it.</li>
+<li>Enable the duplicated profile and assign the created toolchain to this profile.</li>
+<li>If on Windows, you also need to select the Visual Studio generator.</li>
+</ol>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-002"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-13/dev/setup/clion/CLionPixi2.webp"
+  alt="PixiPict2"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="713"
+  height="496"
+    srcset="/Website/pr-13/dev/setup/clion/CLionPixi2_hu_8080a5afb0bc07d0.webp 500w, /Website/pr-13/dev/setup/clion/CLionPixi2.webp 713w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>PixiPict2</figcaption></figure><div id="img-002" popover>
+          <button class="close"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-13/dev/setup/clion/CLionPixi2.webp"
+              title="PixiPict2"
+              alt="PixiPict2"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Note: If CMake does not detect any packages from the .pixi folder then the toolchain script may have failed.
+This may be resolved by using the absolute path to your FreeCAD repository in the <code>pixi-default.bash</code> script.</p>
+<h3
+  id="building-cmake">
+  Building CMake
+  <a class="heading-anchor"
+     href="#building-cmake"
+     title="Building CMake"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>CLion should automatically refresh the CMake build for the application.  You see results or rerun using the cmake
+selection at the lower right
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-003"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-13/dev/setup/clion/CLionPythonDebug9.webp"
+  alt="Pict9"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="652"
+  height="469"
+    srcset="/Website/pr-13/dev/setup/clion/CLionPythonDebug9_hu_789c7eef887c950d.webp 500w, /Website/pr-13/dev/setup/clion/CLionPythonDebug9.webp 652w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Pict9</figcaption></figure><div id="img-003" popover>
+          <button class="close"
+            popovertarget="img-003"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-13/dev/setup/clion/CLionPythonDebug9.webp"
+              title="Pict9"
+              alt="Pict9"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div></p>
+<h3
+  id="building-application">
+  Building Application
+  <a class="heading-anchor"
+     href="#building-application"
+     title="Building Application"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>Choose a configuration ( Debug ) and a target ( FreeCADMain ) from the top bar.  First time through, use the menus to
+run &lsquo;Build All in Debug&rsquo; from the Build Menu.  After that point you can generally just Run or Debug and it will build
+any dependencies for you.  Note that if you switch branches you may sometimes need to &ldquo;Rebuild All in Debug&rdquo; to force
+a clean full rebuild.</p>
+<p><div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-004"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-13/dev/setup/clion/CLionPythonDebug10.webp"
+  alt="Pict10"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1451"
+  height="611"
+    srcset="/Website/pr-13/dev/setup/clion/CLionPythonDebug10_hu_f2204b0b5ab512e9.webp 500w, /Website/pr-13/dev/setup/clion/CLionPythonDebug10_hu_1e12d654ee10d9ff.webp 1000w, /Website/pr-13/dev/setup/clion/CLionPythonDebug10.webp 1451w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Pict10</figcaption></figure><div id="img-004" popover>
+          <button class="close"
+            popovertarget="img-004"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-13/dev/setup/clion/CLionPythonDebug10.webp"
+              title="Pict10"
+              alt="Pict10"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-005"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-13/dev/setup/clion/CLionPythonDebug11.webp"
+  alt="Pict11"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="876"
+  height="185"
+    srcset="/Website/pr-13/dev/setup/clion/CLionPythonDebug11_hu_5a1ba8846474cd42.webp 500w, /Website/pr-13/dev/setup/clion/CLionPythonDebug11.webp 876w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Pict11</figcaption></figure><div id="img-005" popover>
+          <button class="close"
+            popovertarget="img-005"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-13/dev/setup/clion/CLionPythonDebug11.webp"
+              title="Pict11"
+              alt="Pict11"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div></p>
+<h3
+  id="running-application">
+  Running Application
+  <a class="heading-anchor"
+     href="#running-application"
+     title="Running Application"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>Use the Run or Debug Icons from the top bar shown in the prior image.</p>
+<h2
+  id="debugging">
+  Debugging
+  <a class="heading-anchor"
+     href="#debugging"
+     title="Debugging"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>While CLion supports both a C++ debugger and a Python debugger, it generally does not support
+embedded Python interpreters, nor debugging both simultaneously.  However, there are workaround
+procedures that will allow this.</p>
+<h3
+  id="basic-c-concept">
+  Basic C++ concept
+  <a class="heading-anchor"
+     href="#basic-c-concept"
+     title="Basic C&#43;&#43; concept"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>CLion invokes an underlying debugger that launches or connects to the program under
+test.  You can see this in the &ldquo;Attach to Process&rdquo; dialog under the Run menu.  After
+choosing a process, you will be asked to attach with GDB or LLDB; CLion uses the
+appropriate API to communicate with the debugger, which uses OS specific mechanisms
+to control the program under test.</p>
+<h3
+  id="basic-python-concept">
+  Basic Python concept
+  <a class="heading-anchor"
+     href="#basic-python-concept"
+     title="Basic Python concept"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>The pydevd debugger is run inside of the python interpreter under test.  This provides
+a network socket, normally connected <em>from</em> the interpreter under test to a listening
+socket in the controlling debugger UI.  This port defaults to 5678 for non-CLion uses.  CLion
+generates a random port number, and then passes this into the pydevd initialization code;
+if you run a python program then this is accomplished by directly running a shim with
+parameters that include the port number and the program to be debugged.  In an attach
+scenario, CLion <em>launches a C++ debugger</em> to inject the pydevd initialization into the
+running python interpreter and cause it to make the socket connection back to the UI.  Note
+that since you generally cannot have more than one c++ debugger attached to a program,
+this mechanism cannot work for a program already under c++ debugging, and since it assumes
+that the c++ program is in fact a python process, it won&rsquo;t work for embedded python either.</p>
+<h3
+  id="technique-for-getting-python-testing-working">
+  Technique for getting Python testing working
+  <a class="heading-anchor"
+     href="#technique-for-getting-python-testing-working"
+     title="Technique for getting Python testing working"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>The challenge here is to get CLion to listen on a port for the incoming connection from pydevd,
+and to execute pydevd on that port in the program under test.  Since CLion does not support this
+natively, we trick it.  To do this we need to have a pydevd installed in the python interpreter in
+FreeCAD.</p>
+<h3
+  id="running-a-basic-c-debug">
+  Running a basic c++ debug
+  <a class="heading-anchor"
+     href="#running-a-basic-c-debug"
+     title="Running a basic c&#43;&#43; debug"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>Simply choose the debug option to start FreeCAD, and you&rsquo;re good to go.</p>
+<h3
+  id="setting-up-for-python-debugging-in-clion">
+  Setting up for python debugging in CLion
+  <a class="heading-anchor"
+     href="#setting-up-for-python-debugging-in-clion"
+     title="Setting up for python debugging in CLion"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>Use the settings button in the upper right, the File Menu -&gt; Settings, or the Ctrl-Alt-S shortcut
+to open the settings dialog, expand the Build, Execution, Deployment tree item, and select a Python
+Interpreter:</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-006"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-13/dev/setup/clion/CLionPythonDebug1.webp"
+  alt="Pict1"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1851"
+  height="1005"
+    srcset="/Website/pr-13/dev/setup/clion/CLionPythonDebug1_hu_255f4b67fafb898b.webp 500w, /Website/pr-13/dev/setup/clion/CLionPythonDebug1_hu_41f5c7e0589c4dcd.webp 1000w, /Website/pr-13/dev/setup/clion/CLionPythonDebug1.webp 1851w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Pict1</figcaption></figure><div id="img-006" popover>
+          <button class="close"
+            popovertarget="img-006"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-13/dev/setup/clion/CLionPythonDebug1.webp"
+              title="Pict1"
+              alt="Pict1"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Install <code>pydevd</code> into the FreeCAD python environment, if it is not already present. For example:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">C:\Users\jdoe\FreeCAD\cmake-build-relwithdebinfo-visual-studio\bin\python.exe -m pip install pydevd</span></span></code></pre></div></div><p>Switch to the Python Debugger settings, and change the Attach To Process name from python to &lsquo;Freecad&rsquo;
+You may need to change this back if you use the IDE for other applications.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-007"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-13/dev/setup/clion/CLionPythonDebug2.webp"
+  alt="Pict2"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1851"
+  height="1005"
+    srcset="/Website/pr-13/dev/setup/clion/CLionPythonDebug2_hu_b1bf7031b4cc844f.webp 500w, /Website/pr-13/dev/setup/clion/CLionPythonDebug2_hu_43c3ff85647d4bc6.webp 1000w, /Website/pr-13/dev/setup/clion/CLionPythonDebug2.webp 1851w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Pict2</figcaption></figure><div id="img-007" popover>
+          <button class="close"
+            popovertarget="img-007"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-13/dev/setup/clion/CLionPythonDebug2.webp"
+              title="Pict2"
+              alt="Pict2"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Now there are three approaches here:</p>
+<ol>
+<li>
+<p>Using a recent version of CLion (at least 2024.3), ensure that the <code>python.debug.use.single.port</code> is checked in CLion&rsquo;s Registry (Help-&gt;Find action&hellip;-&gt;&ldquo;Registry&rdquo;), then in the Python Debugger settings page set the port to 5679. Note that this option will not appear if your registry setting is off (the default starting in 2024.3.1), so if you don&rsquo;t see the option to set the port, go back and double-check the registry setting.</p>
+</li>
+<li>
+<p>Find the attach_pydevd.py file in your CLion installation, and modify it using the contrib/clion/attach_pydevd.py.patch in the source code.  Then use the macro below.</p>
+</li>
+<li>
+<p>Use this elaborate workaround:</p>
+</li>
+</ol>
+<h3
+  id="running-a-python-or-simultaneous-debug-using-the-non-intrusive-procedure">
+  Running a python or simultaneous debug using the non-intrusive procedure
+  <a class="heading-anchor"
+     href="#running-a-python-or-simultaneous-debug-using-the-non-intrusive-procedure"
+     title="Running a python or simultaneous debug using the non-intrusive procedure"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><ol>
+<li>
+<p>You can start your FreeCAD independently, via CLion, or in c++ debug mode under CLion.</p>
+</li>
+<li>
+<p>Regardless of the starting technique, once FreeCAD is up, if there is no code in your FreeCAD supporting
+CLion debugging, then:</p>
+<ol>
+<li>Go to the python console and import pydevd.
+Then go ahead and pretype in the settrace call, leaving the cursor poised to enter a port name but not executing the line.</li>
+<li>Alternatively, go to the Macro -&gt; Attach to remote debugger dialog and switch to the CLion tab.</li>
+</ol>
+</li>
+</ol>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-008"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-13/dev/setup/clion/CLionPythonDebug6.webp"
+  alt="Pict1"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1958"
+  height="605"
+    srcset="/Website/pr-13/dev/setup/clion/CLionPythonDebug6_hu_2b65a0e84142e43c.webp 500w, /Website/pr-13/dev/setup/clion/CLionPythonDebug6_hu_5091e6a70cac36d4.webp 1000w, /Website/pr-13/dev/setup/clion/CLionPythonDebug6.webp 1958w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Pict1</figcaption></figure><div id="img-008" popover>
+          <button class="close"
+            popovertarget="img-008"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-13/dev/setup/clion/CLionPythonDebug6.webp"
+              title="Pict1"
+              alt="Pict1"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><ol start="3">
+<li>Return to CLion, and start Attach to Process from the run menu:</li>
+</ol>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-009"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-13/dev/setup/clion/CLionPythonDebug3.webp"
+  alt="Pict1"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1851"
+  height="1005"
+    srcset="/Website/pr-13/dev/setup/clion/CLionPythonDebug3_hu_a3cd365d3a56908e.webp 500w, /Website/pr-13/dev/setup/clion/CLionPythonDebug3_hu_7f4712f30ce4521.webp 1000w, /Website/pr-13/dev/setup/clion/CLionPythonDebug3.webp 1851w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Pict1</figcaption></figure><div id="img-009" popover>
+          <button class="close"
+            popovertarget="img-009"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-13/dev/setup/clion/CLionPythonDebug3.webp"
+              title="Pict1"
+              alt="Pict1"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><ol start="4">
+<li>Find the Freecad process, which may be well down at the bottom of the list.  It is the configuration
+from earlier that makes Freecad processes appear in the list as Python debuggable.  Highlight this entry
+and press the Attach with Python Debugger button.</li>
+</ol>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-010"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-13/dev/setup/clion/CLionPythonDebug4.webp"
+  alt="Pict1"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1816"
+  height="1061"
+    srcset="/Website/pr-13/dev/setup/clion/CLionPythonDebug4_hu_ffcc797d18281622.webp 500w, /Website/pr-13/dev/setup/clion/CLionPythonDebug4_hu_2ff7071cd0ae39ea.webp 1000w, /Website/pr-13/dev/setup/clion/CLionPythonDebug4.webp 1816w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Pict1</figcaption></figure><div id="img-010" popover>
+          <button class="close"
+            popovertarget="img-010"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-13/dev/setup/clion/CLionPythonDebug4.webp"
+              title="Pict1"
+              alt="Pict1"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><ol start="5">
+<li>Now it&rsquo;s time to move FAST.  You have about 10 to 15 seconds to complete the following:
+Scroll to the top of the console window and find the (random) port number that CLion has chosen to listen
+on.  Ignore everything else:</li>
+</ol>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-011"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-13/dev/setup/clion/CLionPythonDebug5.webp"
+  alt="Pict1"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="2560"
+  height="384"
+    srcset="/Website/pr-13/dev/setup/clion/CLionPythonDebug5_hu_afb15d8f9ad5cce3.webp 500w, /Website/pr-13/dev/setup/clion/CLionPythonDebug5_hu_49ccdf193fdfcc07.webp 1000w, /Website/pr-13/dev/setup/clion/CLionPythonDebug5.webp 2560w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Pict1</figcaption></figure><div id="img-011" popover>
+          <button class="close"
+            popovertarget="img-011"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-13/dev/setup/clion/CLionPythonDebug5.webp"
+              title="Pict1"
+              alt="Pict1"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><ol start="6">
+<li>Switch to the FreeCAD window and complete the port number in either the console&rsquo;s settrace line or the attach dialog
+and execute it:</li>
+</ol>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-012"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-13/dev/setup/clion/CLionPythonDebug6.webp"
+  alt="Pict1"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1958"
+  height="605"
+    srcset="/Website/pr-13/dev/setup/clion/CLionPythonDebug6_hu_2b65a0e84142e43c.webp 500w, /Website/pr-13/dev/setup/clion/CLionPythonDebug6_hu_5091e6a70cac36d4.webp 1000w, /Website/pr-13/dev/setup/clion/CLionPythonDebug6.webp 1958w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Pict1</figcaption></figure><div id="img-012" popover>
+          <button class="close"
+            popovertarget="img-012"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-13/dev/setup/clion/CLionPythonDebug6.webp"
+              title="Pict1"
+              alt="Pict1"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><ol start="7">
+<li>Note the appearance of a &ldquo;Connected to pydev debugger&rdquo; line in the CLion console.  Shortly before or after that
+message, you will also see the timeout of CLion&rsquo;s attempt to use a debugger to trigger an attach.  Ignore this
+error.</li>
+</ol>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-013"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-13/dev/setup/clion/CLionPythonDebug7.webp"
+  alt="Pict1"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1796"
+  height="451"
+    srcset="/Website/pr-13/dev/setup/clion/CLionPythonDebug7_hu_ea00095d3ce374c7.webp 500w, /Website/pr-13/dev/setup/clion/CLionPythonDebug7_hu_6087eb0bb1d4543.webp 1000w, /Website/pr-13/dev/setup/clion/CLionPythonDebug7.webp 1796w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Pict1</figcaption></figure><div id="img-013" popover>
+          <button class="close"
+            popovertarget="img-013"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-13/dev/setup/clion/CLionPythonDebug7.webp"
+              title="Pict1"
+              alt="Pict1"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><ol start="8">
+<li>Proceed to debug normally:  any existing breakpoints you have either in c++ code or python code will be hit, you
+can step, examine variables, the whole deal.</li>
+</ol>
+<h3
+  id="running-a-python-or-simultaneous-debug-using-updated-clion-or-the-patched-attach_pydevdpy">
+  Running a python or simultaneous debug using updated CLion or the patched attach_pydevd.py
+  <a class="heading-anchor"
+     href="#running-a-python-or-simultaneous-debug-using-updated-clion-or-the-patched-attach_pydevdpy"
+     title="Running a python or simultaneous debug using updated CLion or the patched attach_pydevd.py"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><ol>
+<li>Start FreeCAD running.  You can do this from any place for just a python debug; or you can launch a c++ debug
+in CLion for simultaneous debugging.</li>
+<li>Run the contrib/clion/GetCLionDebugPort.FCMacro in FreeCAD.  The cleanest way to do this is just to add it as
+first parameter of the FreeCAD or FreeCADCmd command line.  Editing your FreeCADMain run/debug configuration in
+CLion is the best way to do this - set it once, and python debugging is always there whether you run a c++ debug
+or not, with no effective performance penalty.</li>
+</ol>
+<h4
+  id="caveats">
+  Caveats
+  <a class="heading-anchor"
+     href="#caveats"
+     title="Caveats"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h4><ul>
+<li>Sometimes you may get one spurious breakpoint hit in the python debugger.  Just hit the continue run button to keep
+going.  FreeCAD triggers a python exception during startup, and the default CLion debugger settings are to break on this</li>
+<li>condition.</li>
+<li>The python files are copied from the source into the build directory.  You must use these build directory versions
+of the python files if you want to set breakpoints.  So if you&rsquo;re built to <code>cmake-build-debug</code> for instance, then you</li>
+<li>want <code>cmake-debug-build/Mod/BIM/Arch.py</code> and not <code>src/Mod/BIM/Arch.py</code>.  This also means that you need to be careful
+when editing files - anything in the build directory is essentially temporary and will be overwritten on the next build,
+but if you change something in the source directory then you need to run a build on an appropriate target to copy the
+changed python file to the build directory.  CLion does not support specifying mapping directories for this python code,
+and there is no evidence of it changing soon.</li>
+</ul>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-13/fr/dev/setup/vscode/"
+             title="Article suivant"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_left.svg#tri_left"></use>
+  </svg>VSCode guide</a><a class="page-item prev"
+             href="/Website/pr-13/fr/dev/roadmap/"
+             title="Prev section">Roadmap<svg class="icon-folder"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/folder.svg#folder"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Aller au sommet de la page"
+  title="Aller au sommet de la page (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-13/fr/"
+            title="FreeCAD"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-13/fr/docs/"
+            title="Documentation"
+            class="active"
+            aria-current="page"
+            
+            >Documentation</a><ul><li>
+                  <a href="/Website/pr-13/fr/manual/"
+                    title="User manual"
+                    
+                    >User manual</a>
+                </li><li>
+                  <a href="/Website/pr-13/fr/dev/"
+                    title="Development Handbook"
+                    
+                    >Development Handbook</a>
+                </li><li>
+                  <a href="/Website/pr-13/fr/reference/"
+                    title="Technical Reference"
+                    
+                    >Technical Reference</a>
+                </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-13/fr/fedishare.html#title=CLion&#43;guide&amp;description=Guide%20for%20getting%20started%20with%20CLion.&amp;url=https://FreeCAD.github.io/Website/pr-13/fr/dev/setup/clion/"
+  title="Partager sur Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-13/fr/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-07
+  </span></div>
+</footer><script src="/Website/pr-13/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-13/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-13/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

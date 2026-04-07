@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-13/css/styles.c8eee209de8ffe4c90d55c604cca8e5fc3f46a05523f438003b135e7845ad3ea.css" integrity="sha256-yO7iCd6P/kyQ1VxgTMqOX8P0agVSP0OAA7E154Ra0&#43;o=" crossorigin="anonymous"><title>FreeCAD | Naming Convention</title>
+  <meta name="description" content="Naming Convention and Writing Style."><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-13/zh/dev/design/naming/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-13/dev/design/naming/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-13/zh/dev/design/naming/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-13/es/dev/design/naming/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-13/fr/dev/design/naming/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-13/pt/dev/design/naming/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-13/de/dev/design/naming/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-13/ja/dev/design/naming/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-13/zh/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-13/zh/dev/design/naming/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Naming Convention">
+  <meta property="og:description" content="Naming Convention and Writing Style.">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dev">
+    <meta property="article:modified_time" content="2026-04-07T13:51:15+02:00">
+</head><body class="single type-dev kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-13/zh/"accesskey="h"
+      title="主页 (Alt + H)"
+      aria-label="主页">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="菜单"
+    aria-label="菜单"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-13/zh/docs/"
+            title="Documentation"
+            
+            
+            
+            >Documentation</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="选择语言 (Alt + L)"
+          aria-label="选择语言"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-13/dev/design/naming/" title="Naming Convention">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-13/zh/dev/design/naming/" title="Naming Convention">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/es/dev/design/naming/" title="Naming Convention">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/fr/dev/design/naming/" title="Naming Convention">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/pt/dev/design/naming/" title="Naming Convention">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/de/dev/design/naming/" title="Naming Convention">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/ja/dev/design/naming/" title="Naming Convention">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="切换主题配色 (Alt + T)"
+    aria-label="切换主题配色"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero">
+
+    <h2 class="title">
+      Naming Convention</h1><h3 class="description">Naming Convention and Writing Style.</h3><div class="metadata"><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/words.svg#words"></use>
+  </svg>837 字</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/time.svg#time"></use>
+  </svg>4 分钟</span></div></section><nav class="toc">
+  <input type="checkbox" id="toc-toggle-checkbox" class="toc-toggle-checkbox">
+  <label for="toc-toggle-checkbox" class="toc-toggle" title="Table of Contents"><svg class="icon-toc"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/toc.svg#toc"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg><span>目录</span>
+  </label>
+
+  <div id="toc-content" class="toc-content">
+    <ul class="section-nav"><li>
+          <a href="/Website/pr-13/zh/dev/"
+            class="current-section"><svg class="icon-tri_tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_tri_left.svg#tri_tri_left"></use>
+  </svg> Development Handbook</a>
+        </li><li>
+          <a href="/Website/pr-13/zh/dev/design/"
+            class="current-section"><svg class="icon-folder"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/folder.svg#folder"></use>
+  </svg> Design Guide</a>
+        </li><li>
+        <ul><li>
+              <a href="/Website/pr-13/zh/dev/design/principles/"
+                >Design Principles</a>
+            </li><li>
+              <a href="/Website/pr-13/zh/dev/design/naming/"
+                id="current-page" class="active" aria-current="page">Naming Convention</a>
+            </li><li>
+              <a href="/Website/pr-13/zh/dev/design/ux/"
+                >Principles and Laws of UI/UX</a>
+            </li><li>
+              <a href="/Website/pr-13/zh/dev/design/ui-glossary/"
+                >Glossary of Terms</a>
+            </li><li>
+              <a href="/Website/pr-13/zh/dev/design/ui-elements/"
+                >Interface Primary Elements</a>
+            </li><li>
+              <a href="/Website/pr-13/zh/dev/design/zones/"
+                >Zones</a>
+            </li><li>
+              <a href="/Website/pr-13/zh/dev/design/hints/"
+                >Input Hints</a>
+            </li><li>
+              <a href="/Website/pr-13/zh/dev/design/branding/"
+                >FreeCAD Brand guidelines</a>
+            </li></ul>
+      </li>
+    </ul><p class="toc-label"><svg class="icon-file"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/file.svg#file"></use>
+  </svg>
+        <span>On this page</span>
+      </p><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#language">Language</a></li>
+            <li><a href="#ui-text-style">UI Text Style</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+</nav><div class="content"><figure>
+  <blockquote class="note"
+    ><svg class="icon-note"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/note.svg#note"></use>
+  </svg>注意<p>此页面尚未翻译，因此使用英文版本。有兴趣帮忙吗？
+<a href=""
+  class="internal-tooltip">贡献<span class="tooltip">
+        <strong>FreeCAD</strong></span></a></p></blockquote></figure><p>Due to the technical nature associated with CAD and advanced programming, it is easy to fall into the trap of using terminology that is either overly descriptive or seems obvious as a developer but is obscure to the layman. Additionally, with so many functions at a user&rsquo;s disposal within FreeCAD, screen space comes at a high premium, and text strings can quickly change a UI/UX from being concise and efficient to awkwark and unpleasant. The following guidelines should be considered when naming/labeling functions, features and other various addons.</p>
+<p><em>NOTE: This area is highly subjective as FreeCAD is translated into many languages, however English is considered the standard by which naming will be assessed. It will be up to various translators to best adhere to these guidelines as best as possible.</em></p>
+<p>Efforts should be made to conserve space within the UI in order to prevent elements from needing to be resized from workbench-to-workbench or dialog-to-dialog. Word choices should be reviewed before merging a pull-request with text elements in the GUI.</p>
+<h3
+  id="language">
+  Language
+  <a class="heading-anchor"
+     href="#language"
+     title="Language"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><ul>
+<li>
+<p>Use the shortest descriptive words possible for a function. Single words are preferred, however this will not always be possible. For example use <code>Additive cube</code> instead of &ldquo;Add additive Cube&rdquo; or &ldquo;Create new additive cube&rdquo; for naming the command. Tooltips can be more descriptive, but concepts and functionality should be explained in the documentation.</p>
+</li>
+<li>
+<p>Do not use verbs in the command name itself where not needed and try to avoid &ldquo;Create&rdquo;, &ldquo;Add&rdquo;, &ldquo;Insert&rdquo; in the command name. Example: <code>New File</code> is sufficient, the command should not say &ldquo;Create new file&rdquo;. It can be relevant if the action is not obvious, e.g. <code>Insert image</code> (just &ldquo;Image&rdquo; would not be enough). Instead of verbs use nouns in the command name, where the most important word should be in the beginning: <code>Horizontal constraint</code> instead of &ldquo;Constrain horizontal&rdquo; (otherwise all similar commands start with constraint).</p>
+</li>
+<li>
+<p>Use third-person present tense in tooltips or hints. <code>Creates</code>, <code>adds</code>, <code>sends</code>, <code>opens</code>, etc. and write tooltips and hints as complete sentences, starting with the verb where possible.</p>
+</li>
+<li>
+<p>Describe the action or result in tooltips: say what the command does and what is needed (e.g. active body or selection), do not only repeat its name. Be specific if possible: instead of &ldquo;Add sketch&rdquo; write <code>Adds a new sketch to the active body</code>.</p>
+</li>
+<li>
+<p>If a text is valid for one or multiple actions use always plural, e.g. <code>Creates holes based on the selected profiles</code> not &ldquo;Creates hole(s) based on the selected profile(s)&rdquo;.</p>
+</li>
+<li>
+<p>Do not add additional information which is obvious or list multiple steps like &ldquo;Select one or more line(s) click this button, add dimension&rdquo;. Better: <code>Inserts a dimension for the selected lines</code>.</p>
+</li>
+<li>
+<p>Avoid redundant descriptions of states in tooltips and notes. Example: instead of &ldquo;If checked by the user, the view is updated automatically&rdquo;, &ldquo;If active,&hellip;&rdquo; or &ldquo;This option controls&hellip;&rdquo; use <code>Updates view atomatically</code>.</p>
+</li>
+<li>
+<p>Avoid addressing the user directly or in third person. Do not write &ldquo;Click this button&rdquo; in the tooltip or &ldquo;Select something then do this&rdquo;. Instead describe in a short sentence what the command does with which inputs without asking the user directly.</p>
+</li>
+<li>
+<p>Broadly accepted and understood acronyms can be used in place of full words (e.g. <code>CAD</code> or <code>ISO</code>), however, these should be scrutinized closely by the design and development teams to avoid obscure references.</p>
+</li>
+<li>
+<p>Write numbers in arabic numerals (<code>0, 1, 2,...</code>) not spelled out (&ldquo;one, two,&hellip;&rdquo;)</p>
+</li>
+<li>
+<p>For concepts already used within FreeCAD, use the same wording so those concepts remain consistent wherever possible.</p>
+</li>
+<li>
+<p>Avoid using common programming terms, preference should be given towards more plain language words.</p>
+</li>
+<li>
+<p>For all user-facing strings add comments to help adding context for translators <code>//: Sketcher: Command name for new line</code>. More info in the <a href="https://doc.qt.io/qt-6/i18n-source-translation.html#add-comments-for-translators"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Qt docs<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>.</p>
+</li>
+</ul>
+<h3
+  id="ui-text-style">
+  UI Text Style
+  <a class="heading-anchor"
+     href="#ui-text-style"
+     title="UI Text Style"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>Use <strong>sentence case</strong> for all user-facing UI text, including buttons, menu items, tooltips, labels, and settings. Sentence case means only the first word and proper nouns are capitalized, and complete sentences end with a period. This makes the user interface visually less distracting and easier to read. For the same reason, avoid contractions like for example &ldquo;don&rsquo;t&rdquo; or &ldquo;can&rsquo;t&rdquo; - write <code>do not</code> and <code>cannot</code> instead.</p>
+<p><strong>Do not use periods</strong> at the end of <strong>short</strong> UI strings like menu items, button labels, and checkbox texts. Use a period on tooltips and longer text elements, if they contain a full sentence. Omit the period if the tooltip is a short phrase or label.</p>
+<p><strong>Do not capitalize commands or object names</strong> unless it is a technical term that is capitalized in general.</p>
+<p><strong>Use ellipsis (&hellip;)</strong> at the end of menu items when specific input from the user is required for the action.</p>
+<p><strong>Example:</strong></p>
+<ul>
+<li><code>Constrains new geometry automatically. It is recommended to leave it enabled for most workflows.</code> - Complete sentences end with a period.</li>
+<li><code>New file</code> - This is just a short label. A tooltip for that command button would be &ldquo;Creates a new file&rdquo;.</li>
+<li><code>Save as...</code> - The function requires user input to function.</li>
+<li><code>Addon manager</code> - This is not a simple action, so no ellipsis.</li>
+</ul>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-13/zh/dev/design/principles/"
+             title="下一篇"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_left.svg#tri_left"></use>
+  </svg>Design Principles</a><a class="page-item prev"
+             href="/Website/pr-13/zh/dev/design/ux/"
+             title="上一篇">Principles and Laws of UI/UX<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="返回顶部"
+  title="返回顶部 (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-13/zh/"
+            title="FreeCAD"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-13/zh/docs/"
+            title="Documentation"
+            class="active"
+            aria-current="page"
+            
+            >Documentation</a><ul><li>
+                  <a href="/Website/pr-13/zh/manual/"
+                    title="User manual"
+                    
+                    >User manual</a>
+                </li><li>
+                  <a href="/Website/pr-13/zh/dev/"
+                    title="Development Handbook"
+                    
+                    >Development Handbook</a>
+                </li><li>
+                  <a href="/Website/pr-13/zh/reference/"
+                    title="Technical Reference"
+                    
+                    >Technical Reference</a>
+                </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-13/zh/fedishare.html#title=Naming&#43;Convention&amp;description=Naming%20Convention%20and%20Writing%20Style.&amp;url=https://FreeCAD.github.io/Website/pr-13/zh/dev/design/naming/"
+  title="分享至 Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-13/zh/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-07
+  </span></div>
+</footer><script src="/Website/pr-13/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-13/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-13/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

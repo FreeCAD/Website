@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zh-CN"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-13/css/styles.c8eee209de8ffe4c90d55c604cca8e5fc3f46a05523f438003b135e7845ad3ea.css" integrity="sha256-yO7iCd6P/kyQ1VxgTMqOX8P0agVSP0OAA7E154Ra0&#43;o=" crossorigin="anonymous"><title>FreeCAD | Next Release</title>
+  <meta name="description" content="Next Release."><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-13/zh/dev/roadmap/next/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-13/dev/roadmap/next/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-13/zh/dev/roadmap/next/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-13/es/dev/roadmap/next/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-13/fr/dev/roadmap/next/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-13/pt/dev/roadmap/next/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-13/de/dev/roadmap/next/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-13/ja/dev/roadmap/next/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-13/zh/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-13/zh/dev/roadmap/next/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Next Release">
+  <meta property="og:description" content="Next Release.">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dev">
+    <meta property="article:modified_time" content="2026-04-07T13:51:15+02:00">
+</head><body class="single type-dev kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-13/zh/"accesskey="h"
+      title="主页 (Alt + H)"
+      aria-label="主页">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="菜单"
+    aria-label="菜单"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-13/zh/docs/"
+            title="Documentation"
+            
+            
+            
+            >Documentation</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="选择语言 (Alt + L)"
+          aria-label="选择语言"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-13/dev/roadmap/next/" title="Next Release">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-13/zh/dev/roadmap/next/" title="Next Release">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/es/dev/roadmap/next/" title="Next Release">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/fr/dev/roadmap/next/" title="Next Release">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/pt/dev/roadmap/next/" title="Next Release">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/de/dev/roadmap/next/" title="Next Release">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/ja/dev/roadmap/next/" title="Next Release">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="切换主题配色 (Alt + T)"
+    aria-label="切换主题配色"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero">
+
+    <h2 class="title">
+      Next Release</h1><h3 class="description">Next Release.</h3><div class="metadata"><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/words.svg#words"></use>
+  </svg>523 字</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/time.svg#time"></use>
+  </svg>3 分钟</span></div></section><nav class="toc">
+  <input type="checkbox" id="toc-toggle-checkbox" class="toc-toggle-checkbox">
+  <label for="toc-toggle-checkbox" class="toc-toggle" title="Table of Contents"><svg class="icon-toc"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/toc.svg#toc"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg><span>目录</span>
+  </label>
+
+  <div id="toc-content" class="toc-content">
+    <ul class="section-nav"><li>
+          <a href="/Website/pr-13/zh/dev/"
+            class="current-section"><svg class="icon-tri_tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_tri_left.svg#tri_tri_left"></use>
+  </svg> Development Handbook</a>
+        </li><li>
+          <a href="/Website/pr-13/zh/dev/roadmap/"
+            class="current-section"><svg class="icon-folder"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/folder.svg#folder"></use>
+  </svg> Roadmap</a>
+        </li><li>
+        <ul><li>
+              <a href="/Website/pr-13/zh/dev/roadmap/next/"
+                id="current-page" class="active" aria-current="page">Next Release</a>
+            </li><li>
+              <a href="/Website/pr-13/zh/dev/roadmap/rationale/"
+                >Roadmap Rationale</a>
+            </li></ul>
+      </li>
+    </ul><p class="toc-label"><svg class="icon-file"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/file.svg#file"></use>
+  </svg>
+        <span>On this page</span>
+      </p><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#topological-naming-problem">Topological Naming Problem</a>
+          <ul>
+            <li><a href="#reference">Reference</a></li>
+          </ul>
+        </li>
+        <li><a href="#assembly-workbench">Assembly Workbench</a>
+          <ul>
+            <li><a href="#reference-1">Reference</a></li>
+          </ul>
+        </li>
+        <li><a href="#material-system">Material System</a>
+          <ul>
+            <li><a href="#reference-2">Reference</a></li>
+          </ul>
+        </li>
+        <li><a href="#initial-user-experience">Initial User Experience</a>
+          <ul>
+            <li><a href="#reference-3">Reference</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+</nav><div class="content"><figure>
+  <blockquote class="note"
+    ><svg class="icon-note"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/note.svg#note"></use>
+  </svg>注意<p>此页面尚未翻译，因此使用英文版本。有兴趣帮忙吗？
+<a href=""
+  class="internal-tooltip">贡献<span class="tooltip">
+        <strong>FreeCAD</strong></span></a></p></blockquote></figure><p>Releasing an official 1.0 release is a major milestone as well as a psychologically important event for the project. It is a signal to the world that FreeCAD is ready for production use, and that it is a mature, stable, and reliable tool for the job.</p>
+<p>The criteria for when FreeCAD would be ready for 1.0 status has been debated for a long time. In general, the consensus has been that the software should be both feature complete and stable.  Feature completeness means that it has the major features a user would expect from a mature CAD application, not that it has ALL the features we desire or can imagine.</p>
+<p>Stability means that the software does not crash routinely and that user models are not corrupted by normal use.  It does not mean that the software is bug free, or that it is perfect.  It does mean that the software is reliable enough to be used in production, and that it is not likely to cause data loss or other major problems.</p>
+<p>At this time, we are setting four major goals to be completed for version 1.0.  When 1.0 is released, it will likely contain many more features and improvements than these four but we will not release 1.0 until these four are achieved.</p>
+<ul>
+<li>Mitigating the topological naming problem</li>
+<li>An integrated assembly workbench</li>
+<li>A unified Material system</li>
+<li>Improved initial user experience</li>
+</ul>
+<h2
+  id="topological-naming-problem">
+  Topological Naming Problem
+  <a class="heading-anchor"
+     href="#topological-naming-problem"
+     title="Topological Naming Problem"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>The toponaming problem has been widely discussed and work is proceeding to resolve it.</p>
+<h3
+  id="reference">
+  Reference
+  <a class="heading-anchor"
+     href="#reference"
+     title="Reference"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><ul>
+<li><a href="https://github.com/freecad/freecad/issues/8432"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">original issue<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a></li>
+<li><a href="https://github.com/orgs/freecad/projects/2"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Github Project<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a></li>
+</ul>
+<h2
+  id="assembly-workbench">
+  Assembly Workbench
+  <a class="heading-anchor"
+     href="#assembly-workbench"
+     title="Assembly Workbench"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Building multi-part assemblies is something users expect a modern CAD system to do.  FreeCAD has multiple add-on options but lacks an integrated Assembly workbench.  Version 1.0 will address this deficiency.  The integrated workbench delivered in 1.0 will be minimally viable.  It will provide the core functionality users need but will likely be less capable than the addon options currently available.  Goals for this release are modest and include</p>
+<ul>
+<li>An intuitive and user-friendly user interface</li>
+<li>An integrated solver to resolve assembly constraints</li>
+<li>A standard API for assemblies that external workbench authors can use to be compatible with both that workbench and each other.</li>
+</ul>
+<h3
+  id="reference-1">
+  Reference
+  <a class="heading-anchor"
+     href="#reference-1"
+     title="Reference"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><ul>
+<li><a href="https://ondsel.com/blog/default-assembly-workbench-1/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Ondsel Blog Series<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a></li>
+<li><a href="https://github.com/orgs/freecad/projects/7"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Github Project<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a></li>
+</ul>
+<h2
+  id="material-system">
+  Material System
+  <a class="heading-anchor"
+     href="#material-system"
+     title="Material System"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>The existing material capability is limited and does not meet the needs of many users.  Version 1.0 will start the process of improving the material system. A new material system will address needs in many different workbenches include FEM, Arch, Path, and Render.  Like the assembly workbench, goals for 1.0 are modest. We will provide minimum viable functionality with a solid foundation for future improvment.</p>
+<h3
+  id="reference-2">
+  Reference
+  <a class="heading-anchor"
+     href="#reference-2"
+     title="Reference"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><ul>
+<li><a href="https://github.com/freecad/freecad/issues/10174"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">original issue<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a></li>
+<li><a href="https://github.com/orgs/freecad/projects/17"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Github Project<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a></li>
+<li><a href="https://ondsel.com/blog/freecad-needs-a-better-materials-system"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Ondsel Blog post<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a></li>
+<li><a href="https://forum.freecad.org/viewtopic.php?style=4&amp;t=78242"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Forum topic<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a></li>
+</ul>
+<h2
+  id="initial-user-experience">
+  Initial User Experience
+  <a class="heading-anchor"
+     href="#initial-user-experience"
+     title="Initial User Experience"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>FreeCAD is often criticized as being hard to learn.  This is understandable because it is a complex application with many features.  However, we can do better, especially for first-time users who struggle to get started.</p>
+<p>The goals for 1.0 are</p>
+<ul>
+<li>A First Run Wizard</li>
+<li>Improved Start Page</li>
+<li>UI / UX improvements to improve discoverability and usability.</li>
+</ul>
+<h3
+  id="reference-3">
+  Reference
+  <a class="heading-anchor"
+     href="#reference-3"
+     title="Reference"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><ul>
+<li><a href="https://github.com/orgs/freecad/projects/1/views/1"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Github Project for the Customization and Preference Cleanup<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a></li>
+<li><a href="https://github.com/orgs/freecad/projects/15/views/1"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Github Project for the Toolbar stability and modernization<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a></li>
+<li><a href="https://github.com/orgs/freecad/projects/16/views/1"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Github Project for the Workbench Selector Cleanup<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a></li>
+</ul>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-13/zh/dev/setup/"
+             title="Next section"><svg class="icon-folder"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/folder.svg#folder"></use>
+  </svg>Development Setup</a><a class="page-item prev"
+             href="/Website/pr-13/zh/dev/roadmap/rationale/"
+             title="上一篇">Roadmap Rationale<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="返回顶部"
+  title="返回顶部 (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-13/zh/"
+            title="FreeCAD"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-13/zh/docs/"
+            title="Documentation"
+            class="active"
+            aria-current="page"
+            
+            >Documentation</a><ul><li>
+                  <a href="/Website/pr-13/zh/manual/"
+                    title="User manual"
+                    
+                    >User manual</a>
+                </li><li>
+                  <a href="/Website/pr-13/zh/dev/"
+                    title="Development Handbook"
+                    
+                    >Development Handbook</a>
+                </li><li>
+                  <a href="/Website/pr-13/zh/reference/"
+                    title="Technical Reference"
+                    
+                    >Technical Reference</a>
+                </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-13/zh/fedishare.html#title=Next&#43;Release&amp;description=Next%20Release.&amp;url=https://FreeCAD.github.io/Website/pr-13/zh/dev/roadmap/next/"
+  title="分享至 Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-13/zh/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-07
+  </span></div>
+</footer><script src="/Website/pr-13/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-13/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-13/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

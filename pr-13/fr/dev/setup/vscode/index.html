@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="fr-FR"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-13/css/styles.c8eee209de8ffe4c90d55c604cca8e5fc3f46a05523f438003b135e7845ad3ea.css" integrity="sha256-yO7iCd6P/kyQ1VxgTMqOX8P0agVSP0OAA7E154Ra0&#43;o=" crossorigin="anonymous"><title>FreeCAD | VSCode guide</title>
+  <meta name="description" content="Guide for getting started with VSCode."><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-13/fr/dev/setup/vscode/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-13/dev/setup/vscode/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-13/zh/dev/setup/vscode/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-13/es/dev/setup/vscode/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-13/fr/dev/setup/vscode/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-13/pt/dev/setup/vscode/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-13/de/dev/setup/vscode/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-13/ja/dev/setup/vscode/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-13/fr/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-13/fr/dev/setup/vscode/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="VSCode guide">
+  <meta property="og:description" content="Guide for getting started with VSCode.">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dev">
+    <meta property="article:modified_time" content="2026-04-07T13:51:15+02:00">
+</head><body class="single type-dev kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-13/fr/"accesskey="h"
+      title="Accueil (Alt + H)"
+      aria-label="Accueil">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-13/fr/docs/"
+            title="Documentation"
+            
+            
+            
+            >Documentation</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choisir la langue (Alt + L)"
+          aria-label="Choisir la langue"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-13/dev/setup/vscode/" title="VSCode guide">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/zh/dev/setup/vscode/" title="VSCode guide">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/es/dev/setup/vscode/" title="VSCode guide">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-13/fr/dev/setup/vscode/" title="VSCode guide">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/pt/dev/setup/vscode/" title="VSCode guide">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/de/dev/setup/vscode/" title="VSCode guide">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-13/ja/dev/setup/vscode/" title="VSCode guide">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Changer le thème (Alt + T)"
+    aria-label="Changer le thème"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero">
+
+    <h2 class="title">
+      VSCode guide</h1><h3 class="description">Guide for getting started with VSCode.</h3><div class="metadata"><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/words.svg#words"></use>
+  </svg>932 mots</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/time.svg#time"></use>
+  </svg>5 min</span></div></section><nav class="toc">
+  <input type="checkbox" id="toc-toggle-checkbox" class="toc-toggle-checkbox">
+  <label for="toc-toggle-checkbox" class="toc-toggle" title="Table of Contents"><svg class="icon-toc"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/toc.svg#toc"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg><span>Table des matières</span>
+  </label>
+
+  <div id="toc-content" class="toc-content">
+    <ul class="section-nav"><li>
+          <a href="/Website/pr-13/fr/dev/"
+            class="current-section"><svg class="icon-tri_tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_tri_left.svg#tri_tri_left"></use>
+  </svg> Development Handbook</a>
+        </li><li>
+          <a href="/Website/pr-13/fr/dev/setup/"
+            class="current-section"><svg class="icon-folder"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/folder.svg#folder"></use>
+  </svg> Development Setup</a>
+        </li><li>
+        <ul><li>
+              <a href="/Website/pr-13/fr/dev/setup/build/"
+                >Build environment</a>
+            </li><li>
+              <a href="/Website/pr-13/fr/dev/setup/workflow/"
+                >Contribution workflow and process</a>
+            </li><li>
+              <a href="/Website/pr-13/fr/dev/setup/dependencies/"
+                >Dependencies</a>
+            </li><li>
+              <a href="/Website/pr-13/fr/dev/setup/vscode/"
+                id="current-page" class="active" aria-current="page">VSCode guide</a>
+            </li><li>
+              <a href="/Website/pr-13/fr/dev/setup/clion/"
+                >CLion guide</a>
+            </li></ul>
+      </li>
+    </ul><p class="toc-label"><svg class="icon-file"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/file.svg#file"></use>
+  </svg>
+        <span>On this page</span>
+      </p><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#select-build-configuration">Select build configuration</a></li>
+        <li><a href="#first-build">First build</a></li>
+        <li><a href="#launching-the-built-executable-and-debugging">Launching the built executable and debugging</a></li>
+        <li><a href="#running-tests">Running tests</a></li>
+        <li><a href="#general-features-of-vscode">General features of VSCode</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+</nav><div class="content"><figure>
+  <blockquote class="note"
+    ><svg class="icon-note"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/note.svg#note"></use>
+  </svg>Remarque<p>Cette page na pas encore été traduite en français, la version anglaise est donc utilisée. Envie de contribuer à la traduction ?
+<a href=""
+  class="internal-tooltip">Contribuer<span class="tooltip">
+        <strong>FreeCAD</strong></span></a></p></blockquote></figure><p>A convenient way of working with the FreeCAD source code is to use an IDE or Integrated Development Environment. The FreeCAD repository contains a VSCode configuration which makes it particularly easy to get started with.</p>
+<p>Get VSCode here <a href="https://code.visualstudio.com/download"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">https://code.visualstudio.com/download<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a> and Git here <a href="https://git-scm.com/downloads"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">https://git-scm.com/downloads<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a></p>
+<p>After that go to github and create your own fork of the FreeCAD repository by clicking the fork button. Once that&rsquo;s done, clone your fork to your local computer that you will be using for development.</p>
+<p>Note: if you are using VSCode on an Ubuntu based Linux, please avoid using the snap version - it won&rsquo;t work properly with FreeCAD.</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">git clone https://github.com/user/freecad --recurse-submodules</span></span></code></pre></div></div><p>Open VSCode and select <code>File &gt; Open Folder</code>, then select the folder where you have cloned your fork of the repo.</p>
+<p>Be sure to copy the <code>.vscode</code> folder inside <code>/contrib</code> to the root directory of the repo (<code>/.vscode</code>)</p>
+<p>VSCode will probably ask to install the recommended extensions: say <code>yes</code>. If it doesn&rsquo;t you&rsquo;ll need to manually install these extensions</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">ms-vscode.cpptools-extension-pack
+</span></span><span class="line"><span class="cl">ms-python.python</span></span></code></pre></div></div><h2
+  id="select-build-configuration">
+  Select build configuration
+  <a class="heading-anchor"
+     href="#select-build-configuration"
+     title="Select build configuration"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p><video controls muted playsinline loop src="configure.mp4" type="video/mp4"></video></p>
+<p>First on the bottom left corner, in the status bar, select the build type. Options are:</p>
+<ul>
+<li>debug</li>
+<li>release</li>
+<li>conda debug</li>
+<li>conda release</li>
+</ul>
+<p>If you are using conda please select one of the respective ones.</p>
+<p>Cmake should automatically configure the project with the selected configuration.</p>
+<h2
+  id="first-build">
+  First build
+  <a class="heading-anchor"
+     href="#first-build"
+     title="First build"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p><video controls muted playsinline loop src="build.mp4" type="video/mp4"></video></p>
+<p>To build, either:</p>
+<ul>
+<li>Run <strong>Pixi</strong>, or</li>
+<li>Press <code>Ctrl + Shift + B</code>, or</li>
+<li>Click the build button with the cog icon in the status bar, or</li>
+<li>Run the <code>CMake: build</code> task</li>
+</ul>
+<p><strong>NOTE:</strong> The first build takes a while.</p>
+<p><strong>NOTE:</strong> If you change configuration (see step above) you will have to build again.</p>
+<h2
+  id="launching-the-built-executable-and-debugging">
+  Launching the built executable and debugging
+  <a class="heading-anchor"
+     href="#launching-the-built-executable-and-debugging"
+     title="Launching the built executable and debugging"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p><video controls muted playsinline loop src="debug.mp4" type="video/mp4"></video></p>
+<p>On the left panel go to the debug section and click the little green play button. Alternatively press <code>F5</code>. Every time you launch the debugger a build is triggered, to ensure all the latest changes you made to the code are compiled in.</p>
+<p>You should see freecad launching and the debugger attaching to the process. If an error pops up the python debugger failed to attach (there&rsquo;s 30 second timeout).
+Close FreeCAD and try launching it again. If it still fails try increasing the timeout located in the file <code>.vscode/scripts/WaitForDebugpy.py</code></p>
+<p>To debug please refer to the <a href="https://code.visualstudio.com/docs/editor/debugging#_debug-actions"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">documentation<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a> or search for a tutorial online.</p>
+<p><strong>NOTE:</strong> VSCode has an option called &lsquo;run without debugging&rsquo;. This doesn&rsquo;t work, don&rsquo;t use it. If you just want to run the application launch with <code>F5</code> and ignore the debugger.</p>
+<p><strong>NOTE:</strong> There&rsquo;s actually two debuggers: on the top panel you can see a dropdown to select either the c++ debugger or the python one.</p>
+<p><strong>NOTE:</strong> Don&rsquo;t use the restart button. It only restarts the selected debugger, which definitely is not what you want. Instead press the stop button (which stops both debuggers) and launch again.</p>
+<h2
+  id="running-tests">
+  Running tests
+  <a class="heading-anchor"
+     href="#running-tests"
+     title="Running tests"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p><video controls muted playsinline loop src="testing.mp4" type="video/mp4"></video></p>
+<p>The IDE supports running FreeCAD tests as well. On the left panel go to the testing section and click the play button. A build takes place and then all the tests are run and results reported.</p>
+<p><strong>NOTE:</strong> This is much slower than running the <code>Tests_run</code> executable directly (run <code>path/to/the/build-dir/tests/Tests_run</code>). The video above is sped up.</p>
+<p><strong>NOTE:</strong> Only c++ tests are currently integrated. Python tests are run from the <code>Test workbench</code>, or with the command <code>FreeCAD -t 0</code>, or <code>pixi run freecad -t 0</code> if you&rsquo;re using Pixi.</p>
+<p>Alternatively, there are two vscode tasks that can be used to run the cpp and python tests directly.</p>
+<p><strong>NOTE:</strong> The debug tests button does not currently work. More configuration is needed to get that to work.</p>
+<h2
+  id="general-features-of-vscode">
+  General features of VSCode
+  <a class="heading-anchor"
+     href="#general-features-of-vscode"
+     title="General features of VSCode"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>On the left panel you can see the following sections:</p>
+<ul>
+<li>File manager: here you can control fils and search them with <code>Ctrl+F</code>. Press <code>F2</code> to rename the selected file.</li>
+<li>Source control: here you can control git from the graphical user interface.</li>
+<li>Search: powerful tool that can search all files and replace text.</li>
+</ul>
+<p>In the status bar on the bottom:</p>
+<ul>
+<li>You can see which branch you are on and change it from there</li>
+<li>Click the error/warning counter to open the <code>PROBLEMS</code> panel. Here you will have a convenient collection of all the compiler warnings, cmake warnings, and problems from the workspace.</li>
+</ul>
+<p>General editor useful shortcuts:</p>
+<ul>
+<li>Rename all occurrencies of a symbol (e.g. a function name) with <code>F2</code></li>
+<li>Easily navigate code with the tools in the right click menu. For example <code>Go to definition</code> and <code>Find all references</code>.</li>
+<li>Press <code>Ctrl+P</code> and type a file name to jump to that file.</li>
+<li>Press <code>Ctrl+F</code> to search the current file.</li>
+<li>Use <code>Alt+Up/Down</code> to move rows of text up and down.</li>
+<li>Use <code>Ctrl+C/X/V</code> without selecting any text to copy/cut/paste entire rows.</li>
+<li>Use <code>Ctrl+Shift+Up/Down</code> to create more cursors and edit many rows at the same time. Press <code>Esc</code> to go back to one cursor.</li>
+<li>Hold <code>Ctrl</code> while moving left/right to move the cursor entire words at a time.</li>
+<li>Hold <code>Shift</code> while moving left/right/up/down to select text with the cursor.</li>
+</ul>
+<p>Read the documentation for more:</p>
+<ul>
+<li><a href="https://code.visualstudio.com/docs/editor/codebasics"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">basic editing<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a></li>
+<li><a href="https://code.visualstudio.com/docs/editor/editingevolved"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">code navigaton<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a></li>
+<li><a href="https://code.visualstudio.com/docs/editor/refactoring"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">refactoring<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a></li>
+</ul>
+<p>Other useful extensions, recommended but not necessary are</p>
+<ul>
+<li>
+<p><code>gruntfuggly.todo-tree</code>: Scans all the files and reports where particular keywords appear. For example <code>TODO</code>, <code>FIXME</code>, <code>BUG</code>&hellip;</p>
+</li>
+<li>
+<p><code>mhutchie.git-graph</code>: Helps visualize git commits and branches.</p>
+</li>
+<li>
+<p><code>donjayamanne.githistory</code>: Adds two buttons to the right-click menu: <code>git: view file history</code> and <code>git: view line history</code></p>
+</li>
+</ul>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-13/dev/setup/vscode/extensions.webp"
+  alt="VSCode extensions"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="2560"
+  height="1408"
+    srcset="/Website/pr-13/dev/setup/vscode/extensions_hu_3d2ce496246b1c8.webp 500w, /Website/pr-13/dev/setup/vscode/extensions_hu_187ae3dbf85a709a.webp 1000w, /Website/pr-13/dev/setup/vscode/extensions.webp 2560w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>VSCode extensions</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-13/dev/setup/vscode/extensions.webp"
+              title="VSCode extensions"
+              alt="VSCode extensions"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><ul>
+<li>On the very left you can see the <code>Todo-Tree</code> extension reporting <code>TODO</code>s and <code>FIXME</code></li>
+<li>On the left half you can see the <code>git graph</code> extension showing all the commits on different branches. You can click a commit to see exactly what was modified by it.</li>
+<li>On the right half you can see the <code>git history</code> of the DocumentObject.cpp file.</li>
+</ul>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-13/fr/dev/setup/dependencies/"
+             title="Article suivant"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_left.svg#tri_left"></use>
+  </svg>Dependencies</a><a class="page-item prev"
+             href="/Website/pr-13/fr/dev/setup/clion/"
+             title="Article précédent">CLion guide<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Aller au sommet de la page"
+  title="Aller au sommet de la page (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-13/fr/"
+            title="FreeCAD"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-13/fr/docs/"
+            title="Documentation"
+            class="active"
+            aria-current="page"
+            
+            >Documentation</a><ul><li>
+                  <a href="/Website/pr-13/fr/manual/"
+                    title="User manual"
+                    
+                    >User manual</a>
+                </li><li>
+                  <a href="/Website/pr-13/fr/dev/"
+                    title="Development Handbook"
+                    
+                    >Development Handbook</a>
+                </li><li>
+                  <a href="/Website/pr-13/fr/reference/"
+                    title="Technical Reference"
+                    
+                    >Technical Reference</a>
+                </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-13/fr/fedishare.html#title=VSCode&#43;guide&amp;description=Guide%20for%20getting%20started%20with%20VSCode.&amp;url=https://FreeCAD.github.io/Website/pr-13/fr/dev/setup/vscode/"
+  title="Partager sur Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-13/fr/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-13/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-07
+  </span></div>
+</footer><script src="/Website/pr-13/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-13/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-13/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>
