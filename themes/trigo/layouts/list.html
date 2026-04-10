@@ -31,26 +31,26 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   {{- $key := "" -}}
   {{- with .File -}}{{- $key = .Path -}}{{- else -}}{{- $key = .RelPermalink -}}{{- end -}}
 
-  {{- /* Get cover image. */ -}}
-  {{- $cover_image := partialCached "main/cover.html" . $key -}}
+  <section class="hero {{ with .Params.background_class }}{{ . }}{{ end }}"
+    style="{{ with .Params.background_style }}{{ . | safeCSS }}
+    {{- else with (partialCached "utils/color_hue.html" . $key) }}--hue: {{ . }};{{ end }}">
 
-  {{- $section_hue := "" -}}
-  {{- if not $cover_image}}
-    {{- $section_hue = partialCached "utils/color_hue.html" . $key -}}
-  {{- end -}}
+    <h1 class="title"
+      {{ with .Params.title_class }}class="{{ . }}"{{ end }}
+      {{ with .Params.title_style }}style="{{ . | safeCSS }}"{{ end }}>
+      {{- title .Title -}}
 
-  <section class="hero"
-    {{ if $section_hue }}style="--hue: {{ $section_hue }};"{{ end }}>
-
-    <h1 class="title">
-      {{ .Title | .RenderString }}
       {{- if .Draft -}}
         <sup><span>[{{- i18n "draft" | default "Draft" -}}]</span></sup>
       {{- end -}}
     </h1>
 
     {{- with .Description  -}}
-      <h3 class="description">{{- . | $.RenderString -}}</h3>
+      <h3 class="description"
+        {{ with $.Params.description_class }}class="{{ . }}"{{ end }}
+        {{ with $.Params.description_style }}style="{{ . | safeCSS }}"{{ end }}>
+        {{- title . -}}
+      </h3>
     {{- end -}}
 
     {{- if not hugo.IsProduction -}}
@@ -103,8 +103,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
       </div>
     {{- end -}}
 
-    {{- $cover_image -}}
-
+    {{- partialCached "main/cover.html" . $key -}}
   </section>
 
   {{/* Dynamically include content partials. */}}

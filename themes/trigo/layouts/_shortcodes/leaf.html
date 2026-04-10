@@ -1,0 +1,41 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Leaf shortcode:
+
+  @param {string} [label] – Optional label for tree leaf.
+  @param {string} [icon=file] – Icon for tree leaf: file, body, feature, sketch, item, element, leaf, or commit.
+  @param {string} [class] – Optional CSS class for tree leaf.
+  @param {string} [style] – Optional CSS style for tree leaf.
+
+  @return {HTML} Render tree leaf with icon and optional label.
+
+  @example {{< leaf label="README.md" icon="file" style="color: red;" >}}
+  @example {{< leaf "README.md" "commit" >}}
+
+*/ -}}
+
+
+{{- $label := cond (.IsNamedParams) (.Get "label") (.Get 0) -}}
+{{- $icon := cond (.IsNamedParams) (.Get "icon") (.Get 1) | default "file" -}}
+{{- $class := cond (.IsNamedParams) (.Get "class") (.Get 2) -}}
+{{- $style := cond (.IsNamedParams) (.Get "style") (.Get 3) -}}
+{{- $leaf := slice "file" "body" "feature" "sketch" "item" "element" "leaf" "commit" -}}
+{{- if not (in $leaf $icon) -}}
+  {{- $icon = "file" -}}
+{{- end -}}
+
+<li>
+  <span
+    class="leaf"
+    tabindex="0"
+    {{ with $class }}class="{{ . }}"{{ end }}
+    {{ with $style }}style="{{ . | safeCSS }}"{{ end }}>
+
+    {{- partialCached "utils/icon.html" $icon (lower $icon) -}}
+    {{- with $label -}}{{- . -}}{{- end -}}
+  </span>
+</li>

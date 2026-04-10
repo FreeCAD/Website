@@ -1,0 +1,180 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Original code from https://github.com/mandaris/stoot. */ -}}
+
+{{- /* Toot shortcode:
+
+  @param {string} url – URL of Mastodon instance (full or domain/id).
+  @param {string} [OG=true] – Optional render of OpenGraph preview card.
+
+  @return {HTML} Render embedded Mastodon toot/post with media, poll, and optional link preview.
+
+  @example {{< toot url="mastodon.social/@user/1234567890" OG="false" >}}
+  @example {{< toot "https://mastodon.social/@user/1234567890" >}}
+
+*/ -}}
+
+
+{{- $url := cond (.IsNamedParams) (.Get "url") (.Get 0) | default "" | lower -}}
+{{- $url = cond (gt (len (findRE "^https?://" $url)) 0) $url (print "https://" $url) -}}
+{{- $url = replace (replace $url "://www." "://") "/$" "" -}}
+{{- $parts := split $url "/" -}}
+{{- $host := (urls.Parse $url).Host -}}
+{{- $id := index $parts (sub (len $parts) 1) -}}
+{{- $api_url := printf "https://%s/api/v1/statuses/%s" $host $id -}}
+{{- $enable_opengraph := cond (.IsNamedParams) (.Get "OG") (.Get 1) | default "true" -}}
+{{- $alt := i18n "image_fallback" | default "Image" -}}
+
+{{- with try (resources.GetRemote $api_url) -}}
+  {{- with .Err -}}
+    <blockquote class="toot-blockquote">
+      <p class="ctr legal">[Source not online at time of site build.]</p>
+    </blockquote>
+  {{- else  with .Value -}}
+    {{- $json := unmarshal .Content -}}
+    {{- $acct := $json.account.acct -}}
+    {{- $toot_link := printf "https://%s/@%s/status/%s" $host $acct $id -}}
+    {{- $handle_inst := printf "@%s@%s" $acct $host -}}
+
+    <blockquote class="toot-blockquote" cite="{{ $toot_link }}">
+      <div class="toot-header">
+        <a class="toot-profile"
+          href="https://{{ $host }}/@{{ $acct }}"
+          rel="noopener">
+          <img src="{{ $json.account.avatar }}"
+            alt="{{ $alt }}"
+            loading="lazy"
+            aria-hidden="true"
+          />
+        </a>
+        <div class="toot-author">
+          <a class="toot-author-name"
+            href="https://{{ $host }}/@{{ $acct }}"
+            rel="noopener">
+            {{ $json.account.display_name }}
+          </a>
+          <a class="toot-author-handle"
+            href="https://{{ $host }}/@{{ $acct }}"
+            rel="noopener">
+            {{ $handle_inst }}
+          </a>
+        </div>
+      </div>
+
+      {{- $json.content | safeHTML -}}
+
+      {{- $images := slice -}}
+      {{- with $json.media_attachments -}}
+        {{- range . -}}
+          {{- if eq .type "image" -}}
+            {{- $images = $images | append . -}}
+          {{- end -}}
+        {{- end -}}
+
+        {{- with $images -}}
+          <div class="toot-img-grid-{{ len $images }}">
+            {{- range $img := . -}}
+              <img src="{{ $img.url }}"
+                alt="{{ $alt }}"
+                class="toot-media-img {{ if $json.sensitive }}toot-sens-blur{{ end }}"
+                loading="lazy"
+                {{- if $json.sensitive }}onclick="this.classList.toggle('toot-sens-blur-no')"{{- end }}
+              />
+              {{- if $json.sensitive -}}
+                <div class="blur-text">
+                  Sensitive content<br />
+                  (flagged at origin)
+                </div>
+              {{- end -}}
+            {{- end -}}
+          </div>
+        {{- end -}}
+
+        {{- range . -}}
+          {{- if or (eq .type "video") (eq .type "gifv") -}}
+            <div class="ctr toot-video-wrapper">
+              <video {{ if eq .type "gifv" }}loop autoplay{{ end }}
+                muted playsinline controls
+                class="ctr toot-media-img {{ if $json.sensitive }} toot-sens-blur{{ end }}"
+                {{- if $json.sensitive }}onclick="this.classList.toggle('toot-sens-blur-no')"{{- end }}>
+                <source src="{{ .url }}">
+                <p class="legal ctr">
+                  (Your browser doesn't support the <code>video</code> tag.)
+                </p>
+              </video>
+              {{- if $json.sensitive -}}
+                <div class="blur-text">
+                  Sensitive content<br />
+                  (flagged at origin)
+                </div>
+              {{- end -}}
+            </div>
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- if eq $enable_opengraph "true" -}}
+        {{- with $json.card -}}
+          {{- with .image -}}
+            <a href="{{ $json.card.url }}" rel="'noopener">
+              <div class="toot-card">
+                <div class="toot-card-image">
+                  <img src="{{ . }}"
+                    alt="{{ $alt }}"
+                    loading="lazy"
+                    class="toot-card-image-image" />
+                </div>
+                <div class="toot-card-content">
+                  <p class="toot-card-title">
+                    {{ $json.card.title }}
+                  </p>
+                  <p class="toot-card-description">
+                    {{ $json.card.description }}
+                  </p>
+                </div>
+              </div>
+            </a>
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- with $json.poll -}}
+        {{- $votes_total := 0 -}}
+        {{- range .options -}}
+          {{- $votes_total = add $votes_total .votes_count -}}
+        {{- end -}}
+        <div class="toot-poll-wrapper">
+          {{- range .options -}}
+            <div class="toot-poll-meter">
+              <meter id="vote-count"
+                max="{{ $votes_total }}"
+                value="{{ .votes_count }}">
+              </meter>
+              <span class="toot-poll-count">
+                {{ (mul 100 (div .votes_count $votes_total)) | lang.FormatPercent 1 }}
+              </span>
+              <span class="toot-poll-title">
+                {{ .title }}
+              </span>
+            </div>
+          {{- end -}}
+        </div>
+        <p class="legal toot-poll-total">
+          {{ $votes_total }} people
+        </p>
+      {{- end -}}
+
+      <div class="toot-footer">
+        <a href="https://{{ $host }}/@{{ $acct }}/{{ $json.id }}"
+          class="toot-date"
+          rel="noopener">
+          {{ dateFormat "3:04 PM • January 2, 2006" $json.created_at }} (UTC)
+        </a>
+      </div>
+    </blockquote>
+  {{- end -}}
+{{- end -}}

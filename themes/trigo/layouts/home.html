@@ -16,18 +16,27 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
   {{- $buttons := .Params.buttons -}}
   {{- $hero := .Params.hero | default hugo.Sites.Default.Params.hero -}}
+
   {{- $key := "" -}}
   {{- with .File -}}{{- $key = .Path -}}{{- else -}}{{- $key = .RelPermalink -}}{{- end -}}
-  {{- $section_hue := partialCached "utils/color_hue.html" . $key -}}
 
-  <section class="hero"
-    {{ if $section_hue }}style="--hue: {{ $section_hue }};"{{ end }}>
+  <section class="hero {{ with .Params.background_class }}{{ . }}{{ end }}"
+    style="{{ with .Params.background_style }}{{ . | safeCSS }}
+    {{- else with (partialCached "utils/color_hue.html" . $key) }}--hue: {{ . }};{{ end }}">
 
     <div class="hero-column">
-      <h1 class="title">{{- .Title | .RenderString -}}</h1>
+      <h1 class="title"
+        {{ with .Params.title_class }}class="{{ . }}"{{ end }}
+        {{ with .Params.title_style }}style="{{ . | safeCSS }}"{{ end }}>
+        {{- title .Title -}}
+      </h1>
 
       {{- with .Description -}}
-        <h3 class="description">{{- . | $.RenderString -}}</h3>
+        <h3 class="description"
+          {{ with $.Params.description_class }}class="{{ . }}"{{ end }}
+          {{ with $.Params.description_style }}style="{{ . | safeCSS }}"{{ end }}>
+          {{- title . -}}
+        </h3>
       {{- end -}}
 
       {{- with $buttons -}}
@@ -81,12 +90,16 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
         href="{{ $hero_link }}"
         {{ if $is_external }}rel="noopener noreferrer"{{ end }}>
 
-        <h2 class="title">{{- $hero_title | .RenderString -}}</h2>
+        <h2 class="title"
+          {{ with .Params.hero.class }}class="{{ . }}"{{ end }}
+          {{ with .Params.hero.style }}style="{{ . | safeCSS }}"{{ end }}>
+          {{- $hero_title -}}
+        </h2>
 
         {{- partialCached "main/cover.html" $hero_cover $hero_cover -}}
       </a>
-    {{- end -}}
 
+    {{- end -}}
   </section>
 
   {{- partial "main/content.html" . -}}

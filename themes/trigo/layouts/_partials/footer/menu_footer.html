@@ -46,7 +46,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
           <a href="{{ .URL }}"
             {{ with $class }}class="{{ delimit . " " }}"{{ end }}
             {{ with $aria }}aria-current="{{ . }}"{{ end }}
-            {{ with .Params.style }}style="{{ . }}"{{ end }}
+            {{ with .Params.style }}style="{{ . | safeCSS }}"{{ end }}
             {{ if $is_external }}target="_blank" rel="noopener noreferrer"{{ end }}>
             {{- $name -}}
             {{- if $is_external -}}
@@ -62,7 +62,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
                 {{- $is_external := and (hasPrefix .URL "http") (not (hasPrefix .URL site.BaseURL)) -}}
                 <li>
                   <a href="{{ .URL }}"
-                    {{ with .Params.style }}style="{{ . }}"{{ end }}
+                    {{ with .Params.style }}style="{{ . | safeCSS }}"{{ end }}
                     {{ if $is_external }}target="_blank" rel="noopener noreferrer"{{ end }}>
                     {{- $name -}}
                     {{- if $is_external -}}
@@ -82,7 +82,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
                     <li>
                       <a href="{{ .RelPermalink }}"
                         {{ with .Params.class }}class="{{ delimit . " " }}"{{ end }}
-                        {{ with .Params.style }}style="{{ . }}"{{ end }}>
+                        {{ with .Params.style }}style="{{ . | safeCSS }}"{{ end }}>
                         {{- .LinkTitle -}}
                       </a>
                     </li>

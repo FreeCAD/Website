@@ -1,0 +1,27 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* PDF shortcode:
+
+  @param {string} path – URL or path to PDF document.
+
+  @return {HTML} Render embedded PDF.
+
+  @example {{< pdf path="/docs/file.pdf" >}}
+  @example {{< pdf "file.pdf" >}}
+
+*/ -}}
+
+
+{{- $path := cond (.IsNamedParams) (.Get "path") (.Get 0) -}}
+
+<div class="pdf">
+  <iframe src="{{ $path | safeURL }}"
+    width="100%"
+    style="min-height: 50vh; max-width: var(--width);"
+    frameborder="0">
+  </iframe>
+</div>

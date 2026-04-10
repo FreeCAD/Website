@@ -1,0 +1,99 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Compare Slider Shortcode:
+
+  - Display a before/after comparison slider with divider and arrows handle.
+  - Support images from page bundles, static/assets directories, or external URLs.
+  - Support positional params or named params (before/after or left/right).
+  - Support resizing for processable formats.
+
+  @param {string} before/left – Left/before image filename/resource/URL
+  @param {string} after/right – Right/after image filename/resource/URL
+
+  @return {HTML} Render interactive before/after image comparison with responsive srcset.
+
+  @example {{< compare before="before.jpg" after="after.jpg" >}}
+  @example {{< compare "before.jpg" "after.jpg" >}}
+
+*/ -}}
+
+
+{{- $before := or (.Get "before") (.Get "left") (.Get 0) -}}
+{{- $after := or (.Get "after") (.Get "right") (.Get 1) -}}
+
+{{- $page := .Page -}}
+{{- $ordinal := .Ordinal -}}
+{{- $format := site.Params.resize_format | default "webp" -}}
+{{- $resize_dimensions := site.Params.resize_dimensions.cover | default (slice "500x250" "1000x500") -}}
+{{- $alt := i18n "image_fallback" | default "Image" -}}
+
+{{- if not (and $before $after) -}}
+  {{- warnf "Compare shortcode: no images found on page %s" $page.File.Path -}}
+  {{- return -}}
+{{- end -}}
+
+{{- $images := slice (dict "src" $before "class" "before") (dict "src" $after "class" "after") -}}
+
+<div id="compare{{ $ordinal }}" class="compare">
+
+  {{- range $images -}}
+
+    {{- $img := $page.Resources.GetMatch .src -}}
+    {{- if not $img -}}
+      {{- $img = resources.Get .src -}}
+    {{- end -}}
+    {{- if and (not $img) (strings.HasPrefix .src "http") -}}
+      {{- $remote := try (resources.GetRemote .src) -}}
+      {{- with $remote.Err -}}
+        {{- warnf "Compare shortcode: failed to fetch remote resource %q: %s" .src . -}}
+      {{- else -}}
+        {{- $img = $remote.Value -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{- if reflect.IsImageResourceProcessable $img -}}
+      {{- $srcset := slice -}}
+      {{- $sizes := slice -}}
+
+      {{- range $resize_dimensions -}}
+        {{- $width := int (index (split . "x") 0) -}}
+        {{- if lt $width $img.Width -}}
+          {{- $resized := $img.Resize (printf "%dx %s" $width $format) -}}
+          {{- $srcset = $srcset | append (printf "%s %dw" $resized.RelPermalink $width) -}}
+          {{- $sizes = $sizes | append (printf "(max-width: %dpx) %dpx" $width $width) -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- $srcset = $srcset | append (printf "%s %dw" $img.RelPermalink $img.Width) -}}
+      {{- $sizes = $sizes | append "75vw" -}}
+
+      <img class="{{ .class }}"
+        srcset="{{ delimit $srcset ", " }}"
+        sizes="{{ delimit $sizes ", " }}"
+        src="{{ $img.RelPermalink }}"
+        width="{{ $img.Width }}"
+        height="{{ $img.Height }}"
+        alt="{{ $alt }}"
+        loading="lazy"
+        fetchpriority="low">
+
+    {{- else -}}
+      <img class="{{ .class }}"
+        src="{{ if $img }}{{ $img.RelPermalink }}{{ else }}{{ .src }}{{ end }}"
+        alt="{{ $alt }}"
+        loading="lazy"
+        fetchpriority="low">
+    {{- end -}}
+  {{- end -}}
+
+  <div class="divider"></div>
+
+  <div class="handle">
+    {{- partialCached "utils/icon.html" "tri_left" "tri_left" -}}
+    {{- partialCached "utils/icon.html" "tri_right" "tri_right" -}}
+  </div>
+</div>

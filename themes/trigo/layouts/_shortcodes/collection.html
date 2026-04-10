@@ -1,0 +1,114 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Collection shortcode:
+
+  @param {string} collection – Name of a taxonomy term, taxonomy, or section to fetch pages from. Default to mainSections.
+  @param {string} [taxonomy] – Optional taxonomy to filter.
+  @param {string} [term] – Optional taxonomy term within given taxonomy.
+  @param {string} [sort] – Optional sort by date, weight, or title.
+  @param {int} [first] – Optional limit number of returned pages.
+  @param {bool} [reverse] – Optional reverse sort order.
+
+  @return {HTML} Render pages collection with cards.
+
+  @example {{< collection collection="news" taxonomy="tags" term="feature" sort="date" >}}
+  @example {{< collection news 6 >}}
+
+*/ -}}
+
+
+{{- $collection := cond (.IsNamedParams) (.Get "collection") (.Get 0) -}}
+{{- $first := cond (.IsNamedParams) (.Get "first") (.Get 1) | default 0 | int -}}
+{{- $taxonomy := cond (.IsNamedParams) (.Get "taxonomy") (.Get 2) -}}
+{{- $term := cond (.IsNamedParams) (.Get "term") (.Get 3) -}}
+{{- $sort := cond (.IsNamedParams) (.Get "sort") (.Get 4) -}}
+{{- $reverse := cond (.IsNamedParams) (.Get "reverse") (.Get 5) | default false -}}
+
+{{- $pages := slice -}}
+{{- $taxonomies := site.Taxonomies -}}
+
+{{- if and $collection (not $taxonomy) (not $term) -}}
+
+  {{- /* Collection is an existing taxonomy term. */ -}}
+  {{- $ter := lower $collection -}}
+  {{- range $tax, $terms := $taxonomies -}}
+    {{- if isset $terms $ter -}}
+      {{- $pages = index $terms $ter -}}
+      {{- break -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- /* Collection is an existing taxonomy name. */ -}}
+  {{- if and (not $pages) (in $taxonomies (lower $collection)) -}}
+    {{- $taxonomy = $collection -}}
+    {{- with index $taxonomies $taxonomy -}}
+      {{- $pages = .Pages -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- /* Collection is a section. */ -}}
+  {{- if not $pages -}}
+    {{- with site.GetPage $collection -}}
+      {{- $pages = .Pages -}}
+    {{- end -}}
+  {{- end -}}
+
+{{- /* Get pages based on collection content. */ -}}
+{{- else if and $taxonomy $term -}}
+  {{- with index $taxonomies $taxonomy -}}
+    {{- $pages = .Get $term -}}
+  {{- end -}}
+
+{{- else if $taxonomy -}}
+  {{- with index $taxonomies $taxonomy -}}
+    {{- $pages = .Pages -}}
+  {{- end -}}
+
+{{- else -}}
+  {{- $pages = .Page.RegularPages
+    | default .Page.CurrentSection.RegularPages
+    | default (where site.RegularPages "Section" "in" site.MainSections)
+  -}}
+{{- end -}}
+
+{{- /* Sort pages. */ -}}
+{{- $valid_sort := slice "date" "weight" "title" -}}
+{{- if not (in $valid_sort $sort)  -}}
+  {{- $sort = "" -}}
+{{- end -}}
+{{- if $sort -}}
+  {{- if eq $sort "date" -}}
+    {{- $pages = $pages.ByDate -}}
+  {{- else if eq $sort "weight" -}}
+    {{- $pages = $pages.ByWeight -}}
+  {{- else if eq $sort "title" -}}
+    {{- $pages = $pages.ByTitle -}}
+  {{- end -}}
+{{- end -}}
+{{- if $reverse -}}
+  {{- $pages = $pages.Reverse -}}
+{{- end -}}
+
+{{- /* Filter pages number. */ -}}
+{{- if gt $first 0 -}}
+  {{- $pages = first $first $pages -}}
+{{- end -}}
+
+{{- /* Render pages as cards. */ -}}
+{{- with $pages -}}
+  <div class="card-list wide">
+    <div class="cards">
+
+      {{- range . -}}
+        {{- $key := "" -}}
+        {{- with .File -}}{{- $key = .Path -}}{{- else -}}{{- $key = .RelPermalink -}}{{- end -}}
+        {{- partialCached "main/card.html" . $key -}}
+      {{- end -}}
+
+    </div>
+  </div>
+{{- end -}}

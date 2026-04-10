@@ -1,0 +1,20 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Load images canvas Shortcode script. */ -}}
+
+
+{{- with resources.Get "js/canvas.js" -}}
+  {{- $canvas := . -}}
+  {{- if hugo.IsProduction -}}
+    {{- $canvas = $canvas | minify | fingerprint -}}
+  {{- end -}}
+  <script src="{{ $canvas.RelPermalink }}"
+    type="text/javascript"
+    {{ if hugo.IsProduction }}integrity="{{ $canvas.Data.Integrity }}" crossorigin="anonymous"{{ end }}
+    defer>
+  </script>
+{{- end -}}

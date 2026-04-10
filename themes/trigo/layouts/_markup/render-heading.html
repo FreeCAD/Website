@@ -9,8 +9,8 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   - Support for CSS class and style attributes.
   - Anchor link next to heading.
 
-  @param {string} [class] CSS class to use.
-  @param {string} [style] CSS style properties to use.
+  @param {string} [class] – Optional CSS class to use.
+  @param {string} [style] – Optional CSS style properties to use.
 
   @returns {template.HTML}
 
@@ -29,9 +29,10 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 <h{{ $level }}
   id="{{ $anchor }}"
-  {{- with $class -}} class="{{ . }}"{{- end -}}
-  {{- with $style -}} style="{{ . | safeCSS }}"{{- end -}}>
-  {{ $text }}
+  {{ with $class }}class="{{ . }}"{{ end }}
+  {{ with $style }}style="{{ . | safeCSS }}"{{ end }}>
+  {{- $text -}}
+
   <a class="heading-anchor"
      href="#{{ $anchor }}"
      title="{{ $text }}">

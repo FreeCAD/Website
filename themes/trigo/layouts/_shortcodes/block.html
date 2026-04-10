@@ -1,0 +1,61 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Block shortcode:
+
+  @param {string} content – Block content.
+  @param {string} [title] – Optional block title.
+  @param {string} [class] – Optional CSS class for whole block container.
+  @param {string} [style] – Optional CSS style for whole block container.
+  @param {string} [title_class] – Optional CSS class for title.
+  @param {string} [title_style] – Optional CSS style for title.
+  @param {string} [content_class] – Optional CSS class for content.
+  @param {string} [content_style] – Optional CSS style for content.
+
+  @return {HTML} Render full-width block layout container with optional title and content.
+
+  @example {{< block title="My Title" content="Inline content" style="border: 1px solid #ccc" >}}
+  @example {{< block "Inline content" "My Title" "padding: 1rem; font-weight: bold; color: #333" >}}
+  @example
+    {{< block style="background: #f7f7f7" >}}
+      Markdown content between tags.
+    {{< /block >}}
+
+*/ -}}
+
+
+{{- $content := .InnerDeindent
+  | default (cond (.IsNamedParams) (.Get "content") (.Get 0))
+  | default "No content provided"
+  | strings.TrimSpace
+-}}
+{{- $title := cond (.IsNamedParams) (.Get "title") (.Get 1) -}}
+{{- $block_class := cond (.IsNamedParams) (.Get "class") (.Get 2) -}}
+{{- $block_style := cond (.IsNamedParams) (.Get "style") (.Get 3) -}}
+{{- $title_class := cond (.IsNamedParams) (.Get "title_class") (.Get 4) -}}
+{{- $title_style := cond (.IsNamedParams) (.Get "title_style") (.Get 5) -}}
+{{- $content_class := cond (.IsNamedParams) (.Get "content_class") (.Get 6) -}}
+{{- $content_style := cond (.IsNamedParams) (.Get "content_style") (.Get 7) -}}
+
+<div class="block wide"
+  {{ with $block_class }}class="{{ . }}"{{ end }}
+  {{ with $block_style }}style="{{ . | safeCSS }}"{{ end }}>
+  {{- with $title -}}
+    <h2 class="block-title"
+      {{ with $title_class }}class="{{ . }}"{{ end }}
+      {{ with $title_style }}style="{{ . | safeCSS }}"{{ end }}>
+      {{- . -}}
+    </h2>
+  {{- end -}}
+
+  {{- with $content -}}
+    <div class="block-content"
+      {{ with $content_class }}class="{{ . }}"{{ end }}
+      {{ with $content_style }}style="{{ . | safeCSS }}"{{ end }}>
+      {{- . | $.Page.RenderString -}}
+    </div>
+  {{- end -}}
+</div>

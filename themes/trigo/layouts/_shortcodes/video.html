@@ -1,0 +1,50 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Video shortcode:
+
+  @param {string} src – Path to video resource (page bundle).
+  @param {string} [poster] – Optional poster image resource.
+
+  @return {HTML} Render video with optional poster and fallback text if video missing.
+
+  @example {{< video src="video.mp4" poster="cover.jpg" >}}
+  @example {{< video "video.mp4" "cover.jpg" >}}
+
+*/ -}}
+
+
+{{- $src := cond (.IsNamedParams) (.Get "src") (.Get 0) -}}
+{{- $poster := .Page.Resources.GetMatch (cond (.IsNamedParams) (.Get "poster") (.Get 1)) | default "" -}}
+{{- $video := .Page.Resources.GetMatch $src -}}
+{{- $video_fallback := i18n "video_fallback" | default "Your browser does not support the video tag." -}}
+
+{{- if not $poster -}}
+  {{- $filename := replace $src (printf ".%s" (path.Ext $src)) "" -}}
+  {{- range $extension := slice "jpg" "jpeg" "png" "webp" -}}
+    {{- with (first 1 ($.Page.Resources.Match (printf "%s*.%s" $filename $extension))) -}}
+      {{- $poster = . -}}
+      {{- break -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+<figure>
+  <video preload="metadata"
+    controls
+    {{ with $poster }}poster="{{ .RelPermalink }}"{{ end }}>
+
+    {{- with $video -}}
+      <source src="{{ .RelPermalink }}"
+        type="video/{{ .MediaType.SubType }}">
+
+    {{- else -}}
+      <p>Video resource '{{ $src }}' not found.</p>
+    {{- end -}}
+
+    {{- $video_fallback -}}
+  </video>
+</figure>

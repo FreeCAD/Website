@@ -27,3 +27,18 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 {{- if and site.Params.enable_js_toc (in (slice "page" "section") .Kind) (ne .Layout "archives") -}}
   {{- partialCached "scripts/toc.html" . "toc" -}}
 {{- end -}}
+
+{{- /* Images carousel Shortcode script. */ -}}
+{{- if and site.Params.enable_js_carousel (.HasShortcode "carousel") -}}
+  {{- partialCached "scripts/carousel.html" . "carousel" -}}
+{{- end -}}
+
+{{- /* Images compare Shortcode script. */ -}}
+{{- if and site.Params.enable_js_compare (.HasShortcode "compare") -}}
+  {{- partialCached "scripts/compare.html" . "compare" -}}
+{{- end -}}
+
+{{- /* Images canvas Shortcode script. */ -}}
+{{- if and site.Params.enable_js_canvas (.HasShortcode "canvas") -}}
+  {{- partialCached "scripts/canvas.html" . "compare" -}}
+{{- end -}}

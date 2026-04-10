@@ -1,0 +1,47 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Details shortcode:
+
+  @param {string} [summary] – Optional summary shown on top.
+  @param {bool|string|int} [open=true] – Option whether details are initially expanded.
+  @param {string} [name] – Optional name attribute for grouping behavior.
+  @param {string} [title] – Optional title attribute.
+  @param {string} [id] – Optional ID attribute.
+  @param {string} [class] – Optional CSS class for details.
+
+  Note: Tweaked from Hugo default details shortcode. See https://gohugo.io/shortcodes/details/
+
+  @return {HTML} Render details with inner content.
+
+  @example {{< details summary="More info" open="true" >}}...{{< /details >}}
+  @example {{< details open >}}...{{< /details >}}
+
+*/ -}}
+
+
+{{- $summary := cond (.IsNamedParams) (.Get "summary") (.Get 0) | default (i18n "details" | default "Details") -}}
+{{- $open := cond (.IsNamedParams) (.Get "open") (.Get 1) -}}
+{{- $name := cond (.IsNamedParams) (.Get "name") (.Get 2) -}}
+{{- $title := cond (.IsNamedParams) (.Get "title") (.Get 3) -}}
+{{- $id := cond (.IsNamedParams) (.Get "id") (.Get 4) -}}
+{{- $class := cond (.IsNamedParams) (.Get "class") (.Get 5) -}}
+
+{{- if in (slice "true" "open" "opened" true 1) $open -}}
+  {{- $open = true -}}
+{{- end -}}
+
+<details
+  {{ with $open }}open{{ end }}
+  {{ with $name }}name="{{ . }}"{{ end }}
+  {{ with $title }}title="{{ . }}"{{ end }}
+  {{ with $id }}id="{{ . }}"{{ end }}
+  {{ with $class }}class="{{ . }}"{{ end }}>
+
+  <summary>{{ $summary }}</summary>
+
+  {{- .Inner | .Page.RenderString (dict "display" "block") -}}
+</details>

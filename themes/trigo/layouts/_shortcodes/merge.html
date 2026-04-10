@@ -1,0 +1,47 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Merge shortcode:
+
+  @param {string} url – URL to git pull/merge request or commit.
+
+  @return {HTML} Render link with icon and label (#id or short commit hash).
+
+  @example {{< merge url="https://github.com/user/repo/pull/123" >}}
+  @example {{< merge "https://gitlab.com/user/repo/-/commit/abcdef123456" >}}
+
+*/ -}}
+
+
+{{- $url := cond (.IsNamedParams) (.Get "url") (.Get 0) | default "" | lower -}}
+{{- $text := "" -}}
+{{- $fallback := i18n "merge" | default "View code change" -}}
+
+{{- with findRE `(?:pulls?|merge_requests?)/(\d+)(?:$|[^a-zA-Z0-9])` $url -}}
+  {{- with index . 0 | replaceRE `.*?/(\d+)(?:$|[^a-zA-Z0-9])` "$1" -}}
+    {{- $text = printf "#%s" . -}}
+  {{- else -}}
+    {{- $text = $fallback -}}
+  {{- end -}}
+
+{{- /* Fallback to commit hash. */ -}}
+{{- else with findRE `(?:commits?|commit)/([0-9a-f]+)(?:$|[^0-9a-fA-F])` $url -}}
+  {{- with index . 0 | replaceRE `.*?/([0-9a-f]+)(?:$|[^0-9a-fA-F])` "$1" -}}
+    {{- $text = slicestr . 0 8 -}}
+  {{- else -}}
+    {{- $text = $fallback -}}
+  {{- end -}}
+{{- else -}}
+  {{- $text = $fallback -}}
+{{- end -}}
+
+<a href="{{ $url }}"
+  class="merge"
+  title="{{ $fallback }}">
+
+  {{- partialCached "utils/icon.html" "versions" "versions" -}}
+  {{ $text }}
+</a>

@@ -13,8 +13,18 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 {{- define "main" -}}
 
-  <section class="hero">
-    <h1 class="title">{{ .Title }}</h1>
+  {{- $key := "" -}}
+  {{- with .File -}}{{- $key = .Path -}}{{- else -}}{{- $key = .RelPermalink -}}{{- end -}}
+
+  <section class="hero {{ with .Params.background_class }}{{ . }}{{ end }}"
+    style="{{ with .Params.background_style }}{{ . | safeCSS }}
+    {{- else with (partialCached "utils/color_hue.html" . $key) }}--hue: {{ . }};{{ end }}">
+
+    <h1 class="title"
+      {{ with .Params.title_class }}class="{{ . }}"{{ end }}
+      {{ with .Params.title_style }}style="{{ . | safeCSS }}"{{ end }}>
+      {{- title .Title -}}
+    </h1>
 
     {{- with .Description -}}
       <h3 class="description">{{ . }}</h3>

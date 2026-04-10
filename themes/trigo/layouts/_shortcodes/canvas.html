@@ -1,0 +1,90 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Canvas Shortcode:
+
+  - Display a sequence of ordered images as an animated canvas with screen, mouse and keyboard controls via JS.
+  - Support image sequence resources from page bundles and static/assets directories.
+  - Support positional params or named params.
+  - Support resizing for processable formats.
+  - Support optional animation speed and title.
+  - Add noscript fallback.
+
+  Note: the animation order is based on image filenames sorting, e.g. `01.webp`, `02.webp`, etc.
+
+  @param {string} [path] – Path to images resources (page bundle or static/assets dirs).
+  @param {int} [fps=12] – Animation speed in frames per second when playing.
+  @param {string} [title] – Title to show on canvas hover.
+
+  @return {HTML} Render animated canvas of images with controls and interaction.
+
+  @example {{< canvas path="directory-path" fps="24" title="An animated canvas." >}}
+
+*/ -}}
+
+
+{{- $path := cond (.IsNamedParams) (.Get "path") (.Get 0) -}}
+{{- $fps := int (cond (.IsNamedParams) (.Get "fps") (.Get 1) | default 12) -}}
+{{- $title := cond (.IsNamedParams) (.Get "title") (.Get 2) -}}
+
+{{- $id := printf "canvas-%d" .Ordinal -}}
+{{- $format := site.Params.resize_format | default "webp" -}}
+{{- $resize_dimensions := index site.Params.resize_dimensions.cover 0 | default "500x250" -}}
+{{- $frames := slice -}}
+{{- $alt := i18n "image_fallback" | default "Image" -}}
+
+{{- range sort (.Page.Resources.Match (printf "%s/*" $path)) "Name" -}}
+  {{- $img := . -}}
+  {{- if reflect.IsImageResourceProcessable $img -}}
+    {{- $width := int (index (split $resize_dimensions "x") 0) -}}
+    {{- if lt $width $img.Width -}}
+      {{- $img = $img.Resize (printf "%dx %s" $width $format) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $frames = $frames | append $img.RelPermalink -}}
+{{- end -}}
+
+{{- if eq (len $frames) 0 -}}
+  {{ errorf "canvas shortcode: no frames found in %q for page %q" $path .Page.File.Path }}
+{{- end -}}
+
+<div class="canvas"
+  id="{{ $id }}"
+  tabindex="0"
+  {{ with $title }}title="{{ . }}"{{ end }}>
+
+  <canvas aria-label="Canvas animation">
+    <img src="{{ index $frames 0 }}" alt="{{ $alt }}">
+  </canvas>
+
+  <div class="controls">
+    <button class="play" aria-label="Play animation">
+      {{- partialCached "utils/icon.html" "play" "play" -}}
+    </button>
+
+    <button class="pause" aria-label="Pause animation">
+      {{- partialCached "utils/icon.html" "pause" "pause" -}}
+    </button>
+    <input class="slider" type="range" min="0" max="{{ sub (len $frames) 1 }}" value="0" aria-label="Animation frame">
+  </div>
+
+  <script type="application/json" class="canvas-data">
+  {
+    "fps": {{ $fps }},
+    "frames": {{ $frames | jsonify | safeJS }}
+  }
+  </script>
+
+  <noscript>
+    <figure>
+      <img src="{{ index $frames 0 }}"
+        alt="{{ $alt }}"
+        style="max-width:100%; border-radius:var(--radius);">
+
+      <figcaption>Enable JavaScript to view the canvas animation.</figcaption>
+    </figure>
+  </noscript>
+</div>

@@ -58,7 +58,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
             title="{{ $name }}"
             {{ with $class }}class="{{ delimit . " " }}"{{ end }}
             {{ with $aria }}aria-current="{{ . }}"{{ end }}
-            {{ with .Params.style }}style="{{ . }}"{{ end }}
+            {{ with .Params.style }}style="{{ . | safeCSS }}"{{ end }}
             {{ if $is_external }}target="_blank" rel="noopener noreferrer"{{ end }}>
             {{- $name -}}
             {{- if $is_external -}}

@@ -1,0 +1,22 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Tabs shortcode:
+
+  @param {inner} content – Tab items (e.g. nested tab).
+
+  @return {HTML} Render tabs container.
+
+  @example {{< tabs >}}{{< tab "Tab 1" >}}Content{{< /tab >}}{{< /tabs >}}
+
+*/ -}}
+
+
+{{- with .Inner -}}
+  <div class="tabs">
+    {{- . -}}
+  </div>
+{{- end -}}

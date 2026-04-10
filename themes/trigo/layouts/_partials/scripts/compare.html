@@ -1,0 +1,20 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Load images compare Shortcode script. */ -}}
+
+
+{{- with resources.Get "js/compare.js" -}}
+  {{- $compare := . -}}
+  {{- if hugo.IsProduction -}}
+    {{- $compare = $compare | minify | fingerprint -}}
+  {{- end -}}
+  <script src="{{ $compare.RelPermalink }}"
+    type="text/javascript"
+    {{ if hugo.IsProduction }}integrity="{{ $compare.Data.Integrity }}" crossorigin="anonymous"{{ end }}
+    defer>
+  </script>
+{{- end -}}

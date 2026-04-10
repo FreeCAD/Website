@@ -1,0 +1,36 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Tab shortcode:
+
+  @param {string} [label] – Optional label for tab.
+
+  @return {HTML} Render tab control with associated content.
+
+  @example {{< tab label="Tab 1" >}}Content{{< /tab >}}
+  @example {{< tab "Tab 1" >}}Content{{< /tab >}}
+
+*/ -}}
+
+
+{{- $label := cond (.IsNamedParams) (.Get "label") (.Get 0) | default (i18n "tab" | default "Tab") -}}
+{{- $group := printf "tabs-%v" (default .Parent.Ordinal (.Parent.Get 0)) -}}
+{{- $tab := printf "%s-%d" $group .Ordinal -}}
+
+<input type="radio"
+  name="{{ $group }}"
+  id="{{ $tab }}"
+  {{ if not .Ordinal }}checked="checked"{{ end }} />
+
+<label for="{{ $tab }}">
+  {{- $label -}}
+</label>
+
+{{- with .Inner -}}
+  <div class="tabs-content">
+    {{- . | $.Page.RenderString -}}
+  </div>
+{{- end -}}
