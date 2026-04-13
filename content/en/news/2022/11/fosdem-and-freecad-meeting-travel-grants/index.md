@@ -16,31 +16,22 @@ The [FreeCAD project association (FPA)](https://github.com/freecad/fpa) is offer
 **The Program**
 
 - The FPA seeks to provide financial assistance to FreeCAD community members traveling to FOSDEM.
-
 - The FPA will issue grants up to a maximum of USD 500 per person and will spend a maximum of USD 5000 in total.
-
 - The grant amount is USD 500 or the price of your travel, whichever is lower.
 
 **Who is Eligible**
 
 - Any person listed under "The team" on the FreeCAD forum is eligible automatically.
-
 - Any person with an approved FreeCAD-related talk at FOSDEM is eligible automatically.
-
 - Any other FreeCAD community member not fitting in the above categories may apply for a grant, but only candidates with significant contributions to FreeCAD will be considered by the FPA. FPA members will decide upon each case individually based on criteria including volume of code contributions as well as duration and extent of community participation.
-
 - Grants will be issued on a first-come, first-served basis.
-
 - Any person interested must request a grant: no grant will be awarded automatically. All requests will be considered and must be approved by the FPA.
-
 - Requests must be submitted by sending an email to the FPA at [fpa@freecad.org](mailto:fpa@freecad.org) no later than December 31st, 2022.
 
 **How can the money be used?**
 
 - The grant must be solely used for travel to and from Brussels for FOSDEM.
-
 - Candidates must submit proof of travel expenses to the FPA (e.g. a train or plane ticket) in order to obtain a grant.
-
 - If travel by train is available,, train should be used preferably instead of plane. The FPA will deliberate over cases that don't follow this guideline.
 
 **When do I get the money?**

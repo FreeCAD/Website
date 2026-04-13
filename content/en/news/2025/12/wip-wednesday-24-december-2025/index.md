@@ -22,6 +22,7 @@ This week in FreeCAD development:
 - marbocub added reverse mapping correction to Carbon Copy so that the orientation of geometry is as expected ([PR#25745](https://github.com/FreeCAD/FreeCAD/pull/25745)).
 
 **Part:**
+
 - Roy-043 fixed an issue where the attachment would not remember local coordinates (attachment offset) on first launch ([PR#25923](https://github.com/FreeCAD/FreeCAD/pull/25923)). He also fixed a release blocker where part attachment would work incorrectly in some cases ([PR#26298](https://github.com/FreeCAD/FreeCAD/pull/26298)).
 - Lgt2x improved preview performance ([PR#26363](https://github.com/FreeCAD/FreeCAD/pull/26363)).
 - YashSuthar983 fixed a regression where files created with 1.0.x would fail to recompute in 1.2dev ([PR#26253](https://github.com/FreeCAD/FreeCAD/pull/26253)).
@@ -64,7 +65,6 @@ This week in FreeCAD development:
   - Fixed a bug where numeric input fields would not evaluate arithmetic expressions (e.g., "10+10mm") and revert to the previous value ([PR#26358](https://github.com/FreeCAD/FreeCAD/pull/26358)).
   - Removed shortcuts for overlay toggles to avoid changing the layout of FreeCAD irreversibly and unpredictably ([PR#26376](https://github.com/FreeCAD/FreeCAD/pull/26376)).
   - Fix the separators` appearance ([PR#26278](https://github.com/FreeCAD/FreeCAD/pull/26278)).
-
 
 **Other changes**:
 

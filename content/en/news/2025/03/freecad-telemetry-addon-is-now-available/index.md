@@ -13,20 +13,14 @@ cover:
 ---
 
 
-Chris Hennes developed an _opt-in_ [Telemetry addon](https://github.com/freecad/freecad-Telemetry) to help the development team make good decisions and help answer questions like:
+Chris Hennes developed an *opt-in* [Telemetry addon](https://github.com/freecad/freecad-Telemetry) to help the development team make good decisions and help answer questions like:
 
 - How many people are affected by a given bug?
-
 - How many people are running an addon that may be affected by an API change?
-
 - Which platforms are the most popular and should receive the most development support?
-
 - How many people are using a specific translation and would benefit from improving it?
-
 - How long should we maintain support and documentation for older releases?
-
 - How can we improve the default user experience based on how users customize FreeCAD?
-
 - What grant applications should get priority?
 
 To assist with that, the addon transmits select information about your copy of FreeCAD back to a central server.
@@ -49,11 +43,8 @@ No, we have no such plans.
 **What kind of information does it send?**
 
 - FreeCAD preferences, including all customizations
-
 - Essential system information (platform, architecture)
-
 - The list of installed 3rd-party addons
-
 - Data about incorrect shutdowns of FreeCAD
 
 **Does the addon send any personal information?**

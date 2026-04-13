@@ -6,7 +6,7 @@ draft: false
 categories: announcement
 tags: []
 cover:
-  image: Freecad_2024.png
+  image: Freecad_2024.webp
   caption: Freecad 2024
 ---
 

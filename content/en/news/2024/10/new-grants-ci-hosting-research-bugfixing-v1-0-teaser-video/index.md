@@ -21,4 +21,4 @@ The FPA recently approved three more grants:
 
 **Oficine Robotica** received a grant of $500 for creating a teaser video to demonstrate new features in the upcoming v1.0 release. The video will be part of the press release.
 
-If you are interested in improving FreeCAD one way or another, you can[ apply](https://fpa.freecad.org/programs/fpadf-announcement) for an out-of-program grant any time.
+If you are interested in improving FreeCAD one way or another, you can [apply](https://fpa.freecad.org/programs/fpadf-announcement) for an out-of-program grant any time.

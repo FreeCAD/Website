@@ -33,7 +33,6 @@ This week in FreeCAD development:
 Among other changes:
 
 - wwmayer fixed an issue in Sketcher and two issues in the core.
-
 - More fixes all around from kriswilk, hyarion, and MisterMakerNL.
 
 **PR stats**: since the previous report, 47 pull requests have been merged, 25 new pull requests have been opened.

@@ -18,38 +18,27 @@ This week in FreeCAD development:
 
 **PartDesign**:
 
-- mwganson applied minor fixes to _Groove_ and _Revolution_ task panels.
-
+- mwganson applied minor fixes to `Groove` and `Revolution` task panels.
 - PaddleStroke fixed a release blocker in which creating a body in an existing document raised the request to migrate it, and then creating another body would segfault FreeCAD.
+- kadet1090 fixed an issue occurring when changing `Pad` from `Dimension` to `Two Dimensions`.
 
-- kadet1090 fixed an issue occurring when changing _Pad_ from _Dimension_ to _Two Dimensions_.
-
-**Assembly**: PaddleStroke fixed a bug where _Insert Component_ would show items hidden in the Tree view. He also added support for flexible subassemblies that create links to separate parts of subassemblies rather than to the entire assemblies. This preserves existing joints in subassemblies and allows controlling the position of those parts from a parent assembly, even if links to the same parts already exist in the parent assembly.
+**Assembly**: PaddleStroke fixed a bug where `Insert Component` would show items hidden in the Tree view. He also added support for flexible subassemblies that create links to separate parts of subassemblies rather than to the entire assemblies. This preserves existing joints in subassemblies and allows controlling the position of those parts from a parent assembly, even if links to the same parts already exist in the parent assembly.
 
 **GUI**:
 
-- pieterhijma made the VarSets dialog modal and fixed an issue with the _Tooltip_ property.
-
-- benj5378 fixed the legibility of start page example files with the _Dark_ theme.
-
+- pieterhijma made the VarSets dialog modal and fixed an issue with the `Tooltip` property.
+- benj5378 fixed the legibility of start page example files with the `Dark` theme.
 - Rexbas continued his work fixing issues related to incorrect camera rotation with some navigation styles.
 
 Among other changes:
 
 - yorikvanhavre and Roy_043 fixed several issues in Draft.
-
 - davesrocketshop patched the new materials system to change the appearance of a body when switching materials only if the appearance hasn't been set explicitly.
-
 - PaddleStroke fixed a release blocker where closing a Sketcher tab with a task running would crash FreeCAD. The fix was to associate task dialogs with views, so now when a view is closed, the task is closed too.
-
 - WandererFan fixed several issues in TechDraw, including two release blockers.
-
 - AIRCAP patched Tolerance to restrict maximum tolerance and repair shapes optionally.
-
 - marioalexis84 fixed two minor issues in FEM.
-
 - hoshengwei and yorikvanhavre fixed several bugs in BIM.
-
 - wwmayer fixed a bug in the measure tool to use the center points as a reference when measuring the distance between circles.
 
 More fixes arrived from wwmayer, adrianinsaval, mwganson.

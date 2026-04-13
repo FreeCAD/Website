@@ -18,27 +18,23 @@ Major changes this week:
 
 **Sketcher**:
 
-- @kadet1090 fixed a bug where colors of sketches wouldn't get updated when a user changed theme preferences.
+- kadet1090 fixed a bug where colors of sketches wouldn't get updated when a user changed theme preferences.
+- howie-j added a preference toggle for choosing the preferred method of constraining circles with on-view parameters (the new floating input widgets): automatically, by diameter, or by radius.
+- wwmayer refactored the Sketch Analysis code.
 
-- @howie-j added a preference toggle for choosing the preferred method of constraining circles with on-view parameters (the new floating input widgets): automatically, by diameter, or by radius.
+**BIM**: Syres916 and yorikvanhavre continued cleaning up the combined Arch/BIM/NativeIFC workbench.
 
-- @wwmayer refactored the Sketch Analysis code.
+**Materials**: davesrocketshop improved the use of the ShapeAppearance property for the Part workbench, as well as UI elements for setting object appearance. He also laid the foundation for future texture support and added API for inheriting a material.
 
-**BIM**: @Syres916 and @yorikvanhavre continued cleaning up the combined Arch/BIM/NativeIFC workbench.
+**CAM**: sliptonic added machinability material model, a couple of materials, and a button in the job dialog to assign a material. So when you try to assign a material in the CAM workbench now, you will get a list of only machinable materials. The sanity report has been updated to display the surface speed for assigned materials. This is the bare minimum of support for the new materials system in CAM.
 
-**Materials**: @davesrocketshop improved the use of the ShapeAppearance property for the Part workbench, as well as UI elements for setting object appearance. He also laid the foundation for future texture support and added API for inheriting a material.
-
-**CAM**: @sliptonic added machinability material model, a couple of materials, and a button in the job dialog to assign a material. So when you try to assign a material in the CAM workbench now, you will get a list of only machinable materials. The sanity report has been updated to display the surface speed for assigned materials. This is the bare minimum of support for the new materials system in CAM.
-
-**VarSets** got two patches by @pieterhijma. The first one provides a GUI command to create variable sets and it presents you with a dialog to add properties. The second one allows users to directly add properties to variable sets from within the expression input dialog.
+**VarSets** got two patches by pieterhijma. The first one provides a GUI command to create variable sets and it presents you with a dialog to add properties. The second one allows users to directly add properties to variable sets from within the expression input dialog.
 
 Among other changes:
 
-- @bgbsww did further cleanup in the new toponaming code.
-
-- @PaddleStroke fixed several bugs in new snapping and smart dimensions code.
-
-- @maxwxyz contributed small UI improvements.
+- bgbsww did further cleanup in the new toponaming code.
+- PaddleStroke fixed several bugs in new snapping and smart dimensions code.
+- maxwxyz contributed small UI improvements.
 
 PR stats: In the week from Wednesday, 29 May to Wednesday, 5 June there were 53 pull requests merged. 46 new pull requests were opened.
 

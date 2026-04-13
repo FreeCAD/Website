@@ -24,7 +24,7 @@ This week in FreeCAD development:
 - kadet1090 fixed two issues in PD.
 - PaddleStroke fixed a bug in Part's offset tools and moved the second direction options in Linear Pattern (PD) under a separate group disabled by default.
 
-![Second direction linear pattern](second-direction-linear-pattern.png "Second direction linear pattern")
+![Second direction linear pattern](second-direction-linear-pattern.webp "Second direction linear pattern")
 
 **TechDraw**:
 

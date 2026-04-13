@@ -9,7 +9,7 @@ tags:
   - service
   - collaboration
 cover:
-  image: homepage-lens-screen.png
+  image: homepage-lens-screen.webp
   caption: Lens Platform Online
 ---
 

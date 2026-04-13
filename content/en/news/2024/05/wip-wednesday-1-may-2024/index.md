@@ -23,15 +23,10 @@ This week in FreeCAD development:
 **UI:**
 
 - The unified measurement tool by hlorus (GSoC2023 student) was finally merged. There is more work to be done in the future: 20 bug reports and features requests have already been submitted against the new tool.
-
 - chennes continued working on the new Start page: he implemented a first start section and fixed card size calculation.
-
 - maxwxyz updated the context menu with a toggle for suppress and updated the icon for assembly's recompute command.
-
 - PaddleStroke did a small reorganization of toolbars in Sketcher, fixed an issue with the TabBar workspace switcher, and removed "Project Shape" from TechDraw's toolbar.
-
 - MisterMakerNL contributed an overlay fix for default windows style and various light themes.
-
 - kadet1090 fixed issues with wrong color for preference page tooltips.
 
 **DXF support:** Roy-043 fixed a bug with polylines importing in the newer importer, as well as a couple of bugs in the legacy DXF importer.
@@ -39,9 +34,7 @@ This week in FreeCAD development:
 Some of the other changes:
 
 - Nexusnui fixed a scaling parameter bug in importCSG (OpenSCAD).
-
 - wwmayer made the Validate Sketch feature scriptable and fixed several bugs in various parts of FreeCAD's code.
-
 - 0penBrain and oursland fixed bugs in the build system and CI.
 
 **PR stats:** In the week from Wednesday, 24 April to Wednesday, 1 May there were 51 pull requests merged. 29 new pull requests were opened.

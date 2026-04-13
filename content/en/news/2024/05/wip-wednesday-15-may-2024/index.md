@@ -27,9 +27,7 @@ This week in FreeCAD development:
 Among other changes:
 
 - oursland contributed improvements to Conda builds.
-
 - Roy-043 added a "Legacy importer only" option to DXF importing to fix a bug where the C++ importer would ignore the "Create as" import settings and always creates simple Part shapes
-
 - Bug fixes from wwmayer, ronnystandtke, FlachyJoe, ppphp, realthunder, jwueller, pieterhijma, NewJoker.
 
 **PR stats**: In the week from Wednesday, 8 May to Wednesday, 15 May there were 39 pull requests merged. 34 new pull requests were opened.

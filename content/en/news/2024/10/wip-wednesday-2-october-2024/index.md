@@ -17,7 +17,6 @@ This week in FreeCAD development:
 **Part and PartDesign**:
 
 - AIRCAP fixed another Loft issue and then a blocker where Pocket's up-to-face option would work differently (and incorrectly at that) from v0.21.2.
-
 - mwganson fixed a bug where you wouldn't be able to run CheckGeometry on an X-axis object when the "Too small edge" option is enabled, after expanding origin object in Part Design.
 
 **Measure**: hlorus fixed 3 bugs including one release blocker where measurements wouldn't disappear when reset was used in the task panel.

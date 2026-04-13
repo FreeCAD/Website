@@ -18,7 +18,7 @@ The current 0.20 release of FreeCAD does not include a built-in workbench for as
 
 ## A2+
 
-![A 2Plus](A2Plus.webp "Adding a constraint in A2+")
+![Adding a constraint in A2+](A2Plus.webp "Adding a constraint in A2+")
 
 [A2+ (Assembly 2 Plus)](https://github.com/kbwbe/A2plus), an assembly workbench by "kbwbe", is intended as a direct successor to the original Assembly 2 workbench. It uses the same basic workflow as Assembly 2 so users already familiar with that workbench will be able to get started quickly. Begin by creating your parts in separate FreeCAD files, then create a new empty file and import the part that forms the basis for your assembly. Successively import more FreeCAD files and apply constraints to position them relative to your other parts. As the README puts it:
 
@@ -27,14 +27,14 @@ The current 0.20 release of FreeCAD does not include a built-in workbench for as
 
 ## Assembly 3
 
-![Addon Spotlight: Assembly Workbenches 2](A3.webp "An Assembly 3 assembly")
+![An Assembly 3 assembly](A3.webp "An Assembly 3 assembly")
 
 [Assembly 3](https://github.com/realthunder/freecad_assembly3) (a.k.a. ASM3) is an assembly workbench written and maintained by developer realthunder. It also uses a constraint-based approach to refer to existing geometric entities and align them relative to one another. It is often used in conjunction with [realthunder's fork of FreeCAD](https://github.com/realthunder/freecad), which implements techniques to mitigate the so-called "topological naming problem" (TNP). TNP-related issues can otherwise cause problems for a constraint-based approach if the underlying objects change after the assembly has begun. Those techniques are being merged into the main FreeCAD development project during the current development cycle, but as of this writing they are not yet available.
 
 
 ## Assembly 4
 
-![Addon Spotlight: Assembly Workbenches 3](A4.webp "Placing a new body in Assembly 4")
+![Placing a new body in Assembly 4](A4.webp "Placing a new body in Assembly 4")
 
 [Assembly 4](https://codeberg.org/zolko/assembly4) by Zolko, uses user-assigned "LCS" (Local Coordinate System) objects to assemble objects relative to one another. This avoids any potential TNP issues by ignoring the underlying geometry itself and using FreeCAD's built-in `Part::Attacher` and `ExpressionEngine`. It completely avoids the idea of "constraints", opting for a simpler (and arguably more reliable) direct-positioning approach.
 

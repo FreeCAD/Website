@@ -9,7 +9,7 @@ tags:
   - FPA
   - hackathon
 cover:
-  image: freecad-day-2025.jpg
+  image: freecad-day-2025.webp
   caption: Freecad day 2025
 ---
 
@@ -67,11 +67,8 @@ FreeCAD and KiCAD will also hold a stand at FOSDEM (exact location to be confirm
 #### Practical info
 
 - Like previous years, travel funding is available to help developers to come to the event. Be sure to [read the rules](https://fpa.freecad.org/programs/fosdem-travel-grants) to apply. Train/bus travel is preferred, when possible.
-
-- There will be no food offered during the events, but the Atelier des Tanneurs is in a lively part of the city full with bars, _frietkots_, take-away places and restaurants close by. Typically, we stop for half an hour or an hour during the day to grab something to eat. At FOSDEM, there are many restaurants and food trucks right on the campus.
-
+- There will be no food offered during the events, but the Atelier des Tanneurs is in a lively part of the city full with bars, *frietkots*, take-away places and restaurants close by. Typically, we stop for half an hour or an hour during the day to grab something to eat. At FOSDEM, there are many restaurants and food trucks right on the campus.
 - Brussels can be cold in February. If you are lucky, you will get cloudy (possibly rainy) days with temperatures around 0 to +5˚C. If unlucky, you could get something as low as -10˚C.
-
 - If you don't know Brussels yet, half a day or a day suffice to get a good tour of the city. We will prepare some self-service tour options later on.
 
 That's it for now, we are thrilled to make this incredible event happening once again. See you there?

@@ -6,7 +6,7 @@ draft: false
 categories: tutorial
 tags: []
 cover:
-  image: fc_turntable.png
+  image: fc_turntable.webp
   caption: FreeCAD turntable
 ---
 

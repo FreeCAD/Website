@@ -35,9 +35,7 @@ Last week in FreeCAD development:
 Among other changes:
 
 - PaddleStroke fixed Sketcher and TechDraw to reset dimension tool settings correctly.
-
 - wwmayer fixed the Delete key not working on macOS in various parts of the program.
-
 - davesrocketshop fixed several minor issues in the new materials system.
 
 **PR stats**: 78 PRs have been merged and 19 pull requests have been opened since last report.

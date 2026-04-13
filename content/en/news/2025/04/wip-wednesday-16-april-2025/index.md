@@ -23,9 +23,7 @@ This week in FreeCAD development:
 Among other changes:
 
 - marcuspollio, Roy-043, Gopal-001, and semhustej contributed various fixes to the BIM workbench.
-
 - Rexbas patched the Part workbench to use the longest straight edge in a face for horizontal or vertical alignment when using the Align to Selection tool.
-
 - FlachyJoe and PaddleStroke fixed a couple of issues in PartDesign.
 
 Additional fixes were contributed by pieterhijma, kadet1090, oursland, luzpaz, captain0xff, davesrocketshop, Roy_043, mosfet80, cjmayo, hyarion, alfrix, chennes, xelathan, xtemp09, and maxwxyz.

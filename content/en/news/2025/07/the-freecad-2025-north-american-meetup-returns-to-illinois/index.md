@@ -20,7 +20,7 @@ The meetup will again be hosted by [Innovate Springfield](https://www.uis.edu/in
 
 We are still only a few blocks away from the Old State Capitol, but with a much-improved view:
 
-[![Horace Mann Educators Corporation](https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Horace_Mann_Educators_Corporation.jpg/1280px-Horace_Mann_Educators_Corporation.jpg "512px Horace Mann Educators Corporation")](https://commons.wikimedia.org/wiki/File:Horace_Mann_Educators_Corporation.jpg "Steve Hinrichs, Horace Mann Educators Corporation, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons")
+![Steve Hinrichs, Horace Mann Educators Corporation, CC BY-SA 4.0 via Wikimedia Commons](Horace_Mann_Educators_Corporation.webp "Steve Hinrichs, Horace Mann Educators Corporation, CC BY-SA 4.0 via Wikimedia Commons")
 
 As usual, the first and the last days of the meetup will be free-form hackathon events. August 9 is reserved for some lightning talks where you can present your project made with FreeCAD or a FreeCAD add-on.
 

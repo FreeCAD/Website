@@ -6,7 +6,7 @@ draft: false
 categories: announcement
 tags: []
 cover:
-  image: forum.png
+  image: forum.webp
   caption: Forum
 ---
 

@@ -25,6 +25,7 @@ This week in FreeCAD development:
 - FlachyJoe fixed a bug where applying MultiTransform to PolarPattern would fail.
 
 **CAM:**
+
 - tarman3 fixed a couple of minor UI issues and two bugs in the LeadIn/Out dressup.
 - Connor fixed a regression that prevented the Surface operation from v1.0.2 files from working.
 - davidgilkaufman fixed a minor UI issue and made the experimental adaptive model awareness feature optional and off by default.

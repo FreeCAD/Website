@@ -62,7 +62,7 @@ Among other changes:
 
 Additional improvements and fixes were contributed by PaddleStroke, theo-vt, pieterhijma, MisterMakerNL, luzpaz, oursland, z0r0, chennes, and mosfet80.
 
-Please note that maintainers are currently _not_ merging any new features or improvements to CAM. For the weeks to follow, only fixes for regressions will be approved. This is because Brad Collette is working on a roadmap for the workbench to help better plan future development to make it sustainable. Please see [this discussion page](https://github.com/FreeCAD/FreeCAD/discussions/22536) for the rationale.
+Please note that maintainers are currently *not* merging any new features or improvements to CAM. For the weeks to follow, only fixes for regressions will be approved. This is because Brad Collette is working on a roadmap for the workbench to help better plan future development to make it sustainable. Please see [this discussion page](https://github.com/FreeCAD/FreeCAD/discussions/22536) for the rationale.
 
 **PR stats**: since the previous report, 62 pull requests have been merged, and 37 new pull requests have been opened.
 

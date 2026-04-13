@@ -12,13 +12,14 @@ cover:
   caption:
 ---
 
-![Cad 1](CAD_1.webp "Cad 1")
+
+![CAD workshop](CAD_1.webp "CAD workshop")
 
 There's a great phrase about education used in various communities "Each One Teach One". Funnily enough I first noticed the phrase as it got used in the FreeCAD Twitter/X account as a hashtag. It's rooted in African culture and initial usage was amongst enslaved people in America who, denied any education, would share what skills they had with their community.
 
 Whilst certainly not as vital or poignant when applied to teaching FreeCAD, it's a great concept that nudges us to show other people what we know. Luckily this week I got the chance to deliver some work into a small project in North Wales UK called GISDA. GISDA works with lots of groups of young people on all manner of issues, and wonderfully, has a creative team who deliver all manner of art and making projects. They've recently had some funding for some fancy 3D printers (a Prusa Mini and a Prusa MK4S) and were wanting to upskill some of the staff team, and in particular Lynwen, in FreeCAD.
 
-![Cwl dwds](cwl_dwds.webp "Cwl dwds")
+![Cwl Dwd](cwl_dwds.webp "Cwl Dwd")
 
 Lynwen is a vastly experienced art practitioner, new to CAD, but on the first day of training told me that her father worked with CAD (AutoCAD) so she was hoping it was in her genes! For those totally new to CAD I tend to look at the Part workbench first using CSG approaches to make parts out of combinations of primitive shapes and boolean operations. We then moved on to using Part Design and Sketcher working through how to map sketches onto faces and perform operations like extruding and pocketing.
 

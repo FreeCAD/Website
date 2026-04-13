@@ -12,7 +12,7 @@ cover:
 ---
 
 
-![Fcf post header combo](fcf_post_header_combo.png "Fcf post header combo")
+![Fcf post header combo](fcf_post_header_combo.webp "Fcf post header combo")
 
 On a Friday, in a range of FreeCAD community platforms, you might see the hashtag #FreeCADFriday. The author of this post looks after this on the [FreeCAD Fosstodon account](https://fosstodon.org/@FreeCAD) but it also often [happens on X](https://x.com/FreeCADNews) and [Bluesky](https://bsky.app/profile/freecad.org). Indeed it may well happen on other social media platforms that we don't know about!
 

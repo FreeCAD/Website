@@ -7,17 +7,16 @@ categories: announcement
 tags:
   - release
 cover:
-  image:
-  caption:
+  image: 45052467584.webp
+  caption: "[Releasing JAXA's HTV7 cargo vehicle from the ISS](https://www.flickr.com/photos/72482589@N07/45052467584) by [Astro_Alex](https://www.flickr.com/photos/72482589@N07) licensed under [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/?ref=openverse)"
 ---
 
-"[Releasing JAXA's HTV7 cargo vehicle from the ISS](https://www.flickr.com/photos/72482589@N07/45052467584)" by [Astro_Alex](https://www.flickr.com/photos/72482589@N07) is licensed under [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/?ref=openverse).
 
 Last week a group of FreeCAD administrators, maintainers, and developers met to discuss the next release of FreeCAD. We decided to begin the process of creating our next release now. The timing is appropriate because:
 
 1. It has been almost a year since the 0.20, which was released on 13 June 2022, and many new features have been added in the interim.
 
-2. The[ work-in-progress towards merging Realthunder's toponaming](https://github.com/orgs/freecad/projects/2) solution is progressing. It has reached a point where the next portion of code to be merged will start to negatively affect FreeCAD's performance. Ultimately those performance problems will be addressed through optimization, but there will be a period of time when the development version of FreeCAD will have degraded performance.
+2. The [work-in-progress towards merging Realthunder's toponaming](https://github.com/orgs/freecad/projects/2) solution is progressing. It has reached a point where the next portion of code to be merged will start to negatively affect FreeCAD's performance. Ultimately those performance problems will be addressed through optimization, but there will be a period of time when the development version of FreeCAD will have degraded performance.
 
 For these reasons it makes sense to make a new release now, before the potential performance drop, so people have a performant version with recent features to use.
 
@@ -44,19 +43,12 @@ Additionally, We have a number of important tasks to perform to make the release
 Besides the tasks already in the roadmap above, we'll also need to:
 
 - Translate as much as possible
-
 - Verify that the documentation is more or less up to date for all workbenches
-
 - Produce a windows installer
-
 - Produce a MacOS dmg
-
 - Produce a Linux Appimage
-
 - Migrate the release notes at [https://wiki.freecad.org/Release_notes_1.0](https://wiki.freecad.org/Release_notes_1.0) to 0.21 and verify they are complete
-
 - Produce a release text to be put on the blog and social networks
-
 - Select a splash screen
 
 ### Documenting the release

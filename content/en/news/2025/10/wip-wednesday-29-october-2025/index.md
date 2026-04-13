@@ -21,6 +21,7 @@ This week in FreeCAD development:
 - paullee0 fixed a bug in ArchStairs where the height would be wrong when toSlabThickness & Landings AtCenter were set ([PR#24864](https://github.com/FreeCAD/FreeCAD/pull/24864)).
 
 **CAM:**
+
 - Connor fixed the expression editor so that widgets refresh after closing ([PR#24837](https://github.com/FreeCAD/FreeCAD/pull/24837)) and refactored the LeadInOut task panel to use QuantitySpinBox ([PR#24818](https://github.com/FreeCAD/FreeCAD/pull/24818)).
 - Tarman3 fixed several issues in the LeadInOut dress-up ([PR#24810](https://github.com/FreeCAD/FreeCAD/pull/24810), [PR#24666](https://github.com/FreeCAD/FreeCAD/pull/24666), [PR#24471](https://github.com/FreeCAD/FreeCAD/pull/24471)).
 - sebastianohl fixed the KineticNCBeamicon2 postprocessor to eliminate one of the two M-commands in one line ([PR#24809](https://github.com/FreeCAD/FreeCAD/pull/24809)) to please the Zero-4 machine controller.

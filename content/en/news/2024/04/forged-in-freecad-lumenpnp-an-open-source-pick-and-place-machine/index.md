@@ -14,7 +14,7 @@ cover:
 
 It's an amazing age for making things, and an even greater age for making things using open source solutions. At our recent [FOSDEM](https://blog.freecad.org/2024/02/16/fosdem-and-freecad-2024/) stand we shared the booth with [KiCad](https://www.kicad.org/), the open source electronics environment. It was fabulous at the event to see items and machines made using KiCad and [FreeCAD](https://www.freecad.org/) in combination. It's also quite amazing to consider the complex printed circuit boards (PCB's) KiCad can create with the tiny component packages placed and soldered into highly accurate positions.
 
-![Kicad for lumen](kicad_for_lumen.png "Kicad for lumen")
+![Kicad for lumen](kicad_for_lumen.webp "Kicad for lumen")
 
 Beyond the mere wonder of it all, it's interesting to delve into how these components might be placed on a PCB. For small, single unit, home hacking, adding solder paste and placing each component with a pair of tweezers before heating the entire PCB is not uncommon. Stepping up in complexity you may manufacture a stencil to add the solder paste quickly and accurately. However, when it comes to making lots of devices with lots of components then the best solution is "Pick and Place".
 
@@ -24,7 +24,7 @@ Pick and place uses a robotic system to load the components from reels with some
 
 LumenPnP uses a very slightly tweaked version of the open source [Marlin Firmware](https://marlinfw.org/), more commonly found in 3D printers. For software the system relies on [openpnp](https://openpnp.org/) - a great choice with baked in support for KiCad. This makes it trivial to set up positional files for the components on project PCB's.
 
-![Lumenpnp pump cover](lumenpnp_pump_cover.png "Lumenpnp pump cover")
+![Lumenpnp pump cover](lumenpnp_pump_cover.webp "Lumenpnp pump cover")
 
 The machine is available to purchase from Opulo, but everything is open source and you could build your own. It's a great system that could save you time and money depending on what volume of PCB's you are planning to populate.
 

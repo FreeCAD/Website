@@ -7,24 +7,22 @@ categories: announcement
 tags:
   - FEM
 cover:
-  image:
-  caption:
+  image: fem-fig1.webp
+  caption: FEM workbench
 ---
 
 
 FreeCAD 1.0 brings a true revolution. But apart from the TNP mitigation, built-in Assembly workbench, material handling rework, and major Sketcher improvements, there's a less common module that received many updates - **FEM**.
 
-![Fem Figure 1](fem-fig1.webp "Fem Figure 1")
-
 In fact, it's one of the workbenches that changed the most. Over 80 issues from the [FEM Roadmap](https://github.com/orgs/freecad/projects/19) were fixed. This includes many bugs - some of them serious and long-standing - but also completely new features and various small usability improvements. I've been maintaining the FEM workbench for almost a year. In this post, I'd like to outline some of the most important new features coming in FreeCAD 1.0 soon.
 
 The biggest new FEM feature is [ConstraintRigidBody](https://wiki.freecad.org/FEM_ConstraintRigidBody) - a tool providing support for CalculiX's rigid body constraint. The constraint is commonly used to apply moment/rotation or force/displacement to any selected face via a so-called reference point which can be located at a distance from the face. This makes it possible to apply a force acting on a lever (_remote force_). The constraint is particularly useful since it finally provides a way to simulate torsion of arbitrarily shaped parts in FreeCAD FEM.
 
-![Fem Figure 2](fem-fig2.webp "Fem Figure 2")
+![Beam torsion analysis](fem-fig2.webp "Beam torsion analysis")
 
-The second major change is the introduction of 2D analyses with CalculiX. That includes plane stress (for very thin parts with in-plane loads), plane strain (for very thick parts with in-plane loads) ,and axisymmetry (for revolved parts with loads uniform around the circumference). The analyses can be performed by just following the approach for analyses with shell elements (but using only the XY plane) and changing the _Model Space_ property of the [CalculiX solver](https://wiki.freecad.org/FEM_SolverCalculixCxxtools).
+The second major change is the introduction of 2D analyses with CalculiX. That includes plane stress (for very thin parts with in-plane loads), plane strain (for very thick parts with in-plane loads), and axis symmetry (for revolved parts with loads uniform around the circumference). The analyses can be performed by just following the approach for analyses with shell elements (but using only the XY plane) and changing the `Model Space` property of the [CalculiX solver](https://wiki.freecad.org/FEM_SolverCalculixCxxtools).
 
-![Fem Figure 3](fem-fig3.webp "Fem Figure 3")
+![2D analysis](fem-fig3.webp "2D analysis")
 
 Another new form of symmetry supported with the CalculiX solver is cyclic symmetry. It can be defined with the [tie constraint](https://wiki.freecad.org/FEM_ConstraintTie) and used for parts consisting of circular patterns of repetitive segments (sectors) around an axis and subjected to loads exhibiting the same type of symmetry. Thus, many rotating components such as shafts, flywheels, turbines, or fans can be analyzed this way.
 
@@ -32,7 +30,7 @@ Smaller but also important changes include more settings for tie and contact con
 
 Several improvements were introduced for thermomechanical analyses. You can change their type to uncoupled or purely thermal, radiation heat flux can be modeled, volumetric heat source is usable with CalculiX and heat flux was added to this solver's outputs.
 
-![Fem Figure 4](fem-fig4.webp "Fem Figure 4")
+![Thermomechanical analysis](fem-fig4.webp "Thermomechanical analysis")
 
 Some other changes include capabilities of suppressing analysis features, hiding the selected finite elements and canceling ongoing meshing.
 

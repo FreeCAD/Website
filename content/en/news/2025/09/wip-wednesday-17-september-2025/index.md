@@ -46,7 +46,7 @@ With that information out of the way, let's move on to what's been brewing under
 - deimi and davidgilkaufman contributed several fixes, including one for a regression in adaptive profiling.
 - Connor reordered minor parts of the UI and replaced the tool library manager with a new one. Here is a screenshot:
 
-![Image 25](image-25.png "Image 25")
+![Image 25](image-25.webp "Image 25")
 
 **GUI**:
 
@@ -55,7 +55,7 @@ With that information out of the way, let's move on to what's been brewing under
 
 **Materials**: pmjdebruijn added a PMMA (Acrylic), POM-(Homopolymer'Copolymer)-Generic, Aluminum-7075-T6, and PEEK-Generic, and updated Aluminum-6061-T6.
 
-_On that note, check out Dave Carter's new _[_Woods_](https://github.com/davesrocketshop/Woods)_ addon-a wood materials database. It's available for installation through the Addon Manager._
+*On that note, check out Dave Carter's new [Woods](https://github.com/davesrocketshop/Woods) addon-a wood materials database. It's available for installation through the Addon Manager.*
 
 **Other changes**:
 

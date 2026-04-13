@@ -34,7 +34,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 {{- $text := .Text -}}
 {{- $cite := .Attributes.cite -}}
 {{- $is_external := strings.HasPrefix $cite "http" -}}
-{{- $caption := .Attributes.caption | markdownify -}}
+{{- $caption := .Attributes.caption -}}
 {{- $is_alert := eq .Type "alert" -}}
 {{- $type := cond $is_alert .AlertType "quote" -}}
 
@@ -46,16 +46,15 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     {{- $text -}}
   </blockquote>
 
-  {{- if $caption -}}
+  {{- with $caption -}}
     <figcaption class="blockquote-caption">
       {{- if $is_external -}}
         <a href="{{ $cite }}"
-          title="{{ $caption | plainify }}"
           target="_blank"
           rel="external noreferrer noopener">
       {{- end -}}
 
-      {{ $caption }}
+      {{ . | $.Page.RenderString }}
 
       {{- if $is_external -}}
         {{- partialCached "utils/icon.html" "external" "external" -}}

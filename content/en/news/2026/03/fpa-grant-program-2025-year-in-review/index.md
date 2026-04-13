@@ -72,8 +72,6 @@ Last year, we got 46 grant applications. We voted 'yes' on 31 of them and 'no' o
 | 72 | [KiConnect PCB Workbench [Time Commitment, Ecosystem]](https://github.com/FreeCAD/FPA-grant-proposals/issues/72) | morganrallen | Q4 | 5200 EUR |
 | 73 | [Maintenance, improvement and development of new features on the Assembly workbench - Q4](https://github.com/FreeCAD/FPA-grant-proposals/issues/73) | PaddleStroke | Q4 | 3000 EUR |
 | 74 | [Maintenance, improvement and development of new features on the Sketcher workbench - Q4](https://github.com/FreeCAD/FPA-grant-proposals/issues/74) | PaddleStroke | Q4 | 3000 EUR |
-</tbody></table></figure>
-
 
 The average grant request was approximately EUR 3,650 with a median of EUR 3,000, and a highest request of EUR 10,500.
 
@@ -98,9 +96,9 @@ For detailed information on the status of approved grants, please see [the respe
 
 The grant program was originally designed to serve two overlapping purposes:
 
-  1.  Distribute donations to developers
+1. Distribute donations to developers
 
-  2.  Encourage development in specific areas identified by FPA members
+2. Encourage development in specific areas identified by FPA members
 
 To the extent that one of the purposes of the program is simply to distribute donor money to those working on FreeCAD, the program succeeds reasonably well. 19 different individuals received money through this program in 2025. It is not a perfect way to distribute the funds, but it is not unreasonable.
 
@@ -117,12 +115,12 @@ Recruiting reviewers also proved difficult: despite several vocal individuals on
 
 Here is what we are likely to change for the 2026 program:
 
-  1.  The budget for the grant program should be reduced to EUR 40,000, divided into EUR 10,000 quarterly grant rounds. The freed-up budget should be used for the bug bounty program and ongoing positions.
+1. The budget for the grant program should be reduced to EUR 40,000, divided into EUR 10,000 quarterly grant rounds. The freed-up budget should be used for the bug bounty program and ongoing positions.
 
-  2.  The technical grant review committee should be eliminated.
+2. The technical grant review committee should be eliminated.
 
-  3.  The FPA should choose some small number of actionable focus areas for each year's program to help guide which applications should be selected (and voters should take care to respect that selection).
+3. The FPA should choose some small number of actionable focus areas for each year's program to help guide which applications should be selected (and voters should take care to respect that selection).
 
-  4.  Grants should be limited to one application per developer per quarter.
+4. Grants should be limited to one application per developer per quarter.
 
-  5.  A "no" vote on a grant should require a statement from the voter about why they are voting no, and that feedback should be anonymized and provided to the grant applicant with the notice of their grant's being declined for funding.
+5. A "no" vote on a grant should require a statement from the voter about why they are voting no, and that feedback should be anonymized and provided to the grant applicant with the notice of their grant's being declined for funding.

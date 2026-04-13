@@ -16,7 +16,7 @@ This week not much has been happening in FreeCAD development due to the winter h
 
 **Core**: PaddleStroke improved the new LCS style to address [concerns](https://github.com/freecad/freecad/issues/18337) raised by users who rely on the weekly builds.
 
-![Screenshot from 2025 01 02 00 08 23](Screenshot-from-2025-01-02-00-08-23.png "Screenshot from 2025 01 02 00 08 23")
+![Screenshot from 2025 01 02 00 08 23](Screenshot-from-2025-01-02-00-08-23.webp "Screenshot from 2025 01 02 00 08 23")
 
 **Draft**: Roy_043 removed unnecessary CamelCase in the names of some functions.
 

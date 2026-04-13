@@ -13,7 +13,7 @@ cover:
 ---
 
 
-![Fpa jobs page](fpa_jobs_page.png "Fpa jobs page")
+![Fpa jobs page](fpa_jobs_page.webp "Fpa jobs page")
 
 Recently the FPA have had numerous open positions available, and we are incredibly pleased to announce that all these positions have now been filled.
 

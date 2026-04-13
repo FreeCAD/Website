@@ -27,7 +27,6 @@ This week in FreeCAD development:
 Among other changes:
 
 - chennes and luzpaz updated the build system; additionally, chennes and oursland updated CI scripts.
-
 - bgbsww added a command line option to keep FreeCAD open after running tests.
 
 **PR stats**: since the previous report, 26 pull requests have been merged, 28 new pull requests have been opened.

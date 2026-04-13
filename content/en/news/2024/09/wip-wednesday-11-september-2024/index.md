@@ -33,21 +33,15 @@ This week in FreeCAD development:
 **GUI**:
 
 - xtemp09 did some fine-tuning in the Light Sources page in Preferences.
-
 - Rexbas fixed two bugs related to the orthographic camera.
-
 - benj5378 added style, theme and qtstyle info to clipboard about info to help investigating UI issues.
 
 Among other changes:
 
 - CalligaroV fixed another bug in the toponaming code.
-
 - Roy_043 fixed snapping to endpoints of dimension lines in Draft - a regression introduced in v0.19.
-
 - FlachyJoe fixed incorrect helix placement in PartDesign.
-
 - pieterhijma deduplicated file extensions on exporting.
-
 - spanner888 fixed a bug where the CAM's toolbit library wouldn't always be saved.
 
 **PR stats**: since the previous report, 45 pull requests have been merged, 36 new pull requests have been opened.

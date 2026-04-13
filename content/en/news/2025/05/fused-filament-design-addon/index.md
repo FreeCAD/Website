@@ -8,7 +8,7 @@ tags:
   - addon
   - 3D printing
 cover:
-  image: fused_filament_addon_rahix.png
+  image: fused_filament_addon_rahix.webp
   caption: Fused Filament Addon
 ---
 
@@ -17,7 +17,7 @@ A short while ago we posted here about an [excellent article by Rahix describing
 
 Brilliantly Rahix has worked on some macros which make it trivial to apply some of the excellent design techniques to your FreeCAD project, furthermore they have compiled this into an addon available via the addon manager.
 
-![Rahix planned](rahix_planned.png "Rahix planned")
+![Rahix planned](rahix_planned.webp "Rahix planned")
 
 It stops short of adding a full workbench to your install but rather adds a small collection of tools to your Part Design workbench. Also excellently if you [look at the addon's github repository](https://github.com/Rahix/FusedFilamentDesign) there are links from the tool descriptions back to the original article.
 

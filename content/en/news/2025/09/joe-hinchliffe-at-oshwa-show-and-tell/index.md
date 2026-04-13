@@ -24,4 +24,4 @@ Jo's project is a small design for a [magnet mounted work holding clamp system](
 
 In the show episode, Jo speaks at length about using FreeCAD and other open source tools and how they feel that it's important to allow others to follow along using the exact open tools as the project creator.
 
-Whilst not FreeCAD-linked, the other two projects on the show are fascinating. A DIY board for surgical students to practice suturing, and a non-contact DIY dynamo and light system for bikes, the latter project is made in Solidworks, but after hearing Jo's interview, the project creator, William Kennedy,  mentions that they really should take another look at FreeCAD! Well done, Jo!
+Whilst not FreeCAD-linked, the other two projects on the show are fascinating. A DIY board for surgical students to practice suturing, and a non-contact DIY dynamo and light system for bikes, the latter project is made in Solidworks, but after hearing Jo's interview, the project creator, William Kennedy, mentions that they really should take another look at FreeCAD! Well done, Jo!

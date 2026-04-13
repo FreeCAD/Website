@@ -24,9 +24,10 @@ We've just released an update with over 30 bugfixes and small improvements, [go 
 - bguest fixed a dimension alignment issue.
 - Syres916 updated FillTemplateFields.csv to work with newer templates.
 
-**CAM**: The workbench now writes post files in the UTF-8 encoding (fixes[ #18698](https://github.com/FreeCAD/FreeCAD/issues/18698)) and removes a redundant move after drilling. Patches contributed by Syres916 and jffmichi.
+**CAM**: The workbench now writes post files in the UTF-8 encoding (fixes [#18698](https://github.com/FreeCAD/FreeCAD/issues/18698)) and removes a redundant move after drilling. Patches contributed by Syres916 and jffmichi.
 
 **BIM**: Roy_043 fixed several bugs where...
+
 - BIM_Leader would create a wire with fewer than 2 points.
 - BIM_WPView did not work properly due to a faulty import.
 - Roof would not auto-limit run length ([#21796](https://github.com/FreeCAD/FreeCAD/issues/21796))

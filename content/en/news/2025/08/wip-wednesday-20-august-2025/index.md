@@ -42,7 +42,7 @@ This week in FreeCAD development:
 - NewJoker added support for CalculiX membrane elements. He also added Amplitude support for rigid body constraints.
 - marioalexis84:
   - Changed the priority of the Elmer equations to be set based on the order of definition, starting with a sufficiently high number (255 is max) and decreasing the values as the equations are defined.
-  - Fixed a regression where CalculiX output wouldn't be created from .dat files after a recent refactoring effort.
+  - Fixed a regression where CalculiX output wouldn't be created from `.dat` files after a recent refactoring effort.
   - Added a new boolean **Glue** option to create conformal meshes from Netgen.
   - ickby contributed several bug fixes, including one that makes the Branch filter Python object work well with the data extraction code.
 

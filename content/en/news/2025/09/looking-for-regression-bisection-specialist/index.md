@@ -17,21 +17,13 @@ The FPA is seeking applicants to help identify and document code regressions in 
 
 Key responsibilities:
 
-
-
-  1.  Investigate regression reports from users, developers, and CI tools
-
-  2.  Use git bisect and related tools to identify the commit that introduced a regression
-
-  3.  Reproduce issues locally using scripts, FreeCAD builds, or custom testing environments
-
-  4.  Collaborate with module Maintainers and other developers to understand the context of the regression
-
-  5.  Open well-documented GitHub issues or improve existing issues summarizing the regression cause, offending commit, and relevant discussion
-
-  6.  Contribute to tooling or automation that speeds up regression identification
-
-  7.  Improve the Developer Handbook with guides and tutorials to help others learn the bisecting process
+1. Investigate regression reports from users, developers, and CI tools.
+2. Use git bisect and related tools to identify the commit that introduced a regression.
+3. Reproduce issues locally using scripts, FreeCAD builds, or custom testing environments.
+4. Collaborate with module Maintainers and other developers to understand the context of the regression.
+5. Open well-documented GitHub issues or improve existing issues summarizing the regression cause, offending commit, and relevant discussion.
+6. Contribute to tooling or automation that speeds up regression identification.
+7. Improve the Developer Handbook with guides and tutorials to help others learn the bisecting process.
 
 This role requires both technical persistence and emotional intelligence. Since regressions are often the result of well-meaning contributions, the grantee must approach the work with tact and respect-focusing on shared goals and not assigning blame. The ability to give clear, actionable feedback without alienating contributors is essential.
 
