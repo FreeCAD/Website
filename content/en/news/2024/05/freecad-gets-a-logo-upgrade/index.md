@@ -14,7 +14,7 @@ cover:
 
 Just in time for upcoming FreeCAD 1.0, the project got a major logo refresh.
 
-![Image 3](image-3.png "Image 3")
+![](image-3.png)
 
 To get there, the design working group organized a [popularity contest](https://forum.freecad.org/viewtopic.php?t=87074). Volunteers submitted 46 designs, over 1,500 community members voted for the TOP-5, then a team of maintainers voted for the winning entry among those five - the one submitted by syta.co (FreeCAD forum handle).
 

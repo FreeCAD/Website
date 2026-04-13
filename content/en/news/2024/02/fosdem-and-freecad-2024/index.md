@@ -15,15 +15,15 @@ cover:
 
 We had a shared stand over in the K building right by the entrance which was excellent in terms of footfall and people coming to chat and say hello. We shared our stand with [Ondsel](https://ondsel.com/), the excellent opensource company building on FreeCAD commercially, and our wider open source family members like [KiCad](https://www.kicad.org/), and [Open Toolchain Foundation](https://opentoolchain.org/). We also shared the stand with FreeCAD sponsors and power users the [Libre Space Foundation](https://libre.space/).
 
-![FOSDEM and FreeCAD 2024 2](IMG_20240204_155608.webp "FOSDEM and FreeCAD 2024 2")
+![FreeCAD stand at FOSDEM](IMG_20240204_155608.webp "FreeCAD stand at FOSDEM")
 
 We were inundated with visitors with most people having used or being regular users of FreeCAD. A popular conversation was around people having historically tried FreeCAD and perhaps having some challenges, so it was great to discuss with people how far FreeCAD has developed recently and encourage people to take another look. Other common topics at the stand were around discussing the upcoming version 1.0 and beyond as well as some general chatting around how to increase the uptake of FreeCAD users.
 
-![FOSDEM and FreeCAD 2024 3](IMG_20240203_114154.webp "FOSDEM and FreeCAD 2024 3")
+![](IMG_20240203_114154.webp)
 
 Libre Space were excellent partners to have on the stand. You could often hear one of the Libre Space team holding their Qubik Pocketcube (A 50mm cubed opensource satellite the design that has flown successfully on low earth orbit) and saying "This is an excellent example of what you can achieve with FreeCAD and KiCad combined". It was a fantastic talking point that showed off all our projects perfectly.
 
-![FOSDEM and FreeCAD 2024 4](IMG_20240203_120022.webp "FOSDEM and FreeCAD 2024 4")
+![](IMG_20240203_120022.webp)
 
 It was great to meet other members of other teams at the stand also. The crew from [Blender](https://www.blender.org/) were attending FOSDEM and stopped by for numerous chats and it was also great to see Yorik and [Inkscape](https://inkscape.org/) core developer Martin chatting by the stand.
 

@@ -43,8 +43,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
               {{- range $month.Pages -}}
                 <article class="archive-entry">
-                  <a href="{{ .RelPermalink }}"
-                    title="{{ .Title | plainify }}">
+                  <a href="{{ .RelPermalink }}">
                     <h4 class="archive-entry-title">
                       {{ .Title }}
                       {{- if .Draft -}}<sup><span>[{{ i18n "draft" | default "Draft" }}]</span></sup>{{- end -}}

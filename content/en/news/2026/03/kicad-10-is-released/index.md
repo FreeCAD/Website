@@ -8,8 +8,8 @@ tags:
   - KiCAD
   - community
 cover:
-  image:
-  caption:
+  image: hopovers.png
+  caption: Hop-over crossings in a schematic
 ---
 
 

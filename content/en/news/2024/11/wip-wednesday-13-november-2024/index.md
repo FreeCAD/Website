@@ -25,13 +25,9 @@ This week in FreeCAD development:
 Among other changes:
 
 - wwmayer and hasecilu fixed two bugs in the core.
-
 - paullee0 fixed two bugs with walls in BIM.
-
 - Roy_043 fixed several bugs in Draft.
-
 - jbaehr reimplemented the fix for correct terminology in CAM (the original one messed a few things up).
-
 - wwmayer, alfrix, FlachyJoe, and AIRCAP fixed several bugs in Part and Part Design.
 
 **PR stats**: since the previous report, 31 pull requests have been merged, and 16 new pull requests have been opened.

@@ -22,7 +22,7 @@ To begin, open a new project using the "Parametric Part" option in the new file 
 
 Having completed our sketch close the sketch to return to the Part Design workbench. Next we are going to copy and paste our sketch 2 times so we end up with 3 sketches. When you copy paste sketches they will be placed outside of the active body, left click and drag the copied sketch items in the file tree into the active body. You can then also delete any extra XY Plane object entries that exist outside the active body.
 
-Next select one of the copied sketches by left clicking on it in the file tree view.  Then in the objects dialogue use the Attachment Offset drop down to adjust the position of the sketch in the Z axis direction. We moved one sketch 40mm and another sketch -40mm to spread out our sketches. Finally, just to show the capability of the surface workbench, we went back in and edited the sketch in the centre of our design so that it was larger than the others. Our sketches ended up looking like the image below.
+Next select one of the copied sketches by left clicking on it in the file tree view. Then in the objects dialogue use the Attachment Offset drop down to adjust the position of the sketch in the Z axis direction. We moved one sketch 40mm and another sketch -40mm to spread out our sketches. Finally, just to show the capability of the surface workbench, we went back in and edited the sketch in the centre of our design so that it was larger than the others. Our sketches ended up looking like the image below.
 
 ![3sketches middle one bigger](3sketches_middle_one_bigger.png "3sketches middle one bigger")
 
@@ -32,9 +32,9 @@ Next let's move over to the Surface workbench. The first tool we are going to us
 
 Once you have selected the three curved edges and created this first surface you can then click the OK button. Repeating this process we created additional surface items for the top and sides of our item.
 
-![Curve section surfaces complete 1](curve_section_surfaces_complete-1.png "Curve section surfaces complete 1")
+![Curve section surfaces complete](curve_section_surfaces_complete-1.png "Curve section surfaces complete")
 
-At this point it's worth noting that you could add a thickness, or use offset tools to make these surfaces into a solid object, however we are going to use a different tool to make the whole of our sketches surfaced into a complete object. For the remaining surfaces which are all in single planes/flat we can use a different surfacing tool. Click the "Filling" tool icon. For either the ends of our object or the base item, we again clicked the "Add Edge" button in the "Boundary Edges" dialogue section. We then could click edge elements in sequence working around the perimeter of the desired surface. As you do this the surface adapts and often looks quite incorrect until you work fully around the boundary of the surface.  Once you are happy each surface is complete click the OK button and relaunch the "Filling" tool to work on the next surface.
+At this point it's worth noting that you could add a thickness, or use offset tools to make these surfaces into a solid object, however we are going to use a different tool to make the whole of our sketches surfaced into a complete object. For the remaining surfaces which are all in single planes/flat we can use a different surfacing tool. Click the "Filling" tool icon. For either the ends of our object or the base item, we again clicked the "Add Edge" button in the "Boundary Edges" dialogue section. We then could click edge elements in sequence working around the perimeter of the desired surface. As you do this the surface adapts and often looks quite incorrect until you work fully around the boundary of the surface. Once you are happy each surface is complete click the OK button and relaunch the "Filling" tool to work on the next surface.
 
 ![Ends done](ends_done.png "Ends done")
 

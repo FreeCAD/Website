@@ -21,11 +21,8 @@ Since its inception in late 2021, the FreeCAD Project Association (FPA) has been
 The idea behind the annual program was to batch the review of grant applications, similar to what the team does for Google Summer of Code (GSoC). However, we received only four applications by the initial deadline:
 
 - Sketcher refactoring, by Ajinkya Dahale;
-
 - Code transfer completion in the toponaming project, by Bradley McLean;
-
 - Designing furniture and parametric components for the FreeCAD library, by Francisco de Assis Rosa;
-
 - C++ API Documentation, by Pieter Hijma.
 
 The first three projects have been successfully completed, the last one is an ongoing project.
@@ -41,11 +38,11 @@ The overall monetary allocation for all 20 projects in 2024 was $82,350-signific
 
 This is how the expense allocation for the approved grants breaks down by type of work:
 
-![Allocation 1](allocation-1.png "Chart")
+![Allocation chart](allocation-1.png "Allocation chart")
 
 Here is a breakdown of the allocation for code contributions:
 
-![Allocation 2](allocation-2.png "Chart")
+![Allocation chart](allocation-2.png "Allocation chart")
 
 Please note that all this is allocation, not actual spending. The distinction is important because not all projects have been completed yet. Some of the funds allocated in 2024 will only be disbursed in 2025.
 
@@ -59,9 +56,7 @@ Overall, we think we are on the right track with the grant program. The FPA went
 There are certain things we think we need to improve.
 
 - The annual program didn't get as many grant applications as we hoped for. The idea of batching reviews is still sound, so for 2025, we are making changes in how we run the program (see below).
-
 - Currently, we have a minor overlap between the grant review committee and the FPA general assembly. So, some of the people who make technical recommendations also have voting power. We think this needs to be corrected by getting more people involved with technical reviews, eventually eliminating voting FPA members from the initial review process.
-
 - The voting process was highly variable in how much time it took to achieve a quorum. That's why the work on one of the first grants (by the late Bradley McLean) was completed before we even announced the first approved grants. The FPA will continue to work to ensure that all members vote in a timely manner so that grants aren't delayed due to lack of member participation.
 
 

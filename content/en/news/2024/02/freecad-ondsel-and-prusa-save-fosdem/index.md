@@ -14,13 +14,13 @@ cover:
 
 Whilst there was enough toilet paper, there was an issue in deploying it. We were approached at the FreeCAD/Ondsel, KiCad booth by a FOSDEM volunteer who was worried. The team only had one key that unlocked the toilet paper dispensers and they were struggling to keep the flow of paper steady. A crisis was emerging!
 
-![FreeCAD, Ondsel and Prusa Save FOSDEM! 2](IMG_20240204_114434.webp "FreeCAD, Ondsel and Prusa Save FOSDEM! 2")
+![Let's print keys!](IMG_20240204_114434.webp "Let's print keys!")
 
 Quick as a flash Brad from [Ondsel](https://ondsel.com/) stepped up, whilst he didn't don a superhero cape, he quickly whipped out the calipers and fluidly made a fantastic model of the key. Barely missing a beat our bold hero uploaded the design to [Ondsel Lens](https://github.com/Ondsel-Development/Ondsel-Lens), the amazing add-on for project sharing and collaboration.
 
 Our next mighty hero stepped into the story, Pavel from [Prusa 3D](https://www.prusa3d.com/) who were just one booth away. Some quick printing ensued on the fantastic [Prusa XL](https://www.prusa3d.com/product/original-prusa-xl-2/) and suddenly the toilets of FOSDEM were safe once more!
 
-![FreeCAD, Ondsel and Prusa Save FOSDEM! 3](IMG_20240204_110457.webp "FreeCAD, Ondsel and Prusa Save FOSDEM! 3")
+![FOSDEM back on track](IMG_20240204_110457.webp "FOSDEM back on track")
 
 The keys were passed back to the team and the FOSDEM experience was back on track. Phew!
 

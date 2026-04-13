@@ -45,6 +45,6 @@ Ultimately with a folded sheet metal design you will probably want to flatten/un
 
  In the section below we find an "Unfold Sketch Generation" area and if we check the "Generate projection sketch" we can then directly export either a DXF or an SVG from this properties panel. DXF or SVG are perfect for print or for potentially using with a laser cutter or other machines, or, of course, they can make great input items for the Techdraw workbench to create technical drawings. You can also apply the flattening action and then you have the geometry that you might then use in the CAM workbench to set up for CNC machining. Even with just these basic uses of the sheet metal workbench you can realise accurate designs, for example the author made this aluminium body shelled robot rover some years ago using these methods!
 
-![Tutorial - Getting Started With the SheetMetal Workbench 8](IMG_20250627_115321.jpg "Tutorial - Getting Started With the SheetMetal Workbench 8")
+![Aluminium shelled robot rover](IMG_20250627_115321.webp "Aluminium shelled robot rover")
 
 As a final thought, whilst the workbench is called the SheetMetal workbench, it really can apply to any foldable/bendable sheet material. It's common to see this workbench used for cardstock cut on a vinyl cutting/dragknife machine or for designing for acrylic sheets that will be bent over a hot element. It's an incredibly useful workbench.

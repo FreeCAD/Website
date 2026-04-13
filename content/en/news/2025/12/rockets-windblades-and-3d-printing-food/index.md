@@ -27,9 +27,9 @@ Yeah, sure. My name is Matt Thomas, and I am very passionate about science and e
 
 My dad, on the other hand, was a telecommunications specialist for the military, and he would bring me along for some of his jobs, such as installing very large phone systems for the base and the research facility at the local university.
 
-When I was in high school, I learned about computer networking and web design because I was _horrible_ at math and science. I fell in love with technology, and after graduating in 2003, the local university had a sister program with Carnegie in Network Engineering and cybersecurity. I received my CCNA, CCNP, RHCT, Ethical Hacking, and a few other well-known certifications, as well as a Bachelor's degree.
+When I was in high school, I learned about computer networking and web design because I was *horrible* at math and science. I fell in love with technology, and after graduating in 2003, the local university had a sister program with Carnegie in Network Engineering and cybersecurity. I received my CCNA, CCNP, RHCT, Ethical Hacking, and a few other well-known certifications, as well as a Bachelor's degree.
 
-However, when I was claiming graduation, something just didn't feel correct. So, I had a long and excellent conversation with my mother, who has never led me down the wrong path. She suggested that I have always liked science _and_ technology, so maybe there is a way to combine the two. So I did just that.
+However, when I was claiming graduation, something just didn't feel correct. So, I had a long and excellent conversation with my mother, who has never led me down the wrong path. She suggested that I have always liked science *and* technology, so maybe there is a way to combine the two. So I did just that.
 
 I was 26 years old when I decided to go back to school for medicine and engineering, the only problem was... I had 3 years of basic math to make up before I could even apply for the associate of pre-engineering and my microbiology coursework.
 
@@ -49,7 +49,7 @@ Many of the papers deal with wind turbine durability and fatigue analysis (["Est
 
 **Why is it important for you to rely on free/open-source tools?**
 
-First, they are available to research students and interns, or anyone, for that matter, for a really _good_ price. Second, open-source engineering tools are very important, especially for developing nations that can not afford the drastic price tag of some packages. However, people are skeptical of using open-source software because they are afraid it's "unsafe" or will produce inaccurate results. This is why having NASA perform validation tests with OpenFOAM was such a _huge_ deal for the open-source community.
+First, they are available to research students and interns, or anyone, for that matter, for a really *good* price. Second, open-source engineering tools are very important, especially for developing nations that can not afford the drastic price tag of some packages. However, people are skeptical of using open-source software because they are afraid it's "unsafe" or will produce inaccurate results. This is why having NASA perform validation tests with OpenFOAM was such a *huge* deal for the open-source community.
 
 **How did you get involved with rockets?**
 
@@ -59,9 +59,9 @@ It was an internship and practicum at school. We were tasked with creating an ac
 
 **And then you got hooked?**
 
-I have always loved planes, and I often go to the aerospace museum that is close to my home.  When the school offered me and a few others this chance, I took it and have loved it ever since. Making my own rockets, fuel, and seeing them go from digital concept to reality is very rewarding.
+I have always loved planes, and I often go to the aerospace museum that is close to my home. When the school offered me and a few others this chance, I took it and have loved it ever since. Making my own rockets, fuel, and seeing them go from digital concept to reality is very rewarding.
 
-**I've also noticed that **[**wind turbines and their **](https://www.researchgate.net/publication/382689796_Estimating_Wind_Turbine_Blade_Durability_Utilizing_National_Renewable_Energy_Laboratory_Tools?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6InB1YmxpY2F0aW9uIiwicGFnZSI6InByb2ZpbGUiLCJwcmV2aW91c1BhZ2UiOiJwdWJsaWNhdGlvbiJ9fQ)<span style="box-sizing: border-box; margin: 0px; padding: 0px;">[**durability**](https://www.researchgate.net/publication/382689796_Estimating_Wind_Turbine_Blade_Durability_Utilizing_National_Renewable_Energy_Laboratory_Tools?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6InB1YmxpY2F0aW9uIiwicGFnZSI6InByb2ZpbGUiLCJwcmV2aW91c1BhZ2UiOiJwdWJsaWNhdGlvbiJ9fQ)</span>**are a big deal for you. How did the interest originate?**
+**I've also noticed that [wind turbines](https://www.researchgate.net/publication/382689796_Estimating_Wind_Turbine_Blade_Durability_Utilizing_National_Renewable_Energy_Laboratory_Tools?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6InB1YmxpY2F0aW9uIiwicGFnZSI6InByb2ZpbGUiLCJwcmV2aW91c1BhZ2UiOiJwdWJsaWNhdGlvbiJ9fQ) and their [durability](https://www.researchgate.net/publication/382689796_Estimating_Wind_Turbine_Blade_Durability_Utilizing_National_Renewable_Energy_Laboratory_Tools?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6InB1YmxpY2F0aW9uIiwicGFnZSI6InByb2ZpbGUiLCJwcmV2aW91c1BhZ2UiOiJwdWJsaWNhdGlvbiJ9fQ) are a big deal for you. How did the interest originate?**
 
 Someone from the state research department on wind energy read my design thesis on high-powered rockets, which included a lot of testing and analysis. So they asked me if I wanted to join the team for a few months as a full-time job doing fatigue analysis and design for wind turbines. I said, "Sure, why not?". The job lasted 2 years because they really liked my work and how I handled things.
 
@@ -77,15 +77,15 @@ I actually use [pyDatView](https://github.com/ebranlard/pyDatView) from GitHub a
 
 OpenFAST and MLife both export the data as Excel files, so that makes it very nice. I do not use LibreOffice Calc as it is missing a few major functions needed for most engineering workflows. This is why I use Excel. Their solver and numerical methods are excellent
 
-OpenRocket is one of my favorites, but it is a standalone software. It will calculate the forces and drag coefficients for you based on the Barrowman Equations developed by James Barrowman at NASA. Using just geometry, the Reynolds number, and skin friction values. OpenRocket will allow you to graph _many_ values against each other, making it a very valuable tool if CFD is not an option.
+OpenRocket is one of my favorites, but it is a standalone software. It will calculate the forces and drag coefficients for you based on the Barrowman Equations developed by James Barrowman at NASA. Using just geometry, the Reynolds number, and skin friction values. OpenRocket will allow you to graph *many* values against each other, making it a very valuable tool if CFD is not an option.
 
-Now, speaking of CFD, I have set up _many_ simulations (again, thanks to the forums for helping me get the preliminaries setup) of high-powered rockets to test against OpenRocket, and sure enough, I get pretty dang close to the same values.
+Now, speaking of CFD, I have set up *many* simulations (again, thanks to the forums for helping me get the preliminaries setup) of high-powered rockets to test against OpenRocket, and sure enough, I get pretty dang close to the same values.
 
 Most people, when they do CFD for the first few times, get results that are way off, and then they get discouraged. 95% of the time it's because they have too coarse of a mesh and not enough refinement areas for the mesh to accurately produce good results. This is why I made the YouTube series on CFD with Ondsel/FreeCAD.
 
 Well, my primary reason is so I don't forget how to do it myself. I record a lot of things I do so I can reference them later, which comes in handy if a supervisor asks about a process.
 
-As for bottlenecks, OpenRocket, an advanced simulation tool, is much harder to use and integrate with other software. PrePoMax actually works better as a standalone product, i.e., import the STP file, mesh it, then set up the scenario, all in PrePoMax. That is one bottleneck. The other is that FreeCAD needs to improve the meshing defaults in the FEM workbench. PrePoMax has _killer_ defaults and meshes extremely well, we just need that in FreeCAD now.
+As for bottlenecks, OpenRocket, an advanced simulation tool, is much harder to use and integrate with other software. PrePoMax actually works better as a standalone product, i.e., import the STP file, mesh it, then set up the scenario, all in PrePoMax. That is one bottleneck. The other is that FreeCAD needs to improve the meshing defaults in the FEM workbench. PrePoMax has *killer* defaults and meshes extremely well, we just need that in FreeCAD now.
 
 {{< youtube id=I8pgxxt1pD8 title="FreeCAD FEM with Boolean Fragments" loading=lazy >}}
 

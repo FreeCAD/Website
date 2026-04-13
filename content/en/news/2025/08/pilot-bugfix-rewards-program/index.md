@@ -19,15 +19,15 @@ The rules are simple: fix 5 confirmed issues from the [FreeCAD GitHub issue trac
 
 Here is how this works.
 
-  1.  Identify issues that qualify: each one should be in the tracker, with the "Status: Confirmed" tag, marked as either "Type: Bug" or "Type: Regression".
+1. Identify issues that qualify: each one should be in the tracker, with the "Status: Confirmed" tag, marked as either "Type: Bug" or "Type: Regression".
 
-  2.  Submit a pull request for each issue and collaborate with maintainers on potential improvements in your patches.
+2. Submit a pull request for each issue and collaborate with maintainers on potential improvements in your patches.
 
-  3.  Once you have 5 patches merged within the last 12 weeks, create a new issue in the [FPA tracker](https://github.com/FreeCAD/FPA/issues), include links to 5 qualifying GitHub issues you resolved, and provide links to the commits or pull requests where your fixes were merged.
+3. Once you have 5 patches merged within the last 12 weeks, create a new issue in the [FPA tracker](https://github.com/FreeCAD/FPA/issues), include links to 5 qualifying GitHub issues you resolved, and provide links to the commits or pull requests where your fixes were merged.
 
-  4.  The FPA reviews your submission and does the payout.
+4. The FPA reviews your submission and does the payout.
 
-  5.  Submit further reward requests, provided each one involves a new set of qualifying fixes.
+5. Submit further reward requests, provided each one involves a new set of qualifying fixes.
 
 There are two limitations left to mention:
 

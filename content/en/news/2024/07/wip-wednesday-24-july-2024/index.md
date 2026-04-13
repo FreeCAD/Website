@@ -31,9 +31,7 @@ This week in FreeCAD development:
 Among other changes:
 
 - WandererFan fixed an issue in TechDraw where the initial point of a leader added to a rotated view was misplaced.
-
 - yorikvanhavre and Roy_043 fixed two issues in the BIM workbench.
-
 - wwmayer added tests for MeshPart and contributed various fixes.
 
 **PR stats**: 39 PRs have been merged and 22 new pull requests have been opened since last report. We also keep accumulating pull requests that will be reviewed once v1.0 is out, there's currently 90 of those (out of 124 overall).

@@ -6,12 +6,10 @@ draft: false
 categories: announcement
 tags: []
 cover:
-  image:
-  caption:
+  image: Vancouver_Skyline_and_Mountains.webp
+  caption: "[Vancouver skyline](https://commons.wikimedia.org/wiki/File:Vancouver_Skyline_and_Mountains.webp) image by Kyle Pearce/ DIY Genius, CC BY-SA 2.0, via Wikimedia Commons."
 ---
 
-
-Vancouver skyline image by Kyle Pearce/ DIY Genius, CC BY-SA 2.0, via Wikimedia Commons.
 
 The FreeCAD Project Association is sponsoring a FreeCAD Hackathon 11-13 August 2023. The in-person event will be held in Vancouver, BC, and we'll be live-streaming/live-blogging the event so that those who can't make it to the event can still participate. It's open to anyone who is interested in hacking on the FreeCAD source code (or working on translations, or developing an Addon, or creating themes, or really anything else FreeCAD-related). Financial support for travel expenses is available from the FPA: for information and to apply for funding, contact the FPA at [fpa@freecad.org](mailto:fpa@freecad.org).
 

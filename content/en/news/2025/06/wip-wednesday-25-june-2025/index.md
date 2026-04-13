@@ -29,7 +29,7 @@ This week in FreeCAD development:
 
 **FEM**: ickby added filter data extraction and visualization to FEM post processing. The first patch adds a basic framework that can be extended later on. New objects are Lineplot, Histogram, and Table.
 
-![Image 5](image-5.png "Image 5")
+![](image-5.webp)
 
 **CAM**:
 
@@ -51,7 +51,7 @@ This week in FreeCAD development:
 - hyarion [changed](https://github.com/FreeCAD/FreeCAD/pull/22024) the elide mode from end to middle in the project tree. So now when long objects name don't fit the dock, you will see the beginning of the name, the end of the name, and elide (...) in the middle. It used to be an elide at the end.
 - tetektoza added a search box to the Preferences dialog, it's in the top right corner. Clicking on an item in the drop-down list will switch you to the relevant page, scroll it down where unnecessary, and highlight the item you were looking for.
 
-![Image 4](image-4.png "Image 4")
+![](image-4.png)
 
 Additional improvements and fixes were contributed by chennes, knipknap, tarman3, Roy-043, kadet1090, wmayer, 3x380V, oursland, paullee0, furgo16, mosfet80, Syres916, luzpaz, maxwxyz, and Rexbas.
 

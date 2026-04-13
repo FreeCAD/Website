@@ -23,4 +23,4 @@ Pieter will begin the project by elaborating on the current state of affairs in 
 
 **Chris Jones** will continue his work on homebrew builds of FreeCAD. This time, he will update the homebrew-freecad tap to link against Python v3.12 and Qt v6 when creating the build. The project is expected to take a few weeks to complete. Chris was [awarded](https://github.com/freecad/fpa-grant-proposals/issues/11) a grant of USD $2,000 for the project.
 
-If you are interested in improving FreeCAD one way or another, you can[ apply](https://fpa.freecad.org/programs/fpadf-announcement) for an out-of-program grant any time.
+If you are interested in improving FreeCAD one way or another, you can [apply](https://fpa.freecad.org/programs/fpadf-announcement) for an out-of-program grant any time.

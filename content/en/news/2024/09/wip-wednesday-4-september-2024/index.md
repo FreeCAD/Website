@@ -17,13 +17,11 @@ This week in FreeCAD development:
 **Sketcher**:
 
 - PaddleStroke fixed a bug with geometry copy-pasting and another bug where on-view parameters would use numeric input for the wrong constraint in certain scenarios.
-
 - AjinkyaDahale fixed another bug that would prevent users from escaping the autosnapping of circles with autoconstraint enabled.
 
 **TechDraw**:
 
 - benj5378 fixed the centering of dimension labels and improved the UI of surface finish labels.
-
 - WandererFan submitted several fixes, including ones for sections snapping, project group detection, and PDF output with correct margins.
 
 **CAM**: shaise fixed 5 bugs in the new milling simulator in one pull request.
@@ -34,16 +32,13 @@ This week in FreeCAD development:
 
 **GUI**: kadet1090 fixed a couple of UI issues in Sketcher and Preferences, and qewer33 added a random splashscreen selector.
 
-![Image](image.webp "Image")
+![New Splashscreens](image.webp "New Splashscreens")
 
 Among other changes:
 
 - bgbsww and CalligaroV fixed several bugs in the toponaming code, including correct element map support in Revolution.
-
 - marioalexis84 and NewJoker fixed several bugs in FEM.
-
 - Syres916 fixed a bug where the user directory for materials couldn't be set in Preferences.
-
 - More fixes all around from wmayer as usual.
 
 **PR stats**: since the previous report, 49 pull requests have been merged, 23 new pull requests have been opened.

@@ -21,25 +21,21 @@ This week in FreeCAD development:
 **Part and PartDesign**:
 
 - PaddleStroke added missing tooltips to Clone and Subshapebinder tools.
-
 - tritao converted Part's XML-based Python APIs to the newly introduced Python-based bindings code model.
 
 **Assembly**:
 
 - PaddleStroke patched the workbench to show an error when a joint is missing a reference.
-
 - JoaoMartins99 fixed a bug where it would be impossible to repeatedly deactivate an assembly.
 
 **TechDraw**:
 
 - PaddleStroke, benj5378, and WandererFan fixed several bugs.
-
 - j-hap replaced the annotation edit dialog with QPlainTextEdit widget, so now you get to have a simpler dialog and annotations in multiple lines.
 
 **CAM**:
 
 - phaseloop fixed a bug in the estlcam postprocessor.
-
 - LarryWoestman refactored postprocessors to use shared code.
 
 **FEM**: ickby extended the VTK post-processing functionality to handle multi-frame results in a single post-processing object.
@@ -47,11 +43,8 @@ This week in FreeCAD development:
 **BIM**:
 
 - furgo16 contributed new unit tests and refactored some of the existing ones.
-
 - semhustej improved UI text.
-
 - yorikvanhavre fixed a bug where saving a project setup preset would fail.
-
 - paullee0 contributed [ArchSketch](https://github.com/paullee0/freecad_sketcharch) support.
 
 **Materials**: davesrocketshop started working on support for external data sources such as databases or web services.

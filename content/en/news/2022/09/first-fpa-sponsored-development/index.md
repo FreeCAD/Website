@@ -18,6 +18,6 @@ Recently, the FPA took an important first step by joining a growing community th
 
 Ajinkya proposed numerous improvements to the spline handling in the sketcher workbench. He raised funds from many members to do this work and has largely completed stage one. The FPA will be contributing to the second stage which will focus on functionality to create more interesting curves not possible by knot position and slope alone.
 
-You can [follow his progress on the forum](https://forum.freecadweb.org/viewtopic.php?f=9&t=71130&p=628543).
+You can [follow his progress on the forum](https://forum.freecad.org/viewtopic.php?f=9&t=71130&p=628543).
 
 If you would like to see more sponsored development, please [consider donating to the FPA](https://www.freecad.org/sponsor.php).

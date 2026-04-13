@@ -21,11 +21,11 @@ This week in FreeCAD development:
 - amon-sha fixed a segfault that was happening during autoscaling ([PR#27077](https://github.com/FreeCAD/FreeCAD/pull/27077)).
 - PaddleStroke implemented displaying the type of constraints in the constraints list ([PR#26797](https://github.com/FreeCAD/FreeCAD/pull/26797)), added a switch between diameter and radius in the Insert Diameter dialog ([PR#26794](https://github.com/FreeCAD/FreeCAD/pull/26794)), and fixed a regression where an angle constraint applied to arc was not correctly attached to the cursor ([PR#27177](https://github.com/FreeCAD/FreeCAD/pull/27177)).
 
-![Image 3](image-3.png "Image 3")
+![](image-3.png)
 
 **Part and PartDesign**: captain0xff added an interactive gizmo for the Draft operation ([PR#27111](https://github.com/FreeCAD/FreeCAD/pull/27111)).
 
-![Image 5](image-5.png "Image 5")
+![](image-5.png)
 
 **Assembly**: PaddleStroke fixed a handful of bugs and made several quality-of-life improvements:
 
@@ -36,7 +36,7 @@ This week in FreeCAD development:
 - Improved joints visualization: selecting a joint in the tree now highlights the joined elements in the viewport ([PR#24951](https://github.com/FreeCAD/FreeCAD/pull/24951)).
 - Added the ability to report overconstraints ([PR#24623](https://github.com/FreeCAD/FreeCAD/pull/24623)).
 
-![Image 6](image-6.png "Image 6")
+![](image-6.png)
 
 **CAM**:
 
@@ -58,7 +58,7 @@ This week in FreeCAD development:
 - PaddleStroke improved the AutoTask mode in overlays ([PR#26768](https://github.com/FreeCAD/FreeCAD/pull/26768)). When it's enabled, the panel will now show if there is a taskbox visible.
 - MortenVajhoj added support for picking cylindrical surfaces when measuring radius or diameter and changed the placement of annotations ([PR#27044](https://github.com/FreeCAD/FreeCAD/pull/27044)).
 
-![Image 4](image-4.png "Image 4")
+![](image-4.png)
 
 Chennes contributed additional improvements and fixes.
 

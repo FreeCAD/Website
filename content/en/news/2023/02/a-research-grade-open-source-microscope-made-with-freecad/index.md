@@ -17,24 +17,24 @@ cover:
 
 The PUMA microscope is a low cost, modular, 3D printed, open source microscope designed in FreeCAD. Its modular nature allows re-use of many components to reconfigure the scope into a multitude of possible forms, from a basic mirror-illuminated simple microscope (middle) to a complex scope for serious research applications (right) - while still being fully portable!
 
-_This guest article is by Dr Paul J. Tadrous, MB, BS, MSc, PhD. Dr Tadrous is a retired clinical pathologist in the UK. Although retired from clinical practice he continues to be active in research into microscopy, image processing, analysis and machine vision at TadPath Diagnostics, London, UK. **Contact**: [email](ptadrous@tadpath.co.uk), [YouTube](https://youtube.com/@PUMAMicroscope), and [Twitter](https://twitter.com/Paul_Tadrous). _
+_This guest article is by Dr Paul J. Tadrous, MB, BS, MSc, PhD. Dr Tadrous is a retired clinical pathologist in the UK. Although retired from clinical practice he continues to be active in research into microscopy, image processing, analysis and machine vision at TadPath Diagnostics, London, UK. **Contact**: [email](ptadrous@tadpath.co.uk), [YouTube](https://youtube.com/@PUMAMicroscope), and [Twitter](https://twitter.com/Paul_Tadrous)._
 
 _If you are interested in writing an article for FreeCAD News, contact Chris Hennes at chennes@freecad.org._
 
 
 ## Introduction
 
-![Puma Figure 1](PUMA_Figure_1.webp "Puma Figure 1")
+![Figure 1. Sample images taken with PUMA configured to various optical modalities](PUMA_Figure_1.webp "Figure 1. Sample images taken with PUMA configured to various optical modalities")
 
-Figure 1. Sample images taken with PUMA configured to various optical modalities. A) Standard transillumination of stained plant cells in mitosis showing chromosomes. B) Unstained human buccal (inner cheek) cells with full aperture transillumination. C) Same specimen but with optical Schlieren phase contrast using a normal (i.e. non-phase) microscope objective. D) Same specimen but showing full phase contrast calculated from 4 Schlieren images. E) Dark ground microscopy of an unstained section of oak leaf. F) and G) Epi-illumination of a silicon chip die showing individual transistors (F) and a set of logic gates (G). H) Human striated muscle seen with crossed polarisation illumination, I) Thin section of a flower bud containing pollen grains, stained with fluorescein and imaged with epi-fluorescence.
+A) Standard transillumination of stained plant cells in mitosis showing chromosomes. B) Unstained human buccal (inner cheek) cells with full aperture transillumination. C) Same specimen but with optical Schlieren phase contrast using a normal (i.e. non-phase) microscope objective. D) Same specimen but showing full phase contrast calculated from 4 Schlieren images. E) Dark ground microscopy of an unstained section of oak leaf. F) and G) Epi-illumination of a silicon chip die showing individual transistors (F) and a set of logic gates (G). H) Human striated muscle seen with crossed polarisation illumination, I) Thin section of a flower bud containing pollen grains, stained with fluorescein and imaged with epi-fluorescence.
 
 The **P**ortable, **U**pgradeable, **M**odular, **A**ffordable (**PUMA**) microscope is an advanced open source (GPL v3) microscopy system designed to be built as a DIY project by anyone with access to low cost 3D printing and some basic hand tools [[1](#1)], [[2](#2)], [[3](#3)].
 
 The scope has interchangeable modules that allow multiple imaging modalities including phase contrast, dark field, epi-illumination, polarisation and fluorescence microscopy (figure 1).
 
-![Puma Figure 2](PUMA_Figure_2.webp "Puma Figure 2")
+![Figure 2. The PUMA Abbe condenser](PUMA_Figure_2.webp "Figure 2. The PUMA Abbe condenser")
 
-Figure 2. The PUMA Abbe condenser (left and centre) allows for high numerical aperture (NA) imaging with a maximum NA of about 1.14 when oiled (about 0.92 dry) for high resolution, high magnification microscopy. An even higher NA illuminator is under development. One of the advantages of this condenser is the easy access it provides to the Fourier aperture of the scope by means of a simple filter slot (the 'Illuminating Aperture Diaphragm' or IAD slot). However, unlike most standard microscopes, PUMA does not restrict its users to simple round 'diaphragm' filters. The filters may be static, 3D printed, filters of custom aperture shape. The filter holders can also accept a 24 mm round glass coverslip on which more complex patterns of colour and shades of grey may be printed (not shown here). However, this 'filter' may instead be an active matrix translucent TFT-screen-based spatial light modulator (SLM) device bringing the advantage of computer control of the Fourier aperture with complex algorithmically calculated patterns of colour, shape and shades of grey (right - see also video 1).
+The PUMA Abbe condenser (left and centre) allows for high numerical aperture (NA) imaging with a maximum NA of about 1.14 when oiled (about 0.92 dry) for high resolution, high magnification microscopy. An even higher NA illuminator is under development. One of the advantages of this condenser is the easy access it provides to the Fourier aperture of the scope by means of a simple filter slot (the 'Illuminating Aperture Diaphragm' or IAD slot). However, unlike most standard microscopes, PUMA does not restrict its users to simple round 'diaphragm' filters. The filters may be static, 3D printed, filters of custom aperture shape. The filter holders can also accept a 24 mm round glass coverslip on which more complex patterns of colour and shades of grey may be printed (not shown here). However, this 'filter' may instead be an active matrix translucent TFT-screen-based spatial light modulator (SLM) device bringing the advantage of computer control of the Fourier aperture with complex algorithmically calculated patterns of colour, shape and shades of grey (right - see also video 1).
 
 {{< video "video_1.mp4" >}}
 
@@ -76,13 +76,13 @@ PUMA is very well documented with a whole series of detailed 'How To' videos exp
 
 PUMA is closer to conventional desktop microscope design compared to the other DIY microscopes and is particularly suited to ergonomical **_direct vision_** as opposed to being a 'camera-only' scope or smartphone-attachment scope.
 
-Compared to their commercial counterparts, PUMA systems are ultra low cost , easy to customise, open source (no trade secrets) and highly portable. All the custom parts are designed in FreeCAD and 3D printable with a low cost printer such as the Ender 3 and all the other parts are generic fixtures and optics that can be bought from accessible online stores like AliExpress, eBay and Amazon. For example, to build a complete epifluorescence PUMA system, including 3D printing, fixtures, fittings, electronics and optics, the cost is typically around $100 USD if full DIY is used. Although commercial fluorescence microscopes would have a sturdier metal construction with more precise mechanical mechanisms and more convenient adjustments compared to the PUMA equivalent, if you are short of the $5000 (and sometimes considerably more) such a scope would cost you brand new then PUMA provides a functional alternative at a fraction of the price - great for home users or labs on a tight budget, esp. if you need multiple scopes for a practical teaching class or special research project.
+Compared to their commercial counterparts, PUMA systems are ultra low cost, easy to customise, open source (no trade secrets) and highly portable. All the custom parts are designed in FreeCAD and 3D printable with a low cost printer such as the Ender 3 and all the other parts are generic fixtures and optics that can be bought from accessible online stores like AliExpress, eBay and Amazon. For example, to build a complete epifluorescence PUMA system, including 3D printing, fixtures, fittings, electronics and optics, the cost is typically around $100 USD if full DIY is used. Although commercial fluorescence microscopes would have a sturdier metal construction with more precise mechanical mechanisms and more convenient adjustments compared to the PUMA equivalent, if you are short of the $5000 (and sometimes considerably more) such a scope would cost you brand new then PUMA provides a functional alternative at a fraction of the price - great for home users or labs on a tight budget, esp. if you need multiple scopes for a practical teaching class or special research project.
 
 In addition to diverse functionality and cost savings, PUMA boasts complete portability weighing just a few hundred grams e.g. 875 g (31 oz) for the fluorescence scope (including battery power supply and lamp), and even lighter - about 540 g (19 oz) for the basic transmitted light mirror-illuminated version of the scope (which can be seen in the middle of the frontice picture at the top of this article).
 
-![Puma Figure 3](PUMA_Figure_3.webp "Puma Figure 3")
+![Figure 3. Simultaneous multi-camera recording](PUMA_Figure_3.webp "Figure 3. Simultaneous multi-camera recording")
 
-Figure 3. Simultaneous multi-camera recording is possible with PUMA. The figure shows, from two different angles, the same PUMA microscope with its full Köhler illuminator fitted with 3 C-mount cameras for simultaneous recording of the same specimen (e.g. with different filters, magnifications, frame rates, etc.). The cameras are arbitrarily numbered 1 to 3. They do not all need to be of the same type or mounting. For example, video 4 shows an example recording from three different cameras. Although multi-camera adapters are available for commercial microscopes they are expensive.
+The figure shows, from two different angles, the same PUMA microscope with its full Köhler illuminator fitted with 3 C-mount cameras for simultaneous recording of the same specimen (e.g. with different filters, magnifications, frame rates, etc.). The cameras are arbitrarily numbered 1 to 3. They do not all need to be of the same type or mounting. For example, video 4 shows an example recording from three different cameras. Although multi-camera adapters are available for commercial microscopes they are expensive.
 
 {{< video "video_3.mp4" >}}
 
@@ -98,10 +98,11 @@ Video 4. Demonstration of a multi-camera recording of a live single cell organis
 
 All this 'direct vision' emphasis doesn't mean that PUMA can't do image recordings - on the contrary, the 'M' in PUMA stands for 'Modular' and there are several modules designed to allow high quality camera recordings - actually with up to three separate cameras recoding in different modalities simultaneously (figure 3, video 4). This is something that, to the best of my knowledge, has not been demonstrated to date with other 3D printed open source microscopes. PUMA can accept standard C-mount and CS-mount cameras as well as eyepiece cameras (including smart phone cameras if suitable adapters are used).
 
+![Figure 4. The PUMA Köhler illuminator](PUMA_Figure_4.webp "Figure 4. The PUMA Köhler illuminator")
 
-![Puma Figure 4](PUMA_Figure_4.webp "Puma Figure 4")
+Left: Design in FreeCAD exploded to show the various 3D printed components. The illuminator gives easy access to the Köhler field stop which, in many modern microscopes, is called the 'illuminated field diaphragm' or IFD but, as with the PUMA Abbe condenser, this is not restricted to a simple round shape diaphragm with PUMA. Right: From top to bottom we have part of Köhler's original publication highlighting his new IFD 'field stop' invention which, in German, he called the 'Sehfeldblende'; an example picture of a stained human skin biopsy taken with PUMA using this illuminator to show the crisp contrast and uniform illumination it affords - comparable to a modern professional microscope; and a photo of the illuminator fixed to a PUMA microscope with the small 'PUMA Lite' battery power supply.
 
-Figure 4. The PUMA Köhler illuminator. Left: Design in FreeCAD exploded to show the various 3D printed components. The illuminator gives easy access to the Köhler field stop which, in many modern microscopes, is called the 'illuminated field diaphragm' or IFD but, as with the PUMA Abbe condenser, this is not restricted to a simple round shape diaphragm with PUMA. Right: From top to bottom we have part of Köhler's original publication highlighting his new IFD 'field stop' invention which, in German, he called the 'Sehfeldblende'; an example picture of a stained human skin biopsy taken with PUMA using this illuminator to show the crisp contrast and uniform illumination it affords - comparable to a modern professional microscope; and a photo of the illuminator fixed to a PUMA microscope with the small 'PUMA Lite' battery power supply. Details of the design, construction and use of this system are provided in this video:
+Details of the design, construction and use of this system are provided in this video:
 
 {{< youtube id=XEE-el7vC5k title="How to build, collimate and use the Köhler Illuminator for the PUMA microscope" loading=lazy >}}
 
@@ -119,9 +120,9 @@ Of course not! It does have its own limitations and peculiarities. These include
 
 ## What does the future hold for PUMA?
 
-![Puma Figure 5](PUMA_Figure_5.webp "Puma Figure 5")
+![Figure 5. Some prototype new modules in development](PUMA_Figure_5.webp "Figure 5. Some prototype new modules in development")
 
-Figure 5. Some prototype new modules in development. The final product may look quite different! A) A stabiliser bracket to minimise image vibrations, useful for high magnification image recordings. B) An adapter to allow the standard PUMA mirror illuminator module to direct daylight (or any other suitable plane wavefront illumination source) as input to the full Köhler illuminator.
+The final product may look quite different! A) A stabiliser bracket to minimise image vibrations, useful for high magnification image recordings. B) An adapter to allow the standard PUMA mirror illuminator module to direct daylight (or any other suitable plane wavefront illumination source) as input to the full Köhler illuminator.
 
 ### New Hardware
 

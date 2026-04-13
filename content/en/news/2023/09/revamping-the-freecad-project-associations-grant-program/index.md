@@ -28,13 +28,9 @@ However, the organization would like to expand the program and is unsure how to 
 Thus another grant was issued to Alexandre Prokoudine to study the experience of other organizations that issue grants to free and open-source software developers. The objective was to find answers to the following questions:
 
 - What to do to start increasing engagement?
-
 - How to find talent and bring them to the project?
-
 - If people think this looks too much like work, do we want to change how it looks or do we find devs who don't think like that?
-
 - How do other organizations and applicants structure grants? Too specific or too open in scope? How much specificity to do? Is it like GSoC project ideas?
-
 - Do we do small/medium/large projects?
 
 To do that Alexandre studied what the FPA has done so far with its grant program and how the program was communicated to the FreeCAD community.,He then identified organizations whose experience could be applicable, conducted interviews and studied what they've been doing and why, then summarized main takeaways and came up with a list of actionable recommendations.

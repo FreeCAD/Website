@@ -27,6 +27,7 @@ This week in FreeCAD development:
 - More fixes by Roy-043 and Syres916.
 
 **CAM:**
+
 - kadet1090 fixed the visual appearance of the origin indicator.
 - tarman3 changed the warning about the Array operation becoming obsolete to show up only when you try to create a new array.
 
@@ -43,7 +44,7 @@ Among other changes:
 - oursland updated pixi dependencies to align with the [VFX Reference Platform](https://vfxplatform.com/) (2026).
 - kadet1090 added Style Parameter Manager to contain theme parameters for defining and managing UI theme parameters on the fly.
 
-![Image](image.png "Image")
+![Theme Style Parameter Manager](image.png "Theme Style Parameter Manager")
 
 Additional improvements and fixes were contributed by maxwxyz, Syres916, ryankembrey, kadet1090, chennes, luzpaz, and NewJoker.
 

@@ -18,7 +18,7 @@ This week in FreeCAD development:
 
 **Assembly**: PaddleStroke fixed 5 issues and added [visual isolation](https://github.com/FreeCAD/FreeCAD/pull/23680) of joint components when creating or editing a joint.
 
-![Image 1](image-1.png "Image 1")
+![Joint component visual isolation](image-1.png "Joint component visual isolation")
 
 **CAM**:
 
@@ -31,7 +31,7 @@ This week in FreeCAD development:
 - Rexbas fixed the conflict between the Transform tool and the OpenSCAD navigation style.
 - hyarion added a selector to the status bar's context menu to toggle quick measure and input hints.
 
-![Image](image.png "Image")
+![Status bar context menu](image.png "Status bar context menu")
 
 **Other changes**:
 

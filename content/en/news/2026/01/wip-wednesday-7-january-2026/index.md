@@ -24,6 +24,7 @@ This week in FreeCAD development:
 - tetektoza changed the rendering of constraint text, arrowheads, and constraint icons to be above geometry lines ([PR#26703](https://github.com/FreeCAD/FreeCAD/pull/26703)).
 
 **PartDesign:**
+
 - PaddleStroke fixed the issue where it was impossible to select multiple points on two sketches ([PR#26596](https://github.com/FreeCAD/FreeCAD/pull/26596)) and enabled the dragging and dropping of shapebinders ([PR#25264](https://github.com/FreeCAD/FreeCAD/pull/25264)).
 - kadet1090 fixed the incorrect preview for polar patterns ([PR#26563](https://github.com/FreeCAD/FreeCAD/pull/26563)).
 - ipatch fixed invalid edge links ([PR#26425](https://github.com/FreeCAD/FreeCAD/pull/26425)).
@@ -60,7 +61,7 @@ This week in FreeCAD development:
 - drwho495 fixed another toponaming issue ([PR#26691](https://github.com/FreeCAD/FreeCAD/pull/26691)).
 - kevinsmia1939 added diameter measurement ([PR#24853](https://github.com/FreeCAD/FreeCAD/pull/24853)).
 
-![Image](image.png "Image")
+![Diameter in measure tool](image.png "Diameter in measure tool")
 
 Roy-043, wwmayer, 3x380V, kadet1090, PaddleStroke, TONY8779, YashSuthar983, adrianinsaval, and luzpaz contributed additional improvements and fixes.
 

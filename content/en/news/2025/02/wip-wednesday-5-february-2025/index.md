@@ -17,15 +17,12 @@ This week in FreeCAD development:
 **Draft**:
 
 - redonwhite added several new path array features: a setting to reverse path, an align mode that uses rotations instead of tangent vectors, a "Fixed spacing" mode, and an ability to use spacing patterns.
-
 - Roy_043 added [improvements to groups handling](https://github.com/freecad/freecad/pull/19312) and fixed several bugs.
 
 **BIM**:
 
 - furgo16 patched the BIM Schedule command to detect and expand array elements, so that they can be further processed (these elements used to be ignored prior to that) and fixed a couple of bugs.
-
 - Tritao improved the checking for IfcOpenShell installation.
-
 - je-cook upgraded the bundled copy of Three.js to its latest release.
 
 **CAM**: dubstar-04 contributed several quality-of-life improvements for using the Tool Bit Library.
@@ -37,13 +34,9 @@ This week in FreeCAD development:
 Among other changes:
 
 - benj5378 made axis colors user-definable.
-
 - panintended fixed Quick Measure to display the angle between edges in correct units.
-
 - chennes contributed a few improvements to the Addon Manager.
-
 - pmjdebruijn patched the PDF exporter to write proper PDF creator metadata.
-
 - hyarion updated the Ondsel Solver submodule to get the latest community-contributed fixes.
 
 Additional fixes arrived from paullee0, alfrix, pskowronskiTDx, totake0224, mwganson, Roy-043, xtemp09, Syres916, furgo16, Rexbas, tritao.

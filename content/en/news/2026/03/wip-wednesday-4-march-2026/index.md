@@ -45,7 +45,7 @@ This week in FreeCAD development:
   - Removed superfluous transaction handling when editing IFC properties ([PR#27313](https://github.com/FreeCAD/FreeCAD/pull/27313)).
 - furgo16 ixed the placement jump when uncloning objects ([PR#27597](https://github.com/FreeCAD/FreeCAD/pull/27597)) and added quick-access option taskboxes to all relevant objects ([PR#27746](https://github.com/FreeCAD/FreeCAD/pull/27746)).
 
-![Image](image.png "Image")
+![BIM task panels](image.png "BIM task panels")
 
 **FEM**:
 

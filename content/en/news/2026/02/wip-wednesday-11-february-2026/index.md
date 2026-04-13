@@ -35,7 +35,7 @@ This week in FreeCAD development:
 - kadet1090 refactored the TopoShape::splitWires method to make it easier to follow and use variable names that better describe the intent ([PR#23096](https://github.com/FreeCAD/FreeCAD/pull/23096)).
 - captain0xff added interactive gizmos for the Box, Cylinder, and Sphere operations ([PR#23700](https://github.com/FreeCAD/FreeCAD/pull/23700)).
 
-![Image 1](image-1.png "Image 1")
+![](image-1.png)
 
 **Assembly**:
 
@@ -47,10 +47,10 @@ This week in FreeCAD development:
 - petterreinholdtsen reintroduced matching pre-/postamble and help text for the dynapath_4060 post-processor ([PR#27331](https://github.com/FreeCAD/FreeCAD/pull/27331)). He also added the M8x1.25 (aka M8 coarse) thread tapping bit ([PR#27114](https://github.com/FreeCAD/FreeCAD/pull/27114)).
 - Daniel-Khodabakhsh fixed the case when the Start Depth of an operation equals the Final Depth and the Step Down is zero ([PR#27247](https://github.com/FreeCAD/FreeCAD/pull/27247)).
 - Connor updated SVG annotation IDs for tool shapes ([PR#27325](https://github.com/FreeCAD/FreeCAD/pull/27325)).
-- tarman3 fixed an issue where <tt>_getCutAreaCrossSection()</tt> would sometimes return False because it would incorrectly define the bounding box for the cut area ([PR#27295](https://github.com/FreeCAD/FreeCAD/pull/27295)).
+- tarman3 fixed an issue where `_getCutAreaCrossSection()` would sometimes return False because it would incorrectly define the bounding box for the cut area ([PR#27295](https://github.com/FreeCAD/FreeCAD/pull/27295)).
 - jffmichi integrated the new simulator into the main window ([PR#22204](https://github.com/FreeCAD/FreeCAD/pull/22204)).
 
-![Image 2](image-2.png "Image 2")
+![](image-2.png)
 
 **BIM/Arch**:
 

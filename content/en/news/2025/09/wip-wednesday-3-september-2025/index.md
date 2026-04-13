@@ -57,14 +57,14 @@ This week in FreeCAD development:
 - tarman3 and sliptonic fixed several other issues in the workbench.
 - davidgilkaufman fixed occasional freezes when computing ramps for long paths and added UI for editing values of an operation's tool controller from within the operation's edit user interface (see [PR#23180](https://github.com/FreeCAD/FreeCAD/pull/23180) for more information).
 
-![Image](image.png "Image")
+![CAM operation task panel](image.png "CAM operation task panel")
 
 **BIM**:
 
 - Roy-043 fixed a regression in Wall, Stairs, and Structure.
 - EdgarJRobles added a T-profile option.
 
-![Image 1](image-1.png "Image 1")
+![T-profile structure](image-1.png "T-profile structure")
 
 **FEM**:
 
@@ -82,7 +82,7 @@ This week in FreeCAD development:
 - tetektoza fixed a bug that resulted in displaying an incorrect Center Of Mass icon when creating measurements.
 - kadet1090 made the axis cross visible on top of all shapes and patched the Attacher to show placement and plane.
 
-![Image 2](image-2.png "Image 2")
+![](image-2.png)
 
 **Other changes**:
 

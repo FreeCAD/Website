@@ -16,13 +16,9 @@ The [FreeCAD Hackathon 2023](https://blog.freecad.org/2023/05/24/freecad-hackath
 Major topics of discussion during the Hackathon will be:
 
 - Roadmap to the 1.0 release
-
 - Default assembly workbench
-
 - User interface cleanup, unification, and polish
-
 - Translations
-
 - Whatever else you bring to the discussion! Post on the Discord to get the ball rolling.
 
 The exact agenda will be decided on-the-fly by attendees, and we expect there to be multiple simultaneous projects ongoing most of the time. The Discord channel has several threads in it to facilitate that effort, and more will be created as needed. I hope I see you there!

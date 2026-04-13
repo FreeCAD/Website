@@ -23,7 +23,7 @@ This week in FreeCAD development:
 
 **Part Design**: kadet1090 contributed long-anticipated transparent previews for Pad, Additive and Subtractive Loft/Pipe/Helix, Pocket, Fillet, Chamfer, and Thickness commands. A separate pull request added the transparent preview to the Draft feature. Colors, transparency levels, and other properties for the transparent previews are all configurable.
 
-![Image 1](image-1.png "Image 1")
+![](image-1.png)
 
 **TechDraw**:
 

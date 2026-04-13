@@ -20,12 +20,11 @@ This week in FreeCAD development:
 
 **Assembly**: furgo16 patched the BOM tool to support autopopulating columns with given dynamic properties like these:
 
-![Image 1](image-1.png "Image 1")
+![](image-1.png)
 
 **BIM**:
 
 - tetektoza contributed a patch that makes it possible to insert a Window to a Curtain Wall.
-
 - paullee0 patched the BIM Window Interactive Tool so that with the SketchArch-addon, the required SketchArch parametric placement information of an Arch Object (Window currently) is automatically completed now. He also contributed more code to support the ArchSketch addon in the BIM workbench.
 
 **FEM**: ickby fixed several bugs, and muezabdalla improved the UI of the temperature constrain expandable.
@@ -35,17 +34,15 @@ This week in FreeCAD development:
 **GUI**:
 
 - Graicc added a classic trackball orbit style for navigation (see [this forum thread](https://forum.freecad.org/viewtopic.php?t=91769)), and Rexbas fixed an issue in the MayaGesture style.
-
 - alexneufeld contributed an improvement that improves the default random colors for assembly objects by using the perceptually uniform [CET-R1](https://colorcet.com/gallery.html#rainbow) color map.
 
 **Materials**: davesrocketshop finished adding support for external materials databases. The last patch adds a Preferences page where you can tweak cache settings or disable the feature entirely.
 
-![Image 2](image-2.png "Image 2")
+![](image-2.png)
 
 Among other changes:
 
 - aprospero did a major overhaul of how FreeCAD imports paths from SVG files.
-
 - pieterhijma improved the App::PropertyContainer documentation as part of his grant work.
 
 Additional improvements and fixes were contributed by J-Dunn, rhabacker, furgo16, Roy-043, tarman, captain0xff, vletii, Syres916, chennes, FlachyJoe, sliptonic, kadet1090, 3x380V, Joao-A-Neves, oursland, and mosfet80.

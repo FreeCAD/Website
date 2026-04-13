@@ -23,19 +23,19 @@ This happened last year:
 
 - **hlorus** worked (and is still working!) on **measurements tools in FreeCAD**. FreeCAD has a very diverse set of different measurement tools, none totally complete, none totally finished. Hlorus, who already worked on other FOSS projects like Blender, started working on a unified system, that hopefully will provide a good FreeCAD-wide measurement solution. Check the project details on [GSoC 2023: Unified Measurement Facility - FreeCAD Forum](https://forum.freecad.org/viewtopic.php?t=78147)
 
-![Measure](measure.webp "Measure")
+![Measure tools](measure.webp "Measure tools")
 
 - **Amulya** worked and is also still working on a **modern replacement for the FreeCAD library**. The [FreeCAD library](https://github.com/freecad/freecad-library) has become this huge, unmaintainable, unusable repository of FreeCAD models, pieces and parts provided by FreeCAD users. We needed a replacement which, while still relying on Git and content provided by users, allows a much easier management both by administrators and users, and has an easier integration in FreeCAD. Project details are on [[GSoC 2023] UI tool for fetching online content - FreeCAD Forum](https://forum.freecad.org/viewtopic.php?t=78124)
 
-![Demo ss 1](demo_ss1.png "Demo ss 1")
+![Models library](demo_ss1.png "Models library")
 
 - **Gauri** worked on a **new documentation system for FreeCAD**. While the current documentation hosted on [the FreeCAD wiki](https://wiki.freecad.org) served and still serves us well so far, a series of growing problems made us think we need a better, more flexible and safer solution where the contents are dissociated from the platform. Gauri set up a markdown-based docusaurus system, and some FreeCAD community members have now picked up her work and are carrying it further. Check the details at [[GSoC2023] Upgrade the documentation system - FreeCAD Forum](https://forum.freecad.org/viewtopic.php?t=78143)
 
-![Screenshot documentation](screenshot-documentation.webp "Screenshot documentation")
+![Documentation portal](screenshot-documentation.webp "Documentation portal")
 
 - **Tanasu** worked on **on-machine inspection tools** that allow a CNC machine equipped with a probe tool to "poke" a piece of material to determine its size and shape. Find more details about it on [[GSoC 2023] On-machine Inspection - FreeCAD Forum](https://forum.freecad.org/viewtopic.php?t=78215)
 
-![Screenshot inspection](screenshot-inspection.webp "Screenshot inspection")
+![Machine inspection](screenshot-inspection.webp "Machine inspection")
 
 Everything that happens with GSoC in FreeCAD is in its [own section of the FreeCAD forum](https://forum.freecad.org/viewforum.php?f=46). Be sure to check what's happening there!
 

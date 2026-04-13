@@ -32,7 +32,7 @@ This week in FreeCAD development:
 - Roy-043 fixed a crash that occurred when switching working planes ([PR#27373](https://github.com/FreeCAD/FreeCAD/pull/27373)).
 - furgo16 renamed the obsolete Mesh property to HiRes ([PR#27783](https://github.com/FreeCAD/FreeCAD/pull/27783)), set the default value of 'MoveWithHost' property to True ([PR#27685](https://github.com/FreeCAD/FreeCAD/pull/27685)), and added an initial implementation of the sliding door preset ([PR#27375](https://github.com/FreeCAD/FreeCAD/pull/27375)).
 
-![Image 4](image-4.png "Image 4")
+![](image-4.png)
 
 **FEM**:
 

@@ -16,7 +16,7 @@ This year, we had three students working on FreeCAD. All projects have been succ
 
 chiragsingh1711 implemented 3D PDF exporting in the TechDraw workbench and added an exporter to the general list of exporting options. The code is [mostly complete](https://github.com/FreeCAD/FreeCAD/pull/23335) and requires some fixes to bring it closer to our coding standards. The maintainers team scheduled this feature for inclusion in v1.2.
 
-![Image 2](image-2.png "A quick test file opened in Adobe Reader, screenshot courtesy by the developer")
+![3D PDF export - A quick test file opened in Adobe Reader](image-2.webp "3D PDF export - A quick test file opened in Adobe Reader")
 
 theo-vt worked on multiple files' parallel editing. This project's aim was to remove the limitation where one document cannot be edited until an operation on another document is completed. The patch is also mostly complete. Because the project ended when the feature freeze was already in effect, and the change affected every aspect of FreeCAD, this feature was postponed to v1.2 to avoid delaying the release of v1.1.
 

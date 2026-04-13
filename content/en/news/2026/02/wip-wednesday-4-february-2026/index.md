@@ -55,7 +55,7 @@ This week in FreeCAD development:
 - Arusekk fixed a bug where an ArchBuildingPart would not move the child object base and only move the child itself ([PR#27237](https://github.com/FreeCAD/FreeCAD/pull/27237)).
 - furgo16 added a task panel for wall options so that you can edit, e.g., alignment and width in one go ([PR#26758](https://github.com/FreeCAD/FreeCAD/pull/26758)). He also fixed a bug where a baseless wall with additions would have a different icon in the Tree View ([PR#27277](https://github.com/FreeCAD/FreeCAD/pull/27277)).
 
-![Image](image.png "Image")
+![BIM Wall task panel](image.png "BIM Wall task panel")
 
 **Other changes**:
 

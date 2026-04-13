@@ -47,7 +47,7 @@ This week in FreeCAD development:
 - z0r0 implemented the generation of Python bindings for FEM, TechDraw, and Assembly with pyi files (see [#21784](https://github.com/FreeCAD/FreeCAD/issues/21784) for more information).
 - xtemp09 simplified the context menu code in Spreadsheet and added icons there.
 
-![Image](image.png "Image")
+![Spreadsheet context menu](image.png "Spreadsheet context menu")
 
 Additional improvements and fixes were contributed by ryankembrey, NewJoker, Roy_043, 3x380V, oursland, MisterMakerNL, theo-vt, chennes, luzpaz, kadet1090, and CarlosNihelton.
 

@@ -27,19 +27,14 @@ This week in FreeCAD development:
 **GUI**:
 
 - 3x380V added a workaround for missing custom cursors on Wayland when building FreeCAD with Qt6.
-
 - Syres916 synced 'Preferences > Display > UI' page with actual defaults for new users: some checkboxes had incorrect states, one checkbox was missing.
-
 - kadet1090 fixed various small cosmetic issues with the Preferences dialog, such as incorrect padding, inconsistent alignment, horizontal scrollbars that should not be present etc.
 
 **Among other changes**:
 
 - NewJoker added a missing 2D meshing algorithm, Quasi-structured Quad, to the Gmsh mesher in the Mesh WB.
-
 - WandererFan fixed a loop in Techdraw during the calculation of the automatic scale.
-
 - Roy_043 fixed a snap-at-intersection bug that would cause the infinite hanging of the program.
-
 - pieterhijma fixed the use of the '--single-instance' command line argument on Windows so that new files would always be opened in the already running instance of FreeCAD.
 
 **PR stats**: since the previous report, 33 pull requests have been merged, 14 new pull requests have been opened.

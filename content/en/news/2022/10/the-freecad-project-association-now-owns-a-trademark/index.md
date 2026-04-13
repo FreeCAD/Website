@@ -17,7 +17,7 @@ The [FreeCAD Project Association](https://github.com/freecad/fpa) (FPA) has regi
 
 The trademark is registered in Benelux only, but it still prevents anyone else in the European Union from registering the same trademark.
 
-What does it mean? Basically the FPA (and _only_ the FPA) now owns the rights over the commercial use of the FreeCAD name and logo. Nothing will change within FreeCAD or for its users, but it gives the FPA legal power to take action against others making money with FreeCAD (and often not complying with the license terms).
+What does it mean? Basically the FPA (and *only* the FPA) now owns the rights over the commercial use of the FreeCAD name and logo. Nothing will change within FreeCAD or for its users, but it gives the FPA legal power to take action against others making money with FreeCAD (and often not complying with the license terms).
 
 The first things we have in mind obviously are the fake versions of FreeCAD sold on the Windows and Apple app stores. We have tried filing complaints in the past, but nothing ever came of them. Now we have an argument that these companies understand better.
 

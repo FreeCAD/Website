@@ -17,7 +17,6 @@ This week in FreeCAD development:
 **Sketcher**:
 
 - PadleStroke implemented group dragging of geometries.
-
 - FlachyJoe improved the look of arc length for when the arc length is higher than half diameter.
 
 **Draft**: Roy_043 improved the Trimex tool and fixed a couple of bugs.
@@ -33,7 +32,6 @@ This week in FreeCAD development:
 **FEM**:
 
 - marioalexis84 added box and elliptical beam section types, implemented a tool to delete all results objects including pipelines and filters, added an option to save geometry IDs in ElmerFEM,
-
 - NewJoker fixed CalculiX ties constraints to support shell surfaces.
 
 **Toponaming**: CalligaroV completed another patch that was the legacy of Brad McLean who passed away earlier this year. The patch adds a plane matching based heuristic to TNP mitigation. According to Brad, this should address the common remaining TNPs arising from edge changes in a sketch.

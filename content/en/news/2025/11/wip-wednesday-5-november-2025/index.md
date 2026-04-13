@@ -27,6 +27,7 @@ This week in FreeCAD development:
 - furgo16 moved the BIM Project command from the toolbar to the Utils menu ([PR#25086](https://github.com/FreeCAD/FreeCAD/pull/25086)).
 
 **FEM:**
+
 - marioalexis84 fixed magnetodynamic2D boundary condition ([PR#25017](https://github.com/FreeCAD/FreeCAD/pull/25017)), fixed CalculiX body heat source writer for 2D cases ([PR#25079](https://github.com/FreeCAD/FreeCAD/pull/25079)), and reworked the Elmer solver object and task panel, which fixes two bugs, including one release blocker ([PR#24912](https://github.com/FreeCAD/FreeCAD/pull/24912)).
 - chennes tweaked a couple of unit tests ([PR#24936](https://github.com/FreeCAD/FreeCAD/pull/24936)).
 

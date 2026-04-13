@@ -9,8 +9,8 @@ tags:
   - open hardware
   - KiCAD
 cover:
-  image:
-  caption:
+  image: FreeCAD-Model_micromanipulator.webp
+  caption: Micro Manipulator FreeCAD model
 ---
 
 
@@ -20,11 +20,11 @@ Using FreeCAD, KiCad and other opensource projects like Python and GRBL this XYZ
 
 First, it has an excellent combinational design of a ball joint with flexures that creates a fabulous joint with smooth movement using tiny ball bearings and 2mm brass tubing. We have to confess it's built so well that we imagined the tubes to be much larger when we first saw them.
 
-![Balljoint flexure](balljoint_flexure.png "Balljoint flexure")
+![Balljoint flexure](balljoint_flexure.webp "Balljoint flexure")
 
 Then there's some very clever exploration of using magnet arrays to emulate a single rotating magnetic field to create a very accurate encoding system using a large 3d printed part attached to a common stepper motors.
 
-![Micro manipulator kicad](micro_manipulator_kicad.jpg "Micro manipulator kicad")
+![Micro manipulator kicad](micro_manipulator_kicad.webp "Micro manipulator kicad")
 
 The motor driver boards are reasonably common modules hooked up to a RP2350 Raspberry Pi Pico2 in turn all mounted and routed on a custom, KiCad-created PCB. A bespoke firmware is supplied over on the repository, and there are some example python scripts for homing and calibration and more.
 

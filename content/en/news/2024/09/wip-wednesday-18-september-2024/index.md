@@ -20,22 +20,17 @@ This week in FreeCAD development:
 
 **TechDraw**: WandererFan fixed a bug where the 'Save a copy...' command would be unavailable with an opened page, and benj5378 significantly improved the centering of labels inside balloons.
 
-![Image 1](image-1.png "Image 1")
+![](image-1.png)
 
 **GUI**: pinkavaj, qewer33 and benj5378 fixed various UI annoyances, and kadet1090 forced Qt6 to load OpenGL immediately, otherwise the first new document would be temporarily hidden. Please note: we are not planning to ship FreeCAD 1.0 built with Qt6, but we still need to fix these bugs.
 
 Among other contributions:
 
 - bgbsww and CalligaroV fixed several toponaming-related issues in Sketcher.
-
 - hlorus and benj5378 fixed several issues in the new measurement tool, including one where the tool would get incorrect data from linked elements.
-
 - bgbsww fixed a blocker issue in Part Design where a new sketch in a link would not open at the correct location.
-
 - yorikvanhavre and Roy_043 fixed several minor bugs and regressions in Draft.
-
 - furgo16 patched the legacy DXF importer to support importing dimensions.
-
 - shaise improved the compatibility of the new mill simulator in CAM with less beefy GPUs.
 
 **PR stats**: since the previous report, 52 pull requests have been merged, 38 new pull requests have been opened.

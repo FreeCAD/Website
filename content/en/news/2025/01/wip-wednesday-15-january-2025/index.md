@@ -21,7 +21,6 @@ A major user-visible change is the introduction of the Transform task panel that
 This patch is part of kadet1090's [grant project](https://github.com/freecad/fpa-grant-proposals/issues/22). There are a few more **GUI** changes:
 
 - tritao improved the Coin scene inspector dialog to make the information human-readable.
-
 - PaddleStroke improved the stylesheet to get the correct background color displayed after moving a toolbar in the menubar and backported extended branding options from Ondsel's soft fork.
 
 **Part and Part Design**: wwmayer improved several aspects of the new datum objects; he renamed the user-visible menu items and added methods to get the base and direction of datum elements.
@@ -31,9 +30,7 @@ This patch is part of kadet1090's [grant project](https://github.com/freecad/fpa
 Other changes:
 
 - BIM: various fixes by yorik, Roy_043, paullee0, galou, and tritao.
-
 - Draft: several fixes by Roy_043.
-
 - Sketcher: wwmayer fixed issues in ellipse creation.
 
 Additional changes arrived from FEA-eng, coldtobi, chennes, mosfet80, wwmayer, tritao, hyarion, BootsSiR, ovo-Tim, and kpemartin.

@@ -31,6 +31,7 @@ This week in FreeCAD development:
 - Paullee0 fixed an issue in ArchStairs ([PR#25167](https://github.com/FreeCAD/FreeCAD/pull/25167)).
 
 **FEM:**
+
 - NewJoker changed categories of two FEM examples ([PR#25246](https://github.com/FreeCAD/FreeCAD/pull/25246)) and added a ccx capacitance two spheres example ([PR#25117](https://github.com/FreeCAD/FreeCAD/pull/25117)).
 - marioalexis84 fixed CapacitanceBody default value ([PR#25148](https://github.com/FreeCAD/FreeCAD/pull/25148)).
 

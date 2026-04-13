@@ -26,6 +26,7 @@ This week in FreeCAD development:
 - saksham-malhotra-27 fixed a sketch redundancy warning ([PR#26064](https://github.com/FreeCAD/FreeCAD/pull/26064)).
 
 **PartDesign:**
+
 - tetektoza fixed a release blocker where the extrusion taper angle of internal faces was reversed ([PR#26781](https://github.com/FreeCAD/FreeCAD/pull/26781)). He also fixed Refine not working with Boolean operations ([PR#26745](https://github.com/FreeCAD/FreeCAD/pull/26745)).
 - PaddleStroke fixed a release blocker where extruding up to shape would not recompute the document correctly ([PR#26696](https://github.com/FreeCAD/FreeCAD/pull/26696)).
 - kadet1090 fixed recomputing the previews when recomputes are disabled ([PR#26805](https://github.com/FreeCAD/FreeCAD/pull/26805)), added the beginnings of scheduling the true recompute of the preview ([PR#26812](https://github.com/FreeCAD/FreeCAD/pull/26812)), and took another stab at fixing pattern transform previews ([PR#26697](https://github.com/FreeCAD/FreeCAD/pull/26697)).
@@ -52,7 +53,7 @@ This week in FreeCAD development:
 - petterreinholdtsen patched the Fanuc post-processor ([PR#26617](https://github.com/FreeCAD/FreeCAD/pull/26617) and [PR#26436](https://github.com/FreeCAD/FreeCAD/pull/26436)).
 - Connor added a threshold for treating large-radius arcs as linear in the simulator ([PR#26860](https://github.com/FreeCAD/FreeCAD/pull/26860)). He added a machine library and editor to the CAM preferences panel ([PR#26533](https://github.com/FreeCAD/FreeCAD/pull/26533)).
 
-![Image 1](image-1.png "Image 1")
+![](image-1.png)
 
 **BIM/Arch**:
 

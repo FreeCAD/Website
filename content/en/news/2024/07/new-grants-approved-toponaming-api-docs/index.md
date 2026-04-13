@@ -23,4 +23,4 @@ The FreeCAD Project Association has just approved several more grants:
 
 **Aleksandr Prokudin** will serve as FreeCAD's blog maintainer for the next 12 months. He will continue publishing weekly recaps of development efforts and post additional project news. He was awarded a grant of €500 per month.
 
-If you are interested in improving FreeCAD one way or another, you can[ apply](https://fpa.freecad.org/programs/fpadf-announcement) for an out-of-program grant any time.
+If you are interested in improving FreeCAD one way or another, you can [apply](https://fpa.freecad.org/programs/fpadf-announcement) for an out-of-program grant any time.

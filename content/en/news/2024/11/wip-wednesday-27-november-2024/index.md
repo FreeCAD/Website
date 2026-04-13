@@ -17,13 +17,11 @@ This week in FreeCAD development:
 **Sketcher**:
 
 - FlachyJoe made axes scale dependent on the viewport size so that they always appear infinite.
-
 - PaddleStroke enhanced the offset tool and the transform tools to use external geometries as input.
 
 **GUI**:
 
 - wwmayer implemented support for Freedesktop's [Thumbnail Management Standard](https://specifications.freedesktop.org/thumbnail-spec/0.8.0/) v0.8.0 in the Start page.
-
 - Various minor tweaks arrived from 3x380V, ein-shved, wwmayer, bdieterm, luzpaz, and pieterhijma.
 
 **FEM**: marioalexis84 added local refinement and second-order linear for Netgen meshing, as well as other improvements and fixes in the FEM workbench.
@@ -37,9 +35,7 @@ This week in FreeCAD development:
 Among other changes:
 
 - Syres916, mwganson, and wwmayer fixed some issues in Part and Part Design.
-
 - paullee0 and Roy_043 fixed several issues in Draft.
-
 - PaddleStroke, kadet1090, and H. Tsubota fixed several fixes to Assembly.
 
 **PR stats**: since the previous report, 72 pull requests have been merged, and 32 new pull requests have been opened.

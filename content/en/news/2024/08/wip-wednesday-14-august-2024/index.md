@@ -25,11 +25,8 @@ This week in FreeCAD development:
 Among other changes:
 
 - pieterhijma fixes three minor issues in the core.
-
 - Roy_043 and paullee0 fixed two issues in the Draft workbench.
-
 - PaddleStroke fixed two issues related to dimensions in TechDraw.
-
 - chennes fixed two bugs in the Addon Manager, one of them related to Qt6 compatibility.
 
 **PR stats**: since the previous report, 34 pull requests have been merged, 12 new pull requests have been opened.

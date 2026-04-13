@@ -13,7 +13,7 @@ cover:
 ---
 
 
-![Moduv 2 photo](moduv2_photo.jpg "Moduv 2 photo")
+![Moduv 2 photo](moduv2_photo.webp "Moduv 2 photo")
 
 In an amusing twist, this Forged in FreeCAD story will contain similar words to the last Forged In FreeCAD story, most notably, "concrete" and "lathe"!The last "[Forged in FreeCAD" story was the SL-24 Opensource Record Lathe](https://blog.freecad.org/2025/11/11/forged-in-freecad-sl-24-an-open-source-record-lathe/), and indeed this story is a lathe story that includes concrete in the construction.
 

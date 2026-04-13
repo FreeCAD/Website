@@ -23,7 +23,7 @@ This week in FreeCAD development:
 - longrackslabs continued adding contextual input hints to edit tools.
 - maxwxyz patched Sketcher to show the dimensional name by default.
 
-![Image 2](image-2.png "Image 2")
+![](image-2.png)
 
 **PartDesign**:
 

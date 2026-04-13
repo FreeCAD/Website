@@ -32,35 +32,22 @@ With the release of version 1.0 we wanted to provide an executive summary as a q
 Highlights:
 
 - Following a long development process, Realthunders Topological naming problem mitigation algorithm has been incorporated into FreeCAD Version 1.0. This algorithm offers resiliency against topology changes in a parametric chain and a vast improvement of a model's stability.
-
 - FreeCAD has a new included Assembly workbench which uses the brand-new Ondsel solver.
-
 - A new logo was chosen by the community members, from community contributed proposals.
-
 - The user interface has received huge improvements.These include rotational centre indicators, selection item filters, on-model task panel and combo view modes, universal measuring tools, brand-new dark and light themes and much more.
 
-![Image alternative text](part.webp "This is an image title")
+![User interface in FreeCAD 1.0](part.webp "User interface in FreeCAD 1.0")
 
 Other key improvements:
 
-- There are multiple changes and improvements to the Core system. The vector API can now be used in expressions, the new property container _App::VarSet _allows the user to create design variations, along with many more improvements to the Python editor and Python API.
-
+- There are multiple changes and improvements to the Core system. The vector API can now be used in expressions, the new property container `App::VarSet` allows the user to create design variations, along with many more improvements to the Python editor and Python API.
 - A new, streamlined and faster start page replaces the Start Workbench.
-
 - The Arch workbench has been merged with BIM and is now the BIM workbench with lots of new features and improvements added including native support for IFC documents.
-
 - The Path workbench has been renamed the CAM workbench with lots of new features including a new CAM simulator.
-
 - The Draft workbench has a long list of improvements. Grid behaviour has been optimised and appearance options have been increased with many of the Draft workbench tools and approaches receiving extra functionality.
-
 - The FEM workbench has had a large overhaul with many small but useful changes to tools and functions. The language used on the FEM workbench has been developed to be closer to industrial standard terms.
-
 - The material handling system has been completely overhauled and a standard system is now in place for further development.
-
 - The Part workbench has numerous improvements with the Part Scale and Part Mirror tools being two obvious improved tools.
-
 - The Part Design workbench has received many fixes and additional functionality within the revolution and groove features, as well as significant changes to the Pad tool making it possible to end extrusions at multiple faces and more.
-
 - The Sketcher workbench has a huge amount of changes and increased functionality and UI improvements. These include "dimensioning on the go", contextual Dimension constraint tools, a new Offset tool and more. Cut and Paste including constraints is now available within and across sketches.
-
 - The TechDraw workbench has numerous new tools: Snapping, a CosmeticCircle tool, an AddOffsetVertex tool and many others.

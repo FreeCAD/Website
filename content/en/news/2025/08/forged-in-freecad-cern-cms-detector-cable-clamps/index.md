@@ -12,9 +12,9 @@ cover:
 ---
 
 
-![Cms 18 cern](cms18_cern.jpg "Cms 18 cern")
+![Cms 18 cern](cms18_cern.webp "Cms 18 cern")
 
-In case it passed you by, over on our [mastodon account](https://fosstodon.org/@freecad) and on the [X platform](https://x.com/FreeCADNews) we have run the hashtag #FreeCADFriday for a long time. It's a straightforward "show everyone what you are up to with FreeCAD" type affair and every week so many amazing projects show up as responses. Sometimes they are breathtakingly complex,  beautiful, often though they are simple and  functional, but sometimes it's fun to see _where_ FreeCAD is getting used!
+In case it passed you by, over on our [mastodon account](https://fosstodon.org/@freecad) and on the [X platform](https://x.com/FreeCADNews) we have run the hashtag #FreeCADFriday for a long time. It's a straightforward "show everyone what you are up to with FreeCAD" type affair and every week so many amazing projects show up as responses. Sometimes they are breathtakingly complex, beautiful, often though they are simple and  functional, but sometimes it's fun to see *where* FreeCAD is getting used!
 
 ![Csm 20 cern](csm20_cern.png "Csm 20 cern")
 

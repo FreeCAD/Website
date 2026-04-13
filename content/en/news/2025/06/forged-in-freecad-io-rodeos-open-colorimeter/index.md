@@ -29,4 +29,4 @@ It's a really capable and neat design and uses an existing product, the Adafruit
 
 ![Colorimeter cropped](colorimeter_cropped.png "Colorimeter cropped")
 
-IO Rodeo sell the devices as complete preflashed systems but glancing over the[ repo ](https://github.com/iorodeo/open_colorimeter)every bit of the source is their for you to build one youself should you need too. As it requires no laptop and is a totally standalone device we imagine it's incredibly useful not only in education but also out in the field. Rounded out with [OSHWA certification](https://certification.oshwa.org/us002138.html) it's a fantastic project and we wish them well.
+IO Rodeo sell the devices as complete preflashed systems but glancing over the [repo](https://github.com/iorodeo/open_colorimeter)every bit of the source is their for you to build one youself should you need too. As it requires no laptop and is a totally standalone device we imagine it's incredibly useful not only in education but also out in the field. Rounded out with [OSHWA certification](https://certification.oshwa.org/us002138.html) it's a fantastic project and we wish them well.

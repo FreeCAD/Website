@@ -26,6 +26,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 {{- $level := .Level -}}
 {{- $anchor := .Anchor -}}
 {{- $text := .Text -}}
+{{- $title := .PlainText -}}
 
 <h{{ $level }}
   id="{{ $anchor }}"
@@ -35,7 +36,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
   <a class="heading-anchor"
      href="#{{ $anchor }}"
-     title="{{ $text }}">
+     title="{{ $title }}">
     {{- partialCached "utils/icon.html" "anchor" "anchor" -}}
   </a>
 </h{{ $level }}>

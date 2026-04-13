@@ -19,13 +19,9 @@ In this upcoming week:
 - Google Summer of Code developers have begun meeting with their community mentors, and are soliciting feedback from everyone in the community on their proposed work plans:
 
 - [GSoC 2023: Unified Measurement Facility](https://forum.freecad.org/viewtopic.php?t=78147)
-
-    - [[GSoC 2023] On-machine Inspection](https://forum.freecad.org/viewtopic.php?t=78215)
-
-    - [[GSoC 2023] UI tool for fetching online content](https://forum.freecad.org/viewtopic.php?p=680088#p680088)
-
-    - [[GSoC2023] Upgrade the documentation system](https://forum.freecad.org/viewtopic.php?p=680258#p680258)
-
-- I (@chennes) am cleaning up some toponaming tests in anticipation of beginning the second TNP merge sequence.
+- [[GSoC 2023] On-machine Inspection](https://forum.freecad.org/viewtopic.php?t=78215)
+- [[GSoC 2023] UI tool for fetching online content](https://forum.freecad.org/viewtopic.php?p=680088#p680088)
+- [[GSoC2023] Upgrade the documentation system](https://forum.freecad.org/viewtopic.php?p=680258#p680258)
+- I (chennes) am cleaning up some toponaming tests in anticipation of beginning the second TNP merge sequence.
 
 **PR stats:** In the week from Tuesday, 2 May to Tuesday, 9 May there were 37 pull requests merged, with a total codebase change of +1,435 / ‑1,518 lines (not counting translation changes). That's an average merged PR size of +40 / ‑42. We closed 32 Issues, and 15 new Issues were opened.

@@ -35,7 +35,7 @@ This week in FreeCAD development:
 - theosib fixed conflicts between AttacherType and AttacherEngine properties ([PR#27069](https://github.com/FreeCAD/FreeCAD/pull/27069)).
 - alfrix fixed the range of the custom clearance of threads ([PR#26296](https://github.com/FreeCAD/FreeCAD/pull/26296)) and added support for cosmetic threads ([PR#22573](https://github.com/FreeCAD/FreeCAD/pull/22573)).
 
-![Image 1](image-1.png "Image 1")
+![](image-1.png)
 
 **Assembly**: PaddleStroke added the ability to view joints attached to a selected part ([PR#27530](https://github.com/FreeCAD/FreeCAD/pull/27530)) and fixed a typo in code ([PR#28415](https://github.com/FreeCAD/FreeCAD/pull/28415)).
 
@@ -48,7 +48,7 @@ This week in FreeCAD development:
 **CAM**:
 
 - sliptonic added machine-based postprocessing ([PR#27507](https://github.com/FreeCAD/FreeCAD/pull/27507)). This is the next stage of revamping the way the CAM workbench stores information about CAM devices and their specifics.
-- Connor fixed the saving of _shape_type for toolbits ([PR#28274](https://github.com/FreeCAD/FreeCAD/pull/28274)) and added a new TSP solver with Python bindings to improve the hole sorting performance ([PR#23093](https://github.com/FreeCAD/FreeCAD/pull/23093)).
+- Connor fixed the saving of `shape_type` for toolbits ([PR#28274](https://github.com/FreeCAD/FreeCAD/pull/28274)) and added a new TSP solver with Python bindings to improve the hole sorting performance ([PR#23093](https://github.com/FreeCAD/FreeCAD/pull/23093)).
 - awgrover added several new features to the opensbp post-processor ([PR#27184](https://github.com/FreeCAD/FreeCAD/pull/27184)): support for arcs (G2, G3), probe (G38.2), and drill (G73, etc.)
 - Several PRs from tarman3:
   - Fix for an overcrowded dropdown list in Job Setub ([PR#27427](https://github.com/FreeCAD/FreeCAD/pull/27427)).

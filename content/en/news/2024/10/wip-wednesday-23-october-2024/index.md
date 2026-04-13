@@ -17,9 +17,7 @@ This week in FreeCAD development:
 **Part and PartDesign**: the unsung hero this week was AIRCAP who single-handedly wrestled with a huge amount of bugs and came out on top:
 
 - Fixed 7 bugs and regressions in the boolean operations code, alleviated another regression, and provided a workaround for yet another issue operations - all that in just one pull request.
-
 - Added features to investigate and debug the effect of Tolerance on FreeCAD features - and the effect of FreeCAD features on tolerance.
-
 - Disabled the tesselation limit in Part to prevent large parts from freezing FreeCAD.
 
 **GUI/UX**: various fixes arrived from Rexbas, NewStorm, and hyarion.
@@ -27,15 +25,10 @@ This week in FreeCAD development:
 Among other changes:
 
 - Roy-043 further improved the fix for dragging and dropping layers in Draft.
-
 - yorikvanhavre and Roy-043 fixed a couple of bugs in BIM.
-
 - PaddleStroke fixed two regressions in the Assembly workbench.
-
 - WandererFan fixed a bug in TechDraw to restore leader line style handling, i.e. setting the leader line to dash, dot, dash and dot.
-
 - marioalexis84 contributed two fixes and improvements to meshing in FEM.
-
 - davesrocketshop fixed a bug where inheriting the material from the parent object would fail in certain scenarios.
 
 As usual, more fixes arrived from wwmayer, yorikvanhavre, PaddleStroke, Roy-043, and FlachyJoe. Additional fixes arrived from mwganson, cjmayo, adrianinsaval, and pieterhijma.

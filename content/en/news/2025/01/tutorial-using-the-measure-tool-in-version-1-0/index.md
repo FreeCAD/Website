@@ -13,7 +13,7 @@ cover:
 
 Amongst the many changes you may have noticed in version 1, the Standard Measure tool icon has changed from an image of a tape measure to a set of Vernier Calipers. It's not just the icon that's changed though, the underlying measuring tools have been improved and expanded.
 
-Clicking the measure tool icon opens a dialogue box and, if you have no geometry selected the drop down menu at the top of the dialogue should have the Mode set as "auto" . In this state the Measure tool is ready for you to select some geometry and it will make it's best guess at what you want to measure. So for example clicking an edge of a cube the tool will automatically switch the mode to "length" and return a result in your default units.
+Clicking the measure tool icon opens a dialogue box and, if you have no geometry selected the drop down menu at the top of the dialogue should have the Mode set as "auto". In this state the Measure tool is ready for you to select some geometry and it will make it's best guess at what you want to measure. So for example clicking an edge of a cube the tool will automatically switch the mode to "length" and return a result in your default units.
 
 ![Cubelength](cubelength.png "Cubelength")
 

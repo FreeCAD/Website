@@ -242,6 +242,10 @@ sup:target {
 
 /* Single page figures, images and videos */
 
+.content figure {
+  margin: calc(var(--gap) * 1.5) auto;
+}
+
 .content img:not([popover] img, blockquote img) {
   display: inherit;
   max-width: 100%;
@@ -795,10 +799,8 @@ figure .internal-tooltip {
   background: var(--entry);
   color: var(--secondary);
   padding: var(--gap);
-  border: 1px solid var(--tone);
   border-radius: var(--radius);
   font-size: var(--s);
-  line-height: 1.5;
   width: max-content;
   max-width: min(90vw, var(--content-width));
 }

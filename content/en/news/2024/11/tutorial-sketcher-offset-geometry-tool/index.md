@@ -20,7 +20,7 @@ In a new sketch we used the Polyline tool to create this simple "A" shape with a
 
 ![Offset input](offset_input.png "Offset input")
 
-Use the control key and left click each section of the line to multi-select them all. Then click the "Offset Geometry" tool icon. With the tool selected if you hover over the line in the live preview you should see the offset geometry appear with an [On View Parameter ](https://blog.freecad.org/2024/10/20/tutorial-on-view-parameters/)input box. You can now type the offset dimension into the input box to create the offset geometry all around the original polyline at the desired offset. We went with a 5mm offset in the example.
+Use the control key and left click each section of the line to multi-select them all. Then click the "Offset Geometry" tool icon. With the tool selected if you hover over the line in the live preview you should see the offset geometry appear with an [On View Parameter](https://blog.freecad.org/2024/10/20/tutorial-on-view-parameters/)input box. You can now type the offset dimension into the input box to create the offset geometry all around the original polyline at the desired offset. We went with a 5mm offset in the example.
 
 ![Deleted sections](deleted_sections.png "Deleted sections")
 

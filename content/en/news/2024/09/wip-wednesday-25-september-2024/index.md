@@ -20,10 +20,8 @@ This week in FreeCAD development:
 
 **Part Design**:
 
-- FlachyJoe fixed several issues where the padding operation would fail in some scenarios when applied with _Up to Face_ and _Up to Shape_ options (that's another release blocker down).
-
+- FlachyJoe fixed several issues where the padding operation would fail in some scenarios when applied with `Up to Face` and `Up to Shape` options (that's another release blocker down).
 - AIRCAP fixed additive loft for cases when the selected shape is not a vertex in the sketch.
-
 - theosib fixed Part Design to no longer allow part planes and axes as options for Sweep and Loft.
 
 **DXF**: kpemartin fixed two regressions related to the importing of layers and layer names, and increased the importing speed.
@@ -31,19 +29,12 @@ This week in FreeCAD development:
 Among other changes:
 
 - davesrocketshop fixed several issues in the new materials system, including one release blocker.
-
 - WandererFan fixed 6 issues in TechDraw, including 2 crashes.
-
 - Syres916, yorikvanhavre, and pinkavaj fixed several issues in BIM.
-
 - marioalexis84 contributed several improvements and fixes to FEM.
-
 - bgbsww fixed several toponaming issues including one blocker where FreeCAD would crash after accepting toponaming recompute dialog in a file with multiple links.
-
 - Rexbas fixed a blocker issue in the align to selection tool.
-
 - xtemp09 improved the Light Sources page of Preferences to move the zoom button to the left so that XYZ axes would be visible in the lower right corner.
-
 - shaise fixed a minor occlusion in the Ambient Occlusion code in the new CAM simulator.
 
 **PR stats**: since the previous report, 61 pull requests have been merged, 18 new pull requests have been opened.

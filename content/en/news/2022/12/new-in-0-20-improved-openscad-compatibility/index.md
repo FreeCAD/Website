@@ -12,11 +12,11 @@ cover:
 ---
 
 
-FreeCAD has supported importing *.scad and *.csg files from [OpenSCAD ](http://openscad.org/)for several years, but supporting the full range of features provided by OpenSCAD is an ongoing project. The FreeCAD 0.20 release brings improved compatibility with several more commands, as well as bug fixes to several existing commands.
+FreeCAD has supported importing *.scad and *.csg files from [OpenSCAD](http://openscad.org/)for several years, but supporting the full range of features provided by OpenSCAD is an ongoing project. The FreeCAD 0.20 release brings improved compatibility with several more commands, as well as bug fixes to several existing commands.
 
 ### Low-poly modeling
 
-OpenSCAD and FreeCAD have different modeling strategies: OpenSCAD is fundamentally discrete, whereas FreeCAD typically maintains mathematically-precise object definitions without surface discretization (unless explicitly told to discretize using the Mesh workbench, etc.). Most of the time when importing from OpenSCAD, the discretized object is replaced by its equivalent "exact" FreeCAD object: however, this is not always the OpenSCAD geometry designer's intent. For example, sometimes a cylinder with only eight sides (i.e. `$fn=8` in OpenSCAD) is really intended to have an octagonal cross-section which is _not_ intended to be a perfect circle. FreeCAD 0.20 improves support for this modeling strategy to include low-`$fn` sweeps and revolutions.
+OpenSCAD and FreeCAD have different modeling strategies: OpenSCAD is fundamentally discrete, whereas FreeCAD typically maintains mathematically-precise object definitions without surface discretization (unless explicitly told to discretize using the Mesh workbench, etc.). Most of the time when importing from OpenSCAD, the discretized object is replaced by its equivalent "exact" FreeCAD object: however, this is not always the OpenSCAD geometry designer's intent. For example, sometimes a cylinder with only eight sides (i.e. `$fn=8` in OpenSCAD) is really intended to have an octagonal cross-section which is *not* intended to be a perfect circle. FreeCAD 0.20 improves support for this modeling strategy to include low-`$fn` sweeps and revolutions.
 
 ### Surfaces from data
 

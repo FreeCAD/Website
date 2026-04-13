@@ -21,9 +21,7 @@ This week in FreeCAD development:
 **BIM**:
 
 - yorikvanhavre fixed IfcOpenShell 0.8 compatibility.
-
 - cjmayo fixed Qt6 compatibility in the IFC explorer.
-
 - hoshengwei changed the IFC Spatial Element to have 'Element' for default composition type.
 
 **TechDraw**: WandererFan fixed two bugs related to displaying SVG hatches; this resulted in better handling for short & wide hatch area and in better scaling of large hatch tiles.
@@ -35,7 +33,6 @@ This week in FreeCAD development:
 Among other changes:
 
 - wwmayer fixed a crash on exporting STEP files.
-
 - davesrocketshop disabled the right-click menu in the material editor; it doesn't yet do anything useful and the editor functionality needs to be looked at once v1.0 is out.
 
 Various other fixes were submitted by adrianinsaval, wwmayer, JamesHodgkins, Jarno-de-Wit, cjmayo, mwganson, AIRCAP.

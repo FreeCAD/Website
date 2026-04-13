@@ -23,31 +23,26 @@ This week in FreeCAD development:
 **Arch / BIM**:
 
 - Roy_043, marcuspollio, tetektoza, furgo16, and Syres916 fixed various issues.
-
 - furgo16 also grouped some items in BIM toolbars to reduce the cognitive load.
 
 Before:
 
-![Image 1](image-1.png "Image 1")
+![](image-1.png)
 
 After:
 
-![Image 2](image-2.png "Image 2")
+![](image-2.png)
 
 **FEM**:
 
 - Ickby enabled Python implemented post-rocessing filters and exposed the VTK data object of post-processing filters.
-
 - marioalexis84 fixed an issue where Elmer electric charge density would convert very low values to zero.
 
 **CAM**:
 
 - tarman3 and shaise fixed a couple of issues in the new simulator.
-
 - LarryWoestman fixed tool changes not correctly output in G-Code.
-
 - jalapenopuzzle added initial support for all of the Snapmaker machines and their variants and modifications.
-
 - knipknap fixed some postprocessor errors.
 
 **TechDraw**: WandererFan fixed a hidden line regression and a complex section crash.

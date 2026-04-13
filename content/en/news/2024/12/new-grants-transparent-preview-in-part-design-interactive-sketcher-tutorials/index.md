@@ -17,7 +17,7 @@ The FPA General Assembly approved two new grant applications.
 
 **Kacper Donat** aka kadet will work on a [new feature preview system](https://github.com/freecad/fpa-grant-proposals/issues/22) that can be used in Part and Part Design. Whenever you need to apply Pad or Loft or any other command, you will get a transparent preview of what you are getting right in the viewport.
 
-![Image](image.png "Image")
+![Feature preview](image.png "Feature preview")
 
 Development already started weeks ago, the plan is to complete it by the end of 2024. Kacper was awarded a grant of EUR 1,500.
 

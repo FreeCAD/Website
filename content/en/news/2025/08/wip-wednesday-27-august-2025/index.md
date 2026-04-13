@@ -63,7 +63,7 @@ This week in FreeCAD development:
 - paullee0 fixed a regression in Slab/Structure Face Maker settings and patched Clone and Link to support Sill change.
 - furgo16 added interactive sun position and ray visualization to Arch Site (see [PR#22516](https://github.com/FreeCAD/FreeCAD/pull/22516) for more info).
 
-![Image 2](image-2.png "Image 2")
+![](image-2.png)
 
 **FEM**:
 
@@ -76,7 +76,7 @@ This week in FreeCAD development:
 
 - MisterMaker replaced the Preferences page icon for Part/ PartDesign.
 - Rexbas fixed zooming at a new rotation center in the Revit preset.
-- maxwxyz deactivated Inspection, OpenSCAD, Robot, Test Framework, and <none> WB options by default.
+- maxwxyz deactivated Inspection, OpenSCAD, Robot, Test Framework, and `<none>` WB options by default.
 - kadet1090 removed unused blank space in the Document Recovery dialog.
 
 **Other changes**:

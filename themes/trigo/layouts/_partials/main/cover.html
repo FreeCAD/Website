@@ -15,9 +15,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 
 {{- $cover := false -}}
-{{- $caption := "" -}}
 {{- $alt := i18n "image_fallback" | default "Image fallback" -}}
-{{- $anchor := "" -}}
 
 {{- $resize_format := site.Params.resize_format | default "webp" -}}
 
@@ -47,11 +45,9 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   {{- end -}}
 {{- end -}}
 
-{{- /* Get cover caption and anchor. */ -}}
-{{- with $page.Params.cover -}}
-  {{- $caption = .caption | plainify -}}
-  {{- $anchor = .anchor | default "Smart" | plainify -}}
-{{- end -}}
+{{- $caption := $page.Params.cover.caption -}}
+{{- $anchor := $page.Params.cover.anchor | default "Smart" -}}
+{{- $title := $caption | plainify -}}
 
 {{- with $cover -}}
 
@@ -87,7 +83,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
       <img srcset="{{ delimit $srcset ", " }}"
         sizes="{{ delimit $sizes ", " }}"
         src="{{ .RelPermalink }}"
-        title="{{ $caption }}"
+        title="{{ $title }}"
         alt="{{ $alt }}"
         width="{{ .Width }}"
         height="{{ .Height }}"
@@ -97,19 +93,18 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     {{- /* Unprocessable image, absolute urls and external links (no img processing). */ -}}
     {{- else -}}
       <img src="{{ with .RelPermalink }}{{ . }}{{ else }}{{ . | absURL }}{{ end }}"
-        title="{{ $caption }}"
+        title="{{ $title }}"
         alt="{{ $alt }}"
         loading="{{ $loading }}"
         fetchpriority="{{ $priority }}">
     {{- end -}}
 
-    {{- /* Display Caption. */ -}}
-    {{- if $caption -}}
+    {{- with $caption -}}
       <figcaption>
         <div class="internal-tooltip">
           {{- partialCached "utils/icon.html" "important" "important" -}}
           <span class="tooltip">
-            {{- $caption -}}
+            {{- . | $.Page.RenderString -}}
           </span>
         </div>
       </figcaption>

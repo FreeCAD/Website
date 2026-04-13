@@ -20,14 +20,13 @@ This week in FreeCAD development:
 
 **FEM**: marioalexis84 contributed several minor improvements and two new features: a calculator filter and an object to define electric charge densities. He also improved the handling of electrical quantities for the standard units system.
 
-![Image](image.png "Image")
+![Electric charge densities](image.png "Electric charge densities")
 
 **CAM**: phaseloop increase speed by about 30-50% when generating V-carve paths on complex faces, and LarryWoestman fixed a bug in the refactored_grbl postprocessor.
 
 Among other changes:
 
 - pieterhijma started contributing patches as part of his grant work on developers documentation.
-
 - davesrocketshop made the support for external material libraries an optional build feature.
 
 Additional fixes were contributed by mosfet80, chennes, semhustej, benj5378, hyarion, tringenbach, luzpaz, kpemartin, Tiago-Almeida007, jonzirk76, alfrix, kadet1090, and ljo.

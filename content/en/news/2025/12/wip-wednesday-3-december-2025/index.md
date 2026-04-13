@@ -44,7 +44,7 @@ This week in FreeCAD development:
 - s-ohl-ostfalia-de patched the KineticNC CAM postprocessor to add cooling ([PR#25022](https://github.com/FreeCAD/FreeCAD/pull/25022)) and fix drill handling ([PR#25023](https://github.com/FreeCAD/FreeCAD/pull/25023)).
 - tarman3 fixed a regression in Lead In/Out where it was not taking layers into account when Offset Entrance Location is other than 0 ([PR#25553](https://github.com/FreeCAD/FreeCAD/pull/25553)), and added line numbers to the Inspect window ([PR#24807](https://github.com/FreeCAD/FreeCAD/pull/24807)) and the G-code export dialog ([PR#23862](https://github.com/FreeCAD/FreeCAD/pull/23862)). He also fixed various minor issues ([PR#25253](https://github.com/FreeCAD/FreeCAD/pull/25253), [PR#25205](https://github.com/FreeCAD/FreeCAD/pull/25205), and [PR#25635](https://github.com/FreeCAD/FreeCAD/pull/25635)).
 
-![Image 3](image-3.png "Image 3")
+![](image-3.png)
 
 **BIM**: Roy_043 fixed an issue in the Material Editor ([PR#25823](https://github.com/FreeCAD/FreeCAD/pull/25823)), introduced a fine-tuning parameter to disable the new handling of BIM_Sketch view properties and its grid ([PR#25778](https://github.com/FreeCAD/FreeCAD/pull/25778)), fixed the reloading of Arch_Reference on opening a file ([PR#25777](https://github.com/FreeCAD/FreeCAD/pull/25777)), and fixed duplicate vertices in Wavefront OBJ exports ([PR#25801](https://github.com/FreeCAD/FreeCAD/pull/25801)).
 
@@ -53,7 +53,7 @@ This week in FreeCAD development:
 - Syres916 fixed the axis letter color and preview background when opening Light Sources preferences ([PR#25703](https://github.com/FreeCAD/FreeCAD/pull/25703)).
 - kadet1090 introduced a SplitButton widget that can be used for buttons that have primary action and alternative ones, and then used it to replace the former "More" button approach in the migration dialog ([PR#25713](https://github.com/FreeCAD/FreeCAD/pull/25713)).
 
-![Image 2](image-2.png "Image 2")
+![](image-2.png)
 
 **Other changes**:
 

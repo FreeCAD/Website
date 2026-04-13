@@ -14,7 +14,7 @@ cover:
 ---
 
 
-![Rc 3](rc3.png "Rc 3")
+![Release Candidate 3](rc3.png "Release Candidate 3")
 
 Earlier this week, we published the third release candidate of FreeCAD 1.1. With just two outstanding release blockers (fingers crossed), this should be the last release candidate before we call it a day and release the final v1.1.
 

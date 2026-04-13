@@ -7,8 +7,8 @@ categories: tutorial
 tags:
   - TechDraw
 cover:
-  image:
-  caption:
+  image: beginning_techdrawing.webp
+  caption: FreeCAD TechDraw Workbench
 ---
 
 
@@ -44,4 +44,4 @@ Rather nicely now you can experiment with going back to the sketch of the origin
 
 Sometimes in technical drawings it can be useful to add labels and text descriptions that aren't particularly a dimension or other imported linked value, a good option for this is to use the "Insert Balloon Annotation". Left click on the tool and then click on the technical drawing where you would like the pointer attached to the annotation to be. A simple pointer line and circular text balloon will appear. We can then double click on this and the "Balloon" dialogue will appear. In this dialogue we can add our text, and also manipulate other settings, balloon shape, font, colour and more to meet our need.
 
-There's lot's left to explore on the TechDraw workbench, but you probably know enough now to explore further features, it's also definitely worth looking at the official [TechDraw documentation ](https://wiki.freecad.org/Category:TechDraw)which has lot's of information on all the TechDraw tooling. Finally you can export your technical drawing at any time by clicking either the "Export Page as SVG" or "Export Page as DXF" tool icons.
+There's lot's left to explore on the TechDraw workbench, but you probably know enough now to explore further features, it's also definitely worth looking at the official [TechDraw documentation](https://wiki.freecad.org/Category:TechDraw)which has lot's of information on all the TechDraw tooling. Finally you can export your technical drawing at any time by clicking either the "Export Page as SVG" or "Export Page as DXF" tool icons.

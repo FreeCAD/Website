@@ -61,7 +61,6 @@ This week in FreeCAD development:
   - Added the Offset property to the old ElementGeometry2D object.
   - Improved the code by allowing the refactored ccx solver to be added with the Analysis containers.
 
-
 **GUI**:
 
 - B0cho improved the expression editor's input and resize behavior.
