@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="de-DE"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Addon Spotlight - Assembly Workbenches</title>
+  <meta name="description" content="Dein eigener freier und Open-Source parametrischer Modellierer"><meta name="keywords" content="addon, assembly"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/de/news/addon-spotlight-assembly-workbenches/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/addon-spotlight-assembly-workbenches/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/addon-spotlight-assembly-workbenches/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/addon-spotlight-assembly-workbenches/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/addon-spotlight-assembly-workbenches/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/addon-spotlight-assembly-workbenches/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/addon-spotlight-assembly-workbenches/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/addon-spotlight-assembly-workbenches/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/de/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/de/news/addon-spotlight-assembly-workbenches/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Addon Spotlight - Assembly Workbenches">
+  <meta property="og:description" content="The current 0.20 release of FreeCAD does not include a built-in workbench for assembling individual components into a more complex system: instead, several 3rd-party addons are available through the Addon Manager, allowing individual users to choose the type of assembly procedure they prefer. Three popular options are A2&#43;, Assembly 3, and Assembly 4. This article will briefly overview each. Note that although the names make it sound like one might be the successor of the other, in fact all three are “spiritual successors” to the no-longer-maintained Assembly 2 workbench. The order they are presented here (and in the Addon Manager) is alphabetical, not an indication of popularity or “official” endorsement.">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2022-10-19T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:43:46+02:00">
+    <meta property="article:tag" content="Addon">
+    <meta property="article:tag" content="Assembly">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/de/"accesskey="h"
+      title="Home (Alt + H)"
+      aria-label="Home">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menü"
+    aria-label="Menü"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/de/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Sprache auswählen (Alt + L)"
+          aria-label="Sprache auswählen"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/addon-spotlight-assembly-workbenches/" title="Addon Spotlight - Assembly Workbenches">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/addon-spotlight-assembly-workbenches/" title="Addon Spotlight - Assembly Workbenches">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/addon-spotlight-assembly-workbenches/" title="Addon Spotlight - Assembly Workbenches">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/addon-spotlight-assembly-workbenches/" title="Addon Spotlight - Assembly Workbenches">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/addon-spotlight-assembly-workbenches/" title="Addon Spotlight - Assembly Workbenches">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/de/news/addon-spotlight-assembly-workbenches/" title="Addon Spotlight - Assembly Workbenches">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/addon-spotlight-assembly-workbenches/" title="Addon Spotlight - Assembly Workbenches">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Design wechseln (Alt + T)"
+    aria-label="Design wechseln"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 60;">
+
+    <h2 class="title"
+      
+      >Addon Spotlight - Assembly Workbenches</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2022-10-19T00:00:00Z">19. Oktober 2022</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/de/authors/chris-hennes/">Chris Hennes (80)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/de/categories/feature/">Feature (18)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/de/tags/addon/">Addon (5)</a><a href="/Website/pr-16/de/tags/assembly/">Assembly (2)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>476 Wörter</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>3 Minuten</span></div></section><div class="content"><p>The current 0.20 release of FreeCAD does not include a built-in workbench for assembling individual components into a more complex system: instead, several 3rd-party addons are available through the Addon Manager, allowing individual users to choose the type of assembly procedure they prefer. Three popular options are A2+, Assembly 3, and Assembly 4. This article will briefly overview each. Note that although the names make it sound like one might be the successor of the other, in fact all three are &ldquo;spiritual successors&rdquo; to the no-longer-maintained Assembly 2 workbench. The order they are presented here (and in the Addon Manager) is alphabetical, not an indication of popularity or &ldquo;official&rdquo; endorsement.</p>
+<h2
+  id="a2"
+  
+  >A2+<a class="heading-anchor"
+     href="#a2"
+     title="A2&#43;"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><div class="image-with-popover">
+      <figure><button aria-label="Bild vergrößern" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/addon-spotlight-assembly-workbenches/A2Plus.webp"
+  alt="A 2Plus"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="2560"
+  height="1186"
+    srcset="/Website/pr-16/news/addon-spotlight-assembly-workbenches/A2Plus_hu_4d34389fc083d02b.webp 500w, /Website/pr-16/news/addon-spotlight-assembly-workbenches/A2Plus_hu_964b5a0cba2bb7fb.webp 1000w, /Website/pr-16/news/addon-spotlight-assembly-workbenches/A2Plus.webp 2560w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Adding a constraint in A2&#43;</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen">
+            <img src="/Website/pr-16/news/addon-spotlight-assembly-workbenches/A2Plus.webp"
+              title="Adding a constraint in A2&#43;"
+              alt="A 2Plus"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p><a href="https://github.com/kbwbe/A2plus"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">A2+ (Assembly 2 Plus)<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, an assembly workbench by &ldquo;kbwbe&rdquo;, is intended as a direct successor to the original Assembly 2 workbench. It uses the same basic workflow as Assembly 2 so users already familiar with that workbench will be able to get started quickly. Begin by creating your parts in separate FreeCAD files, then create a new empty file and import the part that forms the basis for your assembly. Successively import more FreeCAD files and apply constraints to position them relative to your other parts. As the README puts it:</p>
+<figure>
+  <blockquote class="quote"
+    ><svg class="icon-quote"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/quote.svg#quote"></use>
+  </svg>Quote<p>The main goal of A2plus is to create a very simple, easy to use, and not over-featured workbench for FreeCAD assemblies. Using the KISS principle: KEEP IT SIMPLE, STUPID</p>
+</blockquote></figure>
+<h2
+  id="assembly-3"
+  
+  >Assembly 3<a class="heading-anchor"
+     href="#assembly-3"
+     title="Assembly 3"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><div class="image-with-popover">
+      <figure><button aria-label="Bild vergrößern" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/addon-spotlight-assembly-workbenches/A3.webp"
+  alt="Addon Spotlight: Assembly Workbenches 2"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="2560"
+  height="1186"
+    srcset="/Website/pr-16/news/addon-spotlight-assembly-workbenches/A3_hu_cc995e79030de880.webp 500w, /Website/pr-16/news/addon-spotlight-assembly-workbenches/A3_hu_7b711fa16024ab44.webp 1000w, /Website/pr-16/news/addon-spotlight-assembly-workbenches/A3.webp 2560w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>An Assembly 3 assembly</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen">
+            <img src="/Website/pr-16/news/addon-spotlight-assembly-workbenches/A3.webp"
+              title="An Assembly 3 assembly"
+              alt="Addon Spotlight: Assembly Workbenches 2"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p><a href="https://github.com/realthunder/freecad_assembly3"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Assembly 3<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> (a.k.a. ASM3) is an assembly workbench written and maintained by developer realthunder. It also uses a constraint-based approach to refer to existing geometric entities and align them relative to one another. It is often used in conjunction with <a href="https://github.com/realthunder/freecad"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">realthunder&rsquo;s fork of FreeCAD<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, which implements techniques to mitigate the so-called &ldquo;topological naming problem&rdquo; (TNP). TNP-related issues can otherwise cause problems for a constraint-based approach if the underlying objects change after the assembly has begun. Those techniques are being merged into the main FreeCAD development project during the current development cycle, but as of this writing they are not yet available.</p>
+<h2
+  id="assembly-4"
+  
+  >Assembly 4<a class="heading-anchor"
+     href="#assembly-4"
+     title="Assembly 4"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><div class="image-with-popover">
+      <figure><button aria-label="Bild vergrößern" popovertarget="img-002"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/addon-spotlight-assembly-workbenches/A4.webp"
+  alt="Addon Spotlight: Assembly Workbenches 3"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="2560"
+  height="1186"
+    srcset="/Website/pr-16/news/addon-spotlight-assembly-workbenches/A4_hu_c0aaf95309f094c5.webp 500w, /Website/pr-16/news/addon-spotlight-assembly-workbenches/A4_hu_91eadece41e6a7d4.webp 1000w, /Website/pr-16/news/addon-spotlight-assembly-workbenches/A4.webp 2560w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Placing a new body in Assembly 4</figcaption></figure><div id="img-002" popover>
+          <button class="close"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen">
+            <img src="/Website/pr-16/news/addon-spotlight-assembly-workbenches/A4.webp"
+              title="Placing a new body in Assembly 4"
+              alt="Addon Spotlight: Assembly Workbenches 3"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p><a href="https://codeberg.org/zolko/assembly4"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Assembly 4<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> by Zolko, uses user-assigned &ldquo;LCS&rdquo; (Local Coordinate System) objects to assemble objects relative to one another. This avoids any potential TNP issues by ignoring the underlying geometry itself and using FreeCAD&rsquo;s built-in <code>Part::Attacher</code> and <code>ExpressionEngine</code>. It completely avoids the idea of &ldquo;constraints&rdquo;, opting for a simpler (and arguably more reliable) direct-positioning approach.</p>
+<h2
+  id="how-do-you-choose"
+  
+  >How do you choose?<a class="heading-anchor"
+     href="#how-do-you-choose"
+     title="How do you choose?"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>All three of these workbenches are easily installed using the Addon Manager, and all three can be installed at the same time. The best way to determine which one is best for you is to give each of them a test-drive. The user experience for each is very different, and many people develop strong preferences about which one is the best for their use-cases.</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/de/news/freecad-meetup-at-fosdem-2023/"
+             title="Nächster Artikel"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>FreeCAD Meetup at FOSDEM 2023</a><a class="page-item prev"
+             href="/Website/pr-16/de/news/the-freecad-project-association-now-owns-a-trademark/"
+             title="Vorheriger Artikel">The FreeCAD Project Association now owns a trademark<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Nach oben"
+  title="Nach oben (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/de/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/de/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/de/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/de/authors/">Autoren</a>
+                      </li><li>
+                        <a href="/Website/pr-16/de/categories/">Kategorien</a>
+                      </li><li>
+                        <a href="/Website/pr-16/de/tags/">Tags</a>
+                      </li><li>
+                        <a href="/Website/pr-16/de/versions/">Versionen</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/de/fedishare.html#title=Addon&#43;Spotlight&#43;-&#43;Assembly&#43;Workbenches&amp;description=The&#43;current&#43;0.20&#43;release&#43;of&#43;FreeCAD&#43;does&#43;not&#43;include&#43;a&#43;built-in&#43;workbench&#43;for&#43;assembling&#43;individual&#43;components&#43;into&#43;a&#43;more&#43;complex&#43;system%3A&#43;instead%2C&#43;several&#43;3rd-party&#43;addons&#43;are&#43;available&#43;through&#43;the&#43;%E2%80%A6%0A%23addon&#43;%23assembly&amp;url=https://FreeCAD.github.io/Website/pr-16/de/news/addon-spotlight-assembly-workbenches/"
+  title="Teilen auf Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/de/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

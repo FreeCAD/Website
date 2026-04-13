@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en-US"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Tutorial - Getting Started With the SheetMetal Workbench</title>
+  <meta name="description" content="Your own free and open-source parametric modeler"><meta name="keywords" content="sheetmetal, workbench"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/tutorial-getting-started-with-the-sheetmetal-workbench/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/tutorial-getting-started-with-the-sheetmetal-workbench/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/tutorial-getting-started-with-the-sheetmetal-workbench/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/tutorial-getting-started-with-the-sheetmetal-workbench/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/tutorial-getting-started-with-the-sheetmetal-workbench/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/tutorial-getting-started-with-the-sheetmetal-workbench/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Tutorial - Getting Started With the SheetMetal Workbench">
+  <meta property="og:description" content="Test assembly sheet metal FreeCAD is excellent in that it can be used for design projects for all manner of fabrication approaches. A really interesting fabrication approach is cutting, bending and joining sheet metal. As such FreeCAD has a dedicated addon workbench that’s incredibly helpful in designing for flat sheet materials. Let’s run through some super simple examples to show off some of it’s features. Remember that in these tutorials we always use the tooltip text name to describe a tool icon, so you can find tools mentioned by hovering over tool icons and reading the tooltip, coincidentally this is a great way to discover and learn about other tools!">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2025-07-11T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:47:39+02:00">
+    <meta property="article:tag" content="Sheetmetal">
+    <meta property="article:tag" content="Workbench">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/"accesskey="h"
+      title="Homepage (Alt + H)"
+      aria-label="Homepage">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choose language (Alt + L)"
+          aria-label="Choose language"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/" title="Tutorial - Getting Started With the SheetMetal Workbench">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/tutorial-getting-started-with-the-sheetmetal-workbench/" title="Tutorial - Getting Started With the SheetMetal Workbench">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/tutorial-getting-started-with-the-sheetmetal-workbench/" title="Tutorial - Getting Started With the SheetMetal Workbench">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/tutorial-getting-started-with-the-sheetmetal-workbench/" title="Tutorial - Getting Started With the SheetMetal Workbench">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/tutorial-getting-started-with-the-sheetmetal-workbench/" title="Tutorial - Getting Started With the SheetMetal Workbench">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/tutorial-getting-started-with-the-sheetmetal-workbench/" title="Tutorial - Getting Started With the SheetMetal Workbench">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/tutorial-getting-started-with-the-sheetmetal-workbench/" title="Tutorial - Getting Started With the SheetMetal Workbench">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Switch theme chroma (Alt + T)"
+    aria-label="Switch theme chroma"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 100;">
+
+    <h2 class="title"
+      
+      >Tutorial - Getting Started With the SheetMetal Workbench</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2025-07-11T00:00:00Z">July 11, 2025</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/categories/tutorial/">Tutorial (26)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/tags/sheetmetal/">Sheetmetal (1)</a><a href="/Website/pr-16/tags/workbench/">Workbench (1)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>1351 words</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>7 min</span></div></section><div class="content"><div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/test_assembly_sheet_metal.png"
+  alt="Test assembly sheet metal"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1638"
+  height="926"
+    srcset="/Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/test_assembly_sheet_metal_hu_1a4cd4433035cae3.webp 500w, /Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/test_assembly_sheet_metal_hu_b6cba85886568228.webp 1000w, /Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/test_assembly_sheet_metal.png 1638w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Test assembly sheet metal</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/test_assembly_sheet_metal.png"
+              title="Test assembly sheet metal"
+              alt="Test assembly sheet metal"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>FreeCAD is excellent in that it can be used for design projects for all manner of fabrication approaches. A really interesting fabrication approach is cutting, bending and joining sheet metal. As such FreeCAD has a dedicated addon workbench that&rsquo;s incredibly helpful in designing for flat sheet materials. Let&rsquo;s run through some super simple examples to show off some of it&rsquo;s features. Remember that in these tutorials we always use the tooltip text name to describe a tool icon, so you can find tools mentioned by hovering over tool icons and reading the tooltip, coincidentally this is a great way to discover and learn about other tools!</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/addon_manager.png"
+  alt="Addon manager"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="801"
+  height="631"
+    srcset="/Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/addon_manager_hu_bc0cf4f1a0952a6a.webp 500w, /Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/addon_manager.png 801w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Addon manager</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/addon_manager.png"
+              title="Addon manager"
+              alt="Addon manager"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>First of all you&rsquo;ll have to open FreeCAD and install the workbench. Click &ldquo;Tools &gt; Addon manager&rdquo; and the list of available addon workbenches should update. Use the search bar to search for SheetMetal and then click the install button. Wait for it to download and install and then you should be prompted to restart FreeCAD.</p>
+<p>With FreeCAD restarted on the start page click to start a new parametric part project, or create an empty project, move to the Part Design workbench and then click to add an active body. As a first example let&rsquo;s draw a simple rectangle sketch and then extrude it to act as the first sheet of metal in our project. Click to add a new sketch, select the XY plane and in the sketch use the rectangle tool to draw a rectangle. In an ideal world we&rsquo;d constrain our sketches, but for this simple example just close the sketch.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-002"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/select_edge.png"
+  alt="Select edge"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1397"
+  height="828"
+    srcset="/Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/select_edge_hu_2a2f020d268cb004.webp 500w, /Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/select_edge_hu_4402b715ee1e6249.webp 1000w, /Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/select_edge.png 1397w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Select edge</figcaption></figure><div id="img-002" popover>
+          <button class="close"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/select_edge.png"
+              title="Select edge"
+              alt="Select edge"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Next with the sketch highlighted use the Pad tool to pad the sketch, let&rsquo;s imagine our real world material is some 1.2mm aluminium so we can pad to a height of 1.2mm. Once the rectangle is padded let&rsquo;s move to the SheetMetal workbench. Click to select one of the edges of your padded rectangle and you should see some of the SheetMetal tool icons become available. Click the &ldquo;Make Wall&rdquo; tool. Automatically an extended section of sheetmetal is added with a fold section and a wall section at 90 degrees to your base object. Depending on whether you selected an upper or lower edge of your pad object will dictate the direction in which the wall extends. You should see a new object &ldquo;Bend&rdquo; in the file tree view, feel free to delete it and then try with a different edge to get the feel of how this works.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-003"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/simple_wall_fold.png"
+  alt="Simple wall fold"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1433"
+  height="917"
+    srcset="/Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/simple_wall_fold_hu_ac2af5d98fec6b8a.webp 500w, /Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/simple_wall_fold_hu_b4ff2add64a8877e.webp 1000w, /Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/simple_wall_fold.png 1433w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Simple wall fold</figcaption></figure><div id="img-003" popover>
+          <button class="close"
+            popovertarget="img-003"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/simple_wall_fold.png"
+              title="Simple wall fold"
+              alt="Simple wall fold"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>In the properties dialogue for a bend (double click on a bend object in the file tree to access) there are numerous settings to play with. Changing the length of the new section and the angle at which it sits relative to the base object are easy to adjust. The &ldquo;Offsets&rdquo; tab offers some interesting functions. Often we might want to add a wall that is larger than our base object, we can increase the &ldquo;Extend A&rdquo; or &ldquo;Extend B&rdquo; options to make this possible. We can also add &ldquo;Gap&rdquo; values and these can be critical to getting a good final design that works in metal. On our example we have adjusted the gap A and B values to 5 mm. This not only shortens the added wall/bend object, but also places small cuts into the base object. The reason for this is that if you create a folded part where the protruding section is smaller than the base section you&rsquo;ll create a distortion in the metal where the corner of the fold meets. You can relieve/reduce this distortion by adding a small relief cut into the base section. We can change the geometry of these little cut out sections to suit our production methods. If we are cutting the metal by hand we might leave them quite small and the profile as &ldquo;rectangle&rdquo; as we could use a small file to bring the corners square. If we plan to cut the design on a CNC milling machine though we might increase the size of the relief cut to accommodate the tooling, and as milling cutters tend to be round, we might make the cut rounded and large enough for the radius of our cutter with additional clearance. This makes it pretty straightforward to set up tool paths.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-004"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/curvy_slot.png"
+  alt="Curvy slot"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1203"
+  height="926"
+    srcset="/Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/curvy_slot_hu_4306b12b0c5ff62f.webp 500w, /Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/curvy_slot_hu_ab8ec74d0a0001af.webp 1000w, /Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/curvy_slot.png 1203w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Curvy slot</figcaption></figure><div id="img-004" popover>
+          <button class="close"
+            popovertarget="img-004"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/curvy_slot.png"
+              title="Curvy slot"
+              alt="Curvy slot"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Of course sometimes you&rsquo;ll want to create more complex folded options. Another approach that enables more complexity is to draw a sketch of a more complex shape and then map another sketch to it with this second sketch containing fold lines. As an example in a new project we created a part design body, and drew a sketch in the XY plane. Back in the SheetMetal workbench we selected the sketch and then used the &ldquo;Make Base Wall&rdquo; tool to create our base sheet object and set it to the thickness of our target material. Next we highlighted the upper face of the object and moved to the Part Design workbench. We then created a sketch attached to this face. In this sketch we created a line across the angled section of the base object, note that we extended this sketch line beyond the base geometry as that&rsquo;s important when we come to flatten and export our design. Closing the sketch we can return to the SheetMetal workbench.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-005"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/base_with_fold_sketch.png"
+  alt="Base with fold sketch"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1324"
+  height="748"
+    srcset="/Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/base_with_fold_sketch_hu_5890caad22d7619.webp 500w, /Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/base_with_fold_sketch_hu_3c96e380f0861610.webp 1000w, /Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/base_with_fold_sketch.png 1324w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Base with fold sketch</figcaption></figure><div id="img-005" popover>
+          <button class="close"
+            popovertarget="img-005"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/base_with_fold_sketch.png"
+              title="Base with fold sketch"
+              alt="Base with fold sketch"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>We can now perform a fold along the sketch line we just created. To do this we click to select the upper face of the object in the preview window (note this won&rsquo;t work if we select the whole object in the file tree) then we press the control key to multiselect and click the sketch item we just made in the file tree view. With those both selected we can then click the &ldquo;Fold a Wall&rdquo; tool icon and create our fold at the sketch line position.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-006"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/fold_line.png"
+  alt="Fold line"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1226"
+  height="768"
+    srcset="/Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/fold_line_hu_f9d94cb9773ff9bb.webp 500w, /Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/fold_line_hu_886f404ed68ae504.webp 1000w, /Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/fold_line.png 1226w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Fold line</figcaption></figure><div id="img-006" popover>
+          <button class="close"
+            popovertarget="img-006"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/fold_line.png"
+              title="Fold line"
+              alt="Fold line"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Ultimately with a folded sheet metal design you will probably want to flatten/unfold the design at some point to create some kind of output flat plan file. This could be for printing and then sticking the print onto the sheet stock for manual cutting or indeed to create geometry for further CAM processing for machining. We can do this by first selecting a reference face that we want to flatten everything else relative too. So with our angled fold we just made we selected the upper face of the original unfolded section of the design. We can then click the &ldquo;Unfold&rdquo; tool icon and immediately we see a preview of the project flattened. In the &ldquo;Unfold Properties&rdquo; dialogue we can see a few options. We have some material settings which includes a &ldquo;K&rdquo; factor value. These values relate to the amount of material needed to accurately make the fold as at the fold point different materials will expand and compress at differing rates. These K values can be found in material reference books or online and you can adjust for your material and design.</p>
+<p>In the section below we find an &ldquo;Unfold Sketch Generation&rdquo; area and if we check the &ldquo;Generate projection sketch&rdquo; we can then directly export either a DXF or an SVG from this properties panel. DXF or SVG are perfect for print or for potentially using with a laser cutter or other machines, or, of course, they can make great input items for the Techdraw workbench to create technical drawings. You can also apply the flattening action and then you have the geometry that you might then use in the CAM workbench to set up for CNC machining. Even with just these basic uses of the sheet metal workbench you can realise accurate designs, for example the author made this aluminium body shelled robot rover some years ago using these methods!</p>
+<p>As a final thought, whilst the workbench is called the SheetMetal workbench, it really can apply to any foldable/bendable sheet material. It&rsquo;s common to see this workbench used for cardstock cut on a vinyl cutting/dragknife machine or for designing for acrylic sheets that will be bent over a hot element. It&rsquo;s an incredibly useful workbench.</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/news/wip-wednesday-16-july-2025/"
+             title="Next article"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday, 16 July 2025</a><a class="page-item prev"
+             href="/Website/pr-16/news/q2-2025-grants-announced/"
+             title="Previous article">Q2 2025 grants announced<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Go to Top"
+  title="Go to Top (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/authors/">Authors</a>
+                      </li><li>
+                        <a href="/Website/pr-16/categories/">Categories</a>
+                      </li><li>
+                        <a href="/Website/pr-16/tags/">Tags</a>
+                      </li><li>
+                        <a href="/Website/pr-16/versions/">Versions</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/fedishare.html#title=Tutorial&#43;-&#43;Getting&#43;Started&#43;With&#43;the&#43;SheetMetal&#43;Workbench&amp;description=&#43;FreeCAD&#43;is&#43;excellent&#43;in&#43;that&#43;it&#43;can&#43;be&#43;used&#43;for&#43;design&#43;projects&#43;for&#43;all&#43;manner&#43;of&#43;fabrication&#43;approaches.&#43;A&#43;really&#43;interesting&#43;fabrication&#43;approach&#43;is&#43;cutting%2C&#43;bending&#43;and&#43;joining&#43;sheet&#43;metal.&#43;As&#43;%E2%80%A6%0A%23sheetmetal&#43;%23workbench&amp;url=https://FreeCAD.github.io/Website/pr-16/news/tutorial-getting-started-with-the-sheetmetal-workbench/"
+  title="Share on Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

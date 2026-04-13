@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es-ES"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | WIP Wednesday - 26 March 2025</title>
+  <meta name="description" content="Tu propio modelador paramétrico libre y de código abierto"><meta name="keywords" content="WIP"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/es/news/wip-wednesday-26-march-2025/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/wip-wednesday-26-march-2025/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/wip-wednesday-26-march-2025/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/wip-wednesday-26-march-2025/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/wip-wednesday-26-march-2025/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/wip-wednesday-26-march-2025/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/wip-wednesday-26-march-2025/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/wip-wednesday-26-march-2025/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/es/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/es/news/wip-wednesday-26-march-2025/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="WIP Wednesday - 26 March 2025">
+  <meta property="og:description" content="This week in FreeCAD development:
+Draft: Roy_043 contributed several improvements and bugfixes including one for the bug where Near Snap would not obey the Always Snap setting.">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2025-03-26T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:40:06+02:00">
+    <meta property="article:tag" content="WIP">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/es/"accesskey="h"
+      title="Inicio (Alt + H)"
+      aria-label="Inicio">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menú"
+    aria-label="Menú"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/es/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Elegir idioma (Alt + L)"
+          aria-label="Elegir idioma"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/wip-wednesday-26-march-2025/" title="WIP Wednesday - 26 March 2025">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/wip-wednesday-26-march-2025/" title="WIP Wednesday - 26 March 2025">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/es/news/wip-wednesday-26-march-2025/" title="WIP Wednesday - 26 March 2025">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/wip-wednesday-26-march-2025/" title="WIP Wednesday - 26 March 2025">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/wip-wednesday-26-march-2025/" title="WIP Wednesday - 26 March 2025">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/wip-wednesday-26-march-2025/" title="WIP Wednesday - 26 March 2025">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/wip-wednesday-26-march-2025/" title="WIP Wednesday - 26 March 2025">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Cambiar tema chroma (Alt + T)"
+    aria-label="Cambiar tema chroma"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 120;">
+
+    <h2 class="title"
+      
+      >WIP Wednesday - 26 March 2025</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2025-03-26T00:00:00Z">26 de marzo de 2025</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/es/authors/aleksandr-prokudin/">Aleksandr Prokudin (169)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/es/categories/update/">Update (158)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/es/tags/wip/">WIP (153)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>313 palabras</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>2 min</span></div></section><div class="content"><p>This week in FreeCAD development:</p>
+<p><strong>Draft</strong>: Roy_043 contributed several improvements and bugfixes including one for the bug where Near Snap would not obey the Always Snap setting.</p>
+<p><strong>Sketcher</strong>: PaddleStroke improved the way length is enforced in Line and Slot tools when an angle is set.</p>
+<p><strong>Part and PartDesign</strong>:</p>
+<ul>
+<li>
+<p>PaddleStroke added missing tooltips to Clone and Subshapebinder tools.</p>
+</li>
+<li>
+<p>tritao converted Part&rsquo;s XML-based Python APIs to the newly introduced Python-based bindings code model.</p>
+</li>
+</ul>
+<p><strong>Assembly</strong>:</p>
+<ul>
+<li>
+<p>PaddleStroke patched the workbench to show an error when a joint is missing a reference.</p>
+</li>
+<li>
+<p>JoaoMartins99 fixed a bug where it would be impossible to repeatedly deactivate an assembly.</p>
+</li>
+</ul>
+<p><strong>TechDraw</strong>:</p>
+<ul>
+<li>
+<p>PaddleStroke, benj5378, and WandererFan fixed several bugs.</p>
+</li>
+<li>
+<p>j-hap replaced the annotation edit dialog with QPlainTextEdit widget, so now you get to have a simpler dialog and annotations in multiple lines.</p>
+</li>
+</ul>
+<p><strong>CAM</strong>:</p>
+<ul>
+<li>
+<p>phaseloop fixed a bug in the estlcam postprocessor.</p>
+</li>
+<li>
+<p>LarryWoestman refactored postprocessors to use shared code.</p>
+</li>
+</ul>
+<p><strong>FEM</strong>: ickby extended the VTK post-processing functionality to handle multi-frame results in a single post-processing object.</p>
+<p><strong>BIM</strong>:</p>
+<ul>
+<li>
+<p>furgo16 contributed new unit tests and refactored some of the existing ones.</p>
+</li>
+<li>
+<p>semhustej improved UI text.</p>
+</li>
+<li>
+<p>yorikvanhavre fixed a bug where saving a project setup preset would fail.</p>
+</li>
+<li>
+<p>paullee0 contributed <a href="https://github.com/paullee0/freecad_sketcharch"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">ArchSketch<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> support.</p>
+</li>
+</ul>
+<p><strong>Materials</strong>: davesrocketshop started working on support for external data sources such as databases or web services.</p>
+<p>Additional fixes were contributed by aprospero, J-Dunn, Roy-043, chennes, karliss, Roy-043, kadet1090, mosfet80, tritao, pieterhijma, adrianinsaval, 3x380V, xtemp09, Syres916, alfrix, furgo16, thyssentishman, hasecilu, FlachyJoe, hyarion, bofdahof.</p>
+<p><strong>PR stats</strong>: since the previous report, 93 pull requests have been merged, and 44 new pull requests have been opened.</p>
+<p><strong>Issue stats</strong>: overall, there are 2735 open issues in the tracker, up by 20 from last week.</p>
+<p>A word of warning: our weekly builds for Windows are severely behind our Linux and macOS for technical reasons. We are working on resolving the issue. The fix is all but trivial, so please bear with us.</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/es/news/forged-in-freecad-a-beginners-keyring-and-candlestick/"
+             title="Artículo siguiente"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>Forged In FreeCAD - A beginners Keyring and Candlestick</a><a class="page-item prev"
+             href="/Website/pr-16/es/news/wip-wednesday-19-march-2025/"
+             title="Artículo anterior">WIP Wednesday - 19 March 2025<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Ir al inicio"
+  title="Ir al inicio (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/es/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/es/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/es/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/es/authors/">Autores</a>
+                      </li><li>
+                        <a href="/Website/pr-16/es/categories/">Categorías</a>
+                      </li><li>
+                        <a href="/Website/pr-16/es/tags/">Etiquetas</a>
+                      </li><li>
+                        <a href="/Website/pr-16/es/versions/">Versiones</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/es/fedishare.html#title=WIP&#43;Wednesday&#43;-&#43;26&#43;March&#43;2025&amp;description=This&#43;week&#43;in&#43;FreeCAD&#43;development%3A%0ADraft%3A&#43;Roy_043&#43;contributed&#43;several&#43;improvements&#43;and&#43;bugfixes&#43;including&#43;one&#43;for&#43;the&#43;bug&#43;where&#43;Near&#43;Snap&#43;would&#43;not&#43;obey&#43;the&#43;Always&#43;Snap&#43;setting.%0ASketcher%3A&#43;PaddleStroke&#43;%E2%80%A6%0A%23wip&amp;url=https://FreeCAD.github.io/Website/pr-16/es/news/wip-wednesday-26-march-2025/"
+  title="Compartir en Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/es/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es-ES"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | FreeCAD Developer&#39;s Handbook</title>
+  <meta name="description" content="Tu propio modelador paramétrico libre y de código abierto"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/es/news/freecad-developers-handbook/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/freecad-developers-handbook/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/freecad-developers-handbook/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/freecad-developers-handbook/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/freecad-developers-handbook/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/freecad-developers-handbook/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/freecad-developers-handbook/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/freecad-developers-handbook/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/es/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/es/news/freecad-developers-handbook/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="FreeCAD Developer&#39;s Handbook">
+  <meta property="og:description" content="(&#34;Magic Book &#34; by Mike Haufe is licensed under CC BY-NC 2.0 .)">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2023-04-03T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:43:46+02:00">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/es/"accesskey="h"
+      title="Inicio (Alt + H)"
+      aria-label="Inicio">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menú"
+    aria-label="Menú"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/es/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Elegir idioma (Alt + L)"
+          aria-label="Elegir idioma"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/freecad-developers-handbook/" title="FreeCAD Developer's Handbook">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/freecad-developers-handbook/" title="FreeCAD Developer's Handbook">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/es/news/freecad-developers-handbook/" title="FreeCAD Developer's Handbook">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/freecad-developers-handbook/" title="FreeCAD Developer's Handbook">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/freecad-developers-handbook/" title="FreeCAD Developer's Handbook">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/freecad-developers-handbook/" title="FreeCAD Developer's Handbook">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/freecad-developers-handbook/" title="FreeCAD Developer's Handbook">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Cambiar tema chroma (Alt + T)"
+    aria-label="Cambiar tema chroma"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 20;">
+
+    <h2 class="title"
+      
+      >FreeCAD Developer&#39;s Handbook</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2023-04-03T00:00:00Z">3 de abril de 2023</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/es/authors/chris-hennes/">Chris Hennes (80)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/es/categories/announcement/">Announcement (94)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>192 palabras</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>1 min</span></div></section><div class="content"><p>(&quot;<a href="https://www.flickr.com/photos/7964019@N04/2941691931"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Magic Book<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>&quot; by <a href="https://www.flickr.com/photos/7964019@N04"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Mike Haufe<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> is licensed under <a href="https://creativecommons.org/licenses/by-nc/2.0/?ref=openverse"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">CC BY-NC 2.0<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>.)</p>
+<p>One of the new initiatives we are undertaking is the creation of a <a href="https://freecad.github.io/DevelopersHandbook/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Developer&rsquo;s Handbook<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>. It contains sections about the <a href="https://freecad.github.io/DevelopersHandbook/roadmap/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Roadmap<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, outlining the broad objectives of the project, a <a href="https://freecad.github.io/DevelopersHandbook/designguide"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Design Guide<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> to give developers advice about GUI design and consistency, and a <a href="https://freecad.github.io/DevelopersHandbook/maintainersguide/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Maintainers Guide<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, detailing what, exactly, Maintainers are supposed to be doing and how they should conduct code reviews, etc.</p>
+<p>If you just followed those links you may have noticed a certain lack of detail, at least in some places. That&rsquo;s where <em>you</em> come in! We&rsquo;ve just started this project. It&rsquo;s <a href="https://github.com/freecad/developershandbook"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">hosted on GitHub<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, and we are very much open to <a href="https://github.com/freecad/developershandbook/pulls"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Pull Requests<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, helping us refine the various sections. Of course the entire document is a work-in-progress, and to a certain extent always will be. But there are plenty of areas to contribute to. You are also welcome to <a href="https://github.com/freecad/developershandbook/issues"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">file Issues<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> on GitHub if you have ideas for changes but aren&rsquo;t ready to do any writing yet, or if you think something is unclear, or if you disagree with something the Handbook says.</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/es/news/wip-wednesday-5-april-2023/"
+             title="Artículo siguiente"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday - 5 April 2023</a><a class="page-item prev"
+             href="/Website/pr-16/es/news/wip-wednesday-29-mar-2023/"
+             title="Artículo anterior">WIP Wednesday - 29 Mar 2023<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Ir al inicio"
+  title="Ir al inicio (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/es/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/es/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/es/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/es/authors/">Autores</a>
+                      </li><li>
+                        <a href="/Website/pr-16/es/categories/">Categorías</a>
+                      </li><li>
+                        <a href="/Website/pr-16/es/tags/">Etiquetas</a>
+                      </li><li>
+                        <a href="/Website/pr-16/es/versions/">Versiones</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/es/fedishare.html#title=FreeCAD&#43;Developer%27s&#43;Handbook&amp;description=%28%22Magic%20Book%20%22%20by%20Mike%20Haufe%20is%20licensed%20under%20CC%20BY-NC%202.0%20.%29%0aOne%20of%20the%20new%20initiatives%20we%20are%20undertaking%20is%20the%20creation%20of%20a%20Developer%e2%80%99s%20Handbook%20.%20It%20contains%20sections%20about%20the%20Roadmap%20,%20%e2%80%a6&amp;url=https://FreeCAD.github.io/Website/pr-16/es/news/freecad-developers-handbook/"
+  title="Compartir en Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/es/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

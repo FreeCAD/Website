@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en-US"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Announcement</title>
+  <meta name="description" content="Your own free and open-source parametric modeler"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/categories/announcement/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/categories/announcement/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/categories/announcement/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/categories/announcement/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/categories/announcement/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/categories/announcement/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/categories/announcement/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/categories/announcement/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/"></head><body class="list type-categories kind-term "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/"accesskey="h"
+      title="Homepage (Alt + H)"
+      aria-label="Homepage">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/news/"
+            title="News"
+            
+            
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choose language (Alt + L)"
+          aria-label="Choose language"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/categories/announcement/" title="Announcement">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/categories/announcement/" title="Announcement">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/categories/announcement/" title="Announcement">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/categories/announcement/" title="Announcement">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/categories/announcement/" title="Announcement">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/categories/announcement/" title="Announcement">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/categories/announcement/" title="Announcement">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Switch theme chroma (Alt + T)"
+    aria-label="Switch theme chroma"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 30;">
+
+    <h1 class="title">
+      <svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg>Category: Announcement (94)</h1></section><div class="card-list wide">
+    <div class="cards"><a class="card"
+  href="/Website/pr-16/news/fpa-logo-contest/"
+  title="FPA Logo Contest"><div class="card-color "
+      style="--hue: 20;"></div><h3 class="card-title">FPA Logo Contest</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2023-02-20T00:00:00Z">February 20, 2023</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/news/freecad-0-20-2-released/"
+  title="FreeCAD 0.20.2 Released"><figure class="card-cover"><img srcset="/Website/pr-16/news/freecad-0-20-2-released/fireworks_hu_f86b7ac69c5e2b1a.webp 500w, /Website/pr-16/news/freecad-0-20-2-released/fireworks.webp 2560w"
+        sizes="500px"
+        src="/Website/pr-16/news/freecad-0-20-2-released/fireworks.webp"
+        alt="Image fallback"
+        width="2560"
+        height="1440"
+        loading="lazy"
+        fetchpriority="low"></figure><h3 class="card-title">FreeCAD 0.20.2 Released</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2023-01-04T00:00:00Z">January 4, 2023</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/news/your-article-here/"
+  title="Your Article Here"><figure class="card-cover"><img srcset="/Website/pr-16/news/your-article-here/Ethel_Lois_Payne_press_pin_Asian-African_Conference_1955_hu_5fbf0c0a0081e42.webp 500w, /Website/pr-16/news/your-article-here/Ethel_Lois_Payne_press_pin_Asian-African_Conference_1955.jpg 983w"
+        sizes="500px"
+        src="/Website/pr-16/news/your-article-here/Ethel_Lois_Payne_press_pin_Asian-African_Conference_1955.jpg"
+        alt="Image fallback"
+        width="983"
+        height="768"
+        loading="lazy"
+        fetchpriority="low"></figure><h3 class="card-title">Your Article Here</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2022-12-07T00:00:00Z">December 7, 2022</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/news/fpa-website-and-handbook/"
+  title="FPA Website and Handbook"><figure class="card-cover"><img srcset="/Website/pr-16/news/fpa-website-and-handbook/RoyalDecree_hu_71a2597c01265e46.webp 500w, /Website/pr-16/news/fpa-website-and-handbook/RoyalDecree.png 1854w"
+        sizes="500px"
+        src="/Website/pr-16/news/fpa-website-and-handbook/RoyalDecree.png"
+        alt="Image fallback"
+        width="1854"
+        height="1140"
+        loading="lazy"
+        fetchpriority="low"></figure><h3 class="card-title">FPA Website and Handbook</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2022-11-30T00:00:00Z">November 30, 2022</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/news/freecad-project-association-development-fund/"
+  title="FreeCAD Project Association Development Fund"><figure class="card-cover"><img srcset="/Website/pr-16/news/freecad-project-association-development-fund/Monedas_Varias_hu_61bf261451aa19f.webp 500w, /Website/pr-16/news/freecad-project-association-development-fund/Monedas_Varias.jpg 1024w"
+        sizes="500px"
+        src="/Website/pr-16/news/freecad-project-association-development-fund/Monedas_Varias.jpg"
+        alt="Image fallback"
+        width="1024"
+        height="577"
+        loading="lazy"
+        fetchpriority="low"></figure><h3 class="card-title">FreeCAD Project Association Development Fund</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2022-11-23T00:00:00Z">November 23, 2022</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/news/fosdem-and-freecad-meeting-travel-grants/"
+  title="FOSDEM and FreeCAD Meeting travel Grants"><figure class="card-cover"><img srcset="/Website/pr-16/news/fosdem-and-freecad-meeting-travel-grants/Brussels_view_from_Mont_des_Arts_hu_a9544759469c48f9.webp 500w, /Website/pr-16/news/fosdem-and-freecad-meeting-travel-grants/Brussels_view_from_Mont_des_Arts.webp 2560w"
+        sizes="500px"
+        src="/Website/pr-16/news/fosdem-and-freecad-meeting-travel-grants/Brussels_view_from_Mont_des_Arts.webp"
+        alt="Image fallback"
+        width="2560"
+        height="1536"
+        loading="lazy"
+        fetchpriority="low"></figure><h3 class="card-title">FOSDEM and FreeCAD Meeting travel Grants</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2022-11-16T00:00:00Z">November 16, 2022</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/news/the-freecad-project-association-now-owns-a-trademark/"
+  title="The FreeCAD Project Association now owns a trademark"><figure class="card-cover"><img srcset="/Website/pr-16/news/the-freecad-project-association-now-owns-a-trademark/Screenshot-from-2022-10-07-12-45-06_hu_e0c116a2d791c25c.webp 500w, /Website/pr-16/news/the-freecad-project-association-now-owns-a-trademark/Screenshot-from-2022-10-07-12-45-06.png 1042w"
+        sizes="500px"
+        src="/Website/pr-16/news/the-freecad-project-association-now-owns-a-trademark/Screenshot-from-2022-10-07-12-45-06.png"
+        alt="Image fallback"
+        width="1042"
+        height="927"
+        loading="lazy"
+        fetchpriority="low"></figure><h3 class="card-title">The FreeCAD Project Association now owns a trademark</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2022-10-12T00:00:00Z">October 12, 2022</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/news/new-book-freecad-for-makers/"
+  title="New Book - FreeCAD for Makers"><div class="card-color "
+      style="--hue: 20;"></div><h3 class="card-title">New Book - FreeCAD for Makers</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2022-10-05T00:00:00Z">October 5, 2022</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/news/first-fpa-sponsored-development/"
+  title="First FPA sponsored development"><figure class="card-cover"><img srcset="/Website/pr-16/news/first-fpa-sponsored-development/Editing-a-spline-1_hu_7e351e4c8988ea06.webp 500w, /Website/pr-16/news/first-fpa-sponsored-development/Editing-a-spline-1.gif 720w"
+        sizes="500px"
+        src="/Website/pr-16/news/first-fpa-sponsored-development/Editing-a-spline-1.gif"
+        alt="Image fallback"
+        width="720"
+        height="480"
+        loading="lazy"
+        fetchpriority="low"></figure><h3 class="card-title">First FPA sponsored development</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2022-09-26T00:00:00Z">September 26, 2022</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/news/welcome-to-freecad-news/"
+  title="Welcome to FreeCAD News!"><figure class="card-cover"><img srcset="/Website/pr-16/news/welcome-to-freecad-news/freecad-news-logo.png 192w"
+        sizes=""
+        src="/Website/pr-16/news/welcome-to-freecad-news/freecad-news-logo.png"
+        alt="Image fallback"
+        width="192"
+        height="192"
+        loading="lazy"
+        fetchpriority="low"></figure><h3 class="card-title">Welcome to FreeCAD News!</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2022-08-31T00:00:00Z">August 31, 2022</time>
+  </span></div>
+</a></div><nav aria-label="Pagination" class="pagination"><a href="/Website/pr-16/categories/announcement/"
+                class="page-item"
+                title="First page"
+                aria-label="First"><svg class="icon-tri_tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_tri_left.svg#tri_tri_left"></use>
+  </svg>1
+              </a><a href="/Website/pr-16/categories/announcement/page/7/"
+                class="page-item"
+                title="Previous page"
+                aria-label="Previous">
+                <svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg> 7
+              </a><span aria-current="page"
+            class="page-item active"
+            aria-label="Current">
+            8
+          </span></nav></div></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Go to Top"
+  title="Go to Top (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/news/"
+            
+            
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/authors/">Authors</a>
+                      </li><li>
+                        <a href="/Website/pr-16/categories/">Categories</a>
+                      </li><li>
+                        <a href="/Website/pr-16/tags/">Tags</a>
+                      </li><li>
+                        <a href="/Website/pr-16/versions/">Versions</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"></div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+</div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

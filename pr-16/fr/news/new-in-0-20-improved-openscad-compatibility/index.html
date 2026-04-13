@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr-FR"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | New in 0.20 - Improved OpenSCAD compatibility</title>
+  <meta name="description" content="Votre modeleur paramétrique libre et open-source"><meta name="keywords" content="OpenSCAD"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/fr/news/new-in-0-20-improved-openscad-compatibility/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/new-in-0-20-improved-openscad-compatibility/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/new-in-0-20-improved-openscad-compatibility/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/new-in-0-20-improved-openscad-compatibility/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/new-in-0-20-improved-openscad-compatibility/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/new-in-0-20-improved-openscad-compatibility/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/new-in-0-20-improved-openscad-compatibility/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/new-in-0-20-improved-openscad-compatibility/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/fr/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/fr/news/new-in-0-20-improved-openscad-compatibility/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="New in 0.20 - Improved OpenSCAD compatibility">
+  <meta property="og:description" content="FreeCAD has supported importing *.scad and *.csg files from OpenSCAD for several years, but supporting the full range of features provided by OpenSCAD is an ongoing project. The FreeCAD 0.20 release brings improved compatibility with several more commands, as well as bug fixes to several existing commands.">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2022-12-14T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:43:46+02:00">
+    <meta property="article:tag" content="OpenSCAD">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/fr/"accesskey="h"
+      title="Accueil (Alt + H)"
+      aria-label="Accueil">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/fr/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choisir la langue (Alt + L)"
+          aria-label="Choisir la langue"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/new-in-0-20-improved-openscad-compatibility/" title="New in 0.20 - Improved OpenSCAD compatibility">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/new-in-0-20-improved-openscad-compatibility/" title="New in 0.20 - Improved OpenSCAD compatibility">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/new-in-0-20-improved-openscad-compatibility/" title="New in 0.20 - Improved OpenSCAD compatibility">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/fr/news/new-in-0-20-improved-openscad-compatibility/" title="New in 0.20 - Improved OpenSCAD compatibility">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/new-in-0-20-improved-openscad-compatibility/" title="New in 0.20 - Improved OpenSCAD compatibility">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/new-in-0-20-improved-openscad-compatibility/" title="New in 0.20 - Improved OpenSCAD compatibility">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/new-in-0-20-improved-openscad-compatibility/" title="New in 0.20 - Improved OpenSCAD compatibility">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Changer le thème (Alt + T)"
+    aria-label="Changer le thème"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 60;">
+
+    <h2 class="title"
+      
+      >New in 0.20 - Improved OpenSCAD Compatibility</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2022-12-14T00:00:00Z">14 décembre 2022</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/fr/authors/chris-hennes/">Chris Hennes (80)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/fr/categories/feature/">Feature (18)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/fr/tags/openscad/">OpenSCAD (1)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>341 mots</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>2 min</span></div></section><div class="content"><p>FreeCAD has supported importing *.scad and *.csg files from <a href="http://openscad.org/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">OpenSCAD <svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>for several years, but supporting the full range of features provided by OpenSCAD is an ongoing project. The FreeCAD 0.20 release brings improved compatibility with several more commands, as well as bug fixes to several existing commands.</p>
+<h3
+  id="low-poly-modeling"
+  
+  >Low-poly modeling<a class="heading-anchor"
+     href="#low-poly-modeling"
+     title="Low-poly modeling"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>OpenSCAD and FreeCAD have different modeling strategies: OpenSCAD is fundamentally discrete, whereas FreeCAD typically maintains mathematically-precise object definitions without surface discretization (unless explicitly told to discretize using the Mesh workbench, etc.). Most of the time when importing from OpenSCAD, the discretized object is replaced by its equivalent &ldquo;exact&rdquo; FreeCAD object: however, this is not always the OpenSCAD geometry designer&rsquo;s intent. For example, sometimes a cylinder with only eight sides (i.e. <code>$fn=8</code> in OpenSCAD) is really intended to have an octagonal cross-section which is <em>not</em> intended to be a perfect circle. FreeCAD 0.20 improves support for this modeling strategy to include low-<code>$fn</code> sweeps and revolutions.</p>
+<h3
+  id="surfaces-from-data"
+  
+  >Surfaces from data<a class="heading-anchor"
+     href="#surfaces-from-data"
+     title="Surfaces from data"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>When creating a surface from a set of 2D data points and some arbitrary data value at those points, previous versions of FreeCAD &ldquo;un-discretized&rdquo; that surface and created a Bezier surface representation. However, this conflicted with OpenSCAD&rsquo;s fully-discrete geometry representation and often resulted in extreme spikes in the splined surface. FreeCAD now remains faithful to the original discrete surface geometry and gives results more akin to what would be seen directly in OpenSCAD.</p>
+<h3
+  id="improved-extrusions"
+  
+  >Improved extrusions<a class="heading-anchor"
+     href="#improved-extrusions"
+     title="Improved extrusions"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>FreeCAD now fully supports tapered and twisted extrusions, in both low-<code>$fn</code> and non-discretized versions.</p>
+<h3
+  id="improved-snapappimage-support"
+  
+  >Improved Snap/AppImage support<a class="heading-anchor"
+     href="#improved-snapappimage-support"
+     title="Improved Snap/AppImage support"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>For users with the latest version of OpenSCAD installed (2021.01) FreeCAD now supports the new pipe-based data transmission method. The upshot of this new method is that even if FreeCAD and OpenSCAD are installed as Snap or AppImage packages (precluding communication using files in <code>/tmp</code> because the different packages will be prevented from accessing each other&rsquo;s temp files), they can still exchange data. As a fallback for older versions of OpenSCAD, users can now explicitly set the transfer directory to someplace where both programs can access files (for example, the user&rsquo;s home directory).</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/fr/news/the-little-things-navigation-cube-update/"
+             title="Article suivant"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>The Little Things - Navigation Cube Update</a><a class="page-item prev"
+             href="/Website/pr-16/fr/news/your-article-here/"
+             title="Article précédent">Your Article Here<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Aller au sommet de la page"
+  title="Aller au sommet de la page (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/fr/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/fr/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/fr/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/fr/authors/">Auteurs</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/categories/">Catégories</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/tags/">Mots-Clés</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/versions/">Versions</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/fr/fedishare.html#title=New&#43;in&#43;0.20&#43;-&#43;Improved&#43;OpenSCAD&#43;compatibility&amp;description=FreeCAD&#43;has&#43;supported&#43;importing&#43;%2A.scad&#43;and&#43;%2A.csg&#43;files&#43;from&#43;OpenSCAD&#43;for&#43;several&#43;years%2C&#43;but&#43;supporting&#43;the&#43;full&#43;range&#43;of&#43;features&#43;provided&#43;by&#43;OpenSCAD&#43;is&#43;an&#43;ongoing&#43;project.&#43;The&#43;FreeCAD&#43;0.20&#43;release&#43;%E2%80%A6%0A%23openscad&amp;url=https://FreeCAD.github.io/Website/pr-16/fr/news/new-in-0-20-improved-openscad-compatibility/"
+  title="Partager sur Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/fr/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

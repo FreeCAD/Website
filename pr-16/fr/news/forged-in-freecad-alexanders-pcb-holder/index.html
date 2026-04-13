@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fr-FR"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Forged in FreeCAD - Alexander&#39;s PCB Holder</title>
+  <meta name="description" content="Votre modeleur paramétrique libre et open-source"><meta name="keywords" content="user story, 3D printing, PCB"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/fr/news/forged-in-freecad-alexanders-pcb-holder/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/forged-in-freecad-alexanders-pcb-holder/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/forged-in-freecad-alexanders-pcb-holder/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/forged-in-freecad-alexanders-pcb-holder/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/forged-in-freecad-alexanders-pcb-holder/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/forged-in-freecad-alexanders-pcb-holder/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/forged-in-freecad-alexanders-pcb-holder/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/forged-in-freecad-alexanders-pcb-holder/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/fr/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/fr/news/forged-in-freecad-alexanders-pcb-holder/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Forged in FreeCAD - Alexander&#39;s PCB Holder">
+  <meta property="og:description" content="Spotted over on Mastodon, we thought Alexander’s (AKA @PistonPin ) PCB holder design was an excellent tool and a great example of functional 3D printing and FreeCAD. Chatting with Alexander it’s clear he is an experienced CAD user with lots of previous projects under his belt.">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2023-11-20T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:47:39+02:00">
+    <meta property="article:tag" content="User Story">
+    <meta property="article:tag" content="3D Printing">
+    <meta property="article:tag" content="PCB">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/fr/"accesskey="h"
+      title="Accueil (Alt + H)"
+      aria-label="Accueil">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/fr/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choisir la langue (Alt + L)"
+          aria-label="Choisir la langue"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/forged-in-freecad-alexanders-pcb-holder/" title="Forged in FreeCAD - Alexander's PCB Holder">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/forged-in-freecad-alexanders-pcb-holder/" title="Forged in FreeCAD - Alexander's PCB Holder">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/forged-in-freecad-alexanders-pcb-holder/" title="Forged in FreeCAD - Alexander's PCB Holder">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/fr/news/forged-in-freecad-alexanders-pcb-holder/" title="Forged in FreeCAD - Alexander's PCB Holder">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/forged-in-freecad-alexanders-pcb-holder/" title="Forged in FreeCAD - Alexander's PCB Holder">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/forged-in-freecad-alexanders-pcb-holder/" title="Forged in FreeCAD - Alexander's PCB Holder">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/forged-in-freecad-alexanders-pcb-holder/" title="Forged in FreeCAD - Alexander's PCB Holder">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Changer le thème (Alt + T)"
+    aria-label="Changer le thème"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 80;">
+
+    <h2 class="title"
+      
+      >Forged in FreeCAD - Alexander&#39;s PCB Holder</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2023-11-20T00:00:00Z">20 novembre 2023</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/fr/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/fr/categories/showcase/">Showcase (30)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/fr/tags/user-story/">User Story (22)</a><a href="/Website/pr-16/fr/tags/3d-printing/">3D Printing (15)</a><a href="/Website/pr-16/fr/tags/pcb/">PCB (2)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>413 mots</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>2 min</span></div><figure class="article-cover"><img srcset="/Website/pr-16/news/forged-in-freecad-alexanders-pcb-holder/PCB_solder_fren_hu_3325c84d9398182.webp 500w, /Website/pr-16/news/forged-in-freecad-alexanders-pcb-holder/PCB_solder_fren_hu_538956eaf084f999.webp 1000w, /Website/pr-16/news/forged-in-freecad-alexanders-pcb-holder/PCB_solder_fren.webp 2560w"
+        sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"
+        src="/Website/pr-16/news/forged-in-freecad-alexanders-pcb-holder/PCB_solder_fren.webp"
+        title="PCB solder fren"
+        alt="Image de secours"
+        width="2560"
+        height="1706"
+        loading="eager"
+        fetchpriority="high"><figcaption>
+        <div class="internal-tooltip"><svg class="icon-important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/important.svg#important"></use>
+  </svg><span class="tooltip">PCB solder fren</span>
+        </div>
+      </figcaption></figure></section><div class="content"><p>Spotted over on Mastodon, we thought Alexander&rsquo;s (AKA <a href="https://mastodon.online/@PistonPin"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">@PistonPin<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>) PCB holder design was an excellent tool and a great example of functional 3D printing and FreeCAD. Chatting with Alexander it&rsquo;s clear he is an experienced CAD user with lots of previous projects under his belt.</p>
+<p>&ldquo;<em>I switched from Fusion 360 to FreeCAD a few years ago, when Autodesk decided to cut back on features from the maker license. This was a much-needed reminder of the importance of open source and truly owning your creations, so I&rsquo;m very thankful to Autodesk for this decision!</em>&rdquo;</p>
+<p>Alexander has mainly used the <a href="https://wiki.freecad.org/PartDesign_Workbench"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PartDesign workbench<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> and tools to create this useful design and he also used some incorporated some earlier project parts that was also built around 2020 aluminium extrusion. To draw the extruded aluminium profile Alexander used the <a href="https://wiki.freecad.org/Sketcher_Workbench"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Sketcher tools<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> to create just one of the extrusions slot profiles.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/forged-in-freecad-alexanders-pcb-holder/alex_single_profile.webp"
+  alt="Alex single profile"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="2560"
+  height="1372"
+    srcset="/Website/pr-16/news/forged-in-freecad-alexanders-pcb-holder/alex_single_profile_hu_d8964aeb87d066f8.webp 500w, /Website/pr-16/news/forged-in-freecad-alexanders-pcb-holder/alex_single_profile_hu_1ed6e76241625187.webp 1000w, /Website/pr-16/news/forged-in-freecad-alexanders-pcb-holder/alex_single_profile.webp 2560w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Alex single profile</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/forged-in-freecad-alexanders-pcb-holder/alex_single_profile.webp"
+              title="Alex single profile"
+              alt="Alex single profile"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>With the single slot profile sketched and constrained he then used the <a href="https://wiki.freecad.org/PartDesign_PolarPattern"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PolarPattern<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> tool to create the other 3 identical slot profiles. Adding a simple circle for the centre bore and some <a href="https://wiki.freecad.org/PartDesign_Chamfer"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">chamfers<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> to the corners, Alexander could then extrude the design to match the length of aluminium he planned to use.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/forged-in-freecad-alexanders-pcb-holder/alex_polar_patter.webp"
+  alt="Alex polar patter"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="2560"
+  height="1452"
+    srcset="/Website/pr-16/news/forged-in-freecad-alexanders-pcb-holder/alex_polar_patter_hu_211cd5381166c461.webp 500w, /Website/pr-16/news/forged-in-freecad-alexanders-pcb-holder/alex_polar_patter_hu_b4c3985db4bf7aa6.webp 1000w, /Website/pr-16/news/forged-in-freecad-alexanders-pcb-holder/alex_polar_patter.webp 2560w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Alex polar patter</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/forged-in-freecad-alexanders-pcb-holder/alex_polar_patter.webp"
+              title="Alex polar patter"
+              alt="Alex polar patter"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Drawing the legs and the position-able PCB holding blocks, Alexander has made use of the XY plane and added other <a href="https://wiki.freecad.org/PartDesign_Plane"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Datum planes<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> to sketch on to. He has used the <a href="https://wiki.freecad.org/A2plus_Workbench"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">A2plus workbench<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> as a simple way to check the fit of each of the individual sections onto the extruded rail.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-002"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/forged-in-freecad-alexanders-pcb-holder/alex_datum_plane.webp"
+  alt="Alex datum plane"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="2560"
+  height="1372"
+    srcset="/Website/pr-16/news/forged-in-freecad-alexanders-pcb-holder/alex_datum_plane_hu_62309309856c889e.webp 500w, /Website/pr-16/news/forged-in-freecad-alexanders-pcb-holder/alex_datum_plane_hu_dbc1dc2319b0d14.webp 1000w, /Website/pr-16/news/forged-in-freecad-alexanders-pcb-holder/alex_datum_plane.webp 2560w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Alex datum plane</figcaption></figure><div id="img-002" popover>
+          <button class="close"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/forged-in-freecad-alexanders-pcb-holder/alex_datum_plane.webp"
+              title="Alex datum plane"
+              alt="Alex datum plane"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>To make the knob that will lock the PCB clamps into position Alexander used a profile sketch on the XY plane and used the Revolution tool to create the basic geometry. Then adding a sketch to pocket the serrated grip, he finally added some fillets to smooth out the grip sections.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-003"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/forged-in-freecad-alexanders-pcb-holder/alex_revolve_knob.webp"
+  alt="Alex revolve knob"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="2560"
+  height="1372"
+    srcset="/Website/pr-16/news/forged-in-freecad-alexanders-pcb-holder/alex_revolve_knob_hu_4417c690062de925.webp 500w, /Website/pr-16/news/forged-in-freecad-alexanders-pcb-holder/alex_revolve_knob_hu_8113e7963d92adaa.webp 1000w, /Website/pr-16/news/forged-in-freecad-alexanders-pcb-holder/alex_revolve_knob.webp 2560w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Alex revolve knob</figcaption></figure><div id="img-003" popover>
+          <button class="close"
+            popovertarget="img-003"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/forged-in-freecad-alexanders-pcb-holder/alex_revolve_knob.webp"
+              title="Alex revolve knob"
+              alt="Alex revolve knob"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>The results are excellent. The hardware, apart from the aluminium extrusion, are all M5. Alexander mentions he has spent a lot of time making sure that the required tolerances for the M5 parts are correct meaning that everything should adjust well with nothing being too tight or too loose! The resulting tool looks excellent and should suit a range of PCB projects in terms of size and in terms of workholding for SMD or through hole assembly and soldering. If you want to print one of these Alexander has uploaded the project, excellently including the <a href="https://www.printables.com/model/643748-pcb-solder-fren"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">FreeCAD project files over on Printables<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>.</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/fr/news/tutorial-getting-started-with-the-path-workbench-part-one/"
+             title="Article suivant"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>Tutorial - Getting started with the Path Workbench. Part One.</a><a class="page-item prev"
+             href="/Website/pr-16/fr/news/wip-wednesday-15-nov-2023/"
+             title="Article précédent">WIP Wednesday - 15 Nov 2023<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Aller au sommet de la page"
+  title="Aller au sommet de la page (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/fr/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/fr/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/fr/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/fr/authors/">Auteurs</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/categories/">Catégories</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/tags/">Mots-Clés</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/versions/">Versions</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/fr/fedishare.html#title=Forged&#43;in&#43;FreeCAD&#43;-&#43;Alexander%27s&#43;PCB&#43;Holder&amp;description=Spotted&#43;over&#43;on&#43;Mastodon%2C&#43;we&#43;thought&#43;Alexander%E2%80%99s&#43;%28AKA&#43;%40PistonPin&#43;%29&#43;PCB&#43;holder&#43;design&#43;was&#43;an&#43;excellent&#43;tool&#43;and&#43;a&#43;great&#43;example&#43;of&#43;functional&#43;3D&#43;printing&#43;and&#43;FreeCAD.&#43;Chatting&#43;with&#43;Alexander&#43;it%E2%80%99s&#43;clear&#43;%E2%80%A6%0A%23user-story&#43;%233d-printing&#43;%23pcb&amp;url=https://FreeCAD.github.io/Website/pr-16/fr/news/forged-in-freecad-alexanders-pcb-holder/"
+  title="Partager sur Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/fr/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

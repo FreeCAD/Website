@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es-ES"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Forged In FreeCAD - 4Axis for CNC ring engraving</title>
+  <meta name="description" content="Tu propio modelador paramétrico libre y de código abierto"><meta name="keywords" content="user story, CNC"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/es/news/forged-in-freecad-4axis-for-cnc-ring-engraving/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/forged-in-freecad-4axis-for-cnc-ring-engraving/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/forged-in-freecad-4axis-for-cnc-ring-engraving/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/forged-in-freecad-4axis-for-cnc-ring-engraving/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/forged-in-freecad-4axis-for-cnc-ring-engraving/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/forged-in-freecad-4axis-for-cnc-ring-engraving/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/forged-in-freecad-4axis-for-cnc-ring-engraving/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/forged-in-freecad-4axis-for-cnc-ring-engraving/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/es/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/es/news/forged-in-freecad-4axis-for-cnc-ring-engraving/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Forged In FreeCAD - 4Axis for CNC ring engraving">
+  <meta property="og:description" content="We’ve featured a few projects under the “Forged In FreeCAD” title but what caught our eye with this one is that FreeCAD was used to not only create an innovative solution, but also was used to then help operate the created machine.">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2024-05-14T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:47:39+02:00">
+    <meta property="article:tag" content="User Story">
+    <meta property="article:tag" content="CNC">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/es/"accesskey="h"
+      title="Inicio (Alt + H)"
+      aria-label="Inicio">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menú"
+    aria-label="Menú"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/es/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Elegir idioma (Alt + L)"
+          aria-label="Elegir idioma"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/forged-in-freecad-4axis-for-cnc-ring-engraving/" title="Forged In FreeCAD - 4Axis for CNC ring engraving">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/forged-in-freecad-4axis-for-cnc-ring-engraving/" title="Forged In FreeCAD - 4Axis for CNC ring engraving">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/es/news/forged-in-freecad-4axis-for-cnc-ring-engraving/" title="Forged In FreeCAD - 4Axis for CNC ring engraving">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/forged-in-freecad-4axis-for-cnc-ring-engraving/" title="Forged In FreeCAD - 4Axis for CNC ring engraving">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/forged-in-freecad-4axis-for-cnc-ring-engraving/" title="Forged In FreeCAD - 4Axis for CNC ring engraving">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/forged-in-freecad-4axis-for-cnc-ring-engraving/" title="Forged In FreeCAD - 4Axis for CNC ring engraving">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/forged-in-freecad-4axis-for-cnc-ring-engraving/" title="Forged In FreeCAD - 4Axis for CNC ring engraving">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Cambiar tema chroma (Alt + T)"
+    aria-label="Cambiar tema chroma"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 80;">
+
+    <h2 class="title"
+      
+      >Forged in FreeCAD - 4Axis for CNC Ring Engraving</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2024-05-14T00:00:00Z">14 de mayo de 2024</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/es/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/es/categories/showcase/">Showcase (30)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/es/tags/user-story/">User Story (22)</a><a href="/Website/pr-16/es/tags/cnc/">CNC (1)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>471 palabras</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>3 min</span></div><figure class="article-cover"><img srcset="/Website/pr-16/news/forged-in-freecad-4axis-for-cnc-ring-engraving/4thaxis_hu_47412cafcd493a64.webp 500w, /Website/pr-16/news/forged-in-freecad-4axis-for-cnc-ring-engraving/4thaxis_hu_25d18045cad62e62.webp 1000w, /Website/pr-16/news/forged-in-freecad-4axis-for-cnc-ring-engraving/4thaxis.png 1024w"
+        sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"
+        src="/Website/pr-16/news/forged-in-freecad-4axis-for-cnc-ring-engraving/4thaxis.png"
+        title="4Axis"
+        alt="Imagen alternativa"
+        width="1024"
+        height="646"
+        loading="eager"
+        fetchpriority="high"><figcaption>
+        <div class="internal-tooltip"><svg class="icon-important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/important.svg#important"></use>
+  </svg><span class="tooltip">4Axis</span>
+        </div>
+      </figcaption></figure></section><div class="content"><p>We&rsquo;ve featured a few projects under the &ldquo;Forged In FreeCAD&rdquo; title but what caught our eye with this one is that FreeCAD was used to not only create an innovative solution, but also was used to then help operate the created machine.</p>
+<p>Project creator Jordan Poles had a burgeoning interest in lathes and wanted to make an engraved brass ring. The lathe aspects were covered as Jordan owned a small 7*14 style lathe and so turning a ring blank from a piece of brass bar stock was no problem.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Ampliar imagen" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/forged-in-freecad-4axis-for-cnc-ring-engraving/ring.jpg"
+  alt="Ring"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="637"
+  height="446"
+    srcset="/Website/pr-16/news/forged-in-freecad-4axis-for-cnc-ring-engraving/ring_hu_23f9a6ff89de20ab.webp 500w, /Website/pr-16/news/forged-in-freecad-4axis-for-cnc-ring-engraving/ring.jpg 637w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Ring</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes">
+            <img src="/Website/pr-16/news/forged-in-freecad-4axis-for-cnc-ring-engraving/ring.jpg"
+              title="Ring"
+              alt="Ring"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>For the engraving side of the project Jordan wanted to utilise their CNC3018 machine. If you don&rsquo;t know the CNC3018 it is an affordable entry point for desktop small form factor CNC routing. They are small and, whilst there are lot of bigger and better options, it has enough capabilities for those newer to CNC to do lots of projects. As such it&rsquo;s not uncommon to see hacks and modifications carried out on them.</p>
+<p>Jordan&rsquo;s mod was to create a 4<sup>th</sup> axis which could also be referred to as a rotary axis. The design consists of a NEMA 17 stepper motor in an enclosure that allows it to be bolted to the bed of the small CNC router. Attached to the output shaft of the NEMA 17 is a work holding section designed to receive the blank stock ring. It&rsquo;s sort of a mandrel work holder with the ring inserted over a flexible jawed section with the jaws pushed out with a wedge device. The end of the work holding section is supported on a &ldquo;tail stock&rdquo; of sorts which consists of some rollers in a 3D printed enclosure again bolted to the bed of the CNC. This allows the part to be machined with minimal deflection as both ends of the mandrel are supported. FreeCAD has been used for all of this design and the files can be found over on <a href="https://www.thingiverse.com/thing:4778215"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">the project Thingiverse page<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Ampliar imagen" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/forged-in-freecad-4axis-for-cnc-ring-engraving/ring_engraved.jpg"
+  alt="Ring engraved"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1024"
+  height="768"
+    srcset="/Website/pr-16/news/forged-in-freecad-4axis-for-cnc-ring-engraving/ring_engraved_hu_5ad252c50aa1014c.webp 500w, /Website/pr-16/news/forged-in-freecad-4axis-for-cnc-ring-engraving/ring_engraved_hu_d3f1c6da35cbf657.webp 1000w, /Website/pr-16/news/forged-in-freecad-4axis-for-cnc-ring-engraving/ring_engraved.jpg 1024w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Ring engraved</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes">
+            <img src="/Website/pr-16/news/forged-in-freecad-4axis-for-cnc-ring-engraving/ring_engraved.jpg"
+              title="Ring engraved"
+              alt="Ring engraved"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>For the engraving process Jordan has created a design as an SVG file which is then imported into the <a href="https://wiki.freecad.org/Draft_Workbench"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Draft workbench<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> in FreeCAD. Moving to the<a href="https://wiki.freecad.org/CAM_Workbench"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener"> CAM workbench<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, Jordan then creates the tool paths as if the object is a flat piece of work and not cylindrical. The CNC3018 is controlled by a board running GRBL and the rotary axis assembly is actually connected to and replaces the Y axis of the machine. This means that if the X and Z axis are positioned carefully and accurately above the ring in the rotary attachment then the work underneath the tool bit is the same as a flat piece of stock as the ring rotates.</p>
+<p>It&rsquo;s excellent to see FreeCAD being used in this multi-functional way. There&rsquo;s <a href="https://blog.jpoles1.com/archives/183"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">lots more detail over on Jordan&rsquo;s blog<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> and some videos of the setup in use.</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/es/news/wip-wednesday-15-may-2024/"
+             title="Artículo siguiente"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday - 15 May 2024</a><a class="page-item prev"
+             href="/Website/pr-16/es/news/wip-wednesday-8-may-2024/"
+             title="Artículo anterior">WIP Wednesday - 8 May 2024<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Ir al inicio"
+  title="Ir al inicio (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/es/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/es/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/es/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/es/authors/">Autores</a>
+                      </li><li>
+                        <a href="/Website/pr-16/es/categories/">Categorías</a>
+                      </li><li>
+                        <a href="/Website/pr-16/es/tags/">Etiquetas</a>
+                      </li><li>
+                        <a href="/Website/pr-16/es/versions/">Versiones</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/es/fedishare.html#title=Forged&#43;In&#43;FreeCAD&#43;-&#43;4Axis&#43;for&#43;CNC&#43;ring&#43;engraving&amp;description=We%E2%80%99ve&#43;featured&#43;a&#43;few&#43;projects&#43;under&#43;the&#43;%E2%80%9CForged&#43;In&#43;FreeCAD%E2%80%9D&#43;title&#43;but&#43;what&#43;caught&#43;our&#43;eye&#43;with&#43;this&#43;one&#43;is&#43;that&#43;FreeCAD&#43;was&#43;used&#43;to&#43;not&#43;only&#43;create&#43;an&#43;innovative&#43;solution%2C&#43;but&#43;also&#43;was&#43;used&#43;to&#43;then&#43;%E2%80%A6%0A%23user-story&#43;%23cnc&amp;url=https://FreeCAD.github.io/Website/pr-16/es/news/forged-in-freecad-4axis-for-cnc-ring-engraving/"
+  title="Compartir en Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/es/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

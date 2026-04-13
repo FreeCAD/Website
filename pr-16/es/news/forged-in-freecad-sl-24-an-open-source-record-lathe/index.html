@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es-ES"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Forged in FreeCAD - SL-24, An Open Source Record Lathe</title>
+  <meta name="description" content="Tu propio modelador paramétrico libre y de código abierto"><meta name="keywords" content="user story, 3D printing, PCB"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/es/news/forged-in-freecad-sl-24-an-open-source-record-lathe/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/forged-in-freecad-sl-24-an-open-source-record-lathe/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/forged-in-freecad-sl-24-an-open-source-record-lathe/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/forged-in-freecad-sl-24-an-open-source-record-lathe/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/forged-in-freecad-sl-24-an-open-source-record-lathe/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/forged-in-freecad-sl-24-an-open-source-record-lathe/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/forged-in-freecad-sl-24-an-open-source-record-lathe/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/forged-in-freecad-sl-24-an-open-source-record-lathe/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/es/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/es/news/forged-in-freecad-sl-24-an-open-source-record-lathe/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Forged in FreeCAD - SL-24, An Open Source Record Lathe">
+  <meta property="og:description" content="Sl 24 header It’s a given that the FreeCAD community is awesome and make amazing things. Every now and again though a project really stops us in our tracks. None more so than this, the SL-24, an open source record lathe .">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2025-11-11T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:47:39+02:00">
+    <meta property="article:tag" content="User Story">
+    <meta property="article:tag" content="3D Printing">
+    <meta property="article:tag" content="PCB">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/es/"accesskey="h"
+      title="Inicio (Alt + H)"
+      aria-label="Inicio">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menú"
+    aria-label="Menú"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/es/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Elegir idioma (Alt + L)"
+          aria-label="Elegir idioma"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/forged-in-freecad-sl-24-an-open-source-record-lathe/" title="Forged in FreeCAD - SL-24, An Open Source Record Lathe">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/forged-in-freecad-sl-24-an-open-source-record-lathe/" title="Forged in FreeCAD - SL-24, An Open Source Record Lathe">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/es/news/forged-in-freecad-sl-24-an-open-source-record-lathe/" title="Forged in FreeCAD - SL-24, An Open Source Record Lathe">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/forged-in-freecad-sl-24-an-open-source-record-lathe/" title="Forged in FreeCAD - SL-24, An Open Source Record Lathe">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/forged-in-freecad-sl-24-an-open-source-record-lathe/" title="Forged in FreeCAD - SL-24, An Open Source Record Lathe">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/forged-in-freecad-sl-24-an-open-source-record-lathe/" title="Forged in FreeCAD - SL-24, An Open Source Record Lathe">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/forged-in-freecad-sl-24-an-open-source-record-lathe/" title="Forged in FreeCAD - SL-24, An Open Source Record Lathe">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Cambiar tema chroma (Alt + T)"
+    aria-label="Cambiar tema chroma"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 80;">
+
+    <h2 class="title"
+      
+      >Forged in FreeCAD - SL-24, an Open Source Record Lathe</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2025-11-11T00:00:00Z">11 de noviembre de 2025</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/es/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/es/categories/showcase/">Showcase (30)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/es/tags/user-story/">User Story (22)</a><a href="/Website/pr-16/es/tags/3d-printing/">3D Printing (15)</a><a href="/Website/pr-16/es/tags/pcb/">PCB (2)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>313 palabras</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>2 min</span></div></section><div class="content"><div class="image-with-popover">
+      <figure><button aria-label="Ampliar imagen" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/forged-in-freecad-sl-24-an-open-source-record-lathe/sl-24_header.jpg"
+  alt="Sl 24 header"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1200"
+  height="600"
+    srcset="/Website/pr-16/news/forged-in-freecad-sl-24-an-open-source-record-lathe/sl-24_header_hu_d400096b1ed18cef.webp 500w, /Website/pr-16/news/forged-in-freecad-sl-24-an-open-source-record-lathe/sl-24_header_hu_a39609935bae576c.webp 1000w, /Website/pr-16/news/forged-in-freecad-sl-24-an-open-source-record-lathe/sl-24_header.jpg 1200w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Sl 24 header</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes">
+            <img src="/Website/pr-16/news/forged-in-freecad-sl-24-an-open-source-record-lathe/sl-24_header.jpg"
+              title="Sl 24 header"
+              alt="Sl 24 header"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>It&rsquo;s a given that the FreeCAD community is awesome and make amazing things. Every now and again though a project really stops us in our tracks. None more so than this, the <a href="https://git.sr.ht/~slyka/SL-24"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">SL-24, an open source record lathe<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>.</p>
+<p>Part CNC and part high end DIY record deck this project allows people to experiment with cutting grooves to create their own records.  Whilst more complex than home taping or digital copying, vinyl has a special place in audiophiles hearts, why shouldn&rsquo;t we create our own?!</p>
+<p>The base of the unit is formed from plywood as is part of the gantry system, the main turntable is made with weight and rigidity by casting concrete. It&rsquo;s a 3 axis machine and apart from the concrete cast rotary axis the cutting head has 2 linear axis for left and right and vertical motion. As well as laser cutting and casting there is some 3D print, a good example being 3D printed dampers to reduce and isolate motor induced vibrations and also external vibrations, all of which could impact the audio quality of a recording.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Ampliar imagen" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/forged-in-freecad-sl-24-an-open-source-record-lathe/sl24_carriage_assembly.png"
+  alt="Sl 24 carriage assembly"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1293"
+  height="761"
+    srcset="/Website/pr-16/news/forged-in-freecad-sl-24-an-open-source-record-lathe/sl24_carriage_assembly_hu_5325f15f815745ff.webp 500w, /Website/pr-16/news/forged-in-freecad-sl-24-an-open-source-record-lathe/sl24_carriage_assembly_hu_7647718ad3892598.webp 1000w, /Website/pr-16/news/forged-in-freecad-sl-24-an-open-source-record-lathe/sl24_carriage_assembly.png 1293w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Sl 24 carriage assembly</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes">
+            <img src="/Website/pr-16/news/forged-in-freecad-sl-24-an-open-source-record-lathe/sl24_carriage_assembly.png"
+              title="Sl 24 carriage assembly"
+              alt="Sl 24 carriage assembly"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>This long running project has been modelled in FreeCAD, the project began before FreeCAD version 1.0 and therefore doesn&rsquo;t use the Assembly workbench. In fact the complex machine is broken into numerous CAD sub assemblies and often these are just project files with numerous bodies/parts manually placed.</p>
+<p>The source for this project can be found linked over on the <a href="https://git.sr.ht/~slyka/SL-24"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">project Sourcehut<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> page. Included in the source is a PCB design in KiCad for a small motor control board using a STM32 board and there is an Arduino sketch provided as a small program to run the lathe. There&rsquo;s also some tools and utilities for applying EQ to your recordings.</p>
+<p>Finally, check out <a href="https://pawb.fun/@slyka"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">https://pawb.fun/@slyka<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> on the fediverse, where they often post updates about this fabulous project.</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/es/news/wip-wednesday-12-november-2025/"
+             title="Artículo siguiente"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday, 12 November 2025</a><a class="page-item prev"
+             href="/Website/pr-16/es/news/explainer-appearance-properties-in-freecad/"
+             title="Artículo anterior">Explainer - Appearance Properties in FreeCAD<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Ir al inicio"
+  title="Ir al inicio (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/es/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/es/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/es/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/es/authors/">Autores</a>
+                      </li><li>
+                        <a href="/Website/pr-16/es/categories/">Categorías</a>
+                      </li><li>
+                        <a href="/Website/pr-16/es/tags/">Etiquetas</a>
+                      </li><li>
+                        <a href="/Website/pr-16/es/versions/">Versiones</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/es/fedishare.html#title=Forged&#43;in&#43;FreeCAD&#43;-&#43;SL-24%2C&#43;An&#43;Open&#43;Source&#43;Record&#43;Lathe&amp;description=&#43;It%E2%80%99s&#43;a&#43;given&#43;that&#43;the&#43;FreeCAD&#43;community&#43;is&#43;awesome&#43;and&#43;make&#43;amazing&#43;things.&#43;Every&#43;now&#43;and&#43;again&#43;though&#43;a&#43;project&#43;really&#43;stops&#43;us&#43;in&#43;our&#43;tracks.&#43;None&#43;more&#43;so&#43;than&#43;this%2C&#43;the&#43;SL-24%2C&#43;an&#43;open&#43;source&#43;%E2%80%A6%0A%23user-story&#43;%233d-printing&#43;%23pcb&amp;url=https://FreeCAD.github.io/Website/pr-16/es/news/forged-in-freecad-sl-24-an-open-source-record-lathe/"
+  title="Compartir en Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/es/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

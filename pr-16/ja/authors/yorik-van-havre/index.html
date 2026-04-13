@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ja-JP"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Yorik Van Havre</title>
+  <meta name="description" content="あなた自身の自由でオープンソースのパラメトリックモデラー"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/ja/authors/yorik-van-havre/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/authors/yorik-van-havre/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/authors/yorik-van-havre/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/authors/yorik-van-havre/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/authors/yorik-van-havre/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/authors/yorik-van-havre/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/authors/yorik-van-havre/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/authors/yorik-van-havre/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/ja/"></head><body class="list type-authors kind-term "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/ja/"accesskey="h"
+      title="ホームページ (Alt + H)"
+      aria-label="ホームページ">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="メニュー"
+    aria-label="メニュー"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/ja/news/"
+            title="News"
+            
+            
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="言語を選択 (Alt + L)"
+          aria-label="言語を選択"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/authors/yorik-van-havre/" title="Yorik Van Havre">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/authors/yorik-van-havre/" title="Yorik Van Havre">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/authors/yorik-van-havre/" title="Yorik Van Havre">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/authors/yorik-van-havre/" title="Yorik Van Havre">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/authors/yorik-van-havre/" title="Yorik Van Havre">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/authors/yorik-van-havre/" title="Yorik Van Havre">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/ja/authors/yorik-van-havre/" title="Yorik Van Havre">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="テーマchromaに切り替える (Alt + T)"
+    aria-label="テーマchromaに切り替える"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 30;">
+
+    <h1 class="title">
+      <svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg>著者: Yorik Van Havre (13)</h1></section><div class="card-list wide">
+    <div class="cards"><a class="card"
+  href="/Website/pr-16/ja/news/fosdem-and-kicad-freecad-day-2025/"
+  title="FOSDEM and KiCAD &#43; FreeCAD day 2025"><figure class="card-cover"><img srcset="/Website/pr-16/news/fosdem-and-kicad-freecad-day-2025/freecad-day-2025_hu_6d001cc3486de89c.webp 500w, /Website/pr-16/news/fosdem-and-kicad-freecad-day-2025/freecad-day-2025.jpg 1280w"
+        sizes="500px"
+        src="/Website/pr-16/news/fosdem-and-kicad-freecad-day-2025/freecad-day-2025.jpg"
+        alt="代替画像"
+        width="1280"
+        height="516"
+        loading="lazy"
+        fetchpriority="low"></figure><h3 class="card-title">FOSDEM and KiCAD &#43; FreeCAD day 2025</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2024-11-04T00:00:00Z">2024年11月4日</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/ja/news/fpa-annual-report/"
+  title="FPA annual report"><div class="card-color "
+      style="--hue: 20;"></div><h3 class="card-title">FPA annual report</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2024-03-14T00:00:00Z">2024年3月14日</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/ja/news/good-bye-gsoc-2023-hello-gsoc-2024/"
+  title="Good bye GSoC 2023, Hello GSoC 2024"><div class="card-color "
+      style="--hue: 20;"></div><h3 class="card-title">Good bye GSoC 2023, Hello GSoC 2024</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2024-02-29T00:00:00Z">2024年2月29日</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/ja/news/the-freecad-day-2024/"
+  title="The FreeCAD day 2024"><figure class="card-cover"><img srcset="/Website/pr-16/news/the-freecad-day-2024/photo1707816694_hu_1ac45ea3a5b9158d.webp 500w, /Website/pr-16/news/the-freecad-day-2024/photo1707816694.jpeg 1280w"
+        sizes="500px"
+        src="/Website/pr-16/news/the-freecad-day-2024/photo1707816694.jpeg"
+        alt="代替画像"
+        width="1280"
+        height="960"
+        loading="lazy"
+        fetchpriority="low"></figure><h3 class="card-title">The FreeCAD day 2024</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2024-02-13T00:00:00Z">2024年2月13日</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/ja/news/fosdem-freecad-day-and-hackathon-2024/"
+  title="FOSDEM, FreeCAD day and hackathon 2024"><figure class="card-cover"><img srcset="/Website/pr-16/news/fosdem-freecad-day-and-hackathon-2024/Screenshot-from-2023-10-10-14-23-31_hu_34192ddc379de9b0.webp 500w, /Website/pr-16/news/fosdem-freecad-day-and-hackathon-2024/Screenshot-from-2023-10-10-14-23-31.webp 1803w"
+        sizes="500px"
+        src="/Website/pr-16/news/fosdem-freecad-day-and-hackathon-2024/Screenshot-from-2023-10-10-14-23-31.webp"
+        alt="代替画像"
+        width="1803"
+        height="858"
+        loading="lazy"
+        fetchpriority="low"></figure><h3 class="card-title">FOSDEM, FreeCAD day and hackathon 2024</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2023-10-31T00:00:00Z">2023年10月31日</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/ja/news/renaming-development-git-branch-from-master-to-main/"
+  title="Renaming development GIT branch from master to main"><div class="card-color "
+      style="--hue: 120;"></div><h3 class="card-title">Renaming development GIT branch from master to main</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2023-10-02T00:00:00Z">2023年10月2日</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/ja/news/release-0-21-update/"
+  title="Release 0.21 Update"><div class="card-color "
+      style="--hue: 20;"></div><h3 class="card-title">Release 0.21 Update</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2023-05-31T00:00:00Z">2023年5月31日</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/ja/news/google-summer-of-code-2023/"
+  title="Google Summer of Code 2023"><div class="card-color "
+      style="--hue: 20;"></div><h3 class="card-title">Google Summer of Code 2023</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2023-05-04T00:00:00Z">2023年5月4日</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/ja/news/fpa-2022-report/"
+  title="FPA 2022 report"><div class="card-color "
+      style="--hue: 20;"></div><h3 class="card-title">FPA 2022 report</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2023-03-21T00:00:00Z">2023年3月21日</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/ja/news/the-freecad-day-2023-the-video/"
+  title="The FreeCAD day 2023 - The video!"><div class="card-color "
+      style="--hue: 40;"></div><h3 class="card-title">The FreeCAD day 2023 - The video!</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2023-02-21T00:00:00Z">2023年2月21日</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/ja/news/freecad-meeting-day-2023/"
+  title="FreeCAD Meeting Day 2023"><figure class="card-cover"><img srcset="/Website/pr-16/news/freecad-meeting-day-2023/freecad_day_2023_header_hu_a0bcfd8e3cb50fef.webp 500w, /Website/pr-16/news/freecad-meeting-day-2023/freecad_day_2023_header.webp 1600w"
+        sizes="500px"
+        src="/Website/pr-16/news/freecad-meeting-day-2023/freecad_day_2023_header.webp"
+        alt="代替画像"
+        width="1600"
+        height="602"
+        loading="lazy"
+        fetchpriority="low"></figure><h3 class="card-title">FreeCAD Meeting Day 2023</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2023-01-04T00:00:00Z">2023年1月4日</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/ja/news/fosdem-and-freecad-meeting-travel-grants/"
+  title="FOSDEM and FreeCAD Meeting travel Grants"><figure class="card-cover"><img srcset="/Website/pr-16/news/fosdem-and-freecad-meeting-travel-grants/Brussels_view_from_Mont_des_Arts_hu_a9544759469c48f9.webp 500w, /Website/pr-16/news/fosdem-and-freecad-meeting-travel-grants/Brussels_view_from_Mont_des_Arts.webp 2560w"
+        sizes="500px"
+        src="/Website/pr-16/news/fosdem-and-freecad-meeting-travel-grants/Brussels_view_from_Mont_des_Arts.webp"
+        alt="代替画像"
+        width="2560"
+        height="1536"
+        loading="lazy"
+        fetchpriority="low"></figure><h3 class="card-title">FOSDEM and FreeCAD Meeting travel Grants</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2022-11-16T00:00:00Z">2022年11月16日</time>
+  </span></div>
+</a></div><nav aria-label="Pagination" class="pagination"><span aria-current="page"
+            class="page-item active"
+            aria-label="Current">
+            1
+          </span><a href="/Website/pr-16/ja/authors/yorik-van-havre/page/2/"
+                class="page-item"
+                title="最後のページ"
+                aria-label="Last">
+                2<svg class="icon-tri_tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_tri_right.svg#tri_tri_right"></use>
+  </svg></a></nav></div></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="トップへ"
+  title="トップへ (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/ja/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/ja/news/"
+            
+            
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/ja/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/ja/authors/">著者一覧</a>
+                      </li><li>
+                        <a href="/Website/pr-16/ja/categories/">カテゴリ一覧</a>
+                      </li><li>
+                        <a href="/Website/pr-16/ja/tags/">タグ一覧</a>
+                      </li><li>
+                        <a href="/Website/pr-16/ja/versions/">バージョン一覧</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"></div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/ja/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+</div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

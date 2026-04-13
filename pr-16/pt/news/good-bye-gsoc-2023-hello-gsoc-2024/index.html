@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt-BR"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Good bye GSoC 2023, Hello GSoC 2024</title>
+  <meta name="description" content="Seu próprio modelador paramétrico livre e de código aberto"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/pt/news/good-bye-gsoc-2023-hello-gsoc-2024/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/good-bye-gsoc-2023-hello-gsoc-2024/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/good-bye-gsoc-2023-hello-gsoc-2024/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/good-bye-gsoc-2023-hello-gsoc-2024/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/good-bye-gsoc-2023-hello-gsoc-2024/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/good-bye-gsoc-2023-hello-gsoc-2024/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/good-bye-gsoc-2023-hello-gsoc-2024/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/good-bye-gsoc-2023-hello-gsoc-2024/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/pt/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/pt/news/good-bye-gsoc-2023-hello-gsoc-2024/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Good bye GSoC 2023, Hello GSoC 2024">
+  <meta property="og:description" content="FreeCAD is a already long-term participant to the Google Summer of Code (GSoC) program, which is Google’s program to fund students to work on Free and Open-Source Software (FOSS) projects. Each year, students submit proposals to work on their favorite FOSS project during the school holidays, and Google awards them a grant.">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2024-02-29T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:52:30+02:00">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/pt/"accesskey="h"
+      title="Início (Alt + H)"
+      aria-label="Início">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/pt/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Escolha o idioma (Alt + L)"
+          aria-label="Escolha o idioma"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/good-bye-gsoc-2023-hello-gsoc-2024/" title="Good bye GSoC 2023, Hello GSoC 2024">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/good-bye-gsoc-2023-hello-gsoc-2024/" title="Good bye GSoC 2023, Hello GSoC 2024">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/good-bye-gsoc-2023-hello-gsoc-2024/" title="Good bye GSoC 2023, Hello GSoC 2024">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/good-bye-gsoc-2023-hello-gsoc-2024/" title="Good bye GSoC 2023, Hello GSoC 2024">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/pt/news/good-bye-gsoc-2023-hello-gsoc-2024/" title="Good bye GSoC 2023, Hello GSoC 2024">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/good-bye-gsoc-2023-hello-gsoc-2024/" title="Good bye GSoC 2023, Hello GSoC 2024">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/good-bye-gsoc-2023-hello-gsoc-2024/" title="Good bye GSoC 2023, Hello GSoC 2024">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Alterar tema (Alt + T)"
+    aria-label="Alterar tema"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 20;">
+
+    <h2 class="title"
+      
+      >Good Bye GSoC 2023, Hello GSoC 2024</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2024-02-29T00:00:00Z">29 de fevereiro de 2024</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/pt/authors/yorik-van-havre/">Yorik Van Havre (13)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/pt/categories/announcement/">Announcement (94)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>589 palavras</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>3 minutos</span></div></section><div class="content"><p>FreeCAD is a already long-term participant to the <a href="https://summerofcode.withgoogle.com/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Google Summer of Code<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> (GSoC) program, which is Google&rsquo;s program to fund students to work on Free and Open-Source Software (FOSS) projects. Each year, students submit proposals to work on their favorite FOSS project during the school holidays, and Google awards them a grant.</p>
+<p>FreeCAD has been participating since 2016, together with some other FOSS CAD projects like <a href="https://openscad.org/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">OpenSCAD<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, <a href="https://brlcad.org"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">BRL-CAD<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> or <a href="https://kicad.org"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">KiCAD<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> under a same umbrella. Last year, we decided we&rsquo;re old enough to try, and participated on our own. It was a great experience, we got no less than four awarded students working on FreeCAD. All of them produced good results, and got to know and interact with the FreeCAD family.</p>
+<p>The aim of GSoC is not only to get people to work on FOSS projects, but also to give students a chance to dive in to a FOSS project and experience first-hand the dynamics of open-source development (which I think are totally awesome, and definitely something any computer science student should know about). Finally, it also tries to create long-lasting bounds between students and communities they work with, so they stick to the project after GSoC finishes.</p>
+<h3
+  id="gsoc-2023"
+  
+  >GSoC 2023<a class="heading-anchor"
+     href="#gsoc-2023"
+     title="GSoC 2023"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>This happened last year:</p>
+<ul>
+<li><strong>hlorus</strong> worked (and is still working!) on <strong>measurements tools in FreeCAD</strong>. FreeCAD has a very diverse set of different measurement tools, none totally complete, none totally finished. Hlorus, who already worked on other FOSS projects like Blender, started working on a unified system, that hopefully will provide a good FreeCAD-wide measurement solution. Check the project details on <a href="https://forum.freecad.org/viewtopic.php?t=78147"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">GSoC 2023: Unified Measurement Facility - FreeCAD Forum<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></li>
+</ul>
+<div class="image-with-popover">
+      <figure><button aria-label="Ampliar imagem" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/good-bye-gsoc-2023-hello-gsoc-2024/measure.webp"
+  alt="Measure"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1346"
+  height="737"
+    srcset="/Website/pr-16/news/good-bye-gsoc-2023-hello-gsoc-2024/measure_hu_7c095dbe87eb55c9.webp 500w, /Website/pr-16/news/good-bye-gsoc-2023-hello-gsoc-2024/measure_hu_2d904b6f6cbc75b3.webp 1000w, /Website/pr-16/news/good-bye-gsoc-2023-hello-gsoc-2024/measure.webp 1346w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Measure</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="Fechar visualizador de imagens">
+            <img src="/Website/pr-16/news/good-bye-gsoc-2023-hello-gsoc-2024/measure.webp"
+              title="Measure"
+              alt="Measure"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><ul>
+<li><strong>Amulya</strong> worked and is also still working on a <strong>modern replacement for the FreeCAD library</strong>. The <a href="https://github.com/freecad/freecad-library"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">FreeCAD library<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> has become this huge, unmaintainable, unusable repository of FreeCAD models, pieces and parts provided by FreeCAD users. We needed a replacement which, while still relying on Git and content provided by users, allows a much easier management both by administrators and users, and has an easier integration in FreeCAD. Project details are on <a href="https://forum.freecad.org/viewtopic.php?t=78124"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">[GSoC 2023] UI tool for fetching online content - FreeCAD Forum<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></li>
+</ul>
+<div class="image-with-popover">
+      <figure><button aria-label="Ampliar imagem" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/good-bye-gsoc-2023-hello-gsoc-2024/demo_ss1.png"
+  alt="Demo ss 1"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1150"
+  height="861"
+    srcset="/Website/pr-16/news/good-bye-gsoc-2023-hello-gsoc-2024/demo_ss1_hu_1d7508994943338a.webp 500w, /Website/pr-16/news/good-bye-gsoc-2023-hello-gsoc-2024/demo_ss1_hu_a68a305fbce55b51.webp 1000w, /Website/pr-16/news/good-bye-gsoc-2023-hello-gsoc-2024/demo_ss1.png 1150w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Demo ss 1</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Fechar visualizador de imagens">
+            <img src="/Website/pr-16/news/good-bye-gsoc-2023-hello-gsoc-2024/demo_ss1.png"
+              title="Demo ss 1"
+              alt="Demo ss 1"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><ul>
+<li><strong>Gauri</strong> worked on a <strong>new documentation system for FreeCAD</strong>. While the current documentation hosted on <a href="https://wiki.freecad.org"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">the FreeCAD wiki<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> served and still serves us well so far, a series of growing problems made us think we need a better, more flexible and safer solution where the contents are dissociated from the platform. Gauri set up a markdown-based docusaurus system, and some FreeCAD community members have now picked up her work and are carrying it further. Check the details at <a href="https://forum.freecad.org/viewtopic.php?t=78143"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">[GSoC2023] Upgrade the documentation system - FreeCAD Forum<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></li>
+</ul>
+<div class="image-with-popover">
+      <figure><button aria-label="Ampliar imagem" popovertarget="img-002"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/good-bye-gsoc-2023-hello-gsoc-2024/screenshot-documentation.webp"
+  alt="Screenshot documentation"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1917"
+  height="939"
+    srcset="/Website/pr-16/news/good-bye-gsoc-2023-hello-gsoc-2024/screenshot-documentation_hu_6016ce9ddbdcfcb7.webp 500w, /Website/pr-16/news/good-bye-gsoc-2023-hello-gsoc-2024/screenshot-documentation_hu_19ae8dfcfe58153b.webp 1000w, /Website/pr-16/news/good-bye-gsoc-2023-hello-gsoc-2024/screenshot-documentation.webp 1917w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Screenshot documentation</figcaption></figure><div id="img-002" popover>
+          <button class="close"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Fechar visualizador de imagens">
+            <img src="/Website/pr-16/news/good-bye-gsoc-2023-hello-gsoc-2024/screenshot-documentation.webp"
+              title="Screenshot documentation"
+              alt="Screenshot documentation"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><ul>
+<li><strong>Tanasu</strong> worked on <strong>on-machine inspection tools</strong> that allow a CNC machine equipped with a probe tool to &ldquo;poke&rdquo; a piece of material to determine its size and shape. Find more details about it on <a href="https://forum.freecad.org/viewtopic.php?t=78215"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">[GSoC 2023] On-machine Inspection - FreeCAD Forum<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></li>
+</ul>
+<div class="image-with-popover">
+      <figure><button aria-label="Ampliar imagem" popovertarget="img-003"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/good-bye-gsoc-2023-hello-gsoc-2024/screenshot-inspection.webp"
+  alt="Screenshot inspection"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1763"
+  height="842"
+    srcset="/Website/pr-16/news/good-bye-gsoc-2023-hello-gsoc-2024/screenshot-inspection_hu_3f0168eacf491bed.webp 500w, /Website/pr-16/news/good-bye-gsoc-2023-hello-gsoc-2024/screenshot-inspection_hu_b8b220451390250f.webp 1000w, /Website/pr-16/news/good-bye-gsoc-2023-hello-gsoc-2024/screenshot-inspection.webp 1763w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Screenshot inspection</figcaption></figure><div id="img-003" popover>
+          <button class="close"
+            popovertarget="img-003"
+            popovertargetaction="hide"
+            aria-label="Fechar visualizador de imagens">
+            <img src="/Website/pr-16/news/good-bye-gsoc-2023-hello-gsoc-2024/screenshot-inspection.webp"
+              title="Screenshot inspection"
+              alt="Screenshot inspection"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Everything that happens with GSoC in FreeCAD is in its <a href="https://forum.freecad.org/viewforum.php?f=46"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">own section of the FreeCAD forum<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>. Be sure to check what&rsquo;s happening there!</p>
+<h3
+  id="gsoc-2024"
+  
+  >GSoC 2024<a class="heading-anchor"
+     href="#gsoc-2024"
+     title="GSoC 2024"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>This year again, FreeCAD <a href="https://summerofcode.withgoogle.com/programs/2024/organizations/freecad"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">has been accepted to the GSoC program<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>. The store is now open, and students can start looking and asking questions and building their proposals. Are you interested in participating as a student? Be sure to check our <a href="https://wiki.freecad.org/Google_Summer_of_Code_2024"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">GSoC 2024 page<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> page with proposal ideas and everything there is to know about the program. Also look at the <a href="https://developers.google.com/open-source/gsoc/timeline"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">GSoC timeline<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> to have an idea of where you would be going.</p>
+<p>See you there?</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/pt/news/the-annual-grant-program-is-live/"
+             title="Artigo seguinte"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>The annual Grant program is live</a><a class="page-item prev"
+             href="/Website/pr-16/pt/news/wip-wednesday-28-february-2024/"
+             title="Artigo anterior">WIP Wednesday - 28 February 2024<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Ir para o topo"
+  title="Ir para o topo (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/pt/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/pt/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/pt/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/pt/authors/">Autores</a>
+                      </li><li>
+                        <a href="/Website/pr-16/pt/categories/">Categorias</a>
+                      </li><li>
+                        <a href="/Website/pr-16/pt/tags/">Tags</a>
+                      </li><li>
+                        <a href="/Website/pr-16/pt/versions/">Versões</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/pt/fedishare.html#title=Good&#43;bye&#43;GSoC&#43;2023%2C&#43;Hello&#43;GSoC&#43;2024&amp;description=FreeCAD%20is%20a%20already%20long-term%20participant%20to%20the%20Google%20Summer%20of%20Code%20%28GSoC%29%20program,%20which%20is%20Google%e2%80%99s%20program%20to%20fund%20students%20to%20work%20on%20Free%20and%20Open-Source%20Software%20%28FOSS%29%20projects.%20Each%20year,%20%e2%80%a6&amp;url=https://FreeCAD.github.io/Website/pr-16/pt/news/good-bye-gsoc-2023-hello-gsoc-2024/"
+  title="Compartilhar no Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/pt/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

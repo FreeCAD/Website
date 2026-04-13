@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja-JP"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | KiCad 10 is released!</title>
+  <meta name="description" content="あなた自身の自由でオープンソースのパラメトリックモデラー"><meta name="keywords" content="KiCAD, community"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/ja/news/kicad-10-is-released/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/kicad-10-is-released/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/kicad-10-is-released/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/kicad-10-is-released/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/kicad-10-is-released/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/kicad-10-is-released/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/kicad-10-is-released/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/kicad-10-is-released/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/ja/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/ja/news/kicad-10-is-released/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="KiCad 10 is released!">
+  <meta property="og:description" content="Whilst we await our own significant releases, we wanted to take an opportunity to congratulate our wider open source family members, KiCad, on the recent release of KiCad version 10.">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2026-03-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:47:39+02:00">
+    <meta property="article:tag" content="KiCAD">
+    <meta property="article:tag" content="Community">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/ja/"accesskey="h"
+      title="ホームページ (Alt + H)"
+      aria-label="ホームページ">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="メニュー"
+    aria-label="メニュー"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/ja/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="言語を選択 (Alt + L)"
+          aria-label="言語を選択"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/kicad-10-is-released/" title="KiCad 10 is released!">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/kicad-10-is-released/" title="KiCad 10 is released!">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/kicad-10-is-released/" title="KiCad 10 is released!">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/kicad-10-is-released/" title="KiCad 10 is released!">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/kicad-10-is-released/" title="KiCad 10 is released!">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/kicad-10-is-released/" title="KiCad 10 is released!">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/ja/news/kicad-10-is-released/" title="KiCad 10 is released!">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="テーマchromaに切り替える (Alt + T)"
+    aria-label="テーマchromaに切り替える"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 80;">
+
+    <h2 class="title"
+      
+      >KiCad 10 Is Released!</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2026-03-23T00:00:00Z">2026年3月23日</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/ja/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/ja/categories/showcase/">Showcase (30)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/ja/tags/kicad/">KiCAD (5)</a><a href="/Website/pr-16/ja/tags/community/">Community (10)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>154 語</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>1 分</span></div></section><div class="content"><p>Whilst we await our own significant releases, we wanted to take an opportunity to congratulate our wider open source family members, KiCad, on the recent release of <a href="https://www.kicad.org/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">KiCad version 10.<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></p>
+<p>The new version builds on the previous excellence with a whole host of new features and improvements which you can read up on over on <a href="https://www.kicad.org/blog/2026/03/Version-10.0.0-Released/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">this announcement post<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>. As a tiny cross section of new stuff there are new features such as a new interface for editing DRC rules, new methods (hopovers) of visualising wires crossing in schematics and track tuning features to allow user to maximise control over routing parameters.</p>
+<p>With some crossover of the FreeCAD and KiCad communities, both users and developers, and of course FreeCAD workbenches such as KiConnect and KiCad StepUp, we love watching the KiCad project go from strength to strength. If you want to financially support KiCad then it&rsquo;s a <a href="https://donate.kicad.org/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">great time to make a donation<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>.</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/ja/news/freecad-version-1-1-released/"
+             title="次の記事"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>FreeCAD Version 1.1 Released</a><a class="page-item prev"
+             href="/Website/pr-16/ja/news/the-bug-bounty-program-has-been-renewed/"
+             title="前の記事">The bug bounty program has been renewed<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="トップへ"
+  title="トップへ (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/ja/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/ja/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/ja/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/ja/authors/">著者一覧</a>
+                      </li><li>
+                        <a href="/Website/pr-16/ja/categories/">カテゴリ一覧</a>
+                      </li><li>
+                        <a href="/Website/pr-16/ja/tags/">タグ一覧</a>
+                      </li><li>
+                        <a href="/Website/pr-16/ja/versions/">バージョン一覧</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/ja/fedishare.html#title=KiCad&#43;10&#43;is&#43;released%21&amp;description=Whilst&#43;we&#43;await&#43;our&#43;own&#43;significant&#43;releases%2C&#43;we&#43;wanted&#43;to&#43;take&#43;an&#43;opportunity&#43;to&#43;congratulate&#43;our&#43;wider&#43;open&#43;source&#43;family&#43;members%2C&#43;KiCad%2C&#43;on&#43;the&#43;recent&#43;release&#43;of&#43;KiCad&#43;version&#43;10.&#43;The&#43;new&#43;version&#43;%E2%80%A6%0A%23kicad&#43;%23community&amp;url=https://FreeCAD.github.io/Website/pr-16/ja/news/kicad-10-is-released/"
+  title="共有 Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/ja/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

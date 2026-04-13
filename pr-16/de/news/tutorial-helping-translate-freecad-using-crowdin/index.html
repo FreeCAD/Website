@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="de-DE"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Tutorial - Helping translate FreeCAD using Crowdin</title>
+  <meta name="description" content="Dein eigener freier und Open-Source parametrischer Modellierer"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/de/news/tutorial-helping-translate-freecad-using-crowdin/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/tutorial-helping-translate-freecad-using-crowdin/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/tutorial-helping-translate-freecad-using-crowdin/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/tutorial-helping-translate-freecad-using-crowdin/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/tutorial-helping-translate-freecad-using-crowdin/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/tutorial-helping-translate-freecad-using-crowdin/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/tutorial-helping-translate-freecad-using-crowdin/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/tutorial-helping-translate-freecad-using-crowdin/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/de/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/de/news/tutorial-helping-translate-freecad-using-crowdin/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Tutorial - Helping translate FreeCAD using Crowdin">
+  <meta property="og:description" content="In case you didn’t know FreeCAD is available in lots of different languages. If you want to check out the list, launch FreeCAD and click “edit - preferences” and you’ll see a language dropdown at the top of the window and you can scroll to see lots of different language packs that FreeCAD contains. So how do these translations happen?">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2024-07-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:47:39+02:00">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/de/"accesskey="h"
+      title="Home (Alt + H)"
+      aria-label="Home">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menü"
+    aria-label="Menü"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/de/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Sprache auswählen (Alt + L)"
+          aria-label="Sprache auswählen"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/tutorial-helping-translate-freecad-using-crowdin/" title="Tutorial - Helping translate FreeCAD using Crowdin">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/tutorial-helping-translate-freecad-using-crowdin/" title="Tutorial - Helping translate FreeCAD using Crowdin">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/tutorial-helping-translate-freecad-using-crowdin/" title="Tutorial - Helping translate FreeCAD using Crowdin">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/tutorial-helping-translate-freecad-using-crowdin/" title="Tutorial - Helping translate FreeCAD using Crowdin">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/tutorial-helping-translate-freecad-using-crowdin/" title="Tutorial - Helping translate FreeCAD using Crowdin">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/de/news/tutorial-helping-translate-freecad-using-crowdin/" title="Tutorial - Helping translate FreeCAD using Crowdin">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/tutorial-helping-translate-freecad-using-crowdin/" title="Tutorial - Helping translate FreeCAD using Crowdin">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Design wechseln (Alt + T)"
+    aria-label="Design wechseln"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 100;">
+
+    <h2 class="title"
+      
+      >Tutorial - Helping Translate FreeCAD Using Crowdin</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2024-07-04T00:00:00Z">4. Juli 2024</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/de/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/de/categories/tutorial/">Tutorial (26)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>368 Wörter</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>2 Minuten</span></div><figure class="article-cover"><img srcset="/Website/pr-16/news/tutorial-helping-translate-freecad-using-crowdin/fc_language_dropdown_hu_cc45332f4b276b01.webp 500w, /Website/pr-16/news/tutorial-helping-translate-freecad-using-crowdin/fc_language_dropdown.png 735w"
+        sizes="(max-width: 500px) 500px, 75vw"
+        src="/Website/pr-16/news/tutorial-helping-translate-freecad-using-crowdin/fc_language_dropdown.png"
+        title="FreeCAD language dropdown"
+        alt="Ersatzbild"
+        width="735"
+        height="512"
+        loading="eager"
+        fetchpriority="high"><figcaption>
+        <div class="internal-tooltip"><svg class="icon-important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/important.svg#important"></use>
+  </svg><span class="tooltip">FreeCAD language dropdown</span>
+        </div>
+      </figcaption></figure></section><div class="content"><p>In case you didn&rsquo;t know FreeCAD is available in lots of different languages. If you want to check out the list, launch FreeCAD and click &ldquo;edit - preferences&rdquo; and you&rsquo;ll see a language dropdown at the top of the window and you can scroll to see lots of different language packs that FreeCAD contains. So how do these translations happen?</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Bild vergrößern" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-helping-translate-freecad-using-crowdin/crowdin_landing.png"
+  alt="Crowdin landing"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1271"
+  height="865"
+    srcset="/Website/pr-16/news/tutorial-helping-translate-freecad-using-crowdin/crowdin_landing_hu_8c7330caeb9d8291.webp 500w, /Website/pr-16/news/tutorial-helping-translate-freecad-using-crowdin/crowdin_landing_hu_90d0b4a07c5441e.webp 1000w, /Website/pr-16/news/tutorial-helping-translate-freecad-using-crowdin/crowdin_landing.png 1271w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Crowdin landing</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen">
+            <img src="/Website/pr-16/news/tutorial-helping-translate-freecad-using-crowdin/crowdin_landing.png"
+              title="Crowdin landing"
+              alt="Crowdin landing"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>FreeCAD uses an online platform called <a href="https://crowdin.com/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Crowdin<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> to crowd source it&rsquo;s language translations. All the language strings are uploaded to the Crowdin platform and then anyone can contribute and attempt to translate as much or as little as they like in whatever language or languages they choose.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Bild vergrößern" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-helping-translate-freecad-using-crowdin/crowdin_freecad_dashboard.png"
+  alt="Crowdin FreeCAD dashboard"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1895"
+  height="897"
+    srcset="/Website/pr-16/news/tutorial-helping-translate-freecad-using-crowdin/crowdin_freecad_dashboard_hu_8652cefa40a718ca.webp 500w, /Website/pr-16/news/tutorial-helping-translate-freecad-using-crowdin/crowdin_freecad_dashboard_hu_d7d10eb003ed49bc.webp 1000w, /Website/pr-16/news/tutorial-helping-translate-freecad-using-crowdin/crowdin_freecad_dashboard.png 1895w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Crowdin FreeCAD dashboard</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen">
+            <img src="/Website/pr-16/news/tutorial-helping-translate-freecad-using-crowdin/crowdin_freecad_dashboard.png"
+              title="Crowdin FreeCAD dashboard"
+              alt="Crowdin FreeCAD dashboard"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>It&rsquo;s reasonably straightforward. You need to supply and email account to sign up for a Crowdin account once logged in you can navigate to the <a href="https://crowdin.com/project/freecad"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">FreeCAD project dashboard<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>. From here you can select a language you are interested in and click on it. The FreeCAD strings are loaded and the Crowdin page is populated with the collections of phrases for translation.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Bild vergrößern" popovertarget="img-002"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-helping-translate-freecad-using-crowdin/partial_translates-1.png"
+  alt="Partial translates 1"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1090"
+  height="637"
+    srcset="/Website/pr-16/news/tutorial-helping-translate-freecad-using-crowdin/partial_translates-1_hu_1b6631291d1ee595.webp 500w, /Website/pr-16/news/tutorial-helping-translate-freecad-using-crowdin/partial_translates-1_hu_1f3adb36d33254f.webp 1000w, /Website/pr-16/news/tutorial-helping-translate-freecad-using-crowdin/partial_translates-1.png 1090w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Partial translates 1</figcaption></figure><div id="img-002" popover>
+          <button class="close"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen">
+            <img src="/Website/pr-16/news/tutorial-helping-translate-freecad-using-crowdin/partial_translates-1.png"
+              title="Partial translates 1"
+              alt="Partial translates 1"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>You can jump to any part of the FreeCAD project by clicking the &ldquo;All Strings&rdquo; button so you can perhaps focus on areas you use the most first and move to less well known areas later. Don&rsquo;t worry that your translation will automatically be in the next FreeCAD version, in our experience it&rsquo;s common to feel you have exactly described the string that you are attempting. When you have typed in a translation click the &ldquo;SAVE&rdquo; button. It will prompt you to make your translation match the input string, for example if the original text has an ellipsis following the phrase it will prompt you to add this in.</p>
+<p>The brilliant thing about Crowdin is it automatically weighs and collates all suggestions and then proof readers, who are adept in both a language and FreeCAD, can then choose and amend the closest translation. So what is very important is for lots of people to attempt to translate and give it a go without worrying!</p>
+<p>Finally, if you don&rsquo;t see the language you are interested in helping with on the list you can contact the FreeCAD Crowdin team and get it added!</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/de/news/wip-wednesday-10-july-2024/"
+             title="Nächster Artikel"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday - 10 July 2024</a><a class="page-item prev"
+             href="/Website/pr-16/de/news/wip-wednesday-3-july-2024/"
+             title="Vorheriger Artikel">WIP Wednesday - 3 July 2024<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Nach oben"
+  title="Nach oben (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/de/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/de/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/de/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/de/authors/">Autoren</a>
+                      </li><li>
+                        <a href="/Website/pr-16/de/categories/">Kategorien</a>
+                      </li><li>
+                        <a href="/Website/pr-16/de/tags/">Tags</a>
+                      </li><li>
+                        <a href="/Website/pr-16/de/versions/">Versionen</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/de/fedishare.html#title=Tutorial&#43;-&#43;Helping&#43;translate&#43;FreeCAD&#43;using&#43;Crowdin&amp;description=In%20case%20you%20didn%e2%80%99t%20know%20FreeCAD%20is%20available%20in%20lots%20of%20different%20languages.%20If%20you%20want%20to%20check%20out%20the%20list,%20launch%20FreeCAD%20and%20click%20%e2%80%9cedit%20-%20preferences%e2%80%9d%20and%20you%e2%80%99ll%20see%20a%20language%20dropdown%20at%20the%20%e2%80%a6&amp;url=https://FreeCAD.github.io/Website/pr-16/de/news/tutorial-helping-translate-freecad-using-crowdin/"
+  title="Teilen auf Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/de/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ja-JP"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Forged in FreeCAD - IO Rodeo&#39;s Open Colorimeter</title>
+  <meta name="description" content="あなた自身の自由でオープンソースのパラメトリックモデラー"><meta name="keywords" content="user story, open hardware, 3D printing"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/ja/news/forged-in-freecad-io-rodeos-open-colorimeter/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/forged-in-freecad-io-rodeos-open-colorimeter/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/forged-in-freecad-io-rodeos-open-colorimeter/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/forged-in-freecad-io-rodeos-open-colorimeter/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/forged-in-freecad-io-rodeos-open-colorimeter/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/forged-in-freecad-io-rodeos-open-colorimeter/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/forged-in-freecad-io-rodeos-open-colorimeter/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/forged-in-freecad-io-rodeos-open-colorimeter/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/ja/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/ja/news/forged-in-freecad-io-rodeos-open-colorimeter/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Forged in FreeCAD - IO Rodeo&#39;s Open Colorimeter">
+  <meta property="og:description" content="Opencolorimeter It’s always fabulous to see open hardware, even more wonderful when the tool chain to make the hardware is open, and lastly, great when people have used FreeCAD as part of their fascinating projects.">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2025-06-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:47:39+02:00">
+    <meta property="article:tag" content="User Story">
+    <meta property="article:tag" content="Open Hardware">
+    <meta property="article:tag" content="3D Printing">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/ja/"accesskey="h"
+      title="ホームページ (Alt + H)"
+      aria-label="ホームページ">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="メニュー"
+    aria-label="メニュー"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/ja/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="言語を選択 (Alt + L)"
+          aria-label="言語を選択"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/forged-in-freecad-io-rodeos-open-colorimeter/" title="Forged in FreeCAD - IO Rodeo's Open Colorimeter">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/forged-in-freecad-io-rodeos-open-colorimeter/" title="Forged in FreeCAD - IO Rodeo's Open Colorimeter">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/forged-in-freecad-io-rodeos-open-colorimeter/" title="Forged in FreeCAD - IO Rodeo's Open Colorimeter">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/forged-in-freecad-io-rodeos-open-colorimeter/" title="Forged in FreeCAD - IO Rodeo's Open Colorimeter">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/forged-in-freecad-io-rodeos-open-colorimeter/" title="Forged in FreeCAD - IO Rodeo's Open Colorimeter">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/forged-in-freecad-io-rodeos-open-colorimeter/" title="Forged in FreeCAD - IO Rodeo's Open Colorimeter">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/ja/news/forged-in-freecad-io-rodeos-open-colorimeter/" title="Forged in FreeCAD - IO Rodeo's Open Colorimeter">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="テーマchromaに切り替える (Alt + T)"
+    aria-label="テーマchromaに切り替える"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 80;">
+
+    <h2 class="title"
+      
+      >Forged in FreeCAD - IO Rodeo&#39;s Open Colorimeter</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2025-06-23T00:00:00Z">2025年6月23日</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/ja/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/ja/categories/showcase/">Showcase (30)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/ja/tags/user-story/">User Story (22)</a><a href="/Website/pr-16/ja/tags/open-hardware/">Open Hardware (5)</a><a href="/Website/pr-16/ja/tags/3d-printing/">3D Printing (15)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>274 語</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>2 分</span></div></section><div class="content"><div class="image-with-popover">
+      <figure><button aria-label="画像を拡大" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/forged-in-freecad-io-rodeos-open-colorimeter/opencolorimeter.png"
+  alt="Opencolorimeter"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="904"
+  height="646"
+    srcset="/Website/pr-16/news/forged-in-freecad-io-rodeos-open-colorimeter/opencolorimeter_hu_784c68051cf73f67.webp 500w, /Website/pr-16/news/forged-in-freecad-io-rodeos-open-colorimeter/opencolorimeter.png 904w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Opencolorimeter</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="画像ビューアを閉じる">
+            <img src="/Website/pr-16/news/forged-in-freecad-io-rodeos-open-colorimeter/opencolorimeter.png"
+              title="Opencolorimeter"
+              alt="Opencolorimeter"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>It&rsquo;s always fabulous to see open hardware, even more wonderful when the tool chain to make the hardware is open, and lastly, great when people have used FreeCAD as part of their fascinating projects.</p>
+<p>The <a href="https://iorodeo.com/pages/open-colorimeter"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Open Colorimeter<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> from <a href="https://iorodeo.com/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">IO Rodeo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> is a device allowing for the measurement of the intensity of color in a given sample. It achieves this by measuring the absorbance of light of a known wavelength as it&rsquo;s passed through a sample in a container called a cuvette. These techniques can be used for a wide variety of science and just glancing at some of the tutorials on the IO ROdeo site we can see it has many research applications.</p>
+<ul>
+<li>Measuring ammonia, nitrate or nitrite with API test kits</li>
+<li>Turbidity measurements</li>
+<li>Community-developed lab for measuring active carbon in soil</li>
+<li>Community-developed lab for measuring proteins</li>
+</ul>
+<p>It&rsquo;s a really capable and neat design and uses an existing product, the Adafruit PyBadge which is pre programmed with a custom firmware in Circuitpython. Attached to this is an Adafruit Light sensor and you can choose a specific wavelength value of LED module as a light source. It&rsquo;s all neatly wrapped up in a 3D printed enclosure, of course modelled in FreeCAD.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="画像を拡大" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/forged-in-freecad-io-rodeos-open-colorimeter/colorimeter_cropped.png"
+  alt="Colorimeter cropped"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="823"
+  height="655"
+    srcset="/Website/pr-16/news/forged-in-freecad-io-rodeos-open-colorimeter/colorimeter_cropped_hu_c5ac917585e4da75.webp 500w, /Website/pr-16/news/forged-in-freecad-io-rodeos-open-colorimeter/colorimeter_cropped.png 823w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Colorimeter cropped</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="画像ビューアを閉じる">
+            <img src="/Website/pr-16/news/forged-in-freecad-io-rodeos-open-colorimeter/colorimeter_cropped.png"
+              title="Colorimeter cropped"
+              alt="Colorimeter cropped"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>IO Rodeo sell the devices as complete preflashed systems but glancing over the<a href="https://github.com/iorodeo/open_colorimeter"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener"> repo <svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>every bit of the source is their for you to build one youself should you need too. As it requires no laptop and is a totally standalone device we imagine it&rsquo;s incredibly useful not only in education but also out in the field. Rounded out with <a href="https://certification.oshwa.org/us002138.html"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">OSHWA certification<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> it&rsquo;s a fantastic project and we wish them well.</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/ja/news/wip-wednesday-25-june-2025/"
+             title="次の記事"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday, 25 June 2025</a><a class="page-item prev"
+             href="/Website/pr-16/ja/news/kiconnect-at-kicon-new-interoperability-between-freecad-and-kicad/"
+             title="前の記事">KiConnect at KiCon, New interoperability between FreeCAD and KiCad<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="トップへ"
+  title="トップへ (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/ja/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/ja/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/ja/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/ja/authors/">著者一覧</a>
+                      </li><li>
+                        <a href="/Website/pr-16/ja/categories/">カテゴリ一覧</a>
+                      </li><li>
+                        <a href="/Website/pr-16/ja/tags/">タグ一覧</a>
+                      </li><li>
+                        <a href="/Website/pr-16/ja/versions/">バージョン一覧</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/ja/fedishare.html#title=Forged&#43;in&#43;FreeCAD&#43;-&#43;IO&#43;Rodeo%27s&#43;Open&#43;Colorimeter&amp;description=&#43;It%E2%80%99s&#43;always&#43;fabulous&#43;to&#43;see&#43;open&#43;hardware%2C&#43;even&#43;more&#43;wonderful&#43;when&#43;the&#43;tool&#43;chain&#43;to&#43;make&#43;the&#43;hardware&#43;is&#43;open%2C&#43;and&#43;lastly%2C&#43;great&#43;when&#43;people&#43;have&#43;used&#43;FreeCAD&#43;as&#43;part&#43;of&#43;their&#43;fascinating&#43;projects.&#43;%E2%80%A6%0A%23user-story&#43;%23open-hardware&#43;%233d-printing&amp;url=https://FreeCAD.github.io/Website/pr-16/ja/news/forged-in-freecad-io-rodeos-open-colorimeter/"
+  title="共有 Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/ja/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

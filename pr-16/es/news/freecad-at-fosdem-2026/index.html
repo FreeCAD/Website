@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es-ES"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | FreeCAD at FOSDEM 2026</title>
+  <meta name="description" content="Tu propio modelador paramétrico libre y de código abierto"><meta name="keywords" content="FOSDEM, community"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/es/news/freecad-at-fosdem-2026/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/freecad-at-fosdem-2026/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/freecad-at-fosdem-2026/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/freecad-at-fosdem-2026/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/freecad-at-fosdem-2026/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/freecad-at-fosdem-2026/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/freecad-at-fosdem-2026/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/freecad-at-fosdem-2026/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/es/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/es/news/freecad-at-fosdem-2026/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="FreeCAD at FOSDEM 2026">
+  <meta property="og:description" content="Fosdem booth 26 chennes shot FOSDEM fell on the 31st January and the 1st of February this year and, as ever, FreeCAD had a presence at the excellent event in numerous ways.">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2026-02-12T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:47:39+02:00">
+    <meta property="article:tag" content="FOSDEM">
+    <meta property="article:tag" content="Community">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/es/"accesskey="h"
+      title="Inicio (Alt + H)"
+      aria-label="Inicio">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menú"
+    aria-label="Menú"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/es/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Elegir idioma (Alt + L)"
+          aria-label="Elegir idioma"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/freecad-at-fosdem-2026/" title="FreeCAD at FOSDEM 2026">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/freecad-at-fosdem-2026/" title="FreeCAD at FOSDEM 2026">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/es/news/freecad-at-fosdem-2026/" title="FreeCAD at FOSDEM 2026">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/freecad-at-fosdem-2026/" title="FreeCAD at FOSDEM 2026">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/freecad-at-fosdem-2026/" title="FreeCAD at FOSDEM 2026">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/freecad-at-fosdem-2026/" title="FreeCAD at FOSDEM 2026">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/freecad-at-fosdem-2026/" title="FreeCAD at FOSDEM 2026">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Cambiar tema chroma (Alt + T)"
+    aria-label="Cambiar tema chroma"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 40;">
+
+    <h2 class="title"
+      
+      >FreeCAD at FOSDEM 2026</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2026-02-12T00:00:00Z">12 de febrero de 2026</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/es/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/es/categories/event/">Event (22)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/es/tags/fosdem/">FOSDEM (7)</a><a href="/Website/pr-16/es/tags/community/">Community (10)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>689 palabras</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>4 min</span></div></section><div class="content"><div class="image-with-popover">
+      <figure><button aria-label="Ampliar imagen" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/freecad-at-fosdem-2026/fosdem_booth_26_chennes_shot.jpg"
+  alt="Fosdem booth 26 chennes shot"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1280"
+  height="960"
+    srcset="/Website/pr-16/news/freecad-at-fosdem-2026/fosdem_booth_26_chennes_shot_hu_3679fa559475c17b.webp 500w, /Website/pr-16/news/freecad-at-fosdem-2026/fosdem_booth_26_chennes_shot_hu_2f9d01ddcae7ab73.webp 1000w, /Website/pr-16/news/freecad-at-fosdem-2026/fosdem_booth_26_chennes_shot.jpg 1280w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Fosdem booth 26 chennes shot</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes">
+            <img src="/Website/pr-16/news/freecad-at-fosdem-2026/fosdem_booth_26_chennes_shot.jpg"
+              title="Fosdem booth 26 chennes shot"
+              alt="Fosdem booth 26 chennes shot"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>FOSDEM fell on the 31<sup>st</sup> January and the 1<sup>st</sup> of February this year and, as ever, FreeCAD had a presence at the excellent event in numerous ways.</p>
+<p>Once again our main visible presence was on the joint FreeCAD and KiCad booth in the AW building which, as ever, saw great footfall. Many people moving through the AW building stopped for a chat as they know FreeCAD or KiCad but also we met a lot of people not knowing either project. It&rsquo;s always fun when they ask &ldquo;are we the same company&rdquo; or &ldquo;is it the same project&rdquo; and we can explain, &ldquo;no we are two separate organisations who just really like each other and co-operate&rdquo;! Something those who are less used to opensource find quite amazing!</p>
+<p>The booth was crewed excellently both days by a range of FreeCAD and KiCad community members and lot&rsquo;s of brilliant conversations happened. To nudge the conversations along we had numerous brilliant examples of projects built with FreeCAD and KiCad on the table.</p>
+<p>Once again we had some excellent examples of tiny satellites and related electronics on display from our friends and colleagues at the Libre Space Foundation. People were amazed to see the diminutive<a href="https://libre.space/projects/qubik/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener"> Qubik pocketcube satellite<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, a fully operational satellite that has flown on orbit that measures only 50mm cubed.</p>
+<div style="position: relative; padding-top: 56.25%;">
+        <iframe allowfullscreen
+          width="100%"
+          height="100%"
+          frameborder="0"
+          loading="eager"
+          title="1/1000th scale Stonehenge in SMD!"
+          sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+          style="position: absolute; inset: 0px;"
+          src="https://makertube.net/videos/embed/6KDr2Qrk8Sbd9kpd4jNeiD?autoplay=0&amp;controlBar=1&amp;loop=0&amp;muted=0&amp;p2p=1&amp;peertubeLink=1&amp;title=1&amp;warningTitle=1"
+        ></iframe>
+      </div>
+<p>We also had an excellent project from <a href="https://mastodon.social/@cccpresser@chaos.social"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">@cccpresser<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, a wonderful KiCad designed PCB mounted on a CNC brass base unit, which was milled using FreeCAD CAM WB. The PCB was an astonishingly accurate 1/1000 replica of Stonehenge with the henge blocks being built out of a collection of SMD components including LED&rsquo;s. An amazing and beautiful example of what can be achieved with our projects.</p>
+<div style="position: relative; padding-top: 56.25%;">
+        <iframe allowfullscreen
+          width="100%"
+          height="100%"
+          frameborder="0"
+          loading="eager"
+          title="A short clip of the Micro Manipulator set up as a microscope, moveing small salt crystals  on the stage."
+          sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+          style="position: absolute; inset: 0px;"
+          src="https://makertube.net/videos/embed/52EPfQjieiG1rYvLDbXRDA?autoplay=0&amp;controlBar=1&amp;loop=0&amp;muted=0&amp;p2p=1&amp;peertubeLink=1&amp;title=1&amp;warningTitle=1"
+        ></iframe>
+      </div>
+<p>A big draw item on the booth was the excellent display of the opensource <a href="https://github.com/0x23/MicroManipulatorStepper"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Micro Manipulators from Diffraction Limited<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>. These micro manipulators are capable of sub micron resolution and have had pretty wide coverage online, <a href="https://hackaday.com/2025/09/04/designing-an-open-source-micro-manipulator/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">for example on Hackaday.com<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>. It was fabulous to have 2 of these machines set up and running on the desk, with one being an excellent microscope setup where you could move tiny salt crystals around on the stage. Massive thanks to Manu for travelling over to FOSDEM and being extremely busy on the booth showing off the project.</p>
+<div style="position: relative; padding-top: 56.25%;">
+        <iframe allowfullscreen
+          width="100%"
+          height="100%"
+          frameborder="0"
+          loading="eager"
+          title="Diffraction Limited Choreographed Micro Manipulator"
+          sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+          style="position: absolute; inset: 0px;"
+          src="https://makertube.net/videos/embed/smgLQBXVdzzpum57VeM1r2?autoplay=0&amp;controlBar=1&amp;loop=0&amp;muted=0&amp;p2p=1&amp;peertubeLink=1&amp;title=1&amp;warningTitle=1"
+        ></iframe>
+      </div>
+<p>Previously our friends an colleagues at KiCad have voluntarily been the devroom managers for the <a href="https://fosdem.org/2026/schedule/track/open-hardware-and-cadcam/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Open Hardware CAD/CAM dev room<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> talk track at FOSDEM. This year however it was FreeCAD teamsters @chennes and @concretedog who took over the reigns aided and abetted by Kliment and others. It&rsquo;s a fair amount of work to collate and review all the talk proposals (thanks volunteer review team members) but we were pleased to have a really nice range of excellent talks in the room. There are lots of favourites and we enjoyed them all, you can check out the FOSDEM site to view all the talks from all the rooms. Just as a flavour we enjoyed hosting Ryan Walker speaking on &ldquo;<a href="https://fosdem.org/2026/schedule/event/WDCDC3-the_blackpants_are_pants_for_your_blackhat/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">The Blackpants are Pants for your Blackhat<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>&rdquo; a story about the design and development of an enhanced Flipper Zero style device. It was  also great to hear Morgan speaking about his development of <a href="https://git.oit.cloud/morgan/kiconnect"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">KiConnect<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, a FreeCAD workbench that powerfully allows for push pull interaction between FreeCAD and KiCad.</p>
+<figure>
+  <video
+    preload="metadata"
+    controls
+    playsinline
+    loading="lazy"
+    ><source src="https://video.fosdem.org/2026/h1309/JAH78J-kiconnect-one-year.av1.webm">Tu navegador no admite la etiqueta de vídeo.</video>
+</figure>
+<p>Of course we also had the main project updates for<a href="https://fosdem.org/2026/schedule/event/XPFS8X-freecad-state-of-affairs/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener"> FreeCAD from Yorik<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, and <a href="https://fosdem.org/2026/schedule/event/WDEHKY-kicad_status/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">KiCad from Wayne<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> which were incredibly packed talks with the queue for the Open Hardware devroom stretching to over 100 people deep. Thanks to everyone for their patience about access to the devroom in this period as we need to be mindful of fire regulations and our capacity caps.</p>
+<figure>
+  <video
+    preload="metadata"
+    controls
+    playsinline
+    loading="lazy"
+    ><source src="https://video.fosdem.org/2026/h1309/XPFS8X-freecad-state-of-affairs.av1.webm">Tu navegador no admite la etiqueta de vídeo.</video>
+</figure>
+<p>It was once again an excellent event for us and great to meet and mingle with so many FreeCAD users, developers and those curious to try it out. It&rsquo;s an intense weekend of activity and we&rsquo;d like to thank everyone who gave up their time to come and support. We look forward to next year!</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Ampliar imagen" popovertarget="img-002"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/freecad-at-fosdem-2026/club_mate.webp"
+  alt="Club mate"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1692"
+  height="951"
+    srcset="/Website/pr-16/news/freecad-at-fosdem-2026/club_mate_hu_1ec921a8889c9617.webp 500w, /Website/pr-16/news/freecad-at-fosdem-2026/club_mate_hu_d1f92d77d9148d61.webp 1000w, /Website/pr-16/news/freecad-at-fosdem-2026/club_mate.webp 1692w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Club mate</figcaption></figure><div id="img-002" popover>
+          <button class="close"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes">
+            <img src="/Website/pr-16/news/freecad-at-fosdem-2026/club_mate.webp"
+              title="Club mate"
+              alt="Club mate"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div>
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/es/news/wip-wednesday-18-february-2026/"
+             title="Artículo siguiente"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday, 18 February 2026</a><a class="page-item prev"
+             href="/Website/pr-16/es/news/wip-wednesday-11-february-2026/"
+             title="Artículo anterior">WIP Wednesday, 11 February 2026<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Ir al inicio"
+  title="Ir al inicio (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/es/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/es/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/es/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/es/authors/">Autores</a>
+                      </li><li>
+                        <a href="/Website/pr-16/es/categories/">Categorías</a>
+                      </li><li>
+                        <a href="/Website/pr-16/es/tags/">Etiquetas</a>
+                      </li><li>
+                        <a href="/Website/pr-16/es/versions/">Versiones</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/es/fedishare.html#title=FreeCAD&#43;at&#43;FOSDEM&#43;2026&amp;description=&#43;FOSDEM&#43;fell&#43;on&#43;the&#43;31st&#43;January&#43;and&#43;the&#43;1st&#43;of&#43;February&#43;this&#43;year&#43;and%2C&#43;as&#43;ever%2C&#43;FreeCAD&#43;had&#43;a&#43;presence&#43;at&#43;the&#43;excellent&#43;event&#43;in&#43;numerous&#43;ways.%0AOnce&#43;again&#43;our&#43;main&#43;visible&#43;presence&#43;was&#43;on&#43;the&#43;joint&#43;%E2%80%A6%0A%23fosdem&#43;%23community&amp;url=https://FreeCAD.github.io/Website/pr-16/es/news/freecad-at-fosdem-2026/"
+  title="Compartir en Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/es/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

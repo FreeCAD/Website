@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="fr-FR"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Tutorial - Getting Started with TechDraw</title>
+  <meta name="description" content="Votre modeleur paramétrique libre et open-source"><meta name="keywords" content="TechDraw"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/fr/news/tutorial-getting-started-with-techdraw/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/tutorial-getting-started-with-techdraw/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/tutorial-getting-started-with-techdraw/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/tutorial-getting-started-with-techdraw/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/tutorial-getting-started-with-techdraw/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/tutorial-getting-started-with-techdraw/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/tutorial-getting-started-with-techdraw/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/tutorial-getting-started-with-techdraw/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/fr/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/fr/news/tutorial-getting-started-with-techdraw/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Tutorial - Getting Started with TechDraw">
+  <meta property="og:description" content="Sometimes we might need to share a 3D design in the form of a 2D technical drawing. FreeCAD has an entire workbench, TechDraw, with a collection of tools to help you do this.">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2025-10-10T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:47:39+02:00">
+    <meta property="article:tag" content="TechDraw">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/fr/"accesskey="h"
+      title="Accueil (Alt + H)"
+      aria-label="Accueil">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/fr/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choisir la langue (Alt + L)"
+          aria-label="Choisir la langue"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/tutorial-getting-started-with-techdraw/" title="Tutorial - Getting Started with TechDraw">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/tutorial-getting-started-with-techdraw/" title="Tutorial - Getting Started with TechDraw">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/tutorial-getting-started-with-techdraw/" title="Tutorial - Getting Started with TechDraw">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/fr/news/tutorial-getting-started-with-techdraw/" title="Tutorial - Getting Started with TechDraw">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/tutorial-getting-started-with-techdraw/" title="Tutorial - Getting Started with TechDraw">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/tutorial-getting-started-with-techdraw/" title="Tutorial - Getting Started with TechDraw">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/tutorial-getting-started-with-techdraw/" title="Tutorial - Getting Started with TechDraw">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Changer le thème (Alt + T)"
+    aria-label="Changer le thème"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 100;">
+
+    <h2 class="title"
+      
+      >Tutorial - Getting Started With TechDraw</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2025-10-10T00:00:00Z">10 octobre 2025</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/fr/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/fr/categories/tutorial/">Tutorial (26)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/fr/tags/techdraw/">TechDraw (4)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>1352 mots</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>7 min</span></div></section><div class="content"><p>Sometimes we might need to share a 3D design in the form of a 2D technical drawing. FreeCAD has an entire workbench, TechDraw, with a collection of tools to help you do this.</p>
+<p>To explore TechDraw we need to have an object that we want to make a technical drawing of. Let&rsquo;s just quickly create an object. On the FreeCAD start page click the &ldquo;Parametric Part&rdquo; option from the &ldquo;New File&rdquo; window. This creates a new file and jumps to the Part Design workbench and creates an active body. Click the &ldquo;tasks&rdquo; tab and select to &ldquo;Create sketch&rdquo; or click the &ldquo;Create sketch icon&rdquo;. Let&rsquo;s select to draw our sketch in the XY plane.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-getting-started-with-techdraw/some_constraints.png"
+  alt="Some constraints"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="970"
+  height="625"
+    srcset="/Website/pr-16/news/tutorial-getting-started-with-techdraw/some_constraints_hu_44a9cead03422973.webp 500w, /Website/pr-16/news/tutorial-getting-started-with-techdraw/some_constraints.png 970w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Some constraints</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/tutorial-getting-started-with-techdraw/some_constraints.png"
+              title="Some constraints"
+              alt="Some constraints"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Draw a sketch similar to the one in our image. We simply used the &ldquo;Create polyline&rdquo; tool to draw the outside line using the &ldquo;M&rdquo; key to toggle to change to an arc line for the curved corner. Don&rsquo;t worry too much about your design. We drew a circle inside our perimeter polyline to help show some Tech Draw features later on. We don&rsquo;t need to constrain our sketch fully for this example, but let&rsquo;s give the base line of the sketch a length constraint  and set a diameter for the internal circle. We just constrained these to the sizes they are as drawn. Close the sketch and let&rsquo;s pad the sketch to the default 10mm.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-getting-started-with-techdraw/general_item.png"
+  alt="General item"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1920"
+  height="1080"
+    srcset="/Website/pr-16/news/tutorial-getting-started-with-techdraw/general_item_hu_822d34084afee5dd.webp 500w, /Website/pr-16/news/tutorial-getting-started-with-techdraw/general_item_hu_2bcdd5dc2fbc545b.webp 1000w, /Website/pr-16/news/tutorial-getting-started-with-techdraw/general_item.png 1920w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>General item</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/tutorial-getting-started-with-techdraw/general_item.png"
+              title="General item"
+              alt="General item"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Next let&rsquo;s left click the workbench drop down menu and select to move to TechDraw. On first launch in a new project there will only be two tool icons that are selectable. &ldquo;Insert Default Page&rdquo; and &ldquo;Insert Page using Template&rdquo;. First let&rsquo;s left click on &ldquo;Insert Default Page&rdquo;. You&rsquo;ll notice a new object &ldquo;Page&rdquo; appear in the file tree and you should see a blank white page launched in a new tab in the preview area. For the sake of exploration, single left click on the &ldquo;Page&rdquo; object and let&rsquo;s delete it. In turn click the &ldquo;Insert Page using Template&rdquo; option. You should see a &ldquo;Select a Template File&rdquo; window appear containing lots of different template options. These are listed with paper sizes so &ldquo;A4&rdquo; or &ldquo;A3&rdquo; and more, and also different standards such as ANSI A, ANSI B, ISO5457 and more. Let&rsquo;s select &ldquo;A3_Landscape_ISO5457_minimal.svg&rdquo; and click &ldquo;open&rdquo;. This again creates a &ldquo;Page&rdquo; item in the tree and launches the blank template in a new tab. This template has some standard fields added in the lower right hand corner which, of course, can be edited with your project drawings details. Double left clicking on an editable field launches a small dialogue where you can edit the field with your details.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-002"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-getting-started-with-techdraw/insert_view_first_click.png"
+  alt="Insert view first click"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1831"
+  height="957"
+    srcset="/Website/pr-16/news/tutorial-getting-started-with-techdraw/insert_view_first_click_hu_1200e074e8dff9a9.webp 500w, /Website/pr-16/news/tutorial-getting-started-with-techdraw/insert_view_first_click_hu_393a713938c24a1.webp 1000w, /Website/pr-16/news/tutorial-getting-started-with-techdraw/insert_view_first_click.png 1831w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Insert view first click</figcaption></figure><div id="img-002" popover>
+          <button class="close"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/tutorial-getting-started-with-techdraw/insert_view_first_click.png"
+              title="Insert view first click"
+              alt="Insert view first click"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Left click back onto the tab containing our padded part. In the file tree left click to highlight the &ldquo;Pad&rdquo; part and then left click the &ldquo;Insert View&rdquo; tool icon. You should now see, irregardless of the orientation of the part in the preview window, a front view created in the technical drawing page. In the task tab a dialogue titled &ldquo;Projection Group&rdquo; appears. In this dialogue you can perform numerous adjustments to your inserted views. You should see a cluster of tick boxes and you can tick these boxes to add corresponding views into your technical drawing. If you leave the &ldquo;auto distribute&rdquo; box ticked then you can use the X Spacing and Y Spacing inputs to increase or reduce spacing between the view. Likewise you can adjust the scale of the drawing by setting the &ldquo;Scale&rdquo; drop down to &ldquo;Custom&rdquo; and then adjusting the ratio. You can also flip the axis of the projected group to create custom layouts. Notice you can also switch between first angle projection and third angle projection. A good primer on orthographic views, first angle and third angle projection can be found on <a href="https://en.wikipedia.org/wiki/Multiview_orthographic_projection"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Wikipedia here<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>.</p>
+<p>Note that if you manipulate the scale, or the projection angle those fields in the template page will not update automatically. We can edit the scale fields but we can&rsquo;t easily edit the angle projection symbol as these are set as part of the specific template.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-003"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-getting-started-with-techdraw/view_frames_on.png"
+  alt="View frames on"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1136"
+  height="810"
+    srcset="/Website/pr-16/news/tutorial-getting-started-with-techdraw/view_frames_on_hu_c7169a25578c8b1b.webp 500w, /Website/pr-16/news/tutorial-getting-started-with-techdraw/view_frames_on_hu_789342846854a681.webp 1000w, /Website/pr-16/news/tutorial-getting-started-with-techdraw/view_frames_on.png 1136w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>View frames on</figcaption></figure><div id="img-003" popover>
+          <button class="close"
+            popovertarget="img-003"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/tutorial-getting-started-with-techdraw/view_frames_on.png"
+              title="View frames on"
+              alt="View frames on"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Select some views, and then click OK to close the &ldquo;Projection Group&rdquo; dialogue. You&rsquo;ll notice that the individual views inserted into the page are labelled with a view description &ldquo;front left&rdquo; &ldquo;Bottom&rdquo; etc and that they are surrounded by a dashed line. Whilst this view is enabled we can move the entire cluster of projection views by moving the main &ldquo;Front&rdquo; view. Left click on the &ldquo;Front&rdquo; view frame and drag to move the entire group. If we click and drag an individual view frame we can move it limited to the axis the view is projected on. For example if we click and drag the &ldquo;Left001&rdquo; view we can only drag it left and right in the page. This is because it would be easy to place a view in an incorrect projection area otherwise, leading to errors when reading the technical drawing. A note on view placement is that if you double click to reopen the &ldquo;ProjGroup&rdquo; item and you keep the &ldquo;Auto Distribute&rdquo; option ticked then whenever you click &ldquo;OK&rdquo; or &ldquo;Apply&rdquo; any views you have moved in the page will reset to there original positions.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-004"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-getting-started-with-techdraw/some_dimensional_labels.png"
+  alt="Some dimensional labels"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="423"
+  height="464"
+    srcset="/Website/pr-16/news/tutorial-getting-started-with-techdraw/some_dimensional_labels.png 423w"
+    sizes="75vw"></button><figcaption>Some dimensional labels</figcaption></figure><div id="img-004" popover>
+          <button class="close"
+            popovertarget="img-004"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/tutorial-getting-started-with-techdraw/some_dimensional_labels.png"
+              title="Some dimensional labels"
+              alt="Some dimensional labels"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>We can toggle the view frames on and off using the &ldquo;Turn View Frames On/Off&rdquo; tool icon which also then tends to act as a positional lock for the views. We can now begin to add some dimensions and other information to our technical drawing. Left click on the base line of the &ldquo;Front&rdquo; view object and then click the &ldquo;Insert Dimension&rdquo; tool. This tool should look familiar to you as it uses the style and naming conventions used by the equivalent tool in the sketcher workbench. The &ldquo;Insert Dimension&rdquo; tool should correctly guess you are wanting to add a length dimension and should insert and allow you to place this dimension.</p>
+<p>Rather nicely now you can experiment with going back to the sketch of the original item and changing the length constraint for the base of the item, changes should be pushed automatically through to the dimensions in your technical drawing. Changing our, as drawn, 72.36mm length constraint to 78mm, we can see that this value is updated in the technical drawing. Next lets click the &ldquo;Insert Dimension&rdquo; tool and select the circle/hole in the front view. This should automatically add a diameter dimension that can be placed attached to the circle. However unlike in a sketch, you may notice that we don&rsquo;t have a circle centre mark we can use as a reference for the position of the circle centre. Click the Front View and in the &ldquo;View&rdquo; tab under the &ldquo;Decoration&rdquo; heading, toggle the &ldquo;Arc Centre Marks&rdquo; value to &ldquo;True&rdquo;. You should now have a centre mark in both the circle and for the arc made as part of the part outline. You can then select the centre mark, and another point and create length dimensions to describe the position of the centre of your hole.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-005"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-getting-started-with-techdraw/balloon.png"
+  alt="Balloon"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="489"
+  height="329"
+    srcset="/Website/pr-16/news/tutorial-getting-started-with-techdraw/balloon.png 489w"
+    sizes="75vw"></button><figcaption>Balloon</figcaption></figure><div id="img-005" popover>
+          <button class="close"
+            popovertarget="img-005"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/tutorial-getting-started-with-techdraw/balloon.png"
+              title="Balloon"
+              alt="Balloon"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Sometimes in technical drawings it can be useful to add labels and text descriptions that aren&rsquo;t particularly a dimension or other imported linked value, a good option for this is to use the &ldquo;Insert Balloon Annotation&rdquo;. Left click on the tool and then click on the technical drawing where you would like the pointer attached to the annotation to be. A simple pointer line and circular text balloon will appear. We can then double click on this and the &ldquo;Balloon&rdquo; dialogue will appear. In this dialogue we can add our text, and also manipulate other settings, balloon shape, font, colour and more to meet our need.</p>
+<p>There&rsquo;s lot&rsquo;s left to explore on the TechDraw workbench, but you probably know enough now to explore further features, it&rsquo;s also definitely worth looking at the official <a href="https://wiki.freecad.org/Category:TechDraw"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">TechDraw documentation <svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>which has lot&rsquo;s of information on all the TechDraw tooling. Finally you can export your technical drawing at any time by clicking either the &ldquo;Export Page as SVG&rdquo; or &ldquo;Export Page as DXF&rdquo; tool icons.</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/fr/news/job-offer-competition-co-ordinator/"
+             title="Article suivant"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>Job Offer - Competition Co-ordinator</a><a class="page-item prev"
+             href="/Website/pr-16/fr/news/wip-wednesday-8-october-2025/"
+             title="Article précédent">WIP Wednesday, 8 October 2025<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Aller au sommet de la page"
+  title="Aller au sommet de la page (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/fr/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/fr/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/fr/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/fr/authors/">Auteurs</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/categories/">Catégories</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/tags/">Mots-Clés</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/versions/">Versions</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/fr/fedishare.html#title=Tutorial&#43;-&#43;Getting&#43;Started&#43;with&#43;TechDraw&amp;description=Sometimes&#43;we&#43;might&#43;need&#43;to&#43;share&#43;a&#43;3D&#43;design&#43;in&#43;the&#43;form&#43;of&#43;a&#43;2D&#43;technical&#43;drawing.&#43;FreeCAD&#43;has&#43;an&#43;entire&#43;workbench%2C&#43;TechDraw%2C&#43;with&#43;a&#43;collection&#43;of&#43;tools&#43;to&#43;help&#43;you&#43;do&#43;this.%0ATo&#43;explore&#43;TechDraw&#43;we&#43;%E2%80%A6%0A%23techdraw&amp;url=https://FreeCAD.github.io/Website/pr-16/fr/news/tutorial-getting-started-with-techdraw/"
+  title="Partager sur Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/fr/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

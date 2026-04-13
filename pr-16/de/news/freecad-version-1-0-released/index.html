@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="de-DE"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | FreeCAD Version 1.0 Released</title>
+  <meta name="description" content="Dein eigener freier und Open-Source parametrischer Modellierer"><meta name="keywords" content="release"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/de/news/freecad-version-1-0-released/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/freecad-version-1-0-released/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/freecad-version-1-0-released/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/freecad-version-1-0-released/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/freecad-version-1-0-released/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/freecad-version-1-0-released/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/freecad-version-1-0-released/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/freecad-version-1-0-released/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/de/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/de/news/freecad-version-1-0-released/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="FreeCAD Version 1.0 Released">
+  <meta property="og:description" content="After more than twenty years of intense and sustained development, the FreeCAD community is proud to announce the release of version 1.0. FreeCAD 1.0 is now available for download on all platforms .">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2024-11-19T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:47:39+02:00">
+    <meta property="article:tag" content="Release">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/de/"accesskey="h"
+      title="Home (Alt + H)"
+      aria-label="Home">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menü"
+    aria-label="Menü"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/de/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Sprache auswählen (Alt + L)"
+          aria-label="Sprache auswählen"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/freecad-version-1-0-released/" title="FreeCAD Version 1.0 Released">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/freecad-version-1-0-released/" title="FreeCAD Version 1.0 Released">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/freecad-version-1-0-released/" title="FreeCAD Version 1.0 Released">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/freecad-version-1-0-released/" title="FreeCAD Version 1.0 Released">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/freecad-version-1-0-released/" title="FreeCAD Version 1.0 Released">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/de/news/freecad-version-1-0-released/" title="FreeCAD Version 1.0 Released">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/freecad-version-1-0-released/" title="FreeCAD Version 1.0 Released">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Design wechseln (Alt + T)"
+    aria-label="Design wechseln"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 20;">
+
+    <h2 class="title"
+      
+      >FreeCAD Version 1.0 Released</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2024-11-19T00:00:00Z">19. November 2024</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/de/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/de/categories/announcement/">Announcement (94)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/de/tags/release/">Release (16)</a></span><span class="meta versions"><svg class="icon-versions"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/versions.svg#versions"></use>
+  </svg><a href="/Website/pr-16/de/versions/1.0/">1.0 (4)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>833 Wörter</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>4 Minuten</span></div><figure class="article-cover"><img srcset="/Website/pr-16/news/freecad-version-1-0-released/motor_hu_d3e8d3676c851a47.webp 500w, /Website/pr-16/news/freecad-version-1-0-released/motor_hu_ef9df39109c102ac.webp 1000w, /Website/pr-16/news/freecad-version-1-0-released/motor.webp 2560w"
+        sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"
+        src="/Website/pr-16/news/freecad-version-1-0-released/motor.webp"
+        title="a cover caption"
+        alt="Ersatzbild"
+        width="2560"
+        height="1440"
+        loading="eager"
+        fetchpriority="high"><figcaption>
+        <div class="internal-tooltip"><svg class="icon-important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/important.svg#important"></use>
+  </svg><span class="tooltip">a cover caption</span>
+        </div>
+      </figcaption></figure></section><div class="content"><p>After more than twenty years of intense and sustained development, the FreeCAD community is proud to announce the release of version 1.0. FreeCAD 1.0 is now <a href="https://www.freecad.org/downloads.php"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">available for download on all platforms<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>.</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/x5oXSGhK7EY?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="FreeCAD 1.0 release trailer"></iframe>
+    </div>
+
+<p>In software development, version 1 usually means: our software is now stable and ready for &ldquo;real work&rdquo;. If you are a FreeCAD user, you know that FreeCAD has been ready for real work for years, and is used in productive, professional activity all over the world already. We in fact were tempted many times in the past to cut to the chase, and call the next version 1.0 already!</p>
+<p>But we didn&rsquo;t. Since the very beginnings, the FreeCAD community had a clear view of what 1.0 represented for us. What we wanted in it. FreeCAD matured over the years, and that list narrowed down to just two major remaining pieces: fixing the toponaming problem, and having a built-in assembly module.</p>
+<p>Well, I&rsquo;m very proud to say those two issues are now solved. Not finished, mind you, not the perfect, bug-free, faultless features we all want, but reaching that level takes time and effort. That will be our job from now on. What we have now is a solid, working, reliable toponaming solution, that is already in action in the Sketcher and PartDesign, and is being progressively extended to everything else. And we have a good and fairly complete assembly workbench that has a shiny new solver that comes, if you can believe it, from &ldquo;the other FreeCAD&rdquo;. Read the full <a href="https://wiki.freecad.org/Release_notes_1.0"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">release notes<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> to learn more about all this.</p>
+<p>This version 1.0 is not a finished product, simply because FreeCAD is not a product. It&rsquo;s our project, our baby, our passion, our tool. Version 1.0 is our achievement. All of us who worked on it, from the ones who helped raise the project on its feet and are not participating anymore to people who just came to help finishing translations for this release, we worked hard for this, we deserved this, and this 1.0 means: we&rsquo;ve done it.</p>
+<p>I hope you&rsquo;ll enjoy using this new version! If this is your first contact with FreeCAD, be sure to check the <a href="https://wiki.freecad.org/Main_Page"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">documentation<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, the <a href="https://wiki.freecad.org/Manual:Introduction"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">manual<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, the <a href="https://wiki.freecad.org/Tutorials"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">tutorials<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> and everything the community has prepared to help you get started! ~ Yorik</p>
+<p>With the release of version 1.0 we wanted to provide an executive summary as a quicker read of the Version 1.0 release notes. The full Version 1.0 release notes are available on the <a href="https://wiki.freecad.org/Release_notes_1.0"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">FreeCAD Wiki<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, and a nice, <a href="https://librearts.org/2024/11/freecad-1-0/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">illustrated blog post<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> written by Alex.</p>
+<p>Highlights:</p>
+<ul>
+<li>
+<p>Following a long development process, Realthunders Topological naming problem mitigation algorithm has been incorporated into FreeCAD Version 1.0. This algorithm offers resiliency against topology changes in a parametric chain and a vast improvement of a model&rsquo;s stability.</p>
+</li>
+<li>
+<p>FreeCAD has a new included Assembly workbench which uses the brand-new Ondsel solver.</p>
+</li>
+<li>
+<p>A new logo was chosen by the community members, from community contributed proposals.</p>
+</li>
+<li>
+<p>The user interface has received huge improvements.These include rotational centre indicators, selection item filters, on-model task panel and combo view modes, universal measuring tools, brand-new dark and light themes and much more.</p>
+</li>
+</ul>
+<div class="image-with-popover">
+      <figure><button aria-label="Bild vergrößern" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/freecad-version-1-0-released/part.webp"
+  alt="Image alternative text"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="2560"
+  height="1440"
+    srcset="/Website/pr-16/news/freecad-version-1-0-released/part_hu_641e96ccce4b9440.webp 500w, /Website/pr-16/news/freecad-version-1-0-released/part_hu_43ef350e0f879c89.webp 1000w, /Website/pr-16/news/freecad-version-1-0-released/part.webp 2560w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>This is an image title</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen">
+            <img src="/Website/pr-16/news/freecad-version-1-0-released/part.webp"
+              title="This is an image title"
+              alt="Image alternative text"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Other key improvements:</p>
+<ul>
+<li>
+<p>There are multiple changes and improvements to the Core system. The vector API can now be used in expressions, the new property container _App::VarSet _allows the user to create design variations, along with many more improvements to the Python editor and Python API.</p>
+</li>
+<li>
+<p>A new, streamlined and faster start page replaces the Start Workbench.</p>
+</li>
+<li>
+<p>The Arch workbench has been merged with BIM and is now the BIM workbench with lots of new features and improvements added including native support for IFC documents.</p>
+</li>
+<li>
+<p>The Path workbench has been renamed the CAM workbench with lots of new features including a new CAM simulator.</p>
+</li>
+<li>
+<p>The Draft workbench has a long list of improvements. Grid behaviour has been optimised and appearance options have been increased with many of the Draft workbench tools and approaches receiving extra functionality.</p>
+</li>
+<li>
+<p>The FEM workbench has had a large overhaul with many small but useful changes to tools and functions. The language used on the FEM workbench has been developed to be closer to industrial standard terms.</p>
+</li>
+<li>
+<p>The material handling system has been completely overhauled and a standard system is now in place for further development.</p>
+</li>
+<li>
+<p>The Part workbench has numerous improvements with the Part Scale and Part Mirror tools being two obvious improved tools.</p>
+</li>
+<li>
+<p>The Part Design workbench has received many fixes and additional functionality within the revolution and groove features, as well as significant changes to the Pad tool making it possible to end extrusions at multiple faces and more.</p>
+</li>
+<li>
+<p>The Sketcher workbench has a huge amount of changes and increased functionality and UI improvements. These include &ldquo;dimensioning on the go&rdquo;, contextual Dimension constraint tools, a new Offset tool and more. Cut and Paste including constraints is now available within and across sketches.</p>
+</li>
+<li>
+<p>The TechDraw workbench has numerous new tools: Snapping, a CosmeticCircle tool, an AddOffsetVertex tool and many others.</p>
+</li>
+</ul>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/de/news/wip-wednesday-20-november-2024/"
+             title="Nächster Artikel"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday - 20 November 2024</a><a class="page-item prev"
+             href="/Website/pr-16/de/news/new-grants-varsets-mediawiki-artwork-guidelines-and-icons/"
+             title="Vorheriger Artikel">New Grants - VarSets, Mediawiki, artwork guidelines and icons<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Nach oben"
+  title="Nach oben (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/de/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/de/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/de/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/de/authors/">Autoren</a>
+                      </li><li>
+                        <a href="/Website/pr-16/de/categories/">Kategorien</a>
+                      </li><li>
+                        <a href="/Website/pr-16/de/tags/">Tags</a>
+                      </li><li>
+                        <a href="/Website/pr-16/de/versions/">Versionen</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/de/fedishare.html#title=FreeCAD&#43;Version&#43;1.0&#43;Released&amp;description=After&#43;more&#43;than&#43;twenty&#43;years&#43;of&#43;intense&#43;and&#43;sustained&#43;development%2C&#43;the&#43;FreeCAD&#43;community&#43;is&#43;proud&#43;to&#43;announce&#43;the&#43;release&#43;of&#43;version&#43;1.0.&#43;FreeCAD&#43;1.0&#43;is&#43;now&#43;available&#43;for&#43;download&#43;on&#43;all&#43;platforms&#43;.&#43;%E2%80%A6%0A%23release&amp;url=https://FreeCAD.github.io/Website/pr-16/de/news/freecad-version-1-0-released/"
+  title="Teilen auf Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/de/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

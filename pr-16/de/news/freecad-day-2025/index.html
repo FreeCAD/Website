@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="de-DE"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | FreeCAD Day 2025</title>
+  <meta name="description" content="Dein eigener freier und Open-Source parametrischer Modellierer"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/de/news/freecad-day-2025/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/freecad-day-2025/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/freecad-day-2025/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/freecad-day-2025/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/freecad-day-2025/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/freecad-day-2025/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/freecad-day-2025/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/freecad-day-2025/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/de/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/de/news/freecad-day-2025/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="FreeCAD Day 2025">
+  <meta property="og:description" content="Each year on the Friday before the FOSDEM event, FreeCAD held a “FreeCAD Day” where, after working for a few days directly on FreeCAD in a hackathon style, the day is set up as an Un-conference meaning any presentation or activity can be attached to the agenda. It’s a lovely format that allows for really interesting things to happen. Again this year the pre FOSDEM FreeCAD Day took place in the Ateliers Des Tanneurs building which we share with the KiCad team for a few days before FOSDEM.">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2025-02-16T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:47:39+02:00">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/de/"accesskey="h"
+      title="Home (Alt + H)"
+      aria-label="Home">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menü"
+    aria-label="Menü"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/de/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Sprache auswählen (Alt + L)"
+          aria-label="Sprache auswählen"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/freecad-day-2025/" title="FreeCAD Day 2025">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/freecad-day-2025/" title="FreeCAD Day 2025">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/freecad-day-2025/" title="FreeCAD Day 2025">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/freecad-day-2025/" title="FreeCAD Day 2025">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/freecad-day-2025/" title="FreeCAD Day 2025">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/de/news/freecad-day-2025/" title="FreeCAD Day 2025">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/freecad-day-2025/" title="FreeCAD Day 2025">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Design wechseln (Alt + T)"
+    aria-label="Design wechseln"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 40;">
+
+    <h2 class="title"
+      
+      >FreeCAD Day 2025</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2025-02-16T00:00:00Z">16. Februar 2025</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/de/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/de/categories/event/">Event (22)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>855 Wörter</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>5 Minuten</span></div><figure class="article-cover"><img srcset="/Website/pr-16/news/freecad-day-2025/freecadday_group2025_hu_bae5c10289440cf2.webp 500w, /Website/pr-16/news/freecad-day-2025/freecadday_group2025_hu_8413cbbc9d5f132b.webp 1000w, /Website/pr-16/news/freecad-day-2025/freecadday_group2025.webp 2560w"
+        sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"
+        src="/Website/pr-16/news/freecad-day-2025/freecadday_group2025.webp"
+        title="FreeCAD Day group 2025"
+        alt="Ersatzbild"
+        width="2560"
+        height="1920"
+        loading="eager"
+        fetchpriority="high"><figcaption>
+        <div class="internal-tooltip"><svg class="icon-important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/important.svg#important"></use>
+  </svg><span class="tooltip">FreeCAD Day group 2025</span>
+        </div>
+      </figcaption></figure></section><div class="content"><p>Each year on the Friday before the FOSDEM event, FreeCAD held a &ldquo;FreeCAD Day&rdquo; where, after working for a few days directly on FreeCAD in a hackathon style, the day is set up as an Un-conference meaning any presentation or activity can be attached to the agenda. It&rsquo;s a lovely format that allows for really interesting things to happen. Again this year the pre FOSDEM FreeCAD Day took place in the Ateliers Des Tanneurs building which we share with the KiCad team for a few days before FOSDEM.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Bild vergrößern" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/freecad-day-2025/IMG_20250131_095545.webp"
+  alt="FreeCAD Day 2025 2"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1651"
+  height="928"
+    srcset="/Website/pr-16/news/freecad-day-2025/IMG_20250131_095545_hu_1ed54c00af137719.webp 500w, /Website/pr-16/news/freecad-day-2025/IMG_20250131_095545_hu_bc961d4a481f83ac.webp 1000w, /Website/pr-16/news/freecad-day-2025/IMG_20250131_095545.webp 1651w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>FreeCAD Day 2025 2</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen">
+            <img src="/Website/pr-16/news/freecad-day-2025/IMG_20250131_095545.webp"
+              title="FreeCAD Day 2025 2"
+              alt="FreeCAD Day 2025 2"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Our colleagues in KiCad use their Friday as a &ldquo;Learn to Code for KiCad&rdquo; day and as such a delegation of the FreeCAD team attended the first introductory session. One takeaway from this is how enjoyable, and useful it is, to interact with the KiCad crew a little more with value in the fact that there are lots of FreeCAD user base using KiCad and vice versa.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Bild vergrößern" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/freecad-day-2025/IMG_20250131_104809.webp"
+  alt="FreeCAD Day 2025 3"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="2560"
+  height="1438"
+    srcset="/Website/pr-16/news/freecad-day-2025/IMG_20250131_104809_hu_13d7c9be28a65b50.webp 500w, /Website/pr-16/news/freecad-day-2025/IMG_20250131_104809_hu_6f11c4d1797f1185.webp 1000w, /Website/pr-16/news/freecad-day-2025/IMG_20250131_104809.webp 2560w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>FreeCAD Day 2025 3</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen">
+            <img src="/Website/pr-16/news/freecad-day-2025/IMG_20250131_104809.webp"
+              title="FreeCAD Day 2025 3"
+              alt="FreeCAD Day 2025 3"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Numerous activities and presentations happened over the course of the day. After reassembling in the FreeCAD room Yorik began the presentations with an overview of the annual report from the FPA detailing FPA activity and looking at the themes for the next year. Another highlight of the FreeCAD Day is the near infamous &ldquo;complaints session&rdquo;.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Bild vergrößern" popovertarget="img-002"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/freecad-day-2025/IMG_20250131_113523.webp"
+  alt="FreeCAD Day 2025 4"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="2560"
+  height="1438"
+    srcset="/Website/pr-16/news/freecad-day-2025/IMG_20250131_113523_hu_15f6b7da1936a061.webp 500w, /Website/pr-16/news/freecad-day-2025/IMG_20250131_113523_hu_ab54bb411fd7efb0.webp 1000w, /Website/pr-16/news/freecad-day-2025/IMG_20250131_113523.webp 2560w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>FreeCAD Day 2025 4</figcaption></figure><div id="img-002" popover>
+          <button class="close"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen">
+            <img src="/Website/pr-16/news/freecad-day-2025/IMG_20250131_113523.webp"
+              title="FreeCAD Day 2025 4"
+              alt="FreeCAD Day 2025 4"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>The complaints session is expertly hosted by Kliment and we don&rsquo;t say that lightly. The idea of the session is that anyone can say anything they don&rsquo;t like about FreeCAD and the room doesn&rsquo;t unpack it or respond. Rather, Kliment potentially seeks quick clarifications before summing up the individual complaint in a single concise sentence. These &ldquo;quick fire&rdquo; complaints are all captured in the room on audio recorders and then collated and published after the event. They then can be checked to ascertain if they are known issues with a issue raised or if they need to have an issue assigned. It&rsquo;s an incredibly valuable process and it&rsquo;s also heart warming to look at previous complaint sessions and see how many issues have been solved.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Bild vergrößern" popovertarget="img-003"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/freecad-day-2025/IMG_20250131_130533.webp"
+  alt="FreeCAD Day 2025 5"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="2560"
+  height="1438"
+    srcset="/Website/pr-16/news/freecad-day-2025/IMG_20250131_130533_hu_ea4b49d42a57cb97.webp 500w, /Website/pr-16/news/freecad-day-2025/IMG_20250131_130533_hu_665650f7dbd9cbbf.webp 1000w, /Website/pr-16/news/freecad-day-2025/IMG_20250131_130533.webp 2560w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>FreeCAD Day 2025 5</figcaption></figure><div id="img-003" popover>
+          <button class="close"
+            popovertarget="img-003"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen">
+            <img src="/Website/pr-16/news/freecad-day-2025/IMG_20250131_130533.webp"
+              title="FreeCAD Day 2025 5"
+              alt="FreeCAD Day 2025 5"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Over lunch the conversations continue, making sure to chat to people who only attended the FreeCAD Day and not the other hack days, one great conversation was with Danny. Danny was only 4 weeks into his entire discovery of CAD and FreeCAD. In that short time using FreeCAD 1.0 he had managed to make some reasonably complex parts for 3D printing. It&rsquo;s really useful to have people like Danny attend these events having so freshly walked a beginners path to FreeCAD, it&rsquo;s great to explore how Danny has learnt and what resources they have used as well as what hurdles they have faced.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Bild vergrößern" popovertarget="img-004"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/freecad-day-2025/IMG_20250131_153621.webp"
+  alt="FreeCAD Day 2025 6"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="2560"
+  height="1438"
+    srcset="/Website/pr-16/news/freecad-day-2025/IMG_20250131_153621_hu_a6fe0bd4a429eb94.webp 500w, /Website/pr-16/news/freecad-day-2025/IMG_20250131_153621_hu_ecc83108eb987de5.webp 1000w, /Website/pr-16/news/freecad-day-2025/IMG_20250131_153621.webp 2560w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>FreeCAD Day 2025 6</figcaption></figure><div id="img-004" popover>
+          <button class="close"
+            popovertarget="img-004"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen">
+            <img src="/Website/pr-16/news/freecad-day-2025/IMG_20250131_153621.webp"
+              title="FreeCAD Day 2025 6"
+              alt="FreeCAD Day 2025 6"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Post lunch more presentations and discussions are delivered. Some highlights include Kurt speaking about his PostCAD concepts and Julian Todd speaking on a fascinating project using the Godot engine to make multiplayer VR sessions for viewing ParaView CFD simulations. Really interesting stuff. Ajinkya spoke about a project, OSDAG, which is an open source steel and graphics design environement allowing for H beam steel sections designs to be quickly designed and assessed.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Bild vergrößern" popovertarget="img-005"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/freecad-day-2025/IMG_20250131_171251.webp"
+  alt="FreeCAD Day 2025 7"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="2560"
+  height="1438"
+    srcset="/Website/pr-16/news/freecad-day-2025/IMG_20250131_171251_hu_3dd15828f8ba9ba0.webp 500w, /Website/pr-16/news/freecad-day-2025/IMG_20250131_171251_hu_d5a04a33ac6353c3.webp 1000w, /Website/pr-16/news/freecad-day-2025/IMG_20250131_171251.webp 2560w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>FreeCAD Day 2025 7</figcaption></figure><div id="img-005" popover>
+          <button class="close"
+            popovertarget="img-005"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen">
+            <img src="/Website/pr-16/news/freecad-day-2025/IMG_20250131_171251.webp"
+              title="FreeCAD Day 2025 7"
+              alt="FreeCAD Day 2025 7"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Roman gave an overview of their excellent cable design and management addon workbench. This workbench allows for the parametric design of wiring and also features push and pull type workflows so that you can drag a electrical connector and conduit in an architectural feature and the wiring will update and re route accordingly. It&rsquo;s a workbench with great interaction with the BIM areas of FreeCAD, but also opened discussion around cable and harness management and other crossover features between FreeCAD and KiCad. In a similar vein. Michael presented a discussion and overview of their process designing and manufacturing injection moulded enclosures for electronics. Of course this is an area where KiCad and FreeCAD users overlap and became a discussion exploring emboldening crossover functionality, for example could FreeCAD have an enclosures workbench that automatically can parameterise draft angles for injection moulding or shrinkage parameters for different plastics for example.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Bild vergrößern" popovertarget="img-006"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/freecad-day-2025/IMG_20250131_150613.webp"
+  alt="FreeCAD Day 2025 8"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="2560"
+  height="1438"
+    srcset="/Website/pr-16/news/freecad-day-2025/IMG_20250131_150613_hu_573754cbe14caa8f.webp 500w, /Website/pr-16/news/freecad-day-2025/IMG_20250131_150613_hu_94b92a41b8291cfe.webp 1000w, /Website/pr-16/news/freecad-day-2025/IMG_20250131_150613.webp 2560w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>FreeCAD Day 2025 8</figcaption></figure><div id="img-006" popover>
+          <button class="close"
+            popovertarget="img-006"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen">
+            <img src="/Website/pr-16/news/freecad-day-2025/IMG_20250131_150613.webp"
+              title="FreeCAD Day 2025 8"
+              alt="FreeCAD Day 2025 8"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Rounding out the day Marcus spoke about his ongoing work building a prototype new web presence for FreeCAD replacing and consolidating the various websites and blogs into a more cohesive system. It&rsquo;s great to see this work become more known in the community and hopefully more follow up meetings and development will be scheduled this year. Finally the fabulous Chris Hennes rounded out the day with a presentation on the FPA grant activity covering how the grant scheme had worked, what it had delivered and what it will look like in the coming year.</p>
+<p>And Finally&hellip;.</p>
+<p>One thing we feel is missing from our FreeCAD Day is live streaming. We are really interested to see if there is anyone who has some expertise in this area and may attend next years FreeCAD Day. The KiCad team have a live stream and so we know that the bandwidth for this in the building is potentially there. If this is something that interests you then feel free to reach out at <a href="mailto:fpa@freecad.org"
+  class="internal-tooltip">fpa@freecad.org</a>.</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/de/news/wip-wednesday-19-february-2025/"
+             title="Nächster Artikel"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday - 19 February 2025</a><a class="page-item prev"
+             href="/Website/pr-16/de/news/the-ondsel-onwards-fund/"
+             title="Vorheriger Artikel">The Ondsel Onwards Fund<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Nach oben"
+  title="Nach oben (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/de/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/de/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/de/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/de/authors/">Autoren</a>
+                      </li><li>
+                        <a href="/Website/pr-16/de/categories/">Kategorien</a>
+                      </li><li>
+                        <a href="/Website/pr-16/de/tags/">Tags</a>
+                      </li><li>
+                        <a href="/Website/pr-16/de/versions/">Versionen</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/de/fedishare.html#title=FreeCAD&#43;Day&#43;2025&amp;description=Each%20year%20on%20the%20Friday%20before%20the%20FOSDEM%20event,%20FreeCAD%20held%20a%20%e2%80%9cFreeCAD%20Day%e2%80%9d%20where,%20after%20working%20for%20a%20few%20days%20directly%20on%20FreeCAD%20in%20a%20hackathon%20style,%20the%20day%20is%20set%20up%20as%20an%20Un-conference%20%e2%80%a6&amp;url=https://FreeCAD.github.io/Website/pr-16/de/news/freecad-day-2025/"
+  title="Teilen auf Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/de/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

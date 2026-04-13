@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en-US"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Forged in FreeCAD - Thor, an Opensource robotic arm</title>
+  <meta name="description" content="Your own free and open-source parametric modeler"><meta name="keywords" content="user story, 3D printing"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/news/forged-in-freecad-thor-an-opensource-robotic-arm/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/forged-in-freecad-thor-an-opensource-robotic-arm/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/forged-in-freecad-thor-an-opensource-robotic-arm/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/forged-in-freecad-thor-an-opensource-robotic-arm/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/forged-in-freecad-thor-an-opensource-robotic-arm/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/forged-in-freecad-thor-an-opensource-robotic-arm/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/forged-in-freecad-thor-an-opensource-robotic-arm/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/forged-in-freecad-thor-an-opensource-robotic-arm/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/news/forged-in-freecad-thor-an-opensource-robotic-arm/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Forged in FreeCAD - Thor, an Opensource robotic arm">
+  <meta property="og:description" content="We imagine most visitors to this blog will already know that amazing things can be achieved or designed using opensource tools like FreeCAD. The Thor opensource robotic arm is a great example of a complex opensource project built using a totally opensource tool chain.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2024-03-05T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:47:39+02:00">
+    <meta property="article:tag" content="User Story">
+    <meta property="article:tag" content="3D Printing">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/"accesskey="h"
+      title="Homepage (Alt + H)"
+      aria-label="Homepage">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choose language (Alt + L)"
+          aria-label="Choose language"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/news/forged-in-freecad-thor-an-opensource-robotic-arm/" title="Forged in FreeCAD - Thor, an Opensource robotic arm">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/forged-in-freecad-thor-an-opensource-robotic-arm/" title="Forged in FreeCAD - Thor, an Opensource robotic arm">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/forged-in-freecad-thor-an-opensource-robotic-arm/" title="Forged in FreeCAD - Thor, an Opensource robotic arm">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/forged-in-freecad-thor-an-opensource-robotic-arm/" title="Forged in FreeCAD - Thor, an Opensource robotic arm">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/forged-in-freecad-thor-an-opensource-robotic-arm/" title="Forged in FreeCAD - Thor, an Opensource robotic arm">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/forged-in-freecad-thor-an-opensource-robotic-arm/" title="Forged in FreeCAD - Thor, an Opensource robotic arm">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/forged-in-freecad-thor-an-opensource-robotic-arm/" title="Forged in FreeCAD - Thor, an Opensource robotic arm">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Switch theme chroma (Alt + T)"
+    aria-label="Switch theme chroma"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 20;">
+
+    <h2 class="title"
+      
+      >Forged in FreeCAD - Thor, an Opensource Robotic Arm</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2024-03-05T00:00:00Z">March 5, 2024</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/categories/announcement/">Announcement (94)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/tags/user-story/">User Story (22)</a><a href="/Website/pr-16/tags/3d-printing/">3D Printing (15)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>293 words</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>2 min</span></div><figure class="article-cover"><img srcset="/Website/pr-16/news/forged-in-freecad-thor-an-opensource-robotic-arm/thor_header_hu_5b7764876eaf8c48.webp 500w, /Website/pr-16/news/forged-in-freecad-thor-an-opensource-robotic-arm/thor_header.png 756w"
+        sizes="(max-width: 500px) 500px, 75vw"
+        src="/Website/pr-16/news/forged-in-freecad-thor-an-opensource-robotic-arm/thor_header.png"
+        title="Thor Opensource Robotic Arm"
+        alt="Image fallback"
+        width="756"
+        height="461"
+        loading="eager"
+        fetchpriority="high"><figcaption>
+        <div class="internal-tooltip"><svg class="icon-important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/important.svg#important"></use>
+  </svg><span class="tooltip">Thor Opensource Robotic Arm</span>
+        </div>
+      </figcaption></figure></section><div class="content"><p>We imagine most visitors to this blog will already know that amazing things can be achieved or designed using opensource tools like FreeCAD. <a href="http://thor.angel-lm.com/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">The Thor opensource robotic arm<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> is a great example of a complex opensource project built using a totally opensource tool chain.</p>
+<p>It&rsquo;s a primarily 3D printed 6 degrees of freedom robotic arm which looks, and performs much like it&rsquo;s industrial counterparts. Once printed and assembled the 625mm tall arm is able to handle around 750 grams which means it&rsquo;s pretty capable and could well be tasked with useful work.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/forged-in-freecad-thor-an-opensource-robotic-arm/thor_image.jpg"
+  alt="Thor image"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1280"
+  height="720"
+    srcset="/Website/pr-16/news/forged-in-freecad-thor-an-opensource-robotic-arm/thor_image_hu_9947c1ab5ae74122.webp 500w, /Website/pr-16/news/forged-in-freecad-thor-an-opensource-robotic-arm/thor_image_hu_b68e7960b7eeaa41.webp 1000w, /Website/pr-16/news/forged-in-freecad-thor-an-opensource-robotic-arm/thor_image.jpg 1280w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Thor image</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/forged-in-freecad-thor-an-opensource-robotic-arm/thor_image.jpg"
+              title="Thor image"
+              alt="Thor image"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Of course, we feature it here as it&rsquo;s been modelled in FreeCAD, if nothing else it&rsquo;s worth downloading the FreeCAD files as an example of of excellent quality computer aided design and it&rsquo;s fun to look around the parts and assembly. Aside from FreeCAD the Thor project has leveraged <a href="https://www.kicad.org/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">KiCad <svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>for the PCB components and the opensource G-code interpreter and motor driving platform <a href="https://github.com/gnea/grbl/releases"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">GRBL<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>. Once assembled there is an opensource piece of software &ldquo;Asgard&rdquo; which acts as a controller interface for the arm. In other words, it&rsquo;s opensource all the way!</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/forged-in-freecad-thor-an-opensource-robotic-arm/asgard.png"
+  alt="Asgard"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="898"
+  height="837"
+    srcset="/Website/pr-16/news/forged-in-freecad-thor-an-opensource-robotic-arm/asgard_hu_2bbd5f38334a3edb.webp 500w, /Website/pr-16/news/forged-in-freecad-thor-an-opensource-robotic-arm/asgard.png 898w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Asgard</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/forged-in-freecad-thor-an-opensource-robotic-arm/asgard.png"
+              title="Asgard"
+              alt="Asgard"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>If you plan to make a Thor, there is around 200 hours of 3D printing and then a stack of assembly work. All the components, stepper motors, driver boards are all off the shelf items so although a complex design, it&rsquo;s totally doable. So far there have been in excess of 30 Thor arms built and a variety of them are shown on the project website. Whilst it might look a little complex for a beginners project for those new to hardware builds, it is very well documented. There is a burgeoning <a href="http://thor.angel-lm.com/forums/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">forum<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> where you can check out other peoples builds and ask questions.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-002"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/forged-in-freecad-thor-an-opensource-robotic-arm/thors_built.png"
+  alt="Thors built"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="943"
+  height="498"
+    srcset="/Website/pr-16/news/forged-in-freecad-thor-an-opensource-robotic-arm/thors_built_hu_4682508ffb6a628d.webp 500w, /Website/pr-16/news/forged-in-freecad-thor-an-opensource-robotic-arm/thors_built.png 943w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Thors built</figcaption></figure><div id="img-002" popover>
+          <button class="close"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/forged-in-freecad-thor-an-opensource-robotic-arm/thors_built.png"
+              title="Thors built"
+              alt="Thors built"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div>
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/news/wip-wednesday-6-march-2024/"
+             title="Next article"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday - 6 March 2024</a><a class="page-item prev"
+             href="/Website/pr-16/news/the-annual-grant-program-is-live/"
+             title="Previous article">The annual Grant program is live<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Go to Top"
+  title="Go to Top (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/authors/">Authors</a>
+                      </li><li>
+                        <a href="/Website/pr-16/categories/">Categories</a>
+                      </li><li>
+                        <a href="/Website/pr-16/tags/">Tags</a>
+                      </li><li>
+                        <a href="/Website/pr-16/versions/">Versions</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/fedishare.html#title=Forged&#43;in&#43;FreeCAD&#43;-&#43;Thor%2C&#43;an&#43;Opensource&#43;robotic&#43;arm&amp;description=We&#43;imagine&#43;most&#43;visitors&#43;to&#43;this&#43;blog&#43;will&#43;already&#43;know&#43;that&#43;amazing&#43;things&#43;can&#43;be&#43;achieved&#43;or&#43;designed&#43;using&#43;opensource&#43;tools&#43;like&#43;FreeCAD.&#43;The&#43;Thor&#43;opensource&#43;robotic&#43;arm&#43;is&#43;a&#43;great&#43;example&#43;of&#43;a&#43;%E2%80%A6%0A%23user-story&#43;%233d-printing&amp;url=https://FreeCAD.github.io/Website/pr-16/news/forged-in-freecad-thor-an-opensource-robotic-arm/"
+  title="Share on Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

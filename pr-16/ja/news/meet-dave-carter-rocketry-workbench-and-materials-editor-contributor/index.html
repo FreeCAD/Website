@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ja-JP"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Meet Dave Carter, Rocketry Workbench and Materials Editor contributor</title>
+  <meta name="description" content="あなた自身の自由でオープンソースのパラメトリックモデラー"><meta name="keywords" content="contributor"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/ja/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/ja/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/ja/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Meet Dave Carter, Rocketry Workbench and Materials Editor contributor">
+  <meta property="og:description" content="Dave saturn Dave is a rocketeer!">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2024-05-27T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:47:39+02:00">
+    <meta property="article:tag" content="Contributor">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/ja/"accesskey="h"
+      title="ホームページ (Alt + H)"
+      aria-label="ホームページ">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="メニュー"
+    aria-label="メニュー"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/ja/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="言語を選択 (Alt + L)"
+          aria-label="言語を選択"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/" title="Meet Dave Carter, Rocketry Workbench and Materials Editor contributor">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/" title="Meet Dave Carter, Rocketry Workbench and Materials Editor contributor">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/" title="Meet Dave Carter, Rocketry Workbench and Materials Editor contributor">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/" title="Meet Dave Carter, Rocketry Workbench and Materials Editor contributor">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/" title="Meet Dave Carter, Rocketry Workbench and Materials Editor contributor">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/" title="Meet Dave Carter, Rocketry Workbench and Materials Editor contributor">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/ja/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/" title="Meet Dave Carter, Rocketry Workbench and Materials Editor contributor">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="テーマchromaに切り替える (Alt + T)"
+    aria-label="テーマchromaに切り替える"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 80;">
+
+    <h2 class="title"
+      
+      >Meet Dave Carter, Rocketry Workbench and Materials Editor Contributor</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2024-05-27T00:00:00Z">2024年5月27日</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/ja/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/ja/categories/showcase/">Showcase (30)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/ja/tags/contributor/">Contributor (2)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>770 語</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>4 分</span></div><figure class="article-cover"><img srcset="/Website/pr-16/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/rocket_WB_hu_5b23087068023989.webp 500w, /Website/pr-16/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/rocket_WB_hu_a41224b189dc9b80.webp 1000w, /Website/pr-16/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/rocket_WB.png 1300w"
+        sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"
+        src="/Website/pr-16/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/rocket_WB.png"
+        title="Rocket WB"
+        alt="代替画像"
+        width="1300"
+        height="714"
+        loading="eager"
+        fetchpriority="high"><figcaption>
+        <div class="internal-tooltip"><svg class="icon-important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/important.svg#important"></use>
+  </svg><span class="tooltip">Rocket WB</span>
+        </div>
+      </figcaption></figure></section><div class="content"><div class="image-with-popover">
+      <figure><button aria-label="画像を拡大" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/dave_saturn.webp"
+  alt="Dave saturn"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1280"
+  height="1900"
+    srcset="/Website/pr-16/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/dave_saturn_hu_6752a56b7782c867.webp 500w, /Website/pr-16/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/dave_saturn_hu_1acafa9c2d42b7e6.webp 1000w, /Website/pr-16/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/dave_saturn.webp 1280w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Dave saturn</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="画像ビューアを閉じる">
+            <img src="/Website/pr-16/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/dave_saturn.webp"
+              title="Dave saturn"
+              alt="Dave saturn"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Dave is a rocketeer!</p>
+<p>Based in Canada, Dave was very interested in model rocketry as a youngster and returned to the hobby later in life becoming very actively involved in larger high power rocketry. Along the way Dave also got interested in 3D printing in his rocketry designs and, as a by product, interested in CAD.</p>
+<p>Many rocketry types, beyond simple off the shelf kit building, are lured into 3D printing as a method of creating accurate nosecone designs which can be challenging to create accurately using other means. Dave initially utilised <a href="https://openscad.org/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">OpenSCAD <svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>to create parametric nosecone scripts for many different types of nosecone geometries and released his scripts out into rocketry communities. Moving beyond &ldquo;simple&rdquo; nosecones Dave began exploring <a href="https://www.freecad.org/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">FreeCAD<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> as it enabled him to create incredibly detailed scale model designs for 3D print and indeed Dave has some<a href="https://www.youtube.com/channel/UC4xGgMHU40BHQAXmDcR9IuA"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener"> excellent tutorials over on his youtube channel<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="画像を拡大" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/saturn_5.png"
+  alt="Saturn 5"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="819"
+  height="858"
+    srcset="/Website/pr-16/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/saturn_5_hu_b3131f8c42cf9115.webp 500w, /Website/pr-16/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/saturn_5.png 819w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Saturn 5</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="画像ビューアを閉じる">
+            <img src="/Website/pr-16/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/saturn_5.png"
+              title="Saturn 5"
+              alt="Saturn 5"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Dave majored in Physics with a minor in Computer Science and has spent most of his working career as a solutions architect across a variety of industries and government departments. Dave has also worked as a technical trainer delivering all over the world. Everywhere Dave has travelled and worked he has promoted rocketry and tells great stories of bringing rocketry into South Africa and more. Travelling a lot, Dave was drawn first to OpenSCAD and then into FreeCAD as it met his CAD needs whilst not needing ubiquitous connection to the net.</p>
+<p>Prior to all his work on FreeCAD Dave created a really useful for rocketry nosecone generation script in OpenSCAD. Having extensively worked with C++ and Python OpenSCAD presented a pretty straightforward route for Dave to get working with 3D models for 3D print. When Dave started exploring FreeCAD it was pretty straightforward to port the OpenSCAD nosecone generator to work as FreeCAD Macro.</p>
+<p>Dave&rsquo;s involvement with FreeCAD grew when community member &ldquo;<a href="https://forum.freecad.org/memberlist.php?mode=viewprofile&amp;u=27513"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">concretedog<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>&rdquo; (who also coincidentally is the author of this blog post) started a <a href="https://forum.freecad.org/viewtopic.php?t=54496"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">thread on the FreeCAD Forum suggesting that a Rocketry Workbench could be an interesting and useful addon<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>. In the global rocketry community there is another excellent opensource piece of software for rocketry &ldquo;<a href="https://openrocket.info/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Openrocke<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>t&rdquo;. Openrocket enables users to design and simulate rockets and doing a lot of the heavy lifting around calculating centres of pressure and centres of gravity, as well as flight duration and characteristics. It&rsquo;s an excellent piece of software, however it is mainly focused on simulation of designs and has no real model outputs to create real components. Dave was already an Openrocket user and with his attention captured, he began to create a rocketry workbench in FreeCAD which makes it trivial to create rockets and their components for fabrication.</p>
+<p>The <a href="https://wiki.freecad.org/Rocket_Workbench"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">rocket workbench<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> has numerous primitives for nosecones, tubes, fins, fin cans and more and, wonderfully for the rocketry community, Dave has made the parametric inputs similar to Openrocket. This makes it more accessible for those new to FreeCAD but used to Openrocket. Openrocket calls on a large open database of commercial components and Dave has utilised this open data set within the FreeCAD rocketry workbench so you can quickly call up a part that you can buy in the real world. Some rocketeers are also interested in up and down scaling commercial designs so the Rocketry WB in combination perhaps with the draft workbench is incredibly useful.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="画像を拡大" popovertarget="img-002"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/textures.jpeg"
+  alt="Textures"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1281"
+  height="977"
+    srcset="/Website/pr-16/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/textures_hu_1235a76a248dd70a.webp 500w, /Website/pr-16/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/textures_hu_5585ba2f9b12e8e4.webp 1000w, /Website/pr-16/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/textures.jpeg 1281w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Textures</figcaption></figure><div id="img-002" popover>
+          <button class="close"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="画像ビューアを閉じる">
+            <img src="/Website/pr-16/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/textures.jpeg"
+              title="Textures"
+              alt="Textures"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>It&rsquo;s fair to say, at this point that Dave has contributed enough, but no! Dave is really interested in how FreeCAD&rsquo;s capabilities in FEM and CFM can be used in conjunction with rocket designs. It&rsquo;s complex stuff but Dave is working towards having fin flutter and other analysis within the Rocket WB. One challenge is FreeCAD&rsquo;s materials system, in Openrocket components can be assigned to be made from different materials as this obviously effects their weight and therefore the flight characteristics of the rocket airframe. Dave is currently working on a materials manager and database that will be applicable across FreeCAD as well as texturing and other material related capabilities. It&rsquo;s a long road project but once incorporated it will open up a heap of possibilities in and beyond the Rocketry workbench.</p>
+<p>As if all this isn&rsquo;t enough, Dave is passionate about outreach particularly around taking FreeCAD into rocketry communities. NARCON is the largest rocketry conference and Dave has given extremely well attended and popular talks on the Rocketry WB and more.</p>
+<p>Dave is hoping to attend the <a href="https://forum.freecad.org/viewtopic.php?style=5&amp;t=85180"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">North America FreeCAD Day<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> this year in Illinois between the 15th and the 18th of August. If you&rsquo;re attending make sure to say hello to this fantastic and dedicated contributor.</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/ja/news/wip-wednesday-29-may-2024/"
+             title="次の記事"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday - 29 May 2024</a><a class="page-item prev"
+             href="/Website/pr-16/ja/news/freecad-gets-a-logo-upgrade/"
+             title="前の記事">FreeCAD gets a Logo Upgrade<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="トップへ"
+  title="トップへ (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/ja/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/ja/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/ja/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/ja/authors/">著者一覧</a>
+                      </li><li>
+                        <a href="/Website/pr-16/ja/categories/">カテゴリ一覧</a>
+                      </li><li>
+                        <a href="/Website/pr-16/ja/tags/">タグ一覧</a>
+                      </li><li>
+                        <a href="/Website/pr-16/ja/versions/">バージョン一覧</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/ja/fedishare.html#title=Meet&#43;Dave&#43;Carter%2C&#43;Rocketry&#43;Workbench&#43;and&#43;Materials&#43;Editor&#43;contributor&amp;description=&#43;Dave&#43;is&#43;a&#43;rocketeer%21%0ABased&#43;in&#43;Canada%2C&#43;Dave&#43;was&#43;very&#43;interested&#43;in&#43;model&#43;rocketry&#43;as&#43;a&#43;youngster&#43;and&#43;returned&#43;to&#43;the&#43;hobby&#43;later&#43;in&#43;life&#43;becoming&#43;very&#43;actively&#43;involved&#43;in&#43;larger&#43;high&#43;power&#43;rocketry.&#43;%E2%80%A6%0A%23contributor&amp;url=https://FreeCAD.github.io/Website/pr-16/ja/news/meet-dave-carter-rocketry-workbench-and-materials-editor-contributor/"
+  title="共有 Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/ja/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

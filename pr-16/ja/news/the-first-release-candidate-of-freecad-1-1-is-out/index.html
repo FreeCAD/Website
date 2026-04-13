@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ja-JP"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | The first release candidate of FreeCAD 1.1 is out</title>
+  <meta name="description" content="あなた自身の自由でオープンソースのパラメトリックモデラー"><meta name="keywords" content="release, RC"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/ja/news/the-first-release-candidate-of-freecad-1-1-is-out/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/the-first-release-candidate-of-freecad-1-1-is-out/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/the-first-release-candidate-of-freecad-1-1-is-out/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/the-first-release-candidate-of-freecad-1-1-is-out/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/the-first-release-candidate-of-freecad-1-1-is-out/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/the-first-release-candidate-of-freecad-1-1-is-out/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/the-first-release-candidate-of-freecad-1-1-is-out/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/the-first-release-candidate-of-freecad-1-1-is-out/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/ja/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/ja/news/the-first-release-candidate-of-freecad-1-1-is-out/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="The first release candidate of FreeCAD 1.1 is out">
+  <meta property="og:description" content="The team has just published builds of the first candidate of FreeCAD 1.1, you can download them on GitHub . Here is what it means and what’s going to happen next.">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2025-11-26T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:40:06+02:00">
+    <meta property="article:tag" content="Release">
+    <meta property="article:tag" content="RC">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/ja/"accesskey="h"
+      title="ホームページ (Alt + H)"
+      aria-label="ホームページ">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="メニュー"
+    aria-label="メニュー"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/ja/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="言語を選択 (Alt + L)"
+          aria-label="言語を選択"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/the-first-release-candidate-of-freecad-1-1-is-out/" title="The first release candidate of FreeCAD 1.1 is out">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/the-first-release-candidate-of-freecad-1-1-is-out/" title="The first release candidate of FreeCAD 1.1 is out">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/the-first-release-candidate-of-freecad-1-1-is-out/" title="The first release candidate of FreeCAD 1.1 is out">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/the-first-release-candidate-of-freecad-1-1-is-out/" title="The first release candidate of FreeCAD 1.1 is out">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/the-first-release-candidate-of-freecad-1-1-is-out/" title="The first release candidate of FreeCAD 1.1 is out">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/the-first-release-candidate-of-freecad-1-1-is-out/" title="The first release candidate of FreeCAD 1.1 is out">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/ja/news/the-first-release-candidate-of-freecad-1-1-is-out/" title="The first release candidate of FreeCAD 1.1 is out">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="テーマchromaに切り替える (Alt + T)"
+    aria-label="テーマchromaに切り替える"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 20;">
+
+    <h2 class="title"
+      
+      >The First Release Candidate of FreeCAD 1.1 Is Out</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2025-11-26T00:00:00Z">2025年11月26日</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/ja/authors/aleksandr-prokudin/">Aleksandr Prokudin (169)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/ja/categories/announcement/">Announcement (94)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/ja/tags/release/">Release (16)</a><a href="/Website/pr-16/ja/tags/rc/">RC (2)</a></span><span class="meta versions"><svg class="icon-versions"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/versions.svg#versions"></use>
+  </svg><a href="/Website/pr-16/ja/versions/1.1/">1.1 (3)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>194 語</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>1 分</span></div></section><div class="content"><p>The team has just published builds of the first candidate of FreeCAD 1.1, you can download them <a href="https://github.com/FreeCAD/FreeCAD/releases/tag/1.1rc1"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">on GitHub<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>. Here is what it means and what&rsquo;s going to happen next.</p>
+<p>The release candidates are basically preliminary builds of the final version. They are aimed at a particular demographic: people who want to help the team make a final check for major regressions before the final release can be published. If you are one of those people, please download a build for your operating system, test it, and <a href="https://github.com/FreeCAD/FreeCAD/issues"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">report<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> any new issues you run into.</p>
+<p>We are currently down to <a href="https://github.com/FreeCAD/FreeCAD/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22Blocker%22"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">5 critical bugs<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> that block the v1.1 release (we call them release blockers). The number of blockers can temporarily go up, if a lot of people download RC1 and report major issues, and that&rsquo;s great. It means that the final official release will be more polished.</p>
+<p>If you are a developer willing to contribute bugfixes, come look at the list of reports, pick an issue that seems trivial to resolve, write a fix, and submit a pull request. We have weekly <a href="https://www.freecad.org/events.php"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">merge meetings<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> on Mondays to discuss submitted patches. You are welcome to join!</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/ja/news/wip-wednesday-3-december-2025/"
+             title="次の記事"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday, 3 December 2025</a><a class="page-item prev"
+             href="/Website/pr-16/ja/news/wip-wednesday-26-november-2025/"
+             title="前の記事">WIP Wednesday, 26 November 2025<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="トップへ"
+  title="トップへ (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/ja/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/ja/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/ja/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/ja/authors/">著者一覧</a>
+                      </li><li>
+                        <a href="/Website/pr-16/ja/categories/">カテゴリ一覧</a>
+                      </li><li>
+                        <a href="/Website/pr-16/ja/tags/">タグ一覧</a>
+                      </li><li>
+                        <a href="/Website/pr-16/ja/versions/">バージョン一覧</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/ja/fedishare.html#title=The&#43;first&#43;release&#43;candidate&#43;of&#43;FreeCAD&#43;1.1&#43;is&#43;out&amp;description=The&#43;team&#43;has&#43;just&#43;published&#43;builds&#43;of&#43;the&#43;first&#43;candidate&#43;of&#43;FreeCAD&#43;1.1%2C&#43;you&#43;can&#43;download&#43;them&#43;on&#43;GitHub&#43;.&#43;Here&#43;is&#43;what&#43;it&#43;means&#43;and&#43;what%E2%80%99s&#43;going&#43;to&#43;happen&#43;next.%0AThe&#43;release&#43;candidates&#43;are&#43;basically&#43;%E2%80%A6%0A%23release&#43;%23rc&amp;url=https://FreeCAD.github.io/Website/pr-16/ja/news/the-first-release-candidate-of-freecad-1-1-is-out/"
+  title="共有 Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/ja/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

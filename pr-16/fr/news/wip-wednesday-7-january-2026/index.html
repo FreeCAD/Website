@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="fr-FR"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | WIP Wednesday, 7 January 2026</title>
+  <meta name="description" content="Votre modeleur paramétrique libre et open-source"><meta name="keywords" content="WIP"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/fr/news/wip-wednesday-7-january-2026/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/wip-wednesday-7-january-2026/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/wip-wednesday-7-january-2026/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/wip-wednesday-7-january-2026/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/wip-wednesday-7-january-2026/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/wip-wednesday-7-january-2026/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/wip-wednesday-7-january-2026/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/wip-wednesday-7-january-2026/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/fr/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/fr/news/wip-wednesday-7-january-2026/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="WIP Wednesday, 7 January 2026">
+  <meta property="og:description" content="Maintainers have been backporting some of the fixes to the v1.1 branch where possible - 27 backports in the past 7 days. The list of changes in this recap applies to the main development branch (future v1.2).">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2026-01-07T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:40:06+02:00">
+    <meta property="article:tag" content="WIP">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/fr/"accesskey="h"
+      title="Accueil (Alt + H)"
+      aria-label="Accueil">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/fr/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choisir la langue (Alt + L)"
+          aria-label="Choisir la langue"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/wip-wednesday-7-january-2026/" title="WIP Wednesday, 7 January 2026">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/wip-wednesday-7-january-2026/" title="WIP Wednesday, 7 January 2026">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/wip-wednesday-7-january-2026/" title="WIP Wednesday, 7 January 2026">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/fr/news/wip-wednesday-7-january-2026/" title="WIP Wednesday, 7 January 2026">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/wip-wednesday-7-january-2026/" title="WIP Wednesday, 7 January 2026">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/wip-wednesday-7-january-2026/" title="WIP Wednesday, 7 January 2026">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/wip-wednesday-7-january-2026/" title="WIP Wednesday, 7 January 2026">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Changer le thème (Alt + T)"
+    aria-label="Changer le thème"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 120;">
+
+    <h2 class="title"
+      
+      >WIP Wednesday, 7 January 2026</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2026-01-07T00:00:00Z">7 janvier 2026</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/fr/authors/aleksandr-prokudin/">Aleksandr Prokudin (169)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/fr/categories/update/">Update (158)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/fr/tags/wip/">WIP (153)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>598 mots</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>3 min</span></div></section><div class="content"><p>Maintainers have been backporting some of the fixes to the v1.1 branch where possible - 27 backports in the past 7 days. The list of changes in this recap applies to the main development branch (future v1.2).</p>
+<p>This week in FreeCAD development:</p>
+<p><strong>Sketcher</strong>:</p>
+<ul>
+<li>PaddleStroke fixed the sluggishness of dragging complex constraint systems (think 500+ constraints, <a href="https://github.com/FreeCAD/FreeCAD/pull/26598"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#26598<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>). He also fixed <strong>Snap to object</strong> not working on axis (<a href="https://github.com/FreeCAD/FreeCAD/pull/26558"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#26558<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>), the handling of autoconstraints in slot geometry (<a href="https://github.com/FreeCAD/FreeCAD/pull/26559"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#26559<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>), selection and zoom lag in large sketches (<a href="https://github.com/FreeCAD/FreeCAD/pull/26671"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#26671<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>), sped up large bulk selection (<a href="https://github.com/FreeCAD/FreeCAD/pull/26663"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#26663<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>), and fixed dimensional constraint text rendered backwards (<a href="https://github.com/FreeCAD/FreeCAD/pull/26554"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#26554<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>AjinkyaDahale contributed part 5 of his code refactoring work (<a href="https://github.com/FreeCAD/FreeCAD/pull/22951"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#22951<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>wwmayer added support for Bezier and Offset curves as external geometry (cherry-picked by leoheck, <a href="https://github.com/FreeCAD/FreeCAD/pull/25144"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#25144<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>tetektoza changed the rendering of constraint text, arrowheads, and constraint icons to be above geometry lines (<a href="https://github.com/FreeCAD/FreeCAD/pull/26703"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#26703<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>).</li>
+</ul>
+<p><strong>PartDesign:</strong></p>
+<ul>
+<li>PaddleStroke fixed the issue where it was impossible to select multiple points on two sketches (<a href="https://github.com/FreeCAD/FreeCAD/pull/26596"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#26596<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>) and enabled the dragging and dropping of shapebinders (<a href="https://github.com/FreeCAD/FreeCAD/pull/25264"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#25264<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>kadet1090 fixed the incorrect preview for polar patterns (<a href="https://github.com/FreeCAD/FreeCAD/pull/26563"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#26563<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>ipatch fixed invalid edge links (<a href="https://github.com/FreeCAD/FreeCAD/pull/26425"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#26425<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>Krrish777 fixed the Boolean&rsquo;s operation type drop-down list not updating after recomputation (<a href="https://github.com/FreeCAD/FreeCAD/pull/26582"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#26582<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>captain0xff fixed the gizmo direction when the calculated point lies outside the face (<a href="https://github.com/FreeCAD/FreeCAD/pull/26616"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#26616<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>).</li>
+</ul>
+<p><strong>TechDraw</strong>:</p>
+<ul>
+<li>WandererFan fixed crashes in scripts on CosmeticEdge delete (<a href="https://github.com/FreeCAD/FreeCAD/pull/26646"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#26646<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>), restored manual control of view frames (<a href="https://github.com/FreeCAD/FreeCAD/pull/26125"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#26125<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>), and fixed two issues with axonometric length dimensions (<a href="https://github.com/FreeCAD/FreeCAD/pull/26445"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#26445<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>Lgt2x improved drawing performance; the issue was especially noticeable when TD needed to scale hundreds of items on a page (<a href="https://github.com/FreeCAD/FreeCAD/pull/25898"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#25898<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>).</li>
+</ul>
+<p><strong>CAM</strong>:</p>
+<ul>
+<li>Connor added 0.05 um to V-bit tip diameter to prevent invalid sketch constraints (<a href="https://github.com/FreeCAD/FreeCAD/pull/26535"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#26535<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>) and fixed duplicate label issues with toolbits (<a href="https://github.com/FreeCAD/FreeCAD/pull/26647"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#26647<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>jffmichi fixed the Radius Mill Tip Diameter always resetting to 5.0mm when opening a file (<a href="https://github.com/FreeCAD/FreeCAD/pull/26707"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#26707<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>).</li>
+</ul>
+<p><strong>FEM</strong>:</p>
+<ul>
+<li>marioalexis84 added support for 2D geometries to SectionPrint (<a href="https://github.com/FreeCAD/FreeCAD/pull/25081"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#25081<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>). He also added the magnetic flux density boundary condition (<a href="https://github.com/FreeCAD/FreeCAD/pull/25897"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#25897<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>mac-the-bike added half-cycle animation (<a href="https://github.com/FreeCAD/FreeCAD/pull/24129"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#24129<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>xtemp09 modernized a function in the FEM code (<a href="https://github.com/FreeCAD/FreeCAD/pull/23743"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#23743<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>).</li>
+</ul>
+<p><strong>GUI</strong>:</p>
+<ul>
+<li>Krrish777 reordered the Add Property dialog fields to Name-Value-Group-Type (<a href="https://github.com/FreeCAD/FreeCAD/pull/26567"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#26567<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>tetektoza fixed broken image plane transparency (<a href="https://github.com/FreeCAD/FreeCAD/pull/26590"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#26590<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>) and fixed an issue where Selection View - Picked object list would add the whole object to face highlights (<a href="https://github.com/FreeCAD/FreeCAD/pull/26589"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#26589<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>Krrish777 improved error feedback when a user creates a Mirrored, LinearPattern, or PolarPattern feature (or other Transformed features) without selecting any base features to transform (<a href="https://github.com/FreeCAD/FreeCAD/pull/26565"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#26565<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>).</li>
+</ul>
+<p><strong>Other changes</strong>:</p>
+<ul>
+<li>Roy-043 fixed a regression in Draft where an object would be displayed incorrectly when the Draft Object Pattern property is used. He also removed v1.1 Sill Height code in BIM; this was one of release blockers (<a href="https://github.com/FreeCAD/FreeCAD/pull/26641"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#26641<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>tetektoza fixed an issue where the Selectable property would not work on a Body in a Part (<a href="https://github.com/FreeCAD/FreeCAD/pull/25009"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#25009<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>WandererFan applied a patch that allows the Measure module to retrieve geometry information for Surface module objects (<a href="https://github.com/FreeCAD/FreeCAD/pull/26479"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#26479<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>drwho495 fixed another toponaming issue (<a href="https://github.com/FreeCAD/FreeCAD/pull/26691"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#26691<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>kevinsmia1939 added diameter measurement (<a href="https://github.com/FreeCAD/FreeCAD/pull/24853"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PR#24853<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>).</li>
+</ul>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/wip-wednesday-7-january-2026/image.png"
+  alt="Image"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1352"
+  height="819"
+    srcset="/Website/pr-16/news/wip-wednesday-7-january-2026/image_hu_d543d408ba4dfb5c.webp 500w, /Website/pr-16/news/wip-wednesday-7-january-2026/image_hu_69e54785657b6ae3.webp 1000w, /Website/pr-16/news/wip-wednesday-7-january-2026/image.png 1352w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Image</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/wip-wednesday-7-january-2026/image.png"
+              title="Image"
+              alt="Image"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Roy-043, wwmayer, 3x380V, kadet1090, PaddleStroke, TONY8779, YashSuthar983, adrianinsaval, and luzpaz contributed additional improvements and fixes.</p>
+<p>If you are interested in testing the latest weekly build, you can grab it <a href="https://github.com/FreeCAD/FreeCAD/releases/tag/weekly-2026.01.07"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">here<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>.</p>
+<p><strong>PR stats</strong>: since the previous report, 78 pull requests have been merged (including backports to the v1.1 branch), and 40 new pull requests have been opened.</p>
+<p><strong>Issue stats</strong>: overall, there are 3146 open issues in the tracker, same as last week. There are 4 release blockers for v1.1 currently, same as last week too.</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/fr/news/wip-wednesday-14-january-2026/"
+             title="Article suivant"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday, 14 January 2026</a><a class="page-item prev"
+             href="/Website/pr-16/fr/news/mini-documentary-on-dr-adrian-bowyer-with-bonus-freecad-appearances/"
+             title="Article précédent">Mini Documentary on Dr Adrian Bowyer, with bonus FreeCAD appearances!<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Aller au sommet de la page"
+  title="Aller au sommet de la page (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/fr/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/fr/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/fr/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/fr/authors/">Auteurs</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/categories/">Catégories</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/tags/">Mots-Clés</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/versions/">Versions</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/fr/fedishare.html#title=WIP&#43;Wednesday%2C&#43;7&#43;January&#43;2026&amp;description=Maintainers&#43;have&#43;been&#43;backporting&#43;some&#43;of&#43;the&#43;fixes&#43;to&#43;the&#43;v1.1&#43;branch&#43;where&#43;possible&#43;-&#43;27&#43;backports&#43;in&#43;the&#43;past&#43;7&#43;days.&#43;The&#43;list&#43;of&#43;changes&#43;in&#43;this&#43;recap&#43;applies&#43;to&#43;the&#43;main&#43;development&#43;branch&#43;%E2%80%A6%0A%23wip&amp;url=https://FreeCAD.github.io/Website/pr-16/fr/news/wip-wednesday-7-january-2026/"
+  title="Partager sur Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/fr/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

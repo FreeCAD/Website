@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en-US"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Tutorial - Approaching the “How do I get started in FreeCAD” question!</title>
+  <meta name="description" content="Your own free and open-source parametric modeler"><meta name="keywords" content="getting started"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Tutorial - Approaching the “How do I get started in FreeCAD” question!">
+  <meta property="og:description" content="Freecad header There are so many community areas around FreeCAD. Apart from the excellent official FreeCAD forum almost every conceivable messaging platform or social media camp has a FreeCAD presence. From Facebook and X, through Discord, Matrix and Fosstodon there are lots of places with FreeCAD discussion. Whilst we all might have our favoured places to chat FreeCAD it’s interesting to look across a few of these community areas and see what unites them. On a daily basis looking across a few of these sites will reveal that “How do I get started in FreeCAD?” is possibly the most common enquiry.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2024-06-11T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:47:39+02:00">
+    <meta property="article:tag" content="Getting Started">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/"accesskey="h"
+      title="Homepage (Alt + H)"
+      aria-label="Homepage">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choose language (Alt + L)"
+          aria-label="Choose language"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/" title="Tutorial - Approaching the “How do I get started in FreeCAD” question!">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/" title="Tutorial - Approaching the “How do I get started in FreeCAD” question!">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/" title="Tutorial - Approaching the “How do I get started in FreeCAD” question!">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/" title="Tutorial - Approaching the “How do I get started in FreeCAD” question!">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/" title="Tutorial - Approaching the “How do I get started in FreeCAD” question!">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/" title="Tutorial - Approaching the “How do I get started in FreeCAD” question!">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/" title="Tutorial - Approaching the “How do I get started in FreeCAD” question!">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Switch theme chroma (Alt + T)"
+    aria-label="Switch theme chroma"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 100;">
+
+    <h2 class="title"
+      
+      >Tutorial - Approaching the “How Do I Get Started in FreeCAD” Question!</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2024-06-11T00:00:00Z">June 11, 2024</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/categories/tutorial/">Tutorial (26)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/tags/getting-started/">Getting Started (1)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>810 words</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>4 min</span></div></section><div class="content"><div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/freecad_header.png"
+  alt="Freecad header"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="577"
+  height="441"
+    srcset="/Website/pr-16/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/freecad_header_hu_1b32abd49c7361d0.webp 500w, /Website/pr-16/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/freecad_header.png 577w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Freecad header</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/freecad_header.png"
+              title="Freecad header"
+              alt="Freecad header"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>There are so many community areas around FreeCAD. Apart from the excellent official <a href="https://forum.freecad.org/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">FreeCAD forum<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> almost every conceivable messaging platform or social media camp has a FreeCAD presence. From Facebook and X, through Discord, Matrix and Fosstodon there are lots of places with FreeCAD discussion. Whilst we all might have our favoured places to chat FreeCAD it&rsquo;s interesting to look across a few of these community areas and see what unites them. On a daily basis looking across a few of these sites will reveal that &ldquo;How do I get started in FreeCAD?&rdquo; is possibly the most common enquiry.</p>
+<p>We probably all have our standard answer and our go to methods, signposting to the tutorial or resource that was most useful to us. We thought we might list some of these here as options for people to explore.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/freecad_forum.png"
+  alt="Freecad forum"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="550"
+  height="403"
+    srcset="/Website/pr-16/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/freecad_forum_hu_2784a02f62b125fe.webp 500w, /Website/pr-16/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/freecad_forum.png 550w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Freecad forum</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/freecad_forum.png"
+              title="Freecad forum"
+              alt="Freecad forum"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>It can be really useful to point beginners at the <a href="https://forum.freecad.org/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">FreeCAD Forum<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>. The FreeCAD forum is frankly amazing in what it contains, it is an absolute treasure trove of information and inspiration. It&rsquo;s definitely worth mentioning searching there and reading results for a while before posting a question with many subjects having been discussed widely before. The other note worth mentioning to those new to FreeCAD and the forum is that if asking for help it&rsquo;s always worth clicking the &ldquo;about FreeCAD&rdquo; tab in &ldquo;Help&rdquo; menu and copy pasting your FreeCAD version and operating system information into the top of your post.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-002"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/about_FC_version.png"
+  alt="About FreeCAD version"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="784"
+  height="681"
+    srcset="/Website/pr-16/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/about_FC_version_hu_d59f9c5d3acbdd18.webp 500w, /Website/pr-16/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/about_FC_version.png 784w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>About FreeCAD version</figcaption></figure><div id="img-002" popover>
+          <button class="close"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/about_FC_version.png"
+              title="About FreeCAD version"
+              alt="About FreeCAD version"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>The second place that is definitely worth pointing newcomers is the <a href="https://wiki.freecad.org/Main_Page"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">official documentation<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>. Again the official documentation has heaps of information and many pages of it actually have small examples and mini tutorials on particular tools and their use. It is fair to say that some parts of the documentation might not be 100% up to date with current FreeCAD releases but usually differences are small and the principles of operation are the same. If people are interested in helping develop and maintain the <a href="https://wiki.freecad.org/WikiPages"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">official documentation then check out this link<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> to find out how to get involved. The official documentation sits on the FreeCAD wiki and the information is presented in numerous different ways. There are numerous &ldquo;hubs&rdquo; for Users, Power Users and Developers as well as a more<a href="https://wiki.freecad.org/Manual:Introduction"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener"> linear readable manual<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>.</p>
+<p>Outside of the official FreeCAD resources there are lots of resources to learn FreeCAD from. Looking around all the different community areas recommendations for online video tutorials are common. There are lots of people creating great video tutorials across a range of services. Whilst Youtube is by far the most common, there are increasing amounts of FreeCAD video tutorial content on Peertube and other non proprietary platforms. Searching Peertube we came across this German language video tutorial which also has a sign language interpretation, excellent work.</p>
+<p><a href="https://peertube.tv/w/8PP9C5LKL6UZyWYb8Jh4qp"
+  class="external-link"title="CAD, CAM & CNC-Workshop mit ripper - Teil 2: FreeCAD Part Design, TechDraw on PeerTube"
+    target="_blank"
+    rel="external noreferrer noopener">CAD, CAM &amp; CNC-Workshop mit ripper - Teil 2: FreeCAD Part Design, TechDraw on PeerTube<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></p>
+<p>We&rsquo;d be remis not to mention the two most commonly recommended Youtube channels serving excellent FreeCAD and general CAD content. These channels have playlists specifically for FreeCAD for those absolutely new to CAD as well as an astonishing array of more advanced tutorials:</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/Odr5viqPwkc?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="Basic Beginners FreeCAD v1 / 0.22 | Lesson 2 | Basic Preferences for Course | Mango Jelly"></iframe>
+    </div>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/dyU1U6oN0Yk?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="FreeCAD: The 2022 Complete Beginners Guide To Part Design | Joko Engineering"></iframe>
+    </div>
+
+<p>Sometimes people prefer a written guide to FreeCAD rather than video and a common recommendation is <a href="https://hackspace.raspberrypi.com/books/freecad"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">&ldquo;FreeCAD for Makers&rdquo; which is a freely downloadable 16 chapter book from the Raspberry Pi Press<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>. In full disclosure the author of this also is the author of this post and the book also has a foreword written by Yorik. The book works from the premise that if you can work through and understand the first two tutorials ( a small project using the Part workbench and a small project using Part Design) then you can skip to any other section of the book and work through any of the other tutorials.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-003"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/fc_for_makers.png"
+  alt="FreeCAD for makers"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="578"
+  height="760"
+    srcset="/Website/pr-16/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/fc_for_makers_hu_c57cd41c914c3469.webp 500w, /Website/pr-16/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/fc_for_makers.png 578w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>FreeCAD for makers</figcaption></figure><div id="img-003" popover>
+          <button class="close"
+            popovertarget="img-003"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/fc_for_makers.png"
+              title="FreeCAD for makers"
+              alt="FreeCAD for makers"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>A less common recommendation but one that some people find incredibly useful when they have learnt a little FreeCAD is to look at other peoples project files. A great source of this, again, can be the FreeCAD Forum, however it&rsquo;s hard to ignore the amount of FreeCAD projects shared on 3D printing related sites. Whilst there are many sites. Thingiverse, Grabcad and more, <a href="https://www.printables.com/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Printables<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> is a popular option. Using the search term &ldquo;FreeCAD&rdquo; returns page after page of results, and whilst we can&rsquo;t claim to have checked them all, most of the resulting projects include the FreeCAD project file as well as some exported 3D objects. Of course, these projects are all aimed at 3D printing technology but they are fascinating and often useful to download, look at, and tweak, broadening the pool of FreeCAD approaches you&rsquo;ve seen.</p>
+<p>Finally, thank you, if you are one of the many many people in our community who answer the &ldquo;how do I get started?&rdquo; question and help others start their journey, we salute you.</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/news/wip-wednesday-12-june-2024/"
+             title="Next article"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday - 12 June 2024</a><a class="page-item prev"
+             href="/Website/pr-16/news/gsoc-projects-in-2024/"
+             title="Previous article">GSoC projects in 2024<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Go to Top"
+  title="Go to Top (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/authors/">Authors</a>
+                      </li><li>
+                        <a href="/Website/pr-16/categories/">Categories</a>
+                      </li><li>
+                        <a href="/Website/pr-16/tags/">Tags</a>
+                      </li><li>
+                        <a href="/Website/pr-16/versions/">Versions</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/fedishare.html#title=Tutorial&#43;-&#43;Approaching&#43;the&#43;%E2%80%9CHow&#43;do&#43;I&#43;get&#43;started&#43;in&#43;FreeCAD%E2%80%9D&#43;question%21&amp;description=&#43;There&#43;are&#43;so&#43;many&#43;community&#43;areas&#43;around&#43;FreeCAD.&#43;Apart&#43;from&#43;the&#43;excellent&#43;official&#43;FreeCAD&#43;forum&#43;almost&#43;every&#43;conceivable&#43;messaging&#43;platform&#43;or&#43;social&#43;media&#43;camp&#43;has&#43;a&#43;FreeCAD&#43;presence.&#43;From&#43;%E2%80%A6%0A%23getting-started&amp;url=https://FreeCAD.github.io/Website/pr-16/news/tutorial-approaching-the-how-do-i-get-started-in-freecad-question/"
+  title="Share on Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

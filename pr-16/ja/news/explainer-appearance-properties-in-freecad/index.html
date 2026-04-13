@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ja-JP"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Explainer - Appearance Properties in FreeCAD</title>
+  <meta name="description" content="あなた自身の自由でオープンソースのパラメトリックモデラー"><meta name="keywords" content="materials, light"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/ja/news/explainer-appearance-properties-in-freecad/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/explainer-appearance-properties-in-freecad/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/explainer-appearance-properties-in-freecad/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/explainer-appearance-properties-in-freecad/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/explainer-appearance-properties-in-freecad/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/explainer-appearance-properties-in-freecad/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/explainer-appearance-properties-in-freecad/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/explainer-appearance-properties-in-freecad/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/ja/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/ja/news/explainer-appearance-properties-in-freecad/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Explainer - Appearance Properties in FreeCAD">
+  <meta property="og:description" content="FreeCAD 1.0 introduced a new, refactored material system , which includes updated appearance properties of FreeCAD objects. What was previously one property ‘Shape color’ is now six new properties in the ‘Shape Appearance’ group of properties. This article explains how to set up these properties to achieve the desired surface look.">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2025-11-09T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:51:27+02:00">
+    <meta property="article:tag" content="Materials">
+    <meta property="article:tag" content="Light">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/ja/"accesskey="h"
+      title="ホームページ (Alt + H)"
+      aria-label="ホームページ">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="メニュー"
+    aria-label="メニュー"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/ja/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="言語を選択 (Alt + L)"
+          aria-label="言語を選択"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/explainer-appearance-properties-in-freecad/" title="Explainer - Appearance Properties in FreeCAD">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/explainer-appearance-properties-in-freecad/" title="Explainer - Appearance Properties in FreeCAD">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/explainer-appearance-properties-in-freecad/" title="Explainer - Appearance Properties in FreeCAD">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/explainer-appearance-properties-in-freecad/" title="Explainer - Appearance Properties in FreeCAD">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/explainer-appearance-properties-in-freecad/" title="Explainer - Appearance Properties in FreeCAD">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/explainer-appearance-properties-in-freecad/" title="Explainer - Appearance Properties in FreeCAD">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/ja/news/explainer-appearance-properties-in-freecad/" title="Explainer - Appearance Properties in FreeCAD">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="テーマchromaに切り替える (Alt + T)"
+    aria-label="テーマchromaに切り替える"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 100;">
+
+    <h2 class="title"
+      
+      >Explainer - Appearance Properties in FreeCAD</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2025-11-09T00:00:00Z">2025年11月9日</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/ja/authors/tomas-polak/">Tomas Polak (1)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/ja/categories/tutorial/">Tutorial (26)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/ja/tags/materials/">Materials (1)</a><a href="/Website/pr-16/ja/tags/light/">Light (1)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>800 語</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>4 分</span></div></section><div class="content"><p>FreeCAD 1.0 introduced a new, refactored<a href="https://wiki.freecad.org/Material_Workbench"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener"> material system<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, which includes updated appearance properties of FreeCAD objects. What was previously one property &lsquo;Shape color&rsquo; is now six new properties in the &lsquo;Shape Appearance&rsquo; group of properties. This article explains how to set up these properties to achieve the desired surface look.</p>
+<p>There are six appearance properties, which you can find in the <strong>View</strong> properties -&gt; <strong>Object Style</strong> group under the <strong>Shape Appearance</strong> umbrella. These properties are:</p>
+<ul>
+<li>Diffuse Color</li>
+<li>Ambient Color</li>
+<li>Specular Color</li>
+<li>Emissive Color</li>
+<li>Shininess</li>
+<li>Transparency</li>
+</ul>
+<p>Another way to access the appearance properties of an object is by opening the **Appearance **task panel (Ctrl+D shortcut) and clicking the **Appearance **button, which opens the <strong>Material Properties</strong> dialog.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="画像を拡大" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-02-material-properties-dialogue.png"
+  alt="Fig 02 material properties dialogue"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="384"
+  height="449"
+    srcset="/Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-02-material-properties-dialogue.png 384w"
+    sizes="75vw"></button><figcaption>Fig 02 material properties dialogue</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="画像ビューアを閉じる">
+            <img src="/Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-02-material-properties-dialogue.png"
+              title="Fig 02 material properties dialogue"
+              alt="Fig 02 material properties dialogue"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>These six properties define the &rsquo;look&rsquo; of an object: its color, whether it is shiny or not, and how transparent it is. On a more technical level, each of these properties influences the calculation of how light interacts with an object&rsquo;s surface, and thus how the surface looks to an observer. Let&rsquo;s have a look at how each of these properties influences the appearance of an object&rsquo;s surface.</p>
+<p><strong>Diffuse Color</strong> defines the surface&rsquo;s base color when illuminated. It represents how the object scatters light evenly in all directions, independent of the viewer&rsquo;s angle. In layman&rsquo;s terms, this defines the color of the surface.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="画像を拡大" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-03-diffuse.png"
+  alt="Fig 03 diffuse"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="850"
+  height="400"
+    srcset="/Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-03-diffuse_hu_8d9192c845a6700.webp 500w, /Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-03-diffuse.png 850w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Fig 03 diffuse</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="画像ビューアを閉じる">
+            <img src="/Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-03-diffuse.png"
+              title="Fig 03 diffuse"
+              alt="Fig 03 diffuse"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>**Ambient Color **defines the color of a surface under indirect, uniform lighting, representing how it appears when illuminated only by ambient light in a scene, without directional light, shading, or highlights. In other words, this defines the color of the surface hit by indirect uniform light.</p>
+<p>Ambient color is much less prominent than the diffuse color. For a typical material like plastic, the ambient color should be set to a darker shade of diffuse color. So if a diffuse color of an object is set to bright red RGB (255, 0, 0), the appropriate ambient color could be set to RGB (200, 0, 0). As ambient color&rsquo;s influence on the surface appearance is not so powerful, for most uses in FreeCAD it is OK to leave the default ambient color, which is RGB (85, 85, 85).</p>
+<div class="image-with-popover">
+      <figure><button aria-label="画像を拡大" popovertarget="img-002"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-04-ambient.png"
+  alt="Fig 04 ambient"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="850"
+  height="400"
+    srcset="/Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-04-ambient_hu_a02c7a05e79f60a1.webp 500w, /Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-04-ambient.png 850w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Fig 04 ambient</figcaption></figure><div id="img-002" popover>
+          <button class="close"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="画像ビューアを閉じる">
+            <img src="/Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-04-ambient.png"
+              title="Fig 04 ambient"
+              alt="Fig 04 ambient"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p><strong>Specular Color</strong> defines the color and intensity of the bright, mirror-like highlights that appear on shiny or reflective surfaces when light hits them directly. Basically, how shiny the surface is - bright colors define shiny surface and dark colors define matte surface.</p>
+<p>A standard material like plastic, rubber, or wood does not influence reflections by its own color. So to simulate this, only shades of gray should be used in the specular color. Metals like gold or copper tint the reflection, so you can use color values in the specular color definition.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="画像を拡大" popovertarget="img-003"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-05-specular.png"
+  alt="Fig 05 specular"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="850"
+  height="400"
+    srcset="/Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-05-specular_hu_ef9ada87152ceb1a.webp 500w, /Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-05-specular.png 850w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Fig 05 specular</figcaption></figure><div id="img-003" popover>
+          <button class="close"
+            popovertarget="img-003"
+            popovertargetaction="hide"
+            aria-label="画像ビューアを閉じる">
+            <img src="/Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-05-specular.png"
+              title="Fig 05 specular"
+              alt="Fig 05 specular"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p><strong>Emissive Color</strong> defines the color of a surface that appears to emit light, independent of external lighting, making the object look self-illuminated. Note that this does not simulate a light in the FreeCAD 3D space, it only creates an illusion of light emission. So even if a bright color is set as an emissive color for a surface, other objects in the 3D space will not be influenced by this emission. For materials that do not emit light, set this property to black RGB (0, 0, 0).</p>
+<div class="image-with-popover">
+      <figure><button aria-label="画像を拡大" popovertarget="img-004"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-06-emissive.png"
+  alt="Fig 06 emissive"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="850"
+  height="400"
+    srcset="/Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-06-emissive_hu_6aa7798a819b3f5c.webp 500w, /Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-06-emissive.png 850w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Fig 06 emissive</figcaption></figure><div id="img-004" popover>
+          <button class="close"
+            popovertarget="img-004"
+            popovertargetaction="hide"
+            aria-label="画像ビューアを閉じる">
+            <img src="/Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-06-emissive.png"
+              title="Fig 06 emissive"
+              alt="Fig 06 emissive"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p><strong>Shininess</strong> defines the size and sharpness of specular highlights on a surface. Higher values produce small, sharp highlights, while lower values create broad, soft highlights. It is closely linked to the Specular Color. While Specular Color defines the intensity of reflections, Shininess defines their size. It&rsquo;s best not to set Shininess to too low percentage values, as a large part of the surface could be covered by specular highlights.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="画像を拡大" popovertarget="img-005"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-07-shininess.png"
+  alt="Fig 07 shininess"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="850"
+  height="400"
+    srcset="/Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-07-shininess_hu_1c0d61fe95e9608.webp 500w, /Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-07-shininess.png 850w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Fig 07 shininess</figcaption></figure><div id="img-005" popover>
+          <button class="close"
+            popovertarget="img-005"
+            popovertargetaction="hide"
+            aria-label="画像ビューアを閉じる">
+            <img src="/Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-07-shininess.png"
+              title="Fig 07 shininess"
+              alt="Fig 07 shininess"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p><strong>Transparency</strong> defines how much light passes through an object, making it partially or fully see-through. Use 0% for opaque surfaces and 100% for fully transparent surfaces.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="画像を拡大" popovertarget="img-006"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-08-transparencyt.png"
+  alt="Fig 08 transparencyt"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="850"
+  height="400"
+    srcset="/Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-08-transparencyt_hu_213911b16d7ff027.webp 500w, /Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-08-transparencyt.png 850w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Fig 08 transparencyt</figcaption></figure><div id="img-006" popover>
+          <button class="close"
+            popovertarget="img-006"
+            popovertargetaction="hide"
+            aria-label="画像ビューアを閉じる">
+            <img src="/Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-08-transparencyt.png"
+              title="Fig 08 transparencyt"
+              alt="Fig 08 transparencyt"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>These six core appearance properties enable FreeCAD users to achieve various surface interactions with light, allowing them to simulate the appearance of different types of materials. These properties are also widely used in the CG (Computer Graphics) industry, so most rendering engines should be able to support them.</p>
+<p>Note that every FreeCAD material can have an appearance assigned with these basic appearance properties. If said material is then applied to an object, the appearance properties of the object are set from the material&rsquo;s appearance values.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="画像を拡大" popovertarget="img-007"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-09-material-editor.png"
+  alt="Fig 09 material editor"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1065"
+  height="738"
+    srcset="/Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-09-material-editor_hu_38e732308e78a72.webp 500w, /Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-09-material-editor_hu_c678a5bf1a881e43.webp 1000w, /Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-09-material-editor.png 1065w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Fig 09 material editor</figcaption></figure><div id="img-007" popover>
+          <button class="close"
+            popovertarget="img-007"
+            popovertargetaction="hide"
+            aria-label="画像ビューアを閉じる">
+            <img src="/Website/pr-16/news/explainer-appearance-properties-in-freecad/FIG-09-material-editor.png"
+              title="Fig 09 material editor"
+              alt="Fig 09 material editor"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>To reiterate, for a typical FreeCAD user, setting the Diffuse Color is crucial for changing an object&rsquo;s color. This is roughly what Shape Color did in FreeCAD 0.21 and earlier versions. You can also adjust the gray value of Specular Color to adjust the reflectivity of an object. Changing these two values is typically sufficient for most use cases.</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/ja/news/forged-in-freecad-sl-24-an-open-source-record-lathe/"
+             title="次の記事"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>Forged in FreeCAD - SL-24, An Open Source Record Lathe</a><a class="page-item prev"
+             href="/Website/pr-16/ja/news/wip-wednesday-5-november-2025/"
+             title="前の記事">WIP Wednesday, 5 November 2025<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="トップへ"
+  title="トップへ (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/ja/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/ja/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/ja/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/ja/authors/">著者一覧</a>
+                      </li><li>
+                        <a href="/Website/pr-16/ja/categories/">カテゴリ一覧</a>
+                      </li><li>
+                        <a href="/Website/pr-16/ja/tags/">タグ一覧</a>
+                      </li><li>
+                        <a href="/Website/pr-16/ja/versions/">バージョン一覧</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/ja/fedishare.html#title=Explainer&#43;-&#43;Appearance&#43;Properties&#43;in&#43;FreeCAD&amp;description=FreeCAD&#43;1.0&#43;introduced&#43;a&#43;new%2C&#43;refactored&#43;material&#43;system&#43;%2C&#43;which&#43;includes&#43;updated&#43;appearance&#43;properties&#43;of&#43;FreeCAD&#43;objects.&#43;What&#43;was&#43;previously&#43;one&#43;property&#43;%E2%80%98Shape&#43;color%E2%80%99&#43;is&#43;now&#43;six&#43;new&#43;properties&#43;in&#43;%E2%80%A6%0A%23materials&#43;%23light&amp;url=https://FreeCAD.github.io/Website/pr-16/ja/news/explainer-appearance-properties-in-freecad/"
+  title="共有 Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/ja/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

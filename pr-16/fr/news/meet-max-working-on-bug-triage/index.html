@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="fr-FR"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Meet Max - Working on Bug Triage</title>
+  <meta name="description" content="Votre modeleur paramétrique libre et open-source"><meta name="keywords" content="contributor"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/fr/news/meet-max-working-on-bug-triage/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/meet-max-working-on-bug-triage/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/meet-max-working-on-bug-triage/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/meet-max-working-on-bug-triage/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/meet-max-working-on-bug-triage/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/meet-max-working-on-bug-triage/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/meet-max-working-on-bug-triage/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/meet-max-working-on-bug-triage/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/fr/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/fr/news/meet-max-working-on-bug-triage/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Meet Max - Working on Bug Triage">
+  <meta property="og:description" content="Based in Germany, Max is a mechanical engineer in the automotive industry working on electric drive systems for vehicles. In his work life Catia seats are more the norm but Max was interested in alternatives he could use at home to fuel his passion for 3D printing. Of course this led Max to FreeCAD. Max has some lovely personal projects he has created using FreeCAD which you can check out over on Max’s Printables Page .">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2024-03-22T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:47:39+02:00">
+    <meta property="article:tag" content="Contributor">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/fr/"accesskey="h"
+      title="Accueil (Alt + H)"
+      aria-label="Accueil">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/fr/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choisir la langue (Alt + L)"
+          aria-label="Choisir la langue"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/meet-max-working-on-bug-triage/" title="Meet Max - Working on Bug Triage">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/meet-max-working-on-bug-triage/" title="Meet Max - Working on Bug Triage">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/meet-max-working-on-bug-triage/" title="Meet Max - Working on Bug Triage">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/fr/news/meet-max-working-on-bug-triage/" title="Meet Max - Working on Bug Triage">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/meet-max-working-on-bug-triage/" title="Meet Max - Working on Bug Triage">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/meet-max-working-on-bug-triage/" title="Meet Max - Working on Bug Triage">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/meet-max-working-on-bug-triage/" title="Meet Max - Working on Bug Triage">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Changer le thème (Alt + T)"
+    aria-label="Changer le thème"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 80;">
+
+    <h2 class="title"
+      
+      >Meet Max - Working on Bug Triage</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2024-03-22T00:00:00Z">22 mars 2024</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/fr/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/fr/categories/showcase/">Showcase (30)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/fr/tags/contributor/">Contributor (2)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>426 mots</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>2 min</span></div><figure class="article-cover"><img srcset="/Website/pr-16/news/meet-max-working-on-bug-triage/clip_mount_hu_b41cc6100555777a.webp 500w, /Website/pr-16/news/meet-max-working-on-bug-triage/clip_mount_hu_3d116e71b2e9c919.webp 1000w, /Website/pr-16/news/meet-max-working-on-bug-triage/clip_mount.png 2531w"
+        sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"
+        src="/Website/pr-16/news/meet-max-working-on-bug-triage/clip_mount.png"
+        title="Clip mount"
+        alt="Image de secours"
+        width="2531"
+        height="1384"
+        loading="eager"
+        fetchpriority="high"><figcaption>
+        <div class="internal-tooltip"><svg class="icon-important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/important.svg#important"></use>
+  </svg><span class="tooltip">Clip mount</span>
+        </div>
+      </figcaption></figure></section><div class="content"><p>Based in Germany, Max is a mechanical engineer in the automotive industry working on electric drive systems for vehicles. In his work life Catia seats are more the norm but Max was interested in alternatives he could use at home to fuel his passion for 3D printing. Of course this led Max to FreeCAD. Max has some lovely personal projects he has created using FreeCAD which you can check out over on <a href="https://www.printables.com/@maxwxyz/models"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Max&rsquo;s Printables Page<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>.</p>
+<p>Having got to grips with using FreeCAD, excellently Max became interested in contributing to the project. Max taught himself, with help from the community, to build FreeCAD and began to contribute simple fixes to documentation and tool tips and more.</p>
+<p>When the <a href="https://forum.freecad.org/viewtopic.php?style=4&amp;t=84689"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">FPA announced the grant allocation for the bug triage role<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> Max was the successful applicant and he has now completed his first month delivering this work. As a recap the role is centred around managing the GitHub <a href="https://github.com/freecad/freecad-homepage/issues"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">FreeCAD bug tracker<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> . The role places emphasis on various related activities such as, checking new bug submissions for relevance and/or duplication. Another task is to rephrase issues raised to make them addressable points so that required action is clearly identifiable. Max also acts as a facilitator between issue authors, seeking clarifications and further information, to feed to the relevant maintainers and developers.</p>
+<p>As part of his first month of activities Max has now produced his first report <a href="https://github.com/freecad/fpa/blob/main/reports/BugTracker/maxwxyz_report.md"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">available to view here<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>. The report begins with some context and some statistics for the month. It&rsquo;s a really easy straightforward read and obvious to see the quality work Max has done.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/meet-max-working-on-bug-triage/current_stats_this_month.png"
+  alt="Current stats this month"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="381"
+  height="197"
+    srcset="/Website/pr-16/news/meet-max-working-on-bug-triage/current_stats_this_month.png 381w"
+    sizes="75vw"></button><figcaption>Current stats this month</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/meet-max-working-on-bug-triage/current_stats_this_month.png"
+              title="Current stats this month"
+              alt="Current stats this month"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>It&rsquo;s great to see that in this first month every new issue has been checked for quality and classified, a valuable first step in the journey to issues getting fixed and closed. Beyond this Max provides a list of manually closed issues this month with one line descriptors of the reason for closing, many are closed as a duplication, some are unresponsive but many are fixed or implemented.</p>
+<p>Max closes out the report with planned activity in the coming months. Max plans to deep dive into the pile of older issues mostly imported from the older bug tracker system. Max also will continue to manage the <a href="https://github.com/orgs/freecad/projects/20/views/1"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">FreeCAD Complaints Day project board<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> assessing and integrating the issues raised in that session into the system.</p>
+<p>As part of the work Max is also keeping an eye on most of the different FreeCAD community areas, the <a href="https://forum.freecad.org/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">official forum<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, discord, Reddit etc. On the FreeCAD forum Max is @Maxwxyz.</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/fr/news/wip-wednesday-27-march-2024/"
+             title="Article suivant"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday - 27 March 2024</a><a class="page-item prev"
+             href="/Website/pr-16/fr/news/wip-wednesday-20-march-2024/"
+             title="Article précédent">WIP Wednesday - 20 March 2024<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Aller au sommet de la page"
+  title="Aller au sommet de la page (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/fr/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/fr/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/fr/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/fr/authors/">Auteurs</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/categories/">Catégories</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/tags/">Mots-Clés</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/versions/">Versions</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/fr/fedishare.html#title=Meet&#43;Max&#43;-&#43;Working&#43;on&#43;Bug&#43;Triage&amp;description=Based&#43;in&#43;Germany%2C&#43;Max&#43;is&#43;a&#43;mechanical&#43;engineer&#43;in&#43;the&#43;automotive&#43;industry&#43;working&#43;on&#43;electric&#43;drive&#43;systems&#43;for&#43;vehicles.&#43;In&#43;his&#43;work&#43;life&#43;Catia&#43;seats&#43;are&#43;more&#43;the&#43;norm&#43;but&#43;Max&#43;was&#43;interested&#43;in&#43;%E2%80%A6%0A%23contributor&amp;url=https://FreeCAD.github.io/Website/pr-16/fr/news/meet-max-working-on-bug-triage/"
+  title="Partager sur Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/fr/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

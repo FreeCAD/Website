@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="fr-FR"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Tutorial - Getting started with Spreadsheets and Parametric Design</title>
+  <meta name="description" content="Votre modeleur paramétrique libre et open-source"><meta name="keywords" content="spreadsheet"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/fr/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/fr/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/fr/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Tutorial - Getting started with Spreadsheets and Parametric Design">
+  <meta property="og:description" content="Amongst the built in collection of FreeCAD workbenches, you may have noticed one for creating and working with spreadsheets. Whilst you could use this to track your expenses, let’s look at an example project where a spreadsheet is really useful! As a quick reminder, when we write tutorials we call tools by the tool tip names that appear when you rollover tools and show them as italic text in the article.">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2025-04-08T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:47:39+02:00">
+    <meta property="article:tag" content="Spreadsheet">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/fr/"accesskey="h"
+      title="Accueil (Alt + H)"
+      aria-label="Accueil">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/fr/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choisir la langue (Alt + L)"
+          aria-label="Choisir la langue"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/" title="Tutorial - Getting started with Spreadsheets and Parametric Design">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/" title="Tutorial - Getting started with Spreadsheets and Parametric Design">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/" title="Tutorial - Getting started with Spreadsheets and Parametric Design">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/fr/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/" title="Tutorial - Getting started with Spreadsheets and Parametric Design">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/" title="Tutorial - Getting started with Spreadsheets and Parametric Design">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/" title="Tutorial - Getting started with Spreadsheets and Parametric Design">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/" title="Tutorial - Getting started with Spreadsheets and Parametric Design">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Changer le thème (Alt + T)"
+    aria-label="Changer le thème"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 100;">
+
+    <h2 class="title"
+      
+      >Tutorial - Getting Started With Spreadsheets and Parametric Design</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2025-04-08T00:00:00Z">8 avril 2025</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/fr/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/fr/categories/tutorial/">Tutorial (26)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/fr/tags/spreadsheet/">Spreadsheet (1)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>839 mots</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>4 min</span></div><figure class="article-cover"><img srcset="/Website/pr-16/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/freecad_spreadsheet_hu_389fa140dd94e468.webp 500w, /Website/pr-16/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/freecad_spreadsheet_hu_e8bf4ef32f5b0e7d.webp 1000w, /Website/pr-16/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/freecad_spreadsheet.png 1539w"
+        sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"
+        src="/Website/pr-16/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/freecad_spreadsheet.png"
+        title="Freecad spreadsheet"
+        alt="Image de secours"
+        width="1539"
+        height="907"
+        loading="eager"
+        fetchpriority="high"><figcaption>
+        <div class="internal-tooltip"><svg class="icon-important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/important.svg#important"></use>
+  </svg><span class="tooltip">Freecad spreadsheet</span>
+        </div>
+      </figcaption></figure></section><div class="content"><p>Amongst the built in collection of FreeCAD workbenches, you may have noticed one for creating and working with spreadsheets. Whilst you could use this to track your expenses, let&rsquo;s look at an example project where a spreadsheet is really useful! As a quick reminder, when we write tutorials we call tools by the tool tip names that appear when you rollover tools and show them as italic text in the article.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/annular_inflate.webp"
+  alt="Annular inflate"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="900"
+  height="1300"
+    srcset="/Website/pr-16/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/annular_inflate_hu_66e7e94866cba8ba.webp 500w, /Website/pr-16/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/annular_inflate.webp 900w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Annular inflate</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/annular_inflate.webp"
+              title="Annular inflate"
+              alt="Annular inflate"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>The aim of the project is to create a trapezium shaped sketch pattern for a panel or &ldquo;gore&rdquo; of a moderately complex annular parachute. The parachute project isn&rsquo;t really important, but it gives a good example of how a spreadsheet can be used in a parametric design. When designing an annular parachute you make two fundamental choices, one is the number of &lsquo;gores&rsquo; or panels you require and then a target &lsquo;design diameter&rsquo;. All the other dimensions for the individual gore patterns and the line lengths are then derived by simple numerical calculations using the gore number and design diameter. Often the panels are cut using a laser cutter so being able to quickly generate a sketch and then export the design as a .dxf or .svg file is really useful.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/annular_sketch.png"
+  alt="Annular sketch"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="707"
+  height="558"
+    srcset="/Website/pr-16/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/annular_sketch_hu_9d54d03be1d9759.webp 500w, /Website/pr-16/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/annular_sketch.png 707w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Annular sketch</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/annular_sketch.png"
+              title="Annular sketch"
+              alt="Annular sketch"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>To begin let&rsquo;s create a new project in Part Design, click to create a body and then create a sketch in the XY plane. Next select the _Create polyline _tool and draw a trapezium with the base line coincident to the X axis line. Click the <em>Toggle construction geometry</em> tool and then click the <em>Create line</em> tool and then lets draw a construction line from the zero point connected vertically to the topmost horizontal line. Finally let&rsquo;s constrain the upper and lower horizontal line end points around the y axis line with the <em>Constrain Symmetric</em> tool.</p>
+<p>Close the sketch and next let&rsquo;s jump over to the spreadsheet workbench. In the spreadsheet workbench click the <em>Create spreadsheet</em> tool icon and you should see a new tab open with an empty spreadsheet appear. In cell A1 and cell A2 we&rsquo;ve added some text labels for Design Diameter and Number of Gores and then we can input those values in cells B1 and B2. We&rsquo;ve put 1800 mm and 12 gores in for now, but when we return to this project to design specific parachutes we can alter these values.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-002"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/annular_spreadsheet_input.png"
+  alt="Annular spreadsheet input"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="919"
+  height="531"
+    srcset="/Website/pr-16/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/annular_spreadsheet_input_hu_22d98f3e4fa6e813.webp 500w, /Website/pr-16/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/annular_spreadsheet_input.png 919w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Annular spreadsheet input</figcaption></figure><div id="img-002" popover>
+          <button class="close"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/annular_spreadsheet_input.png"
+              title="Annular spreadsheet input"
+              alt="Annular spreadsheet input"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Below this we&rsquo;ve added a lot of labels for all the different dimensions which are calculated from the two main input parameters. Most of these are just ratios of the Design Diameter parameter or other simple calculations. We can create these simple calculations by adding small expressions to each cell. So for example the height of each gore is a simple ratio of the Design Diameter multiplied by 0.304 . To calculate this in cell B6 which we labelled for gore height we insert;</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="o">=</span><span class="n">B1</span> <span class="o">*</span> <span class="mf">0.304</span></span></span></code></pre></div></div><p>We then added similar small formula for the dimensions needed by the sketch, these are the gore panel width at the top and bottom. The other items in the spreadsheet are other dimensions needed to create a parachute of this design such as the various line lengths etc. If you are interested the FreeCAD project is over on <a href="https://github.com/concretedog/annular_parachute_tools"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">this repository<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-003"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/expression_editor.png"
+  alt="Expression editor"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="731"
+  height="534"
+    srcset="/Website/pr-16/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/expression_editor_hu_aa125c7dc6e7709c.webp 500w, /Website/pr-16/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/expression_editor.png 731w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Expression editor</figcaption></figure><div id="img-003" popover>
+          <button class="close"
+            popovertarget="img-003"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/expression_editor.png"
+              title="Expression editor"
+              alt="Expression editor"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>With our formulae now returning the parameters we need we can return to the sketch and use the spreadsheet values locations to create and update constraints. We can click the upper horizontal line and apply a length constraint. Instead of typing a fixed value into the &ldquo;Insert Length&rdquo; dialogue box directly we click the small expression editor button that looks like a blue circle with &ldquo;_f(x)&rdquo; _written inside. This launches the Expressions editor dialogue and in this we then type &ldquo;Spreadsheet.B8&rdquo; as the location of the value for the length of this line. EDIT! Over on Mastodon Michael excellently suggested that instead of clicking the <em>&ldquo;f(x)</em>&rdquo; button simply clicking the &ldquo;=&rdquo; key in a constraint dialogue box directly launches the Expressions editor. Thanks Michael.</p>
+<p>Clicking OK we see that the value calculated in cell B8 is now applied to this length constraint. We repeat the process adding the locations to the gore width at bottom and finally set a height value for the construction line we added earlier linking to the cell B6. With the three constraints set up with parameters we see the sketch is fully constrained. Notice though that should we require a totally different size annular parachute design with a totally different number of gore panels we simply update the 2 original values, the design diameter and the number of gores and our new pattern is instantly created. We can close the sketch and then it&rsquo;s simple to export the sketch when it comes to wanting to laser cut or print and cutting a gore or pattern.</p>
+<p>Hopefully this served as a nice example of how simple spreadsheets can aid parametric design, that said, if any readers get into building parachutes using FreeCAD we&rsquo;d love to hear about that as well!</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/fr/news/wip-wednesday-9-april-2025/"
+             title="Article suivant"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday - 9 April 2025</a><a class="page-item prev"
+             href="/Website/pr-16/fr/news/q1-2025-grants-announced/"
+             title="Article précédent">Q1 2025 Grants announced<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Aller au sommet de la page"
+  title="Aller au sommet de la page (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/fr/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/fr/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/fr/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/fr/authors/">Auteurs</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/categories/">Catégories</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/tags/">Mots-Clés</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/versions/">Versions</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/fr/fedishare.html#title=Tutorial&#43;-&#43;Getting&#43;started&#43;with&#43;Spreadsheets&#43;and&#43;Parametric&#43;Design&amp;description=Amongst&#43;the&#43;built&#43;in&#43;collection&#43;of&#43;FreeCAD&#43;workbenches%2C&#43;you&#43;may&#43;have&#43;noticed&#43;one&#43;for&#43;creating&#43;and&#43;working&#43;with&#43;spreadsheets.&#43;Whilst&#43;you&#43;could&#43;use&#43;this&#43;to&#43;track&#43;your&#43;expenses%2C&#43;let%E2%80%99s&#43;look&#43;at&#43;an&#43;example&#43;%E2%80%A6%0A%23spreadsheet&amp;url=https://FreeCAD.github.io/Website/pr-16/fr/news/tutorialgetting-started-with-spreadsheets-and-parametric-design/"
+  title="Partager sur Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/fr/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

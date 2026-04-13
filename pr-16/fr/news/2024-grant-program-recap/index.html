@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="fr-FR"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | 2024 Grant program recap</title>
+  <meta name="description" content="Votre modeleur paramétrique libre et open-source"><meta name="keywords" content="FPA, grant"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/fr/news/2024-grant-program-recap/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/2024-grant-program-recap/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/2024-grant-program-recap/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/2024-grant-program-recap/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/2024-grant-program-recap/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/2024-grant-program-recap/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/2024-grant-program-recap/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/2024-grant-program-recap/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/fr/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/fr/news/2024-grant-program-recap/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="2024 Grant program recap">
+  <meta property="og:description" content="Since its inception in late 2021, the FreeCAD Project Association (FPA) has been collecting the community’s donations with the intention of spending them on improving FreeCAD and its ecosystem. In 2024, the FPA launched its first annual grant program. Here is a recap of how this went.">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2025-02-13T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:40:06+02:00">
+    <meta property="article:tag" content="FPA">
+    <meta property="article:tag" content="Grant">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/fr/"accesskey="h"
+      title="Accueil (Alt + H)"
+      aria-label="Accueil">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/fr/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choisir la langue (Alt + L)"
+          aria-label="Choisir la langue"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/2024-grant-program-recap/" title="2024 Grant program recap">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/2024-grant-program-recap/" title="2024 Grant program recap">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/2024-grant-program-recap/" title="2024 Grant program recap">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/fr/news/2024-grant-program-recap/" title="2024 Grant program recap">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/2024-grant-program-recap/" title="2024 Grant program recap">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/2024-grant-program-recap/" title="2024 Grant program recap">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/2024-grant-program-recap/" title="2024 Grant program recap">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Changer le thème (Alt + T)"
+    aria-label="Changer le thème"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 20;">
+
+    <h2 class="title"
+      
+      >2024 Grant Program Recap</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2025-02-13T00:00:00Z">13 février 2025</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/fr/authors/aleksandr-prokudin/">Aleksandr Prokudin (169)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/fr/categories/announcement/">Announcement (94)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/fr/tags/fpa/">FPA (44)</a><a href="/Website/pr-16/fr/tags/grant/">Grant (22)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>588 mots</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>3 min</span></div></section><div class="content"><p>Since its inception in late 2021, the FreeCAD Project Association (FPA) has been collecting the community&rsquo;s donations with the intention of spending them on improving FreeCAD and its ecosystem. In 2024, the FPA launched its first annual grant program. Here is a recap of how this went.</p>
+<h2
+  id="program-and-out-of-program-participation"
+  
+  >Program and out-of-program participation<a class="heading-anchor"
+     href="#program-and-out-of-program-participation"
+     title="Program and out-of-program participation"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>The idea behind the annual program was to batch the review of grant applications, similar to what the team does for Google Summer of Code (GSoC). However, we received only four applications by the initial deadline:</p>
+<ul>
+<li>
+<p>Sketcher refactoring, by Ajinkya Dahale;</p>
+</li>
+<li>
+<p>Code transfer completion in the toponaming project, by Bradley McLean;</p>
+</li>
+<li>
+<p>Designing furniture and parametric components for the FreeCAD library, by Francisco de Assis Rosa;</p>
+</li>
+<li>
+<p>C++ API Documentation, by Pieter Hijma.</p>
+</li>
+</ul>
+<p>The first three projects have been successfully completed, the last one is an ongoing project.</p>
+<p>After this initial batch of grants, we started receiving more out-of-program applications: more toponaming fixes, API documentation improvements, user guide updates, UX/UI improvements, etc.</p>
+<p>The total number of approved grants since the annual program launch in 2024 was 17. Three additional grants were given prior to the launch, in January and February 2024.</p>
+<h2
+  id="budget-allocation"
+  
+  >Budget allocation<a class="heading-anchor"
+     href="#budget-allocation"
+     title="Budget allocation"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>The overall monetary allocation for all 20 projects in 2024 was $82,350-significantly above the original $50,000 budget. Despite this overrun, the FPA is still receiving money faster than it is spending it.</p>
+<p>This is how the expense allocation for the approved grants breaks down by type of work:</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/2024-grant-program-recap/allocation-1.png"
+  alt="Allocation 1"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="953"
+  height="588"
+    srcset="/Website/pr-16/news/2024-grant-program-recap/allocation-1_hu_208c6e6ab9593684.webp 500w, /Website/pr-16/news/2024-grant-program-recap/allocation-1.png 953w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Chart</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/2024-grant-program-recap/allocation-1.png"
+              title="Chart"
+              alt="Allocation 1"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Here is a breakdown of the allocation for code contributions:</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/2024-grant-program-recap/allocation-2.png"
+  alt="Allocation 2"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1220"
+  height="840"
+    srcset="/Website/pr-16/news/2024-grant-program-recap/allocation-2_hu_9874f8041d97bec1.webp 500w, /Website/pr-16/news/2024-grant-program-recap/allocation-2_hu_9074d311026a7ee2.webp 1000w, /Website/pr-16/news/2024-grant-program-recap/allocation-2.png 1220w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Chart</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/2024-grant-program-recap/allocation-2.png"
+              title="Chart"
+              alt="Allocation 2"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Please note that all this is allocation, not actual spending. The distinction is important because not all projects have been completed yet. Some of the funds allocated in 2024 will only be disbursed in 2025.</p>
+<p>More information about the 2024 spending will be published in FPA&rsquo;s annual report later this month.</p>
+<h2
+  id="aftermath"
+  
+  >Aftermath<a class="heading-anchor"
+     href="#aftermath"
+     title="Aftermath"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Overall, we think we are on the right track with the grant program. The FPA went from spending $4K in 2023 to allocating over $80K in 2024. The idea of paying contributors to do focused work that benefits the community is getting normalized, and that&rsquo;s a good thing.</p>
+<p>There are certain things we think we need to improve.</p>
+<ul>
+<li>
+<p>The annual program didn&rsquo;t get as many grant applications as we hoped for. The idea of batching reviews is still sound, so for 2025, we are making changes in how we run the program (see below).</p>
+</li>
+<li>
+<p>Currently, we have a minor overlap between the grant review committee and the FPA general assembly. So, some of the people who make technical recommendations also have voting power. We think this needs to be corrected by getting more people involved with technical reviews, eventually eliminating voting FPA members from the initial review process.</p>
+</li>
+<li>
+<p>The voting process was highly variable in how much time it took to achieve a quorum. That&rsquo;s why the work on one of the first grants (by the late Bradley McLean) was completed before we even announced the first approved grants. The FPA will continue to work to ensure that all members vote in a timely manner so that grants aren&rsquo;t delayed due to lack of member participation.</p>
+</li>
+</ul>
+<h2
+  id="going-forward"
+  
+  >Going forward<a class="heading-anchor"
+     href="#going-forward"
+     title="Going forward"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>For 2025, we are replacing the annual program with four waves of grant reviews, on a quarterly basis. We are also raising the overall allocation cap to $80,000 for the entire year. This does not affect or include either 2024 projects or the only grant application that was submitted in 2024 and approved in 2025 (Ajinkya&rsquo;s second Sketcher refactoring project). Stay tuned for a separate announcement.</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/fr/news/the-ondsel-onwards-fund/"
+             title="Article suivant"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>The Ondsel Onwards Fund</a><a class="page-item prev"
+             href="/Website/pr-16/fr/news/wip-wednesday-12-february-2025/"
+             title="Article précédent">WIP Wednesday - 12 February 2025<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Aller au sommet de la page"
+  title="Aller au sommet de la page (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/fr/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/fr/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/fr/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/fr/authors/">Auteurs</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/categories/">Catégories</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/tags/">Mots-Clés</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/versions/">Versions</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/fr/fedishare.html#title=2024&#43;Grant&#43;program&#43;recap&amp;description=Since&#43;its&#43;inception&#43;in&#43;late&#43;2021%2C&#43;the&#43;FreeCAD&#43;Project&#43;Association&#43;%28FPA%29&#43;has&#43;been&#43;collecting&#43;the&#43;community%E2%80%99s&#43;donations&#43;with&#43;the&#43;intention&#43;of&#43;spending&#43;them&#43;on&#43;improving&#43;FreeCAD&#43;and&#43;its&#43;ecosystem.&#43;In&#43;%E2%80%A6%0A%23fpa&#43;%23grant&amp;url=https://FreeCAD.github.io/Website/pr-16/fr/news/2024-grant-program-recap/"
+  title="Partager sur Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/fr/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

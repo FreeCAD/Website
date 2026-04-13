@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ja-JP"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Tutorial - Festive tree decoration, using the Revolution Tool!</title>
+  <meta name="description" content="あなた自身の自由でオープンソースのパラメトリックモデラー"><meta name="keywords" content="3D printing"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/ja/news/tutorial-festive-tree-decoration-using-the-revolution-tool/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/tutorial-festive-tree-decoration-using-the-revolution-tool/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/tutorial-festive-tree-decoration-using-the-revolution-tool/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/tutorial-festive-tree-decoration-using-the-revolution-tool/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/tutorial-festive-tree-decoration-using-the-revolution-tool/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/tutorial-festive-tree-decoration-using-the-revolution-tool/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/tutorial-festive-tree-decoration-using-the-revolution-tool/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/tutorial-festive-tree-decoration-using-the-revolution-tool/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/ja/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/ja/news/tutorial-festive-tree-decoration-using-the-revolution-tool/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Tutorial - Festive tree decoration, using the Revolution Tool!">
+  <meta property="og:description" content="The FreeCAD community is a wonderful diverse place and certainly not everyone in the community will be involved in traditions of bringing trees into their homes and then decorating them! However a festive tree decoration, in the shape of a tree, can be a good mini project for playing with the Revolution tool.">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2024-12-13T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:47:39+02:00">
+    <meta property="article:tag" content="3D Printing">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/ja/"accesskey="h"
+      title="ホームページ (Alt + H)"
+      aria-label="ホームページ">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="メニュー"
+    aria-label="メニュー"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/ja/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="言語を選択 (Alt + L)"
+          aria-label="言語を選択"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/tutorial-festive-tree-decoration-using-the-revolution-tool/" title="Tutorial - Festive tree decoration, using the Revolution Tool!">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/tutorial-festive-tree-decoration-using-the-revolution-tool/" title="Tutorial - Festive tree decoration, using the Revolution Tool!">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/tutorial-festive-tree-decoration-using-the-revolution-tool/" title="Tutorial - Festive tree decoration, using the Revolution Tool!">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/tutorial-festive-tree-decoration-using-the-revolution-tool/" title="Tutorial - Festive tree decoration, using the Revolution Tool!">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/tutorial-festive-tree-decoration-using-the-revolution-tool/" title="Tutorial - Festive tree decoration, using the Revolution Tool!">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/tutorial-festive-tree-decoration-using-the-revolution-tool/" title="Tutorial - Festive tree decoration, using the Revolution Tool!">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/ja/news/tutorial-festive-tree-decoration-using-the-revolution-tool/" title="Tutorial - Festive tree decoration, using the Revolution Tool!">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="テーマchromaに切り替える (Alt + T)"
+    aria-label="テーマchromaに切り替える"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 100;">
+
+    <h2 class="title"
+      
+      >Tutorial - Festive Tree Decoration, Using the Revolution Tool!</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2024-12-13T00:00:00Z">2024年12月13日</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/ja/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/ja/categories/tutorial/">Tutorial (26)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/ja/tags/3d-printing/">3D Printing (15)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>380 語</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>2 分</span></div><figure class="article-cover"><img srcset="/Website/pr-16/news/tutorial-festive-tree-decoration-using-the-revolution-tool/main_hu_5bdf7d4a1d2fcdc4.webp 500w, /Website/pr-16/news/tutorial-festive-tree-decoration-using-the-revolution-tool/main.png 992w"
+        sizes="(max-width: 500px) 500px, 75vw"
+        src="/Website/pr-16/news/tutorial-festive-tree-decoration-using-the-revolution-tool/main.png"
+        title="Festive Tree Decoration"
+        alt="代替画像"
+        width="992"
+        height="748"
+        loading="eager"
+        fetchpriority="high"><figcaption>
+        <div class="internal-tooltip"><svg class="icon-important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/important.svg#important"></use>
+  </svg><span class="tooltip">Festive Tree Decoration</span>
+        </div>
+      </figcaption></figure></section><div class="content"><p>The FreeCAD community is a wonderful diverse place and certainly not everyone in the community will be involved in traditions of bringing trees into their homes and then decorating them! However a festive tree decoration, in the shape of a tree, can be a good mini project for playing with the Revolution tool.</p>
+<p>Note that in all our tutorials on this blog we describe tools using the tool tips that appear when you hover your pointer over tool icons. This encourages everyone to look through the tool icon descriptions!</p>
+<p>To begin open up FreeCAD and create a new project. Move to the Part Design workbench and then in the combo view click &ldquo;Create Body&rdquo; and in turn &ldquo;Create Sketch&rdquo; and select the XZ plane to sketch in. You should now see that you have jumped to the Sketcher workbench.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="画像を拡大" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-festive-tree-decoration-using-the-revolution-tool/sketch.png"
+  alt="Sketch"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="992"
+  height="748"
+    srcset="/Website/pr-16/news/tutorial-festive-tree-decoration-using-the-revolution-tool/sketch_hu_69efc2863d1512b2.webp 500w, /Website/pr-16/news/tutorial-festive-tree-decoration-using-the-revolution-tool/sketch.png 992w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Sketch</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="画像ビューアを閉じる">
+            <img src="/Website/pr-16/news/tutorial-festive-tree-decoration-using-the-revolution-tool/sketch.png"
+              title="Sketch"
+              alt="Sketch"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>We are going to create a sketch that forms a profile of one half of our basic festive tree design. Click on the &ldquo;Create Polyline&rdquo; tool. Staring from the Z axis line draw a profile roughly matching ours. Notice that we have left a small flat section at the very top and we&rsquo;ve closed the polyline with a final line up the Z axis to create a closed sketch. Whilst you can constrain the sketch correctly it&rsquo;s not too critical to do so when creating a festive tree decoration!</p>
+<div class="image-with-popover">
+      <figure><button aria-label="画像を拡大" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-festive-tree-decoration-using-the-revolution-tool/revolution.png"
+  alt="Revolution"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1655"
+  height="747"
+    srcset="/Website/pr-16/news/tutorial-festive-tree-decoration-using-the-revolution-tool/revolution_hu_fd49ffcd97b008ed.webp 500w, /Website/pr-16/news/tutorial-festive-tree-decoration-using-the-revolution-tool/revolution_hu_884f1809c211aa20.webp 1000w, /Website/pr-16/news/tutorial-festive-tree-decoration-using-the-revolution-tool/revolution.png 1655w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Revolution</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="画像ビューアを閉じる">
+            <img src="/Website/pr-16/news/tutorial-festive-tree-decoration-using-the-revolution-tool/revolution.png"
+              title="Revolution"
+              alt="Revolution"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Close the sketch to return to the Part Design workbench and then highlight the sketch in the combo view panel. Next click the &ldquo;Revolution&rdquo; tool icon. You should now see that your sketch has been extruded revolving to create a circular profile of a tree. Note that you can change the angular amount of rotation, whilst we have left ours at the full 360 degrees you might consider, for example, revolving the object 180 degrees so it has a flat back, perfect for 3D printing in two halves.</p>
+<p>To add our little hanging loop to our decoration we simply added another sketch and use the Pad tool to create the loop clicking the &ldquo;Symmetric to plane&rdquo; option to position it correctly.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="画像を拡大" popovertarget="img-002"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-festive-tree-decoration-using-the-revolution-tool/pad_loop.png"
+  alt="Pad loop"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="730"
+  height="747"
+    srcset="/Website/pr-16/news/tutorial-festive-tree-decoration-using-the-revolution-tool/pad_loop_hu_58739ce3da09cfa.webp 500w, /Website/pr-16/news/tutorial-festive-tree-decoration-using-the-revolution-tool/pad_loop.png 730w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Pad loop</figcaption></figure><div id="img-002" popover>
+          <button class="close"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="画像ビューアを閉じる">
+            <img src="/Website/pr-16/news/tutorial-festive-tree-decoration-using-the-revolution-tool/pad_loop.png"
+              title="Pad loop"
+              alt="Pad loop"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Finally, we are sure that wonderful FreeCAD users could create much better designs than this! Do feel free to share any festive designs you are working on!</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/ja/news/wip-wednesday-18-december-2024/"
+             title="次の記事"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday - 18 December 2024</a><a class="page-item prev"
+             href="/Website/pr-16/ja/news/wip-wednesday-11-december-2024/"
+             title="前の記事">WIP Wednesday - 11 December 2024<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="トップへ"
+  title="トップへ (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/ja/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/ja/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/ja/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/ja/authors/">著者一覧</a>
+                      </li><li>
+                        <a href="/Website/pr-16/ja/categories/">カテゴリ一覧</a>
+                      </li><li>
+                        <a href="/Website/pr-16/ja/tags/">タグ一覧</a>
+                      </li><li>
+                        <a href="/Website/pr-16/ja/versions/">バージョン一覧</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/ja/fedishare.html#title=Tutorial&#43;-&#43;Festive&#43;tree&#43;decoration%2C&#43;using&#43;the&#43;Revolution&#43;Tool%21&amp;description=The&#43;FreeCAD&#43;community&#43;is&#43;a&#43;wonderful&#43;diverse&#43;place&#43;and&#43;certainly&#43;not&#43;everyone&#43;in&#43;the&#43;community&#43;will&#43;be&#43;involved&#43;in&#43;traditions&#43;of&#43;bringing&#43;trees&#43;into&#43;their&#43;homes&#43;and&#43;then&#43;decorating&#43;them%21&#43;However&#43;a&#43;%E2%80%A6%0A%233d-printing&amp;url=https://FreeCAD.github.io/Website/pr-16/ja/news/tutorial-festive-tree-decoration-using-the-revolution-tool/"
+  title="共有 Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/ja/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

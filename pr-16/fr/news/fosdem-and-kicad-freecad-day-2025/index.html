@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="fr-FR"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | FOSDEM and KiCAD &#43; FreeCAD day 2025</title>
+  <meta name="description" content="Votre modeleur paramétrique libre et open-source"><meta name="keywords" content="FOSDEM, FPA, hackathon"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/fr/news/fosdem-and-kicad-freecad-day-2025/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/fosdem-and-kicad-freecad-day-2025/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/fosdem-and-kicad-freecad-day-2025/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/fosdem-and-kicad-freecad-day-2025/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/fosdem-and-kicad-freecad-day-2025/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/fosdem-and-kicad-freecad-day-2025/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/fosdem-and-kicad-freecad-day-2025/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/fosdem-and-kicad-freecad-day-2025/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/fr/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/fr/news/fosdem-and-kicad-freecad-day-2025/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="FOSDEM and KiCAD &#43; FreeCAD day 2025">
+  <meta property="og:description" content="It’s happening again! FOSDEM 2025 has been announced and, like the previous years, the FPA are thrilled to organise once again our world-famous FreeCAD events. These will take place in Brussels, from January 28th to February the 2nd 2025, together with FOSDEM. Be ready for several days full of coding, open-sourceness and fun!">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2024-11-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:52:30+02:00">
+    <meta property="article:tag" content="FOSDEM">
+    <meta property="article:tag" content="FPA">
+    <meta property="article:tag" content="Hackathon">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/fr/"accesskey="h"
+      title="Accueil (Alt + H)"
+      aria-label="Accueil">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/fr/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choisir la langue (Alt + L)"
+          aria-label="Choisir la langue"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/fosdem-and-kicad-freecad-day-2025/" title="FOSDEM and KiCAD + FreeCAD day 2025">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/fosdem-and-kicad-freecad-day-2025/" title="FOSDEM and KiCAD + FreeCAD day 2025">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/fosdem-and-kicad-freecad-day-2025/" title="FOSDEM and KiCAD + FreeCAD day 2025">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/fr/news/fosdem-and-kicad-freecad-day-2025/" title="FOSDEM and KiCAD + FreeCAD day 2025">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/fosdem-and-kicad-freecad-day-2025/" title="FOSDEM and KiCAD + FreeCAD day 2025">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/fosdem-and-kicad-freecad-day-2025/" title="FOSDEM and KiCAD + FreeCAD day 2025">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/fosdem-and-kicad-freecad-day-2025/" title="FOSDEM and KiCAD + FreeCAD day 2025">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Changer le thème (Alt + T)"
+    aria-label="Changer le thème"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 40;">
+
+    <h2 class="title"
+      
+      >FOSDEM and KiCAD &#43; FreeCAD Day 2025</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2024-11-04T00:00:00Z">4 novembre 2024</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/fr/authors/yorik-van-havre/">Yorik Van Havre (13)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/fr/categories/event/">Event (22)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/fr/tags/fosdem/">FOSDEM (7)</a><a href="/Website/pr-16/fr/tags/fpa/">FPA (44)</a><a href="/Website/pr-16/fr/tags/hackathon/">Hackathon (4)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>887 mots</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>5 min</span></div><figure class="article-cover"><img srcset="/Website/pr-16/news/fosdem-and-kicad-freecad-day-2025/freecad-day-2025_hu_4c65c08e5196e067.webp 500w, /Website/pr-16/news/fosdem-and-kicad-freecad-day-2025/freecad-day-2025_hu_d603efe407eba428.webp 1000w, /Website/pr-16/news/fosdem-and-kicad-freecad-day-2025/freecad-day-2025.jpg 1280w"
+        sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"
+        src="/Website/pr-16/news/fosdem-and-kicad-freecad-day-2025/freecad-day-2025.jpg"
+        title="Freecad day 2025"
+        alt="Image de secours"
+        width="1280"
+        height="516"
+        loading="eager"
+        fetchpriority="high"><figcaption>
+        <div class="internal-tooltip"><svg class="icon-important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/important.svg#important"></use>
+  </svg><span class="tooltip">Freecad day 2025</span>
+        </div>
+      </figcaption></figure></section><div class="content"><p>It&rsquo;s happening again! <a href="https://fosdem.org"
+  class="external-link"title="Fosdem"
+    target="_blank"
+    rel="external noreferrer noopener">FOSDEM 2025<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> has been announced and, like the previous years, the <a href="https://fpa.freecad.org"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">FPA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> are thrilled to organise once again our world-famous <strong>FreeCAD events</strong>. These will take place in Brussels, from January 28th to February the 2nd 2025, together with FOSDEM. Be ready for several days full of coding, open-sourceness and fun!</p>
+<p>This year, we will once again do the event together with our friends from <a href="https://kicad.org"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">KiCAD<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, and we&rsquo;re preparing even more stuff for developers of both projects to have a look at the other side of the mirror. Let&rsquo;s see what crazy joint ideas can come to life&hellip;</p>
+<p>This is what we&rsquo;ve prepared for you (so far):</p>
+<h4
+  id="tuesday-28-january-2025-freecad-hackathon-at-hsbxl"
+  
+  >Tuesday, 28 January 2025: FreeCAD hackathon at HSBXL<a class="heading-anchor"
+     href="#tuesday-28-january-2025-freecad-hackathon-at-hsbxl"
+     title="Tuesday, 28 January 2025: FreeCAD hackathon at HSBXL"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h4><p>9h00 to 17h00, <a href="https://hsbxl.be/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Brussels hackerspace<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, Brussels</p>
+<p>The Brussels Hackerspace (caution, it has changed location since last year!) will host FreeCAD for a day, where we can meet, code, exchange ideas. This is open to everyone, please check the <a href="https://www.hsbxl.be/events/byteweek/2025/freecad-hackaton/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">hackerspace website<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> for directions and details.</p>
+<h4
+  id="wednesday-29-january-2025-freecad-hackathon"
+  
+  >Wednesday, 29 January 2025: FreeCAD hackathon<a class="heading-anchor"
+     href="#wednesday-29-january-2025-freecad-hackathon"
+     title="Wednesday, 29 January 2025: FreeCAD hackathon"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h4><p>9h00 to 17h00, <a href="https://maps.app.goo.gl/gmaaPHvRMUtqXqU79"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Atelier des tanneurs<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, Brussels</p>
+<p>A full day of hacking, coding and discussions with FreeCAD developers. This year, we will be doing the hackathon at Atelier des Tanneurs. Please <a href="https://docs.google.com/forms/d/e/1FAIpQLSez3xbJiblgBc_aMRqGHY6Y3YUP2lHfzHEgmS3zPrViMIZY7w/viewform?usp=sf_link"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">register<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> if you intend to come (no problem if you change your mind later, it&rsquo;s mostly so we can get an idea of how many people will be there). Bring your computer and your ideas!</p>
+<p>There will be coffee/juice/snacks during the day, and there are many food options around the venue.</p>
+<h4
+  id="thursday-30-january-2025-kicad-and-freecad-hackathon"
+  
+  >Thursday, 30 January 2025: KiCAD and FreeCAD hackathon<a class="heading-anchor"
+     href="#thursday-30-january-2025-kicad-and-freecad-hackathon"
+     title="Thursday, 30 January 2025: KiCAD and FreeCAD hackathon"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h4><p>9h00 to 17h00, <a href="https://maps.app.goo.gl/gmaaPHvRMUtqXqU79"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Atelier des tanneurs<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, Brussels</p>
+<p>Another day of hacking, coding and discussing with FreeCAD and KiCAD developers. Each project will have its own dedicated room, but there will be plenty of space for people from both communities to discuss ideas together. That day, we will have a <strong>FreeCAD for KiCAD developers</strong> and a <strong>KiCAD for FreeCAD developers</strong> sessions, to explain briefly to developers of each project how the other works, how the code works, where to start hacking, etc. Please <a href="https://docs.google.com/forms/d/e/1FAIpQLSez3xbJiblgBc_aMRqGHY6Y3YUP2lHfzHEgmS3zPrViMIZY7w/viewform?usp=sf_link"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">register<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> if you intent to participate to that day.</p>
+<p>There will be coffee/juice/snacks during the day, and there are many food options around the venue.</p>
+<h4
+  id="friday-31-january-2025-kicad-and-freecad-day"
+  
+  >Friday, 31 January 2025: KiCAD and FreeCAD day<a class="heading-anchor"
+     href="#friday-31-january-2025-kicad-and-freecad-day"
+     title="Friday, 31 January 2025: KiCAD and FreeCAD day"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h4><p>9h00 to 17h00, <a href="https://maps.app.goo.gl/gmaaPHvRMUtqXqU79"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Atelier des tanneurs<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, Brussels</p>
+<p>This day is open to public, no registration necessary. So please spread the word! The day will be packed of presentations from FreeCAD and KiCAD community members. On the FreeCAD side, as previous years, the event will be organised as an <a href="https://en.wikipedia.org/wiki/Unconference"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">unconference<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>: Participants willing to discuss a topic or present something (max 15 minutes please!) can write their idea on a post-it note when arriving, and these will be arranged (and re-arranged) on time sheet during the day.</p>
+<p>There will be t-shirts for sale, goodies to grab, and a lot of FreeCAD fun. There will be coffee/juice/snacks during the day, and there are many food options around the venue.</p>
+<h4
+  id="saturday-01-february-2025-restaurant-night"
+  
+  >Saturday 01 February 2025: Restaurant night<a class="heading-anchor"
+     href="#saturday-01-february-2025-restaurant-night"
+     title="Saturday 01 February 2025: Restaurant night"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h4><p>19h00 (to be confirmed), <a href="https://maps.app.goo.gl/ZG7rSpzM1Tec9CDR6"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Volle Gas<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, Brussels</p>
+<p>At night we will gather together with KiCAD in a Brussels restaurant. There are vegetarian options available. Please <a href="https://docs.google.com/forms/d/e/1FAIpQLSez3xbJiblgBc_aMRqGHY6Y3YUP2lHfzHEgmS3zPrViMIZY7w/viewform?usp=sf_link"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">register<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> if you wish to come, so we can book adequate space.</p>
+<h4
+  id="saturday-and-sunday-01-02-february-2025-fosdem"
+  
+  >Saturday and Sunday, 01-02 February 2025: FOSDEM<a class="heading-anchor"
+     href="#saturday-and-sunday-01-02-february-2025-fosdem"
+     title="Saturday and Sunday, 01-02 February 2025: FOSDEM"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h4><p>9h00 to 18h00, <a href="https://maps.app.goo.gl/f3qc5HoQFf4tJVh6A"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Brussels university, Solbosch campus<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, Brussels</p>
+<p><a href="https://fosdem.org"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">FOSDEM<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> is a world-famous 2-day open-source developers meeting happening every year in Brussels. It brings FOSS developers from all around the world for an intense week-end packed with conferences, discoveries, talks, discussions, networking, and more. FOSDEM is free to attend, no registration necessary. Be sure to browse their site to discover everything the event has to offer, and pick your favourites. On Sunday, there will be an <strong>Open Hardware and CAD/CAM</strong> dedicated room, where we will certainly have a couple of FreeCAD-related talks, and many more that should interest FreeCAD developers and users. If you plan to propose a talk, be sure to <a href="https://pretalx.fosdem.org/fosdem-2025/cfp"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">submit it here<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> before 1 December 2024.</p>
+<p>FreeCAD and KiCAD will also hold a stand at FOSDEM (exact location to be confirmed), where people from the two projects (plus any possible other guest star project) will be available to discuss and showcase the projects, and there will be goodies to grab and swag to buy.</p>
+<h4
+  id="practical-info"
+  
+  >Practical info<a class="heading-anchor"
+     href="#practical-info"
+     title="Practical info"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h4><ul>
+<li>
+<p>Like previous years, travel funding is available to help developers to come to the event. Be sure to <a href="https://fpa.freecad.org/programs/fosdem-travel-grants"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">read the rules<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> to apply. Train/bus travel is preferred, when possible.</p>
+</li>
+<li>
+<p>There will be no food offered during the events, but the Atelier des Tanneurs is in a lively part of the city full with bars, <em>frietkots</em>, take-away places and restaurants close by. Typically, we stop for half an hour or an hour during the day to grab something to eat. At FOSDEM, there are many restaurants and food trucks right on the campus.</p>
+</li>
+<li>
+<p>Brussels can be cold in February. If you are lucky, you will get cloudy (possibly rainy) days with temperatures around 0 to +5˚C. If unlucky, you could get something as low as -10˚C.</p>
+</li>
+<li>
+<p>If you don&rsquo;t know Brussels yet, half a day or a day suffice to get a good tour of the city. We will prepare some self-service tour options later on.</p>
+</li>
+</ul>
+<p>That&rsquo;s it for now, we are thrilled to make this incredible event happening once again. See you there?</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/fr/news/wip-wednesday-6-november-2024/"
+             title="Article suivant"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday - 6 November 2024</a><a class="page-item prev"
+             href="/Website/pr-16/fr/news/wip-wednesday-30-october-2024/"
+             title="Article précédent">WIP Wednesday - 30 October 2024<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Aller au sommet de la page"
+  title="Aller au sommet de la page (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/fr/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/fr/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/fr/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/fr/authors/">Auteurs</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/categories/">Catégories</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/tags/">Mots-Clés</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/versions/">Versions</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/fr/fedishare.html#title=FOSDEM&#43;and&#43;KiCAD&#43;%2B&#43;FreeCAD&#43;day&#43;2025&amp;description=It%E2%80%99s&#43;happening&#43;again%21&#43;FOSDEM&#43;2025&#43;has&#43;been&#43;announced&#43;and%2C&#43;like&#43;the&#43;previous&#43;years%2C&#43;the&#43;FPA&#43;are&#43;thrilled&#43;to&#43;organise&#43;once&#43;again&#43;our&#43;world-famous&#43;FreeCAD&#43;events.&#43;These&#43;will&#43;take&#43;place&#43;in&#43;Brussels%2C&#43;from&#43;%E2%80%A6%0A%23fosdem&#43;%23fpa&#43;%23hackathon&amp;url=https://FreeCAD.github.io/Website/pr-16/fr/news/fosdem-and-kicad-freecad-day-2025/"
+  title="Partager sur Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/fr/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

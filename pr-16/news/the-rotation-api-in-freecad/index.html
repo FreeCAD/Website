@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en-US"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | The Rotation API in FreeCAD</title>
+  <meta name="description" content="Your own free and open-source parametric modeler"><meta name="keywords" content="code, API"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/news/the-rotation-api-in-freecad/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/the-rotation-api-in-freecad/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/the-rotation-api-in-freecad/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/the-rotation-api-in-freecad/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/the-rotation-api-in-freecad/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/the-rotation-api-in-freecad/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/the-rotation-api-in-freecad/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/the-rotation-api-in-freecad/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/news/the-rotation-api-in-freecad/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="The Rotation API in FreeCAD">
+  <meta property="og:description" content="This guest post is by Ed Williams (edwilliams16). Interested in contributing an article? Contact Chris Hennes at chennes@freecad.org with your idea!">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2023-01-16T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:46:10+02:00">
+    <meta property="article:tag" content="Code">
+    <meta property="article:tag" content="API">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/"accesskey="h"
+      title="Homepage (Alt + H)"
+      aria-label="Homepage">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choose language (Alt + L)"
+          aria-label="Choose language"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/news/the-rotation-api-in-freecad/" title="The Rotation API in FreeCAD">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/the-rotation-api-in-freecad/" title="The Rotation API in FreeCAD">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/the-rotation-api-in-freecad/" title="The Rotation API in FreeCAD">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/the-rotation-api-in-freecad/" title="The Rotation API in FreeCAD">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/the-rotation-api-in-freecad/" title="The Rotation API in FreeCAD">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/the-rotation-api-in-freecad/" title="The Rotation API in FreeCAD">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/the-rotation-api-in-freecad/" title="The Rotation API in FreeCAD">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Switch theme chroma (Alt + T)"
+    aria-label="Switch theme chroma"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 60;">
+
+    <h2 class="title"
+      
+      >The Rotation API in FreeCAD</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2023-01-16T00:00:00Z">January 16, 2023</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/authors/ed-williams/">Ed Williams (1)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/categories/feature/">Feature (18)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/tags/code/">Code (4)</a><a href="/Website/pr-16/tags/api/">API (2)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>1785 words</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>9 min</span></div></section><div class="content"><p><em>This guest post is by Ed Williams (edwilliams16). Interested in contributing an article? Contact Chris Hennes at <a href="mailto:chennes@freecad.org"
+  class="internal-tooltip">chennes@freecad.org</a> with your idea!</em></p>
+<p>Much of FreeCAD scripting consists of creating objects and then placing them somewhere in 3D. For instance, we can create a default cube with</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">doc</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">ActiveDocument</span>
+</span></span><span class="line"><span class="cl"><span class="n">cube</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">addObject</span><span class="p">(</span><span class="s2">&#34;Part::Box&#34;</span><span class="p">,</span><span class="s2">&#34;Box&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">doc</span><span class="o">.</span><span class="n">recompute</span><span class="p">()</span></span></span></code></pre></div></div><p>The resulting cube has its origin at (0, 0, 0) and is in its default orientation. To locate it elsewhere, without other modification, we can change its <code>Placement</code> property. <code>Placement</code> has two sub-properties: <code>Placement.Base</code> and <code>Placement.Rotation</code>. <code>Placement.Base</code> is the location of the cube&rsquo;s origin and <code>Placement.Rotation</code> rotates the cube (with its origin fixed) into its orientation. If we examine the cube&rsquo;s current Placement in the Data panel, we see</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/the-rotation-api-in-freecad/EWPropertyPlacement.webp"
+  alt="Ewproperty Placement"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1445"
+  height="629"
+    srcset="/Website/pr-16/news/the-rotation-api-in-freecad/EWPropertyPlacement_hu_97265f951fc4d901.webp 500w, /Website/pr-16/news/the-rotation-api-in-freecad/EWPropertyPlacement_hu_be92244c9d37b8dc.webp 1000w, /Website/pr-16/news/the-rotation-api-in-freecad/EWPropertyPlacement.webp 1445w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Ewproperty Placement</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/the-rotation-api-in-freecad/EWPropertyPlacement.webp"
+              title="Ewproperty Placement"
+              alt="Ewproperty Placement"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>indicating an &ldquo;identity&rdquo; Placement. The Position (Base) is (0, 0, 0) and the Rotation is 0<sup>0</sup> around the z (0,0,1) axis. If now, for example, we change the cube&rsquo;s Placement with</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">cube</span><span class="o">.</span><span class="n">Placement</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Placement</span><span class="p">(</span><span class="n">App</span><span class="o">.</span><span class="n">Vector</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">App</span><span class="o">.</span><span class="n">Rotation</span><span class="p">(</span><span class="n">App</span><span class="o">.</span><span class="n">Vector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">20</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">App</span><span class="o">.</span><span class="n">ActiveDocument</span><span class="o">.</span><span class="n">recompute</span><span class="p">()</span></span></span></code></pre></div></div><p>this rotates the cube 20 degrees about its (0,0,1) axis and then translates it so its origin lies at (10, 0, 0), which we see reflected in the Data window.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/the-rotation-api-in-freecad/placedcube.webp"
+  alt="Placedcube"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1106"
+  height="262"
+    srcset="/Website/pr-16/news/the-rotation-api-in-freecad/placedcube_hu_c8f11f084a21ae88.webp 500w, /Website/pr-16/news/the-rotation-api-in-freecad/placedcube_hu_ecf1bdc42be6efc1.webp 1000w, /Website/pr-16/news/the-rotation-api-in-freecad/placedcube.webp 1106w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Placedcube</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/the-rotation-api-in-freecad/placedcube.webp"
+              title="Placedcube"
+              alt="Placedcube"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><h5
+  id="rotationaxis-angle"
+  
+  >Rotation(Axis, Angle)<a class="heading-anchor"
+     href="#rotationaxis-angle"
+     title="Rotation(Axis, Angle)"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h5><p>Of the various ways of constructing rotations, perhaps the simplest to understand is</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">rot</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Rotation</span><span class="p">(</span><span class="n">Axis</span><span class="p">,</span> <span class="n">Angle</span><span class="p">)</span></span></span></code></pre></div></div><p>where Axis, the axis of rotation, is an <code>App.Vector</code> and <code>Angle</code> is the angle in Degrees. The (non-zero!) length of the Axis vector has no effect on its direction, so axes <code>App.Vector(1, 1, 1)</code> and <code>App.Vector(2, 2, 2)</code> represent the same direction. The axis argument of <code>rot</code> is stored as the property <code>rot.RawAxis</code> The Raw Axis is normalized to unit length by FreeCAD and is available as the property <code>rot.Axis</code>.</p>
+<p>We see that in order to specify a rotation there are three degrees of freedom - two for the normalized direction and one for the rotation angle. However, the axis/angle representation is not unique. <code>App.Rotation(App.Vector(0, 0, 1), 30)</code>, <code>App.Rotation(App.Vector(0, 0, -1), 330)</code> and <code>App.Rotation(App.Vector(0, 0, 1), -330)</code> all represent the same rotation. To test if two rotations are the same use <code>rot.isSame(rot1, tolerance)</code>.</p>
+<h5
+  id="approtationvec1-vec2"
+  
+  >App.Rotation(vec1, vec2)<a class="heading-anchor"
+     href="#approtationvec1-vec2"
+     title="App.Rotation(vec1, vec2)"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h5><p>This represents a rotation that takes the direction defined by <code>vec1</code> and rotates it into the direction <code>vec2</code>.</p>
+<p>The axis of this rotation is normal to the plane defined by the two vectors and the angle is the angle between them.</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">vec1</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Vector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">vec2</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Vector</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">rot1</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Rotation</span><span class="p">(</span><span class="n">vec1</span><span class="p">,</span> <span class="n">vec2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">rot2</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Rotation</span><span class="p">(</span><span class="n">vec1</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">vec2</span><span class="p">),</span> <span class="n">Radian</span> <span class="o">=</span> <span class="n">vec1</span><span class="o">.</span><span class="n">getAngle</span><span class="p">(</span><span class="n">vec2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">rot1</span><span class="o">.</span><span class="n">isSame</span><span class="p">(</span><span class="n">rot2</span><span class="p">,</span> <span class="mf">1e-14</span><span class="p">)</span> <span class="c1">#=&gt; True</span></span></span></code></pre></div></div><p>The <code>rot1</code> form is more convenient than the equivalent, first principles, <code>rot2</code> calculation, which assumes familiarity withe vector cross-product operation. The <code>Radian</code> keyword is used because the default angle argument is <code>Degree</code>.</p>
+<p>Below we show this rotation acting on an object from the front and top views.</p>
+<figure>
+  <video
+    preload="metadata"
+    controls
+    playsinline
+    loading="lazy"
+    ><source src="/Website/pr-16/news/the-rotation-api-in-freecad/output.mp4">Your browser does not support the video tag.</video>
+</figure>
+<h6
+  id="fig-1-the-approtationvec1-vec2-rotation-front-view"
+  
+  >Fig (1) The <code>App.Rotation(vec1, vec2)</code> rotation front view.<a class="heading-anchor"
+     href="#fig-1-the-approtationvec1-vec2-rotation-front-view"
+     title="Fig (1) The App.Rotation(vec1, vec2) rotation front view."><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h6><figure>
+  <video
+    preload="metadata"
+    controls
+    playsinline
+    loading="lazy"
+    ><source src="/Website/pr-16/news/the-rotation-api-in-freecad/rot2output.mp4">Your browser does not support the video tag.</video>
+</figure>
+<h6
+  id="fig-2-the-approtationvec1-vec2-rotation-top-view"
+  
+  >Fig (2) The <code>App.Rotation(vec1, vec2)</code> rotation top view.<a class="heading-anchor"
+     href="#fig-2-the-approtationvec1-vec2-rotation-top-view"
+     title="Fig (2) The App.Rotation(vec1, vec2) rotation top view."><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h6><p>When we specify the final direction <code>vec2</code> into which <code>vec1</code> is rotated, we have only constrained two degrees of freedom, those of the direction specified by <code>vec2</code>, yet a general rotation has three degrees of freedom. What happened to the third? Suppose after our <code>App.Rotation(vec1, vec2)</code> rotation, we then spun our object around the <code>vec2</code> axis. The resulting composite rotation would still have rotated <code>vec1</code> into <code>vec2</code>, but the axes perpendicular to <code>vec1</code> will end up in a different directions. This particular constructor therefore cannot create the most general possible rotation.</p>
+<h5
+  id="approtationvecx-vecy-vecz-string"
+  
+  >App.Rotation(vecx, vecy, vecz, string)<a class="heading-anchor"
+     href="#approtationvecx-vecy-vecz-string"
+     title="App.Rotation(vecx, vecy, vecz, string)"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h5><p>This is a more powerful constructor capable of creating arbitrary rotations.</p>
+<p>A natural way to define a rotation is by its effect on the three coordinate directions. That is, provide as input arguments the three directions of the rotated x, y and z axes. However, since each direction vector has two degrees of freedom, this specification would provide six constraints on the three degrees of freedom a rotation possesses. First we note that only two directions need be specified because the third is derived from them by the right-hand rule. This still leaves one over-specification, which is resolved in the following manner.</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">FreeCAD</span> <span class="kn">import</span> <span class="n">Vector</span> <span class="k">as</span> <span class="n">V</span>
+</span></span><span class="line"><span class="cl"><span class="n">rot</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Rotation</span><span class="p">(</span><span class="n">V</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">V</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">V</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="s1">&#39;ZXY&#39;</span><span class="p">)</span></span></span></code></pre></div></div><p>What does this represent? <code>string</code> is the priority order of the axes.</p>
+<ul>
+<li>
+<p>Z is first: the Z-axis is rotated into the direction vecz: <code>V(1,0,1)</code>.  (Two degrees of freedom used.)</p>
+</li>
+<li>
+<p>X is second: the rotated X-axis is placed in the plane defined by the <code>vecx</code> and <code>vecz</code> arguments, orthogonal to <code>vecz</code>. That is, the <strong>component</strong> of <code>vecx</code> orthogonal to <code>vecz</code> defines the rotated X direction.  (Uses one more degree of freedom.)</p>
+</li>
+<li>
+<p>Y is third: the <code>vecy</code> argument is completely ignored. The new Y-axis is created forming an orthogonal triad with the new Z and X axes, constructed from the above by the right hand rule (in the direction Z x X, for those familiar with the vector cross-product).</p>
+</li>
+</ul>
+<p>Our example generates the same rotation illustrated in Figs. (1) and (2) above. Note how the (blue) z-axis and (red) x-axis in Fig. (1) change. The mapping from (xvec, yvec, zvec) to normalized direction vectors, in the second listed step above, is illustrated in Fig (3), the movie below.</p>
+<figure>
+  <video
+    preload="metadata"
+    controls
+    playsinline
+    loading="lazy"
+    ><source src="/Website/pr-16/news/the-rotation-api-in-freecad/rottriad.mp4">Your browser does not support the video tag.</video>
+</figure>
+<h6
+  id="fig-3-zvec-and-xvec-inputs-create-the-zdir-xdir-rotated-normalized-directions"
+  
+  >Fig. (3) zvec and xvec inputs create the zdir xdir rotated normalized directions.<a class="heading-anchor"
+     href="#fig-3-zvec-and-xvec-inputs-create-the-zdir-xdir-rotated-normalized-directions"
+     title="Fig. (3) zvec and xvec inputs create the zdir xdir rotated normalized directions."><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h6><p>This rotation method forms the basis of the  <a href="https://wiki.freecadweb.org/O-X-Y_type_attachment_modes"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">O-Z-X attachment mode<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> for an object in FreeCAD.</p>
+<h5
+  id="approtationyaw-pitch-roll"
+  
+  >App.Rotation(yaw, pitch, roll)<a class="heading-anchor"
+     href="#approtationyaw-pitch-roll"
+     title="App.Rotation(yaw, pitch, roll)"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h5><p>This is described and illustrated in the <a href="https://wiki.freecadweb.org/Placement#Position_and_Yaw.2C_Pitch_and_Roll"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">wiki<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>. Here a rotation is described as the composite of three successive rotations. First a yaw about the z-axis, then a pitch about the <strong>rotated</strong> y-axis, then a roll about the **rotated **x-axis. More explicitly, here a <strong>rotated</strong> axis means that the axis is not the initial coordinate axis, but the axis that results from the prior rotations acting on the coordinate axis. Thinking of rotations of a body, the successive rotation axes are fixed in the body, not in space.</p>
+<h5
+  id="compounding-rotations"
+  
+  >Compounding rotations<a class="heading-anchor"
+     href="#compounding-rotations"
+     title="Compounding rotations"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h5><p>The action of a Rotation (or a Placement) on a vector is often called multiplication. We can write</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">rot</span><span class="o">*</span><span class="n">vector</span> <span class="c1">#or</span>
+</span></span><span class="line"><span class="cl"><span class="n">rot</span><span class="o">.</span><span class="n">multVec</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">placement</span><span class="o">*</span><span class="n">vector</span> <span class="c1">#or placement.multVec(vector)</span></span></span></code></pre></div></div><p>to compute the vector resulting from the transformation. For successive transformations, the &lsquo;*&rsquo; is much tidier.</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">rot2</span> <span class="o">*</span> <span class="n">rot1</span> <span class="o">*</span> <span class="n">vector</span> <span class="n">rot2</span><span class="o">.</span><span class="n">multVec</span><span class="p">(</span><span class="n">rot1</span><span class="o">.</span><span class="n">multVec</span><span class="p">(</span><span class="n">vector</span><span class="p">))</span> <span class="n">rot2</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">rot1</span><span class="p">)</span><span class="o">.</span><span class="n">multVec</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span></span></span></code></pre></div></div><p>all compute the effect of first rotating <code>vector</code> by <code>rot1</code>, then rotating the result by <code>rot2</code>. The result of applying two rotations is itself a rotation, likewise that of applying two placements is a placement. So the compound rotation or placement is just</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">rot_compound</span> <span class="o">=</span> <span class="n">rot2</span> <span class="o">*</span> <span class="n">rot1</span></span></span></code></pre></div></div><p>and</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">placement_compound</span> <span class="o">=</span> <span class="n">placement2</span> <span class="o">*</span> <span class="n">placement1</span></span></span></code></pre></div></div><p>There are three important things to note:</p>
+<ul>
+<li>
+<p>Both placements/rotations reference the <code>same</code> coordinate system.</p>
+</li>
+<li>
+<p>Unlike when multiplying numbers, the order matters! If you rotate an object around two different axes, you&rsquo;ll generally get a different result if you reverse the order of operations.</p>
+</li>
+<li>
+<p>The rotation <code>rot2*rot1</code> means first rot1, then rot2. Think of them as function applications to understand the order.</p>
+</li>
+</ul>
+<p>To illustrate the second point, let us consider two easily visualized rotations R and S and apply them in opposite orders.</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">FreeCAD</span> <span class="kn">import</span> <span class="n">Vector</span> <span class="k">as</span> <span class="n">V</span>
+</span></span><span class="line"><span class="cl"><span class="n">R</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Rotation</span><span class="p">(</span><span class="n">V</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mi">90</span><span class="p">)</span><span class="c1">#90&lt;sup&gt;0&lt;/sup&gt; around x</span>
+</span></span><span class="line"><span class="cl"><span class="n">S</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Rotation</span><span class="p">(</span><span class="n">V</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="mi">90</span><span class="p">)</span><span class="c1">#90&lt;sup&gt;0&lt;/sup&gt; around z</span></span></span></code></pre></div></div><div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-002"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/the-rotation-api-in-freecad/rotationorder.webp"
+  alt="Rotationorder 5"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1496"
+  height="1456"
+    srcset="/Website/pr-16/news/the-rotation-api-in-freecad/rotationorder_hu_59ed82f7a77d81e3.webp 500w, /Website/pr-16/news/the-rotation-api-in-freecad/rotationorder_hu_6759ac5d5e164c5a.webp 1000w, /Website/pr-16/news/the-rotation-api-in-freecad/rotationorder.webp 1496w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Rotationorder 5</figcaption></figure><div id="img-002" popover>
+          <button class="close"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/the-rotation-api-in-freecad/rotationorder.webp"
+              title="Rotationorder 5"
+              alt="Rotationorder 5"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>In the top row of the figure, we perform the rotation S*R . We rotate 90<sup>0</sup> around the coordinate x-axis, followed by 90<sup>0</sup> around the coordinate z-axis and show the effect on a axis triad.</p>
+<p>In the second row, we perform the rotation R<em>S and note that the result differs from that of S</em>R.</p>
+<p>The third row illustrates another important property of rotations. First we do the S rotation (90<sup>0</sup> around z), then we perform R&rsquo;. R&rsquo; is again defined as 90<sup>0</sup> around x - BUT around the (already rotated) <code>body</code> x-axis, not the <code>coordinate</code> x-axis. This is as in the yaw-pitch-roll section above.</p>
+<p>We see the result of R&rsquo;<em>S is the same as S</em>R. This is in fact a general result that I will not attempt to prove here.</p>
+<p><em>To perform a series of rotations in body coordinates instead of fixed coordinates, reverse the order of multiplications.</em></p>
+<p>As an example, we can construct a rotation with a yaw-pitch-roll of 20, 30, 40 degrees, respectively, by post-multiplying the individual rotations.</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">FreeCAD</span> <span class="kn">import</span> <span class="n">Vector</span> <span class="k">as</span> <span class="n">V</span>
+</span></span><span class="line"><span class="cl"><span class="n">yaw</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Rotation</span><span class="p">(</span><span class="n">V</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="mi">20</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">pitch</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Rotation</span><span class="p">(</span><span class="n">V</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mi">30</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">roll</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Rotation</span><span class="p">(</span><span class="n">V</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ypr</span> <span class="o">=</span> <span class="n">yaw</span><span class="o">*</span><span class="n">pitch</span><span class="o">*</span><span class="n">roll</span>
+</span></span><span class="line"><span class="cl"><span class="n">ypr_direct</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Rotation</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ypr</span><span class="o">.</span><span class="n">isSame</span><span class="p">(</span><span class="n">ypr_direct</span><span class="p">,</span> <span class="mf">1e-14</span><span class="p">)</span><span class="c1">#=&gt; True</span></span></span></code></pre></div></div><h5
+  id="offset-rotations"
+  
+  >Offset rotations<a class="heading-anchor"
+     href="#offset-rotations"
+     title="Offset rotations"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h5><p>If we want to rotate an object about an axis that is offset from the origin, we use the three argument form of Placement:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">App</span><span class="o">.</span><span class="n">Placement</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">rotation</span><span class="p">,</span> <span class="n">center</span><span class="p">)</span></span></span></code></pre></div></div><p>This means</p>
+<ul>
+<li>
+<p>Rotate by <code>rotation</code> about an axis through <code>center</code></p>
+</li>
+<li>
+<p>Translate the result by <code>base</code></p>
+</li>
+</ul>
+<p>As an exercise, how could we have done this from first principles?</p>
+<ul>
+<li>
+<p>Translate by -<code>center</code></p>
+</li>
+<li>
+<p>Rotate by <code>rotation</code></p>
+</li>
+<li>
+<p>Translate back by <code>center</code></p>
+</li>
+<li>
+<p>Translate by <code>base</code></p>
+</li>
+</ul>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="c1">#sample data</span>
+</span></span><span class="line"><span class="cl"><span class="n">base</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Vector</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">axis</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Vector</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">angle</span> <span class="o">=</span> <span class="mi">45</span>
+</span></span><span class="line"><span class="cl"><span class="n">center</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Vector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">rotation</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Rotation</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="n">angle</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#compare</span>
+</span></span><span class="line"><span class="cl"><span class="n">ZeroRot</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Rotation</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">ZeroVec</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Vector</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">tr1</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Placement</span><span class="p">(</span><span class="o">-</span><span class="n">center</span><span class="p">,</span> <span class="n">ZeroRot</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">rot</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Placement</span><span class="p">(</span><span class="n">ZeroVec</span><span class="p">,</span> <span class="n">rotation</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">tr2</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Placement</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">ZeroRot</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">tr3</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Placement</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">ZeroRot</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">offsetrot</span> <span class="o">=</span> <span class="n">tr3</span><span class="o">*</span><span class="n">tr2</span><span class="o">*</span><span class="n">rot</span><span class="o">*</span><span class="n">tr1</span>
+</span></span><span class="line"><span class="cl"><span class="n">offsetrot_direct</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Placement</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">rotation</span><span class="p">,</span> <span class="n">center</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">offsetrot</span><span class="o">.</span><span class="n">isSame</span><span class="p">(</span><span class="n">offsetrot_direct</span><span class="p">)</span> <span class="c1">#=&gt; True</span></span></span></code></pre></div></div><h5
+  id="inverse"
+  
+  >Inverse<a class="heading-anchor"
+     href="#inverse"
+     title="Inverse"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h5><p>Both rotations (<code>rot</code>) and placements (<code>pl</code>) have inverses, <code>rot<sup>-1</sup></code> and <code>pl<sup>-1</sup></code> which reverse their effect. These satisfy</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-003"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/the-rotation-api-in-freecad/equationsinverse.webp"
+  alt="Equationsinverse"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="900"
+  height="162"
+    srcset="/Website/pr-16/news/the-rotation-api-in-freecad/equationsinverse_hu_4662c3863db45d57.webp 500w, /Website/pr-16/news/the-rotation-api-in-freecad/equationsinverse.webp 900w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Equationsinverse</figcaption></figure><div id="img-003" popover>
+          <button class="close"
+            popovertarget="img-003"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/the-rotation-api-in-freecad/equationsinverse.webp"
+              title="Equationsinverse"
+              alt="Equationsinverse"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>where <code>I</code> is the identity rotation or placement, respectively.</p>
+<p>Recall from the compound placement section, we found that <code>R' * S = S * R</code>. We could use the algebra of rotations to compute <code>R'</code> explicitly. Multiply both sides of the equation on the right by <code>S<sup>-1</sup></code>, obtaining:</p>
+<p><code>R&rsquo; * S * S-1</sup> = <em>R&rsquo; </em> = S * R * S<sup>-1</sup></code> In code, this becomes:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">FreeCAD</span> <span class="kn">import</span> <span class="n">Vector</span> <span class="k">as</span> <span class="n">V</span>
+</span></span><span class="line"><span class="cl"><span class="n">R</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Rotation</span><span class="p">(</span><span class="n">V</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mi">90</span><span class="p">)</span><span class="c1">#90&lt;sup&gt;0&lt;/sup&gt; around x</span>
+</span></span><span class="line"><span class="cl"><span class="n">S</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Rotation</span><span class="p">(</span><span class="n">V</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="mi">90</span><span class="p">)</span><span class="c1">#90&lt;sup&gt;0&lt;/sup&gt; around z</span>
+</span></span><span class="line"><span class="cl"><span class="n">Rprime</span> <span class="o">=</span> <span class="n">S</span> <span class="o">*</span> <span class="n">R</span> <span class="o">*</span> <span class="n">S</span><span class="o">.</span><span class="n">inverted</span><span class="p">()</span></span></span></code></pre></div></div><p>We find that Rprime is a 90<sup>0</sup> rotation around the (coordinate!) y-axis, in accord with the composite rotation figure above.</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">degrees</span>
+</span></span><span class="line"><span class="cl"><span class="n">degrees</span><span class="p">(</span><span class="n">Rprime</span><span class="o">.</span><span class="n">Angle</span><span class="p">)</span> <span class="c1"># =&gt; 90</span>
+</span></span><span class="line"><span class="cl"><span class="n">Rprime</span><span class="o">.</span><span class="n">Axis</span> <span class="c1"># =&gt; App.Vector(0, 1, 0)</span></span></span></code></pre></div></div><p>Being able to manipulate rotations (and placements) symbolically in this manner is a powerful tool. For another illustration of this, consider an assembly in which our object is contained in a sequence of nested container sub-assemblies.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-004"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/the-rotation-api-in-freecad/nestedplacements.webp"
+  alt="Nestedplacements"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="416"
+  height="362"
+    srcset="/Website/pr-16/news/the-rotation-api-in-freecad/nestedplacements.webp 416w"
+    sizes="75vw"></button><figcaption>Nestedplacements</figcaption></figure><div id="img-004" popover>
+          <button class="close"
+            popovertarget="img-004"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/the-rotation-api-in-freecad/nestedplacements.webp"
+              title="Nestedplacements"
+              alt="Nestedplacements"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>The global placement of the Cube is the product of the placements that contain it. Referring to the Placements of Part, Part001, Part002, Part003 and Cube as <code>pl<sub>0</sub>, pl<sub>1</sub>, pl<sub>2</sub>, pl<sub>3</sub></code> and <code>pl<sub>4</sub></code> respectively, the global placement of the Cube is <code>pl<sub>0</sub> * pl<sub>1</sub> * pl<sub>2</sub> * pl<sub>3</sub> * pl<sub>4</sub></code>. Suppose we want to change the global Placement of the cube to <code>gpl</code> by altering the placement of the Part001 sub-assembly, say by changing <code>pl<sub>1</sub></code> to <code>pl<sub>1</sub>&rsquo;</code>. Then we know that</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-005"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/the-rotation-api-in-freecad/solveforplacement.webp"
+  alt="Solveforplacement"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1086"
+  height="162"
+    srcset="/Website/pr-16/news/the-rotation-api-in-freecad/solveforplacement_hu_a9e060a3b2e414f4.webp 500w, /Website/pr-16/news/the-rotation-api-in-freecad/solveforplacement_hu_9f2b3841c6dc2d54.webp 1000w, /Website/pr-16/news/the-rotation-api-in-freecad/solveforplacement.webp 1086w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Solveforplacement</figcaption></figure><div id="img-005" popover>
+          <button class="close"
+            popovertarget="img-005"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/the-rotation-api-in-freecad/solveforplacement.webp"
+              title="Solveforplacement"
+              alt="Solveforplacement"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>solving for the unknown placement <code>pl<sub>1</sub>&rsquo;</code> by pre- and post-multiplying by the appropriate inverses.</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/news/freecad-and-free-cae-users-conference/"
+             title="Next article"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>FreeCAD (and free CAE) User&#39;s Conference</a><a class="page-item prev"
+             href="/Website/pr-16/news/wip-wednesday-11-jan-2022/"
+             title="Previous article">WIP Wednesday - 11 Jan 2023<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Go to Top"
+  title="Go to Top (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/authors/">Authors</a>
+                      </li><li>
+                        <a href="/Website/pr-16/categories/">Categories</a>
+                      </li><li>
+                        <a href="/Website/pr-16/tags/">Tags</a>
+                      </li><li>
+                        <a href="/Website/pr-16/versions/">Versions</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/fedishare.html#title=The&#43;Rotation&#43;API&#43;in&#43;FreeCAD&amp;description=This&#43;guest&#43;post&#43;is&#43;by&#43;Ed&#43;Williams&#43;%28edwilliams16%29.&#43;Interested&#43;in&#43;contributing&#43;an&#43;article%3F&#43;Contact&#43;Chris&#43;Hennes&#43;at&#43;chennes%40freecad.org&#43;with&#43;your&#43;idea%21%0AMuch&#43;of&#43;FreeCAD&#43;scripting&#43;consists&#43;of&#43;creating&#43;%E2%80%A6%0A%23code&#43;%23api&amp;url=https://FreeCAD.github.io/Website/pr-16/news/the-rotation-api-in-freecad/"
+  title="Share on Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

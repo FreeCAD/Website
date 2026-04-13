@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="fr-FR"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Tutorial - Custom Toolbars</title>
+  <meta name="description" content="Votre modeleur paramétrique libre et open-source"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/fr/news/tutorial-custom-toolbars/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/tutorial-custom-toolbars/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/tutorial-custom-toolbars/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/tutorial-custom-toolbars/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/tutorial-custom-toolbars/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/tutorial-custom-toolbars/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/tutorial-custom-toolbars/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/tutorial-custom-toolbars/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/fr/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/fr/news/tutorial-custom-toolbars/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Tutorial - Custom Toolbars">
+  <meta property="og:description" content="Custom tb header When you use any tool for a while you often build a more personal connection to it. Perhaps you have that old screwdriver in a drawer that’s become polished with years of use and fits your hand perfectly. We’ve looked previously at changing the appearance of FreeCAD using themes and also different workbench listing options as a method of personalising our FreeCAD, in this tutorial though we’ll look at toolbars and tool icons.">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2025-03-14T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:47:39+02:00">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/fr/"accesskey="h"
+      title="Accueil (Alt + H)"
+      aria-label="Accueil">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/fr/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choisir la langue (Alt + L)"
+          aria-label="Choisir la langue"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/tutorial-custom-toolbars/" title="Tutorial - Custom Toolbars">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/tutorial-custom-toolbars/" title="Tutorial - Custom Toolbars">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/tutorial-custom-toolbars/" title="Tutorial - Custom Toolbars">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/fr/news/tutorial-custom-toolbars/" title="Tutorial - Custom Toolbars">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/tutorial-custom-toolbars/" title="Tutorial - Custom Toolbars">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/tutorial-custom-toolbars/" title="Tutorial - Custom Toolbars">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/tutorial-custom-toolbars/" title="Tutorial - Custom Toolbars">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Changer le thème (Alt + T)"
+    aria-label="Changer le thème"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 100;">
+
+    <h2 class="title"
+      
+      >Tutorial - Custom Toolbars</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2025-03-14T00:00:00Z">14 mars 2025</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/fr/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/fr/categories/tutorial/">Tutorial (26)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>611 mots</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>3 min</span></div></section><div class="content"><div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-custom-toolbars/custom_tb_header.png"
+  alt="Custom tb header"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="801"
+  height="504"
+    srcset="/Website/pr-16/news/tutorial-custom-toolbars/custom_tb_header_hu_a44fdb0774c4117a.webp 500w, /Website/pr-16/news/tutorial-custom-toolbars/custom_tb_header.png 801w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Custom tb header</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/tutorial-custom-toolbars/custom_tb_header.png"
+              title="Custom tb header"
+              alt="Custom tb header"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>When you use any tool for a while you often build a more personal connection to it. Perhaps you have that old screwdriver in a drawer that&rsquo;s become polished with years of use and fits your hand perfectly. We&rsquo;ve looked previously at <a href="https://blog.freecad.org/2024/12/03/tutorial-themes-and-workbench-layout/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">changing the appearance of FreeCAD using themes and also different workbench listing options<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> as a method of personalising our FreeCAD, in this tutorial though we&rsquo;ll look at toolbars and tool icons.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-custom-toolbars/dragging_toolbar.png"
+  alt="Dragging toolbar"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="583"
+  height="563"
+    srcset="/Website/pr-16/news/tutorial-custom-toolbars/dragging_toolbar_hu_8f3ca686ad1339ab.webp 500w, /Website/pr-16/news/tutorial-custom-toolbars/dragging_toolbar.png 583w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Dragging toolbar</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/tutorial-custom-toolbars/dragging_toolbar.png"
+              title="Dragging toolbar"
+              alt="Dragging toolbar"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>So all workbenches have their own collection of tools arranged into toolbar groups. One of the fundamental things to know is that you can left click on the 3 dots at the edge of a toolbar and you can then drag the entire toolbar to another position and can also drag it to an automatically created new toolbar line.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-002"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-custom-toolbars/select_visible_tb.png"
+  alt="Select visible tb"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="599"
+  height="376"
+    srcset="/Website/pr-16/news/tutorial-custom-toolbars/select_visible_tb_hu_8e16ef24cddb5089.webp 500w, /Website/pr-16/news/tutorial-custom-toolbars/select_visible_tb.png 599w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Select visible tb</figcaption></figure><div id="img-002" popover>
+          <button class="close"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/tutorial-custom-toolbars/select_visible_tb.png"
+              title="Select visible tb"
+              alt="Select visible tb"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>You can also navigate to <em>view - Toolbars</em> and you will see a tick list of toolbars that are available for the particular workbench you are in. You can then show or hide these toolbars by checking or un-checking them in the list. Notice that this list changes as you access it from different workbenches.</p>
+<p>It&rsquo;s also possible to create your own custom toolbars which can feature any tool from any of the built in FreeCAD workbenches, these custom toolbars can be added to any workbenches you like or even be added globally to all workbenches.</p>
+<p>For example, lets create a custom toolbar that will include the export function, the export to PDF function and the icon to launch the Addon manager. From the Part Workbench click <em>tools - Customize</em>. In the resulting window click the &ldquo;Toolbars&rdquo; tab from the available selection. You&rsquo;ll see on the left hand side that an area populates with tools, icons and commands that you can choose from. There is a drop down menu titled &ldquo;Category&rdquo; and you can use this to jump to collated selections of tools. These categories can either be sections of FreeCAD like the &ldquo;File&rdquo; menu etc or they can be a workbench.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-003"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-custom-toolbars/customize.png"
+  alt="Customize"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="802"
+  height="503"
+    srcset="/Website/pr-16/news/tutorial-custom-toolbars/customize_hu_6e8cb254cf603667.webp 500w, /Website/pr-16/news/tutorial-custom-toolbars/customize.png 802w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Customize</figcaption></figure><div id="img-003" popover>
+          <button class="close"
+            popovertarget="img-003"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/tutorial-custom-toolbars/customize.png"
+              title="Customize"
+              alt="Customize"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>On the right hand side of the window click the &ldquo;New&rdquo; button to create your new custom toolbar. You can give it a recognisable name, or leave it as the default &ldquo;Custom 1&rdquo;. With your new toolbar created you then scroll through, or use the search function on the right hand side to identify the tool or command you want to add to your custom toolbar. With the tool highlighted you then click the arrow point right to add the currently selected tool over into your new toolbar. We added the export function, the export to pdf function and the icon to launch the Addon manager. When you are happy with the contents of your custom toolbar click close. You may need to reload the Part Design workbench by moving to another workbench and then returning to Part Design but then you should see your custom toolbar. Note that on other workbenches this toolbar will not be shown, but it will appear in the _view - Toolbars _list we mentioned earlier so can be added to other workbenches.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-004"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-custom-toolbars/tools_added.png"
+  alt="Tools added"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="802"
+  height="503"
+    srcset="/Website/pr-16/news/tutorial-custom-toolbars/tools_added_hu_420230e9e8471f16.webp 500w, /Website/pr-16/news/tutorial-custom-toolbars/tools_added.png 802w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Tools added</figcaption></figure><div id="img-004" popover>
+          <button class="close"
+            popovertarget="img-004"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/tutorial-custom-toolbars/tools_added.png"
+              title="Tools added"
+              alt="Tools added"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>If you want to create a custom toolbar that appears by default on every workbench as you use FreeCAD you can easily do so. Once again click _tools - __C__ustomize _from the Part Design workbench. In the resulting window click the &ldquo;Toolbars&rdquo; tab from the available selection. This time on the right hand side click the dropdown that currently reads &ldquo;Part Design&rdquo; (or your currently selected workbench) and then select &ldquo;Global&rdquo; from the list. Now when you create your custom toolbar it will automatically appear throughout FreeCAD.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-005"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-custom-toolbars/global.png"
+  alt="Global"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="801"
+  height="502"
+    srcset="/Website/pr-16/news/tutorial-custom-toolbars/global_hu_3c725c42ceafb964.webp 500w, /Website/pr-16/news/tutorial-custom-toolbars/global.png 801w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Global</figcaption></figure><div id="img-005" popover>
+          <button class="close"
+            popovertarget="img-005"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/tutorial-custom-toolbars/global.png"
+              title="Global"
+              alt="Global"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div>
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/fr/news/wip-wednesday-19-march-2025/"
+             title="Article suivant"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday - 19 March 2025</a><a class="page-item prev"
+             href="/Website/pr-16/fr/news/wip-wednesday-12-march-2025/"
+             title="Article précédent">WIP Wednesday - 12 March 2025<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Aller au sommet de la page"
+  title="Aller au sommet de la page (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/fr/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/fr/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/fr/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/fr/authors/">Auteurs</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/categories/">Catégories</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/tags/">Mots-Clés</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/versions/">Versions</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/fr/fedishare.html#title=Tutorial&#43;-&#43;Custom&#43;Toolbars&amp;description=%20When%20you%20use%20any%20tool%20for%20a%20while%20you%20often%20build%20a%20more%20personal%20connection%20to%20it.%20Perhaps%20you%20have%20that%20old%20screwdriver%20in%20a%20drawer%20that%e2%80%99s%20become%20polished%20with%20years%20of%20use%20and%20fits%20your%20hand%20%e2%80%a6&amp;url=https://FreeCAD.github.io/Website/pr-16/fr/news/tutorial-custom-toolbars/"
+  title="Partager sur Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/fr/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

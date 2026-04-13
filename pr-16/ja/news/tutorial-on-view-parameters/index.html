@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ja-JP"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Tutorial - On View Parameters</title>
+  <meta name="description" content="あなた自身の自由でオープンソースのパラメトリックモデラー"><meta name="keywords" content="sketcher"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/ja/news/tutorial-on-view-parameters/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/tutorial-on-view-parameters/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/tutorial-on-view-parameters/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/tutorial-on-view-parameters/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/tutorial-on-view-parameters/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/tutorial-on-view-parameters/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/tutorial-on-view-parameters/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/tutorial-on-view-parameters/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/ja/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/ja/news/tutorial-on-view-parameters/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Tutorial - On View Parameters">
+  <meta property="og:description" content="One of the excellent new features in the upcoming version 1.0 release is the addition of “On View Parameters” for many of the tools in the sketcher workbench. These are parameter inputs boxes that appear automatically when you use sketcher tools mean to add dimensions and more as you create the geometry.">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2024-10-20T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:47:39+02:00">
+    <meta property="article:tag" content="Sketcher">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/ja/"accesskey="h"
+      title="ホームページ (Alt + H)"
+      aria-label="ホームページ">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="メニュー"
+    aria-label="メニュー"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/ja/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="言語を選択 (Alt + L)"
+          aria-label="言語を選択"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/tutorial-on-view-parameters/" title="Tutorial - On View Parameters">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/tutorial-on-view-parameters/" title="Tutorial - On View Parameters">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/tutorial-on-view-parameters/" title="Tutorial - On View Parameters">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/tutorial-on-view-parameters/" title="Tutorial - On View Parameters">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/tutorial-on-view-parameters/" title="Tutorial - On View Parameters">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/tutorial-on-view-parameters/" title="Tutorial - On View Parameters">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/ja/news/tutorial-on-view-parameters/" title="Tutorial - On View Parameters">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="テーマchromaに切り替える (Alt + T)"
+    aria-label="テーマchromaに切り替える"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 100;">
+
+    <h2 class="title"
+      
+      >Tutorial - On View Parameters</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2024-10-20T00:00:00Z">2024年10月20日</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/ja/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/ja/categories/tutorial/">Tutorial (26)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/ja/tags/sketcher/">Sketcher (8)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>785 語</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>4 分</span></div><figure class="article-cover"><img srcset="/Website/pr-16/news/tutorial-on-view-parameters/main_hu_e39d7c7bd9de3bb.webp 500w, /Website/pr-16/news/tutorial-on-view-parameters/main.png 917w"
+        sizes="(max-width: 500px) 500px, 75vw"
+        src="/Website/pr-16/news/tutorial-on-view-parameters/main.png"
+        title="On View Parameters"
+        alt="代替画像"
+        width="917"
+        height="630"
+        loading="eager"
+        fetchpriority="high"><figcaption>
+        <div class="internal-tooltip"><svg class="icon-important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/important.svg#important"></use>
+  </svg><span class="tooltip">On View Parameters</span>
+        </div>
+      </figcaption></figure></section><div class="content"><p>One of the excellent new features in the upcoming version 1.0 release is the addition of &ldquo;On View Parameters&rdquo; for many of the tools in the sketcher workbench. These are parameter inputs boxes that appear automatically when you use sketcher tools mean to add dimensions and more as you create the geometry.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="画像を拡大" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-on-view-parameters/create_rectangle.png"
+  alt="Create rectangle"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="692"
+  height="521"
+    srcset="/Website/pr-16/news/tutorial-on-view-parameters/create_rectangle_hu_33c8b2a6180a8c92.webp 500w, /Website/pr-16/news/tutorial-on-view-parameters/create_rectangle.png 692w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Create rectangle</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="画像ビューアを閉じる">
+            <img src="/Website/pr-16/news/tutorial-on-view-parameters/create_rectangle.png"
+              title="Create rectangle"
+              alt="Create rectangle"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>In the default preferences for version 1.0 the on view parameters will be available for dimensional input when you start to draw many objects in sketcher. As a simple example let&rsquo;s draw a rectangle in a new sketch on the XY plane. Click the &ldquo;Create rectangle&rdquo; tool icon and left click and drag to begin to create a rectangle or square. As you draw you will notice the on view parameter boxes appear. The X axis box will be active so you can type a value for the X axis length of the rectangle. Type in your value and then click the enter key. The X axis value will be set and the Y axis on view parameter input will now be highlighted. Type a value here and then click enter once more to finish your rectangle.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="画像を拡大" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-on-view-parameters/create_circle.png"
+  alt="Create circle"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="384"
+  height="282"
+    srcset="/Website/pr-16/news/tutorial-on-view-parameters/create_circle.png 384w"
+    sizes="75vw"></button><figcaption>Create circle</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="画像ビューアを閉じる">
+            <img src="/Website/pr-16/news/tutorial-on-view-parameters/create_circle.png"
+              title="Create circle"
+              alt="Create circle"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>As a second example lets create a circle. Click the &ldquo;Create circle by center&rdquo; tool. Left click to begin to draw a circle and notice that there is only one on view parameter box into which we can type a value for the diameter of the circle. Type a value and click enter to complete your circle.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="画像を拡大" popovertarget="img-002"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-on-view-parameters/create_line.png"
+  alt="Create line"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="684"
+  height="411"
+    srcset="/Website/pr-16/news/tutorial-on-view-parameters/create_line_hu_7efc6e1a6ffb73ec.webp 500w, /Website/pr-16/news/tutorial-on-view-parameters/create_line.png 684w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Create line</figcaption></figure><div id="img-002" popover>
+          <button class="close"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="画像ビューアを閉じる">
+            <img src="/Website/pr-16/news/tutorial-on-view-parameters/create_line.png"
+              title="Create line"
+              alt="Create line"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Moving beyond simple height, width or diameter parameters, let&rsquo;s draw a single line to look at adding angle values. Click the &ldquo;Create line&rdquo; tool icon and left click to start drawing a line. Dragging across a line will be created with a length parameter input. Type a value and click enter. The next on view parameter highlighted will set the angle of the line relative to the start point. Again you can move the line to the desired position and the parameter will update or you can type in a value in degrees. Note that if you hold down the control key whilst the angle parameter view is highlighted you constrain the movement of the angle into 5 degree steps. Click enter to finish the line.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="画像を拡大" popovertarget="img-003"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-on-view-parameters/create_slot.png"
+  alt="Create slot"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="717"
+  height="506"
+    srcset="/Website/pr-16/news/tutorial-on-view-parameters/create_slot_hu_82c414c45cb049ef.webp 500w, /Website/pr-16/news/tutorial-on-view-parameters/create_slot.png 717w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Create slot</figcaption></figure><div id="img-003" popover>
+          <button class="close"
+            popovertarget="img-003"
+            popovertargetaction="hide"
+            aria-label="画像ビューアを閉じる">
+            <img src="/Website/pr-16/news/tutorial-on-view-parameters/create_slot.png"
+              title="Create slot"
+              alt="Create slot"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Moving to a slightly more complex example we can draw a slot. Click the &ldquo;Create slot&rdquo; tool icon and then left click to begin to draw a slot in the sketch. Notice that there are 2 on view parameter input boxes initially. The first highlighted input defines the length of the slot between the radius end centre points. Insert a value for this and press enter. The next active on view parameter is the angle of the slot. You can rotate the slot and see this figure change or of course you can type in a value in degrees. Once you have typed or placed your correct angle hit the enter key again. You now should have a new on view parameter input appear, this input receives a value for the radius of the slot ends, which obviously sets the width of the slot, again move the slot object to the value you require or type a value and press enter to finish your slot.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="画像を拡大" popovertarget="img-004"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-on-view-parameters/preferences.png"
+  alt="Preferences"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1248"
+  height="928"
+    srcset="/Website/pr-16/news/tutorial-on-view-parameters/preferences_hu_ba5f51e366a63e54.webp 500w, /Website/pr-16/news/tutorial-on-view-parameters/preferences_hu_5242dcaaefdcf43d.webp 1000w, /Website/pr-16/news/tutorial-on-view-parameters/preferences.png 1248w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Preferences</figcaption></figure><div id="img-004" popover>
+          <button class="close"
+            popovertarget="img-004"
+            popovertargetaction="hide"
+            aria-label="画像ビューアを閉じる">
+            <img src="/Website/pr-16/news/tutorial-on-view-parameters/preferences.png"
+              title="Preferences"
+              alt="Preferences"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>With a little practice it becomes second nature to cycle through the on view parameters as you sketch but it&rsquo;s also worth knowing that you can turn off these on view parameters or indeed you can expand on their functionality using the sketcher workbench preferences. Click &ldquo;Edit - Preferences&rdquo; and then select the &ldquo;Sketcher&rdquo; tab from the list. At the bottom of the resulting window you should see a &ldquo;Tool Parameters&rdquo; section with an &ldquo;on-view-parameters&rdquo; drop down available. Clicking on the drop down reveals 3 options. Selecting &ldquo;None&rdquo; allows you to turn off this feature and you can revert to adding dimensions and values using other methods. The default option &ldquo;Dimensions only&rdquo; is the setting we have used so far but we can switch to &ldquo;Position and dimensions&rdquo;. Selecting &ldquo;Positions and dimensions&rdquo; expands the on view parameters to include co-ordinate data.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="画像を拡大" popovertarget="img-005"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-on-view-parameters/co_ordinates.png"
+  alt="Co ordinates"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="876"
+  height="598"
+    srcset="/Website/pr-16/news/tutorial-on-view-parameters/co_ordinates_hu_b7d4a551365897f4.webp 500w, /Website/pr-16/news/tutorial-on-view-parameters/co_ordinates.png 876w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Co ordinates</figcaption></figure><div id="img-005" popover>
+          <button class="close"
+            popovertarget="img-005"
+            popovertargetaction="hide"
+            aria-label="画像ビューアを閉じる">
+            <img src="/Website/pr-16/news/tutorial-on-view-parameters/co_ordinates.png"
+              title="Co ordinates"
+              alt="Co ordinates"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>If we apply this option and draw a rectangle notice that when you select the tool, before you click to start a rectangle, you have on view parameters for the co-ordinates of the start point. Again you can type in the X co-ordinate of the start point, click enter and move to the Y co-ordinate. Pressing enter after the Y co-ordinate you then start to draw a rectangle with the on view parameters for the length and height as we did earlier. Completing these parameters we should then have a fully constrained rectangle in our sketch.</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/ja/news/wip-wednesday-23-october-2024/"
+             title="次の記事"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday - 23 October 2024</a><a class="page-item prev"
+             href="/Website/pr-16/ja/news/wip-wednesday-16-october-2024/"
+             title="前の記事">WIP Wednesday - 16 October 2024<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="トップへ"
+  title="トップへ (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/ja/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/ja/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/ja/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/ja/authors/">著者一覧</a>
+                      </li><li>
+                        <a href="/Website/pr-16/ja/categories/">カテゴリ一覧</a>
+                      </li><li>
+                        <a href="/Website/pr-16/ja/tags/">タグ一覧</a>
+                      </li><li>
+                        <a href="/Website/pr-16/ja/versions/">バージョン一覧</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/ja/fedishare.html#title=Tutorial&#43;-&#43;On&#43;View&#43;Parameters&amp;description=One&#43;of&#43;the&#43;excellent&#43;new&#43;features&#43;in&#43;the&#43;upcoming&#43;version&#43;1.0&#43;release&#43;is&#43;the&#43;addition&#43;of&#43;%E2%80%9COn&#43;View&#43;Parameters%E2%80%9D&#43;for&#43;many&#43;of&#43;the&#43;tools&#43;in&#43;the&#43;sketcher&#43;workbench.&#43;These&#43;are&#43;parameter&#43;inputs&#43;boxes&#43;that&#43;%E2%80%A6%0A%23sketcher&amp;url=https://FreeCAD.github.io/Website/pr-16/ja/news/tutorial-on-view-parameters/"
+  title="共有 Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/ja/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

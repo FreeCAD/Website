@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="de-DE"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Tutorial - Getting started with the Path Workbench. Part One.</title>
+  <meta name="description" content="Dein eigener freier und Open-Source parametrischer Modellierer"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/de/news/tutorial-getting-started-with-the-path-workbench-part-one/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/tutorial-getting-started-with-the-path-workbench-part-one/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/tutorial-getting-started-with-the-path-workbench-part-one/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/tutorial-getting-started-with-the-path-workbench-part-one/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/tutorial-getting-started-with-the-path-workbench-part-one/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/tutorial-getting-started-with-the-path-workbench-part-one/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/tutorial-getting-started-with-the-path-workbench-part-one/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/de/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/de/news/tutorial-getting-started-with-the-path-workbench-part-one/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Tutorial - Getting started with the Path Workbench. Part One.">
+  <meta property="og:description" content="The Path workbench in FreeCAD can help you create tool paths for CAM for a wide variety of CNC machines and G-code families. Let’s walk through how to begin using this workbench in this first part creating and curating custom tool bits. In part two we’ll continue setting up cutting operations and look at exporting G-codes for our machines.">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2023-11-24T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:47:39+02:00">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/de/"accesskey="h"
+      title="Home (Alt + H)"
+      aria-label="Home">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menü"
+    aria-label="Menü"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/de/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Sprache auswählen (Alt + L)"
+          aria-label="Sprache auswählen"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/" title="Tutorial - Getting started with the Path Workbench. Part One.">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/tutorial-getting-started-with-the-path-workbench-part-one/" title="Tutorial - Getting started with the Path Workbench. Part One.">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/tutorial-getting-started-with-the-path-workbench-part-one/" title="Tutorial - Getting started with the Path Workbench. Part One.">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/tutorial-getting-started-with-the-path-workbench-part-one/" title="Tutorial - Getting started with the Path Workbench. Part One.">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/tutorial-getting-started-with-the-path-workbench-part-one/" title="Tutorial - Getting started with the Path Workbench. Part One.">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/de/news/tutorial-getting-started-with-the-path-workbench-part-one/" title="Tutorial - Getting started with the Path Workbench. Part One.">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/tutorial-getting-started-with-the-path-workbench-part-one/" title="Tutorial - Getting started with the Path Workbench. Part One.">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Design wechseln (Alt + T)"
+    aria-label="Design wechseln"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 100;">
+
+    <h2 class="title"
+      
+      >Tutorial - Getting Started With the Path Workbench. Part One.</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2023-11-24T00:00:00Z">24. November 2023</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/de/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/de/categories/tutorial/">Tutorial (26)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>1100 Wörter</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>6 Minuten</span></div><figure class="article-cover"><img srcset="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/path_header_hu_cf4fdb66a6eb28b.webp 500w, /Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/path_header_hu_978bef3a82477292.webp 1000w, /Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/path_header.png 1920w"
+        sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"
+        src="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/path_header.png"
+        title="Path header"
+        alt="Ersatzbild"
+        width="1920"
+        height="1011"
+        loading="eager"
+        fetchpriority="high"><figcaption>
+        <div class="internal-tooltip"><svg class="icon-important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/important.svg#important"></use>
+  </svg><span class="tooltip">Path header</span>
+        </div>
+      </figcaption></figure></section><div class="content"><p>The <a href="https://wiki.freecad.org/Path_Workbench"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Path workbench<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> in FreeCAD can help you create tool paths for CAM for a wide variety of CNC machines and G-code families. Let&rsquo;s walk through how to begin using this workbench in this first part creating and curating custom tool bits. In part two we&rsquo;ll continue setting up cutting operations and look at exporting G-codes for our machines.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Bild vergrößern" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/cut_object.png"
+  alt="Cut object"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1919"
+  height="1002"
+    srcset="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/cut_object_hu_2a9a715b699b0d7f.webp 500w, /Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/cut_object_hu_9466d841f9238f8d.webp 1000w, /Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/cut_object.png 1919w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Cut object</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen">
+            <img src="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/cut_object.png"
+              title="Cut object"
+              alt="Cut object"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>As a simple example object to work with, in a new project, move to the Part workbench and create a 30mm diameter cylinder that is 10mm tall. Create a second smaller diameter cylinder, say 15mm diameter and right click, select transform and move the smaller cylinder upwards a little so that when we cut it out of the larger cylinder it leaves a small pocketed area. Finally select the larger cylinder in the combo view, then use control and select the smaller cylinder and then click the boolean cut tool. You should now have a flat cylinder with a circular hole or pocket cut part way through.</p>
+<p>Next, let&rsquo;s move to the Path Workbench. As a note about how this tutorial is written, whenever we say to click on a &ldquo;Tool Icon&rdquo; we use the name of the tool icon as it appears when you hover/rollover the tool icon and the description appears. This means you&rsquo;ll need to hover over lots of tool icons to find your way around a new workbench; an excellent way to discover the tools! We&rsquo;ve used FreeCAD version 0.21.1 for this tutorial.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Bild vergrößern" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/metric_small_parts_cnc.png"
+  alt="Metric small parts cnc"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1100"
+  height="919"
+    srcset="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/metric_small_parts_cnc_hu_e4cba92ae3ac5515.webp 500w, /Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/metric_small_parts_cnc_hu_d60258d6af7fa6d0.webp 1000w, /Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/metric_small_parts_cnc.png 1100w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Metric small parts cnc</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen">
+            <img src="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/metric_small_parts_cnc.png"
+              title="Metric small parts cnc"
+              alt="Metric small parts cnc"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>If it is the first time you have run the Path workbench, when you select it from the drop down workbench menu you will see a dialogue requesting that you change the unit system to &ldquo;Metric Small Parts/CNC(mm, mm/min)&rdquo;. This is used because when we set the feedrates for individual tools and operations you will set how fast the tool moves in millimetres per minute. To make this change click &ldquo;Preferences&rdquo; and on the &ldquo;General&rdquo; tab set the unit system to &ldquo;Metric Small Parts/CNC(mm, mm/min)&rdquo;.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Bild vergrößern" popovertarget="img-002"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/job1.png"
+  alt="Job 1"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1910"
+  height="999"
+    srcset="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/job1_hu_6e5ff97d411bd6ae.webp 500w, /Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/job1_hu_176ea77332d2fe82.webp 1000w, /Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/job1.png 1910w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Job 1</figcaption></figure><div id="img-002" popover>
+          <button class="close"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen">
+            <img src="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/job1.png"
+              title="Job 1"
+              alt="Job 1"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>In the Path workbench we will need to create a &ldquo;Job&rdquo; item. The &ldquo;Job&rdquo; item in the combo view contains all the different information needed for an entire CAM job. It can contain one or more tool paths or cutting operations as well as the information about which tools are being used and how fast those tools are travelling and more. To create a Job, select the &ldquo;Cut&rdquo; object in the combo view and then click the &ldquo;Job&rdquo; tool icon. We&rsquo;ll skip over the &ldquo;Create Job&rdquo; dialogue for now but it should have the &ldquo;Cut&rdquo; item checked in a checklist, simply click &ldquo;OK&rdquo; to create the &ldquo;Job&rdquo; object. You should now see that the preview window looks a little different with a grey version of our &ldquo;Cut&rdquo; object surrounded by a set of lines forming a box, the greyed version of our target object is a clone of the original which is held inside the &ldquo;Job&rdquo; drop down. Also the combo view should now contain the &ldquo;Job Edit&rdquo; dialogue. At the top of this dialogue you should see the &ldquo;Stock&rdquo; panel. In this you can change the size of the bounding box of lines around our clone &ldquo;Cut&rdquo; object. This represents the size of the stock material we would fit to our CNC machine so you can adjust this to match what you need. For example if we were cutting out this 10mm high cylinder object on a CNC router we might actually use 10mm thick stock material and not face cut the upper and lower surfaces to size, therefore we could change our stock bounding box Z axis values to 0 and 0, this would then make the bounding box the exact thickness of our &ldquo;Cut&rdquo; object.</p>
+<p>The Path workbench has a small collection of built in tools, in this instance the tools refer to the actual cutter that would be placed into the CNC machine to do the work. There is a huge range of tools available in reality so it&rsquo;s important to be able to create tool profiles to match what we have available for our machines. Clicking the &ldquo;ToolBit Dock&rdquo; tool icon for the first time you will be asked to set up a location on your system to store your personal tool library. You can set this up at the suggested path, or you can set a custom path. If you set up a custom path outside of your FreeCAD installation you can then easily migrate your tool collection to new versions of FreeCAD. Once created it will ask if you want to copy over the example default tool geometry files, this is worth doing as it simplifies creating a common range of new tools.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Bild vergrößern" popovertarget="img-003"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/tool_library_editor.png"
+  alt="Tool library editor"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="965"
+  height="622"
+    srcset="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/tool_library_editor_hu_32ee6eaed70308a7.webp 500w, /Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/tool_library_editor.png 965w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Tool library editor</figcaption></figure><div id="img-003" popover>
+          <button class="close"
+            popovertarget="img-003"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen">
+            <img src="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/tool_library_editor.png"
+              title="Tool library editor"
+              alt="Tool library editor"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>To add a new tool click the Path drop down menu and select the &ldquo;ToolBit Library Editor.&rdquo; It&rsquo;s worth identifying a tool in your collection you want to use and perhaps grabbing a set of calipers to measure the various aspects of the tool we need to create the Toolbit item. As an example we can add a 3mm endmill. In the ToolBit Library Editor dialogue click the &ldquo;Create Toolbit&rdquo; button. As we want to create an endmill select the &ldquo;endmill&rdquo; file in the &ldquo;Select Tool Shape&rdquo; window. After selecting the shape of the tool the next window requires you to give your tool a name. We named our example &ldquo;3mm_2Flute_endmill&rdquo;.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Bild vergrößern" popovertarget="img-004"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/shape_attributes.png"
+  alt="Shape attributes"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="963"
+  height="688"
+    srcset="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/shape_attributes_hu_efdb88f6afa68234.webp 500w, /Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/shape_attributes.png 963w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Shape attributes</figcaption></figure><div id="img-004" popover>
+          <button class="close"
+            popovertarget="img-004"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen">
+            <img src="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/shape_attributes.png"
+              title="Shape attributes"
+              alt="Shape attributes"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>You should now see the new tool entry in the ToolBit Library Editor or the dock toolbit area. Double click on the new tool and this will open the &ldquo;Shape&rdquo; and &ldquo;Attributes&rdquo; tab. In the shape tab you add the dimensions of the tool. So for example our 3mm endmill was in total 55mm long with a 25mm long cutting edge, the diameter was 3mm. Moving to the &ldquo;Attributes&rdquo; tab you can set various things including the number of flutes (which we set to 2 to match our endmill) and the tool material between HSS tooling and Carbide tooling.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Bild vergrößern" popovertarget="img-005"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/attributes.png"
+  alt="Attributes"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="960"
+  height="686"
+    srcset="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/attributes_hu_de27c861c4c6261b.webp 500w, /Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/attributes.png 960w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Attributes</figcaption></figure><div id="img-005" popover>
+          <button class="close"
+            popovertarget="img-005"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen">
+            <img src="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/attributes.png"
+              title="Attributes"
+              alt="Attributes"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Unlike some other CAM programs the FreeCAD Path workbench doesn&rsquo;t attach speed and feedrates to each tool in the library, when we add a tool to a job we will automatically create a tool controller object into which we can add speeds and feedrates. This makes sense as our speeds and feeds for the same tool bit might be wildly different in use on different materials and or different machines. We&rsquo;ll look at this and finish off making some simple paths and exporting G-code in the second part of this introduction to the Path Workbench.</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/de/news/tutorial-getting-started-with-the-path-workbench-part-two/"
+             title="Nächster Artikel"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>Tutorial - Getting started with the Path Workbench. Part Two.</a><a class="page-item prev"
+             href="/Website/pr-16/de/news/forged-in-freecad-alexanders-pcb-holder/"
+             title="Vorheriger Artikel">Forged in FreeCAD - Alexander&#39;s PCB Holder<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Nach oben"
+  title="Nach oben (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/de/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/de/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/de/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/de/authors/">Autoren</a>
+                      </li><li>
+                        <a href="/Website/pr-16/de/categories/">Kategorien</a>
+                      </li><li>
+                        <a href="/Website/pr-16/de/tags/">Tags</a>
+                      </li><li>
+                        <a href="/Website/pr-16/de/versions/">Versionen</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/de/fedishare.html#title=Tutorial&#43;-&#43;Getting&#43;started&#43;with&#43;the&#43;Path&#43;Workbench.&#43;Part&#43;One.&amp;description=The%20Path%20workbench%20in%20FreeCAD%20can%20help%20you%20create%20tool%20paths%20for%20CAM%20for%20a%20wide%20variety%20of%20CNC%20machines%20and%20G-code%20families.%20Let%e2%80%99s%20walk%20through%20how%20to%20begin%20using%20this%20workbench%20in%20this%20first%20part%20%e2%80%a6&amp;url=https://FreeCAD.github.io/Website/pr-16/de/news/tutorial-getting-started-with-the-path-workbench-part-one/"
+  title="Teilen auf Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/de/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

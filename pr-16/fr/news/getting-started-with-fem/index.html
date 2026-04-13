@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="fr-FR"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Getting started with FEM</title>
+  <meta name="description" content="Votre modeleur paramétrique libre et open-source"><meta name="keywords" content="FEM"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/fr/news/getting-started-with-fem/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/getting-started-with-fem/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/getting-started-with-fem/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/getting-started-with-fem/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/getting-started-with-fem/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/getting-started-with-fem/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/getting-started-with-fem/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/getting-started-with-fem/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/fr/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/fr/news/getting-started-with-fem/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Getting started with FEM">
+  <meta property="og:description" content="FEM is a highly specialized workbench used to simulate various physical phenomena with the finite element method. The workbench is very actively developed, and thus it’s recommended to always use the newest available FreeCAD version (possibly up-to-date weekly builds ).">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2025-09-16T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:50:21+02:00">
+    <meta property="article:tag" content="FEM">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/fr/"accesskey="h"
+      title="Accueil (Alt + H)"
+      aria-label="Accueil">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/fr/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choisir la langue (Alt + L)"
+          aria-label="Choisir la langue"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/getting-started-with-fem/" title="Getting started with FEM">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/getting-started-with-fem/" title="Getting started with FEM">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/getting-started-with-fem/" title="Getting started with FEM">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/fr/news/getting-started-with-fem/" title="Getting started with FEM">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/getting-started-with-fem/" title="Getting started with FEM">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/getting-started-with-fem/" title="Getting started with FEM">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/getting-started-with-fem/" title="Getting started with FEM">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Changer le thème (Alt + T)"
+    aria-label="Changer le thème"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 100;">
+
+    <h2 class="title"
+      
+      >Getting Started With FEM</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2025-09-16T00:00:00Z">16 septembre 2025</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/fr/authors/newjoker/">NewJoker (3)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/fr/categories/tutorial/">Tutorial (26)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/fr/tags/fem/">FEM (4)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>1506 mots</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>8 min</span></div></section><div class="content"><p>FEM is a highly specialized workbench used to simulate various physical phenomena with the finite element method. The workbench is very actively developed, and thus it&rsquo;s recommended to always use the newest available FreeCAD version (possibly up-to-date <a href="https://github.com/FreeCAD/FreeCAD/releases"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">weekly builds<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>).</p>
+<p>The FEM workbench supports two main solvers:</p>
+<ul>
+<li>CalculiX is the best choice for mechanical (strength) and thermomechanical calculations.</li>
+<li>Elmer is the best choice for electromagnetic, flow, and thermal, as well as coupled (multiphysics) simulations.</li>
+</ul>
+<p>CalculiX is provided with the Windows version, other solvers require <a href="https://wiki.freecad.org/FEM_Install"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">installation<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>.</p>
+<h2
+  id="geometry-preparation"
+  
+  >Geometry preparation<a class="heading-anchor"
+     href="#geometry-preparation"
+     title="Geometry preparation"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Before proceeding to run FEM simulations on your design, you should prepare the geometry as described on the <a href="https://wiki.freecad.org/FEM_Geometry_Preparation_and_Meshing"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">FEM Geometry Preparation and Meshing<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> wiki page. This mainly involves:</p>
+<ul>
+<li>Choosing the right type of geometry (fully solid or simplified to surface/line if it&rsquo;s thin/slender). Currently, it&rsquo;s not possible to mix those types,</li>
+<li>Simplifying the geometry: removing unnecessary small details, utilizing symmetry.</li>
+<li>Combining all parts of an assembly into a single object using Part boolean operations (usually Boolean fragments with <strong>Compsolid</strong> mode + <strong>Compound</strong> filter) - currently, multiple meshes are not supported, and a single object to mesh is needed.</li>
+</ul>
+<p>For the purpose of this tutorial, go to the Part workbench, add <strong>Cube</strong> (<strong>Part_Box</strong>), and only change the <strong>Length</strong> property to 100 mm. We will use this geometry to simulate bending and torsion of a cantilever beam with a square cross-section.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/getting-started-with-fem/image-16.png"
+  alt="Image 16"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1303"
+  height="698"
+    srcset="/Website/pr-16/news/getting-started-with-fem/image-16_hu_cc3e753c0d4c0d59.webp 500w, /Website/pr-16/news/getting-started-with-fem/image-16_hu_62049089a8ba9485.webp 1000w, /Website/pr-16/news/getting-started-with-fem/image-16.png 1303w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Image 16</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/getting-started-with-fem/image-16.png"
+              title="Image 16"
+              alt="Image 16"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><h2
+  id="analysis-container-meshing-and-material-assignment"
+  
+  >Analysis container, meshing, and material assignment<a class="heading-anchor"
+     href="#analysis-container-meshing-and-material-assignment"
+     title="Analysis container, meshing, and material assignment"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>After opening the FEM workbench, you have to add an <strong>Analysis</strong> container to activate the grayed-out tools. This will also add the default solver&rsquo;s object if set in the <strong>Preferences</strong>. Otherwise, add the solver&rsquo;s object manually. Here we will use CalculiX.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/getting-started-with-fem/image-11.png"
+  alt="Image 11"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="300"
+  height="113"
+    srcset="/Website/pr-16/news/getting-started-with-fem/image-11.png 300w"
+    sizes="75vw"></button><figcaption>Image 11</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/getting-started-with-fem/image-11.png"
+              title="Image 11"
+              alt="Image 11"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Now it&rsquo;s time to mesh the geometry-divide it into finite elements of simple shapes. Two meshers are available-Gmsh and Netgen. You can choose whichever you want, but the latter may be trickier to install. Gmsh is typically included with FreeCAD.</p>
+<p>Select the single geometry object (<strong>Cube</strong> in this case) and click on the proper mesher button:</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-002"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/getting-started-with-fem/image-15.png"
+  alt="Image 15"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="351"
+  height="124"
+    srcset="/Website/pr-16/news/getting-started-with-fem/image-15.png 351w"
+    sizes="75vw"></button><figcaption>Image 15</figcaption></figure><div id="img-002" popover>
+          <button class="close"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/getting-started-with-fem/image-15.png"
+              title="Image 15"
+              alt="Image 15"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Now you just have to specify the maximum element size (use 2 mm in this case) and click <strong>Apply</strong>, then <strong>OK</strong>.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-003"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/getting-started-with-fem/image-21.png"
+  alt="Image 21"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1249"
+  height="590"
+    srcset="/Website/pr-16/news/getting-started-with-fem/image-21_hu_f91023d55e118997.webp 500w, /Website/pr-16/news/getting-started-with-fem/image-21_hu_46420ce64547d405.webp 1000w, /Website/pr-16/news/getting-started-with-fem/image-21.png 1249w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Image 21</figcaption></figure><div id="img-003" popover>
+          <button class="close"
+            popovertarget="img-003"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/getting-started-with-fem/image-21.png"
+              title="Image 21"
+              alt="Image 21"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>You can locally refine meshes (the <strong>FEM_MeshRegion</strong> command) when you need to increase the accuracy of the results in some critical locations, such as around holes.</p>
+<p>It&rsquo;s also necessary to assign material(s).</p>
+<p>Select <strong>Solid Material</strong> (yellow button next to <strong>New Analysis</strong>) and pick one from the list. Here, select &ldquo;CalculiX-Steel&rdquo;.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-004"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/getting-started-with-fem/image-12.png"
+  alt="Image 12"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="445"
+  height="271"
+    srcset="/Website/pr-16/news/getting-started-with-fem/image-12.png 445w"
+    sizes="75vw"></button><figcaption>Image 12</figcaption></figure><div id="img-004" popover>
+          <button class="close"
+            popovertarget="img-004"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/getting-started-with-fem/image-12.png"
+              title="Image 12"
+              alt="Image 12"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Optionally, you can use the task panel to change the properties used in analyses. Mechanical simulations need Young&rsquo;s modulus, Poisson&rsquo;s ratio, and density (only for frequency calculations or gravity/centrifugal force loads). Leaving a material with no geometry reference selected means that it will be applied to all geometry regions without material assignments.</p>
+<p>To account for permanent (non-elastic) deformation, you can add a Non-Linear Mechanical Material object to the existing MaterialSolid and define plasticity using points from the material&rsquo;s stress-strain curve specified according to CalculiX&rsquo;s syntax.</p>
+<p>Simulations with surface geometries (shell or 2D elements) also require thickness definition (the <strong>FEM_ElementGeometry2D</strong> tool), while for line geometries (beam elements), you need to define a profile (the <strong>FEM_ElementGeometry1D</strong> tool).</p>
+<h2
+  id="boundary-conditions-and-loads"
+  
+  >Boundary conditions and loads<a class="heading-anchor"
+     href="#boundary-conditions-and-loads"
+     title="Boundary conditions and loads"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Static simulations require boundary conditions (supports) sufficient for static equilibrium. In most cases, they are applied as a Fixed Boundary Condition or a Displacement Boundary Condition. The first one restrains movement in all directions, while the second one lets you select the directions (degrees of freedom) and displacement values (0 means fix, non-zero values enforce motion). Keep in mind that rotations can be controlled only for shell and beam elements.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-005"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/getting-started-with-fem/image-13.png"
+  alt="Image 13"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="173"
+  height="44"
+    srcset="/Website/pr-16/news/getting-started-with-fem/image-13.png 173w"
+    sizes="75vw"></button><figcaption>Image 13</figcaption></figure><div id="img-005" popover>
+          <button class="close"
+            popovertarget="img-005"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/getting-started-with-fem/image-13.png"
+              title="Image 13"
+              alt="Image 13"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Sometimes it&rsquo;s necessary to specify boundary conditions (or force loads) in cylindrical coordinates. After that, you can use the local coordinate system.</p>
+<p>In this case, you just have to fix one square face of the beam.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-006"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/getting-started-with-fem/image-17.png"
+  alt="Image 17"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="932"
+  height="589"
+    srcset="/Website/pr-16/news/getting-started-with-fem/image-17_hu_fb89fe5b47273bfe.webp 500w, /Website/pr-16/news/getting-started-with-fem/image-17.png 932w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Image 17</figcaption></figure><div id="img-006" popover>
+          <button class="close"
+            popovertarget="img-006"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/getting-started-with-fem/image-17.png"
+              title="Image 17"
+              alt="Image 17"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>There are several types of loads available:</p>
+<ul>
+<li><strong>Force</strong>: applies force in N in the specified direction</li>
+<li><strong>Pressure</strong>: applies pressure in Pa in the normal direction</li>
+<li><strong>Centrifugal force</strong>: applies centrifugal force to simulate the load to which parts rotating with a specified frequency are subjected</li>
+<li><strong>Gravity (self-weight)</strong>: applies gravitational acceleration to account for the weight of the model (if it&rsquo;s significant)</li>
+</ul>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-007"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/getting-started-with-fem/image-14.png"
+  alt="Image 14"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="155"
+  height="79"
+    srcset="/Website/pr-16/news/getting-started-with-fem/image-14.png 155w"
+    sizes="75vw"></button><figcaption>Image 14</figcaption></figure><div id="img-007" popover>
+          <button class="close"
+            popovertarget="img-007"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/getting-started-with-fem/image-14.png"
+              title="Image 14"
+              alt="Image 14"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p><em>For this tutorial, follow these steps:</em></p>
+<ol>
+<li>
+<p><em>Add the <strong>Force</strong> load and set it to 200 N.</em></p>
+</li>
+<li>
+<p><em>Select the square face of the beam opposite to the one with the <strong>Fixed</strong> boundary condition.</em></p>
+</li>
+<li>
+<p><em>Select a vertical edge, and click on <strong>Direction</strong> to change the direction in which the force acts to follow that edge.</em></p>
+</li>
+<li>
+<p><em>Invert it by checking the <strong>Reverse direction</strong> box at the bottom.</em></p>
+</li>
+</ol>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-008"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/getting-started-with-fem/image-19.png"
+  alt="Image 19"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1066"
+  height="494"
+    srcset="/Website/pr-16/news/getting-started-with-fem/image-19_hu_36cec4acccab8716.webp 500w, /Website/pr-16/news/getting-started-with-fem/image-19_hu_e919d1da79fdc805.webp 1000w, /Website/pr-16/news/getting-started-with-fem/image-19.png 1066w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Image 19</figcaption></figure><div id="img-008" popover>
+          <button class="close"
+            popovertarget="img-008"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/getting-started-with-fem/image-19.png"
+              title="Image 19"
+              alt="Image 19"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>In the case of assemblies, you may have to define tie constraints (perfectly bonded surface pairs) or contact (surface pairs where surfaces may press against or slide on each other).</p>
+<p>There are also several boundary conditions and loads for thermal (initial temperature, prescribed temperature, heat flux, and body heat source) and electromagnetic analyses, but let&rsquo;s skip those for now.</p>
+<h2
+  id="running-an-analysis-and-post-processing-the-results"
+  
+  >Running an analysis and post-processing the results<a class="heading-anchor"
+     href="#running-an-analysis-and-post-processing-the-results"
+     title="Running an analysis and post-processing the results"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>If you need to change the analysis type or some solver settings, select the CalculiX solver&rsquo;s object in the tree and use the <strong>Property</strong> view to access the appropriate <strong>Data</strong> properties. Many analysis features also have additional options in their Property view.</p>
+<p><em>When everything is defined, just double-click on the solver&rsquo;s object in the tree and click <strong>Apply</strong>. Or <strong>Write .inp File</strong> and then <strong>Run CalculiX</strong> if you have an older CalculiX solver implementation enabled (&ldquo;Result object: Pipeline only&rdquo; CalculiX preference unchecked in FreeCAD 1.1). When it completes, close the task panel and check the results.</em></p>
+<p>Older CalculiX solver generates <strong>CCX_Results</strong> objects that don&rsquo;t have a legend and require double-clicking on them to display the results, but offer quick insight into minimum and maximum values of the selected outputs. Both solvers also generate results pipeline objects. Those have a color legend and show the results all the time if visible.</p>
+<p>Note that the older ccx solver has displacements in meters and stresses in Pascals in its pipelines, while the refactored one uses more convenient mm and MPa units, respectively.</p>
+<p><em>Here, do the following:</em></p>
+<ul>
+<li><em>If you have the older ccx solver enabled, double-click on <strong>CCX_Results</strong>, select <strong>Displacement Z</strong>, and notice the minimum value in the task panel.</em></li>
+</ul>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-009"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/getting-started-with-fem/image-24.png"
+  alt="Image 24"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1249"
+  height="553"
+    srcset="/Website/pr-16/news/getting-started-with-fem/image-24_hu_e129d9d058b8250c.webp 500w, /Website/pr-16/news/getting-started-with-fem/image-24_hu_e02b73bcf18ea354.webp 1000w, /Website/pr-16/news/getting-started-with-fem/image-24.png 1249w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Image 24</figcaption></figure><div id="img-009" popover>
+          <button class="close"
+            popovertarget="img-009"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/getting-started-with-fem/image-24.png"
+              title="Image 24"
+              alt="Image 24"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><ul>
+<li><em>If you have the refactored ccx solver enabled, double-click on the <strong>SolverCalculiXResult</strong> pipeline object, make sure <strong>Field</strong> is set to <strong>Displacement</strong> and <strong>Component</strong> to <strong>Magnitude</strong> or <strong>Z</strong>, and notice the maximum (for <strong>Magnitude</strong>) or minimum (for <strong>Z</strong>) value on the color legend.</em></li>
+</ul>
+<p><em>The displacement should be around 0.381 mm, according to hand calculations.</em></p>
+<p>You can also select the results pipeline and add the <strong>Warp</strong> filter to visualize the deformation with a given scale factor (or use the slider in <strong>CCX_Results</strong>). Other filter types (e.g., for section cuts or probing results at the selected points) are also available.</p>
+<h2
+  id="rerunning-the-simulation-with-torsion"
+  
+  >Rerunning the simulation with torsion<a class="heading-anchor"
+     href="#rerunning-the-simulation-with-torsion"
+     title="Rerunning the simulation with torsion"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Before finishing this basic tutorial, let&rsquo;s go back to the available analysis features and discuss the <strong>Rigid</strong> body constraint shortly. It was added in FreeCAD 1.0 and can be very useful since it transfers the specified force, moment, or displacement/rotation boundary condition from one reference point to the selected region of the model (usually a face).</p>
+<p>The reference point&rsquo;s coordinates can be specified. With this feature, it&rsquo;s possible to apply remote loads or simulate torsion of arbitrarily shaped parts. We will use it for exactly this purpose.</p>
+<p><em>Follow these steps:</em></p>
+<ol>
+<li>
+<p><em>Hide or delete the results of the cantilever beam analysis.</em></p>
+</li>
+<li>
+<p><em>Suppress (right-click → <strong>Suppressed</strong>) and hide or just delete the <strong>Force</strong> object.</em></p>
+</li>
+<li>
+<p><em>Add <strong>Rigid Body Constraint</strong>.</em></p>
+</li>
+<li>
+<p><em>Select the same face on which the force load was applied, and set the reference point coordinates to (100,5,5).</em></p>
+</li>
+<li>
+<p><em>In the <strong>Rotational Mode</strong> section, set <strong>X</strong> to <strong>Load</strong>.</em></p>
+</li>
+<li>
+<p><em>In the <strong>Moment</strong> section, specify 10 Nm (or 10 J in FreeCAD 1.0 because it didn&rsquo;t support the Nm units) for X. This will apply torque around the X axis to twist the beam.</em></p>
+</li>
+</ol>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-010"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/getting-started-with-fem/image-20.png"
+  alt="Image 20"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="848"
+  height="522"
+    srcset="/Website/pr-16/news/getting-started-with-fem/image-20_hu_4dbd500b8fe39f2d.webp 500w, /Website/pr-16/news/getting-started-with-fem/image-20.png 848w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Image 20</figcaption></figure><div id="img-010" popover>
+          <button class="close"
+            popovertarget="img-010"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/getting-started-with-fem/image-20.png"
+              title="Image 20"
+              alt="Image 20"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-011"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/getting-started-with-fem/image-18.png"
+  alt="Image 18"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="434"
+  height="444"
+    srcset="/Website/pr-16/news/getting-started-with-fem/image-18.png 434w"
+    sizes="75vw"></button><figcaption>Image 18</figcaption></figure><div id="img-011" popover>
+          <button class="close"
+            popovertarget="img-011"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/getting-started-with-fem/image-18.png"
+              title="Image 18"
+              alt="Image 18"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p><em>Rerun the analysis and:</em></p>
+<ul>
+<li><em>If you have the older ccx solver enabled, double-click on <strong>Pipeline_CCX_Results</strong> and change the <strong>Field</strong> to <strong>Stress xy</strong> component. Here the stress on the color legend will be in Pa, so you have to divide it by 10^6 to have it in MPa.</em></li>
+<li><em>If you have the refactored ccx solver enabled, double-click on SolverCalculiXResult, change the <strong>Field</strong> to <strong>Stress</strong> and <strong>Component</strong> to <strong>XY</strong>, and check the maximum value on the color legend.</em></li>
+</ul>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-012"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/getting-started-with-fem/image-23.png"
+  alt="Image 23"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1680"
+  height="619"
+    srcset="/Website/pr-16/news/getting-started-with-fem/image-23_hu_ba23bb6be478568b.webp 500w, /Website/pr-16/news/getting-started-with-fem/image-23_hu_276311057891658e.webp 1000w, /Website/pr-16/news/getting-started-with-fem/image-23.png 1680w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Image 23</figcaption></figure><div id="img-012" popover>
+          <button class="close"
+            popovertarget="img-012"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/getting-started-with-fem/image-23.png"
+              title="Image 23"
+              alt="Image 23"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p><em>The maximum shear stress result should be around 48.08 MPa, according to hand calculations.</em></p>
+<h2
+  id="whats-next"
+  
+  >What&rsquo;s next?<a class="heading-anchor"
+     href="#whats-next"
+     title="What&rsquo;s next?"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Now you are ready to continue exploring the FEM workbench on your own or with the help of wiki tutorials and built-in <a href="https://wiki.freecad.org/FEM_Examples"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">FEM Examples<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>. There is also a similar beam analysis within the Start page example files. Just remember that the wiki documentation pages for this workbench&rsquo;s features (listed on the main <a href="https://wiki.freecad.org/FEM_Workbench"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">FEM Workbench<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> page) are the best up-to-date reference. Practicing is really crucial for mastering FEM simulations. If you get stuck and encounter some issues, reach out to us on the <a href="https://forum.freecad.org/viewforum.php?f=18"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">FEM forum<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>.</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/fr/news/wip-wednesday-17-september-2025/"
+             title="Article suivant"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday, 17 September 2025</a><a class="page-item prev"
+             href="/Website/pr-16/fr/news/forged-in-freecad-and-kicad-community-bike-sound-system-solutions/"
+             title="Article précédent">Forged in FreeCAD (and KiCad) - Community Bike Sound System Solutions!<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Aller au sommet de la page"
+  title="Aller au sommet de la page (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/fr/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/fr/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/fr/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/fr/authors/">Auteurs</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/categories/">Catégories</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/tags/">Mots-Clés</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/versions/">Versions</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/fr/fedishare.html#title=Getting&#43;started&#43;with&#43;FEM&amp;description=FEM&#43;is&#43;a&#43;highly&#43;specialized&#43;workbench&#43;used&#43;to&#43;simulate&#43;various&#43;physical&#43;phenomena&#43;with&#43;the&#43;finite&#43;element&#43;method.&#43;The&#43;workbench&#43;is&#43;very&#43;actively&#43;developed%2C&#43;and&#43;thus&#43;it%E2%80%99s&#43;recommended&#43;to&#43;always&#43;use&#43;the&#43;%E2%80%A6%0A%23fem&amp;url=https://FreeCAD.github.io/Website/pr-16/fr/news/getting-started-with-fem/"
+  title="Partager sur Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/fr/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

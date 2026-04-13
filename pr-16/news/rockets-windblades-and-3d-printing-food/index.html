@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en-US"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Rockets, windblades, and 3D-printing food, with Matt Thomas aka LT72884</title>
+  <meta name="description" content="Your own free and open-source parametric modeler"><meta name="keywords" content="research, interview, CFD, FEM"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/news/rockets-windblades-and-3d-printing-food/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/rockets-windblades-and-3d-printing-food/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/rockets-windblades-and-3d-printing-food/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/rockets-windblades-and-3d-printing-food/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/rockets-windblades-and-3d-printing-food/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/rockets-windblades-and-3d-printing-food/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/rockets-windblades-and-3d-printing-food/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/rockets-windblades-and-3d-printing-food/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/news/rockets-windblades-and-3d-printing-food/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Rockets, windblades, and 3D-printing food, with Matt Thomas aka LT72884">
+  <meta property="og:description" content="People have been using FreeCAD in academia and research for many years, and the range of these research projects is surprisingly broad.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2025-12-12T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:40:06+02:00">
+    <meta property="article:tag" content="Research">
+    <meta property="article:tag" content="Interview">
+    <meta property="article:tag" content="CFD">
+    <meta property="article:tag" content="FEM">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/"accesskey="h"
+      title="Homepage (Alt + H)"
+      aria-label="Homepage">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choose language (Alt + L)"
+          aria-label="Choose language"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/news/rockets-windblades-and-3d-printing-food/" title="Rockets, windblades, and 3D-printing food, with Matt Thomas aka LT72884">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/rockets-windblades-and-3d-printing-food/" title="Rockets, windblades, and 3D-printing food, with Matt Thomas aka LT72884">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/rockets-windblades-and-3d-printing-food/" title="Rockets, windblades, and 3D-printing food, with Matt Thomas aka LT72884">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/rockets-windblades-and-3d-printing-food/" title="Rockets, windblades, and 3D-printing food, with Matt Thomas aka LT72884">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/rockets-windblades-and-3d-printing-food/" title="Rockets, windblades, and 3D-printing food, with Matt Thomas aka LT72884">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/rockets-windblades-and-3d-printing-food/" title="Rockets, windblades, and 3D-printing food, with Matt Thomas aka LT72884">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/rockets-windblades-and-3d-printing-food/" title="Rockets, windblades, and 3D-printing food, with Matt Thomas aka LT72884">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Switch theme chroma (Alt + T)"
+    aria-label="Switch theme chroma"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 80;">
+
+    <h2 class="title"
+      
+      >Rockets, Windblades, and 3D-Printing Food, With Matt Thomas Aka LT72884</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2025-12-12T00:00:00Z">December 12, 2025</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/authors/aleksandr-prokudin/">Aleksandr Prokudin (169)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/categories/showcase/">Showcase (30)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/tags/research/">Research (4)</a><a href="/Website/pr-16/tags/interview/">Interview (1)</a><a href="/Website/pr-16/tags/cfd/">CFD (1)</a><a href="/Website/pr-16/tags/fem/">FEM (4)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>1993 words</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>10 min</span></div></section><div class="content"><p>People have been using FreeCAD in academia and research for many years, and the range of these research projects is surprisingly broad.</p>
+<p>Today, we are talking to Matt Thomas aka LT72884, who has a great <a href="https://www.youtube.com/user/LT72884/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">YouTube channel<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> where he explains how to use free and open-source engineering software for rocket design, CfD simulation, FEM, and data analysis.</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/vPwkIOQAOQ4?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="Complex CFD with Complex geometry on Freecad and Ondsel"></iframe>
+    </div>
+
+<p><strong>Hi, could you please briefly introduce yourself?</strong></p>
+<p>Yeah, sure. My name is Matt Thomas, and I am very passionate about science and engineering. I grew up with a mother who was a head nurse and team lead for the first heart transplant, as well as a team member of the Human Genome Project, so science and medicine were a very common dinner table conversation for me growing up.</p>
+<p>My dad, on the other hand, was a telecommunications specialist for the military, and he would bring me along for some of his jobs, such as installing very large phone systems for the base and the research facility at the local university.</p>
+<p>When I was in high school, I learned about computer networking and web design because I was <em>horrible</em> at math and science. I fell in love with technology, and after graduating in 2003, the local university had a sister program with Carnegie in Network Engineering and cybersecurity. I received my CCNA, CCNP, RHCT, Ethical Hacking, and a few other well-known certifications, as well as a Bachelor&rsquo;s degree.</p>
+<p>However, when I was claiming graduation, something just didn&rsquo;t feel correct. So, I had a long and excellent conversation with my mother, who has never led me down the wrong path. She suggested that I have always liked science <em>and</em> technology, so maybe there is a way to combine the two. So I did just that.</p>
+<p>I was 26 years old when I decided to go back to school for medicine and engineering, the only problem was&hellip; I had 3 years of basic math to make up before I could even apply for the associate of pre-engineering and my microbiology coursework.</p>
+<p>After 3 years, I finally made it into the program and continued to push through 6 more semesters of math, 3 semesters of chemistry, biology, pathophysiology, and microbiology. Then I transferred to another university where I finished my degree in Aerospace engineering with a masters coursework in Computational Fluid Dynamics (CFD), numerical and data analysis, as well as advanced material sciences.****</p>
+<p><strong>This is your second higher education, right? Why did you choose engineering?</strong></p>
+<p>To be honest, I chose engineering to honor my family and mom. I grew up in a Christian home, so I was always curious how the big guy in the sky organized things. I consider him to be the ultimate engineer and scientist, as did my mother.</p>
+<p>Engineering and science help me understand how things in this world and out of this world work. I love to just know how things operate, even if I never use that device or product. Oh, and the world is not flat :)</p>
+<p><strong>How many papers have you already published where free and open-source software is used prominently?</strong></p>
+<p>I have about 8-10 papers using open source software as the predominant applications, such as <a href="https://qblade.org/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">QBlade<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, <a href="https://www.nrel.gov/wind/nwtc/openfast"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">OpenFAST<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, <a href="https://www.nrel.gov/wind/nwtc/mlife"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">MLife<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, <a href="https://octave.org/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Octave<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, FreeCAD, Ondsel Engineering Suite, <a href="https://www.openfoam.com/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">OpenFOAM<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, <a href="https://www.paraview.org/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">ParaView<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, <a href="https://prepomax.fs.um.si/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PrePoMax<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, and <a href="https://sourceforge.net/projects/fatlab/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Fatlab<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> (an open-source fatigue analysis tool), with verifications done with ANSYS.</p>
+<p>Many of the papers deal with wind turbine durability and fatigue analysis (<a href="https://www.researchgate.net/publication/382689796_Estimating_Wind_Turbine_Blade_Durability_Utilizing_National_Renewable_Energy_Laboratory_Tools?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6Il9kaXJlY3QiLCJwYWdlIjoicHJvZmlsZSIsInByZXZpb3VzUGFnZSI6InB1YmxpY2F0aW9uIn19"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">&ldquo;Estimating Wind Turbine Blade Durability Utilizing National Renewable Energy Laboratory Tools&rdquo;<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> is the latest) and can be found on <a href="https://www.researchgate.net/profile/Matt-Thomas-22"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">ResearchGate<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>. Some of them may have similar titles and information, but they are extensions of our original work, meaning, we published a paper, then completed even more work, and added to it for a second publication and peer review. I even wrote a basic 75-page user manual for OpenFAST so that anyone wanting to learn how to use it can.</p>
+<p><strong>Why is it important for you to rely on free/open-source tools?</strong></p>
+<p>First, they are available to research students and interns, or anyone, for that matter, for a really <em>good</em> price. Second, open-source engineering tools are very important, especially for developing nations that can not afford the drastic price tag of some packages. However, people are skeptical of using open-source software because they are afraid it&rsquo;s &ldquo;unsafe&rdquo; or will produce inaccurate results. This is why having NASA perform validation tests with OpenFOAM was such a <em>huge</em> deal for the open-source community.</p>
+<p><strong>How did you get involved with rockets?</strong></p>
+<p>It was an internship and practicum at school. We were tasked with creating an active drag system for a rocket to achieve a specific altitude. They are like air brakes in a sense, and from there, I just kept learning more and more about rockets, which led to formulating and characterizing my own solid rocket fuel using ammonium perchlorate, metals, and epoxies, the same ingredients they use for much larger rockets.</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/TnYmVRv1RdM?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="Part 4 Force calculations CFDOF Ondsel Engineering Suite"></iframe>
+    </div>
+
+<p><strong>And then you got hooked?</strong></p>
+<p>I have always loved planes, and I often go to the aerospace museum that is close to my home.  When the school offered me and a few others this chance, I took it and have loved it ever since. Making my own rockets, fuel, and seeing them go from digital concept to reality is very rewarding.</p>
+<p>**I&rsquo;ve also noticed that **<a href="https://www.researchgate.net/publication/382689796_Estimating_Wind_Turbine_Blade_Durability_Utilizing_National_Renewable_Energy_Laboratory_Tools?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6InB1YmxpY2F0aW9uIiwicGFnZSI6InByb2ZpbGUiLCJwcmV2aW91c1BhZ2UiOiJwdWJsaWNhdGlvbiJ9fQ"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">**wind turbines and their **<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a><span style="box-sizing: border-box; margin: 0px; padding: 0px;"><a href="https://www.researchgate.net/publication/382689796_Estimating_Wind_Turbine_Blade_Durability_Utilizing_National_Renewable_Energy_Laboratory_Tools?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6InB1YmxpY2F0aW9uIiwicGFnZSI6InByb2ZpbGUiLCJwcmV2aW91c1BhZ2UiOiJwdWJsaWNhdGlvbiJ9fQ"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener"><strong>durability</strong><svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></span><strong>are a big deal for you. How did the interest originate?</strong></p>
+<p>Someone from the state research department on wind energy read my design thesis on high-powered rockets, which included a lot of testing and analysis. So they asked me if I wanted to join the team for a few months as a full-time job doing fatigue analysis and design for wind turbines. I said, &ldquo;Sure, why not?&rdquo;. The job lasted 2 years because they really liked my work and how I handled things.</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/33IqCq0UnQE?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="How to use OpenFast wind turbine simulation software"></iframe>
+    </div>
+
+<p><strong>You use a whole variety of tools: OpenRocket, FreeCAD, the CfdOf workbench and OpenFOAM, Paraview, OpenFAST, MLife, and even Excel. That&rsquo;s a lot of bridges to build between applications. How well does it work for you, and where do you think are the worst integration bottlenecks today?</strong></p>
+<p>So far, I have not had any issues exporting/importing data from one application to the other. Paraview plays very nicely with OpenFOAM data, and the integration of ParaView into the CfDof workbench for FreeCAD has been nice, though I prefer to close FreeCAD after every CFD simulation and open the data into a fresh start of Paraview.</p>
+<p>I actually use <a href="https://github.com/ebranlard/pyDatView"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">pyDatView<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> from GitHub as a way to view some of the OpenFOAM data files. It&rsquo;s an old tool that I just discovered.</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/Ynb23fo9lbI?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="Using pydatview and excel to make force graphs from openfoam data"></iframe>
+    </div>
+
+<p>OpenFAST and MLife both export the data as Excel files, so that makes it very nice. I do not use LibreOffice Calc as it is missing a few major functions needed for most engineering workflows. This is why I use Excel. Their solver and numerical methods are excellent</p>
+<p>OpenRocket is one of my favorites, but it is a standalone software. It will calculate the forces and drag coefficients for you based on the Barrowman Equations developed by James Barrowman at NASA. Using just geometry, the Reynolds number, and skin friction values. OpenRocket will allow you to graph <em>many</em> values against each other, making it a very valuable tool if CFD is not an option.</p>
+<p>Now, speaking of CFD, I have set up <em>many</em> simulations (again, thanks to the forums for helping me get the preliminaries setup) of high-powered rockets to test against OpenRocket, and sure enough, I get pretty dang close to the same values.</p>
+<p>Most people, when they do CFD for the first few times, get results that are way off, and then they get discouraged. 95% of the time it&rsquo;s because they have too coarse of a mesh and not enough refinement areas for the mesh to accurately produce good results. This is why I made the YouTube series on CFD with Ondsel/FreeCAD.</p>
+<p>Well, my primary reason is so I don&rsquo;t forget how to do it myself. I record a lot of things I do so I can reference them later, which comes in handy if a supervisor asks about a process.</p>
+<p>As for bottlenecks, OpenRocket, an advanced simulation tool, is much harder to use and integrate with other software. PrePoMax actually works better as a standalone product, i.e., import the STP file, mesh it, then set up the scenario, all in PrePoMax. That is one bottleneck. The other is that FreeCAD needs to improve the meshing defaults in the FEM workbench. PrePoMax has <em>killer</em> defaults and meshes extremely well, we just need that in FreeCAD now.</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/I8pgxxt1pD8?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="FreeCAD FEM with Boolean Fragments"></iframe>
+    </div>
+
+<p><strong>When we first discussed your academic work, you said that the paper that you presented at the IEEE conference in May 2024 was well-received, especially from other countries and developing nations, and that was your focus. Could you please elaborate on the focus part?</strong></p>
+<p>For sure : ) My main focus at that presentation was to spread the word on how reliable FreeCAD, OpenFOAM, OpenFAST, and MLife are for major engineering projects. I mean, I had been doing stress-testing and designing 65-meter to 100-meter wind turbine blades in FreeCAD with ease(thanks to the advice from the forums when i got stuck), and then performing all CfD, FEM, and stress analysis with FreeCAD and OpenFAST/MLife.</p>
+<p>Being a developing country and feeling lost in how to begin projects due to high-cost software is very stressful. I have wanted to share this knowledge, and why not share it at a very large IEEE event?</p>
+<p>As soon as I finished my presentation, I had 3 or 4 attendees come over and ask for copies of all my papers to take back to their countries to share with officials they knew.</p>
+<p><strong>Have you been in touch with them ever since?</strong></p>
+<p>I have tried a couple of times over the last year, and have not heard anything back. Could be due to internet laws in their country, which could prevent communication.</p>
+<p><strong>When you talk to your mates at university and to your teachers, do you see much antagonism towards free and open-source software? If you do, where do you think it is coming from?</strong></p>
+<p>Yes and no, but mostly no! My professors encourage the use of open-source software to teach us how to validate our results. We then share our own personal results with about 30 other students and 4 other professors for review. It&rsquo;s an excellent way to teach new students the importance of peer review and safety.</p>
+<p>I think the biggest frustration with FreeCAD that users and university students have is the workarounds that we have to do often to get 3 common features to work, such as thickness, fillet, and chamfer, but that is an issue to do with the kernel, which FreeCAD does not manage unfortunately.</p>
+<p>My fluids professor uses OpenFOAM and prefers it over others because it requires students to understand the theory of fluid dynamics rather than just pushing buttons. Anyone can push buttons and get data back, but, like he says, &ldquo;Garbage in is garbage out&rdquo;, or GIGO for short. I still prefer to push buttons, I know the theory, and now I like to just push a button and let the PC do all the work.</p>
+<p>Where the antagonism comes from is the data science group, and I don&rsquo;t blame them. As I previously mentioned, LibreOffice Calc and other open-source spreadsheet programs lack some major functions, such as a non-linear solver that actually works without wasting time with some sort of workarounds.</p>
+<p><strong>What&rsquo;s the next big chapter for you research-wise?</strong></p>
+<p>In the last 4 years, I published a few papers on food-safe 3D printing. I&rsquo;m currently doing the last extension of the <a href="https://www.researchgate.net/publication/389100627_Innovations_in_Sanitization_for_3D-Printed_Parts_in_Medical_and_Critical_Applications"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">original paper<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, testing filaments for toxins and heavy metals via leach, migration, and mass spectrometry testing.</p>
+<p>My first publication on this matter illustrated that layer lines do not pose a risk and can be cleaned and sanitized to safe levels, and that nozzles do not leave any lead either.</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/news/fosdem-2026-open-hardware-cad-cam-room-update/"
+             title="Next article"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>FOSDEM 2026, Open Hardware CAD/CAM room update</a><a class="page-item prev"
+             href="/Website/pr-16/news/wip-wednesday-10-december-2025/"
+             title="Previous article">WIP Wednesday, 10 December 2025<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Go to Top"
+  title="Go to Top (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/authors/">Authors</a>
+                      </li><li>
+                        <a href="/Website/pr-16/categories/">Categories</a>
+                      </li><li>
+                        <a href="/Website/pr-16/tags/">Tags</a>
+                      </li><li>
+                        <a href="/Website/pr-16/versions/">Versions</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/fedishare.html#title=Rockets%2C&#43;windblades%2C&#43;and&#43;3D-printing&#43;food%2C&#43;with&#43;Matt&#43;Thomas&#43;aka&#43;LT72884&amp;description=People&#43;have&#43;been&#43;using&#43;FreeCAD&#43;in&#43;academia&#43;and&#43;research&#43;for&#43;many&#43;years%2C&#43;and&#43;the&#43;range&#43;of&#43;these&#43;research&#43;projects&#43;is&#43;surprisingly&#43;broad.%0AToday%2C&#43;we&#43;are&#43;talking&#43;to&#43;Matt&#43;Thomas&#43;aka&#43;LT72884%2C&#43;who&#43;has&#43;a&#43;%E2%80%A6%0A%23research&#43;%23interview&#43;%23cfd&#43;%23fem&amp;url=https://FreeCAD.github.io/Website/pr-16/news/rockets-windblades-and-3d-printing-food/"
+  title="Share on Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

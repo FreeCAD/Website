@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en-US"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Sketcher</title>
+  <meta name="description" content="Your own free and open-source parametric modeler"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/tags/sketcher/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/tags/sketcher/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/tags/sketcher/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/tags/sketcher/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/tags/sketcher/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/tags/sketcher/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/tags/sketcher/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/tags/sketcher/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/"></head><body class="list type-tags kind-term "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/"accesskey="h"
+      title="Homepage (Alt + H)"
+      aria-label="Homepage">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/news/"
+            title="News"
+            
+            
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choose language (Alt + L)"
+          aria-label="Choose language"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/tags/sketcher/" title="Sketcher">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/tags/sketcher/" title="Sketcher">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/tags/sketcher/" title="Sketcher">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/tags/sketcher/" title="Sketcher">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/tags/sketcher/" title="Sketcher">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/tags/sketcher/" title="Sketcher">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/tags/sketcher/" title="Sketcher">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Switch theme chroma (Alt + T)"
+    aria-label="Switch theme chroma"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 30;">
+
+    <h1 class="title">
+      <svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg>Tag: Sketcher (8)</h1></section><div class="card-list wide">
+    <div class="cards"><a class="card"
+  href="/Website/pr-16/news/tutorial-sketcher-offset-geometry-tool/"
+  title="Tutorial - Sketcher Offset Geometry Tool"><figure class="card-cover"><img srcset="/Website/pr-16/news/tutorial-sketcher-offset-geometry-tool/main_hu_48d013e56161e5da.webp 500w, /Website/pr-16/news/tutorial-sketcher-offset-geometry-tool/main.png 1060w"
+        sizes="500px"
+        src="/Website/pr-16/news/tutorial-sketcher-offset-geometry-tool/main.png"
+        alt="Image fallback"
+        width="1060"
+        height="728"
+        loading="lazy"
+        fetchpriority="low"></figure><h3 class="card-title">Tutorial - Sketcher Offset Geometry Tool</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2024-11-14T00:00:00Z">November 14, 2024</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/news/tutorial-on-view-parameters/"
+  title="Tutorial - On View Parameters"><figure class="card-cover"><img srcset="/Website/pr-16/news/tutorial-on-view-parameters/main_hu_9f61ebec21f3c89.webp 500w, /Website/pr-16/news/tutorial-on-view-parameters/main.png 917w"
+        sizes="500px"
+        src="/Website/pr-16/news/tutorial-on-view-parameters/main.png"
+        alt="Image fallback"
+        width="917"
+        height="630"
+        loading="lazy"
+        fetchpriority="low"></figure><h3 class="card-title">Tutorial - On View Parameters</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2024-10-20T00:00:00Z">October 20, 2024</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/news/tutorial-multiple-operations-from-a-single-sketch/"
+  title="Tutorial - Multiple operations from a single Sketch"><figure class="card-cover"><img srcset="/Website/pr-16/news/tutorial-multiple-operations-from-a-single-sketch/multi_extruded_sketch_hu_29988f9ed6ecfba7.webp 500w, /Website/pr-16/news/tutorial-multiple-operations-from-a-single-sketch/multi_extruded_sketch.png 1920w"
+        sizes="500px"
+        src="/Website/pr-16/news/tutorial-multiple-operations-from-a-single-sketch/multi_extruded_sketch.png"
+        alt="Image fallback"
+        width="1920"
+        height="1080"
+        loading="lazy"
+        fetchpriority="low"></figure><h3 class="card-title">Tutorial - Multiple operations from a single Sketch</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2024-09-20T00:00:00Z">September 20, 2024</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/news/sketcher-grid-auto-spacing/"
+  title="Sketcher Grid Auto-Spacing"><div class="card-color "
+      style="--hue: 60;"></div><h3 class="card-title">Sketcher Grid Auto-Spacing</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2023-02-27T00:00:00Z">February 27, 2023</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/news/new-constraint-point-on-spline/"
+  title="New constraint - Point-on-Spline"><div class="card-color "
+      style="--hue: 60;"></div><h3 class="card-title">New constraint - Point-on-Spline</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2023-01-23T00:00:00Z">January 23, 2023</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/news/tangent-constraint-at-b-spline-knots/"
+  title="Tangent constraint at B-spline knots"><div class="card-color "
+      style="--hue: 60;"></div><h3 class="card-title">Tangent constraint at B-spline knots</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2022-12-28T00:00:00Z">December 28, 2022</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/news/coming-soon-sketcher-elements-ui-refinement/"
+  title="Coming Soon - Sketcher Elements UI Refinement"><figure class="card-cover"><img srcset="/Website/pr-16/news/coming-soon-sketcher-elements-ui-refinement/SketcherElementsStaticShot_hu_af934d9b413b1025.webp 500w, /Website/pr-16/news/coming-soon-sketcher-elements-ui-refinement/SketcherElementsStaticShot.webp 2560w"
+        sizes="500px"
+        src="/Website/pr-16/news/coming-soon-sketcher-elements-ui-refinement/SketcherElementsStaticShot.webp"
+        alt="Image fallback"
+        width="2560"
+        height="1454"
+        loading="lazy"
+        fetchpriority="low"></figure><h3 class="card-title">Coming Soon - Sketcher Elements UI Refinement</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2022-11-02T00:00:00Z">November 2, 2022</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/news/new-in-0-20-sketcher-enhancements/"
+  title="New in 0.20 - Sketcher Enhancements"><div class="card-color "
+      style="--hue: 60;"></div><h3 class="card-title">New in 0.20 - Sketcher Enhancements</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2022-09-07T00:00:00Z">September 7, 2022</time>
+  </span></div>
+</a></div></div></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Go to Top"
+  title="Go to Top (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/news/"
+            
+            
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/authors/">Authors</a>
+                      </li><li>
+                        <a href="/Website/pr-16/categories/">Categories</a>
+                      </li><li>
+                        <a href="/Website/pr-16/tags/">Tags</a>
+                      </li><li>
+                        <a href="/Website/pr-16/versions/">Versions</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"></div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+</div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

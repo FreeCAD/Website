@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en-US"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | WIP Wednesday - 22 January 2025</title>
+  <meta name="description" content="Your own free and open-source parametric modeler"><meta name="keywords" content="WIP"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/news/wip-wednesday-22-january-2025/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/wip-wednesday-22-january-2025/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/wip-wednesday-22-january-2025/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/wip-wednesday-22-january-2025/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/wip-wednesday-22-january-2025/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/wip-wednesday-22-january-2025/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/wip-wednesday-22-january-2025/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/wip-wednesday-22-january-2025/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/news/wip-wednesday-22-january-2025/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="WIP Wednesday - 22 January 2025">
+  <meta property="og:description" content="This week in FreeCAD development:
+Sketcher:
+Beep6581 patched the workbench to automatically scroll to the constraint in the list view when you click on that constraint in the 3D view.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2025-01-22T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:40:06+02:00">
+    <meta property="article:tag" content="WIP">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/"accesskey="h"
+      title="Homepage (Alt + H)"
+      aria-label="Homepage">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choose language (Alt + L)"
+          aria-label="Choose language"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/news/wip-wednesday-22-january-2025/" title="WIP Wednesday - 22 January 2025">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/wip-wednesday-22-january-2025/" title="WIP Wednesday - 22 January 2025">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/wip-wednesday-22-january-2025/" title="WIP Wednesday - 22 January 2025">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/wip-wednesday-22-january-2025/" title="WIP Wednesday - 22 January 2025">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/wip-wednesday-22-january-2025/" title="WIP Wednesday - 22 January 2025">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/wip-wednesday-22-january-2025/" title="WIP Wednesday - 22 January 2025">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/wip-wednesday-22-january-2025/" title="WIP Wednesday - 22 January 2025">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Switch theme chroma (Alt + T)"
+    aria-label="Switch theme chroma"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 120;">
+
+    <h2 class="title"
+      
+      >WIP Wednesday - 22 January 2025</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2025-01-22T00:00:00Z">January 22, 2025</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/authors/aleksandr-prokudin/">Aleksandr Prokudin (169)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/categories/update/">Update (158)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/tags/wip/">WIP (153)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>367 words</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>2 min</span></div></section><div class="content"><p>This week in FreeCAD development:</p>
+<p><strong>Sketcher</strong>:</p>
+<ul>
+<li>
+<p>Beep6581 patched the workbench to automatically scroll to the constraint in the list view when you click on that constraint in the 3D view.</p>
+</li>
+<li>
+<p>AjinkyaDahale&rsquo;s second refactoring patch landed. No new features, it&rsquo;s just cleaner code with tests.</p>
+</li>
+<li>
+<p>chennes and Jonezzzzz fixed a couple of bugs.</p>
+</li>
+</ul>
+<p><strong>PartDesign</strong>:</p>
+<ul>
+<li>
+<p>PaddleStroke added a new Preferences option: when enabled, the Create New Sketch command opens the attachment dialog instead of the &lsquo;feature pick&rsquo; dialog. Once the attachment dialog becomes more useful, this could become the default option (undecided yet). He also replaced Part Design datum commands by the core ones.</p>
+</li>
+<li>
+<p>alfrix updated the Hole task panel to show drill point options based on the selected type of the drill point. There is ongoing work by the Design Working Group to improve that task panel, you can find the latest mockup <a href="https://www.figma.com/proto/nDkUKcH1YgriUSRG2EInYj/freecad-dialogs?node-id=247-3465&amp;node-type=canvas&amp;t=PXunFHu2h93heWMQ-1&amp;scaling=min-zoom&amp;content-scaling=fixed&amp;starting-point-node-id=247%3A3465&amp;show-proto-sidebar=1"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">here<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>.</p>
+</li>
+</ul>
+<p><strong>Draft</strong>: Roy_043 made move, rotate, and scale commands link-aware, made the DXF exporter preserve text alignment, improved some tooltips, and made Fillet remember the last used settings.</p>
+<p><strong>BIM</strong>: Roy_043 and yorikvanhavre fixed several bugs.</p>
+<p><strong>FEM</strong>: marioalexis84 patched the Reinforced material tool to use the new material editor and made more minor improvements.</p>
+<p><strong>GUI</strong>:</p>
+<ul>
+<li>
+<p>Rexbas fixed a navigation glitch where camera position would shift when starting viewport rotation.</p>
+</li>
+<li>
+<p>benj5378 made autocompletion global and available in all TextEdit objects.</p>
+</li>
+<li>
+<p>hasecilu added units to some spinboxes on Preferences pages.</p>
+</li>
+<li>
+<p>kadet1090 fixed the render order of datum planes and added an option to show the plane that a sketch is based on.</p>
+</li>
+</ul>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/wip-wednesday-22-january-2025/image-1.webp"
+  alt="Image 1"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1716"
+  height="1185"
+    srcset="/Website/pr-16/news/wip-wednesday-22-january-2025/image-1_hu_a2a9555c893665a6.webp 500w, /Website/pr-16/news/wip-wednesday-22-january-2025/image-1_hu_a8dbf8bf293fe70d.webp 1000w, /Website/pr-16/news/wip-wednesday-22-january-2025/image-1.webp 1716w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Image 1</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/wip-wednesday-22-january-2025/image-1.webp"
+              title="Image 1"
+              alt="Image 1"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p><strong>Importing</strong>: wwmayer fixed a transparency issue when loading STEP files made by FreeCAD 0.21 and VariCAD, and rostskadat made miscellaneous improvements in the SH3D importing code.</p>
+<p>Other changes arrived from: davesrocketshop, tritao, kadet1090, xtemp09, toastedcrumpets, and BootsSiR.</p>
+<p><strong>PR stats</strong>: since the previous report, 56 pull requests have been merged, and 25 new pull requests have been opened.</p>
+<p><strong>Issue stats</strong>: overall, there are 2512 open issues in the tracker, up by 3 from last week.</p>
+<p>Meanwhile, Yorik van Havre posted an <a href="https://yorik.uncreated.net/blog/2025/001-freecad-news-28"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">update<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> about his work on the BIM workbench. The post covers new features, such as support for the Type property in native IFC objects, and support for classification systems and quantities.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/wip-wednesday-22-january-2025/image-2.webp"
+  alt="Image 2"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1793"
+  height="722"
+    srcset="/Website/pr-16/news/wip-wednesday-22-january-2025/image-2_hu_e79b848d760fd3fc.webp 500w, /Website/pr-16/news/wip-wednesday-22-january-2025/image-2_hu_468b2d33846013de.webp 1000w, /Website/pr-16/news/wip-wednesday-22-january-2025/image-2.webp 1793w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Image 2</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/wip-wednesday-22-january-2025/image-2.webp"
+              title="Image 2"
+              alt="Image 2"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div>
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/news/job-openings-at-the-fpa/"
+             title="Next article"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>Job openings at the FPA</a><a class="page-item prev"
+             href="/Website/pr-16/news/tutorial-using-the-measure-tool-in-version-1-0/"
+             title="Previous article">Tutorial - Using the Measure Tool in Version 1.0<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Go to Top"
+  title="Go to Top (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/authors/">Authors</a>
+                      </li><li>
+                        <a href="/Website/pr-16/categories/">Categories</a>
+                      </li><li>
+                        <a href="/Website/pr-16/tags/">Tags</a>
+                      </li><li>
+                        <a href="/Website/pr-16/versions/">Versions</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/fedishare.html#title=WIP&#43;Wednesday&#43;-&#43;22&#43;January&#43;2025&amp;description=This&#43;week&#43;in&#43;FreeCAD&#43;development%3A%0ASketcher%3A%0ABeep6581&#43;patched&#43;the&#43;workbench&#43;to&#43;automatically&#43;scroll&#43;to&#43;the&#43;constraint&#43;in&#43;the&#43;list&#43;view&#43;when&#43;you&#43;click&#43;on&#43;that&#43;constraint&#43;in&#43;the&#43;3D&#43;view.%0AAjinkyaDahale%E2%80%99s&#43;%E2%80%A6%0A%23wip&amp;url=https://FreeCAD.github.io/Website/pr-16/news/wip-wednesday-22-january-2025/"
+  title="Share on Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Forged in FreeCAD - LumenPnP, an Open Source Pick and Place machine</title>
+  <meta name="description" content="Seu próprio modelador paramétrico livre e de código aberto"><meta name="keywords" content="user story"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/pt/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/pt/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/pt/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Forged in FreeCAD - LumenPnP, an Open Source Pick and Place machine">
+  <meta property="og:description" content="It’s an amazing age for making things, and an even greater age for making things using open source solutions. At our recent FOSDEM stand we shared the booth with KiCad , the open source electronics environment. It was fabulous at the event to see items and machines made using KiCad and FreeCAD in combination. It’s also quite amazing to consider the complex printed circuit boards (PCB’s) KiCad can create with the tiny component packages placed and soldered into highly accurate positions.">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2024-04-12T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:47:39+02:00">
+    <meta property="article:tag" content="User Story">
+    <meta property="og:image" content="https://FreeCAD.github.io/Website/pr-16/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/lumenpnp_pump_cover.png">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/pt/"accesskey="h"
+      title="Início (Alt + H)"
+      aria-label="Início">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/pt/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Escolha o idioma (Alt + L)"
+          aria-label="Escolha o idioma"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/" title="Forged in FreeCAD - LumenPnP, an Open Source Pick and Place machine">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/" title="Forged in FreeCAD - LumenPnP, an Open Source Pick and Place machine">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/" title="Forged in FreeCAD - LumenPnP, an Open Source Pick and Place machine">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/" title="Forged in FreeCAD - LumenPnP, an Open Source Pick and Place machine">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/pt/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/" title="Forged in FreeCAD - LumenPnP, an Open Source Pick and Place machine">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/" title="Forged in FreeCAD - LumenPnP, an Open Source Pick and Place machine">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/" title="Forged in FreeCAD - LumenPnP, an Open Source Pick and Place machine">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Alterar tema (Alt + T)"
+    aria-label="Alterar tema"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 80;">
+
+    <h2 class="title"
+      
+      >Forged in FreeCAD - LumenPnP, an Open Source Pick and Place Machine</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2024-04-12T00:00:00Z">12 de abril de 2024</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/pt/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/pt/categories/showcase/">Showcase (30)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/pt/tags/user-story/">User Story (22)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>624 palavras</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>3 minutos</span></div><figure class="article-cover"><img srcset="/Website/pr-16/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/lumenpnp_hu_6d4dffea3a10c4e8.webp 500w, /Website/pr-16/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/lumenpnp_hu_252355edbf8c452a.webp 1000w, /Website/pr-16/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/lumenpnp.webp 1080w"
+        sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"
+        src="/Website/pr-16/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/lumenpnp.webp"
+        title="LumenPnP Open Source Pick and Place Machine"
+        alt="Imagem alternativa"
+        width="1080"
+        height="800"
+        loading="eager"
+        fetchpriority="high"><figcaption>
+        <div class="internal-tooltip"><svg class="icon-important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/important.svg#important"></use>
+  </svg><span class="tooltip">LumenPnP Open Source Pick and Place Machine</span>
+        </div>
+      </figcaption></figure></section><div class="content"><p>It&rsquo;s an amazing age for making things, and an even greater age for making things using open source solutions. At our recent <a href="https://blog.freecad.org/2024/02/16/fosdem-and-freecad-2024/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">FOSDEM<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> stand we shared the booth with <a href="https://www.kicad.org/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">KiCad<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, the open source electronics environment. It was fabulous at the event to see items and machines made using KiCad and <a href="https://www.freecad.org/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">FreeCAD<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> in combination. It&rsquo;s also quite amazing to consider the complex printed circuit boards (PCB&rsquo;s) KiCad can create with the tiny component packages placed and soldered into highly accurate positions.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Ampliar imagem" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/kicad_for_lumen.png"
+  alt="Kicad for lumen"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1225"
+  height="768"
+    srcset="/Website/pr-16/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/kicad_for_lumen_hu_b8bb533b93bf18e4.webp 500w, /Website/pr-16/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/kicad_for_lumen_hu_623ac44b6fec5fb.webp 1000w, /Website/pr-16/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/kicad_for_lumen.png 1225w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Kicad for lumen</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="Fechar visualizador de imagens">
+            <img src="/Website/pr-16/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/kicad_for_lumen.png"
+              title="Kicad for lumen"
+              alt="Kicad for lumen"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Beyond the mere wonder of it all, it&rsquo;s interesting to delve into how these components might be placed on a PCB. For small, single unit, home hacking, adding solder paste and placing each component with a pair of tweezers before heating the entire PCB is not uncommon. Stepping up in complexity you may manufacture a stencil to add the solder paste quickly and accurately. However, when it comes to making lots of devices with lots of components then the best solution is &ldquo;Pick and Place&rdquo;.</p>
+<p>Pick and place uses a robotic system to load the components from reels with some kind of actuator picking up the component and accurately placing it onto the PCB. It&rsquo;s exactly the technology that large PCB assembly houses use to create all manner of devices.</p>
+<p><a href="https://www.opulo.io/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">LumenPnP<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> is an open source pick and place machine and brilliantly all the CAD parts have been designed in FreeCAD. From a distance LumenPnP might look like a CNC router as it has X, Y and Z axis created with precision linear rails. The tool head however features two nozzles each of which provides suction to carry electronic components. The machine cleverly has two camera&rsquo;s which enable it to detect fiducial markers to accurately align to PCB jobs.</p>
+<p>LumenPnP uses a very slightly tweaked version of the open source <a href="https://marlinfw.org/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Marlin Firmware<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, more commonly found in 3D printers. For software the system relies on <a href="https://openpnp.org/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">openpnp<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> - a great choice with baked in support for KiCad. This makes it trivial to set up positional files for the components on project PCB&rsquo;s.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Ampliar imagem" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/lumenpnp_pump_cover.png"
+  alt="Lumenpnp pump cover"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1402"
+  height="834"
+    srcset="/Website/pr-16/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/lumenpnp_pump_cover_hu_856671b8c134c9f8.webp 500w, /Website/pr-16/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/lumenpnp_pump_cover_hu_cd7200e23fb537f6.webp 1000w, /Website/pr-16/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/lumenpnp_pump_cover.png 1402w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Lumenpnp pump cover</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Fechar visualizador de imagens">
+            <img src="/Website/pr-16/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/lumenpnp_pump_cover.png"
+              title="Lumenpnp pump cover"
+              alt="Lumenpnp pump cover"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>The machine is available to purchase from Opulo, but everything is open source and you could build your own. It&rsquo;s a great system that could save you time and money depending on what volume of PCB&rsquo;s you are planning to populate.</p>
+<p>Looking through the repository you can find that all the CAD work for mechanical components is completed in FreeCAD, with KiCad being used for all the PCB&rsquo;s. So if you own a LumenPnP you can easily create replacement parts, or indeed you might think of a way to make a modification to the design to suit your particular needs. It also means that it&rsquo;s open to community contributors without tying them into proprietary tool chains.</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/wN_XDsfzgYg?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="You can build this open-source pick and place machine - LumenPNP"></iframe>
+    </div>
+
+<p>Looking around the Opulo site we can also see that there are probably more overlaps and uses for FreeCAD. In one video, a brilliant PCB, shaped like the OSHW logo, is being populated with LED&rsquo;s. It&rsquo;s mounted onto the machine in what appears to be a 3D printed conformal jig. This work holding approach means that it&rsquo;s fast to swap in unpopulated PCB&rsquo;s accurately keeping the process running with minimal resetting. We&rsquo;d hazard a guess that this model was made in FreeCAD, with step output export in KiCad, it&rsquo;s pretty easy to make a jig like this. There&rsquo;s even more crossover between FreeCAD and KiCad with the excellent <a href="https://wiki.freecad.org/KicadStepUp_Workbench/it"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">KiCad step up workbench<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> that makes it pretty trivial to make custom component models that integrate into the KiCad footprint system perfectly as well as mechanically modelling to your PCB design.</p>
+<p>All in all it&rsquo;s excellent to see all these open source projects and communities overlapping creating new and interesting tools and approaches.</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/pt/news/wip-wednesday-17-april-2024/"
+             title="Artigo seguinte"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday - 17 April 2024</a><a class="page-item prev"
+             href="/Website/pr-16/pt/news/wip-wednesday-10-april-2024/"
+             title="Artigo anterior">WIP Wednesday - 10 April 2024<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Ir para o topo"
+  title="Ir para o topo (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/pt/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/pt/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/pt/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/pt/authors/">Autores</a>
+                      </li><li>
+                        <a href="/Website/pr-16/pt/categories/">Categorias</a>
+                      </li><li>
+                        <a href="/Website/pr-16/pt/tags/">Tags</a>
+                      </li><li>
+                        <a href="/Website/pr-16/pt/versions/">Versões</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/pt/fedishare.html#title=Forged&#43;in&#43;FreeCAD&#43;-&#43;LumenPnP%2C&#43;an&#43;Open&#43;Source&#43;Pick&#43;and&#43;Place&#43;machine&amp;description=It%E2%80%99s&#43;an&#43;amazing&#43;age&#43;for&#43;making&#43;things%2C&#43;and&#43;an&#43;even&#43;greater&#43;age&#43;for&#43;making&#43;things&#43;using&#43;open&#43;source&#43;solutions.&#43;At&#43;our&#43;recent&#43;FOSDEM&#43;stand&#43;we&#43;shared&#43;the&#43;booth&#43;with&#43;KiCad&#43;%2C&#43;the&#43;open&#43;source&#43;electronics&#43;%E2%80%A6%0A%23user-story&amp;url=https://FreeCAD.github.io/Website/pr-16/pt/news/forged-in-freecad-lumenpnp-an-open-source-pick-and-place-machine/"
+  title="Compartilhar no Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/pt/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en-US"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Major FEM Workbench improvements for FreeCAD 1.0</title>
+  <meta name="description" content="Your own free and open-source parametric modeler"><meta name="keywords" content="FEM"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/news/major-fem-workbench-improvements-for-freecad-1-0/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/major-fem-workbench-improvements-for-freecad-1-0/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/major-fem-workbench-improvements-for-freecad-1-0/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/major-fem-workbench-improvements-for-freecad-1-0/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/major-fem-workbench-improvements-for-freecad-1-0/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/major-fem-workbench-improvements-for-freecad-1-0/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/major-fem-workbench-improvements-for-freecad-1-0/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/major-fem-workbench-improvements-for-freecad-1-0/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/news/major-fem-workbench-improvements-for-freecad-1-0/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Major FEM Workbench improvements for FreeCAD 1.0">
+  <meta property="og:description" content="FreeCAD 1.0 brings a true revolution. But apart from the TNP mitigation, built-in Assembly workbench, material handling rework, and major Sketcher improvements, there’s a less common module that received many updates - FEM.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2024-09-28T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:50:21+02:00">
+    <meta property="article:tag" content="FEM">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/"accesskey="h"
+      title="Homepage (Alt + H)"
+      aria-label="Homepage">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choose language (Alt + L)"
+          aria-label="Choose language"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/news/major-fem-workbench-improvements-for-freecad-1-0/" title="Major FEM Workbench improvements for FreeCAD 1.0">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/major-fem-workbench-improvements-for-freecad-1-0/" title="Major FEM Workbench improvements for FreeCAD 1.0">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/major-fem-workbench-improvements-for-freecad-1-0/" title="Major FEM Workbench improvements for FreeCAD 1.0">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/major-fem-workbench-improvements-for-freecad-1-0/" title="Major FEM Workbench improvements for FreeCAD 1.0">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/major-fem-workbench-improvements-for-freecad-1-0/" title="Major FEM Workbench improvements for FreeCAD 1.0">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/major-fem-workbench-improvements-for-freecad-1-0/" title="Major FEM Workbench improvements for FreeCAD 1.0">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/major-fem-workbench-improvements-for-freecad-1-0/" title="Major FEM Workbench improvements for FreeCAD 1.0">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Switch theme chroma (Alt + T)"
+    aria-label="Switch theme chroma"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 20;">
+
+    <h2 class="title"
+      
+      >Major FEM Workbench Improvements for FreeCAD 1.0</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2024-09-28T00:00:00Z">September 28, 2024</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/authors/newjoker/">NewJoker (3)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/categories/announcement/">Announcement (94)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/tags/fem/">FEM (4)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>705 words</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>4 min</span></div></section><div class="content"><p>FreeCAD 1.0 brings a true revolution. But apart from the TNP mitigation, built-in Assembly workbench, material handling rework, and major Sketcher improvements, there&rsquo;s a less common module that received many updates - <strong>FEM</strong>.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/major-fem-workbench-improvements-for-freecad-1-0/fem-fig1.webp"
+  alt="Fem Figure 1"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1920"
+  height="939"
+    srcset="/Website/pr-16/news/major-fem-workbench-improvements-for-freecad-1-0/fem-fig1_hu_49a91259e31cf722.webp 500w, /Website/pr-16/news/major-fem-workbench-improvements-for-freecad-1-0/fem-fig1_hu_bc62c1539c447186.webp 1000w, /Website/pr-16/news/major-fem-workbench-improvements-for-freecad-1-0/fem-fig1.webp 1920w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Fem Figure 1</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/major-fem-workbench-improvements-for-freecad-1-0/fem-fig1.webp"
+              title="Fem Figure 1"
+              alt="Fem Figure 1"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>In fact, it&rsquo;s one of the workbenches that changed the most. Over 80 issues from the <a href="https://github.com/orgs/freecad/projects/19"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">FEM Roadmap<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> were fixed. This includes many bugs - some of them serious and long-standing - but also completely new features and various small usability improvements. I&rsquo;ve been maintaining the FEM workbench for almost a year. In this post, I&rsquo;d like to outline some of the most important new features coming in FreeCAD 1.0 soon.</p>
+<p>The biggest new FEM feature is <a href="https://wiki.freecad.org/FEM_ConstraintRigidBody"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">ConstraintRigidBody<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> - a tool providing support for CalculiX&rsquo;s rigid body constraint. The constraint is commonly used to apply moment/rotation or force/displacement to any selected face via a so-called reference point which can be located at a distance from the face. This makes it possible to apply a force acting on a lever (<em>remote force</em>). The constraint is particularly useful since it finally provides a way to simulate torsion of arbitrarily shaped parts in FreeCAD FEM.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/major-fem-workbench-improvements-for-freecad-1-0/fem-fig2.webp"
+  alt="Fem Figure 2"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1287"
+  height="679"
+    srcset="/Website/pr-16/news/major-fem-workbench-improvements-for-freecad-1-0/fem-fig2_hu_6d2c5acb01d5dff4.webp 500w, /Website/pr-16/news/major-fem-workbench-improvements-for-freecad-1-0/fem-fig2_hu_af9435b81c5ae563.webp 1000w, /Website/pr-16/news/major-fem-workbench-improvements-for-freecad-1-0/fem-fig2.webp 1287w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Fem Figure 2</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/major-fem-workbench-improvements-for-freecad-1-0/fem-fig2.webp"
+              title="Fem Figure 2"
+              alt="Fem Figure 2"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>The second major change is the introduction of 2D analyses with CalculiX. That includes plane stress (for very thin parts with in-plane loads), plane strain (for very thick parts with in-plane loads) ,and axisymmetry (for revolved parts with loads uniform around the circumference). The analyses can be performed by just following the approach for analyses with shell elements (but using only the XY plane) and changing the <em>Model Space</em> property of the <a href="https://wiki.freecad.org/FEM_SolverCalculixCxxtools"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">CalculiX solver<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-002"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/major-fem-workbench-improvements-for-freecad-1-0/fem-fig3.webp"
+  alt="Fem Figure 3"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1128"
+  height="551"
+    srcset="/Website/pr-16/news/major-fem-workbench-improvements-for-freecad-1-0/fem-fig3_hu_25563a6df877c7b3.webp 500w, /Website/pr-16/news/major-fem-workbench-improvements-for-freecad-1-0/fem-fig3_hu_56c1ee494a29a335.webp 1000w, /Website/pr-16/news/major-fem-workbench-improvements-for-freecad-1-0/fem-fig3.webp 1128w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Fem Figure 3</figcaption></figure><div id="img-002" popover>
+          <button class="close"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/major-fem-workbench-improvements-for-freecad-1-0/fem-fig3.webp"
+              title="Fem Figure 3"
+              alt="Fem Figure 3"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Another new form of symmetry supported with the CalculiX solver is cyclic symmetry. It can be defined with the <a href="https://wiki.freecad.org/FEM_ConstraintTie"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">tie constraint<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> and used for parts consisting of circular patterns of repetitive segments (sectors) around an axis and subjected to loads exhibiting the same type of symmetry. Thus, many rotating components such as shafts, flywheels, turbines, or fans can be analyzed this way.</p>
+<p>Smaller but also important changes include more settings for tie and contact constraints, beam elements with reduced integration (necessary for pipe cross-sections and accurate results with plasticity), additional incrementation, and output frequency settings for CalculiX, adjustable acceleration magnitude for gravity load and support for plasticity with kinematic hardening in addition to isotropic one, among others.</p>
+<p>Several improvements were introduced for thermomechanical analyses. You can change their type to uncoupled or purely thermal, radiation heat flux can be modeled, volumetric heat source is usable with CalculiX and heat flux was added to this solver&rsquo;s outputs.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-003"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/major-fem-workbench-improvements-for-freecad-1-0/fem-fig4.webp"
+  alt="Fem Figure 4"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1051"
+  height="816"
+    srcset="/Website/pr-16/news/major-fem-workbench-improvements-for-freecad-1-0/fem-fig4_hu_247dbb3bd2a2f257.webp 500w, /Website/pr-16/news/major-fem-workbench-improvements-for-freecad-1-0/fem-fig4_hu_e9be03b8129e916.webp 1000w, /Website/pr-16/news/major-fem-workbench-improvements-for-freecad-1-0/fem-fig4.webp 1051w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Fem Figure 4</figcaption></figure><div id="img-003" popover>
+          <button class="close"
+            popovertarget="img-003"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/major-fem-workbench-improvements-for-freecad-1-0/fem-fig4.webp"
+              title="Fem Figure 4"
+              alt="Fem Figure 4"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Some other changes include capabilities of suppressing analysis features, hiding the selected finite elements and canceling ongoing meshing.</p>
+<p>The implementation of Netgen was also replaced to work on Linux. Symbols of analysis features are now properly scaled and their size can be adjusted. There are several mesh appearance improvements as well. Old FEM examples on the Start page were updated and replaced with one file including three different approaches (1D, 2D and 3D) to the classic cantilever beam analysis.</p>
+<p>Finally, the menu/toolbar names of several analysis features were changed to eliminate incorrect usage of the word &ldquo;constraint&rdquo; and make their meaning more clear.</p>
+<p>A full list of changes, excluding minor bug fixes, can be found in the <a href="https://wiki.freecad.org/Release_notes_1.0#FEM_Workbench"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">release notes<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>.</p>
+<p>Such enormous improvements wouldn&rsquo;t be possible without our new developer - Mario Passaglia (marioalexis84), working with whom is a pleasure. His contributions were <a href="https://wiki.freecad.org/Donate"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">sponsored<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> by you, the community, via a grant from the FreeCAD Project Association. There&rsquo;s still a lot to do in order to make FEM as powerful as it could be, and more contributors are always welcome.</p>
+<p>Current plans for further development include fixing any remaining bugs, standardizing the core of the workbench to make it easier to implement additional solvers (there is a new initiative to add support for <a href="https://code-aster.org/spip.php?rubrique2"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Code_Aster<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>), as well as further extending the support for CalculiX and Elmer and introducing advanced material models based on the reworked material system in FreeCAD.</p>
+<p>Hopefully, many of these goals will be achieved and available in the next major release. All users are welcome to test as much as possible, report any issues and propose new features if they aren&rsquo;t on the roadmap yet.</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/news/tutorial-getting-started-with-the-assembly-workbench/"
+             title="Next article"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>Tutorial - Getting started with the Assembly Workbench</a><a class="page-item prev"
+             href="/Website/pr-16/news/wip-wednesday-25-september-2024/"
+             title="Previous article">WIP Wednesday - 25 September 2024<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Go to Top"
+  title="Go to Top (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/authors/">Authors</a>
+                      </li><li>
+                        <a href="/Website/pr-16/categories/">Categories</a>
+                      </li><li>
+                        <a href="/Website/pr-16/tags/">Tags</a>
+                      </li><li>
+                        <a href="/Website/pr-16/versions/">Versions</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/fedishare.html#title=Major&#43;FEM&#43;Workbench&#43;improvements&#43;for&#43;FreeCAD&#43;1.0&amp;description=FreeCAD&#43;1.0&#43;brings&#43;a&#43;true&#43;revolution.&#43;But&#43;apart&#43;from&#43;the&#43;TNP&#43;mitigation%2C&#43;built-in&#43;Assembly&#43;workbench%2C&#43;material&#43;handling&#43;rework%2C&#43;and&#43;major&#43;Sketcher&#43;improvements%2C&#43;there%E2%80%99s&#43;a&#43;less&#43;common&#43;module&#43;that&#43;%E2%80%A6%0A%23fem&amp;url=https://FreeCAD.github.io/Website/pr-16/news/major-fem-workbench-improvements-for-freecad-1-0/"
+  title="Share on Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

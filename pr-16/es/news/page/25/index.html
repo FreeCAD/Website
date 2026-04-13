@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es-ES"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | News</title>
+  <meta name="description" content="Browse the latest news"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/es/news/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/es/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/es/news/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="News">
+  <meta property="og:description" content="Browse the latest news">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:type" content="website">
+</head><body class="list type-news kind-section "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/es/"accesskey="h"
+      title="Inicio (Alt + H)"
+      aria-label="Inicio">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menú"
+    aria-label="Menú"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/es/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Elegir idioma (Alt + L)"
+          aria-label="Elegir idioma"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/" title="News">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/" title="News">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/es/news/" title="News">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/" title="News">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/" title="News">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/" title="News">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/" title="News">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Cambiar tema chroma (Alt + T)"
+    aria-label="Cambiar tema chroma"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 400;">
+
+    <h1 class="title"
+      
+      >News</h1><h3 class="description"
+        
+        >Browse the Latest News</h3><div class="buttons"><a href="/Website/pr-16/es/authors/"
+              class="hero-button">
+              <svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg>
+              Autores (9)
+            </a><a href="/Website/pr-16/es/categories/"
+              class="hero-button">
+              <svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg>
+              Categorías (6)
+            </a><a href="/Website/pr-16/es/tags/"
+              class="hero-button">
+              <svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg>
+              Etiquetas (64)
+            </a><a href="/Website/pr-16/es/versions/"
+              class="hero-button">
+              <svg class="icon-versions"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/versions.svg#versions"></use>
+  </svg>
+              Versiones (3)
+            </a><a href="/Website/pr-16/es/news/archives/"
+                class="hero-button">
+                Archives
+              </a></div></section>
+
+  <div class="card-list wide">
+    <div class="cards"><a class="card"
+  href="/Website/pr-16/es/news/freecad-0-21-the-final-stretch/"
+  title="FreeCAD 0.21 - The Final Stretch"><div class="card-color "
+      style="--hue: 20;"></div><h3 class="card-title">FreeCAD 0.21 - The Final Stretch</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2023-05-22T00:00:00Z">22 de mayo de 2023</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/es/news/translators-needed/"
+  title="Translators Needed"><div class="card-color "
+      style="--hue: 20;"></div><h3 class="card-title">Translators Needed</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2023-05-20T00:00:00Z">20 de mayo de 2023</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/es/news/wip-wednesday-17-may-2023/"
+  title="WIP Wednesday - 17 May 2023"><div class="card-color "
+      style="--hue: 120;"></div><h3 class="card-title">WIP Wednesday - 17 May 2023</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2023-05-17T00:00:00Z">17 de mayo de 2023</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/es/news/wip-wednesday-10-may-2023/"
+  title="WIP Wednesday - 10 May 2023"><div class="card-color "
+      style="--hue: 120;"></div><h3 class="card-title">WIP Wednesday - 10 May 2023</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2023-05-10T00:00:00Z">10 de mayo de 2023</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/es/news/google-summer-of-code-2023/"
+  title="Google Summer of Code 2023"><div class="card-color "
+      style="--hue: 20;"></div><h3 class="card-title">Google Summer of Code 2023</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2023-05-04T00:00:00Z">4 de mayo de 2023</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/es/news/wip-wednesday-3-may-2023/"
+  title="WIP Wednesday - 3 May 2023"><div class="card-color "
+      style="--hue: 120;"></div><h3 class="card-title">WIP Wednesday - 3 May 2023</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2023-05-03T00:00:00Z">3 de mayo de 2023</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/es/news/coming-soon-freecad-0-21/"
+  title="Coming Soon - FreeCAD 0.21"><div class="card-color "
+      style="--hue: 20;"></div><h3 class="card-title">Coming Soon - FreeCAD 0.21</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2023-04-28T00:00:00Z">28 de abril de 2023</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/es/news/wip-wednesday-26-april-2023/"
+  title="WIP Wednesday - 26 April 2023"><div class="card-color "
+      style="--hue: 120;"></div><h3 class="card-title">WIP Wednesday - 26 April 2023</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2023-04-26T00:00:00Z">26 de abril de 2023</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/es/news/image-import-refactored/"
+  title="Image Import Refactored"><div class="card-color "
+      style="--hue: 60;"></div><h3 class="card-title">Image Import Refactored</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2023-04-24T00:00:00Z">24 de abril de 2023</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/es/news/wip-wednesday-19-april-2023/"
+  title="WIP Wednesday - 19 April 2023"><div class="card-color "
+      style="--hue: 120;"></div><h3 class="card-title">WIP Wednesday - 19 April 2023</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2023-04-19T00:00:00Z">19 de abril de 2023</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/es/news/wip-wednesday-12-april-2023/"
+  title="WIP Wednesday - 12 April 2023"><div class="card-color "
+      style="--hue: 120;"></div><h3 class="card-title">WIP Wednesday - 12 April 2023</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2023-04-12T00:00:00Z">12 de abril de 2023</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/pr-16/es/news/radial-gradient-background/"
+  title="Radial Gradient Background"><div class="card-color "
+      style="--hue: 60;"></div><h3 class="card-title">Radial Gradient Background</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2023-04-10T00:00:00Z">10 de abril de 2023</time>
+  </span></div>
+</a></div><nav aria-label="Pagination" class="pagination"><a href="/Website/pr-16/es/news/"
+                class="page-item"
+                title="Primera página"
+                aria-label="First"><svg class="icon-tri_tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_tri_left.svg#tri_tri_left"></use>
+  </svg>1
+              </a><a href="/Website/pr-16/es/news/page/24/"
+                class="page-item"
+                title="Página anterior"
+                aria-label="Previous">
+                <svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg> 24
+              </a><span aria-current="page"
+            class="page-item active"
+            aria-label="Current">
+            25
+          </span><a href="/Website/pr-16/es/news/page/26/"
+                class="page-item"
+                title="Página siguiente"
+                aria-label="Next">
+                26 <svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg>
+              </a><a href="/Website/pr-16/es/news/page/30/"
+                class="page-item"
+                title="Última página"
+                aria-label="Last">
+                30<svg class="icon-tri_tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_tri_right.svg#tri_tri_right"></use>
+  </svg></a></nav></div></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Ir al inicio"
+  title="Ir al inicio (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/es/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/es/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/es/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/es/authors/">Autores</a>
+                      </li><li>
+                        <a href="/Website/pr-16/es/categories/">Categorías</a>
+                      </li><li>
+                        <a href="/Website/pr-16/es/tags/">Etiquetas</a>
+                      </li><li>
+                        <a href="/Website/pr-16/es/versions/">Versiones</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"></div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/es/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+</div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

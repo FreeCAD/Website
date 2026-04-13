@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Google Summer of Code 2025 recap</title>
+  <meta name="description" content="Seu próprio modelador paramétrico livre e de código aberto"><meta name="keywords" content="WIP"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/pt/news/google-summer-of-code-2025-recap/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/google-summer-of-code-2025-recap/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/google-summer-of-code-2025-recap/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/google-summer-of-code-2025-recap/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/google-summer-of-code-2025-recap/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/google-summer-of-code-2025-recap/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/google-summer-of-code-2025-recap/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/google-summer-of-code-2025-recap/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/pt/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/pt/news/google-summer-of-code-2025-recap/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Google Summer of Code 2025 recap">
+  <meta property="og:description" content="This year, we had three students working on FreeCAD. All projects have been successful. Here is a quick recap.
+chiragsingh1711 implemented 3D PDF exporting in the TechDraw workbench and added an exporter to the general list of exporting options. The code is mostly complete and requires some fixes to bring it closer to our coding standards. The maintainers team scheduled this feature for inclusion in v1.2.">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2025-10-17T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:40:06+02:00">
+    <meta property="article:tag" content="WIP">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/pt/"accesskey="h"
+      title="Início (Alt + H)"
+      aria-label="Início">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/pt/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Escolha o idioma (Alt + L)"
+          aria-label="Escolha o idioma"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/google-summer-of-code-2025-recap/" title="Google Summer of Code 2025 recap">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/google-summer-of-code-2025-recap/" title="Google Summer of Code 2025 recap">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/google-summer-of-code-2025-recap/" title="Google Summer of Code 2025 recap">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/google-summer-of-code-2025-recap/" title="Google Summer of Code 2025 recap">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/pt/news/google-summer-of-code-2025-recap/" title="Google Summer of Code 2025 recap">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/google-summer-of-code-2025-recap/" title="Google Summer of Code 2025 recap">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/google-summer-of-code-2025-recap/" title="Google Summer of Code 2025 recap">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Alterar tema (Alt + T)"
+    aria-label="Alterar tema"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 120;">
+
+    <h2 class="title"
+      
+      >Google Summer of Code 2025 Recap</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2025-10-17T00:00:00Z">17 de outubro de 2025</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/pt/authors/aleksandr-prokudin/">Aleksandr Prokudin (169)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/pt/categories/update/">Update (158)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/pt/tags/wip/">WIP (153)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>256 palavras</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>2 minutos</span></div></section><div class="content"><p>This year, we had three students working on FreeCAD. All projects have been successful. Here is a quick recap.</p>
+<p>chiragsingh1711 implemented 3D PDF exporting in the TechDraw workbench and added an exporter to the general list of exporting options. The code is <a href="https://github.com/FreeCAD/FreeCAD/pull/23335"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">mostly complete<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> and requires some fixes to bring it closer to our coding standards. The maintainers team scheduled this feature for inclusion in v1.2.</p>
+<p>theo-vt worked on multiple files&rsquo; parallel editing. This project&rsquo;s aim was to remove the limitation where one document cannot be edited until an operation on another document is completed. The patch is also mostly complete. Because the project ended when the feature freeze was already in effect, and the change affected every aspect of FreeCAD, this feature was postponed to v1.2 to avoid delaying the release of v1.1.</p>
+<p>Sayantan Deb (captain0xff) <a href="https://github.com/FreeCAD/FreeCAD/pull/22880"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">added<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> interactive controls to the 3D view in the PartDesign workbench. You can now use various draggers when you use Pad, Pocket, Fillet, Helix, and other commands. This feature will be part of the upcoming FreeCAD v1.1 release.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Ampliar imagem" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/google-summer-of-code-2025-recap/Screenshot-From-2025-10-17-14-44-39.webp"
+  alt="On-view controls for Length and Taper Angle in the Pad command"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="2560"
+  height="1440"
+    srcset="/Website/pr-16/news/google-summer-of-code-2025-recap/Screenshot-From-2025-10-17-14-44-39_hu_736507f3f4760c79.webp 500w, /Website/pr-16/news/google-summer-of-code-2025-recap/Screenshot-From-2025-10-17-14-44-39_hu_4b62461c70f15bc8.webp 1000w, /Website/pr-16/news/google-summer-of-code-2025-recap/Screenshot-From-2025-10-17-14-44-39.webp 2560w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>On-view controls for Length and Taper Angle in the Pad command</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Fechar visualizador de imagens">
+            <img src="/Website/pr-16/news/google-summer-of-code-2025-recap/Screenshot-From-2025-10-17-14-44-39.webp"
+              title="On-view controls for Length and Taper Angle in the Pad command"
+              alt="On-view controls for Length and Taper Angle in the Pad command"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>For people who don&rsquo;t like this kind of UI, there&rsquo;s a switch in Preferences.</p>
+<p>Sayantan submitted <a href="https://github.com/FreeCAD/FreeCAD/pull/23912"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">another patch<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> to enhance this new feature by adding on-view parameters for interactive gizmos. The patch is currently in review and won&rsquo;t be merged for v1.1 as we are well past the feature freeze cut-off. If all goes well, expect it in v1.2.</p>
+<p>We thank all students, mentors, and admins for the great work!</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/pt/news/wip-wednesday-22-october-2025/"
+             title="Artigo seguinte"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday, 22 October 2025</a><a class="page-item prev"
+             href="/Website/pr-16/pt/news/wip-wednesday-15-october-2025/"
+             title="Artigo anterior">WIP Wednesday, 15 October 2025<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Ir para o topo"
+  title="Ir para o topo (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/pt/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/pt/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/pt/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/pt/authors/">Autores</a>
+                      </li><li>
+                        <a href="/Website/pr-16/pt/categories/">Categorias</a>
+                      </li><li>
+                        <a href="/Website/pr-16/pt/tags/">Tags</a>
+                      </li><li>
+                        <a href="/Website/pr-16/pt/versions/">Versões</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/pt/fedishare.html#title=Google&#43;Summer&#43;of&#43;Code&#43;2025&#43;recap&amp;description=This&#43;year%2C&#43;we&#43;had&#43;three&#43;students&#43;working&#43;on&#43;FreeCAD.&#43;All&#43;projects&#43;have&#43;been&#43;successful.&#43;Here&#43;is&#43;a&#43;quick&#43;recap.%0Achiragsingh1711&#43;implemented&#43;3D&#43;PDF&#43;exporting&#43;in&#43;the&#43;TechDraw&#43;workbench&#43;and&#43;added&#43;an&#43;%E2%80%A6%0A%23wip&amp;url=https://FreeCAD.github.io/Website/pr-16/pt/news/google-summer-of-code-2025-recap/"
+  title="Compartilhar no Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/pt/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

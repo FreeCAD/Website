@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="zh-CN"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | FPA Grant Program 2025 year-in-review</title>
+  <meta name="description" content="你自己的自由开源参数化建模器"><meta name="keywords" content="FPA, grant"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/zh/news/fpa-grant-program-2025-year-in-review/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/fpa-grant-program-2025-year-in-review/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/fpa-grant-program-2025-year-in-review/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/fpa-grant-program-2025-year-in-review/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/fpa-grant-program-2025-year-in-review/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/fpa-grant-program-2025-year-in-review/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/fpa-grant-program-2025-year-in-review/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/fpa-grant-program-2025-year-in-review/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/zh/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/zh/news/fpa-grant-program-2025-year-in-review/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="FPA Grant Program 2025 year-in-review">
+  <meta property="og:description" content="Let’s talk about the 2025 FPA grant program: what projects were voted for, what projects weren’t, and what we think needs to change for this year’s program.">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2026-03-01T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:43:46+02:00">
+    <meta property="article:tag" content="FPA">
+    <meta property="article:tag" content="Grant">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/zh/"accesskey="h"
+      title="主页 (Alt + H)"
+      aria-label="主页">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="菜单"
+    aria-label="菜单"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/zh/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="选择语言 (Alt + L)"
+          aria-label="选择语言"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/fpa-grant-program-2025-year-in-review/" title="FPA Grant Program 2025 year-in-review">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/zh/news/fpa-grant-program-2025-year-in-review/" title="FPA Grant Program 2025 year-in-review">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/fpa-grant-program-2025-year-in-review/" title="FPA Grant Program 2025 year-in-review">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/fpa-grant-program-2025-year-in-review/" title="FPA Grant Program 2025 year-in-review">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/fpa-grant-program-2025-year-in-review/" title="FPA Grant Program 2025 year-in-review">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/fpa-grant-program-2025-year-in-review/" title="FPA Grant Program 2025 year-in-review">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/fpa-grant-program-2025-year-in-review/" title="FPA Grant Program 2025 year-in-review">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="切换主题配色 (Alt + T)"
+    aria-label="切换主题配色"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 20;">
+
+    <h2 class="title"
+      
+      >FPA Grant Program 2025 Year-in-Review</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2026-03-01T00:00:00Z">2026年3月1日</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/zh/authors/chris-hennes/">Chris Hennes (80)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/zh/categories/announcement/">Announcement (94)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/zh/tags/fpa/">FPA (44)</a><a href="/Website/pr-16/zh/tags/grant/">Grant (22)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>1194 字</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>6 分钟</span></div></section><div class="content"><p>Let&rsquo;s talk about the 2025 FPA grant program: what projects were voted for, what projects weren&rsquo;t, and what we think needs to change for this year&rsquo;s program.</p>
+<h2
+  id="2025-grants"
+  
+  >2025 grants<a class="heading-anchor"
+     href="#2025-grants"
+     title="2025 grants"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Last year, we got 46 grant applications. We voted &lsquo;yes&rsquo; on 31 of them and &rsquo;no&rsquo; on 15. Here is a quick explainer:</p>
+<ul>
+<li>Q1, Q2, Q3, and Q4 are quarters of the year</li>
+<li>declined: grant applications that weren&rsquo;t voted for</li>
+<li>OO: grant applications for the separate <a href="https://blog.freecad.org/2025/02/14/the-ondsel-onwards-fund/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Ondsel Onwards fund<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th><strong>Grant Title</strong></th>
+          <th><strong>Submitter</strong></th>
+          <th style="text-align: center"><strong>Labels</strong></th>
+          <th style="text-align: right"><strong>Budget</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>23</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/23"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Refactoring Sketcher 2<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>AjinkyaDahale</td>
+          <td style="text-align: center">Q1</td>
+          <td style="text-align: right">4000 EUR</td>
+      </tr>
+      <tr>
+          <td>24</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/24"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Improve FreeCAD Copy Paste system.<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>PaddleStroke</td>
+          <td style="text-align: center">declined</td>
+          <td style="text-align: right">4000 EUR</td>
+      </tr>
+      <tr>
+          <td>25</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/25"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">TechDraw: New Page<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>PaddleStroke</td>
+          <td style="text-align: center">declined</td>
+          <td style="text-align: right">4000 EUR</td>
+      </tr>
+      <tr>
+          <td>26</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/26"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">TechDraw: rework annotation tools<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>PaddleStroke</td>
+          <td style="text-align: center">declined</td>
+          <td style="text-align: right">6000 EUR</td>
+      </tr>
+      <tr>
+          <td>27</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/27"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">FreeCAD Road Workbench<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>HakanSeven12</td>
+          <td style="text-align: center">declined</td>
+          <td style="text-align: right">10000 EUR</td>
+      </tr>
+      <tr>
+          <td>28</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/28"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">homebrew-freecad fix building a mac app bundle using deps based around homebrew<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>ipatch</td>
+          <td style="text-align: center">Q1</td>
+          <td style="text-align: right">1000 EUR</td>
+      </tr>
+      <tr>
+          <td>29</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/29"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">[Lens] Make Lens Platform Self-Deployable and Cloud-Agnostic<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>amrit3701</td>
+          <td style="text-align: center">Q1, OO</td>
+          <td style="text-align: right">6500 USD</td>
+      </tr>
+      <tr>
+          <td>31</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/31"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Concept for ISO GPS implementation &ldquo;3D Annotation and Tolerancing WB&rdquo;<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>maxwxyz</td>
+          <td style="text-align: center">declined</td>
+          <td style="text-align: right">9000 EUR</td>
+      </tr>
+      <tr>
+          <td>32</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/32"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Reorganization of the FreeCAD UI - WBs and tools<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>Francisco-Rosa</td>
+          <td style="text-align: center">declined</td>
+          <td style="text-align: right">7000 USD</td>
+      </tr>
+      <tr>
+          <td>33</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/33"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">New curves for Sketcher<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>AjinkyaDahale</td>
+          <td style="text-align: center">Q1</td>
+          <td style="text-align: right">6000 EUR</td>
+      </tr>
+      <tr>
+          <td>34</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/34"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Maintenance, improvement and development of new features on the FEM workbench<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>marioalexis84</td>
+          <td style="text-align: center">Q1</td>
+          <td style="text-align: right">3000 EUR</td>
+      </tr>
+      <tr>
+          <td>35</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/35"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Modernizing FreeCAD&rsquo;s Rendering and Selection Systems<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>tritao</td>
+          <td style="text-align: center">Q1</td>
+          <td style="text-align: right">4000 EUR</td>
+      </tr>
+      <tr>
+          <td>36</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/36"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Multithreading Architecture Improvements in FreeCAD<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>tritao</td>
+          <td style="text-align: center">Q1</td>
+          <td style="text-align: right">2000 EUR</td>
+      </tr>
+      <tr>
+          <td>38</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/38"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Pattern tools refactor, unification and additional functionality.<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>PaddleStroke</td>
+          <td style="text-align: center">Q2</td>
+          <td style="text-align: right">2000 EUR</td>
+      </tr>
+      <tr>
+          <td>39</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/39"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Configuration Space Visualization for Computer-Aided Geometric Design<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>behollister</td>
+          <td style="text-align: center">Q2</td>
+          <td style="text-align: right">500 USD</td>
+      </tr>
+      <tr>
+          <td>40</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/40"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Websites improvements initiative - Step 1<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>marcuspollio</td>
+          <td style="text-align: center">Q2</td>
+          <td style="text-align: right">4000 EUR</td>
+      </tr>
+      <tr>
+          <td>41</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/41"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PartDesign: Extrude Two directions<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>PaddleStroke</td>
+          <td style="text-align: center">Q2</td>
+          <td style="text-align: right">500 EUR</td>
+      </tr>
+      <tr>
+          <td>42</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/42"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Maintenance, improvement and development of new features on the Assembly workbench<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>PaddleStroke</td>
+          <td style="text-align: center">Q2</td>
+          <td style="text-align: right">3000 EUR</td>
+      </tr>
+      <tr>
+          <td>43</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/43"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Maintenance, improvement and development of new features on the Sketcher workbench<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>PaddleStroke</td>
+          <td style="text-align: center">Q2</td>
+          <td style="text-align: right">3000 EUR</td>
+      </tr>
+      <tr>
+          <td>44</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/44"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">CAM/BIM: 2D Nesting Tool for FreeCAD<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>AbhiramMasna</td>
+          <td style="text-align: center">Q2</td>
+          <td style="text-align: right">150000 INR</td>
+      </tr>
+      <tr>
+          <td>45</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/45"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Research ISO GPS / GD&amp;T for an overall concept as implementation in FreeCAD<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>maxwxyz</td>
+          <td style="text-align: center">Q2</td>
+          <td style="text-align: right">3000 EUR</td>
+      </tr>
+      <tr>
+          <td>46</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/46"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">CAM improvements for machining metals<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>davidgilkaufman</td>
+          <td style="text-align: center">Q2</td>
+          <td style="text-align: right">3500 USD</td>
+      </tr>
+      <tr>
+          <td>47</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/47"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Assembly Solver Interface Abstraction and Alternative Solver Implementation<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>oursland</td>
+          <td style="text-align: center">Q2</td>
+          <td style="text-align: right">2000 USD</td>
+      </tr>
+      <tr>
+          <td>48</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/48"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Update OSH Automated Documentation for FreeCAD 1.0<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>pieterhijma</td>
+          <td style="text-align: center">Q2</td>
+          <td style="text-align: right">2000 EUR</td>
+      </tr>
+      <tr>
+          <td>50</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/50"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Promoting Academic and Educational use of FreeCAD via targeted written tutorials<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>concretedog</td>
+          <td style="text-align: center">Q3</td>
+          <td style="text-align: right">2000 GBP</td>
+      </tr>
+      <tr>
+          <td>51</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/51"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Maintenance, improvement and development of new features on the Assembly workbench - Q3<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>PaddleStroke</td>
+          <td style="text-align: center">Q3</td>
+          <td style="text-align: right">3000 EUR</td>
+      </tr>
+      <tr>
+          <td>52</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/52"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Maintenance, improvement and development of new features on the Sketcher workbench - Q3<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>PaddleStroke</td>
+          <td style="text-align: center">Q3</td>
+          <td style="text-align: right">3000 EUR</td>
+      </tr>
+      <tr>
+          <td>53</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/53"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">TechDraw: Rework annotation tools - Repost<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>PaddleStroke</td>
+          <td style="text-align: center">Q3</td>
+          <td style="text-align: right">2000 EUR</td>
+      </tr>
+      <tr>
+          <td>54</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/54"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">TechDraw: New Page - Repost<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>PaddleStroke</td>
+          <td style="text-align: center">declined</td>
+          <td style="text-align: right">2000 EUR</td>
+      </tr>
+      <tr>
+          <td>55</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/55"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">PartDesign: Revolution Two directions<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>PaddleStroke</td>
+          <td style="text-align: center">declined</td>
+          <td style="text-align: right">1800 EUR</td>
+      </tr>
+      <tr>
+          <td>58</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/58"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Design System and Style Guidelines<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>kadet1090</td>
+          <td style="text-align: center">Q3</td>
+          <td style="text-align: right">5000 EUR</td>
+      </tr>
+      <tr>
+          <td>59</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/59"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Addons and Developers Portal<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>mnesarco</td>
+          <td style="text-align: center">declined</td>
+          <td style="text-align: right">8000 USD</td>
+      </tr>
+      <tr>
+          <td>60</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/60"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">[LENS] Enhanced Authentication, Branding Customization, and TrueNAS Integration for Lens Platform<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>amrit3701</td>
+          <td style="text-align: center">Q3, OO</td>
+          <td style="text-align: right">12250 USD</td>
+      </tr>
+      <tr>
+          <td>61</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/61"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">CAM improvements for the Adaptive operation<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>davidgilkaufman</td>
+          <td style="text-align: center">Q3</td>
+          <td style="text-align: right">4250 USD</td>
+      </tr>
+      <tr>
+          <td>62</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/62"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Sky domes, sun radiations analysis module<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>Francisco-Rosa</td>
+          <td style="text-align: center">Q3</td>
+          <td style="text-align: right">2000 USD</td>
+      </tr>
+      <tr>
+          <td>63</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/63"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">FreeCAD video tutorials<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>howtofreecad</td>
+          <td style="text-align: center">declined</td>
+          <td style="text-align: right">Unknown</td>
+      </tr>
+      <tr>
+          <td>64</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/64"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">CNC Milling Machine Tutorial<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>bkmgit</td>
+          <td style="text-align: center">declined</td>
+          <td style="text-align: right">1300 EUR</td>
+      </tr>
+      <tr>
+          <td>65</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/65"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Selection system enhancements / overhaul<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>tetektoza</td>
+          <td style="text-align: center">Q4</td>
+          <td style="text-align: right">3000 EUR</td>
+      </tr>
+      <tr>
+          <td>67</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/67"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Ondsel Lens and Lens addon documentation<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>prokoudine</td>
+          <td style="text-align: center">Q4, OO</td>
+          <td style="text-align: right">1000 EUR</td>
+      </tr>
+      <tr>
+          <td>68</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/68"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Selection System Code Refactoring<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>tetektoza</td>
+          <td style="text-align: center">declined</td>
+          <td style="text-align: right">4000 EUR</td>
+      </tr>
+      <tr>
+          <td>69</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/69"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Selection system enhancements / overhaul pt. 2<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>tetektoza</td>
+          <td style="text-align: center">declined</td>
+          <td style="text-align: right">3500 EUR</td>
+      </tr>
+      <tr>
+          <td>70</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/70"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Document Toponaming<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>pieterhijma</td>
+          <td style="text-align: center">declined</td>
+          <td style="text-align: right">8000 EUR</td>
+      </tr>
+      <tr>
+          <td>71</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/71"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Sun analysis, direct radiations and irradiances analysis module<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>Francisco-Rosa</td>
+          <td style="text-align: center">declined</td>
+          <td style="text-align: right">2000 EUR</td>
+      </tr>
+      <tr>
+          <td>72</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/72"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">KiConnect PCB Workbench [Time Commitment, Ecosystem]<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>morganrallen</td>
+          <td style="text-align: center">Q4</td>
+          <td style="text-align: right">5200 EUR</td>
+      </tr>
+      <tr>
+          <td>73</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/73"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Maintenance, improvement and development of new features on the Assembly workbench - Q4<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>PaddleStroke</td>
+          <td style="text-align: center">Q4</td>
+          <td style="text-align: right">3000 EUR</td>
+      </tr>
+      <tr>
+          <td>74</td>
+          <td><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues/74"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Maintenance, improvement and development of new features on the Sketcher workbench - Q4<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></td>
+          <td>PaddleStroke</td>
+          <td style="text-align: center">Q4</td>
+          <td style="text-align: right">3000 EUR</td>
+      </tr>
+  </tbody>
+</table>
+</tbody></table></figure>
+<p>The average grant request was approximately EUR 3,650 with a median of EUR 3,000, and a highest request of EUR 10,500.</p>
+<p>Here is the breakdown by quarters, with conversion to EUR where applicable:</p>
+<ul>
+<li>Q1: EUR 25,590</li>
+<li>Q2: EUR 24,085</li>
+<li>Q3: EUR 30,630</li>
+<li>Q4: EUR 15,200</li>
+</ul>
+<p>The total allocated budget was EUR 95,505. Note that this includes EUR 17,125 drawn from the separate, privately sponsored Ondsel Onwards fund, as opposed to the general fund built from community donations. This makes the total budget allocation under the planned EUR80K cap.</p>
+<h2
+  id="grants-completion"
+  
+  >Grants completion<a class="heading-anchor"
+     href="#grants-completion"
+     title="Grants completion"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Out of 31 grants approved in 2025, work on 11 has been completed. Please note that Q4 2025 grants were approved in mid-December, so we expected at least some of the work to be completed in 2026.</p>
+<p>For detailed information on the status of approved grants, please see <a href="https://github.com/orgs/FreeCAD/projects/42"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">the respective GitHub project<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> managed by Reqrefusion, the grant program&rsquo;s communication manager.</p>
+<h2
+  id="program-analysis"
+  
+  >Program Analysis<a class="heading-anchor"
+     href="#program-analysis"
+     title="Program Analysis"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>The grant program was originally designed to serve two overlapping purposes:</p>
+<ol>
+<li>
+<p>Distribute donations to developers</p>
+</li>
+<li>
+<p>Encourage development in specific areas identified by FPA members</p>
+</li>
+</ol>
+<p>To the extent that one of the purposes of the program is simply to distribute donor money to those working on FreeCAD, the program succeeds reasonably well. 19 different individuals received money through this program in 2025. It is not a perfect way to distribute the funds, but it is not unreasonable.</p>
+<p>Regarding encouraging development in specific need-areas, however, the program is much less successful.</p>
+<p>With over two-thirds of grants funded, we applied little &ldquo;selection pressure&rdquo;. It was rare for either an FPA member or a grant review committee member to vote to decline a grant on the basis of whether a proposal met some targeted need-area: most &ldquo;no&rdquo; votes were &ldquo;value for the money&rdquo;-based, with a few coming on the basis of whether a given feature proposal represented something we needed at all, not whether it fit into a larger plan, as well as some hesitation to fund out-of-core development work (e.g. addons).</p>
+<p>Another problem the grant program experienced was a grant review team that provided very little feedback. In many cases, reviewers provided simple yes/no comments on grant applications. Further, even when provided with committee feedback, FPA voters seemed to find little value in it, instead forming their own opinions independent of any comment from the committee.</p>
+<p>Recruiting reviewers also proved difficult: despite several vocal individuals on the forums expressing opinions about how the FPA spends the grant money, none of those people volunteered to serve on the committee.</p>
+<h2
+  id="2026-program-modifications"
+  
+  >2026 Program Modifications<a class="heading-anchor"
+     href="#2026-program-modifications"
+     title="2026 Program Modifications"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Here is what we are likely to change for the 2026 program:</p>
+<ol>
+<li>
+<p>The budget for the grant program should be reduced to EUR 40,000, divided into EUR 10,000 quarterly grant rounds. The freed-up budget should be used for the bug bounty program and ongoing positions.</p>
+</li>
+<li>
+<p>The technical grant review committee should be eliminated.</p>
+</li>
+<li>
+<p>The FPA should choose some small number of actionable focus areas for each year&rsquo;s program to help guide which applications should be selected (and voters should take care to respect that selection).</p>
+</li>
+<li>
+<p>Grants should be limited to one application per developer per quarter.</p>
+</li>
+<li>
+<p>A &ldquo;no&rdquo; vote on a grant should require a statement from the voter about why they are voting no, and that feedback should be anonymized and provided to the grant applicant with the notice of their grant&rsquo;s being declined for funding.</p>
+</li>
+</ol>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/zh/news/q1-2026-grant-program/"
+             title="下一篇"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>Q1 2026 Grant Program</a><a class="page-item prev"
+             href="/Website/pr-16/zh/news/freecad-1-1rc3/"
+             title="上一篇">FreeCAD 1.1rc3<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="返回顶部"
+  title="返回顶部 (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/zh/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/zh/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/zh/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/zh/authors/">作者列表</a>
+                      </li><li>
+                        <a href="/Website/pr-16/zh/categories/">分类列表</a>
+                      </li><li>
+                        <a href="/Website/pr-16/zh/tags/">标签列表</a>
+                      </li><li>
+                        <a href="/Website/pr-16/zh/versions/">版本列表</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/zh/fedishare.html#title=FPA&#43;Grant&#43;Program&#43;2025&#43;year-in-review&amp;description=Let%E2%80%99s&#43;talk&#43;about&#43;the&#43;2025&#43;FPA&#43;grant&#43;program%3A&#43;what&#43;projects&#43;were&#43;voted&#43;for%2C&#43;what&#43;projects&#43;weren%E2%80%99t%2C&#43;and&#43;what&#43;we&#43;think&#43;needs&#43;to&#43;change&#43;for&#43;this&#43;year%E2%80%99s&#43;program.%0A2025&#43;grants&#43;Last&#43;year%2C&#43;we&#43;got&#43;46&#43;grant&#43;%E2%80%A6%0A%23fpa&#43;%23grant&amp;url=https://FreeCAD.github.io/Website/pr-16/zh/news/fpa-grant-program-2025-year-in-review/"
+  title="分享至 Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/zh/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

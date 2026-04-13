@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es-ES"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | FreeCAD at FOSDEM 2025</title>
+  <meta name="description" content="Tu propio modelador paramétrico libre y de código abierto"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/es/news/freecad-at-fosdem-2025/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/freecad-at-fosdem-2025/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/freecad-at-fosdem-2025/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/freecad-at-fosdem-2025/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/freecad-at-fosdem-2025/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/freecad-at-fosdem-2025/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/freecad-at-fosdem-2025/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/freecad-at-fosdem-2025/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/es/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/es/news/freecad-at-fosdem-2025/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="FreeCAD at FOSDEM 2025">
+  <meta property="og:description" content="FreeCAD at FOSDEM 2025 1 Last weekend was FOSDEM where a huge cohort of the opensource community descend on Brussels and take over the Solbosch campus of the Université Libre de Bruxelles. It’s a fantastic event and, of course, FreeCAD had a stand alongside our friends and colleagues KiCad , as well a numerous FreeCAD related speakers and talks.">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2025-02-10T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:47:39+02:00">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/es/"accesskey="h"
+      title="Inicio (Alt + H)"
+      aria-label="Inicio">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menú"
+    aria-label="Menú"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/es/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Elegir idioma (Alt + L)"
+          aria-label="Elegir idioma"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/freecad-at-fosdem-2025/" title="FreeCAD at FOSDEM 2025">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/freecad-at-fosdem-2025/" title="FreeCAD at FOSDEM 2025">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/es/news/freecad-at-fosdem-2025/" title="FreeCAD at FOSDEM 2025">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/freecad-at-fosdem-2025/" title="FreeCAD at FOSDEM 2025">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/freecad-at-fosdem-2025/" title="FreeCAD at FOSDEM 2025">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/freecad-at-fosdem-2025/" title="FreeCAD at FOSDEM 2025">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/freecad-at-fosdem-2025/" title="FreeCAD at FOSDEM 2025">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Cambiar tema chroma (Alt + T)"
+    aria-label="Cambiar tema chroma"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 40;">
+
+    <h2 class="title"
+      
+      >FreeCAD at FOSDEM 2025</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2025-02-10T00:00:00Z">10 de febrero de 2025</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/es/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/es/categories/event/">Event (22)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>745 palabras</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>4 min</span></div><figure class="article-cover"><img srcset="/Website/pr-16/news/freecad-at-fosdem-2025/IMG_20250202_115245_hu_19d3d766381a633.webp 500w, /Website/pr-16/news/freecad-at-fosdem-2025/IMG_20250202_115245_hu_b2320506086fec49.webp 1000w, /Website/pr-16/news/freecad-at-fosdem-2025/IMG_20250202_115245.webp 2560w"
+        sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"
+        src="/Website/pr-16/news/freecad-at-fosdem-2025/IMG_20250202_115245.webp"
+        title="FOSDEM 2025"
+        alt="Imagen alternativa"
+        width="2560"
+        height="1438"
+        loading="eager"
+        fetchpriority="high"><figcaption>
+        <div class="internal-tooltip"><svg class="icon-important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/important.svg#important"></use>
+  </svg><span class="tooltip">FOSDEM 2025</span>
+        </div>
+      </figcaption></figure></section><div class="content"><div class="image-with-popover">
+      <figure><button aria-label="Ampliar imagen" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/freecad-at-fosdem-2025/IMG_20250202_163750.webp"
+  alt="FreeCAD at FOSDEM 2025 1"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="2560"
+  height="1438"
+    srcset="/Website/pr-16/news/freecad-at-fosdem-2025/IMG_20250202_163750_hu_1164243404e27c7b.webp 500w, /Website/pr-16/news/freecad-at-fosdem-2025/IMG_20250202_163750_hu_c6d12c66af0e2513.webp 1000w, /Website/pr-16/news/freecad-at-fosdem-2025/IMG_20250202_163750.webp 2560w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>FreeCAD at FOSDEM 2025 1</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes">
+            <img src="/Website/pr-16/news/freecad-at-fosdem-2025/IMG_20250202_163750.webp"
+              title="FreeCAD at FOSDEM 2025 1"
+              alt="FreeCAD at FOSDEM 2025 1"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Last weekend was<a href="https://fosdem.org/2025/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener"> FOSDEM<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> where a huge cohort of the opensource community descend on Brussels and take over the Solbosch campus of the Université Libre de <em>Bruxelles</em>. It&rsquo;s a fantastic event and, of course, FreeCAD had a stand alongside our friends and colleagues <a href="https://www.kicad.org/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">KiCad<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, as well a numerous FreeCAD related speakers and talks.</p>
+<p>FreeCAD and KiCad teams have often shared a stand at FOSDEM and this year was no exception. In fact building on previous successes we opted to have a joint branded banner as a backdrop to the KiCad/FreeCAD stand. With the proud tagline &ldquo;Build your own Future&rdquo; emblazoned across the banner it was excellent to see many many joint users and projects that used both opensource tools.</p>
+<p>This year the stand was placed in the AW building and, like everywhere in FOSDEM, it was busy with a constant flow of people passing with many of them stopping for a chat with us. We had plenty of excellent volunteers crewing the stand which is handy in terms of the volume of conversations that can happen! It&rsquo;s interesting to note how conversations differ in comparison to previous years. There is of course always a mixture of conversations, but you can usually pick out themes that re occur throughout the two days.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Ampliar imagen" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/freecad-at-fosdem-2025/IMG_20250201_103422.webp"
+  alt="FreeCAD at FOSDEM 2025 2"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="2560"
+  height="1438"
+    srcset="/Website/pr-16/news/freecad-at-fosdem-2025/IMG_20250201_103422_hu_2578f1142b3d0943.webp 500w, /Website/pr-16/news/freecad-at-fosdem-2025/IMG_20250201_103422_hu_96af13ebb00e81c9.webp 1000w, /Website/pr-16/news/freecad-at-fosdem-2025/IMG_20250201_103422.webp 2560w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>FreeCAD at FOSDEM 2025 2</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes">
+            <img src="/Website/pr-16/news/freecad-at-fosdem-2025/IMG_20250201_103422.webp"
+              title="FreeCAD at FOSDEM 2025 2"
+              alt="FreeCAD at FOSDEM 2025 2"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>This year a big theme was people saying how pleased they were to see version 1.0 and how it significantly set a marked improvement over previous iterations. This, of course, is very welcome to hear, but it also seemed to link to quite a few people discussing the V1.0 had convinced them to take another look at FreeCAD from having tried an earlier version.</p>
+<p>Another significant set of conversations reported from the FreeCAD stand team was perhaps led by the fact that the stand was clearly a linked KiCad and FreeCAD venture. There were lots of conversations about the step up to KiCad workbench and a heap of conversations around using FreeCAD to design KiCad enclosures. It&rsquo;s really clear from FOSDEM we have a reasonable overlap in userbase and it led to some great conversations.</p>
+<p>The other wonderful thing to happen at the stand is that people arrive with hardware made in FreeCAD, KiCad or both. Some really notable projects this year included the MNT Reform V2 laptop making an appearance, on which wonderfully the owner was going through FreeCAD tutorials! We also saw Arya with a Beepy variant which became FreeCAD stickered! Also the very fabulous Wee Noise Makers PGB-1, a very cool sequencer/synthesiser groovebox. We&rsquo;d also like to take a moment to thank <a href="https://libre.space/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Libre SPace Foundation<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> for loaning us a full scale model of their Picobus V2, a satellite launching system built entirely in FreeCAD and KiCad and a wonderful example of building high end technology with these opensource tools.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Ampliar imagen" popovertarget="img-002"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/freecad-at-fosdem-2025/IMG_20250201_143026.webp"
+  alt="FreeCAD at FOSDEM 2025 4"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="2560"
+  height="1438"
+    srcset="/Website/pr-16/news/freecad-at-fosdem-2025/IMG_20250201_143026_hu_7fa7ce55777c64ad.webp 500w, /Website/pr-16/news/freecad-at-fosdem-2025/IMG_20250201_143026_hu_84fed1ce0f11b352.webp 1000w, /Website/pr-16/news/freecad-at-fosdem-2025/IMG_20250201_143026.webp 2560w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>FreeCAD at FOSDEM 2025 4</figcaption></figure><div id="img-002" popover>
+          <button class="close"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes">
+            <img src="/Website/pr-16/news/freecad-at-fosdem-2025/IMG_20250201_143026.webp"
+              title="FreeCAD at FOSDEM 2025 4"
+              alt="FreeCAD at FOSDEM 2025 4"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>On the Saturday evening KiCad and FreeCAD hosted a community dinner at the &ldquo;Volle Gas&rdquo; the teams were fed well and it&rsquo;s a nice way to promote some interaction between the two communities. It wasn&rsquo;t the latest night as many of us had more volunteering to do on the Sunday with many present also involved in facilitating, or speaking in, the Open Hardware CAD and CAM room.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Ampliar imagen" popovertarget="img-003"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/freecad-at-fosdem-2025/IMG_20250202_144926.webp"
+  alt="FreeCAD at FOSDEM 2025 5"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="2560"
+  height="1438"
+    srcset="/Website/pr-16/news/freecad-at-fosdem-2025/IMG_20250202_144926_hu_eab3e6d7817d84a9.webp 500w, /Website/pr-16/news/freecad-at-fosdem-2025/IMG_20250202_144926_hu_f4330eb678634048.webp 1000w, /Website/pr-16/news/freecad-at-fosdem-2025/IMG_20250202_144926.webp 2560w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>FreeCAD at FOSDEM 2025 5</figcaption></figure><div id="img-003" popover>
+          <button class="close"
+            popovertarget="img-003"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes">
+            <img src="/Website/pr-16/news/freecad-at-fosdem-2025/IMG_20250202_144926.webp"
+              title="FreeCAD at FOSDEM 2025 5"
+              alt="FreeCAD at FOSDEM 2025 5"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>The Open Hardware CAD and CAM room was excellently put together and maintained and we had numerous FreeCAD related speakers in the mix. This included <a href="https://fosdem.org/2025/schedule/event/fosdem-2025-6604-postcad-opencascade-in-the-database/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Kurt Kremitzki&rsquo;s &ldquo;PostCAD: OpenCASCADE in the Database&rdquo;<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, <a href="https://fosdem.org/2025/schedule/event/fosdem-2025-4483-refactoring-sketcher-in-freecad/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Ajinkya Dahale&rsquo;s &ldquo;Refactoring Sketcher in FreeCAD&rdquo;<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> as well as (this blog author) <a href="https://fosdem.org/2025/schedule/event/fosdem-2025-4220-opensource-rocketry-and-tools-freecad-and-beyond-/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Jo Hinchliffes &ldquo;Opensource Rocketry tools, FreeCAD and Beyond&rdquo;<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>. We&rsquo;d like to take a moment to thank the team who ran this room so excellently keeping everything on topic, on time and flowing well.</p>
+<p>Finally, a massive thank you to everyone who stopped by the FreeCAD stand to say hello. Your stories and interactions make the whole effort completely worthwhile. As we all return to our various parts of the world we all have some lovely new connections and stories in our ears. A personal favourite was a French school teacher who teaches their 11 year old students FreeCAD asking if they could take a FreeCAD branded pencil as a prize for their best student. Of course, they left with enough pencils and stickers for each student and and ear full of thanks for their support.</p>
+<p>We look forward to seeing you and your FreeCAD project/product there next year!</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/es/news/wip-wednesday-12-february-2025/"
+             title="Artículo siguiente"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday - 12 February 2025</a><a class="page-item prev"
+             href="/Website/pr-16/es/news/wip-wednesday-5-february-2025/"
+             title="Artículo anterior">WIP Wednesday - 5 February 2025<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Ir al inicio"
+  title="Ir al inicio (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/es/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/es/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/es/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/es/authors/">Autores</a>
+                      </li><li>
+                        <a href="/Website/pr-16/es/categories/">Categorías</a>
+                      </li><li>
+                        <a href="/Website/pr-16/es/tags/">Etiquetas</a>
+                      </li><li>
+                        <a href="/Website/pr-16/es/versions/">Versiones</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/es/fedishare.html#title=FreeCAD&#43;at&#43;FOSDEM&#43;2025&amp;description=%20Last%20weekend%20was%20FOSDEM%20where%20a%20huge%20cohort%20of%20the%20opensource%20community%20descend%20on%20Brussels%20and%20take%20over%20the%20Solbosch%20campus%20of%20the%20Universit%c3%a9%20Libre%20de%20Bruxelles.%20It%e2%80%99s%20a%20fantastic%20event%20and,%20of%20%e2%80%a6&amp;url=https://FreeCAD.github.io/Website/pr-16/es/news/freecad-at-fosdem-2025/"
+  title="Compartir en Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/es/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

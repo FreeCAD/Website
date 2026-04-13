@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="fr-FR"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Tutorial - Installing CfdOF WB to begin exploring Computational Fluid Dynamics</title>
+  <meta name="description" content="Votre modeleur paramétrique libre et open-source"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/fr/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/fr/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/fr/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Tutorial - Installing CfdOF WB to begin exploring Computational Fluid Dynamics">
+  <meta property="og:description" content="FreeCAD does many amazing things, allows us to create all kinds of geometries and assemblies, but we can also use FreeCAD for analysis of the things we make. One fascinating approach is Computational Fluid Dynamics or CFD.">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2025-04-24T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:47:39+02:00">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/fr/"accesskey="h"
+      title="Accueil (Alt + H)"
+      aria-label="Accueil">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/fr/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choisir la langue (Alt + L)"
+          aria-label="Choisir la langue"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/" title="Tutorial - Installing CfdOF WB to begin exploring Computational Fluid Dynamics">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/" title="Tutorial - Installing CfdOF WB to begin exploring Computational Fluid Dynamics">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/" title="Tutorial - Installing CfdOF WB to begin exploring Computational Fluid Dynamics">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/fr/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/" title="Tutorial - Installing CfdOF WB to begin exploring Computational Fluid Dynamics">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/" title="Tutorial - Installing CfdOF WB to begin exploring Computational Fluid Dynamics">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/" title="Tutorial - Installing CfdOF WB to begin exploring Computational Fluid Dynamics">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/" title="Tutorial - Installing CfdOF WB to begin exploring Computational Fluid Dynamics">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Changer le thème (Alt + T)"
+    aria-label="Changer le thème"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 100;">
+
+    <h2 class="title"
+      
+      >Tutorial - Installing CfdOF WB to Begin Exploring Computational Fluid Dynamics</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2025-04-24T00:00:00Z">24 avril 2025</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/fr/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/fr/categories/tutorial/">Tutorial (26)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>1262 mots</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>6 min</span></div><figure class="article-cover"><img srcset="/Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/cfdof_header_hu_faa3fac689a5d0bb.webp 500w, /Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/cfdof_header_hu_b84bbdfceda0a1c2.webp 1000w, /Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/cfdof_header.png 1181w"
+        sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"
+        src="/Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/cfdof_header.png"
+        title="CfdOF WB"
+        alt="Image de secours"
+        width="1181"
+        height="820"
+        loading="eager"
+        fetchpriority="high"><figcaption>
+        <div class="internal-tooltip"><svg class="icon-important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/important.svg#important"></use>
+  </svg><span class="tooltip">CfdOF WB</span>
+        </div>
+      </figcaption></figure></section><div class="content"><p>FreeCAD does many amazing things, allows us to create all kinds of geometries and assemblies, but we can also use FreeCAD for analysis of the things we make. One fascinating approach is Computational Fluid Dynamics or CFD.</p>
+<p>CFD is essentially a tool to show how fluids interact with objects. You could model and assess water flowing through a pipe, or a boat in the sea, or for flying objects, airflow over a part and much more. Of course CFD can also help analyse and perform complex calculations on data so it&rsquo;s not uncommon to use CFD to work out the drag coefficient of an object or it&rsquo;s centre of pressure and much more.</p>
+<p>It&rsquo;s fair to say CFD is a complex area and one that the author is only just beginning to scratch the surface of. Therefore this article isn&rsquo;t a tutorial on CFD directly, rather we&rsquo;ll look at installing the<a href="https://github.com/jaheyns/CfdOF"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener"> CfdOF workbench<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> which requires the installation of some other tools on your system, and then point at some useful tutorials online for you to begin your CFD learning.</p>
+<p>The CfdOF workbench provides an interface for numerous other opensource software&rsquo;s which combine to complete the CFD process. These include some meshing tools. CFD is commonly performed on meshed objects with the target object placed in a containing geometric space, a large cuboid or cylinder perhaps. A good analogy is the containing space is like a virtual wind tunnel, although you aren&rsquo;t limited to just air! The whole environment gets turned into a mesh and often within the mesh various different mesh settings are used (called mesh refinements) so that ultimately you get more detail around the surface of the test object. Therefore meshing is important and there are numerous mesh packages for differing meshing approaches built in to a successful CfdOF workbench install.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/openfoam_header.webp"
+  alt="Openfoam header"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1488"
+  height="851"
+    srcset="/Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/openfoam_header_hu_f810a6de757bd2bd.webp 500w, /Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/openfoam_header_hu_66c5cc1d1f82d475.webp 1000w, /Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/openfoam_header.webp 1488w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Openfoam header</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/openfoam_header.webp"
+              title="Openfoam header"
+              alt="Openfoam header"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Another component piece of opensource software used by the CfdOF workbench is <a href="https://www.openfoam.com/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">OpenFOAM<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>. OpenFOAM is the very heart of CFD operations and is a complex piece of software that can perform a wide range of complex fluid flows. It&rsquo;s not just capable in terms of things we might obviously think of as computational fluid dynamics, such as water/gases/air but can also solve problems involving chemical reactions, heat, magnetic fields and more. It&rsquo;s an incredibly versatile and complex bit of kit that gets used, often stand alone, in all manner of scientific and academic environments.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/paraview_header.webp"
+  alt="Paraview header"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1337"
+  height="787"
+    srcset="/Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/paraview_header_hu_b69f30799fb760b6.webp 500w, /Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/paraview_header_hu_97ce8342cda68ed4.webp 1000w, /Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/paraview_header.webp 1337w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Paraview header</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/paraview_header.webp"
+              title="Paraview header"
+              alt="Paraview header"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Finally there is also a piece of software called <a href="https://www.paraview.org/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Paraview<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>. Paraview is a post processor that, in the case of the CdfOF workbench, can allow you to visualise and analyse case data created with OpenFOAM. It has huge depth and complexity and can perform and create all manner of visualisation as well as performing calculations to aid further analysis of your models.</p>
+<p>So we need to get all these components installed and configured. One advantage of the CdfOF is that it automates some of the setup for us using docker and a docker image. In the FreeCAD documentation there&rsquo;s <a href="https://wiki.freecad.org/CfdOF_Install"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">instructions for installing CdfOF<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> on Windows and Linux (also Mac but support there is variable), also it&rsquo;s worth reading the notes on the <a href="https://github.com/jaheyns/CfdOF"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">CfdOF workbench repository<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> which are also included in the Addon manager listing. We opted to install CdfOF on a machine running stock Debian 12, running the X11 windowing system, and we installed it with the FreeCAD version 1.0 app image.</p>
+<p>To begin, open the FreeCAD app image (if it&rsquo;s the first time you might need to right click on the app image file, select <em>properties</em> and then under the <em>permissions</em> tab you might need to tick the <em>is executable</em> box).</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-002"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/cfdof_preferences.png"
+  alt="Cfdof preferences"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="915"
+  height="935"
+    srcset="/Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/cfdof_preferences_hu_c3a311416d79c728.webp 500w, /Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/cfdof_preferences.png 915w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Cfdof preferences</figcaption></figure><div id="img-002" popover>
+          <button class="close"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/cfdof_preferences.png"
+              title="Cfdof preferences"
+              alt="Cfdof preferences"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Once FreeCAD has opened, install the CfdOF workbench in the usual way. Click <em>tools-addon manager</em> and then select and install the CfdOF workbench. Once the CfdOF workbench is installed and you&rsquo;ve restarted FreeCAD, you can then click _edit - preferences _and you should see a CfdOF tab appear in the preferences dialogue. Select the CfdOF tab. You will see that it has numerous input boxes into which you can set paths to the directories where the various other pieces of software are installed. If you leave these blank then CfdOF workbench will use the default most common locations for the install locations which worked perfectly for us. So on our Debian 12 machine we used a the terminal application to first run an update to update all packages with</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span></span></span></code></pre></div></div><p>we then ran;</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">openfoam</span></span></span></code></pre></div></div><p>and after OpenFOAM had installed we ran;</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">paraview</span></span></span></code></pre></div></div><p>to install Paraview.</p>
+<p>For the rest of the setup we needed to install docker. In the CfdOF FreeCAD documentation page there is a link supplied to a guide to installing up to date docker on Debian so we simply followed these steps. <a href="https://www.linuxtechi.com/install-docker-engine-on-debian/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">https://www.linuxtechi.com/install-docker-engine-on-debian/<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a></p>
+<p>One thing that slightly tripped us up was that not only do we need to add our username to the dialout group, but we also need to log out and log back in to our computer having done so! Again in a terminal we used;</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">usermod</span> <span class="o">-</span><span class="n">aG</span> <span class="n">dialout</span> <span class="s2">&#34;YOURUSERNAMEHERE&#34;</span></span></span></code></pre></div></div><p>and then (after having some problems we eventually remembered to) re login to the computer. Now with docker installed and OpenFOAM and Paraview installed we can fire up the FreeCAD app image, move back to the CfdOF preferences tab and then click the _Install Docker Image _button. Another quick tip is that it can be useful to have the report view panel open in FreeCAD at this point so you can see messages relating to the docker container and any potential problems . To open that panel you can click _view - panels _and then check the <em>Report view</em> box. There is also a small report window if you scroll to the bottom of the CfdOF preferences tab which yields useful information about the install process. Eventually you should be rewarded with a completion message indicating the docker image download has been successful.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-003"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/docker_image_done.png"
+  alt="Docker image done"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="861"
+  height="355"
+    srcset="/Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/docker_image_done_hu_3f22a555bf2ef81e.webp 500w, /Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/docker_image_done.png 861w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Docker image done</figcaption></figure><div id="img-003" popover>
+          <button class="close"
+            popovertarget="img-003"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/docker_image_done.png"
+              title="Docker image done"
+              alt="Docker image done"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Finally before diving headlong into your CFD career it&rsquo;s worth clicking the_ Run dependency checker_ button in the CfdOF preferences dialogue. This should hopefully report that everything is installed correctly.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-004"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/paraview.webp"
+  alt="Paraview"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1920"
+  height="1080"
+    srcset="/Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/paraview_hu_3e92428750fda48f.webp 500w, /Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/paraview_hu_488a88cfd3c8f044.webp 1000w, /Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/paraview.webp 1920w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Paraview</figcaption></figure><div id="img-004" popover>
+          <button class="close"
+            popovertarget="img-004"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/paraview.webp"
+              title="Paraview"
+              alt="Paraview"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>If you are new at CFD then be prepared for quite a lot of learning to even get any tangible output! However, there are heaps of guides and tutorials out there to help you along the way. Whilst we&rsquo;d urge you to look around, the first tutorial we worked through was this <a href="https://www.youtube.com/watch?v=OS4sbbBtZUw&amp;list=PL9H9jQE7y0a5jhlyACRzsdfnx-42AYCCX&amp;index=2&amp;ab_channel=TechBernd"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Youtube tutorial<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> walking through setting up an analysis of water in a broadly L shaped square sided tube. It definitely introduced the general process and order of different operations. This is the first video in a long series of tutorials compiled into a playlist. Jumping to episode 6 in the same series the tutorial covers flowing air over a car design which was very useful for the authors particular areas of interest. After a couple of evening from zero knowledge of CFD the author got to the point of creating a crude analysis of a Ballute parachute design with 6 m/s airflow over it. Whilst the author is continuously discovering errors in approach and discovering better ways to mesh and simulate, it does show that you can begin this journey with very little underlying knowledge!</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Agrandir limage" popovertarget="img-005"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/ballute_6ms_U_Magnitude_1744835954345_0.png"
+  alt="Tutorial: Installing CfdOF WB to begin exploring Computational Fluid Dynamics 7"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1367"
+  height="670"
+    srcset="/Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/ballute_6ms_U_Magnitude_1744835954345_0_hu_58a397cadab12169.webp 500w, /Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/ballute_6ms_U_Magnitude_1744835954345_0_hu_a88a1c1eea089e4d.webp 1000w, /Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/ballute_6ms_U_Magnitude_1744835954345_0.png 1367w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Tutorial: Installing CfdOF WB to begin exploring Computational Fluid Dynamics 7</figcaption></figure><div id="img-005" popover>
+          <button class="close"
+            popovertarget="img-005"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages">
+            <img src="/Website/pr-16/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/ballute_6ms_U_Magnitude_1744835954345_0.png"
+              title="Tutorial: Installing CfdOF WB to begin exploring Computational Fluid Dynamics 7"
+              alt="Tutorial: Installing CfdOF WB to begin exploring Computational Fluid Dynamics 7"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Finally, the CfdOF workbench has an excellent devoted section on the<a href="https://forum.freecad.org/viewforum.php?f=37"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener"> FreeCAD forum<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>. It&rsquo;s definitely worth reading through as many posts there as you can as it&rsquo;s a great source of valuable information by other people on the CFD path!</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/fr/news/new-grant-fixes-and-improvements-in-techdraw-and-partdesign/"
+             title="Article suivant"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>New Grant - Fixes and improvements in TechDraw and PartDesign</a><a class="page-item prev"
+             href="/Website/pr-16/fr/news/wip-wednesday-23-april-2025/"
+             title="Article précédent">WIP Wednesday - 23 April 2025<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Aller au sommet de la page"
+  title="Aller au sommet de la page (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/fr/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/fr/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/fr/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/fr/authors/">Auteurs</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/categories/">Catégories</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/tags/">Mots-Clés</a>
+                      </li><li>
+                        <a href="/Website/pr-16/fr/versions/">Versions</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/fr/fedishare.html#title=Tutorial&#43;-&#43;Installing&#43;CfdOF&#43;WB&#43;to&#43;begin&#43;exploring&#43;Computational&#43;Fluid&#43;Dynamics&amp;description=FreeCAD%20does%20many%20amazing%20things,%20allows%20us%20to%20create%20all%20kinds%20of%20geometries%20and%20assemblies,%20but%20we%20can%20also%20use%20FreeCAD%20for%20analysis%20of%20the%20things%20we%20make.%20One%20fascinating%20approach%20is%20Computational%20%e2%80%a6&amp;url=https://FreeCAD.github.io/Website/pr-16/fr/news/tutorial-installing-cfdof-wb-to-begin-exploring-computational-fluid-dynamics/"
+  title="Partager sur Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/fr/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

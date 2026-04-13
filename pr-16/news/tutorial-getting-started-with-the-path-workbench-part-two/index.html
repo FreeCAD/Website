@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en-US"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Tutorial - Getting started with the Path Workbench. Part Two.</title>
+  <meta name="description" content="Your own free and open-source parametric modeler"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/tutorial-getting-started-with-the-path-workbench-part-two/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/tutorial-getting-started-with-the-path-workbench-part-two/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/tutorial-getting-started-with-the-path-workbench-part-two/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/tutorial-getting-started-with-the-path-workbench-part-two/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/tutorial-getting-started-with-the-path-workbench-part-two/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/tutorial-getting-started-with-the-path-workbench-part-two/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Tutorial - Getting started with the Path Workbench. Part Two.">
+  <meta property="og:description" content="In the first part of this tutorial we looked at setting up the Tool Bit Library when running the Path WB for the first time and creating a custom 3mm endmill tool. As a reminder in these tutorials we will describe tool icons by the text description that is displayed when you rollover an icon. This means you’ll have to explore the rollover texts which is a great way to explore the basics of what tools are on each workbench. Also, as a reminder, this tutorial was written using FreeCAD version 0.21.1.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2023-12-07T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:47:39+02:00">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/"accesskey="h"
+      title="Homepage (Alt + H)"
+      aria-label="Homepage">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choose language (Alt + L)"
+          aria-label="Choose language"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/" title="Tutorial - Getting started with the Path Workbench. Part Two.">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/tutorial-getting-started-with-the-path-workbench-part-two/" title="Tutorial - Getting started with the Path Workbench. Part Two.">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/tutorial-getting-started-with-the-path-workbench-part-two/" title="Tutorial - Getting started with the Path Workbench. Part Two.">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/tutorial-getting-started-with-the-path-workbench-part-two/" title="Tutorial - Getting started with the Path Workbench. Part Two.">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/tutorial-getting-started-with-the-path-workbench-part-two/" title="Tutorial - Getting started with the Path Workbench. Part Two.">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/tutorial-getting-started-with-the-path-workbench-part-two/" title="Tutorial - Getting started with the Path Workbench. Part Two.">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/tutorial-getting-started-with-the-path-workbench-part-two/" title="Tutorial - Getting started with the Path Workbench. Part Two.">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Switch theme chroma (Alt + T)"
+    aria-label="Switch theme chroma"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 100;">
+
+    <h2 class="title"
+      
+      >Tutorial - Getting Started With the Path Workbench. Part Two.</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2023-12-07T00:00:00Z">December 7, 2023</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/categories/tutorial/">Tutorial (26)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>1806 words</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>9 min</span></div><figure class="article-cover"><img srcset="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/main_hu_47176556a66b7e85.webp 500w, /Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/main_hu_3ebc23db7a8c7b27.webp 1000w, /Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/main.png 1917w"
+        sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"
+        src="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/main.png"
+        title="Path Workbench"
+        alt="Image fallback"
+        width="1917"
+        height="1003"
+        loading="eager"
+        fetchpriority="high"><figcaption>
+        <div class="internal-tooltip"><svg class="icon-important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/important.svg#important"></use>
+  </svg><span class="tooltip">Path Workbench</span>
+        </div>
+      </figcaption></figure></section><div class="content"><p>In the <a href="https://blog.freecad.org/2023/11/24/tutorial-getting-started-with-the-path-workbench-part-one/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">first part of this tutorial<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> we looked at setting up the Tool Bit Library when running the Path WB for the first time and creating a custom 3mm endmill tool. As a reminder in these tutorials we will describe tool icons by the text description that is displayed when you rollover an icon. This means you&rsquo;ll have to explore the rollover texts which is a great way to explore the basics of what tools are on each workbench. Also, as a reminder, this tutorial was written using FreeCAD version 0.21.1.</p>
+<p>Continuing from where we were at the end of the first section, in the combo view you can now see the TC:3mmEndmill object. In the TC:3mmEndmill dropdown you can see the 3mm_Endmill object. If you double click on this you will see the shape and attributes dialogue where you can make changes, although its probably more common practice to change shape and attributes in a new tool in the tool library editor. You&rsquo;ll see in the preview window that you have a basic model representation of your 3mm_Endmill tool bit. You can toggle the visibility of this in the preview window in the usual way by highlighting the 3mm_Endmill object in the combo view and clicking the space bar.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-000"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/tool_controller_editor.png"
+  alt="Tool controller editor"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1920"
+  height="1002"
+    srcset="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/tool_controller_editor_hu_5584017130e962e2.webp 500w, /Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/tool_controller_editor_hu_7a399793eb4e9b77.webp 1000w, /Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/tool_controller_editor.png 1920w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Tool controller editor</figcaption></figure><div id="img-000" popover>
+          <button class="close"
+            popovertarget="img-000"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/tool_controller_editor.png"
+              title="Tool controller editor"
+              alt="Tool controller editor"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Back in the combo view if you double left click the TC:3mmEndmill object, where &ldquo;TC&rdquo; stands for &ldquo;Tool Controller&rdquo;, you can see the &ldquo;Tool Controller Editor&rdquo; window and it&rsquo;s in here that we can set the feed and speed rates for our tool. Obviously we can&rsquo;t state what these should be as it&rsquo;s dependant on your cutter geometry, the material you are cutting and the machine you are using. The Path WB is really useful in that it separates the tool library object and the tool controller. This means that, sensibly, you can use any tool multiple times in either the same job or across numerous projects setting the feed rates in each instance rather than having a library full of tools that have the same geometry but wildly different feed rates for different materials. A good example of this is you can use the same tool with two different tool controllers to create a &ldquo;roughing&rdquo; pass where the tool moves faster and removes material quickly and a second &ldquo;finishing&rdquo; pass where the tool makes a high quality light cut travelling slowly and removing less material.</p>
+<p>With our tool, tool controller and feed rates set we can begin to create operations and toolpaths. There are lots of different operation types and they are described well over on the<a href="https://wiki.freecad.org/Path_Workbench"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener"> Path WB documentation page<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>. For our simple object we can create a &ldquo;Pocket&rdquo; operation to mill out the central area and we can create a &ldquo;Profile&rdquo; operation to cut the outside geometry of our object. We&rsquo;ll also finally look at adding tags, small modified areas the toolpath avoids cutting fully through, to keep the object connected to the stock rather than becoming loose on our machine.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/set_origin.png"
+  alt="Set origin"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1920"
+  height="1000"
+    srcset="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/set_origin_hu_a6e2f97c69709cb5.webp 500w, /Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/set_origin_hu_a80361c2ba7ea247.webp 1000w, /Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/set_origin.png 1920w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Set origin</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/set_origin.png"
+              title="Set origin"
+              alt="Set origin"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>When we created the job in the first section it created the &ldquo;Job&rdquo; object in the combo view. If we double click the Job object we can then move to the &ldquo;Setup&rdquo; tab in the &ldquo;Job Edit&rdquo; dialogue which appears. One thing we need to consider is the origin point for our operations, this will be the point from which our tool begins its operations. Usually by default we will see that the origin point is at the 0,0,0 co-ordinate of the XY and Z axis. You should see the &ldquo;axis cross&rdquo;, the object made from blue, red and green arrows aligned with each axis. The axis cross will be sat right in the centre of the base of our object. We probably, for this job, want the origin point to be in a known position on the top surface of our stock so that on our machine we can zero the tip of the tool to this point. To do this highlight a corner of the job bounding box and on the &ldquo;setup&rdquo; tab then click the &ldquo;Set Origin&rdquo; button in the alignment section.</p>
+<p>On the &ldquo;Model&rdquo; drop down is the &ldquo;Model-Cut&rdquo; item which is a copy of our object which was created when we made the Job item. For next section where we create operations we are going to use this Model-Cut copy rather than the original &ldquo;Cut&rdquo; item which should be greyed out and not visible. Double check this is the case, the original cut object should be toggled to non visible and the &ldquo;Model-Cut&rdquo; object should be visible.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-002"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/pocket_setup.png"
+  alt="Pocket setup"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1920"
+  height="1003"
+    srcset="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/pocket_setup_hu_e44b31c2ee448113.webp 500w, /Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/pocket_setup_hu_4d625d7f91c1b9b9.webp 1000w, /Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/pocket_setup.png 1920w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Pocket setup</figcaption></figure><div id="img-002" popover>
+          <button class="close"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/pocket_setup.png"
+              title="Pocket setup"
+              alt="Pocket setup"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>To create the pocket first lets select the face that is the base of the cutout section on the Model-Cut object. Then click the &ldquo;Pocket Shape&rdquo; tool icon. Once pressed a small dialogue with a drop down menu will ask you to select the tool controller you want to assign to the operation, select the TC:3mm_Endmill option. You should now see a &ldquo;Pocket Shape&rdquo; dialogue in the combo view. The Pocket Shape dialogue has numerous tabs and should automatically be open on the lowest tab &ldquo;Operation&rdquo;. Within this tab are the fundamental options for the operation. Of course this differs on what type of operation you are creating. For a pocket operation one of the common options to play with is the &ldquo;Pattern&rdquo; by default this is set to &ldquo;ZigZag&rdquo; but for creating a cylindrical pocket you might opt for an &ldquo;offset&rdquo; path instead. Select the offset option in the &ldquo;Pattern&rdquo; drop down and set the step over percentage to perhaps 40%. You may well want to adjust other aspects of the operation before applying it. Moving to the &ldquo;Depths&rdquo; tab we can adjust the final depth of the pocket cut if needed but it will default to pocket clearing to the face geometry we selected, in our case -4mm. Also on this tab is the &ldquo;Step Down&rdquo; value which is the depth of cut on each pass, this defaults to a step down value equal to the tools diameter, so in our case 3mm. This may be far too deep a cut dependant on your machine or the material so may need adjusting. Click the small icon in the corner of the input box and clear the &ldquo;OpToolDiameter&rdquo; value and then you can set the step down to whatever you chose, we went with 1mm to make the pocket operation complete in 4 passes. You can now hit Apply, or OK and you&rsquo;ll see the green lines of the toolpath appear. Notice that the tool travels to a safe height over the work before beginning it&rsquo;s cuts. Back in the &ldquo;Pocket Shape&rdquo; dialogue you can click on the &ldquo;Heights&rdquo; tab to set the safe and clearance heights to suit your work setup.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-003"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/pocket_simulated.png"
+  alt="Pocket simulated"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1920"
+  height="1001"
+    srcset="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/pocket_simulated_hu_93a389d230d54ae.webp 500w, /Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/pocket_simulated_hu_d72f14716ecc5c44.webp 1000w, /Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/pocket_simulated.png 1920w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Pocket simulated</figcaption></figure><div id="img-003" popover>
+          <button class="close"
+            popovertarget="img-003"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/pocket_simulated.png"
+              title="Pocket simulated"
+              alt="Pocket simulated"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>With the pocket tool path created you can now click the &ldquo;CAM Simulator&rdquo; tool icon to simulate the pass. Once clicked you will see the bounding box is now filled with stock material in the preview window and you have a set of controls in the combo view. You can reduce or increase the speed of the simulation and also the quality. Reducing the quality of simulation is a good idea on slower performing systems. Clicking play you should see the pocket operation take place. If you click OK after the simulation you create a new object which is the cut stock, you can toggle the visibility of this item or delete it as needed.</p>
+<p>Setting up a profile operation is a similar process. If we click the outer edge on the top of our object we can then click the &ldquo;Profile&rdquo; tool icon. A familiar looking dialogue appears called &ldquo;Profile-Profile&rdquo; we can see the same heights, depths and other familiar tabs from the Pocket operation. This dialogue opens on the &ldquo;Operation&rdquo; tab and we can set which side of the geometry we are going to cut on, so in this case &ldquo;Outside&rdquo; we can set the tool controller, and we can set other options such as direction and offset. Offset is useful for if we want to do a profile cut slightly larger than the desired object size we can offset the operation, then we could add a finishing operation separately to bring the object to size.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-004"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/profile_depths.png"
+  alt="Profile depths"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="598"
+  height="552"
+    srcset="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/profile_depths_hu_7d9a93eb83e51bcc.webp 500w, /Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/profile_depths.png 598w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Profile depths</figcaption></figure><div id="img-004" popover>
+          <button class="close"
+            popovertarget="img-004"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/profile_depths.png"
+              title="Profile depths"
+              alt="Profile depths"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>As we have selected a single edge we need to give the profile operation a target depth to cut too. On the &ldquo;depths&rdquo; tab we can click the formula editor icon in each input box to clear the default values of the start depth, final depth and step down. We can then set the depths to what we require, so we have a start depth of 0mm, a final depth of -10mm and a step down of 1mm. Click apply to see the paths in preview and OK to close the dialogue.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-005"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/profile_setup.png"
+  alt="Profile setup"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1560"
+  height="963"
+    srcset="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/profile_setup_hu_ed62cf4841882cc7.webp 500w, /Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/profile_setup_hu_25ed248c6f872170.webp 1000w, /Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/profile_setup.png 1560w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Profile setup</figcaption></figure><div id="img-005" popover>
+          <button class="close"
+            popovertarget="img-005"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/profile_setup.png"
+              title="Profile setup"
+              alt="Profile setup"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Depending on the work holding methods we use on our target machine, it&rsquo;s worth quickly looking at adding tabs to a profile toolpath. Tabs are where material is left uncut to keep the part connected to the stock material so it isn&rsquo;t thrown out of the machine. In the combo view we can highlight the &ldquo;Profile&rdquo; operation object we just created under the &ldquo;Operations&rdquo; dropdown. Next click &ldquo;Path - Path Dressup -Tag&rdquo;. This should automatically create 4 triangular tabs in profile toolpaths. You can adjust the dimensions and geometries of tabs and increase and decrease the number of them and the placement of them in the &ldquo;Holding Tags&rdquo; dialogue. When you are happy with the tags click the apply or OK button. Notice that a &ldquo;Dressup Tag&rdquo; object is created and the profile object is now nested in it&rsquo;s drop down. You can now use the simulator again to view all the toolpaths and check your tag geometry and placement.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-006"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/tag_dressup.png"
+  alt="Tag dressup"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="1920"
+  height="1009"
+    srcset="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/tag_dressup_hu_fed0fb905d671cee.webp 500w, /Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/tag_dressup_hu_dd94a43d20d5b165.webp 1000w, /Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/tag_dressup.png 1920w"
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Tag dressup</figcaption></figure><div id="img-006" popover>
+          <button class="close"
+            popovertarget="img-006"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/tag_dressup.png"
+              title="Tag dressup"
+              alt="Tag dressup"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Finally to create G-Codes to send to our machine we need to look at the output options. In the combo view double click the main &ldquo;Job&rdquo; object and in the &ldquo;Job Edit&rdquo; dialogue move to the &ldquo;Output&rdquo; tab. In this we can set up which post processor to use to create G-codes compatible with our machine. There are lots of post processors available, our target machine runs on GRBL so we selected GRBL from the list. Finally we use the &ldquo;Output File&rdquo; input box to set up a filename and location. We then click OK. To create the G-code using the selected post processing and save it to the specified file we highlight the &ldquo;Job&rdquo; item and then click the &ldquo;Post Process&rdquo; tool icon and save our file.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-007"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/output_postprocessor.png"
+  alt="Output postprocessor"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async"
+  width="589"
+  height="575"
+    srcset="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/output_postprocessor_hu_a0fc50ed59046052.webp 500w, /Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/output_postprocessor.png 589w"
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Output postprocessor</figcaption></figure><div id="img-007" popover>
+          <button class="close"
+            popovertarget="img-007"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/output_postprocessor.png"
+              title="Output postprocessor"
+              alt="Output postprocessor"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>We&rsquo;ve covered the basics in this two part tutorial. As with many workbenches there are lots and lots more tools and features available and it&rsquo;s definitely worth looking around both the <a href="https://wiki.freecad.org/Path_Workbench"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">official documentation <svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>and also the dedicated <a href="https://forum.freecad.org/viewforum.php?f=15"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Path/CAM forum<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> area.</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/news/wip-wednesday-13-dec-2023/"
+             title="Next article"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday - 13 Dec 2023</a><a class="page-item prev"
+             href="/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-one/"
+             title="Previous article">Tutorial - Getting started with the Path Workbench. Part One.<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Go to Top"
+  title="Go to Top (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/authors/">Authors</a>
+                      </li><li>
+                        <a href="/Website/pr-16/categories/">Categories</a>
+                      </li><li>
+                        <a href="/Website/pr-16/tags/">Tags</a>
+                      </li><li>
+                        <a href="/Website/pr-16/versions/">Versions</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/fedishare.html#title=Tutorial&#43;-&#43;Getting&#43;started&#43;with&#43;the&#43;Path&#43;Workbench.&#43;Part&#43;Two.&amp;description=In%20the%20first%20part%20of%20this%20tutorial%20we%20looked%20at%20setting%20up%20the%20Tool%20Bit%20Library%20when%20running%20the%20Path%20WB%20for%20the%20first%20time%20and%20creating%20a%20custom%203mm%20endmill%20tool.%20As%20a%20reminder%20in%20these%20tutorials%20we%20%e2%80%a6&amp;url=https://FreeCAD.github.io/Website/pr-16/news/tutorial-getting-started-with-the-path-workbench-part-two/"
+  title="Share on Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

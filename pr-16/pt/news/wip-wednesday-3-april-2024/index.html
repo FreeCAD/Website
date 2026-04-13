@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | WIP Wednesday - 3 April 2024</title>
+  <meta name="description" content="Seu próprio modelador paramétrico livre e de código aberto"><meta name="keywords" content="WIP"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/pt/news/wip-wednesday-3-april-2024/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/wip-wednesday-3-april-2024/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/wip-wednesday-3-april-2024/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/wip-wednesday-3-april-2024/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/wip-wednesday-3-april-2024/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/wip-wednesday-3-april-2024/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/wip-wednesday-3-april-2024/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/wip-wednesday-3-april-2024/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/pt/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/pt/news/wip-wednesday-3-april-2024/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="WIP Wednesday - 3 April 2024">
+  <meta property="og:description" content="This week in FreeCAD development, the most actively worked-on parts of FreeCAD have been the toponaming project, Sketcher, FEM, and UI/UX.">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2024-04-03T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:40:06+02:00">
+    <meta property="article:tag" content="WIP">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/pt/"accesskey="h"
+      title="Início (Alt + H)"
+      aria-label="Início">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/pt/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Escolha o idioma (Alt + L)"
+          aria-label="Escolha o idioma"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-16/news/wip-wednesday-3-april-2024/" title="WIP Wednesday - 3 April 2024">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/wip-wednesday-3-april-2024/" title="WIP Wednesday - 3 April 2024">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/wip-wednesday-3-april-2024/" title="WIP Wednesday - 3 April 2024">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/wip-wednesday-3-april-2024/" title="WIP Wednesday - 3 April 2024">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/pt/news/wip-wednesday-3-april-2024/" title="WIP Wednesday - 3 April 2024">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/wip-wednesday-3-april-2024/" title="WIP Wednesday - 3 April 2024">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/wip-wednesday-3-april-2024/" title="WIP Wednesday - 3 April 2024">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Alterar tema (Alt + T)"
+    aria-label="Alterar tema"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 120;">
+
+    <h2 class="title"
+      
+      >WIP Wednesday - 3 April 2024</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2024-04-03T00:00:00Z">3 de abril de 2024</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/pt/authors/aleksandr-prokudin/">Aleksandr Prokudin (169)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/pt/categories/update/">Update (158)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/pt/tags/wip/">WIP (153)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>456 palavras</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>3 minutos</span></div></section><div class="content"><p>This week in FreeCAD development, the most actively worked-on parts of FreeCAD have been the toponaming project, Sketcher, FEM, and UI/UX.</p>
+<p>Toponaming:</p>
+<ul>
+<li>
+<p><strong>CalligaroV</strong> imported and improved the WireJoiner class.</p>
+</li>
+<li>
+<p><strong>bgbsww</strong> fixed a few issues, made minor improvements, and added Python implementations for CompSolid, Face, Shell, Solid, as well as missing entries in TopoShape.</p>
+</li>
+</ul>
+<p>Sketcher:</p>
+<ul>
+<li>
+<p><strong>Roy-043</strong> renamed &ldquo;Map sketch to face&hellip;&rdquo; in the main menu to &ldquo;Attach sketch&hellip;&rdquo; for clarity.</p>
+</li>
+<li>
+<p><strong>PaddleStroke</strong> implemented a midpoint autoconstraint, fixed a bug in Chamfer tool code, as well as a bug with a B-Spline icon in construction line mode.</p>
+</li>
+<li>
+<p><strong>FlachyJoe</strong> added an arc length constraint.</p>
+</li>
+</ul>
+<p>FEM:</p>
+<ul>
+<li>
+<p><strong>marioalexis84</strong> improved post-processing object style.</p>
+</li>
+<li>
+<p><strong>NewJoker</strong> changed 2D element thickness from 20 to 1 by default.</p>
+</li>
+<li>
+<p><strong>lyphrowny</strong> fixed and typo in FEM code and removed calculix from solvers tab in examples.</p>
+</li>
+<li>
+<p><strong>davesrocketshop</strong> added the property &lsquo;Thermal Expansion Reference Temperature&rsquo; to the Thermal properties in the new materials editor.</p>
+</li>
+</ul>
+<p>UI/UX:</p>
+<ul>
+<li>
+<p><strong>Roy-043</strong> made &ldquo;View Left&rdquo; the last option in the &ldquo;Individual views&rdquo; toolbar.</p>
+</li>
+<li>
+<p><strong>maxwxyz</strong> updated FEM and Part Design icons for better consistency and added a missing &ldquo;View Top&rdquo; option. He also added missing commands to the tree context menu.</p>
+</li>
+<li>
+<p><strong>PaddleStroke</strong> added an opt-in Tab-Bar workbench selector (enabled in Preferences). He also fixed the toggling of objects&rsquo; transparency in some scenarios and improved the double-click behavior for spreadsheet objects to switch to the Spreadsheet WB.</p>
+</li>
+<li>
+<p><strong>NomAnor</strong> made it possible to allow adding transformations to MultiTransform if there is no active Body.</p>
+</li>
+</ul>
+<p>Among other changes:</p>
+<ul>
+<li>
+<p><strong>wwmayer</strong> fixed a lot of bugs and developed a new function to approximate B-Spline from points.</p>
+</li>
+<li>
+<p><strong>Roy-043</strong> added a new Fuse property to patharray and pathtwistedarray in Draft. This fixes a problem when applying union/intersect to a point array and other objects.</p>
+</li>
+<li>
+<p><strong>tomate44</strong> enabled multi-threading to <em>distToShape</em> following a change in OCCT (starting with v7.6.0). This brings an ×3 to ×6 performance boost on a rather complex 20MB STEP file.</p>
+</li>
+<li>
+<p><strong>adrianinsaval</strong> fixed building new material code on Windows with debugging enabled.</p>
+</li>
+<li>
+<p><strong>NomAnor</strong> patched FreeCAD to ignore suppressed features in patterns (Part Design).</p>
+</li>
+<li>
+<p><strong>furgo16</strong> fixed WebGL exporting</p>
+</li>
+<li>
+<p><strong>paullee0</strong> made a few fixes and improvements in Arch.</p>
+</li>
+<li>
+<p><strong>jamwaffles</strong> added feed retract option to drilling op settings for reaming/boring heads in CAM.</p>
+</li>
+<li>
+<p><strong>yorikvanhavre</strong> made it possible to unset modified state with Python code.</p>
+</li>
+<li>
+<p><strong>chennes</strong> fixed some minor bugs.</p>
+</li>
+<li>
+<p><strong>WandererFan</strong> fixed a failure on corrupt dimension reference in TechDraw.</p>
+</li>
+</ul>
+<p><strong>PR stats:</strong> In the week from Wednesday, 27 March to Wednesday, 3 April there were 70 pull requests merged, with a total codebase change of +9,316 / ‑1,737 (excluding updated translations and icons). We had an average merged PR size of +133 / ‑25. 17 new pull requests were opened.</p>
+<p><strong>Issue stats:</strong> we closed 47 issues, and 37 new issues were opened. Overall, 1,392 issues are currently open.</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/pt/news/wip-wednesday-10-april-2024/"
+             title="Artigo seguinte"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday - 10 April 2024</a><a class="page-item prev"
+             href="/Website/pr-16/pt/news/freecad-1-0-logo-refresh-contest/"
+             title="Artigo anterior">FreeCAD 1.0 Logo Refresh Contest<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Ir para o topo"
+  title="Ir para o topo (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/pt/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/pt/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/pt/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/pt/authors/">Autores</a>
+                      </li><li>
+                        <a href="/Website/pr-16/pt/categories/">Categorias</a>
+                      </li><li>
+                        <a href="/Website/pr-16/pt/tags/">Tags</a>
+                      </li><li>
+                        <a href="/Website/pr-16/pt/versions/">Versões</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/pt/fedishare.html#title=WIP&#43;Wednesday&#43;-&#43;3&#43;April&#43;2024&amp;description=This&#43;week&#43;in&#43;FreeCAD&#43;development%2C&#43;the&#43;most&#43;actively&#43;worked-on&#43;parts&#43;of&#43;FreeCAD&#43;have&#43;been&#43;the&#43;toponaming&#43;project%2C&#43;Sketcher%2C&#43;FEM%2C&#43;and&#43;UI%2FUX.%0AToponaming%3A%0ACalligaroV&#43;imported&#43;and&#43;improved&#43;the&#43;WireJoiner&#43;%E2%80%A6%0A%23wip&amp;url=https://FreeCAD.github.io/Website/pr-16/pt/news/wip-wednesday-3-april-2024/"
+  title="Compartilhar no Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/pt/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

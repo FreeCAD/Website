@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en-US"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Vancouver Hackathon Wrap-up</title>
+  <meta name="description" content="Your own free and open-source parametric modeler"><meta name="keywords" content="hackathon"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/news/vancouver-hackathon-wrap-up/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/vancouver-hackathon-wrap-up/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/vancouver-hackathon-wrap-up/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/vancouver-hackathon-wrap-up/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/vancouver-hackathon-wrap-up/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/vancouver-hackathon-wrap-up/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/vancouver-hackathon-wrap-up/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/vancouver-hackathon-wrap-up/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/news/vancouver-hackathon-wrap-up/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Vancouver Hackathon Wrap-up">
+  <meta property="og:description" content="As I write this we are just wrapping up the FreeCAD Hackathon 2023 in Vancouver, BC. The coffee is gone, the laptop batteries are drained, and everyone present (physically and virtually) is winding up their weekend projects.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2023-08-14T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:43:46+02:00">
+    <meta property="article:tag" content="Hackathon">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/"accesskey="h"
+      title="Homepage (Alt + H)"
+      aria-label="Homepage">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choose language (Alt + L)"
+          aria-label="Choose language"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/news/vancouver-hackathon-wrap-up/" title="Vancouver Hackathon Wrap-up">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/vancouver-hackathon-wrap-up/" title="Vancouver Hackathon Wrap-up">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/vancouver-hackathon-wrap-up/" title="Vancouver Hackathon Wrap-up">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/vancouver-hackathon-wrap-up/" title="Vancouver Hackathon Wrap-up">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/vancouver-hackathon-wrap-up/" title="Vancouver Hackathon Wrap-up">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/vancouver-hackathon-wrap-up/" title="Vancouver Hackathon Wrap-up">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/vancouver-hackathon-wrap-up/" title="Vancouver Hackathon Wrap-up">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Switch theme chroma (Alt + T)"
+    aria-label="Switch theme chroma"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 40;">
+
+    <h2 class="title"
+      
+      >Vancouver Hackathon Wrap-Up</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2023-08-14T00:00:00Z">August 14, 2023</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/authors/chris-hennes/">Chris Hennes (80)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/categories/event/">Event (22)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-16/tags/hackathon/">Hackathon (4)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>1043 words</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>5 min</span></div></section><div class="content"><p>As I write this we are just wrapping up the <a href="https://blog.freecad.org/2023/05/24/freecad-hackathon-11-13-august-2023/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">FreeCAD Hackathon 2023<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> in Vancouver, BC. The coffee is gone, the laptop batteries are drained, and everyone present (physically and virtually) is winding up their weekend projects.</p>
+<p>The weekend featured a variety of different activities, ranging from presentations from **Dr. Aik-Siong Koh **about his recent work on <a href="https://github.com/Ondsel-Development/OndselSolver"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">a new LGPL&rsquo;ed 3D constraints solver for assemblies<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> and from <strong>Ajinkya Dahale</strong> on his work towards a <a href="https://ondsel.com/blog/build-system-for-custom-data-elements/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">custom properties system<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, to audio conferences via <a href="https://discord.gg/w2cTKGzccC"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">the Discord channel<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> with FreeCAD users and developers from across the world, to just a bunch of devs sitting around hacking on FreeCAD and occasionally asking each other for help or input.</p>
+<h3
+  id="major-topics"
+  
+  >Major Topics<a class="heading-anchor"
+     href="#major-topics"
+     title="Major Topics"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p><strong>Version 1.0 Release Roadmap</strong>. The first order of business was to discuss the <a href="https://freecad.github.io/DevelopersHandbook/roadmap/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Roadmap to v1.0<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>. The general consensus was that there are four main focus areas that must be addressed before a 1.0 release:</p>
+<ol>
+<li>
+<p>Mitigating the topological naming problem</p>
+</li>
+<li>
+<p>Integrating a default Assembly workbench</p>
+</li>
+<li>
+<p>Creating a unified Material-handling system</p>
+</li>
+<li>
+<p>Improving the basic user experience</p>
+</li>
+</ol>
+<p>We also discussed a need to improve terminology as a sub-focus area for v1.0, which is closely tied to item 4. In fact, nearly all remaining discussion for the weekend focused on one or more of those four items.</p>
+<p><strong>Assembly Workbench</strong>. It came up at FreeCAD Day 2023, it comes up in the forums on a regular basis, and it comes up in discussions with end users: FreeCAD needs a default, built-in Assembly workbench. It does not necessarily have to have every possible sort of workflow, or solve all assembly-related problems, but it should at the least address basic assembly tasks. Ondsel published a <a href="https://ondsel.com/blog/default-assembly-workbench-7/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">series of blog posts<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> detailing that company&rsquo;s analysis of the situation, and in recent months they have been actively working to develop one of the core technologies anticipated for that workbench: a fully 3D constraint solver with a compatible license. The next order of business was to decide which of the various available paths we intend to follow:</p>
+<ol>
+<li>
+<p>Integrate the new solver into @realthunder&rsquo;s Assembly 3 Workbench, and then integrate that external workbench directly into FreeCAD. @realthunder seems very enthusiastic about the new solver, so it seems likely that at least the first part of this will happen in very short order.</p>
+</li>
+<li>
+<p>Integrate @zolko&rsquo;s Assembly 4 Workbench into FreeCAD and extend it to include the solver.</p>
+</li>
+<li>
+<p>Develop a new Assembly user interface directly in FreeCAD, taking inspiration from Asm3 and Asm4 and combining those ideas into a simplified, streamlined workbench.</p>
+</li>
+</ol>
+<p>In general it was felt that Assembly 3&rsquo;s user interface was too complex to be integrated on its own, and that Assembly 4&rsquo;s lack of solver presented a significant challenge to direct adoption. Therefore the planned approach is to create a new solver user interface in FreeCAD that provides simplified access to the most common assembly tools, and that provides a standard API for assemblies that external workbench authors can use to be compatible with both that workbench and each other.</p>
+<p><strong>User Interface Colors.</strong> FreeCAD&rsquo;s default background gradient and the color scheme of various UI elements present a nearly unusable interface for those with color vision deficiency, and the low contrast inherent in the current design presents some visual challenges even for those without vision impairment. A group of developers and users met (virtually) to discuss the ongoing research project of theme developer <strong>@Obelisk</strong>, who is attempting to create both a set of new light and dark themes based on existing work from a number of other theme authors, as well as to adapt the color scheme of the &ldquo;classic&rdquo; FreeCAD experience to be more friendly to everyone. While we don&rsquo;t expect this work to be without controversy, having a solid technical basis for making these sorts of decisions will help us to move forward with the project.</p>
+<p><strong>Integrating a Rust Library.</strong> A <a href="https://github.com/jbuckmccready/cavalier_contours"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">very appealing project<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> from the Rust world led to a discussion about the feasibility of integrating a Rust library into our codebase for use in the Path workbench. There are a variety of pros and cons related mostly to packaging issues (and no, we did <em>not</em> discuss rewriting FreeCAD in Rust!) but the overall consensus was that the upside of the advanced library outweighed the downside of packaging complexity, and that it is worth attempting in this limited application to see how it goes.</p>
+<p><strong>Toponaming Next Steps</strong>. <strong>@JohnAD</strong>, Ondsel Developer and team lead for the TNP mitigation project worked with various developers to work out what the next phase of that project looks like, and published the next set of steps we need to undertake. Things get exciting right about now, as we <a href="https://github.com/freecad/freecad/issues/8432"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">actually begin using the system to track element history<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>. Help wanted! If you are interested in learning what this TNP thing is all about, and want to assist in the project, <a href="mailto:chennes@freecad.org"
+  class="internal-tooltip">drop me a line</a> and I&rsquo;ll get you an invite to the group Telegram chat.</p>
+<p><strong>Task panel, tree view, and stealing focus (oh my!)</strong>. At the <a href="https://blog.freecad.org/2023/02/06/freecad-day-2023-wrap-up/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">FreeCAD Day meetup at FOSDEM in Brussels<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> earlier this year, a consistent user complaint had to do with interactions between the Task Panel, the Tree View, and various ways that things could go awry when using them. That continued to be an active area of discussion at the event this weekend, with various proposals for helping to mitigate these sorts of problems. There were a number of proposed solutions, but be on the lookout in the coming months for PR&rsquo;s related to a &ldquo;Speed Bar.&rdquo;</p>
+<p><strong>And more!</strong> Dozens of other smaller discussions cropped up during the event: switching from toolbars to a ribbon, improving the documentation, cleaning up the tracker, not moving our toolbars around(!!), and improving the naming of things, just to name a few.</p>
+<p>Thanks to everyone who attended, in person and virtually. I hope that we can have more of these meetups, across the globe, as FreeCAD development moves forward. We don&rsquo;t have any official dates yet for FOSDEM 2024 (likely early February), but you can be assured that FreeCAD developers and users will certainly coordinate a meeting around that event. I have heard of a couple of other groups looking to plan events: if you are interested, please reach out to the <a href="https://fpa.freecad.org"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">FreeCAD Project Association<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> &ndash; funding is available!</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/news/wip-wednesday-16-august-2023/"
+             title="Next article"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday - 16 August 2023</a><a class="page-item prev"
+             href="/Website/pr-16/news/wip-wednesday-9-august-2023/"
+             title="Previous article">WIP Wednesday - 9 August 2023<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Go to Top"
+  title="Go to Top (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/authors/">Authors</a>
+                      </li><li>
+                        <a href="/Website/pr-16/categories/">Categories</a>
+                      </li><li>
+                        <a href="/Website/pr-16/tags/">Tags</a>
+                      </li><li>
+                        <a href="/Website/pr-16/versions/">Versions</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/fedishare.html#title=Vancouver&#43;Hackathon&#43;Wrap-up&amp;description=As&#43;I&#43;write&#43;this&#43;we&#43;are&#43;just&#43;wrapping&#43;up&#43;the&#43;FreeCAD&#43;Hackathon&#43;2023&#43;in&#43;Vancouver%2C&#43;BC.&#43;The&#43;coffee&#43;is&#43;gone%2C&#43;the&#43;laptop&#43;batteries&#43;are&#43;drained%2C&#43;and&#43;everyone&#43;present&#43;%28physically&#43;and&#43;virtually%29&#43;is&#43;winding&#43;up&#43;%E2%80%A6%0A%23hackathon&amp;url=https://FreeCAD.github.io/Website/pr-16/news/vancouver-hackathon-wrap-up/"
+  title="Share on Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>

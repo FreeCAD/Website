@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en-US"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-16/css/styles.063c32d730784b4ab24222e68f349561f438235d078061c2a74ff7b9ab3bfd0c.css" integrity="sha256-Bjwy1zB4S0qyQiLmjzSVYfQ4I10HgGHCp0/3uas7/Qw=" crossorigin="anonymous"><title>FreeCAD | Announcing the FreeCAD 2024 North American Meetup</title>
+  <meta name="description" content="Your own free and open-source parametric modeler"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/news/announcing-the-freecad-2024-north-american-meetup/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/announcing-the-freecad-2024-north-american-meetup/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/announcing-the-freecad-2024-north-american-meetup/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/announcing-the-freecad-2024-north-american-meetup/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/announcing-the-freecad-2024-north-american-meetup/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/announcing-the-freecad-2024-north-american-meetup/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/announcing-the-freecad-2024-north-american-meetup/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/announcing-the-freecad-2024-north-american-meetup/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/news/announcing-the-freecad-2024-north-american-meetup/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Announcing the FreeCAD 2024 North American Meetup">
+  <meta property="og:description" content="In case you don’t read the forum , I’d like to announce FreeCAD’s 2024 North American Meetup!">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2024-06-14T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-13T17:49:00+02:00">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-16/"accesskey="h"
+      title="Homepage (Alt + H)"
+      aria-label="Homepage">FreeCAD</a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-16/news/"
+            title="News"
+            class="active"
+            aria-current="page"
+            
+            >News</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choose language (Alt + L)"
+          aria-label="Choose language"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a aria-current="page" class="active" href="/Website/pr-16/news/announcing-the-freecad-2024-north-american-meetup/" title="Announcing the FreeCAD 2024 North American Meetup">
+                English 🇬🇧
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/zh/news/announcing-the-freecad-2024-north-american-meetup/" title="Announcing the FreeCAD 2024 North American Meetup">
+                中文 🇨🇳
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/es/news/announcing-the-freecad-2024-north-american-meetup/" title="Announcing the FreeCAD 2024 North American Meetup">
+                Español 🇪🇸
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/fr/news/announcing-the-freecad-2024-north-american-meetup/" title="Announcing the FreeCAD 2024 North American Meetup">
+                Français 🇫🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/pt/news/announcing-the-freecad-2024-north-american-meetup/" title="Announcing the FreeCAD 2024 North American Meetup">
+                Português brasileiro 🇧🇷
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/de/news/announcing-the-freecad-2024-north-american-meetup/" title="Announcing the FreeCAD 2024 North American Meetup">
+                Deutsch 🇩🇪
+              </a>
+            </li><li>
+              <a href="/Website/pr-16/ja/news/announcing-the-freecad-2024-north-american-meetup/" title="Announcing the FreeCAD 2024 North American Meetup">
+                日本語 🇯🇵
+              </a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Switch theme chroma (Alt + T)"
+    aria-label="Switch theme chroma"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero "
+    style="--hue: 20;">
+
+    <h2 class="title"
+      
+      >Announcing the FreeCAD 2024 North American Meetup</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/date.svg#date"></use>
+  </svg><time datetime="2024-06-14T00:00:00Z">June 14, 2024</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-16/authors/kurt-kremitzki/">Kurt Kremitzki (3)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-16/categories/announcement/">Announcement (94)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/words.svg#words"></use>
+  </svg>383 words</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/time.svg#time"></use>
+  </svg>2 min</span></div><figure class="article-cover"><img srcset="/Website/pr-16/news/announcing-the-freecad-2024-north-american-meetup/FCNA24_hu_55c369e2c4b6ac78.webp 500w, /Website/pr-16/news/announcing-the-freecad-2024-north-american-meetup/FCNA24_hu_99cd0b9a087c98bd.webp 1000w, /Website/pr-16/news/announcing-the-freecad-2024-north-american-meetup/FCNA24.webp 1440w"
+        sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"
+        src="/Website/pr-16/news/announcing-the-freecad-2024-north-american-meetup/FCNA24.webp"
+        title="FreeCAD 2024 North American Meetup"
+        alt="Image fallback"
+        width="1440"
+        height="1080"
+        loading="eager"
+        fetchpriority="high"><figcaption>
+        <div class="internal-tooltip"><svg class="icon-important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/important.svg#important"></use>
+  </svg><span class="tooltip">FreeCAD 2024 North American Meetup</span>
+        </div>
+      </figcaption></figure></section><div class="content"><p>In case you don&rsquo;t read <a href="https://forum.freecad.org/viewtopic.php?t=85180"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">the forum<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, I&rsquo;d like to announce FreeCAD&rsquo;s 2024 North American Meetup!</p>
+<p>In Springfield, Illinois, on August 15th - 18th, we will be hosted by <a href="https://www.innovatespringfield.org/"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">Innovate Springfield<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, just south of the Old State Capitol downtown (pictured above.)</p>
+<p>For FreeCAD users, developers, and anyone interested: all are welcome.</p>
+<p>Before I get into the details, if you&rsquo;re planning on coming, please help us estimate attendance by <a href="https://forms.gle/wSELDeLeAkF1C76T7"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">filling out this form<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>.</p>
+<p>The first and last days of the meetup will be free-form hackathon events, allowing for those who have to arrive late or return early, and to provide space for coming and going to take part in <a href="https://wiki.freecad.org/NAMeetup/2024/Springfield/Food"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">local food<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> and <a href="https://wiki.freecad.org/NAMeetup/2024/Springfield/Tourism"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">tourism options<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>.</p>
+<p>On Friday, August 16th, in addition to ongoing &ldquo;hacking on the side&rdquo; in other parts of the building, we will schedule some lightning talks and short &amp; medium presentations, i.e. timeslots of no more than 5/25/50 minutes. If you have FreeCAD-related knowledge you&rsquo;d like to share, some niche but interesting work to showcase, or even a bold plan you want to argue for, please reach out! Proposals can be sent to <a href="mailto:spi24@freecad.org"
+  class="internal-tooltip">spi24@freecad.org</a>.</p>
+<p>For Saturday, we&rsquo;ll be doing something a little different: public outreach. The idea is that there are plenty of people &ldquo;outside the fold&rdquo;, so to speak, who might never see this announcement but could find FreeCAD interesting or useful, like Springfield-local engineering &amp; manufacturing companies, or perhaps a high school student interested in pathways to a career in software (or hardware!).</p>
+<p>With an open invitation to the public, please come ready to showcase what you can do with FreeCAD, or even things you&rsquo;ve done or made; how to use FreeCAD, how to make it better, or lessons you&rsquo;ve made to help learn it. Consider this something an informal poster &amp; booth session with a chance to showcase to future users, developers, customers, or even fans. If you have any questions, or know specifically what you&rsquo;d like to showcase, please contact <a href="mailto:spi24@freecad.org"
+  class="internal-tooltip">spi24@freecad.org</a>.</p>
+<p>For more detailed and up-to-date event information, please use the short link <a href="https://freecad.org/spi24"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">freecad.org/spi24<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, which points to the wiki page for the meetup.</p>
+<p>As with similar events in the past, the FreeCAD Project Association is offering <a href="https://fpa.freecad.org/programs/fosdem-travel-grants"
+  class="external-link"title="Open link"
+    target="_blank"
+    rel="external noreferrer noopener">travel grants<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>. Please reach out to the FPA at <a href="mailto:fpa@freecad.org"
+  class="internal-tooltip">fpa@freecad.org</a> for information on how to apply.</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+             href="/Website/pr-16/news/forged-in-freecad-boat-hull-hydrostatic-and-stability-analysis/"
+             title="Next article"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_left.svg#tri_left"></use>
+  </svg>Forged in FreeCAD - Boat hull hydrostatic and stability analysis</a><a class="page-item prev"
+             href="/Website/pr-16/news/wip-wednesday-12-june-2024/"
+             title="Previous article">WIP Wednesday - 12 June 2024<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Go to Top"
+  title="Go to Top (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-16/"
+            
+            
+            
+            >FreeCAD</a><ul></ul></li><li>
+          <a href="/Website/pr-16/news/"
+            class="active"
+            aria-current="page"
+            
+            >News</a><ul><li>
+                  <a href="/Website/pr-16/news/archives/"
+                    
+                    >Archives</a>
+                </li><li>
+                        <a href="/Website/pr-16/authors/">Authors</a>
+                      </li><li>
+                        <a href="/Website/pr-16/categories/">Categories</a>
+                      </li><li>
+                        <a href="/Website/pr-16/tags/">Tags</a>
+                      </li><li>
+                        <a href="/Website/pr-16/versions/">Versions</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="/Website/pr-16/fedishare.html#title=Announcing&#43;the&#43;FreeCAD&#43;2024&#43;North&#43;American&#43;Meetup&amp;description=In%20case%20you%20don%e2%80%99t%20read%20the%20forum%20,%20I%e2%80%99d%20like%20to%20announce%20FreeCAD%e2%80%99s%202024%20North%20American%20Meetup!%0aIn%20Springfield,%20Illinois,%20on%20August%2015th%20-%2018th,%20we%20will%20be%20hosted%20by%20Innovate%20Springfield%20,%20just%20south%20of%20%e2%80%a6&amp;url=https://FreeCAD.github.io/Website/pr-16/news/announcing-the-freecad-2024-north-american-meetup/"
+  title="Share on Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-16/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-13
+  </span></div>
+</footer><script src="/Website/pr-16/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous"
+    defer>
+  </script><script src="/Website/pr-16/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous"
+    defer>
+  </script></body>
+
+</html>
