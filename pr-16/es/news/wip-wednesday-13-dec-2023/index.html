@@ -41,12 +41,12 @@
   <meta property="og:site_name" content="FreeCAD">
   <meta property="og:title" content="WIP Wednesday - 13 Dec 2023">
   <meta property="og:description" content="This week in FreeCAD development:
-@davesrocketshop pushed an update to the new materials system adding new data types (in particular, for the Render workbench), a new appearance preview UI based on the Coin library, and changes in the array data types.">
+@davesrocketshop pushed an update to the new materials system adding new data types (in particular, for the Render workbench), a new appearance preview UI based on the Coin library, and changes in the array data types. @edi271, @Syres916, and @WandererFan pushed numerous fixes and improvements to the TechDraw workbench, including the collection of document info for filling template fields. @Roy-043 introduced the DefaultAnnoScaleMultiplier parameter to replace DraftAnnotationScale, and a new get_param function to help having all defaults in one place to avoid inconsistencies. @abdullahtahiriyo improved the notification area behavior by grouping the same error messages and appending the instance count next to it. @oursland added support for macOS builds and Windows C&#43;&#43; unit tests on Conda; package dependency builds for Ubuntu 22.04 and Windows are now Conda-based as well. PR stats: In the week from Wednesday, 6 Dec to Wednesday, 13 Dec there were 30 pull requests merged, with a total codebase change of &#43;8,464 / ‑2,707 lines (not counting translation updates). We had an average merged PR size of &#43;285 / ‑93. 10 new pull requests were opened.">
   <meta property="og:locale" content="es_ES">
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2023-12-13T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-04-13T17:40:06+02:00">
+    <meta property="article:modified_time" content="2026-04-13T18:56:11+02:00">
     <meta property="article:tag" content="WIP">
 </head><body class="single type-news kind-page "
     id="top">
@@ -176,35 +176,19 @@
     <use href="/Website/pr-16/svg/time.svg#time"></use>
   </svg>2 min</span></div></section><div class="content"><p>This week in FreeCAD development:</p>
 <ul>
-<li>
-<p><strong>@davesrocketshop</strong> pushed an update to the new materials system adding new data types (in particular, for the Render workbench), a new appearance preview UI based on the Coin library, and changes in the array data types.</p>
-</li>
-<li>
-<p><strong>@edi271</strong>, <strong>@Syres916</strong>, and <strong>@WandererFan</strong> pushed numerous fixes and improvements to the TechDraw workbench, including the collection of document info for filling template fields.</p>
-</li>
-<li>
-<p><strong>@Roy-043</strong> introduced the <code>DefaultAnnoScaleMultiplier</code> parameter to replace <code>DraftAnnotationScale</code>, and a new <code>get_param</code> function to help having all defaults in one place to avoid inconsistencies.</p>
-</li>
-<li>
-<p><strong>@abdullahtahiriyo</strong> improved the notification area behavior by grouping the same error messages and appending the instance count next to it.</p>
-</li>
-<li>
-<p><strong>@oursland</strong> added support for macOS builds and Windows C++ unit tests on Conda; package dependency builds for Ubuntu 22.04 and Windows are now Conda-based as well.</p>
-</li>
+<li><strong>@davesrocketshop</strong> pushed an update to the new materials system adding new data types (in particular, for the Render workbench), a new appearance preview UI based on the Coin library, and changes in the array data types.</li>
+<li><strong>@edi271</strong>, <strong>@Syres916</strong>, and <strong>@WandererFan</strong> pushed numerous fixes and improvements to the TechDraw workbench, including the collection of document info for filling template fields.</li>
+<li><strong>@Roy-043</strong> introduced the <code>DefaultAnnoScaleMultiplier</code> parameter to replace <code>DraftAnnotationScale</code>, and a new <code>get_param</code> function to help having all defaults in one place to avoid inconsistencies.</li>
+<li><strong>@abdullahtahiriyo</strong> improved the notification area behavior by grouping the same error messages and appending the instance count next to it.</li>
+<li><strong>@oursland</strong> added support for macOS builds and Windows C++ unit tests on Conda; package dependency builds for Ubuntu 22.04 and Windows are now Conda-based as well.</li>
 </ul>
 <p><strong>PR stats:</strong> In the week from Wednesday, 6 Dec to Wednesday, 13 Dec there were 30 pull requests merged, with a total codebase change of +8,464 / ‑2,707 lines (not counting translation updates). We had an average merged PR size of +285 / ‑93. 10 new pull requests were opened.</p>
 <p><strong>Issue stats:</strong> we closed 13 issues, and 22 new issues were opened. Overall, 1,095 issues are currently open.</p>
 <p>The FreeCAD project association&rsquo;s general assembly approved several new grants in November:</p>
 <ul>
-<li>
-<p>Amulya Paritosh and Harshita Saraswat will continue this year&rsquo;s GSoC project to create the component library, both the server-side and client-side functionality.</p>
-</li>
-<li>
-<p>Kurt Kremitzki will improve FreeCAD&rsquo;s infrastructure performance and maintenance.</p>
-</li>
-<li>
-<p>Ajinkya Dahale will improve curve geometry: general tangency with B-splines, B-splines preview, Bezier curves, curvature constraint etc.'</p>
-</li>
+<li>Amulya Paritosh and Harshita Saraswat will continue this year&rsquo;s GSoC project to create the component library, both the server-side and client-side functionality.</li>
+<li>Kurt Kremitzki will improve FreeCAD&rsquo;s infrastructure performance and maintenance.</li>
+<li>Ajinkya Dahale will improve curve geometry: general tangency with B-splines, B-splines preview, Bezier curves, curvature constraint etc.'</li>
 </ul>
 <p>For more information, please see the <a href="https://fpa.freecad.org/programs/fpadf-announcement"
   class="external-link"title="Open link"

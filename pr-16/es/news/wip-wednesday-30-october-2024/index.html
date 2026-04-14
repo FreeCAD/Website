@@ -46,7 +46,7 @@ Sketcher: PaddleStroke fixed several bugs, including one release blocker, all re
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2024-10-30T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-04-13T17:40:06+02:00">
+    <meta property="article:modified_time" content="2026-04-13T18:56:11+02:00">
     <meta property="article:tag" content="WIP">
 </head><body class="single type-news kind-page "
     id="top">
@@ -178,55 +178,27 @@ Sketcher: PaddleStroke fixed several bugs, including one release blocker, all re
 <p><strong>Sketcher</strong>: PaddleStroke fixed several bugs, including one release blocker, all related to constraints and transformations / arrays.</p>
 <p><strong>PartDesign</strong>:</p>
 <ul>
-<li>
-<p>mwganson applied minor fixes to <em>Groove</em> and <em>Revolution</em> task panels.</p>
-</li>
-<li>
-<p>PaddleStroke fixed a release blocker in which creating a body in an existing document raised the request to migrate it, and then creating another body would segfault FreeCAD.</p>
-</li>
-<li>
-<p>kadet1090 fixed an issue occurring when changing <em>Pad</em> from <em>Dimension</em> to <em>Two Dimensions</em>.</p>
-</li>
+<li>mwganson applied minor fixes to <em>Groove</em> and <em>Revolution</em> task panels.</li>
+<li>PaddleStroke fixed a release blocker in which creating a body in an existing document raised the request to migrate it, and then creating another body would segfault FreeCAD.</li>
+<li>kadet1090 fixed an issue occurring when changing <em>Pad</em> from <em>Dimension</em> to <em>Two Dimensions</em>.</li>
 </ul>
 <p><strong>Assembly</strong>: PaddleStroke fixed a bug where <em>Insert Component</em> would show items hidden in the Tree view. He also added support for flexible subassemblies that create links to separate parts of subassemblies rather than to the entire assemblies. This preserves existing joints in subassemblies and allows controlling the position of those parts from a parent assembly, even if links to the same parts already exist in the parent assembly.</p>
 <p><strong>GUI</strong>:</p>
 <ul>
-<li>
-<p>pieterhijma made the VarSets dialog modal and fixed an issue with the <em>Tooltip</em> property.</p>
-</li>
-<li>
-<p>benj5378 fixed the legibility of start page example files with the <em>Dark</em> theme.</p>
-</li>
-<li>
-<p>Rexbas continued his work fixing issues related to incorrect camera rotation with some navigation styles.</p>
-</li>
+<li>pieterhijma made the VarSets dialog modal and fixed an issue with the <em>Tooltip</em> property.</li>
+<li>benj5378 fixed the legibility of start page example files with the <em>Dark</em> theme.</li>
+<li>Rexbas continued his work fixing issues related to incorrect camera rotation with some navigation styles.</li>
 </ul>
 <p>Among other changes:</p>
 <ul>
-<li>
-<p>yorikvanhavre and Roy_043 fixed several issues in Draft.</p>
-</li>
-<li>
-<p>davesrocketshop patched the new materials system to change the appearance of a body when switching materials only if the appearance hasn&rsquo;t been set explicitly.</p>
-</li>
-<li>
-<p>PaddleStroke fixed a release blocker where closing a Sketcher tab with a task running would crash FreeCAD. The fix was to associate task dialogs with views, so now when a view is closed, the task is closed too.</p>
-</li>
-<li>
-<p>WandererFan fixed several issues in TechDraw, including two release blockers.</p>
-</li>
-<li>
-<p>AIRCAP patched Tolerance to restrict maximum tolerance and repair shapes optionally.</p>
-</li>
-<li>
-<p>marioalexis84 fixed two minor issues in FEM.</p>
-</li>
-<li>
-<p>hoshengwei and yorikvanhavre fixed several bugs in BIM.</p>
-</li>
-<li>
-<p>wwmayer fixed a bug in the measure tool to use the center points as a reference when measuring the distance between circles.</p>
-</li>
+<li>yorikvanhavre and Roy_043 fixed several issues in Draft.</li>
+<li>davesrocketshop patched the new materials system to change the appearance of a body when switching materials only if the appearance hasn&rsquo;t been set explicitly.</li>
+<li>PaddleStroke fixed a release blocker where closing a Sketcher tab with a task running would crash FreeCAD. The fix was to associate task dialogs with views, so now when a view is closed, the task is closed too.</li>
+<li>WandererFan fixed several issues in TechDraw, including two release blockers.</li>
+<li>AIRCAP patched Tolerance to restrict maximum tolerance and repair shapes optionally.</li>
+<li>marioalexis84 fixed two minor issues in FEM.</li>
+<li>hoshengwei and yorikvanhavre fixed several bugs in BIM.</li>
+<li>wwmayer fixed a bug in the measure tool to use the center points as a reference when measuring the distance between circles.</li>
 </ul>
 <p>More fixes arrived from wwmayer, adrianinsaval, mwganson.</p>
 <p><strong>PR stats</strong>: since the previous report, 47 pull requests have been merged, 27 new pull requests have been opened. We&rsquo;ve been steadily accumulating patches scheduled for review once v1.0 is out, there are now 236 such pull requests.</p>

@@ -45,7 +45,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2024-04-03T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-04-13T17:40:06+02:00">
+    <meta property="article:modified_time" content="2026-04-13T18:56:11+02:00">
     <meta property="article:tag" content="WIP">
 </head><body class="single type-news kind-page "
     id="top">
@@ -176,90 +176,42 @@
   </svg>3 min</span></div></section><div class="content"><p>This week in FreeCAD development, the most actively worked-on parts of FreeCAD have been the toponaming project, Sketcher, FEM, and UI/UX.</p>
 <p>Toponaming:</p>
 <ul>
-<li>
-<p><strong>CalligaroV</strong> imported and improved the WireJoiner class.</p>
-</li>
-<li>
-<p><strong>bgbsww</strong> fixed a few issues, made minor improvements, and added Python implementations for CompSolid, Face, Shell, Solid, as well as missing entries in TopoShape.</p>
-</li>
+<li><strong>CalligaroV</strong> imported and improved the WireJoiner class.</li>
+<li><strong>bgbsww</strong> fixed a few issues, made minor improvements, and added Python implementations for CompSolid, Face, Shell, Solid, as well as missing entries in TopoShape.</li>
 </ul>
 <p>Sketcher:</p>
 <ul>
-<li>
-<p><strong>Roy-043</strong> renamed &ldquo;Map sketch to face&hellip;&rdquo; in the main menu to &ldquo;Attach sketch&hellip;&rdquo; for clarity.</p>
-</li>
-<li>
-<p><strong>PaddleStroke</strong> implemented a midpoint autoconstraint, fixed a bug in Chamfer tool code, as well as a bug with a B-Spline icon in construction line mode.</p>
-</li>
-<li>
-<p><strong>FlachyJoe</strong> added an arc length constraint.</p>
-</li>
+<li><strong>Roy-043</strong> renamed &ldquo;Map sketch to face&hellip;&rdquo; in the main menu to &ldquo;Attach sketch&hellip;&rdquo; for clarity.</li>
+<li><strong>PaddleStroke</strong> implemented a midpoint autoconstraint, fixed a bug in Chamfer tool code, as well as a bug with a B-Spline icon in construction line mode.</li>
+<li><strong>FlachyJoe</strong> added an arc length constraint.</li>
 </ul>
 <p>FEM:</p>
 <ul>
-<li>
-<p><strong>marioalexis84</strong> improved post-processing object style.</p>
-</li>
-<li>
-<p><strong>NewJoker</strong> changed 2D element thickness from 20 to 1 by default.</p>
-</li>
-<li>
-<p><strong>lyphrowny</strong> fixed and typo in FEM code and removed calculix from solvers tab in examples.</p>
-</li>
-<li>
-<p><strong>davesrocketshop</strong> added the property &lsquo;Thermal Expansion Reference Temperature&rsquo; to the Thermal properties in the new materials editor.</p>
-</li>
+<li><strong>marioalexis84</strong> improved post-processing object style.</li>
+<li><strong>NewJoker</strong> changed 2D element thickness from 20 to 1 by default.</li>
+<li><strong>lyphrowny</strong> fixed and typo in FEM code and removed calculix from solvers tab in examples.</li>
+<li><strong>davesrocketshop</strong> added the property &lsquo;Thermal Expansion Reference Temperature&rsquo; to the Thermal properties in the new materials editor.</li>
 </ul>
 <p>UI/UX:</p>
 <ul>
-<li>
-<p><strong>Roy-043</strong> made &ldquo;View Left&rdquo; the last option in the &ldquo;Individual views&rdquo; toolbar.</p>
-</li>
-<li>
-<p><strong>maxwxyz</strong> updated FEM and Part Design icons for better consistency and added a missing &ldquo;View Top&rdquo; option. He also added missing commands to the tree context menu.</p>
-</li>
-<li>
-<p><strong>PaddleStroke</strong> added an opt-in Tab-Bar workbench selector (enabled in Preferences). He also fixed the toggling of objects&rsquo; transparency in some scenarios and improved the double-click behavior for spreadsheet objects to switch to the Spreadsheet WB.</p>
-</li>
-<li>
-<p><strong>NomAnor</strong> made it possible to allow adding transformations to MultiTransform if there is no active Body.</p>
-</li>
+<li><strong>Roy-043</strong> made &ldquo;View Left&rdquo; the last option in the &ldquo;Individual views&rdquo; toolbar.</li>
+<li><strong>maxwxyz</strong> updated FEM and Part Design icons for better consistency and added a missing &ldquo;View Top&rdquo; option. He also added missing commands to the tree context menu.</li>
+<li><strong>PaddleStroke</strong> added an opt-in Tab-Bar workbench selector (enabled in Preferences). He also fixed the toggling of objects&rsquo; transparency in some scenarios and improved the double-click behavior for spreadsheet objects to switch to the Spreadsheet WB.</li>
+<li><strong>NomAnor</strong> made it possible to allow adding transformations to MultiTransform if there is no active Body.</li>
 </ul>
 <p>Among other changes:</p>
 <ul>
-<li>
-<p><strong>wwmayer</strong> fixed a lot of bugs and developed a new function to approximate B-Spline from points.</p>
-</li>
-<li>
-<p><strong>Roy-043</strong> added a new Fuse property to patharray and pathtwistedarray in Draft. This fixes a problem when applying union/intersect to a point array and other objects.</p>
-</li>
-<li>
-<p><strong>tomate44</strong> enabled multi-threading to <em>distToShape</em> following a change in OCCT (starting with v7.6.0). This brings an ×3 to ×6 performance boost on a rather complex 20MB STEP file.</p>
-</li>
-<li>
-<p><strong>adrianinsaval</strong> fixed building new material code on Windows with debugging enabled.</p>
-</li>
-<li>
-<p><strong>NomAnor</strong> patched FreeCAD to ignore suppressed features in patterns (Part Design).</p>
-</li>
-<li>
-<p><strong>furgo16</strong> fixed WebGL exporting</p>
-</li>
-<li>
-<p><strong>paullee0</strong> made a few fixes and improvements in Arch.</p>
-</li>
-<li>
-<p><strong>jamwaffles</strong> added feed retract option to drilling op settings for reaming/boring heads in CAM.</p>
-</li>
-<li>
-<p><strong>yorikvanhavre</strong> made it possible to unset modified state with Python code.</p>
-</li>
-<li>
-<p><strong>chennes</strong> fixed some minor bugs.</p>
-</li>
-<li>
-<p><strong>WandererFan</strong> fixed a failure on corrupt dimension reference in TechDraw.</p>
-</li>
+<li><strong>wwmayer</strong> fixed a lot of bugs and developed a new function to approximate B-Spline from points.</li>
+<li><strong>Roy-043</strong> added a new Fuse property to patharray and pathtwistedarray in Draft. This fixes a problem when applying union/intersect to a point array and other objects.</li>
+<li><strong>tomate44</strong> enabled multi-threading to <em>distToShape</em> following a change in OCCT (starting with v7.6.0). This brings an ×3 to ×6 performance boost on a rather complex 20MB STEP file.</li>
+<li><strong>adrianinsaval</strong> fixed building new material code on Windows with debugging enabled.</li>
+<li><strong>NomAnor</strong> patched FreeCAD to ignore suppressed features in patterns (Part Design).</li>
+<li><strong>furgo16</strong> fixed WebGL exporting</li>
+<li><strong>paullee0</strong> made a few fixes and improvements in Arch.</li>
+<li><strong>jamwaffles</strong> added feed retract option to drilling op settings for reaming/boring heads in CAM.</li>
+<li><strong>yorikvanhavre</strong> made it possible to unset modified state with Python code.</li>
+<li><strong>chennes</strong> fixed some minor bugs.</li>
+<li><strong>WandererFan</strong> fixed a failure on corrupt dimension reference in TechDraw.</li>
 </ul>
 <p><strong>PR stats:</strong> In the week from Wednesday, 27 March to Wednesday, 3 April there were 70 pull requests merged, with a total codebase change of +9,316 / ‑1,737 (excluding updated translations and icons). We had an average merged PR size of +133 / ‑25. 17 new pull requests were opened.</p>
 <p><strong>Issue stats:</strong> we closed 47 issues, and 37 new issues were opened. Overall, 1,392 issues are currently open.</p>

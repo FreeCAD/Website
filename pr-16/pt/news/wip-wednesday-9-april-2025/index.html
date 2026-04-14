@@ -42,12 +42,12 @@
   <meta property="og:title" content="WIP Wednesday - 9 April 2025">
   <meta property="og:description" content="This week in FreeCAD development:
 CAM:
-phaseloop migrated the Array operation to a dressup operation and changed the design of the origin axis to be in line with the LCS indicator.">
+phaseloop migrated the Array operation to a dressup operation and changed the design of the origin axis to be in line with the LCS indicator. bdieterm contributed a minor fix. TechDraw: benj5378 fixed a bug where edges would have the wrong color, and jonzirk76 contributed minor code refactoring.">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2025-04-09T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-04-13T17:40:06+02:00">
+    <meta property="article:modified_time" content="2026-04-13T18:56:11+02:00">
     <meta property="article:tag" content="WIP">
 </head><body class="single type-news kind-page "
     id="top">
@@ -178,42 +178,24 @@ phaseloop migrated the Array operation to a dressup operation and changed the de
   </svg>2 minutos</span></div></section><div class="content"><p>This week in FreeCAD development:</p>
 <p><strong>CAM</strong>:</p>
 <ul>
-<li>
-<p>phaseloop migrated the Array operation to a dressup operation and changed the design of the origin axis to be in line with the LCS indicator.</p>
-</li>
-<li>
-<p>bdieterm contributed a minor fix.</p>
-</li>
+<li>phaseloop migrated the Array operation to a dressup operation and changed the design of the origin axis to be in line with the LCS indicator.</li>
+<li>bdieterm contributed a minor fix.</li>
 </ul>
 <p><strong>TechDraw</strong>: benj5378 fixed a bug where edges would have the wrong color, and jonzirk76 contributed minor code refactoring.</p>
 <p><strong>Surface</strong>: Shkolik changed the behavior of the Fill Boundary Curves and Sections surface tools: after activating either of the tools, there&rsquo;s no need to click on the &ldquo;Add edge&rdquo; button anymore, you can select edges immediately.</p>
 <p><strong>Addon Manager</strong>: chennes moved the code to its own repository and made it a Git submodule. According to chennes, this will ultimately provide the ability for the Addon Manager to update itself even within individual releases of FreeCAD.</p>
 <p><strong>GUI</strong>:</p>
 <ul>
-<li>
-<p>alfrix fixed the Quantity spinbox margin so that on-view input widgets would render correctly in Sketcher.</p>
-</li>
-<li>
-<p>kadet1090 added an optional origin placement indicator in the LCS indicator style.</p>
-</li>
-<li>
-<p>vletii fixed the behavior of the Freeze toggle to unfreeze objects down the hierarchy properly.</p>
-</li>
-<li>
-<p>pieterhijma patched varsets to make value inputs show units for properties that have units.</p>
-</li>
+<li>alfrix fixed the Quantity spinbox margin so that on-view input widgets would render correctly in Sketcher.</li>
+<li>kadet1090 added an optional origin placement indicator in the LCS indicator style.</li>
+<li>vletii fixed the behavior of the Freeze toggle to unfreeze objects down the hierarchy properly.</li>
+<li>pieterhijma patched varsets to make value inputs show units for properties that have units.</li>
 </ul>
 <p>Among other changes:</p>
 <ul>
-<li>
-<p>Fixes in Draft by Roy_043, aprospero, and luzpaz.</p>
-</li>
-<li>
-<p>Further work on XML bindings refactoring in Sketcher and Part by tritao.</p>
-</li>
-<li>
-<p>Fixes in PartDesign by PaddleStroke.</p>
-</li>
+<li>Fixes in Draft by Roy_043, aprospero, and luzpaz.</li>
+<li>Further work on XML bindings refactoring in Sketcher and Part by tritao.</li>
+<li>Fixes in PartDesign by PaddleStroke.</li>
 </ul>
 <p>Additional fixes, small improvements, and code refactoring were contributed by pieterhijma, mosfet80, tritao, hyarion, MisterMakerNL, Frankleklek, captain0xff, furgo16, marcuspollio, pskowronskiTDx, kpemartin, xtemp09, runzh-crypto, kadet1090, drwho495, chennes, 3x380V, and oursland.</p>
 <p><strong>PR stats</strong>: since the previous report, 52 pull requests have been merged, and 29 new pull requests have been opened.</p>
@@ -266,7 +248,7 @@ phaseloop migrated the Array operation to a dressup operation and changed the de
                         <a href="/Website/pr-16/pt/versions/">Versões</a>
                       </li></ul></li></ul>
 </nav>
-<div class="share-links"><a href="/Website/pr-16/pt/fedishare.html#title=WIP&#43;Wednesday&#43;-&#43;9&#43;April&#43;2025&amp;description=This&#43;week&#43;in&#43;FreeCAD&#43;development%3A%0ACAM%3A%0Aphaseloop&#43;migrated&#43;the&#43;Array&#43;operation&#43;to&#43;a&#43;dressup&#43;operation&#43;and&#43;changed&#43;the&#43;design&#43;of&#43;the&#43;origin&#43;axis&#43;to&#43;be&#43;in&#43;line&#43;with&#43;the&#43;LCS&#43;indicator.%0Abdieterm&#43;%E2%80%A6%0A%23wip&amp;url=https://FreeCAD.github.io/Website/pr-16/pt/news/wip-wednesday-9-april-2025/"
+<div class="share-links"><a href="/Website/pr-16/pt/fedishare.html#title=WIP&#43;Wednesday&#43;-&#43;9&#43;April&#43;2025&amp;description=This&#43;week&#43;in&#43;FreeCAD&#43;development%3A%0ACAM%3A%0Aphaseloop&#43;migrated&#43;the&#43;Array&#43;operation&#43;to&#43;a&#43;dressup&#43;operation&#43;and&#43;changed&#43;the&#43;design&#43;of&#43;the&#43;origin&#43;axis&#43;to&#43;be&#43;in&#43;line&#43;with&#43;the&#43;LCS&#43;indicator.&#43;bdieterm&#43;%E2%80%A6%0A%23wip&amp;url=https://FreeCAD.github.io/Website/pr-16/pt/news/wip-wednesday-9-april-2025/"
   title="Compartilhar no Fediverse"
   target="_blank" rel="noopener"><svg class="icon-fediverse"
     aria-hidden="true"

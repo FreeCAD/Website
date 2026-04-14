@@ -42,12 +42,12 @@
   <meta property="og:title" content="WIP Wednesday - 4 December 2024">
   <meta property="og:description" content="This week in FreeCAD development:
 Sketcher:
-AjinkyaDahale’s work on refactoring the workbench code to make it more manageable started landing on the main branch. This work is being on on FPA’s grant issued earlier this year.">
+AjinkyaDahale’s work on refactoring the workbench code to make it more manageable started landing on the main branch. This work is being on on FPA’s grant issued earlier this year. PaddleStroke continued his work on making use of external geometry. The latest patch fixes an issue where external geometry can’t be converted to normal geometry, and another one where there is no way to add intersection geometry. To aid that effort, maxwxyz updated Sketcher icons accordingly. Assembly:">
   <meta property="og:locale" content="es_ES">
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2024-12-04T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-04-13T17:40:06+02:00">
+    <meta property="article:modified_time" content="2026-04-13T18:56:11+02:00">
     <meta property="article:tag" content="WIP">
 </head><body class="single type-news kind-page "
     id="top">
@@ -178,34 +178,20 @@ AjinkyaDahale’s work on refactoring the workbench code to make it more managea
   </svg>2 min</span></div></section><div class="content"><p>This week in FreeCAD development:</p>
 <p><strong>Sketcher</strong>:</p>
 <ul>
-<li>
-<p>AjinkyaDahale&rsquo;s work on refactoring the workbench code to make it more manageable started landing on the main branch. This work is being on on FPA&rsquo;s grant issued earlier this year.</p>
-</li>
-<li>
-<p>PaddleStroke continued his work on making use of external geometry. The latest patch fixes an issue where external geometry can&rsquo;t be converted to normal geometry, and another one where there is no way to add intersection geometry. To aid that effort, maxwxyz updated Sketcher icons accordingly.</p>
-</li>
+<li>AjinkyaDahale&rsquo;s work on refactoring the workbench code to make it more manageable started landing on the main branch. This work is being on on FPA&rsquo;s grant issued earlier this year.</li>
+<li>PaddleStroke continued his work on making use of external geometry. The latest patch fixes an issue where external geometry can&rsquo;t be converted to normal geometry, and another one where there is no way to add intersection geometry. To aid that effort, maxwxyz updated Sketcher icons accordingly.</li>
 </ul>
 <p><strong>Assembly</strong>:</p>
 <ul>
-<li>
-<p>The work by aiksiongkoh and PaddleStroke on simulations has finally landed in the main repository. The new Assembly workbench tool allows adding motion to joints and creating animations. There are limitations in what it can do (e.g. what joint types are supported), so expect further refinement. This was one of the two missing changes by Ondsel that were scheduled for upstreaming.</p>
-</li>
-<li>
-<p>PaddleStroke implemented an &ldquo;Insert A New Part&rdquo; command to allow selecting a feature in the geometry of an existing part&rsquo;s, then insert a new body with a sketch referencing that selected feature. So these are humble beginnings of the top-down design approach implementation.</p>
-</li>
-<li>
-<p>hyarion did some code cleanup.</p>
-</li>
+<li>The work by aiksiongkoh and PaddleStroke on simulations has finally landed in the main repository. The new Assembly workbench tool allows adding motion to joints and creating animations. There are limitations in what it can do (e.g. what joint types are supported), so expect further refinement. This was one of the two missing changes by Ondsel that were scheduled for upstreaming.</li>
+<li>PaddleStroke implemented an &ldquo;Insert A New Part&rdquo; command to allow selecting a feature in the geometry of an existing part&rsquo;s, then insert a new body with a sketch referencing that selected feature. So these are humble beginnings of the top-down design approach implementation.</li>
+<li>hyarion did some code cleanup.</li>
 </ul>
 <p><strong>Part Design</strong>: FlachyJoe fixed a design issue where switching the Refine property would trigger a recompute of the shape, this is going to be useful for e.g. helix.</p>
 <p><strong>BIM</strong>:</p>
 <ul>
-<li>
-<p>yorikvanhavre added support for property sets in Native IFC. This means any property added by the user becomes an IFC property, and the BIM properties manager tool now also supports native IFC objects.</p>
-</li>
-<li>
-<p>He also added NativeIFC support to Add/Remove tools.</p>
-</li>
+<li>yorikvanhavre added support for property sets in Native IFC. This means any property added by the user becomes an IFC property, and the BIM properties manager tool now also supports native IFC objects.</li>
+<li>He also added NativeIFC support to Add/Remove tools.</li>
 </ul>
 <p>Various other fixes and improvements arrived from Roy_043, wwmayer, WandererFan, maxxyz, VincidaB, effere79, Roy_043 and others.</p>
 <p><strong>PR stats</strong>: since the previous report, 74 pull requests have been merged, and 29 new pull requests have been opened.</p>

@@ -41,13 +41,12 @@
   <meta property="og:site_name" content="FreeCAD">
   <meta property="og:title" content="WIP Wednesday - 21 February 2024">
   <meta property="og:description" content="This week in FreeCAD development:
-bgbsww, CalligaroV, and chennes made further progress towards mitigating the toponaming issue.
-pieterhijma contributed the first code towards a new custom data elements (custom properties) system, see here for technical details.">
+bgbsww, CalligaroV, and chennes made further progress towards mitigating the toponaming issue. pieterhijma contributed the first code towards a new custom data elements (custom properties) system, see here for technical details. maxwxyz adjusted the default material appearance to better display the objects shape (surfaces and contours) with specular highlights and a low ambient color. He also added the recently merged commands for translating and scaling geometries to the context menu in Sketcher. czinehuba updated icons for the command that toggles contruction lines mode in Sketcher. Rexbas fixed disappearing element handles in Sketcher. Roy-043 made several improvements in Draft. yorikvanhavre fixed an old suboptimal design solution related to IFC. WandererFan fixed a few issues in TechDraw. marioalexis84 fixed several bugs in FEM. FEA-eng added new matrix solver types (PaStiX and Pardiso) to FEM. mosfet80 did some refactoring in the UI code 3x380V cleaned up PythonWrapper (more likely to follow). Andrei-Pozolotin fixed a bug in the expression engine. LemonBoy fixed a bug that prevented FreeCAD from preserving objects order when moving them in the project tree. PR stats: In the week from Wednesday, 14 February to Wednesday, 21 Feb there were 57 pull requests merged, with a total codebase change of &#43;24,587 / ‑4,685 (not counting translation updates). We had an average merged PR size of &#43;431 / ‑82. 28 new pull requests were opened.">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2024-02-21T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-04-13T17:40:06+02:00">
+    <meta property="article:modified_time" content="2026-04-13T18:56:11+02:00">
     <meta property="article:tag" content="WIP">
 </head><body class="single type-news kind-page "
     id="top">
@@ -177,55 +176,27 @@ pieterhijma contributed the first code towards a new custom data elements (custo
     <use href="/Website/pr-16/svg/time.svg#time"></use>
   </svg>2 minutos</span></div></section><div class="content"><p>This week in FreeCAD development:</p>
 <ul>
-<li>
-<p><strong>bgbsww</strong>, <strong>CalligaroV</strong>, and <strong>chennes</strong> made further progress towards mitigating the toponaming issue.</p>
-</li>
-<li>
-<p><strong>pieterhijma</strong> contributed the first code towards a new custom data elements (custom properties) system, <a href="https://github.com/freecad/freecad/pull/12135"
+<li><strong>bgbsww</strong>, <strong>CalligaroV</strong>, and <strong>chennes</strong> made further progress towards mitigating the toponaming issue.</li>
+<li><strong>pieterhijma</strong> contributed the first code towards a new custom data elements (custom properties) system, <a href="https://github.com/freecad/freecad/pull/12135"
   class="external-link"title="Open link"
     target="_blank"
     rel="external noreferrer noopener">see here<svg class="icon-external"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/pr-16/svg/external.svg#external"></use>
-  </svg></a> for technical details.</p>
-</li>
-<li>
-<p><strong>maxwxyz</strong> adjusted the default material appearance to better display the objects shape (surfaces and contours) with specular highlights and a low ambient color. He also added the recently merged commands for translating and scaling geometries to the context menu in Sketcher.</p>
-</li>
-<li>
-<p><strong>czinehuba</strong> updated icons for the command that toggles contruction lines mode in Sketcher.</p>
-</li>
-<li>
-<p><strong>Rexbas</strong> fixed disappearing element handles in Sketcher.</p>
-</li>
-<li>
-<p><strong>Roy-043</strong> made several improvements in Draft.</p>
-</li>
-<li>
-<p><strong>yorikvanhavre</strong> fixed an old suboptimal design solution related to IFC.</p>
-</li>
-<li>
-<p><strong>WandererFan</strong> fixed a few issues in TechDraw.</p>
-</li>
-<li>
-<p><strong>marioalexis84</strong> fixed several bugs in FEM.</p>
-</li>
-<li>
-<p><strong>FEA-eng</strong> added new matrix solver types (PaStiX and Pardiso) to FEM.</p>
-</li>
-<li>
-<p><strong>mosfet80</strong> did some refactoring in the UI code</p>
-</li>
-<li>
-<p><strong>3x380V</strong> cleaned up PythonWrapper (more likely to follow).</p>
-</li>
-<li>
-<p><strong>Andrei-Pozolotin</strong> fixed a bug in the expression engine.</p>
-</li>
-<li>
-<p><strong>LemonBoy</strong> fixed a bug that prevented FreeCAD from preserving objects order when moving them in the project tree.</p>
-</li>
+  </svg></a> for technical details.</li>
+<li><strong>maxwxyz</strong> adjusted the default material appearance to better display the objects shape (surfaces and contours) with specular highlights and a low ambient color. He also added the recently merged commands for translating and scaling geometries to the context menu in Sketcher.</li>
+<li><strong>czinehuba</strong> updated icons for the command that toggles contruction lines mode in Sketcher.</li>
+<li><strong>Rexbas</strong> fixed disappearing element handles in Sketcher.</li>
+<li><strong>Roy-043</strong> made several improvements in Draft.</li>
+<li><strong>yorikvanhavre</strong> fixed an old suboptimal design solution related to IFC.</li>
+<li><strong>WandererFan</strong> fixed a few issues in TechDraw.</li>
+<li><strong>marioalexis84</strong> fixed several bugs in FEM.</li>
+<li><strong>FEA-eng</strong> added new matrix solver types (PaStiX and Pardiso) to FEM.</li>
+<li><strong>mosfet80</strong> did some refactoring in the UI code</li>
+<li><strong>3x380V</strong> cleaned up PythonWrapper (more likely to follow).</li>
+<li><strong>Andrei-Pozolotin</strong> fixed a bug in the expression engine.</li>
+<li><strong>LemonBoy</strong> fixed a bug that prevented FreeCAD from preserving objects order when moving them in the project tree.</li>
 </ul>
 <p><strong>PR stats:</strong> In the week from Wednesday, 14 February to Wednesday, 21 Feb there were 57 pull requests merged, with a total codebase change of +24,587 / ‑4,685 (not counting translation updates). We had an average merged PR size of +431 / ‑82. 28 new pull requests were opened.</p>
 <p><strong>Issue stats:</strong> we closed 34 issues, and 59 new issues were opened. Overall, 1,247 issues are currently open.</p>
@@ -277,7 +248,7 @@ pieterhijma contributed the first code towards a new custom data elements (custo
                         <a href="/Website/pr-16/pt/versions/">Versões</a>
                       </li></ul></li></ul>
 </nav>
-<div class="share-links"><a href="/Website/pr-16/pt/fedishare.html#title=WIP&#43;Wednesday&#43;-&#43;21&#43;February&#43;2024&amp;description=This&#43;week&#43;in&#43;FreeCAD&#43;development%3A%0Abgbsww%2C&#43;CalligaroV%2C&#43;and&#43;chennes&#43;made&#43;further&#43;progress&#43;towards&#43;mitigating&#43;the&#43;toponaming&#43;issue.%0Apieterhijma&#43;contributed&#43;the&#43;first&#43;code&#43;towards&#43;a&#43;new&#43;custom&#43;data&#43;%E2%80%A6%0A%23wip&amp;url=https://FreeCAD.github.io/Website/pr-16/pt/news/wip-wednesday-21-february-2024/"
+<div class="share-links"><a href="/Website/pr-16/pt/fedishare.html#title=WIP&#43;Wednesday&#43;-&#43;21&#43;February&#43;2024&amp;description=This&#43;week&#43;in&#43;FreeCAD&#43;development%3A%0Abgbsww%2C&#43;CalligaroV%2C&#43;and&#43;chennes&#43;made&#43;further&#43;progress&#43;towards&#43;mitigating&#43;the&#43;toponaming&#43;issue.&#43;pieterhijma&#43;contributed&#43;the&#43;first&#43;code&#43;towards&#43;a&#43;new&#43;custom&#43;data&#43;%E2%80%A6%0A%23wip&amp;url=https://FreeCAD.github.io/Website/pr-16/pt/news/wip-wednesday-21-february-2024/"
   title="Compartilhar no Fediverse"
   target="_blank" rel="noopener"><svg class="icon-fediverse"
     aria-hidden="true"

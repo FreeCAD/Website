@@ -41,12 +41,12 @@
   <meta property="og:site_name" content="FreeCAD">
   <meta property="og:title" content="WIP Wednesday - 24 January 2024">
   <meta property="og:description" content="This week in FreeCAD development:
-Roy-043 fixed a few bugs in the Arch workbench, improved layer functions and made further improvements in Draft.">
+Roy-043 fixed a few bugs in the Arch workbench, improved layer functions and made further improvements in Draft. WandererFan fixed several bugs in TechDraw. Paddle added copy/cut/paste commands for geometry, as well as arc angle render improvements and distance arc helpers to Sketcher. He also added a ‘Properties’ action to the contextual menu to open the property dialog. Moreover, he introduced customization for edges pattern and width by type; this allows to render dashed lines for construction curves. kadet1090 introduced styling to elements and constraints lists in Sketcher. AjinkyaDahale implemented B-Spline visualization in edit mode. maxwxyz continued his work on making the contextual (right-click) menu in Sketcher more useful and added BSpline-specific commands. bdieterm added explicit transparency specification in several parts of the user interface. bgbsww improved tests for new toponaming code. chennes committed more toponaming changes - the comparison method for mapped elements. This is original code by RealThunder with some modifications. Further changes come from bgbsww. sliptonic fixed a bug with the split output option in Path. marioalexis84 improved the self-weight constraint in FEM and made further small improvements. He also began contributing to the new materials system by Dave Carter. 3x380V improved the code quality in base classes. hasecilu fixed a bug that would prevent offset property in Part Design linear patterns from being updated. CalligaroV modernized some of the Preferences dialog code. PR stats: In the week from Wednesday, 17 Jan to Wednesday, 24 Jan there were 47 pull requests merged, with a total codebase change of &#43;6,747 / ‑3,894. We had an average merged PR size of &#43;144 / ‑83. 19 new pull requests were opened.">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2024-01-24T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-04-13T17:40:06+02:00">
+    <meta property="article:modified_time" content="2026-04-13T18:56:11+02:00">
     <meta property="article:tag" content="WIP">
 </head><body class="single type-news kind-page "
     id="top">
@@ -176,48 +176,20 @@ Roy-043 fixed a few bugs in the Arch workbench, improved layer functions and mad
     <use href="/Website/pr-16/svg/time.svg#time"></use>
   </svg>2 minutos</span></div></section><div class="content"><p>This week in FreeCAD development:</p>
 <ul>
-<li>
-<p><strong>Roy-043</strong> fixed a few bugs in the Arch workbench, improved layer functions and made further improvements in Draft.</p>
-</li>
-<li>
-<p><strong>WandererFan</strong> fixed several bugs in TechDraw.</p>
-</li>
-<li>
-<p><strong>Paddle</strong> added copy/cut/paste commands for geometry, as well as arc angle render improvements and distance arc helpers to Sketcher. He also added a &lsquo;Properties&rsquo; action to the contextual menu to open the property dialog. Moreover, he introduced customization for edges pattern and width by type; this allows to render dashed lines for construction curves.</p>
-</li>
-<li>
-<p><strong>kadet1090</strong> introduced styling to elements and constraints lists in Sketcher.</p>
-</li>
-<li>
-<p><strong>AjinkyaDahale</strong> implemented B-Spline visualization in edit mode.</p>
-</li>
-<li>
-<p><strong>maxwxyz</strong> continued his work on making the contextual (right-click) menu in Sketcher more useful and added BSpline-specific commands.</p>
-</li>
-<li>
-<p><strong>bdieterm</strong> added explicit transparency specification in several parts of the user interface.</p>
-</li>
-<li>
-<p><strong>bgbsww</strong> improved tests for new toponaming code.</p>
-</li>
-<li>
-<p><strong>chennes</strong> committed more toponaming changes - the comparison method for mapped elements. This is original code by <strong>RealThunder</strong> with some modifications. Further changes come from <strong>bgbsww</strong>.</p>
-</li>
-<li>
-<p><strong>sliptonic</strong> fixed a bug with the split output option in Path.</p>
-</li>
-<li>
-<p><strong>marioalexis84</strong> improved the self-weight constraint in FEM and made further small improvements. He also began contributing to the new materials system by Dave Carter.</p>
-</li>
-<li>
-<p><strong>3x380V</strong> improved the code quality in base classes.</p>
-</li>
-<li>
-<p><strong>hasecilu</strong> fixed a bug that would prevent offset property in Part Design linear patterns from being updated.</p>
-</li>
-<li>
-<p><strong>CalligaroV</strong> modernized some of the Preferences dialog code.</p>
-</li>
+<li><strong>Roy-043</strong> fixed a few bugs in the Arch workbench, improved layer functions and made further improvements in Draft.</li>
+<li><strong>WandererFan</strong> fixed several bugs in TechDraw.</li>
+<li><strong>Paddle</strong> added copy/cut/paste commands for geometry, as well as arc angle render improvements and distance arc helpers to Sketcher. He also added a &lsquo;Properties&rsquo; action to the contextual menu to open the property dialog. Moreover, he introduced customization for edges pattern and width by type; this allows to render dashed lines for construction curves.</li>
+<li><strong>kadet1090</strong> introduced styling to elements and constraints lists in Sketcher.</li>
+<li><strong>AjinkyaDahale</strong> implemented B-Spline visualization in edit mode.</li>
+<li><strong>maxwxyz</strong> continued his work on making the contextual (right-click) menu in Sketcher more useful and added BSpline-specific commands.</li>
+<li><strong>bdieterm</strong> added explicit transparency specification in several parts of the user interface.</li>
+<li><strong>bgbsww</strong> improved tests for new toponaming code.</li>
+<li><strong>chennes</strong> committed more toponaming changes - the comparison method for mapped elements. This is original code by <strong>RealThunder</strong> with some modifications. Further changes come from <strong>bgbsww</strong>.</li>
+<li><strong>sliptonic</strong> fixed a bug with the split output option in Path.</li>
+<li><strong>marioalexis84</strong> improved the self-weight constraint in FEM and made further small improvements. He also began contributing to the new materials system by Dave Carter.</li>
+<li><strong>3x380V</strong> improved the code quality in base classes.</li>
+<li><strong>hasecilu</strong> fixed a bug that would prevent offset property in Part Design linear patterns from being updated.</li>
+<li><strong>CalligaroV</strong> modernized some of the Preferences dialog code.</li>
 </ul>
 <p><strong>PR stats:</strong> In the week from Wednesday, 17 Jan to Wednesday, 24 Jan there were 47 pull requests merged, with a total codebase change of +6,747 / ‑3,894. We had an average merged PR size of +144 / ‑83. 19 new pull requests were opened.</p>
 <p><strong>Issue stats:</strong> we closed 20 issues, and 24 new issues were opened. Overall, 1,164 issues are currently open.</p>
@@ -269,7 +241,7 @@ Roy-043 fixed a few bugs in the Arch workbench, improved layer functions and mad
                         <a href="/Website/pr-16/pt/versions/">Versões</a>
                       </li></ul></li></ul>
 </nav>
-<div class="share-links"><a href="/Website/pr-16/pt/fedishare.html#title=WIP&#43;Wednesday&#43;-&#43;24&#43;January&#43;2024&amp;description=This&#43;week&#43;in&#43;FreeCAD&#43;development%3A%0ARoy-043&#43;fixed&#43;a&#43;few&#43;bugs&#43;in&#43;the&#43;Arch&#43;workbench%2C&#43;improved&#43;layer&#43;functions&#43;and&#43;made&#43;further&#43;improvements&#43;in&#43;Draft.%0AWandererFan&#43;fixed&#43;several&#43;bugs&#43;in&#43;TechDraw.%0APaddle&#43;%E2%80%A6%0A%23wip&amp;url=https://FreeCAD.github.io/Website/pr-16/pt/news/wip-wednesday-24-january-2024/"
+<div class="share-links"><a href="/Website/pr-16/pt/fedishare.html#title=WIP&#43;Wednesday&#43;-&#43;24&#43;January&#43;2024&amp;description=This&#43;week&#43;in&#43;FreeCAD&#43;development%3A%0ARoy-043&#43;fixed&#43;a&#43;few&#43;bugs&#43;in&#43;the&#43;Arch&#43;workbench%2C&#43;improved&#43;layer&#43;functions&#43;and&#43;made&#43;further&#43;improvements&#43;in&#43;Draft.&#43;WandererFan&#43;fixed&#43;several&#43;bugs&#43;in&#43;TechDraw.&#43;Paddle&#43;%E2%80%A6%0A%23wip&amp;url=https://FreeCAD.github.io/Website/pr-16/pt/news/wip-wednesday-24-january-2024/"
   title="Compartilhar no Fediverse"
   target="_blank" rel="noopener"><svg class="icon-fediverse"
     aria-hidden="true"

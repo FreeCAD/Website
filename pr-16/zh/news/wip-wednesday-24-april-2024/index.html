@@ -42,12 +42,12 @@
   <meta property="og:title" content="WIP Wednesday - 24 April 2024">
   <meta property="og:description" content="This week in FreeCAD development:
 TechDraw:
-PaddleStroke unified Insert View tools (View, ProjGroup, Sheet, Arch, SVG, Image). He also made App::Links of views work in TechDraw, this also removes ‘Share Views’ from the toolbar.">
+PaddleStroke unified Insert View tools (View, ProjGroup, Sheet, Arch, SVG, Image). He also made App::Links of views work in TechDraw, this also removes ‘Share Views’ from the toolbar. WandererFan fixed several bugs and added two new Python methods, for getting visible and hidden vertices. farleyrunkel refactored a minor part of TechDraw code. Sketcher:">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2024-04-24T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-04-13T17:40:06+02:00">
+    <meta property="article:modified_time" content="2026-04-13T18:56:11+02:00">
     <meta property="article:tag" content="WIP">
 </head><body class="single type-news kind-page "
     id="top">
@@ -178,110 +178,55 @@ PaddleStroke unified Insert View tools (View, ProjGroup, Sheet, Arch, SVG, Image
   </svg>3 分钟</span></div></section><div class="content"><p>This week in FreeCAD development:</p>
 <p>TechDraw:</p>
 <ul>
-<li>
-<p><strong>PaddleStroke</strong> unified Insert View tools (View, ProjGroup, Sheet, Arch, SVG, Image). He also made App::Links of views work in TechDraw, this also removes &lsquo;Share Views&rsquo; from the toolbar.</p>
-</li>
-<li>
-<p><strong>WandererFan</strong> fixed several bugs and added two new Python methods, for getting visible and hidden vertices.</p>
-</li>
-<li>
-<p><strong>farleyrunkel</strong> refactored a minor part of TechDraw code.</p>
-</li>
+<li><strong>PaddleStroke</strong> unified Insert View tools (View, ProjGroup, Sheet, Arch, SVG, Image). He also made App::Links of views work in TechDraw, this also removes &lsquo;Share Views&rsquo; from the toolbar.</li>
+<li><strong>WandererFan</strong> fixed several bugs and added two new Python methods, for getting visible and hidden vertices.</li>
+<li><strong>farleyrunkel</strong> refactored a minor part of TechDraw code.</li>
 </ul>
 <p>Sketcher:</p>
 <ul>
-<li>
-<p><strong>Roy-043</strong> made constraints and geometry menu texts more consistent and improved GUI texts in Sketcher settings.</p>
-</li>
-<li>
-<p><strong>PaddleStroke</strong> joined Line and Polyline in a command group in the toolbar and fixed the midpoint autoconstraint to work with polylines.</p>
-</li>
+<li><strong>Roy-043</strong> made constraints and geometry menu texts more consistent and improved GUI texts in Sketcher settings.</li>
+<li><strong>PaddleStroke</strong> joined Line and Polyline in a command group in the toolbar and fixed the midpoint autoconstraint to work with polylines.</li>
 </ul>
 <p>FEM:</p>
 <ul>
-<li>
-<p><strong>NewJoker</strong> fixed several bugs.</p>
-</li>
-<li>
-<p><strong>marioalexis84</strong> extended the ABAQUS writer to select the element types available in CalculiX. He also fixed a bug where the size of the FEM feature symbols couldn&rsquo;t be changed.</p>
-</li>
-<li>
-<p><strong>chennes</strong> fixed the compilation of FEM on MSVC.</p>
-</li>
+<li><strong>NewJoker</strong> fixed several bugs.</li>
+<li><strong>marioalexis84</strong> extended the ABAQUS writer to select the element types available in CalculiX. He also fixed a bug where the size of the FEM feature symbols couldn&rsquo;t be changed.</li>
+<li><strong>chennes</strong> fixed the compilation of FEM on MSVC.</li>
 </ul>
 <p>Materials:</p>
 <ul>
-<li>
-<p><strong>davesrocketshop</strong> brought major improvements to the material tree widget:</p>
-</li>
-<li>
-<p>Filters are now lsist and allow a variety of filtering options.</p>
+<li><strong>davesrocketshop</strong> brought major improvements to the material tree widget:
 <ul>
-<li>
-<p>User preferences allow the inclusion/exclusion of favorites and recents.</p>
-</li>
-<li>
-<p>Widget state such as expansion, tree expansions, etc. are saved and restored.</p>
-</li>
-<li>
-<p>The current appearance material is now displayed whehn editing.</p>
-</li>
-<li>
-<p>There&rsquo;s now a Python interface.</p>
-</li>
+<li>Filters are now lsist and allow a variety of filtering options.</li>
+<li>User preferences allow the inclusion/exclusion of favorites and recents.</li>
+<li>Widget state such as expansion, tree expansions, etc. are saved and restored.</li>
+<li>The current appearance material is now displayed whehn editing.</li>
+<li>There&rsquo;s now a Python interface.</li>
 </ul>
 </li>
-<li>
-<p><strong>wwmayer</strong> added support for customizing all material colors and fixed further material issues.</p>
-</li>
+<li><strong>wwmayer</strong> added support for customizing all material colors and fixed further material issues.</li>
 </ul>
 <p>Draft:</p>
 <ul>
-<li>
-<p><strong>Roy-043</strong> fixed several bugs in the workbench.</p>
-</li>
-<li>
-<p><strong>yorikvanhavre</strong> removed hardcoded axis colors (red, green, blue) and made the workbench use FreeCAD-wide axis colors.</p>
-</li>
+<li><strong>Roy-043</strong> fixed several bugs in the workbench.</li>
+<li><strong>yorikvanhavre</strong> removed hardcoded axis colors (red, green, blue) and made the workbench use FreeCAD-wide axis colors.</li>
 </ul>
 <p>Start:</p>
 <ul>
-<li>
-<p><strong>chennes</strong> recreated the <em>Start</em> workbench/page as a QtWidgets-based app.</p>
-</li>
-<li>
-<p>Several more people contributed further fixes and improvements: <strong>Rexbas</strong> fixed the migration script, <strong>wwmayer</strong> made the new Start page look more like the old one, and <strong>cjmayo</strong> made it possible to use Microsoft GSL on the Start page.</p>
-</li>
+<li><strong>chennes</strong> recreated the <em>Start</em> workbench/page as a QtWidgets-based app.</li>
+<li>Several more people contributed further fixes and improvements: <strong>Rexbas</strong> fixed the migration script, <strong>wwmayer</strong> made the new Start page look more like the old one, and <strong>cjmayo</strong> made it possible to use Microsoft GSL on the Start page.</li>
 </ul>
 <p>Some of the other changes are:</p>
 <ul>
-<li>
-<p><strong>wwmayer</strong> fixed several other bugs.</p>
-</li>
-<li>
-<p><strong>mosfet80</strong> removed more dead and unused code.</p>
-</li>
-<li>
-<p><strong>dzid26</strong> fixed a bug where a Save window would remain in the background if FreeCAD is closed by the operating system.</p>
-</li>
-<li>
-<p><strong>tomate44</strong> fixed shape projection of complex BSpline curves.</p>
-</li>
-<li>
-<p><strong>jwueller</strong> fixed a bug in OpenSCAD where CSG computations would start too early.</p>
-</li>
-<li>
-<p><strong>farleyrunkel</strong> fixed a bug where searching a model tree wouldn&rsquo;t work for numbers.</p>
-</li>
-<li>
-<p><strong>PaddleStroke</strong> moved the &lsquo;+&rsquo; tab of the TabBar workbench selector to the left so that it wouldn&rsquo;t be hidden by default with many workbenches enabled.</p>
-</li>
-<li>
-<p><strong>realthunder</strong> fixed a problem with incorrect referencing of App::Part child object&rsquo;s CopyOnChangeGroup.</p>
-</li>
-<li>
-<p><strong>cjmayo</strong> fixed several bugs in the code.</p>
-</li>
+<li><strong>wwmayer</strong> fixed several other bugs.</li>
+<li><strong>mosfet80</strong> removed more dead and unused code.</li>
+<li><strong>dzid26</strong> fixed a bug where a Save window would remain in the background if FreeCAD is closed by the operating system.</li>
+<li><strong>tomate44</strong> fixed shape projection of complex BSpline curves.</li>
+<li><strong>jwueller</strong> fixed a bug in OpenSCAD where CSG computations would start too early.</li>
+<li><strong>farleyrunkel</strong> fixed a bug where searching a model tree wouldn&rsquo;t work for numbers.</li>
+<li><strong>PaddleStroke</strong> moved the &lsquo;+&rsquo; tab of the TabBar workbench selector to the left so that it wouldn&rsquo;t be hidden by default with many workbenches enabled.</li>
+<li><strong>realthunder</strong> fixed a problem with incorrect referencing of App::Part child object&rsquo;s CopyOnChangeGroup.</li>
+<li><strong>cjmayo</strong> fixed several bugs in the code.</li>
 </ul>
 <p><strong>PR stats:</strong> In the week from Wednesday, 17 April to Wednesday, 24 April there were 54 pull requests merged. 23 new pull requests were opened.</p>
 <p><strong>Issue stats:</strong> we closed 32 issues, and 60 new issues were opened. Overall, 1,517 issues are currently open.</p>

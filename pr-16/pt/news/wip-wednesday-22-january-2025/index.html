@@ -42,12 +42,12 @@
   <meta property="og:title" content="WIP Wednesday - 22 January 2025">
   <meta property="og:description" content="This week in FreeCAD development:
 Sketcher:
-Beep6581 patched the workbench to automatically scroll to the constraint in the list view when you click on that constraint in the 3D view.">
+Beep6581 patched the workbench to automatically scroll to the constraint in the list view when you click on that constraint in the 3D view. AjinkyaDahale’s second refactoring patch landed. No new features, it’s just cleaner code with tests. chennes and Jonezzzzz fixed a couple of bugs. PartDesign:">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2025-01-22T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-04-13T17:40:06+02:00">
+    <meta property="article:modified_time" content="2026-04-13T18:56:11+02:00">
     <meta property="article:tag" content="WIP">
 </head><body class="single type-news kind-page "
     id="top">
@@ -178,49 +178,31 @@ Beep6581 patched the workbench to automatically scroll to the constraint in the 
   </svg>2 minutos</span></div></section><div class="content"><p>This week in FreeCAD development:</p>
 <p><strong>Sketcher</strong>:</p>
 <ul>
-<li>
-<p>Beep6581 patched the workbench to automatically scroll to the constraint in the list view when you click on that constraint in the 3D view.</p>
-</li>
-<li>
-<p>AjinkyaDahale&rsquo;s second refactoring patch landed. No new features, it&rsquo;s just cleaner code with tests.</p>
-</li>
-<li>
-<p>chennes and Jonezzzzz fixed a couple of bugs.</p>
-</li>
+<li>Beep6581 patched the workbench to automatically scroll to the constraint in the list view when you click on that constraint in the 3D view.</li>
+<li>AjinkyaDahale&rsquo;s second refactoring patch landed. No new features, it&rsquo;s just cleaner code with tests.</li>
+<li>chennes and Jonezzzzz fixed a couple of bugs.</li>
 </ul>
 <p><strong>PartDesign</strong>:</p>
 <ul>
-<li>
-<p>PaddleStroke added a new Preferences option: when enabled, the Create New Sketch command opens the attachment dialog instead of the &lsquo;feature pick&rsquo; dialog. Once the attachment dialog becomes more useful, this could become the default option (undecided yet). He also replaced Part Design datum commands by the core ones.</p>
-</li>
-<li>
-<p>alfrix updated the Hole task panel to show drill point options based on the selected type of the drill point. There is ongoing work by the Design Working Group to improve that task panel, you can find the latest mockup <a href="https://www.figma.com/proto/nDkUKcH1YgriUSRG2EInYj/freecad-dialogs?node-id=247-3465&amp;node-type=canvas&amp;t=PXunFHu2h93heWMQ-1&amp;scaling=min-zoom&amp;content-scaling=fixed&amp;starting-point-node-id=247%3A3465&amp;show-proto-sidebar=1"
+<li>PaddleStroke added a new Preferences option: when enabled, the Create New Sketch command opens the attachment dialog instead of the &lsquo;feature pick&rsquo; dialog. Once the attachment dialog becomes more useful, this could become the default option (undecided yet). He also replaced Part Design datum commands by the core ones.</li>
+<li>alfrix updated the Hole task panel to show drill point options based on the selected type of the drill point. There is ongoing work by the Design Working Group to improve that task panel, you can find the latest mockup <a href="https://www.figma.com/proto/nDkUKcH1YgriUSRG2EInYj/freecad-dialogs?node-id=247-3465&amp;node-type=canvas&amp;t=PXunFHu2h93heWMQ-1&amp;scaling=min-zoom&amp;content-scaling=fixed&amp;starting-point-node-id=247%3A3465&amp;show-proto-sidebar=1"
   class="external-link"title="Open link"
     target="_blank"
     rel="external noreferrer noopener">here<svg class="icon-external"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/pr-16/svg/external.svg#external"></use>
-  </svg></a>.</p>
-</li>
+  </svg></a>.</li>
 </ul>
 <p><strong>Draft</strong>: Roy_043 made move, rotate, and scale commands link-aware, made the DXF exporter preserve text alignment, improved some tooltips, and made Fillet remember the last used settings.</p>
 <p><strong>BIM</strong>: Roy_043 and yorikvanhavre fixed several bugs.</p>
 <p><strong>FEM</strong>: marioalexis84 patched the Reinforced material tool to use the new material editor and made more minor improvements.</p>
 <p><strong>GUI</strong>:</p>
 <ul>
-<li>
-<p>Rexbas fixed a navigation glitch where camera position would shift when starting viewport rotation.</p>
-</li>
-<li>
-<p>benj5378 made autocompletion global and available in all TextEdit objects.</p>
-</li>
-<li>
-<p>hasecilu added units to some spinboxes on Preferences pages.</p>
-</li>
-<li>
-<p>kadet1090 fixed the render order of datum planes and added an option to show the plane that a sketch is based on.</p>
-</li>
+<li>Rexbas fixed a navigation glitch where camera position would shift when starting viewport rotation.</li>
+<li>benj5378 made autocompletion global and available in all TextEdit objects.</li>
+<li>hasecilu added units to some spinboxes on Preferences pages.</li>
+<li>kadet1090 fixed the render order of datum planes and added an option to show the plane that a sketch is based on.</li>
 </ul>
 <div class="image-with-popover">
       <figure><button aria-label="Ampliar imagem" popovertarget="img-000"><svg class="icon-zoom"
@@ -338,7 +320,7 @@ Beep6581 patched the workbench to automatically scroll to the constraint in the 
                         <a href="/Website/pr-16/pt/versions/">Versões</a>
                       </li></ul></li></ul>
 </nav>
-<div class="share-links"><a href="/Website/pr-16/pt/fedishare.html#title=WIP&#43;Wednesday&#43;-&#43;22&#43;January&#43;2025&amp;description=This&#43;week&#43;in&#43;FreeCAD&#43;development%3A%0ASketcher%3A%0ABeep6581&#43;patched&#43;the&#43;workbench&#43;to&#43;automatically&#43;scroll&#43;to&#43;the&#43;constraint&#43;in&#43;the&#43;list&#43;view&#43;when&#43;you&#43;click&#43;on&#43;that&#43;constraint&#43;in&#43;the&#43;3D&#43;view.%0AAjinkyaDahale%E2%80%99s&#43;%E2%80%A6%0A%23wip&amp;url=https://FreeCAD.github.io/Website/pr-16/pt/news/wip-wednesday-22-january-2025/"
+<div class="share-links"><a href="/Website/pr-16/pt/fedishare.html#title=WIP&#43;Wednesday&#43;-&#43;22&#43;January&#43;2025&amp;description=This&#43;week&#43;in&#43;FreeCAD&#43;development%3A%0ASketcher%3A%0ABeep6581&#43;patched&#43;the&#43;workbench&#43;to&#43;automatically&#43;scroll&#43;to&#43;the&#43;constraint&#43;in&#43;the&#43;list&#43;view&#43;when&#43;you&#43;click&#43;on&#43;that&#43;constraint&#43;in&#43;the&#43;3D&#43;view.&#43;AjinkyaDahale%E2%80%99s&#43;%E2%80%A6%0A%23wip&amp;url=https://FreeCAD.github.io/Website/pr-16/pt/news/wip-wednesday-22-january-2025/"
   title="Compartilhar no Fediverse"
   target="_blank" rel="noopener"><svg class="icon-fediverse"
     aria-hidden="true"

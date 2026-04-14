@@ -41,13 +41,12 @@
   <meta property="og:site_name" content="FreeCAD">
   <meta property="og:title" content="WIP Wednesday - 28 February 2024">
   <meta property="og:description" content="This week in FreeCAD development:
-bgbsww, CalligaroV, and chennes made a lot more progress towards mitigating the toponaming issue.
-chennes contributed more changes to the addon manager: fixes and support for sorting addons by several criteria (alphabetical, last update time, creation date, GitHub stars), as well as support for custom scores for addons.">
+bgbsww, CalligaroV, and chennes made a lot more progress towards mitigating the toponaming issue. chennes contributed more changes to the addon manager: fixes and support for sorting addons by several criteria (alphabetical, last update time, creation date, GitHub stars), as well as support for custom scores for addons. pavltom added the Insert Repetition Count command to TechDraw and reimplemented Rich Annotation parent linking. wwmayer improved the materials editor to use integers for shininess and transparency in a certain value range, submitted a few fixes to Sketcher. edwilliams16 improved the calculation of the ‘b’ parameter of the hyperbolic arc in Sketcher. Roy-043 improved some wording in Sketcher for better consistency. PaddleStroke made it possible to sort items in the project tree by dragging and dropping them. He also changed the behavior of line DSH length/width mode so that it behaves like the rectangle length/width DSH in Sketcher. LemonBoy made datum points highlightable/selectable in the viewport. NomAnor added an optional visibility toggle to the project tree with the “classic” eye icon. He also refactored the task panel code for PartDesign’s patterns. FlachyJoe improved Helix in PartDesign to use the wires of the computed face instead of the selected ones. He also made suppressed objects distinguishable in the project tree. adrianinsaval added a new template to the Start page to easily create a new assembly. FEA-eng added a new property, BeamReducedIntegration, to the CalculiX solver in FEM. He also made several minor improvements in the workbench. marioalexis84 submitted more fixes to the FEM workbench, including mesh generation for check type analysis in CalculiX. Rexbas fixed a regression in the Blender, CAD, and Revit navigation styles. mosfet80 removed a deprecated function in core and two workbenches. 3x380V fixed a few bugs. PR stats: In the week from Wednesday, 21 February to Wednesday, 28 Feb there were 58 pull requests merged, with a total codebase change of &#43;9,585 / ‑4,489 (not counting translation updates). We had an average merged PR size of &#43;165 / ‑77. 22 new pull requests were opened.">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2024-02-28T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-04-13T17:40:06+02:00">
+    <meta property="article:modified_time" content="2026-04-13T18:56:11+02:00">
     <meta property="article:tag" content="WIP">
 </head><body class="single type-news kind-page "
     id="top">
@@ -177,54 +176,22 @@ chennes contributed more changes to the addon manager: fixes and support for sor
     <use href="/Website/pr-16/svg/time.svg#time"></use>
   </svg>2 分钟</span></div></section><div class="content"><p>This week in FreeCAD development:</p>
 <ul>
-<li>
-<p><strong>bgbsww</strong>, <strong>CalligaroV</strong>, and <strong>chennes</strong> made a lot more progress towards mitigating the toponaming issue.</p>
-</li>
-<li>
-<p><strong>chennes</strong> contributed more changes to the addon manager: fixes and support for sorting addons by several criteria (alphabetical, last update time, creation date, GitHub stars), as well as support for custom scores for addons.</p>
-</li>
-<li>
-<p><strong>pavltom</strong> added the Insert Repetition Count command to TechDraw and reimplemented Rich Annotation parent linking.</p>
-</li>
-<li>
-<p><strong>wwmayer</strong> improved the materials editor to use integers for shininess and transparency in a certain value range, submitted a few fixes to Sketcher.</p>
-</li>
-<li>
-<p><strong>edwilliams16</strong> improved the calculation of the &lsquo;b&rsquo; parameter of the hyperbolic arc in Sketcher.</p>
-</li>
-<li>
-<p><strong>Roy-043</strong> improved some wording in Sketcher for better consistency.</p>
-</li>
-<li>
-<p><strong>PaddleStroke</strong> made it possible to sort items in the project tree by dragging and dropping them. He also changed the behavior of line DSH length/width mode so that it behaves like the rectangle length/width DSH in Sketcher.</p>
-</li>
-<li>
-<p><strong>LemonBoy</strong> made datum points highlightable/selectable in the viewport.</p>
-</li>
-<li>
-<p><strong>NomAnor</strong> added an optional visibility toggle to the project tree with the &ldquo;classic&rdquo; eye icon. He also refactored the task panel code for PartDesign&rsquo;s patterns.</p>
-</li>
-<li>
-<p><strong>FlachyJoe</strong> improved Helix in PartDesign to use the wires of the computed face instead of the selected ones. He also made suppressed objects distinguishable in the project tree.</p>
-</li>
-<li>
-<p><strong>adrianinsaval</strong> added a new template to the Start page to easily create a new assembly.</p>
-</li>
-<li>
-<p><strong>FEA-eng</strong> added a new property, BeamReducedIntegration, to the CalculiX solver in FEM. He also made several minor improvements in the workbench.</p>
-</li>
-<li>
-<p><strong>marioalexis84</strong> submitted more fixes to the FEM workbench, including mesh generation for check type analysis in CalculiX.</p>
-</li>
-<li>
-<p><strong>Rexbas</strong> fixed a regression in the Blender, CAD, and Revit navigation styles.</p>
-</li>
-<li>
-<p><strong>mosfet80</strong> removed a deprecated function in core and two workbenches.</p>
-</li>
-<li>
-<p><strong>3x380V</strong> fixed a few bugs.</p>
-</li>
+<li><strong>bgbsww</strong>, <strong>CalligaroV</strong>, and <strong>chennes</strong> made a lot more progress towards mitigating the toponaming issue.</li>
+<li><strong>chennes</strong> contributed more changes to the addon manager: fixes and support for sorting addons by several criteria (alphabetical, last update time, creation date, GitHub stars), as well as support for custom scores for addons.</li>
+<li><strong>pavltom</strong> added the Insert Repetition Count command to TechDraw and reimplemented Rich Annotation parent linking.</li>
+<li><strong>wwmayer</strong> improved the materials editor to use integers for shininess and transparency in a certain value range, submitted a few fixes to Sketcher.</li>
+<li><strong>edwilliams16</strong> improved the calculation of the &lsquo;b&rsquo; parameter of the hyperbolic arc in Sketcher.</li>
+<li><strong>Roy-043</strong> improved some wording in Sketcher for better consistency.</li>
+<li><strong>PaddleStroke</strong> made it possible to sort items in the project tree by dragging and dropping them. He also changed the behavior of line DSH length/width mode so that it behaves like the rectangle length/width DSH in Sketcher.</li>
+<li><strong>LemonBoy</strong> made datum points highlightable/selectable in the viewport.</li>
+<li><strong>NomAnor</strong> added an optional visibility toggle to the project tree with the &ldquo;classic&rdquo; eye icon. He also refactored the task panel code for PartDesign&rsquo;s patterns.</li>
+<li><strong>FlachyJoe</strong> improved Helix in PartDesign to use the wires of the computed face instead of the selected ones. He also made suppressed objects distinguishable in the project tree.</li>
+<li><strong>adrianinsaval</strong> added a new template to the Start page to easily create a new assembly.</li>
+<li><strong>FEA-eng</strong> added a new property, BeamReducedIntegration, to the CalculiX solver in FEM. He also made several minor improvements in the workbench.</li>
+<li><strong>marioalexis84</strong> submitted more fixes to the FEM workbench, including mesh generation for check type analysis in CalculiX.</li>
+<li><strong>Rexbas</strong> fixed a regression in the Blender, CAD, and Revit navigation styles.</li>
+<li><strong>mosfet80</strong> removed a deprecated function in core and two workbenches.</li>
+<li><strong>3x380V</strong> fixed a few bugs.</li>
 </ul>
 <p><strong>PR stats:</strong> In the week from Wednesday, 21 February to Wednesday, 28 Feb there were 58 pull requests merged, with a total codebase change of +9,585 / ‑4,489 (not counting translation updates). We had an average merged PR size of +165 / ‑77. 22 new pull requests were opened.</p>
 <p><strong>Issue stats:</strong> we closed 42 issues, and 48 new issues were opened. Overall, 1,266 issues are currently open.</p>
@@ -276,7 +243,7 @@ chennes contributed more changes to the addon manager: fixes and support for sor
                         <a href="/Website/pr-16/zh/versions/">版本列表</a>
                       </li></ul></li></ul>
 </nav>
-<div class="share-links"><a href="/Website/pr-16/zh/fedishare.html#title=WIP&#43;Wednesday&#43;-&#43;28&#43;February&#43;2024&amp;description=This&#43;week&#43;in&#43;FreeCAD&#43;development%3A%0Abgbsww%2C&#43;CalligaroV%2C&#43;and&#43;chennes&#43;made&#43;a&#43;lot&#43;more&#43;progress&#43;towards&#43;mitigating&#43;the&#43;toponaming&#43;issue.%0Achennes&#43;contributed&#43;more&#43;changes&#43;to&#43;the&#43;addon&#43;manager%3A&#43;fixes&#43;and&#43;%E2%80%A6%0A%23wip&amp;url=https://FreeCAD.github.io/Website/pr-16/zh/news/wip-wednesday-28-february-2024/"
+<div class="share-links"><a href="/Website/pr-16/zh/fedishare.html#title=WIP&#43;Wednesday&#43;-&#43;28&#43;February&#43;2024&amp;description=This&#43;week&#43;in&#43;FreeCAD&#43;development%3A%0Abgbsww%2C&#43;CalligaroV%2C&#43;and&#43;chennes&#43;made&#43;a&#43;lot&#43;more&#43;progress&#43;towards&#43;mitigating&#43;the&#43;toponaming&#43;issue.&#43;chennes&#43;contributed&#43;more&#43;changes&#43;to&#43;the&#43;addon&#43;manager%3A&#43;fixes&#43;and&#43;%E2%80%A6%0A%23wip&amp;url=https://FreeCAD.github.io/Website/pr-16/zh/news/wip-wednesday-28-february-2024/"
   title="分享至 Fediverse"
   target="_blank" rel="noopener"><svg class="icon-fediverse"
     aria-hidden="true"

@@ -45,7 +45,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2023-01-16T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-04-13T17:46:10+02:00">
+    <meta property="article:modified_time" content="2026-04-13T18:56:11+02:00">
     <meta property="article:tag" content="Code">
     <meta property="article:tag" content="API">
 </head><body class="single type-news kind-page "
@@ -322,15 +322,9 @@
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">FreeCAD</span> <span class="kn">import</span> <span class="n">Vector</span> <span class="k">as</span> <span class="n">V</span>
 </span></span><span class="line"><span class="cl"><span class="n">rot</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Rotation</span><span class="p">(</span><span class="n">V</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">V</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">V</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="s1">&#39;ZXY&#39;</span><span class="p">)</span></span></span></code></pre></div></div><p>What does this represent? <code>string</code> is the priority order of the axes.</p>
 <ul>
-<li>
-<p>Z is first: the Z-axis is rotated into the direction vecz: <code>V(1,0,1)</code>.  (Two degrees of freedom used.)</p>
-</li>
-<li>
-<p>X is second: the rotated X-axis is placed in the plane defined by the <code>vecx</code> and <code>vecz</code> arguments, orthogonal to <code>vecz</code>. That is, the <strong>component</strong> of <code>vecx</code> orthogonal to <code>vecz</code> defines the rotated X direction.  (Uses one more degree of freedom.)</p>
-</li>
-<li>
-<p>Y is third: the <code>vecy</code> argument is completely ignored. The new Y-axis is created forming an orthogonal triad with the new Z and X axes, constructed from the above by the right hand rule (in the direction Z x X, for those familiar with the vector cross-product).</p>
-</li>
+<li>Z is first: the Z-axis is rotated into the direction vecz: <code>V(1,0,1)</code>.  (Two degrees of freedom used.)</li>
+<li>X is second: the rotated X-axis is placed in the plane defined by the <code>vecx</code> and <code>vecz</code> arguments, orthogonal to <code>vecz</code>. That is, the <strong>component</strong> of <code>vecx</code> orthogonal to <code>vecz</code> defines the rotated X direction.  (Uses one more degree of freedom.)</li>
+<li>Y is third: the <code>vecy</code> argument is completely ignored. The new Y-axis is created forming an orthogonal triad with the new Z and X axes, constructed from the above by the right hand rule (in the direction Z x X, for those familiar with the vector cross-product).</li>
 </ul>
 <p>Our example generates the same rotation illustrated in Figs. (1) and (2) above. Note how the (blue) z-axis and (red) x-axis in Fig. (1) change. The mapping from (xvec, yvec, zvec) to normalized direction vectors, in the second listed step above, is illustrated in Fig (3), the movie below.</p>
 <figure>
@@ -395,15 +389,9 @@
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">rot_compound</span> <span class="o">=</span> <span class="n">rot2</span> <span class="o">*</span> <span class="n">rot1</span></span></span></code></pre></div></div><p>and</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">placement_compound</span> <span class="o">=</span> <span class="n">placement2</span> <span class="o">*</span> <span class="n">placement1</span></span></span></code></pre></div></div><p>There are three important things to note:</p>
 <ul>
-<li>
-<p>Both placements/rotations reference the <code>same</code> coordinate system.</p>
-</li>
-<li>
-<p>Unlike when multiplying numbers, the order matters! If you rotate an object around two different axes, you&rsquo;ll generally get a different result if you reverse the order of operations.</p>
-</li>
-<li>
-<p>The rotation <code>rot2*rot1</code> means first rot1, then rot2. Think of them as function applications to understand the order.</p>
-</li>
+<li>Both placements/rotations reference the <code>same</code> coordinate system.</li>
+<li>Unlike when multiplying numbers, the order matters! If you rotate an object around two different axes, you&rsquo;ll generally get a different result if you reverse the order of operations.</li>
+<li>The rotation <code>rot2*rot1</code> means first rot1, then rot2. Think of them as function applications to understand the order.</li>
 </ul>
 <p>To illustrate the second point, let us consider two easily visualized rotations R and S and apply them in opposite orders.</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">FreeCAD</span> <span class="kn">import</span> <span class="n">Vector</span> <span class="k">as</span> <span class="n">V</span>
@@ -459,29 +447,17 @@
     <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
   </svg></a>
 </h5><p>If we want to rotate an object about an axis that is offset from the origin, we use the three argument form of Placement:</p>
-<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">App</span><span class="o">.</span><span class="n">Placement</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">rotation</span><span class="p">,</span> <span class="n">center</span><span class="p">)</span></span></span></code></pre></div></div><p>This means</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">App</span><span class="o">.</span><span class="n">Placement</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">rotation</span><span class="p">,</span> <span class="n">center</span><span class="p">)</span></span></span></code></pre></div></div><p>This means:</p>
 <ul>
-<li>
-<p>Rotate by <code>rotation</code> about an axis through <code>center</code></p>
-</li>
-<li>
-<p>Translate the result by <code>base</code></p>
-</li>
+<li>Rotate by <code>rotation</code> about an axis through <code>center</code></li>
+<li>Translate the result by <code>base</code></li>
 </ul>
 <p>As an exercise, how could we have done this from first principles?</p>
 <ul>
-<li>
-<p>Translate by -<code>center</code></p>
-</li>
-<li>
-<p>Rotate by <code>rotation</code></p>
-</li>
-<li>
-<p>Translate back by <code>center</code></p>
-</li>
-<li>
-<p>Translate by <code>base</code></p>
-</li>
+<li>Translate by -<code>center</code></li>
+<li>Rotate by <code>rotation</code></li>
+<li>Translate back by <code>center</code></li>
+<li>Translate by <code>base</code></li>
 </ul>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="c1">#sample data</span>
 </span></span><span class="line"><span class="cl"><span class="n">base</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Vector</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>

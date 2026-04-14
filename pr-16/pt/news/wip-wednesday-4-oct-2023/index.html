@@ -41,12 +41,12 @@
   <meta property="og:site_name" content="FreeCAD">
   <meta property="og:title" content="WIP Wednesday - 4 Oct 2023">
   <meta property="og:description" content="This week in FreeCAD development:
-@obelisk79 is spearheading the formation of a UI/UX working group – more details coming soon! If you are interested in participating, consider joining the FreeCAD Discord and checking out the #ui-ux-themes channel.">
+@obelisk79 is spearheading the formation of a UI/UX working group – more details coming soon! If you are interested in participating, consider joining the FreeCAD Discord and checking out the #ui-ux-themes channel. @yorik is preparing the help module to become builtin @kadet is working on the implementation of preferences navigation redesign (https://github.com/freecad/freecad/issues/10886 ), and then probably going back to thin walls support (https://github.com/freecad/freecad/issues/10538 ) @paddle is working on sketcher tool settings initial implementation &#43; offset : https://github.com/freecad/freecad/pull/10892 And assembly wb : https://github.com/freecad/freecad/pull/10764 @andrecaldas is developing “thread safe containers”: https://github.com/andre-caldas/freecad … /README.md @DavesRocketShop is making progress on material arrays. 2D and 3D arrays can be edited, saved, and restored. Still some UI issues to fix before it is considered complete. I (@chennes) put the finishing touches on the next Toponaming PR (related to storing binary data in our XML files), and am now moving on to actually calculating and storing names for the TopoShape class. PR stats: In the week from Wednesday, 27 Sept to Wednesday, 4 Oct there were 43 pull requests merged, with a total codebase change of &#43;12,993 / ‑4,451 lines. Not counting translation updates we had an average merged PR size of &#43;302 / ‑104. We closed 17 Issues, and 34 new Issues were opened (though many of those are related to implementing the new Materials system, so don’t represent bugs, per se).">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2023-10-05T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-04-13T17:43:46+02:00">
+    <meta property="article:modified_time" content="2026-04-13T18:56:11+02:00">
     <meta property="article:tag" content="WIP">
 </head><body class="single type-news kind-page "
     id="top">
@@ -176,21 +176,16 @@
     <use href="/Website/pr-16/svg/time.svg#time"></use>
   </svg>2 minutos</span></div></section><div class="content"><p>This week in FreeCAD development:</p>
 <ul>
-<li>
-<p><strong>@obelisk79</strong> is spearheading the formation of a UI/UX working group &ndash; more details coming soon! If you are interested in participating, consider joining the <a href="https://discord.gg/w2cTKGzccC"
+<li><strong>@obelisk79</strong> is spearheading the formation of a UI/UX working group &ndash; more details coming soon! If you are interested in participating, consider joining the <a href="https://discord.gg/w2cTKGzccC"
   class="external-link"title="Open link"
     target="_blank"
     rel="external noreferrer noopener">FreeCAD Discord<svg class="icon-external"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/pr-16/svg/external.svg#external"></use>
-  </svg></a> and checking out the #ui-ux-themes channel.</p>
-</li>
-<li>
-<p><strong>@yorik</strong> is preparing the help module to become builtin</p>
-</li>
-<li>
-<p><strong>@kadet</strong> is working on the implementation of preferences navigation redesign (<a href="https://github.com/freecad/freecad/issues/10886"
+  </svg></a> and checking out the #ui-ux-themes channel.</li>
+<li><strong>@yorik</strong> is preparing the help module to become builtin</li>
+<li><strong>@kadet</strong> is working on the implementation of preferences navigation redesign (<a href="https://github.com/freecad/freecad/issues/10886"
   class="external-link"title="Open link"
     target="_blank"
     rel="external noreferrer noopener">https://github.com/freecad/freecad/issues/10886<svg class="icon-external"
@@ -204,10 +199,8 @@
     aria-hidden="true"
     focusable="false">
     <use href="/Website/pr-16/svg/external.svg#external"></use>
-  </svg></a>)</p>
-</li>
-<li>
-<p><strong>@paddle</strong> is working on sketcher tool settings initial implementation + offset : <a href="https://github.com/freecad/freecad/pull/10892"
+  </svg></a>)</li>
+<li><strong>@paddle</strong> is working on sketcher tool settings initial implementation + offset : <a href="https://github.com/freecad/freecad/pull/10892"
   class="external-link"title="Open link"
     target="_blank"
     rel="external noreferrer noopener">https://github.com/freecad/freecad/pull/10892<svg class="icon-external"
@@ -222,24 +215,17 @@ And assembly wb : <a href="https://github.com/freecad/freecad/pull/10764"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/pr-16/svg/external.svg#external"></use>
-  </svg></a></p>
-</li>
-<li>
-<p><strong>@andrecaldas</strong> is developing &ldquo;thread safe containers&rdquo;:<a href="https://github.com/andre-caldas/freecad/blob/SmartPointerDocumentObject/src/Base/Threads/README.md"
+  </svg></a></li>
+<li><strong>@andrecaldas</strong> is developing &ldquo;thread safe containers&rdquo;: <a href="https://github.com/andre-caldas/freecad/blob/SmartPointerDocumentObject/src/Base/Threads/README.md"
   class="external-link"title="Open link"
     target="_blank"
-    rel="external noreferrer noopener"> https://github.com/andre-caldas/freecad &hellip; /README.md<svg class="icon-external"
+    rel="external noreferrer noopener">https://github.com/andre-caldas/freecad &hellip; /README.md<svg class="icon-external"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/pr-16/svg/external.svg#external"></use>
-  </svg></a></p>
-</li>
-<li>
-<p><strong>@DavesRocketShop</strong> is making progress on material arrays. 2D and 3D arrays can be edited, saved, and restored. Still some UI issues to fix before it is considered complete.</p>
-</li>
-<li>
-<p>I (<strong>@chennes</strong>) put the finishing touches on the next Toponaming PR (related to storing binary data in our XML files), and am now moving on to actually calculating and storing names for the TopoShape class.</p>
-</li>
+  </svg></a></li>
+<li><strong>@DavesRocketShop</strong> is making progress on material arrays. 2D and 3D arrays can be edited, saved, and restored. Still some UI issues to fix before it is considered complete.</li>
+<li>I (<strong>@chennes</strong>) put the finishing touches on the next Toponaming PR (related to storing binary data in our XML files), and am now moving on to actually calculating and storing names for the TopoShape class.</li>
 </ul>
 <p><strong>PR stats:</strong> In the week from Wednesday, 27 Sept to Wednesday, 4 Oct there were 43 pull requests merged, with a total codebase change of +12,993 / ‑4,451 lines. Not counting translation updates we had an average merged PR size of +302 / ‑104. We closed 17 Issues, and 34 new Issues were opened (though many of those are related to implementing the new Materials system, so don&rsquo;t represent bugs, <em>per se</em>).</p>
 

@@ -41,12 +41,12 @@
   <meta property="og:site_name" content="FreeCAD">
   <meta property="og:title" content="WIP Wednesday - 31 January 2024">
   <meta property="og:description" content="This week in FreeCAD development:
-bgbsww, chennes, and CalligaroV ported and further improved various changes from RealThunder’s branch towards mitigating the toponaming problem.">
+bgbsww, chennes, and CalligaroV ported and further improved various changes from RealThunder’s branch towards mitigating the toponaming problem. Roy-043 fixed several scale widget related bugs in the Draft workbench, a few bugs in the Arch workbench, a couple of minor issues in Sketcher and in the Preferences dialog, and then tweaked Arch’s preferences layout to follow recent changes in Draft’s preferences. WandererFan fixed several issues in the TechDraw workbench. marioalexis84 improved contact and tie constraints in FEM. He also contributed several fixes to the new materials system. LemonBoy fixed a bug where color assignment to a body would not be undoable. chennes tweaked the Addon Manager to remove excess macros information that can’t be rendered properly and fixed git detection on macOS. He also made it possible to allow primary branch name change in package.xml. PaddleStroke fixed a bug with copying single geometry items and a bug that broke building the main development branch. oursland fixed a Conda-related build issue on Windows. 3x380V submitted further fixes towards Qt6 support. PR stats: In the week from Wednesday, 24 Jan to Wednesday, 31 Jan there were 31 pull requests merged, with a total codebase change of &#43;4,138 / ‑1,902. We had an average merged PR size of &#43;133 / ‑61. 24 new pull requests were opened.">
   <meta property="og:locale" content="es_ES">
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2024-01-31T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-04-13T17:40:06+02:00">
+    <meta property="article:modified_time" content="2026-04-13T18:56:11+02:00">
     <meta property="article:tag" content="WIP">
 </head><body class="single type-news kind-page "
     id="top">
@@ -176,33 +176,15 @@ bgbsww, chennes, and CalligaroV ported and further improved various changes from
     <use href="/Website/pr-16/svg/time.svg#time"></use>
   </svg>2 min</span></div></section><div class="content"><p>This week in FreeCAD development:</p>
 <ul>
-<li>
-<p><strong>bgbsww</strong>, <strong>chennes</strong>, and <strong>CalligaroV</strong> ported and further improved various changes from <strong>RealThunder</strong>&rsquo;s branch towards mitigating the toponaming problem.</p>
-</li>
-<li>
-<p><strong>Roy-043</strong> fixed several scale widget related bugs in the Draft workbench, a few bugs in the Arch workbench, a couple of minor issues in Sketcher and in the Preferences dialog, and then tweaked Arch&rsquo;s preferences layout to follow recent changes in Draft&rsquo;s preferences.</p>
-</li>
-<li>
-<p><strong>WandererFan</strong> fixed several issues in the TechDraw workbench.</p>
-</li>
-<li>
-<p><strong>marioalexis84</strong> improved contact and tie constraints in FEM. He also contributed several fixes to the new materials system.</p>
-</li>
-<li>
-<p><strong>LemonBoy</strong> fixed a bug where color assignment to a body would not be undoable.</p>
-</li>
-<li>
-<p><strong>chennes</strong> tweaked the Addon Manager to remove excess macros information that can&rsquo;t be rendered properly and fixed git detection on macOS. He also made it possible to allow primary branch name change in <code>package.xml</code>.</p>
-</li>
-<li>
-<p><strong>PaddleStroke</strong> fixed a bug with copying single geometry items and a bug that broke building the main development branch.</p>
-</li>
-<li>
-<p><strong>oursland</strong> fixed a Conda-related build issue on Windows.</p>
-</li>
-<li>
-<p><strong>3x380V</strong> submitted further fixes towards Qt6 support.</p>
-</li>
+<li><strong>bgbsww</strong>, <strong>chennes</strong>, and <strong>CalligaroV</strong> ported and further improved various changes from <strong>RealThunder</strong>&rsquo;s branch towards mitigating the toponaming problem.</li>
+<li><strong>Roy-043</strong> fixed several scale widget related bugs in the Draft workbench, a few bugs in the Arch workbench, a couple of minor issues in Sketcher and in the Preferences dialog, and then tweaked Arch&rsquo;s preferences layout to follow recent changes in Draft&rsquo;s preferences.</li>
+<li><strong>WandererFan</strong> fixed several issues in the TechDraw workbench.</li>
+<li><strong>marioalexis84</strong> improved contact and tie constraints in FEM. He also contributed several fixes to the new materials system.</li>
+<li><strong>LemonBoy</strong> fixed a bug where color assignment to a body would not be undoable.</li>
+<li><strong>chennes</strong> tweaked the Addon Manager to remove excess macros information that can&rsquo;t be rendered properly and fixed git detection on macOS. He also made it possible to allow primary branch name change in <code>package.xml</code>.</li>
+<li><strong>PaddleStroke</strong> fixed a bug with copying single geometry items and a bug that broke building the main development branch.</li>
+<li><strong>oursland</strong> fixed a Conda-related build issue on Windows.</li>
+<li><strong>3x380V</strong> submitted further fixes towards Qt6 support.</li>
 </ul>
 <p><strong>PR stats:</strong> In the week from Wednesday, 24 Jan to Wednesday, 31 Jan there were 31 pull requests merged, with a total codebase change of +4,138 / ‑1,902. We had an average merged PR size of +133 / ‑61. 24 new pull requests were opened.</p>
 <p><strong>Issue stats:</strong> we closed 28 issues, and 53 new issues were opened. Overall, 1,196 issues are currently open.</p>
@@ -254,7 +236,7 @@ bgbsww, chennes, and CalligaroV ported and further improved various changes from
                         <a href="/Website/pr-16/es/versions/">Versiones</a>
                       </li></ul></li></ul>
 </nav>
-<div class="share-links"><a href="/Website/pr-16/es/fedishare.html#title=WIP&#43;Wednesday&#43;-&#43;31&#43;January&#43;2024&amp;description=This&#43;week&#43;in&#43;FreeCAD&#43;development%3A%0Abgbsww%2C&#43;chennes%2C&#43;and&#43;CalligaroV&#43;ported&#43;and&#43;further&#43;improved&#43;various&#43;changes&#43;from&#43;RealThunder%E2%80%99s&#43;branch&#43;towards&#43;mitigating&#43;the&#43;toponaming&#43;problem.%0ARoy-043&#43;fixed&#43;several&#43;%E2%80%A6%0A%23wip&amp;url=https://FreeCAD.github.io/Website/pr-16/es/news/wip-wednesday-31-january-2024/"
+<div class="share-links"><a href="/Website/pr-16/es/fedishare.html#title=WIP&#43;Wednesday&#43;-&#43;31&#43;January&#43;2024&amp;description=This&#43;week&#43;in&#43;FreeCAD&#43;development%3A%0Abgbsww%2C&#43;chennes%2C&#43;and&#43;CalligaroV&#43;ported&#43;and&#43;further&#43;improved&#43;various&#43;changes&#43;from&#43;RealThunder%E2%80%99s&#43;branch&#43;towards&#43;mitigating&#43;the&#43;toponaming&#43;problem.&#43;Roy-043&#43;fixed&#43;several&#43;%E2%80%A6%0A%23wip&amp;url=https://FreeCAD.github.io/Website/pr-16/es/news/wip-wednesday-31-january-2024/"
   title="Compartir en Fediverse"
   target="_blank" rel="noopener"><svg class="icon-fediverse"
     aria-hidden="true"

@@ -45,7 +45,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2024-03-27T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-04-13T17:40:06+02:00">
+    <meta property="article:modified_time" content="2026-04-13T18:56:11+02:00">
     <meta property="article:tag" content="WIP">
 </head><body class="single type-news kind-page "
     id="top">
@@ -177,62 +177,34 @@
 <p>Toponaming: <strong>bgbsww</strong> and <strong>chennes</strong> are now actively adding history support. Think extrusion, feature mirroring and offset. And tests - that&rsquo;s really important too.</p>
 <p>TechDraw:</p>
 <ul>
-<li>
-<p><strong>pavltom</strong> contributed an initial implementation of automatic filling of basic editable fields in TechDraw templates. <a href="https://github.com/freecad/freecad/pull/13005"
+<li><strong>pavltom</strong> contributed an initial implementation of automatic filling of basic editable fields in TechDraw templates. <a href="https://github.com/freecad/freecad/pull/13005"
   class="external-link"title="Open link"
     target="_blank"
     rel="external noreferrer noopener">See here<svg class="icon-external"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/pr-16/svg/external.svg#external"></use>
-  </svg></a> for details.</p>
-</li>
-<li>
-<p><strong>WandererFan</strong> fixed a crash occuring when deleting a centerline followed by undo, as well as some other issues in TechDraw. He also fixed a problem with the initial painting of PAT hatches on section views.</p>
-</li>
-<li>
-<p><strong>PaddleStroke</strong> removed &ldquo;cosmetic eraser&rdquo; from TechDraw&rsquo;s toolbar (it can already be done by selecting and pressing the Del key anyway) and fixed several issues.</p>
-</li>
-<li>
-<p><strong>mpfusion</strong> added leading plus (+) in hole/shaft fit limit.</p>
-</li>
-<li>
-<p><strong>guenthereder</strong> fixed a bug occuring when added a BIM section plane into a TechDraw page.</p>
-</li>
+  </svg></a> for details.</li>
+<li><strong>WandererFan</strong> fixed a crash occuring when deleting a centerline followed by undo, as well as some other issues in TechDraw. He also fixed a problem with the initial painting of PAT hatches on section views.</li>
+<li><strong>PaddleStroke</strong> removed &ldquo;cosmetic eraser&rdquo; from TechDraw&rsquo;s toolbar (it can already be done by selecting and pressing the Del key anyway) and fixed several issues.</li>
+<li><strong>mpfusion</strong> added leading plus (+) in hole/shaft fit limit.</li>
+<li><strong>guenthereder</strong> fixed a bug occuring when added a BIM section plane into a TechDraw page.</li>
 </ul>
 <p>Sketcher: <strong>PaddleStroke</strong> created a new Chamfer tool, reworked the Fillet tool (angle preservation is now an option), and reworked the Symmetry tool (now supports previewing and creating symmetry constraints). He also fixed a regression where floating input widget wouldn&rsquo;t get focus after a user tweaks settings in the Task panel.</p>
 <p>FEM:</p>
 <ul>
-<li>
-<p><strong>NewJoker</strong> added minimum and maximum time increment properties for CalculiX solver settings.</p>
-</li>
-<li>
-<p><strong>marioalexis84</strong> implemented the exporting of post-processing data to VTK.</p>
-</li>
-<li>
-<p><strong>chennes</strong> fixed a small bug in FEM.</p>
-</li>
+<li><strong>NewJoker</strong> added minimum and maximum time increment properties for CalculiX solver settings.</li>
+<li><strong>marioalexis84</strong> implemented the exporting of post-processing data to VTK.</li>
+<li><strong>chennes</strong> fixed a small bug in FEM.</li>
 </ul>
 <p>Among other changes:</p>
 <ul>
-<li>
-<p><strong>yorikvanhavre</strong> fixed an bug in the WebGL exporter in Arch and made it possible to write IFC objects without owner history. On top of that, he added a color button to the task panel in Draft, that appears when pressing the Draft working plane button, that allows to change the grid color. And he registered interactive Arch tools to Draft, so that additional Draft mechanisms such as the grid turning automatically on/off would apply.</p>
-</li>
-<li>
-<p><strong>Roy-043</strong> fixed several issues in Draft and improved the logic of Draft_Label texts.</p>
-</li>
-<li>
-<p><strong>wwmayer</strong> did minor refactoring in the code for creating task dialogs, made Part_ProjectionOnSurface in the Part WB parametric, added an &lsquo;MSAA 6x&rsquo; viewport rendering option, and fixed several issues.</p>
-</li>
-<li>
-<p><strong>qewer33</strong> rearranged &lsquo;New File&rsquo; buttons on the Start page and renamed the &lsquo;Standard Part&rsquo; button to &lsquo;Parametric Part&rsquo;.</p>
-</li>
-<li>
-<p><strong>FlachyJoe</strong> fixed a helix bug in Part Design. He also contributed a patch to allow creating an ExpLineEdit widget with Python code.</p>
-</li>
-<li>
-<p><strong>Ovalelephant35</strong> added missing API documentation and updated existing one for for various files.</p>
-</li>
+<li><strong>yorikvanhavre</strong> fixed an bug in the WebGL exporter in Arch and made it possible to write IFC objects without owner history. On top of that, he added a color button to the task panel in Draft, that appears when pressing the Draft working plane button, that allows to change the grid color. And he registered interactive Arch tools to Draft, so that additional Draft mechanisms such as the grid turning automatically on/off would apply.</li>
+<li><strong>Roy-043</strong> fixed several issues in Draft and improved the logic of Draft_Label texts.</li>
+<li><strong>wwmayer</strong> did minor refactoring in the code for creating task dialogs, made Part_ProjectionOnSurface in the Part WB parametric, added an &lsquo;MSAA 6x&rsquo; viewport rendering option, and fixed several issues.</li>
+<li><strong>qewer33</strong> rearranged &lsquo;New File&rsquo; buttons on the Start page and renamed the &lsquo;Standard Part&rsquo; button to &lsquo;Parametric Part&rsquo;.</li>
+<li><strong>FlachyJoe</strong> fixed a helix bug in Part Design. He also contributed a patch to allow creating an ExpLineEdit widget with Python code.</li>
+<li><strong>Ovalelephant35</strong> added missing API documentation and updated existing one for for various files.</li>
 </ul>
 <p><strong>PR stats:</strong> In the week from Wednesday, 20 March to Wednesday, 27 March there were 50 pull requests merged, with a total codebase change of +7,670 / ‑3,140. We had an average merged PR size of +153 / ‑63. 19 new pull requests were opened.</p>
 <p><strong>Issue stats:</strong> we closed 39 issues, and 55 new issues were opened. Overall, 1,390 issues are currently open.</p>

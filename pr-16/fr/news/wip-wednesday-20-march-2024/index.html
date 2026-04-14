@@ -41,12 +41,12 @@
   <meta property="og:site_name" content="FreeCAD">
   <meta property="og:title" content="WIP Wednesday - 20 March 2024">
   <meta property="og:description" content="This week in FreeCAD development:
-bgbsww and chennes made further progress towards mitigating the toponaming issue. More RealThunder’s code has been ported and improved. A C&#43;&#43; testing framework was added for PartDesign and ShapeBinder.">
+bgbsww and chennes made further progress towards mitigating the toponaming issue. More RealThunder’s code has been ported and improved. A C&#43;&#43; testing framework was added for PartDesign and ShapeBinder. marioalexis84 committed fixes to the FEM workbench. NewJoker fixed bugs in FEM and updated FEM examples on the Start page. lyphrowny fixed 1D beam cross section orientation in FEM. hoshengwei contributed a fix to the Arch workbench. sliptonic fixed an i18n error in CAM. WandererFan fixed several bugs in TechDraw. pavltom contributed further fixes for parent linking in TechDraw, this time for Unify Projection Group. edi271 fixed several bugs in TechDraw. davesrocketshop fixed bugs in the new materials system. wwmayer fixed various bugs including some crashers, added a test for mesh export, ported FreeCAD’s QtDesigner plugin to Qt6. maxwxyz made the main window title display the current active document’s name. He also created a toolbar command group for view presets (top, bottom, etc.), this is used by default and can be disabled. Additionally, he added the command for the perpendicular constraint to the context menu in Sketcher, if a line and a conic are selected. Moreover, with feedback from the design working group, he updated some of the Assembly icons to look not too similar to each other. PaddleStroke added missing view menu entries to the navicube button. He also introduced a basic Chamfer tool and reworked the Fillet tool to make the “preserve corner” option a Tasks panel checkbox; both tools now have default shortcuts. yorikvanhavre fixed IFC export of arrays and improved the IFC exporter in Arch so that it would be able to append objects to an IFC file instead of creating a file from scratch. He also updated Draft to recognize NativeIFC objects. oscarale-camorlinga updated the Text attribute in ArchSpace to support Description and Long Name IFC attributes. NomAnor fixed a regression in pattern reference selection in PartDesign. FlachyJoe fixed a crash occurring when using variable links. luzpaz contributed minor fixes. PR stats: In the week from Wednesday, 13 March to Wednesday, 20 March there were 49 pull requests merged, with a total codebase change of &#43;7,919 / ‑3,833. We had an average merged PR size of &#43;162 / ‑78. 29 new pull requests were opened.">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2024-03-20T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-04-13T17:40:06+02:00">
+    <meta property="article:modified_time" content="2026-04-13T18:56:11+02:00">
     <meta property="article:tag" content="WIP">
 </head><body class="single type-news kind-page "
     id="top">
@@ -176,60 +176,24 @@ bgbsww and chennes made further progress towards mitigating the toponaming issue
     <use href="/Website/pr-16/svg/time.svg#time"></use>
   </svg>2 min</span></div></section><div class="content"><p>This week in FreeCAD development:</p>
 <ul>
-<li>
-<p><strong>bgbsww</strong> and <strong>chennes</strong> made further progress towards mitigating the toponaming issue. More RealThunder&rsquo;s code has been ported and improved. A C++ testing framework was added for PartDesign and ShapeBinder.</p>
-</li>
-<li>
-<p><strong>marioalexis84</strong> committed fixes to the FEM workbench.</p>
-</li>
-<li>
-<p><strong>NewJoker</strong> fixed bugs in FEM and updated FEM examples on the Start page.</p>
-</li>
-<li>
-<p><strong>lyphrowny</strong> fixed 1D beam cross section orientation in FEM.</p>
-</li>
-<li>
-<p><strong>hoshengwei</strong> contributed a fix to the Arch workbench.</p>
-</li>
-<li>
-<p><strong>sliptonic</strong> fixed an i18n error in CAM.</p>
-</li>
-<li>
-<p><strong>WandererFan</strong> fixed several bugs in TechDraw.</p>
-</li>
-<li>
-<p><strong>pavltom</strong> contributed further fixes for parent linking in TechDraw, this time for Unify Projection Group.</p>
-</li>
-<li>
-<p><strong>edi271</strong> fixed several bugs in TechDraw.</p>
-</li>
-<li>
-<p><strong>davesrocketshop</strong> fixed bugs in the new materials system.</p>
-</li>
-<li>
-<p><strong>wwmayer</strong> fixed various bugs including some crashers, added a test for mesh export, ported FreeCAD&rsquo;s QtDesigner plugin to Qt6.</p>
-</li>
-<li>
-<p><strong>maxwxyz</strong> made the main window title display the current active document&rsquo;s name. He also created a toolbar command group for view presets (top, bottom, etc.), this is used by default and can be disabled. Additionally, he added the command for the perpendicular constraint to the context menu in Sketcher, if a line and a conic are selected. Moreover, with feedback from the design working group, he updated some of the Assembly icons to look not too similar to each other.</p>
-</li>
-<li>
-<p><strong>PaddleStroke</strong> added missing view menu entries to the navicube button. He also introduced a basic Chamfer tool and reworked the Fillet tool to make the &ldquo;preserve corner&rdquo; option a Tasks panel checkbox; both tools now have default shortcuts.</p>
-</li>
-<li>
-<p><strong>yorikvanhavre</strong> fixed IFC export of arrays and improved the IFC exporter in Arch so that it would be able to append objects to an IFC file instead of creating a file from scratch. He also updated Draft to recognize NativeIFC objects.</p>
-</li>
-<li>
-<p><strong>oscarale-camorlinga</strong> updated the Text attribute in ArchSpace to support <em>Description</em> and <em>Long Name</em> IFC attributes.</p>
-</li>
-<li>
-<p><strong>NomAnor</strong> fixed a regression in pattern reference selection in PartDesign.</p>
-</li>
-<li>
-<p><strong>FlachyJoe</strong> fixed a crash occurring when using variable links.</p>
-</li>
-<li>
-<p><strong>luzpaz</strong> contributed minor fixes.</p>
-</li>
+<li><strong>bgbsww</strong> and <strong>chennes</strong> made further progress towards mitigating the toponaming issue. More RealThunder&rsquo;s code has been ported and improved. A C++ testing framework was added for PartDesign and ShapeBinder.</li>
+<li><strong>marioalexis84</strong> committed fixes to the FEM workbench.</li>
+<li><strong>NewJoker</strong> fixed bugs in FEM and updated FEM examples on the Start page.</li>
+<li><strong>lyphrowny</strong> fixed 1D beam cross section orientation in FEM.</li>
+<li><strong>hoshengwei</strong> contributed a fix to the Arch workbench.</li>
+<li><strong>sliptonic</strong> fixed an i18n error in CAM.</li>
+<li><strong>WandererFan</strong> fixed several bugs in TechDraw.</li>
+<li><strong>pavltom</strong> contributed further fixes for parent linking in TechDraw, this time for Unify Projection Group.</li>
+<li><strong>edi271</strong> fixed several bugs in TechDraw.</li>
+<li><strong>davesrocketshop</strong> fixed bugs in the new materials system.</li>
+<li><strong>wwmayer</strong> fixed various bugs including some crashers, added a test for mesh export, ported FreeCAD&rsquo;s QtDesigner plugin to Qt6.</li>
+<li><strong>maxwxyz</strong> made the main window title display the current active document&rsquo;s name. He also created a toolbar command group for view presets (top, bottom, etc.), this is used by default and can be disabled. Additionally, he added the command for the perpendicular constraint to the context menu in Sketcher, if a line and a conic are selected. Moreover, with feedback from the design working group, he updated some of the Assembly icons to look not too similar to each other.</li>
+<li><strong>PaddleStroke</strong> added missing view menu entries to the navicube button. He also introduced a basic Chamfer tool and reworked the Fillet tool to make the &ldquo;preserve corner&rdquo; option a Tasks panel checkbox; both tools now have default shortcuts.</li>
+<li><strong>yorikvanhavre</strong> fixed IFC export of arrays and improved the IFC exporter in Arch so that it would be able to append objects to an IFC file instead of creating a file from scratch. He also updated Draft to recognize NativeIFC objects.</li>
+<li><strong>oscarale-camorlinga</strong> updated the Text attribute in ArchSpace to support <em>Description</em> and <em>Long Name</em> IFC attributes.</li>
+<li><strong>NomAnor</strong> fixed a regression in pattern reference selection in PartDesign.</li>
+<li><strong>FlachyJoe</strong> fixed a crash occurring when using variable links.</li>
+<li><strong>luzpaz</strong> contributed minor fixes.</li>
 </ul>
 <p><strong>PR stats:</strong> In the week from Wednesday, 13 March to Wednesday, 20 March there were 49 pull requests merged, with a total codebase change of +7,919 / ‑3,833. We had an average merged PR size of +162 / ‑78. 29 new pull requests were opened.</p>
 <p><strong>Issue stats:</strong> we closed 51 issues, and 46 new issues were opened. Overall, 1,367 issues are currently open.</p>

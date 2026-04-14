@@ -41,12 +41,12 @@
   <meta property="og:site_name" content="FreeCAD">
   <meta property="og:title" content="WIP Wednesday - 17 Jan 2024">
   <meta property="og:description" content="This week in FreeCAD development:
-WandererFan committed several fixes and improvements to TechDraw, and edi271 contributed API extensions to the same workbench and fixed a bug in VertexAtIntersection.">
+WandererFan committed several fixes and improvements to TechDraw, and edi271 contributed API extensions to the same workbench and fixed a bug in VertexAtIntersection. Pesc0 and chennes committed further changes towards refactoring topological naming, patches include original code by realthunder. PaddleStroke improved angle constraint rendering, implemented drawing arc helpers for radius constraints, and made several more small improvements in Sketcher. Syres916 improved status bar tooltips visibility. br4243 contributed a fix for missing letters when V-carving a string in Path. 3x380V fixed the Qt6 build by replacing the use of QRegExp with QRegularExpression. kadet1090 added automatic resetting of horizontal scrolling in the Preferences dialog after the recent UI change. mosfet80 updated the Mesh workbench to depend on smesh v7.7.1&#43;. marioalexis84 contributed several fixes to FEM. Roy-043 fixed a bug in Draft where the Task panel checkboxes were repositioned by accident. PR stats: In the week from Wednesday, 10 Jan to Wednesday, 17 Jan there were 31 pull requests merged, with a total codebase change of &#43;2,173 / ‑607. We had an average merged PR size of &#43;70 / ‑20. 20 new pull requests were opened.">
   <meta property="og:locale" content="es_ES">
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2024-01-17T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-04-13T17:40:06+02:00">
+    <meta property="article:modified_time" content="2026-04-13T18:56:11+02:00">
     <meta property="article:tag" content="WIP">
 </head><body class="single type-news kind-page "
     id="top">
@@ -176,36 +176,16 @@ WandererFan committed several fixes and improvements to TechDraw, and edi271 con
     <use href="/Website/pr-16/svg/time.svg#time"></use>
   </svg>1 min</span></div></section><div class="content"><p>This week in FreeCAD development:</p>
 <ul>
-<li>
-<p><strong>WandererFan</strong> committed several fixes and improvements to TechDraw, and <strong>edi271</strong> contributed API extensions to the same workbench and fixed a bug in VertexAtIntersection.</p>
-</li>
-<li>
-<p><strong>Pesc0</strong> and <strong>chennes</strong> committed further changes towards refactoring topological naming, patches include original code by <strong>realthunder</strong>.</p>
-</li>
-<li>
-<p><strong>PaddleStroke</strong> improved angle constraint rendering, implemented drawing arc helpers for radius constraints, and made several more small improvements in Sketcher.</p>
-</li>
-<li>
-<p><strong>Syres916</strong> improved status bar tooltips visibility.</p>
-</li>
-<li>
-<p><strong>br4243</strong> contributed a fix for missing letters when V-carving a string in Path.</p>
-</li>
-<li>
-<p><strong>3x380V</strong> fixed the Qt6 build by replacing the use of QRegExp with QRegularExpression.</p>
-</li>
-<li>
-<p><strong>kadet1090</strong> added automatic resetting of horizontal scrolling in the Preferences dialog after the recent UI change.</p>
-</li>
-<li>
-<p><strong>mosfet80</strong> updated the Mesh workbench to depend on smesh v7.7.1+.</p>
-</li>
-<li>
-<p><strong>marioalexis84</strong> contributed several fixes to FEM.</p>
-</li>
-<li>
-<p><strong>Roy-043</strong> fixed a bug in Draft where the Task panel checkboxes were repositioned by accident.</p>
-</li>
+<li><strong>WandererFan</strong> committed several fixes and improvements to TechDraw, and <strong>edi271</strong> contributed API extensions to the same workbench and fixed a bug in VertexAtIntersection.</li>
+<li><strong>Pesc0</strong> and <strong>chennes</strong> committed further changes towards refactoring topological naming, patches include original code by <strong>realthunder</strong>.</li>
+<li><strong>PaddleStroke</strong> improved angle constraint rendering, implemented drawing arc helpers for radius constraints, and made several more small improvements in Sketcher.</li>
+<li><strong>Syres916</strong> improved status bar tooltips visibility.</li>
+<li><strong>br4243</strong> contributed a fix for missing letters when V-carving a string in Path.</li>
+<li><strong>3x380V</strong> fixed the Qt6 build by replacing the use of QRegExp with QRegularExpression.</li>
+<li><strong>kadet1090</strong> added automatic resetting of horizontal scrolling in the Preferences dialog after the recent UI change.</li>
+<li><strong>mosfet80</strong> updated the Mesh workbench to depend on smesh v7.7.1+.</li>
+<li><strong>marioalexis84</strong> contributed several fixes to FEM.</li>
+<li><strong>Roy-043</strong> fixed a bug in Draft where the Task panel checkboxes were repositioned by accident.</li>
 </ul>
 <p><strong>PR stats:</strong> In the week from Wednesday, 10 Jan to Wednesday, 17 Jan there were 31 pull requests merged, with a total codebase change of +2,173 / ‑607. We had an average merged PR size of +70 / ‑20. 20 new pull requests were opened.</p>
 <p><strong>Issue stats:</strong> we closed 26 issues, and 29 new issues were opened. Overall, 1,156 issues are currently open.</p>

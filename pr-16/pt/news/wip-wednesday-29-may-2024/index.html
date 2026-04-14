@@ -45,7 +45,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2024-05-29T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-04-13T17:40:06+02:00">
+    <meta property="article:modified_time" content="2026-04-13T18:56:11+02:00">
     <meta property="article:tag" content="WIP">
 </head><body class="single type-news kind-page "
     id="top">
@@ -177,78 +177,42 @@
 <p><strong>Assembly</strong> got three new joint types: &lsquo;Angle&rsquo;, &lsquo;Perpendicular&rsquo;, and &lsquo;Parallel&rsquo;, all added by PaddleStroke.</p>
 <p><strong>CAM</strong>:</p>
 <ul>
-<li>
-<p>sliptonic took a first step towards a better CAM tool system. This has been discussed at length with the design working group, more changes will follow.</p>
-</li>
-<li>
-<p>phaseloop reworked the VCarve operation to include features that are mostly available in commercial software: step down, finishing, pass, and head movement optimization. They drastically improve carved surface quality while decreasing the carving time by up to 50%. See <a href="https://forum.freecad.org/viewtopic.php?t=87475"
+<li>sliptonic took a first step towards a better CAM tool system. This has been discussed at length with the design working group, more changes will follow.</li>
+<li>phaseloop reworked the VCarve operation to include features that are mostly available in commercial software: step down, finishing, pass, and head movement optimization. They drastically improve carved surface quality while decreasing the carving time by up to 50%. See <a href="https://forum.freecad.org/viewtopic.php?t=87475"
   class="external-link"title="Open link"
     target="_blank"
     rel="external noreferrer noopener">this discussion<svg class="icon-external"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/pr-16/svg/external.svg#external"></use>
-  </svg></a> for details and photo examples.</p>
-</li>
+  </svg></a> for details and photo examples.</li>
 </ul>
 <p><strong>TechDraw</strong>: PaddleStroke contributed snapping of view to views and dimensions to dimensions, he also added snapping of value to centers of dimensions, WandererFan contributed various fixes.</p>
 <p><strong>Materials</strong>: davesrocketshop made further improvements to the new materials system:</p>
 <ul>
-<li>
-<p>New inspectors for the Appearance and Material properties of an object have been added. They are intended for debugging Appearance and Material issues in models.</p>
-</li>
-<li>
-<p>Editor&rsquo;s UI has been enhanced: you can now set a default color to be used when creating a new material, plus the name of the material Properties tab has been changed to Physical for improved consistency in the user interface.</p>
-</li>
-<li>
-<p>New Material Filter API is now available, developers can use to e.g. request a list of all machinable materials in the CAM workbench.</p>
-</li>
+<li>New inspectors for the Appearance and Material properties of an object have been added. They are intended for debugging Appearance and Material issues in models.</li>
+<li>Editor&rsquo;s UI has been enhanced: you can now set a default color to be used when creating a new material, plus the name of the material Properties tab has been changed to Physical for improved consistency in the user interface.</li>
+<li>New Material Filter API is now available, developers can use to e.g. request a list of all machinable materials in the CAM workbench.</li>
 </ul>
 <p><strong>BIM</strong>: yorikvanhavre did further post-merge cleanup, and paullee0 added a new &lsquo;Offset per Edge&rsquo; feature in ArchWall.</p>
 <p><strong>UI/UX</strong>:</p>
 <ul>
-<li>
-<p>Developers started using new logo in various bits of the program.</p>
-</li>
-<li>
-<p>Icon updates were contributed by maxwxyz and marcuspollio.</p>
-</li>
-<li>
-<p>Additionally, task panels cleanup for Sketcher and Part Design was contributed by marcuspollio.</p>
-</li>
+<li>Developers started using new logo in various bits of the program.</li>
+<li>Icon updates were contributed by maxwxyz and marcuspollio.</li>
+<li>Additionally, task panels cleanup for Sketcher and Part Design was contributed by marcuspollio.</li>
 </ul>
 <p>Among other changes:</p>
 <ul>
-<li>
-<p>Further toponaming patches by bgbsww and yorikvanhavre (in Draft).</p>
-</li>
-<li>
-<p>Draft WB got fixes and partial new materials system support, thanks to Roy-043.</p>
-</li>
-<li>
-<p>Addon Manager: pieterhijma added supporting for starting the Addon Manager for a specific addon (e.g. to update the addon).</p>
-</li>
-<li>
-<p>New Measure tool has been improved: hlorus made the initial measurement placement scale with viewport zoom.</p>
-</li>
-<li>
-<p>Fixes to FEM by marioalexis84 and NewJoker.</p>
-</li>
-<li>
-<p>Fixes and new tests in Sketcher, by wwmayer and PaddleStroke.</p>
-</li>
-<li>
-<p>Headlight intensity value is now decreased when entering Edit mode in Sketcher. This has been patched by Syres916, but the community keeps discussing better ways to make editing sketches easier to do, when you create a sketch from a face.</p>
-</li>
-<li>
-<p>Various core fixes by pieterhijma and wwmayer.</p>
-</li>
-<li>
-<p>GUI fixes by 0penBrain.</p>
-</li>
-<li>
-<p>Unused code removal in Mesh by mosfet80</p>
-</li>
+<li>Further toponaming patches by bgbsww and yorikvanhavre (in Draft).</li>
+<li>Draft WB got fixes and partial new materials system support, thanks to Roy-043.</li>
+<li>Addon Manager: pieterhijma added supporting for starting the Addon Manager for a specific addon (e.g. to update the addon).</li>
+<li>New Measure tool has been improved: hlorus made the initial measurement placement scale with viewport zoom.</li>
+<li>Fixes to FEM by marioalexis84 and NewJoker.</li>
+<li>Fixes and new tests in Sketcher, by wwmayer and PaddleStroke.</li>
+<li>Headlight intensity value is now decreased when entering Edit mode in Sketcher. This has been patched by Syres916, but the community keeps discussing better ways to make editing sketches easier to do, when you create a sketch from a face.</li>
+<li>Various core fixes by pieterhijma and wwmayer.</li>
+<li>GUI fixes by 0penBrain.</li>
+<li>Unused code removal in Mesh by mosfet80</li>
 </ul>
 <p>PR stats: In the week from Wednesday, 22 May to Wednesday, 29 May there were 75 pull requests merged. 36 new pull requests were opened.</p>
 <p>Issue stats: we closed 49 issues, and 50 new issues were opened. Overall, 1,659 issues are currently open.</p>
