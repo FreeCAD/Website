@@ -41,7 +41,7 @@
   <meta property="og:site_name" content="FreeCAD">
   <meta property="og:title" content="WIP Wednesday - 12 June 2024">
   <meta property="og:description" content="This week in FreeCAD development:
-BIM: @paullee0 made small improvements in ArchWall, @Roy-043 fixed image plane imports and updated the BIM WP commands to use the new Draft code, @Syres916 added fallback IfcOpenShell installation fix for Python 3.10, 3.11, and 3.12 systems, @furgo16 fixed the Cut Plane command, and @DeniseBryson fixed incorrect computed dimensions in ArchSpace (floor area and perimeter length).">
+BIM: paullee0 made small improvements in ArchWall, Roy-043 fixed image plane imports and updated the BIM WP commands to use the new Draft code, Syres916 added fallback IfcOpenShell installation fix for Python 3.10, 3.11, and 3.12 systems, furgo16 fixed the Cut Plane command, and DeniseBryson fixed incorrect computed dimensions in ArchSpace (floor area and perimeter length).">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
@@ -175,13 +175,13 @@ BIM: @paullee0 made small improvements in ArchWall, @Roy-043 fixed image plane i
     focusable="false">
     <use href="/Website/pr-16/svg/time.svg#time"></use>
   </svg>2 分</span></div></section><div class="content"><p>This week in FreeCAD development:</p>
-<p><strong>BIM</strong>: @paullee0 made small improvements in ArchWall, @Roy-043 fixed image plane imports and updated the BIM WP commands to use the new Draft code, @Syres916 added fallback IfcOpenShell installation fix for Python 3.10, 3.11, and 3.12 systems, @furgo16 fixed the Cut Plane command, and @DeniseBryson fixed incorrect computed dimensions in ArchSpace (floor area and perimeter length).</p>
-<p><strong>Sketcher</strong>: @emmanuelobrien improved FreeCAD&rsquo;s performance when selecting a lot of geometry objects, @PaddleStroke fixed a bug where on-view parameters wouldn&rsquo;t use the same color after a user saved unrelated program&rsquo;s preferences.</p>
-<p><strong>Part Design</strong>: @FlachyJoe fixed a bug where FreeCAD couldn&rsquo;t pad a sketch on a datum plane, and @kadet1090 added UI for the <code>Up to Shape</code> feature (supports selecting only one shape and set of faces for now).</p>
-<p><strong>Part</strong>: @mh-dm added a new ParallelPlane attachment/map mode which results in an attachment similar to ObjectXY but with the XY plane translated to pass through a selected vertex, and @NewJoker added a New Sketch command to the workbench&rsquo;s toolbar.</p>
-<p><strong>Assembly</strong>: @PaddleStroke resumed improving the dragging behavior. There&rsquo;s now a Preferences option to generate debug files for dragging, and the workbench now looks for movement of grounded objects before attempting to drag.</p>
-<p><strong>CAM</strong>: @jamwaffles renamed CW/CCW to Climb/Conventional respectively for consistency with regular industry&rsquo;s nomenclature.</p>
-<p><strong>TechDraw</strong>: @PaddleStroke fixed a computation error for areas, @Wandererfan fixed incorrect section lines with expression links, and changed template svg_namespace to <a href="https://www.freecad.org"
+<p><strong>BIM</strong>: paullee0 made small improvements in ArchWall, Roy-043 fixed image plane imports and updated the BIM WP commands to use the new Draft code, Syres916 added fallback IfcOpenShell installation fix for Python 3.10, 3.11, and 3.12 systems, furgo16 fixed the Cut Plane command, and DeniseBryson fixed incorrect computed dimensions in ArchSpace (floor area and perimeter length).</p>
+<p><strong>Sketcher</strong>: emmanuelobrien improved FreeCAD&rsquo;s performance when selecting a lot of geometry objects, PaddleStroke fixed a bug where on-view parameters wouldn&rsquo;t use the same color after a user saved unrelated program&rsquo;s preferences.</p>
+<p><strong>Part Design</strong>: FlachyJoe fixed a bug where FreeCAD couldn&rsquo;t pad a sketch on a datum plane, and kadet1090 added UI for the <code>Up to Shape</code> feature (supports selecting only one shape and set of faces for now).</p>
+<p><strong>Part</strong>: mh-dm added a new ParallelPlane attachment/map mode which results in an attachment similar to ObjectXY but with the XY plane translated to pass through a selected vertex, and NewJoker added a New Sketch command to the workbench&rsquo;s toolbar.</p>
+<p><strong>Assembly</strong>: PaddleStroke resumed improving the dragging behavior. There&rsquo;s now a Preferences option to generate debug files for dragging, and the workbench now looks for movement of grounded objects before attempting to drag.</p>
+<p><strong>CAM</strong>: jamwaffles renamed CW/CCW to Climb/Conventional respectively for consistency with regular industry&rsquo;s nomenclature.</p>
+<p><strong>TechDraw</strong>: PaddleStroke fixed a computation error for areas, Wandererfan fixed incorrect section lines with expression links, and changed template svg_namespace to <a href="https://www.freecad.org"
   class="external-link"
   title="リンクを開く"
   
@@ -192,9 +192,9 @@ BIM: @paullee0 made small improvements in ArchWall, @Roy-043 fixed image plane i
     focusable="false">
     <use href="/Website/pr-16/svg/external.svg#external"></use>
   </svg></a>.</p>
-<p><strong>FEM</strong>: @marioalexis84 added body heat source to CalculiX writer, he also cleaned up the <code>ViewProviderFemConstraint</code> class and updated constraint transform.</p>
-<p><strong>UI</strong>: @Rexbas fixed rotation mode in Gesture and MayaGesture navigation styles, @maxwxyz updated several GUI icons, and @Kuzma30 implemented the displaying of internal object names in the project tree view (optional, can be toggled in Preferences).</p>
-<p>As usual, @FlachyJoe and @wwmayer fixed a number of bugs in the core.</p>
+<p><strong>FEM</strong>: marioalexis84 added body heat source to CalculiX writer, he also cleaned up the <code>ViewProviderFemConstraint</code> class and updated constraint transform.</p>
+<p><strong>UI</strong>: Rexbas fixed rotation mode in Gesture and MayaGesture navigation styles, maxwxyz updated several GUI icons, and Kuzma30 implemented the displaying of internal object names in the project tree view (optional, can be toggled in Preferences).</p>
+<p>As usual, FlachyJoe and wwmayer fixed a number of bugs in the core.</p>
 <p><strong>PR stats</strong>: In the week from Wednesday, 5 June to Wednesday, 12 June there were 46 pull requests merged. 28 new pull requests were opened.</p>
 <p><strong>Issue stats</strong>: we closed 40 issues, and 63 new issues were opened. Overall, 1,717 issues are currently open.</p>
 
@@ -245,7 +245,7 @@ BIM: @paullee0 made small improvements in ArchWall, @Roy-043 fixed image plane i
                         <a href="/Website/pr-16/ja/versions/">バージョン一覧</a>
                       </li></ul></li></ul>
 </nav>
-<div class="share-links"><a href="/Website/pr-16/ja/fedishare.html#title=WIP&#43;Wednesday&#43;-&#43;12&#43;June&#43;2024&amp;description=This&#43;week&#43;in&#43;FreeCAD&#43;development%3A%0ABIM%3A&#43;%40paullee0&#43;made&#43;small&#43;improvements&#43;in&#43;ArchWall%2C&#43;%40Roy-043&#43;fixed&#43;image&#43;plane&#43;imports&#43;and&#43;updated&#43;the&#43;BIM&#43;WP&#43;commands&#43;to&#43;use&#43;the&#43;new&#43;Draft&#43;code%2C&#43;%40Syres916&#43;added&#43;%E2%80%A6%0A%23wip&amp;url=https://FreeCAD.github.io/Website/pr-16/ja/news/wip-wednesday-12-june-2024/"
+<div class="share-links"><a href="/Website/pr-16/ja/fedishare.html#title=WIP&#43;Wednesday&#43;-&#43;12&#43;June&#43;2024&amp;description=This&#43;week&#43;in&#43;FreeCAD&#43;development%3A%0ABIM%3A&#43;paullee0&#43;made&#43;small&#43;improvements&#43;in&#43;ArchWall%2C&#43;Roy-043&#43;fixed&#43;image&#43;plane&#43;imports&#43;and&#43;updated&#43;the&#43;BIM&#43;WP&#43;commands&#43;to&#43;use&#43;the&#43;new&#43;Draft&#43;code%2C&#43;Syres916&#43;added&#43;%E2%80%A6%0A%23wip&amp;url=https://FreeCAD.github.io/Website/pr-16/ja/news/wip-wednesday-12-june-2024/"
   title="共有 Fediverse"
   target="_blank" rel="noopener"><svg class="icon-fediverse"
     aria-hidden="true"

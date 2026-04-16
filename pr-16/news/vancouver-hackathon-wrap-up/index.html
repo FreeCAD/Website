@@ -264,17 +264,17 @@
   </svg></a> detailing that company&rsquo;s analysis of the situation, and in recent months they have been actively working to develop one of the core technologies anticipated for that workbench: a fully 3D constraint solver with a compatible license. The next order of business was to decide which of the various available paths we intend to follow:</p>
 <ol>
 <li>
-<p>Integrate the new solver into @realthunder&rsquo;s Assembly 3 Workbench, and then integrate that external workbench directly into FreeCAD. @realthunder seems very enthusiastic about the new solver, so it seems likely that at least the first part of this will happen in very short order.</p>
+<p>Integrate the new solver into realthunder&rsquo;s Assembly 3 Workbench, and then integrate that external workbench directly into FreeCAD. realthunder seems very enthusiastic about the new solver, so it seems likely that at least the first part of this will happen in very short order.</p>
 </li>
 <li>
-<p>Integrate @zolko&rsquo;s Assembly 4 Workbench into FreeCAD and extend it to include the solver.</p>
+<p>Integrate zolko&rsquo;s Assembly 4 Workbench into FreeCAD and extend it to include the solver.</p>
 </li>
 <li>
 <p>Develop a new Assembly user interface directly in FreeCAD, taking inspiration from Asm3 and Asm4 and combining those ideas into a simplified, streamlined workbench.</p>
 </li>
 </ol>
 <p>In general it was felt that Assembly 3&rsquo;s user interface was too complex to be integrated on its own, and that Assembly 4&rsquo;s lack of solver presented a significant challenge to direct adoption. Therefore the planned approach is to create a new solver user interface in FreeCAD that provides simplified access to the most common assembly tools, and that provides a standard API for assemblies that external workbench authors can use to be compatible with both that workbench and each other.</p>
-<p><strong>User Interface Colors.</strong> FreeCAD&rsquo;s default background gradient and the color scheme of various UI elements present a nearly unusable interface for those with color vision deficiency, and the low contrast inherent in the current design presents some visual challenges even for those without vision impairment. A group of developers and users met (virtually) to discuss the ongoing research project of theme developer <strong>@Obelisk</strong>, who is attempting to create both a set of new light and dark themes based on existing work from a number of other theme authors, as well as to adapt the color scheme of the &ldquo;classic&rdquo; FreeCAD experience to be more friendly to everyone. While we don&rsquo;t expect this work to be without controversy, having a solid technical basis for making these sorts of decisions will help us to move forward with the project.</p>
+<p><strong>User Interface Colors.</strong> FreeCAD&rsquo;s default background gradient and the color scheme of various UI elements present a nearly unusable interface for those with color vision deficiency, and the low contrast inherent in the current design presents some visual challenges even for those without vision impairment. A group of developers and users met (virtually) to discuss the ongoing research project of theme developer Obelisk, who is attempting to create both a set of new light and dark themes based on existing work from a number of other theme authors, as well as to adapt the color scheme of the &ldquo;classic&rdquo; FreeCAD experience to be more friendly to everyone. While we don&rsquo;t expect this work to be without controversy, having a solid technical basis for making these sorts of decisions will help us to move forward with the project.</p>
 <p><strong>Integrating a Rust Library.</strong> A <a href="https://github.com/jbuckmccready/cavalier_contours"
   class="external-link"
   title="Open link"
@@ -286,7 +286,7 @@
     focusable="false">
     <use href="/Website/pr-16/svg/external.svg#external"></use>
   </svg></a> from the Rust world led to a discussion about the feasibility of integrating a Rust library into our codebase for use in the Path workbench. There are a variety of pros and cons related mostly to packaging issues (and no, we did <em>not</em> discuss rewriting FreeCAD in Rust!) but the overall consensus was that the upside of the advanced library outweighed the downside of packaging complexity, and that it is worth attempting in this limited application to see how it goes.</p>
-<p><strong>Toponaming Next Steps</strong>. <strong>@JohnAD</strong>, Ondsel Developer and team lead for the TNP mitigation project worked with various developers to work out what the next phase of that project looks like, and published the next set of steps we need to undertake. Things get exciting right about now, as we <a href="https://github.com/freecad/freecad/issues/8432"
+<p><strong>Toponaming Next Steps</strong>. JohnAD, Ondsel Developer and team lead for the TNP mitigation project worked with various developers to work out what the next phase of that project looks like, and published the next set of steps we need to undertake. Things get exciting right about now, as we <a href="https://github.com/freecad/freecad/issues/8432"
   class="external-link"
   title="Open link"
   
