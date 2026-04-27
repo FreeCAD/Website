@@ -170,7 +170,7 @@
     aria-hidden="true"
     focusable="false">
     <use href="/Website/pr-16/svg/words.svg#words"></use>
-  </svg>1821 palabras</span><span class="meta"><svg class="icon-time"
+  </svg>1824 palabras</span><span class="meta"><svg class="icon-time"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/pr-16/svg/time.svg#time"></use>
@@ -189,21 +189,21 @@
     <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
   </svg><img
   src="/Website/pr-16/news/the-rotation-api-in-freecad/EWPropertyPlacement.webp"
-  alt="Ewproperty Placement"
+  alt="Cube Placement properties"
   loading="lazy"
   fetchpriority="low"
   decoding="async"
   width="1445"
   height="629"
     srcset="/Website/pr-16/news/the-rotation-api-in-freecad/EWPropertyPlacement_hu_97265f951fc4d901.webp 500w, /Website/pr-16/news/the-rotation-api-in-freecad/EWPropertyPlacement_hu_be92244c9d37b8dc.webp 1000w, /Website/pr-16/news/the-rotation-api-in-freecad/EWPropertyPlacement.webp 1445w"
-    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Ewproperty Placement</figcaption></figure><div id="img-000" popover>
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Cube Placement properties</figcaption></figure><div id="img-000" popover>
           <button class="close"
             popovertarget="img-000"
             popovertargetaction="hide"
             aria-label="Cerrar visor de imágenes">
             <img src="/Website/pr-16/news/the-rotation-api-in-freecad/EWPropertyPlacement.webp"
-              title="Ewproperty Placement"
-              alt="Ewproperty Placement"
+              title="Cube Placement properties"
+              alt="Cube Placement properties"
               loading="lazy"
               fetchpriority="low"><svg class="icon-cross"
     aria-hidden="true"
@@ -220,21 +220,21 @@
     <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
   </svg><img
   src="/Website/pr-16/news/the-rotation-api-in-freecad/placedcube.webp"
-  alt="Placedcube"
+  alt="Imagen alternativa"
   loading="lazy"
   fetchpriority="low"
   decoding="async"
   width="1106"
   height="262"
     srcset="/Website/pr-16/news/the-rotation-api-in-freecad/placedcube_hu_c8f11f084a21ae88.webp 500w, /Website/pr-16/news/the-rotation-api-in-freecad/placedcube_hu_ecf1bdc42be6efc1.webp 1000w, /Website/pr-16/news/the-rotation-api-in-freecad/placedcube.webp 1106w"
-    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Placedcube</figcaption></figure><div id="img-001" popover>
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button></figure><div id="img-001" popover>
           <button class="close"
             popovertarget="img-001"
             popovertargetaction="hide"
             aria-label="Cerrar visor de imágenes">
             <img src="/Website/pr-16/news/the-rotation-api-in-freecad/placedcube.webp"
-              title="Placedcube"
-              alt="Placedcube"
+              title=""
+              alt="Imagen alternativa"
               loading="lazy"
               fetchpriority="low"><svg class="icon-cross"
     aria-hidden="true"
@@ -302,8 +302,8 @@
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">FreeCAD</span> <span class="kn">import</span> <span class="n">Vector</span> <span class="k">as</span> <span class="n">V</span>
 </span></span><span class="line"><span class="cl"><span class="n">rot</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Rotation</span><span class="p">(</span><span class="n">V</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">V</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">V</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="s1">&#39;ZXY&#39;</span><span class="p">)</span></span></span></code></pre></div></div><p>What does this represent? <code>string</code> is the priority order of the axes.</p>
 <ul>
-<li>Z is first: the Z-axis is rotated into the direction vecz: <code>V(1,0,1)</code>.  (Two degrees of freedom used.)</li>
-<li>X is second: the rotated X-axis is placed in the plane defined by the <code>vecx</code> and <code>vecz</code> arguments, orthogonal to <code>vecz</code>. That is, the <strong>component</strong> of <code>vecx</code> orthogonal to <code>vecz</code> defines the rotated X direction.  (Uses one more degree of freedom.)</li>
+<li>Z is first: the Z-axis is rotated into the direction vecz: <code>V(1,0,1)</code>. (Two degrees of freedom used.)</li>
+<li>X is second: the rotated X-axis is placed in the plane defined by the <code>vecx</code> and <code>vecz</code> arguments, orthogonal to <code>vecz</code>. That is, the <strong>component</strong> of <code>vecx</code> orthogonal to <code>vecz</code> defines the rotated X direction. (Uses one more degree of freedom.)</li>
 <li>Y is third: the <code>vecy</code> argument is completely ignored. The new Y-axis is created forming an orthogonal triad with the new Z and X axes, constructed from the above by the right hand rule (in the direction Z x X, for those familiar with the vector cross-product).</li>
 </ul>
 <p>Our example generates the same rotation illustrated in Figs. (1) and (2) above. Note how the (blue) z-axis and (red) x-axis in Fig. (1) change. The mapping from <code>(xvec, yvec, zvec)</code> to normalized direction vectors, in the second listed step above, is illustrated in Fig (3), the movie below.</p>
@@ -380,28 +380,28 @@
     <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
   </svg><img
   src="/Website/pr-16/news/the-rotation-api-in-freecad/rotationorder.webp"
-  alt="Rotationorder 5"
+  alt="Rotation order"
   loading="lazy"
   fetchpriority="low"
   decoding="async"
   width="1496"
   height="1456"
     srcset="/Website/pr-16/news/the-rotation-api-in-freecad/rotationorder_hu_59ed82f7a77d81e3.webp 500w, /Website/pr-16/news/the-rotation-api-in-freecad/rotationorder_hu_6759ac5d5e164c5a.webp 1000w, /Website/pr-16/news/the-rotation-api-in-freecad/rotationorder.webp 1496w"
-    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Rotationorder 5</figcaption></figure><div id="img-002" popover>
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Rotation order</figcaption></figure><div id="img-002" popover>
           <button class="close"
             popovertarget="img-002"
             popovertargetaction="hide"
             aria-label="Cerrar visor de imágenes">
             <img src="/Website/pr-16/news/the-rotation-api-in-freecad/rotationorder.webp"
-              title="Rotationorder 5"
-              alt="Rotationorder 5"
+              title="Rotation order"
+              alt="Rotation order"
               loading="lazy"
               fetchpriority="low"><svg class="icon-cross"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/pr-16/svg/cross.svg#cross"></use>
   </svg></button>
-        </div></div><p>In the top row of the figure, we perform the rotation <code>S * R</code> . We rotate 90° around the coordinate x-axis, followed by 90° around the coordinate z-axis and show the effect on a axis triad.</p>
+        </div></div><p>In the top row of the figure, we perform the rotation <code>S * R</code>. We rotate 90° around the coordinate x-axis, followed by 90° around the coordinate z-axis and show the effect on a axis triad.</p>
 <p>In the second row, we perform the rotation <code>R * S</code> and note that the result differs from that of <code>S * R</code>.</p>
 <p>The third row illustrates another important property of rotations. First we do the S rotation (90° around z), then we perform R&rsquo;. R&rsquo; is again defined as 90° around x - BUT around the (already rotated) <code>body</code> x-axis, not the <code>coordinate</code> x-axis. This is as in the yaw-pitch-roll section above.</p>
 <p>We see the result of <code>R'* S</code> is the same as <code>S * R</code>. This is in fact a general result that I will not attempt to prove here.</p>
@@ -469,21 +469,21 @@
     <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
   </svg><img
   src="/Website/pr-16/news/the-rotation-api-in-freecad/equationsinverse.webp"
-  alt="Equationsinverse"
+  alt="Inverse equations"
   loading="lazy"
   fetchpriority="low"
   decoding="async"
   width="900"
   height="162"
     srcset="/Website/pr-16/news/the-rotation-api-in-freecad/equationsinverse_hu_4662c3863db45d57.webp 500w, /Website/pr-16/news/the-rotation-api-in-freecad/equationsinverse.webp 900w"
-    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Equationsinverse</figcaption></figure><div id="img-003" popover>
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Inverse equations</figcaption></figure><div id="img-003" popover>
           <button class="close"
             popovertarget="img-003"
             popovertargetaction="hide"
             aria-label="Cerrar visor de imágenes">
             <img src="/Website/pr-16/news/the-rotation-api-in-freecad/equationsinverse.webp"
-              title="Equationsinverse"
-              alt="Equationsinverse"
+              title="Inverse equations"
+              alt="Inverse equations"
               loading="lazy"
               fetchpriority="low"><svg class="icon-cross"
     aria-hidden="true"
@@ -507,21 +507,21 @@
     <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
   </svg><img
   src="/Website/pr-16/news/the-rotation-api-in-freecad/nestedplacements.webp"
-  alt="Nestedplacements"
+  alt="Nested placements"
   loading="lazy"
   fetchpriority="low"
   decoding="async"
   width="416"
   height="362"
     srcset="/Website/pr-16/news/the-rotation-api-in-freecad/nestedplacements.webp 416w"
-    sizes="75vw"></button><figcaption>Nestedplacements</figcaption></figure><div id="img-004" popover>
+    sizes="75vw"></button><figcaption>Nested placements</figcaption></figure><div id="img-004" popover>
           <button class="close"
             popovertarget="img-004"
             popovertargetaction="hide"
             aria-label="Cerrar visor de imágenes">
             <img src="/Website/pr-16/news/the-rotation-api-in-freecad/nestedplacements.webp"
-              title="Nestedplacements"
-              alt="Nestedplacements"
+              title="Nested placements"
+              alt="Nested placements"
               loading="lazy"
               fetchpriority="low"><svg class="icon-cross"
     aria-hidden="true"
@@ -536,21 +536,21 @@
     <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
   </svg><img
   src="/Website/pr-16/news/the-rotation-api-in-freecad/solveforplacement.webp"
-  alt="Solveforplacement"
+  alt="Solving placement equation"
   loading="lazy"
   fetchpriority="low"
   decoding="async"
   width="1086"
   height="162"
     srcset="/Website/pr-16/news/the-rotation-api-in-freecad/solveforplacement_hu_a9e060a3b2e414f4.webp 500w, /Website/pr-16/news/the-rotation-api-in-freecad/solveforplacement_hu_9f2b3841c6dc2d54.webp 1000w, /Website/pr-16/news/the-rotation-api-in-freecad/solveforplacement.webp 1086w"
-    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Solveforplacement</figcaption></figure><div id="img-005" popover>
+    sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Solving placement equation</figcaption></figure><div id="img-005" popover>
           <button class="close"
             popovertarget="img-005"
             popovertargetaction="hide"
             aria-label="Cerrar visor de imágenes">
             <img src="/Website/pr-16/news/the-rotation-api-in-freecad/solveforplacement.webp"
-              title="Solveforplacement"
-              alt="Solveforplacement"
+              title="Solving placement equation"
+              alt="Solving placement equation"
               loading="lazy"
               fetchpriority="low"><svg class="icon-cross"
     aria-hidden="true"

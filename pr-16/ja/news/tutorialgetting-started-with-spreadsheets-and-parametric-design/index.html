@@ -169,7 +169,7 @@
     aria-hidden="true"
     focusable="false">
     <use href="/Website/pr-16/svg/words.svg#words"></use>
-  </svg>839 語</span><span class="meta"><svg class="icon-time"
+  </svg>838 語</span><span class="meta"><svg class="icon-time"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/pr-16/svg/time.svg#time"></use>
@@ -217,7 +217,7 @@
     focusable="false">
     <use href="/Website/pr-16/svg/cross.svg#cross"></use>
   </svg></button>
-        </div></div><p>The aim of the project is to create a trapezium shaped sketch pattern for a panel or &ldquo;gore&rdquo; of a moderately complex annular parachute. The parachute project isn&rsquo;t really important, but it gives a good example of how a spreadsheet can be used in a parametric design. When designing an annular parachute you make two fundamental choices, one is the number of &lsquo;gores&rsquo; or panels you require and then a target &lsquo;design diameter&rsquo;. All the other dimensions for the individual gore patterns and the line lengths are then derived by simple numerical calculations using the gore number and design diameter. Often the panels are cut using a laser cutter so being able to quickly generate a sketch and then export the design as a .dxf or .svg file is really useful.</p>
+        </div></div><p>The aim of the project is to create a trapezium shaped sketch pattern for a panel or &ldquo;gore&rdquo; of a moderately complex annular parachute. The parachute project isn&rsquo;t really important, but it gives a good example of how a spreadsheet can be used in a parametric design. When designing an annular parachute you make two fundamental choices, one is the number of &lsquo;gores&rsquo; or panels you require and then a target &lsquo;design diameter&rsquo;. All the other dimensions for the individual gore patterns and the line lengths are then derived by simple numerical calculations using the gore number and design diameter. Often the panels are cut using a laser cutter so being able to quickly generate a sketch and then export the design as a <code>.dxf</code> or <code>.svg</code> file is really useful.</p>
 <div class="image-with-popover">
       <figure><button aria-label="画像を拡大" popovertarget="img-001"><svg class="icon-zoom"
     aria-hidden="true"
@@ -276,7 +276,7 @@
     focusable="false">
     <use href="/Website/pr-16/svg/cross.svg#cross"></use>
   </svg></button>
-        </div></div><p>Below this we&rsquo;ve added a lot of labels for all the different dimensions which are calculated from the two main input parameters. Most of these are just ratios of the Design Diameter parameter or other simple calculations. We can create these simple calculations by adding small expressions to each cell. So for example the height of each gore is a simple ratio of the Design Diameter multiplied by 0.304 . To calculate this in cell B6 which we labelled for gore height we insert;</p>
+        </div></div><p>Below this we&rsquo;ve added a lot of labels for all the different dimensions which are calculated from the two main input parameters. Most of these are just ratios of the Design Diameter parameter or other simple calculations. We can create these simple calculations by adding small expressions to each cell. So for example the height of each gore is a simple ratio of the Design Diameter multiplied by 0.304. To calculate this in cell B6 which we labelled for gore height we insert;</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="o">=</span><span class="n">B1</span> <span class="o">*</span> <span class="mf">0.304</span></span></span></code></pre></div></div><p>We then added similar small formula for the dimensions needed by the sketch, these are the gore panel width at the top and bottom. The other items in the spreadsheet are other dimensions needed to create a parachute of this design such as the various line lengths etc. If you are interested the FreeCAD project is over on <a href="https://github.com/concretedog/annular_parachute_tools"
   class="external-link"
   title="リンクを開く"

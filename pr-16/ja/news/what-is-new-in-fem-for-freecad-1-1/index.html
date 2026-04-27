@@ -40,7 +40,7 @@
   <meta name="description" content="あなた自身の自由でオープンソースのパラメトリックモデラー"><meta name="keywords" content="FEM"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-16/ja/news/what-is-new-in-fem-for-freecad-1-1/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-16/zh/news/what-is-new-in-fem-for-freecad-1-1/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-16/es/news/what-is-new-in-fem-for-freecad-1-1/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-16/fr/news/what-is-new-in-fem-for-freecad-1-1/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-16/pt/news/what-is-new-in-fem-for-freecad-1-1/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-16/de/news/what-is-new-in-fem-for-freecad-1-1/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-16/ja/news/what-is-new-in-fem-for-freecad-1-1/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-16/ja/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-16/ja/news/what-is-new-in-fem-for-freecad-1-1/">
   <meta property="og:site_name" content="FreeCAD">
   <meta property="og:title" content="What’s new in FEM for FreeCAD 1.1?">
-  <meta property="og:description" content="Now that the feature freeze for FreeCAD 1.1 is on, and we are not too far off from the final release, let’s summarize the main changes in the FEM workbench. Just like in the case of the revolutionary 1.0.0 release (see this blog post ), FEM dominates the release notes . There have been many significant improvements, so let’s go through them.">
+  <meta property="og:description" content="Now that the feature freeze for FreeCAD 1.1 is on, and we are not too far off from the final release, let’s summarize the main changes in the FEM workbench. Just like in the case of the revolutionary 1.0 release (see this blog post Major FEM Workbench improvements for FreeCAD 1.0), FEM dominates the release notes . There have been many significant improvements, so let’s go through them.">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
@@ -169,21 +169,30 @@
     aria-hidden="true"
     focusable="false">
     <use href="/Website/pr-16/svg/words.svg#words"></use>
-  </svg>847 語</span><span class="meta"><svg class="icon-time"
+  </svg>860 語</span><span class="meta"><svg class="icon-time"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/pr-16/svg/time.svg#time"></use>
-  </svg>4 分</span></div></section><div class="content"><p>Now that the feature freeze for FreeCAD 1.1 is on, and we are not too far off from the final release, let&rsquo;s summarize the main changes in the FEM workbench. Just like in the case of the revolutionary 1.0.0 release (see <a href="https://blog.freecad.org/2024/09/28/major-fem-workbench-improvements-for-freecad-1-0/"
-  class="external-link"
-  title="リンクを開く"
-  
-  target="_blank"
-  rel="external noreferrer noopener"
-  >this blog post<svg class="icon-external"
+  </svg>5 分</span></div><figure class="article-cover"><img srcset="/Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/image-10_hu_4a59a81ddb5dc068.webp 500w, /Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/image-10_hu_4e95f52b3e619552.webp 1000w, /Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/image-10.webp 1680w"
+        sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"
+        src="/Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/image-10.webp"
+        title="FEM workbench"
+        alt="代替画像"
+        width="1680"
+        height="860"
+        loading="eager"
+        fetchpriority="high"><figcaption>
+        <div class="internal-tooltip"><svg class="icon-important"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/pr-16/svg/external.svg#external"></use>
-  </svg></a>), FEM dominates the <a href="https://wiki.freecad.org/Release_notes_1.1"
+    <use href="/Website/pr-16/svg/important.svg#important"></use>
+  </svg><span class="tooltip">FEM workbench</span>
+        </div>
+      </figcaption></figure></section><div class="content"><p>Now that the feature freeze for FreeCAD 1.1 is on, and we are not too far off from the final release, let&rsquo;s summarize the main changes in the FEM workbench. Just like in the case of the revolutionary 1.0 release (see <a href="/Website/pr-16/ja/news/major-fem-workbench-improvements-for-freecad-1-0/"
+  class="internal-tooltip"
+  title="リンクを開く"
+  >this blog post<span class="tooltip">
+        <strong>Major FEM Workbench improvements for FreeCAD 1.0</strong></span></a>), FEM dominates the <a href="https://wiki.freecad.org/Release_notes_1.1"
   class="external-link"
   title="リンクを開く"
   
@@ -204,7 +213,7 @@
     focusable="false">
     <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
   </svg></a>
-</h2><p>In this release cycle, the main focus was on electromagnetic (EM) analyses, postprocessing, and key missing CalculiX features. The range of supported electromagnetic simulations was extended with the introduction of Elmer&rsquo;s static current conduction solver implemented as <a href="http://fem_equationstaticcurrent/"
+</h2><p>In this release cycle, the main focus was on electromagnetic (EM) analyses, postprocessing, and key missing CalculiX features. The range of supported electromagnetic simulations was extended with the introduction of Elmer&rsquo;s static current conduction solver implemented as <a href="https://wiki.freecad.org/FEM_EquationStaticCurrent"
   class="external-link"
   title="リンクを開く"
   
@@ -232,21 +241,21 @@
     <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
   </svg><img
   src="/Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/image-4.png"
-  alt="Image 4"
+  alt="Electromagnetic analysis"
   loading="lazy"
   fetchpriority="low"
   decoding="async"
   width="400"
   height="203"
     srcset="/Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/image-4.png 400w"
-    sizes="75vw"></button><figcaption>Image 4</figcaption></figure><div id="img-000" popover>
+    sizes="75vw"></button><figcaption>Electromagnetic analysis</figcaption></figure><div id="img-000" popover>
           <button class="close"
             popovertarget="img-000"
             popovertargetaction="hide"
             aria-label="画像ビューアを閉じる">
             <img src="/Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/image-4.png"
-              title="Image 4"
-              alt="Image 4"
+              title="Electromagnetic analysis"
+              alt="Electromagnetic analysis"
               loading="lazy"
               fetchpriority="low"><svg class="icon-cross"
     aria-hidden="true"
@@ -272,21 +281,21 @@
     <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
   </svg><img
   src="/Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/image-5.png"
-  alt="Image 5"
+  alt="Electromagnetic analysis in 2D"
   loading="lazy"
   fetchpriority="low"
   decoding="async"
   width="618"
   height="435"
     srcset="/Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/image-5_hu_584742d819557946.webp 500w, /Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/image-5.png 618w"
-    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Image 5</figcaption></figure><div id="img-001" popover>
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Electromagnetic analysis in 2D</figcaption></figure><div id="img-001" popover>
           <button class="close"
             popovertarget="img-001"
             popovertargetaction="hide"
             aria-label="画像ビューアを閉じる">
             <img src="/Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/image-5.png"
-              title="Image 5"
-              alt="Image 5"
+              title="Electromagnetic analysis in 2D"
+              alt="Electromagnetic analysis in 2D"
               loading="lazy"
               fetchpriority="low"><svg class="icon-cross"
     aria-hidden="true"
@@ -312,21 +321,21 @@
     <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
   </svg><img
   src="/Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/image-3.png"
-  alt="Image 3"
+  alt="Result Frames task panel"
   loading="lazy"
   fetchpriority="low"
   decoding="async"
   width="446"
   height="380"
     srcset="/Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/image-3.png 446w"
-    sizes="75vw"></button><figcaption>Image 3</figcaption></figure><div id="img-002" popover>
+    sizes="75vw"></button><figcaption>Result Frames task panel</figcaption></figure><div id="img-002" popover>
           <button class="close"
             popovertarget="img-002"
             popovertargetaction="hide"
             aria-label="画像ビューアを閉じる">
             <img src="/Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/image-3.png"
-              title="Image 3"
-              alt="Image 3"
+              title="Result Frames task panel"
+              alt="Result Frames task panel"
               loading="lazy"
               fetchpriority="low"><svg class="icon-cross"
     aria-hidden="true"
@@ -346,21 +355,21 @@
     <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
   </svg><img
   src="/Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/image-9.png"
-  alt="Image 9"
+  alt="Symbolic vectors in Glyph"
   loading="lazy"
   fetchpriority="low"
   decoding="async"
   width="863"
   height="622"
     srcset="/Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/image-9_hu_a16f01bf2090856a.webp 500w, /Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/image-9.png 863w"
-    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Image 9</figcaption></figure><div id="img-003" popover>
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Symbolic vectors in Glyph</figcaption></figure><div id="img-003" popover>
           <button class="close"
             popovertarget="img-003"
             popovertargetaction="hide"
             aria-label="画像ビューアを閉じる">
             <img src="/Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/image-9.png"
-              title="Image 9"
-              alt="Image 9"
+              title="Symbolic vectors in Glyph"
+              alt="Symbolic vectors in Glyph"
               loading="lazy"
               fetchpriority="low"><svg class="icon-cross"
     aria-hidden="true"
@@ -408,21 +417,21 @@
     <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
   </svg><img
   src="/Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/image-7.png"
-  alt="Image 7"
+  alt="代替画像"
   loading="lazy"
   fetchpriority="low"
   decoding="async"
   width="522"
   height="547"
     srcset="/Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/image-7_hu_3031796f723d6119.webp 500w, /Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/image-7.png 522w"
-    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Image 7</figcaption></figure><div id="img-004" popover>
+    sizes="(max-width: 500px) 500px, 75vw"></button></figure><div id="img-004" popover>
           <button class="close"
             popovertarget="img-004"
             popovertargetaction="hide"
             aria-label="画像ビューアを閉じる">
             <img src="/Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/image-7.png"
-              title="Image 7"
-              alt="Image 7"
+              title=""
+              alt="代替画像"
               loading="lazy"
               fetchpriority="low"><svg class="icon-cross"
     aria-hidden="true"
@@ -447,21 +456,21 @@
     <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
   </svg><img
   src="/Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/image-6.png"
-  alt="Image 6"
+  alt="Netgen mesher"
   loading="lazy"
   fetchpriority="low"
   decoding="async"
   width="669"
   height="522"
     srcset="/Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/image-6_hu_6ff12f372d8994fe.webp 500w, /Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/image-6.png 669w"
-    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Image 6</figcaption></figure><div id="img-005" popover>
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Netgen mesher</figcaption></figure><div id="img-005" popover>
           <button class="close"
             popovertarget="img-005"
             popovertargetaction="hide"
             aria-label="画像ビューアを閉じる">
             <img src="/Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/image-6.png"
-              title="Image 6"
-              alt="Image 6"
+              title="Netgen mesher"
+              alt="Netgen mesher"
               loading="lazy"
               fetchpriority="low"><svg class="icon-cross"
     aria-hidden="true"
@@ -478,21 +487,21 @@
     <use href="/Website/pr-16/svg/zoom.svg#zoom"></use>
   </svg><img
   src="/Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/image-8.png"
-  alt="Image 8"
+  alt="Multiple solids selection menu"
   loading="lazy"
   fetchpriority="low"
   decoding="async"
   width="677"
   height="614"
     srcset="/Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/image-8_hu_1345d7466d101853.webp 500w, /Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/image-8.png 677w"
-    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Image 8</figcaption></figure><div id="img-006" popover>
+    sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Multiple solids selection menu</figcaption></figure><div id="img-006" popover>
           <button class="close"
             popovertarget="img-006"
             popovertargetaction="hide"
             aria-label="画像ビューアを閉じる">
             <img src="/Website/pr-16/news/what-is-new-in-fem-for-freecad-1-1/image-8.png"
-              title="Image 8"
-              alt="Image 8"
+              title="Multiple solids selection menu"
+              alt="Multiple solids selection menu"
               loading="lazy"
               fetchpriority="low"><svg class="icon-cross"
     aria-hidden="true"
@@ -509,7 +518,27 @@
     focusable="false">
     <use href="/Website/pr-16/svg/anchor.svg#anchor"></use>
   </svg></a>
-</h2><p>FEM has been actively developed in the v1.1 development cycle. Such progress wouldn&rsquo;t be possible without the invaluable contributions of marioalexis84 and ickby, as well as other devs occasionally contributing to FEM. There&rsquo;s still a lot to improve, such as:</p>
+</h2><p>FEM has been actively developed in the v1.1 development cycle. Such progress wouldn&rsquo;t be possible without the invaluable contributions of <a href="https://github.com/marioalexis84"
+  class="external-link"
+  title="リンクを開く"
+  
+  target="_blank"
+  rel="external noreferrer noopener"
+  >marioalexis84<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a> and <a href="https://github.com/ickby"
+  class="external-link"
+  title="リンクを開く"
+  
+  target="_blank"
+  rel="external noreferrer noopener"
+  >ickby<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-16/svg/external.svg#external"></use>
+  </svg></a>, as well as other devs occasionally contributing to FEM. There&rsquo;s still a lot to improve, such as:</p>
 <ul>
 <li>more CalculiX and Elmer features;</li>
 <li>mixed and multiple meshes;</li>
