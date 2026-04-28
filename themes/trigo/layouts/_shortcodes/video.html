@@ -18,7 +18,8 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 
 {{- $src := cond (.IsNamedParams) (.Get "src") (.Get 0) -}}
-{{- $poster := cond (.IsNamedParams) (.Get "poster") (.Get 1) | default "" -}}
+{{- $caption := cond (.IsNamedParams) (.Get "caption") (.Get 1) -}}
+{{- $poster := cond (.IsNamedParams) (.Get "poster") (.Get 2) | default "" -}}
 
 {{- $url := urls.Parse $src -}}
 {{- $is_remote := $url.IsAbs -}}
@@ -79,4 +80,8 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
     {{- $video_fallback -}}
   </video>
+
+  {{- with $caption -}}
+    <figcaption>{{ . | $.Page.RenderString }}</figcaption>
+  {{- end -}}
 </figure>

@@ -14,7 +14,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
   @examples
 
-    ![caption](path/to/image.jpg "image description")
+    ![Description](path/to/image.jpg "Title")
 
 */ -}}
 
@@ -22,6 +22,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 {{- $url := urls.Parse .Destination -}}
 {{- $alt := .PlainText | default (i18n "image_fallback" | default "Image fallback") -}}
 {{- $title := .Title | default .PlainText -}}
+{{- $caption := .Text -}}
 {{- $attributes := .Attributes -}}
 {{- $zoom := i18n "image_zoom" | default "Zoom image" -}}
 {{- $close := i18n "image_close" | default "Close image viewer" -}}
@@ -67,7 +68,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
         {{- if site.Params.show_popover -}}</button>{{- end -}}
 
-        {{- with $title -}}
+        {{- with $caption -}}
           <figcaption>{{ . }}</figcaption>
         {{- end -}}
       </figure>
