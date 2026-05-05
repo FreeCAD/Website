@@ -1,0 +1,122 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Welcome contributors custom partial:
+
+  - Render single-choice tree buttons from welcome front matter labels and link.
+
+  @returns {template.HTML}
+*/ -}}
+
+
+{{- $welcome := .Params.welcome -}}
+{{- with $welcome -}}
+
+  <div class="welcome">
+
+    <input type="radio" name="wel-root" id="wel-root" checked>
+
+    <div class="wel-level-1">
+      {{- range $i, $item := . -}}
+
+        {{- if $item.children -}}
+
+          {{- $id := printf "wel-l1-%s" ($item.id | default (printf "%d" $i)) -}}
+
+          <input type="radio" name="wel-l1" id="{{ $id }}">
+          <label class="wel-button" for="{{ $id }}">{{- $item.label -}}</label>
+
+          <div class="wel-panel">
+            {{- partial "inline/welcome-level.html" (dict
+              "nodes" $item.children
+              "parent" $id
+              "level" 2
+            ) -}}
+          </div>
+
+        {{- else if not .children -}}
+
+          {{- $href := $item.url -}}
+          {{- with site.GetPage $href -}}
+            {{- with .Params.redirect -}}
+              {{- $href = . -}}
+            {{- else -}}
+              {{- $href = .RelPermalink -}}
+            {{- end -}}
+          {{- end -}}
+
+          {{- $is_external := and (hasPrefix $href "http") (not (hasPrefix $href site.BaseURL)) -}}
+
+          <div class="wel-other">
+            <a class="wel-button wel-link"
+              href="{{ $href }}"
+              {{- if $is_external }} target="_blank" rel="noopener"{{ end -}}>
+              {{- $item.label -}}
+
+              {{- if $is_external -}}
+                {{- partialCached "utils/icon.html" "external" "external" -}}
+              {{- end -}}
+            </a>
+          </div>
+        {{- end -}}
+
+      {{- end -}}
+    </div>
+  </div>
+{{- end -}}
+
+{{- define "_partials/inline/welcome-level.html" -}}
+
+  {{- $nodes := .nodes -}}
+  {{- $parent := .parent -}}
+  {{- $level := .level -}}
+
+  <div class="wel-level-{{ $level }}">
+
+    {{- range $i, $node := $nodes -}}
+
+      {{- $id := printf "%s-%s" $parent ($node.id | default (printf "%d" $i)) -}}
+
+      {{- if $node.children -}}
+
+        <input type="radio" name="wel-l{{ $level }}" id="{{ $id }}">
+        <label class="wel-button" for="{{ $id }}">{{- $node.label -}}</label>
+
+        <div class="wel-panel">
+          {{- partial "inline/welcome-level.html" (dict
+            "nodes" $node.children
+            "parent" $id
+            "level" (add $level 1)
+          ) -}}
+        </div>
+
+      {{- else -}}
+
+        {{- $href := $node.url -}}
+        {{- with site.GetPage $href -}}
+          {{- with .Params.redirect -}}
+            {{- $href = . -}}
+          {{- else -}}
+            {{- $href = .RelPermalink -}}
+          {{- end -}}
+        {{- end -}}
+
+        {{- $is_external := and (hasPrefix $href "http") (not (hasPrefix $href site.BaseURL)) -}}
+
+        <a class="wel-button wel-link"
+          href="{{ $href }}"
+          {{- if $is_external }} target="_blank" rel="noopener"{{ end -}}>
+          {{- $node.label -}}
+
+          {{- if $is_external -}}
+            {{- partialCached "utils/icon.html" "external" "external" -}}
+          {{- end -}}
+        </a>
+
+      {{- end -}}
+    {{- end -}}
+  </div>
+{{- end -}}

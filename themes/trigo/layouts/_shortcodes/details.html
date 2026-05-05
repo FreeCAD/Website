@@ -26,7 +26,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 {{- if .Inner -}}
 
   {{- $summary := cond (.IsNamedParams) (.Get "summary") (.Get 0) | default (i18n "details" | default "Details") -}}
-  {{- $open := cond (.IsNamedParams) (.Get "open") (.Get 1) -}}
+  {{- $open := cond (.IsNamedParams) (.Get "open") (.Get 1) | default "true" -}}
   {{- $name := cond (.IsNamedParams) (.Get "name") (.Get 2) -}}
   {{- $title := cond (.IsNamedParams) (.Get "title") (.Get 3) -}}
   {{- $id := cond (.IsNamedParams) (.Get "id") (.Get 4) -}}
@@ -34,6 +34,8 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
   {{- if in (slice "true" "open" "opened" true 1) $open -}}
     {{- $open = true -}}
+  {{- else -}}
+    {{- $open = false -}}
   {{- end -}}
 
   <details

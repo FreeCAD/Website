@@ -15,6 +15,13 @@ menus:
   - pageRef: /news
   - pageRef: /community
   - pageRef: /docs
+    identifier: docs
+  - pageRef: /manual
+    parent: docs
+  - pageRef: /dev
+    parent: docs
+  - pageRef: /api
+    parent: docs
   - pageRef: /donate
     params:
       class: button
@@ -34,7 +41,7 @@ menus:
     parent: docs
   - pageRef: /dev
     parent: docs
-  - pageRef: /reference
+  - pageRef: /api
     parent: docs
   - pageRef: /donate
 
@@ -114,7 +121,7 @@ cascade:
   - weight: 90
     target:
       kind: section
-      path: "{/reference}"
+      path: "{/api}"
 
   - weight: 100
     target:

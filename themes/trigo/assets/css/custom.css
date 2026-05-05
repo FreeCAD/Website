@@ -88,3 +88,78 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 .download-release h4 {
   color: var(--secondary);
 }
+
+
+/* Welcome contributors box */
+
+.welcome {
+  width: calc(var(--content-width) * 0.5);
+  margin: var(--gap) auto;
+}
+
+.welcome input,
+[class^="wel-level"] {
+  display: none;
+}
+
+#wel-root:checked ~ .wel-level-1 {
+  display: grid;
+}
+
+.wel-panel {
+  display: none;
+  margin-top: calc(var(--gap) * 0.5);
+  padding: 0 var(--gap);
+}
+
+#wel-root:checked ~ .wel-level-1,
+.welcome input:checked + label + .wel-panel > [class^="wel-level"] {
+  display: block;
+}
+
+.welcome input:checked + label + .wel-panel {
+  display: block;
+  margin: var(--gap) auto;
+}
+
+.wel-button {
+  display: block;
+  padding: var(--padding);
+  margin: var(--gap) 0;
+  border-radius: var(--radius);
+  background: var(--theme);
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--secondary);
+  font-size: var(--m);
+  transition: var(--transition);
+}
+
+.welcome input:checked + .wel-button {
+  color: var(--primary);
+  background: var(--entry);
+  font-weight: bold;
+}
+
+.wel-button:hover,
+.wel-link:hover,
+.welcome input:checked + .wel-button:hover {
+  background: var(--accent-hover);
+  color: var(--primary);
+}
+
+.wel-button::after {
+  content: "›";
+  float: right;
+  opacity: 0.5;
+}
+
+.wel-link::after {
+  content: "";
+}
+
+.wel-other {
+  margin-top: calc(var(--gap) * 2);
+  padding-top: var(--gap);
+  border-top: var(--border);
+}
