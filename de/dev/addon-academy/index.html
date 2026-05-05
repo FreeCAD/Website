@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="de-DE"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/css/styles.4727226c46aadd46176bcbdc49e2e7de4e74f8fa896275434dcbf594564d0208.css" integrity="sha256-RycibEaq3UYXa8vcSeLn3k50&#43;PqJYnVDTcv1lFZNAgg=" crossorigin="anonymous"><link rel="icon" type="image/svg+xml" href="/Website/favicon.svg"><link rel="shortcut icon" type="image/x-icon" href="/Website/favicon.ico"><link rel="apple-touch-icon" href="/Website/apple-touch-icon.png"><title>FreeCAD | Addon Academy</title>
+  <meta name="description" content="Develop and distribute macros, external workbenches, and libraries."><meta name="keywords" content="free, open-source, CAD, software, tool, parametric, modeling, model, design, product, engineering, manufacturing, community, workbench, FOSS, 3D, BIM, CAM, FEM, FEA"><link rel="canonical" href="https://FreeCAD.github.io/Website/de/dev/addon-academy/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/dev/addon-academy/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/zh/dev/addon-academy/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/es/dev/addon-academy/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/fr/dev/addon-academy/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pt/dev/addon-academy/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/de/dev/addon-academy/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/ja/dev/addon-academy/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/de/"><meta property="og:url" content="https://FreeCAD.github.io/Website/de/dev/addon-academy/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Addon Academy">
+  <meta property="og:description" content="Develop and distribute macros, external workbenches, and libraries.">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:type" content="website">
+</head><body class="list type-dev kind-section "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/de/"accesskey="h"
+      title="Home (Alt + H)"
+      aria-label="Home"><svg class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+      <use href="/Website/FreeCAD-wordmark.svg#logo"></use>
+    </svg></a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menü"
+    aria-label="Menü"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/de/download/">Herunterladen</a>
+        </li><li>
+          <a href="/Website/de/news/">Aktuelles</a>
+        </li><li>
+          <a href="/Website/de/docs/" aria-current="page" class="active">Dokumentation</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Sprache auswählen (Alt + L)"
+          aria-label="Sprache auswählen"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/dev/addon-academy/" title="Addon Academy">English 🇬🇧</a>
+            </li><li>
+              <a href="/Website/zh/dev/addon-academy/" title="Addon Academy">中文 🇨🇳</a>
+            </li><li>
+              <a href="/Website/es/dev/addon-academy/" title="Addon Academy">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/fr/dev/addon-academy/" title="Addon Academy">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pt/dev/addon-academy/" title="Addon Academy">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/de/dev/addon-academy/" title="Addon Academy">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/ja/dev/addon-academy/" title="Addon Academy">日本語 🇯🇵</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Design wechseln (Alt + T)"
+    aria-label="Design wechseln"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero"
+    style="--hue: 140;">
+
+    <h1 class="title">Addon Academy</h1><h3 class="description">Develop and distribute macros, external workbenches, and libraries.</h3></section>
+
+  <nav class="toc">
+  <input type="checkbox" id="toc-toggle-checkbox" class="toc-toggle-checkbox">
+  <label for="toc-toggle-checkbox" class="toc-toggle" title="Table of Contents"><svg class="icon-toc"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/toc.svg#toc"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/cross.svg#cross"></use>
+  </svg><span>Inhaltsverzeichnis</span>
+  </label>
+
+  <div id="toc-content" class="toc-content">
+    <ul class="section-nav"><li>
+          <a href="/Website/de/dev/"
+            class="current-section"><svg class="icon-tri_tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/tri_tri_left.svg#tri_tri_left"></use>
+  </svg> Development Handbook</a>
+        </li><li>
+        <ul></ul>
+      </li>
+    </ul><p class="toc-label"><svg class="icon-file"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/file.svg#file"></use>
+  </svg>
+        <span>On this page</span>
+      </p><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#wip">WIP</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+</nav><div class="content"><figure>
+  <blockquote class="note"><svg class="icon-note"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/note.svg#note"></use>
+  </svg>Hinweis<p>Diese Seite wurde noch nicht übersetzt, daher wird stattdessen die englische Version verwendet. Möchtest du mithelfen?
+<a href="https://github.com/freecad/website"
+  class="external-link" title="Link öffnen" target="_blank" rel="external noreferrer noopener">Mitwirken<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a></p></blockquote></figure><h2
+  id="wip">WIP<a class="heading-anchor"
+     href="#wip"
+     title="WIP"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Coming soon&hellip;</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+            href="/Website/de/dev/design/"
+            title="Next section"><svg class="icon-folder_closed"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/folder_closed.svg#folder_closed"></use>
+  </svg>Design Guide</a><a class="page-item prev"
+            href="/Website/de/dev/localization/"
+            title="Prev section">Localization and Translations<svg class="icon-folder_closed"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/folder_closed.svg#folder_closed"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Nach oben"
+  title="Nach oben (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/de/">Home</a><ul></ul></li><li>
+          <a href="/Website/de/download/">Herunterladen</a><ul><li>
+                      <a href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="noopener noreferrer">Development Builds<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a href="/Website/de/download/releases/">Releases</a>
+                    </li></ul></li><li>
+          <a href="/Website/de/news/">Aktuelles</a><ul><li>
+                  <a href="/Website/de/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/de/authors/">Autoren</a>
+                      </li><li>
+                        <a href="/Website/de/categories/">Kategorien</a>
+                      </li><li>
+                        <a href="/Website/de/tags/">Tags</a>
+                      </li><li>
+                        <a href="/Website/de/versions/">Versionen</a>
+                      </li></ul></li><li>
+          <a href="/Website/de/docs/" aria-current="page" class="active">Dokumentation</a><ul><li>
+                  <a href="https://wiki.freecad.org/User_hub" target="_blank" rel="noopener noreferrer">User Manual<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+                </li><li>
+                  <a href="/Website/de/dev/">Development Handbook</a>
+                </li><li>
+                  <a href="https://freecad.github.io/SourceDoc/" target="_blank" rel="noopener noreferrer">FreeCAD API<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+                </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="https://forum.freecad.org"
+      title="Forum"
+      target="_blank" rel="noopener"><svg class="icon-forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/forum.svg#forum"></use>
+  </svg></a><a href="https://github.com/freecad"
+      title="Github"
+      target="_blank" rel="noopener"><svg class="icon-github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/github.svg#github"></use>
+  </svg></a><a href="https://codeberg.org/freecad"
+      title="Codeberg"
+      target="_blank" rel="noopener"><svg class="icon-codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a href="https://social.freecad.org/@freecad"
+      title="Mastodon"
+      target="_blank" rel="noopener"><svg class="icon-mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a href="https://www.reddit.com/r/freecad"
+      title="Reddit"
+      target="_blank" rel="noopener"><svg class="icon-reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/reddit.svg#reddit"></use>
+  </svg></a><a href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+      title="Matrix"
+      target="_blank" rel="noopener"><svg class="icon-matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/matrix.svg#matrix"></use>
+  </svg></a><a href="https://discord.gg/w2cTKGzccC"
+      title="Discord"
+      target="_blank" rel="noopener"><svg class="icon-discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/discord.svg#discord"></use>
+  </svg></a><a href="https://www.facebook.com/freecad"
+      title="Facebook"
+      target="_blank" rel="noopener"><svg class="icon-facebook"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/facebook.svg#facebook"></use>
+  </svg></a><a href="https://www.linkedin.com/groups/4295230"
+      title="Linkedin"
+      target="_blank" rel="noopener"><svg class="icon-linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a href="/Website/de/fedishare.html#title=Addon&#43;Academy&amp;description=Develop%20and%20distribute%20macros,%20external%20workbenches,%20and%20libraries.&amp;url=https://FreeCAD.github.io/Website/de/dev/addon-academy/"
+  title="Teilen auf Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/de/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-05-05
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/0ecf4c13f446aea52a7486c8503f448103f5706d">
+        0ecf4c13f<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script src="/Website/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script><script src="/Website/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    defer integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous">
+  </script><script src="/Website/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    defer integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous">
+  </script></body>
+
+</html>
