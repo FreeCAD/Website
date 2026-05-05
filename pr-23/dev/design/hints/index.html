@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en-US"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-23/css/styles.b5e3242e90b5c297f796a80d9eafe691a92c20d1ecd8132fb12b94657392388c.css" integrity="sha256-teMkLpC1wpf3lqgNnq/mkaksINHs2BMvsSuUZXOSOIw=" crossorigin="anonymous"><link rel="icon" type="image/svg+xml" href="/Website/pr-23/favicon.svg"><link rel="shortcut icon" type="image/x-icon" href="/Website/pr-23/favicon.ico"><link rel="apple-touch-icon" href="/Website/pr-23/apple-touch-icon.png"><title>FreeCAD | Input Hints</title>
+  <meta name="description" content="Input Hints Guidelines."><meta name="keywords" content="free, open-source, CAD, software, tool, parametric, modeling, model, design, product, engineering, manufacturing, community, workbench, FOSS, 3D, BIM, CAM, FEM, FEA"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-23/dev/design/hints/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-23/dev/design/hints/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-23/zh/dev/design/hints/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-23/es/dev/design/hints/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-23/fr/dev/design/hints/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-23/pt/dev/design/hints/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-23/de/dev/design/hints/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-23/ja/dev/design/hints/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-23/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-23/dev/design/hints/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Input Hints">
+  <meta property="og:description" content="Input Hints Guidelines.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dev">
+    <meta property="article:modified_time" content="2026-05-05T13:25:32+02:00">
+</head><body class="single type-dev kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-23/"accesskey="h"
+      title="Homepage (Alt + H)"
+      aria-label="Homepage"><svg class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+      <use href="/Website/pr-23/FreeCAD-wordmark.svg#logo"></use>
+    </svg></a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-23/download/">Download</a>
+        </li><li>
+          <a href="/Website/pr-23/news/">News</a>
+        </li><li>
+          <a href="/Website/pr-23/docs/" aria-current="page" class="active">Documentation</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choose language (Alt + L)"
+          aria-label="Choose language"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a aria-current="page" class="active" href="/Website/pr-23/dev/design/hints/" title="Input Hints">English 🇬🇧</a>
+            </li><li>
+              <a href="/Website/pr-23/zh/dev/design/hints/" title="Input Hints">中文 🇨🇳</a>
+            </li><li>
+              <a href="/Website/pr-23/es/dev/design/hints/" title="Input Hints">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/pr-23/fr/dev/design/hints/" title="Input Hints">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pr-23/pt/dev/design/hints/" title="Input Hints">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a href="/Website/pr-23/de/dev/design/hints/" title="Input Hints">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/pr-23/ja/dev/design/hints/" title="Input Hints">日本語 🇯🇵</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Switch theme chroma (Alt + T)"
+    aria-label="Switch theme chroma"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero"
+    style="--hue: 160;">
+
+    <h2 class="title">Input Hints</h1><h3 class="description">Input Hints Guidelines.</h3><div class="metadata"><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/words.svg#words"></use>
+  </svg>319 words</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/time.svg#time"></use>
+  </svg>2 min</span></div></section><nav class="toc">
+  <input type="checkbox" id="toc-toggle-checkbox" class="toc-toggle-checkbox">
+  <label for="toc-toggle-checkbox" class="toc-toggle" title="Table of Contents"><svg class="icon-toc"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/toc.svg#toc"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/cross.svg#cross"></use>
+  </svg><span>Table of Contents</span>
+  </label>
+
+  <div id="toc-content" class="toc-content">
+    <ul class="section-nav"><li>
+          <a href="/Website/pr-23/dev/"
+            class="current-section"><svg class="icon-tri_tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/tri_tri_left.svg#tri_tri_left"></use>
+  </svg> Development Handbook</a>
+        </li><li>
+          <a href="/Website/pr-23/dev/design/"
+            class="current-section"><svg class="icon-folder_closed"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/folder_closed.svg#folder_closed"></use>
+  </svg> Design Guide</a>
+        </li><li>
+        <ul><li>
+              <a href="/Website/pr-23/dev/design/intro/">Design Introduction</a>
+            </li><li>
+              <a href="/Website/pr-23/dev/design/principles/">Design Principles</a>
+            </li><li>
+              <a href="/Website/pr-23/dev/design/naming/">Naming Convention</a>
+            </li><li>
+              <a href="/Website/pr-23/dev/design/ui-glossary/">Glossary of Terms</a>
+            </li><li>
+              <a href="/Website/pr-23/dev/design/elements/">Interface Primary Elements</a>
+            </li><li>
+              <a href="/Website/pr-23/dev/design/zones/">Zones</a>
+            </li><li>
+              <a href="/Website/pr-23/dev/design/hints/" id="current-page" class="active" aria-current="page">Input Hints</a>
+            </li><li>
+              <a href="/Website/pr-23/dev/design/branding/">FreeCAD Brand Guidelines</a>
+            </li></ul>
+      </li>
+    </ul><p class="toc-label"><svg class="icon-file"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/file.svg#file"></use>
+  </svg>
+        <span>On this page</span>
+      </p><nav id="TableOfContents"></nav></div>
+</nav><div class="content"><p>Input Hints is feature that provides user with hints for available actions as part of the status bar.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Zoom image" popovertarget="img-%!d(&lt;nil&gt;)"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-23/dev/design/hints/input-hints-preview.webp"
+  alt="Input Hints Preview"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" width="820" height="73" srcset="/Website/pr-23/dev/design/hints/input-hints-preview_hu_c3111c0171f8db77.webp 500w, /Website/pr-23/dev/design/hints/input-hints-preview.webp 820w" sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Input Hints Preview</figcaption></figure><div id="img-%!d(&lt;nil&gt;)" popover>
+          <button class="close"
+            popovertarget="img-%!d(&lt;nil&gt;)"
+            popovertargetaction="hide"
+            aria-label="Close image viewer">
+            <img src="/Website/pr-23/dev/design/hints/input-hints-preview.webp"
+              title="Input Hints Preview"
+              alt="Input Hints Preview"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Technically the hint consists of the displayed message with placeholders (<code>%1</code>, <code>%2</code>, &hellip;)
+corresponding to each key sequence, and key sequences. One hint can contain one sequence (<code>[M] change mode</code>) or multiple ones (<code>[U]/[J] increase / decrease number of sides</code>). Each sequence can
+consist of one or more keys (for example <code>[shift][M]</code>). Placeholders can be placed anywhere in the
+hint message, however hints should follow <code>[key] action</code> convention. Available keys are defined
+within <code>Gui::InputHint::UserInput</code> enum.</p>
+<p>Messages for hints should respect these rules:</p>
+<ol>
+<li>
+<p>Start with input, then lowercase letter, hint is not a sentence, e.g. <code>%1 pick radius</code>.</p>
+</li>
+<li>
+<p>Keep hints as short as possible, avoid redundancy if context is clear, e.g. <code>%1 pick arc center</code>
+instead of <code>1% pick center of an arc</code>.</p>
+</li>
+<li>
+<p>Start with modifiers only (<code>ctrl</code>, <code>alt</code>, <code>shift</code>, etc.) if they affect other inputs, then mouse inputs, then  normal keys.</p>
+</li>
+<li>
+<p>Ideally within groups hints should be ordered by frequency of use (more common actions should be
+first).</p>
+</li>
+<li>
+<p>Try to be specific - instead of <code>change mode</code> try creating a dynamic hint with the name of the
+next mode.</p>
+</li>
+<li>
+<p>If actions are similar but differ in minor detail - they can be combined, e.g. <code>%1 / %2 decrease / increase side</code>, <code>%1, %2 or %3 constrain axis</code>.</p>
+</li>
+<li>
+<p>Remember to use translate function!</p>
+</li>
+<li>
+<p>Due to limited space available - try to keep the list of actions short, ideally no more than 6
+hints. Focus on the most common and important actions.</p>
+</li>
+<li>
+<p>Avoid adding unnecessary hints, e.g. don&rsquo;t show navigation commands as hints, when tools are
+active and don&rsquo;t show hints which are currently not possible due to other actions.</p>
+</li>
+<li>
+<p>If hints change dynamically - keep common hints between states of the tool used. If given action
+is removed, it is a strong suggestion that it is no longer available.</p>
+</li>
+</ol>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+            href="/Website/pr-23/dev/design/zones/"
+            title="Next article"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/tri_left.svg#tri_left"></use>
+  </svg>Zones</a><a class="page-item prev"
+            href="/Website/pr-23/dev/design/branding/"
+            title="Previous article">FreeCAD Brand Guidelines<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Go to Top"
+  title="Go to Top (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-23/">Homepage</a><ul></ul></li><li>
+          <a href="/Website/pr-23/download/">Download</a><ul><li>
+                      <a href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="noopener noreferrer">Development Builds<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a href="/Website/pr-23/download/releases/">Releases</a>
+                    </li></ul></li><li>
+          <a href="/Website/pr-23/news/">News</a><ul><li>
+                  <a href="/Website/pr-23/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/pr-23/authors/">Authors</a>
+                      </li><li>
+                        <a href="/Website/pr-23/categories/">Categories</a>
+                      </li><li>
+                        <a href="/Website/pr-23/tags/">Tags</a>
+                      </li><li>
+                        <a href="/Website/pr-23/versions/">Versions</a>
+                      </li></ul></li><li>
+          <a href="/Website/pr-23/docs/" aria-current="page" class="active">Documentation</a><ul><li>
+                  <a href="https://wiki.freecad.org/User_hub" target="_blank" rel="noopener noreferrer">User Manual<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/external.svg#external"></use>
+  </svg></a>
+                </li><li>
+                  <a href="/Website/pr-23/dev/">Development Handbook</a>
+                </li><li>
+                  <a href="https://freecad.github.io/SourceDoc/" target="_blank" rel="noopener noreferrer">FreeCAD API<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/external.svg#external"></use>
+  </svg></a>
+                </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="https://forum.freecad.org"
+      title="Forum"
+      target="_blank" rel="noopener"><svg class="icon-forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/forum.svg#forum"></use>
+  </svg></a><a href="https://github.com/freecad"
+      title="Github"
+      target="_blank" rel="noopener"><svg class="icon-github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/github.svg#github"></use>
+  </svg></a><a href="https://codeberg.org/freecad"
+      title="Codeberg"
+      target="_blank" rel="noopener"><svg class="icon-codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a href="https://social.freecad.org/@freecad"
+      title="Mastodon"
+      target="_blank" rel="noopener"><svg class="icon-mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a href="https://www.reddit.com/r/freecad"
+      title="Reddit"
+      target="_blank" rel="noopener"><svg class="icon-reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/reddit.svg#reddit"></use>
+  </svg></a><a href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+      title="Matrix"
+      target="_blank" rel="noopener"><svg class="icon-matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/matrix.svg#matrix"></use>
+  </svg></a><a href="https://discord.gg/w2cTKGzccC"
+      title="Discord"
+      target="_blank" rel="noopener"><svg class="icon-discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/discord.svg#discord"></use>
+  </svg></a><a href="https://www.facebook.com/freecad"
+      title="Facebook"
+      target="_blank" rel="noopener"><svg class="icon-facebook"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/facebook.svg#facebook"></use>
+  </svg></a><a href="https://www.linkedin.com/groups/4295230"
+      title="Linkedin"
+      target="_blank" rel="noopener"><svg class="icon-linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a href="/Website/pr-23/fedishare.html#title=Input&#43;Hints&amp;description=Input%20Hints%20Guidelines.&amp;url=https://FreeCAD.github.io/Website/pr-23/dev/design/hints/"
+  title="Share on Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-23/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-05-05
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/ca0847c316d2c76eff4fb76a710845f4b6ee2db4">
+        ca0847c3<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-23/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script src="/Website/pr-23/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script><script src="/Website/pr-23/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    defer integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous">
+  </script><script src="/Website/pr-23/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    defer integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous">
+  </script></body>
+
+</html>
