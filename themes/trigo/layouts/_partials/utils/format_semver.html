@@ -1,0 +1,98 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Semantic versioning sorter utility partial:
+
+  @param {string|string[]|dict} input – Version(s) as string, slice, or dict.
+    dict keys:
+      - versions {string|string[]} – Input versions.
+      - index {"first"|"last"|0|1} – Returned index item. Defaults to "last".
+
+  @return {string} Selected version (latest by default), semver-sorted with dev/alpha/beta/rc support.
+
+  @example {{ partial "utils/format_semver.html" .Params.versions }}
+  @example {{ partial "utils/format_semver.html" (dict "versions" .Params.versions "index" "first") }}
+
+*/ -}}
+
+
+{{- $input := . -}}
+{{- $versions := $input -}}
+{{- $index := "last" -}}
+
+{{- if reflect.IsMap $input -}}
+  {{- $versions = $input.versions -}}
+  {{- with $input.index -}}
+    {{- $index = . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* Return early with single string. */ -}}
+{{- if not (reflect.IsSlice $versions) -}}
+  {{- $versions -}}
+{{- else -}}
+
+  {{- $pairs := slice -}}
+
+  {{- range $versions -}}
+
+    {{- $version := . -}}
+    {{- $clean := lower (replace $version "v" "") -}}
+    {{- $match := findRE `^([0-9]+(?:\.[0-9]+){0,2})(.*)$` $clean 1 -}}
+
+    {{- $main := "0.0.0" -}}
+    {{- $suffix := "" -}}
+
+    {{- if $match -}}
+      {{- $full := index $match 0 -}}
+      {{- $main = replaceRE `^([0-9]+(?:\.[0-9]+){0,2}).*$` `$1` $full -}}
+      {{- $suffix = replaceRE `^[0-9]+(?:\.[0-9]+){0,2}` "" $full -}}
+    {{- end -}}
+
+    {{- $parts := split $main "." -}}
+    {{- $major := int (index $parts 0 | default "0") -}}
+    {{- $minor := int (index $parts 1 | default "0") -}}
+    {{- $patch := int (index $parts 2 | default "0") -}}
+
+    {{- $suffix_rank := 5 -}}
+    {{- $suffix_num := 0 -}}
+
+    {{- if $suffix -}}
+      {{- $suffix_clean := replace (lower $suffix) "-" "" -}}
+
+      {{- if findRE `dev` $suffix_clean -}}
+        {{- $suffix_rank = 1 -}}
+      {{- else if findRE `alpha` $suffix_clean -}}
+        {{- $suffix_rank = 2 -}}
+      {{- else if findRE `beta` $suffix_clean -}}
+        {{- $suffix_rank = 3 -}}
+      {{- else if findRE `rc` $suffix_clean -}}
+        {{- $suffix_rank = 4 -}}
+      {{- else -}}
+        {{- $suffix_rank = 0 -}}
+      {{- end -}}
+
+      {{- $digits := replaceRE `\D` "" $suffix_clean -}}
+      {{- if $digits -}}
+        {{- $suffix_num = int $digits -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{- $key := printf "%05d.%05d.%05d.%02d.%05d"
+      $major $minor $patch $suffix_rank $suffix_num -}}
+
+    {{- $pairs = $pairs | append (dict "key" $key "val" $version) -}}
+  {{- end -}}
+
+  {{- $sorted := sort $pairs "key" -}}
+  {{- $idx := lower (printf "%v" $index) -}}
+
+  {{- if in (slice "first" "0" "1") $index -}}
+    {{- (index $sorted 0).val -}}
+  {{- else -}}
+    {{- (index $sorted (sub (len $sorted) 1)).val -}}
+  {{- end -}}
+{{- end -}}

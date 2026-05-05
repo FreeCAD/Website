@@ -127,6 +127,14 @@ cascade:
       path: "{/admin}"
 
   - params:
+      partials:
+        content:
+          - download
+    target:
+      kind: page
+      path: /download/releases/**
+
+  - params:
       toc: true
     target:
       path: /dev/**
@@ -151,6 +159,16 @@ minify:
 services:
   googleAnalytics:
     id: # Google Analytics G-MEASUREMENT_ID.
+
+frontmatter:
+  lastmod:
+  - lastmod
+  - modified
+  - :git
+  - date
+  - publishdate
+  - pubdate
+  - published
 
 markup:
   goldmark:

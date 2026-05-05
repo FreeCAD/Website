@@ -52,3 +52,39 @@ resize_dimensions:
 
 # Remote resources fetching
 timeout: 5s
+
+
+# Custom partials parameters. For localized strings, see relevant content files.
+
+# Download Section
+download:
+  - os: windows
+    label: Windows
+    order: 1
+    packages:
+      - key: msi
+        label: x86_64 Installer
+        alt: WINDOWS-MSI
+      - key: zip
+        label: x86_64 Portable
+        alt: WINDOWS-ZIP
+  - os: mac
+    label: macOS
+    order: 2
+    packages:
+      - key: x86
+        label: Intel x86
+        alt: MACOS-X86
+      - key: arm
+        label: Apple Silicon
+        alt: MACOS-ARM
+  - os: linux
+    label: GNU/Linux
+    order: 3
+    packages:
+      - key: x86
+        label: x86_64 AppImage
+        alt: LINUX-X86
+      - key: arm
+        label: AArch64 AppImage
+        alt: LINUX-AARCH64

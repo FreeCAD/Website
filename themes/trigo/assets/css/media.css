@@ -160,6 +160,14 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     padding: calc(var(--gap) * 2) 0;
   }
 
+  .block-content {
+    flex-direction: column;
+  }
+
+  .block-content > * {
+    max-width: calc(var(--width) - (var(--gap) * 2));
+  }
+
   .footer-menu > ul > li {
     flex: 1;
     min-width: calc(var(--width) * 0.4);

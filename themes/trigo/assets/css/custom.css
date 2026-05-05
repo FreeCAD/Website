@@ -1,0 +1,90 @@
+/*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/
+
+/* Custom partials CSS stylesheet. */
+
+
+/* Download box */
+
+.download-box {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: space-evenly;
+  text-align: center;
+  gap: var(--gap);
+  width: var(--width);
+  margin: var(--gap) auto;
+  z-index: 2;
+}
+
+.download-box .card {
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.download-box button {
+  padding: var(--padding);
+  color: var(--secondary);
+  flex: 1;
+}
+
+.download-box svg {
+  height: var(--xxxl);
+  width: var(--xxxl);
+  color: var(--secondary);
+}
+
+.download-box button:hover svg {
+  color: var(--accent-hover);
+}
+
+.download-box .app-build {
+  padding: var(--padding);
+  color: var(--secondary);
+}
+
+.download-box .app-build svg {
+  padding: calc(var(--gap) * 0.5);
+  background: var(--secondary);
+  color: var(--entry);
+  border-radius: var(--radius);
+}
+
+.download-box .app-build:hover svg {
+  background: var(--accent-hover);
+}
+
+:is(#windows:has(#windows-arch:popover-open),
+#mac:has(#mac-arch:popover-open),
+#linux:has(#linux-arch:popover-open)) .app-build {
+  display: inline-block;
+}
+
+.card:has(#windows-arch:popover-open,
+#mac-arch:popover-open,
+#linux-arch:popover-open) {
+  filter: var(--filter);
+  transform: var(--transform-hover);
+  outline: var(--outline);
+}
+
+:is(#windows:has(#windows-arch:popover-open),
+#mac:has(#mac-arch:popover-open),
+#linux:has(#linux-arch:popover-open)) [popovertarget*="arch"],
+[id*="arch"],
+.app-build {
+  display: none;
+}
+
+.download-release {
+  display: flex;
+  flex-direction: column;
+}
+
+.download-release h4 {
+  color: var(--secondary);
+}
