@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="de-DE"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-22/css/styles.ba768ac93cf3a454882390b43d12fbaeff6f6c264a8291f4d46b65756257404f.css" integrity="sha256-unaKyTzzpFSII5C0PRL7rv9vbCZKgpH01GtldWJXQE8=" crossorigin="anonymous"><link rel="icon" type="image/svg+xml" href="/Website/pr-22/favicon.svg"><link rel="shortcut icon" type="image/x-icon" href="/Website/pr-22/favicon.ico"><link rel="apple-touch-icon" href="/Website/pr-22/apple-touch-icon.png"><title>FreeCAD | FreeCAD 1.1</title>
+  <meta name="description" content="Free and open-source CAD, refined."><meta name="keywords" content="free, open-source, CAD, software, tool, parametric, modeling, model, design, product, engineering, manufacturing, community, workbench, FOSS, 3D, BIM, CAM, FEM, FEA"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-22/de/download/releases/1-1/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-22/download/releases/1-1/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-22/zh/download/releases/1-1/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-22/es/download/releases/1-1/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-22/fr/download/releases/1-1/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-22/pt/download/releases/1-1/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-22/de/download/releases/1-1/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-22/ja/download/releases/1-1/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-22/de/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-22/de/download/releases/1-1/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="FreeCAD 1.1">
+  <meta property="og:description" content="Free and open-source CAD, refined.">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="download">
+    <meta property="article:published_time" content="2026-03-24T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-14T00:00:00+00:00">
+</head><body class="single type-download kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-22/de/"accesskey="h"
+      title="Home (Alt + H)"
+      aria-label="Home"><svg class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+      <use href="/Website/pr-22/FreeCAD-wordmark.svg#logo"></use>
+    </svg></a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menü"
+    aria-label="Menü"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-22/de/download/" aria-current="page" class="active">Herunterladen</a>
+        </li><li>
+          <a href="/Website/pr-22/de/news/">Aktuelles</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Sprache auswählen (Alt + L)"
+          aria-label="Sprache auswählen"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-22/download/releases/1-1/" title="FreeCAD 1.1">English 🇬🇧</a>
+            </li><li>
+              <a href="/Website/pr-22/zh/download/releases/1-1/" title="FreeCAD 1.1">中文 🇨🇳</a>
+            </li><li>
+              <a href="/Website/pr-22/es/download/releases/1-1/" title="FreeCAD 1.1">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/pr-22/fr/download/releases/1-1/" title="FreeCAD 1.1">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pr-22/pt/download/releases/1-1/" title="FreeCAD 1.1">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-22/de/download/releases/1-1/" title="FreeCAD 1.1">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/pr-22/ja/download/releases/1-1/" title="FreeCAD 1.1">日本語 🇯🇵</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Design wechseln (Alt + T)"
+    aria-label="Design wechseln"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero"
+    style="--hue: 10;">
+
+    <h2 class="title">FreeCAD 1.1</h1><h3 class="description">Free and open-source CAD, refined.</h3><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/date.svg#date"></use>
+  </svg><time datetime="2026-03-24T00:00:00Z">24. März 2026</time>
+  </span><span class="meta versions"><svg class="icon-versions"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/versions.svg#versions"></use>
+  </svg><a href="/Website/pr-22/de/versions/1.1/">1.1 (4)</a><a href="/Website/pr-22/de/versions/1.1.1/">1.1.1 (1)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/words.svg#words"></use>
+  </svg>410 Wörter</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/time.svg#time"></use>
+  </svg>2 Minuten</span></div><figure class="article-cover"><img srcset="/Website/pr-22/download/releases/1-1/relnotes_1-1_hu_b1bc97fd4bb608cf.webp 500w, /Website/pr-22/download/releases/1-1/relnotes_1-1_hu_fd6afe843a311ce6.webp 1000w, /Website/pr-22/download/releases/1-1/relnotes_1-1.webp 1280w"
+        sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"
+        src="/Website/pr-22/download/releases/1-1/relnotes_1-1.webp"
+        title="FreeCAD 1.1 release"
+        alt="Ersatzbild"
+        width="1280"
+        height="720"
+        loading="eager"
+        fetchpriority="high"><figcaption>
+        <div class="internal-tooltip"><svg class="icon-important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/important.svg#important"></use>
+  </svg><span class="tooltip">FreeCAD 1.1 release</span>
+        </div>
+      </figcaption></figure></section><div class="content"><figure>
+  <blockquote class="note"><svg class="icon-note"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/note.svg#note"></use>
+  </svg>Hinweis<p>Diese Seite wurde noch nicht übersetzt, daher wird stattdessen die englische Version verwendet. Möchtest du mithelfen?
+<a href="https://github.com/freecad/website"
+  class="external-link" title="Link öffnen" target="_blank" rel="external noreferrer noopener">Mitwirken<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/external.svg#external"></use>
+  </svg></a></p></blockquote></figure><p>After one year and a half of continuous development, FreeCAD 1.1 builds on the 1.0 milestone with meaningful new tools and improved workflows across the board.</p>
+<p>This release focuses on making everyday modeling more reliable, faster, and more intuitive — while expanding capabilities for hobbyists, advanced users and professionals alike.</p>
+<a href="https://www.youtube.com/watch?v=a9biWv_M8p8"
+    title="Watch the release video"
+    aria-label="Watch the release video"
+    class="shortcode-button" target="_blank" rel="noopener noreferrer"><svg class="icon-youtube_fill"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/youtube_fill.svg#youtube_fill"></use>
+  </svg>Watch the release video<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/external.svg#external"></use>
+  </svg></a>
+<div class="block-shortcode wide" style="background: linear-gradient(135deg, #ffd6e0, #fff3b0, #caffbf);"><h2 class="block-title" style="color: darkslategrey;">Your Refined User Interface and Experience</h2><div class="block-content" style="color: darkslategrey;"><div class="group"><div id="carousel0"
+    class="carousel"
+    data-duration="5000"
+    data-mode="fixed">
+    <ul><li id="carousel0-slide0">
+            <img
+              srcset="/Website/pr-22/download/releases/1-1/transform_1-1_hu_ad57db24cf3c77fc.webp 500w, /Website/pr-22/download/releases/1-1/transform_1-1_hu_8d980780331d22d.webp 1000w, /Website/pr-22/download/releases/1-1/transform_1-1.webp 1200w"
+              sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"
+              src="/Website/pr-22/download/releases/1-1/transform_1-1.webp"
+              width="1200"
+              height="600"
+              alt="Slide-0"
+              loading="lazy"
+              fetchpriority="low">
+          </li><li id="carousel0-slide1">
+            <img
+              srcset="/Website/pr-22/download/releases/1-1/transform2_1-1_hu_3f94d2e03d58a62c.webp 500w, /Website/pr-22/download/releases/1-1/transform2_1-1_hu_5317d413f4ba402c.webp 1000w, /Website/pr-22/download/releases/1-1/transform2_1-1.webp 1200w"
+              sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"
+              src="/Website/pr-22/download/releases/1-1/transform2_1-1.webp"
+              width="1200"
+              height="600"
+              alt="Slide-1"
+              loading="lazy"
+              fetchpriority="low">
+          </li></ul>
+    <ol><li><a href="#carousel0-slide0"></a></li><li><a href="#carousel0-slide1"></a></li></ol>
+    <div class="prev"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/tri_left.svg#tri_left"></use>
+  </svg></div>
+    <div class="next"><svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/tri_right.svg#tri_right"></use>
+  </svg></div>
+  </div>
+<br>
+<ul>
+<li>Three-point lighting improving rendering of models in the 3D view.</li>
+<li>Transform tool overhaul, with draggers, precise input, alignment, snapping, and target features.</li>
+<li>New Theme Editor and theme token system to easily customize stylesheets.</li>
+<li>Consolidated <mark>Add Property</mark> dialog and Expression Editor with better completion and VarSet input.</li>
+</ul>
+</div>
+<div class="group"><ul>
+<li>New tools and shortcut hints and quick measure in the Status bar.</li>
+<li>The new clarify selection enables temporary transparency to shows all nearby geometrical entities.</li>
+<li>Improved navigation controls, align to selection, and visual utility tools.</li>
+<li>New search in the Preferences Editor.</li>
+</ul>
+<br>
+<div class="image-with-popover">
+      <figure><button aria-label="Bild vergrößern" popovertarget="img-%!d(&lt;nil&gt;)"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-22/download/releases/1-1/clarify_1-1.webp"
+  alt="Clarify selection"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" width="1080" height="540" srcset="/Website/pr-22/download/releases/1-1/clarify_1-1_hu_d869b86c8ed11db6.webp 500w, /Website/pr-22/download/releases/1-1/clarify_1-1_hu_e122633f65198271.webp 1000w, /Website/pr-22/download/releases/1-1/clarify_1-1.webp 1080w" sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Clarify selection</figcaption></figure><div id="img-%!d(&lt;nil&gt;)" popover>
+          <button class="close"
+            popovertarget="img-%!d(&lt;nil&gt;)"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen">
+            <img src="/Website/pr-22/download/releases/1-1/clarify_1-1.webp"
+              title="Clarify selection"
+              alt="Clarify selection"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div></div></div>
+  </div>
+<div class="block-shortcode wide" style="background: var(--bg-gradient);"><h2 class="block-title">Part Design and Assembly on the Move</h2><div class="block-content"><div class="image-with-popover">
+      <figure><button aria-label="Bild vergrößern" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-22/download/releases/1-1/pd_1-1.webp"
+  alt="Feature preview and adjustments by gizmos"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" width="720" height="640" srcset="/Website/pr-22/download/releases/1-1/pd_1-1_hu_f08987486a72d53e.webp 500w, /Website/pr-22/download/releases/1-1/pd_1-1.webp 720w" sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Feature preview and adjustments by gizmos</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen">
+            <img src="/Website/pr-22/download/releases/1-1/pd_1-1.webp"
+              title="Feature preview and adjustments by gizmos"
+              alt="Feature preview and adjustments by gizmos"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><ul>
+<li>Enhanced feedback during modeling and editing thanks to transparent previews and interactive draggers.</li>
+<li>Overhauled hole tool task panel, taper and thread support, and performance.</li>
+<li>Two sided mode for padding and different spacing in transform tools.</li>
+<li>New part insertion, simulation for joints motion and animations, and Bill of Materials for Assemblies.</li>
+</ul>
+</div>
+  </div>
+<div class="block-shortcode wide" style="background: var(--bg-dots);"><h2 class="block-title">Born to Sketch</h2><div class="block-content"><div class="group"><div id="compare0" class="compare"><img class="before"
+            srcset="/Website/pr-22/download/releases/1-1/sketcher_1-1_hu_a06311d15ab5b6d0.webp 500w, /Website/pr-22/download/releases/1-1/sketcher_1-1.webp 660w"
+            sizes="(max-width: 500px) 500px, 75vw"
+            src="/Website/pr-22/download/releases/1-1/sketcher_1-1.webp"
+            width="660"
+            height="600"
+            alt="Ersatzbild"
+            loading="lazy"
+            fetchpriority="low"><img class="after"
+            srcset="/Website/pr-22/download/releases/1-1/pad_1-1_hu_3a9e0504f417fd38.webp 500w, /Website/pr-22/download/releases/1-1/pad_1-1.webp 660w"
+            sizes="(max-width: 500px) 500px, 75vw"
+            src="/Website/pr-22/download/releases/1-1/pad_1-1.webp"
+            width="660"
+            height="600"
+            alt="Ersatzbild"
+            loading="lazy"
+            fetchpriority="low"><div class="divider"></div>
+      <div class="handle"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/tri_left.svg#tri_left"></use>
+  </svg><svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/tri_right.svg#tri_right"></use>
+  </svg></div>
+    </div>
+<ul>
+<li>Projection, intersection, and external geometry in the Sketcher.</li>
+<li>Improved master sketch workflow via make internals for closed contours.</li>
+<li>Many usability and interface tweaks to streamline sketching workflows.</li>
+</ul>
+</div></div>
+  </div>
+<div class="block-shortcode wide" style="background: linear-gradient(135deg, #e0c3fc, #f9f7ff, #c3f0ff);"><h2 class="block-title" style="color: darkslateblue;">CAM, FEM and TechDraw Flow</h2><div class="block-content" style="color: darkslateblue;"><ul>
+<li>New toolbit library and editor, better multi-pass support and post-processors introduced in CAM.</li>
+<li>FEM results now support animations, electrostatic analyses, and glyph filters.</li>
+<li>TechDraw has improved snapping, frame toggle, annotation, and dimension tools.</li>
+</ul>
+<div class="image-with-popover">
+      <figure><button aria-label="Bild vergrößern" popovertarget="img-002"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-22/download/releases/1-1/glyph_1-1.webp"
+  alt="Forces visualization for glyph filters"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" width="720" height="600" srcset="/Website/pr-22/download/releases/1-1/glyph_1-1_hu_2b5de35899ced2b9.webp 500w, /Website/pr-22/download/releases/1-1/glyph_1-1.webp 720w" sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Forces visualization for glyph filters</figcaption></figure><div id="img-002" popover>
+          <button class="close"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen">
+            <img src="/Website/pr-22/download/releases/1-1/glyph_1-1.webp"
+              title="Forces visualization for glyph filters"
+              alt="Forces visualization for glyph filters"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div></div>
+  </div>
+<div class="block-shortcode wide" style="background: var(--bg-grid);"><h2 class="block-title">Build on BIM and Draft</h2><div class="block-content"><div class="image-with-popover">
+      <figure><button aria-label="Bild vergrößern" popovertarget="img-003"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-22/download/releases/1-1/plan_1-1.webp"
+  alt="Better layers, dimensions, and style management"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" width="1777" height="1059" srcset="/Website/pr-22/download/releases/1-1/plan_1-1_hu_df7b685b881805c8.webp 500w, /Website/pr-22/download/releases/1-1/plan_1-1_hu_fa55e8a426101ec4.webp 1000w, /Website/pr-22/download/releases/1-1/plan_1-1.webp 1777w" sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Better layers, dimensions, and style management</figcaption></figure><div id="img-003" popover>
+          <button class="close"
+            popovertarget="img-003"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen">
+            <img src="/Website/pr-22/download/releases/1-1/plan_1-1.webp"
+              title="Better layers, dimensions, and style management"
+              alt="Better layers, dimensions, and style management"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><ul>
+<li>View panel to view, interact, and manage the project spatial structure and 2D views.</li>
+<li>Interactive sun position and ray visualization for sites.</li>
+<li>Improved layers management with overrides, array tools, drafting objects creation and editing.</li>
+</ul>
+</div>
+  </div>
+<div class="block-shortcode wide" style="background: linear-gradient(135deg, #dbe6c4 0%, #c3d2a4 40%, #aebf7a 70%, #8f9f5a 100%);"><h2 class="block-title" style="color: darkolivegreen;">General Performance and Stability</h2><div class="block-content" style="color: darkolivegreen;"><ul>
+<li>Continued improvements to topological naming mitigation for greater model stability.</li>
+<li>Better Wayland support for Linux users.</li>
+<li>Faster startup and reduced memory usage.</li>
+<li>Numerous bug fixes across all workbenches.</li>
+</ul>
+<div class="image-with-popover">
+      <figure><button aria-label="Bild vergrößern" popovertarget="img-004"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-22/download/releases/1-1/cnc_1-1.webp"
+  alt="CNC lathe model assembly"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" width="1200" height="800" srcset="/Website/pr-22/download/releases/1-1/cnc_1-1_hu_3ef62349790b448.webp 500w, /Website/pr-22/download/releases/1-1/cnc_1-1_hu_c712757f4b199eec.webp 1000w, /Website/pr-22/download/releases/1-1/cnc_1-1.webp 1200w" sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>CNC lathe model assembly</figcaption></figure><div id="img-004" popover>
+          <button class="close"
+            popovertarget="img-004"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen">
+            <img src="/Website/pr-22/download/releases/1-1/cnc_1-1.webp"
+              title="CNC lathe model assembly"
+              alt="CNC lathe model assembly"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div></div>
+  </div>
+<a href="https://wiki.freecad.org/Release_notes_1.1"
+    title="Read the complete release notes"
+    aria-label="Read the complete release notes"
+    class="shortcode-button" target="_blank" rel="noopener noreferrer">Read the complete release notes<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/external.svg#external"></use>
+  </svg></a>
+<p>And much more, thanks to hundreds of contributions from the community around the world.</p>
+<p><strong>Want to be part of the journey?</strong> Join the <a href="/community"
+  class="internal-tooltip">community</a> and <a href="/donate"
+  class="internal-tooltip">help shape</a> the future of FreeCAD.</p>
+<p>As always — have fun and keep <em>FreeCADing</em>!</p>
+
+  </div><hr style="width: var(--width);">
+    <div class="download-release"><div class="download-box"><div class="card" id="windows" style="order: 1;">
+
+        <span popover id="windows-arch"></span>
+        <button popovertarget="windows-arch"
+          title="Windows"><svg class="icon-windows"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/windows.svg#windows"></use>
+  </svg><br>
+          <span>Windows</span>
+        </button><a class="app-build"
+              href="https://github.com/freecad/freecad/releases/download/1.1.1/FreeCAD_1.1.1-Windows-x86_64-py311-installer.exe"
+              data-url="https://github.com/freecad/freecad/releases/download/1.1.1/FreeCAD_1.1.1-Windows-x86_64-py311-installer.exe"
+              aria-label="x86_64 Installer"
+              title="x86_64 Installer"
+              target="_blank"
+              rel="noopener noreferrer"><svg class="icon-msi"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/msi.svg#msi"></use>
+  </svg><br>
+              <span>x86_64 Installer</span>
+            </a><a class="app-build"
+              href="https://github.com/freecad/freecad/releases/download/1.1.1/FreeCAD_1.1.1-Windows-x86_64-py311.7z"
+              data-url="https://github.com/freecad/freecad/releases/download/1.1.1/FreeCAD_1.1.1-Windows-x86_64-py311.7z"
+              aria-label="x86_64 Portable"
+              title="x86_64 Portable"
+              target="_blank"
+              rel="noopener noreferrer"><svg class="icon-zip"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/zip.svg#zip"></use>
+  </svg><br>
+              <span>x86_64 Portable</span>
+            </a></div><div class="card" id="mac" style="order: 2;">
+
+        <span popover id="mac-arch"></span>
+        <button popovertarget="mac-arch"
+          title="macOS"><svg class="icon-mac"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/mac.svg#mac"></use>
+  </svg><br>
+          <span>macOS</span>
+        </button><a class="app-build"
+              href="https://github.com/freecad/freecad/releases/download/1.1.1/FreeCAD_1.1.1-macOS-x86_64-py311.dmg"
+              data-url="https://github.com/freecad/freecad/releases/download/1.1.1/FreeCAD_1.1.1-macOS-x86_64-py311.dmg"
+              aria-label="Intel x86"
+              title="Intel x86"
+              target="_blank"
+              rel="noopener noreferrer"><svg class="icon-x86"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/x86.svg#x86"></use>
+  </svg><br>
+              <span>Intel x86</span>
+            </a><a class="app-build"
+              href="https://github.com/freecad/freecad/releases/download/1.1.1/FreeCAD_1.1.1-macOS-arm64-py311.dmg"
+              data-url="https://github.com/freecad/freecad/releases/download/1.1.1/FreeCAD_1.1.1-macOS-arm64-py311.dmg"
+              aria-label="Apple Silicon"
+              title="Apple Silicon"
+              target="_blank"
+              rel="noopener noreferrer"><svg class="icon-arm"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/arm.svg#arm"></use>
+  </svg><br>
+              <span>Apple Silicon</span>
+            </a></div><div class="card" id="linux" style="order: 3;">
+
+        <span popover id="linux-arch"></span>
+        <button popovertarget="linux-arch"
+          title="GNU/Linux"><svg class="icon-linux"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/linux.svg#linux"></use>
+  </svg><br>
+          <span>GNU/Linux</span>
+        </button><a class="app-build"
+              href="https://github.com/freecad/freecad/releases/download/1.1.1/FreeCAD_1.1.1-Linux-x86_64-py311.AppImage"
+              data-url="https://github.com/freecad/freecad/releases/download/1.1.1/FreeCAD_1.1.1-Linux-x86_64-py311.AppImage"
+              aria-label="x86_64 AppImage"
+              title="x86_64 AppImage"
+              target="_blank"
+              rel="noopener noreferrer"><svg class="icon-x86"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/x86.svg#x86"></use>
+  </svg><br>
+              <span>x86_64 AppImage</span>
+            </a><a class="app-build"
+              href="https://github.com/freecad/freecad/releases/download/1.1.1/FreeCAD_1.1.1-Linux-aarch64-py311.AppImage"
+              data-url="https://github.com/freecad/freecad/releases/download/1.1.1/FreeCAD_1.1.1-Linux-aarch64-py311.AppImage"
+              aria-label="AArch64 AppImage"
+              title="AArch64 AppImage"
+              target="_blank"
+              rel="noopener noreferrer"><svg class="icon-arm"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/arm.svg#arm"></use>
+  </svg><br>
+              <span>AArch64 AppImage</span>
+            </a></div></div>
+
+  <h4 class="description">Herunterladen 1.1.1 · 14. April 2026</h4></div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item prev"
+            href="/Website/pr-22/de/download/releases/1-0/"
+            title="Vorheriger Artikel">FreeCAD 1.0<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Nach oben"
+  title="Nach oben (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-22/de/">Home</a><ul></ul></li><li>
+          <a href="/Website/pr-22/de/download/" aria-current="page" class="active">Herunterladen</a><ul><li>
+                      <a href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="noopener noreferrer">Development Builds<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a href="/Website/pr-22/de/download/releases/">Releases</a>
+                    </li></ul></li><li>
+          <a href="/Website/pr-22/de/news/">Aktuelles</a><ul><li>
+                  <a href="/Website/pr-22/de/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/pr-22/de/authors/">Autoren</a>
+                      </li><li>
+                        <a href="/Website/pr-22/de/categories/">Kategorien</a>
+                      </li><li>
+                        <a href="/Website/pr-22/de/tags/">Tags</a>
+                      </li><li>
+                        <a href="/Website/pr-22/de/versions/">Versionen</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="https://forum.freecad.org"
+      title="Forum"
+      target="_blank" rel="noopener"><svg class="icon-forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/forum.svg#forum"></use>
+  </svg></a><a href="https://github.com/freecad"
+      title="Github"
+      target="_blank" rel="noopener"><svg class="icon-github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/github.svg#github"></use>
+  </svg></a><a href="https://codeberg.org/freecad"
+      title="Codeberg"
+      target="_blank" rel="noopener"><svg class="icon-codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a href="https://social.freecad.org/@freecad"
+      title="Mastodon"
+      target="_blank" rel="noopener"><svg class="icon-mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a href="https://www.reddit.com/r/freecad"
+      title="Reddit"
+      target="_blank" rel="noopener"><svg class="icon-reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/reddit.svg#reddit"></use>
+  </svg></a><a href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+      title="Matrix"
+      target="_blank" rel="noopener"><svg class="icon-matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/matrix.svg#matrix"></use>
+  </svg></a><a href="https://discord.gg/w2cTKGzccC"
+      title="Discord"
+      target="_blank" rel="noopener"><svg class="icon-discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/discord.svg#discord"></use>
+  </svg></a><a href="https://www.facebook.com/freecad"
+      title="Facebook"
+      target="_blank" rel="noopener"><svg class="icon-facebook"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/facebook.svg#facebook"></use>
+  </svg></a><a href="https://www.linkedin.com/groups/4295230"
+      title="Linkedin"
+      target="_blank" rel="noopener"><svg class="icon-linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a href="/Website/pr-22/de/fedishare.html#title=FreeCAD&#43;1.1&amp;description=Free%20and%20open-source%20CAD,%20refined.&amp;url=https://FreeCAD.github.io/Website/pr-22/de/download/releases/1-1/"
+  title="Teilen auf Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-22/de/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-04-14
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/b00d39b4cbaeac57c14217692d6547d1d490c50f">
+        b00d39b4<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-22/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script src="/Website/pr-22/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script><script src="/Website/pr-22/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    defer integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous">
+  </script><script src="/Website/pr-22/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    defer integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous">
+  </script><script src="/Website/pr-22/js/carousel.min.bd85b27175faec415846a6756cb42cdb497c7a6ea9e211b716f71604798f0c58.js"
+    type="text/javascript"
+    defer integrity="sha256-vYWycXX67EFYRqZ1bLQs20l8em6p4hG3FvcWBHmPDFg=" crossorigin="anonymous">
+  </script><script src="/Website/pr-22/js/compare.min.4d087fb4ca93201f53f0833e94ce4e23c4b727b01851489ba5b6f7bf2f3aaa86.js"
+    type="text/javascript"
+    defer integrity="sha256-TQh/tMqTIB9T8IM&#43;lM5OI8S3J7AYUUibpbb3vy86qoY=" crossorigin="anonymous">
+  </script></body>
+
+</html>
