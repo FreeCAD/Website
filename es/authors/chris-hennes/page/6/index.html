@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es-ES"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/css/styles.f40aa23de9987fc5e30e6f3d166d31ad98cde2a10dd7cf76f067cce5f9aa3778.css" integrity="sha256-9AqiPemYf8XjDm89Fm0xrZjN4qEN18928GfM5fmqN3g=" crossorigin="anonymous"><link rel="icon" type="image/svg+xml" href="/Website/favicon.svg"><link rel="shortcut icon" type="image/x-icon" href="/Website/favicon.ico"><link rel="apple-touch-icon" href="/Website/apple-touch-icon.png"><title>FreeCAD | Chris Hennes</title>
+  <meta name="description" content="Tu propio modelador paramétrico libre y de código abierto"><meta name="keywords" content="free, open-source, CAD, software, tool, parametric, modeling, model, design, product, engineering, manufacturing, community, workbench, FOSS, 3D, BIM, CAM, FEM, FEA"><link rel="canonical" href="https://FreeCAD.github.io/Website/es/authors/chris-hennes/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/authors/chris-hennes/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/zh/authors/chris-hennes/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/es/authors/chris-hennes/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/fr/authors/chris-hennes/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pt/authors/chris-hennes/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/de/authors/chris-hennes/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/ja/authors/chris-hennes/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/es/"></head><body class="list type-authors kind-term "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/es/"accesskey="h"
+      title="Inicio (Alt + H)"
+      aria-label="Inicio"><svg class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+      <use href="/Website/FreeCAD-wordmark.svg#logo"></use>
+    </svg></a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menú"
+    aria-label="Menú"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/es/news/">Actualidad</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Elegir idioma (Alt + L)"
+          aria-label="Elegir idioma"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/authors/chris-hennes/" title="Chris Hennes">English 🇬🇧</a>
+            </li><li>
+              <a href="/Website/zh/authors/chris-hennes/" title="Chris Hennes">中文 🇨🇳</a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/es/authors/chris-hennes/" title="Chris Hennes">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/fr/authors/chris-hennes/" title="Chris Hennes">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pt/authors/chris-hennes/" title="Chris Hennes">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a href="/Website/de/authors/chris-hennes/" title="Chris Hennes">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/ja/authors/chris-hennes/" title="Chris Hennes">日本語 🇯🇵</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Cambiar tema chroma (Alt + T)"
+    aria-label="Cambiar tema chroma"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero"
+    style="--hue: 30;">
+
+    <h1 class="title">
+      <svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/authors.svg#authors"></use>
+  </svg>Autor: Chris Hennes (80)</h1></section><div class="card-list wide">
+    <div class="cards"><a class="card"
+  href="/Website/es/news/wip-wednesday-18-jan-2023/"><div class="card-color "
+      style="--hue: 120;"></div><h3 class="card-title">WIP Wednesday - 18 Jan 2023</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/date.svg#date"></use>
+  </svg><time datetime="2023-01-18T00:00:00Z">18 de enero de 2023</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/es/news/freecad-and-free-cae-users-conference/"><div class="card-color "
+      style="--hue: 40;"></div><h3 class="card-title">FreeCAD (And Free CAE) User&#39;s Conference</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/date.svg#date"></use>
+  </svg><time datetime="2023-01-16T00:00:00Z">16 de enero de 2023</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/es/news/wip-wednesday-11-jan-2023/"><div class="card-color "
+      style="--hue: 120;"></div><h3 class="card-title">WIP Wednesday - 11 Jan 2023</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/date.svg#date"></use>
+  </svg><time datetime="2023-01-11T00:00:00Z">11 de enero de 2023</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/es/news/freecad-0-20-2-released/"><figure class="card-cover"><img srcset="/Website/news/freecad-0-20-2-released/fireworks_hu_f86b7ac69c5e2b1a.webp 500w, /Website/news/freecad-0-20-2-released/fireworks.webp 2560w"
+        sizes="500px"
+        src="/Website/news/freecad-0-20-2-released/fireworks.webp"
+        alt="Imagen alternativa"
+        width="2560"
+        height="1440"
+        loading="lazy"
+        fetchpriority="low"></figure><h3 class="card-title">FreeCAD 0.20.2 Released</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/date.svg#date"></use>
+  </svg><time datetime="2023-01-04T00:00:00Z">4 de enero de 2023</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/es/news/tangent-constraint-at-b-spline-knots/"><div class="card-color "
+      style="--hue: 60;"></div><h3 class="card-title">Tangent Constraint at B-Spline Knots</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/date.svg#date"></use>
+  </svg><time datetime="2022-12-28T00:00:00Z">28 de diciembre de 2022</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/es/news/the-little-things-navigation-cube-update/"><div class="card-color "
+      style="--hue: 60;"></div><h3 class="card-title">The Little Things - Navigation Cube Update</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/date.svg#date"></use>
+  </svg><time datetime="2022-12-21T00:00:00Z">21 de diciembre de 2022</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/es/news/new-in-0-20-improved-openscad-compatibility/"><div class="card-color "
+      style="--hue: 60;"></div><h3 class="card-title">New in 0.20 - Improved OpenSCAD Compatibility</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/date.svg#date"></use>
+  </svg><time datetime="2022-12-14T00:00:00Z">14 de diciembre de 2022</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/es/news/your-article-here/"><figure class="card-cover"><img srcset="/Website/news/your-article-here/Ethel_Lois_Payne_press_pin_Asian-African_Conference_1955_hu_17f28450f7752260.webp 500w, /Website/news/your-article-here/Ethel_Lois_Payne_press_pin_Asian-African_Conference_1955.webp 983w"
+        sizes="500px"
+        src="/Website/news/your-article-here/Ethel_Lois_Payne_press_pin_Asian-African_Conference_1955.webp"
+        alt="Imagen alternativa"
+        width="983"
+        height="768"
+        loading="lazy"
+        fetchpriority="low"></figure><h3 class="card-title">Your Article Here</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/date.svg#date"></use>
+  </svg><time datetime="2022-12-07T00:00:00Z">7 de diciembre de 2022</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/es/news/fpa-website-and-handbook/"><figure class="card-cover"><img srcset="/Website/news/fpa-website-and-handbook/RoyalDecree_hu_7c72f2fba0049205.webp 500w, /Website/news/fpa-website-and-handbook/RoyalDecree.webp 1854w"
+        sizes="500px"
+        src="/Website/news/fpa-website-and-handbook/RoyalDecree.webp"
+        alt="Imagen alternativa"
+        width="1854"
+        height="1140"
+        loading="lazy"
+        fetchpriority="low"></figure><h3 class="card-title">FPA Website and Handbook</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/date.svg#date"></use>
+  </svg><time datetime="2022-11-30T00:00:00Z">30 de noviembre de 2022</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/es/news/freecad-project-association-development-fund/"><figure class="card-cover"><img srcset="/Website/news/freecad-project-association-development-fund/Monedas_Varias_hu_2681d91160f588f.webp 500w, /Website/news/freecad-project-association-development-fund/Monedas_Varias.webp 1024w"
+        sizes="500px"
+        src="/Website/news/freecad-project-association-development-fund/Monedas_Varias.webp"
+        alt="Imagen alternativa"
+        width="1024"
+        height="577"
+        loading="lazy"
+        fetchpriority="low"></figure><h3 class="card-title">FreeCAD Project Association Development Fund</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/date.svg#date"></use>
+  </svg><time datetime="2022-11-23T00:00:00Z">23 de noviembre de 2022</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/es/news/coming-soon-techdraw-complexsection/"><figure class="card-cover"><img srcset="/Website/news/coming-soon-techdraw-complexsection/TechDraw_AlignedSection_example_hu_6b89be2989375d26.webp 500w, /Website/news/coming-soon-techdraw-complexsection/TechDraw_AlignedSection_example.webp 614w"
+        sizes="500px"
+        src="/Website/news/coming-soon-techdraw-complexsection/TechDraw_AlignedSection_example.webp"
+        alt="Imagen alternativa"
+        width="614"
+        height="308"
+        loading="lazy"
+        fetchpriority="low"></figure><h3 class="card-title">Coming Soon - TechDraw ComplexSection</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/date.svg#date"></use>
+  </svg><time datetime="2022-11-09T00:00:00Z">9 de noviembre de 2022</time>
+  </span></div>
+</a><a class="card"
+  href="/Website/es/news/coming-soon-sketcher-elements-ui-refinement/"><figure class="card-cover"><img srcset="/Website/news/coming-soon-sketcher-elements-ui-refinement/SketcherElementsStaticShot_hu_af934d9b413b1025.webp 500w, /Website/news/coming-soon-sketcher-elements-ui-refinement/SketcherElementsStaticShot.webp 2560w"
+        sizes="500px"
+        src="/Website/news/coming-soon-sketcher-elements-ui-refinement/SketcherElementsStaticShot.webp"
+        alt="Imagen alternativa"
+        width="2560"
+        height="1454"
+        loading="lazy"
+        fetchpriority="low"></figure><h3 class="card-title">Coming Soon - Sketcher Elements UI Refinement</h3><div class="card-metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/date.svg#date"></use>
+  </svg><time datetime="2022-11-02T00:00:00Z">2 de noviembre de 2022</time>
+  </span></div>
+</a></div><nav aria-label="Pagination" class="pagination"><a href="/Website/es/authors/chris-hennes/"
+                class="page-item"
+                title="Primera página"
+                aria-label="First"><svg class="icon-tri_tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/tri_tri_left.svg#tri_tri_left"></use>
+  </svg>1
+              </a><a href="/Website/es/authors/chris-hennes/page/5/"
+                class="page-item"
+                title="Página anterior"
+                aria-label="Previous">
+                <svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/tri_left.svg#tri_left"></use>
+  </svg> 5
+              </a><span aria-current="page"
+            class="page-item active"
+            aria-label="Current">
+            6
+          </span><a href="/Website/es/authors/chris-hennes/page/7/"
+                class="page-item"
+                title="Última página"
+                aria-label="Last">
+                7<svg class="icon-tri_tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/tri_tri_right.svg#tri_tri_right"></use>
+  </svg></a></nav></div></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Ir al inicio"
+  title="Ir al inicio (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/es/">Inicio</a><ul></ul></li><li>
+          <a href="/Website/es/news/">Actualidad</a><ul><li>
+                  <a href="/Website/es/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/es/authors/">Autores</a>
+                      </li><li>
+                        <a href="/Website/es/categories/">Categorías</a>
+                      </li><li>
+                        <a href="/Website/es/tags/">Etiquetas</a>
+                      </li><li>
+                        <a href="/Website/es/versions/">Versiones</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="https://forum.freecad.org"
+      title="Forum"
+      target="_blank" rel="noopener"><svg class="icon-forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/forum.svg#forum"></use>
+  </svg></a><a href="https://github.com/freecad"
+      title="Github"
+      target="_blank" rel="noopener"><svg class="icon-github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/github.svg#github"></use>
+  </svg></a><a href="https://codeberg.org/freecad"
+      title="Codeberg"
+      target="_blank" rel="noopener"><svg class="icon-codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a href="https://social.freecad.org/@freecad"
+      title="Mastodon"
+      target="_blank" rel="noopener"><svg class="icon-mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a href="https://www.reddit.com/r/freecad"
+      title="Reddit"
+      target="_blank" rel="noopener"><svg class="icon-reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/reddit.svg#reddit"></use>
+  </svg></a><a href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+      title="Matrix"
+      target="_blank" rel="noopener"><svg class="icon-matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/matrix.svg#matrix"></use>
+  </svg></a><a href="https://discord.gg/w2cTKGzccC"
+      title="Discord"
+      target="_blank" rel="noopener"><svg class="icon-discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/discord.svg#discord"></use>
+  </svg></a><a href="https://www.facebook.com/freecad"
+      title="Facebook"
+      target="_blank" rel="noopener"><svg class="icon-facebook"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/facebook.svg#facebook"></use>
+  </svg></a><a href="https://www.linkedin.com/groups/4295230"
+      title="Linkedin"
+      target="_blank" rel="noopener"><svg class="icon-linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/linkedin.svg#linkedin"></use>
+  </svg></a></div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/es/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+</div>
+</footer><script src="/Website/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script></body>
+
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-BR"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/css/styles.f40aa23de9987fc5e30e6f3d166d31ad98cde2a10dd7cf76f067cce5f9aa3778.css" integrity="sha256-9AqiPemYf8XjDm89Fm0xrZjN4qEN18928GfM5fmqN3g=" crossorigin="anonymous"><link rel="icon" type="image/svg+xml" href="/Website/favicon.svg"><link rel="shortcut icon" type="image/x-icon" href="/Website/favicon.ico"><link rel="apple-touch-icon" href="/Website/apple-touch-icon.png"><title>FreeCAD | Tutorial - Using the Additive Pipe Tool</title>
+  <meta name="description" content="Seu próprio modelador paramétrico livre e de código aberto"><meta name="keywords" content="PartDesign"><link rel="canonical" href="https://FreeCAD.github.io/Website/pt/news/tutorial-using-the-additive-pipe-tool/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/news/tutorial-using-the-additive-pipe-tool/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/zh/news/tutorial-using-the-additive-pipe-tool/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/es/news/tutorial-using-the-additive-pipe-tool/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/fr/news/tutorial-using-the-additive-pipe-tool/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pt/news/tutorial-using-the-additive-pipe-tool/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/de/news/tutorial-using-the-additive-pipe-tool/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/ja/news/tutorial-using-the-additive-pipe-tool/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pt/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pt/news/tutorial-using-the-additive-pipe-tool/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Tutorial - Using the Additive Pipe Tool">
+  <meta property="og:description" content="Additive pipe complete The additive pipe tool is an excellent tool that allows a sketch or sketches to be swept along a series of edges to create a solid pipe with the profile of the original sketch. It can also be used to create more complex geometric pipes that flow through a variety of profiles along their length. As a reminder in these tutorials we use the tool tip text that appears when you hover over a tool icon to describe tools, which is a good way to explore FreeCAD!">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2025-07-31T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-05-05T08:10:07+02:00">
+    <meta property="article:tag" content="PartDesign">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pt/"accesskey="h"
+      title="Início (Alt + H)"
+      aria-label="Início"><svg class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+      <use href="/Website/FreeCAD-wordmark.svg#logo"></use>
+    </svg></a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pt/news/" aria-current="page" class="active">Atualidades</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Escolha o idioma (Alt + L)"
+          aria-label="Escolha o idioma"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/news/tutorial-using-the-additive-pipe-tool/" title="Tutorial - Using the Additive Pipe Tool">English 🇬🇧</a>
+            </li><li>
+              <a href="/Website/zh/news/tutorial-using-the-additive-pipe-tool/" title="Tutorial - Using the Additive Pipe Tool">中文 🇨🇳</a>
+            </li><li>
+              <a href="/Website/es/news/tutorial-using-the-additive-pipe-tool/" title="Tutorial - Using the Additive Pipe Tool">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/fr/news/tutorial-using-the-additive-pipe-tool/" title="Tutorial - Using the Additive Pipe Tool">Français 🇫🇷</a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pt/news/tutorial-using-the-additive-pipe-tool/" title="Tutorial - Using the Additive Pipe Tool">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a href="/Website/de/news/tutorial-using-the-additive-pipe-tool/" title="Tutorial - Using the Additive Pipe Tool">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/ja/news/tutorial-using-the-additive-pipe-tool/" title="Tutorial - Using the Additive Pipe Tool">日本語 🇯🇵</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Alterar tema (Alt + T)"
+    aria-label="Alterar tema"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero"
+    style="--hue: 100;">
+
+    <h2 class="title">Tutorial - Using the Additive Pipe Tool</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/date.svg#date"></use>
+  </svg><time datetime="2025-07-31T00:00:00Z">31 de julho de 2025</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pt/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pt/categories/tutorial/">Tutorial (26)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pt/tags/partdesign/">PartDesign (2)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/words.svg#words"></use>
+  </svg>552 palavras</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/time.svg#time"></use>
+  </svg>3 minutos</span></div></section><div class="content"><div class="image-with-popover">
+      <figure><button aria-label="Ampliar imagem" popovertarget="img-%!d(&lt;nil&gt;)"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/news/tutorial-using-the-additive-pipe-tool/additive_pipe_complete.webp"
+  alt="Additive pipe complete"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" width="1454" height="796" srcset="/Website/news/tutorial-using-the-additive-pipe-tool/additive_pipe_complete_hu_8c28f4579b9674b8.webp 500w, /Website/news/tutorial-using-the-additive-pipe-tool/additive_pipe_complete_hu_ce005412c22a3eda.webp 1000w, /Website/news/tutorial-using-the-additive-pipe-tool/additive_pipe_complete.webp 1454w" sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Additive pipe complete</figcaption></figure><div id="img-%!d(&lt;nil&gt;)" popover>
+          <button class="close"
+            popovertarget="img-%!d(&lt;nil&gt;)"
+            popovertargetaction="hide"
+            aria-label="Fechar visualizador de imagens">
+            <img src="/Website/news/tutorial-using-the-additive-pipe-tool/additive_pipe_complete.webp"
+              title="Additive pipe complete"
+              alt="Additive pipe complete"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>The additive pipe tool is an excellent tool that allows a sketch or sketches to be swept along a series of edges to create a solid pipe with the profile of the original sketch. It can also be used to create more complex geometric pipes that flow through a variety of profiles along their length. As a reminder in these tutorials we use the tool tip text that appears when you hover over a tool icon to describe tools, which is a good way to explore FreeCAD!</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Ampliar imagem" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/news/tutorial-using-the-additive-pipe-tool/sketch.webp"
+  alt="Sketch"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" width="1547" height="989" srcset="/Website/news/tutorial-using-the-additive-pipe-tool/sketch_hu_99a20588f14f25b5.webp 500w, /Website/news/tutorial-using-the-additive-pipe-tool/sketch_hu_88d60d9f352c7703.webp 1000w, /Website/news/tutorial-using-the-additive-pipe-tool/sketch.webp 1547w" sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Sketch</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Fechar visualizador de imagens">
+            <img src="/Website/news/tutorial-using-the-additive-pipe-tool/sketch.webp"
+              title="Sketch"
+              alt="Sketch"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Launch a new project from the start page using the &ldquo;parametric part&rdquo; option from the New File area. This will create a new blank project in the PartDesign workbench and will have created an active body. In the active body click to create a sketch and select to add the sketch to the XY plane. In this sketch we are going to create a small drawing that will define the cross section outline of our simple pipe. Let&rsquo;s use the &ldquo;Create rectangle&rdquo; tool and then left click to draw a small rectangle roughly centred around the XY origin point. We aren&rsquo;t going to worry about constraining our rectangle for this quick experiment. Click &ldquo;close&rdquo; to close the sketch.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Ampliar imagem" popovertarget="img-002"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/news/tutorial-using-the-additive-pipe-tool/sketches.webp"
+  alt="Sketches"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" width="1174" height="785" srcset="/Website/news/tutorial-using-the-additive-pipe-tool/sketches_hu_1e48f5eca2539d6.webp 500w, /Website/news/tutorial-using-the-additive-pipe-tool/sketches_hu_7e41323bfa70b46d.webp 1000w, /Website/news/tutorial-using-the-additive-pipe-tool/sketches.webp 1174w" sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Sketches</figcaption></figure><div id="img-002" popover>
+          <button class="close"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Fechar visualizador de imagens">
+            <img src="/Website/news/tutorial-using-the-additive-pipe-tool/sketches.webp"
+              title="Sketches"
+              alt="Sketches"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Next let&rsquo;s click to create a second sketch but this time in the XZ plane. In this sketch select the &ldquo;Create Polyline&rdquo; tool and draw a series of straight lines attached and starting on the XZ origin point. Don&rsquo;t worry too much about the polyline but know that this will be the path along which our pipe is formed. Having added two or three sections of polyline close the sketch.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Ampliar imagem" popovertarget="img-003"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/news/tutorial-using-the-additive-pipe-tool/additive_pipe_preview.webp"
+  alt="Additive pipe preview"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" width="1084" height="1035" srcset="/Website/news/tutorial-using-the-additive-pipe-tool/additive_pipe_preview_hu_2d8d41cf5789a94f.webp 500w, /Website/news/tutorial-using-the-additive-pipe-tool/additive_pipe_preview_hu_e2495987692bb79b.webp 1000w, /Website/news/tutorial-using-the-additive-pipe-tool/additive_pipe_preview.webp 1084w" sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Additive pipe preview</figcaption></figure><div id="img-003" popover>
+          <button class="close"
+            popovertarget="img-003"
+            popovertargetaction="hide"
+            aria-label="Fechar visualizador de imagens">
+            <img src="/Website/news/tutorial-using-the-additive-pipe-tool/additive_pipe_preview.webp"
+              title="Additive pipe preview"
+              alt="Additive pipe preview"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>In the file tree view highlight the original &ldquo;sketch&rdquo; item which contains our rectangle and then click the &ldquo;Additive Pipe&rdquo; tool icon. In the Additive Pipe dialogue the upmost tab is &ldquo;Pipe parameters&rdquo;. In this tab we should see &ldquo;Object&rdquo; is set to &ldquo;sketch&rdquo; and further below we can find an &ldquo;add edge&rdquo; button. Click the &ldquo;add edge&rdquo; button and then select the first section of polyline we drew, connected to the XZ origin, in the preview window. You should see transparent preview of a pipe form along this section. Click the add edge again and add the next section of polyline and repeat this for all your polyline sections. Before we click &ldquo;OK&rdquo; to apply the changes let&rsquo;s change the Corner Transition value to &ldquo;Right Corner&rdquo; in the drop down menu. Feel free to return to this section and try the other corner transition options to see how they effect your pipe design.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Ampliar imagem" popovertarget="img-004"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/news/tutorial-using-the-additive-pipe-tool/thickness.webp"
+  alt="Thickness"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" width="1098" height="1028" srcset="/Website/news/tutorial-using-the-additive-pipe-tool/thickness_hu_107190376623bff5.webp 500w, /Website/news/tutorial-using-the-additive-pipe-tool/thickness_hu_8cbe3de265124908.webp 1000w, /Website/news/tutorial-using-the-additive-pipe-tool/thickness.webp 1098w" sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Thickness</figcaption></figure><div id="img-004" popover>
+          <button class="close"
+            popovertarget="img-004"
+            popovertargetaction="hide"
+            aria-label="Fechar visualizador de imagens">
+            <img src="/Website/news/tutorial-using-the-additive-pipe-tool/thickness.webp"
+              title="Thickness"
+              alt="Thickness"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>For now let&rsquo;s click &ldquo;OK&rdquo; to apply the additive pipe settings and to close the additive pipe dialogue. You should see you now have a nice pipe object that flows with rounded corners along the polyine you defined. However, you&rsquo;ll also realise, it&rsquo;s not a hollow pipe! To make your pipe hollow select an end face of the pipe object and then left click the &ldquo;Thickness&rdquo; icon. In the thickness dialogue click the &ldquo;select&rdquo; button and rotate your pipe geometry in the live preview so that you can select the opposite end of the pipe. Select that face and click OK and you should now have a hollow pipe with a 1mm thick wall.</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+            href="/Website/pt/news/wip-wednesday-6-august-2025/"
+            title="Artigo seguinte"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday, 6 August 2025</a><a class="page-item prev"
+            href="/Website/pt/news/wip-wednesday-30-july-2025/"
+            title="Artigo anterior">WIP Wednesday, 30 July 2025<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Ir para o topo"
+  title="Ir para o topo (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pt/">Início</a><ul></ul></li><li>
+          <a href="/Website/pt/news/" aria-current="page" class="active">Atualidades</a><ul><li>
+                  <a href="/Website/pt/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/pt/authors/">Autores</a>
+                      </li><li>
+                        <a href="/Website/pt/categories/">Categorias</a>
+                      </li><li>
+                        <a href="/Website/pt/tags/">Tags</a>
+                      </li><li>
+                        <a href="/Website/pt/versions/">Versões</a>
+                      </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="https://forum.freecad.org"
+      title="Forum"
+      target="_blank" rel="noopener"><svg class="icon-forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/forum.svg#forum"></use>
+  </svg></a><a href="https://github.com/freecad"
+      title="Github"
+      target="_blank" rel="noopener"><svg class="icon-github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/github.svg#github"></use>
+  </svg></a><a href="https://codeberg.org/freecad"
+      title="Codeberg"
+      target="_blank" rel="noopener"><svg class="icon-codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a href="https://social.freecad.org/@freecad"
+      title="Mastodon"
+      target="_blank" rel="noopener"><svg class="icon-mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a href="https://www.reddit.com/r/freecad"
+      title="Reddit"
+      target="_blank" rel="noopener"><svg class="icon-reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/reddit.svg#reddit"></use>
+  </svg></a><a href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+      title="Matrix"
+      target="_blank" rel="noopener"><svg class="icon-matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/matrix.svg#matrix"></use>
+  </svg></a><a href="https://discord.gg/w2cTKGzccC"
+      title="Discord"
+      target="_blank" rel="noopener"><svg class="icon-discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/discord.svg#discord"></use>
+  </svg></a><a href="https://www.facebook.com/freecad"
+      title="Facebook"
+      target="_blank" rel="noopener"><svg class="icon-facebook"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/facebook.svg#facebook"></use>
+  </svg></a><a href="https://www.linkedin.com/groups/4295230"
+      title="Linkedin"
+      target="_blank" rel="noopener"><svg class="icon-linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a href="/Website/pt/fedishare.html#title=Tutorial&#43;-&#43;Using&#43;the&#43;Additive&#43;Pipe&#43;Tool&amp;description=&#43;The&#43;additive&#43;pipe&#43;tool&#43;is&#43;an&#43;excellent&#43;tool&#43;that&#43;allows&#43;a&#43;sketch&#43;or&#43;sketches&#43;to&#43;be&#43;swept&#43;along&#43;a&#43;series&#43;of&#43;edges&#43;to&#43;create&#43;a&#43;solid&#43;pipe&#43;with&#43;the&#43;profile&#43;of&#43;the&#43;original&#43;sketch.&#43;It&#43;can&#43;also&#43;be&#43;used&#43;to&#43;%E2%80%A6%0A%23partdesign&amp;url=https://FreeCAD.github.io/Website/pt/news/tutorial-using-the-additive-pipe-tool/"
+  title="Compartilhar no Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pt/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-05-05
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/ab12b609077875783943636ca2c31feec3421a6a">
+        ab12b609<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script src="/Website/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script><script src="/Website/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    defer integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous">
+  </script><script src="/Website/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    defer integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous">
+  </script></body>
+
+</html>
