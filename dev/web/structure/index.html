@@ -44,7 +44,7 @@
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="article">
     <meta property="article:section" content="dev">
-    <meta property="article:modified_time" content="2026-05-05T15:27:52+02:00">
+    <meta property="article:modified_time" content="2026-05-06T10:42:03+02:00">
 </head><body class="single type-dev kind-page "
     id="top">
 
@@ -131,13 +131,13 @@
   </svg></button>
 </div></div>
 </header><main><section class="hero"
-    style="--hue: 100;">
+    style="--hue: 110;">
 
     <h2 class="title">Structure and Organization</h1><h3 class="description">How to organize the website files.</h3><div class="metadata"><span class="meta"><svg class="icon-words"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/words.svg#words"></use>
-  </svg>387 words</span><span class="meta"><svg class="icon-time"
+  </svg>368 words</span><span class="meta"><svg class="icon-time"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/time.svg#time"></use>
@@ -173,15 +173,21 @@
         <ul><li>
               <a href="/Website/dev/web/start/">Website Introduction</a>
             </li><li>
+              <a href="/Website/dev/web/guidelines/">Guidelines</a>
+            </li><li>
               <a href="/Website/dev/web/structure/" id="current-page" class="active" aria-current="page">Structure and Organization</a>
             </li><li>
               <a href="/Website/dev/web/markdown/">Markdown Syntax Guide</a>
             </li><li>
               <a href="/Website/dev/web/shortcodes/">Shortcodes</a>
             </li><li>
-              <a href="/Website/dev/web/guidelines/">Guidelines</a>
+              <a href="/Website/dev/web/front-matter/">Front Matter</a>
+            </li><li>
+              <a href="/Website/dev/web/locales/">Translations and Languages</a>
             </li><li>
               <a href="/Website/dev/web/cms/">CMS</a>
+            </li><li>
+              <a href="/Website/dev/web/theme/">Theme, Project Setup, and Configuration</a>
             </li></ul>
       </li>
     </ul><p class="toc-label"><svg class="icon-file"
@@ -199,7 +205,7 @@
             <li><a href="#configure-content-directory">Configure Content Directory</a></li>
           </ul>
         </li>
-        <li><a href="#add-resources">Add resources</a>
+        <li><a href="#resources">Resources</a>
           <ul>
             <li><a href="#page-bundles">Page bundles</a></li>
             <li><a href="#static-and-assets">Static and Assets</a></li>
@@ -217,7 +223,7 @@
     focusable="false">
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
-</h2><p>By default, Hugo searches for Markdown files in the <code>content</code> directory, and the structure of the directory determines the final output structure of your website.</p>
+</h2><p>By default, Hugo looks for Markdown files in the <code>/content</code> directory, and the structure of the directory determines the final output structure of your website.</p>
 <p>Take this site as an example:</p>
 <ul class="tree">
   <li>
@@ -237,7 +243,7 @@
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/folder_closed.svg#folder_closed"></use>
-  </svg></span>content</label><ul>
+  </svg></span>/content</label><ul>
   <li>
     <span
       class="leaf"
@@ -245,7 +251,7 @@
       aria-hidden="true"
       focusable="false">
       <use href="/Website/svg/file.svg#file"></use>
-    </svg>_index.md  ← /</span>
+    </svg>_index.md  ← / (homepage)</span>
   </li>
   <li>
 <input type="checkbox"
@@ -416,22 +422,44 @@ focusable="false">
     focusable="false">
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
-</h3><p>By default, the root <code>content/</code> directory is used by Hugo to build the site.
-If you need to use a different directory for content, for example <code>docs/</code>, this can be done by setting the <a href="https://gohugo.io/getting-started/configuration/#contentdir"
+</h3><p>By default, the root <code>/content</code> directory is used by Hugo to build the site.
+If you need to use a different directory for content, for example <code>/docs</code>, this can be done by setting the <a href="https://gohugo.io/getting-started/configuration/#contentdir"
   class="external-link" title="Open link" target="_blank" rel="external noreferrer noopener"><code>contentDir</code><svg class="icon-external"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/external.svg#external"></use>
   </svg></a> parameter in the site configuration <code>hugo.yaml</code>.</p>
 <h2
-  id="add-resources">Add resources<a class="heading-anchor"
-     href="#add-resources"
-     title="Add resources"><svg class="icon-anchor"
+  id="resources">Resources<a class="heading-anchor"
+     href="#resources"
+     title="Resources"><svg class="icon-anchor"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
-</h2><p>To add resources such as images, videos, and more, the easiest way is to place these files in the same directory as the Markdown file.</p>
+</h2><p>In addition to text content, Hugo supports a wide range of additional resources, such as images, animations, vector graphics, videos, PDF, JSON, CSV, and many more medias and data formats.</p>
+<figure>
+  <blockquote class="note"><svg class="icon-note"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/note.svg#note"></use>
+  </svg>Note<p>For the FreeCAD website, page bundles are used, so it is easier to organize large amount of content and resources in a nested structure.</p>
+<p>Additionally, each language is organized into its own root content directory (e.g <code>/content/en/</code>). Resources only need to go into the default language site (<code>en</code> for English), as other languages are linked automatically.</p></blockquote></figure>
+<h3
+  id="page-bundles">Page bundles<a class="heading-anchor"
+     href="#page-bundles"
+     title="Page bundles"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>To add resources, the easiest way is to place these files together in the same directory as the Markdown file.</p>
+<p>The <a href="https://gohugo.io/content-management/page-bundles/#leaf-bundles"
+  class="external-link" title="Open link" target="_blank" rel="external noreferrer noopener">page bundles<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a> feature of Hugo allows to organize content and resource files neatly. To achieve that, turn the <code>my-page.md</code> file into a directory <code>my-page</code>, put the content into a Markdown file named <code>index.md</code>, and put the resource files inside the <code>my-page</code> directory.</p>
 <p>For example, add an image file <code>image.webp</code> alongside the <code>my-page.md</code> file:</p>
 <ul class="tree">
   <li>
@@ -496,120 +524,7 @@ If you need to use a different directory for content, for example <code>docs/</c
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/words.svg#words"></use>
-  </svg>content/section/my-page.md</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">![<span class="nt">alt</span>](<span class="na">image.webp &#34;title&#34;</span>)</span></span></code></pre></div></div><h3
-  id="page-bundles">Page bundles<a class="heading-anchor"
-     href="#page-bundles"
-     title="Page bundles"><svg class="icon-anchor"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h3><p>The <a href="https://gohugo.io/content-management/page-bundles/#leaf-bundles"
-  class="external-link" title="Open link" target="_blank" rel="external noreferrer noopener">page bundles<svg class="icon-external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> feature of Hugo allows to organize resource files together with the Markdown file. To achieve that, turn the <code>my-page.md</code> file into a directory <code>my-page</code> and put the content into a file named <code>index.md</code>, and put the resource files inside the <code>my-page</code> directory.</p>
-<figure>
-  <blockquote class="note"><svg class="icon-note"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/note.svg#note"></use>
-  </svg>Note<p>For the FreeCAD website, page bundles are used, so it is easier to organize large amount of content and resources in a nested structure.</p>
-<p>Additionally, each language is organized into its own root content directory (e.g <code>/content/en/section</code>, <code>/content/fr/section</code>, etc). Resources only need to go into the default language site (<code>en</code> for English), as other languages are linked automatically.</p>
-<p>The strategy illustrated below (e.g. <code>index.en.md</code>) is currently not used.</p></blockquote></figure>
-<p>For multi-lingual sites, it is also possible to organize translated content in the same directory with the language code in the file name.</p>
-<ul class="tree">
-  <li>
-  <input type="checkbox"
-    id="branch-000" checked hidden>
-
-  <label class="branch"
-    for="branch-000">
-
-    <span class="branch-open"><svg class="icon-folder_open"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/folder_open.svg#folder_open"></use>
-  </svg></span>
-
-    <span class="branch-closed"><svg class="icon-folder_closed"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/folder_closed.svg#folder_closed"></use>
-  </svg></span>content</label><ul>
-  <li>
-<input type="checkbox"
-  id="branch-000" checked hidden>
-
-<label class="branch"
-  for="branch-000">
-
-  <span class="branch-open"><svg class="icon-folder_open"
-  aria-hidden="true"
-  focusable="false">
-  <use href="/Website/svg/folder_open.svg#folder_open"></use>
-</svg></span>
-
-  <span class="branch-closed"><svg class="icon-folder_closed"
-  aria-hidden="true"
-  focusable="false">
-  <use href="/Website/svg/folder_closed.svg#folder_closed"></use>
-</svg></span>section</label><ul>
-  <li>
-<input type="checkbox"
-id="branch-000" checked hidden>
-
-<label class="branch"
-for="branch-000">
-
-<span class="branch-open"><svg class="icon-folder_open"
-aria-hidden="true"
-focusable="false">
-<use href="/Website/svg/folder_open.svg#folder_open"></use>
-</svg></span>
-
-<span class="branch-closed"><svg class="icon-folder_closed"
-aria-hidden="true"
-focusable="false">
-<use href="/Website/svg/folder_closed.svg#folder_closed"></use>
-</svg></span>my-page</label><ul>
-<li>
-<span
-  class="leaf"
-  tabindex="0"><svg class="icon-file"
-  aria-hidden="true"
-  focusable="false">
-  <use href="/Website/svg/file.svg#file"></use>
-</svg>index.en.md</span>
-</li>
-<li>
-<span
-  class="leaf"
-  tabindex="0"><svg class="icon-file"
-  aria-hidden="true"
-  focusable="false">
-  <use href="/Website/svg/file.svg#file"></use>
-</svg>index.fr.md</span>
-</li>
-<li>
-<span
-  class="leaf"
-  tabindex="0"><svg class="icon-file"
-  aria-hidden="true"
-  focusable="false">
-  <use href="/Website/svg/file.svg#file"></use>
-</svg>image.webp</span>
-</li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
-<div class="codeblock"><div class="codeblock-file"><svg class="icon-words"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/words.svg#words"></use>
-  </svg>content/section/my-page/index.en.md</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">![<span class="nt">alt</span>](<span class="na">image.webp &#34;title&#34;</span>)</span></span></code></pre></div></div><h3
+  </svg>content/en/section/my-page/index.md</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">![<span class="nt">alt</span>](<span class="na">image.webp &#34;title&#34;</span>)</span></span></code></pre></div></div><h3
   id="static-and-assets">Static and Assets<a class="heading-anchor"
      href="#static-and-assets"
      title="Static and Assets"><svg class="icon-anchor"
@@ -727,12 +642,12 @@ focusable="false">
   </svg>content/section/my-page.md</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">![<span class="nt">alt</span>](<span class="na">/images/image.webp &#34;title&#34;</span>)</span></span></code></pre></div></div>
   </div><footer class="single-footer">
     <nav class="pagination"><a class="page-item next"
-            href="/Website/dev/web/start/"
+            href="/Website/dev/web/guidelines/"
             title="Next article"><svg class="icon-tri_left"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/tri_left.svg#tri_left"></use>
-  </svg>Website Introduction</a><a class="page-item prev"
+  </svg>Guidelines</a><a class="page-item prev"
             href="/Website/dev/web/markdown/"
             title="Previous article">Markdown Syntax Guide<svg class="icon-tri_right"
     aria-hidden="true"
@@ -867,10 +782,10 @@ focusable="false">
   </svg></a>
 </span>
 <span>
-    Modified: 2026-05-05
+    Modified: 2026-05-06
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/0ecf4c13f446aea52a7486c8503f448103f5706d">
-        0ecf4c13f<svg class="icon-external"
+      Commit: <a href="https://github.com/freecad/website/commit/9e6ffad0ced837cb1ca208586c9f02e52641b57f">
+        9e6ffad0c<svg class="icon-external"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/external.svg#external"></use>
