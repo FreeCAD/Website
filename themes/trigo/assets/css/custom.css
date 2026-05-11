@@ -163,3 +163,162 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   padding-top: var(--gap);
   border-top: var(--border);
 }
+
+
+/* Calendar in Community */
+
+.calendar {
+  margin: var(--gap) auto;
+  width: var(--width);
+  height: calc(var(--width) * 0.5);
+  border: none;
+  border-radius: var(--radius);
+  z-index: 3;
+}
+
+
+/* Addons list */
+
+.addons-sort {
+  width: var(--content-width);
+  margin: var(--gap) auto;
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap);
+  justify-content: center;
+}
+
+.addons-sort button {
+  padding: var(--padding);
+  color: var(--secondary);
+  background: var(--entry);
+  border-radius: var(--radius);
+}
+
+.addons-sort button .label-asc,
+.addons-sort button .label-desc {
+  display: none;
+}
+
+.addons-sort button[data-order="asc"] .label-asc,
+.addons-sort button[data-order="desc"] .label-desc {
+  display: inline;
+}
+
+.addons-sort button.active {
+  font-weight: bold;
+  background: var(--accent);
+  color: var(--entry);
+}
+
+.addons-sort :is(button, button.active):hover {
+  background: var(--accent-hover);
+}
+
+.addons-sort svg {
+  vertical-align: calc(var(--gap) * -0.125);
+}
+
+.addon-icon {
+  display: grid;
+  place-items: center;
+  width: var(--xxl);
+  height: var(--xxl);
+  border-radius: 50%;
+  background: var(--theme);
+}
+
+.addon-icon img {
+  width: calc(var(--xxl) * 0.75);
+  height: auto;
+  max-height: calc(var(--xxl) * 0.75);
+  object-fit: contain;
+  text-align: center;
+  border-radius: 10%;
+}
+
+.addon-title {
+  margin: 0;
+}
+
+
+/* Telemetry charts */
+
+.telemetry {
+  width: var(--content-width);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--gap) * 2);
+}
+
+.chart {
+  background: var(--theme);
+  border-radius: var(--radius);
+  padding: var(--gap);
+}
+
+.chart-title {
+  font-size: var(--l);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.chart-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-label {
+  text-align: start;
+  width: 100%;
+  margin-bottom: calc(var(--gap) * 0.5);;
+}
+
+.chart-label span:first-of-type {
+  font-weight: bold;
+}
+
+.chart-label span:first-of-type::after {
+  content: " · ";
+}
+
+.chart-track {
+  display: grid;
+  align-items: center;
+}
+
+.chart-track > * {
+  grid-area: 1 / 1;
+  height: var(--s);
+  border-radius: var(--radius);
+}
+
+.chart-segment {
+  width: 100%;
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--tone), var(--entry) 25%),
+      var(--tone)
+  );
+}
+
+.chart-bar {
+  width: var(--percent);
+  min-width: var(--s);
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--color), var(--entry) 25%),
+      var(--color)
+  );
+}
+
+.chart-row:hover .chart-bar {
+  outline: var(--line) solid var(--color);
+  background: var(--color);
+}
+
+.chart-row:hover .chart-segment {
+  background: color-mix(in srgb, var(--tone), var(--color) 25%);
+}

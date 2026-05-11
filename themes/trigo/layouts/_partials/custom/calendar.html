@@ -1,0 +1,67 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Public Calendar on Community page:
+
+  - Get ICS Calendar from hosted service (currently open-web-calendar).
+  - Set some attributes from Site config and others directly here.
+  - Render iframe with nicer layout.
+  - Display link to ICS Calendar or file.
+  - Script to allow Calendar skin switch based on chroma.
+*/ -}}
+
+
+{{- with site.Params.calendar -}}
+
+  {{- $cal := . -}}
+  {{- $host := .host | safeURL -}}
+  {{- $query := slice -}}
+
+  {{- range $key := slice "url" "title" "skin" "target" -}}
+    {{- with index $cal $key -}}
+      {{- $query = $query | append (printf "%s=%s" $key (urlquery .)) -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- with .tabs -}}
+    {{- range . -}}
+      {{- $query = $query | append (printf "tabs=%s" (urlquery .)) -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- $menu := .menu | default false -}}
+  {{- range $menus := slice "calendar_names" "description" "title" -}}
+    {{- $query = $query | append (printf "menu_shows_%s=%t" $menus $menu) -}}
+  {{- end -}}
+
+  {{- $css := urlquery ".hamburger-menu,.status-window{display:none;}" -}}
+  {{- $query = $query | append (printf "css=%s" $css) -}}
+
+  {{- $query = $query | append "prefer_browser_language=true" -}}
+  {{- $query = $query | append "loader=" -}}
+
+  {{- $query := delimit $query "&" -}}
+
+  <iframe id="open-web-calendar"
+    class="calendar"
+    src="{{ printf "%s?%s" $host $query }}"
+    sandbox="allow-scripts allow-same-origin allow-top-navigation"
+    allowTransparency="true"
+    scrolling="no"
+    frameborder="0">
+  </iframe>
+
+  {{- $label := i18n "ics_calendar" | default "ICS Calendar" -}}
+  {{- $href := printf "%s?export" .url -}}
+
+  <a href="https://cloud.freecad.org/remote.php/dav/public-calendars/ZtJiizXtSqBaacwo/?export"
+    class="hero-button"
+    title="{{ $label }}">
+    {{- partialCached "utils/icon.html" "download" "download" -}}
+
+    {{- $label -}}
+  </a>
+{{- end -}}

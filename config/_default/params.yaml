@@ -28,6 +28,8 @@ enable_js_toc: true
 enable_js_carousel: true
 enable_js_compare: true
 enable_js_canvas: true
+enable_js_calendar: true
+enable_js_addons: true
 
 enable_fediverse: true
 
@@ -88,3 +90,30 @@ download:
       - key: arm
         label: AArch64 AppImage
         alt: LINUX-AARCH64
+
+# Calendar in Community
+calendar:
+  host: https://open-web-calendar.hosted.quelltext.eu/calendar.html
+  url: https://cloud.freecad.org/remote.php/dav/public-calendars/ZtJiizXtSqBaacwo
+  title: FreeCAD Calendar
+  tabs: [month, week, agenda]
+  skin: terrace
+  menu: false
+  target: _blank
+
+# Telemetry in Community
+telemetry:
+  entries_max: 12
+  order:
+    - freecad_version
+    - language
+    - system
+    - machine
+    - mods
+    - workbench_default
+    - theme
+    - screen_resolution
+    - navigation_style
+    - navigation_orbit_style
+    - ui_toolbar_icon_size
+    - python_version

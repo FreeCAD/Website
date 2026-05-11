@@ -10,11 +10,14 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 */ -}}
 
 
+{{- $page_key := "" -}}
+{{- with .File -}}{{- $page_key = .ContentBaseName -}}{{- else -}}{{- $page_key = trim .RelPermalink "/" -}}{{- end -}}
+
 {{- /* Theme Chroma toggle. */ -}}
 {{- partialCached "scripts/chroma.html" . "chroma" -}}
 
 {{- /* Copy Code block content to clipboard. */ -}}
-{{- if and site.Params.enable_js_copy (in (slice "page" "section") .Kind) (ne .Layout "archives") -}}
+{{- if and site.Params.enable_js_copy (in (slice "page" "section") .Kind) (ne .Layout "archives") (in .Content "<code") -}}
   {{- partialCached "scripts/copy.html" . "copy" -}}
 {{- end -}}
 
@@ -40,5 +43,15 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 {{- /* Images canvas Shortcode script. */ -}}
 {{- if and site.Params.enable_js_canvas (.HasShortcode "canvas") -}}
-  {{- partialCached "scripts/canvas.html" . "compare" -}}
+  {{- partialCached "scripts/canvas.html" . "canvas" -}}
+{{- end -}}
+
+{{- /* Calendar skin toggle script on Community. */ -}}
+{{- if and site.Params.enable_js_calendar site.Params.calendar (hasSuffix $page_key "calendar") -}}
+  {{- partialCached "scripts/calendar.html" . "calendar" -}}
+{{- end -}}
+
+{{- /* Addons sorting script on Community. */ -}}
+{{- if and site.Params.enable_js_addons hugo.Data.addons (hasSuffix $page_key "addons") -}}
+  {{- partialCached "scripts/addons.html" . "addons" -}}
 {{- end -}}

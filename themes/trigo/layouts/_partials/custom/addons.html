@@ -1,0 +1,161 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Addons list:
+
+  - Get Addon catalog from JSON Data file.
+  - Pick main/master branch versions.
+  - Get and clean Addon metadata (specially icons).
+  - Display Addons in cards sorted by last update.
+*/ -}}
+
+
+{{- $default_icon := resources.Get site.Params.default_icon -}}
+{{- $catalog := hugo.Data.addons -}}
+
+{{- with $catalog -}}
+
+  {{- $entries := slice -}}
+  {{- range $versions := . -}}
+    {{- $main := where $versions "git_ref" "in" (slice "main" "master") -}}
+    {{- $item := (index $main 0) | default (index $versions 0) -}}
+    {{- if $item.metadata -}}
+      {{- $entries = $entries | append (dict "item" $item) -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- $sorted := sort $entries "item.last_update_time" "desc" -}}
+
+  {{- if site.Params.enable_js_addons -}}
+    {{- $sorts := slice
+      (dict
+        "key" "title"
+        "order" "asc"
+        "pressed" false
+        "label_asc" (i18n "sort_title_asc" | default "Title A–Z")
+        "label_desc" (i18n "sort_title_desc" | default "Title Z–A")
+      )
+      (dict
+        "key" "date"
+        "order" "desc"
+        "pressed" true
+        "label_asc" (i18n "sort_date_asc" | default "Oldest update")
+        "label_desc" (i18n "sort_date_desc" | default "Latest update")
+      )
+      (dict
+        "key" "downloads"
+        "order" "desc"
+        "pressed" false
+        "label_asc" (i18n "sort_downloads_asc" | default "Least downloads")
+        "label_desc" (i18n "sort_downloads_desc" | default "Most downloads")
+      )
+    -}}
+
+    <div class="addons-sort">
+      {{- range $sorts -}}
+
+        <button
+          data-sort="{{ .key }}"
+          data-order="{{ .order }}"
+          aria-pressed="{{ .pressed }}">
+          <span class="label-asc">
+            {{- partialCached "utils/icon.html" "tri_up" "tri_up" -}}
+            {{- .label_asc -}}
+          </span>
+          <span class="label-desc">
+            {{- partialCached "utils/icon.html" "tri_down" "tri_down" -}}
+            {{- .label_desc -}}
+          </span>
+        </button>
+      {{- end -}}
+    </div>
+  {{- end -}}
+
+  <div class="cards">
+    {{- range $sorted -}}
+
+      {{- $item := .item -}}
+      {{- $meta := $item.metadata -}}
+
+      {{- $repo := $item.repository | default "" -}}
+      {{- if strings.HasSuffix $repo ".git" -}}
+        {{- $repo = replace $repo ".git" "" -}}
+      {{- end -}}
+      {{- $is_github := strings.Contains $repo "github" -}}
+      {{- $is_gitlab := strings.Contains $repo "gitlab" -}}
+      {{- $is_codeberg := strings.Contains $repo "codeberg" -}}
+
+      {{- /* Get base raw file URL. */ -}}
+      {{- $raw := cond $is_github
+        (printf "https://raw.githubusercontent.com/%s/refs/heads/%s"
+          (replace $repo "https://github.com/" "") $item.git_ref)
+        (cond $is_gitlab
+          (printf "%s/raw/%s" $repo $item.git_ref)
+          (cond $is_codeberg
+            (printf "%s/raw/branch/%s" $repo $item.git_ref)
+            "")) -}}
+
+      {{- /* Clean icon path or get default icon. */ -}}
+      {{- $icon := cond (and $meta.icon (ne $raw ""))
+        (printf "%s/%s" $raw (replaceRE "(\\.\\.?/)+" "" $meta.icon))
+        $default_icon.RelPermalink -}}
+
+      <a class="card"
+        href="{{ $item.repository }}"
+        data-title="{{ $meta.name | lower | replaceRE "[^a-z0-9]+" "" }}"
+        data-date="{{ (time.AsTime $item.last_update_time).Unix }}"
+        data-downloads="{{ $item.total_downloads | default 0 }}">
+        <div class="card-title">
+          <div class="addon-icon">
+            <img src="{{ $icon }}"
+              loading="lazy"
+              decoding="async"
+              alt="{{ i18n "icon" | default "Icon" }}">
+          </div>
+
+          {{- with $meta.name -}}
+            <h3 class="addon-title">{{- . | title -}}</h3>
+          {{- end -}}
+        </div>
+
+        {{- with $meta.description -}}
+          <p class="card-description">{{- truncate 240 . -}}</p>
+        {{- end -}}
+
+        <div class="card-metadata">
+          {{- with $meta.version -}}
+            <span class="meta">
+              {{- partialCached "utils/icon.html" "tags" "tags" -}}
+              {{- truncate 12 . -}}
+            </span>
+          {{- end -}}
+
+          {{- with $item.last_update_time -}}
+            <span class="meta">
+              {{- partialCached "utils/icon.html" "date" "date" -}}
+              {{- time . | time.Format ":date_medium" -}}
+            </span>
+          {{- end -}}
+
+          {{- with $meta.maintainer -}}
+            <span class="meta">
+              {{- partialCached "utils/icon.html" "authors" "authors" -}}
+              {{- truncate 24 . -}}
+            </span>
+          {{- end -}}
+
+          {{- with $item.total_downloads -}}
+            <span class="meta">
+              {{- partialCached "utils/icon.html" "download" "download" -}}
+              {{- partialCached "utils/format_number.html" . (lower .) -}}
+            </span>
+          {{- end -}}
+        </div>
+      </a>
+
+    {{- end -}}
+  </div>
+{{- end -}}

@@ -370,24 +370,20 @@ figure .internal-tooltip {
   margin-block-end: var(--gap);
 }
 
-.content .wide:nth-child(3n + 1) {
+.wide:not(.hero .wide):nth-child(3n + 1) {
   background: var(--bg1);
 }
 
-.content .wide:nth-child(3n + 2) {
+.wide:not(.hero .wide):nth-child(3n + 2) {
   background: var(--bg2);
 }
 
-.content .wide:nth-child(3n) {
+.wide:not(.hero .wide):nth-child(3n) {
   background: var(--bg3);
 }
 
 
 /* Cards on List pages and custom Sections. */
-
-.card-list:not(:is(.hero, .content) .card-list) {
-  background: var(--bg-gradient);
-}
 
 .content .card-list {
   display: flex;
@@ -526,7 +522,7 @@ figure .internal-tooltip {
 
 .card-description {
   text-align: justify;
-  text-align-last: center;
+  text-align-last: start;
 }
 
 .card-metadata {

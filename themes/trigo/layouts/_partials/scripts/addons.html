@@ -1,0 +1,20 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Load addons script. */ -}}
+
+
+{{- with resources.Get "js/addons.js" -}}
+  {{- $addons := . -}}
+  {{- if hugo.IsProduction -}}
+    {{- $addons = $addons | minify | fingerprint -}}
+  {{- end -}}
+  <script src="{{ $addons.RelPermalink }}"
+    type="text/javascript"
+    defer
+    {{- if hugo.IsProduction }} integrity="{{ $addons.Data.Integrity }}" crossorigin="anonymous"{{ end -}}>
+  </script>
+{{- end -}}

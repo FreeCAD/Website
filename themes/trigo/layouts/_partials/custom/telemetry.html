@@ -1,0 +1,174 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Telemetry Charts:
+
+  - Get Telemetry data from JSON file.
+  - Parse, clean and sort data.
+  - Display data in horizontal bars charts with inline CSS width and colors.
+ */ -}}
+
+
+{{- /* Telemetry charts */ -}}
+
+{{- $entries_max := site.Params.telemetry.entries_max | default 12 -}}
+{{- $telemetry := hugo.Data.telemetry -}}
+
+{{- with $telemetry -}}
+
+  {{- $total_users := .total_users | default 1 -}}
+  {{- $order := site.Params.telemetry.order | default (slice) -}}
+
+  {{- $charts := dict -}}
+  {{- range $key, $value := . -}}
+    {{- if reflect.IsMap $value -}}
+      {{- $normalized_key := lower (replace $key "$" "") -}}
+      {{- $charts = merge $charts (dict $normalized_key $value) -}}
+    {{- end -}}
+  {{- end -}}
+
+  <div class="telemetry">
+
+    {{- range $chart_key := $order -}}
+
+      {{- $chart_data := index $charts $chart_key -}}
+      {{- if not $chart_data -}}
+        {{- continue -}}
+      {{- end -}}
+
+      {{- $chart_label := humanize (replace $chart_key "_" " ") -}}
+      {{- if not (hasSuffix $chart_label "s") -}}
+        {{- $chart_label = printf "%ss" $chart_label -}}
+      {{- end -}}
+
+      {{- $total_records := 0 -}}
+      {{- range $chart_data -}}
+        {{- $total_records = add $total_records . -}}
+      {{- end -}}
+
+      {{- $entries := slice -}}
+      {{- range $label, $value := $chart_data -}}
+
+        {{- $percent := 0 -}}
+        {{- if gt $total_records 0 -}}
+          {{- $percent = div (math.Round (mul (div $value $total_records) 1000)) 10 -}}
+        {{- end -}}
+
+        {{- $user_percent := 0 -}}
+        {{- if gt $total_records $total_users -}}
+          {{- $user_percent = div (math.Round (mul (div $value $total_users) 1000)) 10 -}}
+        {{- end -}}
+
+        {{- $display_percent := math.Min 100 (cond (gt $user_percent 0) $user_percent $percent) -}}
+
+        {{- $name := $label
+          | strings.ReplacePairs
+            "$" ""
+            "_" " "
+            "cad" "CAD"
+            "3d" "3D"
+        -}}
+
+        {{- $entries = $entries | append (dict
+          "name" $name
+          "value" $value
+          "percent" $percent
+          "display_percent" $display_percent
+        ) -}}
+
+      {{- end -}}
+
+      {{- $entries = sort $entries "display_percent" "desc" -}}
+      {{- $visible_entries := first $entries_max $entries -}}
+      {{- $overflow_entries := after $entries_max $entries -}}
+
+      {{- if gt (len $overflow_entries) 0 -}}
+
+        {{- $overflow_value := 0 -}}
+        {{- $overflow_percent := 0 -}}
+
+        {{- range $overflow_entries -}}
+          {{- $overflow_value = add $overflow_value .value -}}
+          {{- $overflow_percent = add $overflow_percent .percent -}}
+        {{- end -}}
+
+        {{- $overflow_percent = div (math.Round (mul $overflow_percent 10)) 10 -}}
+        {{- $overflow_label := printf "Others (%d more)" (len $overflow_entries) -}}
+
+        {{- $visible_entries = $visible_entries | append (dict
+          "name" $overflow_label
+          "value" $overflow_value
+          "percent" $overflow_percent
+          "display_percent" $overflow_percent
+          "color" "hsl(0, 0%, 70%)"
+        ) -}}
+
+      {{- end -}}
+
+      {{- $chart_entries := slice -}}
+      {{- range $index, $entry := $visible_entries -}}
+
+        {{- if not (isset $entry "color") -}}
+          {{- $count := sub (len $visible_entries) 1 -}}
+          {{- $hue := cond (gt $count 0) (sub 240 (div (mul 240 $index) $count)) 240 -}}
+          {{- $color := printf "hsl(%d, 60%%, 75%%)" $hue -}}
+          {{- $entry = merge $entry (dict "color" $color) -}}
+        {{- end -}}
+
+        {{- $chart_entries = $chart_entries | append $entry -}}
+      {{- end -}}
+
+      <section class="chart">
+
+        <h3 class="chart-title">
+          {{- printf "%v %s" (len $entries) $chart_label -}}
+        </h3>
+        <p>
+          {{- printf "%v %s / %v %s"
+            $total_records
+            (cond (gt $total_records 1) (i18n "record" 2 | default "records") (i18n "record" 1 | default "record"))
+            $total_users
+            (cond (gt $total_users 1) (i18n "user" 2 | default "users") (i18n "user" 1 | default "user"))
+            -}}
+        </p>
+
+          {{- range $index, $entry := $chart_entries -}}
+
+            {{- $percent := printf "%v%%" $entry.display_percent -}}
+            {{- $value := printf "%v %s (%v)"
+              $entry.value
+              (cond (gt $entry.value 1) (i18n "user" 2 | default "users") (i18n "user" 1 | default "user"))
+              ($entry.display_percent | lang.FormatPercent 1)
+            -}}
+
+            <div class="chart-row"
+              title="{{ printf "%s: %s" $entry.name $value }}">
+
+              <p class="chart-label">
+                <span>{{- $entry.name -}}</span>
+                <span>{{- $percent -}}</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: {{ $percent }}; --color: {{ $entry.color | safeCSS }}">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="{{ $entry.display_percent }}"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="{{ $percent }}"
+                  aria-label="{{ $entry.name }}">
+                </div>
+              </div>
+            </div>
+
+          {{- end -}}
+      </section>
+
+    {{- end -}}
+  </div>
+{{- end -}}

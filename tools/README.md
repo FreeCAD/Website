@@ -43,4 +43,86 @@ Created: website/content/en/news/2026/04/wip-wednesday-01-april-2026/index.md
 
 ---
 
+
+## Workflows Scripts
+
+### `addons.py`
+
+Python3 script to fetch and process Addons metadata from the [FreeCAD Addons index](https://github.com/FreeCAD/Addons) repository, produce a JSON data file suitable for use in the Hugo website, and cache the results to avoid redundant processing.
+
+**Features:**
+
+- Download Addons cache ZIP with ETag to avoid unnecessary requests
+- Extract Addons JSON from downloaded ZIP archive
+- Fetch download statistics from FreeCAD Addons Matomo instance
+- Normalize Addon metadata from package XML
+- Write cleaned JSON to `data/addons.json`
+- Use SHA256 hashing to detect changes and skip processing when data is unchanged
+
+**Usage:**
+
+```sh
+python3 addons.py
+```
+
+**Output Example:**
+
+```json
+{
+  "SomeAddon": [
+    {
+      "repository": "https://github.com/FreeCAD/SomeAddon",
+      "git_ref": "main",
+      "total_downloads": 1234,
+      "last_update_time": "2026-01-01T12:00:00Z",
+      "metadata": {
+        "name": "SomeAddon",
+        "description": "A sample FreeCAD addon",
+        "version": "1.2.3",
+        "maintainer": "abcd",
+        "license": "LGPL-2",
+        "icon": "https://example.com/icon.svg"
+      },
+      "curated": true
+    }
+  ]
+}
+```
+
+---
+
+### `telemetry.py`
+
+Python3 script to fetch and process Telemetry data provided from the optional [FreeCAD Telemetry addon](https://github.com/FreeCAD/FreeCAD-Telemetry), produce a JSON data file suitable for use in the Hugo website, and cache the results to avoid redundant processing.
+
+**Features:**
+
+- Fetch remote JSON telemetry data
+- Detect changes via SHA256 hash and skip processing if data has not changed
+- Extract most common `totalUsers` value from all telemetry metrics
+- Log invalid or inconsistent keys in the dataset
+- Transform telemetry data into structured dictionary with `labels` and `data` key-value pairs and `total_users` field
+- Write cleaned JSON to `data/telemetry.json`
+- Store hash of last fetched telemetry
+
+**Usage:**
+
+```sh
+python3 telemetry.py
+```
+
+**Output Example:**
+
+```json
+{
+  "versions": {
+    "1.2.3": 123,
+    "2.4.6": 456
+  },
+  "total_users": 7890
+}
+```
+
+---
+
 ### `script.py`

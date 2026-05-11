@@ -1,0 +1,20 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Load calendar script. */ -}}
+
+
+{{- with resources.Get "js/calendar.js" -}}
+  {{- $calendar := . -}}
+  {{- if hugo.IsProduction -}}
+    {{- $calendar = $calendar | minify | fingerprint -}}
+  {{- end -}}
+  <script src="{{ $calendar.RelPermalink }}"
+    type="text/javascript"
+    defer
+    {{- if hugo.IsProduction }} integrity="{{ $calendar.Data.Integrity }}" crossorigin="anonymous"{{ end -}}>
+  </script>
+{{- end -}}
