@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es-ES"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-24/css/styles.dc9016311df2ab3f350a29f5d80a33b9f4b0248e6e77f294e3631b58171e602d.css" integrity="sha256-3JAWMR3yqz81Cin12AozufSwJI5ud/KU42MbWBceYC0=" crossorigin="anonymous"><link rel="icon" type="image/svg+xml" href="/Website/pr-24/favicon.svg"><link rel="shortcut icon" type="image/x-icon" href="/Website/pr-24/favicon.ico"><link rel="apple-touch-icon" href="/Website/pr-24/apple-touch-icon.png"><title>FreeCAD | Tutorial - Getting Started With the Assembly Workbench</title>
+  <meta name="description" content="Tu propio modelador paramétrico libre y de código abierto"><meta name="keywords" content="assembly"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-24/es/news/tutorial-getting-started-with-the-assembly-workbench/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-24/news/tutorial-getting-started-with-the-assembly-workbench/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-24/zh/news/tutorial-getting-started-with-the-assembly-workbench/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-24/es/news/tutorial-getting-started-with-the-assembly-workbench/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-24/fr/news/tutorial-getting-started-with-the-assembly-workbench/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-24/pt/news/tutorial-getting-started-with-the-assembly-workbench/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-24/de/news/tutorial-getting-started-with-the-assembly-workbench/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-24/ja/news/tutorial-getting-started-with-the-assembly-workbench/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-24/es/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-24/es/news/tutorial-getting-started-with-the-assembly-workbench/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Tutorial - Getting started with the Assembly Workbench">
+  <meta property="og:description" content="With the Version 1.0 release candidates coming thick and fast it’s a good time to explore some of the new features that Version 1.0 will have to offer. One of the most eagerly anticipated new features is the Assembly workbench. Documentation and a great tutorial can be found for the Assembly workbench here but it can be fun to just quickly work through the most minimal viable example to get a quick idea of a basic workflow.">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2024-09-30T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-05-05T08:10:07+02:00">
+    <meta property="article:tag" content="Assembly">
+</head><body class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-24/es/"accesskey="h"
+      title="Inicio (Alt + H)"
+      aria-label="Inicio"><svg class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+      <use href="/Website/pr-24/FreeCAD-wordmark.svg#logo"></use>
+    </svg></a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menú"
+    aria-label="Menú"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-24/es/download/">Descarga</a>
+        </li><li>
+          <a href="/Website/pr-24/es/news/" aria-current="page" class="active">Actualidad</a>
+        </li><li>
+          <a href="/Website/pr-24/es/community/">Comunidad</a>
+        </li><li>
+          <a href="/Website/pr-24/es/docs/">Documentación</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Elegir idioma (Alt + L)"
+          aria-label="Elegir idioma"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-24/news/tutorial-getting-started-with-the-assembly-workbench/" title="Tutorial - Getting Started With the Assembly Workbench">English 🇬🇧</a>
+            </li><li>
+              <a href="/Website/pr-24/zh/news/tutorial-getting-started-with-the-assembly-workbench/" title="Tutorial - Getting Started With the Assembly Workbench">中文 🇨🇳</a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-24/es/news/tutorial-getting-started-with-the-assembly-workbench/" title="Tutorial - Getting Started With the Assembly Workbench">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/pr-24/fr/news/tutorial-getting-started-with-the-assembly-workbench/" title="Tutorial - Getting Started With the Assembly Workbench">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pr-24/pt/news/tutorial-getting-started-with-the-assembly-workbench/" title="Tutorial - Getting Started With the Assembly Workbench">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a href="/Website/pr-24/de/news/tutorial-getting-started-with-the-assembly-workbench/" title="Tutorial - Getting Started With the Assembly Workbench">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/pr-24/ja/news/tutorial-getting-started-with-the-assembly-workbench/" title="Tutorial - Getting Started With the Assembly Workbench">日本語 🇯🇵</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Cambiar tema chroma (Alt + T)"
+    aria-label="Cambiar tema chroma"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero"
+    style="--hue: 100;">
+
+    <h2 class="title">Tutorial - Getting Started With the Assembly Workbench</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/date.svg#date"></use>
+  </svg><time datetime="2024-09-30T00:00:00Z">30 de septiembre de 2024</time>
+  </span><span class="meta authors"><svg class="icon-authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-24/es/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg class="icon-categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-24/es/categories/tutorial/">Tutorial (26)</a></span><span class="meta tags"><svg class="icon-tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-24/es/tags/assembly/">Assembly (2)</a></span><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/words.svg#words"></use>
+  </svg>488 palabras</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/time.svg#time"></use>
+  </svg>3 min</span></div><figure class="article-cover"><img srcset="/Website/pr-24/news/tutorial-getting-started-with-the-assembly-workbench/2_parts_hu_3758c7595b3c24a0.webp 500w, /Website/pr-24/news/tutorial-getting-started-with-the-assembly-workbench/2_parts_hu_7711b47b771ad2e9.webp 1000w, /Website/pr-24/news/tutorial-getting-started-with-the-assembly-workbench/2_parts.webp 1920w"
+        sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"
+        src="/Website/pr-24/news/tutorial-getting-started-with-the-assembly-workbench/2_parts.webp"
+        title="Assembly Workbench"
+        alt="Imagen alternativa"
+        width="1920"
+        height="1035"
+        loading="eager"
+        fetchpriority="high"><figcaption>
+        <div class="internal-tooltip"><svg class="icon-important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/important.svg#important"></use>
+  </svg><span class="tooltip">Assembly Workbench</span>
+        </div>
+      </figcaption></figure></section><div class="content"><p>With the <a href="https://blog.freecad.org/2024/09/24/the-second-release-candidate-of-freecad-1-0-is-out/"
+  class="external-link" title="Abrir enlace" target="_blank" rel="external noreferrer noopener">Version 1.0 release candidates coming thick and fast<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/external.svg#external"></use>
+  </svg></a> it&rsquo;s a good time to explore some of the new features that Version 1.0 will have to offer. One of the most eagerly anticipated new features is the Assembly workbench. Documentation and a great tutorial can be found for the Assembly workbench <a href="https://wiki.freecad.org/Assembly_Workbench"
+  class="external-link" title="Abrir enlace" target="_blank" rel="external noreferrer noopener">here<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/external.svg#external"></use>
+  </svg></a> but it can be fun to just quickly work through the most minimal viable example to get a quick idea of a basic workflow.</p>
+<p>In our tutorials we always refer to tools by the name of the tool that appears in the tool tip when you roll over the tool icons. Rolling over tool icons and reading tool tips is a great way to learn what functionality a workbench offers.</p>
+<p>In this example we first used the part workbench to create two parts in the same project. Both are 20mm x 10mm x 5mm cubes, one is a union with a cylinder and the other is a cut with a cylinder removed. We right clicked and used the &ldquo;random colour&rdquo; option to set each object to a different colour and placed the objects next to each other not overlapping.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Ampliar imagen" popovertarget="img-%!d(&lt;nil&gt;)"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-24/news/tutorial-getting-started-with-the-assembly-workbench/assembly_created.webp"
+  alt="Assembly created"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" width="433" height="307" srcset="/Website/pr-24/news/tutorial-getting-started-with-the-assembly-workbench/assembly_created.webp 433w" sizes="75vw"></button><figcaption>Assembly created</figcaption></figure><div id="img-%!d(&lt;nil&gt;)" popover>
+          <button class="close"
+            popovertarget="img-%!d(&lt;nil&gt;)"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes">
+            <img src="/Website/pr-24/news/tutorial-getting-started-with-the-assembly-workbench/assembly_created.webp"
+              title="Assembly created"
+              alt="Assembly created"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Moving to the Assembly workbench we first click the Create Assembly tool icon. This creates an Assembly object in the file tree with Origin and Joints labels created inside it. Next left click each part we made in turn and drag them on top of the Assembly object in the file tree. This should move the parts inside the Assembly object and so can be included in the assembly.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Ampliar imagen" popovertarget="img-001"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-24/news/tutorial-getting-started-with-the-assembly-workbench/parts_added.webp"
+  alt="Parts added"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" width="260" height="248" srcset="/Website/pr-24/news/tutorial-getting-started-with-the-assembly-workbench/parts_added.webp 260w" sizes="75vw"></button><figcaption>Parts added</figcaption></figure><div id="img-001" popover>
+          <button class="close"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes">
+            <img src="/Website/pr-24/news/tutorial-getting-started-with-the-assembly-workbench/parts_added.webp"
+              title="Parts added"
+              alt="Parts added"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>Next select our part that is the union object with the protruding cylinder (the green object in our example) and then click the Toggle Grounded tool icon. In the preview you should now see that this part has a red lock symbol placed over it and it means that it is locked in it&rsquo;s current position and cannot be moved or rotated.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Ampliar imagen" popovertarget="img-002"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-24/news/tutorial-getting-started-with-the-assembly-workbench/grounded_locked.webp"
+  alt="Grounded locked"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" width="686" height="563" srcset="/Website/pr-24/news/tutorial-getting-started-with-the-assembly-workbench/grounded_locked_hu_44c03485a1179c5b.webp 500w, /Website/pr-24/news/tutorial-getting-started-with-the-assembly-workbench/grounded_locked.webp 686w" sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Grounded locked</figcaption></figure><div id="img-002" popover>
+          <button class="close"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes">
+            <img src="/Website/pr-24/news/tutorial-getting-started-with-the-assembly-workbench/grounded_locked.webp"
+              title="Grounded locked"
+              alt="Grounded locked"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>We want to assemble the other part so that the hole is centred and constrained around the small cylinder/axle. To do this, in the preview window click to select the upper edge of the hole and then use the control key to also select the upper face of the cylinder.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Ampliar imagen" popovertarget="img-003"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-24/news/tutorial-getting-started-with-the-assembly-workbench/selection_rotary.webp"
+  alt="Selection rotary"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" width="830" height="480" srcset="/Website/pr-24/news/tutorial-getting-started-with-the-assembly-workbench/selection_rotary_hu_3c4ea2707a4a4c45.webp 500w, /Website/pr-24/news/tutorial-getting-started-with-the-assembly-workbench/selection_rotary.webp 830w" sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Selection rotary</figcaption></figure><div id="img-003" popover>
+          <button class="close"
+            popovertarget="img-003"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes">
+            <img src="/Website/pr-24/news/tutorial-getting-started-with-the-assembly-workbench/selection_rotary.webp"
+              title="Selection rotary"
+              alt="Selection rotary"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>With these selected we simple click the Create Revolute Joint tool icon and then click OK. You should now see that our simple assembly is complete and if you left click on the non grounded block you can rotate it freely around the cylindrical axle object but not move it away from that connection.</p>
+<div class="image-with-popover">
+      <figure><button aria-label="Ampliar imagen" popovertarget="img-004"><svg class="icon-zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/zoom.svg#zoom"></use>
+  </svg><img
+  src="/Website/pr-24/news/tutorial-getting-started-with-the-assembly-workbench/revolution.webp"
+  alt="Revolution"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" width="1307" height="800" srcset="/Website/pr-24/news/tutorial-getting-started-with-the-assembly-workbench/revolution_hu_1a240fcd60216b12.webp 500w, /Website/pr-24/news/tutorial-getting-started-with-the-assembly-workbench/revolution_hu_619c99b397dfc078.webp 1000w, /Website/pr-24/news/tutorial-getting-started-with-the-assembly-workbench/revolution.webp 1307w" sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Revolution</figcaption></figure><div id="img-004" popover>
+          <button class="close"
+            popovertarget="img-004"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes">
+            <img src="/Website/pr-24/news/tutorial-getting-started-with-the-assembly-workbench/revolution.webp"
+              title="Revolution"
+              alt="Revolution"
+              loading="lazy"
+              fetchpriority="low"><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/cross.svg#cross"></use>
+  </svg></button>
+        </div></div><p>This is a super simple way to dip a toe into this workbench. If you want to explore a little further the example in the documentation linked above is well worth working through to introduce you to different types of motion and joints. We look forward to seeing what the community makes!</p>
+
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+            href="/Website/pr-24/es/news/wip-wednesday-2-october-2024/"
+            title="Artículo siguiente"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday - 2 October 2024</a><a class="page-item prev"
+            href="/Website/pr-24/es/news/major-fem-workbench-improvements-for-freecad-1-0/"
+            title="Artículo anterior">Major FEM Workbench Improvements for FreeCAD 1.0<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Ir al inicio"
+  title="Ir al inicio (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-24/es/">Inicio</a><ul></ul></li><li>
+          <a href="/Website/pr-24/es/download/">Descarga</a><ul><li>
+                      <a href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="noopener noreferrer">Development Builds<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a href="/Website/pr-24/es/download/releases/">Releases</a>
+                    </li></ul></li><li>
+          <a href="/Website/pr-24/es/news/" aria-current="page" class="active">Actualidad</a><ul><li>
+                  <a href="/Website/pr-24/es/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/pr-24/es/authors/">Autores</a>
+                      </li><li>
+                        <a href="/Website/pr-24/es/categories/">Categorías</a>
+                      </li><li>
+                        <a href="/Website/pr-24/es/tags/">Etiquetas</a>
+                      </li><li>
+                        <a href="/Website/pr-24/es/versions/">Versiones</a>
+                      </li></ul></li><li>
+          <a href="/Website/pr-24/es/community/">Comunidad</a><ul><li>
+                      <a href="/Website/pr-24/es/community/calendar/">Calendar</a>
+                    </li><li>
+                      <a href="https://events.freecad.org/" target="_blank" rel="noopener noreferrer">Events<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a href="https://fpa.freecad.org" target="_blank" rel="noopener noreferrer">Association<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a href="/Website/pr-24/es/community/fpn/">Professional Network</a>
+                    </li><li>
+                      <a href="/Website/pr-24/es/community/addons/">Addons</a>
+                    </li></ul></li><li>
+          <a href="/Website/pr-24/es/docs/">Documentación</a><ul><li>
+                  <a href="https://wiki.freecad.org/User_hub" target="_blank" rel="noopener noreferrer">User Manual<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/external.svg#external"></use>
+  </svg></a>
+                </li><li>
+                  <a href="/Website/pr-24/es/dev/">Development Handbook</a>
+                </li><li>
+                  <a href="https://freecad.github.io/SourceDoc/" target="_blank" rel="noopener noreferrer">FreeCAD API<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/external.svg#external"></use>
+  </svg></a>
+                </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="https://forum.freecad.org"
+      title="Forum"
+      target="_blank" rel="noopener"><svg class="icon-forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/forum.svg#forum"></use>
+  </svg></a><a href="https://github.com/freecad"
+      title="Github"
+      target="_blank" rel="noopener"><svg class="icon-github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/github.svg#github"></use>
+  </svg></a><a href="https://codeberg.org/freecad"
+      title="Codeberg"
+      target="_blank" rel="noopener"><svg class="icon-codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a href="https://social.freecad.org/@freecad"
+      title="Mastodon"
+      target="_blank" rel="noopener"><svg class="icon-mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a href="https://www.reddit.com/r/freecad"
+      title="Reddit"
+      target="_blank" rel="noopener"><svg class="icon-reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/reddit.svg#reddit"></use>
+  </svg></a><a href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+      title="Matrix"
+      target="_blank" rel="noopener"><svg class="icon-matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/matrix.svg#matrix"></use>
+  </svg></a><a href="https://discord.gg/w2cTKGzccC"
+      title="Discord"
+      target="_blank" rel="noopener"><svg class="icon-discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/discord.svg#discord"></use>
+  </svg></a><a href="https://www.facebook.com/freecad"
+      title="Facebook"
+      target="_blank" rel="noopener"><svg class="icon-facebook"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/facebook.svg#facebook"></use>
+  </svg></a><a href="https://www.linkedin.com/groups/4295230"
+      title="Linkedin"
+      target="_blank" rel="noopener"><svg class="icon-linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a href="/Website/pr-24/es/fedishare.html#title=Tutorial&#43;-&#43;Getting&#43;started&#43;with&#43;the&#43;Assembly&#43;Workbench&amp;description=With&#43;the&#43;Version&#43;1.0&#43;release&#43;candidates&#43;coming&#43;thick&#43;and&#43;fast&#43;it%E2%80%99s&#43;a&#43;good&#43;time&#43;to&#43;explore&#43;some&#43;of&#43;the&#43;new&#43;features&#43;that&#43;Version&#43;1.0&#43;will&#43;have&#43;to&#43;offer.&#43;One&#43;of&#43;the&#43;most&#43;eagerly&#43;anticipated&#43;new&#43;features&#43;%E2%80%A6%0A%23assembly&amp;url=https://FreeCAD.github.io/Website/pr-24/es/news/tutorial-getting-started-with-the-assembly-workbench/"
+  title="Compartir en Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-24/es/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-05-05
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/ab12b609077875783943636ca2c31feec3421a6a">
+        ab12b6090<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script src="/Website/pr-24/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script><script src="/Website/pr-24/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    defer integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous">
+  </script></body>
+
+</html>

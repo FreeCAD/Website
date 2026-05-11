@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="es-ES"
+  dir="ltr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link rel="stylesheet" href="/Website/pr-24/css/styles.dc9016311df2ab3f350a29f5d80a33b9f4b0248e6e77f294e3631b58171e602d.css" integrity="sha256-3JAWMR3yqz81Cin12AozufSwJI5ud/KU42MbWBceYC0=" crossorigin="anonymous"><link rel="icon" type="image/svg+xml" href="/Website/pr-24/favicon.svg"><link rel="shortcut icon" type="image/x-icon" href="/Website/pr-24/favicon.ico"><link rel="apple-touch-icon" href="/Website/pr-24/apple-touch-icon.png"><title>FreeCAD | Structure and Organization</title>
+  <meta name="description" content="How to organize the website files."><meta name="keywords" content="free, open-source, CAD, software, tool, parametric, modeling, model, design, product, engineering, manufacturing, community, workbench, FOSS, 3D, BIM, CAM, FEM, FEA"><link rel="canonical" href="https://FreeCAD.github.io/Website/pr-24/es/dev/web/structure/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/pr-24/dev/web/structure/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/pr-24/zh/dev/web/structure/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/pr-24/es/dev/web/structure/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/pr-24/fr/dev/web/structure/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pr-24/pt/dev/web/structure/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/pr-24/de/dev/web/structure/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/pr-24/ja/dev/web/structure/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/pr-24/es/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-24/es/dev/web/structure/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Structure and organization">
+  <meta property="og:description" content="How to organize the website files.">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dev">
+    <meta property="article:modified_time" content="2026-05-06T10:42:03+02:00">
+</head><body class="single type-dev kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a href="/Website/pr-24/es/"accesskey="h"
+      title="Inicio (Alt + H)"
+      aria-label="Inicio"><svg class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+      <use href="/Website/pr-24/FreeCAD-wordmark.svg#logo"></use>
+    </svg></a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menú"
+    aria-label="Menú"><svg class="icon-hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/hamburger.svg#hamburger"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/pr-24/es/download/">Descarga</a>
+        </li><li>
+          <a href="/Website/pr-24/es/news/">Actualidad</a>
+        </li><li>
+          <a href="/Website/pr-24/es/community/">Comunidad</a>
+        </li><li>
+          <a href="/Website/pr-24/es/docs/" aria-current="page" class="active">Documentación</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Elegir idioma (Alt + L)"
+          aria-label="Elegir idioma"><svg class="icon-language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul popover id="lang-list" class="language-list"><li>
+              <a href="/Website/pr-24/dev/web/structure/" title="Structure and Organization">English 🇬🇧</a>
+            </li><li>
+              <a href="/Website/pr-24/zh/dev/web/structure/" title="Structure and Organization">中文 🇨🇳</a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-24/es/dev/web/structure/" title="Structure and Organization">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/pr-24/fr/dev/web/structure/" title="Structure and Organization">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pr-24/pt/dev/web/structure/" title="Structure and Organization">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a href="/Website/pr-24/de/dev/web/structure/" title="Structure and Organization">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/pr-24/ja/dev/web/structure/" title="Structure and Organization">日本語 🇯🇵</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Cambiar tema chroma (Alt + T)"
+    aria-label="Cambiar tema chroma"><svg class="icon-dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/dark.svg#dark"></use>
+  </svg><svg class="icon-light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero"
+    style="--hue: 110;">
+
+    <h2 class="title">Structure and Organization</h1><h3 class="description">How to organize the website files.</h3><div class="metadata"><span class="meta"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/words.svg#words"></use>
+  </svg>368 palabras</span><span class="meta"><svg class="icon-time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/time.svg#time"></use>
+  </svg>2 min</span></div></section><nav class="toc">
+  <input type="checkbox" id="toc-toggle-checkbox" class="toc-toggle-checkbox">
+  <label for="toc-toggle-checkbox" class="toc-toggle" title="Table of Contents"><svg class="icon-toc"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/toc.svg#toc"></use>
+  </svg><svg class="icon-cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/cross.svg#cross"></use>
+  </svg><span>Tabla de Contenidos</span>
+  </label>
+
+  <div id="toc-content" class="toc-content">
+    <ul class="section-nav"><li>
+          <a href="/Website/pr-24/es/dev/"
+            class="current-section"><svg class="icon-tri_tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/tri_tri_left.svg#tri_tri_left"></use>
+  </svg> Development Handbook</a>
+        </li><li>
+          <a href="/Website/pr-24/es/dev/web/"
+            class="current-section"><svg class="icon-folder_closed"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/folder_closed.svg#folder_closed"></use>
+  </svg> Website</a>
+        </li><li>
+        <ul><li>
+              <a href="/Website/pr-24/es/dev/web/start/">Website Introduction</a>
+            </li><li>
+              <a href="/Website/pr-24/es/dev/web/guidelines/">Guidelines</a>
+            </li><li>
+              <a href="/Website/pr-24/es/dev/web/structure/" id="current-page" class="active" aria-current="page">Structure and Organization</a>
+            </li><li>
+              <a href="/Website/pr-24/es/dev/web/markdown/">Markdown Syntax Guide</a>
+            </li><li>
+              <a href="/Website/pr-24/es/dev/web/shortcodes/">Shortcodes</a>
+            </li><li>
+              <a href="/Website/pr-24/es/dev/web/front-matter/">Front Matter</a>
+            </li><li>
+              <a href="/Website/pr-24/es/dev/web/locales/">Translations and Languages</a>
+            </li><li>
+              <a href="/Website/pr-24/es/dev/web/cms/">CMS</a>
+            </li><li>
+              <a href="/Website/pr-24/es/dev/web/theme/">Theme, Project Setup, and Configuration</a>
+            </li></ul>
+      </li>
+    </ul><p class="toc-label"><svg class="icon-file"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/file.svg#file"></use>
+  </svg>
+        <span>On this page</span>
+      </p><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#directory-structure">Directory Structure</a>
+          <ul>
+            <li><a href="#configure-content-directory">Configure Content Directory</a></li>
+          </ul>
+        </li>
+        <li><a href="#resources">Resources</a>
+          <ul>
+            <li><a href="#page-bundles">Page bundles</a></li>
+            <li><a href="#static-and-assets">Static and Assets</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+</nav><div class="content"><figure>
+  <blockquote class="note"><svg class="icon-note"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/note.svg#note"></use>
+  </svg>Nota<p>Esta página aún no se ha traducido en español, por lo que se utiliza la versión inglesa. Interesado en ayudar?
+<a href="https://github.com/freecad/website"
+  class="external-link" title="Abrir enlace" target="_blank" rel="external noreferrer noopener">Contribuir<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/external.svg#external"></use>
+  </svg></a></p></blockquote></figure><h2
+  id="directory-structure">Directory Structure<a class="heading-anchor"
+     href="#directory-structure"
+     title="Directory Structure"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>By default, Hugo looks for Markdown files in the <code>/content</code> directory, and the structure of the directory determines the final output structure of your website.</p>
+<p>Take this site as an example:</p>
+<ul class="tree">
+  <li>
+  <input type="checkbox"
+    id="branch-000" checked hidden>
+
+  <label class="branch"
+    for="branch-000">
+
+    <span class="branch-open"><svg class="icon-folder_open"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/folder_open.svg#folder_open"></use>
+  </svg></span>
+
+    <span class="branch-closed"><svg class="icon-folder_closed"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/folder_closed.svg#folder_closed"></use>
+  </svg></span>/content</label><ul>
+  <li>
+    <span
+      class="leaf"
+      tabindex="0"><svg class="icon-file"
+      aria-hidden="true"
+      focusable="false">
+      <use href="/Website/pr-24/svg/file.svg#file"></use>
+    </svg>_index.md  ← / (homepage)</span>
+  </li>
+  <li>
+<input type="checkbox"
+  id="branch-001" checked hidden>
+
+<label class="branch"
+  for="branch-001">
+
+  <span class="branch-open"><svg class="icon-folder_open"
+  aria-hidden="true"
+  focusable="false">
+  <use href="/Website/pr-24/svg/folder_open.svg#folder_open"></use>
+</svg></span>
+
+  <span class="branch-closed"><svg class="icon-folder_closed"
+  aria-hidden="true"
+  focusable="false">
+  <use href="/Website/pr-24/svg/folder_closed.svg#folder_closed"></use>
+</svg></span>docs</label><ul>
+<li>
+  <span
+    class="leaf"
+    tabindex="0"><svg class="icon-file"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/file.svg#file"></use>
+  </svg>_index.md  ← /docs/</span>
+</li>
+<li>
+<input type="checkbox"
+id="branch-001" checked hidden>
+
+<label class="branch"
+for="branch-001">
+
+<span class="branch-open"><svg class="icon-folder_open"
+aria-hidden="true"
+focusable="false">
+<use href="/Website/pr-24/svg/folder_open.svg#folder_open"></use>
+</svg></span>
+
+<span class="branch-closed"><svg class="icon-folder_closed"
+aria-hidden="true"
+focusable="false">
+<use href="/Website/pr-24/svg/folder_closed.svg#folder_closed"></use>
+</svg></span>getting-started</label><ul>
+<li>
+<span
+class="leaf"
+tabindex="0"><svg class="icon-file"
+aria-hidden="true"
+focusable="false">
+<use href="/Website/pr-24/svg/file.svg#file"></use>
+</svg>index.md  ← /docs/getting-started/</span>
+</li>
+</ul></li>
+<li>
+<input type="checkbox"
+id="branch-002" checked hidden>
+
+<label class="branch"
+for="branch-002">
+
+<span class="branch-open"><svg class="icon-folder_open"
+aria-hidden="true"
+focusable="false">
+<use href="/Website/pr-24/svg/folder_open.svg#folder_open"></use>
+</svg></span>
+
+<span class="branch-closed"><svg class="icon-folder_closed"
+aria-hidden="true"
+focusable="false">
+<use href="/Website/pr-24/svg/folder_closed.svg#folder_closed"></use>
+</svg></span>guide</label><ul>
+<li>
+<span
+class="leaf"
+tabindex="0"><svg class="icon-file"
+aria-hidden="true"
+focusable="false">
+<use href="/Website/pr-24/svg/file.svg#file"></use>
+</svg>_index.md  ← /docs/guide/</span>
+</li>
+<li>
+<span
+class="leaf"
+tabindex="0"><svg class="icon-file"
+aria-hidden="true"
+focusable="false">
+<use href="/Website/pr-24/svg/file.svg#file"></use>
+</svg>organize-files.md  ← /docs/guide/organize-files/</span>
+</li>
+</ul></li>
+</ul></li>
+  <li>
+<input type="checkbox"
+  id="branch-002" checked hidden>
+
+<label class="branch"
+  for="branch-002">
+
+  <span class="branch-open"><svg class="icon-folder_open"
+  aria-hidden="true"
+  focusable="false">
+  <use href="/Website/pr-24/svg/folder_open.svg#folder_open"></use>
+</svg></span>
+
+  <span class="branch-closed"><svg class="icon-folder_closed"
+  aria-hidden="true"
+  focusable="false">
+  <use href="/Website/pr-24/svg/folder_closed.svg#folder_closed"></use>
+</svg></span>blog</label><ul>
+<li>
+  <span
+    class="leaf"
+    tabindex="0"><svg class="icon-file"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/file.svg#file"></use>
+  </svg>_index.md  ← /blog/</span>
+</li>
+<li>
+  <span
+    class="leaf"
+    tabindex="0"><svg class="icon-file"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/file.svg#file"></use>
+  </svg>post.md  ← /blog/post/</span>
+</li>
+<li>
+<input type="checkbox"
+id="branch-002" checked hidden>
+
+<label class="branch"
+for="branch-002">
+
+<span class="branch-open"><svg class="icon-folder_open"
+aria-hidden="true"
+focusable="false">
+<use href="/Website/pr-24/svg/folder_open.svg#folder_open"></use>
+</svg></span>
+
+<span class="branch-closed"><svg class="icon-folder_closed"
+aria-hidden="true"
+focusable="false">
+<use href="/Website/pr-24/svg/folder_closed.svg#folder_closed"></use>
+</svg></span>article</label><ul>
+<li>
+<span
+class="leaf"
+tabindex="0"><svg class="icon-file"
+aria-hidden="true"
+focusable="false">
+<use href="/Website/pr-24/svg/file.svg#file"></use>
+</svg>index.md  ← /docs/article/</span>
+</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Each <code>_index.md</code> file is the index page for the corresponding section. The other Markdown files are regular pages, placed directly in the section directory, or nested in their own sub-directory.</p>
+<h3
+  id="configure-content-directory">Configure Content Directory<a class="heading-anchor"
+     href="#configure-content-directory"
+     title="Configure Content Directory"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>By default, the root <code>/content</code> directory is used by Hugo to build the site.
+If you need to use a different directory for content, for example <code>/docs</code>, this can be done by setting the <a href="https://gohugo.io/getting-started/configuration/#contentdir"
+  class="external-link" title="Abrir enlace" target="_blank" rel="external noreferrer noopener"><code>contentDir</code><svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/external.svg#external"></use>
+  </svg></a> parameter in the site configuration <code>hugo.yaml</code>.</p>
+<h2
+  id="resources">Resources<a class="heading-anchor"
+     href="#resources"
+     title="Resources"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>In addition to text content, Hugo supports a wide range of additional resources, such as images, animations, vector graphics, videos, PDF, JSON, CSV, and many more medias and data formats.</p>
+<figure>
+  <blockquote class="note"><svg class="icon-note"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/note.svg#note"></use>
+  </svg>Nota<p>For the FreeCAD website, page bundles are used, so it is easier to organize large amount of content and resources in a nested structure.</p>
+<p>Additionally, each language is organized into its own root content directory (e.g <code>/content/en/</code>). Resources only need to go into the default language site (<code>en</code> for English), as other languages are linked automatically.</p></blockquote></figure>
+<h3
+  id="page-bundles">Page bundles<a class="heading-anchor"
+     href="#page-bundles"
+     title="Page bundles"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>To add resources, the easiest way is to place these files together in the same directory as the Markdown file.</p>
+<p>The <a href="https://gohugo.io/content-management/page-bundles/#leaf-bundles"
+  class="external-link" title="Abrir enlace" target="_blank" rel="external noreferrer noopener">page bundles<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/external.svg#external"></use>
+  </svg></a> feature of Hugo allows to organize content and resource files neatly. To achieve that, turn the <code>my-page.md</code> file into a directory <code>my-page</code>, put the content into a Markdown file named <code>index.md</code>, and put the resource files inside the <code>my-page</code> directory.</p>
+<p>For example, add an image file <code>image.webp</code> alongside the <code>my-page.md</code> file:</p>
+<ul class="tree">
+  <li>
+  <input type="checkbox"
+    id="branch-000" checked hidden>
+
+  <label class="branch"
+    for="branch-000">
+
+    <span class="branch-open"><svg class="icon-folder_open"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/folder_open.svg#folder_open"></use>
+  </svg></span>
+
+    <span class="branch-closed"><svg class="icon-folder_closed"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/folder_closed.svg#folder_closed"></use>
+  </svg></span>content</label><ul>
+  <li>
+<input type="checkbox"
+  id="branch-000" checked hidden>
+
+<label class="branch"
+  for="branch-000">
+
+  <span class="branch-open"><svg class="icon-folder_open"
+  aria-hidden="true"
+  focusable="false">
+  <use href="/Website/pr-24/svg/folder_open.svg#folder_open"></use>
+</svg></span>
+
+  <span class="branch-closed"><svg class="icon-folder_closed"
+  aria-hidden="true"
+  focusable="false">
+  <use href="/Website/pr-24/svg/folder_closed.svg#folder_closed"></use>
+</svg></span>section</label><ul>
+  <li>
+    <span
+      class="leaf"
+      tabindex="0"><svg class="icon-file"
+      aria-hidden="true"
+      focusable="false">
+      <use href="/Website/pr-24/svg/file.svg#file"></use>
+    </svg>my-page.md</span>
+  </li>
+  <li>
+    <span
+      class="leaf"
+      tabindex="0"><svg class="icon-file"
+      aria-hidden="true"
+      focusable="false">
+      <use href="/Website/pr-24/svg/file.svg#file"></use>
+    </svg>image.webp</span>
+  </li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Then, can use the following Markdown syntax to add the image to the content:</p>
+<div class="codeblock"><div class="codeblock-file"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/words.svg#words"></use>
+  </svg>content/en/section/my-page/index.md</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">![<span class="nt">alt</span>](<span class="na">image.webp &#34;title&#34;</span>)</span></span></code></pre></div></div><h3
+  id="static-and-assets">Static and Assets<a class="heading-anchor"
+     href="#static-and-assets"
+     title="Static and Assets"><svg class="icon-anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>Alternatively, it is possible to place resources in the <code>static</code> and <code>assets</code> root directories, which will make the resources available for all pages:</p>
+<ul class="tree">
+  <li>
+  <input type="checkbox"
+    id="branch-000" checked hidden>
+
+  <label class="branch"
+    for="branch-000">
+
+    <span class="branch-open"><svg class="icon-folder_open"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/folder_open.svg#folder_open"></use>
+  </svg></span>
+
+    <span class="branch-closed"><svg class="icon-folder_closed"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/folder_closed.svg#folder_closed"></use>
+  </svg></span>static</label><ul>
+  <li>
+<input type="checkbox"
+  id="branch-000" checked hidden>
+
+<label class="branch"
+  for="branch-000">
+
+  <span class="branch-open"><svg class="icon-folder_open"
+  aria-hidden="true"
+  focusable="false">
+  <use href="/Website/pr-24/svg/folder_open.svg#folder_open"></use>
+</svg></span>
+
+  <span class="branch-closed"><svg class="icon-folder_closed"
+  aria-hidden="true"
+  focusable="false">
+  <use href="/Website/pr-24/svg/folder_closed.svg#folder_closed"></use>
+</svg></span>images</label><ul>
+  <li>
+    <span
+      class="leaf"
+      tabindex="0"><svg class="icon-file"
+      aria-hidden="true"
+      focusable="false">
+      <use href="/Website/pr-24/svg/file.svg#file"></use>
+    </svg>image.webp</span>
+  </li>
+</ul></li>
+</ul></li>
+  <li>
+  <input type="checkbox"
+    id="branch-001" checked hidden>
+
+  <label class="branch"
+    for="branch-001">
+
+    <span class="branch-open"><svg class="icon-folder_open"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/folder_open.svg#folder_open"></use>
+  </svg></span>
+
+    <span class="branch-closed"><svg class="icon-folder_closed"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/folder_closed.svg#folder_closed"></use>
+  </svg></span>content</label><ul>
+  <li>
+<input type="checkbox"
+  id="branch-000" checked hidden>
+
+<label class="branch"
+  for="branch-000">
+
+  <span class="branch-open"><svg class="icon-folder_open"
+  aria-hidden="true"
+  focusable="false">
+  <use href="/Website/pr-24/svg/folder_open.svg#folder_open"></use>
+</svg></span>
+
+  <span class="branch-closed"><svg class="icon-folder_closed"
+  aria-hidden="true"
+  focusable="false">
+  <use href="/Website/pr-24/svg/folder_closed.svg#folder_closed"></use>
+</svg></span>section</label><ul>
+  <li>
+    <span
+      class="leaf"
+      tabindex="0"><svg class="icon-file"
+      aria-hidden="true"
+      focusable="false">
+      <use href="/Website/pr-24/svg/file.svg#file"></use>
+    </svg>my-page.md</span>
+  </li>
+</ul></li>
+</ul></li>
+</ul>
+<figure>
+  <blockquote class="note"><svg class="icon-note"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/note.svg#note"></use>
+  </svg>Nota<p>The path for a resource in the static directory begins with a slash <code>/</code>.</p></blockquote></figure>
+<div class="codeblock"><div class="codeblock-file"><svg class="icon-words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/words.svg#words"></use>
+  </svg>content/section/my-page.md</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">![<span class="nt">alt</span>](<span class="na">/images/image.webp &#34;title&#34;</span>)</span></span></code></pre></div></div>
+  </div><footer class="single-footer">
+    <nav class="pagination"><a class="page-item next"
+            href="/Website/pr-24/es/dev/web/guidelines/"
+            title="Artículo siguiente"><svg class="icon-tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/tri_left.svg#tri_left"></use>
+  </svg>Guidelines</a><a class="page-item prev"
+            href="/Website/pr-24/es/dev/web/markdown/"
+            title="Artículo anterior">Markdown Syntax Guide<svg class="icon-tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Ir al inicio"
+  title="Ir al inicio (Alt + G)" ><svg class="icon-tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a href="/Website/pr-24/es/">Inicio</a><ul></ul></li><li>
+          <a href="/Website/pr-24/es/download/">Descarga</a><ul><li>
+                      <a href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="noopener noreferrer">Development Builds<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a href="/Website/pr-24/es/download/releases/">Releases</a>
+                    </li></ul></li><li>
+          <a href="/Website/pr-24/es/news/">Actualidad</a><ul><li>
+                  <a href="/Website/pr-24/es/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/pr-24/es/authors/">Autores</a>
+                      </li><li>
+                        <a href="/Website/pr-24/es/categories/">Categorías</a>
+                      </li><li>
+                        <a href="/Website/pr-24/es/tags/">Etiquetas</a>
+                      </li><li>
+                        <a href="/Website/pr-24/es/versions/">Versiones</a>
+                      </li></ul></li><li>
+          <a href="/Website/pr-24/es/community/">Comunidad</a><ul><li>
+                      <a href="/Website/pr-24/es/community/calendar/">Calendar</a>
+                    </li><li>
+                      <a href="https://events.freecad.org/" target="_blank" rel="noopener noreferrer">Events<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a href="https://fpa.freecad.org" target="_blank" rel="noopener noreferrer">Association<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a href="/Website/pr-24/es/community/fpn/">Professional Network</a>
+                    </li><li>
+                      <a href="/Website/pr-24/es/community/addons/">Addons</a>
+                    </li></ul></li><li>
+          <a href="/Website/pr-24/es/docs/" aria-current="page" class="active">Documentación</a><ul><li>
+                  <a href="https://wiki.freecad.org/User_hub" target="_blank" rel="noopener noreferrer">User Manual<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/external.svg#external"></use>
+  </svg></a>
+                </li><li>
+                  <a href="/Website/pr-24/es/dev/">Development Handbook</a>
+                </li><li>
+                  <a href="https://freecad.github.io/SourceDoc/" target="_blank" rel="noopener noreferrer">FreeCAD API<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/external.svg#external"></use>
+  </svg></a>
+                </li></ul></li></ul>
+</nav>
+<div class="share-links"><a href="https://forum.freecad.org"
+      title="Forum"
+      target="_blank" rel="noopener"><svg class="icon-forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/forum.svg#forum"></use>
+  </svg></a><a href="https://github.com/freecad"
+      title="Github"
+      target="_blank" rel="noopener"><svg class="icon-github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/github.svg#github"></use>
+  </svg></a><a href="https://codeberg.org/freecad"
+      title="Codeberg"
+      target="_blank" rel="noopener"><svg class="icon-codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a href="https://social.freecad.org/@freecad"
+      title="Mastodon"
+      target="_blank" rel="noopener"><svg class="icon-mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a href="https://www.reddit.com/r/freecad"
+      title="Reddit"
+      target="_blank" rel="noopener"><svg class="icon-reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/reddit.svg#reddit"></use>
+  </svg></a><a href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+      title="Matrix"
+      target="_blank" rel="noopener"><svg class="icon-matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/matrix.svg#matrix"></use>
+  </svg></a><a href="https://discord.gg/w2cTKGzccC"
+      title="Discord"
+      target="_blank" rel="noopener"><svg class="icon-discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/discord.svg#discord"></use>
+  </svg></a><a href="https://www.facebook.com/freecad"
+      title="Facebook"
+      target="_blank" rel="noopener"><svg class="icon-facebook"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/facebook.svg#facebook"></use>
+  </svg></a><a href="https://www.linkedin.com/groups/4295230"
+      title="Linkedin"
+      target="_blank" rel="noopener"><svg class="icon-linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a href="/Website/pr-24/es/fedishare.html#title=Structure&#43;and&#43;organization&amp;description=How%20to%20organize%20the%20website%20files.&amp;url=https://FreeCAD.github.io/Website/pr-24/es/dev/web/structure/"
+  title="Compartir en Fediverse"
+  target="_blank" rel="noopener"><svg class="icon-fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026 <a href="/Website/pr-24/es/" title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
+    CC BY-SA<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
+    Hugo<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-05-06
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/9e6ffad0ced837cb1ca208586c9f02e52641b57f">
+        9e6ffad0c<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-24/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script src="/Website/pr-24/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script><script src="/Website/pr-24/js/code.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    defer integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous">
+  </script><script src="/Website/pr-24/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    defer integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous">
+  </script></body>
+
+</html>
