@@ -36,7 +36,7 @@
           --border: var(--line) solid var(--tone);
         }
       }
-    </style></noscript><link rel="stylesheet" href="/Website/css/styles.722b7c5f64b75240cfac27d8e17bf6869beeb364922e58d7f33b2155a3295df0.css" integrity="sha256-cit8X2S3UkDPrCfY4Xv2hpvus2SSLljX8zshVaMpXfA=" crossorigin="anonymous"><link rel="icon" type="image/svg+xml" href="/Website/favicon.svg"><link rel="shortcut icon" type="image/x-icon" href="/Website/favicon.ico"><link rel="apple-touch-icon" href="/Website/apple-touch-icon.png"><title>FreeCAD | The Rotation API in FreeCAD</title>
+    </style></noscript><link rel="stylesheet" href="/Website/css/styles.3331715dfdf3cabf3cd5e37dac61051f84c6b68a59066de2894ba199530ec04b.css" integrity="sha256-MzFxXf3zyr881eN9rGEFH4TGtopZBm3iiUuhmVMOwEs=" crossorigin="anonymous"><link rel="icon" type="image/svg+xml" href="/Website/favicon.svg"><link rel="shortcut icon" type="image/x-icon" href="/Website/favicon.ico"><link rel="apple-touch-icon" href="/Website/apple-touch-icon.png"><title>FreeCAD | The Rotation API in FreeCAD</title>
   <meta name="description" content="あなた自身の自由でオープンソースのパラメトリックモデラー"><meta name="keywords" content="code, API"><link rel="canonical" href="https://FreeCAD.github.io/Website/ja/news/the-rotation-api-in-freecad/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/news/the-rotation-api-in-freecad/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/zh/news/the-rotation-api-in-freecad/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/es/news/the-rotation-api-in-freecad/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/fr/news/the-rotation-api-in-freecad/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pt/news/the-rotation-api-in-freecad/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/de/news/the-rotation-api-in-freecad/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/ja/news/the-rotation-api-in-freecad/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/ja/"><meta property="og:url" content="https://FreeCAD.github.io/Website/ja/news/the-rotation-api-in-freecad/">
   <meta property="og:site_name" content="FreeCAD">
   <meta property="og:title" content="The Rotation API in FreeCAD">
@@ -85,6 +85,8 @@
   </svg></button>
 
   <ul popover id="menu-list" class="menu-list"><li>
+          <a href="/Website/ja/features/">特徴</a>
+        </li><li>
           <a href="/Website/ja/download/">ダウンロード</a>
         </li><li>
           <a href="/Website/ja/news/" aria-current="page" class="active">ニュース</a>
@@ -135,8 +137,7 @@
     <use href="/Website/svg/light.svg#light"></use>
   </svg></button>
 </div></div>
-</header><main><section class="hero"
-    style="--hue: 60;">
+</header><main style="--hue: 60;"><section class="hero">
 
     <h2 class="title">The Rotation API in FreeCAD</h1><div class="metadata"><span class="meta"><svg class="icon-date"
     aria-hidden="true"
@@ -159,7 +160,7 @@
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/words.svg#words"></use>
-  </svg>1777 語</span><span class="meta"><svg class="icon-time"
+  </svg>1784 語</span><span class="meta"><svg class="icon-time"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/time.svg#time"></use>
@@ -169,8 +170,10 @@
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">doc</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">ActiveDocument</span>
 </span></span><span class="line"><span class="cl"><span class="n">cube</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">addObject</span><span class="p">(</span><span class="s2">&#34;Part::Box&#34;</span><span class="p">,</span><span class="s2">&#34;Box&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">doc</span><span class="o">.</span><span class="n">recompute</span><span class="p">()</span></span></span></code></pre></div></div><p>The resulting cube has its origin at <code>(0, 0, 0)</code> and is in its default orientation. To locate it elsewhere, without other modification, we can change its <code>Placement</code> property. <code>Placement</code> has two sub-properties: <code>Placement.Base</code> and <code>Placement.Rotation</code>. <code>Placement.Base</code> is the location of the cube&rsquo;s origin and <code>Placement.Rotation</code> rotates the cube (with its origin fixed) into its orientation. If we examine the cube&rsquo;s current Placement in the Data panel, we see</p>
-<div class="image-with-popover">
-      <figure><button aria-label="画像を拡大" popovertarget="img-%!d(&lt;nil&gt;)"><svg class="icon-zoom"
+<figure class="image"><button
+          aria-label="画像を拡大"
+          popovertarget="img-001"
+          popovertargetaction="show"><svg class="icon-zoom"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/zoom.svg#zoom"></use>
@@ -179,25 +182,28 @@
   alt="Cube Placement properties"
   loading="lazy"
   fetchpriority="low"
-  decoding="async" width="1445" height="629" srcset="/Website/news/the-rotation-api-in-freecad/EWPropertyPlacement_hu_97265f951fc4d901.webp 500w, /Website/news/the-rotation-api-in-freecad/EWPropertyPlacement_hu_be92244c9d37b8dc.webp 1000w, /Website/news/the-rotation-api-in-freecad/EWPropertyPlacement.webp 1445w" sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Cube Placement properties</figcaption></figure><div id="img-%!d(&lt;nil&gt;)" popover>
-          <button class="close"
-            popovertarget="img-%!d(&lt;nil&gt;)"
+  decoding="async" title="Cube Placement properties" width="1445" height="629" srcset="/Website/news/the-rotation-api-in-freecad/EWPropertyPlacement_hu_38bd74ec919c76a8.webp 400w, /Website/news/the-rotation-api-in-freecad/EWPropertyPlacement_hu_ea48ddacc53ac034.webp 800w, /Website/news/the-rotation-api-in-freecad/EWPropertyPlacement.webp 1445w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+        <div id="img-001" popover>
+          <button
+            class="close"
+            popovertarget="img-001"
             popovertargetaction="hide"
-            aria-label="画像ビューアを閉じる">
-            <img src="/Website/news/the-rotation-api-in-freecad/EWPropertyPlacement.webp"
-              title="Cube Placement properties"
-              alt="Cube Placement properties"
-              loading="lazy"
-              fetchpriority="low"><svg class="icon-cross"
+            aria-label="画像ビューアを閉じる"><img
+  src="/Website/news/the-rotation-api-in-freecad/EWPropertyPlacement.webp"
+  alt="Cube Placement properties"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Cube Placement properties" width="1445" height="629" srcset="/Website/news/the-rotation-api-in-freecad/EWPropertyPlacement_hu_38bd74ec919c76a8.webp 400w, /Website/news/the-rotation-api-in-freecad/EWPropertyPlacement_hu_ea48ddacc53ac034.webp 800w, /Website/news/the-rotation-api-in-freecad/EWPropertyPlacement.webp 1445w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg class="icon-cross"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/cross.svg#cross"></use>
-  </svg></button>
-        </div></div><p>indicating an &ldquo;identity&rdquo; Placement. The Position (Base) is <code>(0, 0, 0)</code> and the Rotation is 0<sup>0</sup> around the <code>z (0,0,1)</code> axis. If now, for example, we change the cube&rsquo;s Placement with:</p>
+  </svg></button><p>Cube Placement properties</p></div><figcaption>Cube Placement properties</figcaption></figure><p>indicating an &ldquo;identity&rdquo; Placement. The Position (Base) is <code>(0, 0, 0)</code> and the Rotation is 0<sup>0</sup> around the <code>z (0,0,1)</code> axis. If now, for example, we change the cube&rsquo;s Placement with:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">cube</span><span class="o">.</span><span class="n">Placement</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Placement</span><span class="p">(</span><span class="n">App</span><span class="o">.</span><span class="n">Vector</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">App</span><span class="o">.</span><span class="n">Rotation</span><span class="p">(</span><span class="n">App</span><span class="o">.</span><span class="n">Vector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">20</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl"><span class="n">App</span><span class="o">.</span><span class="n">ActiveDocument</span><span class="o">.</span><span class="n">recompute</span><span class="p">()</span></span></span></code></pre></div></div><p>this rotates the cube 20 degrees about its <code>(0,0,1)</code> axis and then translates it so its origin lies at <code>(10, 0, 0)</code>, which we see reflected in the Data window.</p>
-<div class="image-with-popover">
-      <figure><button aria-label="画像を拡大" popovertarget="img-001"><svg class="icon-zoom"
+<figure class="image"><button
+          aria-label="画像を拡大"
+          popovertarget="img-002"
+          popovertargetaction="show"><svg class="icon-zoom"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/zoom.svg#zoom"></use>
@@ -206,21 +212,22 @@
   alt="代替画像"
   loading="lazy"
   fetchpriority="low"
-  decoding="async" width="1106" height="262" srcset="/Website/news/the-rotation-api-in-freecad/placedcube_hu_c8f11f084a21ae88.webp 500w, /Website/news/the-rotation-api-in-freecad/placedcube_hu_ecf1bdc42be6efc1.webp 1000w, /Website/news/the-rotation-api-in-freecad/placedcube.webp 1106w" sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button></figure><div id="img-001" popover>
-          <button class="close"
-            popovertarget="img-001"
+  decoding="async" width="1106" height="262" srcset="/Website/news/the-rotation-api-in-freecad/placedcube_hu_5eeecf4bd0d1b33f.webp 400w, /Website/news/the-rotation-api-in-freecad/placedcube_hu_9dd93eceeafb685c.webp 800w, /Website/news/the-rotation-api-in-freecad/placedcube.webp 1106w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+        <div id="img-002" popover>
+          <button
+            class="close"
+            popovertarget="img-002"
             popovertargetaction="hide"
-            aria-label="画像ビューアを閉じる">
-            <img src="/Website/news/the-rotation-api-in-freecad/placedcube.webp"
-              title=""
-              alt="代替画像"
-              loading="lazy"
-              fetchpriority="low"><svg class="icon-cross"
+            aria-label="画像ビューアを閉じる"><img
+  src="/Website/news/the-rotation-api-in-freecad/placedcube.webp"
+  alt="代替画像"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" width="1106" height="262" srcset="/Website/news/the-rotation-api-in-freecad/placedcube_hu_5eeecf4bd0d1b33f.webp 400w, /Website/news/the-rotation-api-in-freecad/placedcube_hu_9dd93eceeafb685c.webp 800w, /Website/news/the-rotation-api-in-freecad/placedcube.webp 1106w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg class="icon-cross"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/cross.svg#cross"></use>
-  </svg></button>
-        </div></div><h3
+  </svg></button></div></figure><h3
   id="rotationaxis-angle">Rotation(Axis, Angle)<a class="heading-anchor"
      href="#rotationaxis-angle"
      title="Rotation(Axis, Angle)"><svg class="icon-anchor"
@@ -251,15 +258,13 @@
     <video
       preload="metadata"
       controls
-      playsinline
-      loading="lazy"><source src="/Website/news/the-rotation-api-in-freecad/output.mp4">お使いのブラウザはvideoタグに対応していません。</video>
+      playsinline><source src="/Website/news/the-rotation-api-in-freecad/output.mp4">お使いのブラウザはvideoタグに対応していません。</video>
   </figure>
 <figure>
     <video
       preload="metadata"
       controls
-      playsinline
-      loading="lazy"><source src="/Website/news/the-rotation-api-in-freecad/rot2output.mp4">お使いのブラウザはvideoタグに対応していません。</video>
+      playsinline><source src="/Website/news/the-rotation-api-in-freecad/rot2output.mp4">お使いのブラウザはvideoタグに対応していません。</video>
   </figure>
 <p>When we specify the final direction <code>vec2</code> into which <code>vec1</code> is rotated, we have only constrained two degrees of freedom, those of the direction specified by <code>vec2</code>, yet a general rotation has three degrees of freedom. What happened to the third? Suppose after our <code>App.Rotation(vec1, vec2)</code> rotation, we then spun our object around the <code>vec2</code> axis. The resulting composite rotation would still have rotated <code>vec1</code> into <code>vec2</code>, but the axes perpendicular to <code>vec1</code> will end up in a different directions. This particular constructor therefore cannot create the most general possible rotation.</p>
 <h3
@@ -284,8 +289,7 @@
     <video
       preload="metadata"
       controls
-      playsinline
-      loading="lazy"><source src="/Website/news/the-rotation-api-in-freecad/rottriad.mp4">お使いのブラウザはvideoタグに対応していません。</video>
+      playsinline><source src="/Website/news/the-rotation-api-in-freecad/rottriad.mp4">お使いのブラウザはvideoタグに対応していません。</video>
   </figure>
 <p>This rotation method forms the basis of the  <a href="https://wiki.freecad.org/O-X-Y_type_attachment_modes"
   class="external-link" title="リンクを開く" target="_blank" rel="external noreferrer noopener">O-Z-X attachment mode<svg class="icon-external"
@@ -332,8 +336,10 @@
 <p>To illustrate the second point, let us consider two easily visualized rotations R and S and apply them in opposite orders.</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">FreeCAD</span> <span class="kn">import</span> <span class="n">Vector</span> <span class="k">as</span> <span class="n">V</span>
 </span></span><span class="line"><span class="cl"><span class="n">R</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Rotation</span><span class="p">(</span><span class="n">V</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mi">90</span><span class="p">)</span> <span class="c1"># 90° around x</span>
-</span></span><span class="line"><span class="cl"><span class="n">S</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Rotation</span><span class="p">(</span><span class="n">V</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="mi">90</span><span class="p">)</span> <span class="c1"># 90° around z</span></span></span></code></pre></div></div><div class="image-with-popover">
-      <figure><button aria-label="画像を拡大" popovertarget="img-002"><svg class="icon-zoom"
+</span></span><span class="line"><span class="cl"><span class="n">S</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Rotation</span><span class="p">(</span><span class="n">V</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="mi">90</span><span class="p">)</span> <span class="c1"># 90° around z</span></span></span></code></pre></div></div><figure class="image"><button
+          aria-label="画像を拡大"
+          popovertarget="img-003"
+          popovertargetaction="show"><svg class="icon-zoom"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/zoom.svg#zoom"></use>
@@ -342,21 +348,22 @@
   alt="Rotation order"
   loading="lazy"
   fetchpriority="low"
-  decoding="async" width="1496" height="1456" srcset="/Website/news/the-rotation-api-in-freecad/rotationorder_hu_59ed82f7a77d81e3.webp 500w, /Website/news/the-rotation-api-in-freecad/rotationorder_hu_6759ac5d5e164c5a.webp 1000w, /Website/news/the-rotation-api-in-freecad/rotationorder.webp 1496w" sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Rotation order</figcaption></figure><div id="img-002" popover>
-          <button class="close"
-            popovertarget="img-002"
+  decoding="async" title="Rotation order" width="1496" height="1456" srcset="/Website/news/the-rotation-api-in-freecad/rotationorder_hu_e8dba16f53b1c6db.webp 400w, /Website/news/the-rotation-api-in-freecad/rotationorder_hu_769bb63a791577d1.webp 800w, /Website/news/the-rotation-api-in-freecad/rotationorder.webp 1496w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+        <div id="img-003" popover>
+          <button
+            class="close"
+            popovertarget="img-003"
             popovertargetaction="hide"
-            aria-label="画像ビューアを閉じる">
-            <img src="/Website/news/the-rotation-api-in-freecad/rotationorder.webp"
-              title="Rotation order"
-              alt="Rotation order"
-              loading="lazy"
-              fetchpriority="low"><svg class="icon-cross"
+            aria-label="画像ビューアを閉じる"><img
+  src="/Website/news/the-rotation-api-in-freecad/rotationorder.webp"
+  alt="Rotation order"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Rotation order" width="1496" height="1456" srcset="/Website/news/the-rotation-api-in-freecad/rotationorder_hu_e8dba16f53b1c6db.webp 400w, /Website/news/the-rotation-api-in-freecad/rotationorder_hu_769bb63a791577d1.webp 800w, /Website/news/the-rotation-api-in-freecad/rotationorder.webp 1496w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg class="icon-cross"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/cross.svg#cross"></use>
-  </svg></button>
-        </div></div><p>In the top row of the figure, we perform the rotation <code>S * R</code>. We rotate 90° around the coordinate x-axis, followed by 90° around the coordinate z-axis and show the effect on a axis triad.</p>
+  </svg></button><p>Rotation order</p></div><figcaption>Rotation order</figcaption></figure><p>In the top row of the figure, we perform the rotation <code>S * R</code>. We rotate 90° around the coordinate x-axis, followed by 90° around the coordinate z-axis and show the effect on a axis triad.</p>
 <p>In the second row, we perform the rotation <code>R * S</code> and note that the result differs from that of <code>S * R</code>.</p>
 <p>The third row illustrates another important property of rotations. First we do the S rotation (90° around z), then we perform R&rsquo;. R&rsquo; is again defined as 90° around x - BUT around the (already rotated) <code>body</code> x-axis, not the <code>coordinate</code> x-axis. This is as in the yaw-pitch-roll section above.</p>
 <p>We see the result of <code>R'* S</code> is the same as <code>S * R</code>. This is in fact a general result that I will not attempt to prove here.</p>
@@ -413,8 +420,10 @@
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
 </h3><p>Both rotations (<code>rot</code>) and placements (<code>pl</code>) have inverses, <code>rot<sup>-1</sup></code> and <code>pl<sup>-1</sup></code> which reverse their effect. These satisfy</p>
-<div class="image-with-popover">
-      <figure><button aria-label="画像を拡大" popovertarget="img-003"><svg class="icon-zoom"
+<figure class="image"><button
+          aria-label="画像を拡大"
+          popovertarget="img-004"
+          popovertargetaction="show"><svg class="icon-zoom"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/zoom.svg#zoom"></use>
@@ -423,21 +432,22 @@
   alt="Inverse equations"
   loading="lazy"
   fetchpriority="low"
-  decoding="async" width="900" height="162" srcset="/Website/news/the-rotation-api-in-freecad/equationsinverse_hu_4662c3863db45d57.webp 500w, /Website/news/the-rotation-api-in-freecad/equationsinverse.webp 900w" sizes="(max-width: 500px) 500px, 75vw"></button><figcaption>Inverse equations</figcaption></figure><div id="img-003" popover>
-          <button class="close"
-            popovertarget="img-003"
+  decoding="async" title="Inverse equations" width="900" height="162" srcset="/Website/news/the-rotation-api-in-freecad/equationsinverse_hu_673907aff95f5d10.webp 400w, /Website/news/the-rotation-api-in-freecad/equationsinverse_hu_fa84be2c5ab9b56e.webp 800w, /Website/news/the-rotation-api-in-freecad/equationsinverse.webp 900w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+        <div id="img-004" popover>
+          <button
+            class="close"
+            popovertarget="img-004"
             popovertargetaction="hide"
-            aria-label="画像ビューアを閉じる">
-            <img src="/Website/news/the-rotation-api-in-freecad/equationsinverse.webp"
-              title="Inverse equations"
-              alt="Inverse equations"
-              loading="lazy"
-              fetchpriority="low"><svg class="icon-cross"
+            aria-label="画像ビューアを閉じる"><img
+  src="/Website/news/the-rotation-api-in-freecad/equationsinverse.webp"
+  alt="Inverse equations"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Inverse equations" width="900" height="162" srcset="/Website/news/the-rotation-api-in-freecad/equationsinverse_hu_673907aff95f5d10.webp 400w, /Website/news/the-rotation-api-in-freecad/equationsinverse_hu_fa84be2c5ab9b56e.webp 800w, /Website/news/the-rotation-api-in-freecad/equationsinverse.webp 900w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg class="icon-cross"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/cross.svg#cross"></use>
-  </svg></button>
-        </div></div><p>where <code>I</code> is the identity rotation or placement, respectively.</p>
+  </svg></button><p>Inverse equations</p></div><figcaption>Inverse equations</figcaption></figure><p>where <code>I</code> is the identity rotation or placement, respectively.</p>
 <p>Recall from the compound placement section, we found that <code>R' * S = S * R</code>. We could use the algebra of rotations to compute <code>R'</code> explicitly. Multiply both sides of the equation on the right by <code>S<sup>-1</sup></code>, obtaining:</p>
 <p><code>R&rsquo; * S * S<sup>-1</sup> = <em>R&rsquo; </em> = S * R * S<sup>-1</sup></code> In code, this becomes:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">FreeCAD</span> <span class="kn">import</span> <span class="n">Vector</span> <span class="k">as</span> <span class="n">V</span>
@@ -447,8 +457,10 @@
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">degrees</span>
 </span></span><span class="line"><span class="cl"><span class="n">degrees</span><span class="p">(</span><span class="n">Rprime</span><span class="o">.</span><span class="n">Angle</span><span class="p">)</span> <span class="c1"># =&gt; 90</span>
 </span></span><span class="line"><span class="cl"><span class="n">Rprime</span><span class="o">.</span><span class="n">Axis</span> <span class="c1"># =&gt; App.Vector(0, 1, 0)</span></span></span></code></pre></div></div><p>Being able to manipulate rotations (and placements) symbolically in this manner is a powerful tool. For another illustration of this, consider an assembly in which our object is contained in a sequence of nested container sub-assemblies.</p>
-<div class="image-with-popover">
-      <figure><button aria-label="画像を拡大" popovertarget="img-004"><svg class="icon-zoom"
+<figure class="image"><button
+          aria-label="画像を拡大"
+          popovertarget="img-005"
+          popovertargetaction="show"><svg class="icon-zoom"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/zoom.svg#zoom"></use>
@@ -457,23 +469,26 @@
   alt="Nested placements"
   loading="lazy"
   fetchpriority="low"
-  decoding="async" width="416" height="362" srcset="/Website/news/the-rotation-api-in-freecad/nestedplacements.webp 416w" sizes="75vw"></button><figcaption>Nested placements</figcaption></figure><div id="img-004" popover>
-          <button class="close"
-            popovertarget="img-004"
+  decoding="async" title="Nested placements" width="416" height="362" srcset="/Website/news/the-rotation-api-in-freecad/nestedplacements_hu_2637efea130f45c0.webp 400w, /Website/news/the-rotation-api-in-freecad/nestedplacements.webp 416w" sizes="(max-width: 400px) 400px, 95vw"></button>
+        <div id="img-005" popover>
+          <button
+            class="close"
+            popovertarget="img-005"
             popovertargetaction="hide"
-            aria-label="画像ビューアを閉じる">
-            <img src="/Website/news/the-rotation-api-in-freecad/nestedplacements.webp"
-              title="Nested placements"
-              alt="Nested placements"
-              loading="lazy"
-              fetchpriority="low"><svg class="icon-cross"
+            aria-label="画像ビューアを閉じる"><img
+  src="/Website/news/the-rotation-api-in-freecad/nestedplacements.webp"
+  alt="Nested placements"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Nested placements" width="416" height="362" srcset="/Website/news/the-rotation-api-in-freecad/nestedplacements_hu_2637efea130f45c0.webp 400w, /Website/news/the-rotation-api-in-freecad/nestedplacements.webp 416w" sizes="(max-width: 400px) 400px, 95vw"><svg class="icon-cross"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/cross.svg#cross"></use>
-  </svg></button>
-        </div></div><p>The global placement of the Cube is the product of the placements that contain it. Referring to the Placements of Part, Part001, Part002, Part003 and Cube as <code>pl<sub>0</sub>, pl<sub>1</sub>, pl<sub>2</sub>, pl<sub>3</sub></code> and <code>pl<sub>4</sub></code> respectively, the global placement of the Cube is <code>pl<sub>0</sub> * pl<sub>1</sub> * pl<sub>2</sub> * pl<sub>3</sub> * pl<sub>4</sub></code>. Suppose we want to change the global Placement of the cube to <code>gpl</code> by altering the placement of the Part001 sub-assembly, say by changing <code>pl<sub>1</sub></code> to <code>pl<sub>1</sub>&rsquo;</code>. Then we know that</p>
-<div class="image-with-popover">
-      <figure><button aria-label="画像を拡大" popovertarget="img-005"><svg class="icon-zoom"
+  </svg></button><p>Nested placements</p></div><figcaption>Nested placements</figcaption></figure><p>The global placement of the Cube is the product of the placements that contain it. Referring to the Placements of Part, Part001, Part002, Part003 and Cube as <code>pl<sub>0</sub>, pl<sub>1</sub>, pl<sub>2</sub>, pl<sub>3</sub></code> and <code>pl<sub>4</sub></code> respectively, the global placement of the Cube is <code>pl<sub>0</sub> * pl<sub>1</sub> * pl<sub>2</sub> * pl<sub>3</sub> * pl<sub>4</sub></code>. Suppose we want to change the global Placement of the cube to <code>gpl</code> by altering the placement of the Part001 sub-assembly, say by changing <code>pl<sub>1</sub></code> to <code>pl<sub>1</sub>&rsquo;</code>. Then we know that</p>
+<figure class="image"><button
+          aria-label="画像を拡大"
+          popovertarget="img-006"
+          popovertargetaction="show"><svg class="icon-zoom"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/zoom.svg#zoom"></use>
@@ -482,30 +497,31 @@
   alt="Solving placement equation"
   loading="lazy"
   fetchpriority="low"
-  decoding="async" width="1086" height="162" srcset="/Website/news/the-rotation-api-in-freecad/solveforplacement_hu_a9e060a3b2e414f4.webp 500w, /Website/news/the-rotation-api-in-freecad/solveforplacement_hu_9f2b3841c6dc2d54.webp 1000w, /Website/news/the-rotation-api-in-freecad/solveforplacement.webp 1086w" sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 75vw"></button><figcaption>Solving placement equation</figcaption></figure><div id="img-005" popover>
-          <button class="close"
-            popovertarget="img-005"
+  decoding="async" title="Solving placement equation" width="1086" height="162" srcset="/Website/news/the-rotation-api-in-freecad/solveforplacement_hu_7a993c20643a016f.webp 400w, /Website/news/the-rotation-api-in-freecad/solveforplacement_hu_c3fc777d1ecaa384.webp 800w, /Website/news/the-rotation-api-in-freecad/solveforplacement.webp 1086w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+        <div id="img-006" popover>
+          <button
+            class="close"
+            popovertarget="img-006"
             popovertargetaction="hide"
-            aria-label="画像ビューアを閉じる">
-            <img src="/Website/news/the-rotation-api-in-freecad/solveforplacement.webp"
-              title="Solving placement equation"
-              alt="Solving placement equation"
-              loading="lazy"
-              fetchpriority="low"><svg class="icon-cross"
+            aria-label="画像ビューアを閉じる"><img
+  src="/Website/news/the-rotation-api-in-freecad/solveforplacement.webp"
+  alt="Solving placement equation"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Solving placement equation" width="1086" height="162" srcset="/Website/news/the-rotation-api-in-freecad/solveforplacement_hu_7a993c20643a016f.webp 400w, /Website/news/the-rotation-api-in-freecad/solveforplacement_hu_c3fc777d1ecaa384.webp 800w, /Website/news/the-rotation-api-in-freecad/solveforplacement.webp 1086w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg class="icon-cross"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/cross.svg#cross"></use>
-  </svg></button>
-        </div></div><p>solving for the unknown placement <code>pl<sub>1</sub>&rsquo;</code> by pre- and post-multiplying by the appropriate inverses.</p>
+  </svg></button><p>Solving placement equation</p></div><figcaption>Solving placement equation</figcaption></figure><p>solving for the unknown placement <code>pl<sub>1</sub>&rsquo;</code> by pre- and post-multiplying by the appropriate inverses.</p>
 
   </div><footer class="single-footer">
-    <nav class="pagination"><a class="page-item next"
+    <nav class="pagination"><a class="button next"
             href="/Website/ja/news/freecad-and-free-cae-users-conference/"
             title="次の記事"><svg class="icon-tri_left"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/tri_left.svg#tri_left"></use>
-  </svg>FreeCAD (And Free CAE) User&#39;s Conference</a><a class="page-item prev"
+  </svg>FreeCAD (And Free CAE) User&#39;s Conference</a><a class="button prev"
             href="/Website/ja/news/wip-wednesday-11-jan-2023/"
             title="前の記事">WIP Wednesday - 11 Jan 2023<svg class="icon-tri_right"
     aria-hidden="true"
@@ -523,8 +539,15 @@
   </svg></a><nav class="footer-menu">
   <ul><li>
           <a href="/Website/ja/">ホームページ</a><ul></ul></li><li>
+          <a href="/Website/ja/features/">特徴</a><ul></ul></li><li>
           <a href="/Website/ja/download/">ダウンロード</a><ul><li>
                       <a href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="noopener noreferrer">Development Builds<svg class="icon-external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a href="https://github.com/FreeCAD/Examples" target="_blank" rel="noopener noreferrer">Examples an Parts Library<svg class="icon-external"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/external.svg#external"></use>
