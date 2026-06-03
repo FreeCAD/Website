@@ -12,4 +12,4 @@ For the `main` branch, `hugo-main.yaml` action workflow is used.
 
 For Pull Request temporary builds triggering a Preview, `pr-preview.yaml` action workflow is used. PR Preview artifacts are stored in sub-directories named `/pr-<number>`.
 
-The resulting website is visible at https://freecad.github.io/website/.
+The resulting website is visible at https://freecad.github.io/Website/.
