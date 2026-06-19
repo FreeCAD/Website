@@ -1,9 +1,16 @@
 <!DOCTYPE html>
-<html lang="es-ES"
+<html
+  lang="es-ES"
   dir="ltr"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
-<meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="robots" content="index, follow"><script>
+<meta
+  name="viewport"
+  content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta
+  name="referrer"
+  content="strict-origin-when-cross-origin">
+<meta
+  name="robots"
+  content="index, follow"><script>
     const pref = localStorage.getItem("pref-theme");
     if (pref === "dark") {
       document.documentElement.classList.add('dark');
@@ -36,18 +43,61 @@
           --border: var(--line) solid var(--tone);
         }
       }
-    </style></noscript><link rel="stylesheet" href="/Website/css/styles.4a5b10e5d4dd516d554c0e562c9676d8fd59e480afda137f073192a3d8865f82.css" integrity="sha256-SlsQ5dTdUW1VTA5WLJZ22P1Z5ICv2hN/BzGSo9iGX4I=" crossorigin="anonymous"><link rel="icon" type="image/svg+xml" href="/Website/favicon.svg"><link rel="shortcut icon" type="image/x-icon" href="/Website/favicon.ico"><link rel="apple-touch-icon" href="/Website/apple-touch-icon.png"><title>FreeCAD | What’s New in FEM for FreeCAD 1.1?</title>
-  <meta name="description" content="Tu propio modelador paramétrico libre y de código abierto"><meta name="keywords" content="FEM"><link rel="canonical" href="https://FreeCAD.github.io/Website/es/news/what-is-new-in-fem-for-freecad-1-1/"><link rel="alternate" hreflang="en-US" href="https://FreeCAD.github.io/Website/news/what-is-new-in-fem-for-freecad-1-1/"><link rel="alternate" hreflang="zh-CN" href="https://FreeCAD.github.io/Website/zh/news/what-is-new-in-fem-for-freecad-1-1/"><link rel="alternate" hreflang="es-ES" href="https://FreeCAD.github.io/Website/es/news/what-is-new-in-fem-for-freecad-1-1/"><link rel="alternate" hreflang="fr-FR" href="https://FreeCAD.github.io/Website/fr/news/what-is-new-in-fem-for-freecad-1-1/"><link rel="alternate" hreflang="pt-BR" href="https://FreeCAD.github.io/Website/pt/news/what-is-new-in-fem-for-freecad-1-1/"><link rel="alternate" hreflang="de-DE" href="https://FreeCAD.github.io/Website/de/news/what-is-new-in-fem-for-freecad-1-1/"><link rel="alternate" hreflang="ja-JP" href="https://FreeCAD.github.io/Website/ja/news/what-is-new-in-fem-for-freecad-1-1/"><link rel="alternate" hreflang="x-default" href="https://FreeCAD.github.io/Website/es/"><meta property="og:url" content="https://FreeCAD.github.io/Website/es/news/what-is-new-in-fem-for-freecad-1-1/">
+    </style></noscript><link
+          rel="stylesheet"
+          href="/Website/css/styles.fb2eb04dbe4ac3510aff912553a7bf56561773508f79ba9df3e88f9483e026a7.css"
+          integrity="sha256-&#43;y6wTb5Kw1EK/5ElU6e/VlYXc1CPebqd8&#43;iPlIPgJqc="
+          crossorigin="anonymous"><link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Website/favicon.svg"><link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/Website/favicon.ico"><link
+      rel="apple-touch-icon"
+      href="/Website/apple-touch-icon.png"><title>FreeCAD | What’s new in FEM for FreeCAD 1.1?</title>
+  <meta
+    name="description"
+    content="Tu propio modelador paramétrico libre y de código abierto"><meta
+      name="keywords"
+      content="FEM"><link
+    rel="canonical"
+    href="https://FreeCAD.github.io/Website/es/news/what-is-new-in-fem-for-freecad-1-1/"><link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://FreeCAD.github.io/Website/news/what-is-new-in-fem-for-freecad-1-1/"><link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://FreeCAD.github.io/Website/zh/news/what-is-new-in-fem-for-freecad-1-1/"><link
+      rel="alternate"
+      hreflang="es-ES"
+      href="https://FreeCAD.github.io/Website/es/news/what-is-new-in-fem-for-freecad-1-1/"><link
+      rel="alternate"
+      hreflang="fr-FR"
+      href="https://FreeCAD.github.io/Website/fr/news/what-is-new-in-fem-for-freecad-1-1/"><link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://FreeCAD.github.io/Website/pt/news/what-is-new-in-fem-for-freecad-1-1/"><link
+      rel="alternate"
+      hreflang="de-DE"
+      href="https://FreeCAD.github.io/Website/de/news/what-is-new-in-fem-for-freecad-1-1/"><link
+      rel="alternate"
+      hreflang="ja-JP"
+      href="https://FreeCAD.github.io/Website/ja/news/what-is-new-in-fem-for-freecad-1-1/"><link
+    rel="alternate"
+    hreflang="x-default"
+    href="https://FreeCAD.github.io/Website/es/"><meta property="og:url" content="https://FreeCAD.github.io/Website/es/news/what-is-new-in-fem-for-freecad-1-1/">
   <meta property="og:site_name" content="FreeCAD">
   <meta property="og:title" content="What’s new in FEM for FreeCAD 1.1?">
-  <meta property="og:description" content="Now that the feature freeze for FreeCAD 1.1 is on, and we are not too far off from the final release, let’s summarize the main changes in the FEM workbench. Just like in the case of the revolutionary 1.0 release (see this blog post Major FEM Workbench Improvements for FreeCAD 1.0), FEM dominates the release notes . There have been many significant improvements, so let’s go through them.">
+  <meta property="og:description" content="Now that the feature freeze for FreeCAD 1.1 is on, and we are not too far off from the final release, let’s summarize the main changes in the FEM workbench. Just like in the case of the revolutionary 1.0 release (see this blog post Major FEM Workbench improvements for FreeCAD 1.0), FEM dominates the release notes . There have been many significant improvements, so let’s go through them.">
   <meta property="og:locale" content="es_ES">
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2025-09-09T00:00:00+00:00">
     <meta property="article:modified_time" content="2026-05-05T08:11:44+02:00">
     <meta property="article:tag" content="FEM">
-</head><body class="single type-news kind-page "
+</head><body
+    class="single type-news kind-page "
     id="top">
 
 <div class="unsupported-browser">
@@ -57,80 +107,105 @@
 <header class="site-header">
 
   <div class="logo">
-    <a href="/Website/es/"accesskey="h"
+    <a
+      href="/Website/es/"
+      accesskey="h"
       title="Inicio (Alt + H)"
-      aria-label="Inicio"><svg class="logo-svg"
+      aria-label="Inicio"><svg
+      class="logo-svg"
       aria-hidden="true"
       focusable="false">
+
       <use href="/Website/FreeCAD-wordmark.svg#logo"></use>
     </svg></a>
   </div>
 
   <div class="site-nav"><nav class="menu">
-  <button popovertarget="menu-list"
+  <button
+    popovertarget="menu-list"
     popovertargetaction="toggle"
     class="menu-toggle"
     aria-controls="menu-list"
     aria-haspopup="menu"
     title="Menú"
-    aria-label="Menú"><svg class="icon-hamburger"
+    aria-label="Menú"><svg
+    class="icon-hamburger"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/hamburger.svg#hamburger"></use>
-  </svg><svg class="icon-cross"
+  </svg><svg
+    class="icon-cross"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/cross.svg#cross"></use>
   </svg></button>
 
-  <ul popover id="menu-list" class="menu-list"><li>
-          <a href="/Website/es/features/">Características</a>
+  <ul
+    popover
+    id="menu-list"
+    class="menu-list"><li>
+          <a
+            href="/Website/es/features/">Características</a>
         </li><li>
-          <a href="/Website/es/download/">Descarga</a>
+          <a
+            href="/Website/es/download/">Descarga</a>
         </li><li>
-          <a href="/Website/es/news/" aria-current="page" class="active">Actualidad</a>
+          <a
+            href="/Website/es/news/" aria-current="page" class="active">Actualidad</a>
         </li><li>
-          <a href="/Website/es/community/">Comunidad</a>
+          <a
+            href="/Website/es/community/">Comunidad</a>
         </li><li>
-          <a href="/Website/es/docs/">Documentación</a>
+          <a
+            href="/Website/es/docs/">Documentación</a>
+        </li><li>
+          <a
+            href="/Website/es/donate/" class="donate-button">❤ Donate</a>
         </li></ul>
 </nav>
 <div class="language-dropdown">
-        <button popovertarget="lang-list"
+        <button
+          popovertarget="lang-list"
           popovertargetaction="toggle"
           class="lang-toggle"
           accesskey="l"
           title="Elegir idioma (Alt + L)"
-          aria-label="Elegir idioma"><svg class="icon-language"
+          aria-label="Elegir idioma"><svg
+    class="icon-language"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/language.svg#language"></use>
   </svg></button>
 
-        <ul popover id="lang-list" class="language-list"><li>
-              <a href="/Website/news/what-is-new-in-fem-for-freecad-1-1/" title="What’s New in FEM for FreeCAD 1.1?">English 🇬🇧</a>
+        <ul
+          popover
+          id="lang-list"
+          class="language-list"><li>
+              <a href="/Website/news/what-is-new-in-fem-for-freecad-1-1/" title="What’s new in FEM for FreeCAD 1.1?">English 🇬🇧</a>
             </li><li>
-              <a href="/Website/zh/news/what-is-new-in-fem-for-freecad-1-1/" title="What’s New in FEM for FreeCAD 1.1?">中文 🇨🇳</a>
+              <a href="/Website/zh/news/what-is-new-in-fem-for-freecad-1-1/" title="What’s new in FEM for FreeCAD 1.1?">中文 🇨🇳</a>
             </li><li>
-              <a aria-current="page" class="active" href="/Website/es/news/what-is-new-in-fem-for-freecad-1-1/" title="What’s New in FEM for FreeCAD 1.1?">Español 🇪🇸</a>
+              <a aria-current="page" class="active" href="/Website/es/news/what-is-new-in-fem-for-freecad-1-1/" title="What’s new in FEM for FreeCAD 1.1?">Español 🇪🇸</a>
             </li><li>
-              <a href="/Website/fr/news/what-is-new-in-fem-for-freecad-1-1/" title="What’s New in FEM for FreeCAD 1.1?">Français 🇫🇷</a>
+              <a href="/Website/fr/news/what-is-new-in-fem-for-freecad-1-1/" title="What’s new in FEM for FreeCAD 1.1?">Français 🇫🇷</a>
             </li><li>
-              <a href="/Website/pt/news/what-is-new-in-fem-for-freecad-1-1/" title="What’s New in FEM for FreeCAD 1.1?">Português brasileiro 🇧🇷</a>
+              <a href="/Website/pt/news/what-is-new-in-fem-for-freecad-1-1/" title="What’s new in FEM for FreeCAD 1.1?">Português brasileiro 🇧🇷</a>
             </li><li>
-              <a href="/Website/de/news/what-is-new-in-fem-for-freecad-1-1/" title="What’s New in FEM for FreeCAD 1.1?">Deutsch 🇩🇪</a>
+              <a href="/Website/de/news/what-is-new-in-fem-for-freecad-1-1/" title="What’s new in FEM for FreeCAD 1.1?">Deutsch 🇩🇪</a>
             </li><li>
-              <a href="/Website/ja/news/what-is-new-in-fem-for-freecad-1-1/" title="What’s New in FEM for FreeCAD 1.1?">日本語 🇯🇵</a>
+              <a href="/Website/ja/news/what-is-new-in-fem-for-freecad-1-1/" title="What’s new in FEM for FreeCAD 1.1?">日本語 🇯🇵</a>
             </li></ul>
       </div><div class="chroma-toggle">
   <button id="chroma-toggle"
     accesskey="t"
     title="Cambiar tema chroma (Alt + T)"
-    aria-label="Cambiar tema chroma"><svg class="icon-dark"
+    aria-label="Cambiar tema chroma"><svg
+    class="icon-dark"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/dark.svg#dark"></use>
-  </svg><svg class="icon-light"
+  </svg><svg
+    class="icon-light"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/light.svg#light"></use>
@@ -138,28 +213,34 @@
 </div></div>
 </header><main style="--hue: 120;"><section class="hero">
 
-    <h2 class="title">What’s New in FEM for FreeCAD 1.1?</h1><div class="metadata"><span class="meta"><svg class="icon-date"
+    <h2 class="title">What’s new in FEM for FreeCAD 1.1?</h1><div class="metadata"><span class="meta"><svg
+    class="icon-date"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/date.svg#date"></use>
   </svg><time datetime="2025-09-09T00:00:00Z">9 de septiembre de 2025</time>
-  </span><span class="meta authors"><svg class="icon-authors"
+  </span><span class="meta authors"><svg
+    class="icon-authors"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/authors.svg#authors"></use>
-  </svg><a href="/Website/es/authors/newjoker/">NewJoker (3)</a></span><span class="meta categories"><svg class="icon-categories"
+  </svg><a href="/Website/es/authors/newjoker/">NewJoker (3)</a></span><span class="meta categories"><svg
+    class="icon-categories"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/categories.svg#categories"></use>
-  </svg><a href="/Website/es/categories/update/">Update (158)</a></span><span class="meta tags"><svg class="icon-tags"
+  </svg><a href="/Website/es/categories/update/">Update (158)</a></span><span class="meta tags"><svg
+    class="icon-tags"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/tags.svg#tags"></use>
-  </svg><a href="/Website/es/tags/fem/">FEM (4)</a></span><span class="meta"><svg class="icon-words"
+  </svg><a href="/Website/es/tags/fem/">FEM (4)</a></span><span class="meta"><svg
+    class="icon-words"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/words.svg#words"></use>
-  </svg>881 palabras</span><span class="meta"><svg class="icon-time"
+  </svg>881 palabras</span><span class="meta"><svg
+    class="icon-time"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/time.svg#time"></use>
@@ -169,16 +250,20 @@
   loading="lazy"
   fetchpriority="low"
   decoding="async" title="FEM workbench" width="1680" height="860" srcset="/Website/news/what-is-new-in-fem-for-freecad-1-1/image-10_hu_cf47f1374733a1f9.webp 400w, /Website/news/what-is-new-in-fem-for-freecad-1-1/image-10_hu_948c055dc2bd0bd2.webp 800w, /Website/news/what-is-new-in-fem-for-freecad-1-1/image-10_hu_eceed56c35dd3bdc.webp 1600w, /Website/news/what-is-new-in-fem-for-freecad-1-1/image-10.webp 1680w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"><figcaption>
-        <div class="internal-tooltip"><svg class="icon-important"
+        <div class="internal-tooltip"><svg
+    class="icon-important"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/important.svg#important"></use>
   </svg><span class="tooltip">FEM workbench</span>
         </div>
-      </figcaption></figure></section><div class="content"><p>Now that the feature freeze for FreeCAD 1.1 is on, and we are not too far off from the final release, let&rsquo;s summarize the main changes in the FEM workbench. Just like in the case of the revolutionary 1.0 release (see <a href="/Website/es/news/major-fem-workbench-improvements-for-freecad-1-0/"
+      </figcaption></figure></section><div class="content"><p>Now that the feature freeze for FreeCAD 1.1 is on, and we are not too far off from the final release, let&rsquo;s summarize the main changes in the FEM workbench. Just like in the case of the revolutionary 1.0 release (see <a
+  href="/Website/es/news/major-fem-workbench-improvements-for-freecad-1-0/"
   class="internal-tooltip">this blog post<span class="tooltip">
-        <strong>Major FEM Workbench Improvements for FreeCAD 1.0</strong></span></a>), FEM dominates the <a href="https://wiki.freecad.org/Release_notes_1.1"
-  class="external-link" title="Abrir enlace" target="_blank" rel="external noreferrer noopener">release notes<svg class="icon-external"
+        <strong>Major FEM Workbench improvements for FreeCAD 1.0</strong></span></a>), FEM dominates the <a
+  href="https://wiki.freecad.org/Release_notes_1.1"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">release notes<svg
+    class="icon-external"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/external.svg#external"></use>
@@ -186,18 +271,23 @@
 <h2
   id="electromagnetics">Electromagnetics<a class="heading-anchor"
      href="#electromagnetics"
-     title="Electromagnetics"><svg class="icon-anchor"
+     title="Electromagnetics"><svg
+    class="icon-anchor"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
-</h2><p>In this release cycle, the main focus was on electromagnetic (EM) analyses, postprocessing, and key missing CalculiX features. The range of supported electromagnetic simulations was extended with the introduction of Elmer&rsquo;s static current conduction solver implemented as <a href="https://wiki.freecad.org/FEM_EquationStaticCurrent"
-  class="external-link" title="Abrir enlace" target="_blank" rel="external noreferrer noopener">EquationStaticCurrent<svg class="icon-external"
+</h2><p>In this release cycle, the main focus was on electromagnetic (EM) analyses, postprocessing, and key missing CalculiX features. The range of supported electromagnetic simulations was extended with the introduction of Elmer&rsquo;s static current conduction solver implemented as <a
+  href="https://wiki.freecad.org/FEM_EquationStaticCurrent"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">EquationStaticCurrent<svg
+    class="icon-external"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>. It doesn&rsquo;t just allow direct current (DC) flow simulations: when combined with the Heat equation, it may also be used to model resistive (Joule) heating. There is a dedicated <a href="https://wiki.freecad.org/FEM_Examples"
-  class="external-link" title="Abrir enlace" target="_blank" rel="external noreferrer noopener">FEM Example<svg class="icon-external"
+  </svg></a>. It doesn&rsquo;t just allow direct current (DC) flow simulations: when combined with the Heat equation, it may also be used to model resistive (Joule) heating. There is a dedicated <a
+  href="https://wiki.freecad.org/FEM_Examples"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">FEM Example<svg
+    class="icon-external"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/external.svg#external"></use>
@@ -205,7 +295,8 @@
 <figure class="image"><button
           aria-label="Ampliar imagen"
           popovertarget="img-001"
-          popovertargetaction="show"><svg class="icon-zoom"
+          popovertargetaction="show"><svg
+    class="icon-zoom"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/zoom.svg#zoom"></use>
@@ -225,12 +316,15 @@
   alt="Electromagnetic analysis"
   loading="lazy"
   fetchpriority="low"
-  decoding="async" title="Electromagnetic analysis" width="400" height="203" srcset="/Website/news/what-is-new-in-fem-for-freecad-1-1/image-4.webp 400w" sizes="95vw"><svg class="icon-cross"
+  decoding="async" title="Electromagnetic analysis" width="400" height="203" srcset="/Website/news/what-is-new-in-fem-for-freecad-1-1/image-4.webp 400w" sizes="95vw"><svg
+    class="icon-cross"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/cross.svg#cross"></use>
-  </svg></button><p>Electromagnetic analysis</p></div><figcaption>Electromagnetic analysis</figcaption></figure><p>Another major change for EM workflows was the addition of the <a href="https://wiki.freecad.org/FEM_ElectricChargeDensity"
-  class="external-link" title="Abrir enlace" target="_blank" rel="external noreferrer noopener">electric charge density load<svg class="icon-external"
+  </svg></button><p>Electromagnetic analysis</p></div><figcaption>Electromagnetic analysis</figcaption></figure><p>Another major change for EM workflows was the addition of the <a
+  href="https://wiki.freecad.org/FEM_ElectricChargeDensity"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">electric charge density load<svg
+    class="icon-external"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/external.svg#external"></use>
@@ -239,7 +333,8 @@
 <figure class="image"><button
           aria-label="Ampliar imagen"
           popovertarget="img-002"
-          popovertargetaction="show"><svg class="icon-zoom"
+          popovertargetaction="show"><svg
+    class="icon-zoom"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/zoom.svg#zoom"></use>
@@ -259,7 +354,8 @@
   alt="Electromagnetic analysis in 2D"
   loading="lazy"
   fetchpriority="low"
-  decoding="async" title="Electromagnetic analysis in 2D" width="618" height="435" srcset="/Website/news/what-is-new-in-fem-for-freecad-1-1/image-5_hu_b007a659e04ac02c.webp 400w, /Website/news/what-is-new-in-fem-for-freecad-1-1/image-5.webp 618w" sizes="(max-width: 400px) 400px, 95vw"><svg class="icon-cross"
+  decoding="async" title="Electromagnetic analysis in 2D" width="618" height="435" srcset="/Website/news/what-is-new-in-fem-for-freecad-1-1/image-5_hu_b007a659e04ac02c.webp 400w, /Website/news/what-is-new-in-fem-for-freecad-1-1/image-5.webp 618w" sizes="(max-width: 400px) 400px, 95vw"><svg
+    class="icon-cross"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/cross.svg#cross"></use>
@@ -267,7 +363,8 @@
 <h2
   id="postprocessing">Postprocessing<a class="heading-anchor"
      href="#postprocessing"
-     title="Postprocessing"><svg class="icon-anchor"
+     title="Postprocessing"><svg
+    class="icon-anchor"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/anchor.svg#anchor"></use>
@@ -276,7 +373,8 @@
 <figure class="image"><button
           aria-label="Ampliar imagen"
           popovertarget="img-003"
-          popovertargetaction="show"><svg class="icon-zoom"
+          popovertargetaction="show"><svg
+    class="icon-zoom"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/zoom.svg#zoom"></use>
@@ -296,7 +394,8 @@
   alt="Result Frames task panel"
   loading="lazy"
   fetchpriority="low"
-  decoding="async" title="Result Frames task panel" width="446" height="380" srcset="/Website/news/what-is-new-in-fem-for-freecad-1-1/image-3_hu_59d08cdd931843bd.webp 400w, /Website/news/what-is-new-in-fem-for-freecad-1-1/image-3.webp 446w" sizes="(max-width: 400px) 400px, 95vw"><svg class="icon-cross"
+  decoding="async" title="Result Frames task panel" width="446" height="380" srcset="/Website/news/what-is-new-in-fem-for-freecad-1-1/image-3_hu_59d08cdd931843bd.webp 400w, /Website/news/what-is-new-in-fem-for-freecad-1-1/image-3.webp 446w" sizes="(max-width: 400px) 400px, 95vw"><svg
+    class="icon-cross"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/cross.svg#cross"></use>
@@ -309,7 +408,8 @@
 <figure class="image"><button
           aria-label="Ampliar imagen"
           popovertarget="img-004"
-          popovertargetaction="show"><svg class="icon-zoom"
+          popovertargetaction="show"><svg
+    class="icon-zoom"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/zoom.svg#zoom"></use>
@@ -329,7 +429,8 @@
   alt="Symbolic vectors in Glyph"
   loading="lazy"
   fetchpriority="low"
-  decoding="async" title="Symbolic vectors in Glyph" width="863" height="622" srcset="/Website/news/what-is-new-in-fem-for-freecad-1-1/image-9_hu_312d7e0b6285b356.webp 400w, /Website/news/what-is-new-in-fem-for-freecad-1-1/image-9_hu_53940be0baba1c9f.webp 800w, /Website/news/what-is-new-in-fem-for-freecad-1-1/image-9.webp 863w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg class="icon-cross"
+  decoding="async" title="Symbolic vectors in Glyph" width="863" height="622" srcset="/Website/news/what-is-new-in-fem-for-freecad-1-1/image-9_hu_312d7e0b6285b356.webp 400w, /Website/news/what-is-new-in-fem-for-freecad-1-1/image-9_hu_53940be0baba1c9f.webp 800w, /Website/news/what-is-new-in-fem-for-freecad-1-1/image-9.webp 863w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg
+    class="icon-cross"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/cross.svg#cross"></use>
@@ -343,7 +444,8 @@
 <h2
   id="calculix-features">CalculiX features<a class="heading-anchor"
      href="#calculix-features"
-     title="CalculiX features"><svg class="icon-anchor"
+     title="CalculiX features"><svg
+    class="icon-anchor"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/anchor.svg#anchor"></use>
@@ -368,7 +470,8 @@
 <figure class="image"><button
           aria-label="Ampliar imagen"
           popovertarget="img-005"
-          popovertargetaction="show"><svg class="icon-zoom"
+          popovertargetaction="show"><svg
+    class="icon-zoom"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/zoom.svg#zoom"></use>
@@ -388,14 +491,16 @@
   alt="Pressure in 2D analysis"
   loading="lazy"
   fetchpriority="low"
-  decoding="async" title="Pressure in 2D analysis" width="522" height="547" srcset="/Website/news/what-is-new-in-fem-for-freecad-1-1/image-7_hu_f7b9002db2c40b12.webp 400w, /Website/news/what-is-new-in-fem-for-freecad-1-1/image-7.webp 522w" sizes="(max-width: 400px) 400px, 95vw"><svg class="icon-cross"
+  decoding="async" title="Pressure in 2D analysis" width="522" height="547" srcset="/Website/news/what-is-new-in-fem-for-freecad-1-1/image-7_hu_f7b9002db2c40b12.webp 400w, /Website/news/what-is-new-in-fem-for-freecad-1-1/image-7.webp 522w" sizes="(max-width: 400px) 400px, 95vw"><svg
+    class="icon-cross"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/cross.svg#cross"></use>
   </svg></button><p>Pressure in 2D analysis</p></div><figcaption>Pressure in 2D analysis</figcaption></figure><h2
   id="other-improvements">Other improvements<a class="heading-anchor"
      href="#other-improvements"
-     title="Other improvements"><svg class="icon-anchor"
+     title="Other improvements"><svg
+    class="icon-anchor"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/anchor.svg#anchor"></use>
@@ -404,7 +509,8 @@
 <figure class="image"><button
           aria-label="Ampliar imagen"
           popovertarget="img-006"
-          popovertargetaction="show"><svg class="icon-zoom"
+          popovertargetaction="show"><svg
+    class="icon-zoom"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/zoom.svg#zoom"></use>
@@ -424,7 +530,8 @@
   alt="Netgen mesher"
   loading="lazy"
   fetchpriority="low"
-  decoding="async" title="Netgen mesher" width="669" height="522" srcset="/Website/news/what-is-new-in-fem-for-freecad-1-1/image-6_hu_b6daa1fd767fa239.webp 400w, /Website/news/what-is-new-in-fem-for-freecad-1-1/image-6.webp 669w" sizes="(max-width: 400px) 400px, 95vw"><svg class="icon-cross"
+  decoding="async" title="Netgen mesher" width="669" height="522" srcset="/Website/news/what-is-new-in-fem-for-freecad-1-1/image-6_hu_b6daa1fd767fa239.webp 400w, /Website/news/what-is-new-in-fem-for-freecad-1-1/image-6.webp 669w" sizes="(max-width: 400px) 400px, 95vw"><svg
+    class="icon-cross"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/cross.svg#cross"></use>
@@ -434,7 +541,8 @@
 <figure class="image"><button
           aria-label="Ampliar imagen"
           popovertarget="img-007"
-          popovertargetaction="show"><svg class="icon-zoom"
+          popovertargetaction="show"><svg
+    class="icon-zoom"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/zoom.svg#zoom"></use>
@@ -454,25 +562,31 @@
   alt="Multiple solids selection menu"
   loading="lazy"
   fetchpriority="low"
-  decoding="async" title="Multiple solids selection menu" width="677" height="614" srcset="/Website/news/what-is-new-in-fem-for-freecad-1-1/image-8_hu_d5aef99cc591e1cd.webp 400w, /Website/news/what-is-new-in-fem-for-freecad-1-1/image-8.webp 677w" sizes="(max-width: 400px) 400px, 95vw"><svg class="icon-cross"
+  decoding="async" title="Multiple solids selection menu" width="677" height="614" srcset="/Website/news/what-is-new-in-fem-for-freecad-1-1/image-8_hu_d5aef99cc591e1cd.webp 400w, /Website/news/what-is-new-in-fem-for-freecad-1-1/image-8.webp 677w" sizes="(max-width: 400px) 400px, 95vw"><svg
+    class="icon-cross"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/cross.svg#cross"></use>
   </svg></button><p>Multiple solids selection menu</p></div><figcaption>Multiple solids selection menu</figcaption></figure><h2
   id="summary">Summary<a class="heading-anchor"
      href="#summary"
-     title="Summary"><svg class="icon-anchor"
+     title="Summary"><svg
+    class="icon-anchor"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
-</h2><p>FEM has been actively developed in the v1.1 development cycle. Such progress wouldn&rsquo;t be possible without the invaluable contributions of <a href="https://github.com/marioalexis84"
-  class="external-link" title="Abrir enlace" target="_blank" rel="external noreferrer noopener">marioalexis84<svg class="icon-external"
+</h2><p>FEM has been actively developed in the v1.1 development cycle. Such progress wouldn&rsquo;t be possible without the invaluable contributions of <a
+  href="https://github.com/marioalexis84"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">marioalexis84<svg
+    class="icon-external"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> and <a href="https://github.com/ickby"
-  class="external-link" title="Abrir enlace" target="_blank" rel="external noreferrer noopener">ickby<svg class="icon-external"
+  </svg></a> and <a
+  href="https://github.com/ickby"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">ickby<svg
+    class="icon-external"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/external.svg#external"></use>
@@ -485,17 +599,20 @@
 <li>a framework for additional specialized solvers.</li>
 </ul>
 <p>Thus, we welcome all new contributors to help make FEM even better!</p>
-
-  </div><footer class="single-footer">
-    <nav class="pagination"><a class="button next"
+</div><footer class="single-footer">
+    <nav class="pagination"><a
+            class="button next"
             href="/Website/es/news/wip-wednesday-10-september-2025/"
-            title="Artículo siguiente"><svg class="icon-tri_left"
+            title="Artículo siguiente"><svg
+    class="icon-tri_left"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/tri_left.svg#tri_left"></use>
-  </svg>WIP Wednesday, 10 September 2025</a><a class="button prev"
+  </svg>WIP Wednesday, 10 September 2025</a><a
+            class="button prev"
             href="/Website/es/news/looking-for-regression-bisection-specialist/"
-            title="Artículo anterior">We Are Looking for a Regression Bisection Specialist<svg class="icon-tri_right"
+            title="Artículo anterior">We are looking for a regression bisection specialist<svg
+    class="icon-tri_right"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/tri_right.svg#tri_right"></use>
@@ -504,31 +621,42 @@
   href="#top"
   accesskey="g"
   aria-label="Ir al inicio"
-  title="Ir al inicio (Alt + G)" ><svg class="icon-tri_up"
+  title="Ir al inicio (Alt + G)" ><svg
+    class="icon-tri_up"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/tri_up.svg#tri_up"></use>
   </svg></a><nav class="footer-menu">
   <ul><li>
-          <a href="/Website/es/">Inicio</a><ul></ul></li><li>
-          <a href="/Website/es/features/">Características</a><ul></ul></li><li>
-          <a href="/Website/es/download/">Descarga</a><ul><li>
-                      <a href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="noopener noreferrer">Development Builds<svg class="icon-external"
+          <a
+            href="/Website/es/">Inicio</a><ul></ul></li><li>
+          <a
+            href="/Website/es/features/">Características</a><ul></ul></li><li>
+          <a
+            href="/Website/es/download/">Descarga</a><ul><li>
+                      <a
+                        href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="external noreferrer nofollow">Development builds<svg
+    class="icon-external"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/external.svg#external"></use>
   </svg></a>
                     </li><li>
-                      <a href="https://github.com/FreeCAD/Examples" target="_blank" rel="noopener noreferrer">Examples an Parts Library<svg class="icon-external"
+                      <a
+                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples an parts library<svg
+    class="icon-external"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/external.svg#external"></use>
   </svg></a>
                     </li><li>
-                      <a href="/Website/es/download/releases/">Releases</a>
+                      <a
+                        href="/Website/es/download/releases/">Releases</a>
                     </li></ul></li><li>
-          <a href="/Website/es/news/" aria-current="page" class="active">Actualidad</a><ul><li>
-                  <a href="/Website/es/news/archives/">Archives</a>
+          <a
+            href="/Website/es/news/" aria-current="page" class="active">Actualidad</a><ul><li>
+                  <a
+                    href="/Website/es/news/archives/">Archives</a>
                 </li><li>
                         <a href="/Website/es/authors/">Autores</a>
                       </li><li>
@@ -538,109 +666,154 @@
                       </li><li>
                         <a href="/Website/es/versions/">Versiones</a>
                       </li></ul></li><li>
-          <a href="/Website/es/community/">Comunidad</a><ul><li>
-                      <a href="/Website/es/community/calendar/">Calendar</a>
+          <a
+            href="/Website/es/community/">Comunidad</a><ul><li>
+                      <a
+                        href="/Website/es/community/calendar/">Calendar</a>
                     </li><li>
-                      <a href="https://events.freecad.org/" target="_blank" rel="noopener noreferrer">Events<svg class="icon-external"
+                      <a
+                        href="https://events.freecad.org/" target="_blank" rel="external noreferrer nofollow">Events<svg
+    class="icon-external"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/external.svg#external"></use>
   </svg></a>
                     </li><li>
-                      <a href="https://fpa.freecad.org" target="_blank" rel="noopener noreferrer">Association<svg class="icon-external"
+                      <a
+                        href="https://fpa.freecad.org" target="_blank" rel="external noreferrer nofollow">Association<svg
+    class="icon-external"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/external.svg#external"></use>
   </svg></a>
                     </li><li>
-                      <a href="/Website/es/community/fpn/">Professional Network</a>
+                      <a
+                        href="/Website/es/community/fpn/">Professional Network</a>
                     </li><li>
-                      <a href="/Website/es/community/addons/">Addons</a>
+                      <a
+                        href="/Website/es/community/addons/">Addons</a>
                     </li><li>
-                      <a href="/Website/es/community/telemetry/">Telemetry</a>
+                      <a
+                        href="/Website/es/community/telemetry/">Telemetry</a>
                     </li></ul></li><li>
-          <a href="/Website/es/docs/">Documentación</a><ul><li>
-                  <a href="https://wiki.freecad.org/User_hub" target="_blank" rel="noopener noreferrer">User Manual<svg class="icon-external"
+          <a
+            href="/Website/es/docs/">Documentación</a><ul><li>
+                  <a
+                    href="https://wiki.freecad.org/User_hub" target="_blank" rel="external noreferrer nofollow">User manual<svg
+    class="icon-external"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/external.svg#external"></use>
   </svg></a>
                 </li><li>
-                  <a href="/Website/es/dev/">Development Handbook</a>
+                  <a
+                    href="/Website/es/dev/">Development Handbook</a>
                 </li><li>
-                  <a href="https://freecad.github.io/SourceDoc/" target="_blank" rel="noopener noreferrer">FreeCAD API<svg class="icon-external"
+                  <a
+                    href="https://freecad.github.io/SourceDoc/" target="_blank" rel="external noreferrer nofollow">FreeCAD API<svg
+    class="icon-external"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/external.svg#external"></use>
   </svg></a>
-                </li></ul></li></ul>
+                </li></ul></li><li>
+          <a
+            href="/Website/es/donate/">❤ Donate</a><ul></ul></li></ul>
 </nav>
-<div class="share-links"><a href="https://forum.freecad.org"
-      title="Forum"
-      target="_blank" rel="noopener"><svg class="icon-forum"
+<div class="share-links"><a
+      href="https://forum.freecad.org"
+      title="forum"
+      target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon-forum"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/forum.svg#forum"></use>
-  </svg></a><a href="https://github.com/freecad"
-      title="Github"
-      target="_blank" rel="noopener"><svg class="icon-github"
+  </svg></a><a
+      href="https://github.com/freecad"
+      title="github"
+      target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon-github"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/github.svg#github"></use>
-  </svg></a><a href="https://codeberg.org/freecad"
-      title="Codeberg"
-      target="_blank" rel="noopener"><svg class="icon-codeberg"
+  </svg></a><a
+      href="https://codeberg.org/freecad"
+      title="codeberg"
+      target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon-codeberg"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/codeberg.svg#codeberg"></use>
-  </svg></a><a href="https://social.freecad.org/@freecad"
-      title="Mastodon"
-      target="_blank" rel="noopener"><svg class="icon-mastodon"
+  </svg></a><a
+      href="https://social.freecad.org/@freecad"
+      title="mastodon"
+      target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon-mastodon"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/mastodon.svg#mastodon"></use>
-  </svg></a><a href="https://www.reddit.com/r/freecad"
-      title="Reddit"
-      target="_blank" rel="noopener"><svg class="icon-reddit"
+  </svg></a><a
+      href="https://www.reddit.com/r/freecad"
+      title="reddit"
+      target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon-reddit"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/reddit.svg#reddit"></use>
-  </svg></a><a href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
-      title="Matrix"
-      target="_blank" rel="noopener"><svg class="icon-matrix"
+  </svg></a><a
+      href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+      title="matrix"
+      target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon-matrix"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/matrix.svg#matrix"></use>
-  </svg></a><a href="https://discord.gg/w2cTKGzccC"
-      title="Discord"
-      target="_blank" rel="noopener"><svg class="icon-discord"
+  </svg></a><a
+      href="https://discord.gg/w2cTKGzccC"
+      title="discord"
+      target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon-discord"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/discord.svg#discord"></use>
-  </svg></a><a href="https://www.facebook.com/freecad"
-      title="Facebook"
-      target="_blank" rel="noopener"><svg class="icon-facebook"
+  </svg></a><a
+      href="https://www.facebook.com/freecad"
+      title="facebook"
+      target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon-facebook"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/facebook.svg#facebook"></use>
-  </svg></a><a href="https://www.linkedin.com/groups/4295230"
-      title="Linkedin"
-      target="_blank" rel="noopener"><svg class="icon-linkedin"
+  </svg></a><a
+      href="https://www.linkedin.com/groups/4295230"
+      title="linkedin"
+      target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon-linkedin"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/linkedin.svg#linkedin"></use>
-  </svg></a><a href="/Website/es/fedishare.html#title=What%E2%80%99s&#43;new&#43;in&#43;FEM&#43;for&#43;FreeCAD&#43;1.1%3F&amp;description=Now&#43;that&#43;the&#43;feature&#43;freeze&#43;for&#43;FreeCAD&#43;1.1&#43;is&#43;on%2C&#43;and&#43;we&#43;are&#43;not&#43;too&#43;far&#43;off&#43;from&#43;the&#43;final&#43;release%2C&#43;let%E2%80%99s&#43;summarize&#43;the&#43;main&#43;changes&#43;in&#43;the&#43;FEM&#43;workbench.&#43;Just&#43;like&#43;in&#43;the&#43;case&#43;of&#43;the&#43;revolutionary&#43;%E2%80%A6%0A%23fem&amp;url=https://FreeCAD.github.io/Website/es/news/what-is-new-in-fem-for-freecad-1-1/"
+  </svg></a><a
+  href="/Website/es/fedishare.html#title=What%E2%80%99s&#43;new&#43;in&#43;FEM&#43;for&#43;FreeCAD&#43;1.1%3F&amp;description=Now&#43;that&#43;the&#43;feature&#43;freeze&#43;for&#43;FreeCAD&#43;1.1&#43;is&#43;on%2C&#43;and&#43;we&#43;are&#43;not&#43;too&#43;far&#43;off&#43;from&#43;the&#43;final&#43;release%2C&#43;let%E2%80%99s&#43;summarize&#43;the&#43;main&#43;changes&#43;in&#43;the&#43;FEM&#43;workbench.&#43;Just&#43;like&#43;in&#43;the&#43;case&#43;of&#43;the&#43;revolutionary&#43;%E2%80%A6%0A%23fem&amp;url=https://FreeCAD.github.io/Website/es/news/what-is-new-in-fem-for-freecad-1-1/"
   title="Compartir en Fediverse"
-  target="_blank" rel="noopener"><svg class="icon-fediverse"
+  target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon-fediverse"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/fediverse.svg#fediverse"></use>
   </svg></a>
 </div><div class="copyright"><span>
-    &copy; 2026 <a href="/Website/es/" title="FreeCAD">FreeCAD</a>
+    &copy; 2026
+    <a
+      href="/Website/es/"
+      title="FreeCAD">FreeCAD</a>
   </span><span>
-  <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons" rel="license">
-    CC BY-SA<svg class="icon-external"
+  <a
+    href="https://creativecommons.org/licenses/by-sa/4.0/"
+    title="Creative Commons"
+    target="_blank" rel="license external noreferrer nofollow">
+
+    CC BY-SA<svg
+    class="icon-external"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/external.svg#external"></use>
@@ -648,8 +821,14 @@
 </span>
 
 <span>
-  Made with ♥︎ thanks to <a href="https://gohugo.io/" title="Hugo SSG" rel="external noreferrer" target="_blank">
-    Hugo<svg class="icon-external"
+  Made with ♥︎ thanks to
+  <a
+    href="https://gohugo.io/"
+    title="Hugo SSG"
+    target="_blank" rel="external noreferrer nofollow">
+
+    Hugo<svg
+    class="icon-external"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/external.svg#external"></use>
@@ -658,19 +837,17 @@
 <span>
     Modified: 2026-05-05
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/17615c056717da0e1d8134a1316f96bf1c2f37b7">
-        17615c056<svg class="icon-external"
+      Commit: <a href="https://github.com/freecad/website/commit/17615c056717da0e1d8134a1316f96bf1c2f37b7">17615c056<svg
+    class="icon-external"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/external.svg#external"></use>
   </svg></a>
     </span></div>
-</footer><script src="/Website/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+</footer><script
+    src="/Website/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
     type="text/javascript"
     defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
-  </script><script src="/Website/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
-    type="text/javascript"
-    defer integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous">
   </script></body>
 
 </html>
