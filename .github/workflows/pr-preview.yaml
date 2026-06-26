@@ -53,7 +53,7 @@ jobs:
     steps:
       - name: Determine action (deploy or clean)
         id: determine-action
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           script: |
             const isPRComment = !!context.payload.issue?.pull_request;
@@ -99,7 +99,7 @@ jobs:
       - name: Fetch PR details
         id: pr
         if: steps.determine-action.outputs.pr != ''
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         env:
           PR_NUMBER: ${{ steps.determine-action.outputs.pr }}
         with:
@@ -222,7 +222,7 @@ jobs:
           key: ${{ steps.cache-restore.outputs.cache-primary-key }}
 
       - name: Post or update PR preview comment
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         env:
           PR_NUMBER: ${{ needs.action.outputs.pr }}
           PREVIEW_BASE_URL: ${{ env.PREVIEW_BASE_URL }}
@@ -298,7 +298,7 @@ jobs:
           fi
 
       - name: Comment cleanup confirmation
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         if: github.event_name == 'issue_comment'
         env:
           PR_NUMBER: ${{ needs.action.outputs.pr }}
