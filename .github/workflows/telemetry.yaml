@@ -23,7 +23,7 @@ jobs:
 
       - name: Restore Telemetry cache
         id: cache-restore
-        uses: actions/cache/restore@v5
+        uses: actions/cache/restore@v6
         with:
           path: .cache/telemetry
           key: telemetry-${{ github.ref_name }}
@@ -63,7 +63,7 @@ jobs:
 
 
       - name: Save Telemetry cache
-        uses: actions/cache/save@v5
+        uses: actions/cache/save@v6
         with:
           path: .cache/telemetry
           key: telemetry-${{ github.ref_name }}

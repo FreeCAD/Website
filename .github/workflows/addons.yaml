@@ -23,7 +23,7 @@ jobs:
 
       - name: Restore Addons cache
         id: cache-restore
-        uses: actions/cache/restore@v5
+        uses: actions/cache/restore@v6
         with:
           path: .cache/addons
           key: addons-${{ github.ref_name }}
@@ -61,7 +61,7 @@ jobs:
           delete-branch: true
 
       - name: Save Addons cache
-        uses: actions/cache/save@v5
+        uses: actions/cache/save@v6
         with:
           path: .cache/addons
           key: addons-${{ github.ref_name }}
