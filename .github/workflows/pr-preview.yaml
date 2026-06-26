@@ -124,7 +124,7 @@ jobs:
     steps:
 
       - name: Checkout PR branch
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           ref: ${{ needs.action.outputs.sha }}
           submodules: recursive
@@ -269,7 +269,7 @@ jobs:
     steps:
 
       - name: Checkout pages branch for cleanup
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           ref: pages
           fetch-depth: 0
