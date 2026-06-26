@@ -93,7 +93,7 @@
   <meta property="og:locale" content="fr_FR">
   <meta property="og:type" content="article">
     <meta property="article:section" content="dev">
-    <meta property="article:modified_time" content="2026-05-06T10:42:03+02:00">
+    <meta property="article:modified_time" content="2026-06-26T14:07:56+02:00">
 </head><body
     class="single type-dev kind-page "
     id="top">
@@ -216,12 +216,12 @@
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/words.svg#words"></use>
-  </svg>596 mots</span><span class="meta"><svg
+  </svg>668 mots</span><span class="meta"><svg
     class="icon-time"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/time.svg#time"></use>
-  </svg>3 min</span></div></section><nav class="toc">
+  </svg>4 min</span></div></section><nav class="toc">
   <input
     type="checkbox"
     id="toc-checkbox"
@@ -358,16 +358,106 @@ Converters from YAML to TOML or JSON and vice-versa are available online if nece
     focusable="false">
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
-</h2><p>TODO&hellip;</p>
-<figure>
+</h2><figure>
   <blockquote class="note"><svg
     class="icon-note"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/note.svg#note"></use>
-  </svg>Remarque<p>For all Hugo methods, functions, and default fields, the <code>CamelCase</code> formatting is used.</p>
-<p>For all custom Trigo theme naming and fields, <code>snake_case</code> formatting is used instead to help distinguish from official Hugo syntax.
+  </svg>Remarque<p>For all Hugo default fields, <code>camelCase</code> is used.
+For all custom Trigo theme naming and fields, <code>snake_case</code> is used instead to help distinguish from official Hugo syntax.
 CSS classes and IDs use hyphens like <code>custom-class</code>.</p></blockquote></figure>
+<table>
+  <thead>
+      <tr>
+          <th>Field name</th>
+          <th>Value type</th>
+          <th>Example</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>authors</code></td>
+          <td>string</td>
+          <td>Alice and Bob</td>
+      </tr>
+      <tr>
+          <td><code>categories</code></td>
+          <td>string (options)</td>
+          <td>event</td>
+      </tr>
+      <tr>
+          <td><code>cover</code></td>
+          <td>map</td>
+          <td>{&ldquo;image&rdquo;: &ldquo;img.webp&rdquo;, &ldquo;caption&rdquo;: None}</td>
+      </tr>
+      <tr>
+          <td><code>date</code></td>
+          <td>date</td>
+          <td>2020-01-02</td>
+      </tr>
+      <tr>
+          <td><code>description</code></td>
+          <td>string</td>
+          <td>How to write great articles.</td>
+      </tr>
+      <tr>
+          <td><code>draft</code></td>
+          <td>bool</td>
+          <td>False</td>
+      </tr>
+      <tr>
+          <td><code>icon</code></td>
+          <td>string</td>
+          <td>puzzle</td>
+      </tr>
+      <tr>
+          <td><code>icon_cms</code></td>
+          <td>string</td>
+          <td>bolt</td>
+      </tr>
+      <tr>
+          <td><code>lastmod</code></td>
+          <td>date</td>
+          <td>2021-02-03</td>
+      </tr>
+      <tr>
+          <td><code>layout</code></td>
+          <td>string</td>
+          <td>archives</td>
+      </tr>
+      <tr>
+          <td><code>linkTitle</code></td>
+          <td>string</td>
+          <td>Admin</td>
+      </tr>
+      <tr>
+          <td><code>redirect</code></td>
+          <td>string</td>
+          <td>auto</td>
+      </tr>
+      <tr>
+          <td><code>tags</code></td>
+          <td>list[string]</td>
+          <td>[code, python] (can be inline or block array)</td>
+      </tr>
+      <tr>
+          <td><code>title</code></td>
+          <td>string</td>
+          <td>A great title</td>
+      </tr>
+      <tr>
+          <td><code>versions</code></td>
+          <td>list[string]</td>
+          <td>[&ldquo;1.0&rdquo;, &ldquo;1.1&rdquo;] (can be inline or block array)</td>
+      </tr>
+      <tr>
+          <td><code>weight</code></td>
+          <td>int</td>
+          <td>1</td>
+      </tr>
+  </tbody>
+</table>
 <h2
   id="yaml-syntax">YAML syntax<a class="heading-anchor"
      href="#yaml-syntax"
@@ -885,9 +975,9 @@ CSS classes and IDs use hyphens like <code>custom-class</code>.</p></blockquote>
   </svg></a>
 </span>
 <span>
-    Modified: 2026-05-06
+    Modified: 2026-06-26
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/9e6ffad0ced837cb1ca208586c9f02e52641b57f">9e6ffad0c<svg
+      Commit: <a href="https://github.com/freecad/website/commit/f7747eb3974afdad15458e218a931f99df0e201f">f7747eb39<svg
     class="icon-external"
     aria-hidden="true"
     focusable="false">
