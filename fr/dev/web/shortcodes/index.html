@@ -93,7 +93,7 @@
   <meta property="og:locale" content="fr_FR">
   <meta property="og:type" content="article">
     <meta property="article:section" content="dev">
-    <meta property="article:modified_time" content="2026-06-19T11:20:33+02:00">
+    <meta property="article:modified_time" content="2026-06-27T13:19:47+02:00">
 </head><body
     class="single type-dev kind-page "
     id="top">
@@ -272,10 +272,10 @@
                 href="/Website/fr/dev/web/guidelines/">Guidelines</a>
             </li><li>
               <a
-                href="/Website/fr/dev/web/structure/">Structure and organization</a>
+                href="/Website/fr/dev/web/structure/">Structure</a>
             </li><li>
               <a
-                href="/Website/fr/dev/web/markdown/">Markdown Syntax Guide</a>
+                href="/Website/fr/dev/web/markdown/">Markdown</a>
             </li><li>
               <a
                 href="/Website/fr/dev/web/shortcodes/" id="current-page" class="active" aria-current="page">Shortcodes</a>
@@ -284,13 +284,13 @@
                 href="/Website/fr/dev/web/front-matter/">Front matter</a>
             </li><li>
               <a
-                href="/Website/fr/dev/web/locales/">Translations and languages</a>
+                href="/Website/fr/dev/web/locales/">Translations</a>
             </li><li>
               <a
                 href="/Website/fr/dev/web/cms/">CMS</a>
             </li><li>
               <a
-                href="/Website/fr/dev/web/theme/">Theme, project setup, and configuration</a>
+                href="/Website/fr/dev/web/theme/">Setup and Theme</a>
             </li></ul>
       </li>
     </ul><p class="toc-label"><svg
@@ -670,7 +670,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
 </span></span><span class="line"><span class="cl">  <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">branch</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;content&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
 </span></span><span class="line"><span class="cl">    <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">leaf</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;_index.md&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
 </span></span><span class="line"><span class="cl">    <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">branch</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;docs&#34;</span><span class="w"> </span><span class="nx">state</span><span class="o">=</span><span class="s">&#34;closed&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
-</span></span><span class="line"><span class="cl">      <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">leaf</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;_index.md&#34;</span><span class="w"> </span><span class="nx">class</span><span class="o">=</span><span class="s">&#34;accent&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">leaf</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;_index.md&#34;</span><span class="w"> </span><span class="nx">css_class</span><span class="o">=</span><span class="s">&#34;pastel1&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
 </span></span><span class="line"><span class="cl">      <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">leaf</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;introduction.md&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
 </span></span><span class="line"><span class="cl">      <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">leaf</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;introduction.fr.md&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
 </span></span><span class="line"><span class="cl">    <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="nx">branch</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
@@ -733,7 +733,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
   <use href="/Website/svg/folder_closed.svg#folder_closed"></use>
 </svg></span>docs</label><ul>
 <li>
-  <span class="leaf"><svg
+  <span class="leaf pastel1"><svg
     class="icon-file"
     aria-hidden="true"
     focusable="false">
@@ -1665,8 +1665,8 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/words.svg#words"></use>
-  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">collection</span><span class="w"> </span><span class="nx">collection</span><span class="o">=</span><span class="s">&#34;dev&#34;</span><span class="w"> </span><span class="nx">first</span><span class="o">=</span><span class="nx">3</span><span class="w"> </span><span class="nx">class</span><span class="o">=</span><span class="s">&#34;gradient&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
-<div class="card-list wide">
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">collection</span><span class="w"> </span><span class="nx">collection</span><span class="o">=</span><span class="s">&#34;dev&#34;</span><span class="w"> </span><span class="nx">first</span><span class="o">=</span><span class="nx">3</span><span class="w"> </span><span class="nx">css_class</span><span class="o">=</span><span class="s">&#34;gradient&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+<div class="card-list wide gradient">
     <div
       class="cards"><a
   class="card"
@@ -1781,7 +1781,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/words.svg#words"></use>
-  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="k">block</span><span class="w"> </span><span class="nx">title</span><span class="o">=</span><span class="s">&#34;My Title&#34;</span><span class="w"> </span><span class="nx">class</span><span class="o">=</span><span class="s">&#34;section&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="k">block</span><span class="w"> </span><span class="nx">title</span><span class="o">=</span><span class="s">&#34;My Title&#34;</span><span class="w"> </span><span class="nx">css_class</span><span class="o">=</span><span class="s">&#34;section&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">group</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
 </span></span><span class="line"><span class="cl">
@@ -1809,7 +1809,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
 </span></span><span class="line"><span class="cl">![](/FreeCAD-symbol.webp)
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="k">block</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
-<div class="block-shortcode wide"><h2 class="block-title">My Title</h2><div class="block-content"><div class="group"><p>This is <strong>Markdown</strong> <em>content</em> between <code>block</code> and <code>group</code> shortcode tags.</p>
+<div class="block-shortcode wide section"><h2 class="block-title">My Title</h2><div class="block-content"><div class="group"><p>This is <strong>Markdown</strong> <em>content</em> between <code>block</code> and <code>group</code> shortcode tags.</p>
 <table>
   <thead>
       <tr>
@@ -1893,10 +1893,10 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     <use href="/Website/svg/zoom.svg#zoom"></use>
   </svg><img
   src="/Website/FreeCAD-symbol.webp"
-  alt="FreeCAD Symbol"
+  alt="Image de secours"
   loading="lazy"
   fetchpriority="low"
-  decoding="async" title="FreeCAD Symbol" width="400" height="480" srcset="/Website/FreeCAD-symbol.webp 400w" sizes="95vw"></button>
+  decoding="async" width="400" height="480" srcset="/Website/FreeCAD-symbol.webp 400w" sizes="95vw"></button>
         <div id="img-001" popover>
           <button
             class="close"
@@ -1904,10 +1904,10 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
             popovertargetaction="hide"
             aria-label="Fermer la visionneuse dimages"><img
   src="/Website/FreeCAD-symbol.webp"
-  alt="FreeCAD Symbol"
+  alt="Image de secours"
   loading="lazy"
   fetchpriority="low"
-  decoding="async" title="FreeCAD Symbol" width="400" height="480" srcset="/Website/FreeCAD-symbol.webp 400w" sizes="95vw"><svg
+  decoding="async" width="400" height="480" srcset="/Website/FreeCAD-symbol.webp 400w" sizes="95vw"><svg
     class="icon-cross"
     aria-hidden="true"
     focusable="false">
@@ -2009,7 +2009,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/tri_left.svg#tri_left"></use>
-  </svg>Markdown Syntax Guide</a><a
+  </svg>Markdown</a><a
             class="button prev"
             href="/Website/fr/dev/web/front-matter/"
             title="Article précédent">Front matter<svg
@@ -2228,9 +2228,9 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
   </svg></a>
 </span>
 <span>
-    Modified: 2026-06-19
+    Modified: 2026-06-27
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/67966ba8cec86365d0de35f1910bebc2fdb3c8b5">67966ba8c<svg
+      Commit: <a href="https://github.com/freecad/website/commit/6cd0fe9f7eca6dfa94073171c4ffa6bf28958345">6cd0fe9f7<svg
     class="icon-external"
     aria-hidden="true"
     focusable="false">
