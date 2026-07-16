@@ -7,7 +7,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 /* Hero CSS stylesheet. */
 
 .hero {
-  --hero-pattern: color-mix(in srgb, var(--accent) 12%, transparent);
+  --hero-pattern: color-mix(in srgb, var(--accent) 22%, transparent);
   min-height: calc(var(--width) * 0.25);
   height: auto;
   overflow: hidden;
@@ -64,7 +64,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
       var(--hero-pattern) 63px 64px
     );
   background-size: 64px 64px;
-  opacity: 0.75;
+  opacity: 0.9;
   -webkit-mask-image: radial-gradient(
     ellipse 72% 100% at 80% 50%,
     black 0 28%,
@@ -83,6 +83,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 }
 
 .dark .hero {
+  --hero-pattern: color-mix(in srgb, var(--accent) 17%, transparent);
   background:
     radial-gradient(
       80% 70% at -5% -5%,
