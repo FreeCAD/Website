@@ -6,6 +6,7 @@ buttons:
   - link: /download/
     label: Download FreeCAD
     class: primary
+    latest: true
   - link: latest-release
     label: Read release notes
     class: secondary

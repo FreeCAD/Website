@@ -7,7 +7,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 {{- /* Homepage template:
 
   - Render title, description and custom buttons from homepage front matter.
-  - Resolve the latest release for the hero metadata and release-notes CTA.
+  - Resolve the latest release for the versioned download CTA and release-notes link.
   - Render hero article with its title and cover (fall back to homepage cover).
   - Render homepage content.
 */ -}}
@@ -49,13 +49,22 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
         </p>
       {{- end -}}
 
-      {{- with $latest_version -}}
+      <div class="hero-details">
         <p class="hero-meta">
-          <span>Latest release: {{ . }}</span>
+          <span>Windows</span>
           <span aria-hidden="true">·</span>
-          <span>Windows · macOS · GNU/Linux</span>
+          <span>macOS</span>
+          <span aria-hidden="true">·</span>
+          <span>GNU/Linux</span>
         </p>
-      {{- end -}}
+        <p class="hero-trust">
+          <span>Free and open source</span>
+          <span aria-hidden="true">·</span>
+          <span>Open formats</span>
+          <span aria-hidden="true">·</span>
+          <span>Editable project files</span>
+        </p>
+      </div>
 
       {{- with $buttons -}}
         <div class="buttons">
@@ -63,6 +72,10 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
             {{- $button_link := .link -}}
             {{- $button_label := .label -}}
+
+            {{- if and .latest $latest_version -}}
+              {{- $button_label = printf "%s %s" $button_label $latest_version -}}
+            {{- end -}}
 
             {{- if eq $button_link "latest-release" -}}
               {{- with $latest_release -}}

@@ -165,15 +165,30 @@ main > :is(.hero:only-child, .not-found) {
   text-wrap: balance;
 }
 
-.kind-home .hero .hero-meta {
+.kind-home .hero .hero-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(var(--gap) * 0.35);
+}
+
+.kind-home .hero .hero-meta,
+.kind-home .hero .hero-trust {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: calc(var(--gap) * 0.5);
   margin: 0;
-  color: var(--tertiary);
   font-size: var(--s);
   line-height: 1.4;
+}
+
+.kind-home .hero .hero-meta {
+  color: var(--secondary);
+}
+
+.kind-home .hero .hero-trust {
+  color: var(--tertiary);
 }
 
 .kind-home .content,
