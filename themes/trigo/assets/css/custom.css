@@ -751,6 +751,7 @@ main .block-shortcode[id] {
 }
 
 .kind-home .onboarding-section .block-content > .group {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -762,8 +763,50 @@ main .block-shortcode[id] {
   box-shadow: var(--shadow);
 }
 
+.kind-home .onboarding-section .block-content > .group::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: var(--line);
+  background: var(--accent);
+  border-radius: var(--radius) 0 0 var(--radius);
+}
+
+.kind-home .onboarding-marker {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap);
+  margin-block-end: var(--gap);
+  color: var(--accent);
+}
+
+.kind-home .onboarding-marker-icon {
+  display: grid;
+  place-items: center;
+  width: calc(var(--gap) * 2.5);
+  height: calc(var(--gap) * 2.5);
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, var(--entry));
+  border-radius: var(--radius);
+}
+
+.kind-home .onboarding-marker-icon .icon {
+  width: var(--l);
+  height: var(--l);
+}
+
+.kind-home .onboarding-marker-number {
+  font-size: var(--s);
+  font-weight: bold;
+  letter-spacing: 0.12em;
+  opacity: 0.65;
+}
+
 .kind-home .onboarding-card h3 {
   margin-top: 0;
+  text-align: left;
   color: var(--accent);
 }
 

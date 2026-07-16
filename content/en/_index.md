@@ -19,6 +19,8 @@ hero:
 
 {{< group css_class="onboarding-card" >}}
 
+{{< onboarding_marker number="01" icon="download" >}}
+
 ### Start designing
 
 Download FreeCAD and begin your first parametric model.
@@ -29,6 +31,8 @@ Download FreeCAD and begin your first parametric model.
 
 {{< group css_class="onboarding-card" >}}
 
+{{< onboarding_marker number="02" icon="gear" >}}
+
 ### Explore what FreeCAD can do
 
 Browse workflows for product design, BIM, manufacturing, and 3D printing.
@@ -38,6 +42,8 @@ Browse workflows for product design, BIM, manufacturing, and 3D printing.
 {{< /group >}}
 
 {{< group css_class="onboarding-card" >}}
+
+{{< onboarding_marker number="03" icon="manual" >}}
 
 ### Learn FreeCAD
 

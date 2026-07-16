@@ -1,0 +1,4 @@
+{{- /* Decorative numbered marker for homepage onboarding cards. */ -}}
+{{- $number := cond .IsNamedParams (.Get "number") (.Get 0) -}}
+{{- $icon := cond .IsNamedParams (.Get "icon") (.Get 1) -}}
+<div class="onboarding-marker" aria-hidden="true"><span class="onboarding-marker-icon">{{- with $icon -}}{{- partialCached "utils/icon.html" . (printf "onboarding-marker-%s" .) -}}{{- end -}}</span><span class="onboarding-marker-number">{{ $number }}</span></div>
