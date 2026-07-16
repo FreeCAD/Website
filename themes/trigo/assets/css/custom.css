@@ -739,6 +739,38 @@ a.sponsor-entry:hover {
 
 /* Homepage proof points and workflow cards */
 
+.kind-home .onboarding-section .block-content {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  max-width: var(--width);
+}
+
+.kind-home .onboarding-section .block-content > .group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: calc(var(--gap) * 1.25);
+  background: var(--entry);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.kind-home .onboarding-card h3 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+.kind-home .onboarding-card > p {
+  flex: 1;
+}
+
+.kind-home .onboarding-card .button-shortcode {
+  margin-top: var(--gap);
+}
+
 .kind-home .proof-strip .block-content {
   align-items: stretch;
 }

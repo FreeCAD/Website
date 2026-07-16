@@ -14,11 +14,37 @@ hero:
   link: /features/
 ---
 
-{{< block title="One open tool for real-world design" css_class="section" title_class="accent" >}}
+{{< block title="What do you want to do?" css_class="section onboarding-section" title_class="accent" >}}
 
-FreeCAD is a free, open-source parametric modeler for product design, engineering, architecture, BIM, manufacturing, and 3D printing. Build with precise real-world units, keep a clear modeling history, and export your work in the formats your projects need.
+{{< group css_class="onboarding-card" >}}
 
-{{< button url="/features/" label="Explore FreeCAD's features" icon="gear" >}}
+### Start designing
+
+Download FreeCAD and begin your first parametric model.
+
+{{< button url="/download/" label="Download FreeCAD" icon="download" >}}
+
+{{< /group >}}
+
+{{< group css_class="onboarding-card" >}}
+
+### Explore what FreeCAD can do
+
+Browse workflows for product design, BIM, manufacturing, and 3D printing.
+
+{{< button url="/features/" label="Explore workflows" icon="gear" >}}
+
+{{< /group >}}
+
+{{< group css_class="onboarding-card" >}}
+
+### Learn FreeCAD
+
+Find documentation, examples, and guidance for your next step.
+
+{{< button url="/docs/" label="Open documentation" icon="manual" >}}
+
+{{< /group >}}
 
 {{< /block >}}
 
