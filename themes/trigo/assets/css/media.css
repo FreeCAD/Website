@@ -67,8 +67,24 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
   /* List and Single pages */
   .kind-home .hero {
-    min-height: calc(100vh - var(--header-height));
+    min-height: auto;
     flex-direction: column;
+    align-items: stretch;
+    padding-block: clamp(3rem, 12vw, 6rem);
+  }
+
+  .kind-home .hero-copy,
+  .kind-home .hero-visual {
+    width: 100%;
+    max-width: var(--width);
+  }
+
+  .kind-home .hero-copy {
+    order: 1;
+  }
+
+  .kind-home .hero-visual {
+    order: 2;
   }
 
   .hero {
@@ -79,6 +95,24 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   .hero-column {
     max-width: var(--width);
     flex: none;
+  }
+
+  .kind-home .hero .title {
+    font-size: clamp(2.25rem, 11vw, 4rem);
+  }
+
+  .kind-home .hero-visual > .title {
+    font-size: clamp(2rem, 9vw, 3.25rem);
+  }
+
+  .kind-home .hero .buttons {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .kind-home .hero .button {
+    width: 100%;
+    margin-inline: 0;
   }
 
   .metadata,
@@ -96,6 +130,19 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
   .cover img {
     height: calc(100vh - var(--header-height));
+  }
+
+  .kind-home .hero-visual .cover img {
+    height: auto;
+    max-height: none;
+    width: 100%;
+  }
+
+  .kind-home .hero-visual > .title,
+  .kind-home .hero-visual .cover {
+    width: 100%;
+    max-width: 20rem;
+    margin-inline: auto;
   }
 
   main:has(> .toc + .content) .content {
@@ -156,6 +203,15 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
   .block-content > * {
     max-width: calc(var(--width) - (var(--gap) * 2));
+  }
+
+  .workflow-grid {
+    grid-template-columns: 1fr;
+    gap: var(--gap);
+  }
+
+  .workflow-card-image {
+    height: clamp(12rem, 55vw, 18rem);
   }
 
   .footer-menu > ul > li {
@@ -267,6 +323,14 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 }
 
 
+@media screen and (max-width: 900px) and (min-width: 501px) {
+
+  .workflow-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
 /* Bigger screen devices (e.g. desktops, laptops, high-end tablets). */
 @media screen and (min-width: 1000px) {
 
@@ -281,10 +345,19 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 
 /* Reduced motion devices. */
-@media (prefers-reduced-motion) {
+@media (prefers-reduced-motion: reduce) {
 
   :root {
     --transform-hover: none;
     --transform-active: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }

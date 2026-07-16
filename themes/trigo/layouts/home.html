@@ -7,6 +7,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 {{- /* Homepage template:
 
   - Render title, description and custom buttons from homepage front matter.
+  - Resolve the latest release for the hero metadata and release-notes CTA.
   - Render hero article with its title and cover (fall back to homepage cover).
   - Render homepage content.
 */ -}}
@@ -16,21 +17,45 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
   {{- $buttons := .Params.buttons -}}
   {{- $hero := .Params.hero | default hugo.Sites.Default.Home.Params.hero -}}
+  {{- $release_section := site.GetPage "/download/releases/" -}}
+  {{- $latest_release := false -}}
+
+  {{- with $release_section -}}
+    {{- with .Pages.ByDate.Reverse -}}
+      {{- $latest_release = index . 0 -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- $latest_version := "" -}}
+
+  {{- with $latest_release -}}
+    {{- $latest_version = .Params.versions -}}
+
+    {{- if reflect.IsSlice $latest_version -}}
+      {{- $latest_version = index $latest_version (sub (len $latest_version) 1) -}}
+    {{- end -}}
+  {{- end -}}
 
   <section class="hero{{ with .Params.background_class }} {{ . }}{{ end }}">
 
-    <div class="hero-column">
+    <div class="hero-column hero-copy">
       <h1 class="title{{ with .Params.title_class }} {{ . }}{{ end -}}">
         {{- .Title -}}
       </h1>
 
       {{- with .Description -}}
-        <h3 class="description{{ with $.Params.description_class }} {{ . }}{{ end -}}">
+        <p class="description{{ with $.Params.description_class }} {{ . }}{{ end -}}">
           {{- . -}}
-        </h3>
+        </p>
       {{- end -}}
 
-      <h3>🚧 Work in Progress... Come back soon! 🏗️</h3>
+      {{- with $latest_version -}}
+        <p class="hero-meta">
+          <span>Latest release: {{ . }}</span>
+          <span aria-hidden="true">·</span>
+          <span>Windows · macOS · GNU/Linux</span>
+        </p>
+      {{- end -}}
 
       {{- with $buttons -}}
         <div class="buttons">
@@ -38,6 +63,12 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
             {{- $button_link := .link -}}
             {{- $button_label := .label -}}
+
+            {{- if eq $button_link "latest-release" -}}
+              {{- with $latest_release -}}
+                {{- $button_link = .RelPermalink -}}
+              {{- end -}}
+            {{- end -}}
 
             {{- with site.GetPage $button_link -}}
               {{- $key := partialCached "utils/cache_key.html" . . -}}
@@ -89,9 +120,11 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
       {{- with $hero_link -}}
         <a
-          class="hero-column"
+          class="hero-column hero-visual"
           href="{{ . }}"
           {{- if $is_external }} target="_blank" rel="external noreferrer nofollow"{{ end -}}>
+      {{- else -}}
+        <div class="hero-column hero-visual">
       {{- end -}}
 
       {{- with $hero_title -}}
@@ -105,10 +138,17 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
       {{- end -}}
 
       {{- with $hero_cover -}}
-        {{- partialCached "main/cover.html" . . -}}
+        {{- partialCached "main/cover.html"
+          (dict "page" . "loading" "eager" "priority" "high")
+          (printf "homepage-cover-%s" .RelPermalink)
+        -}}
       {{- end -}}
 
-      {{- with $hero_link -}}</a>{{- end -}}
+      {{- with $hero_link -}}
+        </a>
+      {{- else -}}
+        </div>
+      {{- end -}}
 
     {{- end -}}
   </section>

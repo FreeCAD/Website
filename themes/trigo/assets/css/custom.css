@@ -735,3 +735,119 @@ a.sponsor-entry:hover {
   background: var(--entry);
   border-radius: var(--radius);
 }
+
+
+/* Homepage proof points and workflow cards */
+
+.kind-home .proof-strip .block-content {
+  align-items: stretch;
+}
+
+.kind-home .proof-strip .group {
+  padding: var(--gap);
+  text-align: center;
+}
+
+.kind-home .proof-strip .group h3 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+.kind-home .workflow-section .block-content {
+  display: block;
+  max-width: var(--width);
+}
+
+.kind-home .workflow-section .block-content > .workflow-grid {
+  max-width: var(--width);
+  width: 100%;
+}
+
+.workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: calc(var(--gap) * 1.5);
+  width: 100%;
+  max-width: var(--width);
+  margin: auto;
+}
+
+.workflow-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: var(--secondary);
+  background: var(--entry);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.workflow-card:hover {
+  color: var(--secondary);
+  filter: var(--filter);
+  transform: var(--transform-hover);
+}
+
+.workflow-card:focus-visible {
+  outline: var(--outline-focus);
+}
+
+.workflow-card-image {
+  height: clamp(11rem, 15vw, 17rem);
+  overflow: hidden;
+  background: var(--tone);
+}
+
+.workflow-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.workflow-card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: calc(var(--gap) * 1.25);
+}
+
+.workflow-card-content h3 {
+  margin: 0 0 calc(var(--gap) * 0.5);
+  color: var(--secondary);
+}
+
+.workflow-card-description {
+  flex: 1;
+  color: var(--tertiary);
+}
+
+.workflow-card-description p {
+  margin: 0;
+  font-size: var(--m);
+}
+
+.workflow-card-link {
+  margin-top: var(--gap);
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.workflow-card-link span {
+  margin-inline-start: calc(var(--gap) * 0.25);
+}
+
+.kind-home .project-section .block-content {
+  flex-wrap: wrap;
+}
+
+.kind-home .project-section .block-content > div:first-child {
+  flex: 1 1 100%;
+  max-width: var(--width);
+}
+
+.kind-home .project-section .block-content > .button-shortcode {
+  flex: 0 1 100%;
+  max-width: var(--width);
+}

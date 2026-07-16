@@ -17,6 +17,15 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 {{- $page := .Page -}}
 {{- $cover := "" -}}
 {{- $caption := "" -}}
+{{- $alt := "" -}}
+{{- $loading := "" -}}
+{{- $priority := "" -}}
+
+{{- if reflect.IsMap . -}}
+  {{- $page = .page -}}
+  {{- $loading = .loading -}}
+  {{- $priority = .priority -}}
+{{- end -}}
 
 {{- with $page.Params.cover -}}
   {{- with .image -}}
@@ -49,6 +58,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   {{- end -}}
 
   {{- $caption = .caption | plainify -}}
+  {{- $alt = .alt | plainify -}}
 {{- end -}}
 
 {{- /* Cover fallbacks. */ -}}
@@ -83,10 +93,12 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
       {{- partialCached "utils/process_image.html" (dict
         "image" .
-        "alt" ""
+        "alt" ($alt | default $caption)
         "title" $caption
+        "loading" $loading
+        "priority" $priority
         "attributes" dict
-        ) $key -}}
+        ) (printf "%s-%s-%s" $key $loading $priority) -}}
 
     {{- else -}}
       {{- warnf "Cover MediaType not supported for %q in page %q" $cover $page.LinkTitle -}}

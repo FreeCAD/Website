@@ -74,7 +74,18 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   gap: var(--gap);
   flex: 1;
   max-width: calc(var(--width) * 0.5);
+  min-width: 0;
   color: var(--secondary);
+}
+
+.hero-copy {
+  justify-content: center;
+}
+
+.hero-visual {
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 a.hero-column:hover {
@@ -88,7 +99,8 @@ main > :is(.hero:only-child, .not-found) {
 }
 
 .kind-home .hero {
-  min-height: calc(var(--width) * 0.5);
+  min-height: clamp(34rem, 76vh, 50rem);
+  width: 100%;
   flex-direction: row;
 }
 
@@ -96,9 +108,61 @@ main > :is(.hero:only-child, .not-found) {
 .description,
 .hero .button,
 .metadata {
-  display: inline-flex;
+  display: flex;
   max-width: var(--width);
   z-index: 2;
+}
+
+.kind-home .hero .title {
+  display: block;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.kind-home .hero .description {
+  font-size: clamp(1.2rem, 2vw, 1.75rem);
+  line-height: 1.35;
+  text-wrap: balance;
+}
+
+.kind-home .hero .hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: calc(var(--gap) * 0.5);
+  margin: 0;
+  color: var(--tertiary);
+  font-size: var(--s);
+  line-height: 1.4;
+}
+
+.kind-home .content,
+.kind-home .content p {
+  text-align: left;
+  text-align-last: left;
+}
+
+.hero .buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: calc(var(--gap) * 0.5);
+}
+
+.hero .button.primary {
+  color: var(--primary);
+  background: var(--accent);
+}
+
+.hero .button.primary:hover {
+  color: var(--primary);
+  background: var(--accent-hover);
+}
+
+.hero .button.secondary {
+  background: transparent;
+  box-shadow: none;
 }
 
 .kind-page:not(.layout-archives) :is(.title, .description) {
@@ -127,7 +191,7 @@ main > :is(.hero:only-child, .not-found) {
   justify-content: center;
   align-content: center;
   text-decoration: none;
-  white-space: nowrap;
+  white-space: normal;
   cursor: pointer;
   transition: var(--transition);
   box-shadow: var(--shadow);
@@ -162,7 +226,7 @@ input:checked + .button,
   filter: var(--filter);
 }
 
-.button:focus {
+.button:focus-visible {
   outline: var(--outline-focus);
 }
 
@@ -196,6 +260,27 @@ input:checked + .button,
   max-width: var(--width);
   max-height: calc(var(--width) * 0.5);
   z-index: 1;
+}
+
+.hero-visual .cover {
+  width: 100%;
+  max-width: 100%;
+}
+
+.hero-visual .cover img {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  max-height: min(50vh, 32rem);
+  object-fit: contain;
+}
+
+.hero-visual > .title {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 .cover svg.svg {

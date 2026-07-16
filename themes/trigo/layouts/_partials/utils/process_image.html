@@ -22,9 +22,9 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 {{- $resize_format := site.Params.resize_format | default "webp" -}}
 {{- $resize_dimensions := site.Params.resize_dimensions | default (slice 400 800 1600) -}}
-{{- $loading := site.Params.image_loading | default "lazy" -}}
-{{- $priority := site.Params.image_priority | default "low" -}}
-{{- $decoding := site.Params.image_decoding | default "async" -}}
+{{- $loading := .loading | default site.Params.image_loading | default "lazy" -}}
+{{- $priority := .priority | default site.Params.image_priority | default "low" -}}
+{{- $decoding := .decoding | default site.Params.image_decoding | default "async" -}}
 
 {{- $width := 0 -}}
 {{- $height := 0 -}}

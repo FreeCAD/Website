@@ -11,7 +11,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 */ -}}
 
 
-{{- $title := cond .IsHome site.Title (printf "%s | %s" site.Title .LinkTitle) -}}
+{{- $title := printf "%s | %s" site.Title .LinkTitle -}}
 {{- $description := or .Description site.Params.site_description -}}
 
 <head>
