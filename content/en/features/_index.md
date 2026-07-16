@@ -10,7 +10,7 @@ cover:
 ---
 
 
-{{< block title="Made to build for the real world" css_class="grid" title_class="accent" >}}
+{{< block title="Made to build for the real world" css_class="grid" title_class="accent" id="real-world-design" >}}
 
 {{< group >}}
 
@@ -40,7 +40,7 @@ FreeCAD features an advanced geometry engine based on Open CASCADE Technology. I
 {{< /block >}}
 
 
-{{< block title="A wi(l)dly parametric environment" css_class="dots" >}}
+{{< block title="A wi(l)dly parametric environment" css_class="dots" id="parametric-automation" >}}
 
 {{< group >}}
 
@@ -68,7 +68,7 @@ FreeCAD allows to import and export models and data to dozens of different file 
 {{< /block >}}
 
 
-{{< block title="A large multi-specialty ecosystem" css_class="section" >}}
+{{< block title="A large multi-specialty ecosystem" css_class="section" id="bim-and-ecosystem" >}}
 
 ![Building Information Modeling](bim.webp "Building Information Modeling")
 

@@ -11,6 +11,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   @param {string} [css_class] – Optional CSS class for whole block container.
   @param {string} [title_class] – Optional CSS class for title.
   @param {string} [content_class] – Optional CSS class for content.
+  @param {string} [id] – Optional stable anchor ID for the block.
 
   @return {HTML} Render full-width block layout container with optional title and content.
 
@@ -35,6 +36,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   {{- $block_class := cond (.IsNamedParams) (.Get "css_class") (.Get 2) -}}
   {{- $title_class := cond (.IsNamedParams) (.Get "title_class") (.Get 3) -}}
   {{- $content_class := cond (.IsNamedParams) (.Get "content_class") (.Get 4) -}}
+  {{- $block_id := cond (.IsNamedParams) (.Get "id") (.Get 5) -}}
 
   {{- $block_classes := slice "block-shortcode" "wide" -}}
   {{- with $block_class -}}
@@ -61,7 +63,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     {{- $content_classes = $content_classes | append . -}}
   {{- end -}}
 
-  <div class="{{ delimit $block_classes " " }}">
+  <div{{ with $block_id }} id="{{ . }}"{{ end }} class="{{ delimit $block_classes " " }}">
 
     {{- with $title -}}
       <h2 class="{{ delimit $title_classes " " }}">
