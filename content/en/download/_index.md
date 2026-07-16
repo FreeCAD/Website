@@ -32,7 +32,7 @@ designing with FreeCAD is more fun and powerful than ever. Oh, full freedom incl
 ## See the source code, it's open!
 {class="accent"}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+FreeCAD is developed in the open by contributors around the world. Inspect the source, report issues, improve documentation, or submit a patch — the project welcomes participation at every level.
 
 {{< /group >}}
 

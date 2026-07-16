@@ -3,6 +3,10 @@ title: Innovate Without Limits
 linkTitle: Features
 description: Powerful and open parametric design for everyone.
 icon_cms: bolt
+cover:
+  image: assembly.webp
+  caption: Parametric FreeCAD assembly model
+  alt: A parametric FreeCAD assembly model
 ---
 
 

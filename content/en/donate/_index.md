@@ -23,34 +23,28 @@ donate:
     messages:
       default: Choose the monthly sponsorship level
   corporate_label: Corporate
-icon_cms: favorite
+icon_cms: heart
 ---
 
 
 ### Donations Frequently Asked Questions
 
 {{< details summary="Why donate to FreeCAD?" name="faq" >}}
-Why donate to FreeCAD?
+Your donations help fund infrastructure, development grants, community events, and the day-to-day work that keeps FreeCAD available as free and open-source software.
 {{< /details >}}
 
 {{< details summary="How to donate?" name="faq" >}}
-How to donate?
+Choose a one-time donation or monthly sponsorship above, select an amount, and follow the payment instructions. Contributions are handled by the FreeCAD Project Association.
 {{< /details >}}
 
 {{< details summary="Sponsorship Tiers" name="faq" id="tiers" >}}
-Normal Sponsorship info.
-
-Bronze Sponsorship info.
-
-Silver Sponsorship info.
-
-Gold Sponsorship info.
+Monthly sponsors can choose a tier that fits their budget. Every tier supports the same project and receives our thanks; larger contributions simply provide more sustained support.
 {{< /details >}}
 
 {{< details summary="Corporate Sponsorship" name="faq" id="corporate" >}}
-Corporate Sponsorship info.
+Companies can support FreeCAD as corporate sponsors. This is a useful way to invest in an open tool that many teams and industries rely on; please contact the FreeCAD Project Association for details.
 {{< /details >}}
 
 {{< details summary="Payment options" name="faq" >}}
-Payment options info.
+The available payment methods and currencies are shown by the donation form. If your preferred option is not available, contact the project association before sending a contribution.
 {{< /details >}}
