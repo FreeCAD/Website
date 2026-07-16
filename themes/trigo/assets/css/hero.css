@@ -7,6 +7,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 /* Hero CSS stylesheet. */
 
 .hero {
+  --hero-pattern: color-mix(in srgb, var(--accent) 12%, transparent);
   min-height: calc(var(--width) * 0.25);
   height: auto;
   overflow: hidden;
@@ -20,6 +21,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   gap: var(--gap);
   text-align: center;
   position: relative;
+  isolation: isolate;
   background:
     radial-gradient(
       80% 70% at -5% -5%,
@@ -42,6 +44,42 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
       hsl(var(--section-hue) 20% 90%)
     );
   transition: var(--transition);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(
+      30deg,
+      transparent 0 63px,
+      var(--hero-pattern) 63px 64px
+    ),
+    repeating-linear-gradient(
+      150deg,
+      transparent 0 63px,
+      var(--hero-pattern) 63px 64px
+    );
+  background-size: 64px 64px;
+  opacity: 0.75;
+  -webkit-mask-image: radial-gradient(
+    ellipse 72% 100% at 80% 50%,
+    black 0 28%,
+    transparent 88%
+  );
+  mask-image: radial-gradient(
+    ellipse 72% 100% at 80% 50%,
+    black 0 28%,
+    transparent 88%
+  );
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 .dark .hero {
@@ -263,8 +301,14 @@ input:checked + .button,
 }
 
 .hero-visual .cover {
+  position: relative;
   width: 100%;
   max-width: 100%;
+  padding: calc(var(--gap) * 0.5);
+  border: var(--line) solid color-mix(in srgb, var(--accent) 20%, transparent);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--entry) 30%, transparent);
+  box-shadow: 0 1rem 3rem color-mix(in srgb, var(--primary) 12%, transparent);
 }
 
 .hero-visual .cover img {

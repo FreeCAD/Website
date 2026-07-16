@@ -138,6 +138,21 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     width: 100%;
   }
 
+  .hero::before {
+    background-size: 48px 48px;
+    opacity: 0.55;
+    -webkit-mask-image: radial-gradient(
+      ellipse 110% 60% at 50% 45%,
+      black 0 22%,
+      transparent 88%
+    );
+    mask-image: radial-gradient(
+      ellipse 110% 60% at 50% 45%,
+      black 0 22%,
+      transparent 88%
+    );
+  }
+
   .kind-home .hero-visual > .title,
   .kind-home .hero-visual .cover {
     width: 100%;
