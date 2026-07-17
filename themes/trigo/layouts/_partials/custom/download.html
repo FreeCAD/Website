@@ -15,13 +15,16 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 
 {{- $page := . -}}
+{{- $dynamic := $page.Params.dynamic_downloads | default false -}}
 {{- $release := $page -}}
-{{- $releases := site.GetPage "download/releases" -}}
-{{- with $releases -}}
-  {{- if not (.InSection $page) -}}
-  {{- $pages := sort .RegularPages "Date" "desc" -}}
-    {{- with index $pages 0 -}}
-      {{- $release = . -}}
+{{- if not $dynamic -}}
+  {{- $releases := site.GetPage "download/releases" -}}
+  {{- with $releases -}}
+    {{- if not (.InSection $page) -}}
+      {{- $pages := sort .RegularPages "Date" "desc" -}}
+      {{- with index $pages 0 -}}
+        {{- $release = . -}}
+      {{- end -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}
@@ -37,60 +40,39 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
       <div class="download-release">
     {{- end -}}
 
-    <h4 class="description">
-      {{- printf "%s %s · %s"
-        (i18n "download" | default "Download")
-        (partial "utils/format_semver.html" $release.Params.versions)
-        ($release.Lastmod | time.Format ":date_long")
-      -}}
-    </h4>
+    {{- if $dynamic -}}
+      <div
+        class="download-release"
+        data-release-download
+        data-release-channel="stable"
+        data-donate-page="{{ with (site.GetPage "donate") }}{{ .RelPermalink }}{{ else }}#{{ end }}">
+        <h4 class="description">Latest Stable Release</h4>
+        <p>
+          If JavaScript is unavailable,
+          <a
+            href="https://github.com/FreeCAD/FreeCAD/releases/latest"
+            data-release-link
+            target="_blank"
+            rel="external noreferrer nofollow">download the latest stable release</a>.
+        </p>
+    {{- else -}}
+      <h4 class="description">
+        {{- printf "%s %s · %s"
+          (i18n "download" | default "Download")
+          (partial "utils/format_semver.html" $release.Params.versions)
+          ($release.Lastmod | time.Format ":date_long")
+        -}}
+      </h4>
+    {{- end -}}
 
-    <div class="download-box">
+    {{- partial "custom/download_cards.html" (dict
+      "builds" $builds
+      "dynamic" $dynamic
+    ) -}}
 
-      {{- range $platform := . -}}
+    {{- if $dynamic -}}</div>{{- end -}}
 
-        <div
-          class="download-card"
-          id="{{ $platform.os }}"
-          style="order: {{ $platform.order }};">
-
-          <div class="download-platform">
-            {{- partialCached "utils/icon.html" $platform.os (lower $platform.os) -}}
-            <h3>{{ $platform.label }}</h3>
-
-            {{- with $platform.subtitle -}}
-              <p>{{ . }}</p>
-            {{- end -}}
-          </div>
-
-          {{- with $platform.packages -}}
-            <div class="download-buttons">
-
-              {{- range $package := . -}}
-
-                {{- $key := printf "%s_%s" $platform.os $package.key -}}
-                {{- with index $builds $key -}}
-                  <a class="button download-link"
-                    href="{{ . }}"
-                    target="_blank"
-                    rel="external noreferrer nofollow">
-                    {{- partialCached "utils/icon.html" "download" "download" -}}
-                    <strong>{{ $package.label }}</strong>
-
-                    {{- with $package.meta -}}
-                      <span>{{ . }}</span>
-                    {{- end -}}
-                  </a>
-                {{- end -}}
-              {{- end -}}
-
-            </div>
-          {{- end -}}
-        </div>
-
-      {{- end -}}
-    </div>
-
+    {{- if not $dynamic -}}
     <script>
     const DONATE_PAGE = '{{ with (site.GetPage "donate") }}{{ .RelPermalink }}{{ else }}#{{ end }}';
 
@@ -102,6 +84,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
       });
     });
     </script>
+    {{- end -}}
 
   {{- if $page.IsPage -}}</div>{{- end -}}
 

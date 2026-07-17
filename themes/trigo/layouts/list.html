@@ -119,6 +119,10 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   {{- /* List RegularPages, or Sections. */ -}}
   {{- partial "main/paginator.html" . -}}
 
+  {{- if .Params.weekly_downloads -}}
+    {{- partial "custom/weekly_download.html" . -}}
+  {{- end -}}
+
   {{- /* Get pagination to previous and next pages. */ -}}
   {{- if and site.Params.show_pagination .Content (not .Pages) -}}
     {{- partial "main/pagination.html" . -}}

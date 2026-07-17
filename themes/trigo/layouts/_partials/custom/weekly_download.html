@@ -1,0 +1,24 @@
+{{- /* Render the collapsible latest-weekly download section. */ -}}
+
+<section class="weekly-downloads" id="weekly-downloads">
+  <details>
+    <summary class="screenreader-only">Latest Weekly downloads</summary>
+    <div class="download-release" data-release-download data-release-channel="weekly">
+      <h2>Latest Development Build</h2>
+      <p>
+        <a
+          href="https://github.com/FreeCAD/FreeCAD/releases"
+          data-release-link
+          target="_blank"
+          rel="external noreferrer nofollow">The current Weekly release</a> contains bleeding edge
+        FreeCAD development builds for testing bugfixes, regressions, and recently implemented
+        features. Do not use in a production environment. If JavaScript is unavailable,
+        <a
+          href="https://github.com/FreeCAD/FreeCAD/releases"
+          target="_blank"
+          rel="external noreferrer nofollow">browse all FreeCAD releases</a>.
+      </p>
+      {{- partial "custom/download_cards.html" (dict "dynamic" true) -}}
+    </div>
+  </details>
+</section>

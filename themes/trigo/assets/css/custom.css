@@ -56,6 +56,10 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   display: inline-block;
 }
 
+.download-buttons .button[hidden] {
+  display: none;
+}
+
 .download-buttons span {
   margin-inline-start: calc(var(--gap) * 0.5);
   color: var(--tertiary);
@@ -69,6 +73,69 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 .download-release h4 {
   color: var(--secondary);
+}
+
+.weekly-downloads {
+  position: relative;
+  left: calc((100vw - 100%) / 2);
+  width: var(--width);
+  margin: 0 auto;
+}
+
+.weekly-downloads details {
+  margin: 0;
+}
+
+.weekly-downloads details[open] {
+  margin-top: calc(var(--gap) * 2);
+}
+
+.weekly-downloads details[open] .download-release {
+  margin: 0;
+  padding-block: var(--gap);
+  color: white;
+  background: linear-gradient(135deg, #ef675d, #c83c36);
+  border-radius: var(--radius);
+}
+
+.dark .weekly-downloads details[open] .download-release {
+  background: linear-gradient(315deg, #b13a38, #702424);
+}
+
+.weekly-downloads .download-release > :is(h2, p) {
+  margin-inline: var(--gap);
+}
+
+.weekly-downloads .download-release > h2,
+.weekly-downloads .download-release > p {
+  color: inherit;
+}
+
+.weekly-downloads .download-release > p a {
+  color: inherit;
+  text-decoration: var(--underline);
+}
+
+.weekly-downloads .download-card {
+  color: var(--primary);
+}
+
+.weekly-downloads .download-box {
+  width: 100%;
+}
+
+button.card.weekly-download-trigger {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.weekly-download-trigger .card-color {
+  background: linear-gradient(135deg, #ef675d, #c83c36);
+}
+
+.dark .weekly-download-trigger .card-color {
+  background: linear-gradient(315deg, #b13a38, #702424);
 }
 
 

@@ -15,16 +15,26 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 {{- $params := site.Params -}}
 {{- $href := .RelPermalink -}}
+{{- $weekly_download_trigger := .Params.weekly_download_trigger | default false -}}
 
 {{- $key := partialCached "utils/cache_key.html" . . -}}
 {{- $href = partialCached "utils/link_redirect.html" . $key -}}
 
 {{- $is_external := partialCached "utils/is_external.html" $href $href -}}
 
-<a
-  class="card"
-  href="{{ $href }}"
-  {{- if $is_external }} target="_blank" rel="external noreferrer nofollow"{{ end -}}>
+{{- if $weekly_download_trigger -}}
+  <button
+    class="card weekly-download-trigger"
+    type="button"
+    data-weekly-download-toggle
+    aria-controls="weekly-downloads"
+    aria-expanded="false">
+{{- else -}}
+  <a
+    class="card"
+    href="{{ $href }}"
+    {{- if $is_external }} target="_blank" rel="external noreferrer nofollow"{{ end -}}>
+{{- end -}}
 
   {{- with (partialCached "main/thumbnail.html" . $key) -}}
     {{- . -}}
@@ -44,7 +54,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   <h3 class="card-title">
     {{- .Title -}}
 
-    {{- if $is_external -}}
+    {{- if and $is_external (not $weekly_download_trigger) -}}
       {{- partialCached "utils/icon.html" "external" "external" -}}
     {{- end -}}
 
@@ -68,4 +78,8 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
       {{- partialCached "main/meta_date.html" . $key -}}
     {{- end -}}
   </div>
-</a>
+{{- if $weekly_download_trigger -}}
+  </button>
+{{- else -}}
+  </a>
+{{- end -}}

@@ -68,6 +68,10 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     "name" "donate"
     "basename" true
   )
+  (dict
+    "name" "download"
+    "param" "dynamic_downloads"
+  )
 -}}
 
 {{- range $scripts -}}
@@ -75,7 +79,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     {{- if and
       (cond (.kind) (in .kind $kind) true)
       (cond (.content) (in $content .content) true)
-      (cond (.params) (index $page.Params .name) true)
+      (cond (or .params .param) (index $page.Params (.param | default .name)) true)
       (cond (.shortcode) ($page.HasShortcode .name) true)
       (cond (.basename) (eq $page_basename .name) true)
     -}}
