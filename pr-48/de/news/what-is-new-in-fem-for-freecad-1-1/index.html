@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html
+  lang="de-DE"
+  dir="ltr"><head><meta charset="utf-8">
+<meta
+  name="viewport"
+  content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta
+  name="referrer"
+  content="strict-origin-when-cross-origin">
+<meta
+  name="robots"
+  content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link
+          rel="stylesheet"
+          href="/Website/pr-48/css/styles.427631aa94aa0860581e0dbdc75e2aef60d77920a9e865903f30d190e7aaac8d.css"
+          integrity="sha256-QnYxqpSqCGBYHg29x14q72DXeSCp6GWQPzDRkOeqrI0="
+          crossorigin="anonymous"><link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Website/pr-48/favicon.svg"><link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/Website/pr-48/favicon.ico"><link
+      rel="apple-touch-icon"
+      href="/Website/pr-48/apple-touch-icon.png"><title>FreeCAD | What’s new in FEM for FreeCAD 1.1?</title>
+  <meta
+    name="description"
+    content="Dein eigener freier und Open-Source parametrischer Modellierer"><meta
+      name="keywords"
+      content="FEM"><link
+    rel="canonical"
+    href="https://FreeCAD.github.io/Website/pr-48/de/news/what-is-new-in-fem-for-freecad-1-1/"><link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://FreeCAD.github.io/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/"><link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://FreeCAD.github.io/Website/pr-48/zh/news/what-is-new-in-fem-for-freecad-1-1/"><link
+      rel="alternate"
+      hreflang="es-ES"
+      href="https://FreeCAD.github.io/Website/pr-48/es/news/what-is-new-in-fem-for-freecad-1-1/"><link
+      rel="alternate"
+      hreflang="fr-FR"
+      href="https://FreeCAD.github.io/Website/pr-48/fr/news/what-is-new-in-fem-for-freecad-1-1/"><link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://FreeCAD.github.io/Website/pr-48/pt/news/what-is-new-in-fem-for-freecad-1-1/"><link
+      rel="alternate"
+      hreflang="de-DE"
+      href="https://FreeCAD.github.io/Website/pr-48/de/news/what-is-new-in-fem-for-freecad-1-1/"><link
+      rel="alternate"
+      hreflang="ja-JP"
+      href="https://FreeCAD.github.io/Website/pr-48/ja/news/what-is-new-in-fem-for-freecad-1-1/"><link
+    rel="alternate"
+    hreflang="x-default"
+    href="https://FreeCAD.github.io/Website/pr-48/de/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-48/de/news/what-is-new-in-fem-for-freecad-1-1/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="What’s new in FEM for FreeCAD 1.1?">
+  <meta property="og:description" content="Now that the feature freeze for FreeCAD 1.1 is on, and we are not too far off from the final release, let’s summarize the main changes in the FEM workbench. Just like in the case of the revolutionary 1.0 release (see this blog post Major FEM Workbench improvements for FreeCAD 1.0), FEM dominates the release notes . There have been many significant improvements, so let’s go through them.">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2025-09-09T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-05-05T08:11:44+02:00">
+    <meta property="article:tag" content="FEM">
+</head><body
+    class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a
+      href="/Website/pr-48/de/"
+      accesskey="h"
+      title="Home (Alt + H)"
+      aria-label="Home"><svg
+      class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+
+      <use href="/Website/pr-48/FreeCAD-wordmark.svg#logo"></use>
+    </svg></a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button
+    popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menü"
+    aria-label="Menü"><svg
+    class="icon hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/hamburger.svg#hamburger"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul
+    popover
+    id="menu-list"
+    class="menu-list"><li>
+          <a
+            href="/Website/pr-48/de/features/">Funktionen</a>
+        </li><li>
+          <a
+            href="/Website/pr-48/de/download/">Herunterladen</a>
+        </li><li>
+          <a
+            href="/Website/pr-48/de/news/" aria-current="page" class="active">Aktuelles</a>
+        </li><li>
+          <a
+            href="/Website/pr-48/de/community/">Community</a>
+        </li><li>
+          <a
+            href="/Website/pr-48/de/docs/">Dokumentation</a>
+        </li><li>
+          <a
+            href="/Website/pr-48/de/donate/" class="donate-button">♥︎ Spenden</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button
+          popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Sprache auswählen (Alt + L)"
+          aria-label="Sprache auswählen"><svg
+    class="icon language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul
+          popover
+          id="lang-list"
+          class="language-list"><li>
+              <a href="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/" title="What’s new in FEM for FreeCAD 1.1?">English 🇬🇧</a>
+            </li><li>
+              <a href="/Website/pr-48/zh/news/what-is-new-in-fem-for-freecad-1-1/" title="What’s new in FEM for FreeCAD 1.1?">中文 🇨🇳</a>
+            </li><li>
+              <a href="/Website/pr-48/es/news/what-is-new-in-fem-for-freecad-1-1/" title="What’s new in FEM for FreeCAD 1.1?">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/pr-48/fr/news/what-is-new-in-fem-for-freecad-1-1/" title="What’s new in FEM for FreeCAD 1.1?">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pr-48/pt/news/what-is-new-in-fem-for-freecad-1-1/" title="What’s new in FEM for FreeCAD 1.1?">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-48/de/news/what-is-new-in-fem-for-freecad-1-1/" title="What’s new in FEM for FreeCAD 1.1?">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/pr-48/ja/news/what-is-new-in-fem-for-freecad-1-1/" title="What’s new in FEM for FreeCAD 1.1?">日本語 🇯🇵</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Design wechseln (Alt + T)"
+    aria-label="Design wechseln"><svg
+    class="icon dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/dark.svg#dark"></use>
+  </svg><svg
+    class="icon light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main style="--hue: 120;"><section class="hero">
+
+    <h2 class="title">What’s new in FEM for FreeCAD 1.1?</h1><div class="metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/date.svg#date"></use>
+  </svg><time datetime="2025-09-09T00:00:00Z">9. September 2025</time>
+  </span><span class="meta authors"><svg
+    class="icon authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-48/de/authors/newjoker/">NewJoker (3)</a></span><span class="meta categories"><svg
+    class="icon categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-48/de/categories/update/">Update (158)</a></span><span class="meta tags"><svg
+    class="icon tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-48/de/tags/fem/">FEM (4)</a></span><span class="meta"><svg
+    class="icon time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/time.svg#time"></use>
+  </svg>5 Minuten</span></div><figure class="cover"><img
+    class="img image-10"
+    src="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-10.webp"
+    alt="Ersatzbild"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="FEM workbench" width="1680" height="860" srcset="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-10_hu_cf47f1374733a1f9.webp 400w, /Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-10_hu_948c055dc2bd0bd2.webp 800w, /Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-10_hu_eceed56c35dd3bdc.webp 1600w, /Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-10.webp 1680w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"><figcaption>
+        <div class="internal-tooltip"><svg
+    class="icon important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/important.svg#important"></use>
+  </svg><span class="tooltip">FEM workbench</span>
+        </div>
+      </figcaption></figure></section><div class="content"><p>Now that the feature freeze for FreeCAD 1.1 is on, and we are not too far off from the final release, let&rsquo;s summarize the main changes in the FEM workbench. Just like in the case of the revolutionary 1.0 release (see <a
+  href="/Website/pr-48/de/news/major-fem-workbench-improvements-for-freecad-1-0/"
+  class="internal-tooltip">this blog post<span class="tooltip">
+        <strong>Major FEM Workbench improvements for FreeCAD 1.0</strong></span></a>), FEM dominates the <a
+  href="https://wiki.freecad.org/Release_notes_1.1"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">release notes<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>. There have been many significant improvements, so let&rsquo;s go through them.</p>
+<h2
+  id="electromagnetics">Electromagnetics<a class="heading-anchor"
+     href="#electromagnetics"
+     title="Electromagnetics"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>In this release cycle, the main focus was on electromagnetic (EM) analyses, postprocessing, and key missing CalculiX features. The range of supported electromagnetic simulations was extended with the introduction of Elmer&rsquo;s static current conduction solver implemented as <a
+  href="https://wiki.freecad.org/FEM_EquationStaticCurrent"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">EquationStaticCurrent<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>. It doesn&rsquo;t just allow direct current (DC) flow simulations: when combined with the Heat equation, it may also be used to model resistive (Joule) heating. There is a dedicated <a
+  href="https://wiki.freecad.org/FEM_Examples"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">FEM Example<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a> for it, including analytical verification of results.</p>
+<figure class="image"><button
+          aria-label="Bild vergrößern"
+          popovertarget="img-001"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img image-4"
+    src="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-4.webp"
+    alt="Electromagnetic analysis"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Electromagnetic analysis" width="400" height="203" srcset="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-4.webp 400w" sizes="95vw"></button>
+        <div id="img-001" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen"><img
+    class="img image-4"
+    src="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-4.webp"
+    alt="Electromagnetic analysis"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Electromagnetic analysis" width="400" height="203" srcset="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-4.webp 400w" sizes="95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/cross.svg#cross"></use>
+  </svg></button><p>Electromagnetic analysis</p></div><figcaption>Electromagnetic analysis</figcaption></figure><p>Another major change for EM workflows was the addition of the <a
+  href="https://wiki.freecad.org/FEM_ElectricChargeDensity"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">electric charge density load<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>. It can be used in electrostatic analyses to prescribe total charge in Coulombs or charge per unit area/volume.</p>
+<p>Speaking about electrostatics, this type of analyses is now also possible (even in 2D) with the newly refactored CalculiX solver, which we will cover in more detail below. This implementation utilizes the analogy of differential equations for electrostatics and steady-state heat transfer.</p>
+<figure class="image"><button
+          aria-label="Bild vergrößern"
+          popovertarget="img-002"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img image-5"
+    src="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-5.webp"
+    alt="Electromagnetic analysis in 2D"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Electromagnetic analysis in 2D" width="618" height="435" srcset="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-5_hu_b007a659e04ac02c.webp 400w, /Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-5.webp 618w" sizes="(max-width: 400px) 400px, 95vw"></button>
+        <div id="img-002" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen"><img
+    class="img image-5"
+    src="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-5.webp"
+    alt="Electromagnetic analysis in 2D"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Electromagnetic analysis in 2D" width="618" height="435" srcset="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-5_hu_b007a659e04ac02c.webp 400w, /Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-5.webp 618w" sizes="(max-width: 400px) 400px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/cross.svg#cross"></use>
+  </svg></button><p>Electromagnetic analysis in 2D</p></div><figcaption>Electromagnetic analysis in 2D</figcaption></figure><p>We improved the existing EM boundary conditions and loads. There are two modes for the current density boundary condition (Custom and Normal), while the electrostatic potential boundary condition can be used to prescribe electric flux density in C/m^2. These two constraints now have symbols too. Also, we overhauled the task panel for the magnetization boundary condition.</p>
+<h2
+  id="postprocessing">Postprocessing<a class="heading-anchor"
+     href="#postprocessing"
+     title="Postprocessing"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>As mentioned in the beginning, we made several big improvements in the area of postprocessing. They mainly affected results pipelines. If the new Result object: Pipeline only preference is enabled, a refactored CalculiX solver implementation is used. The main difference is that it doesn&rsquo;t generate the legacy CCX_Results objects and only adds one results pipeline object to avoid cluttering the tree. Thanks to ickby&rsquo;s effort, there&rsquo;s no need for multiple pipeline objects anymore, as they support results from multiple frames - users can easily switch between them in the task panel.</p>
+<figure class="image"><button
+          aria-label="Bild vergrößern"
+          popovertarget="img-003"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img image-3"
+    src="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-3.webp"
+    alt="Result Frames task panel"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Result Frames task panel" width="446" height="380" srcset="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-3_hu_59d08cdd931843bd.webp 400w, /Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-3.webp 446w" sizes="(max-width: 400px) 400px, 95vw"></button>
+        <div id="img-003" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-003"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen"><img
+    class="img image-3"
+    src="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-3.webp"
+    alt="Result Frames task panel"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Result Frames task panel" width="446" height="380" srcset="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-3_hu_59d08cdd931843bd.webp 400w, /Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-3.webp 446w" sizes="(max-width: 400px) 400px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/cross.svg#cross"></use>
+  </svg></button><p>Result Frames task panel</p></div><figcaption>Result Frames task panel</figcaption></figure><p>The refactored ccx solver has other advantages too - it supports electrostatic analyses and provides results in mm and MPa units. However, it&rsquo;s not yet fully developed and doesn&rsquo;t support some result types as well as preprocessing warnings.</p>
+<p>Other significant enhancements in terms of postprocessing are two new pipeline filters:</p>
+<ul>
+<li>Calculator creates custom result fields by performing mathematical operations on the existing fields.</li>
+<li>Glyph creates symbol plots helpful to visualize vector quantities.</li>
+</ul>
+<figure class="image"><button
+          aria-label="Bild vergrößern"
+          popovertarget="img-004"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img image-9"
+    src="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-9.webp"
+    alt="Symbolic vectors in Glyph"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Symbolic vectors in Glyph" width="863" height="622" srcset="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-9_hu_312d7e0b6285b356.webp 400w, /Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-9_hu_53940be0baba1c9f.webp 800w, /Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-9.webp 863w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+        <div id="img-004" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-004"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen"><img
+    class="img image-9"
+    src="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-9.webp"
+    alt="Symbolic vectors in Glyph"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Symbolic vectors in Glyph" width="863" height="622" srcset="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-9_hu_312d7e0b6285b356.webp 400w, /Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-9_hu_53940be0baba1c9f.webp 800w, /Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-9.webp 863w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/cross.svg#cross"></use>
+  </svg></button><p>Symbolic vectors in Glyph</p></div><figcaption>Symbolic vectors in Glyph</figcaption></figure><p>There is also a new Data and Extractions widget for pipelines and three tools allowing detailed exploration of the numbers obtained from simulations. The following data extraction objects are available:</p>
+<ul>
+<li>line plot</li>
+<li>histogram</li>
+<li>table</li>
+</ul>
+<p>Finally, the legacy CCX_Results objects now have a task panel option enabling simple animations of the deformed result shapes. There is also a Python function Fem.frdToVTK which can be used to convert CalculiX results to the ParaView format.</p>
+<h2
+  id="calculix-features">CalculiX features<a class="heading-anchor"
+     href="#calculix-features"
+     title="CalculiX features"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>We added several useful CalculiX keywords and options to further extend the support of FreeCAD FEM for its main solver. This includes, among others:</p>
+<ul>
+<li>additional beam sections - box and elliptical;</li>
+<li>tie constraint applicable to shell faces;</li>
+<li>definition of reference temperature for thermal expansion;</li>
+<li>offset for shell elements;</li>
+<li>thermal contact (gap conduction);</li>
+<li>hard (automatically determined stiffness) and tied (bonded) contact;</li>
+<li>cavity (surface to surface) radiation;</li>
+<li>amplitudes for most boundary conditions and loads to define their time variation;</li>
+<li>region selection for initial temperature;</li>
+<li>prescribed temperature field in static analyses;</li>
+<li>membrane (shell with no bending stiffness) and truss (beam with no bending stiffness) elements;</li>
+<li>printing contact forces and rigid body constraint&rsquo;s reference point displacements to ccx_dat_file;</li>
+<li>pressure and heat flux load, as well as contact and tie constraints applicable to edges in 2D analyses;</li>
+<li>body heat source and centrifugal force loads applicable to faces in 2D analyses.</li>
+</ul>
+<figure class="image"><button
+          aria-label="Bild vergrößern"
+          popovertarget="img-005"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img image-7"
+    src="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-7.webp"
+    alt="Pressure in 2D analysis"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Pressure in 2D analysis" width="522" height="547" srcset="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-7_hu_f7b9002db2c40b12.webp 400w, /Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-7.webp 522w" sizes="(max-width: 400px) 400px, 95vw"></button>
+        <div id="img-005" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-005"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen"><img
+    class="img image-7"
+    src="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-7.webp"
+    alt="Pressure in 2D analysis"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Pressure in 2D analysis" width="522" height="547" srcset="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-7_hu_f7b9002db2c40b12.webp 400w, /Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-7.webp 522w" sizes="(max-width: 400px) 400px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/cross.svg#cross"></use>
+  </svg></button><p>Pressure in 2D analysis</p></div><figcaption>Pressure in 2D analysis</figcaption></figure><h2
+  id="other-improvements">Other improvements<a class="heading-anchor"
+     href="#other-improvements"
+     title="Other improvements"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Among other major features, there are some mesher enhancements, such as support for simple extruded hexahedral-dominated meshes with Netgen.</p>
+<figure class="image"><button
+          aria-label="Bild vergrößern"
+          popovertarget="img-006"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img image-6"
+    src="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-6.webp"
+    alt="Netgen mesher"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Netgen mesher" width="669" height="522" srcset="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-6_hu_b6daa1fd767fa239.webp 400w, /Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-6.webp 669w" sizes="(max-width: 400px) 400px, 95vw"></button>
+        <div id="img-006" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-006"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen"><img
+    class="img image-6"
+    src="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-6.webp"
+    alt="Netgen mesher"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Netgen mesher" width="669" height="522" srcset="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-6_hu_b6daa1fd767fa239.webp 400w, /Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-6.webp 669w" sizes="(max-width: 400px) 400px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/cross.svg#cross"></use>
+  </svg></button><p>Netgen mesher</p></div><figcaption>Netgen mesher</figcaption></figure><p>This mesher can now also use local refinement, generate second-order meshes by linear interpolation of nodes, and create conformal meshes. Previously, those features were only available with Gmsh.</p>
+<p>We made it possible to suppress (deactivate) not only constraints but also other FEM features for which suppression makes sense.</p>
+<p>Another handy new feature is a pop-up menu to select the proper solid of a CompSolid when picking its face belonging to both solids. This facilitates material assignment.</p>
+<figure class="image"><button
+          aria-label="Bild vergrößern"
+          popovertarget="img-007"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img image-8"
+    src="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-8.webp"
+    alt="Multiple solids selection menu"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Multiple solids selection menu" width="677" height="614" srcset="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-8_hu_d5aef99cc591e1cd.webp 400w, /Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-8.webp 677w" sizes="(max-width: 400px) 400px, 95vw"></button>
+        <div id="img-007" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-007"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen"><img
+    class="img image-8"
+    src="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-8.webp"
+    alt="Multiple solids selection menu"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Multiple solids selection menu" width="677" height="614" srcset="/Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-8_hu_d5aef99cc591e1cd.webp 400w, /Website/pr-48/news/what-is-new-in-fem-for-freecad-1-1/image-8.webp 677w" sizes="(max-width: 400px) 400px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/cross.svg#cross"></use>
+  </svg></button><p>Multiple solids selection menu</p></div><figcaption>Multiple solids selection menu</figcaption></figure><h2
+  id="summary">Summary<a class="heading-anchor"
+     href="#summary"
+     title="Summary"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>FEM has been actively developed in the v1.1 development cycle. Such progress wouldn&rsquo;t be possible without the invaluable contributions of <a
+  href="https://github.com/marioalexis84"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">marioalexis84<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a> and <a
+  href="https://github.com/ickby"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">ickby<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>, as well as other devs occasionally contributing to FEM. There&rsquo;s still a lot to improve, such as:</p>
+<ul>
+<li>more CalculiX and Elmer features;</li>
+<li>mixed and multiple meshes;</li>
+<li>multistep analyses;</li>
+<li>further postprocessing usability improvements (including unit handling and color legend issues);</li>
+<li>a framework for additional specialized solvers.</li>
+</ul>
+<p>Thus, we welcome all new contributors to help make FEM even better!</p>
+</div><footer class="single-footer">
+    <nav class="pagination"><a
+            class="button next"
+            href="/Website/pr-48/de/news/wip-wednesday-10-september-2025/"
+            title="Nächster Artikel"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday, 10 September 2025</a><a
+            class="button prev"
+            href="/Website/pr-48/de/news/looking-for-regression-bisection-specialist/"
+            title="Vorheriger Artikel">We are looking for a regression bisection specialist<svg
+    class="icon tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Nach oben"
+  title="Nach oben (Alt + G)" ><svg
+    class="icon tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a
+            href="/Website/pr-48/de/">Home</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-48/de/features/">Funktionen</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-48/de/download/">Herunterladen</a><ul><li>
+                      <a
+                        href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="external noreferrer nofollow">Development Builds<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples and Parts Library<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-48/de/download/releases/">Releases</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-48/de/news/" aria-current="page" class="active">Aktuelles</a><ul><li>
+                  <a
+                    href="/Website/pr-48/de/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/pr-48/de/authors/">Autoren</a>
+                      </li><li>
+                        <a href="/Website/pr-48/de/categories/">Kategorien</a>
+                      </li><li>
+                        <a href="/Website/pr-48/de/tags/">Tags</a>
+                      </li><li>
+                        <a href="/Website/pr-48/de/versions/">Versionen</a>
+                      </li></ul></li><li>
+          <a
+            href="/Website/pr-48/de/community/">Community</a><ul><li>
+                      <a
+                        href="/Website/pr-48/de/community/calendar/">Calendar</a>
+                    </li><li>
+                      <a
+                        href="https://events.freecad.org/" target="_blank" rel="external noreferrer nofollow">Events<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://fpa.freecad.org" target="_blank" rel="external noreferrer nofollow">Association<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-48/de/community/fpn/">Professional Network</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-48/de/community/addons/">Addons</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-48/de/community/telemetry/">Telemetry</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-48/de/docs/">Dokumentation</a><ul><li>
+                  <a
+                    href="https://wiki.freecad.org/User_hub" target="_blank" rel="external noreferrer nofollow">User manual<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+                </li><li>
+                  <a
+                    href="/Website/pr-48/de/dev/">Development Handbook</a>
+                </li><li>
+                  <a
+                    href="https://freecad.github.io/SourceDoc/" target="_blank" rel="external noreferrer nofollow">FreeCAD API<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+                </li></ul></li><li>
+          <a
+            href="/Website/pr-48/de/donate/">♥︎ Spenden</a><ul></ul></li></ul>
+</nav>
+<div class="share-links"><a
+    href="https://forum.freecad.org"
+    title="Forum"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/forum.svg#forum"></use>
+  </svg></a><a
+    href="https://github.com/freecad"
+    title="GitHub"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/github.svg#github"></use>
+  </svg></a><a
+    href="https://codeberg.org/freecad"
+    title="Codeberg"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a
+    href="https://social.freecad.org/@freecad"
+    title="Mastodon"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://www.reddit.com/r/freecad"
+    title="Reddit"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/reddit.svg#reddit"></use>
+  </svg></a><a
+    href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+    title="Matrix"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/matrix.svg#matrix"></use>
+  </svg></a><a
+    href="https://discord.gg/w2cTKGzccC"
+    title="Discord"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/discord.svg#discord"></use>
+  </svg></a><a
+    href="https://www.linkedin.com/groups/4295230"
+    title="LinkedIn"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+  href="/Website/pr-48/de/fedishare.html#title=What%E2%80%99s&#43;new&#43;in&#43;FEM&#43;for&#43;FreeCAD&#43;1.1%3F&amp;description=Now&#43;that&#43;the&#43;feature&#43;freeze&#43;for&#43;FreeCAD&#43;1.1&#43;is&#43;on%2C&#43;and&#43;we&#43;are&#43;not&#43;too&#43;far&#43;off&#43;from&#43;the&#43;final&#43;release%2C&#43;let%E2%80%99s&#43;summarize&#43;the&#43;main&#43;changes&#43;in&#43;the&#43;FEM&#43;workbench.&#43;Just&#43;like&#43;in&#43;the&#43;case&#43;of&#43;the&#43;revolutionary&#43;%E2%80%A6%0A%23fem&amp;url=https://FreeCAD.github.io/Website/pr-48/de/news/what-is-new-in-fem-for-freecad-1-1/"
+  title="Teilen auf Fediverse"
+  target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026
+    <a
+      href="/Website/pr-48/de/"
+      title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a
+    href="https://creativecommons.org/licenses/by-sa/4.0/"
+    title="Creative Commons"
+    target="_blank" rel="license external noreferrer nofollow">
+
+    CC BY-SA<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to
+  <a
+    href="https://gohugo.io/"
+    title="Hugo SSG"
+    target="_blank" rel="external noreferrer nofollow">
+
+    Hugo<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-05-05
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/17615c056717da0e1d8134a1316f96bf1c2f37b7">17615c056<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script
+    src="/Website/pr-48/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script></body>
+
+</html>

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html
+  lang="es-ES"
+  dir="ltr"><head><meta charset="utf-8">
+<meta
+  name="viewport"
+  content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta
+  name="referrer"
+  content="strict-origin-when-cross-origin">
+<meta
+  name="robots"
+  content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link
+          rel="stylesheet"
+          href="/Website/pr-48/css/styles.427631aa94aa0860581e0dbdc75e2aef60d77920a9e865903f30d190e7aaac8d.css"
+          integrity="sha256-QnYxqpSqCGBYHg29x14q72DXeSCp6GWQPzDRkOeqrI0="
+          crossorigin="anonymous"><link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Website/pr-48/favicon.svg"><link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/Website/pr-48/favicon.ico"><link
+      rel="apple-touch-icon"
+      href="/Website/pr-48/apple-touch-icon.png"><title>FreeCAD | Expression Autocomplete Improvements</title>
+  <meta
+    name="description"
+    content="Tu propio modelador paramétrico libre y de código abierto"><meta
+      name="keywords"
+      content="expression"><link
+    rel="canonical"
+    href="https://FreeCAD.github.io/Website/pr-48/es/news/expression-autocomplete-improvements/"><link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://FreeCAD.github.io/Website/pr-48/news/expression-autocomplete-improvements/"><link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://FreeCAD.github.io/Website/pr-48/zh/news/expression-autocomplete-improvements/"><link
+      rel="alternate"
+      hreflang="es-ES"
+      href="https://FreeCAD.github.io/Website/pr-48/es/news/expression-autocomplete-improvements/"><link
+      rel="alternate"
+      hreflang="fr-FR"
+      href="https://FreeCAD.github.io/Website/pr-48/fr/news/expression-autocomplete-improvements/"><link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://FreeCAD.github.io/Website/pr-48/pt/news/expression-autocomplete-improvements/"><link
+      rel="alternate"
+      hreflang="de-DE"
+      href="https://FreeCAD.github.io/Website/pr-48/de/news/expression-autocomplete-improvements/"><link
+      rel="alternate"
+      hreflang="ja-JP"
+      href="https://FreeCAD.github.io/Website/pr-48/ja/news/expression-autocomplete-improvements/"><link
+    rel="alternate"
+    hreflang="x-default"
+    href="https://FreeCAD.github.io/Website/pr-48/es/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-48/es/news/expression-autocomplete-improvements/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Expression Autocomplete Improvements">
+  <meta property="og:description" content="A longstanding bug in FreeCAD was recently tackled by new contributor Adrian Popescu (acpopescu). In PR 8228 and a series of follow-up commits, he has addressed some of the major shortcomings in the expression auto-complete function.">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2023-01-30T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-06-26T14:06:59+02:00">
+    <meta property="article:tag" content="Expression">
+</head><body
+    class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a
+      href="/Website/pr-48/es/"
+      accesskey="h"
+      title="Inicio (Alt + H)"
+      aria-label="Inicio"><svg
+      class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+
+      <use href="/Website/pr-48/FreeCAD-wordmark.svg#logo"></use>
+    </svg></a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button
+    popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menú"
+    aria-label="Menú"><svg
+    class="icon hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/hamburger.svg#hamburger"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul
+    popover
+    id="menu-list"
+    class="menu-list"><li>
+          <a
+            href="/Website/pr-48/es/features/">Características</a>
+        </li><li>
+          <a
+            href="/Website/pr-48/es/download/">Descarga</a>
+        </li><li>
+          <a
+            href="/Website/pr-48/es/news/" aria-current="page" class="active">Actualidad</a>
+        </li><li>
+          <a
+            href="/Website/pr-48/es/community/">Comunidad</a>
+        </li><li>
+          <a
+            href="/Website/pr-48/es/docs/">Documentación</a>
+        </li><li>
+          <a
+            href="/Website/pr-48/es/donate/" class="donate-button">♥ Donar</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button
+          popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Elegir idioma (Alt + L)"
+          aria-label="Elegir idioma"><svg
+    class="icon language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul
+          popover
+          id="lang-list"
+          class="language-list"><li>
+              <a href="/Website/pr-48/news/expression-autocomplete-improvements/" title="Expression Autocomplete Improvements">English 🇬🇧</a>
+            </li><li>
+              <a href="/Website/pr-48/zh/news/expression-autocomplete-improvements/" title="Expression Autocomplete Improvements">中文 🇨🇳</a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-48/es/news/expression-autocomplete-improvements/" title="Expression Autocomplete Improvements">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/pr-48/fr/news/expression-autocomplete-improvements/" title="Expression Autocomplete Improvements">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pr-48/pt/news/expression-autocomplete-improvements/" title="Expression Autocomplete Improvements">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a href="/Website/pr-48/de/news/expression-autocomplete-improvements/" title="Expression Autocomplete Improvements">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/pr-48/ja/news/expression-autocomplete-improvements/" title="Expression Autocomplete Improvements">日本語 🇯🇵</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Cambiar tema chroma (Alt + T)"
+    aria-label="Cambiar tema chroma"><svg
+    class="icon dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/dark.svg#dark"></use>
+  </svg><svg
+    class="icon light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main style="--hue: 60;"><section class="hero">
+
+    <h2 class="title">Expression Autocomplete Improvements</h1><div class="metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/date.svg#date"></use>
+  </svg><time datetime="2023-01-30T00:00:00Z">30 de enero de 2023</time>
+  </span><span class="meta authors"><svg
+    class="icon authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-48/es/authors/chris-hennes/">Chris Hennes (80)</a></span><span class="meta categories"><svg
+    class="icon categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-48/es/categories/feature/">Feature (18)</a></span><span class="meta tags"><svg
+    class="icon tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-48/es/tags/expression/">Expression (1)</a></span><span class="meta"><svg
+    class="icon time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/time.svg#time"></use>
+  </svg>1 min</span></div></section><div class="content"><p>A longstanding bug in FreeCAD was recently tackled by new contributor Adrian Popescu (acpopescu). In <a
+  href="https://github.com/freecad/freecad/pull/8228"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR 8228<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a> and a series of follow-up commits, he has addressed some of the major shortcomings in the expression auto-complete function.</p>
+<figure>
+      <video
+        preload="metadata"
+        controls
+        playsinline>
+
+        <source
+          src="/Website/pr-48/news/expression-autocomplete-improvements/expressioncompleter.mp4" type="video/mp4">Tu navegador no admite la etiqueta de vídeo.</video></figure>
+<p>AutoCompleter demonstration using data from a spreadsheet.</p>
+<p>The improved autocompleter works anywhere you enter expression data in FreeCAD, and can pull data from all of the sources you&rsquo;d expect. If searches inside variable names, so you don&rsquo;t have to remember whether you called your entry <code>widget_height</code> or <code>height_of_widget</code> &ndash; start typing <code>height</code> and it will show up, whichever option you chose.</p>
+<p>There are still some issues with the new completer (for example, the &ldquo;Constraints&rdquo; object in Assembly4 blocks autocomplete of local constraints!), but those are being worked on as I type this, and even the first batch of improvements here makes a big difference in the day-to-day use of expressions. If you are using a beta of the current development version give it a try and let us know what you think.</p>
+</div><footer class="single-footer">
+    <nav class="pagination"><a
+            class="button next"
+            href="/Website/pr-48/es/news/wip-wednesday-1-feb-2023/"
+            title="Artículo siguiente"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday - 1 Feb 2023</a><a
+            class="button prev"
+            href="/Website/pr-48/es/news/wip-wednesday-25-jan-2023/"
+            title="Artículo anterior">WIP Wednesday - 25 Jan 2023<svg
+    class="icon tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Ir al inicio"
+  title="Ir al inicio (Alt + G)" ><svg
+    class="icon tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a
+            href="/Website/pr-48/es/">Inicio</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-48/es/features/">Características</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-48/es/download/">Descarga</a><ul><li>
+                      <a
+                        href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="external noreferrer nofollow">Development Builds<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples and Parts Library<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-48/es/download/releases/">Releases</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-48/es/news/" aria-current="page" class="active">Actualidad</a><ul><li>
+                  <a
+                    href="/Website/pr-48/es/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/pr-48/es/authors/">Autores</a>
+                      </li><li>
+                        <a href="/Website/pr-48/es/categories/">Categorías</a>
+                      </li><li>
+                        <a href="/Website/pr-48/es/tags/">Etiquetas</a>
+                      </li><li>
+                        <a href="/Website/pr-48/es/versions/">Versiones</a>
+                      </li></ul></li><li>
+          <a
+            href="/Website/pr-48/es/community/">Comunidad</a><ul><li>
+                      <a
+                        href="/Website/pr-48/es/community/calendar/">Calendar</a>
+                    </li><li>
+                      <a
+                        href="https://events.freecad.org/" target="_blank" rel="external noreferrer nofollow">Events<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://fpa.freecad.org" target="_blank" rel="external noreferrer nofollow">Association<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-48/es/community/fpn/">Professional Network</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-48/es/community/addons/">Addons</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-48/es/community/telemetry/">Telemetry</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-48/es/docs/">Documentación</a><ul><li>
+                  <a
+                    href="https://wiki.freecad.org/User_hub" target="_blank" rel="external noreferrer nofollow">User manual<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+                </li><li>
+                  <a
+                    href="/Website/pr-48/es/dev/">Development Handbook</a>
+                </li><li>
+                  <a
+                    href="https://freecad.github.io/SourceDoc/" target="_blank" rel="external noreferrer nofollow">FreeCAD API<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+                </li></ul></li><li>
+          <a
+            href="/Website/pr-48/es/donate/">♥ Donar</a><ul></ul></li></ul>
+</nav>
+<div class="share-links"><a
+    href="https://forum.freecad.org"
+    title="Forum"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/forum.svg#forum"></use>
+  </svg></a><a
+    href="https://github.com/freecad"
+    title="GitHub"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/github.svg#github"></use>
+  </svg></a><a
+    href="https://codeberg.org/freecad"
+    title="Codeberg"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a
+    href="https://social.freecad.org/@freecad"
+    title="Mastodon"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://www.reddit.com/r/freecad"
+    title="Reddit"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/reddit.svg#reddit"></use>
+  </svg></a><a
+    href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+    title="Matrix"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/matrix.svg#matrix"></use>
+  </svg></a><a
+    href="https://discord.gg/w2cTKGzccC"
+    title="Discord"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/discord.svg#discord"></use>
+  </svg></a><a
+    href="https://www.linkedin.com/groups/4295230"
+    title="LinkedIn"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+  href="/Website/pr-48/es/fedishare.html#title=Expression&#43;Autocomplete&#43;Improvements&amp;description=A&#43;longstanding&#43;bug&#43;in&#43;FreeCAD&#43;was&#43;recently&#43;tackled&#43;by&#43;new&#43;contributor&#43;Adrian&#43;Popescu&#43;%28acpopescu%29.&#43;In&#43;PR&#43;8228&#43;and&#43;a&#43;series&#43;of&#43;follow-up&#43;commits%2C&#43;he&#43;has&#43;addressed&#43;some&#43;of&#43;the&#43;major&#43;shortcomings&#43;in&#43;the&#43;%E2%80%A6%0A%23expression&amp;url=https://FreeCAD.github.io/Website/pr-48/es/news/expression-autocomplete-improvements/"
+  title="Compartir en Fediverse"
+  target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026
+    <a
+      href="/Website/pr-48/es/"
+      title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a
+    href="https://creativecommons.org/licenses/by-sa/4.0/"
+    title="Creative Commons"
+    target="_blank" rel="license external noreferrer nofollow">
+
+    CC BY-SA<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to
+  <a
+    href="https://gohugo.io/"
+    title="Hugo SSG"
+    target="_blank" rel="external noreferrer nofollow">
+
+    Hugo<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-06-26
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/1840595f71c4dddaaddb7810c098ae3dd50f905d">1840595f7<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script
+    src="/Website/pr-48/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-48/js/es/copy.min.4352077bd376c0fa652c23733a44a84d7b971232620cabd39f339a5f1b2bb913.js"
+    type="text/javascript"
+    defer integrity="sha256-Q1IHe9N2wPplLCNzOkSoTXuXEjJiDKvTnzOaXxsruRM=" crossorigin="anonymous">
+  </script></body>
+
+</html>

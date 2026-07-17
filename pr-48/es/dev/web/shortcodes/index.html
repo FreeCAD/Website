@@ -1,0 +1,2264 @@
+<!DOCTYPE html>
+<html
+  lang="es-ES"
+  dir="ltr"><head><meta charset="utf-8">
+<meta
+  name="viewport"
+  content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta
+  name="referrer"
+  content="strict-origin-when-cross-origin">
+<meta
+  name="robots"
+  content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link
+          rel="stylesheet"
+          href="/Website/pr-48/css/styles.427631aa94aa0860581e0dbdc75e2aef60d77920a9e865903f30d190e7aaac8d.css"
+          integrity="sha256-QnYxqpSqCGBYHg29x14q72DXeSCp6GWQPzDRkOeqrI0="
+          crossorigin="anonymous"><link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Website/pr-48/favicon.svg"><link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/Website/pr-48/favicon.ico"><link
+      rel="apple-touch-icon"
+      href="/Website/pr-48/apple-touch-icon.png"><title>FreeCAD | Shortcodes</title>
+  <meta
+    name="description"
+    content="Bundled Trigo Theme and Hugo shortcodes to enhance content."><meta
+      name="keywords"
+      content="free, open-source, CAD, software, tool, parametric, modeling, model, design, product, engineering, manufacturing, community, workbench, FOSS, 3D, BIM, CAM, FEM, FEA"><link
+    rel="canonical"
+    href="https://FreeCAD.github.io/Website/pr-48/es/dev/web/shortcodes/"><link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://FreeCAD.github.io/Website/pr-48/dev/web/shortcodes/"><link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://FreeCAD.github.io/Website/pr-48/zh/dev/web/shortcodes/"><link
+      rel="alternate"
+      hreflang="es-ES"
+      href="https://FreeCAD.github.io/Website/pr-48/es/dev/web/shortcodes/"><link
+      rel="alternate"
+      hreflang="fr-FR"
+      href="https://FreeCAD.github.io/Website/pr-48/fr/dev/web/shortcodes/"><link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://FreeCAD.github.io/Website/pr-48/pt/dev/web/shortcodes/"><link
+      rel="alternate"
+      hreflang="de-DE"
+      href="https://FreeCAD.github.io/Website/pr-48/de/dev/web/shortcodes/"><link
+      rel="alternate"
+      hreflang="ja-JP"
+      href="https://FreeCAD.github.io/Website/pr-48/ja/dev/web/shortcodes/"><link
+    rel="alternate"
+    hreflang="x-default"
+    href="https://FreeCAD.github.io/Website/pr-48/es/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-48/es/dev/web/shortcodes/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Shortcodes">
+  <meta property="og:description" content="Bundled Trigo Theme and Hugo shortcodes to enhance content.">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dev">
+    <meta property="article:modified_time" content="2026-06-27T13:19:47+02:00">
+</head><body
+    class="single type-dev kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a
+      href="/Website/pr-48/es/"
+      accesskey="h"
+      title="Inicio (Alt + H)"
+      aria-label="Inicio"><svg
+      class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+
+      <use href="/Website/pr-48/FreeCAD-wordmark.svg#logo"></use>
+    </svg></a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button
+    popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menú"
+    aria-label="Menú"><svg
+    class="icon hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/hamburger.svg#hamburger"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul
+    popover
+    id="menu-list"
+    class="menu-list"><li>
+          <a
+            href="/Website/pr-48/es/features/">Características</a>
+        </li><li>
+          <a
+            href="/Website/pr-48/es/download/">Descarga</a>
+        </li><li>
+          <a
+            href="/Website/pr-48/es/news/">Actualidad</a>
+        </li><li>
+          <a
+            href="/Website/pr-48/es/community/">Comunidad</a>
+        </li><li>
+          <a
+            href="/Website/pr-48/es/docs/" aria-current="page" class="active">Documentación</a>
+        </li><li>
+          <a
+            href="/Website/pr-48/es/donate/" class="donate-button">♥ Donar</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button
+          popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Elegir idioma (Alt + L)"
+          aria-label="Elegir idioma"><svg
+    class="icon language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul
+          popover
+          id="lang-list"
+          class="language-list"><li>
+              <a href="/Website/pr-48/dev/web/shortcodes/" title="Shortcodes">English 🇬🇧</a>
+            </li><li>
+              <a href="/Website/pr-48/zh/dev/web/shortcodes/" title="Shortcodes">中文 🇨🇳</a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-48/es/dev/web/shortcodes/" title="Shortcodes">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/pr-48/fr/dev/web/shortcodes/" title="Shortcodes">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pr-48/pt/dev/web/shortcodes/" title="Shortcodes">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a href="/Website/pr-48/de/dev/web/shortcodes/" title="Shortcodes">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/pr-48/ja/dev/web/shortcodes/" title="Shortcodes">日本語 🇯🇵</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Cambiar tema chroma (Alt + T)"
+    aria-label="Cambiar tema chroma"><svg
+    class="icon dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/dark.svg#dark"></use>
+  </svg><svg
+    class="icon light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main style="--hue: 130;"><section class="hero">
+
+    <h2 class="title">Shortcodes</h1><h3 class="description">Bundled Trigo Theme and Hugo shortcodes to enhance content.</h3><div class="metadata"><span class="meta"><svg
+    class="icon time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/time.svg#time"></use>
+  </svg>9 min</span></div></section><nav class="toc">
+  <input
+    type="checkbox"
+    id="toc-checkbox"
+    class="toc-checkbox">
+  <label
+    for="toc-checkbox"
+    class="toc-toggle button"
+    title="Table of Contents"><svg
+    class="icon expand"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/expand.svg#expand"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/cross.svg#cross"></use>
+  </svg><span>Tabla de Contenidos</span>
+  </label>
+
+  <div
+    id="toc-content"
+    class="toc-content">
+    <ul class="section-nav"><li>
+          <a
+            href="/Website/pr-48/es/dev/"
+            class="current-section"><svg
+    class="icon tri_tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/tri_tri_left.svg#tri_tri_left"></use>
+  </svg> Development Handbook</a>
+        </li><li>
+          <a
+            href="/Website/pr-48/es/dev/web/"
+            class="current-section"><svg
+    class="icon folder_closed"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/folder_closed.svg#folder_closed"></use>
+  </svg> Website</a>
+        </li><li>
+        <ul><li>
+              <a
+                href="/Website/pr-48/es/dev/web/start/">Website introduction</a>
+            </li><li>
+              <a
+                href="/Website/pr-48/es/dev/web/guidelines/">Guidelines</a>
+            </li><li>
+              <a
+                href="/Website/pr-48/es/dev/web/structure/">Structure</a>
+            </li><li>
+              <a
+                href="/Website/pr-48/es/dev/web/markdown/">Markdown</a>
+            </li><li>
+              <a
+                href="/Website/pr-48/es/dev/web/shortcodes/" id="current-page" class="active" aria-current="page">Shortcodes</a>
+            </li><li>
+              <a
+                href="/Website/pr-48/es/dev/web/front-matter/">Front matter</a>
+            </li><li>
+              <a
+                href="/Website/pr-48/es/dev/web/locales/">Translations</a>
+            </li><li>
+              <a
+                href="/Website/pr-48/es/dev/web/cms/">CMS</a>
+            </li><li>
+              <a
+                href="/Website/pr-48/es/dev/web/theme/">Setup and Theme</a>
+            </li></ul>
+      </li>
+    </ul><p class="toc-label"><svg
+    class="icon file"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/file.svg#file"></use>
+  </svg>
+        <span>On this page</span>
+      </p><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#details">Details</a></li>
+        <li><a href="#tabs-and-tab">Tabs and tab</a></li>
+        <li><a href="#steps">Steps</a></li>
+        <li><a href="#tree-branch-and-leaf">Tree, branch and leaf</a></li>
+        <li><a href="#carousel">Carousel</a></li>
+        <li><a href="#compare">Compare</a></li>
+        <li><a href="#canvas">Canvas</a></li>
+        <li><a href="#button">Button</a></li>
+        <li><a href="#git">Git</a></li>
+        <li><a href="#pdf">PDF</a></li>
+        <li><a href="#video">Video</a></li>
+        <li><a href="#peertube">Peertube</a></li>
+        <li><a href="#youtube">YouTube</a></li>
+        <li><a href="#vimeo">Vimeo</a></li>
+        <li><a href="#collection">Collection</a></li>
+        <li><a href="#block-and-group">Block and group</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+</nav><div class="content"><figure>
+  <blockquote class="note"><svg
+    class="icon note"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/note.svg#note"></use>
+  </svg>Nota<p>Esta página aún no se ha traducido en español, por lo que se utiliza la versión inglesa. Interesado en ayudar?
+<a
+  href="https://github.com/freecad/website"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Contribuir<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a></p></blockquote></figure><figure>
+  <blockquote class="quote"><svg
+    class="icon quote"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/quote.svg#quote"></use>
+  </svg>Quote<p>Shortcodes are special code snippets inside your Markdown content files calling built-in or custom templates.</p>
+<p>They allow to add specialized content to pages or format their layout with ease.</p>
+</blockquote></figure>
+<p>The Trigo theme provides several custom shortcodes detailed below.</p>
+<figure>
+  <blockquote class="note"><svg
+    class="icon note"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/note.svg#note"></use>
+  </svg>Nota<p>Additional shortcodes are also provided directly by Hugo.</p>
+<p>See the <a
+  href="https://gohugo.io/content-management/shortcodes/#embedded"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">built-in Hugo shortcodes list<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a> on its official documentation.</p></blockquote></figure>
+<p>Shortcodes require the special <code>{{&lt; &gt;}}</code> tags, the shortcode name and optional arguments.
+Some shortcodes only require one tag, while others need both opening and closing tags with Markdown content in-between.
+Some shortcodes can even be nested, allowing for complex content and layout.
+Most shortcodes support both named and positional arguments.</p>
+<p>See the examples below to understand their use cases, structure, and syntax.</p>
+<h2
+  id="details">Details<a class="heading-anchor"
+     href="#details"
+     title="Details"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Trigo shortcode to display a collapsible detail block and renders inner content.</p>
+<div class="codeblock"><div class="codeblock-file"><svg
+    class="icon words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/words.svg#words"></use>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">details</span><span class="w"> </span><span class="nx">summary</span><span class="o">=</span><span class="s">&#34;Details&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">This is the content of the details.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Markdown is **supported**.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="nx">details</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><div class="codeblock"><div class="codeblock-file"><svg
+    class="icon words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/words.svg#words"></use>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">details</span><span class="w"> </span><span class="nx">summary</span><span class="o">=</span><span class="s">&#34;Click me to reveal&#34;</span><span class="w"> </span><span class="nx">open</span><span class="o">=</span><span class="s">&#34;false&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">This will be hidden by default.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="nx">details</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+<details open>
+
+    <summary>Details</summary><p>This is the content of the details.</p>
+<p>Markdown is <strong>supported</strong>.</p>
+</details>
+<details>
+
+    <summary>Click me to reveal</summary><p>This will be hidden by default.</p>
+</details>
+<p><u><code>details</code> arguments:</u></p>
+<table>
+  <thead>
+      <tr>
+          <th>Position</th>
+          <th>Argument</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Options</th>
+          <th>Example value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>summary</td>
+          <td>string</td>
+          <td>&ldquo;Details&rdquo;</td>
+          <td></td>
+          <td>&ldquo;Click me&rdquo;</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>open</td>
+          <td>bool</td>
+          <td><code>true</code></td>
+          <td></td>
+          <td><code>false</code></td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>name</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td></td>
+          <td>&ldquo;name&rdquo;</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>title</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td></td>
+          <td>&ldquo;title&rdquo;</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>id</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td></td>
+          <td>&ldquo;id&rdquo;</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>class</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td></td>
+          <td>CSS class</td>
+      </tr>
+  </tbody>
+</table>
+<h2
+  id="tabs-and-tab">Tabs and tab<a class="heading-anchor"
+     href="#tabs-and-tab"
+     title="Tabs and tab"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Trigo shortcode to display content in multiple tabs.
+The <code>tabs</code> shortcode renders the inner content with multiple <code>tab</code> shortcodes.</p>
+<div class="codeblock"><div class="codeblock-file"><svg
+    class="icon words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/words.svg#words"></use>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">tabs</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">tab</span><span class="w"> </span><span class="nx">JSON</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">  **JSON**: JavaScript Object Notation (JSON) is a standard text-based format for representing structured data.
+</span></span><span class="line"><span class="cl">  ```json
+</span></span><span class="line"><span class="cl">  { &#34;hello&#34;: &#34;world&#34; }
+</span></span><span class="line"><span class="cl">  ```
+</span></span><span class="line"><span class="cl">  <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="nx">tab</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">tab</span><span class="w"> </span><span class="nx">YAML</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">  **YAML**: YAML is a human-readable data serialization language.
+</span></span><span class="line"><span class="cl">  ```yaml
+</span></span><span class="line"><span class="cl">  hello: world
+</span></span><span class="line"><span class="cl">  ```
+</span></span><span class="line"><span class="cl">  <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="nx">tab</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">tab</span><span class="w"> </span><span class="nx">TOML</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">  **TOML**: TOML aims to be a minimal configuration file format that&#39;s easy to read due to obvious semantics.
+</span></span><span class="line"><span class="cl">  ```toml
+</span></span><span class="line"><span class="cl">  hello = &#34;world&#34;
+</span></span><span class="line"><span class="cl">  ```
+</span></span><span class="line"><span class="cl">  <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="nx">tab</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="nx">tabs</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+<div class="tabs">
+  <input
+    type="radio"
+    name="tabs-2"
+    id="tabs-2-0" checked>
+
+  <label for="tabs-2-0">JSON</label>
+
+  <div class="tab-content"><p><strong>JSON</strong>: JavaScript Object Notation (JSON) is a standard text-based format for representing structured data.</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span> <span class="nt">&#34;hello&#34;</span><span class="p">:</span> <span class="s2">&#34;world&#34;</span> <span class="p">}</span></span></span></code></pre></div></div></div>
+  <input
+    type="radio"
+    name="tabs-2"
+    id="tabs-2-1">
+
+  <label for="tabs-2-1">YAML</label>
+
+  <div class="tab-content"><p><strong>YAML</strong>: YAML is a human-readable data serialization language.</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">hello</span><span class="p">:</span><span class="w"> </span><span class="l">world</span></span></span></code></pre></div></div></div>
+  <input
+    type="radio"
+    name="tabs-2"
+    id="tabs-2-2">
+
+  <label for="tabs-2-2">TOML</label>
+
+  <div class="tab-content"><p><strong>TOML</strong>: TOML aims to be a minimal configuration file format that&rsquo;s easy to read due to obvious semantics.</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">hello</span> <span class="p">=</span> <span class="s2">&#34;world&#34;</span></span></span></code></pre></div></div></div>
+</div>
+<p><u><code>tab</code> arguments:</u></p>
+<table>
+  <thead>
+      <tr>
+          <th>Position</th>
+          <th>Argument</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Options</th>
+          <th>Example value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>label</td>
+          <td>string</td>
+          <td>&ldquo;Tab&rdquo;</td>
+          <td></td>
+          <td>&ldquo;Tab label&rdquo;</td>
+      </tr>
+  </tbody>
+</table>
+<h2
+  id="steps">Steps<a class="heading-anchor"
+     href="#steps"
+     title="Steps"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Trigo shortcode to display a series of numbered steps based on headings.</p>
+<p>You can use the Markdown attribute <code>{class=&quot;no-step&quot;}</code> to prevent a heading from being counted as a step.</p>
+<figure>
+  <blockquote class="important"><svg
+    class="icon important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/important.svg#important"></use>
+  </svg>Importante<p>Please note that this shortcode is intended <strong>for Markdown content only</strong>.
+HTML or other shortcodes as step content may not render as expected.</p></blockquote></figure>
+<div class="codeblock"><div class="codeblock-file"><svg
+    class="icon words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/words.svg#words"></use>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">steps</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">## Step 1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">This is the first step.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">### Step 2
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">This is the second step.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">#### Step subheading {class=&#34;no-step&#34;}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">This will not be counted as a step.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">### Step 3
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">- Item 1
+</span></span><span class="line"><span class="cl">- Item 2
+</span></span><span class="line"><span class="cl">- Item 3
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="nx">steps</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+<div class="steps"><h2
+  id="step-1">Step 1<a class="heading-anchor"
+     href="#step-1"
+     title="Step 1"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>This is the first step.</p>
+<h3
+  id="step-2">Step 2<a class="heading-anchor"
+     href="#step-2"
+     title="Step 2"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>This is the second step.</p>
+<h4
+  id="step-subheading" class="no-step">Step subheading<a class="heading-anchor"
+     href="#step-subheading"
+     title="Step subheading"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h4><p>This will not be counted as a step.</p>
+<h3
+  id="step-3">Step 3<a class="heading-anchor"
+     href="#step-3"
+     title="Step 3"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><ul>
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
+</ul>
+</div>
+<h2
+  id="tree-branch-and-leaf">Tree, branch and leaf<a class="heading-anchor"
+     href="#tree-branch-and-leaf"
+     title="Tree, branch and leaf"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Trigo shortcode to display a filetree list with inner content/branches/leaves and optional icon and label. Branches are collapsible with nested children (e.g. branches or leaves).</p>
+<div class="codeblock"><div class="codeblock-file"><svg
+    class="icon words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/words.svg#words"></use>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">tree</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;example&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">branch</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;content&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">leaf</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;_index.md&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">branch</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;docs&#34;</span><span class="w"> </span><span class="nx">state</span><span class="o">=</span><span class="s">&#34;closed&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">leaf</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;_index.md&#34;</span><span class="w"> </span><span class="nx">css_class</span><span class="o">=</span><span class="s">&#34;pastel1&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">leaf</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;introduction.md&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">leaf</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;introduction.fr.md&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="nx">branch</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="nx">branch</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">leaf</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;hugo.toml&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="nx">tree</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+<ul class="tree">
+  <li>
+  <input
+    type="checkbox"
+    id="tree-004-branch-000-content"
+    hidden checked >
+
+  <label
+    for="tree-004-branch-000-content"
+    class="branch">
+
+    <span class="open"><svg
+    class="icon folder_open"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/folder_open.svg#folder_open"></use>
+  </svg></span>
+
+    <span class="closed"><svg
+    class="icon folder_closed"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/folder_closed.svg#folder_closed"></use>
+  </svg></span>content</label><ul>
+  <li>
+    <span class="leaf"><svg
+      class="icon file"
+      aria-hidden="true"
+      focusable="false">
+      <use href="/Website/pr-48/svg/file.svg#file"></use>
+    </svg>_index.md</span>
+  </li>
+  <li>
+<input
+  type="checkbox"
+  id="branch-000-branch-001-docs"
+  hidden>
+
+<label
+  for="branch-000-branch-001-docs"
+  class="branch">
+
+  <span class="open"><svg
+  class="icon folder_open"
+  aria-hidden="true"
+  focusable="false">
+  <use href="/Website/pr-48/svg/folder_open.svg#folder_open"></use>
+</svg></span>
+
+  <span class="closed"><svg
+  class="icon folder_closed"
+  aria-hidden="true"
+  focusable="false">
+  <use href="/Website/pr-48/svg/folder_closed.svg#folder_closed"></use>
+</svg></span>docs</label><ul>
+<li>
+  <span class="leaf pastel1"><svg
+    class="icon file"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/file.svg#file"></use>
+  </svg>_index.md</span>
+</li>
+<li>
+  <span class="leaf"><svg
+    class="icon file"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/file.svg#file"></use>
+  </svg>introduction.md</span>
+</li>
+<li>
+  <span class="leaf"><svg
+    class="icon file"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/file.svg#file"></use>
+  </svg>introduction.fr.md</span>
+</li>
+</ul></li>
+</ul></li>
+  <li>
+    <span class="leaf"><svg
+      class="icon file"
+      aria-hidden="true"
+      focusable="false">
+      <use href="/Website/pr-48/svg/file.svg#file"></use>
+    </svg>hugo.toml</span>
+  </li>
+<li class="tree-label">example</li></ul>
+<p><u><code>tree</code> arguments:</u></p>
+<table>
+  <thead>
+      <tr>
+          <th>Position</th>
+          <th>Argument</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Options</th>
+          <th>Example value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>label</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td></td>
+          <td>&ldquo;Tree label&rdquo;</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>class</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td>custom CSS classes</td>
+          <td>&ldquo;accent&rdquo;</td>
+      </tr>
+  </tbody>
+</table>
+<p><u><code>branch</code> arguments:</u></p>
+<table>
+  <thead>
+      <tr>
+          <th>Position</th>
+          <th>Argument</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Options</th>
+          <th>Example value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>label</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td></td>
+          <td>&ldquo;label&rdquo;</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>icon</td>
+          <td>string</td>
+          <td>&ldquo;folder&rdquo;</td>
+          <td>&ldquo;folder&rdquo;, &ldquo;document&rdquo;, &ldquo;container&rdquo;, &ldquo;group&rdquo;, &ldquo;part&rdquo;, &ldquo;assembly&rdquo;, &ldquo;arrow&rdquo;, &ldquo;branch&rdquo;, &ldquo;fork&rdquo;, &ldquo;pr&rdquo;, or &ldquo;versions&rdquo;</td>
+          <td>&ldquo;group&rdquo;</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>state</td>
+          <td>string</td>
+          <td>&ldquo;open&rdquo;</td>
+          <td></td>
+          <td>&ldquo;state&rdquo;</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>class</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td>custom CSS classes</td>
+          <td>&ldquo;accent&rdquo;</td>
+      </tr>
+  </tbody>
+</table>
+<p><u><code>leaf</code> arguments:</u></p>
+<table>
+  <thead>
+      <tr>
+          <th>Position</th>
+          <th>Argument</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Options</th>
+          <th>Example value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>label</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td></td>
+          <td>&ldquo;label&rdquo;</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>icon</td>
+          <td>string</td>
+          <td>&ldquo;file&rdquo;</td>
+          <td>&ldquo;file&rdquo;, &ldquo;body&rdquo;, &ldquo;feature&rdquo;, &ldquo;sketch&rdquo;, &ldquo;item&rdquo;, &ldquo;element&rdquo;, &ldquo;leaf&rdquo;, &ldquo;commit&rdquo;</td>
+          <td>&ldquo;item&rdquo;</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>class</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td>custom CSS classes</td>
+          <td>&ldquo;accent&rdquo;</td>
+      </tr>
+  </tbody>
+</table>
+<h2
+  id="carousel">Carousel<a class="heading-anchor"
+     href="#carousel"
+     title="Carousel"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Trigo shortcode to display a carousel of images with drag, scroll support and optional automatic mode.</p>
+<p>Use either <code>dir</code>, <code>images</code>, or positional image arguments. Do not combine them.</p>
+<p>Directory where all image resources are used for the carousel:</p>
+<div class="codeblock"><div class="codeblock-file"><svg
+    class="icon words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/words.svg#words"></use>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">carousel</span><span class="w"> </span><span class="nx">dir</span><span class="o">=</span><span class="s">&#34;path/to/directory&#34;</span><span class="w"> </span><span class="nx">mode</span><span class="o">=</span><span class="s">&#34;auto&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p>List of images to use with an <code>images</code> parameter:</p>
+<div class="codeblock"><div class="codeblock-file"><svg
+    class="icon words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/words.svg#words"></use>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">carousel</span><span class="w"> </span><span class="nx">images</span><span class="o">=</span><span class="s">&#34;1.webp, 2.webp, 3.webp&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p>Images as positional arguments:</p>
+<div class="codeblock"><div class="codeblock-file"><svg
+    class="icon words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/words.svg#words"></use>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">carousel</span><span class="w"> </span><span class="s">&#34;1.webp&#34;</span><span class="w"> </span><span class="s">&#34;2.webp&#34;</span><span class="w"> </span><span class="s">&#34;3.webp&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p>The path is relative to the current page bundle. To use resources in the <code>static</code> or <code>assets</code> directories of the site, prefix the path with a <code>/</code> slash. External image URLs are also supported.</p>
+<p><u>How it renders:</u></p>
+<div
+    id="carousel5"
+    class="carousel"
+    data-duration="5000"
+    data-mode="auto">
+    <ul><li id="carousel5-slide0">
+            <img
+              srcset="/Website/pr-48/dev/web/shortcodes/dir/1_hu_b2b4d89bc7f12b36.webp 400w, /Website/pr-48/dev/web/shortcodes/dir/1.webp 600w"
+              sizes="(max-width: 400px) 400px, 75vw"
+              src="/Website/pr-48/dev/web/shortcodes/dir/1.webp"
+              width="600"
+              height="600"
+              alt="Slide-0"
+              loading="lazy"
+              fetchpriority="low">
+          </li><li id="carousel5-slide1">
+            <img
+              srcset="/Website/pr-48/dev/web/shortcodes/dir/2_hu_255a132b289a4947.webp 400w, /Website/pr-48/dev/web/shortcodes/dir/2.webp 600w"
+              sizes="(max-width: 400px) 400px, 75vw"
+              src="/Website/pr-48/dev/web/shortcodes/dir/2.webp"
+              width="600"
+              height="600"
+              alt="Slide-1"
+              loading="lazy"
+              fetchpriority="low">
+          </li><li id="carousel5-slide2">
+            <img
+              srcset="/Website/pr-48/dev/web/shortcodes/dir/3_hu_7ed47b1a12e456b5.webp 400w, /Website/pr-48/dev/web/shortcodes/dir/3.webp 600w"
+              sizes="(max-width: 400px) 400px, 75vw"
+              src="/Website/pr-48/dev/web/shortcodes/dir/3.webp"
+              width="600"
+              height="600"
+              alt="Slide-2"
+              loading="lazy"
+              fetchpriority="low">
+          </li></ul>
+    <ol><li><a href="#carousel5-slide0"></a></li><li><a href="#carousel5-slide1"></a></li><li><a href="#carousel5-slide2"></a></li></ol>
+    <div class="prev"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/tri_left.svg#tri_left"></use>
+  </svg></div>
+    <div class="next"><svg
+    class="icon tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/tri_right.svg#tri_right"></use>
+  </svg></div>
+  </div>
+<p><u><code>carousel</code> arguments:</u></p>
+<table>
+  <thead>
+      <tr>
+          <th>Position</th>
+          <th>Argument</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Options</th>
+          <th>Example value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td></td>
+          <td>unnamed</td>
+          <td>string[]</td>
+          <td><em>optional</em></td>
+          <td></td>
+          <td>&ldquo;1.webp&rdquo;</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td>images</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td></td>
+          <td>&ldquo;1.webp, 2.webp&rdquo;</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td>dir</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td></td>
+          <td>&ldquo;path/to/dir&rdquo;</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td>mode</td>
+          <td>string</td>
+          <td>&ldquo;fixed&rdquo;</td>
+          <td>&ldquo;fixed&rdquo; or &ldquo;auto&rdquo;</td>
+          <td>&ldquo;auto&rdquo;</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td>duration</td>
+          <td>int[ms]</td>
+          <td>5000</td>
+          <td></td>
+          <td>1000</td>
+      </tr>
+  </tbody>
+</table>
+<h2
+  id="compare">Compare<a class="heading-anchor"
+     href="#compare"
+     title="Compare"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Trigo shortcode to display two stacked images with a movable vertical clipping path.</p>
+<p>Specify two image paths:</p>
+<div class="codeblock"><div class="codeblock-file"><svg
+    class="icon words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/words.svg#words"></use>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">compare</span><span class="w"> </span><span class="s">&#34;1.webp&#34;</span><span class="w"> </span><span class="s">&#34;2.webp&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p>The path is relative to the current page bundle. To use resources in the <code>static</code> directory of the site, prefix the path with a <code>/</code> slash. External image URLs are also supported.</p>
+<p><u>How it renders:</u></p>
+<div id="compare6" class="compare"><img
+            class="before"
+            srcset="/Website/pr-48/dev/web/shortcodes/dir/1_hu_b2b4d89bc7f12b36.webp 400w, /Website/pr-48/dev/web/shortcodes/dir/1.webp 600w"
+            sizes="(max-width: 400px) 400px, 75vw"
+            src="/Website/pr-48/dev/web/shortcodes/dir/1.webp"
+            width="600"
+            height="600"
+            alt="Imagen alternativa"
+            loading="lazy"
+            fetchpriority="low"><img
+            class="after"
+            srcset="/Website/pr-48/dev/web/shortcodes/dir/3_hu_7ed47b1a12e456b5.webp 400w, /Website/pr-48/dev/web/shortcodes/dir/3.webp 600w"
+            sizes="(max-width: 400px) 400px, 75vw"
+            src="/Website/pr-48/dev/web/shortcodes/dir/3.webp"
+            width="600"
+            height="600"
+            alt="Imagen alternativa"
+            loading="lazy"
+            fetchpriority="low"><div class="divider"></div>
+      <div class="handle"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/tri_left.svg#tri_left"></use>
+  </svg><svg
+    class="icon tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/tri_right.svg#tri_right"></use>
+  </svg></div>
+    </div>
+<p><u><code>compare</code> arguments:</u></p>
+<table>
+  <thead>
+      <tr>
+          <th>Position</th>
+          <th>Argument</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Options</th>
+          <th>Example value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td></td>
+          <td>before (alias: left)</td>
+          <td>string</td>
+          <td><strong>required</strong></td>
+          <td></td>
+          <td>&ldquo;before.webp&rdquo;</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td>after (alias: right)</td>
+          <td>string</td>
+          <td><strong>required</strong></td>
+          <td></td>
+          <td>&ldquo;after.webp&rdquo;</td>
+      </tr>
+  </tbody>
+</table>
+<h2
+  id="canvas">Canvas<a class="heading-anchor"
+     href="#canvas"
+     title="Canvas"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Trigo shortcode to display an animated canvas based on a sequence of images with screen, mouse and keyboard controls.</p>
+<p>Specify a directory path with the sequence of named images, optionally the animation speed as FPS and a title.</p>
+<div class="codeblock"><div class="codeblock-file"><svg
+    class="icon words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/words.svg#words"></use>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">canvas</span><span class="w"> </span><span class="nx">path</span><span class="o">=</span><span class="s">&#34;frames-dir&#34;</span><span class="w"> </span><span class="nx">fps</span><span class="o">=</span><span class="s">&#34;12&#34;</span><span class="w"> </span><span class="nx">title</span><span class="o">=</span><span class="s">&#34;Animation title&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p>The path is relative to the current page bundle. To use resources in the <code>static</code> directory of the site, prefix the path with a <code>/</code> slash. External resources (defined from a URL) are not supported at this time. Frames are ordered lexicographically by filename, e.g. <code>001.webp</code>, <code>002.webp</code>.</p>
+<p><u>How it renders:</u></p>
+<div
+  class="canvas"
+  id="canvas-7"
+  tabindex="0" title="Press spacebar to animate me! Or grab, scroll and use keyboard arrows too!">
+
+  <canvas aria-label="Canvas animation">
+    <img
+      src="/Website/pr-48/dev/web/shortcodes/frames/01_hu_16c305e5dca76398.webp"
+      alt="Imagen alternativa">
+  </canvas>
+
+  <div class="controls">
+    <button
+      class="play"
+      aria-label="Play animation"><svg
+    class="icon play"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/play.svg#play"></use>
+  </svg></button>
+
+    <button
+      class="pause"
+      aria-label="Pause animation"><svg
+    class="icon pause"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/pause.svg#pause"></use>
+  </svg></button>
+
+    <input
+      class="slider"
+      type="range"
+      min="0"
+      max="35"
+      value="0"
+      aria-label="Animation frame">
+  </div>
+
+  <script
+    type="application/json"
+    class="canvas-data">
+  {
+    "fps":  12 ,
+    "frames": ["/Website/pr-48/dev/web/shortcodes/frames/01_hu_16c305e5dca76398.webp","/Website/pr-48/dev/web/shortcodes/frames/02_hu_1704630222f7cba2.webp","/Website/pr-48/dev/web/shortcodes/frames/03_hu_4d83030e2050c351.webp","/Website/pr-48/dev/web/shortcodes/frames/04_hu_61e1bdcda7d28364.webp","/Website/pr-48/dev/web/shortcodes/frames/05_hu_dc1d1d949ef35998.webp","/Website/pr-48/dev/web/shortcodes/frames/06_hu_c450374a3b8d1f63.webp","/Website/pr-48/dev/web/shortcodes/frames/07_hu_f2a7b5f5337ac169.webp","/Website/pr-48/dev/web/shortcodes/frames/08_hu_10e43d6244d1fdb7.webp","/Website/pr-48/dev/web/shortcodes/frames/09_hu_e914e1ced8ed9bf5.webp","/Website/pr-48/dev/web/shortcodes/frames/10_hu_a41a9b5bafaccec9.webp","/Website/pr-48/dev/web/shortcodes/frames/11_hu_dcb3140208966afe.webp","/Website/pr-48/dev/web/shortcodes/frames/12_hu_c4ff1859b2c5cfc8.webp","/Website/pr-48/dev/web/shortcodes/frames/13_hu_f9adf19716ce21de.webp","/Website/pr-48/dev/web/shortcodes/frames/14_hu_ffe0565429656883.webp","/Website/pr-48/dev/web/shortcodes/frames/15_hu_d829e3bbc52ffc73.webp","/Website/pr-48/dev/web/shortcodes/frames/16_hu_846a74f7eb0a9f33.webp","/Website/pr-48/dev/web/shortcodes/frames/17_hu_7fadeac00904922.webp","/Website/pr-48/dev/web/shortcodes/frames/18_hu_ed8860dfb819095e.webp","/Website/pr-48/dev/web/shortcodes/frames/19_hu_3801eca7b36f8580.webp","/Website/pr-48/dev/web/shortcodes/frames/20_hu_22f005b27365059f.webp","/Website/pr-48/dev/web/shortcodes/frames/21_hu_93860403c05d3002.webp","/Website/pr-48/dev/web/shortcodes/frames/22_hu_8b1593106f500ffe.webp","/Website/pr-48/dev/web/shortcodes/frames/23_hu_d5fdc792ef142ca7.webp","/Website/pr-48/dev/web/shortcodes/frames/24_hu_f4ff0c20b241e74d.webp","/Website/pr-48/dev/web/shortcodes/frames/25_hu_e19118dc264b25be.webp","/Website/pr-48/dev/web/shortcodes/frames/26_hu_87ec02806f1d8709.webp","/Website/pr-48/dev/web/shortcodes/frames/27_hu_336385740c9915ae.webp","/Website/pr-48/dev/web/shortcodes/frames/28_hu_e4a845985966a2.webp","/Website/pr-48/dev/web/shortcodes/frames/29_hu_33644c996663fe9.webp","/Website/pr-48/dev/web/shortcodes/frames/30_hu_1a7adb097c221237.webp","/Website/pr-48/dev/web/shortcodes/frames/31_hu_39cd992ec67c41bc.webp","/Website/pr-48/dev/web/shortcodes/frames/32_hu_af116d024da5afb6.webp","/Website/pr-48/dev/web/shortcodes/frames/33_hu_664ae6f4ddefab14.webp","/Website/pr-48/dev/web/shortcodes/frames/34_hu_2d89a7771728ad90.webp","/Website/pr-48/dev/web/shortcodes/frames/35_hu_7d77a414cbca488c.webp","/Website/pr-48/dev/web/shortcodes/frames/36_hu_85208ec6f729a3c8.webp"]
+  }
+  </script>
+
+  <noscript>
+    <figure>
+      <img
+        src="/Website/pr-48/dev/web/shortcodes/frames/01_hu_16c305e5dca76398.webp"
+        alt="Imagen alternativa"
+        style="max-width:100%; border-radius:var(--radius);"
+        loading="lazy"
+        fetchpriority="low">
+      <figcaption>Enable JavaScript to view the canvas animation.</figcaption>
+    </figure>
+  </noscript>
+</div>
+<p><u><code>canvas</code> arguments:</u></p>
+<table>
+  <thead>
+      <tr>
+          <th>Position</th>
+          <th>Argument</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Options</th>
+          <th>Example value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>path</td>
+          <td>string</td>
+          <td><strong>required</strong></td>
+          <td></td>
+          <td>&ldquo;path/to/dir&rdquo;</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>fps</td>
+          <td>int[fps]</td>
+          <td>12</td>
+          <td></td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>title</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td></td>
+          <td>&ldquo;Canvas title&rdquo;</td>
+      </tr>
+  </tbody>
+</table>
+<h2
+  id="button">Button<a class="heading-anchor"
+     href="#button"
+     title="Button"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Trigo shortcode to add a link as a clickable button with optional icon and label.</p>
+<div class="codeblock"><div class="codeblock-file"><svg
+    class="icon words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/words.svg#words"></use>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">button</span><span class="w"> </span><span class="nx">url</span><span class="o">=</span><span class="s">&#34;/news&#34;</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;See the latest news&#34;</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="s">&#34;time&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+<div class="button-shortcode">
+    <a
+      href="/Website/pr-48/es/news/"
+      title="See the latest news"
+      class="button"><svg
+    class="icon time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/time.svg#time"></use>
+  </svg>See the latest news</a>
+  </div>
+<p><u><code>button</code> arguments:</u></p>
+<table>
+  <thead>
+      <tr>
+          <th>Position</th>
+          <th>Argument</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Options</th>
+          <th>Example value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>url</td>
+          <td>string</td>
+          <td><strong>required</strong></td>
+          <td></td>
+          <td>&ldquo;/news&rdquo;</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>label</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td></td>
+          <td>&ldquo;Button label&rdquo;</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>icon</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td></td>
+          <td>&ldquo;heart&rdquo;</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>class</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td>custom CSS classes</td>
+          <td>&ldquo;button-accent&rdquo;</td>
+      </tr>
+  </tbody>
+</table>
+<h2
+  id="git">Git<a class="heading-anchor"
+     href="#git"
+     title="Git"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Trigo shortcode to link to a git commit or pull request (short commit hash or #id respectively).</p>
+<div class="codeblock"><div class="codeblock-file"><svg
+    class="icon words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/words.svg#words"></use>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl">A git commit: <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">git</span><span class="w"> </span><span class="s">&#34;https://gitlab.com/user/repo/-/commit/abcdef123456&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>,
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">and a pull request: <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">git</span><span class="w"> </span><span class="nx">url</span><span class="o">=</span><span class="s">&#34;https://github.com/user/repo/pull/123&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>.</span></span></code></pre></div></div><p><u>How it renders:</u></p>
+<p>A commit: <a
+        href="https://gitlab.com/user/repo/-/commit/abcdef123456"
+        class="git"
+        title="View code change"
+        target="_blank"
+        rel="external noreferrer nofollow"><svg
+    class="icon commit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/commit.svg#commit"></use>
+  </svg>abcdef12<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>,</p>
+<p>and a pull request: <a
+        href="https://github.com/user/repo/pull/123"
+        class="git"
+        title="View code change"
+        target="_blank"
+        rel="external noreferrer nofollow"><svg
+    class="icon pr"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/pr.svg#pr"></use>
+  </svg>#123<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>.</p>
+<p><u><code>merge</code> arguments:</u></p>
+<table>
+  <thead>
+      <tr>
+          <th>Position</th>
+          <th>Argument</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Options</th>
+          <th>Example value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>url</td>
+          <td>string</td>
+          <td><strong>required</strong></td>
+          <td></td>
+          <td>&ldquo;<a
+  href="https://github.com/user/repo/pull/123%22"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">https://github.com/user/repo/pull/123"<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a></td>
+      </tr>
+  </tbody>
+</table>
+<h2
+  id="pdf">PDF<a class="heading-anchor"
+     href="#pdf"
+     title="PDF"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Trigo shortcode to display an embedded PDF file.</p>
+<div class="codeblock"><div class="codeblock-file"><svg
+    class="icon words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/words.svg#words"></use>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">pdf</span><span class="w"> </span><span class="s">&#34;https://example.com/sample.pdf&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p>The PDF file can also be located in the project directory and use the relative path.</p>
+<div class="codeblock"><div class="codeblock-file"><svg
+    class="icon words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/words.svg#words"></use>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">pdf</span><span class="w"> </span><span class="s">&#34;path/to/file.pdf&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+<div class="pdf">
+    <iframe
+      src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Wikimedia_Commons_web_en.pdf"
+      title="Wikimedia_Commons_web_en"
+      loading="lazy"
+      allowfullscreen>
+    </iframe>
+  </div>
+<p><u><code>pdf</code> arguments:</u></p>
+<table>
+  <thead>
+      <tr>
+          <th>Position</th>
+          <th>Argument</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Options</th>
+          <th>Example value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>path</td>
+          <td>string</td>
+          <td><strong>required</strong></td>
+          <td></td>
+          <td>&ldquo;path/to/file.pdf&rdquo;</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>title</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td></td>
+          <td>&ldquo;My PDF document&rdquo;</td>
+      </tr>
+  </tbody>
+</table>
+<h2
+  id="video">Video<a class="heading-anchor"
+     href="#video"
+     title="Video"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Trigo shortcode to display a video with optional poster.</p>
+<div class="codeblock"><div class="codeblock-file"><svg
+    class="icon words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/words.svg#words"></use>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">video</span><span class="w"> </span><span class="nx">src</span><span class="o">=</span><span class="s">&#34;video.mp4&#34;</span><span class="w"> </span><span class="nx">poster</span><span class="o">=</span><span class="s">&#34;dir/3.webp&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+<p><figure>
+  <blockquote class="warning"><svg
+    class="icon warning"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/warning.svg#warning"></use>
+  </svg>Advertencia<p>Video resource &lsquo;video.mp4&rsquo; not found.</p></blockquote></figure></p>
+<p><u><code>video</code> arguments:</u></p>
+<table>
+  <thead>
+      <tr>
+          <th>Position</th>
+          <th>Argument</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Options</th>
+          <th>Example value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>src</td>
+          <td>string</td>
+          <td><strong>required</strong></td>
+          <td></td>
+          <td>&ldquo;path/to/video.mp4&rdquo;</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>poster</td>
+          <td>string</td>
+          <td></td>
+          <td></td>
+          <td>&ldquo;poster.webp&rdquo;</td>
+      </tr>
+  </tbody>
+</table>
+<h2
+  id="peertube">Peertube<a class="heading-anchor"
+     href="#peertube"
+     title="Peertube"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Trigo shortcode to embed a Peertube video.</p>
+<div class="codeblock"><div class="codeblock-file"><svg
+    class="icon words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/words.svg#words"></use>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">peertube</span><span class="w"> </span><span class="nx">url</span><span class="o">=</span><span class="s">&#34;https://toobnix.org/w/5jBegFpNbffA1nhmp32kqR&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p>You can optionally specify a start and/or stop time.</p>
+<div class="codeblock"><div class="codeblock-file"><svg
+    class="icon words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/words.svg#words"></use>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">peertube</span><span class="w"> </span><span class="nx">url</span><span class="o">=</span><span class="s">&#34;https://toobnix.org/w/5jBegFpNbffA1nhmp32kqR&#34;</span><span class="w"> </span><span class="nx">start</span><span class="o">=</span><span class="s">&#34;30s&#34;</span><span class="w"> </span><span class="nx">stop</span><span class="o">=</span><span class="s">&#34;2m15s&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+<div style="position: relative; aspect-ratio: 1.7778;">
+        <iframe
+          title="BUNNY ENCOUNTER!"
+          loading="lazy"
+          sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+          style="position: absolute; inset: 0; width: 100%; height: 100%;"
+          src="https://toobnix.org/videos/embed/5jBegFpNbffA1nhmp32kqR?autoplay=0&amp;controlBar=1&amp;loop=0&amp;muted=0&amp;p2p=1&amp;peertubeLink=1&amp;title=1&amp;warningTitle=1"
+          referrerpolicy="strict-origin-when-cross-origin" allow="fullscreen;">
+        </iframe>
+      </div>
+<p><u><code>peertube</code> arguments:</u></p>
+<table>
+  <thead>
+      <tr>
+          <th>Position</th>
+          <th>Argument</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Options</th>
+          <th>Example value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>url</td>
+          <td>string</td>
+          <td><strong>required</strong></td>
+          <td></td>
+          <td>&ldquo;<a
+  href="https://toobnix.org/w/5jBegFpNbffA1nhmp32kqR%22"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">https://toobnix.org/w/5jBegFpNbffA1nhmp32kqR"<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a></td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>start</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td></td>
+          <td>&ldquo;30s&rdquo;</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>stop</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td></td>
+          <td>&ldquo;2m15s&rdquo;</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>width</td>
+          <td>int[px]</td>
+          <td>0=responsive</td>
+          <td></td>
+          <td>1280</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>autoplay</td>
+          <td>boolean</td>
+          <td><code>false</code></td>
+          <td></td>
+          <td><code>true</code></td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>mute</td>
+          <td>boolean</td>
+          <td><code>false</code></td>
+          <td></td>
+          <td><code>true</code></td>
+      </tr>
+  </tbody>
+</table>
+<p>By default, videos are displayed responsively, lazy-loaded, and allow fullscreen playback.</p>
+<h2
+  id="youtube">YouTube<a class="heading-anchor"
+     href="#youtube"
+     title="YouTube"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Hugo built-in shortcode to embed a YouTube video.</p>
+<div class="codeblock"><div class="codeblock-file"><svg
+    class="icon words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/words.svg#words"></use>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">youtube</span><span class="w"> </span><span class="nx">id</span><span class="o">=</span><span class="nx">a9biWv_M8p8</span><span class="w"> </span><span class="nx">title</span><span class="o">=</span><span class="s">&#34;My video title&#34;</span><span class="w"> </span><span class="nx">start</span><span class="o">=</span><span class="nx">30</span><span class="w"> </span><span class="nx">loading</span><span class="o">=</span><span class="nx">lazy</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/a9biWv_M8p8?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=30" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="My video title"></iframe>
+    </div>
+
+<p>For more information, see <a
+  href="https://gohugo.io/shortcodes/youtube/"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Hugo&rsquo;s YouTube shortcode<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>.</p>
+<h2
+  id="vimeo">Vimeo<a class="heading-anchor"
+     href="#vimeo"
+     title="Vimeo"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Hugo built-in shortcode to embed a Vimeo video.</p>
+<div class="codeblock"><div class="codeblock-file"><svg
+    class="icon words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/words.svg#words"></use>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">vimeo</span><span class="w"> </span><span class="nx">id</span><span class="o">=</span><span class="nx">19899678</span><span class="w"> </span><span class="nx">loading</span><span class="o">=</span><span class="nx">lazy</span><span class="w"> </span><span class="nx">title</span><span class="o">=</span><span class="s">&#34;Barn Owl&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+
+      <div
+          style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+        <iframe
+          src="https://player.vimeo.com/video/19899678?dnt=0"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allow="fullscreen" loading="lazy" title="Barn Owl">
+        </iframe>
+      </div>
+
+<p>For more information, see <a
+  href="https://gohugo.io/shortcodes/vimeo/"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Hugo&rsquo;s Vimeo shortcode<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>.</p>
+<h2
+  id="collection">Collection<a class="heading-anchor"
+     href="#collection"
+     title="Collection"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Trigo shortcode to display a full-width layout with a collection of pages as cards. These pages come from a section, a specific taxonomy term or are part of a taxonomy.</p>
+<div class="codeblock"><div class="codeblock-file"><svg
+    class="icon words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/words.svg#words"></use>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">collection</span><span class="w"> </span><span class="nx">collection</span><span class="o">=</span><span class="s">&#34;dev&#34;</span><span class="w"> </span><span class="nx">first</span><span class="o">=</span><span class="nx">3</span><span class="w"> </span><span class="nx">css_class</span><span class="o">=</span><span class="s">&#34;gradient&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+<div class="card-list wide gradient">
+    <div
+      class="cards"><a
+    class="card"
+    href="/Website/pr-48/es/dev/welcome/"><div class="card-color" style="--hue: 90;"><span class="card-icon"><svg
+    class="icon directions"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/directions.svg#directions"></use>
+  </svg></span></div><h3 class="card-title">Contributors, welcome!</h3><p class="card-description">Want to contribute to FreeCAD? Start here.</p><div class="card-metadata"></div></a><a
+    class="card"
+    href="/Website/pr-48/es/dev/teams/"><div class="card-color" style="--hue: 100;"><span class="card-icon"><svg
+    class="icon people"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/people.svg#people"></use>
+  </svg></span></div><h3 class="card-title">Teams</h3><p class="card-description">The Teams of contributors making FreeCAD happen.</p><div class="card-metadata"></div></a><a
+    class="card"
+    href="/Website/pr-48/es/dev/setup/build/"><div class="card-color" style="--hue: 110;"><span class="card-icon"><svg
+    class="icon gear"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/gear.svg#gear"></use>
+  </svg></span></div><h3 class="card-title">Development Setup</h3><p class="card-description">Set the development up, build, run, enjoy!</p><div class="card-metadata"></div></a></div>
+  </div>
+<p><u><code>collection</code> arguments:</u></p>
+<table>
+  <thead>
+      <tr>
+          <th>Position</th>
+          <th>Argument</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Options</th>
+          <th>Example value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>collection</td>
+          <td>string</td>
+          <td></td>
+          <td></td>
+          <td>&ldquo;news&rdquo;</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>first</td>
+          <td>int</td>
+          <td>0</td>
+          <td></td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>taxonomy</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td></td>
+          <td>&ldquo;categories&rdquo;</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>term</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td></td>
+          <td>&ldquo;event&rdquo;</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>sort</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td></td>
+          <td>&ldquo;date&rdquo;</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>reverse</td>
+          <td>bool</td>
+          <td><code>false</code></td>
+          <td></td>
+          <td><code>true</code></td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>class</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td>custom CSS classes</td>
+          <td>&ldquo;gradient&rdquo;</td>
+      </tr>
+  </tbody>
+</table>
+<h2
+  id="block-and-group">Block and group<a class="heading-anchor"
+     href="#block-and-group"
+     title="Block and group"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Trigo shortcode to display a full-width layout block container with custom inner content.</p>
+<p>Use the <code>{{&lt; group &gt;}}</code> shortcode to nest and group related content into vertical columns within a block.</p>
+<div class="codeblock"><div class="codeblock-file"><svg
+    class="icon words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/words.svg#words"></use>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="k">block</span><span class="w"> </span><span class="nx">title</span><span class="o">=</span><span class="s">&#34;My Title&#34;</span><span class="w"> </span><span class="nx">css_class</span><span class="o">=</span><span class="s">&#34;section&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">group</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">This is **Markdown** *content* between `block` and `group` shortcode tags.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">| Format      | Syntax          | Example output           |
+</span></span><span class="line"><span class="cl">| ----------- | --------------- | ------------------------ |
+</span></span><span class="line"><span class="cl">| Bold        | `**bold**`      | Some **bold** text       |
+</span></span><span class="line"><span class="cl">| Italic      | `*italic*`      | Some *italic* text       |
+</span></span><span class="line"><span class="cl">| Mark        | `==mark==`      | Some ==marked== text.    |
+</span></span><span class="line"><span class="cl">| Deleted     | `~~deleted~~`   | Some ~~deleted~~ text    |
+</span></span><span class="line"><span class="cl">| Inserted    | `++inserted++`  | Some ++inserted++ text   |
+</span></span><span class="line"><span class="cl">| Subscript   | `~subscript~`   | Some ~subscript~ text.   |
+</span></span><span class="line"><span class="cl">| Superscript | `^superscript^` | Some ^superscript^ text. |
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&gt; [!TIP]
+</span></span><span class="line"><span class="cl">&gt; - Content such as images and other shortcodes can be added as well
+</span></span><span class="line"><span class="cl">&gt; - Each individual HTML block-level element (e.g. heading, paragraph, figure, list, quote) form a &#34;sub-block&#34; and creates its own vertical layout.
+</span></span><span class="line"><span class="cl">&gt; - Use the `group` shortcode to group them vertically and control the flow.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">button</span><span class="w"> </span><span class="nx">url</span><span class="o">=</span><span class="s">&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Display/Block_and_inline_layout&#34;</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;Reference: Block and inline layout in normal flow&#34;</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="s">&#34;tip&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="nx">group</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">![](/FreeCAD-symbol.webp)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="k">block</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+<div class="block-shortcode wide section"><h2 class="block-title">My Title</h2><div class="block-content"><div class="group"><p>This is <strong>Markdown</strong> <em>content</em> between <code>block</code> and <code>group</code> shortcode tags.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Format</th>
+          <th>Syntax</th>
+          <th>Example output</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Bold</td>
+          <td><code>**bold**</code></td>
+          <td>Some <strong>bold</strong> text</td>
+      </tr>
+      <tr>
+          <td>Italic</td>
+          <td><code>*italic*</code></td>
+          <td>Some <em>italic</em> text</td>
+      </tr>
+      <tr>
+          <td>Mark</td>
+          <td><code>==mark==</code></td>
+          <td>Some <mark>marked</mark> text.</td>
+      </tr>
+      <tr>
+          <td>Deleted</td>
+          <td><code>~~deleted~~</code></td>
+          <td>Some <del>deleted</del> text</td>
+      </tr>
+      <tr>
+          <td>Inserted</td>
+          <td><code>++inserted++</code></td>
+          <td>Some <ins>inserted</ins> text</td>
+      </tr>
+      <tr>
+          <td>Subscript</td>
+          <td><code>~subscript~</code></td>
+          <td>Some <sub>subscript</sub> text.</td>
+      </tr>
+      <tr>
+          <td>Superscript</td>
+          <td><code>^superscript^</code></td>
+          <td>Some <sup>superscript</sup> text.</td>
+      </tr>
+  </tbody>
+</table>
+<figure>
+  <blockquote class="tip"><svg
+    class="icon tip"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/tip.svg#tip"></use>
+  </svg>Consejo<ul>
+<li>Content such as images and other shortcodes can be added as well</li>
+<li>Each individual HTML block-level element (e.g. heading, paragraph, figure, list, quote) form a &ldquo;sub-block&rdquo; and creates its own vertical layout.</li>
+<li>Use the <code>group</code> shortcode to group them vertically and control the flow.</li>
+</ul></blockquote></figure>
+<div class="button-shortcode">
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Display/Block_and_inline_layout"
+      title="Reference: Block and inline layout in normal flow"
+      class="button" target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon tip"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/tip.svg#tip"></use>
+  </svg>Reference: Block and inline layout in normal flow<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+  </div></div>
+<figure class="image"><button
+          aria-label="Ampliar imagen"
+          popovertarget="img-001"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img FreeCAD-symbol"
+    src="/Website/pr-48/FreeCAD-symbol.webp"
+    alt="Imagen alternativa"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" width="400" height="480" srcset="/Website/pr-48/FreeCAD-symbol.webp 400w" sizes="95vw"></button>
+        <div id="img-001" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes"><img
+    class="img FreeCAD-symbol"
+    src="/Website/pr-48/FreeCAD-symbol.webp"
+    alt="Imagen alternativa"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" width="400" height="480" srcset="/Website/pr-48/FreeCAD-symbol.webp 400w" sizes="95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/cross.svg#cross"></use>
+  </svg></button></div></figure></div>
+  </div>
+<p><u><code>block</code> arguments:</u></p>
+<table>
+  <thead>
+      <tr>
+          <th>Position</th>
+          <th>Argument</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Options</th>
+          <th>Example value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>content</td>
+          <td>string</td>
+          <td><code>InnerDeindent</code></td>
+          <td></td>
+          <td>Note: Place <strong>Markdown</strong> <em>content</em> inside block tags</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>title</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td></td>
+          <td>&ldquo;Block title&rdquo;</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>class</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td>custom CSS classes</td>
+          <td>&ldquo;section&rdquo;</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>title_class</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td>custom CSS classes</td>
+          <td>&ldquo;accent&rdquo;</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>content_class</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td>custom CSS classes</td>
+          <td>&ldquo;accent&rdquo;</td>
+      </tr>
+  </tbody>
+</table>
+<p><u><code>group</code> arguments:</u></p>
+<table>
+  <thead>
+      <tr>
+          <th>Position</th>
+          <th>Argument</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Options</th>
+          <th>Example value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>content</td>
+          <td>string</td>
+          <td><code>InnerDeindent</code></td>
+          <td></td>
+          <td>Note: Place <strong>Markdown</strong> <em>content</em> inside group tags</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>class</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td>custom CSS classes</td>
+          <td>&ldquo;accent&rdquo;</td>
+      </tr>
+  </tbody>
+</table>
+</div><footer class="single-footer">
+    <nav class="pagination"><a
+            class="button next"
+            href="/Website/pr-48/es/dev/web/markdown/"
+            title="Artículo siguiente"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/tri_left.svg#tri_left"></use>
+  </svg>Markdown</a><a
+            class="button prev"
+            href="/Website/pr-48/es/dev/web/front-matter/"
+            title="Artículo anterior">Front matter<svg
+    class="icon tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Ir al inicio"
+  title="Ir al inicio (Alt + G)" ><svg
+    class="icon tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a
+            href="/Website/pr-48/es/">Inicio</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-48/es/features/">Características</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-48/es/download/">Descarga</a><ul><li>
+                      <a
+                        href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="external noreferrer nofollow">Development Builds<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples and Parts Library<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-48/es/download/releases/">Releases</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-48/es/news/">Actualidad</a><ul><li>
+                  <a
+                    href="/Website/pr-48/es/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/pr-48/es/authors/">Autores</a>
+                      </li><li>
+                        <a href="/Website/pr-48/es/categories/">Categorías</a>
+                      </li><li>
+                        <a href="/Website/pr-48/es/tags/">Etiquetas</a>
+                      </li><li>
+                        <a href="/Website/pr-48/es/versions/">Versiones</a>
+                      </li></ul></li><li>
+          <a
+            href="/Website/pr-48/es/community/">Comunidad</a><ul><li>
+                      <a
+                        href="/Website/pr-48/es/community/calendar/">Calendar</a>
+                    </li><li>
+                      <a
+                        href="https://events.freecad.org/" target="_blank" rel="external noreferrer nofollow">Events<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://fpa.freecad.org" target="_blank" rel="external noreferrer nofollow">Association<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-48/es/community/fpn/">Professional Network</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-48/es/community/addons/">Addons</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-48/es/community/telemetry/">Telemetry</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-48/es/docs/" aria-current="page" class="active">Documentación</a><ul><li>
+                  <a
+                    href="https://wiki.freecad.org/User_hub" target="_blank" rel="external noreferrer nofollow">User manual<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+                </li><li>
+                  <a
+                    href="/Website/pr-48/es/dev/">Development Handbook</a>
+                </li><li>
+                  <a
+                    href="https://freecad.github.io/SourceDoc/" target="_blank" rel="external noreferrer nofollow">FreeCAD API<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+                </li></ul></li><li>
+          <a
+            href="/Website/pr-48/es/donate/">♥ Donar</a><ul></ul></li></ul>
+</nav>
+<div class="share-links"><a
+    href="https://forum.freecad.org"
+    title="Forum"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/forum.svg#forum"></use>
+  </svg></a><a
+    href="https://github.com/freecad"
+    title="GitHub"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/github.svg#github"></use>
+  </svg></a><a
+    href="https://codeberg.org/freecad"
+    title="Codeberg"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a
+    href="https://social.freecad.org/@freecad"
+    title="Mastodon"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://www.reddit.com/r/freecad"
+    title="Reddit"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/reddit.svg#reddit"></use>
+  </svg></a><a
+    href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+    title="Matrix"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/matrix.svg#matrix"></use>
+  </svg></a><a
+    href="https://discord.gg/w2cTKGzccC"
+    title="Discord"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/discord.svg#discord"></use>
+  </svg></a><a
+    href="https://www.linkedin.com/groups/4295230"
+    title="LinkedIn"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+  href="/Website/pr-48/es/fedishare.html#title=Shortcodes&amp;description=Bundled%20Trigo%20Theme%20and%20Hugo%20shortcodes%20to%20enhance%20content.&amp;url=https://FreeCAD.github.io/Website/pr-48/es/dev/web/shortcodes/"
+  title="Compartir en Fediverse"
+  target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026
+    <a
+      href="/Website/pr-48/es/"
+      title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a
+    href="https://creativecommons.org/licenses/by-sa/4.0/"
+    title="Creative Commons"
+    target="_blank" rel="license external noreferrer nofollow">
+
+    CC BY-SA<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to
+  <a
+    href="https://gohugo.io/"
+    title="Hugo SSG"
+    target="_blank" rel="external noreferrer nofollow">
+
+    Hugo<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-06-27
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/6cd0fe9f7eca6dfa94073171c4ffa6bf28958345">6cd0fe9f7<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script
+    src="/Website/pr-48/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-48/js/es/copy.min.4352077bd376c0fa652c23733a44a84d7b971232620cabd39f339a5f1b2bb913.js"
+    type="text/javascript"
+    defer integrity="sha256-Q1IHe9N2wPplLCNzOkSoTXuXEjJiDKvTnzOaXxsruRM=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-48/js/details.min.b17077114e408df643b3e362cc55ca6b915b0ccef5832659790575c459655d05.js"
+    type="text/javascript"
+    defer integrity="sha256-sXB3EU5AjfZDs&#43;NizFXKa5FbDM71gyZZeQV1xFllXQU=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-48/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    defer integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-48/js/carousel.min.bd85b27175faec415846a6756cb42cdb497c7a6ea9e211b716f71604798f0c58.js"
+    type="text/javascript"
+    defer integrity="sha256-vYWycXX67EFYRqZ1bLQs20l8em6p4hG3FvcWBHmPDFg=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-48/js/compare.min.4d087fb4ca93201f53f0833e94ce4e23c4b727b01851489ba5b6f7bf2f3aaa86.js"
+    type="text/javascript"
+    defer integrity="sha256-TQh/tMqTIB9T8IM&#43;lM5OI8S3J7AYUUibpbb3vy86qoY=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-48/js/canvas.min.92bba31ceb5c3725915f94004825bc1a799fed9f41246f893d676aa83f82b816.js"
+    type="text/javascript"
+    defer integrity="sha256-krujHOtcNyWRX5QASCW8Gnmf7Z9BJG&#43;JPWdqqD&#43;CuBY=" crossorigin="anonymous">
+  </script></body>
+
+</html>

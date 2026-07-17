@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html
+  lang="es-ES"
+  dir="ltr"><head><meta charset="utf-8">
+<meta
+  name="viewport"
+  content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta
+  name="referrer"
+  content="strict-origin-when-cross-origin">
+<meta
+  name="robots"
+  content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link
+          rel="stylesheet"
+          href="/Website/pr-48/css/styles.427631aa94aa0860581e0dbdc75e2aef60d77920a9e865903f30d190e7aaac8d.css"
+          integrity="sha256-QnYxqpSqCGBYHg29x14q72DXeSCp6GWQPzDRkOeqrI0="
+          crossorigin="anonymous"><link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Website/pr-48/favicon.svg"><link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/Website/pr-48/favicon.ico"><link
+      rel="apple-touch-icon"
+      href="/Website/pr-48/apple-touch-icon.png"><title>FreeCAD | News</title>
+  <meta
+    name="description"
+    content="Browse the latest news"><meta
+      name="keywords"
+      content="free, open-source, CAD, software, tool, parametric, modeling, model, design, product, engineering, manufacturing, community, workbench, FOSS, 3D, BIM, CAM, FEM, FEA"><link
+    rel="canonical"
+    href="https://FreeCAD.github.io/Website/pr-48/es/news/"><link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://FreeCAD.github.io/Website/pr-48/news/"><link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://FreeCAD.github.io/Website/pr-48/zh/news/"><link
+      rel="alternate"
+      hreflang="es-ES"
+      href="https://FreeCAD.github.io/Website/pr-48/es/news/"><link
+      rel="alternate"
+      hreflang="fr-FR"
+      href="https://FreeCAD.github.io/Website/pr-48/fr/news/"><link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://FreeCAD.github.io/Website/pr-48/pt/news/"><link
+      rel="alternate"
+      hreflang="de-DE"
+      href="https://FreeCAD.github.io/Website/pr-48/de/news/"><link
+      rel="alternate"
+      hreflang="ja-JP"
+      href="https://FreeCAD.github.io/Website/pr-48/ja/news/"><link
+    rel="alternate"
+    hreflang="x-default"
+    href="https://FreeCAD.github.io/Website/pr-48/es/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-48/es/news/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="News">
+  <meta property="og:description" content="Browse the latest news">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:type" content="website">
+</head><body
+    class="list type-news kind-section "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a
+      href="/Website/pr-48/es/"
+      accesskey="h"
+      title="Inicio (Alt + H)"
+      aria-label="Inicio"><svg
+      class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+
+      <use href="/Website/pr-48/FreeCAD-wordmark.svg#logo"></use>
+    </svg></a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button
+    popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menú"
+    aria-label="Menú"><svg
+    class="icon hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/hamburger.svg#hamburger"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul
+    popover
+    id="menu-list"
+    class="menu-list"><li>
+          <a
+            href="/Website/pr-48/es/features/">Características</a>
+        </li><li>
+          <a
+            href="/Website/pr-48/es/download/">Descarga</a>
+        </li><li>
+          <a
+            href="/Website/pr-48/es/news/" aria-current="page" class="active">Actualidad</a>
+        </li><li>
+          <a
+            href="/Website/pr-48/es/community/">Comunidad</a>
+        </li><li>
+          <a
+            href="/Website/pr-48/es/docs/">Documentación</a>
+        </li><li>
+          <a
+            href="/Website/pr-48/es/donate/" class="donate-button">♥ Donar</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button
+          popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Elegir idioma (Alt + L)"
+          aria-label="Elegir idioma"><svg
+    class="icon language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul
+          popover
+          id="lang-list"
+          class="language-list"><li>
+              <a href="/Website/pr-48/news/" title="News">English 🇬🇧</a>
+            </li><li>
+              <a href="/Website/pr-48/zh/news/" title="News">中文 🇨🇳</a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-48/es/news/" title="News">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/pr-48/fr/news/" title="News">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pr-48/pt/news/" title="News">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a href="/Website/pr-48/de/news/" title="News">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/pr-48/ja/news/" title="News">日本語 🇯🇵</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Cambiar tema chroma (Alt + T)"
+    aria-label="Cambiar tema chroma"><svg
+    class="icon dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/dark.svg#dark"></use>
+  </svg><svg
+    class="icon light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main style="--hue: 40;"><section class="hero">
+
+    <h1 class="title">News</h1><h3 class="description">Browse the latest news</h3><div class="buttons"><a
+              href="/Website/pr-48/es/authors/"
+              class="button"><svg
+    class="icon authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/authors.svg#authors"></use>
+  </svg>Autores (9)</a><a
+              href="/Website/pr-48/es/categories/"
+              class="button"><svg
+    class="icon categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/categories.svg#categories"></use>
+  </svg>Categorías (6)</a><a
+              href="/Website/pr-48/es/tags/"
+              class="button"><svg
+    class="icon tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/tags.svg#tags"></use>
+  </svg>Etiquetas (64)</a><a
+              href="/Website/pr-48/es/versions/"
+              class="button"><svg
+    class="icon versions"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/versions.svg#versions"></use>
+  </svg>Versiones (11)</a><a
+                href="/Website/pr-48/es/news/archives/"
+                class="button">Archives</a></div></section>
+
+  <div class="card-list wide">
+    <div class="cards"><a
+    class="card"
+    href="/Website/pr-48/es/news/mini-documentary-on-dr-adrian-bowyer-with-bonus-freecad-appearances/"><div class="card-color" style="--hue: 80;"></div><h3 class="card-title">Mini Documentary on Dr Adrian Bowyer, with bonus FreeCAD appearances!</h3><div class="card-metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/date.svg#date"></use>
+  </svg><time datetime="2026-01-05T00:00:00Z">5 de enero de 2026</time>
+  </span></div></a><a
+    class="card"
+    href="/Website/pr-48/es/news/wip-wednesday-21-december-2025/"><div class="card-color" style="--hue: 120;"></div><h3 class="card-title">WIP Wednesday, 31 December 2025</h3><div class="card-metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/date.svg#date"></use>
+  </svg><time datetime="2025-12-31T00:00:00Z">31 de diciembre de 2025</time>
+  </span></div></a><a
+    class="card"
+    href="/Website/pr-48/es/news/q4-2025-grants-selected/"><div class="card-color" style="--hue: 20;"></div><h3 class="card-title">Q4 2025 grants selected</h3><div class="card-metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/date.svg#date"></use>
+  </svg><time datetime="2025-12-25T00:00:00Z">25 de diciembre de 2025</time>
+  </span></div></a><a
+    class="card"
+    href="/Website/pr-48/es/news/wip-wednesday-24-december-2025/"><div class="card-color" style="--hue: 120;"></div><h3 class="card-title">WIP Wednesday, 24 December 2025</h3><div class="card-metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/date.svg#date"></use>
+  </svg><time datetime="2025-12-24T00:00:00Z">24 de diciembre de 2025</time>
+  </span></div></a><a
+    class="card"
+    href="/Website/pr-48/es/news/tutorial-festive-star-decoration-using-a-macro/"><div class="card-color" style="--hue: 100;"></div><h3 class="card-title">Tutorial - Festive Star Decoration using a Macro</h3><div class="card-metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/date.svg#date"></use>
+  </svg><time datetime="2025-12-22T00:00:00Z">22 de diciembre de 2025</time>
+  </span></div></a><a
+    class="card"
+    href="/Website/pr-48/es/news/dec-2025-bug-bounty-update/"><div class="card-color" style="--hue: 120;"></div><h3 class="card-title">Dec 2025 bug bounty update</h3><div class="card-metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/date.svg#date"></use>
+  </svg><time datetime="2025-12-19T00:00:00Z">19 de diciembre de 2025</time>
+  </span></div></a><a
+    class="card"
+    href="/Website/pr-48/es/news/guest-post-turan-at-the-google-summer-of-code-summit/"><figure class="thumbnail"><img
+    class="img 7"
+    src="/Website/pr-48/news/guest-post-turan-at-the-google-summer-of-code-summit/7.webp"
+    alt="Guest Post, Turan at the Google Summer of Code Summit"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" width="1386" height="1041" srcset="/Website/pr-48/news/guest-post-turan-at-the-google-summer-of-code-summit/7_hu_8a27b048b75b8425.webp 400w, /Website/pr-48/news/guest-post-turan-at-the-google-summer-of-code-summit/7_hu_c688b6683727349c.webp 800w, /Website/pr-48/news/guest-post-turan-at-the-google-summer-of-code-summit/7.webp 1386w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></figure><h3 class="card-title">Guest Post, Turan at the Google Summer of Code Summit</h3><div class="card-metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/date.svg#date"></use>
+  </svg><time datetime="2025-12-18T00:00:00Z">18 de diciembre de 2025</time>
+  </span></div></a><a
+    class="card"
+    href="/Website/pr-48/es/news/wip-wednesday-17-december-2025/"><div class="card-color" style="--hue: 120;"></div><h3 class="card-title">WIP Wednesday, 17 December 2025</h3><div class="card-metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/date.svg#date"></use>
+  </svg><time datetime="2025-12-17T00:00:00Z">17 de diciembre de 2025</time>
+  </span></div></a><a
+    class="card"
+    href="/Website/pr-48/es/news/fosdem-2026-open-hardware-cad-cam-room-update/"><div class="card-color" style="--hue: 40;"></div><h3 class="card-title">FOSDEM 2026, Open Hardware CAD/CAM room update</h3><div class="card-metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/date.svg#date"></use>
+  </svg><time datetime="2025-12-15T00:00:00Z">15 de diciembre de 2025</time>
+  </span></div></a><a
+    class="card"
+    href="/Website/pr-48/es/news/rockets-windblades-and-3d-printing-food/"><div class="card-color" style="--hue: 80;"></div><h3 class="card-title">Rockets, windblades, and 3D-printing food, with Matt Thomas aka LT72884</h3><div class="card-metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/date.svg#date"></use>
+  </svg><time datetime="2025-12-12T00:00:00Z">12 de diciembre de 2025</time>
+  </span></div></a><a
+    class="card"
+    href="/Website/pr-48/es/news/wip-wednesday-10-december-2025/"><div class="card-color" style="--hue: 120;"></div><h3 class="card-title">WIP Wednesday, 10 December 2025</h3><div class="card-metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/date.svg#date"></use>
+  </svg><time datetime="2025-12-10T00:00:00Z">10 de diciembre de 2025</time>
+  </span></div></a><a
+    class="card"
+    href="/Website/pr-48/es/news/wip-wednesday-3-december-2025/"><div class="card-color" style="--hue: 120;"></div><h3 class="card-title">WIP Wednesday, 3 December 2025</h3><div class="card-metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/date.svg#date"></use>
+  </svg><time datetime="2025-12-03T00:00:00Z">3 de diciembre de 2025</time>
+  </span></div></a></div><nav
+          aria-label="Pagination"
+          class="pagination"><a
+                href="/Website/pr-48/es/news/"
+                class="button"
+                title="Primera página"
+                aria-label="First"><svg
+    class="icon tri_tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/tri_tri_left.svg#tri_tri_left"></use>
+  </svg>1
+              </a><a
+                href="/Website/pr-48/es/news/page/2/"
+                class="button"
+                title="Página anterior"
+                aria-label="Previous"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/tri_left.svg#tri_left"></use>
+  </svg>2
+              </a><span
+            aria-current="page"
+            class="button active"
+            aria-label="Current">3</span><a
+                href="/Website/pr-48/es/news/page/4/"
+                class="button"
+                title="Página siguiente"
+                aria-label="Next">4<svg
+    class="icon tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/tri_right.svg#tri_right"></use>
+  </svg>
+              </a><a
+                href="/Website/pr-48/es/news/page/30/"
+                class="button"
+                title="Última página"
+                aria-label="Last">30<svg
+    class="icon tri_tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/tri_tri_right.svg#tri_tri_right"></use>
+  </svg></a></nav></div></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Ir al inicio"
+  title="Ir al inicio (Alt + G)" ><svg
+    class="icon tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a
+            href="/Website/pr-48/es/">Inicio</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-48/es/features/">Características</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-48/es/download/">Descarga</a><ul><li>
+                      <a
+                        href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="external noreferrer nofollow">Development Builds<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples and Parts Library<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-48/es/download/releases/">Releases</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-48/es/news/" aria-current="page" class="active">Actualidad</a><ul><li>
+                  <a
+                    href="/Website/pr-48/es/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/pr-48/es/authors/">Autores</a>
+                      </li><li>
+                        <a href="/Website/pr-48/es/categories/">Categorías</a>
+                      </li><li>
+                        <a href="/Website/pr-48/es/tags/">Etiquetas</a>
+                      </li><li>
+                        <a href="/Website/pr-48/es/versions/">Versiones</a>
+                      </li></ul></li><li>
+          <a
+            href="/Website/pr-48/es/community/">Comunidad</a><ul><li>
+                      <a
+                        href="/Website/pr-48/es/community/calendar/">Calendar</a>
+                    </li><li>
+                      <a
+                        href="https://events.freecad.org/" target="_blank" rel="external noreferrer nofollow">Events<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://fpa.freecad.org" target="_blank" rel="external noreferrer nofollow">Association<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-48/es/community/fpn/">Professional Network</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-48/es/community/addons/">Addons</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-48/es/community/telemetry/">Telemetry</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-48/es/docs/">Documentación</a><ul><li>
+                  <a
+                    href="https://wiki.freecad.org/User_hub" target="_blank" rel="external noreferrer nofollow">User manual<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+                </li><li>
+                  <a
+                    href="/Website/pr-48/es/dev/">Development Handbook</a>
+                </li><li>
+                  <a
+                    href="https://freecad.github.io/SourceDoc/" target="_blank" rel="external noreferrer nofollow">FreeCAD API<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+                </li></ul></li><li>
+          <a
+            href="/Website/pr-48/es/donate/">♥ Donar</a><ul></ul></li></ul>
+</nav>
+<div class="share-links"><a
+    href="https://forum.freecad.org"
+    title="Forum"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/forum.svg#forum"></use>
+  </svg></a><a
+    href="https://github.com/freecad"
+    title="GitHub"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/github.svg#github"></use>
+  </svg></a><a
+    href="https://codeberg.org/freecad"
+    title="Codeberg"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a
+    href="https://social.freecad.org/@freecad"
+    title="Mastodon"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://www.reddit.com/r/freecad"
+    title="Reddit"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/reddit.svg#reddit"></use>
+  </svg></a><a
+    href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+    title="Matrix"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/matrix.svg#matrix"></use>
+  </svg></a><a
+    href="https://discord.gg/w2cTKGzccC"
+    title="Discord"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/discord.svg#discord"></use>
+  </svg></a><a
+    href="https://www.linkedin.com/groups/4295230"
+    title="LinkedIn"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/linkedin.svg#linkedin"></use>
+  </svg></a></div><div class="copyright"><span>
+    &copy; 2026
+    <a
+      href="/Website/pr-48/es/"
+      title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a
+    href="https://creativecommons.org/licenses/by-sa/4.0/"
+    title="Creative Commons"
+    target="_blank" rel="license external noreferrer nofollow">
+
+    CC BY-SA<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to
+  <a
+    href="https://gohugo.io/"
+    title="Hugo SSG"
+    target="_blank" rel="external noreferrer nofollow">
+
+    Hugo<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+</div>
+</footer><script
+    src="/Website/pr-48/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script></body>
+
+</html>

@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html
+  lang="de-DE"
+  dir="ltr"><head><meta charset="utf-8">
+<meta
+  name="viewport"
+  content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta
+  name="referrer"
+  content="strict-origin-when-cross-origin">
+<meta
+  name="robots"
+  content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link
+          rel="stylesheet"
+          href="/Website/pr-48/css/styles.427631aa94aa0860581e0dbdc75e2aef60d77920a9e865903f30d190e7aaac8d.css"
+          integrity="sha256-QnYxqpSqCGBYHg29x14q72DXeSCp6GWQPzDRkOeqrI0="
+          crossorigin="anonymous"><link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Website/pr-48/favicon.svg"><link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/Website/pr-48/favicon.ico"><link
+      rel="apple-touch-icon"
+      href="/Website/pr-48/apple-touch-icon.png"><title>FreeCAD | CMS</title>
+  <meta
+    name="description"
+    content="How to use the Sveltia CMS for the FreeCAD website."><meta
+      name="keywords"
+      content="free, open-source, CAD, software, tool, parametric, modeling, model, design, product, engineering, manufacturing, community, workbench, FOSS, 3D, BIM, CAM, FEM, FEA"><link
+    rel="canonical"
+    href="https://FreeCAD.github.io/Website/pr-48/de/dev/web/cms/"><link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://FreeCAD.github.io/Website/pr-48/dev/web/cms/"><link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://FreeCAD.github.io/Website/pr-48/zh/dev/web/cms/"><link
+      rel="alternate"
+      hreflang="es-ES"
+      href="https://FreeCAD.github.io/Website/pr-48/es/dev/web/cms/"><link
+      rel="alternate"
+      hreflang="fr-FR"
+      href="https://FreeCAD.github.io/Website/pr-48/fr/dev/web/cms/"><link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://FreeCAD.github.io/Website/pr-48/pt/dev/web/cms/"><link
+      rel="alternate"
+      hreflang="de-DE"
+      href="https://FreeCAD.github.io/Website/pr-48/de/dev/web/cms/"><link
+      rel="alternate"
+      hreflang="ja-JP"
+      href="https://FreeCAD.github.io/Website/pr-48/ja/dev/web/cms/"><link
+    rel="alternate"
+    hreflang="x-default"
+    href="https://FreeCAD.github.io/Website/pr-48/de/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-48/de/dev/web/cms/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Content Management System">
+  <meta property="og:description" content="How to use the Sveltia CMS for the FreeCAD website.">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dev">
+    <meta property="article:modified_time" content="2026-06-27T13:19:47+02:00">
+</head><body
+    class="single type-dev kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a
+      href="/Website/pr-48/de/"
+      accesskey="h"
+      title="Home (Alt + H)"
+      aria-label="Home"><svg
+      class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+
+      <use href="/Website/pr-48/FreeCAD-wordmark.svg#logo"></use>
+    </svg></a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button
+    popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menü"
+    aria-label="Menü"><svg
+    class="icon hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/hamburger.svg#hamburger"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul
+    popover
+    id="menu-list"
+    class="menu-list"><li>
+          <a
+            href="/Website/pr-48/de/features/">Funktionen</a>
+        </li><li>
+          <a
+            href="/Website/pr-48/de/download/">Herunterladen</a>
+        </li><li>
+          <a
+            href="/Website/pr-48/de/news/">Aktuelles</a>
+        </li><li>
+          <a
+            href="/Website/pr-48/de/community/">Community</a>
+        </li><li>
+          <a
+            href="/Website/pr-48/de/docs/" aria-current="page" class="active">Dokumentation</a>
+        </li><li>
+          <a
+            href="/Website/pr-48/de/donate/" class="donate-button">♥︎ Spenden</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button
+          popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Sprache auswählen (Alt + L)"
+          aria-label="Sprache auswählen"><svg
+    class="icon language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul
+          popover
+          id="lang-list"
+          class="language-list"><li>
+              <a href="/Website/pr-48/dev/web/cms/" title="CMS">English 🇬🇧</a>
+            </li><li>
+              <a href="/Website/pr-48/zh/dev/web/cms/" title="CMS">中文 🇨🇳</a>
+            </li><li>
+              <a href="/Website/pr-48/es/dev/web/cms/" title="CMS">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/pr-48/fr/dev/web/cms/" title="CMS">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pr-48/pt/dev/web/cms/" title="CMS">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-48/de/dev/web/cms/" title="CMS">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/pr-48/ja/dev/web/cms/" title="CMS">日本語 🇯🇵</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Design wechseln (Alt + T)"
+    aria-label="Design wechseln"><svg
+    class="icon dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/dark.svg#dark"></use>
+  </svg><svg
+    class="icon light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main style="--hue: 160;"><section class="hero">
+
+    <h2 class="title">Content Management System</h1><h3 class="description">How to use the Sveltia CMS for the FreeCAD website.</h3><div class="metadata"><span class="meta"><svg
+    class="icon time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/time.svg#time"></use>
+  </svg>5 Minuten</span></div></section><nav class="toc">
+  <input
+    type="checkbox"
+    id="toc-checkbox"
+    class="toc-checkbox">
+  <label
+    for="toc-checkbox"
+    class="toc-toggle button"
+    title="Table of Contents"><svg
+    class="icon expand"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/expand.svg#expand"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/cross.svg#cross"></use>
+  </svg><span>Inhaltsverzeichnis</span>
+  </label>
+
+  <div
+    id="toc-content"
+    class="toc-content">
+    <ul class="section-nav"><li>
+          <a
+            href="/Website/pr-48/de/dev/"
+            class="current-section"><svg
+    class="icon tri_tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/tri_tri_left.svg#tri_tri_left"></use>
+  </svg> Development Handbook</a>
+        </li><li>
+          <a
+            href="/Website/pr-48/de/dev/web/"
+            class="current-section"><svg
+    class="icon folder_closed"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/folder_closed.svg#folder_closed"></use>
+  </svg> Website</a>
+        </li><li>
+        <ul><li>
+              <a
+                href="/Website/pr-48/de/dev/web/start/">Website introduction</a>
+            </li><li>
+              <a
+                href="/Website/pr-48/de/dev/web/guidelines/">Guidelines</a>
+            </li><li>
+              <a
+                href="/Website/pr-48/de/dev/web/structure/">Structure</a>
+            </li><li>
+              <a
+                href="/Website/pr-48/de/dev/web/markdown/">Markdown</a>
+            </li><li>
+              <a
+                href="/Website/pr-48/de/dev/web/shortcodes/">Shortcodes</a>
+            </li><li>
+              <a
+                href="/Website/pr-48/de/dev/web/front-matter/">Front matter</a>
+            </li><li>
+              <a
+                href="/Website/pr-48/de/dev/web/locales/">Translations</a>
+            </li><li>
+              <a
+                href="/Website/pr-48/de/dev/web/cms/" id="current-page" class="active" aria-current="page">CMS</a>
+            </li><li>
+              <a
+                href="/Website/pr-48/de/dev/web/theme/">Setup and Theme</a>
+            </li></ul>
+      </li>
+    </ul><p class="toc-label"><svg
+    class="icon file"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/file.svg#file"></use>
+  </svg>
+        <span>On this page</span>
+      </p><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#cms-overview">CMS overview</a></li>
+        <li><a href="#logging-in">Logging in</a>
+          <ul>
+            <li><a href="#1-local-workflow">1. Local workflow</a></li>
+            <li><a href="#2-git-server">2. Git server</a></li>
+          </ul>
+        </li>
+        <li><a href="#using-the-cms">Using the CMS</a>
+          <ul>
+            <li><a href="#navigate-collections">Navigate Collections</a></li>
+            <li><a href="#edit-existing-content">Edit existing content</a></li>
+            <li><a href="#create-new-content">Create New Content</a></li>
+            <li><a href="#upload-images-or-files">Upload Images or Files</a></li>
+            <li><a href="#manage-translations">Manage Translations</a></li>
+          </ul>
+        </li>
+        <li><a href="#need-help">Need Help?</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+</nav><div class="content"><figure>
+  <blockquote class="note"><svg
+    class="icon note"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/note.svg#note"></use>
+  </svg>Hinweis<p>Diese Seite wurde noch nicht übersetzt, daher wird stattdessen die englische Version verwendet. Möchtest du mithelfen?
+<a
+  href="https://github.com/freecad/website"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Mitwirken<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a></p></blockquote></figure><p>The FreeCAD website takes advantage of a headless Content Management System (CMS). It is intended for content editors, translators, and contributors to ease the process of adding and editing the website content. For detailed CMS features, refer to the official <a
+  href="https://sveltiacms.app/en/docs/intro"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Sveltia CMS documentation<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>.</p>
+<h2
+  id="cms-overview">CMS overview<a class="heading-anchor"
+     href="#cms-overview"
+     title="CMS overview"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>The website content can be managed through a web-based CMS:</p>
+<ul>
+<li>Create and edit pages and articles.</li>
+<li>Update translations.</li>
+<li>Upload and manage resources such as images and documents.</li>
+<li>Review existing content before publishing changes.</li>
+</ul>
+<p>Reading the <a
+  href="/Website/pr-48/de/dev/web/guidelines/"
+  class="internal-tooltip">website guidelines<span class="tooltip">
+        <strong>Guidelines</strong>Guidelines for contributing to the website.</span></a> is highly recommended. Thank you!</p>
+<figure>
+  <blockquote class="note"><svg
+    class="icon note"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/note.svg#note"></use>
+  </svg>Hinweis<p>Changes made in the CMS are saved in the website git repository.
+Depending on the workflow chosen below, some additional steps and review time are required before the changes appear on the public website.</p></blockquote></figure>
+<h2
+  id="logging-in">Logging in<a class="heading-anchor"
+     href="#logging-in"
+     title="Logging in"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Open the <a
+  href="/Website/pr-48/de/admin/"
+  class="internal-tooltip">Admin page<span class="tooltip">
+        <strong>FreeCAD Admin CMS</strong></span></a> or if building locally, open the <a
+  href="http://localhost:1313/admin/"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">localhost admin<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a> address:</p>
+<figure class="image"><button
+          aria-label="Bild vergrößern"
+          popovertarget="img-001"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img cms-login-1"
+    src="/Website/pr-48/dev/web/cms/cms-login-1.webp"
+    alt="CMS login screen"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="CMS login screen" width="569" height="497" srcset="/Website/pr-48/dev/web/cms/cms-login-1_hu_8241271fbbc8bc29.webp 400w, /Website/pr-48/dev/web/cms/cms-login-1.webp 569w" sizes="(max-width: 400px) 400px, 95vw"></button>
+        <div id="img-001" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen"><img
+    class="img cms-login-1"
+    src="/Website/pr-48/dev/web/cms/cms-login-1.webp"
+    alt="CMS login screen"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="CMS login screen" width="569" height="497" srcset="/Website/pr-48/dev/web/cms/cms-login-1_hu_8241271fbbc8bc29.webp 400w, /Website/pr-48/dev/web/cms/cms-login-1.webp 569w" sizes="(max-width: 400px) 400px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/cross.svg#cross"></use>
+  </svg></button><p>CMS login screen</p></div><figcaption>CMS login screen</figcaption></figure><p>There are two main workflows: a local one (1) and a git server-based one (2).
+Both workflows require a GitHub account, the main git platform currently used by the FreeCAD project for now.</p>
+<h3
+  id="1-local-workflow">1. Local workflow<a class="heading-anchor"
+     href="#1-local-workflow"
+     title="1. Local workflow"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><ul>
+<li>Clone the repository locally as described in the <a
+  href="/Website/pr-48/de/dev/web/start/#building"
+  class="internal-tooltip hash-link"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/hash.svg#hash"></use>
+  </svg>website building</a> fourth step.</li>
+<li>Click <strong>Work with Local Repository</strong> on the CMS login page.</li>
+<li>Select the destination of your local repository clone.</li>
+</ul>
+<p>The local workflow means a standard git-based process with branches, commits and pull requests is required to submit changes to upstream, as is the case with FreeCAD development in general.</p>
+<h3
+  id="2-git-server">2. Git server<a class="heading-anchor"
+     href="#2-git-server"
+     title="2. Git server"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><ul>
+<li>Log into your GitHub account and request a GitHub fine-grained Personal Access Token (PAT) by filling in the form as below:
+<ul>
+<li><code>&lt;your-username&gt;</code> &gt; <code>Developers Settings</code>  &gt; <code>Fine-grained personal access token</code> (2)</li>
+<li>Choose a token name and description</li>
+<li>Choose the FreeCAD organization as owner (3)</li>
+<li>Choose a duration for the validity of the PAT (e.g. one month)</li>
+<li>Fill in the request message</li>
+<li>Select the <code>FreeCAD/Website</code> repository for access (4)</li>
+<li>Choose the <code>Read and write</code> access permissions for the <code>Contents</code> of the repository (5)</li>
+<li>Generate the token by requesting access and copy safely the PAT code</li>
+</ul>
+</li>
+</ul>
+<figure class="image"><button
+          aria-label="Bild vergrößern"
+          popovertarget="img-002"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img cms-login-2"
+    src="/Website/pr-48/dev/web/cms/cms-login-2.webp"
+    alt="GitHub PAT request"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="GitHub PAT request" width="1277" height="1505" srcset="/Website/pr-48/dev/web/cms/cms-login-2_hu_dc33c566aa186308.webp 400w, /Website/pr-48/dev/web/cms/cms-login-2_hu_f4d1f5870f31ef06.webp 800w, /Website/pr-48/dev/web/cms/cms-login-2.webp 1277w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+        <div id="img-002" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen"><img
+    class="img cms-login-2"
+    src="/Website/pr-48/dev/web/cms/cms-login-2.webp"
+    alt="GitHub PAT request"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="GitHub PAT request" width="1277" height="1505" srcset="/Website/pr-48/dev/web/cms/cms-login-2_hu_dc33c566aa186308.webp 400w, /Website/pr-48/dev/web/cms/cms-login-2_hu_f4d1f5870f31ef06.webp 800w, /Website/pr-48/dev/web/cms/cms-login-2.webp 1277w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/cross.svg#cross"></use>
+  </svg></button><p>GitHub PAT request</p></div><figcaption>GitHub PAT request</figcaption></figure><ul>
+<li>Once the request is approved (a few days may be needed as it is manually validated by maintainers), click <strong>Sign in using Access Token</strong> on the CMS login page and provide the PAT code:</li>
+</ul>
+<figure class="image"><button
+          aria-label="Bild vergrößern"
+          popovertarget="img-003"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img cms-login-3"
+    src="/Website/pr-48/dev/web/cms/cms-login-3.webp"
+    alt="Access Token login"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Access Token login" width="691" height="562" srcset="/Website/pr-48/dev/web/cms/cms-login-3_hu_96a9e5a03798d140.webp 400w, /Website/pr-48/dev/web/cms/cms-login-3.webp 691w" sizes="(max-width: 400px) 400px, 95vw"></button>
+        <div id="img-003" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-003"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen"><img
+    class="img cms-login-3"
+    src="/Website/pr-48/dev/web/cms/cms-login-3.webp"
+    alt="Access Token login"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Access Token login" width="691" height="562" srcset="/Website/pr-48/dev/web/cms/cms-login-3_hu_96a9e5a03798d140.webp 400w, /Website/pr-48/dev/web/cms/cms-login-3.webp 691w" sizes="(max-width: 400px) 400px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/cross.svg#cross"></use>
+  </svg></button><p>Access Token login</p></div><figcaption>Access Token login</figcaption></figure><h2
+  id="using-the-cms">Using the CMS<a class="heading-anchor"
+     href="#using-the-cms"
+     title="Using the CMS"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>After successful login, the CMS dashboard will open:</p>
+<figure class="image"><button
+          aria-label="Bild vergrößern"
+          popovertarget="img-004"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img cms-1"
+    src="/Website/pr-48/dev/web/cms/cms-1.webp"
+    alt="CMS dashboard"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="CMS dashboard" width="1920" height="794" srcset="/Website/pr-48/dev/web/cms/cms-1_hu_c52920385ba7adfc.webp 400w, /Website/pr-48/dev/web/cms/cms-1_hu_8e600ea1f8575060.webp 800w, /Website/pr-48/dev/web/cms/cms-1_hu_25230517d4cf388b.webp 1600w, /Website/pr-48/dev/web/cms/cms-1.webp 1920w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"></button>
+        <div id="img-004" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-004"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen"><img
+    class="img cms-1"
+    src="/Website/pr-48/dev/web/cms/cms-1.webp"
+    alt="CMS dashboard"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="CMS dashboard" width="1920" height="794" srcset="/Website/pr-48/dev/web/cms/cms-1_hu_c52920385ba7adfc.webp 400w, /Website/pr-48/dev/web/cms/cms-1_hu_8e600ea1f8575060.webp 800w, /Website/pr-48/dev/web/cms/cms-1_hu_25230517d4cf388b.webp 1600w, /Website/pr-48/dev/web/cms/cms-1.webp 1920w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/cross.svg#cross"></use>
+  </svg></button><p>CMS dashboard</p></div><figcaption>CMS dashboard</figcaption></figure><p>The top-left FreeCAD icon links to the public website, followed by the Collections and Assets tabs (1).
+The top-center search field (2) looks for entries in the whole repository, with the menus (3) on the top-right.</p>
+<figure class="image"><button
+          aria-label="Bild vergrößern"
+          popovertarget="img-005"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img cms-2"
+    src="/Website/pr-48/dev/web/cms/cms-2.webp"
+    alt="General menus"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="General menus" width="1527" height="641" srcset="/Website/pr-48/dev/web/cms/cms-2_hu_885f8a3cc6d8ea81.webp 400w, /Website/pr-48/dev/web/cms/cms-2_hu_2e7fde52f8ed3e4d.webp 800w, /Website/pr-48/dev/web/cms/cms-2.webp 1527w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+        <div id="img-005" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-005"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen"><img
+    class="img cms-2"
+    src="/Website/pr-48/dev/web/cms/cms-2.webp"
+    alt="General menus"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="General menus" width="1527" height="641" srcset="/Website/pr-48/dev/web/cms/cms-2_hu_885f8a3cc6d8ea81.webp 400w, /Website/pr-48/dev/web/cms/cms-2_hu_2e7fde52f8ed3e4d.webp 800w, /Website/pr-48/dev/web/cms/cms-2.webp 1527w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/cross.svg#cross"></use>
+  </svg></button><p>General menus</p></div><figcaption>General menus</figcaption></figure><p>The available menus are general entry addition (1), help (2), and CMS settings (3).</p>
+<h3
+  id="navigate-collections">Navigate Collections<a class="heading-anchor"
+     href="#navigate-collections"
+     title="Navigate Collections"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><figure class="image"><button
+          aria-label="Bild vergrößern"
+          popovertarget="img-006"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img cms-3"
+    src="/Website/pr-48/dev/web/cms/cms-3.webp"
+    alt="Collection large thumbnails view"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Collection large thumbnails view" width="1920" height="961" srcset="/Website/pr-48/dev/web/cms/cms-3_hu_cae7b95fd703e688.webp 400w, /Website/pr-48/dev/web/cms/cms-3_hu_3cdc6330bf6fcbbc.webp 800w, /Website/pr-48/dev/web/cms/cms-3_hu_ef1a410f21462de.webp 1600w, /Website/pr-48/dev/web/cms/cms-3.webp 1920w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"></button>
+        <div id="img-006" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-006"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen"><img
+    class="img cms-3"
+    src="/Website/pr-48/dev/web/cms/cms-3.webp"
+    alt="Collection large thumbnails view"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Collection large thumbnails view" width="1920" height="961" srcset="/Website/pr-48/dev/web/cms/cms-3_hu_cae7b95fd703e688.webp 400w, /Website/pr-48/dev/web/cms/cms-3_hu_3cdc6330bf6fcbbc.webp 800w, /Website/pr-48/dev/web/cms/cms-3_hu_ef1a410f21462de.webp 1600w, /Website/pr-48/dev/web/cms/cms-3.webp 1920w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/cross.svg#cross"></use>
+  </svg></button><p>Collection large thumbnails view</p></div><figcaption>Collection large thumbnails view</figcaption></figure><p>By default, the Collections tab is shown (1). Its left sidebar contains all editable content sections, collections, and files.
+The selected collection lists its pages (2) either as cards with large thumbnails or as a compact vertical list:</p>
+<figure class="image"><button
+          aria-label="Bild vergrößern"
+          popovertarget="img-007"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img cms-4"
+    src="/Website/pr-48/dev/web/cms/cms-4.webp"
+    alt="Collection compact vertical list view"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Collection compact vertical list view" width="1920" height="961" srcset="/Website/pr-48/dev/web/cms/cms-4_hu_303525b2da220124.webp 400w, /Website/pr-48/dev/web/cms/cms-4_hu_a29bb5b6a7ca6a62.webp 800w, /Website/pr-48/dev/web/cms/cms-4_hu_52628510ccacd262.webp 1600w, /Website/pr-48/dev/web/cms/cms-4.webp 1920w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"></button>
+        <div id="img-007" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-007"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen"><img
+    class="img cms-4"
+    src="/Website/pr-48/dev/web/cms/cms-4.webp"
+    alt="Collection compact vertical list view"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Collection compact vertical list view" width="1920" height="961" srcset="/Website/pr-48/dev/web/cms/cms-4_hu_303525b2da220124.webp 400w, /Website/pr-48/dev/web/cms/cms-4_hu_a29bb5b6a7ca6a62.webp 800w, /Website/pr-48/dev/web/cms/cms-4_hu_52628510ccacd262.webp 1600w, /Website/pr-48/dev/web/cms/cms-4.webp 1920w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/cross.svg#cross"></use>
+  </svg></button><p>Collection compact vertical list view</p></div><figcaption>Collection compact vertical list view</figcaption></figure><p>Sorting (1), filtering (2) and grouping (3) view options are available on the right of the Collection panel:</p>
+<figure class="image"><button
+          aria-label="Bild vergrößern"
+          popovertarget="img-008"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img cms-5"
+    src="/Website/pr-48/dev/web/cms/cms-5.webp"
+    alt="View options"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="View options" width="2179" height="775" srcset="/Website/pr-48/dev/web/cms/cms-5_hu_ec1e546409b84280.webp 400w, /Website/pr-48/dev/web/cms/cms-5_hu_a78054216547e557.webp 800w, /Website/pr-48/dev/web/cms/cms-5_hu_b6df6deb27349fb3.webp 1600w, /Website/pr-48/dev/web/cms/cms-5.webp 2179w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"></button>
+        <div id="img-008" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-008"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen"><img
+    class="img cms-5"
+    src="/Website/pr-48/dev/web/cms/cms-5.webp"
+    alt="View options"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="View options" width="2179" height="775" srcset="/Website/pr-48/dev/web/cms/cms-5_hu_ec1e546409b84280.webp 400w, /Website/pr-48/dev/web/cms/cms-5_hu_a78054216547e557.webp 800w, /Website/pr-48/dev/web/cms/cms-5_hu_b6df6deb27349fb3.webp 1600w, /Website/pr-48/dev/web/cms/cms-5.webp 2179w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/cross.svg#cross"></use>
+  </svg></button><p>View options</p></div><figcaption>View options</figcaption></figure><h3
+  id="edit-existing-content">Edit existing content<a class="heading-anchor"
+     href="#edit-existing-content"
+     title="Edit existing content"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>Open an entry in the collection list to edit its content:</p>
+<figure class="image"><button
+          aria-label="Bild vergrößern"
+          popovertarget="img-009"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img cms-6"
+    src="/Website/pr-48/dev/web/cms/cms-6.webp"
+    alt="Content editor"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Content editor" width="1920" height="961" srcset="/Website/pr-48/dev/web/cms/cms-6_hu_d68828647c2aa757.webp 400w, /Website/pr-48/dev/web/cms/cms-6_hu_6d76e019ac89735.webp 800w, /Website/pr-48/dev/web/cms/cms-6_hu_af7dba0ca863b4bb.webp 1600w, /Website/pr-48/dev/web/cms/cms-6.webp 1920w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"></button>
+        <div id="img-009" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-009"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen"><img
+    class="img cms-6"
+    src="/Website/pr-48/dev/web/cms/cms-6.webp"
+    alt="Content editor"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Content editor" width="1920" height="961" srcset="/Website/pr-48/dev/web/cms/cms-6_hu_d68828647c2aa757.webp 400w, /Website/pr-48/dev/web/cms/cms-6_hu_6d76e019ac89735.webp 800w, /Website/pr-48/dev/web/cms/cms-6_hu_af7dba0ca863b4bb.webp 1600w, /Website/pr-48/dev/web/cms/cms-6.webp 1920w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/cross.svg#cross"></use>
+  </svg></button><p>Content editor</p></div><figcaption>Content editor</figcaption></figure><p>The languages and preview are accessible on the top (1).
+Below, all page metadata fields are displayed (2).</p>
+<p>The <code>Body</code> field is where the main content of the page is stored in Markdown.</p>
+<figure class="image"><button
+          aria-label="Bild vergrößern"
+          popovertarget="img-010"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img cms-7"
+    src="/Website/pr-48/dev/web/cms/cms-7.webp"
+    alt="Rich Text editor"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Rich Text editor" width="800" height="631" srcset="/Website/pr-48/dev/web/cms/cms-7_hu_d071ff7fa2fedec2.webp 400w, /Website/pr-48/dev/web/cms/cms-7.webp 800w" sizes="(max-width: 400px) 400px, 95vw"></button>
+        <div id="img-010" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-010"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen"><img
+    class="img cms-7"
+    src="/Website/pr-48/dev/web/cms/cms-7.webp"
+    alt="Rich Text editor"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Rich Text editor" width="800" height="631" srcset="/Website/pr-48/dev/web/cms/cms-7_hu_d071ff7fa2fedec2.webp 400w, /Website/pr-48/dev/web/cms/cms-7.webp 800w" sizes="(max-width: 400px) 400px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/cross.svg#cross"></use>
+  </svg></button><p>Rich Text editor</p></div><figcaption>Rich Text editor</figcaption></figure><p>By default, it is displayed as a Rich Text editor with user-friendly buttons for both common Markdown formatting (1) and <a
+  href="/Website/pr-48/de/dev/web/shortcodes/"
+  class="internal-tooltip">custom shortcodes<span class="tooltip">
+        <strong>Shortcodes</strong>Bundled Trigo Theme and Hugo shortcodes to enhance content.</span></a> (2).
+The Markdown code can be seen by clicking on the Markdown icon on the right of the <code>Body</code> field.</p>
+<p>Nested shortcodes can be added as well and their preview is shown on the preview side:</p>
+<figure class="image"><button
+          aria-label="Bild vergrößern"
+          popovertarget="img-011"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img cms-8"
+    src="/Website/pr-48/dev/web/cms/cms-8.webp"
+    alt="Nested shortcodes"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Nested shortcodes" width="1918" height="961" srcset="/Website/pr-48/dev/web/cms/cms-8_hu_9030a577fadad9d6.webp 400w, /Website/pr-48/dev/web/cms/cms-8_hu_81b6285cd8677174.webp 800w, /Website/pr-48/dev/web/cms/cms-8_hu_c99d2cc8673d55c3.webp 1600w, /Website/pr-48/dev/web/cms/cms-8.webp 1918w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"></button>
+        <div id="img-011" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-011"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen"><img
+    class="img cms-8"
+    src="/Website/pr-48/dev/web/cms/cms-8.webp"
+    alt="Nested shortcodes"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Nested shortcodes" width="1918" height="961" srcset="/Website/pr-48/dev/web/cms/cms-8_hu_9030a577fadad9d6.webp 400w, /Website/pr-48/dev/web/cms/cms-8_hu_81b6285cd8677174.webp 800w, /Website/pr-48/dev/web/cms/cms-8_hu_c99d2cc8673d55c3.webp 1600w, /Website/pr-48/dev/web/cms/cms-8.webp 1918w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/cross.svg#cross"></use>
+  </svg></button><p>Nested shortcodes</p></div><figcaption>Nested shortcodes</figcaption></figure><p>Note the hierarchy between the <code>Body</code> field (1), the <code>Block</code> shortcodes (2) and the nested <code>Group</code> shortcodes (3).</p>
+<p>Some shortcodes are displayed as compact buttons opening a dialog, such as the <code>Button</code> shortcode shown here.</p>
+<p>After making changes, use the <code>Save</code> button on the top-right.</p>
+<h3
+  id="create-new-content">Create New Content<a class="heading-anchor"
+     href="#create-new-content"
+     title="Create New Content"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><ul>
+<li>On the Collections panel, use <code>New</code> directly in the appropriate collection or the general <code>+</code> entry addition button to add pages in the collections that allow new entries.</li>
+<li>Complete the required fields.</li>
+<li>Save the entry.</li>
+</ul>
+<h3
+  id="upload-images-or-files">Upload Images or Files<a class="heading-anchor"
+     href="#upload-images-or-files"
+     title="Upload Images or Files"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>Images and documents can be uploaded directly from image or file fields in the Content editor.</p>
+<p>Additional resources can be added via the assets panel (1):</p>
+<figure class="image"><button
+          aria-label="Bild vergrößern"
+          popovertarget="img-012"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img cms-9"
+    src="/Website/pr-48/dev/web/cms/cms-9.webp"
+    alt="Assets tab"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Assets tab" width="1920" height="961" srcset="/Website/pr-48/dev/web/cms/cms-9_hu_3fa686d1c1df9dbb.webp 400w, /Website/pr-48/dev/web/cms/cms-9_hu_677f9851d0fcceed.webp 800w, /Website/pr-48/dev/web/cms/cms-9_hu_5c71df180afdda3c.webp 1600w, /Website/pr-48/dev/web/cms/cms-9.webp 1920w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"></button>
+        <div id="img-012" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-012"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen"><img
+    class="img cms-9"
+    src="/Website/pr-48/dev/web/cms/cms-9.webp"
+    alt="Assets tab"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Assets tab" width="1920" height="961" srcset="/Website/pr-48/dev/web/cms/cms-9_hu_3fa686d1c1df9dbb.webp 400w, /Website/pr-48/dev/web/cms/cms-9_hu_677f9851d0fcceed.webp 800w, /Website/pr-48/dev/web/cms/cms-9_hu_5c71df180afdda3c.webp 1600w, /Website/pr-48/dev/web/cms/cms-9.webp 1920w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/cross.svg#cross"></use>
+  </svg></button><p>Assets tab</p></div><figcaption>Assets tab</figcaption></figure><p>Assets are grouped by collections and special folders (2).
+Management features (3) and information on the selected files (4) are available on the right side.</p>
+<h3
+  id="manage-translations">Manage Translations<a class="heading-anchor"
+     href="#manage-translations"
+     title="Manage Translations"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>As seen previously, pages that support multiple languages display the list of enabled and disabled translations on the top of the content editor:</p>
+<figure class="image"><button
+          aria-label="Bild vergrößern"
+          popovertarget="img-013"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img cms-10"
+    src="/Website/pr-48/dev/web/cms/cms-10.webp"
+    alt="Translations list"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Translations list" width="811" height="722" srcset="/Website/pr-48/dev/web/cms/cms-10_hu_1bba8207cacc79c5.webp 400w, /Website/pr-48/dev/web/cms/cms-10_hu_b51dee3f01350012.webp 800w, /Website/pr-48/dev/web/cms/cms-10.webp 811w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+        <div id="img-013" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-013"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen"><img
+    class="img cms-10"
+    src="/Website/pr-48/dev/web/cms/cms-10.webp"
+    alt="Translations list"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Translations list" width="811" height="722" srcset="/Website/pr-48/dev/web/cms/cms-10_hu_1bba8207cacc79c5.webp 400w, /Website/pr-48/dev/web/cms/cms-10_hu_b51dee3f01350012.webp 800w, /Website/pr-48/dev/web/cms/cms-10.webp 811w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/cross.svg#cross"></use>
+  </svg></button><p>Translations list</p></div><figcaption>Translations list</figcaption></figure><p>New translations can be enabled and the original content copied easily in one go to be translated manually.</p>
+<p>Some automatic online translation services are also available via an API key:</p>
+<figure class="image"><button
+          aria-label="Bild vergrößern"
+          popovertarget="img-014"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img cms-11"
+    src="/Website/pr-48/dev/web/cms/cms-11.webp"
+    alt="Automatic translation services"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Automatic translation services" width="707" height="468" srcset="/Website/pr-48/dev/web/cms/cms-11_hu_1e441897381dc406.webp 400w, /Website/pr-48/dev/web/cms/cms-11.webp 707w" sizes="(max-width: 400px) 400px, 95vw"></button>
+        <div id="img-014" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-014"
+            popovertargetaction="hide"
+            aria-label="Bildbetrachter schließen"><img
+    class="img cms-11"
+    src="/Website/pr-48/dev/web/cms/cms-11.webp"
+    alt="Automatic translation services"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Automatic translation services" width="707" height="468" srcset="/Website/pr-48/dev/web/cms/cms-11_hu_1e441897381dc406.webp 400w, /Website/pr-48/dev/web/cms/cms-11.webp 707w" sizes="(max-width: 400px) 400px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/cross.svg#cross"></use>
+  </svg></button><p>Automatic translation services</p></div><figcaption>Automatic translation services</figcaption></figure><h2
+  id="need-help">Need Help?<a class="heading-anchor"
+     href="#need-help"
+     title="Need Help?"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>In case of problems:</p>
+<ol>
+<li>Go back to the general Dashboard and try again. Draft content can be discarded.</li>
+<li>Check that the correct language is selected.</li>
+<li>Fill in all required fields.</li>
+<li>Sometimes writing in plain Markdown instead of using the Rich Text editor can help.</li>
+<li>Don&rsquo;t forget to save.</li>
+<li>Contact the website maintainers and provide all useful information: reproduction steps, screenshots, relevant pages, and CMS version visible in the help menu.</li>
+</ol>
+</div><footer class="single-footer">
+    <nav class="pagination"><a
+            class="button next"
+            href="/Website/pr-48/de/dev/web/locales/"
+            title="Nächster Artikel"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/tri_left.svg#tri_left"></use>
+  </svg>Translations</a><a
+            class="button prev"
+            href="/Website/pr-48/de/dev/web/theme/"
+            title="Vorheriger Artikel">Setup and Theme<svg
+    class="icon tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Nach oben"
+  title="Nach oben (Alt + G)" ><svg
+    class="icon tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a
+            href="/Website/pr-48/de/">Home</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-48/de/features/">Funktionen</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-48/de/download/">Herunterladen</a><ul><li>
+                      <a
+                        href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="external noreferrer nofollow">Development Builds<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples and Parts Library<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-48/de/download/releases/">Releases</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-48/de/news/">Aktuelles</a><ul><li>
+                  <a
+                    href="/Website/pr-48/de/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/pr-48/de/authors/">Autoren</a>
+                      </li><li>
+                        <a href="/Website/pr-48/de/categories/">Kategorien</a>
+                      </li><li>
+                        <a href="/Website/pr-48/de/tags/">Tags</a>
+                      </li><li>
+                        <a href="/Website/pr-48/de/versions/">Versionen</a>
+                      </li></ul></li><li>
+          <a
+            href="/Website/pr-48/de/community/">Community</a><ul><li>
+                      <a
+                        href="/Website/pr-48/de/community/calendar/">Calendar</a>
+                    </li><li>
+                      <a
+                        href="https://events.freecad.org/" target="_blank" rel="external noreferrer nofollow">Events<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://fpa.freecad.org" target="_blank" rel="external noreferrer nofollow">Association<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-48/de/community/fpn/">Professional Network</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-48/de/community/addons/">Addons</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-48/de/community/telemetry/">Telemetry</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-48/de/docs/" aria-current="page" class="active">Dokumentation</a><ul><li>
+                  <a
+                    href="https://wiki.freecad.org/User_hub" target="_blank" rel="external noreferrer nofollow">User manual<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+                </li><li>
+                  <a
+                    href="/Website/pr-48/de/dev/">Development Handbook</a>
+                </li><li>
+                  <a
+                    href="https://freecad.github.io/SourceDoc/" target="_blank" rel="external noreferrer nofollow">FreeCAD API<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+                </li></ul></li><li>
+          <a
+            href="/Website/pr-48/de/donate/">♥︎ Spenden</a><ul></ul></li></ul>
+</nav>
+<div class="share-links"><a
+    href="https://forum.freecad.org"
+    title="Forum"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/forum.svg#forum"></use>
+  </svg></a><a
+    href="https://github.com/freecad"
+    title="GitHub"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/github.svg#github"></use>
+  </svg></a><a
+    href="https://codeberg.org/freecad"
+    title="Codeberg"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a
+    href="https://social.freecad.org/@freecad"
+    title="Mastodon"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://www.reddit.com/r/freecad"
+    title="Reddit"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/reddit.svg#reddit"></use>
+  </svg></a><a
+    href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+    title="Matrix"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/matrix.svg#matrix"></use>
+  </svg></a><a
+    href="https://discord.gg/w2cTKGzccC"
+    title="Discord"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/discord.svg#discord"></use>
+  </svg></a><a
+    href="https://www.linkedin.com/groups/4295230"
+    title="LinkedIn"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+  href="/Website/pr-48/de/fedishare.html#title=Content&#43;Management&#43;System&amp;description=How%20to%20use%20the%20Sveltia%20CMS%20for%20the%20FreeCAD%20website.&amp;url=https://FreeCAD.github.io/Website/pr-48/de/dev/web/cms/"
+  title="Teilen auf Fediverse"
+  target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026
+    <a
+      href="/Website/pr-48/de/"
+      title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a
+    href="https://creativecommons.org/licenses/by-sa/4.0/"
+    title="Creative Commons"
+    target="_blank" rel="license external noreferrer nofollow">
+
+    CC BY-SA<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to
+  <a
+    href="https://gohugo.io/"
+    title="Hugo SSG"
+    target="_blank" rel="external noreferrer nofollow">
+
+    Hugo<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-06-27
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/6cd0fe9f7eca6dfa94073171c4ffa6bf28958345">6cd0fe9f7<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-48/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script
+    src="/Website/pr-48/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-48/js/de/copy.min.ce482923bd28ee86b91e2de37a7cd711f1df682c7518f02d717f97e8029a1f32.js"
+    type="text/javascript"
+    defer integrity="sha256-zkgpI70o7oa5Hi3jenzXEfHfaCx1GPAtcX&#43;X6AKaHzI=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-48/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    defer integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous">
+  </script></body>
+
+</html>

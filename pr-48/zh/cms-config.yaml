@@ -1,0 +1,1093 @@
+site_url: https://FreeCAD.github.io/Website/pr-48/
+
+app_title: FreeCAD Admin CMS
+logout_redirect_url: https://www.freecad.org
+logo:
+  src: https://www.freecad.org/svg/icon-freecad.svg
+
+backend:
+  name: github
+  repo: freecad/website
+  branch: main
+
+media_folder: /static
+public_folder: /
+asset_collections:
+  - name: sponsors
+    label: Sponsors
+    icon: person_add
+    media_folder: /assets/sponsors
+    public_folder: /sponsors
+  - name: icons
+    label: Icons
+    icon: add_reaction
+    media_folder: /themes/trigo/assets/svg
+    public_folder: /svg
+media_libraries:
+  default:
+    config:
+      max_file_size: 1024000 # in bytes
+      slugify_filename: true
+      transformations:
+        raster_image: # original format
+          format: webp # new format, only `webp` is supported with sveltia for now
+          quality: 80
+          width: 1600
+          height: 1600
+        svg:
+          optimize: true
+
+i18n:
+  structure: multiple_folders
+  locales: [en, zh, es, fr, pt, de, ja]
+  default_locale: en
+  initial_locales: default
+
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+  trim: true
+  lowercase: true
+
+output:
+  omit_empty_optional_fields: true
+
+field_defaults:
+  richtext:
+    linked_images: false
+
+collections:
+
+  - name: homepage
+    label: Homepage
+    media_folder: ""
+    public_folder: ""
+    thumbnail: cover.image
+    icon: home
+    i18n: true
+    files:
+      - name: homepage
+        label: Homepage
+        file: "content/{{locale}}/_index.md"
+        icon: home
+        i18n: true
+        fields:
+          - name: title
+            label: Title
+            widget: string
+            i18n: true
+          - name: description
+            label: Description
+            widget: string
+            i18n: true
+          - name: linkTitle
+            label: Link Title
+            widget: string
+            i18n: true
+            required: false
+          - name: cover
+            label: Cover
+            widget: object
+            i18n: true
+            required: false
+            fields:
+              - { name: image, label: Image, widget: image, i18n: duplicate, required: false }
+              - { name: caption, label: Caption, widget: string, i18n: true, required: false }
+          - name: body
+            label: Body
+            widget: richtext
+            i18n: true
+            required: false
+
+  - divider: true
+
+  - name: features-section
+    label: Features
+    description: Features section
+    media_folder: ""
+    public_folder: ""
+    thumbnail: cover.image
+    icon: bolt
+    i18n: true
+    files:
+      - name: features-section-index
+        label: Features
+        file: content/{{locale}}/features/_index.md
+        icon: bolt
+        i18n: true
+        fields:
+          - name: title
+            label: Title
+            widget: string
+            i18n: true
+          - name: description
+            label: Description
+            widget: string
+            i18n: true
+          - name: linkTitle
+            label: Link Title
+            widget: string
+            i18n: true
+            required: false
+          - name: cover
+            label: Cover
+            widget: object
+            i18n: true
+            required: false
+            fields:
+              - { name: image, label: Image, widget: image, i18n: duplicate, required: false }
+              - { name: caption, label: Caption, widget: string, i18n: true, required: false }
+          - name: body
+            label: Body
+            widget: richtext
+            i18n: true
+            required: false
+
+  - divider: true
+
+  - name: download-pages
+    label: Download
+    description: Download collection
+    folder: content
+    path: 'download/releases/{{slug}}/index'
+    media_folder: ""
+    public_folder: ""
+    thumbnail: cover.image
+    icon: download
+    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{authors | default('no authors')}} · {{locales | upper}}"
+    reorder:
+      key: weight
+    i18n: true
+
+    sortable_fields:
+      fields: [title, date, authors]
+      default:
+        field: date
+        direction: descending
+
+    view_groups:
+      groups:
+        - name: year
+          label: Year
+          field: date
+          pattern: '\d{4}'
+        - name: category
+          label: Categories
+          field: categories
+      default: year
+
+    view_filters:
+      filters:
+        - name: drafts
+          label: Drafts
+          field: draft
+          pattern: true
+        - name: posts_2023
+          label: Posted in 2023
+          field: date
+          pattern: '^2023'
+        - name: posts_2024
+          label: Posted in 2024
+          field: date
+          pattern: '^2024'
+        - name: posts_2025
+          label: Posted in 2025
+          field: date
+          pattern: '^2025'
+        - name: posts_2026
+          label: Posted in 2026
+          field: date
+          pattern: '^2026'
+        
+
+    index_file:
+      label: Download Index
+      icon: home
+      i18n: true
+      fields:
+        - name: title
+          label: Title
+          widget: string
+          i18n: true
+        - name: description
+          label: Description
+          widget: string
+          i18n: true
+        - name: linkTitle
+          label: Link Title
+          widget: string
+          i18n: true
+          required: false
+        - name: redirect
+          label: Redirect
+          widget: string
+          i18n: duplicate
+          required: false
+        - name: cover
+          label: Cover
+          widget: object
+          i18n: true
+          required: false
+          fields:
+            - { name: image, label: Image, widget: image, i18n: duplicate, required: false }
+            - { name: caption, label: Caption, widget: string, i18n: true, required: false }
+        - name: body
+          label: Body
+          widget: richtext
+          i18n: true
+          required: false
+
+    fields:
+      - name: title
+        label: Title
+        widget: string
+        i18n: true
+      - name: description
+        label: Description
+        widget: string
+        i18n: true
+        required: false
+      - name: linkTitle
+        label: Link Title
+        widget: string
+        i18n: true
+        required: false
+      - name: redirect
+        label: Redirect
+        widget: string
+        i18n: duplicate
+        required: false
+      - name: date
+        label: Date
+        widget: datetime
+        i18n: duplicate
+      - name: draft
+        label: Draft
+        widget: boolean
+        default: false
+        i18n: duplicate
+        required: false
+      - name: cover
+        label: Cover
+        widget: object
+        i18n: true
+        required: false
+        fields:
+          - { name: image, label: Image, widget: image, i18n: duplicate, required: false }
+          - { name: caption, label: Caption, widget: string, i18n: true, required: false }
+      - name: body
+        label: Body
+        widget: richtext
+        i18n: true
+
+  - divider: true
+
+  - name: news-pages
+    label: News
+    description: News collection
+    folder: content
+    path: 'news/{{year}}/{{month}}/{{slug}}/index'
+    media_folder: ""
+    public_folder: ""
+    thumbnail: cover.image
+    icon: brand_awareness
+    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{authors | default('no authors')}} · {{locales | upper}}"
+    reorder:
+      key: weight
+    i18n: true
+
+    sortable_fields:
+      fields: [title, date, authors]
+      default:
+        field: date
+        direction: descending
+
+    view_groups:
+      groups:
+        - name: year
+          label: Year
+          field: date
+          pattern: '\d{4}'
+        - name: category
+          label: Categories
+          field: categories
+      default: year
+
+    view_filters:
+      filters:
+        - name: drafts
+          label: Drafts
+          field: draft
+          pattern: true
+        - name: posts_2023
+          label: Posted in 2023
+          field: date
+          pattern: '^2023'
+        - name: posts_2024
+          label: Posted in 2024
+          field: date
+          pattern: '^2024'
+        - name: posts_2025
+          label: Posted in 2025
+          field: date
+          pattern: '^2025'
+        - name: posts_2026
+          label: Posted in 2026
+          field: date
+          pattern: '^2026'
+        - name: announcement
+          label: Announcement
+          field: categories
+          pattern: announcement
+        - name: event
+          label: Event
+          field: categories
+          pattern: event
+        - name: feature
+          label: Feature
+          field: categories
+          pattern: feature
+        - name: showcase
+          label: Showcase
+          field: categories
+          pattern: showcase
+        - name: tutorial
+          label: Tutorial
+          field: categories
+          pattern: tutorial
+        - name: update
+          label: Update
+          field: categories
+          pattern: Update
+
+    index_file:
+      label: News Index
+      icon: home
+      i18n: true
+      fields:
+        - name: title
+          label: Title
+          widget: string
+          i18n: true
+        - name: description
+          label: Description
+          widget: string
+          i18n: true
+        - name: linkTitle
+          label: Link Title
+          widget: string
+          i18n: true
+          required: false
+        - name: redirect
+          label: Redirect
+          widget: string
+          i18n: duplicate
+          required: false
+        - name: cover
+          label: Cover
+          widget: object
+          i18n: true
+          required: false
+          fields:
+            - { name: image, label: Image, widget: image, i18n: duplicate, required: false }
+            - { name: caption, label: Caption, widget: string, i18n: true, required: false }
+        - name: body
+          label: Body
+          widget: richtext
+          i18n: true
+          required: false
+
+    fields:
+      - name: title
+        label: Title
+        widget: string
+        i18n: true
+      - name: description
+        label: Description
+        widget: string
+        i18n: true
+        required: false
+      - name: date
+        label: Date
+        widget: datetime
+        i18n: duplicate
+      - name: draft
+        label: Draft
+        widget: boolean
+        default: false
+        i18n: duplicate
+        required: false
+      - name: authors
+        label: Authors
+        widget: string
+        i18n: duplicate
+        required: false
+      - name: categories
+        label: Categories
+        widget: select
+        options:
+          - { label: Announcement, value: announcement }
+          - { label: Event, value: event }
+          - { label: Feature, value: feature }
+          - { label: Showcase, value: showcase }
+          - { label: Tutorial, value: tutorial }
+          - { label: Update, value: update }
+        i18n: duplicate
+        required: false
+      - name: tags
+        label: Tags
+        widget: list
+        i18n: duplicate
+        required: false
+      - name: cover
+        label: Cover
+        widget: object
+        i18n: true
+        required: false
+        fields:
+          - { name: image, label: Image, widget: image, i18n: duplicate, required: false }
+          - { name: caption, label: Caption, widget: string, i18n: true, required: false }
+      - name: body
+        label: Body
+        widget: richtext
+        i18n: true
+
+  - divider: true
+
+  - name: community-pages
+    label: Community
+    description: Community collection
+    folder: content
+    path: 'community/{{slug}}/_index'
+    media_folder: ""
+    public_folder: ""
+    thumbnail: cover.image
+    icon: groups
+    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{authors | default('no authors')}} · {{locales | upper}}"
+    reorder:
+      key: weight
+    i18n: true
+
+    sortable_fields:
+      fields: [title, date, authors]
+      default:
+        field: date
+        direction: descending
+
+    view_groups:
+      groups:
+        - name: year
+          label: Year
+          field: date
+          pattern: '\d{4}'
+        - name: category
+          label: Categories
+          field: categories
+      default: year
+
+    view_filters:
+      filters:
+        - name: drafts
+          label: Drafts
+          field: draft
+          pattern: true
+        - name: posts_2023
+          label: Posted in 2023
+          field: date
+          pattern: '^2023'
+        - name: posts_2024
+          label: Posted in 2024
+          field: date
+          pattern: '^2024'
+        - name: posts_2025
+          label: Posted in 2025
+          field: date
+          pattern: '^2025'
+        - name: posts_2026
+          label: Posted in 2026
+          field: date
+          pattern: '^2026'
+        
+
+    index_file:
+      label: Community Index
+      icon: home
+      i18n: true
+      fields:
+        - name: title
+          label: Title
+          widget: string
+          i18n: true
+        - name: description
+          label: Description
+          widget: string
+          i18n: true
+        - name: linkTitle
+          label: Link Title
+          widget: string
+          i18n: true
+          required: false
+        - name: redirect
+          label: Redirect
+          widget: string
+          i18n: duplicate
+          required: false
+        - name: cover
+          label: Cover
+          widget: object
+          i18n: true
+          required: false
+          fields:
+            - { name: image, label: Image, widget: image, i18n: duplicate, required: false }
+            - { name: caption, label: Caption, widget: string, i18n: true, required: false }
+        - name: body
+          label: Body
+          widget: richtext
+          i18n: true
+          required: false
+
+    fields:
+      - name: title
+        label: Title
+        widget: string
+        i18n: true
+      - name: description
+        label: Description
+        widget: string
+        i18n: true
+        required: false
+      - name: linkTitle
+        label: Link Title
+        widget: string
+        i18n: true
+        required: false
+      - name: redirect
+        label: Redirect
+        widget: string
+        i18n: duplicate
+        required: false
+      - name: date
+        label: Date
+        widget: datetime
+        i18n: duplicate
+      - name: draft
+        label: Draft
+        widget: boolean
+        default: false
+        i18n: duplicate
+        required: false
+      - name: cover
+        label: Cover
+        widget: object
+        i18n: true
+        required: false
+        fields:
+          - { name: image, label: Image, widget: image, i18n: duplicate, required: false }
+          - { name: caption, label: Caption, widget: string, i18n: true, required: false }
+      - name: body
+        label: Body
+        widget: richtext
+        i18n: true
+
+  - divider: true
+
+  - name: docs-section
+    label: Docs
+    description: Docs section
+    media_folder: ""
+    public_folder: ""
+    thumbnail: cover.image
+    icon: docs
+    i18n: true
+    files:
+      - name: docs-section-index
+        label: Docs
+        file: content/{{locale}}/docs/_index.md
+        icon: docs
+        i18n: true
+        fields:
+          - name: title
+            label: Title
+            widget: string
+            i18n: true
+          - name: description
+            label: Description
+            widget: string
+            i18n: true
+          - name: linkTitle
+            label: Link Title
+            widget: string
+            i18n: true
+            required: false
+          - name: cover
+            label: Cover
+            widget: object
+            i18n: true
+            required: false
+            fields:
+              - { name: image, label: Image, widget: image, i18n: duplicate, required: false }
+              - { name: caption, label: Caption, widget: string, i18n: true, required: false }
+          - name: body
+            label: Body
+            widget: richtext
+            i18n: true
+            required: false
+
+  - divider: true
+
+  - name: manual-section
+    label: Manual
+    description: Manual section
+    media_folder: ""
+    public_folder: ""
+    thumbnail: cover.image
+    icon: menu_book
+    i18n: true
+    files:
+      - name: manual-section-index
+        label: Manual
+        file: content/{{locale}}/manual/_index.md
+        icon: menu_book
+        i18n: true
+        fields:
+          - name: title
+            label: Title
+            widget: string
+            i18n: true
+          - name: description
+            label: Description
+            widget: string
+            i18n: true
+          - name: linkTitle
+            label: Link Title
+            widget: string
+            i18n: true
+            required: false
+          - name: cover
+            label: Cover
+            widget: object
+            i18n: true
+            required: false
+            fields:
+              - { name: image, label: Image, widget: image, i18n: duplicate, required: false }
+              - { name: caption, label: Caption, widget: string, i18n: true, required: false }
+          - name: body
+            label: Body
+            widget: richtext
+            i18n: true
+            required: false
+
+  - divider: true
+
+  - name: dev-pages
+    label: Dev
+    description: Dev collection
+    folder: content
+    path: 'dev/{{slug}}/_index'
+    media_folder: ""
+    public_folder: ""
+    thumbnail: cover.image
+    icon: logo_dev
+    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{authors | default('no authors')}} · {{locales | upper}}"
+    reorder:
+      key: weight
+    i18n: true
+
+    sortable_fields:
+      fields: [title, date, authors]
+      default:
+        field: date
+        direction: descending
+
+    view_groups:
+      groups:
+        - name: year
+          label: Year
+          field: date
+          pattern: '\d{4}'
+        - name: category
+          label: Categories
+          field: categories
+      default: year
+
+    view_filters:
+      filters:
+        - name: drafts
+          label: Drafts
+          field: draft
+          pattern: true
+        - name: posts_2023
+          label: Posted in 2023
+          field: date
+          pattern: '^2023'
+        - name: posts_2024
+          label: Posted in 2024
+          field: date
+          pattern: '^2024'
+        - name: posts_2025
+          label: Posted in 2025
+          field: date
+          pattern: '^2025'
+        - name: posts_2026
+          label: Posted in 2026
+          field: date
+          pattern: '^2026'
+        
+
+    index_file:
+      label: Dev Index
+      icon: home
+      i18n: true
+      fields:
+        - name: title
+          label: Title
+          widget: string
+          i18n: true
+        - name: description
+          label: Description
+          widget: string
+          i18n: true
+        - name: linkTitle
+          label: Link Title
+          widget: string
+          i18n: true
+          required: false
+        - name: redirect
+          label: Redirect
+          widget: string
+          i18n: duplicate
+          required: false
+        - name: cover
+          label: Cover
+          widget: object
+          i18n: true
+          required: false
+          fields:
+            - { name: image, label: Image, widget: image, i18n: duplicate, required: false }
+            - { name: caption, label: Caption, widget: string, i18n: true, required: false }
+        - name: body
+          label: Body
+          widget: richtext
+          i18n: true
+          required: false
+
+    fields:
+      - name: title
+        label: Title
+        widget: string
+        i18n: true
+      - name: description
+        label: Description
+        widget: string
+        i18n: true
+        required: false
+      - name: linkTitle
+        label: Link Title
+        widget: string
+        i18n: true
+        required: false
+      - name: redirect
+        label: Redirect
+        widget: string
+        i18n: duplicate
+        required: false
+      - name: date
+        label: Date
+        widget: datetime
+        i18n: duplicate
+      - name: draft
+        label: Draft
+        widget: boolean
+        default: false
+        i18n: duplicate
+        required: false
+      - name: cover
+        label: Cover
+        widget: object
+        i18n: true
+        required: false
+        fields:
+          - { name: image, label: Image, widget: image, i18n: duplicate, required: false }
+          - { name: caption, label: Caption, widget: string, i18n: true, required: false }
+      - name: body
+        label: Body
+        widget: richtext
+        i18n: true
+
+  - divider: true
+
+  - name: api-section
+    label: API
+    description: API section
+    media_folder: ""
+    public_folder: ""
+    thumbnail: cover.image
+    icon: code_xml
+    i18n: true
+    files:
+      - name: api-section-index
+        label: API
+        file: content/{{locale}}/api/_index.md
+        icon: code_xml
+        i18n: true
+        fields:
+          - name: title
+            label: Title
+            widget: string
+            i18n: true
+          - name: description
+            label: Description
+            widget: string
+            i18n: true
+          - name: linkTitle
+            label: Link Title
+            widget: string
+            i18n: true
+            required: false
+          - name: cover
+            label: Cover
+            widget: object
+            i18n: true
+            required: false
+            fields:
+              - { name: image, label: Image, widget: image, i18n: duplicate, required: false }
+              - { name: caption, label: Caption, widget: string, i18n: true, required: false }
+          - name: body
+            label: Body
+            widget: richtext
+            i18n: true
+            required: false
+
+  - divider: true
+
+  - name: donate-pages
+    label: Donate
+    description: Donate collection
+    folder: content
+    path: 'donate/{{slug}}/_index'
+    media_folder: ""
+    public_folder: ""
+    thumbnail: cover.image
+    icon: favorite
+    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{authors | default('no authors')}} · {{locales | upper}}"
+    reorder:
+      key: weight
+    i18n: true
+
+    sortable_fields:
+      fields: [title, date, authors]
+      default:
+        field: date
+        direction: descending
+
+    view_groups:
+      groups:
+        - name: year
+          label: Year
+          field: date
+          pattern: '\d{4}'
+        - name: category
+          label: Categories
+          field: categories
+      default: year
+
+    view_filters:
+      filters:
+        - name: drafts
+          label: Drafts
+          field: draft
+          pattern: true
+        - name: posts_2023
+          label: Posted in 2023
+          field: date
+          pattern: '^2023'
+        - name: posts_2024
+          label: Posted in 2024
+          field: date
+          pattern: '^2024'
+        - name: posts_2025
+          label: Posted in 2025
+          field: date
+          pattern: '^2025'
+        - name: posts_2026
+          label: Posted in 2026
+          field: date
+          pattern: '^2026'
+        
+
+    index_file:
+      label: Donate Index
+      icon: home
+      i18n: true
+      fields:
+        - name: title
+          label: Title
+          widget: string
+          i18n: true
+        - name: description
+          label: Description
+          widget: string
+          i18n: true
+        - name: linkTitle
+          label: Link Title
+          widget: string
+          i18n: true
+          required: false
+        - name: redirect
+          label: Redirect
+          widget: string
+          i18n: duplicate
+          required: false
+        - name: cover
+          label: Cover
+          widget: object
+          i18n: true
+          required: false
+          fields:
+            - { name: image, label: Image, widget: image, i18n: duplicate, required: false }
+            - { name: caption, label: Caption, widget: string, i18n: true, required: false }
+        - name: body
+          label: Body
+          widget: richtext
+          i18n: true
+          required: false
+
+    fields:
+      - name: title
+        label: Title
+        widget: string
+        i18n: true
+      - name: description
+        label: Description
+        widget: string
+        i18n: true
+        required: false
+      - name: linkTitle
+        label: Link Title
+        widget: string
+        i18n: true
+        required: false
+      - name: redirect
+        label: Redirect
+        widget: string
+        i18n: duplicate
+        required: false
+      - name: date
+        label: Date
+        widget: datetime
+        i18n: duplicate
+      - name: draft
+        label: Draft
+        widget: boolean
+        default: false
+        i18n: duplicate
+        required: false
+      - name: cover
+        label: Cover
+        widget: object
+        i18n: true
+        required: false
+        fields:
+          - { name: image, label: Image, widget: image, i18n: duplicate, required: false }
+          - { name: caption, label: Caption, widget: string, i18n: true, required: false }
+      - name: body
+        label: Body
+        widget: richtext
+        i18n: true
+
+singletons:
+
+  - name: settings
+    label: Site Settings
+    file: config/_default/params.yaml
+    icon: settings
+    fields:
+      - name: site_authors
+        label: Default site authors
+        widget: string
+      - name: site_keywords
+        label: Site keywords and tags
+        widget: list
+      - name: site_logo
+        label: Site logo
+        widget: image
+        media_folder: /static
+        public_folder: /
+      - name: default_icon
+        label: Default placeholder icon
+        widget: image
+        media_folder: /static
+        public_folder: /
+      - name: git_repository
+        label: Git repository URL
+        widget: string
+      - name: socials
+        label: Social media links
+        widget: list
+        summary: "{{label}}"
+        collapsed: auto
+        fields:
+          - name: label
+            label: Label
+            widget: string
+          - name: url
+            label: Social media URL
+            widget: string
+      - name: style
+        label: Theme Style
+        hint: Only change the value. Please leave the key (variable name) as-is.
+        widget: keyvalue
+        key_label: CSS variable name
+        value_label: CSS value
+
+  - divider: true
+
+  - name: sponsors
+    label: Sponsors list
+    file: data/sponsors.yaml
+    icon: person_add
+    fields:
+      - name: sponsors
+        label: Sponsors
+        label_singular: Sponsor
+        widget: list
+        summary: "{{label}} - {{tier}}"
+        thumbnail: logo
+        collapsed: auto
+        root: true
+        fields:
+          - name: id
+            label: Sponsor ID
+            widget: hidden
+            default: "{{uuid_shorter}}"
+          - name: label
+            label: Label
+            widget: string
+          - name: description
+            label: Description
+            widget: string
+            required: false
+          - name: logo
+            label: Logo
+            widget: image
+            media_folder: /assets/sponsors
+            public_folder: /sponsors
+            required: false
+          - name: link
+            label: Link
+            widget: string
+            required: false
+          - name: tier
+            label: Sponsoring tier
+            widget: select
+            options:
+              - { label: Corporate, value: corporate }
+              - { label: Gold, value: gold }
+              - { label: Early, value: early }
+              - { label: Silver, value: silver }
+              - { label: Bronze, value: bronze }
+          - name: start_date
+            label: Start date
+            widget: datetime
+            type: date
