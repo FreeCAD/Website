@@ -1,0 +1,65 @@
+{{- /* Render static or dynamically resolved download cards. */ -}}
+
+{{- $builds := .builds -}}
+{{- $dynamic := .dynamic | default false -}}
+{{- $asset_patterns := dict
+  "windows_msi" `Windows-x86_64(?:-py\d+)?-installer\.exe$`
+  "windows_zip" `Windows-x86_64(?:-py\d+)?\.7z$`
+  "mac_x86" `macOS(?:\d+)?-x86_64(?:-py\d+)?\.dmg$`
+  "mac_arm" `macOS(?:\d+)?-arm64(?:-py\d+)?\.dmg$`
+  "linux_x86" `Linux-x86_64(?:-py\d+)?\.AppImage$`
+  "linux_arm" `Linux-aarch64(?:-py\d+)?\.AppImage$`
+-}}
+
+{{- with site.Params.download -}}
+  <div class="download-box">
+    {{- range $platform := . -}}
+      <div
+        class="download-card"
+        id="{{ $platform.os }}"
+        style="order: {{ $platform.order }};">
+        <div class="download-platform">
+          {{- partialCached "utils/icon.html" $platform.os (lower $platform.os) -}}
+          <h3>{{ $platform.label }}</h3>
+          {{- with $platform.subtitle -}}
+            <p>{{ . }}</p>
+          {{- end -}}
+        </div>
+
+        {{- with $platform.packages -}}
+          <div class="download-buttons">
+            {{- range $package := . -}}
+              {{- $key := printf "%s_%s" $platform.os $package.key -}}
+              {{- if $dynamic -}}
+                {{- with index $asset_patterns $key -}}
+                  <a
+                    class="button download-link"
+                    data-release-asset-pattern="{{ . }}"
+                    hidden
+                    aria-hidden="true"
+                    target="_blank"
+                    rel="external noreferrer nofollow">
+                    {{- partialCached "utils/icon.html" "download" "download" -}}
+                    <strong>{{ $package.label }}</strong>
+                    {{- with $package.meta -}}<span>{{ . }}</span>{{- end -}}
+                  </a>
+                {{- end -}}
+              {{- else -}}
+                {{- with index $builds $key -}}
+                  <a class="button download-link"
+                    href="{{ . }}"
+                    target="_blank"
+                    rel="external noreferrer nofollow">
+                    {{- partialCached "utils/icon.html" "download" "download" -}}
+                    <strong>{{ $package.label }}</strong>
+                    {{- with $package.meta -}}<span>{{ . }}</span>{{- end -}}
+                  </a>
+                {{- end -}}
+              {{- end -}}
+            {{- end -}}
+          </div>
+        {{- end -}}
+      </div>
+    {{- end -}}
+  </div>
+{{- end -}}

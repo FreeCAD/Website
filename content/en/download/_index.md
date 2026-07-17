@@ -3,6 +3,7 @@ title: Launch into design!
 linkTitle: Download
 description: Get FreeCAD and start with freedom right away.
 icon_cms: download
+dynamic_downloads: true
 ---
 
 
@@ -48,3 +49,6 @@ The FreeCAD community provides a wealth of additional workbenches, macros, inter
 {{< /group >}}
 
 {{< /block >}}
+
+
+{{< weekly_download >}}

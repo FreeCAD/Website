@@ -56,6 +56,10 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   display: inline-block;
 }
 
+.download-buttons .button[hidden] {
+  display: none;
+}
+
 .download-buttons span {
   margin-inline-start: calc(var(--gap) * 0.5);
   color: var(--tertiary);
@@ -69,6 +73,19 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 .download-release h4 {
   color: var(--secondary);
+}
+
+.weekly-downloads {
+  width: var(--width);
+  margin: var(--gap) auto;
+}
+
+.weekly-downloads summary {
+  cursor: pointer;
+}
+
+.weekly-downloads .download-release {
+  margin-top: var(--gap);
 }
 
 
