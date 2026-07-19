@@ -1,7 +1,7 @@
 ---
-title: Launch into design!
+title: Download FreeCAD
 linkTitle: Download
-description: Get FreeCAD and start with freedom right away.
+description: Choose your platform and get the latest stable release.
 icon_cms: download
 ---
 
@@ -12,7 +12,7 @@ icon_cms: download
 
 ## What's New in the Latest Release
 
-FreeCAD 1.1 focuses on refinement and key features to enhance workflow and stability for everyone.
+The latest FreeCAD release focuses on refinement and key features to enhance workflow and stability for everyone.
 With many quality of life improvements to all workbenches, hundreds of bug fixes, and updated libraries,
 designing with FreeCAD is more fun and powerful than ever. Oh, full freedom included by the way.
 

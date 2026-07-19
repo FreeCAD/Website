@@ -16,12 +16,14 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   align-content: space-evenly;
   flex-wrap: wrap;
   gap: var(--gap);
-  width: var(--width);
+  width: min(var(--width), 100%);
   margin: var(--gap) auto;
   z-index: 2;
 }
 
 .download-card {
+  position: relative;
+  min-width: 0;
   flex: 1 1 25%;
   display: flex;
   flex-direction: column;
@@ -30,6 +32,21 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   border-radius: var(--radius);
   background: var(--entry);
   box-shadow: var(--shadow);
+}
+
+.download-card.recommended {
+  outline: calc(var(--line) * 2) solid var(--accent);
+}
+
+.download-recommended {
+  display: inline-block;
+  margin-block-end: calc(var(--gap) * 0.5);
+  padding: calc(var(--gap) * 0.25) calc(var(--gap) * 0.5);
+  color: var(--entry);
+  font-size: var(--s);
+  font-weight: bold;
+  background: var(--accent);
+  border-radius: var(--radius);
 }
 
 .download-platform {
@@ -50,10 +67,13 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 .download-buttons {
   display: flex;
   flex-direction: column;
+  gap: calc(var(--gap) * 0.25);
 }
 
 .download-buttons .button {
   display: inline-block;
+  width: 100%;
+  margin-inline: 0;
 }
 
 .download-buttons span {
@@ -65,10 +85,38 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 .download-release {
   display: flex;
   flex-direction: column;
+  width: min(var(--width), 100%);
+  margin-inline: auto;
 }
 
-.download-release h4 {
+.download-release-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: calc(var(--gap) * 0.5);
   color: var(--secondary);
+  text-align: center;
+}
+
+.download-release-kicker {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.download-release-meta strong {
+  font-size: var(--l);
+}
+
+.download-release-meta time {
+  color: var(--tertiary);
+  font-size: var(--s);
+}
+
+.download-release-intro {
+  margin-block-start: 0;
+  color: var(--tertiary);
+  text-align: center;
 }
 
 

@@ -37,13 +37,18 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
       <div class="download-release">
     {{- end -}}
 
-    <h4 class="description">
-      {{- printf "%s %s · %s"
-        (i18n "download" | default "Download")
-        (partial "utils/format_semver.html" $release.Params.versions)
-        ($release.Lastmod | time.Format ":date_long")
-      -}}
-    </h4>
+    <div class="download-release-meta">
+      <span class="download-release-kicker">Latest stable release</span>
+      <strong>FreeCAD {{ partial "utils/format_semver.html" $release.Params.versions }}</strong>
+      <time datetime="{{ $release.Lastmod | time.Format "2006-01-02" }}">
+        Updated {{ $release.Lastmod | time.Format ":date_long" }}
+      </time>
+      <a href="{{ $release.RelPermalink }}">Read release notes</a>
+    </div>
+
+    <p class="download-release-intro">
+      Choose your operating system. All downloads are free and open source.
+    </p>
 
     <div class="download-box">
 
@@ -101,6 +106,33 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
         }, 1500);
       });
     });
+
+    const userAgent = navigator.userAgent || '';
+    const userPlatform = navigator.userAgentData?.platform || navigator.platform || '';
+    let recommendedPlatform = '';
+
+    if (!/Android|iPhone|iPad/i.test(userAgent)) {
+      if (/Win/i.test(userPlatform)) {
+        recommendedPlatform = 'windows';
+      } else if (/Mac/i.test(userPlatform)) {
+        recommendedPlatform = 'mac';
+      } else if (/Linux/i.test(userPlatform)) {
+        recommendedPlatform = 'linux';
+      }
+    }
+
+    if (recommendedPlatform) {
+      const card = document.getElementById(recommendedPlatform);
+
+      if (card) {
+        card.classList.add('recommended');
+
+        const badge = document.createElement('span');
+        badge.className = 'download-recommended';
+        badge.textContent = 'Recommended for you';
+        card.querySelector('.download-platform').prepend(badge);
+      }
+    }
     </script>
 
   {{- if $page.IsPage -}}</div>{{- end -}}
