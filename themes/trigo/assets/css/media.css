@@ -97,15 +97,47 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     flex: none;
   }
 
+  .hero > .title,
+  .hero > .description,
   .download-release,
+  .download-release-meta,
+  .download-release-intro,
   .download-box {
     width: 100%;
-    max-width: var(--width);
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .hero > .title {
+    font-size: clamp(1.8rem, 8vw, 2.25rem);
+  }
+
+  .download-release,
+  .download-box {
+    margin-inline: 0;
+  }
+
+  .download-release-meta {
+    flex-direction: column;
+    align-items: center;
+    gap: calc(var(--gap) * 0.25);
   }
 
   .download-box {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .download-platform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .download-recommended {
+    display: block;
+    width: fit-content;
+    margin-inline: auto;
   }
 
   .download-card {
