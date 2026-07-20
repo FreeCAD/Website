@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html
+  lang="ja-JP"
+  dir="ltr"><head><meta charset="utf-8">
+<meta
+  name="viewport"
+  content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta
+  name="referrer"
+  content="strict-origin-when-cross-origin">
+<meta
+  name="robots"
+  content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link
+          rel="stylesheet"
+          href="/Website/pr-50/css/styles.bcc18f796fb280b7c936b6bee084ed4dc1155e59e8c601cb37fb6afeef60a05d.css"
+          integrity="sha256-vMGPeW&#43;ygLfJNra&#43;4ITtTcEVXlnoxgHLN/tq/u9goF0="
+          crossorigin="anonymous"><link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Website/pr-50/favicon.svg"><link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/Website/pr-50/favicon.ico"><link
+      rel="apple-touch-icon"
+      href="/Website/pr-50/apple-touch-icon.png"><title>FreeCAD | WIP Wednesday - 13 March 2024</title>
+  <meta
+    name="description"
+    content="あなた自身の自由でオープンソースのパラメトリックモデラー"><meta
+      name="keywords"
+      content="WIP"><link
+    rel="canonical"
+    href="https://FreeCAD.github.io/Website/pr-50/ja/news/wip-wednesday-13-march-2024/"><link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://FreeCAD.github.io/Website/pr-50/news/wip-wednesday-13-march-2024/"><link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://FreeCAD.github.io/Website/pr-50/zh/news/wip-wednesday-13-march-2024/"><link
+      rel="alternate"
+      hreflang="es-ES"
+      href="https://FreeCAD.github.io/Website/pr-50/es/news/wip-wednesday-13-march-2024/"><link
+      rel="alternate"
+      hreflang="fr-FR"
+      href="https://FreeCAD.github.io/Website/pr-50/fr/news/wip-wednesday-13-march-2024/"><link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://FreeCAD.github.io/Website/pr-50/pt/news/wip-wednesday-13-march-2024/"><link
+      rel="alternate"
+      hreflang="de-DE"
+      href="https://FreeCAD.github.io/Website/pr-50/de/news/wip-wednesday-13-march-2024/"><link
+      rel="alternate"
+      hreflang="ja-JP"
+      href="https://FreeCAD.github.io/Website/pr-50/ja/news/wip-wednesday-13-march-2024/"><link
+    rel="alternate"
+    hreflang="x-default"
+    href="https://FreeCAD.github.io/Website/pr-50/ja/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-50/ja/news/wip-wednesday-13-march-2024/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="WIP Wednesday - 13 March 2024">
+  <meta property="og:description" content="This week in FreeCAD development:
+bgbsww and chennes made further progress towards mitigating the toponaming issue. wwmayer fixed MinGW builds, added a class for reading metadata from project files and a test function to write to file stream, and fixed the context menu for the expression editing input box. pavltom reimplemented parent linking for weld symbols in TechDraw. edi271 fixed a scaling issue in TechDraw’s AxoLengthDimension. prrvchr fixed an issue with filling template fields in TechDraw when importing an Arch section plan. yorikvanhavre introduced a new “Mouse delay” preference in “Edit -&gt; Preferences -&gt; Draft -&gt; Grid and Snapping” for suppressing mouse events in numeric inputs for coordinates in Draft and Arch. chennes fixed several i18n bugs in PartDesign, Sketcher, and the task panel. He also convert GTest to a git submodule and made more improvements in the Addon Manager. FlachyJoe fixed the issue where dimensions in Sketcher would have an unselectable area. Roy-043 corrected the position of ConstrainLock and ConstrainRadiam in Sketcher. sliptonic renamed the Path workbench to CAM (additional fixes for that from maxwxyz and chennes), for rationale please see this post . He also fixed an edge case with missing toolshapes. davesrocketshop enhanced the new materials system with data models to support elasticity. This will allow FEM to expand support for more material types. FEA-eng added a new CalculiX property OutputFrequency that defines output frequency for the whole step in numbers of increments. He also added support for quad8 elements in 2D analyses and fixed Elmer FEM 2D flow examples. marioalexis84 implemented partial support for hexahedral elements meshing and submitted a partial transparency fix in FemPostObject display modes. NomAnor added an additional visibility icon for features in groups. Ovalelephant35 improved API documentation. mpfusion improved ISO 286 (geometrical product specifications) conformance. xtemp09 fixed two crashes. PR stats: In the week from Wednesday, 6 March to Wednesday, 13 March there were 55 pull requests merged, with a total codebase change of &#43;6,554 / ‑3,909 (additional loss of 108K&#43; lines of code is due to GTest devendoring in favor of a git submodule). We had an average merged PR size of &#43;119 / ‑71. 24 new pull requests were opened.">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2024-03-13T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-05-05T08:06:31+02:00">
+    <meta property="article:tag" content="WIP">
+</head>
+<body
+    class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a
+      href="/Website/pr-50/ja/"
+      accesskey="h"
+      title="ホームページ (Alt + H)"
+      aria-label="ホームページ"><svg
+      class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+
+      <use href="/Website/pr-50/FreeCAD-wordmark.svg#logo"></use>
+    </svg></a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button
+    popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="メニュー"
+    aria-label="メニュー"><svg
+    class="icon hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/hamburger.svg#hamburger"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul
+    popover
+    id="menu-list"
+    class="menu-list"><li>
+          <a
+            href="/Website/pr-50/ja/features/">特徴</a>
+        </li><li>
+          <a
+            href="/Website/pr-50/ja/download/">ダウンロード</a>
+        </li><li>
+          <a
+            href="/Website/pr-50/ja/news/" aria-current="page" class="active">ニュース</a>
+        </li><li>
+          <a
+            href="/Website/pr-50/ja/community/">コミュニティ</a>
+        </li><li>
+          <a
+            href="/Website/pr-50/ja/docs/">ドキュメント</a>
+        </li><li>
+          <a
+            href="/Website/pr-50/ja/donate/" class="donate-button">♥ 寄付する</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button
+          popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="言語を選択 (Alt + L)"
+          aria-label="言語を選択"><svg
+    class="icon language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul
+          popover
+          id="lang-list"
+          class="language-list"><li>
+              <a href="/Website/pr-50/news/wip-wednesday-13-march-2024/" title="WIP Wednesday - 13 March 2024">English 🇬🇧</a>
+            </li><li>
+              <a href="/Website/pr-50/zh/news/wip-wednesday-13-march-2024/" title="WIP Wednesday - 13 March 2024">中文 🇨🇳</a>
+            </li><li>
+              <a href="/Website/pr-50/es/news/wip-wednesday-13-march-2024/" title="WIP Wednesday - 13 March 2024">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/pr-50/fr/news/wip-wednesday-13-march-2024/" title="WIP Wednesday - 13 March 2024">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pr-50/pt/news/wip-wednesday-13-march-2024/" title="WIP Wednesday - 13 March 2024">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a href="/Website/pr-50/de/news/wip-wednesday-13-march-2024/" title="WIP Wednesday - 13 March 2024">Deutsch 🇩🇪</a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-50/ja/news/wip-wednesday-13-march-2024/" title="WIP Wednesday - 13 March 2024">日本語 🇯🇵</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="テーマchromaに切り替える (Alt + T)"
+    aria-label="テーマchromaに切り替える"><svg
+    class="icon dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/dark.svg#dark"></use>
+  </svg><svg
+    class="icon light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main style="--hue: 120;"><section class="hero">
+
+    <h2 class="title">WIP Wednesday - 13 March 2024</h1><div class="metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/date.svg#date"></use>
+  </svg><time datetime="2024-03-13T00:00:00Z">2024年3月13日</time>
+  </span><span class="meta authors"><svg
+    class="icon authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-50/ja/authors/aleksandr-prokudin/">Aleksandr Prokudin (169)</a></span><span class="meta categories"><svg
+    class="icon categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-50/ja/categories/update/">Update (158)</a></span><span class="meta tags"><svg
+    class="icon tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-50/ja/tags/wip/">WIP (153)</a></span><span class="meta"><svg
+    class="icon time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/time.svg#time"></use>
+  </svg>2 分</span></div></section><div class="content"><p>This week in FreeCAD development:</p>
+<ul>
+<li><strong>bgbsww</strong> and <strong>chennes</strong> made further progress towards mitigating the toponaming issue.</li>
+<li><strong>wwmayer</strong> fixed MinGW builds, added a class for reading metadata from project files and a test function to write to file stream, and fixed the context menu for the expression editing input box.</li>
+<li><strong>pavltom</strong> reimplemented parent linking for weld symbols in TechDraw.</li>
+<li><strong>edi271</strong> fixed a scaling issue in TechDraw&rsquo;s AxoLengthDimension.</li>
+<li><strong>prrvchr</strong> fixed an issue with filling template fields in TechDraw when importing an Arch section plan.</li>
+<li><strong>yorikvanhavre</strong> introduced a new &ldquo;Mouse delay&rdquo; preference in &ldquo;Edit -&gt; Preferences -&gt; Draft -&gt; Grid and Snapping&rdquo; for suppressing mouse events in numeric inputs for coordinates in Draft and Arch.</li>
+<li><strong>chennes</strong> fixed several i18n bugs in PartDesign, Sketcher, and the task panel. He also convert GTest to a git submodule and made more improvements in the Addon Manager.</li>
+<li><strong>FlachyJoe</strong> fixed the issue where dimensions in Sketcher would have an unselectable area.</li>
+<li><strong>Roy-043</strong> corrected the position of ConstrainLock and ConstrainRadiam in Sketcher.</li>
+<li><strong>sliptonic</strong> renamed the Path workbench to CAM (additional fixes for that from maxwxyz and chennes), for rationale please see <a
+  href="https://ondsel.com/blog/path-wb-going-away/"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">this post<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>. He also fixed an edge case with missing toolshapes.</li>
+<li><strong>davesrocketshop</strong> enhanced the new materials system with data models to support elasticity. This will allow FEM to expand support for more material types.</li>
+<li><strong>FEA-eng</strong> added a new CalculiX property OutputFrequency that defines output frequency for the whole step in numbers of increments. He also added support for quad8 elements in 2D analyses and fixed Elmer FEM 2D flow examples.</li>
+<li><strong>marioalexis84</strong> implemented partial support for hexahedral elements meshing and submitted a partial transparency fix in FemPostObject display modes.</li>
+<li><strong>NomAnor</strong> added an additional visibility icon for features in groups.</li>
+<li><strong>Ovalelephant35</strong> improved API documentation.</li>
+<li><strong>mpfusion</strong> improved ISO 286 (geometrical product specifications) conformance.</li>
+<li><strong>xtemp09</strong> fixed two crashes.</li>
+</ul>
+<p><strong>PR stats:</strong> In the week from Wednesday, 6 March to Wednesday, 13 March there were 55 pull requests merged, with a total codebase change of +6,554 / ‑3,909 (additional loss of 108K+ lines of code is due to GTest devendoring in favor of a git submodule). We had an average merged PR size of +119 / ‑71. 24 new pull requests were opened.</p>
+<p><strong>Issue stats:</strong> we closed 37 issues, and 66 new issues were opened. Overall, 1,354 issues are currently open.</p>
+</div><footer class="single-footer">
+    <nav class="pagination"><a
+            class="button next"
+            href="/Website/pr-50/ja/news/fpa-annual-report/"
+            title="次の記事"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/tri_left.svg#tri_left"></use>
+  </svg>FPA annual report</a><a
+            class="button prev"
+            href="/Website/pr-50/ja/news/wip-wednesday-6-march-2024/"
+            title="前の記事">WIP Wednesday - 6 March 2024<svg
+    class="icon tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="トップへ"
+  title="トップへ (Alt + G)" ><svg
+    class="icon tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a
+            href="/Website/pr-50/ja/">ホームページ</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-50/ja/features/">特徴</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-50/ja/download/">ダウンロード</a><ul><li>
+                      <a
+                        href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="external noreferrer nofollow">Development builds<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples an parts library<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-50/ja/download/releases/">Releases</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-50/ja/news/" aria-current="page" class="active">ニュース</a><ul><li>
+                  <a
+                    href="/Website/pr-50/ja/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/pr-50/ja/authors/">著者一覧</a>
+                      </li><li>
+                        <a href="/Website/pr-50/ja/categories/">カテゴリ一覧</a>
+                      </li><li>
+                        <a href="/Website/pr-50/ja/tags/">タグ一覧</a>
+                      </li><li>
+                        <a href="/Website/pr-50/ja/versions/">バージョン一覧</a>
+                      </li></ul></li><li>
+          <a
+            href="/Website/pr-50/ja/community/">コミュニティ</a><ul><li>
+                      <a
+                        href="/Website/pr-50/ja/community/calendar/">Calendar</a>
+                    </li><li>
+                      <a
+                        href="https://events.freecad.org/" target="_blank" rel="external noreferrer nofollow">Events<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://fpa.freecad.org" target="_blank" rel="external noreferrer nofollow">Association<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-50/ja/community/fpn/">Professional Network</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-50/ja/community/addons/">Addons</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-50/ja/community/telemetry/">Telemetry</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-50/ja/docs/">ドキュメント</a><ul><li>
+                  <a
+                    href="https://wiki.freecad.org/User_hub" target="_blank" rel="external noreferrer nofollow">User manual<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>
+                </li><li>
+                  <a
+                    href="/Website/pr-50/ja/dev/">Development Handbook</a>
+                </li><li>
+                  <a
+                    href="https://freecad.github.io/SourceDoc/" target="_blank" rel="external noreferrer nofollow">FreeCAD API<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>
+                </li></ul></li><li>
+          <a
+            href="/Website/pr-50/ja/donate/">♥ 寄付する</a><ul></ul></li></ul>
+</nav>
+<div class="share-links"><a
+    href="https://forum.freecad.org"
+    title="Forum"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/forum.svg#forum"></use>
+  </svg></a><a
+    href="https://github.com/freecad"
+    title="GitHub"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/github.svg#github"></use>
+  </svg></a><a
+    href="https://codeberg.org/freecad"
+    title="Codeberg"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a
+    href="https://social.freecad.org/@freecad"
+    title="Mastodon"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://www.reddit.com/r/freecad"
+    title="Reddit"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/reddit.svg#reddit"></use>
+  </svg></a><a
+    href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+    title="Matrix"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/matrix.svg#matrix"></use>
+  </svg></a><a
+    href="https://discord.gg/w2cTKGzccC"
+    title="Discord"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/discord.svg#discord"></use>
+  </svg></a><a
+    href="https://www.linkedin.com/groups/4295230"
+    title="LinkedIn"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+  href="/Website/pr-50/ja/fedishare.html#title=WIP&#43;Wednesday&#43;-&#43;13&#43;March&#43;2024&amp;description=This&#43;week&#43;in&#43;FreeCAD&#43;development%3A%0Abgbsww&#43;and&#43;chennes&#43;made&#43;further&#43;progress&#43;towards&#43;mitigating&#43;the&#43;toponaming&#43;issue.&#43;wwmayer&#43;fixed&#43;MinGW&#43;builds%2C&#43;added&#43;a&#43;class&#43;for&#43;reading&#43;metadata&#43;from&#43;project&#43;files&#43;%E2%80%A6%0A%23wip&amp;url=https://FreeCAD.github.io/Website/pr-50/ja/news/wip-wednesday-13-march-2024/"
+  title="共有 Fediverse"
+  target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026
+    <a
+      href="/Website/pr-50/ja/"
+      title="Open-source parametric 3D CAD">Open-source parametric 3D CAD</a>
+  </span><span>
+  <a
+    href="https://creativecommons.org/licenses/by-sa/4.0/"
+    title="Creative Commons"
+    target="_blank" rel="license external noreferrer nofollow">
+
+    CC BY-SA<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to
+  <a
+    href="https://gohugo.io/"
+    title="Hugo SSG"
+    target="_blank" rel="external noreferrer nofollow">
+
+    Hugo<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-05-05
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/b17445f590d892755b51f7f35ced061e6eb392b5">b17445f59<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script
+    src="/Website/pr-50/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script></body>
+
+</html>

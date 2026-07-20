@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html
+  lang="es-ES"
+  dir="ltr"><head><meta charset="utf-8">
+<meta
+  name="viewport"
+  content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta
+  name="referrer"
+  content="strict-origin-when-cross-origin">
+<meta
+  name="robots"
+  content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link
+          rel="stylesheet"
+          href="/Website/pr-50/css/styles.bcc18f796fb280b7c936b6bee084ed4dc1155e59e8c601cb37fb6afeef60a05d.css"
+          integrity="sha256-vMGPeW&#43;ygLfJNra&#43;4ITtTcEVXlnoxgHLN/tq/u9goF0="
+          crossorigin="anonymous"><link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Website/pr-50/favicon.svg"><link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/Website/pr-50/favicon.ico"><link
+      rel="apple-touch-icon"
+      href="/Website/pr-50/apple-touch-icon.png"><title>FreeCAD | Releases</title>
+  <meta
+    name="description"
+    content="Browse back in time previous releases."><meta
+      name="keywords"
+      content="free, open-source, CAD, software, tool, parametric, modeling, model, design, product, engineering, manufacturing, community, workbench, FOSS, 3D, BIM, CAM, FEM, FEA"><link
+    rel="canonical"
+    href="https://FreeCAD.github.io/Website/pr-50/es/download/releases/"><link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://FreeCAD.github.io/Website/pr-50/download/releases/"><link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://FreeCAD.github.io/Website/pr-50/zh/download/releases/"><link
+      rel="alternate"
+      hreflang="es-ES"
+      href="https://FreeCAD.github.io/Website/pr-50/es/download/releases/"><link
+      rel="alternate"
+      hreflang="fr-FR"
+      href="https://FreeCAD.github.io/Website/pr-50/fr/download/releases/"><link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://FreeCAD.github.io/Website/pr-50/pt/download/releases/"><link
+      rel="alternate"
+      hreflang="de-DE"
+      href="https://FreeCAD.github.io/Website/pr-50/de/download/releases/"><link
+      rel="alternate"
+      hreflang="ja-JP"
+      href="https://FreeCAD.github.io/Website/pr-50/ja/download/releases/"><link
+    rel="alternate"
+    hreflang="x-default"
+    href="https://FreeCAD.github.io/Website/pr-50/es/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-50/es/download/releases/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="All release notes">
+  <meta property="og:description" content="Browse back in time previous releases.">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:type" content="website">
+</head>
+<body
+    class="list type-download kind-section "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a
+      href="/Website/pr-50/es/"
+      accesskey="h"
+      title="Inicio (Alt + H)"
+      aria-label="Inicio"><svg
+      class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+
+      <use href="/Website/pr-50/FreeCAD-wordmark.svg#logo"></use>
+    </svg></a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button
+    popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menú"
+    aria-label="Menú"><svg
+    class="icon hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/hamburger.svg#hamburger"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul
+    popover
+    id="menu-list"
+    class="menu-list"><li>
+          <a
+            href="/Website/pr-50/es/features/">Características</a>
+        </li><li>
+          <a
+            href="/Website/pr-50/es/download/" aria-current="page" class="active">Descarga</a>
+        </li><li>
+          <a
+            href="/Website/pr-50/es/news/">Actualidad</a>
+        </li><li>
+          <a
+            href="/Website/pr-50/es/community/">Comunidad</a>
+        </li><li>
+          <a
+            href="/Website/pr-50/es/docs/">Documentación</a>
+        </li><li>
+          <a
+            href="/Website/pr-50/es/donate/" class="donate-button">♥ Donar</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button
+          popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Elegir idioma (Alt + L)"
+          aria-label="Elegir idioma"><svg
+    class="icon language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul
+          popover
+          id="lang-list"
+          class="language-list"><li>
+              <a href="/Website/pr-50/download/releases/" title="Releases">English 🇬🇧</a>
+            </li><li>
+              <a href="/Website/pr-50/zh/download/releases/" title="Releases">中文 🇨🇳</a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-50/es/download/releases/" title="Releases">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/pr-50/fr/download/releases/" title="Releases">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pr-50/pt/download/releases/" title="Releases">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a href="/Website/pr-50/de/download/releases/" title="Releases">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/pr-50/ja/download/releases/" title="Releases">日本語 🇯🇵</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Cambiar tema chroma (Alt + T)"
+    aria-label="Cambiar tema chroma"><svg
+    class="icon dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/dark.svg#dark"></use>
+  </svg><svg
+    class="icon light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main style="--hue: 60;"><section class="hero">
+
+    <h1 class="title">All release notes</h1><h3 class="description">Browse back in time previous releases.</h3></section>
+
+  <div class="card-list wide">
+    <div class="cards"><a
+  class="card"
+  href="/Website/pr-50/es/download/releases/1-1/"><figure class="thumbnail"><img
+    class="img relnotes_1-1"
+    src="/Website/pr-50/download/releases/1-1/relnotes_1-1.webp"
+    alt="FreeCAD 1.1 Notes"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" width="1280" height="720" srcset="/Website/pr-50/download/releases/1-1/relnotes_1-1_hu_12982a451188f910.webp 400w, /Website/pr-50/download/releases/1-1/relnotes_1-1_hu_44b7a83c9d1a0b47.webp 800w, /Website/pr-50/download/releases/1-1/relnotes_1-1.webp 1280w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></figure><h3 class="card-title">FreeCAD 1.1 Notes</h3><p class="card-description">Free and open-source CAD, refined.</p><div class="card-metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/date.svg#date"></use>
+  </svg><time datetime="2026-03-24T00:00:00Z">24 de marzo de 2026</time>
+  </span></div>
+</a><a
+  class="card"
+  href="/Website/pr-50/es/download/releases/1-0/"><figure class="thumbnail"><img
+    class="img relnotes_1-0"
+    src="/Website/pr-50/download/releases/1-0/relnotes_1-0.webp"
+    alt="FreeCAD 1.0 Notes"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" width="1920" height="1080" srcset="/Website/pr-50/download/releases/1-0/relnotes_1-0_hu_23039677fca2898.webp 400w, /Website/pr-50/download/releases/1-0/relnotes_1-0_hu_86937af7bfaa07bf.webp 800w, /Website/pr-50/download/releases/1-0/relnotes_1-0_hu_27cded22b12dc325.webp 1600w, /Website/pr-50/download/releases/1-0/relnotes_1-0.webp 1920w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"></figure><h3 class="card-title">FreeCAD 1.0 Notes</h3><p class="card-description">A new chapter for free and open-source CAD.</p><div class="card-metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/date.svg#date"></use>
+  </svg><time datetime="2024-11-19T00:00:00Z">19 de noviembre de 2024</time>
+  </span></div>
+</a><a
+  class="card"
+  href="https://wiki.freecad.org/Release_notes_0.21" target="_blank" rel="external noreferrer nofollow"><figure class="thumbnail"><img
+    class="img relnotes_0-21"
+    src="/Website/pr-50/download/releases/0-21/relnotes_0-21.webp"
+    alt="FreeCAD 0.21 Notes"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" width="1920" height="1044" srcset="/Website/pr-50/download/releases/0-21/relnotes_0-21_hu_3251d2d432551c7f.webp 400w, /Website/pr-50/download/releases/0-21/relnotes_0-21_hu_9dbe9e1d637905a7.webp 800w, /Website/pr-50/download/releases/0-21/relnotes_0-21_hu_f4dc75cf7c735a23.webp 1600w, /Website/pr-50/download/releases/0-21/relnotes_0-21.webp 1920w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"></figure><h3 class="card-title">FreeCAD 0.21 Notes<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></h3><p class="card-description">Last release of the pre-1.0 days.</p><div class="card-metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/date.svg#date"></use>
+  </svg><time datetime="2023-11-19T00:00:00Z">19 de noviembre de 2023</time>
+  </span></div>
+</a><a
+  class="card"
+  href="https://wiki.freecad.org/Release_notes_0.20" target="_blank" rel="external noreferrer nofollow"><figure class="thumbnail"><img
+    class="img relnotes_0-20"
+    src="/Website/pr-50/download/releases/0-20/relnotes_0-20.webp"
+    alt="FreeCAD 0.20 Notes"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" width="1920" height="1080" srcset="/Website/pr-50/download/releases/0-20/relnotes_0-20_hu_1fd4c956d24a3a13.webp 400w, /Website/pr-50/download/releases/0-20/relnotes_0-20_hu_22f43758c5d5ea80.webp 800w, /Website/pr-50/download/releases/0-20/relnotes_0-20_hu_38d7e578f4ab8546.webp 1600w, /Website/pr-50/download/releases/0-20/relnotes_0-20.webp 1920w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"></figure><h3 class="card-title">FreeCAD 0.20 Notes<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></h3><p class="card-description">A 20ᵗʰ release for the 20ᵗʰ anniversary.</p><div class="card-metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/date.svg#date"></use>
+  </svg><time datetime="2022-06-14T00:00:00Z">14 de junio de 2022</time>
+  </span></div>
+</a><a
+  class="card"
+  href="https://wiki.freecad.org/Release_notes_0.19" target="_blank" rel="external noreferrer nofollow"><figure class="thumbnail"><img
+    class="img relnotes_0-19"
+    src="/Website/pr-50/download/releases/0-19/relnotes_0-19.webp"
+    alt="FreeCAD 0.19 Notes"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" width="2369" height="1680" srcset="/Website/pr-50/download/releases/0-19/relnotes_0-19_hu_1641e3d9cccce2d1.webp 400w, /Website/pr-50/download/releases/0-19/relnotes_0-19_hu_28e0341a22c775ec.webp 800w, /Website/pr-50/download/releases/0-19/relnotes_0-19_hu_27e09cd8fe23a657.webp 1600w, /Website/pr-50/download/releases/0-19/relnotes_0-19.webp 2369w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"></figure><h3 class="card-title">FreeCAD 0.19 Notes<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></h3><p class="card-description">Links everywhere.</p><div class="card-metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/date.svg#date"></use>
+  </svg><time datetime="2021-03-20T00:00:00Z">20 de marzo de 2021</time>
+  </span></div>
+</a><a
+  class="card"
+  href="https://wiki.freecad.org/Release_notes_0.18" target="_blank" rel="external noreferrer nofollow"><figure class="thumbnail"><img
+    class="img relnotes_0-18"
+    src="/Website/pr-50/download/releases/0-18/relnotes_0-18.webp"
+    alt="FreeCAD 0.18 Notes"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" width="1920" height="1080" srcset="/Website/pr-50/download/releases/0-18/relnotes_0-18_hu_2113e352c4902d9d.webp 400w, /Website/pr-50/download/releases/0-18/relnotes_0-18_hu_8ec801a2b5abfb5.webp 800w, /Website/pr-50/download/releases/0-18/relnotes_0-18_hu_12c1462d6b20588e.webp 1600w, /Website/pr-50/download/releases/0-18/relnotes_0-18.webp 1920w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"></figure><h3 class="card-title">FreeCAD 0.18 Notes<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></h3><p class="card-description">Start, Sketcher, BIM, TechDraw and much more.</p><div class="card-metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/date.svg#date"></use>
+  </svg><time datetime="2019-03-12T00:00:00Z">12 de marzo de 2019</time>
+  </span></div>
+</a><a
+  class="card"
+  href="https://wiki.freecad.org/Release_notes_0.17" target="_blank" rel="external noreferrer nofollow"><figure class="thumbnail"><img
+    class="img relnotes_0-17"
+    src="/Website/pr-50/download/releases/0-17/relnotes_0-17.webp"
+    alt="FreeCAD 0.17 Notes"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" width="968" height="637" srcset="/Website/pr-50/download/releases/0-17/relnotes_0-17_hu_e912645af32cadd4.webp 400w, /Website/pr-50/download/releases/0-17/relnotes_0-17_hu_6129612289c27a16.webp 800w, /Website/pr-50/download/releases/0-17/relnotes_0-17.webp 968w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></figure><h3 class="card-title">FreeCAD 0.17 Notes<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></h3><p class="card-description">Thank you Roland.</p><div class="card-metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/date.svg#date"></use>
+  </svg><time datetime="2018-04-06T00:00:00Z">6 de abril de 2018</time>
+  </span></div>
+</a></div></div></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Ir al inicio"
+  title="Ir al inicio (Alt + G)" ><svg
+    class="icon tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a
+            href="/Website/pr-50/es/">Inicio</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-50/es/features/">Características</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-50/es/download/" aria-current="page" class="active">Descarga</a><ul><li>
+                      <a
+                        href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="external noreferrer nofollow">Development builds<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples an parts library<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-50/es/download/releases/">Releases</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-50/es/news/">Actualidad</a><ul><li>
+                  <a
+                    href="/Website/pr-50/es/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/pr-50/es/authors/">Autores</a>
+                      </li><li>
+                        <a href="/Website/pr-50/es/categories/">Categorías</a>
+                      </li><li>
+                        <a href="/Website/pr-50/es/tags/">Etiquetas</a>
+                      </li><li>
+                        <a href="/Website/pr-50/es/versions/">Versiones</a>
+                      </li></ul></li><li>
+          <a
+            href="/Website/pr-50/es/community/">Comunidad</a><ul><li>
+                      <a
+                        href="/Website/pr-50/es/community/calendar/">Calendar</a>
+                    </li><li>
+                      <a
+                        href="https://events.freecad.org/" target="_blank" rel="external noreferrer nofollow">Events<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://fpa.freecad.org" target="_blank" rel="external noreferrer nofollow">Association<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-50/es/community/fpn/">Professional Network</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-50/es/community/addons/">Addons</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-50/es/community/telemetry/">Telemetry</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-50/es/docs/">Documentación</a><ul><li>
+                  <a
+                    href="https://wiki.freecad.org/User_hub" target="_blank" rel="external noreferrer nofollow">User manual<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>
+                </li><li>
+                  <a
+                    href="/Website/pr-50/es/dev/">Development Handbook</a>
+                </li><li>
+                  <a
+                    href="https://freecad.github.io/SourceDoc/" target="_blank" rel="external noreferrer nofollow">FreeCAD API<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>
+                </li></ul></li><li>
+          <a
+            href="/Website/pr-50/es/donate/">♥ Donar</a><ul></ul></li></ul>
+</nav>
+<div class="share-links"><a
+    href="https://forum.freecad.org"
+    title="Forum"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/forum.svg#forum"></use>
+  </svg></a><a
+    href="https://github.com/freecad"
+    title="GitHub"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/github.svg#github"></use>
+  </svg></a><a
+    href="https://codeberg.org/freecad"
+    title="Codeberg"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a
+    href="https://social.freecad.org/@freecad"
+    title="Mastodon"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://www.reddit.com/r/freecad"
+    title="Reddit"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/reddit.svg#reddit"></use>
+  </svg></a><a
+    href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+    title="Matrix"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/matrix.svg#matrix"></use>
+  </svg></a><a
+    href="https://discord.gg/w2cTKGzccC"
+    title="Discord"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/discord.svg#discord"></use>
+  </svg></a><a
+    href="https://www.linkedin.com/groups/4295230"
+    title="LinkedIn"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+  href="/Website/pr-50/es/fedishare.html#title=All&#43;release&#43;notes&amp;description=Browse%20back%20in%20time%20previous%20releases.&amp;url=https://FreeCAD.github.io/Website/pr-50/es/download/releases/"
+  title="Compartir en Fediverse"
+  target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026
+    <a
+      href="/Website/pr-50/es/"
+      title="Open-source parametric 3D CAD">Open-source parametric 3D CAD</a>
+  </span><span>
+  <a
+    href="https://creativecommons.org/licenses/by-sa/4.0/"
+    title="Creative Commons"
+    target="_blank" rel="license external noreferrer nofollow">
+
+    CC BY-SA<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to
+  <a
+    href="https://gohugo.io/"
+    title="Hugo SSG"
+    target="_blank" rel="external noreferrer nofollow">
+
+    Hugo<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-05-15
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/73b1046510e3c77ce03a8098b192d1b97cbcb3ec">73b104651<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script
+    src="/Website/pr-50/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script></body>
+
+</html>

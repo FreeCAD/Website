@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html
+  lang="zh-CN"
+  dir="ltr"><head><meta charset="utf-8">
+<meta
+  name="viewport"
+  content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta
+  name="referrer"
+  content="strict-origin-when-cross-origin">
+<meta
+  name="robots"
+  content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link
+          rel="stylesheet"
+          href="/Website/pr-50/css/styles.bcc18f796fb280b7c936b6bee084ed4dc1155e59e8c601cb37fb6afeef60a05d.css"
+          integrity="sha256-vMGPeW&#43;ygLfJNra&#43;4ITtTcEVXlnoxgHLN/tq/u9goF0="
+          crossorigin="anonymous"><link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Website/pr-50/favicon.svg"><link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/Website/pr-50/favicon.ico"><link
+      rel="apple-touch-icon"
+      href="/Website/pr-50/apple-touch-icon.png"><title>FreeCAD | Guidelines</title>
+  <meta
+    name="description"
+    content="Guidelines for contributing to the website."><meta
+      name="keywords"
+      content="free, open-source, CAD, software, tool, parametric, modeling, model, design, product, engineering, manufacturing, community, workbench, FOSS, 3D, BIM, CAM, FEM, FEA"><link
+    rel="canonical"
+    href="https://FreeCAD.github.io/Website/pr-50/zh/dev/web/guidelines/"><link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://FreeCAD.github.io/Website/pr-50/dev/web/guidelines/"><link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://FreeCAD.github.io/Website/pr-50/zh/dev/web/guidelines/"><link
+      rel="alternate"
+      hreflang="es-ES"
+      href="https://FreeCAD.github.io/Website/pr-50/es/dev/web/guidelines/"><link
+      rel="alternate"
+      hreflang="fr-FR"
+      href="https://FreeCAD.github.io/Website/pr-50/fr/dev/web/guidelines/"><link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://FreeCAD.github.io/Website/pr-50/pt/dev/web/guidelines/"><link
+      rel="alternate"
+      hreflang="de-DE"
+      href="https://FreeCAD.github.io/Website/pr-50/de/dev/web/guidelines/"><link
+      rel="alternate"
+      hreflang="ja-JP"
+      href="https://FreeCAD.github.io/Website/pr-50/ja/dev/web/guidelines/"><link
+    rel="alternate"
+    hreflang="x-default"
+    href="https://FreeCAD.github.io/Website/pr-50/zh/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-50/zh/dev/web/guidelines/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Guidelines">
+  <meta property="og:description" content="Guidelines for contributing to the website.">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dev">
+    <meta property="article:modified_time" content="2026-07-10T15:14:29+02:00">
+</head>
+<body
+    class="single type-dev kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a
+      href="/Website/pr-50/zh/"
+      accesskey="h"
+      title="主页 (Alt + H)"
+      aria-label="主页"><svg
+      class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+
+      <use href="/Website/pr-50/FreeCAD-wordmark.svg#logo"></use>
+    </svg></a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button
+    popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="菜单"
+    aria-label="菜单"><svg
+    class="icon hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/hamburger.svg#hamburger"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul
+    popover
+    id="menu-list"
+    class="menu-list"><li>
+          <a
+            href="/Website/pr-50/zh/features/">功能</a>
+        </li><li>
+          <a
+            href="/Website/pr-50/zh/download/">下载</a>
+        </li><li>
+          <a
+            href="/Website/pr-50/zh/news/">新闻</a>
+        </li><li>
+          <a
+            href="/Website/pr-50/zh/community/">社区</a>
+        </li><li>
+          <a
+            href="/Website/pr-50/zh/docs/" aria-current="page" class="active">文档</a>
+        </li><li>
+          <a
+            href="/Website/pr-50/zh/donate/" class="donate-button">♥ 赞助</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button
+          popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="选择语言 (Alt + L)"
+          aria-label="选择语言"><svg
+    class="icon language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul
+          popover
+          id="lang-list"
+          class="language-list"><li>
+              <a href="/Website/pr-50/dev/web/guidelines/" title="Guidelines">English 🇬🇧</a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-50/zh/dev/web/guidelines/" title="Guidelines">中文 🇨🇳</a>
+            </li><li>
+              <a href="/Website/pr-50/es/dev/web/guidelines/" title="Guidelines">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/pr-50/fr/dev/web/guidelines/" title="Guidelines">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pr-50/pt/dev/web/guidelines/" title="Guidelines">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a href="/Website/pr-50/de/dev/web/guidelines/" title="Guidelines">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/pr-50/ja/dev/web/guidelines/" title="Guidelines">日本語 🇯🇵</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="切换主题配色 (Alt + T)"
+    aria-label="切换主题配色"><svg
+    class="icon dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/dark.svg#dark"></use>
+  </svg><svg
+    class="icon light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main style="--hue: 100;"><section class="hero">
+
+    <h2 class="title">Guidelines</h1><h3 class="description">Guidelines for contributing to the website.</h3><div class="metadata"><span class="meta"><svg
+    class="icon time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/time.svg#time"></use>
+  </svg>6 分钟</span></div></section><nav class="toc">
+  <input
+    type="checkbox"
+    id="toc-checkbox"
+    class="toc-checkbox">
+  <label
+    for="toc-checkbox"
+    class="toc-toggle button"
+    title="Table of Contents"><svg
+    class="icon expand"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/expand.svg#expand"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/cross.svg#cross"></use>
+  </svg><span>目录</span>
+  </label>
+
+  <div
+    id="toc-content"
+    class="toc-content">
+    <ul class="section-nav"><li>
+          <a
+            href="/Website/pr-50/zh/dev/"
+            class="current-section"><svg
+    class="icon tri_tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/tri_tri_left.svg#tri_tri_left"></use>
+  </svg> Development Handbook</a>
+        </li><li>
+          <a
+            href="/Website/pr-50/zh/dev/web/"
+            class="current-section"><svg
+    class="icon folder_closed"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/folder_closed.svg#folder_closed"></use>
+  </svg> Website</a>
+        </li><li>
+        <ul><li>
+              <a
+                href="/Website/pr-50/zh/dev/web/start/">Website introduction</a>
+            </li><li>
+              <a
+                href="/Website/pr-50/zh/dev/web/guidelines/" id="current-page" class="active" aria-current="page">Guidelines</a>
+            </li><li>
+              <a
+                href="/Website/pr-50/zh/dev/web/structure/">Structure</a>
+            </li><li>
+              <a
+                href="/Website/pr-50/zh/dev/web/markdown/">Markdown</a>
+            </li><li>
+              <a
+                href="/Website/pr-50/zh/dev/web/shortcodes/">Shortcodes</a>
+            </li><li>
+              <a
+                href="/Website/pr-50/zh/dev/web/front-matter/">Front matter</a>
+            </li><li>
+              <a
+                href="/Website/pr-50/zh/dev/web/locales/">Translations</a>
+            </li><li>
+              <a
+                href="/Website/pr-50/zh/dev/web/cms/">CMS</a>
+            </li><li>
+              <a
+                href="/Website/pr-50/zh/dev/web/theme/">Setup and Theme</a>
+            </li></ul>
+      </li>
+    </ul><p class="toc-label"><svg
+    class="icon file"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/file.svg#file"></use>
+  </svg>
+        <span>On this page</span>
+      </p><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#text">Text</a></li>
+        <li><a href="#translations">Translations</a></li>
+        <li><a href="#illustrations">Illustrations</a>
+          <ul>
+            <li><a href="#vector-graphics">Vector graphics</a></li>
+          </ul>
+        </li>
+        <li><a href="#theme-and-configuration">Theme and configuration</a></li>
+        <li><a href="#licensing">Licensing</a>
+          <ul>
+            <li><a href="#content">Content</a></li>
+            <li><a href="#freecad-branded-resources">FreeCAD branded resources</a></li>
+            <li><a href="#trigo-theme-for-hugo">Trigo Theme for Hugo</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+</nav><div class="content"><figure>
+  <blockquote class="note"><svg
+    class="icon note"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/note.svg#note"></use>
+  </svg>注意<p>此页面尚未翻译，因此使用英文版本。有兴趣帮忙吗？
+<a
+  href="https://github.com/freecad/website"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">贡献<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a></p></blockquote></figure><p>Is it recommended to use the <a
+  href="/Website/pr-50/zh/dev/web/cms/"
+  class="internal-tooltip">Content Management System<span class="tooltip">
+        <strong>Content Management System</strong>How to use the Sveltia CMS for the FreeCAD website.</span></a> to add, edit and delete content, such as pages, translations, and resources, as it provides a user-friendly interface, adequate settings and pre-configured forms that facilitate the contributing workflow.</p>
+<p>Nevertheless, please read the few following guidelines to ensure contributions are in line with the project&rsquo;s standards and help make the process easier and efficient for everyone involved.</p>
+<h2
+  id="text">Text<a class="heading-anchor"
+     href="#text"
+     title="Text"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><ul>
+<li>Texts use a clear, concise, straightforward and inclusive language that welcomes readers from diverse backgrounds and communities (e.g. non-tech, skills, cultures).</li>
+<li>A friendly and supportive tone is used reflecting the free and open-source community collaborative spirit.</li>
+<li>Texts should be easy to translate. If in doubt, ask a translator.</li>
+<li>Texts focus on user benefits in practical and relatable terms that highlight how FreeCAD contribute to solving real-world challenges (e.g. design, engineering, community, free and open-source development).</li>
+<li>Prefer using the active voice when possible (e.g. subject is the agent: &ldquo;subject does action&rdquo;, instead of passive voice where subject is recipient: &ldquo;action is done by subject&rdquo;) and break complex ideas into simpler and digestible explanations.</li>
+<li>Use dedicated Markdown and shortcode features to enhance the content, layout, and text with adequate formant and style.</li>
+<li>Sometimes an illustration is worth a thousand words.</li>
+</ul>
+<h2
+  id="translations">Translations<a class="heading-anchor"
+     href="#translations"
+     title="Translations"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>To improve translations and add locales, see the dedicated <a
+  href="/Website/pr-50/zh/dev/web/locales/"
+  class="internal-tooltip">locales page<span class="tooltip">
+        <strong>Translations and languages</strong>Translate content and configure locales for the website.</span></a>.</p>
+<p>Current supported languages are defined in the general site configuration <code>config/_default/languages.yaml</code>.</p>
+<p>Content translations are stored in separate content root directories, e.g. <code>/content/en/</code> and <code>/content/zh/</code>. Page resources such as images, videos, and more, only need to be placed in the default language site (<code>en</code> for English), using the <a
+  href="https://gohugo.io/content-management/page-bundles/"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">page bundle<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a> approach, as they are automatically linked among languages.</p>
+<p>Translations of the Theme are handled by translations tables in <code>themes/trigo/i18n</code>.</p>
+<p>Before a new language is enabled, the main navigation pages (Homepage, Features, Download, News, Community, Documentation and Donate) and the Theme strings must be translated. If willing to add a new language, use the provided <a
+  href="https://github.com/FreeCAD/Website/issues"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">feature issue<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a> template indicating who will translate and who will proof-read/review.</p>
+<p>The <a
+  href="/Website/pr-50/zh/dev/web/cms/#manage-translations"
+  class="internal-tooltip hash-link"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/hash.svg#hash"></use>
+  </svg>CMS</a> allows to edit and add translated content easily, based on the original English content, and provides automatic online translation services via API keys.</p>
+<h2
+  id="illustrations">Illustrations<a class="heading-anchor"
+     href="#illustrations"
+     title="Illustrations"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><ul>
+<li>Images in hero cover and page content are used to illustrate the page message and purpose, and additionally highlight related and successful projects.</li>
+<li>Texts in illustrations are avoided if possible for translation reasons. Attribution and license are respected at all times. If photos depict human beings, a consent agreement is submitted accordingly.</li>
+<li>It is highly recommended to add illustrations files along the page Markdown file in the same directory, using the <a
+  href="https://gohugo.io/content-management/page-bundles/"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">page bundle<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a> approach, so they can be processed by the static site generator templates. For internal resources, relative links are used instead of absolute links.</li>
+<li>Resources filenames must be slugified (e.g. <code>my-image.webp</code>), without any whitespace or special characters. Use hyphens (<code>-</code>), underscores (<code>_</code>), or simplified characters (<code>e</code> for <code>é</code>, <code>ue</code> for <code>ü</code>, etc.) instead.</li>
+<li>Caption and alternate text are provided when adequate:</li>
+</ul>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="cl">![<span class="nt">alternative text for image</span>](<span class="na">img.webp “image caption”</span>)</span></span></code></pre></div></div><p>Please avoid adding links to images (e.g. <code>[![alt](img.webp)](link)</code>) as the Markdown parser and render hooks mix HTML block-level with inline elements, which is invalid. Use the <code>figure</code> shortcode instead, or add links to nearby heading, text or caption.</p>
+<p>A minimum width of about 2000 pixels is recommended. A square or landscape format ratio of 2:1 maximum are recommended. The WebP graphics file format is recommended, with a compression quality of about 80%. Animated GIF and WEBP files are supported, the latter being recommended. AVIF is currently not supported. Media metadata can be stripped, as they are currently not used.</p>
+<p>The theme templates resize and crop images at build time depending on their use. The Content Management System also resizes uploaded images at the correct resolution. In most cases, content contributors only need to add one WebP file about 2000px wide.</p>
+<p>Several theme <a
+  href="/Website/pr-50/zh/dev/web/shortcodes/"
+  class="internal-tooltip">shortcodes<span class="tooltip">
+        <strong>Shortcodes</strong>Bundled Trigo Theme and Hugo shortcodes to enhance content.</span></a> are available to enhance the layout and arrangement of multiple illustrations.</p>
+<h3
+  id="vector-graphics">Vector graphics<a class="heading-anchor"
+     href="#vector-graphics"
+     title="Vector graphics"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>Scalable Vector Graphics (SVG) illustrations are supported as well, both as hero cover and page content images. For proper display and theme features support, SVG files must be formatted as below:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-svg" data-lang="svg"><span class="line"><span class="cl"><span class="nt">&lt;svg</span> <span class="na">xmlns=</span><span class="s">&#34;http://www.w3.org/2000/svg&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">id=</span><span class="s">&#34;&lt;NAME&gt;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">viewBox=</span><span class="s">&#34;0 0 &lt;WIDTH&gt; &lt;HEIGHT&gt;&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">  ...
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/svg&gt;</span></span></span></code></pre></div></div><p>In the svg root node, the identifier <code>&lt;NAME&gt;</code> must be the slugified filename (e.g. <code>id=&quot;my-svg-graph&quot;</code>). The <code>&lt;WIDTH&gt;</code> and <code>&lt;HEIGHT&gt;</code> of the <code>viewBox</code> must be provided based on the canvas dimensions (e.g. <code>viewBox=&quot;0 0 100 100&quot;</code>). Do not include the <code>width</code> and <code>height</code> attributes, use the <code>viewBox</code> only.</p>
+<p>For simple vector graphics illustrations, style attributes such as <code>fill</code>, <code>stroke</code>, <code>font</code>, <code>text</code>, etc. can be specified in the svg root node. To provide two variants for the light and dark theme chroma, use the general <code>currentColor</code> property value (e.g. <code>stroke=&quot;currentColor&quot;</code>) to rely on the theme default style, or use the CSS variables of the theme (e.g. <code>fill=&quot;var(--theme)&quot;</code>) at the root or as inline style for each node.</p>
+<p>It is also recommended to simplify and cleanup the svg code by removing unused document resources, definitions, groups, nodes, and attributes. In most cases, one decimal precision is plenty enough and makes the file significantly lighter.</p>
+<h2
+  id="theme-and-configuration">Theme and configuration<a class="heading-anchor"
+     href="#theme-and-configuration"
+     title="Theme and configuration"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>To tweak the style of the Trigo theme, enhance it by adding new features, fix issues, or deep dive into the FreeCAD website configuration, see the dedicated <a
+  href="/Website/pr-50/zh/dev/web/theme/"
+  class="internal-tooltip">setup and theme page<span class="tooltip">
+        <strong>Setup and Theme</strong>Enhance the website project structure, configuration, and the Trigo Theme.</span></a>.</p>
+<h2
+  id="licensing">Licensing<a class="heading-anchor"
+     href="#licensing"
+     title="Licensing"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>The whole FreeCAD website repository is licensed under the <a
+  href="https://github.com/FreeCAD/Website/blob/main/LICENSE"
+  class="external-link" title="Read the license text" target="_blank" rel="external noreferrer nofollow">GNU Lesser General Public License Version 2.1<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>.</p>
+<h3
+  id="content">Content<a class="heading-anchor"
+     href="#content"
+     title="Content"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>Content of the website is licensed under <a
+  href="https://creativecommons.org/licenses/by-sa/4.0/"
+  class="external-link" title="Read the license" target="_blank" rel="external noreferrer nofollow">Creative Commons Attribution ShareAlike 4.0 International<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>. By default, it is copyrighted by and attributed to &ldquo;FreeCAD&rdquo;. If they wish so, authors can specify the respective attribution for the content they produce. For Markdown files, the attribution is specified in the <code>author</code> field of the Front Matter.</p>
+<p>By submitting Pull Requests to this repository, make sure who is the author of the content. Make sure rights to share under the CC-BY-SA 4.0 license and original author mention are respected. Also note that sharing images with people is subject to obtaining appropriate consent.</p>
+<h3
+  id="freecad-branded-resources">FreeCAD branded resources<a class="heading-anchor"
+     href="#freecad-branded-resources"
+     title="FreeCAD branded resources"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>The trademark of FreeCAD branded resources (e.g. FreeCAD logo) is registered and owned by the <a
+  href="https://fpa.freecad.org/handbook"
+  class="external-link" title="Read the FPA Handbook" target="_blank" rel="external noreferrer nofollow">FreeCAD Project Association<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>.</p>
+<h3
+  id="trigo-theme-for-hugo">Trigo Theme for Hugo<a class="heading-anchor"
+     href="#trigo-theme-for-hugo"
+     title="Trigo Theme for Hugo"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>The <code>Trigo</code> Theme is licensed under the <a
+  href="https://github.com/FreeCAD/Website/blob/main/themes/trigo/LICENSE"
+  class="external-link" title="Read the license text" target="_blank" rel="external noreferrer nofollow">MIT License<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>.</p>
+</div><footer class="single-footer">
+    <nav class="pagination"><a
+            class="button next"
+            href="/Website/pr-50/zh/dev/web/start/"
+            title="下一篇"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/tri_left.svg#tri_left"></use>
+  </svg>Website introduction</a><a
+            class="button prev"
+            href="/Website/pr-50/zh/dev/web/structure/"
+            title="上一篇">Structure<svg
+    class="icon tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="返回顶部"
+  title="返回顶部 (Alt + G)" ><svg
+    class="icon tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a
+            href="/Website/pr-50/zh/">主页</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-50/zh/features/">功能</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-50/zh/download/">下载</a><ul><li>
+                      <a
+                        href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="external noreferrer nofollow">Development builds<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples an parts library<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-50/zh/download/releases/">Releases</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-50/zh/news/">新闻</a><ul><li>
+                  <a
+                    href="/Website/pr-50/zh/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/pr-50/zh/authors/">作者列表</a>
+                      </li><li>
+                        <a href="/Website/pr-50/zh/categories/">分类列表</a>
+                      </li><li>
+                        <a href="/Website/pr-50/zh/tags/">标签列表</a>
+                      </li><li>
+                        <a href="/Website/pr-50/zh/versions/">版本列表</a>
+                      </li></ul></li><li>
+          <a
+            href="/Website/pr-50/zh/community/">社区</a><ul><li>
+                      <a
+                        href="/Website/pr-50/zh/community/calendar/">Calendar</a>
+                    </li><li>
+                      <a
+                        href="https://events.freecad.org/" target="_blank" rel="external noreferrer nofollow">Events<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://fpa.freecad.org" target="_blank" rel="external noreferrer nofollow">Association<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-50/zh/community/fpn/">Professional Network</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-50/zh/community/addons/">Addons</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-50/zh/community/telemetry/">Telemetry</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-50/zh/docs/" aria-current="page" class="active">文档</a><ul><li>
+                  <a
+                    href="https://wiki.freecad.org/User_hub" target="_blank" rel="external noreferrer nofollow">User manual<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>
+                </li><li>
+                  <a
+                    href="/Website/pr-50/zh/dev/">Development Handbook</a>
+                </li><li>
+                  <a
+                    href="https://freecad.github.io/SourceDoc/" target="_blank" rel="external noreferrer nofollow">FreeCAD API<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>
+                </li></ul></li><li>
+          <a
+            href="/Website/pr-50/zh/donate/">♥ 赞助</a><ul></ul></li></ul>
+</nav>
+<div class="share-links"><a
+    href="https://forum.freecad.org"
+    title="Forum"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/forum.svg#forum"></use>
+  </svg></a><a
+    href="https://github.com/freecad"
+    title="GitHub"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/github.svg#github"></use>
+  </svg></a><a
+    href="https://codeberg.org/freecad"
+    title="Codeberg"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a
+    href="https://social.freecad.org/@freecad"
+    title="Mastodon"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://www.reddit.com/r/freecad"
+    title="Reddit"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/reddit.svg#reddit"></use>
+  </svg></a><a
+    href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+    title="Matrix"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/matrix.svg#matrix"></use>
+  </svg></a><a
+    href="https://discord.gg/w2cTKGzccC"
+    title="Discord"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/discord.svg#discord"></use>
+  </svg></a><a
+    href="https://www.linkedin.com/groups/4295230"
+    title="LinkedIn"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+  href="/Website/pr-50/zh/fedishare.html#title=Guidelines&amp;description=Guidelines%20for%20contributing%20to%20the%20website.&amp;url=https://FreeCAD.github.io/Website/pr-50/zh/dev/web/guidelines/"
+  title="分享至 Fediverse"
+  target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026
+    <a
+      href="/Website/pr-50/zh/"
+      title="Open-source parametric 3D CAD">Open-source parametric 3D CAD</a>
+  </span><span>
+  <a
+    href="https://creativecommons.org/licenses/by-sa/4.0/"
+    title="Creative Commons"
+    target="_blank" rel="license external noreferrer nofollow">
+
+    CC BY-SA<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to
+  <a
+    href="https://gohugo.io/"
+    title="Hugo SSG"
+    target="_blank" rel="external noreferrer nofollow">
+
+    Hugo<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-07-10
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/cbca6c5bd2a0236f0a18154c70952df832e094a8">cbca6c5bd<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-50/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script
+    src="/Website/pr-50/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-50/js/zh/copy.min.57c093ec71dcdb38c069f157cd427ffcde6aa69884ed3da8e43df4acea5a3187.js"
+    type="text/javascript"
+    defer integrity="sha256-V8CT7HHc2zjAafFXzUJ//N5qppiE7T2o5D30rOpaMYc=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-50/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    defer integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous">
+  </script></body>
+
+</html>
