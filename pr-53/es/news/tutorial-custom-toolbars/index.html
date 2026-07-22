@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html
+  lang="es-ES"
+  dir="ltr"><head><meta charset="utf-8">
+<meta
+  name="viewport"
+  content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta
+  name="referrer"
+  content="strict-origin-when-cross-origin">
+<meta
+  name="robots"
+  content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link
+          rel="stylesheet"
+          href="/Website/pr-53/css/styles.cb71b36b5732d30ca23c01d073b3e202fee816532c3843c6b985ab0d743f3dc2.css"
+          integrity="sha256-y3Gza1cy0wyiPAHQc7PiAv7oFlMsOEPGuYWrDXQ/PcI="
+          crossorigin="anonymous"><link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Website/pr-53/favicon.svg"><link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/Website/pr-53/favicon.ico"><link
+      rel="apple-touch-icon"
+      href="/Website/pr-53/apple-touch-icon.png"><title>FreeCAD | Tutorial - Custom Toolbars</title>
+  <meta
+    name="description"
+    content="Tu propio modelador paramétrico libre y de código abierto"><meta
+      name="keywords"
+      content="free, open-source, CAD, software, tool, parametric, modeling, model, design, product, engineering, manufacturing, community, workbench, FOSS, 3D, BIM, CAM, FEM, FEA"><link
+    rel="canonical"
+    href="https://FreeCAD.github.io/Website/pr-53/es/news/tutorial-custom-toolbars/"><link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://FreeCAD.github.io/Website/pr-53/news/tutorial-custom-toolbars/"><link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://FreeCAD.github.io/Website/pr-53/zh/news/tutorial-custom-toolbars/"><link
+      rel="alternate"
+      hreflang="es-ES"
+      href="https://FreeCAD.github.io/Website/pr-53/es/news/tutorial-custom-toolbars/"><link
+      rel="alternate"
+      hreflang="fr-FR"
+      href="https://FreeCAD.github.io/Website/pr-53/fr/news/tutorial-custom-toolbars/"><link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://FreeCAD.github.io/Website/pr-53/pt/news/tutorial-custom-toolbars/"><link
+      rel="alternate"
+      hreflang="de-DE"
+      href="https://FreeCAD.github.io/Website/pr-53/de/news/tutorial-custom-toolbars/"><link
+      rel="alternate"
+      hreflang="ja-JP"
+      href="https://FreeCAD.github.io/Website/pr-53/ja/news/tutorial-custom-toolbars/"><link
+    rel="alternate"
+    hreflang="x-default"
+    href="https://FreeCAD.github.io/Website/pr-53/es/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-53/es/news/tutorial-custom-toolbars/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Tutorial - Custom Toolbars">
+  <meta property="og:description" content="Custom tb header">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2025-03-14T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-05-05T08:10:07+02:00">
+</head><body
+    class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a
+      href="/Website/pr-53/es/"
+      accesskey="h"
+      title="Inicio (Alt + H)"
+      aria-label="Inicio"><svg
+      class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+
+      <use href="/Website/pr-53/FreeCAD-wordmark.svg#logo"></use>
+    </svg></a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button
+    popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menú"
+    aria-label="Menú"><svg
+    class="icon hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/hamburger.svg#hamburger"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul
+    popover
+    id="menu-list"
+    class="menu-list"><li>
+          <a
+            href="/Website/pr-53/es/features/">Características</a>
+        </li><li>
+          <a
+            href="/Website/pr-53/es/download/">Descarga</a>
+        </li><li>
+          <a
+            href="/Website/pr-53/es/news/" aria-current="page" class="active">Actualidad</a>
+        </li><li>
+          <a
+            href="/Website/pr-53/es/community/">Comunidad</a>
+        </li><li>
+          <a
+            href="/Website/pr-53/es/docs/">Documentación</a>
+        </li><li>
+          <a
+            href="/Website/pr-53/es/donate/" class="donate-button">♥ Donar</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button
+          popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Elegir idioma (Alt + L)"
+          aria-label="Elegir idioma"><svg
+    class="icon language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul
+          popover
+          id="lang-list"
+          class="language-list"><li>
+              <a href="/Website/pr-53/news/tutorial-custom-toolbars/" title="Tutorial - Custom Toolbars">English 🇬🇧</a>
+            </li><li>
+              <a href="/Website/pr-53/zh/news/tutorial-custom-toolbars/" title="Tutorial - Custom Toolbars">中文 🇨🇳</a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-53/es/news/tutorial-custom-toolbars/" title="Tutorial - Custom Toolbars">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/pr-53/fr/news/tutorial-custom-toolbars/" title="Tutorial - Custom Toolbars">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pr-53/pt/news/tutorial-custom-toolbars/" title="Tutorial - Custom Toolbars">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a href="/Website/pr-53/de/news/tutorial-custom-toolbars/" title="Tutorial - Custom Toolbars">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/pr-53/ja/news/tutorial-custom-toolbars/" title="Tutorial - Custom Toolbars">日本語 🇯🇵</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Cambiar tema chroma (Alt + T)"
+    aria-label="Cambiar tema chroma"><svg
+    class="icon dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/dark.svg#dark"></use>
+  </svg><svg
+    class="icon light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main style="--hue: 100;"><section class="hero">
+
+    <h2 class="title">Tutorial - Custom Toolbars</h1><div class="metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/date.svg#date"></use>
+  </svg><time datetime="2025-03-14T00:00:00Z">14 de marzo de 2025</time>
+  </span><span class="meta authors"><svg
+    class="icon authors"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/authors.svg#authors"></use>
+  </svg><a href="/Website/pr-53/es/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg
+    class="icon categories"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/categories.svg#categories"></use>
+  </svg><a href="/Website/pr-53/es/categories/tutorial/">Tutorial (26)</a></span><span class="meta"><svg
+    class="icon time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/time.svg#time"></use>
+  </svg>3 min</span></div></section><div class="content"><figure class="image"><button
+          aria-label="Ampliar imagen"
+          popovertarget="img-001"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img custom_tb_header"
+    src="/Website/pr-53/news/tutorial-custom-toolbars/custom_tb_header.webp"
+    alt="Custom tb header"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Custom tb header" width="801" height="504" srcset="/Website/pr-53/news/tutorial-custom-toolbars/custom_tb_header_hu_67be4bc84029d1fb.webp 400w, /Website/pr-53/news/tutorial-custom-toolbars/custom_tb_header_hu_d1290f2fcb0ef3d.webp 800w, /Website/pr-53/news/tutorial-custom-toolbars/custom_tb_header.webp 801w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+        <div id="img-001" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes"><img
+    class="img custom_tb_header"
+    src="/Website/pr-53/news/tutorial-custom-toolbars/custom_tb_header.webp"
+    alt="Custom tb header"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Custom tb header" width="801" height="504" srcset="/Website/pr-53/news/tutorial-custom-toolbars/custom_tb_header_hu_67be4bc84029d1fb.webp 400w, /Website/pr-53/news/tutorial-custom-toolbars/custom_tb_header_hu_d1290f2fcb0ef3d.webp 800w, /Website/pr-53/news/tutorial-custom-toolbars/custom_tb_header.webp 801w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/cross.svg#cross"></use>
+  </svg></button><p>Custom tb header</p></div><figcaption>Custom tb header</figcaption></figure><p>When you use any tool for a while you often build a more personal connection to it. Perhaps you have that old screwdriver in a drawer that&rsquo;s become polished with years of use and fits your hand perfectly. We&rsquo;ve looked previously at <a
+  href="https://blog.freecad.org/2024/12/03/tutorial-themes-and-workbench-layout/"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">changing the appearance of FreeCAD using themes and also different workbench listing options<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/external.svg#external"></use>
+  </svg></a> as a method of personalising our FreeCAD, in this tutorial though we&rsquo;ll look at toolbars and tool icons.</p>
+<figure class="image"><button
+          aria-label="Ampliar imagen"
+          popovertarget="img-002"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img dragging_toolbar"
+    src="/Website/pr-53/news/tutorial-custom-toolbars/dragging_toolbar.webp"
+    alt="Dragging toolbar"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Dragging toolbar" width="583" height="563" srcset="/Website/pr-53/news/tutorial-custom-toolbars/dragging_toolbar_hu_1b84e1d9bc1e90e9.webp 400w, /Website/pr-53/news/tutorial-custom-toolbars/dragging_toolbar.webp 583w" sizes="(max-width: 400px) 400px, 95vw"></button>
+        <div id="img-002" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes"><img
+    class="img dragging_toolbar"
+    src="/Website/pr-53/news/tutorial-custom-toolbars/dragging_toolbar.webp"
+    alt="Dragging toolbar"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Dragging toolbar" width="583" height="563" srcset="/Website/pr-53/news/tutorial-custom-toolbars/dragging_toolbar_hu_1b84e1d9bc1e90e9.webp 400w, /Website/pr-53/news/tutorial-custom-toolbars/dragging_toolbar.webp 583w" sizes="(max-width: 400px) 400px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/cross.svg#cross"></use>
+  </svg></button><p>Dragging toolbar</p></div><figcaption>Dragging toolbar</figcaption></figure><p>So all workbenches have their own collection of tools arranged into toolbar groups. One of the fundamental things to know is that you can left click on the 3 dots at the edge of a toolbar and you can then drag the entire toolbar to another position and can also drag it to an automatically created new toolbar line.</p>
+<figure class="image"><button
+          aria-label="Ampliar imagen"
+          popovertarget="img-003"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img select_visible_tb"
+    src="/Website/pr-53/news/tutorial-custom-toolbars/select_visible_tb.webp"
+    alt="Select visible tb"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Select visible tb" width="599" height="376" srcset="/Website/pr-53/news/tutorial-custom-toolbars/select_visible_tb_hu_bf3cfee66211c212.webp 400w, /Website/pr-53/news/tutorial-custom-toolbars/select_visible_tb.webp 599w" sizes="(max-width: 400px) 400px, 95vw"></button>
+        <div id="img-003" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-003"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes"><img
+    class="img select_visible_tb"
+    src="/Website/pr-53/news/tutorial-custom-toolbars/select_visible_tb.webp"
+    alt="Select visible tb"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Select visible tb" width="599" height="376" srcset="/Website/pr-53/news/tutorial-custom-toolbars/select_visible_tb_hu_bf3cfee66211c212.webp 400w, /Website/pr-53/news/tutorial-custom-toolbars/select_visible_tb.webp 599w" sizes="(max-width: 400px) 400px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/cross.svg#cross"></use>
+  </svg></button><p>Select visible tb</p></div><figcaption>Select visible tb</figcaption></figure><p>You can also navigate to <code>View - Toolbars</code> and you will see a tick list of toolbars that are available for the particular workbench you are in. You can then show or hide these toolbars by checking or un-checking them in the list. Notice that this list changes as you access it from different workbenches.</p>
+<p>It&rsquo;s also possible to create your own custom toolbars which can feature any tool from any of the built in FreeCAD workbenches, these custom toolbars can be added to any workbenches you like or even be added globally to all workbenches.</p>
+<p>For example, lets create a custom toolbar that will include the export function, the export to PDF function and the icon to launch the Addon manager. From the Part Workbench click <code>Tools - Customize</code>. In the resulting window click the &ldquo;Toolbars&rdquo; tab from the available selection. You&rsquo;ll see on the left hand side that an area populates with tools, icons and commands that you can choose from. There is a drop down menu titled &ldquo;Category&rdquo; and you can use this to jump to collated selections of tools. These categories can either be sections of FreeCAD like the &ldquo;File&rdquo; menu etc or they can be a workbench.</p>
+<figure class="image"><button
+          aria-label="Ampliar imagen"
+          popovertarget="img-004"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img customize"
+    src="/Website/pr-53/news/tutorial-custom-toolbars/customize.webp"
+    alt="Customize"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Customize" width="802" height="503" srcset="/Website/pr-53/news/tutorial-custom-toolbars/customize_hu_79ab699d0eb7d1ec.webp 400w, /Website/pr-53/news/tutorial-custom-toolbars/customize_hu_b56075cfffdf476e.webp 800w, /Website/pr-53/news/tutorial-custom-toolbars/customize.webp 802w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+        <div id="img-004" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-004"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes"><img
+    class="img customize"
+    src="/Website/pr-53/news/tutorial-custom-toolbars/customize.webp"
+    alt="Customize"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Customize" width="802" height="503" srcset="/Website/pr-53/news/tutorial-custom-toolbars/customize_hu_79ab699d0eb7d1ec.webp 400w, /Website/pr-53/news/tutorial-custom-toolbars/customize_hu_b56075cfffdf476e.webp 800w, /Website/pr-53/news/tutorial-custom-toolbars/customize.webp 802w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/cross.svg#cross"></use>
+  </svg></button><p>Customize</p></div><figcaption>Customize</figcaption></figure><p>On the right hand side of the window click the &ldquo;New&rdquo; button to create your new custom toolbar. You can give it a recognisable name, or leave it as the default &ldquo;Custom 1&rdquo;. With your new toolbar created you then scroll through, or use the search function on the right hand side to identify the tool or command you want to add to your custom toolbar. With the tool highlighted you then click the arrow point right to add the currently selected tool over into your new toolbar. We added the export function, the export to pdf function and the icon to launch the Addon manager. When you are happy with the contents of your custom toolbar click close. You may need to reload the Part Design workbench by moving to another workbench and then returning to Part Design but then you should see your custom toolbar. Note that on other workbenches this toolbar will not be shown, but it will appear in the <code>View - Toolbars</code> list we mentioned earlier so can be added to other workbenches.</p>
+<figure class="image"><button
+          aria-label="Ampliar imagen"
+          popovertarget="img-005"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img tools_added"
+    src="/Website/pr-53/news/tutorial-custom-toolbars/tools_added.webp"
+    alt="Tools added"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Tools added" width="802" height="503" srcset="/Website/pr-53/news/tutorial-custom-toolbars/tools_added_hu_dc3956ac66fd6116.webp 400w, /Website/pr-53/news/tutorial-custom-toolbars/tools_added_hu_757ce381b14d32eb.webp 800w, /Website/pr-53/news/tutorial-custom-toolbars/tools_added.webp 802w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+        <div id="img-005" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-005"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes"><img
+    class="img tools_added"
+    src="/Website/pr-53/news/tutorial-custom-toolbars/tools_added.webp"
+    alt="Tools added"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Tools added" width="802" height="503" srcset="/Website/pr-53/news/tutorial-custom-toolbars/tools_added_hu_dc3956ac66fd6116.webp 400w, /Website/pr-53/news/tutorial-custom-toolbars/tools_added_hu_757ce381b14d32eb.webp 800w, /Website/pr-53/news/tutorial-custom-toolbars/tools_added.webp 802w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/cross.svg#cross"></use>
+  </svg></button><p>Tools added</p></div><figcaption>Tools added</figcaption></figure><p>If you want to create a custom toolbar that appears by default on every workbench as you use FreeCAD you can easily do so. Once again click <code>Tools - Customize</code> from the Part Design workbench. In the resulting window click the &ldquo;Toolbars&rdquo; tab from the available selection. This time on the right hand side click the dropdown that currently reads &ldquo;Part Design&rdquo; (or your currently selected workbench) and then select &ldquo;Global&rdquo; from the list. Now when you create your custom toolbar it will automatically appear throughout FreeCAD.</p>
+<figure class="image"><button
+          aria-label="Ampliar imagen"
+          popovertarget="img-006"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img global"
+    src="/Website/pr-53/news/tutorial-custom-toolbars/global.webp"
+    alt="Global"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Global" width="801" height="502" srcset="/Website/pr-53/news/tutorial-custom-toolbars/global_hu_4180414cb8fa88f9.webp 400w, /Website/pr-53/news/tutorial-custom-toolbars/global_hu_b5a53fd79335b5e2.webp 800w, /Website/pr-53/news/tutorial-custom-toolbars/global.webp 801w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+        <div id="img-006" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-006"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes"><img
+    class="img global"
+    src="/Website/pr-53/news/tutorial-custom-toolbars/global.webp"
+    alt="Global"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Global" width="801" height="502" srcset="/Website/pr-53/news/tutorial-custom-toolbars/global_hu_4180414cb8fa88f9.webp 400w, /Website/pr-53/news/tutorial-custom-toolbars/global_hu_b5a53fd79335b5e2.webp 800w, /Website/pr-53/news/tutorial-custom-toolbars/global.webp 801w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/cross.svg#cross"></use>
+  </svg></button><p>Global</p></div><figcaption>Global</figcaption></figure></div><footer class="single-footer">
+    <nav class="pagination"><a
+            class="button next"
+            href="/Website/pr-53/es/news/wip-wednesday-19-march-2025/"
+            title="Artículo siguiente"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday - 19 March 2025</a><a
+            class="button prev"
+            href="/Website/pr-53/es/news/wip-wednesday-12-march-2025/"
+            title="Artículo anterior">WIP Wednesday - 12 March 2025<svg
+    class="icon tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Ir al inicio"
+  title="Ir al inicio (Alt + G)" ><svg
+    class="icon tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a
+            href="/Website/pr-53/es/">Inicio</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-53/es/features/">Características</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-53/es/download/">Descarga</a><ul><li>
+                      <a
+                        href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="external noreferrer nofollow">Development builds<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples an parts library<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-53/es/download/releases/">Releases</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-53/es/news/" aria-current="page" class="active">Actualidad</a><ul><li>
+                  <a
+                    href="/Website/pr-53/es/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/pr-53/es/authors/">Autores</a>
+                      </li><li>
+                        <a href="/Website/pr-53/es/categories/">Categorías</a>
+                      </li><li>
+                        <a href="/Website/pr-53/es/tags/">Etiquetas</a>
+                      </li><li>
+                        <a href="/Website/pr-53/es/versions/">Versiones</a>
+                      </li></ul></li><li>
+          <a
+            href="/Website/pr-53/es/community/">Comunidad</a><ul><li>
+                      <a
+                        href="/Website/pr-53/es/community/calendar/">Calendar</a>
+                    </li><li>
+                      <a
+                        href="https://events.freecad.org/" target="_blank" rel="external noreferrer nofollow">Events<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://fpa.freecad.org" target="_blank" rel="external noreferrer nofollow">Association<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-53/es/community/fpn/">Professional Network</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-53/es/community/addons/">Addons</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-53/es/community/telemetry/">Telemetry</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-53/es/docs/">Documentación</a><ul><li>
+                  <a
+                    href="https://wiki.freecad.org/User_hub" target="_blank" rel="external noreferrer nofollow">User manual<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/external.svg#external"></use>
+  </svg></a>
+                </li><li>
+                  <a
+                    href="/Website/pr-53/es/dev/">Development Handbook</a>
+                </li><li>
+                  <a
+                    href="https://freecad.github.io/SourceDoc/" target="_blank" rel="external noreferrer nofollow">FreeCAD API<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/external.svg#external"></use>
+  </svg></a>
+                </li></ul></li><li>
+          <a
+            href="/Website/pr-53/es/donate/">♥ Donar</a><ul></ul></li></ul>
+</nav>
+<div class="share-links"><a
+    href="https://forum.freecad.org"
+    title="Forum"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/forum.svg#forum"></use>
+  </svg></a><a
+    href="https://github.com/freecad"
+    title="GitHub"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/github.svg#github"></use>
+  </svg></a><a
+    href="https://codeberg.org/freecad"
+    title="Codeberg"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a
+    href="https://social.freecad.org/@freecad"
+    title="Mastodon"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://www.reddit.com/r/freecad"
+    title="Reddit"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/reddit.svg#reddit"></use>
+  </svg></a><a
+    href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+    title="Matrix"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/matrix.svg#matrix"></use>
+  </svg></a><a
+    href="https://discord.gg/w2cTKGzccC"
+    title="Discord"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/discord.svg#discord"></use>
+  </svg></a><a
+    href="https://www.linkedin.com/groups/4295230"
+    title="LinkedIn"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+  href="/Website/pr-53/es/fedishare.html#title=Tutorial&#43;-&#43;Custom&#43;Toolbars&amp;description=%20Custom%20tb%20header%0aWhen%20you%20use%20any%20tool%20for%20a%20while%20you%20often%20build%20a%20more%20personal%20connection%20to%20it.%20Perhaps%20you%20have%20that%20old%20screwdriver%20in%20a%20drawer%20that%e2%80%99s%20become%20polished%20with%20years%20of%20use%20and%20%e2%80%a6&amp;url=https://FreeCAD.github.io/Website/pr-53/es/news/tutorial-custom-toolbars/"
+  title="Compartir en Fediverse"
+  target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026
+    <a
+      href="/Website/pr-53/es/"
+      title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a
+    href="https://creativecommons.org/licenses/by-sa/4.0/"
+    title="Creative Commons"
+    target="_blank" rel="license external noreferrer nofollow">
+
+    CC BY-SA<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to
+  <a
+    href="https://gohugo.io/"
+    title="Hugo SSG"
+    target="_blank" rel="external noreferrer nofollow">
+
+    Hugo<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-05-05
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/ab12b609077875783943636ca2c31feec3421a6a">ab12b6090<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script
+    src="/Website/pr-53/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-53/js/es/copy.min.4352077bd376c0fa652c23733a44a84d7b971232620cabd39f339a5f1b2bb913.js"
+    type="text/javascript"
+    defer integrity="sha256-Q1IHe9N2wPplLCNzOkSoTXuXEjJiDKvTnzOaXxsruRM=" crossorigin="anonymous">
+  </script></body>
+
+</html>

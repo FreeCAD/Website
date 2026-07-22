@@ -1,0 +1,2575 @@
+<!DOCTYPE html>
+<html
+  lang="pt-BR"
+  dir="ltr"><head><meta charset="utf-8">
+<meta
+  name="viewport"
+  content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta
+  name="referrer"
+  content="strict-origin-when-cross-origin">
+<meta
+  name="robots"
+  content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(16, 16, 16);
+          --theme: rgb(32, 32, 32);
+          --entry: rgb(48, 48, 48);
+          --tone: rgb(64, 64, 64);
+          --footer: rgb(80, 80, 80);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --backdrop: rgba(0, 0, 0, 0.8);
+          --backdrop: rgba(0, 0, 0, 0.75);
+          --accent: rgb(102, 177, 255);
+          --accent-hover: rgb(65, 143, 222);
+          --underline: underline solid currentColor var(--line);
+          --border: var(--line) solid var(--tone);
+        }
+      }
+    </style></noscript><link
+          rel="stylesheet"
+          href="/Website/pr-53/css/styles.cb71b36b5732d30ca23c01d073b3e202fee816532c3843c6b985ab0d743f3dc2.css"
+          integrity="sha256-y3Gza1cy0wyiPAHQc7PiAv7oFlMsOEPGuYWrDXQ/PcI="
+          crossorigin="anonymous"><link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Website/pr-53/favicon.svg"><link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/Website/pr-53/favicon.ico"><link
+      rel="apple-touch-icon"
+      href="/Website/pr-53/apple-touch-icon.png"><title>FreeCAD | Telemetry</title>
+  <meta
+    name="description"
+    content="Data from the FreeCAD Telemetry addon"><meta
+      name="keywords"
+      content="free, open-source, CAD, software, tool, parametric, modeling, model, design, product, engineering, manufacturing, community, workbench, FOSS, 3D, BIM, CAM, FEM, FEA"><link
+    rel="canonical"
+    href="https://FreeCAD.github.io/Website/pr-53/pt/community/telemetry/"><link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://FreeCAD.github.io/Website/pr-53/community/telemetry/"><link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://FreeCAD.github.io/Website/pr-53/zh/community/telemetry/"><link
+      rel="alternate"
+      hreflang="es-ES"
+      href="https://FreeCAD.github.io/Website/pr-53/es/community/telemetry/"><link
+      rel="alternate"
+      hreflang="fr-FR"
+      href="https://FreeCAD.github.io/Website/pr-53/fr/community/telemetry/"><link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://FreeCAD.github.io/Website/pr-53/pt/community/telemetry/"><link
+      rel="alternate"
+      hreflang="de-DE"
+      href="https://FreeCAD.github.io/Website/pr-53/de/community/telemetry/"><link
+      rel="alternate"
+      hreflang="ja-JP"
+      href="https://FreeCAD.github.io/Website/pr-53/ja/community/telemetry/"><link
+    rel="alternate"
+    hreflang="x-default"
+    href="https://FreeCAD.github.io/Website/pr-53/pt/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-53/pt/community/telemetry/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Telemetry">
+  <meta property="og:description" content="Data from the FreeCAD Telemetry addon">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website">
+</head><body
+    class="list type-community kind-section "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <div class="logo">
+    <a
+      href="/Website/pr-53/pt/"
+      accesskey="h"
+      title="Início (Alt + H)"
+      aria-label="Início"><svg
+      class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+
+      <use href="/Website/pr-53/FreeCAD-wordmark.svg#logo"></use>
+    </svg></a>
+  </div>
+
+  <div class="site-nav"><nav class="menu">
+  <button
+    popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg
+    class="icon hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/hamburger.svg#hamburger"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul
+    popover
+    id="menu-list"
+    class="menu-list"><li>
+          <a
+            href="/Website/pr-53/pt/features/">Funcionalidades</a>
+        </li><li>
+          <a
+            href="/Website/pr-53/pt/download/">Baixar</a>
+        </li><li>
+          <a
+            href="/Website/pr-53/pt/news/">Atualidades</a>
+        </li><li>
+          <a
+            href="/Website/pr-53/pt/community/" aria-current="page" class="active">Comunidade</a>
+        </li><li>
+          <a
+            href="/Website/pr-53/pt/docs/">Documentação</a>
+        </li><li>
+          <a
+            href="/Website/pr-53/pt/donate/" class="donate-button">♥ Faça uma doação</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button
+          popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Escolha o idioma (Alt + L)"
+          aria-label="Escolha o idioma"><svg
+    class="icon language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul
+          popover
+          id="lang-list"
+          class="language-list"><li>
+              <a href="/Website/pr-53/community/telemetry/" title="Telemetry">English 🇬🇧</a>
+            </li><li>
+              <a href="/Website/pr-53/zh/community/telemetry/" title="Telemetry">中文 🇨🇳</a>
+            </li><li>
+              <a href="/Website/pr-53/es/community/telemetry/" title="Telemetry">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/pr-53/fr/community/telemetry/" title="Telemetry">Français 🇫🇷</a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-53/pt/community/telemetry/" title="Telemetry">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a href="/Website/pr-53/de/community/telemetry/" title="Telemetry">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/pr-53/ja/community/telemetry/" title="Telemetry">日本語 🇯🇵</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Alterar tema (Alt + T)"
+    aria-label="Alterar tema"><svg
+    class="icon dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/dark.svg#dark"></use>
+  </svg><svg
+    class="icon light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main style="--hue: 110;"><section class="hero">
+
+    <h1 class="title">Telemetry</h1><h3 class="description">Data from the FreeCAD Telemetry addon</h3><div class="telemetry"><section class="chart">
+
+        <h3 class="chart-title">9 Freecad versions</h3>
+        <p>371 records / 371 users</p><div class="chart-row"
+              title="1.1.1: 216 users (58,2%)">
+
+              <p class="chart-label">
+                <span>1.1.1</span>
+                <span>58.2%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 58.2%; --color: hsl(240, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="58.2"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="58.2%"
+                  aria-label="1.1.1">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="26.3.0: 52 users (14,0%)">
+
+              <p class="chart-label">
+                <span>26.3.0</span>
+                <span>14%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 14%; --color: hsl(210, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="14"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="14%"
+                  aria-label="26.3.0">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="1.1.0: 40 users (10,8%)">
+
+              <p class="chart-label">
+                <span>1.1.0</span>
+                <span>10.8%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 10.8%; --color: hsl(180, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="10.8"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="10.8%"
+                  aria-label="1.1.0">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="1.2.0: 34 users (9,2%)">
+
+              <p class="chart-label">
+                <span>1.2.0</span>
+                <span>9.2%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 9.2%; --color: hsl(150, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="9.2"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="9.2%"
+                  aria-label="1.2.0">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="1.0.2: 15 users (4,0%)">
+
+              <p class="chart-label">
+                <span>1.0.2</span>
+                <span>4%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 4%; --color: hsl(120, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="4"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="4%"
+                  aria-label="1.0.2">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="1.0.1: 6 users (1,6%)">
+
+              <p class="chart-label">
+                <span>1.0.1</span>
+                <span>1.6%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 1.6%; --color: hsl(90, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="1.6"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="1.6%"
+                  aria-label="1.0.1">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="1.0.0: 5 users (1,3%)">
+
+              <p class="chart-label">
+                <span>1.0.0</span>
+                <span>1.3%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 1.3%; --color: hsl(60, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="1.3"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="1.3%"
+                  aria-label="1.0.0">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="2.0.0: 2 users (0,5%)">
+
+              <p class="chart-label">
+                <span>2.0.0</span>
+                <span>0.5%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 0.5%; --color: hsl(30, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="0.5"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="0.5%"
+                  aria-label="2.0.0">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="2024.1003.0: 1 user (0,3%)">
+
+              <p class="chart-label">
+                <span>2024.1003.0</span>
+                <span>0.3%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 0.3%; --color: hsl(0, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="0.3"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="0.3%"
+                  aria-label="2024.1003.0">
+                </div>
+              </div>
+            </div></section><section class="chart">
+
+        <h3 class="chart-title">15 Languages</h3>
+        <p>370 records / 371 users</p><div class="chart-row"
+              title="English: 266 users (71,9%)">
+
+              <p class="chart-label">
+                <span>English</span>
+                <span>71.9%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 71.9%; --color: hsl(240, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="71.9"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="71.9%"
+                  aria-label="English">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="German: 36 users (9,7%)">
+
+              <p class="chart-label">
+                <span>German</span>
+                <span>9.7%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 9.7%; --color: hsl(220, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="9.7"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="9.7%"
+                  aria-label="German">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="French: 33 users (8,9%)">
+
+              <p class="chart-label">
+                <span>French</span>
+                <span>8.9%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 8.9%; --color: hsl(200, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="8.9"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="8.9%"
+                  aria-label="French">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Russian: 10 users (2,7%)">
+
+              <p class="chart-label">
+                <span>Russian</span>
+                <span>2.7%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 2.7%; --color: hsl(180, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="2.7"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="2.7%"
+                  aria-label="Russian">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Spanish: 7 users (1,9%)">
+
+              <p class="chart-label">
+                <span>Spanish</span>
+                <span>1.9%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 1.9%; --color: hsl(160, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="1.9"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="1.9%"
+                  aria-label="Spanish">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Japanese: 4 users (1,1%)">
+
+              <p class="chart-label">
+                <span>Japanese</span>
+                <span>1.1%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 1.1%; --color: hsl(140, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="1.1"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="1.1%"
+                  aria-label="Japanese">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Chinese (Simplified): 3 users (0,8%)">
+
+              <p class="chart-label">
+                <span>Chinese (Simplified)</span>
+                <span>0.8%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 0.8%; --color: hsl(120, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="0.8"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="0.8%"
+                  aria-label="Chinese (Simplified)">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Dutch: 2 users (0,5%)">
+
+              <p class="chart-label">
+                <span>Dutch</span>
+                <span>0.5%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 0.5%; --color: hsl(100, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="0.5"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="0.5%"
+                  aria-label="Dutch">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Italian: 2 users (0,5%)">
+
+              <p class="chart-label">
+                <span>Italian</span>
+                <span>0.5%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 0.5%; --color: hsl(80, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="0.5"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="0.5%"
+                  aria-label="Italian">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Polish: 2 users (0,5%)">
+
+              <p class="chart-label">
+                <span>Polish</span>
+                <span>0.5%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 0.5%; --color: hsl(60, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="0.5"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="0.5%"
+                  aria-label="Polish">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Czech: 1 user (0,3%)">
+
+              <p class="chart-label">
+                <span>Czech</span>
+                <span>0.3%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 0.3%; --color: hsl(40, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="0.3"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="0.3%"
+                  aria-label="Czech">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Hungarian: 1 user (0,3%)">
+
+              <p class="chart-label">
+                <span>Hungarian</span>
+                <span>0.3%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 0.3%; --color: hsl(20, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="0.3"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="0.3%"
+                  aria-label="Hungarian">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Others (3 more): 3 users (0,9%)">
+
+              <p class="chart-label">
+                <span>Others (3 more)</span>
+                <span>0.9%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 0.9%; --color: hsl(0, 0%, 70%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="0.9"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="0.9%"
+                  aria-label="Others (3 more)">
+                </div>
+              </div>
+            </div></section><section class="chart">
+
+        <h3 class="chart-title">3 Systems</h3>
+        <p>370 records / 371 users</p><div class="chart-row"
+              title="Linux: 166 users (44,9%)">
+
+              <p class="chart-label">
+                <span>Linux</span>
+                <span>44.9%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 44.9%; --color: hsl(240, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="44.9"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="44.9%"
+                  aria-label="Linux">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Windows: 158 users (42,7%)">
+
+              <p class="chart-label">
+                <span>Windows</span>
+                <span>42.7%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 42.7%; --color: hsl(120, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="42.7"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="42.7%"
+                  aria-label="Windows">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="macOS: 46 users (12,4%)">
+
+              <p class="chart-label">
+                <span>macOS</span>
+                <span>12.4%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 12.4%; --color: hsl(0, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="12.4"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="12.4%"
+                  aria-label="macOS">
+                </div>
+              </div>
+            </div></section><section class="chart">
+
+        <h3 class="chart-title">4 Machines</h3>
+        <p>370 records / 371 users</p><div class="chart-row"
+              title="x86 64: 170 users (45,9%)">
+
+              <p class="chart-label">
+                <span>x86 64</span>
+                <span>45.9%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 45.9%; --color: hsl(240, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="45.9"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="45.9%"
+                  aria-label="x86 64">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="AMD64: 158 users (42,7%)">
+
+              <p class="chart-label">
+                <span>AMD64</span>
+                <span>42.7%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 42.7%; --color: hsl(160, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="42.7"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="42.7%"
+                  aria-label="AMD64">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="arm64: 40 users (10,8%)">
+
+              <p class="chart-label">
+                <span>arm64</span>
+                <span>10.8%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 10.8%; --color: hsl(80, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="10.8"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="10.8%"
+                  aria-label="arm64">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="aarch64: 2 users (0,5%)">
+
+              <p class="chart-label">
+                <span>aarch64</span>
+                <span>0.5%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 0.5%; --color: hsl(0, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="0.5"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="0.5%"
+                  aria-label="aarch64">
+                </div>
+              </div>
+            </div></section><section class="chart">
+
+        <h3 class="chart-title">394 Mods</h3>
+        <p>5072 records / 371 users</p><div class="chart-row"
+              title="Telemetry: 316 users (85,2%)">
+
+              <p class="chart-label">
+                <span>Telemetry</span>
+                <span>85.2%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 85.2%; --color: hsl(240, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="85.2"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="85.2%"
+                  aria-label="Telemetry">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Fasteners Workbench: 211 users (56,9%)">
+
+              <p class="chart-label">
+                <span>Fasteners Workbench</span>
+                <span>56.9%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 56.9%; --color: hsl(220, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="56.9"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="56.9%"
+                  aria-label="Fasteners Workbench">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Curves workbench: 176 users (47,4%)">
+
+              <p class="chart-label">
+                <span>Curves workbench</span>
+                <span>47.4%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 47.4%; --color: hsl(200, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="47.4"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="47.4%"
+                  aria-label="Curves workbench">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="SheetMetal Workbench: 148 users (39,9%)">
+
+              <p class="chart-label">
+                <span>SheetMetal Workbench</span>
+                <span>39.9%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 39.9%; --color: hsl(180, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="39.9"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="39.9%"
+                  aria-label="SheetMetal Workbench">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="freeCAD.gears workbench: 121 users (32,6%)">
+
+              <p class="chart-label">
+                <span>freeCAD.gears workbench</span>
+                <span>32.6%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 32.6%; --color: hsl(160, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="32.6"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="32.6%"
+                  aria-label="freeCAD.gears workbench">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="OpenTheme: 98 users (26,4%)">
+
+              <p class="chart-label">
+                <span>OpenTheme</span>
+                <span>26.4%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 26.4%; --color: hsl(140, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="26.4"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="26.4%"
+                  aria-label="OpenTheme">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Curved Shapes: 95 users (25,6%)">
+
+              <p class="chart-label">
+                <span>Curved Shapes</span>
+                <span>25.6%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 25.6%; --color: hsl(120, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="25.6"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="25.6%"
+                  aria-label="Curved Shapes">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="FusedFilamentDesign: 76 users (20,5%)">
+
+              <p class="chart-label">
+                <span>FusedFilamentDesign</span>
+                <span>20.5%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 20.5%; --color: hsl(100, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="20.5"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="20.5%"
+                  aria-label="FusedFilamentDesign">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Gridfinity Workbench: 58 users (15,6%)">
+
+              <p class="chart-label">
+                <span>Gridfinity Workbench</span>
+                <span>15.6%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 15.6%; --color: hsl(80, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="15.6"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="15.6%"
+                  aria-label="Gridfinity Workbench">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Woodworking: 55 users (14,8%)">
+
+              <p class="chart-label">
+                <span>Woodworking</span>
+                <span>14.8%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 14.8%; --color: hsl(60, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="14.8"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="14.8%"
+                  aria-label="Woodworking">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Lattice2 Workbench: 51 users (13,7%)">
+
+              <p class="chart-label">
+                <span>Lattice2 Workbench</span>
+                <span>13.7%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 13.7%; --color: hsl(40, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="13.7"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="13.7%"
+                  aria-label="Lattice2 Workbench">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Addon Manager: 50 users (13,5%)">
+
+              <p class="chart-label">
+                <span>Addon Manager</span>
+                <span>13.5%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 13.5%; --color: hsl(20, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="13.5"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="13.5%"
+                  aria-label="Addon Manager">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Others (382 more): 3617 users (70,6%)">
+
+              <p class="chart-label">
+                <span>Others (382 more)</span>
+                <span>70.6%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 70.6%; --color: hsl(0, 0%, 70%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="70.6"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="70.6%"
+                  aria-label="Others (382 more)">
+                </div>
+              </div>
+            </div></section><section class="chart">
+
+        <h3 class="chart-title">9 Workbench defaults</h3>
+        <p>369 records / 371 users</p><div class="chart-row"
+              title="PartDesign: 320 users (86,7%)">
+
+              <p class="chart-label">
+                <span>PartDesign</span>
+                <span>86.7%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 86.7%; --color: hsl(240, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="86.7"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="86.7%"
+                  aria-label="PartDesign">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="BIM: 14 users (3,8%)">
+
+              <p class="chart-label">
+                <span>BIM</span>
+                <span>3.8%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 3.8%; --color: hsl(210, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="3.8"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="3.8%"
+                  aria-label="BIM">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Part: 12 users (3,3%)">
+
+              <p class="chart-label">
+                <span>Part</span>
+                <span>3.3%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 3.3%; --color: hsl(180, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="3.3"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="3.3%"
+                  aria-label="Part">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="LastModule: 6 users (1,6%)">
+
+              <p class="chart-label">
+                <span>LastModule</span>
+                <span>1.6%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 1.6%; --color: hsl(150, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="1.6"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="1.6%"
+                  aria-label="LastModule">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Sketcher: 6 users (1,6%)">
+
+              <p class="chart-label">
+                <span>Sketcher</span>
+                <span>1.6%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 1.6%; --color: hsl(120, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="1.6"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="1.6%"
+                  aria-label="Sketcher">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Woodworking: 5 users (1,4%)">
+
+              <p class="chart-label">
+                <span>Woodworking</span>
+                <span>1.4%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 1.4%; --color: hsl(90, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="1.4"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="1.4%"
+                  aria-label="Woodworking">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Draft: 4 users (1,1%)">
+
+              <p class="chart-label">
+                <span>Draft</span>
+                <span>1.1%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 1.1%; --color: hsl(60, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="1.1"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="1.1%"
+                  aria-label="Draft">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Assembly4p1: 1 user (0,3%)">
+
+              <p class="chart-label">
+                <span>Assembly4p1</span>
+                <span>0.3%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 0.3%; --color: hsl(30, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="0.3"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="0.3%"
+                  aria-label="Assembly4p1">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="CAM: 1 user (0,3%)">
+
+              <p class="chart-label">
+                <span>CAM</span>
+                <span>0.3%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 0.3%; --color: hsl(0, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="0.3"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="0.3%"
+                  aria-label="CAM">
+                </div>
+              </div>
+            </div></section><section class="chart">
+
+        <h3 class="chart-title">15 Themes</h3>
+        <p>370 records / 371 users</p><div class="chart-row"
+              title="FreeCAD Dark: 144 users (38,9%)">
+
+              <p class="chart-label">
+                <span>FreeCAD Dark</span>
+                <span>38.9%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 38.9%; --color: hsl(240, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="38.9"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="38.9%"
+                  aria-label="FreeCAD Dark">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="FreeCAD Light: 95 users (25,7%)">
+
+              <p class="chart-label">
+                <span>FreeCAD Light</span>
+                <span>25.7%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 25.7%; --color: hsl(220, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="25.7"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="25.7%"
+                  aria-label="FreeCAD Light">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="FreeCAD Classic: 49 users (13,2%)">
+
+              <p class="chart-label">
+                <span>FreeCAD Classic</span>
+                <span>13.2%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 13.2%; --color: hsl(200, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="13.2"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="13.2%"
+                  aria-label="FreeCAD Classic">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="OpenDark: 38 users (10,3%)">
+
+              <p class="chart-label">
+                <span>OpenDark</span>
+                <span>10.3%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 10.3%; --color: hsl(180, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="10.3"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="10.3%"
+                  aria-label="OpenDark">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="OpenLight: 25 users (6,8%)">
+
+              <p class="chart-label">
+                <span>OpenLight</span>
+                <span>6.8%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 6.8%; --color: hsl(160, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="6.8"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="6.8%"
+                  aria-label="OpenLight">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="unset: 8 users (2,2%)">
+
+              <p class="chart-label">
+                <span>unset</span>
+                <span>2.2%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 2.2%; --color: hsl(140, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="2.2"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="2.2%"
+                  aria-label="unset">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Behave-dark 1 1 Plus: 3 users (0,8%)">
+
+              <p class="chart-label">
+                <span>Behave-dark 1 1 Plus</span>
+                <span>0.8%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 0.8%; --color: hsl(120, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="0.8"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="0.8%"
+                  aria-label="Behave-dark 1 1 Plus">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Behave-dark: 1 user (0,3%)">
+
+              <p class="chart-label">
+                <span>Behave-dark</span>
+                <span>0.3%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 0.3%; --color: hsl(100, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="0.3"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="0.3%"
+                  aria-label="Behave-dark">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="ColorPalette 1 A: 1 user (0,3%)">
+
+              <p class="chart-label">
+                <span>ColorPalette 1 A</span>
+                <span>0.3%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 0.3%; --color: hsl(80, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="0.3"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="0.3%"
+                  aria-label="ColorPalette 1 A">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Dark theme: 1 user (0,3%)">
+
+              <p class="chart-label">
+                <span>Dark theme</span>
+                <span>0.3%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 0.3%; --color: hsl(60, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="0.3"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="0.3%"
+                  aria-label="Dark theme">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Dark-contrast: 1 user (0,3%)">
+
+              <p class="chart-label">
+                <span>Dark-contrast</span>
+                <span>0.3%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 0.3%; --color: hsl(40, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="0.3"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="0.3%"
+                  aria-label="Dark-contrast">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Dark-modern: 1 user (0,3%)">
+
+              <p class="chart-label">
+                <span>Dark-modern</span>
+                <span>0.3%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 0.3%; --color: hsl(20, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="0.3"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="0.3%"
+                  aria-label="Dark-modern">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Others (3 more): 3 users (0,9%)">
+
+              <p class="chart-label">
+                <span>Others (3 more)</span>
+                <span>0.9%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 0.9%; --color: hsl(0, 0%, 70%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="0.9"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="0.9%"
+                  aria-label="Others (3 more)">
+                </div>
+              </div>
+            </div></section><section class="chart">
+
+        <h3 class="chart-title">141 Screen resolutions</h3>
+        <p>370 records / 371 users</p><div class="chart-row"
+              title="1920x1080: 36 users (9,7%)">
+
+              <p class="chart-label">
+                <span>1920x1080</span>
+                <span>9.7%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 9.7%; --color: hsl(240, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="9.7"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="9.7%"
+                  aria-label="1920x1080">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="1920x1032: 31 users (8,4%)">
+
+              <p class="chart-label">
+                <span>1920x1032</span>
+                <span>8.4%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 8.4%; --color: hsl(220, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="8.4"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="8.4%"
+                  aria-label="1920x1032">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="1920x1040: 21 users (5,7%)">
+
+              <p class="chart-label">
+                <span>1920x1040</span>
+                <span>5.7%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 5.7%; --color: hsl(200, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="5.7"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="5.7%"
+                  aria-label="1920x1040">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="1536x816: 16 users (4,3%)">
+
+              <p class="chart-label">
+                <span>1536x816</span>
+                <span>4.3%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 4.3%; --color: hsl(180, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="4.3"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="4.3%"
+                  aria-label="1536x816">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="1920x1200: 16 users (4,3%)">
+
+              <p class="chart-label">
+                <span>1920x1200</span>
+                <span>4.3%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 4.3%; --color: hsl(160, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="4.3"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="4.3%"
+                  aria-label="1920x1200">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="2560x1392: 15 users (4,1%)">
+
+              <p class="chart-label">
+                <span>2560x1392</span>
+                <span>4.1%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 4.1%; --color: hsl(140, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="4.1"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="4.1%"
+                  aria-label="2560x1392">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="2560x1440: 13 users (3,5%)">
+
+              <p class="chart-label">
+                <span>2560x1440</span>
+                <span>3.5%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 3.5%; --color: hsl(120, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="3.5"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="3.5%"
+                  aria-label="2560x1440">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="1707x1019: 8 users (2,2%)">
+
+              <p class="chart-label">
+                <span>1707x1019</span>
+                <span>2.2%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 2.2%; --color: hsl(100, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="2.2"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="2.2%"
+                  aria-label="1707x1019">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="1920x1050: 7 users (1,9%)">
+
+              <p class="chart-label">
+                <span>1920x1050</span>
+                <span>1.9%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 1.9%; --color: hsl(80, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="1.9"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="1.9%"
+                  aria-label="1920x1050">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="2560x1400: 6 users (1,6%)">
+
+              <p class="chart-label">
+                <span>2560x1400</span>
+                <span>1.6%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 1.6%; --color: hsl(60, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="1.6"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="1.6%"
+                  aria-label="2560x1400">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="3840x2160: 6 users (1,6%)">
+
+              <p class="chart-label">
+                <span>3840x2160</span>
+                <span>1.6%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 1.6%; --color: hsl(40, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="1.6"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="1.6%"
+                  aria-label="3840x2160">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="1512x949: 5 users (1,4%)">
+
+              <p class="chart-label">
+                <span>1512x949</span>
+                <span>1.4%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 1.4%; --color: hsl(20, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="1.4"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="1.4%"
+                  aria-label="1512x949">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Others (129 more): 190 users (52,8%)">
+
+              <p class="chart-label">
+                <span>Others (129 more)</span>
+                <span>52.8%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 52.8%; --color: hsl(0, 0%, 70%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="52.8"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="52.8%"
+                  aria-label="Others (129 more)">
+                </div>
+              </div>
+            </div></section><section class="chart">
+
+        <h3 class="chart-title">11 Navigation styles</h3>
+        <p>370 records / 371 users</p><div class="chart-row"
+              title="CAD: 113 users (30,5%)">
+
+              <p class="chart-label">
+                <span>CAD</span>
+                <span>30.5%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 30.5%; --color: hsl(240, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="30.5"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="30.5%"
+                  aria-label="CAD">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Blender: 66 users (17,8%)">
+
+              <p class="chart-label">
+                <span>Blender</span>
+                <span>17.8%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 17.8%; --color: hsl(216, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="17.8"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="17.8%"
+                  aria-label="Blender">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Gesture: 53 users (14,3%)">
+
+              <p class="chart-label">
+                <span>Gesture</span>
+                <span>14.3%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 14.3%; --color: hsl(192, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="14.3"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="14.3%"
+                  aria-label="Gesture">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Touchpad: 51 users (13,8%)">
+
+              <p class="chart-label">
+                <span>Touchpad</span>
+                <span>13.8%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 13.8%; --color: hsl(168, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="13.8"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="13.8%"
+                  aria-label="Touchpad">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="TinkerCAD: 45 users (12,2%)">
+
+              <p class="chart-label">
+                <span>TinkerCAD</span>
+                <span>12.2%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 12.2%; --color: hsl(144, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="12.2"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="12.2%"
+                  aria-label="TinkerCAD">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Revit: 20 users (5,4%)">
+
+              <p class="chart-label">
+                <span>Revit</span>
+                <span>5.4%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 5.4%; --color: hsl(120, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="5.4"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="5.4%"
+                  aria-label="Revit">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="SolidWorks: 12 users (3,2%)">
+
+              <p class="chart-label">
+                <span>SolidWorks</span>
+                <span>3.2%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 3.2%; --color: hsl(96, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="3.2"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="3.2%"
+                  aria-label="SolidWorks">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Inventor: 4 users (1,1%)">
+
+              <p class="chart-label">
+                <span>Inventor</span>
+                <span>1.1%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 1.1%; --color: hsl(72, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="1.1"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="1.1%"
+                  aria-label="Inventor">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="OpenSCAD: 3 users (0,8%)">
+
+              <p class="chart-label">
+                <span>OpenSCAD</span>
+                <span>0.8%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 0.8%; --color: hsl(48, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="0.8"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="0.8%"
+                  aria-label="OpenSCAD">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="SiemensNX: 2 users (0,5%)">
+
+              <p class="chart-label">
+                <span>SiemensNX</span>
+                <span>0.5%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 0.5%; --color: hsl(24, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="0.5"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="0.5%"
+                  aria-label="SiemensNX">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="OpenCasCADe: 1 user (0,3%)">
+
+              <p class="chart-label">
+                <span>OpenCasCADe</span>
+                <span>0.3%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 0.3%; --color: hsl(0, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="0.3"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="0.3%"
+                  aria-label="OpenCasCADe">
+                </div>
+              </div>
+            </div></section><section class="chart">
+
+        <h3 class="chart-title">5 Navigation orbit styles</h3>
+        <p>370 records / 371 users</p><div class="chart-row"
+              title="Trackball: 195 users (52,7%)">
+
+              <p class="chart-label">
+                <span>Trackball</span>
+                <span>52.7%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 52.7%; --color: hsl(240, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="52.7"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="52.7%"
+                  aria-label="Trackball">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Rounded Arcball: 111 users (30,0%)">
+
+              <p class="chart-label">
+                <span>Rounded Arcball</span>
+                <span>30%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 30%; --color: hsl(180, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="30"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="30%"
+                  aria-label="Rounded Arcball">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Turntable: 44 users (11,9%)">
+
+              <p class="chart-label">
+                <span>Turntable</span>
+                <span>11.9%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 11.9%; --color: hsl(120, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="11.9"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="11.9%"
+                  aria-label="Turntable">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Free Turntable: 12 users (3,2%)">
+
+              <p class="chart-label">
+                <span>Free Turntable</span>
+                <span>3.2%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 3.2%; --color: hsl(60, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="3.2"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="3.2%"
+                  aria-label="Free Turntable">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="Trackball Classic: 8 users (2,2%)">
+
+              <p class="chart-label">
+                <span>Trackball Classic</span>
+                <span>2.2%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 2.2%; --color: hsl(0, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="2.2"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="2.2%"
+                  aria-label="Trackball Classic">
+                </div>
+              </div>
+            </div></section><section class="chart">
+
+        <h3 class="chart-title">7 Ui toolbar icon sizes</h3>
+        <p>370 records / 371 users</p><div class="chart-row"
+              title="24: 307 users (83,0%)">
+
+              <p class="chart-label">
+                <span>24</span>
+                <span>83%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 83%; --color: hsl(240, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="83"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="83%"
+                  aria-label="24">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="32: 38 users (10,3%)">
+
+              <p class="chart-label">
+                <span>32</span>
+                <span>10.3%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 10.3%; --color: hsl(200, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="10.3"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="10.3%"
+                  aria-label="32">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="16: 18 users (4,9%)">
+
+              <p class="chart-label">
+                <span>16</span>
+                <span>4.9%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 4.9%; --color: hsl(160, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="4.9"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="4.9%"
+                  aria-label="16">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="48: 3 users (0,8%)">
+
+              <p class="chart-label">
+                <span>48</span>
+                <span>0.8%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 0.8%; --color: hsl(120, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="0.8"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="0.8%"
+                  aria-label="48">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="18: 2 users (0,5%)">
+
+              <p class="chart-label">
+                <span>18</span>
+                <span>0.5%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 0.5%; --color: hsl(80, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="0.5"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="0.5%"
+                  aria-label="18">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="20: 1 user (0,3%)">
+
+              <p class="chart-label">
+                <span>20</span>
+                <span>0.3%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 0.3%; --color: hsl(40, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="0.3"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="0.3%"
+                  aria-label="20">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="22: 1 user (0,3%)">
+
+              <p class="chart-label">
+                <span>22</span>
+                <span>0.3%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 0.3%; --color: hsl(0, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="0.3"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="0.3%"
+                  aria-label="22">
+                </div>
+              </div>
+            </div></section><section class="chart">
+
+        <h3 class="chart-title">5 Python versions</h3>
+        <p>371 records / 371 users</p><div class="chart-row"
+              title="3.11: 306 users (82,5%)">
+
+              <p class="chart-label">
+                <span>3.11</span>
+                <span>82.5%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 82.5%; --color: hsl(240, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="82.5"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="82.5%"
+                  aria-label="3.11">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="3.13: 40 users (10,8%)">
+
+              <p class="chart-label">
+                <span>3.13</span>
+                <span>10.8%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 10.8%; --color: hsl(180, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="10.8"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="10.8%"
+                  aria-label="3.13">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="3.14: 20 users (5,4%)">
+
+              <p class="chart-label">
+                <span>3.14</span>
+                <span>5.4%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 5.4%; --color: hsl(120, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="5.4"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="5.4%"
+                  aria-label="3.14">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="3.12: 4 users (1,1%)">
+
+              <p class="chart-label">
+                <span>3.12</span>
+                <span>1.1%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 1.1%; --color: hsl(60, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="1.1"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="1.1%"
+                  aria-label="3.12">
+                </div>
+              </div>
+            </div><div class="chart-row"
+              title="3.10: 1 user (0,3%)">
+
+              <p class="chart-label">
+                <span>3.10</span>
+                <span>0.3%</span>
+              </p>
+
+              <div class="chart-track"
+                style="--percent: 0.3%; --color: hsl(0, 60%, 75%)">
+                <div class="chart-segment"></div>
+                <div class="chart-bar"
+                  role="meter"
+                  aria-valuenow="0.3"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuetext="0.3%"
+                  aria-label="3.10">
+                </div>
+              </div>
+            </div></section></div></section>
+
+  </main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Ir para o topo"
+  title="Ir para o topo (Alt + G)" ><svg
+    class="icon tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a
+            href="/Website/pr-53/pt/">Início</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-53/pt/features/">Funcionalidades</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-53/pt/download/">Baixar</a><ul><li>
+                      <a
+                        href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="external noreferrer nofollow">Development builds<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples an parts library<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-53/pt/download/releases/">Releases</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-53/pt/news/">Atualidades</a><ul><li>
+                  <a
+                    href="/Website/pr-53/pt/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/pr-53/pt/authors/">Autores</a>
+                      </li><li>
+                        <a href="/Website/pr-53/pt/categories/">Categorias</a>
+                      </li><li>
+                        <a href="/Website/pr-53/pt/tags/">Tags</a>
+                      </li><li>
+                        <a href="/Website/pr-53/pt/versions/">Versões</a>
+                      </li></ul></li><li>
+          <a
+            href="/Website/pr-53/pt/community/" aria-current="page" class="active">Comunidade</a><ul><li>
+                      <a
+                        href="/Website/pr-53/pt/community/calendar/">Calendar</a>
+                    </li><li>
+                      <a
+                        href="https://events.freecad.org/" target="_blank" rel="external noreferrer nofollow">Events<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://fpa.freecad.org" target="_blank" rel="external noreferrer nofollow">Association<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-53/pt/community/fpn/">Professional Network</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-53/pt/community/addons/">Addons</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-53/pt/community/telemetry/">Telemetry</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-53/pt/docs/">Documentação</a><ul><li>
+                  <a
+                    href="https://wiki.freecad.org/User_hub" target="_blank" rel="external noreferrer nofollow">User manual<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/external.svg#external"></use>
+  </svg></a>
+                </li><li>
+                  <a
+                    href="/Website/pr-53/pt/dev/">Development Handbook</a>
+                </li><li>
+                  <a
+                    href="https://freecad.github.io/SourceDoc/" target="_blank" rel="external noreferrer nofollow">FreeCAD API<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/external.svg#external"></use>
+  </svg></a>
+                </li></ul></li><li>
+          <a
+            href="/Website/pr-53/pt/donate/">♥ Faça uma doação</a><ul></ul></li></ul>
+</nav>
+<div class="share-links"><a
+    href="https://forum.freecad.org"
+    title="Forum"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/forum.svg#forum"></use>
+  </svg></a><a
+    href="https://github.com/freecad"
+    title="GitHub"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/github.svg#github"></use>
+  </svg></a><a
+    href="https://codeberg.org/freecad"
+    title="Codeberg"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a
+    href="https://social.freecad.org/@freecad"
+    title="Mastodon"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://www.reddit.com/r/freecad"
+    title="Reddit"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/reddit.svg#reddit"></use>
+  </svg></a><a
+    href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+    title="Matrix"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/matrix.svg#matrix"></use>
+  </svg></a><a
+    href="https://discord.gg/w2cTKGzccC"
+    title="Discord"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/discord.svg#discord"></use>
+  </svg></a><a
+    href="https://www.linkedin.com/groups/4295230"
+    title="LinkedIn"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+  href="/Website/pr-53/pt/fedishare.html#title=Telemetry&amp;description=Data%20from%20the%20FreeCAD%20Telemetry%20addon&amp;url=https://FreeCAD.github.io/Website/pr-53/pt/community/telemetry/"
+  title="Compartilhar no Fediverse"
+  target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026
+    <a
+      href="/Website/pr-53/pt/"
+      title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a
+    href="https://creativecommons.org/licenses/by-sa/4.0/"
+    title="Creative Commons"
+    target="_blank" rel="license external noreferrer nofollow">
+
+    CC BY-SA<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to
+  <a
+    href="https://gohugo.io/"
+    title="Hugo SSG"
+    target="_blank" rel="external noreferrer nofollow">
+
+    Hugo<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-05-15
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/73b1046510e3c77ce03a8098b192d1b97cbcb3ec">73b104651<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-53/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script
+    src="/Website/pr-53/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script></body>
+
+</html>
