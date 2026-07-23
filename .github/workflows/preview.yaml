@@ -1,4 +1,13 @@
-name: PR Preview (build PR, deploy to pages branch, and clean with cache)
+# Preview PR action workflow
+#
+# Website built with Hugo for PR preview.
+# Artifact deployment to GH pages 'pr-<number>' dir.
+# Clean dir when PR is closed.
+# Manual trigger by '/preview' comment or workflow_dispatch with PR number.
+
+
+name: Preview PR build & deploy
+run-name: Preview PR ${{ inputs.pr }} build & deploy by @${{ github.triggering_actor }}
 
 on:
   pull_request:
@@ -23,7 +32,7 @@ on:
   workflow_dispatch:
     inputs:
       pr:
-        description: PR number to deploy preview for
+        description: PR number to build and deploy preview for
         required: true
         type: number
 
@@ -33,7 +42,7 @@ permissions:
   pull-requests: write
 
 concurrency:
-  group: pr-preview
+  group: preview
   cancel-in-progress: true
 
 jobs:

@@ -1,7 +1,15 @@
-# Sample workflow for building and deploying a Hugo project to GitHub Pages
+# Main action workflow
+#
+# Website main branch built with Hugo.
+# Artifact deployment to GH pages.
+# Auto trigger by push to main or manually by workflow_dispatch.
+#
+# Sample workflow for building and deploying a Hugo project to GitHub Pages.
 # https://gohugo.io/host-and-deploy/host-on-github-pages
 
-name: Hugo main (build main, and deploy to pages branch with cache)
+
+name: Main build & deploy
+run-name: Main build & deploy by @${{ github.triggering_actor }}
 
 on:
   push:
@@ -36,7 +44,7 @@ permissions:
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs to allow these deployments to complete.
 concurrency:
-  group: hugo-main
+  group: main
   cancel-in-progress: false
 
 defaults:
