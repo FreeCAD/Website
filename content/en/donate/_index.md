@@ -29,7 +29,7 @@ icon_cms: favorite
 ### Donations Frequently Asked Questions
 
 {{< details summary="Why donate to FreeCAD?" name="faq" >}}
-FreeCAD is entirely ran by community members. All the donations go to the non-profit [FreeCAD Project Association](https://fpa.freecad.org/), which are then used for its [initiatives](https://fpa.freecad.org/programs.html), including but not limited to development grants, or bounty payouts. Visit the [Accepting donations](https://fpa.freecad.org/handbook/process/accepting-donations.html) page for more details.
+FreeCAD is run entirely by community members. All donations go to the non-profit [FreeCAD project association AISBL](https://fpa.freecad.org/), which are then used for its [initiatives](https://fpa.freecad.org/programs.html), including but not limited to development grants, travel grants, and bug bounty payouts. Visit the [Accepting donations](https://fpa.freecad.org/handbook/process/accepting-donations.html) page for more details.
 {{< /details >}}
 
 {{< details summary="How are the money spent?" name="faq" >}}
