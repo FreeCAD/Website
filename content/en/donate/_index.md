@@ -51,5 +51,5 @@ It is possible to commit to monthly donations or make to a one-time payment usin
 {{< /details >}}
 
 {{< details summary="Corporate Sponsorship" name="faq" id="corporate" >}}
-The *FreeCAD Project Association* accepts donations from individuals and corporations alike. Donations solely aimed at placing companies links on the sponsors page are not accepted, as sponsoring companies must have some form or relationship with the FreeCAD project. For more information, visit the [Accepting donations](https://fpa.freecad.org/handbook/process/accepting-donations.html) page.
+The *FreeCAD project association AISBL* accepts donations from individuals and corporations alike. Donations solely aimed at placing companies' links on the sponsors page are not accepted, as sponsoring companies must have some form of relationship with the FreeCAD project. For more information, visit the [Accepting donations](https://fpa.freecad.org/handbook/process/accepting-donations.html) page.
 {{< /details >}}
