@@ -137,6 +137,7 @@ jobs:
         run: |
           message="${{ github.event.head_commit.message || github.event.inputs.message }}"
           message=${message:-"Deploy Hugo main project to pages branch"}
+          message=$(printf '%s\n' "$message" | sed -n '1p')
           message=$(echo "$message" | tr '\n\r' ' ' | sed "s/['\"]/ /g")
           echo "message=$message" >> $GITHUB_OUTPUT
 
