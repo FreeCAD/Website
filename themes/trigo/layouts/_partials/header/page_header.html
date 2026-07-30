@@ -18,17 +18,15 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 <header class="site-header">
 
-  <div class="logo">
-    <a
-      href="{{ "" | relLangURL }}"
-      accesskey="h"
-      title="{{ $home_title }} (Alt + H)"
-      aria-label="{{ $home_title }}"
-      {{- if .IsHome }} class="active"{{ end -}}>
+  <a
+    class="logo{{- if .IsHome }} active{{ end -}}"
+    href="{{ "" | relLangURL }}"
+    accesskey="h"
+    title="{{ $home_title }} (Alt + H)"
+    aria-label="{{ $home_title }}">
 
-      {{- partialCached "header/logo.html" . "logo" -}}
-    </a>
-  </div>
+    {{- partialCached "header/logo.html" . "logo" -}}
+  </a>
 
   <div class="site-nav">
 

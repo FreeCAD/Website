@@ -19,12 +19,12 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 .archive-month {
   display: flex;
+  padding: var(--gap);
   align-items: flex-start;
   font-size: var(--l);
 }
 
 .archive-month-header {
-  margin: var(--gap) auto;
   width: calc(var(--width) * 0.25);
 }
 
@@ -34,32 +34,33 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 .archive-month-list {
   width: 100%;
+  display: flex;
+  flex-direction: column;
   font-size: var(--m);
+  gap: var(--gap);
 }
 
 .archive-entry {
-  margin: var(--gap) auto;
-  padding: 0 var(--gap) var(--gap);
-  background: var(--entry);
+  width: 100%;
+  text-align: start;
+  padding-bottom: calc(var(--gap) * 0.5);
   border-radius: var(--radius);
-  transition: var(--transition);
 }
 
-.archive-entry:hover {
-  filter: var(--filter);
-  transform: var(--transform-hover);
+.archive-entry:focus-within {
+  outline: var(--outline-focus);
+}
+
+.archive-entry > a {
+  outline: transparent;
 }
 
 .archive-entry-title {
-  margin: 0 auto;
-  padding: calc(var(--gap) * 1.5) 0;
+  margin-bottom: 0;
+  padding: var(--gap);
   color: var(--secondary);
 }
 
 .archive-entry-title:hover {
   color: var(--accent-hover);
-}
-
-.archive-entry h3 {
-  margin: 1.25rem auto 0.5rem;
 }

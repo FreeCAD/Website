@@ -39,7 +39,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
             <div class="archive-month-list">
 
               {{- range $month.Pages -}}
-                <article class="archive-entry">
+                <article class="archive-entry card">
                   {{- $href := .RelPermalink -}}
                   {{- $key := partialCached "utils/cache_key.html" . . -}}
                   {{- $href = partialCached "utils/link_redirect.html" . $key -}}

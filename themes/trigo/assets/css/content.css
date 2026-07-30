@@ -304,6 +304,7 @@ figure .internal-tooltip {
   cursor: zoom-in;
   margin: auto;
   text-align: center;
+  border-radius: var(--radius);
   transition: var(--transition);
 }
 
@@ -446,10 +447,6 @@ figure .internal-tooltip {
   transform: var(--transform-active);
 }
 
-.card:focus {
-  outline: var(--outline-focus);
-}
-
 .card :is(.thumbnail, .card-color) {
   position: relative;
   height: calc(var(--card-width) * 0.5);
@@ -464,7 +461,7 @@ figure .internal-tooltip {
 }
 
 .card-color {
-  --card-hue: calc(120deg + var(--hue) * 1.5deg);
+  --card-hue: calc(120deg + var(--hue) * 1.75deg);
   background: linear-gradient(
     var(--angle),
     hsl(var(--card-hue), 50%, 75%) 0%,

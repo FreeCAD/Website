@@ -20,52 +20,20 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   gap: var(--gap);
   text-align: center;
   position: relative;
-  background:
-    radial-gradient(
-      80% 70% at -5% -5%,
-      hsl(var(--section-hue) 80% 75% / 35%),
-      transparent 60%
-    ),
-    radial-gradient(
-      60% 50% at 105% 5%,
-      hsl(calc(var(--section-hue) + 45deg) 75% 75% / 30%),
-      transparent 50%
-    ),
-    radial-gradient(
-      70% 60% at 50% 100%,
-      hsl(calc(var(--section-hue) - 30deg) 60% 75% / 25%),
-      transparent 70%
-    ),
-    linear-gradient(
-      var(--angle),
-      hsl(var(--section-hue) 40% 95%),
-      hsl(var(--section-hue) 20% 90%)
-    );
+  background: linear-gradient(
+    var(--angle),
+    hsl(var(--section-hue) 75% 75% / 25%),
+    hsl(calc(var(--section-hue) + 60deg) 75% 75% / 25%)
+  );
   transition: var(--transition);
 }
 
 .dark .hero {
-  background:
-    radial-gradient(
-      80% 70% at -5% -5%,
-      hsl(var(--section-hue) 80% 25% / 35%),
-      transparent 60%
-    ),
-    radial-gradient(
-      60% 50% at 105% 5%,
-      hsl(calc(var(--section-hue) + 45deg) 75% 25% / 30%),
-      transparent 50%
-    ),
-    radial-gradient(
-      70% 60% at 50% 100%,
-      hsl(calc(var(--section-hue) - 30deg) 60% 25% / 25%),
-      transparent 70%
-    ),
-    linear-gradient(
-      var(--angle),
-      hsl(var(--section-hue) 40% 5%),
-      hsl(var(--section-hue) 20% 10%)
-    );
+  background: linear-gradient(
+    var(--angle),
+    hsl(var(--section-hue) 75% 25% / 25%),
+    hsl(calc(var(--section-hue) + 60deg) 75% 25% / 25%)
+  );
 }
 
 .hero-column {
@@ -96,7 +64,6 @@ main > :is(.hero:only-child, .not-found) {
 .description,
 .hero .button,
 .metadata {
-  display: inline-flex;
   max-width: var(--width);
   z-index: 2;
 }
@@ -112,6 +79,7 @@ main > :is(.hero:only-child, .not-found) {
 .title svg {
   height: var(--xxl);
   width: var(--xxl);
+  vertical-align: calc(var(--gap) * -0.25);
 }
 
 .button {
@@ -122,7 +90,7 @@ main > :is(.hero:only-child, .not-found) {
   font-size: var(--m);
   background: var(--entry);
   border-radius: var(--radius);
-  outline: var(--outline);
+  outline: var(--border);
   text-align: center;
   justify-content: center;
   align-content: center;
@@ -137,12 +105,16 @@ main > :is(.hero:only-child, .not-found) {
 .button:hover {
   color: var(--primary);
   outline: var(--outline-hover);
-  filter: var(--filter);
+}
+
+.button:focus-visible {
+  color: var(--primary);
+  outline: var(--outline-focus);
 }
 
 .button:disabled {
-  background: var(--tone);
   color: var(--tertiary);
+  background: var(--tone);
   text-decoration: line-through;
   cursor: not-allowed;
 }
@@ -151,19 +123,15 @@ input:checked + .button,
 .button:active,
 .button.active {
   color: var(--primary);
-  font-weight: bold;
   background: var(--header);
   outline: var(--line) solid var(--backdrop);
+  font-weight: bold;
 }
 
 :is(input:checked + .button, .button:active, .button.active):hover {
   color: var(--primary);
+  background: var(--header);
   outline: var(--outline-hover);
-  filter: var(--filter);
-}
-
-.button:focus {
-  outline: var(--outline-focus);
 }
 
 .meta {

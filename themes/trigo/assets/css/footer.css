@@ -18,10 +18,11 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   justify-content: center;
   font-size: 1.5rem;
   color: var(--tertiary);
+  outline: transparent;
   transition: var(--transition);
 }
 
-#top-link:hover {
+#top-link:is(:hover, :focus) {
   color: var(--accent-hover);
 }
 
@@ -69,22 +70,22 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 }
 
 .footer-menu > ul > li > a {
-  margin: 0.25rem auto;
-  color: var(--secondary);
+  padding: calc(var(--gap) * 0.5);
   font-size: var(--m);
   font-weight: bold;
+  border-radius: var(--radius);
+  color: var(--secondary);
 }
 
 .footer-menu ul li ul {
   padding: 0;
-  margin: 0;
+  margin: calc(var(--gap) * 0.5) calc(var(--gap) * 0.25);
 }
 
 .footer-menu ul li ul li a {
+  padding: calc(var(--gap) * 0.25);
   font-size: var(--s);
-}
-
-.footer-menu ul li ul li a {
+  border-radius: var(--radius);
   color: var(--tertiary);
 }
 
@@ -102,7 +103,11 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   color: var(--tertiary);
 }
 
-.share-links svg:hover {
+.share-links a:is(:hover, :focus) {
+  outline: transparent;
+}
+
+.share-links a:is(:hover, :focus) svg {
   color: var(--accent-hover);
 }
 
@@ -118,6 +123,11 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   gap: var(--gap);
   font-size: var(--s);
   color: var(--tertiary);
+}
+
+.copyright a {
+  padding: calc(var(--gap) * 0.25);
+  border-radius: var(--radius);
 }
 
 .debug-icon {

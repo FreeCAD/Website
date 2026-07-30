@@ -359,6 +359,10 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   padding: calc(var(--gap) * 0.25);
 }
 
+#custom-amount-box:focus-within {
+  outline: var(--outline-focus);
+}
+
 #corporate-sponsor {
   grid-column: span 3;
   display: flex;
@@ -374,6 +378,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   padding: calc(var(--gap) * 0.25);
   color: var(--secondary);
   text-align: center;
+  outline: transparent;
 }
 
 #currency-toggle {
@@ -399,7 +404,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 [for="donate-checkbox"]:not([id$="default"]), [id^="payment-"] {
   color: var(--secondary);
   background: var(--theme);
-  outline: var(--outline);
+  outline: var(--border);
   border-radius: var(--radius);
   cursor: pointer;
 }
@@ -502,41 +507,16 @@ a.sponsor-entry:hover {
 
 /* Custom classes. */
 
-.donate-button {
-  display: inline-block;
-  margin: calc(var(--gap) * 0.5);
-  padding: var(--padding);
-  color: var(--secondary);
-  font-size: var(--m);
+.donate {
   background: linear-gradient(
     var(--angle),
     color-mix(in srgb, var(--accent) 25%, var(--header) 75%),
     color-mix(in srgb, var(--accent-hover) 50%, var(--header) 50%)
   );
-  border-radius: var(--radius);
-  outline: var(--line) solid var(--header);
-  text-align: center;
-  text-decoration: none;
-  white-space: nowrap;
-  cursor: pointer;
-  transition: var(--transition);
-  z-index: 2;
+  outline: transparent;
 }
 
-.donate-button.active:not(.button) {
-  color: var(--primary);
-  outline: var(--line) solid var(--tertiary);
-  font-weight: bold;
-  text-decoration: none;
-}
-
-:is(.donate-button, .donate-button.active):hover {
-  color: var(--primary);
-  outline: var(--outline-hover);
-  filter: var(--filter);
-}
-
-:is(.donate-button, .donate-button.active):focus {
+.donate.active:focus-visible {
   outline: var(--outline-focus);
 }
 

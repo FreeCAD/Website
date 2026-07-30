@@ -43,7 +43,9 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
     <summary>{{ $summary }}</summary>
 
-    {{- .Inner | .Page.RenderString (dict "display" "block") -}}
+    <div>
+      {{- .Inner | .Page.RenderString (dict "display" "block") -}}
+    </div>
   </details>
 
 {{- else -}}

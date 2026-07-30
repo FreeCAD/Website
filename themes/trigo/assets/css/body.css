@@ -32,17 +32,17 @@ main {
   white-space: normal;
   background: var(--theme);
   overflow-wrap: break-word;
-  --section-hue: calc(180deg + var(--hue) * 1.5deg);
+  --section-hue: calc(150deg + var(--hue) * 1.75deg);
   --section:
     radial-gradient(
       80% 70% at 105% 5%,
       hsl(var(--section-hue) 80% 75% / 35%),
-      transparent 60%
+      transparent
     ),
     radial-gradient(
       70% 60% at -5% 95%,
       hsl(calc(var(--section-hue) - 30deg) 60% 75% / 25%),
-      transparent 70%
+      transparent
     ),
     linear-gradient(
       var(--angle),
@@ -56,12 +56,12 @@ main {
     radial-gradient(
       80% 70% at 105% 5%,
       hsl(var(--section-hue) 80% 25% / 35%),
-      transparent 60%
+      transparent
     ),
     radial-gradient(
       70% 60% at -5% 95%,
       hsl(calc(var(--section-hue) - 30deg) 60% 25% / 25%),
-      transparent 70%
+      transparent
     ),
     linear-gradient(
       var(--angle),
@@ -104,11 +104,16 @@ p {
 a {
   color: var(--accent);
   text-decoration: none;
+  border-radius: var(--radius);
   transition: var(--transition);
 }
 
 a:hover {
   color: var(--accent-hover);
+}
+
+*:focus-visible {
+  outline: var(--outline-focus);
 }
 
 figure {
@@ -135,10 +140,11 @@ svg.icon {
 }
 
 table {
+  display: block;
   width: 100%;
   border-collapse: collapse;
   overflow-x: auto;
-  margin-bottom: calc(var(--gap) * 2);
+  margin: var(--gap) auto;
 }
 
 button,
@@ -148,7 +154,7 @@ textarea {
   font: inherit;
   background: 0;
   border: 0;
-  outline: 0;
+  outline: transparent;
 }
 
 textarea {
@@ -243,18 +249,14 @@ mark {
 }
 
 details {
-  margin: 0.5rem auto;
+  margin: var(--gap) auto;
   background: var(--entry);
   border-radius: var(--radius);
   scroll-margin-top: 25vh;
 }
 
-details[open] {
-  padding-bottom: calc(var(--gap) * 0.5);
-}
-
-details > * {
-  padding: 0 var(--gap);
+details div {
+  padding: 0 var(--gap) calc(var(--gap) * 0.5) var(--gap);
 }
 
 details .copy {
@@ -283,7 +285,6 @@ details summary {
 details[open] summary {
   cursor: zoom-out;
   background: var(--tone);
-  margin-block-end: var(--gap);
 }
 
 details summary:hover {

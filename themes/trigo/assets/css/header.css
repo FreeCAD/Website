@@ -22,7 +22,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: var(--gap);
+  gap: calc(var(--gap) * 0.5);
 }
 
 .logo,
@@ -32,11 +32,14 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: calc(var(--gap) * 0.25);
   list-style: none;
 }
 
-.logo a {
+.logo {
+  padding: calc(var(--gap) * 0.5) 0;
   color: var(--secondary);
+  border-radius: var(--radius);
 }
 
 .logo :is(img, svg) {
@@ -47,7 +50,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 }
 
 .active,
-.logo .active,
+.logo.active,
 .menu-list .active,
 .footer-menu .active {
   color: var(--primary);
@@ -61,8 +64,9 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 .menu-toggle,
 .lang-toggle,
 #chroma-toggle {
-  padding: 0.25rem;
+  padding: 0.5rem;
   color: var(--tertiary);
+  border-radius: 50%;
 }
 
 :is(.menu-toggle, .lang-toggle, #chroma-toggle):hover {
@@ -100,17 +104,18 @@ html:not(.dark) .site-nav svg.icon.light {
 
 .menu-list {
   position: sticky;
+  margin: 0;
   word-break: keep-all;
   white-space: nowrap;
-  gap: var(--gap);
   border: none;
   background: none;
 }
 
-.menu-list a {
-  margin: 0;
+.menu-list a:not(.button) {
+  padding: calc(var(--gap) * 0.5);
   font-size: var(--m);
   color: var(--secondary);
+  border-radius: var(--radius);
 }
 
 li .active:not(.button) {
@@ -120,10 +125,6 @@ li .active:not(.button) {
 .menu-list a:hover,
 li .active:not(.button):hover {
   color: var(--accent-hover);
-}
-
-.menu-list .button {
-  line-height: 2.5;
 }
 
 /* Languages and Menu in media mode */
