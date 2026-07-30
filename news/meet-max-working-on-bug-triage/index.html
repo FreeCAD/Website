@@ -27,26 +27,23 @@
   </style><style>
       @media (prefers-color-scheme: dark) {
         :root {
-          --header: rgb(16, 16, 16);
-          --theme: rgb(32, 32, 32);
-          --entry: rgb(48, 48, 48);
+          --header: rgb(8, 8, 8);
+          --theme: rgb(16, 16, 16);
+          --entry: rgb(32, 32, 32);
           --tone: rgb(64, 64, 64);
-          --footer: rgb(80, 80, 80);
+          --backdrop: rgba(64, 64, 64, 0.8);
           --primary: rgb(240, 240, 240);
           --secondary: rgb(224, 224, 224);
           --tertiary: rgb(208, 208, 208);
-          --backdrop: rgba(0, 0, 0, 0.8);
-          --backdrop: rgba(0, 0, 0, 0.75);
-          --accent: rgb(102, 177, 255);
-          --accent-hover: rgb(65, 143, 222);
-          --underline: underline solid currentColor var(--line);
-          --border: var(--line) solid var(--tone);
+          --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+          --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+          --angle: 315deg;
         }
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/Website/css/styles.cb71b36b5732d30ca23c01d073b3e202fee816532c3843c6b985ab0d743f3dc2.css"
-          integrity="sha256-y3Gza1cy0wyiPAHQc7PiAv7oFlMsOEPGuYWrDXQ/PcI="
+          href="/Website/css/styles.25fa741e01f3b228a75aa3ff909e66cff1ea0e54fce574f2c6b118bdcb68dd34.css"
+          integrity="sha256-Jfp0HgHzsiinWqP/kJ5mz/HqDlT85XTyxrEYvcto3TQ="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -106,19 +103,18 @@
 </div>
 <header class="site-header">
 
-  <div class="logo">
-    <a
-      href="/Website/"
-      accesskey="h"
-      title="Homepage (Alt + H)"
-      aria-label="Homepage"><svg
+  <a
+    class="logo"
+    href="/Website/"
+    accesskey="h"
+    title="Homepage (Alt + H)"
+    aria-label="Homepage"><svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
       <use href="/Website/FreeCAD-wordmark.svg#logo"></use>
     </svg></a>
-  </div>
 
   <div class="site-nav"><nav class="menu">
   <button
@@ -160,7 +156,7 @@
             href="/Website/docs/">Documentation</a>
         </li><li>
           <a
-            href="/Website/donate/" class="donate-button">♥︎ Donate</a>
+            href="/Website/donate/" class="button donate">♥︎ Donate</a>
         </li></ul>
 </nav>
 <div class="language-dropdown">
@@ -242,10 +238,10 @@
   </svg>3 min</span></div><figure class="cover"><img
     class="img clip_mount"
     src="/Website/news/meet-max-working-on-bug-triage/clip_mount.webp"
-    alt="Image fallback"
+    alt="Meet Max - Working on Bug Triage"
     loading="lazy"
     fetchpriority="low"
-    decoding="async" title="Clip mount" width="2531" height="1384" srcset="/Website/news/meet-max-working-on-bug-triage/clip_mount_hu_4800a1efe9967918.webp 400w, /Website/news/meet-max-working-on-bug-triage/clip_mount_hu_f5a79ea8d440b2a3.webp 800w, /Website/news/meet-max-working-on-bug-triage/clip_mount_hu_ed5d084526238226.webp 1600w, /Website/news/meet-max-working-on-bug-triage/clip_mount.webp 2531w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"><figcaption>
+    decoding="async" width="2531" height="1384" srcset="/Website/news/meet-max-working-on-bug-triage/clip_mount_hu_4800a1efe9967918.webp 400w, /Website/news/meet-max-working-on-bug-triage/clip_mount_hu_f5a79ea8d440b2a3.webp 800w, /Website/news/meet-max-working-on-bug-triage/clip_mount_hu_ed5d084526238226.webp 1600w, /Website/news/meet-max-working-on-bug-triage/clip_mount.webp 2531w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"><figcaption>
         <div class="internal-tooltip"><svg
     class="icon important"
     aria-hidden="true"

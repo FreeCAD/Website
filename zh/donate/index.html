@@ -27,26 +27,23 @@
   </style><style>
       @media (prefers-color-scheme: dark) {
         :root {
-          --header: rgb(16, 16, 16);
-          --theme: rgb(32, 32, 32);
-          --entry: rgb(48, 48, 48);
+          --header: rgb(8, 8, 8);
+          --theme: rgb(16, 16, 16);
+          --entry: rgb(32, 32, 32);
           --tone: rgb(64, 64, 64);
-          --footer: rgb(80, 80, 80);
+          --backdrop: rgba(64, 64, 64, 0.8);
           --primary: rgb(240, 240, 240);
           --secondary: rgb(224, 224, 224);
           --tertiary: rgb(208, 208, 208);
-          --backdrop: rgba(0, 0, 0, 0.8);
-          --backdrop: rgba(0, 0, 0, 0.75);
-          --accent: rgb(102, 177, 255);
-          --accent-hover: rgb(65, 143, 222);
-          --underline: underline solid currentColor var(--line);
-          --border: var(--line) solid var(--tone);
+          --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+          --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+          --angle: 315deg;
         }
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/Website/css/styles.cb71b36b5732d30ca23c01d073b3e202fee816532c3843c6b985ab0d743f3dc2.css"
-          integrity="sha256-y3Gza1cy0wyiPAHQc7PiAv7oFlMsOEPGuYWrDXQ/PcI="
+          href="/Website/css/styles.25fa741e01f3b228a75aa3ff909e66cff1ea0e54fce574f2c6b118bdcb68dd34.css"
+          integrity="sha256-Jfp0HgHzsiinWqP/kJ5mz/HqDlT85XTyxrEYvcto3TQ="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -102,19 +99,18 @@
 </div>
 <header class="site-header">
 
-  <div class="logo">
-    <a
-      href="/Website/zh/"
-      accesskey="h"
-      title="主页 (Alt + H)"
-      aria-label="主页"><svg
+  <a
+    class="logo"
+    href="/Website/zh/"
+    accesskey="h"
+    title="主页 (Alt + H)"
+    aria-label="主页"><svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
       <use href="/Website/FreeCAD-wordmark.svg#logo"></use>
     </svg></a>
-  </div>
 
   <div class="site-nav"><nav class="menu">
   <button
@@ -156,7 +152,7 @@
             href="/Website/zh/docs/">文档</a>
         </li><li>
           <a
-            href="/Website/zh/donate/" aria-current="page" class="active donate-button">♥ 赞助</a>
+            href="/Website/zh/donate/" aria-current="page" class="active button donate">♥ 赞助</a>
         </li></ul>
 </nav>
 <div class="language-dropdown">
@@ -604,7 +600,9 @@ document.querySelectorAll('.platform').forEach(link => {
   </svg></a>
 </h3><details open name="faq">
 
-    <summary>Why donate to FreeCAD?</summary><p>FreeCAD is run entirely by community members. All donations go to the non-profit <a
+    <summary>Why donate to FreeCAD?</summary>
+
+    <div><p>FreeCAD is run entirely by community members. All donations go to the non-profit <a
   href="https://fpa.freecad.org/"
   class="external-link" target="_blank" rel="external noreferrer nofollow">FreeCAD project association AISBL<svg
     class="icon external"
@@ -626,10 +624,13 @@ document.querySelectorAll('.platform').forEach(link => {
     focusable="false">
     <use href="/Website/svg/external.svg#external"></use>
   </svg></a> page for more details.</p>
-</details>
+</div>
+  </details>
 <details open name="faq">
 
-    <summary>How are the money spent?</summary><p>Check out the <a
+    <summary>How are the money spent?</summary>
+
+    <div><p>Check out the <a
   href="https://fpa.freecad.org/handbook/process/bookkeeping/overview.html"
   class="external-link" target="_blank" rel="external noreferrer nofollow">Bookkeeping<svg
     class="icon external"
@@ -637,14 +638,20 @@ document.querySelectorAll('.platform').forEach(link => {
     focusable="false">
     <use href="/Website/svg/external.svg#external"></use>
   </svg></a> page to see how the resources are allocated.</p>
-</details>
+</div>
+  </details>
 <details open name="faq">
 
-    <summary>How to donate?</summary><p>It is possible to commit to monthly donations or make to a one-time payment using the payment methods provided by this page. Monthly donations will grant you a sponsor level depending on the amount.</p>
-</details>
+    <summary>How to donate?</summary>
+
+    <div><p>It is possible to commit to monthly donations or make to a one-time payment using the payment methods provided by this page. Monthly donations will grant you a sponsor level depending on the amount.</p>
+</div>
+  </details>
 <details open name="faq" id="tiers">
 
-    <summary>Sponsorship Tiers</summary><table>
+    <summary>Sponsorship Tiers</summary>
+
+    <div><table>
   <thead>
       <tr>
           <th>Tier</th>
@@ -675,10 +682,13 @@ document.querySelectorAll('.platform').forEach(link => {
       </tr>
   </tbody>
 </table>
-</details>
+</div>
+  </details>
 <details open name="faq" id="corporate">
 
-    <summary>Corporate Sponsorship</summary><p>The <em>FreeCAD project association AISBL</em> accepts donations from individuals and corporations alike. Donations solely aimed at placing companies&rsquo; links on the sponsors page are not accepted, as sponsoring companies must have some form of relationship with the FreeCAD project. For more information, visit the <a
+    <summary>Corporate Sponsorship</summary>
+
+    <div><p>The <em>FreeCAD project association AISBL</em> accepts donations from individuals and corporations alike. Donations solely aimed at placing companies&rsquo; links on the sponsors page are not accepted, as sponsoring companies must have some form of relationship with the FreeCAD project. For more information, visit the <a
   href="https://fpa.freecad.org/handbook/process/accepting-donations.html"
   class="external-link" target="_blank" rel="external noreferrer nofollow">Accepting donations<svg
     class="icon external"
@@ -686,7 +696,8 @@ document.querySelectorAll('.platform').forEach(link => {
     focusable="false">
     <use href="/Website/svg/external.svg#external"></use>
   </svg></a> page.</p>
-</details>
+</div>
+  </details>
 </div></main><footer class="site-footer"><a id="top-link"
   href="#top"
   accesskey="g"

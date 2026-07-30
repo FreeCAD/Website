@@ -27,26 +27,23 @@
   </style><style>
       @media (prefers-color-scheme: dark) {
         :root {
-          --header: rgb(16, 16, 16);
-          --theme: rgb(32, 32, 32);
-          --entry: rgb(48, 48, 48);
+          --header: rgb(8, 8, 8);
+          --theme: rgb(16, 16, 16);
+          --entry: rgb(32, 32, 32);
           --tone: rgb(64, 64, 64);
-          --footer: rgb(80, 80, 80);
+          --backdrop: rgba(64, 64, 64, 0.8);
           --primary: rgb(240, 240, 240);
           --secondary: rgb(224, 224, 224);
           --tertiary: rgb(208, 208, 208);
-          --backdrop: rgba(0, 0, 0, 0.8);
-          --backdrop: rgba(0, 0, 0, 0.75);
-          --accent: rgb(102, 177, 255);
-          --accent-hover: rgb(65, 143, 222);
-          --underline: underline solid currentColor var(--line);
-          --border: var(--line) solid var(--tone);
+          --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+          --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+          --angle: 315deg;
         }
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/Website/css/styles.cb71b36b5732d30ca23c01d073b3e202fee816532c3843c6b985ab0d743f3dc2.css"
-          integrity="sha256-y3Gza1cy0wyiPAHQc7PiAv7oFlMsOEPGuYWrDXQ/PcI="
+          href="/Website/css/styles.25fa741e01f3b228a75aa3ff909e66cff1ea0e54fce574f2c6b118bdcb68dd34.css"
+          integrity="sha256-Jfp0HgHzsiinWqP/kJ5mz/HqDlT85XTyxrEYvcto3TQ="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -107,19 +104,18 @@ bgbsww, CalligaroV, and chennes made further progress towards mitigating the top
 </div>
 <header class="site-header">
 
-  <div class="logo">
-    <a
-      href="/Website/pt/"
-      accesskey="h"
-      title="Início (Alt + H)"
-      aria-label="Início"><svg
+  <a
+    class="logo"
+    href="/Website/pt/"
+    accesskey="h"
+    title="Início (Alt + H)"
+    aria-label="Início"><svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
       <use href="/Website/FreeCAD-wordmark.svg#logo"></use>
     </svg></a>
-  </div>
 
   <div class="site-nav"><nav class="menu">
   <button
@@ -161,7 +157,7 @@ bgbsww, CalligaroV, and chennes made further progress towards mitigating the top
             href="/Website/pt/docs/">Documentação</a>
         </li><li>
           <a
-            href="/Website/pt/donate/" class="donate-button">♥ Faça uma doação</a>
+            href="/Website/pt/donate/" class="button donate">♥ Faça uma doação</a>
         </li></ul>
 </nav>
 <div class="language-dropdown">

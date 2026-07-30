@@ -27,26 +27,23 @@
   </style><style>
       @media (prefers-color-scheme: dark) {
         :root {
-          --header: rgb(16, 16, 16);
-          --theme: rgb(32, 32, 32);
-          --entry: rgb(48, 48, 48);
+          --header: rgb(8, 8, 8);
+          --theme: rgb(16, 16, 16);
+          --entry: rgb(32, 32, 32);
           --tone: rgb(64, 64, 64);
-          --footer: rgb(80, 80, 80);
+          --backdrop: rgba(64, 64, 64, 0.8);
           --primary: rgb(240, 240, 240);
           --secondary: rgb(224, 224, 224);
           --tertiary: rgb(208, 208, 208);
-          --backdrop: rgba(0, 0, 0, 0.8);
-          --backdrop: rgba(0, 0, 0, 0.75);
-          --accent: rgb(102, 177, 255);
-          --accent-hover: rgb(65, 143, 222);
-          --underline: underline solid currentColor var(--line);
-          --border: var(--line) solid var(--tone);
+          --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+          --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+          --angle: 315deg;
         }
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/Website/css/styles.cb71b36b5732d30ca23c01d073b3e202fee816532c3843c6b985ab0d743f3dc2.css"
-          integrity="sha256-y3Gza1cy0wyiPAHQc7PiAv7oFlMsOEPGuYWrDXQ/PcI="
+          href="/Website/css/styles.25fa741e01f3b228a75aa3ff909e66cff1ea0e54fce574f2c6b118bdcb68dd34.css"
+          integrity="sha256-Jfp0HgHzsiinWqP/kJ5mz/HqDlT85XTyxrEYvcto3TQ="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -96,19 +93,18 @@
 </div>
 <header class="site-header">
 
-  <div class="logo">
-    <a
-      href="/Website/de/"
-      accesskey="h"
-      title="Home (Alt + H)"
-      aria-label="Home"><svg
+  <a
+    class="logo"
+    href="/Website/de/"
+    accesskey="h"
+    title="Home (Alt + H)"
+    aria-label="Home"><svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
       <use href="/Website/FreeCAD-wordmark.svg#logo"></use>
     </svg></a>
-  </div>
 
   <div class="site-nav"><nav class="menu">
   <button
@@ -150,7 +146,7 @@
             href="/Website/de/docs/">Dokumentation</a>
         </li><li>
           <a
-            href="/Website/de/donate/" class="donate-button">♥︎ Spenden</a>
+            href="/Website/de/donate/" class="button donate">♥︎ Spenden</a>
         </li></ul>
 </nav>
 <div class="language-dropdown">
@@ -214,10 +210,10 @@
   href="/Website/de/news/kicad-10-is-released/"><figure class="thumbnail"><img
     class="img kicad_10_dark"
     src="/Website/news/kicad-10-is-released/kicad_10_dark.webp"
-    alt="Ersatzbild"
+    alt="KiCad 10 is released!"
     loading="lazy"
     fetchpriority="low"
-    decoding="async" title="KiCAD 10 dark theme interface" width="1380" height="720" srcset="/Website/news/kicad-10-is-released/kicad_10_dark_hu_fbdd44a3215a278b.webp 400w, /Website/news/kicad-10-is-released/kicad_10_dark_hu_142a798aca640c32.webp 800w, /Website/news/kicad-10-is-released/kicad_10_dark.webp 1380w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></figure><h3 class="card-title">KiCad 10 is released!</h3><div class="card-metadata"><span class="meta"><svg
+    decoding="async" width="1380" height="720" srcset="/Website/news/kicad-10-is-released/kicad_10_dark_hu_fbdd44a3215a278b.webp 400w, /Website/news/kicad-10-is-released/kicad_10_dark_hu_142a798aca640c32.webp 800w, /Website/news/kicad-10-is-released/kicad_10_dark.webp 1380w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></figure><h3 class="card-title">KiCad 10 is released!</h3><div class="card-metadata"><span class="meta"><svg
     class="icon date"
     aria-hidden="true"
     focusable="false">
