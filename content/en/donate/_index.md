@@ -33,7 +33,7 @@ FreeCAD is run entirely by community members. All donations go to the non-profit
 {{< /details >}}
 
 {{< details summary="How are the money spent?" name="faq" >}}
-Check out the [Bookkeeping](https://fpa.freecad.org/handbook/process/bookkeeping/overview.html) page to know how the resources are allocated.
+Check out the [Bookkeeping](https://fpa.freecad.org/handbook/process/bookkeeping/overview.html) page to see how the resources are allocated.
 {{< /details >}}
 
 {{< details summary="How to donate?" name="faq" >}}
