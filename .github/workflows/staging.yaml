@@ -1,0 +1,48 @@
+# Staging action workflow
+#
+# Website deployment to FreeCAD staging server.
+# Manual trigger by workflow_dispatch.
+
+
+name: Staging deploy
+run-name: Staging deployment by @${{ github.triggering_actor }}
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: staging
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: staging
+    timeout-minutes: 10
+
+    steps:
+      - name: Configure SSH
+        env:
+          STAGING_DEPLOY_KEY: ${{ secrets.STAGING_DEPLOY_KEY }}
+          STAGING_KNOWN_HOSTS: ${{ secrets.STAGING_KNOWN_HOSTS }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$STAGING_DEPLOY_KEY" > ~/.ssh/staging_deploy
+          chmod 600 ~/.ssh/staging_deploy
+          printf '%s\n' "$STAGING_KNOWN_HOSTS" > ~/.ssh/known_hosts
+
+      # The remote deploy script is pinned as a forced command in the
+      # staging-deploy account authorized_keys, so no command is sent here.
+      - name: Deploy
+        run: |
+          ssh \
+            -i ~/.ssh/staging_deploy \
+            -o IdentitiesOnly=yes \
+            -o BatchMode=yes \
+            -o StrictHostKeyChecking=yes \
+            -o ConnectTimeout=15 \
+            -n \
+            staging-deploy@${{ vars.STAGING_DEPLOY_HOST }}

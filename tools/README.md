@@ -125,4 +125,31 @@ python3 telemetry.py
 
 ---
 
+### `deploy-website.sh`
+
+Bash script for server-side deployment of the website on the FreeCAD staging or production server.
+
+The copy stored here in this git repository is for reference and version tracking.
+The deployed server copy must be updated manually by an admin.
+
+**Features:**
+
+* Prevent concurrent deployments using file lock, no `root` run
+* Fetch and hard-reset to pinned remote branch (`origin/main`)
+* Build website with Hugo using temporary output dir
+* Atomically swap new built site into place after successful build
+* Preserve previous deployment as `public.old`
+* Cleanup temporary files
+* Log deployment progress and deployed Git revision
+
+**Output Example:**
+
+```
+2026-07-30T12:34:56Z deploy-website: fetching origin/main
+2026-07-30T12:34:57Z deploy-website: building main at 0123456789abcdef...
+2026-07-30T12:35:01Z deploy-website: deployed main at 0123456789abcdef...
+```
+
+---
+
 ### `script.py`
