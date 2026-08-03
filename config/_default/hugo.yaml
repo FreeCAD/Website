@@ -51,7 +51,6 @@ taxonomies:
   category: categories
   tag: tags
   author: authors
-  version: versions
 
 mainSections:
   - news
@@ -142,6 +141,14 @@ cascade:
     target:
       kind: page
       path: /download/releases/**
+
+  - params:
+      partials:
+        hero:
+          - download
+    target:
+      kind: section
+      path: /download/unstable
 
   - params:
       no_listing: true

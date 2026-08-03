@@ -7,7 +7,7 @@ categories: announcement
 tags:
   - release
   - RC
-versions: "1.1"
+  - "1.1"
 cover:
   image:
   caption:

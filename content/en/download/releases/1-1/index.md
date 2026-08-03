@@ -2,18 +2,9 @@
 title: FreeCAD 1.1 Notes
 description: Free and open-source CAD, refined.
 date: 2026-03-24
-lastmod: 2026-04-14
-versions: ["1.1", "1.1.1"]
 cover:
   image: relnotes_1-1.webp
   caption: FreeCAD 1.1 release
-builds:
-  windows_msi: https://github.com/freecad/freecad/releases/download/1.1.1/FreeCAD_1.1.1-Windows-x86_64-py311-installer.exe
-  windows_zip: https://github.com/freecad/freecad/releases/download/1.1.1/FreeCAD_1.1.1-Windows-x86_64-py311.7z
-  mac_x86: https://github.com/freecad/freecad/releases/download/1.1.1/FreeCAD_1.1.1-macOS-x86_64-py311.dmg
-  mac_arm: https://github.com/freecad/freecad/releases/download/1.1.1/FreeCAD_1.1.1-macOS-arm64-py311.dmg
-  linux_x86: https://github.com/freecad/freecad/releases/download/1.1.1/FreeCAD_1.1.1-Linux-x86_64-py311.AppImage
-  linux_arm: https://github.com/freecad/freecad/releases/download/1.1.1/FreeCAD_1.1.1-Linux-aarch64-py311.AppImage
 ---
 
 

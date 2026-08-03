@@ -6,7 +6,7 @@ icon_cms: download
 ---
 
 
-{{< block css_class="section" >}}
+{{< block css_class="pastel2" >}}
 
 {{< group >}}
 
@@ -23,16 +23,16 @@ designing with FreeCAD is more fun and powerful than ever. Oh, full freedom incl
 {{< /block >}}
 
 
-{{< block >}}
+{{< block css_class="section" >}}
 
 {{< group >}}
-
-{{< button url="https://github.com/FreeCAD/FreeCAD" label="FreeCAD code" icon="code" >}}
 
 ## See the source code, it's open!
 {class="accent"}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+{{< button url="https://github.com/FreeCAD/FreeCAD" label="FreeCAD code" icon="code" >}}
 
 {{< /group >}}
 

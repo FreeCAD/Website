@@ -6,7 +6,7 @@ draft: false
 categories: announcement
 tags:
   - release
-versions: "1.0"
+  - "1.0"
 cover:
   image: freecad-1-0-1.webp
   caption: FreeCAD 1.0.1 released

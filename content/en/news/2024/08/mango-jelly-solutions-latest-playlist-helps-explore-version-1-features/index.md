@@ -6,7 +6,7 @@ draft: false
 categories: tutorial
 tags:
   - feature
-versions: "1.0"
+  - "1.0"
 cover:
   image:
   caption:
