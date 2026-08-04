@@ -1,0 +1,92 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Unstable custom partial:
+
+  - List all unstable/weekly development builds.
+
+  @returns {template.HTML}
+*/ -}}
+
+
+{{- $page := . -}}
+
+{{- $releases := after 1 (sort (where hugo.Data.releases.releases "prerelease" true) "published" "desc") -}}
+
+{{- if and $releases (not $page.Params.redirect) -}}
+
+  {{- $download_title := i18n "download" | default "Download" -}}
+  {{- $checksum_title := i18n "copy_checksum" | default "Copy SHA-256 checksum to clipboard" -}}
+
+  {{- $important := i18n "important_unstable" |
+    default "Unstable builds contain experimental changes to test bugfixes, regressions, and recently implemented features." -}}
+  {{- $warn := i18n "warn_unstable" |
+    default "Beware! They can crash and corrupt files. ***Not recommended for production.***" -}}
+  {{- printf "> [!IMPORTANT]\n> %s\n>\n> %s" $important $warn | $.Page.RenderString -}}
+
+  <div class="unstable-list">
+
+    <h3>
+      {{- partialCached "utils/icon.html" "history" "history" -}}
+      {{- i18n "historical_builds" | default "Historical Builds" -}}
+    </h3>
+
+    {{- range $release := $releases -}}
+
+      <div class="download-card">
+
+        <p class="release-title">
+          <strong>{{- $release.name -}}</strong>
+          <span>{{- $release.published | time.Format ":date_long" }}</span>
+        </p>
+
+
+        <div class="download-buttons">
+
+          {{- range $platform := site.Params.download }}
+            {{- with index $release.assets $platform.os }}
+
+              <div class="os-group">
+                {{- range $arch, $packages := . }}
+                  {{- range $package, $asset := $packages }}
+
+                    {{- $link_title := printf "%s %s" $download_title $asset.name -}}
+                    <div class="button">
+                      <a
+                        class="link-donate"
+                        href="{{ $asset.url }}"
+                        title="{{ $link_title }}"
+                        target="_blank"
+                        rel="external noreferrer nofollow">
+                        {{- partialCached "utils/icon.html" $platform.os $platform.os -}}
+                        <strong>{{ i18n (printf "%s_%s" $package $arch) | default (printf "%s %s" $arch $package | title) }}</strong>
+                        <span>{{ partial "utils/format_filesize.html" $asset.size }}</span>
+                      </a>
+
+                      {{- with $asset.sha256 }}
+                        <button
+                          class="checksum-button"
+                          data-sha256="{{ . }}"
+                          data-title="{{ $checksum_title }}"
+                          title="{{ $checksum_title }}"
+                          aria-label="{{ $checksum_title }}">
+                          {{- partialCached "utils/icon.html" "checksum" "checksum" -}}
+                        </button>
+                      {{- end }}
+                    </div>
+                  {{- end -}}
+                {{- end -}}
+              </div>
+
+            {{- end -}}
+          {{- end -}}
+        </div>
+
+      </div>
+
+    {{- end -}}
+  </div>
+{{- end -}}

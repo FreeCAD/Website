@@ -15,6 +15,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 {{- $content := .Content -}}
 {{- $kind := .Kind -}}
 {{- $layout := .Layout -}}
+{{- $section := .Section -}}
 {{- $params := .Params -}}
 
 {{- $page_basename := "" -}}
@@ -57,6 +58,10 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     "shortcode" true
   )
   (dict
+    "name" "checksum"
+    "section" (slice "download")
+  )
+  (dict
     "name" "calendar"
     "basename" true
   )
@@ -68,12 +73,22 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     "name" "donate"
     "basename" true
   )
+  (dict
+    "name" "redirect_to_donate"
+    "section" (slice "download")
+  )
+  (dict
+    "name" "redirect_to_thanks"
+    "section" (slice "donate")
+  )
 -}}
 
 {{- range $scripts -}}
   {{- if index site.Params (printf "enable_js_%s" .name) -}}
     {{- if and
       (cond (.kind) (in .kind $kind) true)
+      (cond (.layout) (in .layout $layout) true)
+      (cond (.section) (in .section $section) true)
       (cond (.content) (in $content .content) true)
       (cond (.params) (index $page.Params .name) true)
       (cond (.shortcode) ($page.HasShortcode .name) true)

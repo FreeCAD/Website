@@ -28,7 +28,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   justify-content: space-around;
   padding: var(--gap);
   border-radius: var(--radius);
-  background: var(--entry);
+  background: var(--muted);
   box-shadow: var(--shadow);
 }
 
@@ -53,13 +53,48 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 }
 
 .download-buttons .button {
-  display: inline-block;
+  display: inline-flex;
+  padding: 0;
+}
+
+.download-buttons .button:focus-within {
+  outline: var(--outline-focus);
+}
+
+.download-buttons .link-donate {
+  padding: calc(var(--gap) * 0.75);
+  color: var(--secondary);
+  outline: transparent;
+  flex: 1;
 }
 
 .download-buttons span {
   margin-inline-start: calc(var(--gap) * 0.5);
   color: var(--tertiary);
   font-size: var(--s);
+}
+
+.download-buttons .checksum-button {
+  padding: calc(var(--gap) * 0.75);
+  color: var(--tertiary);
+  font-size: var(--s);
+}
+
+.download-buttons .checksum-button.copied {
+  color: var(--primary);
+}
+
+.download-buttons svg {
+  vertical-align: calc(var(--gap) * -0.125);
+}
+
+.download-buttons .checksum-button:is(:hover, :focus-visible) {
+  color: var(--accent-color);
+  outline: transparent;
+}
+
+.download-buttons .button:has(.checksum-button:focus-visible) {
+  outline: var(--border);;
 }
 
 .download-release {
@@ -71,6 +106,32 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   color: var(--secondary);
 }
 
+.unstable-list {
+  display: flex;
+  flex-direction: column;
+  width: var(--width);
+  gap: var(--gap);
+}
+
+.unstable-list h3 svg {
+  width: var(--l);
+  height: var(--l);
+  vertical-align: calc(var(--gap) * -0.125);
+}
+
+.release-title span:first-of-type::before {
+  content: " · ";
+}
+
+.unstable-list .download-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.os-group {
+  display: flex;
+  flex-direction: column;
+}
 
 /* Welcome contributors box */
 
@@ -109,14 +170,10 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   margin: var(--gap) 0;
 }
 
-.welcome .button::after {
+.welcome label.button::after {
   content: "›";
   float: right;
   opacity: 0.5;
-}
-
-.welcome .link::after {
-  content: "";
 }
 
 .welcome .other {
@@ -199,7 +256,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 }
 
 .chart {
-  background: var(--entry);
+  background: var(--muted);
   border-radius: var(--radius);
   padding: var(--gap);
   box-shadow: var(--shadow);
@@ -282,7 +339,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   gap: calc(var(--gap) * 0.5);
   padding: var(--gap);
   align-items: center;
-  background: var(--entry);
+  background: var(--muted);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   z-index: 3;
@@ -548,7 +605,7 @@ a.sponsor-entry:hover {
 
 .dots {
   background: radial-gradient(
-    var(--entry) var(--line),
+    var(--muted) var(--line),
     transparent var(--line))
     0 0 / calc(var(--gap) * 0.5) calc(var(--gap) * 0.5
   );
@@ -558,12 +615,12 @@ a.sponsor-entry:hover {
   background:
     repeating-linear-gradient(
       90deg,
-      var(--entry) 0 var(--line),
+      var(--muted) 0 var(--line),
       transparent 0 calc(var(--gap) * 0.5)
     ),
     repeating-linear-gradient(
       180deg,
-      var(--entry) 0 var(--line),
+      var(--muted) 0 var(--line),
       transparent 0 calc(var(--gap) * 0.5)
     );
 }
@@ -724,6 +781,6 @@ a.sponsor-entry:hover {
 .group-center {
   padding: var(--gap);
   text-align: center;
-  background: var(--entry);
+  background: var(--muted);
   border-radius: var(--radius);
 }

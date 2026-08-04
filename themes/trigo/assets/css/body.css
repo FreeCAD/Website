@@ -242,7 +242,7 @@ iframe {
 }
 
 mark {
-  color: var(--entry);
+  color: var(--header);
   padding: 0.125rem 0.25rem;
   border-radius: calc(var(--radius) * 0.5);
   background: var(--tertiary);
@@ -250,7 +250,7 @@ mark {
 
 details {
   margin: var(--gap) auto;
-  background: var(--entry);
+  background: var(--muted);
   border-radius: var(--radius);
   scroll-margin-top: 25vh;
 }
@@ -277,6 +277,7 @@ details:not(:has(> summary))[open] {
 
 details summary {
   padding: var(--gap);
+  background: var(--entry);
   border-radius: var(--radius);
   cursor: zoom-in;
   font-weight: bold;

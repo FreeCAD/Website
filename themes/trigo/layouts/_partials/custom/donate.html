@@ -183,7 +183,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
         <button
           type="submit"
           id="payment-{{ lower .platform }}"
-          class="platform"
+          class="link-thanks"
           formaction="{{ .url }}"
           formmethod="get">
           {{- .platform -}}
@@ -243,15 +243,3 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     }
   {{- end -}}
 </style>
-
-<script>
-const THANKS_PAGE = '{{ with (site.GetPage "thanks") }}{{ .RelPermalink }}{{ else }}#{{ end }}';
-
-document.querySelectorAll('.platform').forEach(link => {
-  link.addEventListener('click', () => {
-    setTimeout(() => {
-      window.location.assign(THANKS_PAGE);
-    }, 1500);
-  });
-});
-</script>

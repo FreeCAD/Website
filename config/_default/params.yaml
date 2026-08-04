@@ -51,9 +51,12 @@ enable_js_toc: true
 enable_js_carousel: true
 enable_js_compare: true
 enable_js_canvas: true
+enable_js_checksum: true
 enable_js_calendar: true
 enable_js_addons: true
 enable_js_donate: true
+enable_js_redirect_to_donate: true
+enable_js_redirect_to_thanks: true
 
 # External and remote interaction
 allow_remote: true
@@ -105,35 +108,14 @@ download:
     label: Windows
     subtitle: Windows 10+
     order: 1
-    packages:
-      - key: msi
-        label: Installer
-        meta: x86-64
-      - key: zip
-        label: Portable
-        meta: x86-64
   - os: mac
     label: macOS
     subtitle: macOS 12+ Monterey
     order: 2
-    packages:
-      - key: x86
-        label: Intel
-        meta: x86-64
-      - key: arm
-        label: Apple Silicon
-        meta: arm64
   - os: linux
     label: GNU/Linux
-    subtitle: Multiple Distributions
+    subtitle: All distributions
     order: 3
-    packages:
-      - key: x86
-        label: x86-64 AppImage
-        meta: amd64
-      - key: arm
-        label: AArch64 AppImage
-        meta: arm64
 
 # Calendar in Community
 calendar:

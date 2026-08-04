@@ -15,72 +15,92 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 
 {{- $page := . -}}
-{{- $release := $page -}}
-{{- $releases := site.GetPage "download/releases" -}}
-{{- with $releases -}}
-  {{- if not (.InSection $page) -}}
-  {{- $pages := sort .RegularPages "Date" "desc" -}}
-    {{- with index $pages 0 -}}
-      {{- $release = . -}}
+{{- $release := dict -}}
+{{- $releases_data := hugo.Data.releases.releases -}}
+
+{{- if $page.IsPage -}}
+  {{- with $page.File -}}
+    {{- $base := replace .ContentBaseName "-" "." -}}
+    {{- range sort $releases_data "published" "desc" -}}
+      {{- if hasPrefix .tag $base -}}
+        {{- $release = . -}}
+        {{- break -}}
+      {{- end -}}
     {{- end -}}
   {{- end -}}
+
+{{- else if and $page.IsSection (not $page.Parent.IsHome) -}}
+  {{- $release = index (sort (where $releases_data "prerelease" true) "published" "desc") 0 -}}
+
+{{- else -}}
+  {{- $release = index (where $releases_data "latest" true) 0 -}}
 {{- end -}}
 
-{{- $builds := $release.Params.builds -}}
-
-{{- if not $release.Params.redirect -}}
+{{- if and $release (not $page.Params.redirect) -}}
 
   {{- with site.Params.download -}}
+
+    {{- $download_title := i18n "download" | default "Download" -}}
+    {{- $checksum_title := i18n "copy_checksum" | default "Copy SHA-256 checksum to clipboard" -}}
 
     {{- if $page.IsPage -}}
       <hr style="width: var(--width);">
       <div class="download-release">
     {{- end -}}
 
-    <h4 class="description">
-      {{- printf "%s %s · %s"
-        (i18n "download" | default "Download")
-        (partial "utils/format_semver.html" $release.Params.versions)
-        ($release.Lastmod | time.Format ":date_long")
-      -}}
-    </h4>
+    <p class="release-title">
+      <strong>{{- printf "%s %s" $download_title $release.tag -}}</strong>
+      <span>{{- $release.published | time.Format ":date_long" }}</span>
+    </p>
 
     <div class="download-box">
-
       {{- range $platform := . -}}
 
-        <div
-          class="download-card"
-          id="{{ $platform.os }}"
-          style="order: {{ $platform.order }};">
+        {{- with index $release.assets $platform.os -}}
 
-          <div class="download-platform">
-            {{- partialCached "utils/icon.html" $platform.os (lower $platform.os) -}}
-            <h3>{{ $platform.label }}</h3>
+          <div
+            class="download-card"
+            id="{{ $platform.os }}"
+            style="order: {{ $platform.order }};">
 
-            {{- with $platform.subtitle -}}
-              <p>{{ . }}</p>
-            {{- end -}}
-          </div>
+            <div class="download-platform">
+              {{- partialCached "utils/icon.html" $platform.os (lower $platform.os) -}}
+              <h3>{{ $platform.label }}</h3>
 
-          {{- with $platform.packages -}}
+              {{- with $platform.subtitle -}}
+                <p>{{ . }}</p>
+              {{- end -}}
+            </div>
+
             <div class="download-buttons">
 
-              {{- range $package := . -}}
+              {{- range $arch, $packages := . -}}
+                {{- range $package, $asset := $packages -}}
 
-                {{- $key := printf "%s_%s" $platform.os $package.key -}}
-                {{- with index $builds $key -}}
-                  <a class="button download-link"
-                    href="{{ . }}"
-                    target="_blank"
-                    rel="external noreferrer nofollow">
-                    {{- partialCached "utils/icon.html" "download" "download" -}}
-                    <strong>{{ $package.label }}</strong>
+                  {{- $link_title := printf "%s %s" $download_title $asset.name -}}
+                  <div class="button">
+                    <a
+                      class="link-donate"
+                      href="{{ $asset.url }}"
+                      title="{{ $link_title }}"
+                      target="_blank"
+                      rel="external noreferrer nofollow">
+                      {{- partialCached "utils/icon.html" "download" "download" -}}
+                      <strong>{{ i18n (printf "%s_%s" $package $arch) | default (printf "%s %s" $arch $package | title) }}</strong>
+                      <span>{{ partial "utils/format_filesize.html" $asset.size }}</span>
+                    </a>
 
-                    {{- with $package.meta -}}
-                      <span>{{ . }}</span>
-                    {{- end -}}
-                  </a>
+                    {{- with $asset.sha256 }}
+                      <button
+                        class="checksum-button"
+                        data-sha256="{{ . }}"
+                        data-title="{{ $checksum_title }}"
+                        title="{{ $checksum_title }}"
+                        aria-label="{{ $checksum_title }}">
+                        {{- partialCached "utils/icon.html" "checksum" "checksum" -}}
+                      </button>
+                    {{- end }}
+                  </div>
                 {{- end -}}
               {{- end -}}
 
@@ -90,18 +110,6 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
       {{- end -}}
     </div>
-
-    <script>
-    const DONATE_PAGE = '{{ with (site.GetPage "donate") }}{{ .RelPermalink }}{{ else }}#{{ end }}';
-
-    document.querySelectorAll('.download-link').forEach(link => {
-      link.addEventListener('click', () => {
-        setTimeout(() => {
-          window.location.assign(DONATE_PAGE);
-        }, 1500);
-      });
-    });
-    </script>
 
   {{- if $page.IsPage -}}</div>{{- end -}}
 
