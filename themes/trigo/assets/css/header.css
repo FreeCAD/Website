@@ -88,11 +88,6 @@ html:not(.dark) .site-nav svg.icon.light {
 
 /* Menu in non-media mode */
 
-.menu-toggle {
-  font-size: var(--l);
-  display: block;
-}
-
 .menu:has(#menu-list:popover-open) svg.icon.hamburger,
 .menu:has(:not(#menu-list:popover-open)) svg.icon.cross {
   display: none;
@@ -162,7 +157,7 @@ li .active:not(.button):hover {
 .language-list li a {
   text-align: center;
   margin: 0.5rem;
-  padding: 0;
+  padding: calc(var(--gap) * 0.5);
   display: inline-block;
 }
 

@@ -305,8 +305,21 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 }
 
 #donation-type input,
-#donation-amount input:not([type="number"]) {
-  display: none;
+#donation-amount input:not([type="number"]),
+#donate-checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+}
+
+:is(
+  #donation-type input,
+  #donation-amount input:not([type="number"]),
+  #donate-checkbox
+):focus-visible + label {
+  outline: var(--outline-focus);
 }
 
 #donation-amount .tiers {
@@ -419,7 +432,6 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   display: block;
 }
 
-#donate-checkbox,
 #donation-payment:has(#donate-checkbox:not(:disabled):checked) [for="donate-checkbox"],
 #donation-payment:has(:is(#donate-checkbox:not(:checked), #donate-checkbox:disabled)) [id^="payment-"],
 #donation-form:has(#monthly:checked) [id="payment-stripe"] {
