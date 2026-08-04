@@ -42,8 +42,8 @@
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/Website/css/styles.bd86a8a9907a785fe45bd10c7fdf5c4c2a61e9ace073d4ea371f40001aeede05.css"
-          integrity="sha256-vYaoqZB6eF/kW9EMf99cTCph6azgc9TqNx9AABru3gU="
+          href="/Website/css/styles.116fa23ef90e94aefa96956c0d7dac2a2e5fb239745495eb42807efa192e6acc.css"
+          integrity="sha256-EW&#43;iPvkOlK76lpVsDX2sKi5fsjl0VJXrQoB&#43;&#43;hkuasw="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -350,22 +350,22 @@
         id="message-monthly-3">Become a Gold sponsor</label><button
           type="submit"
           id="payment-paypal"
-          class="platform"
+          class="link-thanks"
           formaction="https://www.paypal.com/donate/?hosted_button_id=M3Z8BGW6DB69Q"
           formmethod="get">Paypal</button><button
           type="submit"
           id="payment-stripe"
-          class="platform"
+          class="link-thanks"
           formaction="https://donate.stripe.com/14k3ei9TYgwFclq145"
           formmethod="get">Stripe</button><button
           type="submit"
           id="payment-github"
-          class="platform"
+          class="link-thanks"
           formaction="https://github.com/sponsors/freecad"
           formmethod="get">GitHub</button><button
           type="submit"
           id="payment-opencollective"
-          class="platform"
+          class="link-thanks"
           formaction="https://opencollective.com/freecad/donate"
           formmethod="get">OpenCollective</button><button
           type="button"
@@ -428,18 +428,6 @@
       display: block;
       background: color-mix(in srgb, #D4A715 75%, var(--header) 25%);
     }</style>
-
-<script>
-const THANKS_PAGE = '\/Website\/de\/donate\/thanks\/';
-
-document.querySelectorAll('.platform').forEach(link => {
-  link.addEventListener('click', () => {
-    setTimeout(() => {
-      window.location.assign(THANKS_PAGE);
-    }, 1500);
-  });
-});
-</script>
 </section>
 
   <div class="sponsors">
@@ -716,15 +704,7 @@ document.querySelectorAll('.platform').forEach(link => {
           <a
             href="/Website/de/download/">Herunterladen</a><ul><li>
                       <a
-                        href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="external noreferrer nofollow">Development builds<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
-                      <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples an parts library<svg
+                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">
@@ -733,6 +713,9 @@ document.querySelectorAll('.platform').forEach(link => {
                     </li><li>
                       <a
                         href="/Website/de/download/releases/">Releases</a>
+                    </li><li>
+                      <a
+                        href="/Website/de/download/unstable/">Unstable</a>
                     </li></ul></li><li>
           <a
             href="/Website/de/news/">Aktuelles</a><ul><li>
@@ -744,8 +727,6 @@ document.querySelectorAll('.platform').forEach(link => {
                         <a href="/Website/de/categories/">Kategorien</a>
                       </li><li>
                         <a href="/Website/de/tags/">Tags</a>
-                      </li><li>
-                        <a href="/Website/de/versions/">Versionen</a>
                       </li></ul></li><li>
           <a
             href="/Website/de/community/">Community</a><ul><li>
@@ -929,6 +910,10 @@ document.querySelectorAll('.platform').forEach(link => {
     src="/Website/js/donate.min.57b37379efb071f2fa82c3b47573857848c5e032b2e6272168938542583bae73.js"
     type="text/javascript"
     defer integrity="sha256-V7Nzee&#43;wcfL6gsO0dXOFeEjF4DKy5ichaJOFQlg7rnM=" crossorigin="anonymous">
+  </script><script
+    src="/Website/js/de/redirect_to_thanks.min.156e3bd2f6f0f41c5e18239fa7f58f29e6eba7fae34d914043c55bcc0b0890a9.js"
+    type="text/javascript"
+    defer integrity="sha256-FW470vbw9BxeGCOfp/WPKebrp/rjTZFAQ8VbzAsIkKk=" crossorigin="anonymous">
   </script></body>
 
 </html>
