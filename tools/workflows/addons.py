@@ -16,7 +16,6 @@ import hashlib
 import json
 import logging
 import shutil
-import sys
 import xml.etree.ElementTree as ET
 import zipfile
 
@@ -296,13 +295,9 @@ def main() -> int:
         return 0
 
     except RuntimeError as err:
-        logger.error(str(err))
-        return 1
-
-    except Exception as err:
-        logger.exception("Unexpected error occurred")
+        logger.error("%s", err)
         return 1
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    raise SystemExit(main())

@@ -15,7 +15,6 @@ Fetch and process FreeCAD telemetry data as JSON for website use.
 import hashlib
 import json
 import logging
-import sys
 
 from collections import Counter
 from pathlib import Path
@@ -203,13 +202,9 @@ def main() -> int:
         return 0
 
     except RuntimeError as err:
-        logger.error(str(err))
-        return 1
-
-    except Exception as err:
-        logger.exception("Unexpected error occurred")
+        logger.error("%s", err)
         return 1
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    raise SystemExit(main())

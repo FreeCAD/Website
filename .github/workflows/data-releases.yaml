@@ -1,0 +1,67 @@
+name: Update Releases data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 06 * * 4" # Weekly on Thursday 06:00 UTC
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: releases
+  cancel-in-progress: false
+
+jobs:
+  releases:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Restore Releases cache
+        id: cache-restore
+        uses: actions/cache/restore@v6
+        with:
+          path: .cache/releases
+          key: releases-${{ github.ref_name }}
+          restore-keys: |
+            releases-${{ github.ref_name }}-
+            releases-
+
+      - name: Setup Python
+        uses: actions/setup-python@v7
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Run Releases script
+        run: |
+          python tools/workflows/releases.py
+
+      - name: Get date
+        id: date
+        run: |
+          echo "date=$(date -u +'%Y-%m-%d')" >> "$GITHUB_OUTPUT"
+
+      - name: Create Pull Request with updated Releases data
+        uses: peter-evans/create-pull-request@v8
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          add-paths: |
+            data/releases.json
+          commit-message: "Action: Update Releases data - ${{ steps.date.outputs.date }}"
+          title: "Action: Update Releases data - ${{ steps.date.outputs.date }}"
+          body: |
+            Automated update of Releases data.
+          branch: automation/update-releases-${{ steps.date.outputs.date }}
+          delete-branch: true
+
+      - name: Save Releases cache
+        uses: actions/cache/save@v6
+        with:
+          path: .cache/releases
+          key: releases-${{ github.ref_name }}
