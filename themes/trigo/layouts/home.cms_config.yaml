@@ -28,6 +28,7 @@ backend:
   name: {{ index (split ($url.Hostname) ".") 0 }}
   repo: {{ strings.TrimSuffix ".git" (trim $url.Path "/") }}
   branch: {{ site.Params.cms_branch | default "main" }}
+  auth_methods: [token]
 
 {{/*
 # publish_mode: editorial_workflow # NOTE: not supported yet, see
