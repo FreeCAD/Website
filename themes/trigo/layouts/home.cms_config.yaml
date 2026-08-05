@@ -374,6 +374,40 @@ collections:
 
 {{- end }}
 
+  - divider: true
+
+  - name: theme
+    label: Theme i18n
+    icon: language
+    i18n: true
+    files:
+      - name: translations
+        label: Theme Translations
+        file: "{{ "themes/trigo/i18n/{{locale}}.yaml" }}"
+        icon: language
+        i18n: true
+        fields:
+          - name: strings
+            label: i18n strings
+            widget: list
+            root: true
+            summary: "{{ "{{id}} - {{translation}}" }}"
+            i18n: true
+            allow_add: false
+            allow_remove: false
+            allow_duplicate: false
+            allow_reorder: false
+            hint: "{{ "Template variables such as {{ .Count }} are supported." }}"
+            fields:
+              - name: id
+                label: Translation ID
+                widget: string
+                i18n: duplicate
+              - name: translation
+                label: Translation
+                widget: string
+                i18n: true
+
 singletons:
 
   - name: settings
