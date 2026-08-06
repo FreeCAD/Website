@@ -1,0 +1,102 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* RSS feed template. */ -}}
+
+
+{{- $feed_title := cond .IsHome site.Title (printf "%s | %s" site.Title .LinkTitle) -}}
+
+{{- $author_name := "" -}}
+{{- $author_email := "" -}}
+{{- with site.Params.author -}}
+  {{- if reflect.IsMap . -}}
+    {{- with .email -}}
+      {{- $author_email = . -}}
+    {{- end -}}
+    {{- with .name -}}
+      {{- $author_name = . -}}
+    {{- end -}}
+  {{- else -}}
+    {{- $author_name = . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $author := cond $author_email (printf "%s (%s)" $author_name $author_email) $author_name -}}
+
+{{- $pages := slice -}}
+{{- if or .IsHome .IsSection -}}
+  {{- $pages = where site.RegularPages "Section" "news" -}}
+{{- else -}}
+  {{- $pages = site.Pages -}}
+{{- end -}}
+
+{{- $limit := site.Config.Services.RSS.Limit -}}
+{{- if ge $limit 1 -}}
+  {{- $pages = $pages | first $limit -}}
+{{- end -}}
+
+{{- $date := "" -}}
+{{- with first 1 ($pages.ByLastmod.Reverse) -}}
+  {{- $date = (index . 0).Lastmod.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML -}}
+{{- end -}}
+
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML -}}
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>{{ $feed_title }}</title>
+    <link>{{ .Permalink }}</link>
+    <description>{{ i18n "rss_feed" | default "RSS feed" }}</description>
+    <generator>Hugo</generator>
+    <language>{{ site.Language.Locale }}</language>
+
+    {{- with $author }}
+    <managingEditor>{{ . }}</managingEditor>
+    {{- end -}}
+
+    {{- with site.Copyright }}
+    <copyright>{{ . }}</copyright>
+    {{- end -}}
+
+    {{- with $date }}
+    <lastBuildDate>{{ . }}</lastBuildDate>
+    {{- end -}}
+
+    {{- with .OutputFormats.Get "RSS" }}
+    {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML -}}
+    {{- end -}}
+
+    {{- range $pages -}}
+
+    {{- $link := .Permalink }}
+
+    {{- $date := .Date -}}
+    {{- if not .PublishDate.IsZero -}}
+      {{- $date = .PublishDate -}}
+    {{- end -}}
+
+    {{- $description := "" -}}
+    {{- with .Description -}}
+      {{- $description = printf "<p>%s</p>" . -}}
+    {{- end -}}
+    {{- $body := printf "%s<p><a href=%q>Read the full article</a></p>" $description $link }}
+    <item>
+      <title>{{ .Title }}</title>
+      <link>{{ $link }}</link>
+      <pubDate>{{ $date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+      {{- with .Params.authors }}
+      <dc:creator>{{ printf "<![CDATA[%s]]>" . | safeHTML }}</dc:creator>
+      {{- end }}
+      <guid isPermaLink="true">{{ $link }}</guid>
+      {{- with .Params.categories }}
+      <category>{{ . }}</category>
+      {{- end }}
+      <description>{{ printf "<![CDATA[%s]]>" $body | safeHTML }}</description>
+      <content:encoded>{{ printf "<![CDATA[%s]]>" $body | safeHTML }}</content:encoded>
+    </item>
+    {{- end }}
+  </channel>
+</rss>

@@ -50,6 +50,14 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     hreflang="x-default"
     href="{{ site.Home.Permalink }}">
 
+  {{- with .OutputFormats.Get "rss" -}}
+    <link
+      rel="{{ .Rel }}"
+      type="{{ .MediaType.Type }}"
+      href="{{ .Permalink }}"
+      title="{{ site.Title }}">
+  {{- end -}}
+
   {{- if hugo.IsProduction -}}
     {{- /* Get google analytics. */ -}}
     {{- if site.Config.Services.GoogleAnalytics.ID -}}
