@@ -3,11 +3,11 @@
 # Website built with Hugo for PR preview.
 # Artifact deployment to GH pages 'pr-<number>' dir.
 # Clean dir when PR is closed.
-# Manual trigger by '/preview' comment or workflow_dispatch with PR number.
+# Manual trigger by workflow_dispatch with PR number and action choice.
 
 
-name: Preview PR build & deploy
-run-name: Preview PR ${{ inputs.pr }} build & deploy by @${{ github.triggering_actor }}
+name: Preview PR
+run-name: Preview PR ${{ inputs.pr || github.event.pull_request.number }} (${{ inputs.action || 'clean' }}) by @${{ github.triggering_actor }}
 
 on:
   pull_request:
@@ -26,15 +26,19 @@ on:
       - ".github/labeler.yml"
       - "notes/**"
       - "tools/**"
-  delete:
-  issue_comment:
-    types: [created]
   workflow_dispatch:
     inputs:
       pr:
-        description: PR number to build and deploy preview for
+        description: Pull Request number
         required: true
         type: number
+      action:
+        description: Action for PR
+        required: true
+        type: choice
+        options:
+          - deploy
+          - clean
 
 # Sets permissions to allow to write to branches (e.g. pages) and comment on PR
 permissions:
@@ -42,15 +46,13 @@ permissions:
   pull-requests: write
 
 concurrency:
-  group: preview
+  group: preview-${{ inputs.pr || github.event.pull_request.number }}
   cancel-in-progress: true
 
 jobs:
   action:
     if: >
       (github.event_name == 'pull_request' && github.event.action == 'closed') ||
-      github.event_name == 'delete' ||
-      (github.event_name == 'issue_comment' && github.event.issue.pull_request != null) ||
       github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     outputs:
@@ -65,41 +67,20 @@ jobs:
         uses: actions/github-script@v9
         with:
           script: |
-            const isPRComment = !!context.payload.issue?.pull_request;
-            const isPRClose = context.eventName === 'pull_request' && context.payload.action === 'closed';
-            const allowed = ['MEMBER', 'OWNER', 'COLLABORATOR'];
-            const association = context.payload.comment?.author_association;
-
             let action = 'none';
             let prNumber;
 
-            if (isPRComment && allowed.includes(association)) {
-              prNumber = context.payload.issue.number;
-              const body = context.payload.comment.body.trim();
-              if (body === '/preview') action = 'deploy';
-              if (body === '/clean') action = 'clean';
-            }
-
-            if (isPRComment && !allowed.includes(association)) {
-              core.info(`Ignoring comment from ${association} as not allowed.`);
-            }
-
-            if (isPRClose) {
-              prNumber = context.payload.pull_request.number;
-              action = 'clean';
-            }
-
-            if (context.eventName === 'delete') {
-              core.info("Branch deleted but PR number not available.");
-            }
-
-            if (context.eventName === 'workflow_dispatch' && context.payload.inputs?.pr) {
+            if (context.eventName === 'workflow_dispatch') {
+              action = context.payload.inputs.action;
               prNumber = Number(context.payload.inputs.pr);
-              action = 'deploy';
             }
 
-            if (!prNumber) {
-              core.info("No PR number detected; skipping workflow.");
+            if (
+              context.eventName === 'pull_request' &&
+              context.payload.action === 'closed'
+            ) {
+              action = 'clean';
+              prNumber = context.payload.pull_request.number;
             }
 
             core.setOutput('action', action);
@@ -107,7 +88,9 @@ jobs:
 
       - name: Fetch PR details
         id: pr
-        if: steps.determine-action.outputs.pr != ''
+        if: >
+          steps.determine-action.outputs.pr != '' &&
+          steps.determine-action.outputs.action == 'deploy'
         uses: actions/github-script@v9
         env:
           PR_NUMBER: ${{ steps.determine-action.outputs.pr }}
@@ -295,8 +278,8 @@ jobs:
 
       - name: Commit and push cleanup
         run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
           if git diff --quiet; then
             echo "Nothing to commit for cleanup."
@@ -308,7 +291,6 @@ jobs:
 
       - name: Comment cleanup confirmation
         uses: actions/github-script@v9
-        if: github.event_name == 'issue_comment'
         env:
           PR_NUMBER: ${{ needs.action.outputs.pr }}
         with:
