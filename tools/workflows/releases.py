@@ -35,6 +35,18 @@ TIMEOUT: int = 120
 PER_PAGE: int = 100
 MAX_RETRIES: int = 3
 
+SKIPPED_TAGS: set[str] = {"weeklies"}
+PLATFORMS: tuple[str] = ("windows", "linux", "mac")
+IGNORED_ASSETS: tuple[str] = (".txt", ".zsync", ".pdf")
+WINDOWS_PLATFORM: tuple[str] = ("win", "setup", "installer")
+MAC_PLATFORM: tuple[str] = ("mac", "osx")
+ARM_ARCH: tuple[str] = ("aarch64", "arm64")
+X86_64_ARCH: tuple[str] = ("x86_64", "x64", "amd64", "osx_10", "os10", "intel_x86") # Old Intel macOS builds may only contain OS version (e.g. "10.15")
+IA32_ARCH: tuple[str] = ("x86", "x32", "i386", "ia-32")
+WINDOWS_PORTABLE: tuple[str] = (".7z", ".zip")
+WINDOWS_INSTALLER: tuple[str] = (".exe", ".msi")
+MAC_ARCHIVE: tuple[str] = (".zip", ".tar.gz")
+
 
 logger = logging.getLogger(__name__)
 
@@ -124,7 +136,15 @@ def fetch_releases() -> list[dict[str, Any]]:
         if not isinstance(data, list):
             raise RuntimeError("Unexpected GitHub releases response.")
 
-        releases.extend(data)
+        for release in data:
+            tag = release.get("tag_name")
+
+            if tag in SKIPPED_TAGS:
+                logger.info("Skipping release '%s'", tag)
+                continue
+
+            releases.append(release)
+
         url = next_page_url(headers.get("Link"))
 
     return releases
@@ -190,29 +210,28 @@ def classify_asset(asset: dict[str, Any]) -> tuple[str, str, str] | None:
     if name.endswith(".tar.gz") and "source" in name:
         return "source", "", ""
 
-    if any(t in name for t in ("win", "setup", "installer")):
+    if any(t in name for t in WINDOWS_PLATFORM):
         platform = "windows"
     elif "linux" in name or name.endswith(".appimage"):
         platform = "linux"
-    elif any(t in name for t in ("mac", "osx")):
+    elif any(t in name for t in MAC_PLATFORM):
         platform = "mac"
     else:
         return None
 
-    if any(t in name for t in ("aarch64", "arm64")):
+    if any(t in name for t in ARM_ARCH):
         arch = "arm"
-    # Old Intel macOS builds may only contain OS version (e.g. "10.15")
-    elif any(t in name for t in ("x86_64", "x64", "amd64", "10.")):
+    elif any(t in name for t in X86_64_ARCH):
         arch = "x86-64"
-    elif any(t in name for t in ("x86", "x32", "i386", "ia-32")):
+    elif any(t in name for t in IA32_ARCH):
         arch = "ia-32"
     else:
         return None
 
     if platform == "windows":
-        if name.endswith((".7z", ".zip")):
+        if name.endswith(WINDOWS_PORTABLE):
             package = "portable"
-        elif name.endswith((".exe", ".msi")):
+        elif name.endswith(WINDOWS_INSTALLER):
             package = "installer"
         else:
             return None
@@ -226,7 +245,7 @@ def classify_asset(asset: dict[str, Any]) -> tuple[str, str, str] | None:
     elif platform == "mac":
         if name.endswith(".dmg"):
             package = "dmg"
-        elif name.endswith((".zip", ".tar.gz")):
+        elif name.endswith(MAC_ARCHIVE):
             package = "archive"
         else:
             return None
@@ -250,7 +269,7 @@ def build_release(
         if source:
             existing_assets[source["url"]] = source
 
-        for platform in ("windows", "linux", "mac"):
+        for platform in PLATFORMS:
             for arch_assets in existing.get(platform, {}).values():
                 for asset in arch_assets.values():
                     existing_assets[asset["url"]] = asset
@@ -259,7 +278,7 @@ def build_release(
 
         filename: str = raw_asset["name"]
 
-        if filename.endswith((".txt", ".zsync", ".pdf")):
+        if filename.endswith(IGNORED_ASSETS):
             continue
 
         asset_class = classify_asset(raw_asset)
