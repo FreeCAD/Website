@@ -72,3 +72,11 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
       rel="apple-touch-icon"
       href="{{ "apple-touch-icon.png" | relURL }}">
 {{- end -}}
+
+{{- with site.Home.OutputFormats.Get "rss" -}}
+  <link
+    rel="{{ .Rel }}"
+    type="{{ .MediaType.Type }}"
+    href="{{ .Permalink }}"
+    title="{{ site.Title }}">
+{{- end -}}

@@ -22,7 +22,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   </a>
 {{- end -}}
 
-{{- with .OutputFormats.Get "rss" -}}
+{{- with site.Home.OutputFormats.Get "rss" -}}
   <a
     href="{{ .Permalink }}"
     type="{{ .MediaType.Type }}"
