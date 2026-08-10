@@ -267,16 +267,21 @@ jobs:
           fetch-depth: 0
 
       - name: Remove preview directory
+        id: remove-preview
         run: |
           PREVIEW_DIR="pr-${{ needs.action.outputs.pr }}"
+
           if [ -d "$PREVIEW_DIR" ]; then
             rm -rf "$PREVIEW_DIR"
+            echo "removed=true" >> "$GITHUB_OUTPUT"
             echo "Removed $PREVIEW_DIR"
           else
+            echo "removed=false" >> "$GITHUB_OUTPUT"
             echo "No preview directory found"
           fi
 
       - name: Commit and push cleanup
+        if: steps.remove-preview.outputs.removed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -290,6 +295,7 @@ jobs:
           fi
 
       - name: Comment cleanup confirmation
+        if: steps.remove-preview.outputs.removed == 'true'
         uses: actions/github-script@v9
         env:
           PR_NUMBER: ${{ needs.action.outputs.pr }}
