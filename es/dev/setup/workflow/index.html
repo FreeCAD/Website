@@ -94,7 +94,7 @@
   <meta property="og:locale" content="es_ES">
   <meta property="og:type" content="article">
     <meta property="article:section" content="dev">
-    <meta property="article:modified_time" content="2026-05-05T15:27:52+02:00">
+    <meta property="article:modified_time" content="2026-08-10T15:10:34+02:00">
 </head><body
     class="single type-dev kind-page "
     id="top">
@@ -216,7 +216,7 @@
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/time.svg#time"></use>
-  </svg>3 min</span></div></section><nav class="toc">
+  </svg>6 min</span></div></section><nav class="toc">
   <input
     type="checkbox"
     id="toc-checkbox"
@@ -289,6 +289,12 @@
       <ul>
         <li><a href="#submitting-a-pr">Submitting a PR</a></li>
         <li><a href="#pr-review-process">PR Review Process</a></li>
+        <li><a href="#rebasing">Rebasing</a>
+          <ul>
+            <li><a href="#dos">Do&rsquo;s</a></li>
+            <li><a href="#donts">Don&rsquo;ts</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -318,34 +324,32 @@
   </svg></a>
 </h2><p>The basic process is:</p>
 <ol>
-<li>
-<p>Write some code (and possibly some unit tests)</p>
-</li>
-<li>
-<p><code>git add file1.cpp file2.cpp</code></p>
-</li>
-<li>
-<p><code>git commit -m &quot;Sketcher: Fixed bug in constraints&quot; -m &quot;Added foo to bar. Fixes #1234.&quot;</code></p>
-</li>
+<li>Write some code (and possibly some unit tests)</li>
+<li><code>git add file1.cpp file2.cpp</code></li>
+<li><code>git commit -m &quot;Sketcher: Fixed bug in constraints&quot; -m &quot;Added foo to bar. Fixes #1234.&quot;</code></li>
 </ol>
 <ul>
 <li>When running <code>git commit</code> our pre-commit hooks will run to check your code. If the scripts had to make changes, you will have to <code>git add</code> the changed files and run <code>git commit</code> again.</li>
 </ul>
 <ol start="4">
-<li>
-<p><code>git push</code> to send your changes to GitHub</p>
-</li>
-<li>
-<p>Visit <a
+<li><code>git push</code> to send your changes to GitHub</li>
+<li>Visit <a
   href="https://github.com/freecad/freecad"
   class="external-link" target="_blank" rel="external noreferrer nofollow">https://github.com/freecad/freecad<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> &ndash; at the top of the screen you should see a yellow banner suggesting you create a Pull Request. Follow the instructions on the site to get the process started.</p>
-</li>
+  </svg></a> &ndash; at the top of the screen you should see a yellow banner suggesting you create a Pull Request. Follow the instructions on the site to get the process started.</li>
 </ol>
+<p>For PRs that are larger and consist of multiple commits and are larger of size, see the <a
+  href="/Website/es/dev/setup/workflow/#rebasing"
+  class="internal-tooltip hash-link"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg>Rebasing</a> section.</p>
 <h2
   id="pr-review-process">PR Review Process<a class="heading-anchor"
      href="#pr-review-process"
@@ -378,28 +382,112 @@ in the process by reviewing PRs yourself. Although only Maintainers may merge PR
 Maintainers take that feedback into consideration when evaluating PRs. Any time you can contribute to the project is appreciated!</p>
 <p>To expedite the PR review process, consider the following guidelines:</p>
 <ol>
-<li>
-<p>If your PR is still a work-in-progress, please mark it as a &ldquo;Draft&rdquo; so that Maintainers don&rsquo;t spend time reviewing something that is not yet ready to be merged.</p>
-</li>
-<li>
-<p>If you get a question on your PR, it is unlikely to be merged until you respond to that question (particularly if the question is from a Maintainer).</p>
-</li>
-<li>
-<p>The PR review meeting proceeds by going linearly through a list of ready-to-review PRs sorted by least-recently-updated: the goal is that no under-review PR ever sits for more than a week without action.</p>
-</li>
-<li>
-<p>Adding automated tests (in Python or C++) can greatly expedite the review process by providing clear demonstration of how the new code works, and what problem it solves.</p>
-</li>
-<li>
-<p>A good description in your PRs submission text helps Maintainers determine who is best suited to evaluate a PR, and prevents wasting time sorting through the code itself to figure out who should be looking at it.</p>
-</li>
-<li>
-<p>FreeCAD&rsquo;s Maintainer team is currently quite small, and sometimes the Maintainer responsible for a certain part of the code is unable to attend the review meeting: this sometimes unavoidably delays the merge process through no fault of the submitter. We ask for your patience as we work to grow our team.</p>
-</li>
-<li>
-<p>It helps the merge process if you can ensure you have a clean commit history in your PR, squashing any intermediate work and only retaining separate commits for logically separate parts of the PR (in most cases we hope that this is only a single commit).</p>
-</li>
+<li>If your PR is still a work-in-progress, please mark it as a &ldquo;Draft&rdquo; so that Maintainers don&rsquo;t spend time reviewing something that is not yet ready to be merged.</li>
+<li>If you get a question on your PR, it is unlikely to be merged until you respond to that question (particularly if the question is from a Maintainer).</li>
+<li>The PR review meeting proceeds by going linearly through a <a
+  href="https://github.com/orgs/FreeCAD/projects/40"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">manually curated list of ready-to-review PRs<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>: the goal is that no under-review PR ever sits for more than a week without action.</li>
+<li>Adding automated tests (in Python or C++) can greatly expedite the review process by providing a clear demonstration of how the new code works and what problem it solves.</li>
+<li>A good description in your PR&rsquo;s submission text helps Maintainers determine who is best suited to evaluate a PR, and prevents wasting time sorting through the code itself to figure out who should be looking at it.</li>
+<li>FreeCAD&rsquo;s Maintainer team is currently quite small, and sometimes the Maintainer responsible for a certain part of the code is unable to attend the review meeting: this sometimes unavoidably delays the merge process through no fault of the submitter. We ask for your patience as we work to grow our team.</li>
+<li>It helps the merge process if you can ensure you have a clean commit history in your PR, squashing any intermediate work and only retaining separate commits for logically separate parts of the PR and not merging the main branch into your branch PR (in most cases, we hope that this is only a single commit, see <a
+  href="/Website/es/dev/setup/workflow/#rebasing"
+  class="internal-tooltip hash-link"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg>Rebasing</a> for more information).</li>
 </ol>
+<h2
+  id="rebasing">Rebasing<a class="heading-anchor"
+     href="#rebasing"
+     title="Rebasing"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>The PR queue of FreeCAD can become quite lengthy.  This may mean that it takes some time for reviewers to get to review and merge your PR.  This can be frustrating especially for the larger PRs that consist of multiple commits because after some time those PR can become outdated because of other smaller PR that have been merged.</p>
+<p>In this section, we give some do&rsquo;s and don&rsquo;ts for rebasing and to make sure your work can remain up-to-date without much effort.</p>
+<h3
+  id="dos">Do&rsquo;s<a class="heading-anchor"
+     href="#dos"
+     title="Do&rsquo;s"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><ol>
+<li><strong>Small PRs:</strong> Smaller PRs are much easier to rebase.</li>
+<li><strong>Clean commit history</strong>: A clean and logical commit history not only helps the review process (as mentioned above), it also helps rebasing where the rebase maintains the logic.</li>
+<li><strong>Amend the logical commits</strong>: When rebasing, amend the logical commits updating them in such a way as if they were originally written on the updated main branch.  The benefit is that if you need to do a new rebase, you only need to solve the new conflicts and not the old ones again (see don&rsquo;ts 1 and 2).</li>
+</ol>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">*  (main) Core: Update feature 1
+</span></span><span class="line"><span class="cl">*  Gui: Improve the 3D view
+</span></span><span class="line"><span class="cl">*  Sketcher: Update the solver
+</span></span><span class="line"><span class="cl">| *  (my-pr) Test: Add a test for MyModule
+</span></span><span class="line"><span class="cl">| *  Gui: Add Gui support for MyModule
+</span></span><span class="line"><span class="cl">| *  MyModule: Add the new feature
+</span></span><span class="line"><span class="cl">| *  Core: Add support for a new MyModule feature
+</span></span><span class="line"><span class="cl">|/
+</span></span><span class="line"><span class="cl">*  PartDesign: Fix bug #23
+</span></span><span class="line"><span class="cl">*  ...</span></span></code></pre></div></div><p>A rebase should give this:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">*  (my-pr) Test: Add a test for MyModule
+</span></span><span class="line"><span class="cl">*  Gui: Add Gui support for MyModule
+</span></span><span class="line"><span class="cl">*  MyModule: Add the new feature
+</span></span><span class="line"><span class="cl">*  Core: Add support for a new MyModule feature
+</span></span><span class="line"><span class="cl">*  (main) Core: Update feature 1
+</span></span><span class="line"><span class="cl">*  Gui: Improve the 3D view
+</span></span><span class="line"><span class="cl">*  Sketcher: Update the solver
+</span></span><span class="line"><span class="cl">*  PartDesign: Fix bug #23
+</span></span><span class="line"><span class="cl">*  ...</span></span></code></pre></div></div><p>In this example, all conflicts are resolved and stored in the original logical commits with amends to those commits.  It is as if the PR has been based on the new main.  The command to use is: <code>git rebase -i</code> (interactive).</p>
+<h3
+  id="donts">Don&rsquo;ts<a class="heading-anchor"
+     href="#donts"
+     title="Don&rsquo;ts"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><ol>
+<li><strong>Merge main into your PR branch</strong>: This effectively adds a new (merge) commit that captures an update to your PR given changed circumstances.  This does not follow rule 2. &ldquo;Clean commit history&rdquo; because it is not a &ldquo;logical&rdquo; commit.  The merge commit has nothing to do with your work, but has only to do with changed circumstances.  This means that if you need to rebase the PR on top of main, you need to replay all those commits onto main.  This effectively means that you are rebasing your work multiple times.</li>
+<li><strong>Create commits to update to a new main branch</strong>: This follows the same reasoning as above.  It is not a logical commit belonging to the work, which means that each time you need to do a rebase, you need to solve conflicts again and again for the earlier commits.</li>
+</ol>
+<p>The following git history for <code>my-pr</code> is not a clean, logical history:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">*  (main) Core: Update feature 1
+</span></span><span class="line"><span class="cl">*  Gui: Improve the 3D view
+</span></span><span class="line"><span class="cl">*  Sketcher: Update the solver
+</span></span><span class="line"><span class="cl">| *  (my-pr) Fix the test
+</span></span><span class="line"><span class="cl">| *  Test MyModule
+</span></span><span class="line"><span class="cl">| *  Make the Gui really work
+</span></span><span class="line"><span class="cl">| *  Make the Gui work
+</span></span><span class="line"><span class="cl">| *  Fix issue in core
+</span></span><span class="line"><span class="cl">| *  MyModule: Add the new feature
+</span></span><span class="line"><span class="cl">|/
+</span></span><span class="line"><span class="cl">*  PartDesign: Fix bug #23
+</span></span><span class="line"><span class="cl">*  ...</span></span></code></pre></div></div><p>Adapting to the new <code>main</code> branch should not look like this:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">*  (my-pr) Fix for the rebase
+</span></span><span class="line"><span class="cl">*    Merge branch &#39;main&#39; into my-pr
+</span></span><span class="line"><span class="cl">|\
+</span></span><span class="line"><span class="cl">| *  (main) Core: Update feature 1
+</span></span><span class="line"><span class="cl">| *  Gui: Improve the 3D view
+</span></span><span class="line"><span class="cl">| *  Sketcher: Update the solver
+</span></span><span class="line"><span class="cl">* |  Fix the test
+</span></span><span class="line"><span class="cl">* |  Test myModule
+</span></span><span class="line"><span class="cl">* |  Make the Gui really work
+</span></span><span class="line"><span class="cl">* |  Make the Gui work
+</span></span><span class="line"><span class="cl">* |  Fix issue in core
+</span></span><span class="line"><span class="cl">* |  MyModule: Add the new feature
+</span></span><span class="line"><span class="cl">|/
+</span></span><span class="line"><span class="cl">*  PartDesign: Fix bug #23</span></span></code></pre></div></div><p>If you would now rebase <code>my-pr</code> onto <code>main</code>, you would need to solve all conflicts again that are stored into commits &ldquo;Merge branch &lsquo;main&rsquo; into my-pr&rdquo; and &ldquo;Fix for the rebase&rdquo; because all the commits of <code>my-pr</code> are still based on &ldquo;PartDesign: Fix bug #23&rdquo;.  So, having a commit history like this can lead to much double work in making your PR up-to-date with a newly updated main branch.</p>
 </div><footer class="single-footer">
     <nav class="pagination"><a
             class="button next"
@@ -629,9 +717,9 @@ Maintainers take that feedback into consideration when evaluating PRs. Any time 
   </svg></a>
 </span>
 <span>
-    Modified: 2026-05-05
+    Modified: 2026-08-10
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/0ecf4c13f446aea52a7486c8503f448103f5706d">0ecf4c13f4<svg
+      Commit: <a href="https://github.com/freecad/website/commit/67757e319793d3d2dc0842183f4c5fa52c8817e2">67757e3197<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">
