@@ -1,7 +1,7 @@
 ---
 title: Building release packages
 description: How to build FreeCAD packages for the different supported platforms.
-weight: 14
+weight: 15
 ---
 
 

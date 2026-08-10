@@ -1,7 +1,7 @@
 ---
 title: Snap package
 description: Maintaining the Snap package.
-weight: 17
+weight: 18
 ---
 
 

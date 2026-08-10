@@ -1,7 +1,7 @@
 ---
 title: Code signing
 description: Signing the FreeCAD executables and installers.
-weight: 15
+weight: 16
 ---
 
 
