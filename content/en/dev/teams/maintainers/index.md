@@ -24,6 +24,8 @@ This is the list of **current** maintainers & admins.
 
 `Kacper Donat` [GitHub][GitHub-Kadet] [Forum][Forum-Kadet]
 
+`Louis Gombert` [GitHub][GitHub-Lgt2x] [Forum][Forum-lgtx]
+
 `Pieter Hijma` [GitHub][GitHub-pieterhijma] [Forum][Forum-pieterhijma]
 
 `Roy-043` [GitHub][GitHub-Roy] [Forum][Forum-Roy]
@@ -52,6 +54,7 @@ This is the list of **current** maintainers & admins.
 [GitHub-Roy]: https://github.com/Roy-043 'GitHub'
 [GitHub-Connor9220]: https://github.com/Connor9220 'GitHub'
 [GitHub-PieterHijma]: https://github.com/pieterhijma 'GitHub'
+[GitHub-Lgt2x]: https://github.com/Lgt2x 'GitHub'
 
 [Forum-AdrianInsAval]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=19302 'Forum'
 [Forum-WandererFan]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=1375 'Forum'
@@ -64,6 +67,7 @@ This is the list of **current** maintainers & admins.
 [Forum-Roy]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=22936 'Forum'
 [Forum-Connor]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=53853 'Forum'
 [Forum-pieterhijma]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=49078 'Forum'
+[Forum-lgtx]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=85993 'Forum'
 
 
 ## The Role of a Maintainer
