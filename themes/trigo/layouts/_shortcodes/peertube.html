@@ -90,7 +90,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   {{- /* Determine API URL. */ -}}
   {{- $api := "" -}}
   {{- $u := urls.Parse $url -}}
-  {{- if (hasPrefix $u.Scheme "http") -}}
+  {{- if hasPrefix $u.Scheme "http" -}}
     {{- $path := trim $u.Path "/" -}}
     {{- $parts := split $path "/" -}}
     {{- $uuid := index (last 1 $parts) 0 -}}

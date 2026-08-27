@@ -11,23 +11,36 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 {{- $page := . -}}
 {{- $link := "" -}}
+{{- $wiki_url := "https://wiki.freecad.org" -}}
 
-{{- with $page.Params.redirect -}}
-  {{- if and $page.IsSection (eq . "auto") -}}
-    {{- $pages := sort $page.Pages -}}
-    {{- with index $pages 0 -}}
-      {{- $link = .RelPermalink -}}
+{{- if reflect.IsPage $page -}}
+  {{- with $page.Params.redirect -}}
+    {{- if and $page.IsSection (eq . "auto") -}}
+      {{- $pages := sort $page.Pages -}}
+      {{- with index $pages 0 -}}
+        {{- $link = .RelPermalink -}}
+      {{- end -}}
+    {{- else -}}
+      {{- $target := site.GetPage . -}}
+      {{- with $target -}}
+        {{- $link = .RelPermalink -}}
+      {{- else -}}
+        {{- if hasPrefix . $wiki_url -}}
+          {{- $link = printf "%s/%s" . site.Language.Name -}}
+        {{- else -}}
+          {{- $link = . -}}
+        {{- end -}}
+      {{- end -}}
     {{- end -}}
   {{- else -}}
-    {{- $target := site.GetPage . -}}
-    {{- with $target -}}
-      {{- $link = .RelPermalink -}}
-    {{- else -}}
-      {{- $link = . -}}
-    {{- end -}}
+    {{- $link = $page.RelPermalink -}}
   {{- end -}}
 {{- else -}}
-  {{- $link = $page.RelPermalink -}}
+  {{- if hasPrefix $page $wiki_url -}}
+    {{- $link = printf "%s/%s" . site.Language.Name -}}
+  {{- else -}}
+    {{- $link = . -}}
+  {{- end -}}
 {{- end -}}
 
 {{- return $link -}}

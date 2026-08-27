@@ -46,7 +46,10 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   {{- end -}}
 {{- end -}}
 
-{{- $is_external := partialCached "utils/is_external.html" $href $href -}}
+{{- $key := partialCached "utils/cache_key.html" $href $href -}}
+{{- $link := partialCached "utils/link_redirect.html" $href $key -}}
+
+{{- $is_external := partialCached "utils/is_external.html" $link $link -}}
 
 {{- $classes := slice (cond $is_external "external-link" "internal-tooltip") -}}
 {{- if $is_fragment -}}
@@ -54,7 +57,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 {{- end -}}
 
 <a
-  href="{{ $href }}"
+  href="{{ $link }}"
   class="{{ delimit $classes " " }}"
   {{- with .Title }} title="{{ . | plainify }}"{{ end -}}
   {{- if $is_external }} target="_blank" rel="external noreferrer nofollow"{{ end -}}>

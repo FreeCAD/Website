@@ -11,11 +11,15 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 
 {{- $key := "" -}}
-{{- with .File -}}
-  {{- $key = .Path -}}
+{{- if reflect.IsPage . -}}
+  {{- with .File -}}
+    {{- $key = .Path -}}
 
+  {{- else -}}
+    {{- $key = .RelPermalink -}}
+  {{- end -}}
 {{- else -}}
-  {{- $key = .RelPermalink -}}
+  {{- $key = . -}}
 {{- end -}}
 
 {{- return $key -}}

@@ -28,8 +28,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   {{- $class := cond (.IsNamedParams) (.Get "css_class") (.Get 3) -}}
 
   {{- with site.GetPage $url -}}
-    {{- $key := partialCached "utils/cache_key.html" . . -}}
-    {{- $url = partialCached "utils/link_redirect.html" . $key -}}
+    {{- $url = . -}}
     {{- if not $icon -}}
       {{- with .Params.icon -}}
         {{- $icon = . -}}
@@ -44,14 +43,17 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     {{- $label = i18n "open_link" | default "Open link" -}}
   {{- end -}}
 
-  {{- $is_external := partialCached "utils/is_external.html" $url $url -}}
+  {{- $key := partialCached "utils/cache_key.html" $url $url -}}
+  {{- $link := partialCached "utils/link_redirect.html" $url $key -}}
+
+  {{- $is_external := partialCached "utils/is_external.html" $link $link -}}
 
   {{- $classes := slice "button" -}}
   {{- with $class -}}{{- $classes = $classes | append . -}}{{- end -}}
 
   <div class="button-shortcode">
     <a
-      href="{{ $url }}"
+      href="{{ $link }}"
       title="{{ $label }}"
       class="{{ delimit $classes " " }}"
       {{- if $is_external }} target="_blank" rel="external noreferrer nofollow"{{ end -}}>
