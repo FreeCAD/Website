@@ -30,7 +30,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
   {{- $key := partialCached "utils/cache_key.html" . . -}}
 
-  <section class="hero{{ with .Params.background_class }} {{ . }}{{ end }}">
+  <section class="hero">
 
     <h1 class="title{{ with .Params.title_class }} {{ . }}{{ end -}}">
       {{- .Title -}}
@@ -53,7 +53,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     {{- end -}}
 
     {{/* Dynamically include custom hero partials. */}}
-    {{- partial "utils/custom_partials.html" (dict "page" . "where" "hero" "auto" true) $key -}}
+    {{- partial "utils/custom_partials.html" (dict "page" . "where" "hero" "auto" true) -}}
 
     {{- if and
       (eq .Section (index site.MainSections 0))
@@ -95,8 +95,8 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
       <div class="card-list wide">
         <div class="cards">
           {{- range . -}}
-            {{- $card := partialCached "utils/cache_key.html" . . -}}
-            {{- partialCached "main/card.html" . $card -}}
+            {{- $card_key := partialCached "utils/cache_key.html" . . -}}
+            {{- partialCached "main/card.html" . $card_key -}}
           {{- end -}}
         </div>
       </div>
@@ -111,16 +111,22 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   {{- if and .Params.toc .Content (not .Pages) -}}
     {{- partial "main/table_contents.html" . -}}
   {{- end -}}
-  {{- partial "utils/custom_partials.html" (dict "page" . "where" "content") $key -}}
+
+  {{- partial "utils/custom_partials.html" (dict "page" . "where" "content") -}}
 
   {{- /* Get page content. */ -}}
   {{- partial "main/content.html" . -}}
 
   {{- /* List RegularPages, or Sections. */ -}}
-  {{- partial "main/paginator.html" . -}}
+  {{- if or
+    (in .Site.MainSections .Section)
+    (and .RegularPages (not .Sections))
+    (and .Sections (not .RegularPagesRecursive)) -}}
+    {{- partial "main/paginator.html" . -}}
+  {{- end -}}
 
   {{- /* Get pagination to previous and next pages. */ -}}
-  {{- if and site.Params.show_pagination .Content (not .Pages) -}}
+  {{- if and site.Params.show_pagination .Content (and .Pages (and .Parent.IsHome (in site.MainSections .Section))) -}}
     {{- partial "main/pagination.html" . -}}
   {{- end -}}
 

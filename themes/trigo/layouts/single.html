@@ -15,7 +15,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
   {{- $key := partialCached "utils/cache_key.html" . . -}}
 
-  <section class="hero{{ with .Params.background_class }} {{ . }}{{ end }}">
+  <section class="hero">
 
     <h2 class="title{{ with .Params.title_class }} {{ . }}{{ end -}}">
       {{- .Title -}}
@@ -48,7 +48,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   {{- partial "main/content.html" . -}}
 
   {{/* Dynamically include custom content partials. */}}
-  {{- partial "utils/custom_partials.html" (dict "page" . "where" "content" "auto" true) $key -}}
+  {{- partial "utils/custom_partials.html" (dict "page" . "where" "content" "auto" true) -}}
 
   {{- /* Get pagination to previous and next pages. */ -}}
   {{- if site.Params.show_pagination -}}

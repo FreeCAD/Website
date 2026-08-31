@@ -13,6 +13,8 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 */ -}}
 
 
+{{- $key := partialCached "utils/cache_key.html" . . -}}
+
 <footer class="site-footer">
 
   {{- partialCached "footer/top.html" "top" "top" -}}
@@ -60,4 +62,4 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 </footer>
 
 {{- /* Load bunch of JS at end of DOM. */ -}}
-{{- partial "scripts/scripts.html" . -}}
+{{- partialCached "scripts/scripts.html" . $key -}}

@@ -21,11 +21,11 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   {{- $download_title := i18n "download" | default "Download" -}}
   {{- $checksum_title := i18n "copy_checksum" | default "Copy SHA-256 checksum to clipboard" -}}
 
-  {{- $important := i18n "important_unstable" |
-    default "Unstable builds contain experimental changes to test bugfixes, regressions, and recently implemented features." -}}
-  {{- $warn := i18n "warn_unstable" |
-    default "Beware! They can crash and corrupt files. ***Not recommended for production.***" -}}
-  {{- printf "> [!IMPORTANT]\n> %s\n>\n> %s" $important $warn | $.Page.RenderString -}}
+  {{- $unstable_notice := i18n "unstable_notice" |
+    default "Unstable builds contain experimental changes to test bugfixes, regressions, and recently implemented features. They can crash and corrupt files." -}}
+  {{- $notprod_notice := i18n "notprod_notice" |
+    default "***Not recommended for production!***" -}}
+  {{- printf "> [!IMPORTANT]\n> %s\n>\n> %s" $unstable_notice $notprod_notice | $.Page.RenderString -}}
 
   <div class="unstable-list">
 

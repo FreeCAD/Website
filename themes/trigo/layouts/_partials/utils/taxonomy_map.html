@@ -39,9 +39,9 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   {{- $taxonomy_data := dict -}}
   {{- with .Page -}}
     {{- $taxonomy_data = dict
-        "count" (len .Pages)
-        "rel_permalink" .RelPermalink
-        "link_title" .LinkTitle
+      "count" (len .Pages)
+      "rel_permalink" .RelPermalink
+      "link_title" .LinkTitle
     -}}
   {{- end -}}
 

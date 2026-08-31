@@ -15,10 +15,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 
 {{- /* Get latest RegularPages, or Sections for top-level Section. */ -}}
-{{- $pages := .RegularPages -}}
-{{- if and .IsSection .Parent.IsHome (not .Params.no_listing) -}}
-  {{- $pages = union $pages .Sections -}}
-{{- end -}}
+{{- $pages := .Pages -}}
 
 {{- with (.Paginate $pages).Pages -}}
   <div class="card-list wide">

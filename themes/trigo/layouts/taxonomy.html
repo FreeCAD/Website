@@ -18,12 +18,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
   {{- $key := partialCached "utils/cache_key.html" . . -}}
 
-  {{- $classes := slice "hero" -}}
-  {{- with .Params.background_class -}}
-    {{- $classes = $classes | append . -}}
-  {{- end -}}
-
-  <section class="{{ delimit $classes " " }}">
+  <section class="hero">
 
     <h1 class="title">
       {{- partialCached "utils/icon.html" $taxonomy $taxonomy -}}

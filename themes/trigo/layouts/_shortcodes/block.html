@@ -46,16 +46,6 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     {{- $title_classes = $title_classes | append . -}}
   {{- end -}}
 
-  {{- $block_classes := slice "block-shortcode" "wide" -}}
-  {{- with $block_class -}}
-    {{- $block_classes = $block_classes | append . -}}
-  {{- end -}}
-
-  {{- $title_classes := slice "block-title" -}}
-  {{- with $title_class -}}
-    {{- $title_classes = $title_classes | append . -}}
-  {{- end -}}
-
   {{- $content_classes := slice "block-content" -}}
   {{- with $content_class -}}
     {{- $content_classes = $content_classes | append . -}}
@@ -71,7 +61,6 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     {{- end -}}
 
     <div class="{{ delimit $content_classes " " }}">
-
       {{- $content | .Page.RenderString (dict "display" "block") -}}
     </div>
   </div>

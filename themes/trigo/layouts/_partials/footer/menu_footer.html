@@ -89,12 +89,8 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
               {{- end -}}
 
               {{- with .Page -}}
-                {{- if and
-                  (not .IsHome)
-                  (not (eq .Section (index site.MainSections 0)))
-                  (not .Params.no_listing)
-                -}}
-                  {{- range .Pages.ByWeight -}}
+                {{- if and .Sections (not .IsHome) -}}
+                  {{- range .Sections.ByWeight -}}
 
                     {{- $page_url := .RelPermalink -}}
                     {{- $key := partialCached "utils/cache_key.html" . . -}}

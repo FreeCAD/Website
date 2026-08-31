@@ -20,14 +20,20 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 .heading-anchor {
   position: relative;
+  outline: transparent;
 }
 
-svg.icon.anchor {
+.heading-anchor svg {
   opacity: 0;
 }
 
-:is(h1, h2, h3, h4, h5, h6):hover svg.icon.anchor {
+:is(h1, h2, h3, h4, h5, h6):is(:hover, :focus-within) .heading-anchor svg {
   opacity: 1;
+}
+
+:is(h1, h2, h3, h4, h5, h6):focus-within {
+  outline: var(--outline-focus);
+  border-radius: var(--radius);
 }
 
 svg.icon:is(.anchor, .external, .hash) {
@@ -665,7 +671,7 @@ figure .internal-tooltip {
 }
 
 .pagination svg.icon:not(.external) {
-  vertical-align: -0.125rem;
+  vertical-align: calc(var(--gap) * -0.125);
 }
 
 
