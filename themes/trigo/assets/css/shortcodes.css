@@ -438,6 +438,10 @@ input:checked + .branch :is(+ ul, .branch .open) {
   margin: auto;
 }
 
+.card-shortcode > * {
+  margin: auto;
+}
+
 
 /* Group shortcode. */
 
@@ -635,4 +639,26 @@ input:checked + .branch :is(+ ul, .branch .open) {
 .toot-card-title {
   margin-top: 0;
   font-weight: bold;
+}
+
+
+/* Marker shortcode. */
+
+.marker {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap);
+  margin-block-end: var(--gap);
+  color: var(--accent);
+}
+
+.marker span {
+  padding: calc(var(--gap) * 0.5);
+  background: color-mix(in srgb, var(--accent) 25%, var(--header));
+  border-radius: var(--radius);
+}
+
+.marker svg {
+  vertical-align: calc(var(--gap) * -0.125);
 }

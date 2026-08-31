@@ -12,28 +12,36 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   @returns {template.HTML}
 */ -}}
 
+{{- $site_params := site.Params -}}
+{{- $page := . -}}
+{{- if not (reflect.IsPage $page) -}}
+  {{- warnf "_partials/main/card.html: not IsPage: %s" . -}}
+  {{- $page = site.GetPage . -}}
+{{- end -}}
+{{- $href := $page.RelPermalink -}}
+{{- $title := $page.Title -}}
+{{- $description := $page.Description -}}
+{{- $params := $page.Params -}}
+{{- $classes := slice "card" -}}
 
-{{- $params := site.Params -}}
-{{- $href := .RelPermalink -}}
-
-{{- $key := partialCached "utils/cache_key.html" . . -}}
-{{- $href = partialCached "utils/link_redirect.html" . $key -}}
+{{- $key := partialCached "utils/cache_key.html" $page $page -}}
+{{- $href = partialCached "utils/link_redirect.html" $page $key -}}
 
 {{- $is_external := partialCached "utils/is_external.html" $href $href -}}
 
 <a
-  class="card"
+  class="{{ delimit $classes " " }}"
   href="{{ $href }}"
   {{- if $is_external }} target="_blank" rel="external noreferrer nofollow"{{ end -}}>
 
-  {{- with (partialCached "main/thumbnail.html" . $key) -}}
+  {{- with (partialCached "main/thumbnail.html" $page $key) -}}
     {{- . -}}
 
   {{- else -}}
-    <div class="card-color{{ with .Params.background_class }} {{ . }}{{ end }}"
-      {{- with (partialCached "utils/color_hue.html" . $key) }} style="--hue: {{ . }};"{{ end -}}>
+    <div class="card-color"
+      {{- with (partialCached "utils/color_hue.html" $page $key) }} style="--hue: {{ . }};"{{ end -}}>
 
-      {{- with .Params.icon -}}
+      {{- with $params.icon -}}
         <span class="card-icon">
           {{- partialCached "utils/icon.html" . (lower .) -}}
         </span>
@@ -42,30 +50,30 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   {{- end -}}
 
   <h3 class="card-title">
-    {{- .Title -}}
+    {{- $title -}}
 
     {{- if $is_external -}}
       {{- partialCached "utils/icon.html" "external" "external" -}}
     {{- end -}}
 
-    {{- if .Draft }}
+    {{- if $page.Draft -}}
       <sup><span>[{{- i18n "draft" | default "Draft" -}}]</span></sup>
     {{- end -}}
   </h3>
 
-  {{- with .Description -}}
+  {{- with $description -}}
     <p class="card-description">{{ . }}</p>
   {{- end -}}
 
-  {{- if and site.Params.enable_debug (not hugo.IsProduction) -}}
-    {{- with .Weight -}}
+  {{- if and $site_params.enable_debug (not hugo.IsProduction) -}}
+    {{- with $page.Weight -}}
       <h2 style="color: crimson;">Weight: {{ . }}</h2>
     {{- end -}}
   {{- end -}}
 
-  <div class="card-metadata">
-    {{- if $params.show_date -}}
+  {{- if $site_params.show_date -}}
+    <div class="card-metadata">
       {{- partialCached "main/meta_date.html" . $key -}}
-    {{- end -}}
-  </div>
+    </div>
+  {{- end -}}
 </a>

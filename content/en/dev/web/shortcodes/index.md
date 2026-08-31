@@ -71,7 +71,7 @@ This will be hidden by default.
 | 2 | name | string | *optional* | | "name" |
 | 3 | title | string | *optional* | | "title" |
 | 4 | id | string | *optional* | | "id" |
-| 5 | class | string | *optional* | | CSS class |
+| 5 | css_class | string | *optional* | | CSS class |
 
 
 ## Tabs and tab
@@ -230,24 +230,24 @@ Trigo shortcode to display a filetree list with inner content/branches/leaves an
 | Position | Argument| Type | Default | Options | Example value |
 | --- | --- | --- | --- | --- | --- |
 | 0 | label | string | *optional* | | "Tree label" |
-| 1 | class | string | *optional* | custom CSS classes | "accent" |
+| 1 | css_class | string | *optional* | custom CSS classes | "accent" |
 
 <u>`branch` arguments:</u>
 
 | Position | Argument| Type | Default | Options | Example value |
 | --- | --- | --- | --- | --- | --- |
-| 0 | label | string | *optional* | | "label" |
+| 0 | label | string | *optional* | | "Branch label" |
 | 1 | icon | string | "folder" | "folder", "document", "container", "group", "part", "assembly", "arrow", "branch", "fork", "pr", or "versions" | "group" |
 | 2 | state | string | "open" | | "state" |
-| 3 | class | string | *optional* | custom CSS classes | "accent" |
+| 3 | css_class | string | *optional* | custom CSS classes | "accent" |
 
 <u>`leaf` arguments:</u>
 
 | Position | Argument| Type | Default | Options | Example value |
 | --- | --- | --- | --- | --- | --- |
-| 0 | label | string | *optional* | | "label" |
+| 0 | label | string | *optional* | | "Leaf label" |
 | 1 | icon | string | "file" | "file", "body", "feature", "sketch", "item", "element", "leaf", "commit" | "item" |
-| 2 | class | string | *optional* | custom CSS classes | "accent" |
+| 2 | css_class | string | *optional* | custom CSS classes | "accent" |
 
 
 ## Carousel
@@ -346,12 +346,12 @@ The path is relative to the current page bundle. To use resources in the `static
 Trigo shortcode to add a link as a clickable button with optional icon and label.
 
 ```html {file="markdown"}
-{{</* button url="/news" label="See the latest news" icon="time" */>}}
+{{</* button url="/news" label="Button label" icon="time" */>}}
 ```
 
 <u>How it renders:</u>
 
-{{< button url="/news" label="See the latest news" icon="time" >}}
+{{< button url="/news" label="Button label" icon="time" >}}
 
 <u>`button` arguments:</u>
 
@@ -360,7 +360,28 @@ Trigo shortcode to add a link as a clickable button with optional icon and label
 | 0 | url | string | **required** | | "/news" |
 | 1 | label | string | *optional* | | "Button label" |
 | 2 | icon | string | *optional* | | "heart" |
-| 3 | class | string | *optional* | custom CSS classes | "button-accent" |
+| 3 | css_class | string | *optional* | custom CSS classes | "button-accent" |
+
+
+## Marker
+
+Trigo shortcode to add a marker with optional icon and label.
+
+```html {file="markdown"}
+{{</* marker label="Marker label" icon="heart" */>}}
+```
+
+<u>How it renders:</u>
+
+{{< marker label="Marker label" icon="heart" >}}
+
+<u>`button` arguments:</u>
+
+| Position | Argument| Type | Default | Options | Example value |
+| --- | --- | --- | --- | --- | --- |
+| 0 | label | string | *optional* | | "Marker label" |
+| 1 | icon | string | *optional* | | "heart" |
+| 2 | css_class | string | *optional* | custom CSS classes | "accent" |
 
 
 ## Git
@@ -494,6 +515,25 @@ Hugo built-in shortcode to embed a Vimeo video.
 For more information, see [Hugo's Vimeo shortcode](https://gohugo.io/shortcodes/vimeo/).
 
 
+## Card
+
+Trigo shortcode to display an internal page card.
+
+```html {file="markdown"}
+{{</* card url="thanks" */>}}
+```
+
+<u>How it renders:</u>
+
+{{</* card url="thanks" */>}}
+
+<u>`card` arguments:</u>
+
+| Position | Argument| Type | Default | Options | Example value |
+| --- | --- | --- | --- | --- | --- |
+| 0 | url | string | | | "thanks" |
+
+
 ## Collection
 
 Trigo shortcode to display a full-width layout with a collection of pages as cards. These pages come from a section, a specific taxonomy term or are part of a taxonomy.
@@ -516,7 +556,7 @@ Trigo shortcode to display a full-width layout with a collection of pages as car
 | 3 | term | string | *optional* | | "event" |
 | 4 | sort | string | *optional* | | "date" |
 | 5 | reverse | bool | `false` | | `true` |
-| 6 | class | string | *optional* | custom CSS classes | "gradient" |
+| 6 | css_class | string | *optional* | custom CSS classes | "gradient" |
 
 
 ## Block and group
@@ -593,7 +633,7 @@ This is **Markdown** *content* between `block` and `group` shortcode tags.
 | --- | --- | --- | --- | --- | --- |
 | 0 | content | string | `InnerDeindent` | | Note: Place **Markdown** *content* inside block tags |
 | 1 | title | string | *optional* | | "Block title" |
-| 2 | class | string | *optional* | custom CSS classes | "section" |
+| 2 | css_class | string | *optional* | custom CSS classes | "section" |
 | 3 | title_class | string | *optional* | custom CSS classes | "accent" |
 | 4 | content_class | string | *optional* | custom CSS classes | "accent" |
 
@@ -602,4 +642,4 @@ This is **Markdown** *content* between `block` and `group` shortcode tags.
 | Position | Argument| Type | Default | Options | Example value |
 | --- | --- | --- | --- | --- | --- |
 | 0 | content | string | `InnerDeindent` | | Note: Place **Markdown** *content* inside group tags |
-| 1 | class | string | *optional* | custom CSS classes | "accent" |
+| 1 | css_class | string | *optional* | custom CSS classes | "accent" |

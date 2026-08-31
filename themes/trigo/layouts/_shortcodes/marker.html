@@ -1,0 +1,40 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Marker shortcode:
+
+  @param {string} [label] – Optional label for the marker.
+  @param {string} [icon] – Optional icon for the marker.
+  @param {string} [css_class] – Optional CSS class for the marker.
+
+  @return {HTML} Render horizontal block marker with label and icon.
+
+  @example {{< marker label="Marker label" icon="download" >}}
+
+*/ -}}
+
+
+{{- $label := cond (.IsNamedParams) (.Get "label") (.Get 0) -}}
+{{- $icon := cond (.IsNamedParams) (.Get "icon") (.Get 1) -}}
+{{- $class := cond (.IsNamedParams) (.Get "css_class") (.Get 2) -}}
+
+{{- if or $label $icon -}}
+  <div class="marker">
+    {{- with $icon -}}
+      <span
+        {{- with $class }} class="{{ . }}"{{- end -}}>
+        {{- partialCached "utils/icon.html" . . -}}
+      </span>
+    {{- end -}}
+
+    {{- with $label -}}
+      <span
+        {{- with $class }} class="{{ . }}"{{- end -}}>
+        {{- . -}}
+      </span>
+    {{- end -}}
+  </div>
+{{- end -}}
