@@ -90,7 +90,11 @@ FreeCAD evolves every day. Test the very latest changes, fixes, and features.
 FreeCAD is free and open source software under the LGPL-2.0-or-later license.
 Explore the code, understand how it works, contribute improvements, and help shape the future of free, open, and parametric 3D design.
 
-{{< button url="https://github.com/FreeCAD/FreeCAD" label="FreeCAD code" icon="code" >}}
+{{< button url="https://github.com/FreeCAD/FreeCAD" label="FreeCAD code on GitHub" icon="github" >}}
+
+{{< button url="https://gitlab.com/freecad/FreeCAD" label="FreeCAD code on GitLab" icon="gitlab" >}}
+
+{{< button url="https://codeberg.org/FreeCAD/FreeCAD" label="FreeCAD code on Codeberg" icon="codeberg" >}}
 
 {{< /group >}}
 
