@@ -71,9 +71,11 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     {{- end -}}
   {{- end -}}
 
-  {{- if $site_params.show_date -}}
+  {{- if and $site_params.show_date $site_params.show_taxonomy -}}
     <div class="card-metadata">
       {{- partialCached "main/meta_date.html" . $key -}}
+
+      {{- partialCached "main/meta_taxonomy.html" (dict "page" . "taxonomies" (slice "categories")) $key -}}
     </div>
   {{- end -}}
 </a>

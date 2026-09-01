@@ -2,6 +2,7 @@
 title: Innovate without limits
 linkTitle: Features
 description: Powerful and open parametric design for everyone.
+icon: stars
 icon_cms: bolt
 ---
 

@@ -23,6 +23,7 @@ donate:
     messages:
       default: Choose the monthly sponsorship level
   corporate_label: Corporate
+icon: heart
 icon_cms: favorite
 ---
 

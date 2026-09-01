@@ -525,7 +525,7 @@ Trigo shortcode to display an internal page card.
 
 <u>How it renders:</u>
 
-{{</* card url="thanks" */>}}
+{{< card url="thanks" >}}
 
 <u>`card` arguments:</u>
 

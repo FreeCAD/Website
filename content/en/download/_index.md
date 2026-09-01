@@ -2,6 +2,7 @@
 title: Launch into design!
 linkTitle: Download
 description: Get FreeCAD and start with freedom right away.
+icon: download
 icon_cms: download
 ---
 

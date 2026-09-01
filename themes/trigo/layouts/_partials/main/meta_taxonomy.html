@@ -6,13 +6,19 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 {{- /* Page taxonomy metadata. */ -}}
 
+{{- $page := . -}}
+{{- $taxonomies := slice -}}
+{{- if reflect.IsMap $page -}}
+  {{- $page = .page -}}
+  {{- $taxonomies = .taxonomies -}}
+{{- end -}}
 
-{{- $taxonomy_map := partialCached "utils/taxonomy_map.html" . "taxonomy_map" -}}
+{{- $taxonomy_map := partialCached "utils/taxonomy_map.html" $page "taxonomy_map" -}}
 
 {{- range $taxonomy, $terms := site.Taxonomies -}}
 
-  {{- if isset $.Params $taxonomy -}}
-    {{- $page_terms := (index $.Params $taxonomy) | default (slice) -}}
+  {{- if and (or (not $taxonomies) (in $taxonomies $taxonomy)) (isset $page.Params $taxonomy) -}}
+    {{- $page_terms := (index $page.Params $taxonomy) | default slice -}}
     {{- if not (reflect.IsSlice $page_terms) -}}
       {{- $page_terms = slice $page_terms -}}
     {{- end -}}
@@ -25,9 +31,9 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
         {{- range $page_terms -}}
           {{- $term := index $tax (. | anchorize) -}}
           {{- with $term -}}
-            <a href="{{ .rel_permalink }}">
+            {{- if not $taxonomies -}}<a href="{{ .rel_permalink }}">{{- end -}}
               {{- printf "%s (%d)" .link_title .count -}}
-            </a>
+            {{- if not $taxonomies -}}</a>{{- end -}}
           {{- end -}}
         {{- end -}}
       </span>
