@@ -862,140 +862,91 @@ collections:
 
   - divider: true
 
-  - name: donate-pages
+  - name: donate-section
     label: Donate
-    description: Donate collection
-    folder: content
-    path: 'donate/{{slug}}/_index'
+    description: Donate section
     media_folder: ""
     public_folder: ""
     thumbnail: cover.image
     icon: favorite
-    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{authors | default('no authors')}} · {{locales | upper}}"
-    reorder:
-      key: weight
     i18n: true
-
-    sortable_fields:
-      fields: [title, date, authors]
-      default:
-        field: date
-        direction: descending
-
-    view_groups:
-      groups:
-        - name: year
-          label: Year
-          field: date
-          pattern: '\d{4}'
-        - name: category
-          label: Categories
-          field: categories
-      default: year
-
-    view_filters:
-      filters:
-        - name: drafts
-          label: Drafts
-          field: draft
-          pattern: true
-        - name: posts_2023
-          label: Posted in 2023
-          field: date
-          pattern: '^2023'
-        - name: posts_2024
-          label: Posted in 2024
-          field: date
-          pattern: '^2024'
-        - name: posts_2025
-          label: Posted in 2025
-          field: date
-          pattern: '^2025'
-        - name: posts_2026
-          label: Posted in 2026
-          field: date
-          pattern: '^2026'
-        
-
-    index_file:
-      label: Donate Index
-      icon: home
-      i18n: true
-      fields:
-        - name: title
-          label: Title
-          widget: string
-          i18n: true
-        - name: description
-          label: Description
-          widget: string
-          i18n: true
-        - name: linkTitle
-          label: Link Title
-          widget: string
-          i18n: true
-          required: false
-        - name: redirect
-          label: Redirect
-          widget: string
-          i18n: duplicate
-          required: false
-        - name: cover
-          label: Cover
-          widget: object
-          i18n: true
-          required: false
-          fields:
-            - { name: image, label: Image, widget: image, i18n: duplicate, required: false }
-            - { name: caption, label: Caption, widget: string, i18n: true, required: false }
-        - name: body
-          label: Body
-          widget: richtext
-          i18n: true
-          required: false
-
-    fields:
-      - name: title
-        label: Title
-        widget: string
+    files:
+      - name: donate-section-index
+        label: Donate
+        file: content/{{locale}}/donate/_index.md
+        icon: favorite
         i18n: true
-      - name: description
-        label: Description
-        widget: string
-        i18n: true
-        required: false
-      - name: linkTitle
-        label: Link Title
-        widget: string
-        i18n: true
-        required: false
-      - name: redirect
-        label: Redirect
-        widget: string
-        i18n: duplicate
-        required: false
-      - name: date
-        label: Date
-        widget: datetime
-        i18n: duplicate
-      - name: draft
-        label: Draft
-        widget: boolean
-        default: false
-        i18n: duplicate
-        required: false
-      - name: cover
-        label: Cover
-        widget: object
-        i18n: true
-        required: false
         fields:
-          - { name: image, label: Image, widget: image, i18n: duplicate, required: false }
-          - { name: caption, label: Caption, widget: string, i18n: true, required: false }
-      - name: body
-        label: Body
-        widget: richtext
+          - name: title
+            label: Title
+            widget: string
+            i18n: true
+          - name: description
+            label: Description
+            widget: string
+            i18n: true
+          - name: linkTitle
+            label: Link Title
+            widget: string
+            i18n: true
+            required: false
+          - name: cover
+            label: Cover
+            widget: object
+            i18n: true
+            required: false
+            fields:
+              - { name: image, label: Image, widget: image, i18n: duplicate, required: false }
+              - { name: caption, label: Caption, widget: string, i18n: true, required: false }
+          - name: body
+            label: Body
+            widget: richtext
+            i18n: true
+            required: false
+
+  - divider: true
+
+  - name: thanks-section
+    label: Thanks
+    description: Thanks section
+    media_folder: ""
+    public_folder: ""
+    thumbnail: cover.image
+    icon: <no value>
+    i18n: true
+    files:
+      - name: thanks-section-index
+        label: Thanks
+        file: content/{{locale}}/thanks/_index.md
+        icon: <no value>
         i18n: true
+        fields:
+          - name: title
+            label: Title
+            widget: string
+            i18n: true
+          - name: description
+            label: Description
+            widget: string
+            i18n: true
+          - name: linkTitle
+            label: Link Title
+            widget: string
+            i18n: true
+            required: false
+          - name: cover
+            label: Cover
+            widget: object
+            i18n: true
+            required: false
+            fields:
+              - { name: image, label: Image, widget: image, i18n: duplicate, required: false }
+              - { name: caption, label: Caption, widget: string, i18n: true, required: false }
+          - name: body
+            label: Body
+            widget: richtext
+            i18n: true
+            required: false
 
   - divider: true
 

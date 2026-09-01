@@ -42,8 +42,8 @@
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/Website/css/styles.116fa23ef90e94aefa96956c0d7dac2a2e5fb239745495eb42807efa192e6acc.css"
-          integrity="sha256-EW&#43;iPvkOlK76lpVsDX2sKi5fsjl0VJXrQoB&#43;&#43;hkuasw="
+          href="/Website/css/styles.400b0c94f0f9310cdaa6c370561feb05bf83ebe915616ba88f065160b5d34f81.css"
+          integrity="sha256-QAsMlPD5MQzapsNwVh/rBb&#43;D6&#43;kVYWuojwZRYLXTT4E="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -94,7 +94,7 @@
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="dev">
-    <meta property="article:modified_time" content="2026-06-27T13:19:47+02:00">
+    <meta property="article:modified_time" content="2026-08-31T13:33:55+02:00">
 </head><body
     class="single type-dev kind-page "
     id="top">
@@ -216,7 +216,7 @@
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/time.svg#time"></use>
-  </svg>9 分钟</span></div></section><nav class="toc">
+  </svg>10 分钟</span></div></section><nav class="toc">
   <input
     type="checkbox"
     id="toc-checkbox"
@@ -307,12 +307,14 @@
         <li><a href="#compare">Compare</a></li>
         <li><a href="#canvas">Canvas</a></li>
         <li><a href="#button">Button</a></li>
+        <li><a href="#marker">Marker</a></li>
         <li><a href="#git">Git</a></li>
         <li><a href="#pdf">PDF</a></li>
         <li><a href="#video">Video</a></li>
         <li><a href="#peertube">Peertube</a></li>
         <li><a href="#youtube">YouTube</a></li>
         <li><a href="#vimeo">Vimeo</a></li>
+        <li><a href="#card">Card</a></li>
         <li><a href="#collection">Collection</a></li>
         <li><a href="#block-and-group">Block and group</a></li>
       </ul>
@@ -464,7 +466,7 @@ Most shortcodes support both named and positional arguments.</p>
       </tr>
       <tr>
           <td>5</td>
-          <td>class</td>
+          <td>css_class</td>
           <td>string</td>
           <td><em>optional</em></td>
           <td></td>
@@ -791,7 +793,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
       </tr>
       <tr>
           <td>1</td>
-          <td>class</td>
+          <td>css_class</td>
           <td>string</td>
           <td><em>optional</em></td>
           <td>custom CSS classes</td>
@@ -818,7 +820,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
           <td>string</td>
           <td><em>optional</em></td>
           <td></td>
-          <td>&ldquo;label&rdquo;</td>
+          <td>&ldquo;Branch label&rdquo;</td>
       </tr>
       <tr>
           <td>1</td>
@@ -838,7 +840,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
       </tr>
       <tr>
           <td>3</td>
-          <td>class</td>
+          <td>css_class</td>
           <td>string</td>
           <td><em>optional</em></td>
           <td>custom CSS classes</td>
@@ -865,7 +867,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
           <td>string</td>
           <td><em>optional</em></td>
           <td></td>
-          <td>&ldquo;label&rdquo;</td>
+          <td>&ldquo;Leaf label&rdquo;</td>
       </tr>
       <tr>
           <td>1</td>
@@ -877,7 +879,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
       </tr>
       <tr>
           <td>2</td>
-          <td>class</td>
+          <td>css_class</td>
           <td>string</td>
           <td><em>optional</em></td>
           <td>custom CSS classes</td>
@@ -1232,17 +1234,17 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/words.svg#words"></use>
-  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">button</span><span class="w"> </span><span class="nx">url</span><span class="o">=</span><span class="s">&#34;/news&#34;</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;See the latest news&#34;</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="s">&#34;time&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">button</span><span class="w"> </span><span class="nx">url</span><span class="o">=</span><span class="s">&#34;/news&#34;</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;Button label&#34;</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="s">&#34;time&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
 <div class="button-shortcode">
     <a
       href="/Website/zh/news/"
-      title="See the latest news"
+      title="Button label"
       class="button"><svg
     class="icon time"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/time.svg#time"></use>
-  </svg>See the latest news</a>
+  </svg>Button label</a>
   </div>
 <p><u><code>button</code> arguments:</u></p>
 <table>
@@ -1283,11 +1285,72 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
       </tr>
       <tr>
           <td>3</td>
-          <td>class</td>
+          <td>css_class</td>
           <td>string</td>
           <td><em>optional</em></td>
           <td>custom CSS classes</td>
           <td>&ldquo;button-accent&rdquo;</td>
+      </tr>
+  </tbody>
+</table>
+<h2
+  id="marker">Marker<a class="heading-anchor"
+     href="#marker"
+     title="Marker"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Trigo shortcode to add a marker with optional icon and label.</p>
+<div class="codeblock"><div class="codeblock-file"><svg
+    class="icon words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/words.svg#words"></use>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">marker</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;Marker label&#34;</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="s">&#34;heart&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+<div class="marker"><span><svg
+    class="icon heart"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/heart.svg#heart"></use>
+  </svg></span><span>Marker label</span></div>
+<p><u><code>button</code> arguments:</u></p>
+<table>
+  <thead>
+      <tr>
+          <th>Position</th>
+          <th>Argument</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Options</th>
+          <th>Example value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>label</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td></td>
+          <td>&ldquo;Marker label&rdquo;</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>icon</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td></td>
+          <td>&ldquo;heart&rdquo;</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>css_class</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td>custom CSS classes</td>
+          <td>&ldquo;accent&rdquo;</td>
       </tr>
   </tbody>
 </table>
@@ -1651,6 +1714,46 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     <use href="/Website/svg/external.svg#external"></use>
   </svg></a>.</p>
 <h2
+  id="card">Card<a class="heading-anchor"
+     href="#card"
+     title="Card"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Trigo shortcode to display an internal page card.</p>
+<div class="codeblock"><div class="codeblock-file"><svg
+    class="icon words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/words.svg#words"></use>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">card</span><span class="w"> </span><span class="nx">url</span><span class="o">=</span><span class="s">&#34;thanks&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+<p>{{&lt; card url=&ldquo;thanks&rdquo; &gt;}}</p>
+<p><u><code>card</code> arguments:</u></p>
+<table>
+  <thead>
+      <tr>
+          <th>Position</th>
+          <th>Argument</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Options</th>
+          <th>Example value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>url</td>
+          <td>string</td>
+          <td></td>
+          <td></td>
+          <td>&ldquo;thanks&rdquo;</td>
+      </tr>
+  </tbody>
+</table>
+<h2
   id="collection">Collection<a class="heading-anchor"
      href="#collection"
      title="Collection"><svg
@@ -1675,24 +1778,21 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/directions.svg#directions"></use>
-  </svg></span></div><h3 class="card-title">Contributors, welcome!</h3><p class="card-description">Want to contribute to FreeCAD? Start here.</p><div class="card-metadata"></div>
-</a><a
+  </svg></span></div><h3 class="card-title">Contributors, welcome!</h3><p class="card-description">Want to contribute to FreeCAD? Start here.</p><div class="card-metadata"></div></a><a
   class="card"
   href="/Website/zh/dev/teams/"><div class="card-color" style="--hue: 100;"><span class="card-icon"><svg
     class="icon people"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/people.svg#people"></use>
-  </svg></span></div><h3 class="card-title">Teams</h3><p class="card-description">The Teams of contributors making FreeCAD happen.</p><div class="card-metadata"></div>
-</a><a
+  </svg></span></div><h3 class="card-title">Teams</h3><p class="card-description">The Teams of contributors making FreeCAD happen.</p><div class="card-metadata"></div></a><a
   class="card"
   href="/Website/zh/dev/setup/build/"><div class="card-color" style="--hue: 110;"><span class="card-icon"><svg
     class="icon gear"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/gear.svg#gear"></use>
-  </svg></span></div><h3 class="card-title">Development Setup</h3><p class="card-description">Set the development up, build, run, enjoy!</p><div class="card-metadata"></div>
-</a></div>
+  </svg></span></div><h3 class="card-title">Development Setup</h3><p class="card-description">Set the development up, build, run, enjoy!</p><div class="card-metadata"></div></a></div>
   </div>
 <p><u><code>collection</code> arguments:</u></p>
 <table>
@@ -1757,7 +1857,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
       </tr>
       <tr>
           <td>6</td>
-          <td>class</td>
+          <td>css_class</td>
           <td>string</td>
           <td><em>optional</em></td>
           <td>custom CSS classes</td>
@@ -1947,7 +2047,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
       </tr>
       <tr>
           <td>2</td>
-          <td>class</td>
+          <td>css_class</td>
           <td>string</td>
           <td><em>optional</em></td>
           <td>custom CSS classes</td>
@@ -1994,7 +2094,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
       </tr>
       <tr>
           <td>1</td>
-          <td>class</td>
+          <td>css_class</td>
           <td>string</td>
           <td><em>optional</em></td>
           <td>custom CSS classes</td>
@@ -2095,7 +2195,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
           <a
             href="/Website/zh/docs/" aria-current="page" class="active">文档</a><ul><li>
                   <a
-                    href="https://wiki.freecad.org/User_hub" target="_blank" rel="external noreferrer nofollow">User manual<svg
+                    href="https://wiki.freecad.org/User_hub/zh" target="_blank" rel="external noreferrer nofollow">User manual<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">
@@ -2231,9 +2331,9 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
   </svg></a>
 </span>
 <span>
-    Modified: 2026-06-27
+    Modified: 2026-08-31
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/6cd0fe9f7eca6dfa94073171c4ffa6bf28958345">6cd0fe9f7e<svg
+      Commit: <a href="https://github.com/freecad/website/commit/feb67ef82bf3983b52a3df0a89208f79c1bd35c5">feb67ef82b<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">
