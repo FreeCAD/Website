@@ -645,137 +645,46 @@ a.sponsor-entry:hover {
   color: transparent;
 }
 
-:not(h1, h2, h3, h4, h5, h6).pastel1 {
-  color: dimgrey;
+.pastel1 { --hue: 15; } /* Peach */
+.pastel2 { --hue: 60; } /* Apricot */
+.pastel3 { --hue: 120; } /* Sage */
+.pastel4 { --hue: 180; } /* Water */
+.pastel5 { --hue: 270; } /* Lavender */
+.pastel6 { --hue: 330; } /* Rose */
+
+[class*="pastel"] {
+  --bg1: oklch(90% 7.5% var(--hue));
+  --bg2: oklch(95% 2.5% var(--hue));
+  --bg3: oklch(85% 5% var(--hue));
+  --fg1: oklch(40% 30% var(--hue));
+  --fg2: oklch(60% 15% var(--hue));
   background: linear-gradient(
     var(--angle),
-    #ffd6e0,
-    #fff3b0,
-    #caffbf
+    var(--bg1),
+    var(--bg2),
+    var(--bg3)
   );
 }
 
-:is(h1, h2, h3).pastel1, .pastel1 > :is(h1, h2, h3) {
+.dark [class*="pastel"] {
+  --bg1: oklch(20% 7.5% var(--hue));
+  --bg2: oklch(15% 2.5% var(--hue));
+  --bg3: oklch(25% 5% var(--hue));
+  --fg1: oklch(60% 30% var(--hue));
+  --fg2: oklch(80% 15% var(--hue));
+}
+
+[class*="pastel"] > :is(h1, h2, h3),
+[class*="pastel"]:is(h1, h2, h3) {
   background: linear-gradient(
     var(--angle),
-    #ff5c8a,
-    #4caf50
+    var(--fg1),
+    var(--fg2)
   );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
-  color: transparent;
-}
-
-:not(h1, h2, h3, h4, h5, h6).pastel2 {
-  color: dimgrey;
-  background: linear-gradient(
-    var(--angle),
-    #e0c3fc,
-    #f9f7ff,
-    #c3f0ff
-  );
-}
-
-:is(h1, h2, h3).pastel2, .pastel2 > :is(h1, h2, h3) {
-  background: linear-gradient(
-    var(--angle),
-    #7c4dff,
-    #3b82f6
-  );
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
   color: transparent;
-}
-
-:not(h1, h2, h3, h4, h5, h6).pastel3 {
-  color: dimgrey;
-  background: linear-gradient(
-    var(--angle),
-    #dbe6c4,
-    #c3d2a4,
-    #aebf7a,
-    #8f9f5a
-  );
-}
-
-:is(h1, h2, h3).pastel3, .pastel3 > :is(h1, h2, h3) {
-  background: linear-gradient(
-    var(--angle),
-    #7a8f3d,
-    #556b2f
-  );
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-}
-
-:not(h1, h2, h3, h4, h5, h6).pastel4 {
-  color: dimgrey;
-  background: linear-gradient(
-    var(--angle),
-    #ffe7d6,
-    #ffd6e7,
-    #e6d6ff
-  );
-}
-
-:is(h1, h2, h3).pastel4, .pastel4 > :is(h1, h2, h3) {
-  background: linear-gradient(
-    var(--angle),
-    #c86b5a,
-    #7b61c9
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-}
-
-:not(h1, h2, h3, h4, h5, h6).pastel5 {
-  color: dimgrey;
-  background: linear-gradient(
-    var(--angle),
-    #dfffe2,
-    #d6fff5,
-    #d6ecff
-  );
-}
-
-:is(h1, h2, h3).pastel5, .pastel5 > :is(h1, h2, h3) {
-  background: linear-gradient(
-    var(--angle),
-    #2f9a73,
-    #3d74d8
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-}
-
-:not(h1, h2, h3, h4, h5, h6).pastel6 {
-  color: dimgrey;
-  background: linear-gradient(
-    var(--angle),
-    #fff8e7,
-    #ffe4e1,
-    #fff0c9
-  );
-}
-
-:is(h1, h2, h3).pastel6, .pastel6 > :is(h1, h2, h3) {
-  background: linear-gradient(
-    var(--angle),
-    #ce4125,
-    #c78b09
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
 }
 
 .group-center {
