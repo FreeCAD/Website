@@ -1,0 +1,645 @@
+/*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/
+
+/* Homepage CSS stylesheet. */
+
+/* Hero. */
+
+.home-hero {
+  min-height: clamp(34rem, 76vh, 48rem);
+  justify-content: center;
+  gap: calc(var(--gap) * 3);
+  isolation: isolate;
+}
+
+.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.45;
+  pointer-events: none;
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--accent) 16%, transparent) var(--line), transparent var(--line)),
+    linear-gradient(90deg, color-mix(in srgb, var(--accent) 16%, transparent) var(--line), transparent var(--line));
+  background-size: 3rem 3rem;
+  mask-image: linear-gradient(90deg, transparent 5%, black 65%, transparent 100%);
+}
+
+.home-hero-copy {
+  align-items: flex-start;
+  text-align: start;
+  width: 100%;
+  min-width: 0;
+}
+
+.home-hero .title {
+  display: block;
+  width: 100%;
+  max-width: 11ch;
+  margin: 0;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.home-hero .description {
+  display: block;
+  width: 100%;
+  max-width: 38rem;
+  margin: 0;
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+
+.home-hero .buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--gap) * 0.5);
+}
+
+.home-hero .button {
+  margin: 0;
+}
+
+.home-hero .button.primary {
+  color: var(--theme);
+  background: var(--accent);
+}
+
+.home-hero .button.primary:hover {
+  background: var(--accent-hover);
+}
+
+.home-platforms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--gap) * 0.5);
+  margin: 0;
+  color: var(--tertiary);
+  font-size: var(--s);
+}
+
+.home-platforms span:not([aria-hidden]) {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--gap) * 0.2);
+}
+
+.home-platforms svg.icon {
+  width: 1em;
+  height: 1em;
+  margin: 0;
+}
+
+.home-hero-visual {
+  align-items: center;
+  justify-content: center;
+}
+
+.home-hero-visual:focus-visible {
+  outline: var(--outline-focus);
+  outline-offset: calc(var(--gap) * 0.25);
+}
+
+.home-hero-visual figure {
+  position: relative;
+  overflow: hidden;
+  border: var(--line) solid color-mix(in srgb, var(--accent) 35%, transparent);
+  border-radius: calc(var(--radius) * 2);
+  background: var(--entry);
+  box-shadow: 0 1.5rem 4rem color-mix(in srgb, var(--primary) 18%, transparent);
+}
+
+.home-hero-visual img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 1000px) {
+  .home-hero-copy {
+    flex: 0 1 44%;
+  }
+
+  .home-hero-visual {
+    flex: 0 1 56%;
+    max-width: calc(var(--width) * 0.56);
+  }
+}
+
+.kind-home .content,
+.kind-home .content p {
+  text-align: start;
+}
+
+.kind-home .block-title {
+  width: 100%;
+  margin-inline: auto;
+  text-wrap: balance;
+}
+
+/* Benefit cards. */
+
+.home-paths .group,
+.home-workflows .group {
+  padding: var(--gap);
+  border-radius: var(--radius);
+  background: var(--entry);
+  box-shadow: var(--shadow);
+}
+
+.home-benefits .group {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto minmax(3em, auto) 1fr;
+  gap: calc(var(--gap) * 0.7);
+  margin: 0;
+  padding: calc(var(--gap) * 1.15) calc(var(--gap) * 1.25);
+  background: color-mix(in srgb, var(--entry) 52%, transparent);
+  border: var(--line) solid color-mix(in srgb, var(--primary) 8%, transparent);
+  border-radius: var(--radius);
+  transition:
+    background-color 180ms ease-out,
+    border-color 180ms ease-out;
+}
+
+.home-benefits .group::before {
+  content: "";
+  position: absolute;
+  inset-block: calc(var(--gap) * 0.8);
+  inset-inline-start: 0;
+  width: calc(var(--line) * 1.5);
+  background: color-mix(in srgb, var(--accent) 72%, transparent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.home-benefits .group:is(:hover, :focus-within) {
+  background: color-mix(in srgb, var(--entry) 72%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.home-benefits .block-content {
+  --card-gap: clamp(var(--gap), 2.5vw, calc(var(--gap) * 1.75));
+}
+
+.home-benefits .marker {
+  min-height: 2.25rem;
+  margin: 0;
+  align-self: start;
+}
+
+.home-benefits .group h3 {
+  min-height: 2.5em;
+  margin: 0;
+  align-self: start;
+  font-size: clamp(1.2rem, 1.55vw, 1.45rem);
+  line-height: 1.25;
+}
+
+.home-benefits .group > p {
+  margin: 0;
+  align-self: start;
+  line-height: 1.6;
+}
+
+/* Next-step cards. */
+
+.home-paths .group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
+  margin: 0;
+  padding: calc(var(--gap) * 1.25);
+  border: var(--line) solid color-mix(in srgb, var(--accent) 16%, transparent);
+  background: color-mix(in srgb, var(--entry) 88%, transparent);
+  transition:
+    transform 180ms ease-out,
+    border-color 180ms ease-out,
+    box-shadow 180ms ease-out;
+}
+
+.home-paths .block-content {
+  --card-gap: var(--gap);
+}
+
+.home-paths .group::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: calc(var(--line) * 3);
+  background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 25%, transparent));
+}
+
+.home-paths .group:nth-child(2)::before {
+  opacity: 0.78;
+}
+
+.home-paths .group:nth-child(3)::before {
+  opacity: 0.58;
+}
+
+.home-paths .group:is(:hover, :focus-within) {
+  transform: translateY(calc(var(--gap) * -0.15));
+  border-color: color-mix(in srgb, var(--accent) 42%, transparent);
+  box-shadow: 0 1rem 2.5rem color-mix(in srgb, var(--primary) 14%, transparent);
+}
+
+.home-paths .marker {
+  gap: calc(var(--gap) * 0.6);
+  margin-block-end: calc(var(--gap) * 0.9);
+  color: var(--tertiary);
+  background: transparent;
+  font-size: var(--s);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.home-paths .marker span {
+  padding: 0;
+}
+
+.home-paths .marker span:first-child {
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  place-items: center;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 16%, var(--header));
+  border: var(--line) solid color-mix(in srgb, var(--accent) 20%, transparent);
+  border-radius: calc(var(--radius) * 1.25);
+}
+
+.home-paths .marker svg.icon {
+  width: 1.35rem;
+  height: 1.35rem;
+  margin: 0;
+}
+
+.home-paths .group h3 {
+  margin-block: 0 calc(var(--gap) * 0.45);
+  font-size: clamp(1.25rem, 1.8vw, 1.55rem);
+  line-height: 1.2;
+}
+
+.home-paths .group > p {
+  margin-block: 0 var(--gap);
+}
+
+.home-paths .button-shortcode {
+  width: 100%;
+  margin-block-start: auto;
+  margin-block-end: 0;
+}
+
+.home-paths .button-shortcode .button {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(var(--gap) * 0.5);
+  padding: calc(var(--gap) * 0.7) calc(var(--gap) * 0.85);
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, var(--header));
+  border-color: color-mix(in srgb, var(--accent) 20%, transparent);
+  font-weight: 650;
+}
+
+.home-paths .button-shortcode .button::after {
+  content: "→";
+  margin-inline-start: auto;
+  font-size: 1.2em;
+  transition: transform 180ms ease-out;
+}
+
+.home-paths .button-shortcode .button:hover::after {
+  transform: translateX(calc(var(--gap) * 0.2));
+}
+
+/* Shared card copy. */
+
+.home-paths .group :is(h3, p),
+.home-benefits .group :is(h3, p),
+.home-workflows .group :is(h3, p) {
+  text-align: start;
+  line-height: 1.5;
+}
+
+.home-paths .group > p,
+.home-benefits .group > p,
+.home-workflows .group > p {
+  font-size: clamp(1rem, 1.1vw, 1.1rem);
+}
+
+.home-workflows .block-content {
+  --card-gap: clamp(calc(var(--gap) * 1.25), 2.4vw, calc(var(--gap) * 2));
+}
+
+/* Workflow cards. */
+
+.home-workflows .group {
+  --workflow-card-padding: clamp(var(--gap), 1.5vw, calc(var(--gap) * 1.35));
+  display: grid;
+  grid-template-rows: auto auto minmax(2.6em, auto) 1fr auto;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: var(--line) solid color-mix(in srgb, var(--primary) 7%, transparent);
+  box-shadow: 0 0.35rem 1.25rem color-mix(in srgb, var(--primary) 7%, transparent);
+  transition:
+    transform 180ms ease-out,
+    border-color 180ms ease-out,
+    box-shadow 180ms ease-out;
+}
+
+.home-workflows .group:is(:hover, :focus-within) {
+  transform: translateY(calc(var(--gap) * -0.12));
+  border-color: color-mix(in srgb, var(--accent) 24%, transparent);
+  box-shadow: 0 0.75rem 2rem color-mix(in srgb, var(--primary) 12%, transparent);
+}
+
+.home-workflows .workflow-image {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding: calc(var(--gap) * 0.6);
+  background:
+    radial-gradient(circle at 50% 48%, color-mix(in srgb, var(--accent) 8%, var(--entry)), transparent 64%),
+    color-mix(in srgb, var(--entry) 62%, var(--header));
+  border-bottom: var(--line) solid color-mix(in srgb, var(--primary) 8%, transparent);
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.home-workflows .workflow-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  object-position: center;
+  transition: transform 180ms ease-out;
+}
+
+.home-workflows .group:hover .workflow-image img {
+  transform: scale(1.015);
+}
+
+.home-workflows .group > :not(.workflow-image, .attribution) {
+  margin-inline: var(--workflow-card-padding);
+}
+
+.home-workflows .marker {
+  min-height: 0;
+  margin-block: var(--workflow-card-padding) calc(var(--gap) * 0.35);
+  align-self: start;
+  color: color-mix(in srgb, var(--accent) 88%, var(--tertiary));
+  background: color-mix(in srgb, var(--accent) 11%, var(--entry));
+  border: var(--line) solid color-mix(in srgb, var(--accent) 9%, transparent);
+  font-size: clamp(0.72rem, 0.78vw, 0.82rem);
+  font-weight: 650;
+}
+
+.home-workflows .marker span {
+  padding-block: calc(var(--gap) * 0.32);
+  padding-inline: calc(var(--gap) * 0.48);
+}
+
+.home-workflows .marker span:first-child {
+  padding-inline-end: 0;
+}
+
+.home-workflows .marker span + span {
+  padding-inline-start: calc(var(--gap) * 0.28);
+}
+
+.home-workflows .group h3 {
+  margin-block: 0 calc(var(--gap) * 0.55);
+  align-self: start;
+  font-size: clamp(1.2rem, 1.55vw, 1.45rem);
+  line-height: 1.25;
+}
+
+.home-workflows .group > p {
+  margin-block: 0 var(--workflow-card-padding);
+  align-self: start;
+  line-height: 1.55;
+}
+
+.home-workflows .attribution {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--gap) * 0.35);
+  width: 100%;
+  margin: 0;
+  padding: calc(var(--gap) * 0.7) var(--workflow-card-padding);
+  color: color-mix(in srgb, var(--tertiary) 82%, transparent);
+  background: color-mix(in srgb, var(--primary) 2.5%, transparent);
+  border-top: var(--line) solid color-mix(in srgb, var(--primary) 7%, transparent);
+  font-size: clamp(0.8rem, 0.9vw, 0.95rem);
+  line-height: 1.35;
+}
+
+.home-workflows .attribution svg.icon {
+  flex: 0 0 auto;
+  width: 1em;
+  height: 1em;
+  margin: 0;
+  color: currentColor;
+  opacity: 0.78;
+}
+
+.home-workflows .attribution a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+  text-underline-offset: 0.15em;
+}
+
+/* Community cards. */
+
+.home-community .group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0;
+  padding: var(--gap);
+  text-align: start;
+  background: var(--entry);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.home-community .group :is(h3, p) {
+  text-align: start;
+}
+
+.home-community .button-shortcode {
+  margin-block-start: auto;
+}
+
+/* News. */
+
+.home-news .cards {
+  width: 100%;
+  max-width: var(--width);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.home-news .collection-shortcode {
+  max-width: var(--width);
+}
+
+.home-news .card {
+  width: 100%;
+}
+
+.home-news .card-color::after {
+  content: "";
+  width: clamp(3.5rem, 30%, 6rem);
+  aspect-ratio: 1;
+  background: url('/FreeCAD-symbol-mono.svg') center / contain no-repeat;
+  opacity: 0.7;
+}
+
+/* Final call to action. */
+
+.home-final .group {
+  max-width: 48rem;
+  text-align: center;
+}
+
+.home-final .group > p {
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  line-height: 1.6;
+}
+
+.home-final .button-shortcode {
+  display: inline-block;
+  margin: calc(var(--gap) * 0.35);
+}
+
+.home-final {
+  color: var(--secondary);
+  background:
+    radial-gradient(circle at 20% 20%, color-mix(in srgb, var(--accent) 20%, transparent), transparent 40%),
+    linear-gradient(var(--angle), var(--entry), var(--tone));
+}
+
+.home-final .block-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+.home-final .button.primary {
+  color: var(--theme);
+  background: var(--accent);
+}
+
+.home-final .button.primary:hover {
+  background: var(--accent-hover);
+}
+
+.home-final .block-content {
+  justify-content: center;
+  text-align: center;
+}
+
+@media screen and (max-width: 999px) {
+  .kind-home .home-hero {
+    min-height: auto;
+  }
+
+  .home-hero-visual {
+    max-width: 24rem;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  .kind-home .block-shortcode {
+    min-width: 0;
+    padding-inline: clamp(0.75rem, 4vw, 2rem);
+  }
+
+  .kind-home .block-title {
+    width: auto;
+    max-width: calc(100vw - (var(--gap) * 2));
+    padding-inline: calc(var(--gap) * 0.25);
+    font-size: 1.25rem;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .kind-home .block-content {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .home-hero {
+    min-height: auto;
+  }
+
+  .home-hero-copy {
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-hero .title {
+    font-size: clamp(2.5rem, 12vw, 3.5rem);
+  }
+
+  .home-platforms {
+    justify-content: center;
+  }
+
+  .home-hero .buttons {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .home-hero .button {
+    width: 100%;
+  }
+
+  .home-hero-visual {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .home-hero-visual img {
+    aspect-ratio: 3 / 2;
+  }
+
+  .home-workflows .workflow-image {
+    padding: calc(var(--gap) * 0.5);
+  }
+
+  .home-news .cards {
+    flex-direction: column;
+    grid-template-columns: 1fr;
+  }
+
+  .home-benefits .group h3 {
+    min-height: 0;
+  }
+
+  .home-benefits .marker {
+    margin-block-end: calc(var(--gap) * 0.5);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero,
+  .home-hero *,
+  .home-workflows .workflow-image img {
+    transition: none;
+  }
+}
