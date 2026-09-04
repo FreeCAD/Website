@@ -22,17 +22,15 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 {{- $class := cond (.IsNamedParams) (.Get "css_class") (.Get 2) -}}
 
 {{- if or $label $icon -}}
-  <div class="marker">
+  <div class="marker{{ with $class }} {{ . }}{{ end }}">
     {{- with $icon -}}
-      <span
-        {{- with $class }} class="{{ . }}"{{- end -}}>
+      <span>
         {{- partialCached "utils/icon.html" . . -}}
       </span>
     {{- end -}}
 
     {{- with $label -}}
-      <span
-        {{- with $class }} class="{{ . }}"{{- end -}}>
+      <span>
         {{- . -}}
       </span>
     {{- end -}}
