@@ -18,7 +18,7 @@ With many quality of life improvements, hundreds of bug fixes, and updated libra
 
 {{< /group >}}
 
-{{< collection "download/releases" 1 >}}
+{{< collection collection="download/releases" first=1 embedded=true >}}
 
 {{< /block >}}
 
