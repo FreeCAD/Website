@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html
+  lang="en-US"
+  dir="ltr"><head><meta charset="utf-8">
+<meta
+  name="viewport"
+  content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta
+  name="referrer"
+  content="strict-origin-when-cross-origin">
+<meta
+  name="robots"
+  content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(8, 8, 8);
+          --theme: rgb(16, 16, 16);
+          --entry: rgb(32, 32, 32);
+          --tone: rgb(64, 64, 64);
+          --backdrop: rgba(64, 64, 64, 0.8);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+          --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+          --angle: 315deg;
+        }
+      }
+    </style></noscript><link
+          rel="stylesheet"
+          href="/Website/pr-80/css/styles.2e6f6931facfcc75fea8a7b772001676ee24002b0bdbbece90e11df412a33af3.css"
+          integrity="sha256-Lm9pMfrPzHX&#43;qKe3cgAWdu4kACsL277OkOEd9BKjOvM="
+          crossorigin="anonymous"><link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Website/pr-80/favicon.svg"><link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/Website/pr-80/favicon.ico"><link
+      rel="apple-touch-icon"
+      href="/Website/pr-80/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://FreeCAD.github.io/Website/pr-80/index.xml"
+    title="FreeCAD"><title>FreeCAD | Download</title>
+  <meta
+    name="description"
+    content="Get FreeCAD and start with freedom right away."><meta
+      name="keywords"
+      content="free, open-source, CAD, software, tool, parametric, modeling, model, design, product, engineering, manufacturing, community, workbench, FOSS, 3D, BIM, CAM, FEM, FEA"><link
+    rel="canonical"
+    href="https://FreeCAD.github.io/Website/pr-80/download/"><link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://FreeCAD.github.io/Website/pr-80/download/"><link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://FreeCAD.github.io/Website/pr-80/zh/download/"><link
+      rel="alternate"
+      hreflang="es-ES"
+      href="https://FreeCAD.github.io/Website/pr-80/es/download/"><link
+      rel="alternate"
+      hreflang="fr-FR"
+      href="https://FreeCAD.github.io/Website/pr-80/fr/download/"><link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://FreeCAD.github.io/Website/pr-80/pt/download/"><link
+      rel="alternate"
+      hreflang="de-DE"
+      href="https://FreeCAD.github.io/Website/pr-80/de/download/"><link
+      rel="alternate"
+      hreflang="ja-JP"
+      href="https://FreeCAD.github.io/Website/pr-80/ja/download/"><link
+    rel="alternate"
+    hreflang="x-default"
+    href="https://FreeCAD.github.io/Website/pr-80/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-80/download/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Launch into design!">
+  <meta property="og:description" content="Get FreeCAD and start with freedom right away.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+</head><body
+    class="list type-download kind-section "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <a
+    class="logo"
+    href="/Website/pr-80/"
+    accesskey="h"
+    title="Homepage (Alt + H)"
+    aria-label="Homepage"><svg
+      class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+
+      <use href="/Website/pr-80/FreeCAD-wordmark.svg#logo"></use>
+    </svg></a>
+
+  <div class="site-nav"><nav class="menu">
+  <button
+    popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg
+    class="icon hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/hamburger.svg#hamburger"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul
+    popover
+    id="menu-list"
+    class="menu-list"><li>
+          <a
+            href="/Website/pr-80/features/">Features</a>
+        </li><li>
+          <a
+            href="/Website/pr-80/download/" aria-current="page" class="active">Download</a>
+        </li><li>
+          <a
+            href="/Website/pr-80/news/">News</a>
+        </li><li>
+          <a
+            href="/Website/pr-80/community/">Community</a>
+        </li><li>
+          <a
+            href="/Website/pr-80/docs/">Documentation</a>
+        </li><li>
+          <a
+            href="/Website/pr-80/donate/" class="button donate">♥︎ Donate</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button
+          popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choose language (Alt + L)"
+          aria-label="Choose language"><svg
+    class="icon language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul
+          popover
+          id="lang-list"
+          class="language-list"><li>
+              <a aria-current="page" class="active" href="/Website/pr-80/download/" title="Download">English 🇬🇧</a>
+            </li><li>
+              <a href="/Website/pr-80/zh/download/" title="Download">中文 🇨🇳</a>
+            </li><li>
+              <a href="/Website/pr-80/es/download/" title="Download">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/pr-80/fr/download/" title="Download">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pr-80/pt/download/" title="Download">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a href="/Website/pr-80/de/download/" title="Download">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/pr-80/ja/download/" title="Download">日本語 🇯🇵</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Switch theme chroma (Alt + T)"
+    aria-label="Switch theme chroma"><svg
+    class="icon dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/dark.svg#dark"></use>
+  </svg><svg
+    class="icon light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main style="--hue: 30;"><section class="hero">
+
+    <h1 class="title">Launch into design!</h1><h3 class="description">Get FreeCAD and start with freedom right away.</h3><p class="release-title">
+      <strong>Download 1.1.3</strong>
+      <span>July 25, 2026</span>
+    </p>
+
+    <div class="download-box"><div
+            class="download-card"
+            id="windows"
+            style="order: 1;">
+
+            <div class="download-platform"><svg
+    class="icon windows"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/windows.svg#windows"></use>
+  </svg><h3>Windows</h3><p>Windows 10&#43;</p></div>
+
+            <div class="download-buttons"><div class="button">
+                    <a
+                      class="link-donate"
+                      href="https://github.com/FreeCAD/FreeCAD/releases/download/1.1.3/FreeCAD_1.1.3-Windows-x86_64-py311-installer.exe"
+                      title="Download FreeCAD_1.1.3-Windows-x86_64-py311-installer.exe"
+                      target="_blank"
+                      rel="external noreferrer nofollow"><svg
+    class="icon download"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/download.svg#download"></use>
+  </svg><strong>64-bit Installer</strong>
+                      <span>495.2 MB</span>
+                    </a>
+                      <button
+                        class="checksum-button"
+                        data-sha256="3de56676dedb7c68f4da9734c79abeaff9bbbf09f6a2c01df72a82beeee81c11"
+                        data-title="Copy SHA-256 checksum to clipboard"
+                        title="Copy SHA-256 checksum to clipboard"
+                        aria-label="Copy SHA-256 checksum to clipboard"><svg
+    class="icon checksum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/checksum.svg#checksum"></use>
+  </svg></button>
+                  </div><div class="button">
+                    <a
+                      class="link-donate"
+                      href="https://github.com/FreeCAD/FreeCAD/releases/download/1.1.3/FreeCAD_1.1.3-Windows-x86_64-py311.7z"
+                      title="Download FreeCAD_1.1.3-Windows-x86_64-py311.7z"
+                      target="_blank"
+                      rel="external noreferrer nofollow"><svg
+    class="icon download"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/download.svg#download"></use>
+  </svg><strong>64-bit Portable</strong>
+                      <span>398.7 MB</span>
+                    </a>
+                      <button
+                        class="checksum-button"
+                        data-sha256="9c6959dc9c4dba64dd818a62447e3dfedb4221d776fb044b239d462f150bcec4"
+                        data-title="Copy SHA-256 checksum to clipboard"
+                        title="Copy SHA-256 checksum to clipboard"
+                        aria-label="Copy SHA-256 checksum to clipboard"><svg
+    class="icon checksum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/checksum.svg#checksum"></use>
+  </svg></button>
+                  </div></div></div><div
+            class="download-card"
+            id="mac"
+            style="order: 2;">
+
+            <div class="download-platform"><svg
+    class="icon mac"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/mac.svg#mac"></use>
+  </svg><h3>macOS</h3><p>macOS 12&#43; Monterey</p></div>
+
+            <div class="download-buttons"><div class="button">
+                    <a
+                      class="link-donate"
+                      href="https://github.com/FreeCAD/FreeCAD/releases/download/1.1.3/FreeCAD_1.1.3-macOS-arm64-py311.dmg"
+                      title="Download FreeCAD_1.1.3-macOS-arm64-py311.dmg"
+                      target="_blank"
+                      rel="external noreferrer nofollow"><svg
+    class="icon download"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/download.svg#download"></use>
+  </svg><strong>Apple Silicon</strong>
+                      <span>619.8 MB</span>
+                    </a>
+                      <button
+                        class="checksum-button"
+                        data-sha256="f5c0ece7cd7c932466d6effadc0fc6e179b0538a9d9a6a77a6769eae3af2667c"
+                        data-title="Copy SHA-256 checksum to clipboard"
+                        title="Copy SHA-256 checksum to clipboard"
+                        aria-label="Copy SHA-256 checksum to clipboard"><svg
+    class="icon checksum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/checksum.svg#checksum"></use>
+  </svg></button>
+                  </div><div class="button">
+                    <a
+                      class="link-donate"
+                      href="https://github.com/FreeCAD/FreeCAD/releases/download/1.1.3/FreeCAD_1.1.3-macOS-x86_64-py311.dmg"
+                      title="Download FreeCAD_1.1.3-macOS-x86_64-py311.dmg"
+                      target="_blank"
+                      rel="external noreferrer nofollow"><svg
+    class="icon download"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/download.svg#download"></use>
+  </svg><strong>Intel Disk Image</strong>
+                      <span>686.2 MB</span>
+                    </a>
+                      <button
+                        class="checksum-button"
+                        data-sha256="8434bd6ad32f597605d184e5b996f496e9cbc7e6d8ffb6db4dbd6e2ce6d1612b"
+                        data-title="Copy SHA-256 checksum to clipboard"
+                        title="Copy SHA-256 checksum to clipboard"
+                        aria-label="Copy SHA-256 checksum to clipboard"><svg
+    class="icon checksum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/checksum.svg#checksum"></use>
+  </svg></button>
+                  </div></div></div><div
+            class="download-card"
+            id="linux"
+            style="order: 3;">
+
+            <div class="download-platform"><svg
+    class="icon linux"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/linux.svg#linux"></use>
+  </svg><h3>GNU/Linux</h3><p>All distributions</p></div>
+
+            <div class="download-buttons"><div class="button">
+                    <a
+                      class="link-donate"
+                      href="https://github.com/FreeCAD/FreeCAD/releases/download/1.1.3/FreeCAD_1.1.3-Linux-aarch64-py311.AppImage"
+                      title="Download FreeCAD_1.1.3-Linux-aarch64-py311.AppImage"
+                      target="_blank"
+                      rel="external noreferrer nofollow"><svg
+    class="icon download"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/download.svg#download"></use>
+  </svg><strong>aarch64 AppImage</strong>
+                      <span>720.6 MB</span>
+                    </a>
+                      <button
+                        class="checksum-button"
+                        data-sha256="9a8f9f7f2802bb856f2bb70f53d536e2ae06569f4e6d718407803076104ff55e"
+                        data-title="Copy SHA-256 checksum to clipboard"
+                        title="Copy SHA-256 checksum to clipboard"
+                        aria-label="Copy SHA-256 checksum to clipboard"><svg
+    class="icon checksum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/checksum.svg#checksum"></use>
+  </svg></button>
+                  </div><div class="button">
+                    <a
+                      class="link-donate"
+                      href="https://github.com/FreeCAD/FreeCAD/releases/download/1.1.3/FreeCAD_1.1.3-Linux-x86_64-py311.AppImage"
+                      title="Download FreeCAD_1.1.3-Linux-x86_64-py311.AppImage"
+                      target="_blank"
+                      rel="external noreferrer nofollow"><svg
+    class="icon download"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/download.svg#download"></use>
+  </svg><strong>x86 AppImage</strong>
+                      <span>782.8 MB</span>
+                    </a>
+                      <button
+                        class="checksum-button"
+                        data-sha256="3a853eb69ee595f779f2255dbf80a765926981d8ff68903cefee4dfb03a8f5ef"
+                        data-title="Copy SHA-256 checksum to clipboard"
+                        title="Copy SHA-256 checksum to clipboard"
+                        aria-label="Copy SHA-256 checksum to clipboard"><svg
+    class="icon checksum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/checksum.svg#checksum"></use>
+  </svg></button>
+                  </div></div></div></div></section>
+
+  <div class="content"><div class="block-shortcode wide dots"><div class="block-content layout-split"><div class="group"><h2
+  id="whats-new-in-the-latest-release">What&rsquo;s New in the Latest Release<a class="heading-anchor"
+     href="#whats-new-in-the-latest-release"
+     title="What&rsquo;s New in the Latest Release"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>The latest FreeCAD release focuses on refinement and key features to enhance workflows and stability for everyone.
+With many quality of life improvements, hundreds of bug fixes, and updated libraries, designing with FreeCAD is more fun and powerful than ever.</p>
+</div>
+<div class="collection-shortcode collection-shortcode--embedded">
+    <div class="cards"><a
+  class="card"
+  href="/Website/pr-80/download/releases/1-1/"><figure class="thumbnail"><img
+    class="img relnotes_1-1"
+    src="/Website/pr-80/download/releases/1-1/relnotes_1-1.webp"
+    alt="FreeCAD 1.1 Notes"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" width="1280" height="720" srcset="/Website/pr-80/download/releases/1-1/relnotes_1-1_hu_12982a451188f910.webp 400w, /Website/pr-80/download/releases/1-1/relnotes_1-1_hu_44b7a83c9d1a0b47.webp 800w, /Website/pr-80/download/releases/1-1/relnotes_1-1.webp 1280w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></figure><h3 class="card-title">FreeCAD 1.1 Notes</h3><p class="card-description">Free and open-source CAD, refined.</p><div class="card-metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/date.svg#date"></use>
+  </svg><time datetime="2026-03-24T00:00:00Z">March 24, 2026</time>
+  </span></div></a></div>
+  </div></div>
+  </div>
+<div class="block-shortcode wide pastel4"><div class="block-content layout-split"><div class="card-shortcode"><a
+  class="card"
+  href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow"><div class="card-color" style="--hue: 50;"><span class="card-icon"><svg
+    class="icon folder_open"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/folder_open.svg#folder_open"></use>
+  </svg></span></div><h3 class="card-title">Examples and Parts Library<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/external.svg#external"></use>
+  </svg></h3><p class="card-description">Get assets and FreeCAD files to start in no time.</p><div class="card-metadata"></div></a></div>
+<div class="group"><h2
+  id="examples-and-parts-library" class="pastel4">Examples and Parts Library<a class="heading-anchor"
+     href="#examples-and-parts-library"
+     title="Examples and Parts Library"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><div class="marker"><span><svg
+    class="icon folder_open"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/folder_open.svg#folder_open"></use>
+  </svg></span><span>Assets</span></div>
+<p>The FreeCAD community provides a wealth of file examples, part libraries, templates and various assets.</p>
+</div></div>
+  </div>
+<div class="block-shortcode wide pastel6"><div class="block-content layout-split"><div class="group"><h2
+  id="additional-modules-and-macros" class="pastel6">Additional modules and macros<a class="heading-anchor"
+     href="#additional-modules-and-macros"
+     title="Additional modules and macros"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><div class="marker"><span><svg
+    class="icon puzzle"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/puzzle.svg#puzzle"></use>
+  </svg></span><span>Addons</span></div>
+<p>The FreeCAD community provides many additional features, workbenches, macros, and interface themes.
+They can easily be installed directly from within FreeCAD using the Addon Manager.</p>
+</div>
+<div class="card-shortcode"><a
+  class="card"
+  href="/Website/pr-80/download/addons/"><div class="card-color" style="--hue: 60;"><span class="card-icon"><svg
+    class="icon puzzle"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/puzzle.svg#puzzle"></use>
+  </svg></span></div><h3 class="card-title">Addons</h3><p class="card-description">Explore FreeCAD ecosystem and take advantage of specialized tools.</p><div class="card-metadata"></div></a></div></div>
+  </div>
+<div class="block-shortcode wide pastel5"><div class="block-content layout-split"><div class="card-shortcode"><a
+  class="card"
+  href="/Website/pr-80/download/unstable/"><div class="card-color" style="--hue: 70;"><span class="card-icon"><svg
+    class="icon test"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/test.svg#test"></use>
+  </svg></span></div><h3 class="card-title">Unstable Development Builds</h3><p class="card-description">FreeCAD evolves every day. Test the very latest changes, fixes, and features.</p><div class="card-metadata"></div></a></div>
+<div class="group"><h2
+  id="go-experimental" class="pastel5">Go experimental<a class="heading-anchor"
+     href="#go-experimental"
+     title="Go experimental"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><div class="marker"><span><svg
+    class="icon test"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/test.svg#test"></use>
+  </svg></span><span>Unstable</span></div>
+<p>FreeCAD evolves every day. Test the very latest changes, fixes, and features.</p>
+<p><em><strong>Not recommended for production!</strong></em></p>
+</div></div>
+  </div>
+<div class="block-shortcode wide section"><div class="block-content layout-split"><div class="group"><h2
+  id="see-the-source-code-its-open" class="accent">See the source code, it&rsquo;s open!<a class="heading-anchor"
+     href="#see-the-source-code-its-open"
+     title="See the source code, it&rsquo;s open!"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>FreeCAD is free and open source software under the LGPL-2.0-or-later license.
+Explore the code, understand how it works, contribute improvements, and help shape the future of free, open, and parametric 3D design.</p>
+<div class="button-shortcode">
+    <a
+      href="https://github.com/FreeCAD/FreeCAD"
+      title="FreeCAD code on GitHub"
+      class="button" target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/github.svg#github"></use>
+  </svg>FreeCAD code on GitHub<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/external.svg#external"></use>
+  </svg></a>
+  </div>
+<div class="button-shortcode">
+    <a
+      href="https://gitlab.com/freecad/FreeCAD"
+      title="FreeCAD code on GitLab"
+      class="button" target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon gitlab"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/gitlab.svg#gitlab"></use>
+  </svg>FreeCAD code on GitLab<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/external.svg#external"></use>
+  </svg></a>
+  </div>
+<div class="button-shortcode">
+    <a
+      href="https://codeberg.org/FreeCAD/FreeCAD"
+      title="FreeCAD code on Codeberg"
+      class="button" target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/codeberg.svg#codeberg"></use>
+  </svg>FreeCAD code on Codeberg<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/external.svg#external"></use>
+  </svg></a>
+  </div></div></div>
+  </div>
+</div></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Go to Top"
+  title="Go to Top (Alt + G)" ><svg
+    class="icon tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a
+            href="/Website/pr-80/">Homepage</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-80/features/">Features</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-80/download/" aria-current="page" class="active">Download</a><ul><li>
+                      <a
+                        href="/Website/pr-80/download/releases/">Releases</a>
+                    </li><li>
+                      <a
+                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-80/download/addons/">Addons</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-80/download/unstable/">Unstable</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-80/news/">News</a><ul><li>
+                  <a
+                    href="/Website/pr-80/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/pr-80/authors/">Authors</a>
+                      </li><li>
+                        <a href="/Website/pr-80/categories/">Categories</a>
+                      </li><li>
+                        <a href="/Website/pr-80/tags/">Tags</a>
+                      </li></ul></li><li>
+          <a
+            href="/Website/pr-80/community/">Community</a><ul><li>
+                      <a
+                        href="/Website/pr-80/community/calendar/">Calendar</a>
+                    </li><li>
+                      <a
+                        href="https://events.freecad.org/" target="_blank" rel="external noreferrer nofollow">Events<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://fpa.freecad.org" target="_blank" rel="external noreferrer nofollow">Association<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-80/community/fpn/">Professional Network</a>
+                    </li><li>
+                      <a
+                        href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-80/community/telemetry/">Telemetry</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-80/docs/">Documentation</a><ul><li>
+                  <a
+                    href="https://wiki.freecad.org/User_hub/en" target="_blank" rel="external noreferrer nofollow">User manual<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/external.svg#external"></use>
+  </svg></a>
+                </li><li>
+                  <a
+                    href="/Website/pr-80/dev/">Development Handbook</a>
+                </li><li>
+                  <a
+                    href="https://freecad.github.io/SourceDoc/" target="_blank" rel="external noreferrer nofollow">FreeCAD API<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/external.svg#external"></use>
+  </svg></a>
+                </li></ul></li><li>
+          <a
+            href="/Website/pr-80/donate/">♥︎ Donate</a><ul></ul></li></ul>
+</nav>
+<div class="share-links"><a
+    href="https://forum.freecad.org"
+    title="Forum"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/forum.svg#forum"></use>
+  </svg></a><a
+    href="https://github.com/freecad"
+    title="GitHub"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/github.svg#github"></use>
+  </svg></a><a
+    href="https://codeberg.org/freecad"
+    title="Codeberg"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a
+    href="https://social.freecad.org/@freecad"
+    title="Mastodon"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://www.reddit.com/r/freecad"
+    title="Reddit"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/reddit.svg#reddit"></use>
+  </svg></a><a
+    href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+    title="Matrix"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/matrix.svg#matrix"></use>
+  </svg></a><a
+    href="https://discord.gg/w2cTKGzccC"
+    title="Discord"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/discord.svg#discord"></use>
+  </svg></a><a
+    href="https://www.linkedin.com/groups/4295230"
+    title="LinkedIn"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+    href="https://FreeCAD.github.io/Website/pr-80/index.xml"
+    type="application/rss&#43;xml"
+    title="RSS feed"><svg
+    class="icon rss"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/rss.svg#rss"></use>
+  </svg></a><a
+  href="/Website/pr-80/fedishare.html#title=Launch&#43;into&#43;design%21&amp;description=Get%20FreeCAD%20and%20start%20with%20freedom%20right%20away.&amp;url=https://FreeCAD.github.io/Website/pr-80/download/"
+  title="Share on Fediverse"
+  target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026
+    <a
+      href="/Website/pr-80/"
+      title="Your ideas, made real">Your ideas, made real</a>
+  </span><span>
+  <a
+    href="https://creativecommons.org/licenses/by-sa/4.0/"
+    title="Creative Commons"
+    target="_blank" rel="license external noreferrer nofollow">
+
+    CC BY-SA<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to
+  <a
+    href="https://gohugo.io/"
+    title="Hugo SSG"
+    target="_blank" rel="external noreferrer nofollow">
+
+    Hugo<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-09-04
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/cf772773e15373a98e21b4c5b022fa66093c33a7">cf772773e1<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-80/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script
+    src="/Website/pr-80/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-80/js/checksum.min.59a2e28e4dc9c4bbdfb432a0a4f8541373e5ac3df1523826096165f0647cbaf8.js"
+    type="text/javascript"
+    defer integrity="sha256-WaLijk3JxLvftDKgpPhUE3PlrD3xUjgmCWFl8GR8uvg=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-80/js/en/redirect_to_donate.min.f1ffd9ec5c9d2a98119b18933ea31690a2589036b580d37ede1cf09ebf1de54f.js"
+    type="text/javascript"
+    defer integrity="sha256-8f/Z7FydKpgRmxiTPqMWkKJYkDa1gNN&#43;3hzwnr8d5U8=" crossorigin="anonymous">
+  </script></body>
+
+</html>
