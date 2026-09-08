@@ -13,6 +13,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   @param {int} [first] – Optional limit number of returned pages.
   @param {bool} [reverse] – Optional reverse sort order.
   @param {string} [css_class] – Optional CSS class for whole collection container.
+  @param {bool} [embedded] – Remove outer card-list layout when nested in another component.
 
   @return {HTML} Render pages collection with cards.
 
@@ -29,10 +30,10 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 {{- $sort := cond (.IsNamedParams) (.Get "sort") (.Get 4) | lower -}}
 {{- $reverse := cond (.IsNamedParams) (.Get "reverse") (.Get 5) | default false -}}
 {{- $class := cond (.IsNamedParams) (.Get "css_class") (.Get 6) -}}
+{{- $embedded := cond (.IsNamedParams) (.Get "embedded") false | default false -}}
 
 {{- $pages := slice -}}
 {{- $taxonomies := site.Taxonomies -}}
-{{- $shortcode_parent := .Parent -}}
 
 {{- if and $collection (not $taxonomy) (not $term) -}}
   {{- $collection_key := lower $collection -}}
@@ -97,7 +98,12 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   {{- $pages = first . $pages -}}
 {{- end -}}
 
-{{- $classes := slice "card-list" "wide" -}}
+{{- $classes := slice "collection-shortcode" -}}
+{{- if $embedded -}}
+  {{- $classes = $classes | append "collection-shortcode--embedded" -}}
+{{- else -}}
+  {{- $classes = $classes | append "card-list" "wide" -}}
+{{- end -}}
 {{- with $class -}}
   {{- $classes = $classes | append . -}}
 {{- end -}}
@@ -105,10 +111,8 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 {{- /* Render pages as cards. */ -}}
 {{- with $pages -}}
 
-  <div {{- if not $shortcode_parent }} class="{{ delimit $classes " " }}"{{ end -}}>
-    <div
-      class="cards"
-      {{- if $shortcode_parent }} style="padding: 0;"{{ end -}}>
+  <div class="{{ delimit $classes " " }}">
+    <div class="cards">
 
       {{- range . -}}
         {{- $key := partialCached "utils/cache_key.html" . . -}}

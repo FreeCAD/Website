@@ -1,0 +1,31 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Workflow card image:
+
+  @param {string} src – Image path relative to the assets directory.
+  @param {string} alt – Accessible image description.
+
+  @example {{< workflow_image src="images/home/workflows/design.png" alt="Assembly model in FreeCAD" >}}
+
+*/ -}}
+
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" -}}
+
+{{- with resources.Get $src -}}
+  <figure class="workflow-image">
+    {{- partialCached "utils/process_image.html" (dict
+      "image" .
+      "alt" $alt
+      "loading" "lazy"
+      "priority" "low"
+      "decoding" "async"
+      ) $src -}}
+  </figure>
+{{- else -}}
+  {{- warnf "%q shortcode: image resource %q not found on %s" $.Name $src $.Position -}}
+{{- end -}}

@@ -1,0 +1,36 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Attribution shortcode:
+
+  @param {string} creator – Name of the credited creator.
+  @param {string} [work] – Optional description of the credited work.
+  @param {string} [url] – Optional creator or source URL.
+
+  @example {{< attribution creator="Jane Doe" work="Model" >}}
+*/ -}}
+
+{{- $creator := cond (.IsNamedParams) (.Get "creator") (.Get 0) -}}
+{{- $work := cond (.IsNamedParams) (.Get "work") (.Get 1) -}}
+{{- $url := cond (.IsNamedParams) (.Get "url") (.Get 2) -}}
+
+{{- with $creator -}}
+  <p class="attribution">
+    {{- partialCached "utils/icon.html" "authors" "authors" -}}
+    <span>{{ with $work }}{{ . }} by {{ end }}
+      {{- if $url -}}
+        {{- $key := partialCached "utils/cache_key.html" $url $url -}}
+        {{- $link := partialCached "utils/link_redirect.html" $url $key -}}
+        {{- $is_external := partialCached "utils/is_external.html" $link $link -}}
+        <a href="{{ $link }}"{{ if $is_external }} target="_blank" rel="external noreferrer nofollow"{{ end }}>{{ . }}</a>
+      {{- else -}}
+        {{- . -}}
+      {{- end -}}
+    </span>
+  </p>
+{{- else -}}
+  {{- warnf "%q shortcode: missing required 'creator' argument on %s" $.Name $.Position -}}
+{{- end -}}

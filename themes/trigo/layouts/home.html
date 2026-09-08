@@ -6,8 +6,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 {{- /* Homepage template:
 
-  - Render title, description and custom buttons from homepage front matter.
-  - Render hero article with its title and cover (fall back to homepage cover).
+  - Render title, description, buttons, platforms and hero image from homepage front matter.
   - Render homepage content.
 */ -}}
 
@@ -15,22 +14,21 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 {{- define "main" -}}
 
   {{- $buttons := .Params.buttons -}}
-  {{- $hero := .Params.hero | default hugo.Sites.Default.Home.Params.hero -}}
+  {{- $default_home := hugo.Sites.Default.Home -}}
+  {{- $hero := .Params.hero | default $default_home.Params.hero -}}
+  {{- $platforms := .Params.platforms | default $default_home.Params.platforms -}}
+  <section class="hero home-hero">
 
-  <section class="hero">
-
-    <div class="hero-column">
+    <div class="hero-column home-hero-copy">
       <h1 class="title{{ with .Params.title_class }} {{ . }}{{ end -}}">
         {{- .Title -}}
       </h1>
 
       {{- with .Description -}}
-        <h3 class="description{{ with $.Params.description_class }} {{ . }}{{ end -}}">
+        <p class="description{{ with $.Params.description_class }} {{ . }}{{ end -}}">
           {{- . -}}
-        </h3>
+        </p>
       {{- end -}}
-
-      <h3>🚧 Work in Progress... Come back soon! 🏗️</h3>
 
       {{- with $buttons -}}
         <div class="buttons">
@@ -66,50 +64,43 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
           {{- end -}}
         </div>
       {{- end -}}
+
+      {{- with $platforms -}}
+        <p class="home-platforms">
+          {{- range $index, $platform := . -}}
+            {{- if $index }}<span aria-hidden="true">·</span>{{ end -}}
+            <span>
+              {{- partialCached "utils/icon.html" $platform.icon $platform.icon -}}
+              {{ $platform.label }}
+            </span>
+          {{- end -}}
+        </p>
+      {{- end -}}
     </div>
 
-    {{- with $hero -}}
-
-      {{- $hero_link := .link -}}
-      {{- $hero_title := .title -}}
-      {{- $hero_cover := .cover -}}
-
-      {{- with site.GetPage $hero_link -}}
-        {{- $key := partialCached "utils/cache_key.html" . . -}}
-        {{- $hero_link = partialCached "utils/link_redirect.html" . $key -}}
-        {{- if not $hero_title -}}
-          {{- $hero_title = .LinkTitle -}}
-        {{- end -}}
-        {{- if not $hero_cover -}}
-          {{- $hero_cover = .Page -}}
-        {{- end -}}
-      {{- end -}}
-
-      {{- $is_external := partialCached "utils/is_external.html" $hero_link $hero_link -}}
-
-      {{- with $hero_link -}}
-        <a
-          class="hero-column"
-          href="{{ . }}"
-          {{- if $is_external }} target="_blank" rel="external noreferrer nofollow"{{ end -}}>
-      {{- end -}}
-
-      {{- with $hero_title -}}
-        <h2 class="title{{ with $hero.class }} {{ . }}{{ end -}}">
-          {{- . -}}
-
-          {{- if $is_external -}}
-            {{- partialCached "utils/icon.html" "external" "external" -}}
-          {{- end -}}
-        </h2>
-      {{- end -}}
-
-      {{- with $hero_cover -}}
-        {{- partialCached "main/cover.html" . . -}}
-      {{- end -}}
-
-      {{- with $hero_link -}}</a>{{- end -}}
-
+    {{- with resources.Get $hero.desktop -}}
+      {{- $hero_link := $hero.link | default "/features/" | relLangURL -}}
+      <a class="hero-column home-hero-visual" href="{{ $hero_link }}" aria-label="{{ $hero.label }}">
+        <figure>
+          <picture>
+            {{- with resources.Get $hero.mobile -}}
+              {{- $mobile_small := .Resize "400x webp" -}}
+              {{- $mobile_large := .Resize "800x webp" -}}
+              <source
+                media="(max-width: 500px)"
+                srcset="{{ $mobile_small.RelPermalink }} 400w, {{ $mobile_large.RelPermalink }} 800w"
+                sizes="calc(100vw - 2rem)">
+            {{- end -}}
+            {{- partialCached "utils/process_image.html" (dict
+              "image" .
+              "alt" $hero.alt
+              "loading" "eager"
+              "priority" "high"
+              "decoding" "async"
+              ) $hero.desktop -}}
+          </picture>
+        </figure>
+      </a>
     {{- end -}}
   </section>
 
