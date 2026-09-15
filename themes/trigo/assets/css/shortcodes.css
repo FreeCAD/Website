@@ -417,25 +417,87 @@ input:checked + .branch :is(+ ul, .branch .open) {
 
 .block-title {
   text-align: center;
+  margin-inline: auto;
   max-width: var(--width);
   color: var(--secondary);
 }
 
 .block-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   gap: var(--gap);
   margin: auto;
   max-width: var(--width);
   border-radius: var(--radius);
 }
 
-.block-content > * {
+.layout-split {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.layout-split > * {
   max-width: calc((var(--width) * 0.5) - (var(--gap) * 2));
   flex: 1 auto;
   margin: auto;
+}
+
+.layout-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.layout-stack > * {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+}
+
+.layout-cards {
+  --card-gap: var(--gap);
+  display: grid;
+  align-items: stretch;
+  gap: var(--card-gap);
+}
+
+.layout-cards > * {
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+}
+
+.layout-cards--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.layout-cards--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media screen and (max-width: 999px) {
+  .layout-cards--three {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .layout-cards--three > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    width: calc(50% - (var(--card-gap) * 0.5));
+    justify-self: center;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .layout-cards--two,
+  .layout-cards--three {
+    grid-template-columns: 1fr;
+  }
+
+  .layout-cards--three > :last-child:nth-child(odd) {
+    grid-column: auto;
+    width: 100%;
+  }
 }
 
 .card-shortcode {
@@ -444,6 +506,18 @@ input:checked + .branch :is(+ ul, .branch .open) {
 
 .card-shortcode > * {
   margin: auto;
+}
+
+
+/* Collection shortcode. */
+
+.collection-shortcode {
+  width: 100%;
+  max-width: var(--width);
+}
+
+.collection-shortcode--embedded .cards {
+  padding: 0;
 }
 
 
@@ -666,4 +740,21 @@ input:checked + .branch :is(+ ul, .branch .open) {
 
 .marker svg {
   vertical-align: calc(var(--gap) * -0.125);
+}
+
+.card-marker {
+  width: fit-content;
+  justify-content: flex-start;
+  gap: 0;
+  background: color-mix(in srgb, var(--accent) 20%, var(--header));
+  border-radius: var(--radius);
+}
+
+.card-marker span {
+  padding: calc(var(--gap) * 0.45);
+  background: transparent;
+}
+
+.card-marker span:first-child {
+  padding-inline-end: 0;
 }
