@@ -10,7 +10,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   @param {string} [title] – Optional block title.
   @param {string} [css_class] – Optional CSS class for whole block container.
   @param {string} [title_class] – Optional CSS class for title.
-  @param {string} [content_class] – Optional CSS class for content.
+  @param {string} [content_class] – Optional content layout class. Defaults to "layout-split".
 
   @return {HTML} Render full-width block layout container with optional title and content.
 
@@ -47,8 +47,10 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   {{- end -}}
 
   {{- $content_classes := slice "block-content" -}}
-  {{- with $content_class -}}
-    {{- $content_classes = $content_classes | append . -}}
+  {{- if $content_class -}}
+    {{- $content_classes = $content_classes | append $content_class -}}
+  {{- else -}}
+    {{- $content_classes = $content_classes | append "layout-split" -}}
   {{- end -}}
 
   <div class="{{ delimit $block_classes " " }}">
