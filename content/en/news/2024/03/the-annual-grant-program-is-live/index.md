@@ -1,9 +1,9 @@
 ---
 title: The annual Grant program is live
 date: 2024-03-01
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: announcement
+category: announcement
 tags:
   - FPA
   - grant

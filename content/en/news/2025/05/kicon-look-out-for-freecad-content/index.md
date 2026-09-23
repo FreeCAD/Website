@@ -1,9 +1,9 @@
 ---
 title: KiCon, Look out for FreeCAD content!
 date: 2025-05-13
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: event
+category: event
 tags:
   - KiCAD
 cover:

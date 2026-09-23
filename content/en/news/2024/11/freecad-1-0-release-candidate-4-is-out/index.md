@@ -1,9 +1,9 @@
 ---
 title: FreeCAD 1.0 Release Candidate 4 is out
 date: 2024-11-14
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: announcement
+category: announcement
 tags:
   - release
 cover:

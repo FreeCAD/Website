@@ -1,9 +1,9 @@
 ---
 title: Amazing Multibody Dynamics with FEM
 date: 2026-02-27
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: showcase
+category: showcase
 tags:
   - addon
   - community

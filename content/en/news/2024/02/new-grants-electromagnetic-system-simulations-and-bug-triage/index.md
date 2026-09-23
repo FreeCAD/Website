@@ -1,9 +1,9 @@
 ---
 title: New Grants - Electromagnetic system simulations and bug triage
 date: 2024-02-27
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: announcement
+category: announcement
 tags:
   - FPA
   - grant

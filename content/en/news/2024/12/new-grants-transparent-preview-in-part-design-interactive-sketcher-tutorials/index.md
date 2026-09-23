@@ -1,9 +1,9 @@
 ---
 title: New Grants - Transparent preview in Part Design, interactive Sketcher tutorials
 date: 2024-12-02
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: announcement
+category: announcement
 tags:
   - FPA
   - grant

@@ -1,9 +1,9 @@
 ---
 title: Q1 2026 Grant Program
 date: 2026-03-02
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: announcement
+category: announcement
 tags:
   - FPA
   - grant

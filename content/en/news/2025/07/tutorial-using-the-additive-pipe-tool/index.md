@@ -1,9 +1,9 @@
 ---
 title: Tutorial - Using the Additive Pipe Tool
 date: 2025-07-31
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: tutorial
+category: tutorial
 tags:
   - PartDesign
 cover:

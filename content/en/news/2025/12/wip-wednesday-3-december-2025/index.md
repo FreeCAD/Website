@@ -1,9 +1,9 @@
 ---
 title: WIP Wednesday, 3 December 2025
 date: 2025-12-03
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: update
+category: update
 tags:
   - WIP
 cover:

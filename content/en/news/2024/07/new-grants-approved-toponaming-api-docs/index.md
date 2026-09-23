@@ -1,9 +1,9 @@
 ---
 title: New Grants - further Toponaming work, better API documentation
 date: 2024-07-02
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: announcement
+category: announcement
 tags:
   - FPA
   - grant

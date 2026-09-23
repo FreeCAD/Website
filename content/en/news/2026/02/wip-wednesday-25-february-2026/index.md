@@ -1,9 +1,9 @@
 ---
 title: WIP Wednesday, 25 February 2026
 date: 2026-02-25
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: update
+category: update
 tags:
   - WIP
 cover:

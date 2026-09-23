@@ -1,9 +1,9 @@
 ---
 title: Feature freeze for FreeCAD 1.0 is now on
 date: 2024-06-04
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: update
+category: update
 tags: []
 cover:
   image:

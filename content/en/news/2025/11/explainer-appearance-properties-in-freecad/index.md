@@ -1,9 +1,9 @@
 ---
 title: Explainer - Appearance Properties in FreeCAD
 date: 2025-11-09
-authors: Tomas Polak
+author: Tomas Polak
 draft: false
-categories: tutorial
+category: tutorial
 tags:
   - materials
   - light

@@ -1,9 +1,9 @@
 ---
 title: Q1 2025 Grants announced
 date: 2025-04-07
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: announcement
+category: announcement
 tags:
   - FPA
   - grant

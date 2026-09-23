@@ -1,9 +1,9 @@
 ---
 title: v1.0 Issue Triage Meeting
 date: 2024-06-29
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: update
+category: update
 tags: []
 cover:
   image:

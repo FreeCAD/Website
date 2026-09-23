@@ -26,8 +26,8 @@ By default, a `title` front matter field must be provided for each page. Additio
 
 | Field name | Value type | Example |
 |---|---|---|
-| `authors` | string | Alice and Bob |
-| `categories` | string (options) | event |
+| `author` | string | Alice |
+| `category` | string (options) | Event |
 | `cover` | map | {"image": "img.webp", "caption": None} |
 | `date` | date | 2020-01-02 |
 | `description` | string | How to write great articles. |

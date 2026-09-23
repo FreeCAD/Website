@@ -1,9 +1,9 @@
 ---
 title: New Grants - CI hosting research, bugfixing, v1.0 teaser video
 date: 2024-10-15
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: announcement
+category: announcement
 tags:
   - FPA
   - grant

@@ -1,9 +1,9 @@
 ---
 title: FreeCAD at FOSDEM 2026
 date: 2026-02-12
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: event
+category: event
 tags:
   - FOSDEM
   - community

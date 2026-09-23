@@ -1,9 +1,9 @@
 ---
 title: Google Summer of Code 2025 Projects Announced
 date: 2025-05-08
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: update
+category: update
 tags:
   - GSOC
 cover:

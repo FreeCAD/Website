@@ -1,9 +1,9 @@
 ---
 title: Image Import Refactored
 date: 2023-04-24
-authors: Chris Hennes
+author: Chris Hennes
 draft: false
-categories: feature
+category: feature
 tags:
   - image
   - UI

@@ -1,9 +1,9 @@
 ---
 title: WIP Wednesday - 31 January 2024
 date: 2024-01-31
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: update
+category: update
 tags:
   - WIP
 cover:

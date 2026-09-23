@@ -1,9 +1,9 @@
 ---
 title: Tutorial - On View Parameters
 date: 2024-10-20
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: tutorial
+category: tutorial
 tags:
   - sketcher
 cover:

@@ -1,9 +1,9 @@
 ---
 title: Tutorial - Getting started with Spreadsheets and Parametric Design
 date: 2025-04-08
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: tutorial
+category: tutorial
 tags:
   - spreadsheet
 cover:

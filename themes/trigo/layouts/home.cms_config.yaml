@@ -193,13 +193,13 @@ collections:
     public_folder: ""
     thumbnail: cover.image
     icon: {{ .Page.Params.icon_cms }}
-    summary: "{{ "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{authors | default('no authors')}} · {{locales | upper}}" }}"
+    summary: "{{ "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{author | default('no author')}} · {{locales | upper}}" }}"
     reorder:
       key: weight
     i18n: true
 
     sortable_fields:
-      fields: [title, date, authors]
+      fields: [title, date, author]
       default:
         field: date
         direction: descending
@@ -211,8 +211,8 @@ collections:
           field: date
           pattern: '\d{4}'
         - name: category
-          label: Categories
-          field: categories
+          label: Category
+          field: category
       default: year
 
     view_filters:
@@ -240,27 +240,27 @@ collections:
         {{ if eq .Section (index site.MainSections 0) -}}
         - name: announcement
           label: Announcement
-          field: categories
+          field: category
           pattern: announcement
         - name: event
           label: Event
-          field: categories
+          field: category
           pattern: event
         - name: feature
           label: Feature
-          field: categories
+          field: category
           pattern: feature
         - name: showcase
           label: Showcase
-          field: categories
+          field: category
           pattern: showcase
         - name: tutorial
           label: Tutorial
-          field: categories
+          field: category
           pattern: tutorial
         - name: update
           label: Update
-          field: categories
+          field: category
           pattern: Update
         {{- end }}
 
@@ -334,13 +334,13 @@ collections:
         i18n: duplicate
         required: false
       {{ if eq .Section (index site.MainSections 0) -}}
-      - name: authors
-        label: Authors
+      - name: author
+        label: Author
         widget: string
         i18n: duplicate
         required: false
-      - name: categories
-        label: Categories
+      - name: category
+        label: category
         widget: select
         options:
           - { label: Announcement, value: announcement }
@@ -415,8 +415,8 @@ singletons:
     file: config/_default/params.yaml
     icon: settings
     fields:
-      - name: site_authors
-        label: Default site authors
+      - name: site_author
+        label: Default site author
         widget: string
       - name: site_keywords
         label: Site keywords and tags

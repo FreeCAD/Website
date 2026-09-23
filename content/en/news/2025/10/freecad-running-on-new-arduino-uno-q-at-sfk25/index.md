@@ -1,9 +1,9 @@
 ---
 title: FreeCAD Running on New Arduino UNO Q at SKF25
 date: 2025-10-28
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: event
+category: event
 tags:
   - conference
   - workshop

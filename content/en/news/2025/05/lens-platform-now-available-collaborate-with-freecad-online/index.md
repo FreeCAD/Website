@@ -1,9 +1,9 @@
 ---
 title: Lens Platform now available, Collaborate with FreeCAD Online
 date: 2025-05-19
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: announcement
+category: announcement
 tags:
   - lens
   - service

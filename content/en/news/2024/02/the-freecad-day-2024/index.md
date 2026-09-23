@@ -1,9 +1,9 @@
 ---
 title: The FreeCAD day 2024
 date: 2024-02-13
-authors: Yorik van Havre
+author: Yorik van Havre
 draft: false
-categories: event
+category: event
 tags:
   - FOSDEM
   - FPA

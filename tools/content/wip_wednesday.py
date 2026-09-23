@@ -530,9 +530,9 @@ def generate_front_matter(dt: datetime, author: str) -> str:
         ---
         title: WIP Wednesday - {dt.strftime("%d %B %Y")}
         date: {dt.strftime("%Y-%m-%d")}
-        authors: {author}
+        author: {author}
         draft: false
-        categories: update
+        category: update
         tags:
         - WIP
         cover:
@@ -644,7 +644,7 @@ def main() -> None:
         description="Generate Hugo WIP Wednesday markdown."
     )
     parser.add_argument("--time", help="Optional timestamp (ISO 8601 or RFC 2822)")
-    parser.add_argument("--author", help="Optional article authors", default="")
+    parser.add_argument("--author", help="Optional article author", default="")
     parser.add_argument("--root", type=Path, default=Path.cwd())
     parser.add_argument("--ci", action="store_true", help="CI mode: skip prompts, use most recent Wednesday")
     parser.add_argument("--token", help="GitHub token to increase API rate limits")

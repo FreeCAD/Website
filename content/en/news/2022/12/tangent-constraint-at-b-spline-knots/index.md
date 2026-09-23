@@ -1,9 +1,9 @@
 ---
 title: Tangent constraint at B-spline knots
 date: 2022-12-28
-authors: Chris Hennes
+author: Chris Hennes
 draft: false
-categories: feature
+category: feature
 tags:
   - sketcher
 cover:

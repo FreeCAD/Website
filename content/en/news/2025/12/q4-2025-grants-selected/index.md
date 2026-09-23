@@ -1,9 +1,9 @@
 ---
 title: Q4 2025 grants selected
 date: 2025-12-25
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: announcement
+category: announcement
 tags:
   - FPA
   - grant

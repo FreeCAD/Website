@@ -30,7 +30,7 @@ python3 wip_wednesday.py [optional arguments]
 **Optional arguments:**
 
 - `--time <timestamp>`: optional date input like ISO 8601 (2026-01-01T12:00:00) or RFC 2822 (Thu, 01 Jan 2026 12:00:00 GMT)
-- `--author <name>`: optional article authors field in front matter
+- `--author <name>`: optional article author field in front matter
 - `--root <path>`: optional path to directory of website Hugo project (default: current working dir)
 - `--ci`: optional non-interactive mode with automatically most recent Wednesday
 - `--token <github_token>`: optional GitHub token or PAT (recommended to avoid rate limits)

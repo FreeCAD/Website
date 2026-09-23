@@ -1,9 +1,9 @@
 ---
 title: Tutorial - Getting Started with TechDraw
 date: 2025-10-10
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: tutorial
+category: tutorial
 tags:
   - TechDraw
 cover:

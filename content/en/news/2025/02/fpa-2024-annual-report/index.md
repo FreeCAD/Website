@@ -1,9 +1,9 @@
 ---
 title: FPA's 2024 Annual Report
 date: 2025-02-27
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: announcement
+category: announcement
 tags:
   - FPA
   - report

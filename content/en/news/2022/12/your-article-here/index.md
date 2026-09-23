@@ -1,9 +1,9 @@
 ---
 title: Your Article Here
 date: 2022-12-07
-authors: Chris Hennes
+author: Chris Hennes
 draft: false
-categories: announcement
+category: announcement
 tags: []
 cover:
   image:

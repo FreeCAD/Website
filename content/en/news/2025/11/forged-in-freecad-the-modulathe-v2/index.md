@@ -1,9 +1,9 @@
 ---
 title: Forged In FreeCAD - The Modulathe V2
 date: 2025-11-21
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: showcase
+category: showcase
 tags:
   - user story
   - 3D printing

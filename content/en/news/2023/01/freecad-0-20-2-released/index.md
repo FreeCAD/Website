@@ -1,9 +1,9 @@
 ---
 title: FreeCAD 0.20.2 Released
 date: 2023-01-04
-authors: Chris Hennes
+author: Chris Hennes
 draft: false
-categories: announcement
+category: announcement
 tags:
   - release
 cover:

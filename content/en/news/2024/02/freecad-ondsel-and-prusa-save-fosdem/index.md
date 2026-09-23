@@ -1,9 +1,9 @@
 ---
 title: FreeCAD, Ondsel and Prusa save FOSDEM!
 date: 2024-02-08
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: announcement
+category: announcement
 tags:
   - FOSDEM
 cover:

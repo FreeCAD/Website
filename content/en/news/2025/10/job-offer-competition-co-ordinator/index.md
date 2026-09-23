@@ -1,9 +1,9 @@
 ---
 title: Job Offer - Competition Co-ordinator
 date: 2025-10-12
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: announcement
+category: announcement
 tags:
   - FPA
   - job

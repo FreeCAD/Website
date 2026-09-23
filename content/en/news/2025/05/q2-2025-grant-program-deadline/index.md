@@ -1,9 +1,9 @@
 ---
 title: Q2 2025 Grant program deadline
 date: 2025-05-09
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: announcement
+category: announcement
 tags:
   - FPA
   - grant

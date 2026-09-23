@@ -1,9 +1,9 @@
 ---
 title: Tutorial - Multiple operations from a single Sketch
 date: 2024-09-20
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: tutorial
+category: tutorial
 tags:
   - part
   - sketcher

@@ -1,9 +1,9 @@
 ---
 title: Shawn Hymel discusses FreeCAD on the Amp Hour Podcast
 date: 2024-08-13
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: showcase
+category: showcase
 tags:
   - user story
 cover:

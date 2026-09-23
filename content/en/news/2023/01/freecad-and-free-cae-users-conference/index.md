@@ -1,9 +1,9 @@
 ---
 title: FreeCAD (and free CAE) User's Conference
 date: 2023-01-16
-authors: Chris Hennes
+author: Chris Hennes
 draft: false
-categories: event
+category: event
 tags: []
 cover:
   image:

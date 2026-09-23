@@ -1,9 +1,9 @@
 ---
 title: FPA Logo Contest
 date: 2023-02-20
-authors: Chris Hennes
+author: Chris Hennes
 draft: false
-categories: announcement
+category: announcement
 tags:
   - FPA
   - contest

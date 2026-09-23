@@ -1,9 +1,9 @@
 ---
 title: FreeCAD 0.21 - The Final Stretch
 date: 2023-05-22
-authors: Chris Hennes
+author: Chris Hennes
 draft: false
-categories: announcement
+category: announcement
 tags:
   - release
 cover:

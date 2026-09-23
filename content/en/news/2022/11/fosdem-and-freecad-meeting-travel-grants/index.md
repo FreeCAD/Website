@@ -1,9 +1,9 @@
 ---
 title: FOSDEM and FreeCAD Meeting travel Grants
 date: 2022-11-16
-authors: Yorik van Havre
+author: Yorik van Havre
 draft: false
-categories: announcement
+category: announcement
 tags: []
 cover:
   image: Brussels_view_from_Mont_des_Arts.webp

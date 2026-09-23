@@ -1,9 +1,9 @@
 ---
 title: Tutorial - Using the Surface Workbench
 date: 2025-08-22
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: tutorial
+category: tutorial
 tags:
   - surface
 cover:

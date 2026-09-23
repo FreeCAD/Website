@@ -72,13 +72,13 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
   {{- else if (eq .Section (index site.MainSections 0)) -}}
     {{- $data := partialCached "utils/taxonomy_map.html" . "taxonomy_map" -}}
-    {{- $categories := .Params.categories | default "" -}}
+    {{- $categories := .Params.category | default "" -}}
     {{- $category := cond (reflect.IsSlice $categories)
       (index $categories 0)
       $categories
     -}}
     {{- $category = replace (string $category) " " "-" -}}
-    {{- $index := index $data.categories_index $category | default 0 -}}
+    {{- $index := index $data.category_index $category | default 0 -}}
     {{- $hue = mul 2 (add $index 1) $step -}}
 
   {{- else -}}

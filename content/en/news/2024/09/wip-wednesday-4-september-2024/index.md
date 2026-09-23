@@ -1,9 +1,9 @@
 ---
 title: WIP Wednesday - 4 September 2024
 date: 2024-09-04
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: update
+category: update
 tags:
   - WIP
 cover:

@@ -1,9 +1,9 @@
 ---
 title: WIP Wednesday - 13 Sept 2023
 date: 2023-09-13
-authors: Chris Hennes
+author: Chris Hennes
 draft: false
-categories: update
+category: update
 tags:
   - WIP
 cover:

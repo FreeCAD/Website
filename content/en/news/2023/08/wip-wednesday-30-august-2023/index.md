@@ -1,9 +1,9 @@
 ---
 title: WIP Wednesday - 30 August 2023
 date: 2023-08-30
-authors: Chris Hennes
+author: Chris Hennes
 draft: false
-categories: update
+category: update
 tags:
   - WIP
 cover:

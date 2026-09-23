@@ -1,9 +1,9 @@
 ---
 title: New Feature Merged - Cosmetic Threads
 date: 2026-03-20
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: feature
+category: feature
 tags:
   - PartDesign
 cover:

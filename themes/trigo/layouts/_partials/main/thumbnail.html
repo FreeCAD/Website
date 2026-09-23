@@ -52,7 +52,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 {{- /* Thumbnail fallbacks for RegularPages. */ -}}
 {{- if and (not $thumbnail) (eq $page.BundleType "single") -}}
   {{- $first_section := $page.FirstSection -}}
-  {{- $categories := $page.Params.categories -}}
+  {{- $categories := $page.Params.category -}}
   {{- $category := cond (reflect.IsSlice $categories)
     (index $categories 0)
     $categories

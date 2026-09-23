@@ -1,9 +1,9 @@
 ---
 title: Tutorial - Festive Star Decoration using a Macro
 date: 2025-12-22
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: tutorial
+category: tutorial
 tags:
   - marco
   - 3D printing

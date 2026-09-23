@@ -1,9 +1,9 @@
 ---
 title: FreeCAD Project Association Development Fund
 date: 2022-11-23
-authors: Chris Hennes
+author: Chris Hennes
 draft: false
-categories: announcement
+category: announcement
 tags:
   - FPA
 cover:

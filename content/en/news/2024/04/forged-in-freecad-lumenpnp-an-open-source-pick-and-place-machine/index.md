@@ -1,9 +1,9 @@
 ---
 title: Forged in FreeCAD - LumenPnP, an Open Source Pick and Place machine
 date: 2024-04-12
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: showcase
+category: showcase
 tags:
   - user story
 cover:

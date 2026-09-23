@@ -1,9 +1,9 @@
 ---
 title: New in 0.20 - Improved OpenSCAD compatibility
 date: 2022-12-14
-authors: Chris Hennes
+author: Chris Hennes
 draft: false
-categories: feature
+category: feature
 tags:
   - OpenSCAD
 cover:

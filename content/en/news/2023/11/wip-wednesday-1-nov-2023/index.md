@@ -1,9 +1,9 @@
 ---
 title: WIP Wednesday - 1 Nov 2023
 date: 2023-11-02
-authors: Chris Hennes
+author: Chris Hennes
 draft: false
-categories: update
+category: update
 tags:
   - WIP
 cover:

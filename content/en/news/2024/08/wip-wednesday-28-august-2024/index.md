@@ -1,9 +1,9 @@
 ---
 title: WIP Wednesday - 28 August 2024
 date: 2024-08-28
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: update
+category: update
 tags:
   - WIP
 cover:

@@ -1,9 +1,9 @@
 ---
 title: Rules regarding AI-generated patches
 date: 2026-03-16
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: announcement
+category: announcement
 tags:
   - code
   - AI

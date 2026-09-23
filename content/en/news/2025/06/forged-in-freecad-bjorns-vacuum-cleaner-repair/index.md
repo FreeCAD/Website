@@ -1,9 +1,9 @@
 ---
 title: Forged in FreeCAD - Bjørn's Vacuum Cleaner Repair
 date: 2025-06-10
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: showcase
+category: showcase
 tags:
   - user story
   - 3D printing

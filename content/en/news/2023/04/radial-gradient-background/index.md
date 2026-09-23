@@ -1,9 +1,9 @@
 ---
 title: Radial Gradient Background
 date: 2023-04-10
-authors: Chris Hennes
+author: Chris Hennes
 draft: false
-categories: feature
+category: feature
 tags:
   - UI
 cover:

@@ -1,9 +1,9 @@
 ---
 title: A Research Grade Open Source Microscope
 date: 2023-02-13
-authors: Chris Hennes
+author: Chris Hennes
 draft: false
-categories: showcase
+category: showcase
 tags:
   - user story
   - 3D printing

@@ -1,9 +1,9 @@
 ---
 title: Forged in FreeCAD - XYZ Micro Manipulator for Sub Micron Motion Control
 date: 2025-09-25
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: showcase
+category: showcase
 tags:
   - user story
   - open hardware

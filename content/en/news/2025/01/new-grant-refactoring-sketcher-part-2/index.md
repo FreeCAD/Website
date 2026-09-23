@@ -1,9 +1,9 @@
 ---
 title: New Grant - Refactoring Sketcher, part 2
 date: 2025-01-31
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: announcement
+category: announcement
 tags:
   - FPA
   - grant

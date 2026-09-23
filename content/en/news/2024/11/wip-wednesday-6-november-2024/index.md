@@ -1,9 +1,9 @@
 ---
 title: WIP Wednesday - 6 November 2024
 date: 2024-11-06
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: announcement
+category: announcement
 tags:
   - WIP
 cover:

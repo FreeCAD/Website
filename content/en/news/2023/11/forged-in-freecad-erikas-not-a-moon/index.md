@@ -1,9 +1,9 @@
 ---
 title: Forged In FreeCAD - Erika's “Not a Moon”
 date: 2023-11-09
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: showcase
+category: showcase
 tags:
   - user story
   - 3D printing

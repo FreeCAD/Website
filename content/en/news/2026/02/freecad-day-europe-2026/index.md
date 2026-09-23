@@ -1,9 +1,9 @@
 ---
 title: FreeCAD Day 2026
 date: 2026-02-06
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: event
+category: event
 tags:
   - FreeCAD day
   - community

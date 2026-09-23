@@ -1,9 +1,9 @@
 ---
 title: WIP Wednesday - 29 May 2024
 date: 2024-05-29
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: update
+category: update
 tags:
   - WIP
 cover:

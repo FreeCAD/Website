@@ -1,9 +1,9 @@
 ---
 title: The FPA announces a pilot bugfix rewards program
 date: 2025-08-14
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: announcement
+category: announcement
 tags:
   - FPA
   - bounty

@@ -1,9 +1,9 @@
 ---
 title: Tutorial - Getting Started With the SheetMetal Workbench
 date: 2025-07-11
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: tutorial
+category: tutorial
 tags:
   - sheetmetal
   - workbench

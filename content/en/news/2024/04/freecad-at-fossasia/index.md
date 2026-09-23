@@ -1,9 +1,9 @@
 ---
 title: FreeCAD at FOSSASIA
 date: 2024-04-22
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: announcement
+category: announcement
 tags: []
 cover:
   image: 437958995_965986825530504_8094539299392487996_n.webp

@@ -1,9 +1,9 @@
 ---
 title: KiConnect at KiCon, New interoperability between FreeCAD and KiCad
 date: 2025-06-20
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: showcase
+category: showcase
 tags:
   - addon
   - KiCAD

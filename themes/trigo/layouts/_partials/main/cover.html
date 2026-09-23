@@ -54,7 +54,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 {{- /* Cover fallbacks. */ -}}
 {{- if and (eq .BundleType "single") (not $cover) -}}
   {{- $first_section := .FirstSection -}}
-  {{- $categories := .Params.categories -}}
+  {{- $categories := .Params.category -}}
   {{- $category := cond (reflect.IsSlice $categories)
     (index $categories 0)
     $categories

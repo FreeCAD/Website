@@ -1,9 +1,9 @@
 ---
 title: Design for 3D Printing, an Excellent Article
 date: 2025-05-08
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: tutorial
+category: tutorial
 tags:
   - 3D printing
 cover:

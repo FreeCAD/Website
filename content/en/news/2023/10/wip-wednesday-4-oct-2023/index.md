@@ -1,9 +1,9 @@
 ---
 title: WIP Wednesday - 4 Oct 2023
 date: 2023-10-05
-authors: Chris Hennes
+author: Chris Hennes
 draft: false
-categories: update
+category: update
 tags:
   - WIP
 cover:

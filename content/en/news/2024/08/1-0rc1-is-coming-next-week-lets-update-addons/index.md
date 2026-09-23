@@ -1,9 +1,9 @@
 ---
 title: 1.0RC1 is coming next week, let’s update Addons
 date: 2024-08-30
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: update
+category: update
 tags: []
 cover:
   image:

@@ -1,9 +1,9 @@
 ---
 title: Forged in FreeCAD - Alexander's PCB Holder
 date: 2023-11-20
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: showcase
+category: showcase
 tags:
   - user story
   - 3D printing

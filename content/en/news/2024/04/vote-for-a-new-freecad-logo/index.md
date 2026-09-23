@@ -1,9 +1,9 @@
 ---
 title: Vote for a new FreeCAD logo
 date: 2024-04-29
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: announcement
+category: announcement
 tags:
   - logo
 cover:

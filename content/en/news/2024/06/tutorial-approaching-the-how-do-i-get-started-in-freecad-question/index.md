@@ -1,9 +1,9 @@
 ---
 title: Tutorial - Approaching the “How do I get started in FreeCAD” question!
 date: 2024-06-11
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: tutorial
+category: tutorial
 tags:
   - getting started
 cover:

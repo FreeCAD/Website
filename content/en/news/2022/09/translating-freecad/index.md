@@ -1,9 +1,9 @@
 ---
 title: Translating FreeCAD
 date: 2022-09-21
-authors: Chris Hennes
+author: Chris Hennes
 draft: false
-categories: feature
+category: feature
 tags:
   - UI
 cover:

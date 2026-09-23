@@ -1,9 +1,9 @@
 ---
 title: New FPA Positions Filled
 date: 2025-08-29
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: announcement
+category: announcement
 tags:
   - FPA
   - job

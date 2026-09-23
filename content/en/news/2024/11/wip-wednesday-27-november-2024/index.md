@@ -1,9 +1,9 @@
 ---
 title: WIP Wednesday - 27 November 2024
 date: 2024-11-27
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: update
+category: update
 tags:
   - WIP
 cover:

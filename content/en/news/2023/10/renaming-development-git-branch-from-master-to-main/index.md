@@ -1,9 +1,9 @@
 ---
 title: Renaming development GIT branch from master to main
 date: 2023-10-02
-authors: Yorik van Havre
+author: Yorik van Havre
 draft: false
-categories: update
+category: update
 tags: []
 cover:
   image:

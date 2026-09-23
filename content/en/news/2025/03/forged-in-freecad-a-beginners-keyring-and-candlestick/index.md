@@ -1,9 +1,9 @@
 ---
 title: Forged In FreeCAD - A beginners Keyring and Candlestick
 date: 2025-03-27
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: showcase
+category: showcase
 tags:
   - user story
   - 3D printing

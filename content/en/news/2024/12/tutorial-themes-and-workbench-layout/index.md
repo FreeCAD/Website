@@ -1,9 +1,9 @@
 ---
 title: Tutorial - Themes and Workbench layout
 date: 2024-12-03
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: tutorial
+category: tutorial
 tags:
   - UI
 cover:

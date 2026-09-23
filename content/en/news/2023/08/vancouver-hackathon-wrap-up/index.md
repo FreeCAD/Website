@@ -1,9 +1,9 @@
 ---
 title: Vancouver Hackathon Wrap-up
 date: 2023-08-14
-authors: Chris Hennes
+author: Chris Hennes
 draft: false
-categories: event
+category: event
 tags:
   - hackathon
 cover:

@@ -1,9 +1,9 @@
 ---
 title: Getting started with FEM
 date: 2025-09-16
-authors: NewJoker
+author: NewJoker
 draft: false
-categories: tutorial
+category: tutorial
 tags:
   - FEM
 cover:

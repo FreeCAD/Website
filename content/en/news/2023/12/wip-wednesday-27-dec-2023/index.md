@@ -1,9 +1,9 @@
 ---
 title: WIP Wednesday - 27 Dec 2023
 date: 2023-12-27
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: update
+category: update
 tags:
   - WIP
 cover:

@@ -1,9 +1,9 @@
 ---
 title: WIP Wednesday - 16 October 2024
 date: 2024-10-16
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: update
+category: update
 tags:
   - WIP
 cover:

@@ -1,9 +1,9 @@
 ---
 title: A New Materials System
 date: 2023-06-11
-authors: Chris Hennes
+author: Chris Hennes
 draft: false
-categories: update
+category: update
 tags: []
 cover:
   image: Simple_Periodic_Table_Chart.webp

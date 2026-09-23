@@ -1,9 +1,9 @@
 ---
 title: The FreeCAD day 2023 - The video!
 date: 2023-02-21
-authors: Yorik van Havre
+author: Yorik van Havre
 draft: false
-categories: event
+category: event
 tags:
   - FreeCAD day
 cover:

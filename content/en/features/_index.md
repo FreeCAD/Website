@@ -45,11 +45,11 @@ FreeCAD features an advanced geometry engine based on Open CASCADE Technology. I
 
 {{< group >}}
 
-{{< marker label="03" icon="categories" >}}
+{{< marker label="03" icon="category" >}}
 
 All FreeCAD objects are natively parametric, meaning their shape can be based on properties such as numeric values, texts, many data types, or even other objects allowing complex custom parametric behavior. All shape changes are recalculated on demand, recorded by an undo/redo stack, and allow to maintain a precise modelling history. New parametric objects are easy to code thanks to Python code that allows to perform just about anything in FreeCAD, from simple one-line commands in the integrated Python console to recording macros, developing custom tools up to fully featured workbenches.
 
-{{< button url="https://wiki.freecad.org/Property" label="Properties everywhere!" icon="categories" >}}
+{{< button url="https://wiki.freecad.org/Property" label="Properties everywhere!" icon="category" >}}
 
 {{< /group >}}
 

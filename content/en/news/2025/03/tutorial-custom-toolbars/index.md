@@ -1,9 +1,9 @@
 ---
 title: Tutorial - Custom Toolbars
 date: 2025-03-14
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: tutorial
+category: tutorial
 tags: []
 cover:
   image:

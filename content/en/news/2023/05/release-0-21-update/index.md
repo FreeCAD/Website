@@ -1,9 +1,9 @@
 ---
 title: Release 0.21 Update
 date: 2023-05-31
-authors: Yorik van Havre
+author: Yorik van Havre
 draft: false
-categories: announcement
+category: announcement
 tags:
   - release
 cover:

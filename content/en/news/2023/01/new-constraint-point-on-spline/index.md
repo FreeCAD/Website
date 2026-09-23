@@ -1,9 +1,9 @@
 ---
 title: New constraint - Point-on-Spline
 date: 2023-01-23
-authors: Chris Hennes
+author: Chris Hennes
 draft: false
-categories: feature
+category: feature
 tags:
   - sketcher
 cover:

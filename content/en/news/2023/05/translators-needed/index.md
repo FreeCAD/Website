@@ -1,9 +1,9 @@
 ---
 title: Translators Needed
 date: 2023-05-20
-authors: Chris Hennes
+author: Chris Hennes
 draft: false
-categories: announcement
+category: announcement
 tags: []
 cover:
   image:

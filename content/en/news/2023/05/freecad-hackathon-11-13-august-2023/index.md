@@ -1,9 +1,9 @@
 ---
 title: FreeCAD Hackathon 11-13 August, 2023
 date: 2023-05-24
-authors: Chris Hennes
+author: Chris Hennes
 draft: false
-categories: announcement
+category: announcement
 tags: []
 cover:
   image: Vancouver_Skyline_and_Mountains.webp

@@ -1,9 +1,9 @@
 ---
 title: New Book - FreeCAD for Makers
 date: 2022-10-05
-authors: Chris Hennes
+author: Chris Hennes
 draft: false
-categories: announcement
+category: announcement
 tags: []
 cover:
   image: FreeCAD_Book_Cover.webp

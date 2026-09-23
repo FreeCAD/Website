@@ -1,9 +1,9 @@
 ---
 title: WIP Wednesday - 25 Jan 2023
 date: 2023-01-25
-authors: Chris Hennes
+author: Chris Hennes
 draft: false
-categories: update
+category: update
 tags:
   - WIP
 cover:

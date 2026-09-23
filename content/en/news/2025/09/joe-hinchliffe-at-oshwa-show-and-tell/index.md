@@ -1,9 +1,9 @@
 ---
 title: Jo Hinchliffe at OSHWA Show and Tell
 date: 2025-09-30
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: showcase
+category: showcase
 tags:
   - user story
   - community

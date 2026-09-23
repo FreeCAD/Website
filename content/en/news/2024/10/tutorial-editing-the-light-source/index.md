@@ -1,9 +1,9 @@
 ---
 title: Tutorial - Editing the Light Source
 date: 2024-10-28
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: tutorial
+category: tutorial
 tags:
   - UI
 cover:

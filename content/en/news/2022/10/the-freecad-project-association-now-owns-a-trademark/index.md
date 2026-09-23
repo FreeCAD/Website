@@ -1,9 +1,9 @@
 ---
 title: The FreeCAD Project Association now owns a trademark
 date: 2022-10-12
-authors: Yorik van Havre
+author: Yorik van Havre
 draft: false
-categories: announcement
+category: announcement
 tags:
   - FPA
   - logo

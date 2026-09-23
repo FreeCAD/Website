@@ -1,9 +1,9 @@
 ---
 title: Mini Documentary on Dr Adrian Bowyer, with bonus FreeCAD appearances!
 date: 2026-01-05
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: showcase
+category: showcase
 tags:
   - user story
   - documentary

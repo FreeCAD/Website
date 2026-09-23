@@ -87,11 +87,11 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
       <title>{{ .Title }}</title>
       <link>{{ $link }}</link>
       <pubDate>{{ $date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
-      {{- with .Params.authors }}
+      {{- with .Params.author }}
       <dc:creator>{{ printf "<![CDATA[%s]]>" . | safeHTML }}</dc:creator>
       {{- end }}
       <guid isPermaLink="true">{{ $link }}</guid>
-      {{- with .Params.categories }}
+      {{- with .Params.category }}
       <category>{{ . }}</category>
       {{- end }}
       <description>{{ printf "<![CDATA[%s]]>" $body | safeHTML }}</description>

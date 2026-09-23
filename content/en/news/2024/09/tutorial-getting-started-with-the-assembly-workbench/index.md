@@ -1,9 +1,9 @@
 ---
 title: Tutorial - Getting started with the Assembly Workbench
 date: 2024-09-30
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: tutorial
+category: tutorial
 tags:
   - assembly
 cover:

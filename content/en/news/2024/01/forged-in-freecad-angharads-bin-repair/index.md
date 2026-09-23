@@ -1,9 +1,9 @@
 ---
 title: Forged In FreeCAD - Angharad's bin repair
 date: 2024-01-16
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: showcase
+category: showcase
 tags:
   - 3D printing
 cover:

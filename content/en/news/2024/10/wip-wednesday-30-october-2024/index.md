@@ -1,9 +1,9 @@
 ---
 title: WIP Wednesday - 30 October 2024
 date: 2024-10-30
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: announcement
+category: announcement
 tags:
   - WIP
 cover:

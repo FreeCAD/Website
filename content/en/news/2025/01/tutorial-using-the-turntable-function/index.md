@@ -1,9 +1,9 @@
 ---
 title: Tutorial - Using the Turntable Function
 date: 2025-01-06
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: tutorial
+category: tutorial
 tags: []
 cover:
   image: fc_turntable.webp

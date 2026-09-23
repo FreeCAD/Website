@@ -1,9 +1,9 @@
 ---
 title: Dec 2025 bug bounty update
 date: 2025-12-19
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: update
+category: update
 tags:
   - FPA
   - bounty

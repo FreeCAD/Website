@@ -1,9 +1,9 @@
 ---
 title: Forged in FreeCAD - Boat hull hydrostatic and stability analysis
 date: 2024-06-21
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: showcase
+category: showcase
 tags:
   - user story
   - research

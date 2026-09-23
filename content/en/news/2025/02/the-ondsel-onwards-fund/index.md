@@ -1,9 +1,9 @@
 ---
 title: The Ondsel Onwards Fund
 date: 2025-02-14
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: announcement
+category: announcement
 tags: []
 cover:
   image:

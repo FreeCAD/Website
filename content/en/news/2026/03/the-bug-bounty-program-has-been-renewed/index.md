@@ -1,9 +1,9 @@
 ---
 title: The bug bounty program has been renewed
 date: 2026-03-21
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: announcement
+category: announcement
 tags:
   - FPA
   - bounty

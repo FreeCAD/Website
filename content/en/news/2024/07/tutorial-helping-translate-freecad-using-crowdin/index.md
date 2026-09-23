@@ -1,9 +1,9 @@
 ---
 title: Tutorial - Helping translate FreeCAD using Crowdin
 date: 2024-07-04
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: tutorial
+category: tutorial
 tags: []
 cover:
   image: crowdin_freecad_dashboard.webp

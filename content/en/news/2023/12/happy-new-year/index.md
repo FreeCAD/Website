@@ -1,9 +1,9 @@
 ---
 title: Happy New Year!
 date: 2023-12-31
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: announcement
+category: announcement
 tags: []
 cover:
   image: Freecad_2024.webp

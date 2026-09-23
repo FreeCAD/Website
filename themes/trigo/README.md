@@ -52,7 +52,7 @@ Default Layouts use either:
 
 - `archives.html` for listing all relevant RegularPages in a Section with an `archives.md` file.
 
-- `taxonomy.html` for listing all relevant Terms of a Taxonomy (e.g. Event, Announcement for the Categories Taxonomy).
+- `taxonomy.html` for listing all relevant Terms of a Taxonomy (e.g. Event, Announcement for the Category Taxonomy).
 
 - `term.html` for listing all relevant Pages associated with a specific Term.
 

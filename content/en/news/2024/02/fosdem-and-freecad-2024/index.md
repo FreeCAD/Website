@@ -1,9 +1,9 @@
 ---
 title: FOSDEM and FreeCAD 2024
 date: 2024-02-16
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: announcement
+category: announcement
 tags: []
 cover:
   image: IMG_20240203_100009.webp

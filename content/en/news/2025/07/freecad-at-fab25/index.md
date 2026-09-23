@@ -1,9 +1,9 @@
 ---
 title: FreeCAD at FAB25
 date: 2025-07-18
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: event
+category: event
 tags:
   - FAB
 cover:

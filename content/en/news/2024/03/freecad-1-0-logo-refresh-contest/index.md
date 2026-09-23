@@ -1,9 +1,9 @@
 ---
 title: FreeCAD 1.0 Logo Refresh Contest
 date: 2024-03-28
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: announcement
+category: announcement
 tags:
   - contest
   - logo

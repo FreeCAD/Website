@@ -1,9 +1,9 @@
 ---
 title: Tutorial - Festive tree decoration, using the Revolution Tool!
 date: 2024-12-13
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: tutorial
+category: tutorial
 tags:
   - 3D printing
 cover:

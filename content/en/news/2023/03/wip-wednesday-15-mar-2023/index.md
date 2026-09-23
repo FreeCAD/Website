@@ -1,9 +1,9 @@
 ---
 title: WIP Wednesday - 15 Mar 2023
 date: 2023-03-15
-authors: Chris Hennes
+author: Chris Hennes
 draft: false
-categories: update
+category: update
 tags:
   - WIP
 cover:

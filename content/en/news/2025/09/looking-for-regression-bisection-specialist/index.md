@@ -1,9 +1,9 @@
 ---
 title: We are looking for a regression bisection specialist
 date: 2025-09-04
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: announcement
+category: announcement
 tags:
   - FPA
   - job

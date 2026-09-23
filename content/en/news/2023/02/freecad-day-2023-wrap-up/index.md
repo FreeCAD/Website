@@ -1,9 +1,9 @@
 ---
 title: FreeCAD Day 2023 Wrap-Up
 date: 2023-02-06
-authors: Chris Hennes
+author: Chris Hennes
 draft: false
-categories: event
+category: event
 tags: []
 cover:
   image:

@@ -1,9 +1,9 @@
 ---
 title: FreeCAD Hackathon Goals
 date: 2023-06-20
-authors: Chris Hennes
+author: Chris Hennes
 draft: false
-categories: announcement
+category: announcement
 tags:
   - hackathon
 cover:

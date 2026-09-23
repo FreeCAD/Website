@@ -552,7 +552,7 @@ Trigo shortcode to display a full-width layout with a collection of pages as car
 | --- | --- | --- | --- | --- | --- |
 | 0 | collection | string | | | "news" |
 | 1 | first | int | 0 | | 1 |
-| 2 | taxonomy | string | *optional* | | "categories" |
+| 2 | taxonomy | string | *optional* | | "category" |
 | 3 | term | string | *optional* | | "event" |
 | 4 | sort | string | *optional* | | "date" |
 | 5 | reverse | bool | `false` | | `true` |

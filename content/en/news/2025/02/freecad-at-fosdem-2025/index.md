@@ -1,9 +1,9 @@
 ---
 title: FreeCAD at FOSDEM 2025
 date: 2025-02-10
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: event
+category: event
 tags: []
 cover:
   image: IMG_20250202_115245.webp

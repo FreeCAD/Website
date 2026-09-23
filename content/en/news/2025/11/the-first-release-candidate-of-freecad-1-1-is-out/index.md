@@ -1,9 +1,9 @@
 ---
 title: The first release candidate of FreeCAD 1.1 is out
 date: 2025-11-26
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: announcement
+category: announcement
 tags:
   - release
   - RC

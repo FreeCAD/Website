@@ -1,9 +1,9 @@
 ---
 title: The Q3 2025 grant applications deadline is near
 date: 2025-08-07
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: announcement
+category: announcement
 tags:
   - FPA
   - grant

@@ -1,9 +1,9 @@
 ---
 title: Forged In FreeCAD - 4Axis for CNC ring engraving
 date: 2024-05-14
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: showcase
+category: showcase
 tags:
   - user story
   - CNC

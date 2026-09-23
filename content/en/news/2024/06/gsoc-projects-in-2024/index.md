@@ -1,9 +1,9 @@
 ---
 title: GSoC projects in 2024
 date: 2024-06-10
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: announcement
+category: announcement
 tags:
   - GSOC
 cover:

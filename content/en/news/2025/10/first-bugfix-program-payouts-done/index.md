@@ -1,9 +1,9 @@
 ---
 title: First bugfix program payouts done
 date: 2025-10-02
-authors: Aleksandr Prokudin
+author: Aleksandr Prokudin
 draft: false
-categories: announcement
+category: announcement
 tags:
   - FPA
   - bounty

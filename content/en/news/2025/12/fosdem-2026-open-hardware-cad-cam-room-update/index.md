@@ -1,9 +1,9 @@
 ---
 title: FOSDEM 2026, Open Hardware CAD/CAM room update
 date: 2025-12-15
-authors: Jo Hinchliffe
+author: Jo Hinchliffe
 draft: false
-categories: event
+category: event
 tags:
   - FOSDEM
   - community
