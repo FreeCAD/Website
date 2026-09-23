@@ -182,8 +182,8 @@ collections:
     path: '
     {{- if eq .Section (index site.MainSections 0) -}}
       {{- printf "%s/{{year}}/{{month}}/{{slug}}/index" .Section -}}
-    {{- else if eq .Section "download" -}}
-      {{- printf "%s/releases/{{slug}}/index" .Section -}}
+    {{- else if .RegularPages -}}
+      {{- printf "%s/{{slug}}/index" .Section -}}
     {{- else if .Sections -}}
       {{- printf "%s/{{slug}}/_index" .Section -}}
     {{- else -}}

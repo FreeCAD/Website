@@ -3,7 +3,7 @@ title: FreeCAD 1.1 Notes
 description: Free and open-source CAD, refined.
 date: 2026-03-24
 cover:
-  image: relnotes_1-1.webp
+  image: 1-1.webp
   caption: FreeCAD 1.1 release
 ---
 
@@ -19,7 +19,7 @@ This release focuses on making everyday modeling more reliable, faster, and more
 
 {{< group >}}
 
-{{< carousel "transform_1-1.webp" "transform2_1-1.webp" >}}
+{{< carousel "transform.webp" "transform2.webp" >}}
 
 - Three-point lighting improving rendering of models in the 3D view.
 - Transform tool overhaul, with draggers, precise input, alignment, snapping, and target features.
@@ -35,7 +35,7 @@ This release focuses on making everyday modeling more reliable, faster, and more
 - Improved navigation controls, align to selection, and visual utility tools.
 - New search in the Preferences Editor.
 
-![Clarify selection](clarify_1-1.webp)
+![Clarify selection](clarify.webp)
 
 {{< /group >}}
 
@@ -44,7 +44,7 @@ This release focuses on making everyday modeling more reliable, faster, and more
 
 {{< block title="Part Design and Assembly on the move" css_class="background: var(--gradient);" >}}
 
-![Feature preview and adjustments by gizmos](pd_1-1.webp)
+![Feature preview and adjustments by gizmos](pd.webp)
 
 - Enhanced feedback during modeling and editing thanks to transparent previews and interactive draggers.
 - Overhauled hole tool task panel, taper and thread support, and performance.
@@ -58,7 +58,7 @@ This release focuses on making everyday modeling more reliable, faster, and more
 
 {{< group >}}
 
-{{< compare "sketcher_1-1.webp" "pad_1-1.webp" >}}
+{{< compare "sketcher.webp" "pad.webp" >}}
 
 - Projection, intersection, and external geometry in the Sketcher.
 - Improved master sketch workflow via make internals for closed contours.
@@ -75,14 +75,14 @@ This release focuses on making everyday modeling more reliable, faster, and more
 - FEM results now support animations, electrostatic analyses, and glyph filters.
 - TechDraw has improved snapping, frame toggle, annotation, and dimension tools.
 
-![Forces visualization for glyph filters](glyph_1-1.webp)
+![Forces visualization for glyph filters](glyph.webp)
 
 {{< /block >}}
 
 
 {{< block title="Build on BIM and Draft" css_class="grid" >}}
 
-![Better layers, dimensions, and style management](plan_1-1.webp)
+![Better layers, dimensions, and style management](plan.webp)
 
 - View panel to view, interact, and manage the project spatial structure and 2D views.
 - Interactive sun position and ray visualization for sites.
@@ -98,7 +98,7 @@ This release focuses on making everyday modeling more reliable, faster, and more
 - Faster startup and reduced memory usage.
 - Numerous bug fixes across all workbenches.
 
-![CNC lathe model assembly](cnc_1-1.webp)
+![CNC lathe model assembly](cnc.webp)
 
 {{< /block >}}
 

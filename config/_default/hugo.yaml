@@ -32,6 +32,9 @@ menus:
   - pageRef: /
   - pageRef: /features
   - pageRef: /download
+    identifier: download
+  - pageRef: /releases
+    parent: download
   - pageRef: /news
     identifier: news
   - pageRef: /news/archives
@@ -77,6 +80,8 @@ enableGitInfo: true
 permalinks:
   page:
     news: /:sections[0]/:slugorcontentbasename
+  section:
+    about: /:slugorcontentbasename
 
 cascade:
   - weight: 1
@@ -84,15 +89,20 @@ cascade:
       kind: home
       path: "{/}"
 
-  - weight: 20
+  - weight: 10
     target:
       kind: section
       path: "{/features}"
 
-  - weight: 30
+  - weight: 20
     target:
       kind: section
       path: "{/download}"
+
+  - weight: 30
+    target:
+      kind: section
+      path: "{/releases}"
 
   - weight: 40
     target:
@@ -132,6 +142,11 @@ cascade:
   - weight: 110
     target:
       kind: section
+      path: "{/about}"
+
+  - weight: 120
+    target:
+      kind: section
       path: "{/admin}"
 
   - params:
@@ -140,7 +155,7 @@ cascade:
           - download
     target:
       kind: page
-      path: /download/releases/**
+      path: /releases/**
 
   - params:
       partials:
