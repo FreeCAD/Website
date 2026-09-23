@@ -3,7 +3,7 @@ title: FreeCAD 1.0 Notes
 description: A new chapter for free and open-source CAD.
 date: 2024-11-19
 cover:
-  image: relnotes_1-0.webp
+  image: 1-0.webp
   caption: FreeCAD 1.0 release
 ---
 
@@ -74,7 +74,7 @@ void ShapeHistory::reset(
 
 {{< block title="Integrated Assembly" >}}
 
-![Exploded View in the Assembly](exploded-view_1-0.webp "Exploded View in the Assembly")
+![Exploded View in the Assembly](exploded-view.webp "Exploded View in the Assembly")
 
 - A brand-new built-in Assembly workbench powered by a modern solver
 - Define constraints between parts with improved reliability
@@ -91,14 +91,14 @@ void ShapeHistory::reset(
 - Reworked panels, tabs, and preferences dialog
 - Faster, cleaner start page
 
-![Side panels overlay](assembly_1-0.webp "Side panels overlay")
+![Side panels overlay](assembly.webp "Side panels overlay")
 
 {{< /block >}}
 
 
 {{< block title="Better Tools for Everyday" >}}
 
-![Measurement tool](measurement_1-0.webp "Measurement tool")
+![Measurement tool](measurement.webp "Measurement tool")
 
 - Universal measurement tools available across workbenches
 - Improved Sketcher and Part Design workflows
@@ -113,7 +113,7 @@ void ShapeHistory::reset(
 - Better project structure, data handling, and building workflows
 - Improved interoperability with other open BIM tools
 
-![BIM workbench](bim_1-0.webp "BIM workbench")
+![BIM workbench](bim.webp "BIM workbench")
 
 {{< /block >}}
 
@@ -130,7 +130,7 @@ void ShapeHistory::reset(
 
 {{< block title="Materials and Simulation Improvements" >}}
 
-![FEM workbench](fem_1-0.webp "FEM workbench")
+![FEM workbench](fem.webp "FEM workbench")
 
 - A new materials system for visual and physical properties
 - Many enhancements across FEM and simulation tools
