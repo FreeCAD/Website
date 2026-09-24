@@ -591,7 +591,7 @@ This is **Markdown** *content* between `block` and `group` shortcode tags.
 
 {{</* /group */>}}
 
-![](/FreeCAD-symbol.webp)
+![](symbol.svg)
 
 {{</* /block */>}}
 ```
@@ -623,7 +623,7 @@ This is **Markdown** *content* between `block` and `group` shortcode tags.
 
 {{< /group >}}
 
-![](/FreeCAD-symbol.webp)
+![](symbol.svg)
 
 {{< /block >}}
 

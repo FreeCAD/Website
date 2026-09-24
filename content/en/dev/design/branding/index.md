@@ -22,13 +22,13 @@ You can download the logo kit including guidelines:
 
 ### Wordmark
 
-![FreeCAD Wordmark](FreeCAD-wordmark.webp)
+![FreeCAD Wordmark](wordmark.svg)
 
 The logo consists of two elements: the *F* symbol and the wordmark. The text uses the [Evolventa](https://evolventa.github.io/) font family, in regular weight for "Free" and in bold weight for "CAD". It should not be recreated but instead used as provided, either in the dark or light version.
 
 ### Symbol
 
-![FreeCAD Symbol](FreeCAD-symbol.webp)
+![FreeCAD Symbol](symbol.svg)
 
 The symbol has two versions:
 1. Full color (primary) which is the preferred version

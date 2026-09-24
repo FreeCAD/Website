@@ -137,12 +137,12 @@ Second Term
 ## Images
 
 ```text {file=Markdown}
-![](FreeCAD-symbol.webp)
+![](symbol.svg)
 ```
 
 <u>How it renders:</u>
 
-![](FreeCAD-symbol.webp)
+![](symbol.svg)
 
 With caption:
 
