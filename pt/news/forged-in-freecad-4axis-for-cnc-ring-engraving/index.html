@@ -42,8 +42,8 @@
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/Website/css/styles.2cc9d0e001a0d539d26f5e1557d29282ba2d9c71359b224fc1893cdeb81ac2c6.css"
-          integrity="sha256-LMnQ4AGg1TnSb14VV9KSgrotnHE1myJPwYk83rgawsY="
+          href="/Website/css/styles.efbcc322b54e75869cceeda071ddcfc9bd2bbd825e1a9ee2b7ebfc2e2635f178.css"
+          integrity="sha256-77zDIrVOdYaczu2gcd3Pyb0rvYJeGp7it&#43;v8LiY18Xg="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -95,7 +95,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2024-05-14T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-05-05T08:10:07+02:00">
+    <meta property="article:modified_time" content="2026-09-23T13:25:40+02:00">
     <meta property="article:tag" content="User Story">
     <meta property="article:tag" content="CNC">
 </head><body
@@ -113,12 +113,13 @@
     href="/Website/pt/"
     accesskey="h"
     title="Início (Alt + H)"
-    aria-label="Início"><svg
+    aria-label="Início">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/Website/wordmark.svg#wordmark"></use>
     </svg></a>
 
   <div class="site-nav"><nav class="menu">
@@ -220,17 +221,17 @@
     focusable="false">
     <use href="/Website/svg/date.svg#date"></use>
   </svg><time datetime="2024-05-14T00:00:00Z">14 de maio de 2024</time>
-  </span><span class="meta authors"><svg
-    class="icon authors"
+  </span><span class="meta author"><svg
+    class="icon author"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/authors.svg#authors"></use>
-  </svg><a href="/Website/pt/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg
-    class="icon categories"
+    <use href="/Website/svg/author.svg#author"></use>
+  </svg><a href="/Website/pt/author/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta category"><svg
+    class="icon category"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/categories.svg#categories"></use>
-  </svg><a href="/Website/pt/categories/showcase/">Showcase (30)</a></span><span class="meta tags"><svg
+    <use href="/Website/svg/category.svg#category"></use>
+  </svg><a href="/Website/pt/category/showcase/">Showcase (30)</a></span><span class="meta tags"><svg
     class="icon tags"
     aria-hidden="true"
     focusable="false">
@@ -289,13 +290,8 @@
     <use href="/Website/svg/cross.svg#cross"></use>
   </svg></button><p>Ring</p></div><figcaption>Ring</figcaption></figure><p>For the engraving side of the project Jordan wanted to utilise their CNC3018 machine. If you don&rsquo;t know the CNC3018 it is an affordable entry point for desktop small form factor CNC routing. They are small and, whilst there are lot of bigger and better options, it has enough capabilities for those newer to CNC to do lots of projects. As such it&rsquo;s not uncommon to see hacks and modifications carried out on them.</p>
 <p>Jordan&rsquo;s mod was to create a 4<sup>th</sup> axis which could also be referred to as a rotary axis. The design consists of a NEMA 17 stepper motor in an enclosure that allows it to be bolted to the bed of the small CNC router. Attached to the output shaft of the NEMA 17 is a work holding section designed to receive the blank stock ring. It&rsquo;s sort of a mandrel work holder with the ring inserted over a flexible jawed section with the jaws pushed out with a wedge device. The end of the work holding section is supported on a &ldquo;tail stock&rdquo; of sorts which consists of some rollers in a 3D printed enclosure again bolted to the bed of the CNC. This allows the part to be machined with minimal deflection as both ends of the mandrel are supported. FreeCAD has been used for all of this design and the files can be found over on <a
-  href="https://www.thingiverse.com/thing:4778215"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">the project Thingiverse page<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>.</p>
+  href="false"
+  class="internal-tooltip">the project Thingiverse page</a>.</p>
 <figure class="image"><button
           aria-label="Ampliar imagem"
           popovertarget="img-002"
@@ -328,28 +324,13 @@
     focusable="false">
     <use href="/Website/svg/cross.svg#cross"></use>
   </svg></button><p>Ring engraved</p></div><figcaption>Ring engraved</figcaption></figure><p>For the engraving process Jordan has created a design as an SVG file which is then imported into the <a
-  href="https://wiki.freecad.org/Draft_Workbench/pt"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Draft workbench<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> in FreeCAD. Moving to the <a
-  href="https://wiki.freecad.org/CAM_Workbench/pt"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">CAM workbench<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>, Jordan then creates the tool paths as if the object is a flat piece of work and not cylindrical. The CNC3018 is controlled by a board running GRBL and the rotary axis assembly is actually connected to and replaces the Y axis of the machine. This means that if the X and Z axis are positioned carefully and accurately above the ring in the rotary attachment then the work underneath the tool bit is the same as a flat piece of stock as the ring rotates.</p>
+  href="false"
+  class="internal-tooltip">Draft workbench</a> in FreeCAD. Moving to the <a
+  href="false"
+  class="internal-tooltip">CAM workbench</a>, Jordan then creates the tool paths as if the object is a flat piece of work and not cylindrical. The CNC3018 is controlled by a board running GRBL and the rotary axis assembly is actually connected to and replaces the Y axis of the machine. This means that if the X and Z axis are positioned carefully and accurately above the ring in the rotary attachment then the work underneath the tool bit is the same as a flat piece of stock as the ring rotates.</p>
 <p>It&rsquo;s excellent to see FreeCAD being used in this multi-functional way. There&rsquo;s <a
-  href="https://blog.jpoles1.com/archives/183"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">lots more detail over on Jordan&rsquo;s blog<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> and some videos of the setup in use.</p>
+  href="false"
+  class="internal-tooltip">lots more detail over on Jordan&rsquo;s blog</a> and some videos of the setup in use.</p>
 </div><footer class="single-footer">
     <nav class="pagination"><a
             class="button next"
@@ -385,17 +366,9 @@
             href="/Website/pt/features/">Funcionalidades</a><ul></ul></li><li>
           <a
             href="/Website/pt/download/">Baixar</a><ul><li>
-                      <a
-                        href="/Website/pt/download/releases/">Releases</a>
-                    </li><li>
-                      <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
+                  <a
+                    href="/Website/pt/releases/">Releases</a>
+                </li><li>
                       <a
                         href="/Website/pt/download/addons/">Addons</a>
                     </li><li>
@@ -407,9 +380,9 @@
                   <a
                     href="/Website/pt/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/Website/pt/authors/">Autores</a>
+                        <a href="/Website/pt/author/">Autor</a>
                       </li><li>
-                        <a href="/Website/pt/categories/">Categorias</a>
+                        <a href="/Website/pt/category/">Categoria</a>
                       </li><li>
                         <a href="/Website/pt/tags/">Tags</a>
                       </li></ul></li><li>
@@ -435,7 +408,12 @@
   </svg></a>
                     </li><li>
                       <a
-                        href="/Website/pt/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
@@ -504,6 +482,14 @@
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/bluesky.svg#bluesky"></use>
   </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"
@@ -587,9 +573,9 @@
   </svg></a>
 </span>
 <span>
-    Modified: 2026-05-05
+    Modified: 2026-09-23
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/ab12b609077875783943636ca2c31feec3421a6a">ab12b60907<svg
+      Commit: <a href="https://github.com/freecad/website/commit/efdfa08161fa1b81bbff5f770b0baaf19e5deffb">efdfa08161<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

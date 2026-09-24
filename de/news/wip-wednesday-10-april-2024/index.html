@@ -42,8 +42,8 @@
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/Website/css/styles.2cc9d0e001a0d539d26f5e1557d29282ba2d9c71359b224fc1893cdeb81ac2c6.css"
-          integrity="sha256-LMnQ4AGg1TnSb14VV9KSgrotnHE1myJPwYk83rgawsY="
+          href="/Website/css/styles.efbcc322b54e75869cceeda071ddcfc9bd2bbd825e1a9ee2b7ebfc2e2635f178.css"
+          integrity="sha256-77zDIrVOdYaczu2gcd3Pyb0rvYJeGp7it&#43;v8LiY18Xg="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -96,7 +96,7 @@ In Arch, yorikvanhavre upgraded the reference tool, so that it could work with D
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2024-04-10T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-05-05T08:06:31+02:00">
+    <meta property="article:modified_time" content="2026-09-23T13:25:40+02:00">
     <meta property="article:tag" content="WIP">
 </head><body
     class="single type-news kind-page "
@@ -113,12 +113,13 @@ In Arch, yorikvanhavre upgraded the reference tool, so that it could work with D
     href="/Website/de/"
     accesskey="h"
     title="Home (Alt + H)"
-    aria-label="Home"><svg
+    aria-label="Home">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/Website/wordmark.svg#wordmark"></use>
     </svg></a>
 
   <div class="site-nav"><nav class="menu">
@@ -220,17 +221,17 @@ In Arch, yorikvanhavre upgraded the reference tool, so that it could work with D
     focusable="false">
     <use href="/Website/svg/date.svg#date"></use>
   </svg><time datetime="2024-04-10T00:00:00Z">10. April 2024</time>
-  </span><span class="meta authors"><svg
-    class="icon authors"
+  </span><span class="meta author"><svg
+    class="icon author"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/authors.svg#authors"></use>
-  </svg><a href="/Website/de/authors/aleksandr-prokudin/">Aleksandr Prokudin (169)</a></span><span class="meta categories"><svg
-    class="icon categories"
+    <use href="/Website/svg/author.svg#author"></use>
+  </svg><a href="/Website/de/author/aleksandr-prokudin/">Aleksandr Prokudin (169)</a></span><span class="meta category"><svg
+    class="icon category"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/categories.svg#categories"></use>
-  </svg><a href="/Website/de/categories/update/">Update (158)</a></span><span class="meta tags"><svg
+    <use href="/Website/svg/category.svg#category"></use>
+  </svg><a href="/Website/de/category/update/">Update (158)</a></span><span class="meta tags"><svg
     class="icon tags"
     aria-hidden="true"
     focusable="false">
@@ -242,29 +243,14 @@ In Arch, yorikvanhavre upgraded the reference tool, so that it could work with D
     <use href="/Website/svg/time.svg#time"></use>
   </svg>2 Minuten</span></div></section><div class="content"><p>In the <em>toponaming project</em>, <strong>bgbsww</strong> added more tests and updated existing ones, and <strong>CalligaroV</strong> fixed two bugs.</p>
 <p>In <em>Arch</em>, <strong>yorikvanhavre</strong> upgraded the reference tool, so that it could work with DXF and IFC files (<a
-  href="https://github.com/yorikvanhavre/freecad-nativeifc"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">NativeIFC<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> is required for the latter), and <strong>paullee0</strong> fixed a regression that occured when making a block from a DraftWire.</p>
+  href="false"
+  class="internal-tooltip">NativeIFC</a> is required for the latter), and <strong>paullee0</strong> fixed a regression that occured when making a block from a DraftWire.</p>
 <p>In <em>Sketcher</em>, <strong>PaddleStroke</strong> <a
-  href="https://github.com/freecad/freecad/pull/13098"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">changed the rendering<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> of points&rsquo; colors (after a discussion with the design working group) and fixed a bug in the Translate tool (horizontal and vertical constraints disappeared after translating).</p>
+  href="false"
+  class="internal-tooltip">changed the rendering</a> of points&rsquo; colors (after a discussion with the design working group) and fixed a bug in the Translate tool (horizontal and vertical constraints disappeared after translating).</p>
 <p>In <em>TechDraw</em>, <strong>WandererFan</strong> implemented the so-called <a
-  href="https://github.com/freecad/freecad/issues/5694"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">broken view<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> - a way to render very large objects on a page by cutting a segment from the middle and juxtaposing them. He also fixed a problem with template autofilling where the total number of sheets in a document would always be equal to 1.</p>
+  href="false"
+  class="internal-tooltip">broken view</a> - a way to render very large objects on a page by cutting a segment from the middle and juxtaposing them. He also fixed a problem with template autofilling where the total number of sheets in a document would always be equal to 1.</p>
 <p>In <em>FEM</em>, <strong>FlachyJoe</strong> implemented a way to suppress the constraints: a suppressed constraint is no more written in the solver&rsquo;s input file and thus not taken into account for analysis. Meanwhile <strong>lyphrowny</strong> migrated calculix tests to ccxtools tests and attempted to resolve two issues by implementing float comparison for FEM tests.</p>
 <p>Thanks to <strong>davesrocketshop</strong>, FreeCAD now uses the new <em>material system</em> for body appearance. A new widget is now available to allow the user to select materials in a consistent fashion. It can also launch the material editor with its more advanced capabilities. Quickly after that, wwmayer fixed some of the regressions that were introduced with this patch.</p>
 <p>Several more general fixes were contributed by <strong>mosfet80</strong>.</p>
@@ -305,17 +291,9 @@ In Arch, yorikvanhavre upgraded the reference tool, so that it could work with D
             href="/Website/de/features/">Funktionen</a><ul></ul></li><li>
           <a
             href="/Website/de/download/">Herunterladen</a><ul><li>
-                      <a
-                        href="/Website/de/download/releases/">Releases</a>
-                    </li><li>
-                      <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
+                  <a
+                    href="/Website/de/releases/">Releases</a>
+                </li><li>
                       <a
                         href="/Website/de/download/addons/">Addons</a>
                     </li><li>
@@ -327,9 +305,9 @@ In Arch, yorikvanhavre upgraded the reference tool, so that it could work with D
                   <a
                     href="/Website/de/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/Website/de/authors/">Autoren</a>
+                        <a href="/Website/de/author/">Autor</a>
                       </li><li>
-                        <a href="/Website/de/categories/">Kategorien</a>
+                        <a href="/Website/de/category/">Kategorie</a>
                       </li><li>
                         <a href="/Website/de/tags/">Tags</a>
                       </li></ul></li><li>
@@ -355,7 +333,12 @@ In Arch, yorikvanhavre upgraded the reference tool, so that it could work with D
   </svg></a>
                     </li><li>
                       <a
-                        href="/Website/de/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
@@ -424,6 +407,14 @@ In Arch, yorikvanhavre upgraded the reference tool, so that it could work with D
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/bluesky.svg#bluesky"></use>
   </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"
@@ -507,9 +498,9 @@ In Arch, yorikvanhavre upgraded the reference tool, so that it could work with D
   </svg></a>
 </span>
 <span>
-    Modified: 2026-05-05
+    Modified: 2026-09-23
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/b17445f590d892755b51f7f35ced061e6eb392b5">b17445f590<svg
+      Commit: <a href="https://github.com/freecad/website/commit/efdfa08161fa1b81bbff5f770b0baaf19e5deffb">efdfa08161<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

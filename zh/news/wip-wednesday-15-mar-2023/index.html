@@ -42,8 +42,8 @@
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/Website/css/styles.2cc9d0e001a0d539d26f5e1557d29282ba2d9c71359b224fc1893cdeb81ac2c6.css"
-          integrity="sha256-LMnQ4AGg1TnSb14VV9KSgrotnHE1myJPwYk83rgawsY="
+          href="/Website/css/styles.efbcc322b54e75869cceeda071ddcfc9bd2bbd825e1a9ee2b7ebfc2e2635f178.css"
+          integrity="sha256-77zDIrVOdYaczu2gcd3Pyb0rvYJeGp7it&#43;v8LiY18Xg="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -90,12 +90,12 @@
     href="https://FreeCAD.github.io/Website/zh/"><meta property="og:url" content="https://FreeCAD.github.io/Website/zh/news/wip-wednesday-15-mar-2023/">
   <meta property="og:site_name" content="FreeCAD">
   <meta property="og:title" content="WIP Wednesday - 15 Mar 2023">
-  <meta property="og:description" content="I am hopelessly biased, but as far as I am concerned the big news this week is the merge of the first piece of the puzzle to mitigating the Topological Naming Problem, with the merge of PR 8776 . It’s not a large or complicated piece of code, but it forms the very innermost core of the TNP solution created by FreeCAD developer realthunder, and it’s now in the main FreeCAD codebase 🎉. No user-visible changes yet, but you eat an elephant one bite at a time!">
+  <meta property="og:description" content="I am hopelessly biased, but as far as I am concerned the big news this week is the merge of the first piece of the puzzle to mitigating the Topological Naming Problem, with the merge of PR 8776. It’s not a large or complicated piece of code, but it forms the very innermost core of the TNP solution created by FreeCAD developer realthunder, and it’s now in the main FreeCAD codebase 🎉. No user-visible changes yet, but you eat an elephant one bite at a time!">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2023-03-15T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-05-05T08:08:12+02:00">
+    <meta property="article:modified_time" content="2026-09-23T13:25:40+02:00">
     <meta property="article:tag" content="WIP">
 </head><body
     class="single type-news kind-page "
@@ -112,12 +112,13 @@
     href="/Website/zh/"
     accesskey="h"
     title="主页 (Alt + H)"
-    aria-label="主页"><svg
+    aria-label="主页">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/Website/wordmark.svg#wordmark"></use>
     </svg></a>
 
   <div class="site-nav"><nav class="menu">
@@ -219,17 +220,17 @@
     focusable="false">
     <use href="/Website/svg/date.svg#date"></use>
   </svg><time datetime="2023-03-15T00:00:00Z">2023年3月15日</time>
-  </span><span class="meta authors"><svg
-    class="icon authors"
+  </span><span class="meta author"><svg
+    class="icon author"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/authors.svg#authors"></use>
-  </svg><a href="/Website/zh/authors/chris-hennes/">Chris Hennes (80)</a></span><span class="meta categories"><svg
-    class="icon categories"
+    <use href="/Website/svg/author.svg#author"></use>
+  </svg><a href="/Website/zh/author/chris-hennes/">Chris Hennes (80)</a></span><span class="meta category"><svg
+    class="icon category"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/categories.svg#categories"></use>
-  </svg><a href="/Website/zh/categories/update/">Update (158)</a></span><span class="meta tags"><svg
+    <use href="/Website/svg/category.svg#category"></use>
+  </svg><a href="/Website/zh/category/update/">Update (158)</a></span><span class="meta tags"><svg
     class="icon tags"
     aria-hidden="true"
     focusable="false">
@@ -240,25 +241,15 @@
     focusable="false">
     <use href="/Website/svg/time.svg#time"></use>
   </svg>2 分钟</span></div></section><div class="content"><p>I am hopelessly biased, but as far as I am concerned the big news this week is the merge of the first piece of the puzzle to mitigating the Topological Naming Problem, with the merge of <a
-  href="https://github.com/freecad/freecad/pull/8776"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR 8776<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>. It&rsquo;s not a large or complicated piece of code, but it forms the very innermost core of the TNP solution created by FreeCAD developer realthunder, and it&rsquo;s now in the main FreeCAD codebase 🎉. No user-visible changes yet, but you eat an elephant one bite at a time!</p>
+  href="false"
+  class="internal-tooltip">PR 8776</a>. It&rsquo;s not a large or complicated piece of code, but it forms the very innermost core of the TNP solution created by FreeCAD developer realthunder, and it&rsquo;s now in the main FreeCAD codebase 🎉. No user-visible changes yet, but you eat an elephant one bite at a time!</p>
 <p>The past week also saw merges of new notification functionality from Abdullah (the maintainer of the Sketcher workbench), plus many small usability improvements and bug fixes. In the upcoming week:</p>
 <ul>
 <li>wandererfan is working on an annoying fail when creating a projection group on some Windows builds.</li>
 <li>He&rsquo;s also working on the first steps in fixing the &ldquo;lesser topo naming problem&rdquo; - autocorrect dimension references when they become invalid after a recompute.</li>
 <li>jonasb is working on <a
-  href="https://github.com/freecad/freecad/issues/5618"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Profile Shift<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> &ndash; this time for real.</li>
+  href="false"
+  class="internal-tooltip">Profile Shift</a> &ndash; this time for real.</li>
 <li>I (chennes) am starting in on the next chunk of the Topological Naming Problem merge, as well as fixing a bug in the Addon Manager that prevented Addon installation after running Update All.</li>
 </ul>
 <p><strong>PR stats:</strong> In the week from Tuesday, 7 Feb to Tuesday, 14 Mar there were 75 pull requests merged, with a total codebase change of +16,880 / ‑11,672 lines (not counting translation changes). That&rsquo;s an average merged PR size of +225 / ‑156.</p>
@@ -297,17 +288,9 @@
             href="/Website/zh/features/">功能</a><ul></ul></li><li>
           <a
             href="/Website/zh/download/">下载</a><ul><li>
-                      <a
-                        href="/Website/zh/download/releases/">Releases</a>
-                    </li><li>
-                      <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
+                  <a
+                    href="/Website/zh/releases/">Releases</a>
+                </li><li>
                       <a
                         href="/Website/zh/download/addons/">Addons</a>
                     </li><li>
@@ -319,9 +302,9 @@
                   <a
                     href="/Website/zh/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/Website/zh/authors/">作者列表</a>
+                        <a href="/Website/zh/author/">作者</a>
                       </li><li>
-                        <a href="/Website/zh/categories/">分类列表</a>
+                        <a href="/Website/zh/category/">分类</a>
                       </li><li>
                         <a href="/Website/zh/tags/">标签列表</a>
                       </li></ul></li><li>
@@ -347,7 +330,12 @@
   </svg></a>
                     </li><li>
                       <a
-                        href="/Website/zh/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
@@ -417,6 +405,14 @@
     focusable="false">
     <use href="/Website/svg/mastodon.svg#mastodon"></use>
   </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/bluesky.svg#bluesky"></use>
+  </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"
     target="_blank" rel="external noreferrer nofollow"><svg
@@ -457,7 +453,7 @@
     focusable="false">
     <use href="/Website/svg/rss.svg#rss"></use>
   </svg></a><a
-  href="/Website/zh/fedishare.html#title=WIP&#43;Wednesday&#43;-&#43;15&#43;Mar&#43;2023&amp;description=I&#43;am&#43;hopelessly&#43;biased%2C&#43;but&#43;as&#43;far&#43;as&#43;I&#43;am&#43;concerned&#43;the&#43;big&#43;news&#43;this&#43;week&#43;is&#43;the&#43;merge&#43;of&#43;the&#43;first&#43;piece&#43;of&#43;the&#43;puzzle&#43;to&#43;mitigating&#43;the&#43;Topological&#43;Naming&#43;Problem%2C&#43;with&#43;the&#43;merge&#43;of&#43;PR&#43;8776&#43;.&#43;It%E2%80%99s&#43;%E2%80%A6%0A%23wip&amp;url=https://FreeCAD.github.io/Website/zh/news/wip-wednesday-15-mar-2023/"
+  href="/Website/zh/fedishare.html#title=WIP&#43;Wednesday&#43;-&#43;15&#43;Mar&#43;2023&amp;description=I&#43;am&#43;hopelessly&#43;biased%2C&#43;but&#43;as&#43;far&#43;as&#43;I&#43;am&#43;concerned&#43;the&#43;big&#43;news&#43;this&#43;week&#43;is&#43;the&#43;merge&#43;of&#43;the&#43;first&#43;piece&#43;of&#43;the&#43;puzzle&#43;to&#43;mitigating&#43;the&#43;Topological&#43;Naming&#43;Problem%2C&#43;with&#43;the&#43;merge&#43;of&#43;PR&#43;8776.&#43;It%E2%80%99s&#43;%E2%80%A6%0A%23wip&amp;url=https://FreeCAD.github.io/Website/zh/news/wip-wednesday-15-mar-2023/"
   title="分享至 Fediverse"
   target="_blank" rel="external noreferrer nofollow"><svg
     class="icon fediverse"
@@ -499,9 +495,9 @@
   </svg></a>
 </span>
 <span>
-    Modified: 2026-05-05
+    Modified: 2026-09-23
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/03ff103a0b353046b4e1c2d8cbc0ae96e9f253f5">03ff103a0b<svg
+      Commit: <a href="https://github.com/freecad/website/commit/efdfa08161fa1b81bbff5f770b0baaf19e5deffb">efdfa08161<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

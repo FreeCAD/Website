@@ -42,8 +42,8 @@
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/Website/css/styles.2cc9d0e001a0d539d26f5e1557d29282ba2d9c71359b224fc1893cdeb81ac2c6.css"
-          integrity="sha256-LMnQ4AGg1TnSb14VV9KSgrotnHE1myJPwYk83rgawsY="
+          href="/Website/css/styles.efbcc322b54e75869cceeda071ddcfc9bd2bbd825e1a9ee2b7ebfc2e2635f178.css"
+          integrity="sha256-77zDIrVOdYaczu2gcd3Pyb0rvYJeGp7it&#43;v8LiY18Xg="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -110,12 +110,13 @@
     href="/Website/zh/"
     accesskey="h"
     title="主页 (Alt + H)"
-    aria-label="主页"><svg
+    aria-label="主页">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/Website/wordmark.svg#wordmark"></use>
     </svg></a>
 
   <div class="site-nav"><nav class="menu">
@@ -342,13 +343,8 @@
     <use href="/Website/svg/note.svg#note"></use>
   </svg>注意<p>此页面尚未翻译，因此使用英文版本。有兴趣帮忙吗？
 <a
-  href="https://github.com/freecad/website"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">贡献<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></p></blockquote></figure><p>The <code>user.cfg</code> XML file contains a hierarchical list of all the preferences used by FreeCAD.</p>
+  href="false"
+  class="internal-tooltip">贡献</a></p></blockquote></figure><p>The <code>user.cfg</code> XML file contains a hierarchical list of all the preferences used by FreeCAD.</p>
 <p>Each module has its own branch of the hierarchy starting under Preferences/Mod.</p>
 <p>There are two ways of updating preferences:</p>
 <ul>
@@ -362,51 +358,26 @@
 <p>custom preference dialogs</p>
 <ul>
 <li><a
-  href="https://github.com/freecad/freecad/blob/master/src/Mod/Part/Gui/DlgSettingsGeneral.cpp"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">a sample dialog<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">a sample dialog</a></li>
 <li>these dialogs use <a
-  href="https://wiki.freecad.org/Compile_on_Windows/en#Qt_Designer_plugin/zh"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">custom FreeCAD widgets<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> to update preference values.  Each preference widget has two special properties: prefEntry and prefPath.  prefPath is the identifies the branch of the preference hierarchy and prefEntry identifies the leaf node to be updated.</li>
+  href="false"
+  class="internal-tooltip">custom FreeCAD widgets</a> to update preference values.  Each preference widget has two special properties: prefEntry and prefPath.  prefPath is the identifies the branch of the preference hierarchy and prefEntry identifies the leaf node to be updated.</li>
 <li>two entries are needed in the dialog for each preference value - onSave() in saveSettings and onRestore() in loadSettings().</li>
 </ul>
 </li>
 </ul>
 <p>Preference values are retrieved (and sometimes set) using functions from <a
-  href="https://github.com/freecad/freecad/blob/master/src/Base/Parameter.cpp"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Base/Parameter.cpp<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>.</p>
+  href="false"
+  class="internal-tooltip">Base/Parameter.cpp</a>.</p>
 <p>Good examples of retrieving parameters can be found in:</p>
 <ul>
 <li>Python: <a
-  href="https://github.com/freecad/freecad/blob/master/src/Mod/Draft/draftutils/utils.py"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">get_param()<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> in /Mod/Draft/draftutils/util.py</li>
+  href="false"
+  class="internal-tooltip">get_param()</a> in /Mod/Draft/draftutils/util.py</li>
 <li>C++: <a
-  href="https://github.com/freecad/freecad/blob/master/src/Mod/TechDraw/App/Preferences.cpp"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">various methods<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> in /Mod/TechDraw/App/Preferences.cpp</li>
+  href="false"
+  class="internal-tooltip">various methods</a> in /Mod/TechDraw/App/Preferences.cpp</li>
 </ul>
 <h2
   id="see-also">See also<a class="heading-anchor"
@@ -419,13 +390,8 @@
   </svg></a>
 </h2><ul>
 <li><a
-  href="https://wiki.freecad.org/Preferences_Editor/zh"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Preference Editor wiki entry<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">Preference Editor wiki entry</a></li>
 </ul>
 </div><footer class="single-footer">
     <nav class="pagination"><a
@@ -462,17 +428,9 @@
             href="/Website/zh/features/">功能</a><ul></ul></li><li>
           <a
             href="/Website/zh/download/">下载</a><ul><li>
-                      <a
-                        href="/Website/zh/download/releases/">Releases</a>
-                    </li><li>
-                      <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
+                  <a
+                    href="/Website/zh/releases/">Releases</a>
+                </li><li>
                       <a
                         href="/Website/zh/download/addons/">Addons</a>
                     </li><li>
@@ -484,9 +442,9 @@
                   <a
                     href="/Website/zh/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/Website/zh/authors/">作者列表</a>
+                        <a href="/Website/zh/author/">作者</a>
                       </li><li>
-                        <a href="/Website/zh/categories/">分类列表</a>
+                        <a href="/Website/zh/category/">分类</a>
                       </li><li>
                         <a href="/Website/zh/tags/">标签列表</a>
                       </li></ul></li><li>
@@ -512,7 +470,12 @@
   </svg></a>
                     </li><li>
                       <a
-                        href="/Website/zh/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
@@ -581,6 +544,14 @@
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/bluesky.svg#bluesky"></use>
   </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"

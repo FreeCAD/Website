@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html
+  lang="es-ES"
+  dir="ltr"><head><meta charset="utf-8">
+<meta
+  name="viewport"
+  content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta
+  name="referrer"
+  content="strict-origin-when-cross-origin">
+<meta
+  name="robots"
+  content="index, follow"><script>
+    const pref = localStorage.getItem("pref-theme");
+    if (pref === "dark") {
+      document.documentElement.classList.add('dark');
+    } else if (pref === "light") {
+      document.documentElement.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+  </style><style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --header: rgb(8, 8, 8);
+          --theme: rgb(16, 16, 16);
+          --entry: rgb(32, 32, 32);
+          --tone: rgb(64, 64, 64);
+          --backdrop: rgba(64, 64, 64, 0.8);
+          --primary: rgb(240, 240, 240);
+          --secondary: rgb(224, 224, 224);
+          --tertiary: rgb(208, 208, 208);
+          --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+          --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+          --angle: 315deg;
+        }
+      }
+    </style></noscript><link
+          rel="stylesheet"
+          href="/Website/css/styles.efbcc322b54e75869cceeda071ddcfc9bd2bbd825e1a9ee2b7ebfc2e2635f178.css"
+          integrity="sha256-77zDIrVOdYaczu2gcd3Pyb0rvYJeGp7it&#43;v8LiY18Xg="
+          crossorigin="anonymous"><link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Website/favicon.svg"><link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/Website/favicon.ico"><link
+      rel="apple-touch-icon"
+      href="/Website/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://FreeCAD.github.io/Website/es/index.xml"
+    title="FreeCAD"><title>FreeCAD | FreeCAD 26.3 Notes</title>
+  <meta
+    name="description"
+    content="Fresh release cadence, many improved workflows, same freedom to design."><meta
+      name="keywords"
+      content="free, open-source, CAD, software, tool, parametric, modeling, model, design, product, engineering, manufacturing, community, workbench, FOSS, 3D, BIM, CAM, FEM, FEA"><link
+    rel="canonical"
+    href="https://FreeCAD.github.io/Website/es/releases/26-3/"><link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://FreeCAD.github.io/Website/releases/26-3/"><link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://FreeCAD.github.io/Website/zh/releases/26-3/"><link
+      rel="alternate"
+      hreflang="es-ES"
+      href="https://FreeCAD.github.io/Website/es/releases/26-3/"><link
+      rel="alternate"
+      hreflang="fr-FR"
+      href="https://FreeCAD.github.io/Website/fr/releases/26-3/"><link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://FreeCAD.github.io/Website/pt/releases/26-3/"><link
+      rel="alternate"
+      hreflang="de-DE"
+      href="https://FreeCAD.github.io/Website/de/releases/26-3/"><link
+      rel="alternate"
+      hreflang="ja-JP"
+      href="https://FreeCAD.github.io/Website/ja/releases/26-3/"><link
+    rel="alternate"
+    hreflang="x-default"
+    href="https://FreeCAD.github.io/Website/es/"><meta property="og:url" content="https://FreeCAD.github.io/Website/es/releases/26-3/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="FreeCAD 26.3 Notes">
+  <meta property="og:description" content="Fresh release cadence, many improved workflows, same freedom to design.">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="releases">
+    <meta property="article:published_time" content="2026-09-01T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-09-23T15:46:57+02:00">
+</head><body
+    class="single type-releases kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <a
+    class="logo"
+    href="/Website/es/"
+    accesskey="h"
+    title="Inicio (Alt + H)"
+    aria-label="Inicio">
+    <svg
+      class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+
+      <use href="/Website/wordmark.svg#wordmark"></use>
+    </svg></a>
+
+  <div class="site-nav"><nav class="menu">
+  <button
+    popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menú"
+    aria-label="Menú"><svg
+    class="icon hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/hamburger.svg#hamburger"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul
+    popover
+    id="menu-list"
+    class="menu-list"><li>
+          <a
+            href="/Website/es/features/">Características</a>
+        </li><li>
+          <a
+            href="/Website/es/download/">Descarga</a>
+        </li><li>
+          <a
+            href="/Website/es/news/">Actualidad</a>
+        </li><li>
+          <a
+            href="/Website/es/community/">Comunidad</a>
+        </li><li>
+          <a
+            href="/Website/es/docs/">Documentación</a>
+        </li><li>
+          <a
+            href="/Website/es/donate/" class="button donate">♥ Donar</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button
+          popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Elegir idioma (Alt + L)"
+          aria-label="Elegir idioma"><svg
+    class="icon language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul
+          popover
+          id="lang-list"
+          class="language-list"><li>
+              <a href="/Website/releases/26-3/" title="FreeCAD 26.3 Notes">English 🇬🇧</a>
+            </li><li>
+              <a href="/Website/zh/releases/26-3/" title="FreeCAD 26.3 Notes">中文 🇨🇳</a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/es/releases/26-3/" title="FreeCAD 26.3 Notes">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/fr/releases/26-3/" title="FreeCAD 26.3 Notes">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pt/releases/26-3/" title="FreeCAD 26.3 Notes">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a href="/Website/de/releases/26-3/" title="FreeCAD 26.3 Notes">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/ja/releases/26-3/" title="FreeCAD 26.3 Notes">日本語 🇯🇵</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Cambiar tema chroma (Alt + T)"
+    aria-label="Cambiar tema chroma"><svg
+    class="icon dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/dark.svg#dark"></use>
+  </svg><svg
+    class="icon light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main style="--hue: 10;"><section class="hero">
+
+    <h2 class="title">FreeCAD 26.3 Notes</h1><h3 class="description">Fresh release cadence, many improved workflows, same freedom to design.</h3><div class="metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/date.svg#date"></use>
+  </svg><time datetime="2026-09-01T00:00:00Z">1 de septiembre de 2026</time>
+  </span><span class="meta"><svg
+    class="icon time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/time.svg#time"></use>
+  </svg>1 min</span></div></section><div class="content"><figure>
+  <blockquote class="note"><svg
+    class="icon note"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/note.svg#note"></use>
+  </svg>Nota<p>Esta página aún no se ha traducido en español, por lo que se utiliza la versión inglesa. Interesado en ayudar?
+<a
+  href="false"
+  class="internal-tooltip">Contribuir</a></p></blockquote></figure><p>FreeCAD 26.3 blablabla &hellip;</p>
+<p>This release blablabla &hellip;</p>
+<div class="button-shortcode">
+    <a
+      href="https://www.youtube.com/watch?v=a9biWv_M8p8"
+      title="Watch the release video"
+      class="button" target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon youtube_fill"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/youtube_fill.svg#youtube_fill"></use>
+  </svg>Watch the release video<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+  </div>
+<div class="block-shortcode wide section"><h2 class="block-title">General and Core</h2><div class="block-content"><figure class="image"><button
+          aria-label="Ampliar imagen"
+          popovertarget="img-001"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img annotation"
+    src="/Website/releases/26-3/annotation.webp"
+    alt="Annotation labels"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Annotation labels" width="1200" height="800" srcset="/Website/releases/26-3/annotation_hu_66bbc07daa9c2d6e.webp 400w, /Website/releases/26-3/annotation_hu_ed09cbce0b90cc43.webp 800w, /Website/releases/26-3/annotation.webp 1200w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+        <div id="img-001" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes"><img
+    class="img annotation"
+    src="/Website/releases/26-3/annotation.webp"
+    alt="Annotation labels"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Annotation labels" width="1200" height="800" srcset="/Website/releases/26-3/annotation_hu_66bbc07daa9c2d6e.webp 400w, /Website/releases/26-3/annotation_hu_ed09cbce0b90cc43.webp 800w, /Website/releases/26-3/annotation.webp 1200w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/cross.svg#cross"></use>
+  </svg></button><p>Annotation labels</p></div><figcaption>Annotation labels</figcaption></figure><figure class="image"><button
+          aria-label="Ampliar imagen"
+          popovertarget="img-002"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img mass"
+    src="/Website/releases/26-3/mass.webp"
+    alt="Mass properties"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Mass properties" width="1200" height="800" srcset="/Website/releases/26-3/mass_hu_195cd25d91b960f6.webp 400w, /Website/releases/26-3/mass_hu_122a3b14d176d7d8.webp 800w, /Website/releases/26-3/mass.webp 1200w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+        <div id="img-002" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes"><img
+    class="img mass"
+    src="/Website/releases/26-3/mass.webp"
+    alt="Mass properties"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Mass properties" width="1200" height="800" srcset="/Website/releases/26-3/mass_hu_195cd25d91b960f6.webp 400w, /Website/releases/26-3/mass_hu_122a3b14d176d7d8.webp 800w, /Website/releases/26-3/mass.webp 1200w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/cross.svg#cross"></use>
+  </svg></button><p>Mass properties</p></div><figcaption>Mass properties</figcaption></figure></div>
+  </div>
+<div class="block-shortcode wide"><h2 class="block-title">User Interface and Experience</h2><div class="block-content"><ul>
+<li>User Interface and Experience</li>
+</ul>
+</div>
+  </div>
+<div class="block-shortcode wide gradient"><h2 class="block-title">Part, PartDesign, and Assembly</h2><div class="block-content"><figure class="image"><button
+          aria-label="Ampliar imagen"
+          popovertarget="img-003"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img pattern"
+    src="/Website/releases/26-3/pattern.webp"
+    alt="On-view parameters for patterns"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="On-view parameters for patterns" width="1200" height="800" srcset="/Website/releases/26-3/pattern_hu_1a7a0d90d238a49a.webp 400w, /Website/releases/26-3/pattern_hu_b40a16994883fb95.webp 800w, /Website/releases/26-3/pattern.webp 1200w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+        <div id="img-003" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-003"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes"><img
+    class="img pattern"
+    src="/Website/releases/26-3/pattern.webp"
+    alt="On-view parameters for patterns"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="On-view parameters for patterns" width="1200" height="800" srcset="/Website/releases/26-3/pattern_hu_1a7a0d90d238a49a.webp 400w, /Website/releases/26-3/pattern_hu_b40a16994883fb95.webp 800w, /Website/releases/26-3/pattern.webp 1200w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/cross.svg#cross"></use>
+  </svg></button><p>On-view parameters for patterns</p></div><figcaption>On-view parameters for patterns</figcaption></figure><figure class="image"><button
+          aria-label="Ampliar imagen"
+          popovertarget="img-004"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img thread"
+    src="/Website/releases/26-3/thread.webp"
+    alt="Cosmetic threads"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Cosmetic threads" width="1200" height="800" srcset="/Website/releases/26-3/thread_hu_f80376eb3aa3a1a6.webp 400w, /Website/releases/26-3/thread_hu_19fe694492260842.webp 800w, /Website/releases/26-3/thread.webp 1200w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+        <div id="img-004" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-004"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes"><img
+    class="img thread"
+    src="/Website/releases/26-3/thread.webp"
+    alt="Cosmetic threads"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Cosmetic threads" width="1200" height="800" srcset="/Website/releases/26-3/thread_hu_f80376eb3aa3a1a6.webp 400w, /Website/releases/26-3/thread_hu_19fe694492260842.webp 800w, /Website/releases/26-3/thread.webp 1200w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/cross.svg#cross"></use>
+  </svg></button><p>Cosmetic threads</p></div><figcaption>Cosmetic threads</figcaption></figure></div>
+  </div>
+<div class="block-shortcode wide grid"><h2 class="block-title">Sketcher and TechDraw</h2><div class="block-content"><figure class="image"><button
+          aria-label="Ampliar imagen"
+          popovertarget="img-005"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img polyline"
+    src="/Website/releases/26-3/polyline.webp"
+    alt="Polyline with on-view parameters"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Polyline with on-view parameters" width="1000" height="600" srcset="/Website/releases/26-3/polyline_hu_32e1bf0fa2878a1d.webp 400w, /Website/releases/26-3/polyline_hu_304223e6fd782d2.webp 800w, /Website/releases/26-3/polyline.webp 1000w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+        <div id="img-005" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-005"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes"><img
+    class="img polyline"
+    src="/Website/releases/26-3/polyline.webp"
+    alt="Polyline with on-view parameters"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Polyline with on-view parameters" width="1000" height="600" srcset="/Website/releases/26-3/polyline_hu_32e1bf0fa2878a1d.webp 400w, /Website/releases/26-3/polyline_hu_304223e6fd782d2.webp 800w, /Website/releases/26-3/polyline.webp 1000w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/cross.svg#cross"></use>
+  </svg></button><p>Polyline with on-view parameters</p></div><figcaption>Polyline with on-view parameters</figcaption></figure><figure class="image"><button
+          aria-label="Ampliar imagen"
+          popovertarget="img-006"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img richtext"
+    src="/Website/releases/26-3/richtext.webp"
+    alt="TechDraw Rich-text annotations"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="TechDraw Rich-text annotations" width="800" height="200" srcset="/Website/releases/26-3/richtext_hu_b1d4d34adff49575.webp 400w, /Website/releases/26-3/richtext.webp 800w" sizes="(max-width: 400px) 400px, 95vw"></button>
+        <div id="img-006" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-006"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes"><img
+    class="img richtext"
+    src="/Website/releases/26-3/richtext.webp"
+    alt="TechDraw Rich-text annotations"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="TechDraw Rich-text annotations" width="800" height="200" srcset="/Website/releases/26-3/richtext_hu_b1d4d34adff49575.webp 400w, /Website/releases/26-3/richtext.webp 800w" sizes="(max-width: 400px) 400px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/cross.svg#cross"></use>
+  </svg></button><p>TechDraw Rich-text annotations</p></div><figcaption>TechDraw Rich-text annotations</figcaption></figure></div>
+  </div>
+<div class="block-shortcode wide"><h2 class="block-title">CAM, FEM</h2><div class="block-content"><figure class="image"><button
+          aria-label="Ampliar imagen"
+          popovertarget="img-007"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/zoom.svg#zoom"></use>
+  </svg><img
+    class="img gmsh"
+    src="/Website/releases/26-3/gmsh.webp"
+    alt="Refinements for Gmsh mesher"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Refinements for Gmsh mesher" width="1000" height="750" srcset="/Website/releases/26-3/gmsh_hu_2295c644bc8de905.webp 400w, /Website/releases/26-3/gmsh_hu_19cd2ccf56d3ce82.webp 800w, /Website/releases/26-3/gmsh.webp 1000w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+        <div id="img-007" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-007"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes"><img
+    class="img gmsh"
+    src="/Website/releases/26-3/gmsh.webp"
+    alt="Refinements for Gmsh mesher"
+    loading="lazy"
+    fetchpriority="low"
+    decoding="async" title="Refinements for Gmsh mesher" width="1000" height="750" srcset="/Website/releases/26-3/gmsh_hu_2295c644bc8de905.webp 400w, /Website/releases/26-3/gmsh_hu_19cd2ccf56d3ce82.webp 800w, /Website/releases/26-3/gmsh.webp 1000w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/cross.svg#cross"></use>
+  </svg></button><p>Refinements for Gmsh mesher</p></div><figcaption>Refinements for Gmsh mesher</figcaption></figure></div>
+  </div>
+<div class="block-shortcode wide section"><h2 class="block-title">Draft and BIM</h2><div class="block-content"><ul>
+<li>Draft and BIM</li>
+</ul>
+</div>
+  </div>
+<div class="block-shortcode wide gradient"><h2 class="block-title">Others</h2><div class="block-content"><ul>
+<li>Others</li>
+</ul>
+</div>
+  </div>
+<div class="button-shortcode">
+    <a
+      href="https://wiki.freecad.org/Release_notes_26.3/es"
+      title="Read the complete release notes"
+      class="button" target="_blank" rel="external noreferrer nofollow">Read the complete release notes<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+  </div>
+<p>And much more, thanks to hundreds of contributions from the community around the world.</p>
+<p><strong>Want to be part of the journey?</strong> Join the <a
+  href="/Website/es/community/"
+  class="internal-tooltip">community<span class="tooltip">
+        <strong>Community</strong>Get in touch with the FreeCAD community around the world.</span></a> and <a
+  href="/Website/es/donate/"
+  class="internal-tooltip">donate<span class="tooltip">
+        <strong>Support the FreeCAD project</strong>Donate once or sponsor monthly to make FreeCAD even more awesome!</span></a> to shape the future of FreeCAD.</p>
+<p>As always — have fun and keep <em>FreeCADing</em>!</p>
+</div><footer class="single-footer">
+    <nav class="pagination"><a
+            class="button prev"
+            href="/Website/es/releases/1-1/"
+            title="Artículo anterior">FreeCAD 1.1 Notes<svg
+    class="icon tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Ir al inicio"
+  title="Ir al inicio (Alt + G)" ><svg
+    class="icon tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a
+            href="/Website/es/">Inicio</a><ul></ul></li><li>
+          <a
+            href="/Website/es/features/">Características</a><ul></ul></li><li>
+          <a
+            href="/Website/es/download/" aria-current="page" class="active">Descarga</a><ul><li>
+                  <a
+                    href="/Website/es/releases/">Releases</a>
+                </li><li>
+                      <a
+                        href="/Website/es/download/addons/">Addons</a>
+                    </li><li>
+                      <a
+                        href="/Website/es/download/unstable/">Unstable</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/es/news/">Actualidad</a><ul><li>
+                  <a
+                    href="/Website/es/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/es/author/">Autor</a>
+                      </li><li>
+                        <a href="/Website/es/category/">Categoría</a>
+                      </li><li>
+                        <a href="/Website/es/tags/">Etiquetas</a>
+                      </li></ul></li><li>
+          <a
+            href="/Website/es/community/">Comunidad</a><ul><li>
+                      <a
+                        href="/Website/es/community/calendar/">Calendar</a>
+                    </li><li>
+                      <a
+                        href="https://events.freecad.org/" target="_blank" rel="external noreferrer nofollow">Events<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://fpa.freecad.org" target="_blank" rel="external noreferrer nofollow">Association<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/es/community/telemetry/">Telemetry</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/es/docs/">Documentación</a><ul><li>
+                  <a
+                    href="https://wiki.freecad.org/User_hub/es" target="_blank" rel="external noreferrer nofollow">User manual<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+                </li><li>
+                  <a
+                    href="/Website/es/dev/">Development Handbook</a>
+                </li><li>
+                  <a
+                    href="https://freecad.github.io/SourceDoc/" target="_blank" rel="external noreferrer nofollow">FreeCAD API<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+                </li></ul></li><li>
+          <a
+            href="/Website/es/donate/">♥ Donar</a><ul></ul></li></ul>
+</nav>
+<div class="share-links"><a
+    href="https://forum.freecad.org"
+    title="Forum"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/forum.svg#forum"></use>
+  </svg></a><a
+    href="https://github.com/freecad"
+    title="GitHub"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/github.svg#github"></use>
+  </svg></a><a
+    href="https://codeberg.org/freecad"
+    title="Codeberg"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a
+    href="https://social.freecad.org/@freecad"
+    title="Mastodon"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/bluesky.svg#bluesky"></use>
+  </svg></a><a
+    href="https://www.reddit.com/r/freecad"
+    title="Reddit"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/reddit.svg#reddit"></use>
+  </svg></a><a
+    href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+    title="Matrix"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/matrix.svg#matrix"></use>
+  </svg></a><a
+    href="https://discord.gg/w2cTKGzccC"
+    title="Discord"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/discord.svg#discord"></use>
+  </svg></a><a
+    href="https://www.linkedin.com/groups/4295230"
+    title="LinkedIn"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+    href="https://FreeCAD.github.io/Website/es/index.xml"
+    type="application/rss&#43;xml"
+    title="RSS feed"><svg
+    class="icon rss"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/rss.svg#rss"></use>
+  </svg></a><a
+  href="/Website/es/fedishare.html#title=FreeCAD&#43;26.3&#43;Notes&amp;description=Fresh%20release%20cadence,%20many%20improved%20workflows,%20same%20freedom%20to%20design.&amp;url=https://FreeCAD.github.io/Website/es/releases/26-3/"
+  title="Compartir en Fediverse"
+  target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026
+    <a
+      href="/Website/es/"
+      title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a
+    href="https://creativecommons.org/licenses/by-sa/4.0/"
+    title="Creative Commons"
+    target="_blank" rel="license external noreferrer nofollow">
+
+    CC BY-SA<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to
+  <a
+    href="https://gohugo.io/"
+    title="Hugo SSG"
+    target="_blank" rel="external noreferrer nofollow">
+
+    Hugo<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-09-23
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/ec2fa2c3b6c87e6e6a57ec630b2cd34bcfc7c870">ec2fa2c3b6<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script
+    src="/Website/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script></body>
+
+</html>

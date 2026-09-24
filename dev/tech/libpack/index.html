@@ -42,8 +42,8 @@
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/Website/css/styles.2cc9d0e001a0d539d26f5e1557d29282ba2d9c71359b224fc1893cdeb81ac2c6.css"
-          integrity="sha256-LMnQ4AGg1TnSb14VV9KSgrotnHE1myJPwYk83rgawsY="
+          href="/Website/css/styles.efbcc322b54e75869cceeda071ddcfc9bd2bbd825e1a9ee2b7ebfc2e2635f178.css"
+          integrity="sha256-77zDIrVOdYaczu2gcd3Pyb0rvYJeGp7it&#43;v8LiY18Xg="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -110,12 +110,13 @@
     href="/Website/"
     accesskey="h"
     title="Homepage (Alt + H)"
-    aria-label="Homepage"><svg
+    aria-label="Homepage">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/Website/wordmark.svg#wordmark"></use>
     </svg></a>
 
   <div class="site-nav"><nav class="menu">
@@ -347,29 +348,14 @@ dependencies being installed before the software which requires them. Note that 
 structure, so the final LibPack contains several different types of installation tree.</p>
 <ul>
 <li><strong><a
-  href="https://python.org"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Python<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></strong> &ndash; Install in a newly-created <em>LIBPACK\bin</em> subdirectory using the basic Python installer. Only install
+  href="false"
+  class="internal-tooltip">Python</a></strong> &ndash; Install in a newly-created <em>LIBPACK\bin</em> subdirectory using the basic Python installer. Only install
 Python itself: the Idle IDE, debug symbols, etc. are not included in the LibPack.</li>
 <li><strong><a
-  href="https://qt.io"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Qt<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></strong> &ndash; The Open Source installer is found at <a
-  href="https://www.qt.io/download-open-source"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://www.qt.io/download-open-source<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">Qt</a></strong> &ndash; The Open Source installer is found at <a
+  href="false"
+  class="internal-tooltip">https://www.qt.io/download-open-source</a></li>
 <li>Most of the optional components of Qt can be omitted, except for:
 <ul>
 <li>Qt WebEngine</li>
@@ -382,13 +368,8 @@ will create a subdirectory structure that is based on the version number and arc
 Within that subdirectory are many directories: <code>bin</code>,<code>doc</code>,<code>include</code>, etc. These should all be copied into
 the top level of the LibPack</li>
 <li><strong><a
-  href="https://boost.org"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Boost<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></strong> &ndash; this is split into its headers and libraries:
+  href="false"
+  class="internal-tooltip">Boost</a></strong> &ndash; this is split into its headers and libraries:
 <ul>
 <li>Many Boost libraries are header-only, but FreeCAD does require several compiled libraries</li>
 <li>Create a file either in your home directory, or in the toplevel boost src directory, called user-config.jam and
@@ -400,20 +381,10 @@ in it specify the path and version of the Python interpreter installed above. Fo
 </ul>
 </li>
 <li><strong><a
-  href="https://www.coin3d.org"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Coin<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></strong> &ndash; obtained by cloning and compiling <a
-  href="https://github.com/coin3d/coin"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://github.com/coin3d/coin<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>
+  href="false"
+  class="internal-tooltip">Coin</a></strong> &ndash; obtained by cloning and compiling <a
+  href="false"
+  class="internal-tooltip">https://github.com/coin3d/coin</a>
 <ul>
 <li>Make sure you compile against the Boost libraries downloaded above by setting BOOST_ROOT to the top of the <em>LIBPACK</em></li>
 <li>Set CMAKE_INSTALL_PATH to the top of the <em>LIBPACK</em></li>
@@ -423,20 +394,10 @@ in it specify the path and version of the Python interpreter installed above. Fo
 </ul>
 </li>
 <li><strong><a
-  href="https://www.coin3d.org"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Quarter<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></strong> &ndash; obtained by cloning and compiling <a
-  href="https://github.com/coin3d/quarter"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://github.com/coin3d/quarter<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>
+  href="false"
+  class="internal-tooltip">Quarter</a></strong> &ndash; obtained by cloning and compiling <a
+  href="false"
+  class="internal-tooltip">https://github.com/coin3d/quarter</a>
 <ul>
 <li>Set Coin_DIR to <em>LIBPACK/lib/cmake/Coin-4.0.1</em> (or the current version, if it is not 4.0.1)</li>
 <li>Set Qt6_DIR to <em>LIBPACK/lib/cmake/Qt6</em></li>
@@ -450,75 +411,35 @@ be modified to add <code>#include &lt;QOpenGLContext&gt;</code> in the Qt includ
 </ul>
 </li>
 <li><strong><a
-  href="https://pcre.org/"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PCRE2<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></strong> &ndash; Clone <a
-  href="https://github.com/PCRE2Project/pcre2"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://github.com/PCRE2Project/pcre2<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>
+  href="false"
+  class="internal-tooltip">PCRE2</a></strong> &ndash; Clone <a
+  href="false"
+  class="internal-tooltip">https://github.com/PCRE2Project/pcre2</a>
 <ul>
 <li>Only required if compiling SWIG, rather than downloading binaries</li>
 <li>Only shared libraries needed (no need to build static)</li>
 </ul>
 </li>
 <li><strong><a
-  href="https://www.swig.org"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">SWIG<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></strong> &ndash; obtained from <a
-  href="https://www.swig.org"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://www.swig.org<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>, prebuilt binaries are available for Windows
+  href="false"
+  class="internal-tooltip">SWIG</a></strong> &ndash; obtained from <a
+  href="false"
+  class="internal-tooltip">https://www.swig.org</a>, prebuilt binaries are available for Windows
 <ul>
 <li>Copy the downloaded folder to <em>LIBPACK\bin\swig</em> (e.g. change its name to remove the version number)</li>
 <li>Alternative: follow instructions above for PCRE2, then clone from <a
-  href="https://github.com/swig/swig.git"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://github.com/swig/swig.git<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">https://github.com/swig/swig.git</a></li>
 <li>Note that this will require GNU Bison to build. Windows exe can be downloaded from <a
-  href="https://github.com/lexxmark/winflexbison/"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://github.com/lexxmark/winflexbison/<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">https://github.com/lexxmark/winflexbison/</a></li>
 </ul>
 </li>
 <li><strong><a
-  href="https://www.coin3d.org"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Pivy<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></strong> &ndash; obtained by cloning and compiling <a
-  href="https://github.com/coin3d/pivy"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://github.com/coin3d/pivy<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>
+  href="false"
+  class="internal-tooltip">Pivy</a></strong> &ndash; obtained by cloning and compiling <a
+  href="false"
+  class="internal-tooltip">https://github.com/coin3d/pivy</a>
 <ul>
 <li>Set Python_ROOT_DIR to <em>LIBPACK/bin</em></li>
 <li>Set SWIG_EXECUTABLE to <em>LIBPACK/bin/swig/swig.exe</em></li>
@@ -533,68 +454,38 @@ those cases you will need to manually set the path to the cmake files as <em>LIB
 </ul>
 </li>
 <li><strong><a
-  href="https://clang.llvm.org"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">libclang<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></strong> &ndash; Needed by pyside6, and provided prebuilt by Qt
+  href="false"
+  class="internal-tooltip">libclang</a></strong> &ndash; Needed by pyside6, and provided prebuilt by Qt
 <ul>
 <li>Download from <a
-  href="https://download.qt.io/development_releases/prebuilt/libclang/"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://download.qt.io/development_releases/prebuilt/libclang/<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">https://download.qt.io/development_releases/prebuilt/libclang/</a></li>
 <li>Decompress and move the contents to the <em>LIBPACK</em> directory</li>
 </ul>
 </li>
 <li><strong><a
-  href="https://pypi.org/project/PySide6"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Pyside<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></strong> &ndash; now part of the Qt project, installed as a Python package with pip
+  href="false"
+  class="internal-tooltip">Pyside</a></strong> &ndash; now part of the Qt project, installed as a Python package with pip
 <ul>
 <li>E.g. <code>LIBPACK/bin/python.exe -m pip install pyside6==6.5.2</code></li>
 <li>Note that this will also install Shiboken, in the same location</li>
 </ul>
 </li>
 <li><strong><a
-  href="https://vtk.org"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">VTK<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></strong> &ndash; Download or clone the source
+  href="false"
+  class="internal-tooltip">VTK</a></strong> &ndash; Download or clone the source
 <ul>
 <li>Set CMAKE_INSTALL_PREFIX to <em>LIBPACK</em></li>
 <li>Build the ALL_BUILD and INSTALL targets in Release mode</li>
 </ul>
 </li>
 <li><strong><a
-  href="https://harfbuzz.github.io"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">HarfBuzz<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></strong>
+  href="false"
+  class="internal-tooltip">HarfBuzz</a></strong>
 <ul>
 <li>Clone <a
-  href="https://github.com/harfbuzz/harfbuzz"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://github.com/harfbuzz/harfbuzz<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">https://github.com/harfbuzz/harfbuzz</a></li>
 <li>Switch to the latest release branch</li>
 <li>Set PYTHON_EXECUTABLE to <em>LIBPACK/bin/python.exe</em></li>
 <li>Set CMAKE_INSTALL_PREFIX to <em>LIBPACK</em></li>
@@ -602,13 +493,8 @@ those cases you will need to manually set the path to the cmake files as <em>LIB
 </ul>
 </li>
 <li><strong><a
-  href="http://zlib.net"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">ZLIB<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></strong>
+  href="false"
+  class="internal-tooltip">ZLIB</a></strong>
 <ul>
 <li>Download and unpack the latest source code</li>
 <li>Set CMAKE_INSTALL_PREFIX to <em>LIBPACK</em> (note: must be done prior to running Configure if using the GUI)</li>
@@ -616,13 +502,8 @@ those cases you will need to manually set the path to the cmake files as <em>LIB
 </ul>
 </li>
 <li><strong><a
-  href="http://www.libpng.org"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">libpng<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></strong>
+  href="false"
+  class="internal-tooltip">libpng</a></strong>
 <ul>
 <li>Download the zipfile of the source code and extract it</li>
 <li>Set ZLIB_INCLUDE_DIR to <em>LIBPACK/include</em></li>
@@ -632,22 +513,12 @@ those cases you will need to manually set the path to the cmake files as <em>LIB
 </ul>
 </li>
 <li><strong><a
-  href="https://sourceware.org.bzip2"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">bzip2<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></strong>
+  href="false"
+  class="internal-tooltip">bzip2</a></strong>
 <ul>
 <li>Download the source from <a
-  href="https://sourceware.org/bzip2/downloads.html"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://sourceware.org/bzip2/downloads.html<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">https://sourceware.org/bzip2/downloads.html</a></li>
 <li>Extract it to a directory with no spaces or non-ASCII characters in it</li>
 <li>Open a Developer&rsquo;s PowerShell</li>
 <li><code>cd X:\path\to\extracted\files</code></li>
@@ -657,22 +528,12 @@ those cases you will need to manually set the path to the cmake files as <em>LIB
 </ul>
 </li>
 <li><strong><a
-  href="https://freetype.org"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">FreeType<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></strong>
+  href="false"
+  class="internal-tooltip">FreeType</a></strong>
 <ul>
 <li>Download the latest version from <a
-  href="https://sourceforge.net/projects/freetype/files/freetype2/"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://sourceforge.net/projects/freetype/files/freetype2/<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> (a Windows .zip file is available)</li>
+  href="false"
+  class="internal-tooltip">https://sourceforge.net/projects/freetype/files/freetype2/</a> (a Windows .zip file is available)</li>
 <li>Extract the files and run cMake</li>
 <li>Set HarfBuzz_INCLUDE_DIR to <em>LIBPACK/include</em></li>
 <li>Set HarfBuzz_LIBRARY to <em>LIBPACK/lib/harfbuzz.lib</em></li>
@@ -688,13 +549,8 @@ those cases you will need to manually set the path to the cmake files as <em>LIB
 </ul>
 </li>
 <li><strong><a
-  href="https://www.tcl.tk"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Tcl/Tk<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></strong>
+  href="false"
+  class="internal-tooltip">Tcl/Tk</a></strong>
 <ul>
 <li>Download the latest source code for Tcl and Tk</li>
 <li>Unpack each, and for each
@@ -707,23 +563,13 @@ those cases you will need to manually set the path to the cmake files as <em>LIB
 </ul>
 </li>
 <li><strong><a
-  href="https://www.opencascade.org"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">OpenCASCADE<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></strong> &ndash; Also known as OCCT, the core CAD kernel used by FreeCAD is fetched from a gitlab mirror that
+  href="false"
+  class="internal-tooltip">OpenCASCADE</a></strong> &ndash; Also known as OCCT, the core CAD kernel used by FreeCAD is fetched from a gitlab mirror that
 provides additional improvements over the upstream version
 <ul>
 <li>Clone <a
-  href="https://gitlab.com/blobfish/occt"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://gitlab.com/blobfish/occt<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">https://gitlab.com/blobfish/occt</a></li>
 <li>Run cMake</li>
 <li>Enable USE_VTK</li>
 <li>For each of TCL, TK, VTK, and FreeType (represented below by XXX):
@@ -741,22 +587,12 @@ provides additional improvements over the upstream version
 </ul>
 </li>
 <li><strong><a
-  href="https://ngsolve.org"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Netgen<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></strong>
+  href="false"
+  class="internal-tooltip">Netgen</a></strong>
 <ul>
 <li>Clone <a
-  href="https://github.com/NGSolve/netgen"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://github.com/NGSolve/netgen<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">https://github.com/NGSolve/netgen</a></li>
 <li>Switch to the tag you wish to compile (e.g. <code>git checkout v6.2.2304</code>)</li>
 <li>Run cMake</li>
 <li>Turn off &ldquo;Superbuild&rdquo;</li>
@@ -768,22 +604,12 @@ provides additional improvements over the upstream version
 </ul>
 </li>
 <li><strong><a
-  href="https://github.com/HDFGroup/hdf5"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">HDF5<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></strong>
+  href="false"
+  class="internal-tooltip">HDF5</a></strong>
 <ul>
 <li>Clone the repository from <a
-  href="https://github.com/HDFGroup/hdf5"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://github.com/HDFGroup/hdf5<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">https://github.com/HDFGroup/hdf5</a></li>
 <li>Check out the release tag you want to build (e.g. <code>hdf5-1_14_1-2</code>)</li>
 <li>Deactivate building tests and examples</li>
 <li>Set ZLIB_INCLUDE_DIR and ZLIB_LIBRARY_RELEASE</li>
@@ -792,22 +618,12 @@ provides additional improvements over the upstream version
 </ul>
 </li>
 <li><strong><a
-  href="https://www.salome-platform.org"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">MEDFile<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></strong>
+  href="false"
+  class="internal-tooltip">MEDFile</a></strong>
 <ul>
 <li>Download the source package from <a
-  href="http://files.salome-platform.org/Salome/other/med-4.1.1.tar.gz"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">http://files.salome-platform.org/Salome/other/med-4.1.1.tar.gz<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">http://files.salome-platform.org/Salome/other/med-4.1.1.tar.gz</a></li>
 <li>Activate MEDFILE_USE_UNICODE</li>
 <li>The current Medfile CMake scripts assert a dependence on HDF5 v1.10.x &ndash; the error message claims to be
 searching for HDF5 &gt;= 1.10.2, but that is not what is actually implemented, requiring instead <em>exactly</em>
@@ -817,13 +633,8 @@ this parameter lets compilation succeed.</li>
 </ul>
 </li>
 <li><strong><a
-  href="https://gmsh.info"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">GMSH<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></strong>
+  href="false"
+  class="internal-tooltip">GMSH</a></strong>
 <ul>
 <li>Download the desired version of the Gmsh source code</li>
 <li>Set the path to FreeType</li>
@@ -837,35 +648,20 @@ this parameter lets compilation succeed.</li>
 </ul>
 </li>
 <li><strong><a
-  href="https://cxx.sourceforge.net"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PyCXX<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></strong>
+  href="false"
+  class="internal-tooltip">PyCXX</a></strong>
 <ul>
 <li>Download the latest source from Sourceforge</li>
 <li>Run <code>LIBPACK/bin/python.exe setup.py install</code> from within the extracted directory</li>
 </ul>
 </li>
 <li><strong><a
-  href="https://icu.unicode.org"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">ICU<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></strong> &ndash; Advanced Unicode handling for Xerces-C
+  href="false"
+  class="internal-tooltip">ICU</a></strong> &ndash; Advanced Unicode handling for Xerces-C
 <ul>
 <li>Clone from <a
-  href="https://github.com/unicode-org/icu"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://github.com/unicode-org/icu<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">https://github.com/unicode-org/icu</a></li>
 <li>Switch to the tag you want to build, e.g. <code>release-73-2</code></li>
 <li>Open the Visual Studio project in icu4c/source/allinone</li>
 <li>Configure for your platform and Release, and run Rebuild Solution</li>
@@ -873,13 +669,8 @@ this parameter lets compilation succeed.</li>
 </ul>
 </li>
 <li><strong><a
-  href="https://xerces.apache.org/xerces-c/"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Xerces-C<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></strong>
+  href="false"
+  class="internal-tooltip">Xerces-C</a></strong>
 <ul>
 <li>Set ICU_INCLUDE_DIR to <em>LIBPACK/include/unicode</em></li>
 <li>Set CMAKE_INSTALL_PREFIX to <em>LIBPACK</em></li>
@@ -888,22 +679,12 @@ this parameter lets compilation succeed.</li>
 </ul>
 </li>
 <li><strong><a
-  href="https://github.com/fmtlib/fmt"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">libfmt<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></strong>
+  href="false"
+  class="internal-tooltip">libfmt</a></strong>
 <ul>
 <li>Clone <a
-  href="https://github.com/fmtlib/fmt"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://github.com/fmtlib/fmt<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">https://github.com/fmtlib/fmt</a></li>
 <li>Check out the desired tag (e.g. <code>git checkout 10.0.0</code>)</li>
 <li>Set CMAKE_INSTALL_PREFIX to <em>LIBPACK</em></li>
 <li>Turn off Test</li>
@@ -911,22 +692,12 @@ this parameter lets compilation succeed.</li>
 </ul>
 </li>
 <li><strong><a
-  href="https://gitlab.com/libeigen/eigen"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Eigen3<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></strong>
+  href="false"
+  class="internal-tooltip">Eigen3</a></strong>
 <ul>
 <li>Clone <a
-  href="https://gitlab.com/libeigen/eigen"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://gitlab.com/libeigen/eigen<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">https://gitlab.com/libeigen/eigen</a></li>
 <li>Deactivate BUILD_TESTING and BUILD_DOC</li>
 <li>Set CMAKE_INSTALL_PREFIX to <em>LIBPACK</em></li>
 <li>Configure and Generate, then open in Visual Studio, switch to Release, and build ALL_BUILD and INSTALL</li>
@@ -968,17 +739,9 @@ this parameter lets compilation succeed.</li>
             href="/Website/features/">Features</a><ul></ul></li><li>
           <a
             href="/Website/download/">Download</a><ul><li>
-                      <a
-                        href="/Website/download/releases/">Releases</a>
-                    </li><li>
-                      <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
+                  <a
+                    href="/Website/releases/">Releases</a>
+                </li><li>
                       <a
                         href="/Website/download/addons/">Addons</a>
                     </li><li>
@@ -990,9 +753,9 @@ this parameter lets compilation succeed.</li>
                   <a
                     href="/Website/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/Website/authors/">Authors</a>
+                        <a href="/Website/author/">Author</a>
                       </li><li>
-                        <a href="/Website/categories/">Categories</a>
+                        <a href="/Website/category/">Category</a>
                       </li><li>
                         <a href="/Website/tags/">Tags</a>
                       </li></ul></li><li>
@@ -1018,7 +781,12 @@ this parameter lets compilation succeed.</li>
   </svg></a>
                     </li><li>
                       <a
-                        href="/Website/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
@@ -1087,6 +855,14 @@ this parameter lets compilation succeed.</li>
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/bluesky.svg#bluesky"></use>
   </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"

@@ -42,8 +42,8 @@
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/Website/css/styles.2cc9d0e001a0d539d26f5e1557d29282ba2d9c71359b224fc1893cdeb81ac2c6.css"
-          integrity="sha256-LMnQ4AGg1TnSb14VV9KSgrotnHE1myJPwYk83rgawsY="
+          href="/Website/css/styles.efbcc322b54e75869cceeda071ddcfc9bd2bbd825e1a9ee2b7ebfc2e2635f178.css"
+          integrity="sha256-77zDIrVOdYaczu2gcd3Pyb0rvYJeGp7it&#43;v8LiY18Xg="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -95,7 +95,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2025-12-10T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-05-05T08:06:31+02:00">
+    <meta property="article:modified_time" content="2026-09-23T13:25:40+02:00">
     <meta property="article:tag" content="WIP">
 </head><body
     class="single type-news kind-page "
@@ -112,12 +112,13 @@
     href="/Website/fr/"
     accesskey="h"
     title="Accueil (Alt + H)"
-    aria-label="Accueil"><svg
+    aria-label="Accueil">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/Website/wordmark.svg#wordmark"></use>
     </svg></a>
 
   <div class="site-nav"><nav class="menu">
@@ -219,17 +220,17 @@
     focusable="false">
     <use href="/Website/svg/date.svg#date"></use>
   </svg><time datetime="2025-12-10T00:00:00Z">10 décembre 2025</time>
-  </span><span class="meta authors"><svg
-    class="icon authors"
+  </span><span class="meta author"><svg
+    class="icon author"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/authors.svg#authors"></use>
-  </svg><a href="/Website/fr/authors/aleksandr-prokudin/">Aleksandr Prokudin (169)</a></span><span class="meta categories"><svg
-    class="icon categories"
+    <use href="/Website/svg/author.svg#author"></use>
+  </svg><a href="/Website/fr/author/aleksandr-prokudin/">Aleksandr Prokudin (169)</a></span><span class="meta category"><svg
+    class="icon category"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/categories.svg#categories"></use>
-  </svg><a href="/Website/fr/categories/update/">Update (158)</a></span><span class="meta tags"><svg
+    <use href="/Website/svg/category.svg#category"></use>
+  </svg><a href="/Website/fr/category/update/">Update (158)</a></span><span class="meta tags"><svg
     class="icon tags"
     aria-hidden="true"
     focusable="false">
@@ -242,121 +243,56 @@
   </svg>2 min</span></div></section><div class="content"><p>Maintainers have been backporting some of the fixes to the v1.1 branch where possible - 14 backports in the past 7 days. The list of changes in this recap applies to the main development branch (future v1.2).</p>
 <p>This week in FreeCAD development:</p>
 <p><strong>Sketcher</strong>: PaddleStroke fixed incorrect creation of an offset when sketch directions differ (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/25941"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#25941<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>) and invalid subname errors when clicking on any vertex outside of a sketch edit mode (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/25953"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#25953<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</p>
+  href="false"
+  class="internal-tooltip">PR#25941</a>) and invalid subname errors when clicking on any vertex outside of a sketch edit mode (<a
+  href="false"
+  class="internal-tooltip">PR#25953</a>).</p>
 <p><strong>Part and PartDesign</strong>:</p>
 <ul>
 <li>PaddleStroke fixed a toponaming issue related to links (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/25913"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#25913<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</li>
+  href="false"
+  class="internal-tooltip">PR#25913</a>).</li>
 <li>chennes fixed a release blocker where symmetric padding was not working (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26037"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26037<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</li>
+  href="false"
+  class="internal-tooltip">PR#26037</a>).</li>
 </ul>
 <p><strong>TechDraw</strong>:</p>
 <ul>
 <li>WandererFan fixed a crash on adding cosmetic features before geometry is created (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/25903"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#25903<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</li>
+  href="false"
+  class="internal-tooltip">PR#25903</a>).</li>
 <li>3x380V Syntax errors, missing dimensions, and templates (upon opening a model from a previous FC version (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/25853"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#25853<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</li>
+  href="false"
+  class="internal-tooltip">PR#25853</a>).</li>
 </ul>
 <p><strong>GUI</strong>:</p>
 <ul>
 <li>kadet1090 fixed toolbar button size changing (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26063"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26063<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</li>
+  href="false"
+  class="internal-tooltip">PR#26063</a>).</li>
 <li>Syres916 fixed the incorrect position of the main window on first run and Safe Mode on Windows and Wayland (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/25809"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#25809<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</li>
+  href="false"
+  class="internal-tooltip">PR#25809</a>).</li>
 <li>tetektoza fixed preferences search popup positioning on Wayland (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/25675"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#25675<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</li>
+  href="false"
+  class="internal-tooltip">PR#25675</a>).</li>
 </ul>
 <p><strong>Other changes</strong>:</p>
 <ul>
 <li>marioalexis84 fixed and undefined variable issue in FEM (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/25935"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#25935<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</li>
+  href="false"
+  class="internal-tooltip">PR#25935</a>).</li>
 <li>jffmichi reverted an accidental icon name change in CAM (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26038"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26038<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</li>
+  href="false"
+  class="internal-tooltip">PR#26038</a>).</li>
 <li>PaddleStroke added getPlacementOf, a better alternative to getGlobalPlacement (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26059"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26059<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>). This enables link arrays to give their global placement properly.</li>
+  href="false"
+  class="internal-tooltip">PR#26059</a>). This enables link arrays to give their global placement properly.</li>
 </ul>
 <p>YashSuthar983, maxwxyz, adrianinsaval, mnesarco, and ryanthara contributed additional improvements and fixes.</p>
 <p>If you are interested in testing the latest weekly build, you can grab it <a
-  href="https://github.com/FreeCAD/FreeCAD/releases/tag/weekly-2025.12.10"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">here<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>.</p>
+  href="false"
+  class="internal-tooltip">here</a>.</p>
 <p><strong>PR stats</strong>: since the previous report, 35 pull requests have been merged (including backports to the v1.1 branch), and 42 new pull requests have been opened.</p>
 <p><strong>Issue stats</strong>: overall, there are 3049 open issues in the tracker, up by 12 from last week. There are 29 release blockers for v1.1 currently, up by 21 from last week. This is likely because release candidate news doesn&rsquo;t travel all that fast, so there&rsquo;s an increase of people testing it.</p>
 </div><footer class="single-footer">
@@ -394,17 +330,9 @@
             href="/Website/fr/features/">Fonctionnalités</a><ul></ul></li><li>
           <a
             href="/Website/fr/download/">Télécharger</a><ul><li>
-                      <a
-                        href="/Website/fr/download/releases/">Releases</a>
-                    </li><li>
-                      <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
+                  <a
+                    href="/Website/fr/releases/">Releases</a>
+                </li><li>
                       <a
                         href="/Website/fr/download/addons/">Addons</a>
                     </li><li>
@@ -416,9 +344,9 @@
                   <a
                     href="/Website/fr/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/Website/fr/authors/">Auteurs</a>
+                        <a href="/Website/fr/author/">Auteur</a>
                       </li><li>
-                        <a href="/Website/fr/categories/">Catégories</a>
+                        <a href="/Website/fr/category/">Catégorie</a>
                       </li><li>
                         <a href="/Website/fr/tags/">Mots-clés</a>
                       </li></ul></li><li>
@@ -444,7 +372,12 @@
   </svg></a>
                     </li><li>
                       <a
-                        href="/Website/fr/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
@@ -513,6 +446,14 @@
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/bluesky.svg#bluesky"></use>
   </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"
@@ -596,9 +537,9 @@
   </svg></a>
 </span>
 <span>
-    Modified: 2026-05-05
+    Modified: 2026-09-23
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/b17445f590d892755b51f7f35ced061e6eb392b5">b17445f590<svg
+      Commit: <a href="https://github.com/freecad/website/commit/efdfa08161fa1b81bbff5f770b0baaf19e5deffb">efdfa08161<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

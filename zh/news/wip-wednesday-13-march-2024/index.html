@@ -42,8 +42,8 @@
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/Website/css/styles.2cc9d0e001a0d539d26f5e1557d29282ba2d9c71359b224fc1893cdeb81ac2c6.css"
-          integrity="sha256-LMnQ4AGg1TnSb14VV9KSgrotnHE1myJPwYk83rgawsY="
+          href="/Website/css/styles.efbcc322b54e75869cceeda071ddcfc9bd2bbd825e1a9ee2b7ebfc2e2635f178.css"
+          integrity="sha256-77zDIrVOdYaczu2gcd3Pyb0rvYJeGp7it&#43;v8LiY18Xg="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -91,12 +91,12 @@
   <meta property="og:site_name" content="FreeCAD">
   <meta property="og:title" content="WIP Wednesday - 13 March 2024">
   <meta property="og:description" content="This week in FreeCAD development:
-bgbsww and chennes made further progress towards mitigating the toponaming issue. wwmayer fixed MinGW builds, added a class for reading metadata from project files and a test function to write to file stream, and fixed the context menu for the expression editing input box. pavltom reimplemented parent linking for weld symbols in TechDraw. edi271 fixed a scaling issue in TechDraw’s AxoLengthDimension. prrvchr fixed an issue with filling template fields in TechDraw when importing an Arch section plan. yorikvanhavre introduced a new “Mouse delay” preference in “Edit -&gt; Preferences -&gt; Draft -&gt; Grid and Snapping” for suppressing mouse events in numeric inputs for coordinates in Draft and Arch. chennes fixed several i18n bugs in PartDesign, Sketcher, and the task panel. He also convert GTest to a git submodule and made more improvements in the Addon Manager. FlachyJoe fixed the issue where dimensions in Sketcher would have an unselectable area. Roy-043 corrected the position of ConstrainLock and ConstrainRadiam in Sketcher. sliptonic renamed the Path workbench to CAM (additional fixes for that from maxwxyz and chennes), for rationale please see this post . He also fixed an edge case with missing toolshapes. davesrocketshop enhanced the new materials system with data models to support elasticity. This will allow FEM to expand support for more material types. FEA-eng added a new CalculiX property OutputFrequency that defines output frequency for the whole step in numbers of increments. He also added support for quad8 elements in 2D analyses and fixed Elmer FEM 2D flow examples. marioalexis84 implemented partial support for hexahedral elements meshing and submitted a partial transparency fix in FemPostObject display modes. NomAnor added an additional visibility icon for features in groups. Ovalelephant35 improved API documentation. mpfusion improved ISO 286 (geometrical product specifications) conformance. xtemp09 fixed two crashes. PR stats: In the week from Wednesday, 6 March to Wednesday, 13 March there were 55 pull requests merged, with a total codebase change of &#43;6,554 / ‑3,909 (additional loss of 108K&#43; lines of code is due to GTest devendoring in favor of a git submodule). We had an average merged PR size of &#43;119 / ‑71. 24 new pull requests were opened.">
+bgbsww and chennes made further progress towards mitigating the toponaming issue. wwmayer fixed MinGW builds, added a class for reading metadata from project files and a test function to write to file stream, and fixed the context menu for the expression editing input box. pavltom reimplemented parent linking for weld symbols in TechDraw. edi271 fixed a scaling issue in TechDraw’s AxoLengthDimension. prrvchr fixed an issue with filling template fields in TechDraw when importing an Arch section plan. yorikvanhavre introduced a new “Mouse delay” preference in “Edit -&gt; Preferences -&gt; Draft -&gt; Grid and Snapping” for suppressing mouse events in numeric inputs for coordinates in Draft and Arch. chennes fixed several i18n bugs in PartDesign, Sketcher, and the task panel. He also convert GTest to a git submodule and made more improvements in the Addon Manager. FlachyJoe fixed the issue where dimensions in Sketcher would have an unselectable area. Roy-043 corrected the position of ConstrainLock and ConstrainRadiam in Sketcher. sliptonic renamed the Path workbench to CAM (additional fixes for that from maxwxyz and chennes), for rationale please see this post. He also fixed an edge case with missing toolshapes. davesrocketshop enhanced the new materials system with data models to support elasticity. This will allow FEM to expand support for more material types. FEA-eng added a new CalculiX property OutputFrequency that defines output frequency for the whole step in numbers of increments. He also added support for quad8 elements in 2D analyses and fixed Elmer FEM 2D flow examples. marioalexis84 implemented partial support for hexahedral elements meshing and submitted a partial transparency fix in FemPostObject display modes. NomAnor added an additional visibility icon for features in groups. Ovalelephant35 improved API documentation. mpfusion improved ISO 286 (geometrical product specifications) conformance. xtemp09 fixed two crashes. PR stats: In the week from Wednesday, 6 March to Wednesday, 13 March there were 55 pull requests merged, with a total codebase change of &#43;6,554 / ‑3,909 (additional loss of 108K&#43; lines of code is due to GTest devendoring in favor of a git submodule). We had an average merged PR size of &#43;119 / ‑71. 24 new pull requests were opened.">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2024-03-13T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-05-05T08:06:31+02:00">
+    <meta property="article:modified_time" content="2026-09-23T13:25:40+02:00">
     <meta property="article:tag" content="WIP">
 </head><body
     class="single type-news kind-page "
@@ -113,12 +113,13 @@ bgbsww and chennes made further progress towards mitigating the toponaming issue
     href="/Website/zh/"
     accesskey="h"
     title="主页 (Alt + H)"
-    aria-label="主页"><svg
+    aria-label="主页">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/Website/wordmark.svg#wordmark"></use>
     </svg></a>
 
   <div class="site-nav"><nav class="menu">
@@ -220,22 +221,12 @@ bgbsww and chennes made further progress towards mitigating the toponaming issue
     focusable="false">
     <use href="/Website/svg/date.svg#date"></use>
   </svg><time datetime="2024-03-13T00:00:00Z">2024年3月13日</time>
-  </span><span class="meta authors"><svg
-    class="icon authors"
+  </span><span class="meta category"><svg
+    class="icon category"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/authors.svg#authors"></use>
-  </svg><a href="/Website/zh/authors/aleksandr-prokudin/">Aleksandr Prokudin (169)</a></span><span class="meta categories"><svg
-    class="icon categories"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/categories.svg#categories"></use>
-  </svg><a href="/Website/zh/categories/update/">Update (158)</a></span><span class="meta tags"><svg
-    class="icon tags"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/tags.svg#tags"></use>
-  </svg><a href="/Website/zh/tags/wip/">WIP (153)</a></span><span class="meta"><svg
+    <use href="/Website/svg/category.svg#category"></use>
+  </svg>Update (158)</span><span class="meta"><svg
     class="icon time"
     aria-hidden="true"
     focusable="false">
@@ -252,13 +243,8 @@ bgbsww and chennes made further progress towards mitigating the toponaming issue
 <li><strong>FlachyJoe</strong> fixed the issue where dimensions in Sketcher would have an unselectable area.</li>
 <li><strong>Roy-043</strong> corrected the position of ConstrainLock and ConstrainRadiam in Sketcher.</li>
 <li><strong>sliptonic</strong> renamed the Path workbench to CAM (additional fixes for that from maxwxyz and chennes), for rationale please see <a
-  href="https://ondsel.com/blog/path-wb-going-away/"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">this post<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>. He also fixed an edge case with missing toolshapes.</li>
+  href="false"
+  class="internal-tooltip">this post</a>. He also fixed an edge case with missing toolshapes.</li>
 <li><strong>davesrocketshop</strong> enhanced the new materials system with data models to support elasticity. This will allow FEM to expand support for more material types.</li>
 <li><strong>FEA-eng</strong> added a new CalculiX property OutputFrequency that defines output frequency for the whole step in numbers of increments. He also added support for quad8 elements in 2D analyses and fixed Elmer FEM 2D flow examples.</li>
 <li><strong>marioalexis84</strong> implemented partial support for hexahedral elements meshing and submitted a partial transparency fix in FemPostObject display modes.</li>
@@ -304,17 +290,9 @@ bgbsww and chennes made further progress towards mitigating the toponaming issue
             href="/Website/zh/features/">功能</a><ul></ul></li><li>
           <a
             href="/Website/zh/download/">下载</a><ul><li>
-                      <a
-                        href="/Website/zh/download/releases/">Releases</a>
-                    </li><li>
-                      <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
+                  <a
+                    href="/Website/zh/releases/">Releases</a>
+                </li><li>
                       <a
                         href="/Website/zh/download/addons/">Addons</a>
                     </li><li>
@@ -326,9 +304,9 @@ bgbsww and chennes made further progress towards mitigating the toponaming issue
                   <a
                     href="/Website/zh/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/Website/zh/authors/">作者列表</a>
+                        <a href="/Website/zh/author/">作者</a>
                       </li><li>
-                        <a href="/Website/zh/categories/">分类列表</a>
+                        <a href="/Website/zh/category/">分类</a>
                       </li><li>
                         <a href="/Website/zh/tags/">标签列表</a>
                       </li></ul></li><li>
@@ -354,7 +332,12 @@ bgbsww and chennes made further progress towards mitigating the toponaming issue
   </svg></a>
                     </li><li>
                       <a
-                        href="/Website/zh/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
@@ -423,6 +406,14 @@ bgbsww and chennes made further progress towards mitigating the toponaming issue
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/bluesky.svg#bluesky"></use>
   </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"
@@ -506,9 +497,9 @@ bgbsww and chennes made further progress towards mitigating the toponaming issue
   </svg></a>
 </span>
 <span>
-    Modified: 2026-05-05
+    Modified: 2026-09-23
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/b17445f590d892755b51f7f35ced061e6eb392b5">b17445f590<svg
+      Commit: <a href="https://github.com/freecad/website/commit/efdfa08161fa1b81bbff5f770b0baaf19e5deffb">efdfa08161<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

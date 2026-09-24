@@ -42,8 +42,8 @@
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/Website/css/styles.2cc9d0e001a0d539d26f5e1557d29282ba2d9c71359b224fc1893cdeb81ac2c6.css"
-          integrity="sha256-LMnQ4AGg1TnSb14VV9KSgrotnHE1myJPwYk83rgawsY="
+          href="/Website/css/styles.efbcc322b54e75869cceeda071ddcfc9bd2bbd825e1a9ee2b7ebfc2e2635f178.css"
+          integrity="sha256-77zDIrVOdYaczu2gcd3Pyb0rvYJeGp7it&#43;v8LiY18Xg="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -95,7 +95,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2023-11-24T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-05-05T08:10:07+02:00">
+    <meta property="article:modified_time" content="2026-09-23T13:25:40+02:00">
 </head><body
     class="single type-news kind-page "
     id="top">
@@ -111,12 +111,13 @@
     href="/Website/pt/"
     accesskey="h"
     title="Início (Alt + H)"
-    aria-label="Início"><svg
+    aria-label="Início">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/Website/wordmark.svg#wordmark"></use>
     </svg></a>
 
   <div class="site-nav"><nav class="menu">
@@ -218,12 +219,17 @@
     focusable="false">
     <use href="/Website/svg/date.svg#date"></use>
   </svg><time datetime="2023-11-24T00:00:00Z">24 de novembro de 2023</time>
-  </span><span class="meta categories"><svg
-    class="icon categories"
+  </span><span class="meta author"><svg
+    class="icon author"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/categories.svg#categories"></use>
-  </svg>Tutorial (26)</span><span class="meta"><svg
+    <use href="/Website/svg/author.svg#author"></use>
+  </svg><a href="/Website/pt/author/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta category"><svg
+    class="icon category"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/category.svg#category"></use>
+  </svg><a href="/Website/pt/category/tutorial/">Tutorial (26)</a></span><span class="meta"><svg
     class="icon time"
     aria-hidden="true"
     focusable="false">
@@ -231,10 +237,10 @@
   </svg>6 minutos</span></div><figure class="cover"><img
     class="img path_header"
     src="/Website/news/tutorial-getting-started-with-the-path-workbench-part-one/path_header.webp"
-    alt="Tutorial - Getting started with the Path Workbench. Part One."
+    alt="Imagem alternativa"
     loading="lazy"
     fetchpriority="low"
-    decoding="async" width="1920" height="1011" srcset="/Website/news/tutorial-getting-started-with-the-path-workbench-part-one/path_header_hu_9c45a9e7fdc2e59c.webp 400w, /Website/news/tutorial-getting-started-with-the-path-workbench-part-one/path_header_hu_d8b08d280183a32.webp 800w, /Website/news/tutorial-getting-started-with-the-path-workbench-part-one/path_header_hu_c1ab24f436ac3097.webp 1600w, /Website/news/tutorial-getting-started-with-the-path-workbench-part-one/path_header.webp 1920w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"><figcaption>
+    decoding="async" title="Path header" width="1920" height="1011" srcset="/Website/news/tutorial-getting-started-with-the-path-workbench-part-one/path_header_hu_9c45a9e7fdc2e59c.webp 400w, /Website/news/tutorial-getting-started-with-the-path-workbench-part-one/path_header_hu_d8b08d280183a32.webp 800w, /Website/news/tutorial-getting-started-with-the-path-workbench-part-one/path_header_hu_c1ab24f436ac3097.webp 1600w, /Website/news/tutorial-getting-started-with-the-path-workbench-part-one/path_header.webp 1920w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"><figcaption>
         <div class="internal-tooltip"><svg
     class="icon important"
     aria-hidden="true"
@@ -243,13 +249,8 @@
   </svg><span class="tooltip">Path header</span>
         </div>
       </figcaption></figure></section><div class="content"><p>The <a
-  href="https://wiki.freecad.org/Path_Workbench/pt"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Path workbench<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> in FreeCAD can help you create tool paths for CAM for a wide variety of CNC machines and G-code families. Let&rsquo;s walk through how to begin using this workbench in this first part creating and curating custom tool bits. In part two we&rsquo;ll continue setting up cutting operations and look at exporting G-codes for our machines.</p>
+  href="false"
+  class="internal-tooltip">Path workbench</a> in FreeCAD can help you create tool paths for CAM for a wide variety of CNC machines and G-code families. Let&rsquo;s walk through how to begin using this workbench in this first part creating and curating custom tool bits. In part two we&rsquo;ll continue setting up cutting operations and look at exporting G-codes for our machines.</p>
 <figure class="image"><button
           aria-label="Ampliar imagem"
           popovertarget="img-001"
@@ -479,17 +480,9 @@
             href="/Website/pt/features/">Funcionalidades</a><ul></ul></li><li>
           <a
             href="/Website/pt/download/">Baixar</a><ul><li>
-                      <a
-                        href="/Website/pt/download/releases/">Releases</a>
-                    </li><li>
-                      <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
+                  <a
+                    href="/Website/pt/releases/">Releases</a>
+                </li><li>
                       <a
                         href="/Website/pt/download/addons/">Addons</a>
                     </li><li>
@@ -501,9 +494,9 @@
                   <a
                     href="/Website/pt/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/Website/pt/authors/">Autores</a>
+                        <a href="/Website/pt/author/">Autor</a>
                       </li><li>
-                        <a href="/Website/pt/categories/">Categorias</a>
+                        <a href="/Website/pt/category/">Categoria</a>
                       </li><li>
                         <a href="/Website/pt/tags/">Tags</a>
                       </li></ul></li><li>
@@ -529,7 +522,12 @@
   </svg></a>
                     </li><li>
                       <a
-                        href="/Website/pt/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
@@ -598,6 +596,14 @@
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/bluesky.svg#bluesky"></use>
   </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"
@@ -681,9 +687,9 @@
   </svg></a>
 </span>
 <span>
-    Modified: 2026-05-05
+    Modified: 2026-09-23
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/ab12b609077875783943636ca2c31feec3421a6a">ab12b60907<svg
+      Commit: <a href="https://github.com/freecad/website/commit/efdfa08161fa1b81bbff5f770b0baaf19e5deffb">efdfa08161<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

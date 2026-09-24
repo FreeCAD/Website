@@ -42,8 +42,8 @@
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/Website/css/styles.2cc9d0e001a0d539d26f5e1557d29282ba2d9c71359b224fc1893cdeb81ac2c6.css"
-          integrity="sha256-LMnQ4AGg1TnSb14VV9KSgrotnHE1myJPwYk83rgawsY="
+          href="/Website/css/styles.efbcc322b54e75869cceeda071ddcfc9bd2bbd825e1a9ee2b7ebfc2e2635f178.css"
+          integrity="sha256-77zDIrVOdYaczu2gcd3Pyb0rvYJeGp7it&#43;v8LiY18Xg="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -110,12 +110,13 @@
     href="/Website/zh/"
     accesskey="h"
     title="主页 (Alt + H)"
-    aria-label="主页"><svg
+    aria-label="主页">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/Website/wordmark.svg#wordmark"></use>
     </svg></a>
 
   <div class="site-nav"><nav class="menu">
@@ -312,13 +313,8 @@
     <use href="/Website/svg/note.svg#note"></use>
   </svg>注意<p>此页面尚未翻译，因此使用英文版本。有兴趣帮忙吗？
 <a
-  href="https://github.com/freecad/website"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">贡献<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></p></blockquote></figure><h2
+  href="false"
+  class="internal-tooltip">贡献</a></p></blockquote></figure><h2
   id="naming-conventions---pep8">Naming conventions - PEP8<a class="heading-anchor"
      href="#naming-conventions---pep8"
      title="Naming conventions - PEP8"><svg
@@ -330,13 +326,8 @@
 </h2><p>Using well known conventions makes easier for other developers to understand your code and maintain it in the future.</p>
 <ul>
 <li><a
-  href="https://peps.python.org/pep-0008/"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PEP 8 – Style Guide for Python Code<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">PEP 8 – Style Guide for Python Code</a></li>
 </ul>
 <h2
   id="namespacing">Namespacing<a class="heading-anchor"
@@ -350,21 +341,11 @@
 </h2><p>Use proper namespacing to avoid conflicts with existing packages. It is preferred to put any FreeCAD code in a sub-module of the <code>freecad</code> base namespace.</p>
 <ul>
 <li><a
-  href="https://docs.python.org/3/tutorial/modules.html#packages"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Python Modules Documentation<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">Python Modules Documentation</a></li>
 <li><a
-  href="https://packaging.python.org/en/latest/guides/packaging-namespace-packages/"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Python Packaging Namespace Packages Guide<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">Python Packaging Namespace Packages Guide</a></li>
 </ul>
 <h2
   id="tooling">Tooling<a class="heading-anchor"
@@ -388,24 +369,14 @@
 <li>
 <p><strong>Ruff</strong>: (modern and fast)</p>
 <p><a
-  href="https://docs.astral.sh/ruff/"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Ruff Documentation<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></p>
+  href="false"
+  class="internal-tooltip">Ruff Documentation</a></p>
 </li>
 <li>
 <p><strong>Black</strong></p>
 <p><a
-  href="https://black.readthedocs.io/en/stable/"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Black Documentation<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></p>
+  href="false"
+  class="internal-tooltip">Black Documentation</a></p>
 <p>Main FreeCAD repo uses <code>black</code> with <code>--linelength=100</code> in the pre-commit hook, so if you are submitting code to main, take that into account.</p>
 </li>
 </ul>
@@ -420,13 +391,8 @@
   </svg></a>
 </h3><p>The modern tooling for python is <code>uv</code>, it replaces <code>pip</code> and manage dependencies, project metadata, virtual environments, etc&hellip; and it is 10x faster than pip.</p>
 <p><a
-  href="https://docs.astral.sh/uv/"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">uv Documentation<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></p>
+  href="false"
+  class="internal-tooltip">uv Documentation</a></p>
 <h2
   id="typing">Typing<a class="heading-anchor"
      href="#typing"
@@ -439,40 +405,20 @@
 </h2><p>Type hints makes the code safer and more easy to maintain and refactor.</p>
 <ul>
 <li><a
-  href="https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">typing cheat sheet<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">typing cheat sheet</a></li>
 </ul>
 <p>There are many static  type checkers:</p>
 <ul>
 <li><a
-  href="https://mypy-lang.org/"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">mypy<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> (maybe the most common)</li>
+  href="false"
+  class="internal-tooltip">mypy</a> (maybe the most common)</li>
 <li><a
-  href="https://github.com/microsoft/pyright"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">pyright<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> (Microsoft)</li>
+  href="false"
+  class="internal-tooltip">pyright</a> (Microsoft)</li>
 <li><a
-  href="https://github.com/astral-sh/ty"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">ty<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> (New and fast)</li>
+  href="false"
+  class="internal-tooltip">ty</a> (New and fast)</li>
 </ul>
 <h2
   id="python-versions">Python versions<a class="heading-anchor"
@@ -519,17 +465,9 @@
             href="/Website/zh/features/">功能</a><ul></ul></li><li>
           <a
             href="/Website/zh/download/">下载</a><ul><li>
-                      <a
-                        href="/Website/zh/download/releases/">Releases</a>
-                    </li><li>
-                      <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
+                  <a
+                    href="/Website/zh/releases/">Releases</a>
+                </li><li>
                       <a
                         href="/Website/zh/download/addons/">Addons</a>
                     </li><li>
@@ -541,9 +479,9 @@
                   <a
                     href="/Website/zh/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/Website/zh/authors/">作者列表</a>
+                        <a href="/Website/zh/author/">作者</a>
                       </li><li>
-                        <a href="/Website/zh/categories/">分类列表</a>
+                        <a href="/Website/zh/category/">分类</a>
                       </li><li>
                         <a href="/Website/zh/tags/">标签列表</a>
                       </li></ul></li><li>
@@ -569,7 +507,12 @@
   </svg></a>
                     </li><li>
                       <a
-                        href="/Website/zh/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
@@ -638,6 +581,14 @@
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/bluesky.svg#bluesky"></use>
   </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"

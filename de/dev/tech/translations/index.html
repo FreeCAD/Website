@@ -42,8 +42,8 @@
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/Website/css/styles.2cc9d0e001a0d539d26f5e1557d29282ba2d9c71359b224fc1893cdeb81ac2c6.css"
-          integrity="sha256-LMnQ4AGg1TnSb14VV9KSgrotnHE1myJPwYk83rgawsY="
+          href="/Website/css/styles.efbcc322b54e75869cceeda071ddcfc9bd2bbd825e1a9ee2b7ebfc2e2635f178.css"
+          integrity="sha256-77zDIrVOdYaczu2gcd3Pyb0rvYJeGp7it&#43;v8LiY18Xg="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -110,12 +110,13 @@
     href="/Website/de/"
     accesskey="h"
     title="Home (Alt + H)"
-    aria-label="Home"><svg
+    aria-label="Home">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/Website/wordmark.svg#wordmark"></use>
     </svg></a>
 
   <div class="site-nav"><nav class="menu">
@@ -365,13 +366,8 @@
     <use href="/Website/svg/note.svg#note"></use>
   </svg>Hinweis<p>Diese Seite wurde noch nicht übersetzt, daher wird stattdessen die englische Version verwendet. Möchtest du mithelfen?
 <a
-  href="https://github.com/freecad/website"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Mitwirken<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></p></blockquote></figure><p>In most cases, any user-visible text in FreeCAD should be made translatable. Exceptions to this general rule are:</p>
+  href="false"
+  class="internal-tooltip">Mitwirken</a></p></blockquote></figure><p>In most cases, any user-visible text in FreeCAD should be made translatable. Exceptions to this general rule are:</p>
 <ol>
 <li>Text that only appears as log-level messages in the Report View</li>
 <li>Names of Python commands, etc.</li>
@@ -388,13 +384,8 @@
 <ul>
 <li>The NOOP-versions of the Qt translation functions extract the string for translation purposes, but <em>do not</em> replace the string in place with its translated equivalent. A later call to <code>tr()</code> or <code>translate()</code> is always required in these cases. See more detail below.</li>
 <li>In a non-QObject-derived class, use <code>Q_DECLARE_TR_FUNCTIONS(MyClass)</code> to give your class access to the <code>tr()</code> function. See also <a
-  href="https://doc.qt.io/qt-5/i18n-source-translation.html"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">the Qt documentation<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>.</li>
+  href="false"
+  class="internal-tooltip">the Qt documentation</a>.</li>
 </ul>
 <h2
   id="basic-usage">Basic Usage<a class="heading-anchor"
@@ -406,7 +397,7 @@
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
 </h2><p>For approximately 99% of text strings, the usage of the translation functions is completely straightforward. This section shows the most basic usage patterns. More <a
-  href="/Website/de/dev/tech/translations/#advanced-translation"
+  href="false"
   class="internal-tooltip hash-link"><svg
     class="icon hash"
     aria-hidden="true"
@@ -448,7 +439,7 @@
 </span></span><span class="line"><span class="cl">                  .arg(done)
 </span></span><span class="line"><span class="cl">                  .arg(total)
 </span></span><span class="line"><span class="cl">                  .arg(currentFile));</span></span></code></pre></div></div><p>Most C++ translation should use these mechanisms as written here, but in various places in FreeCAD more complex mechanisms are needed to handle alternate use cases. Those are described in the <a
-  href="/Website/de/dev/tech/translations/#advanced-translation"
+  href="false"
   class="internal-tooltip hash-link"><svg
     class="icon hash"
     aria-hidden="true"
@@ -483,26 +474,16 @@
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
 </h3><p>In most cases the developers and translators are not the same groups of people, and translators typically work on <a
-  href="https://crowdin.com/project/freecad"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">the CrowdIn platform<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>. Some coordination and extra courtesy is required to ensure that we present the best possible experience for everyone in the project.</p>
+  href="false"
+  class="internal-tooltip">the CrowdIn platform</a>. Some coordination and extra courtesy is required to ensure that we present the best possible experience for everyone in the project.</p>
 <ol>
 <li><em>Any</em> change to a string requires it to be retranslated. For small changes that is an easy thing to do, but <strong>it requires human intervention for each and every language that FreeCAD supports</strong>. This means that, e.g. changing the capitalization of a single letter in a string will require additional input on CrowdIn from several dozen individual translators. Until they do that, the string will be presented in English. The consequence of this is that minor string changes <em>must not</em> be made late in a release cycle: it is better for a small inconsistency to appear in English than for every single language to display the &ldquo;correct&rdquo; English string instead of the translated one (in many cases the translators will have corrected the inconsistency or error in their own language).</li>
 <li>Two strings with different context require separate translation. In cases where the string is used throughout FreeCAD, explicitly use <code>QObject::tr()</code> to place the string in the <code>QObject</code> context so translators only need translate the string a single time.</li>
 <li>Re-use strings (within the same context) whenever possible. An entirely new UI element that re-uses an existing string in the same context requires no intervention from translators, and the string translation will simply work.</li>
 <li>Most translators don&rsquo;t frequent GitHub, so translation bugs reported in the main FreeCAD issue tracker will often go unnoticed. Problems with translations (that is, where the English text is deemed correct, but in some language or other the translated text is incorrect) should be reported on CrowdIn, not GitHub.</li>
 <li>Conversely, most developers don&rsquo;t frequent CrowdIn, so when the original English string is incorrect, when a UI element is not available for translation at all, or when a string appears for translators but does not appear translated in the UI, the issue should ultimately be migrated to GitHub. The FreeCAD project maintains a separate repository purely for translation-related bugs: <a
-  href="https://github.com/FreeCAD/FreeCAD-translations/"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://github.com/FreeCAD/FreeCAD-translations/<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">https://github.com/FreeCAD/FreeCAD-translations/</a></li>
 </ol>
 <h2
   id="advanced-translation">Advanced Translation<a class="heading-anchor"
@@ -514,13 +495,8 @@
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
 </h2><p>To understand how and why the more advanced translation mechanisms are needed, it&rsquo;s helpful to understand how Qt actually does the translation. Qt&rsquo;s main page for developers can be found at <a
-  href="https://doc.qt.io/qt-6/i18n-source-translation.html"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Writing Source Code for Translation<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></p>
+  href="false"
+  class="internal-tooltip">Writing Source Code for Translation</a></p>
 <h3
   id="qt-translation-process">Qt Translation Process<a class="heading-anchor"
      href="#qt-translation-process"
@@ -791,17 +767,9 @@ a separate mechanism must be used to provide the string to translators, and <cod
             href="/Website/de/features/">Funktionen</a><ul></ul></li><li>
           <a
             href="/Website/de/download/">Herunterladen</a><ul><li>
-                      <a
-                        href="/Website/de/download/releases/">Releases</a>
-                    </li><li>
-                      <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
+                  <a
+                    href="/Website/de/releases/">Releases</a>
+                </li><li>
                       <a
                         href="/Website/de/download/addons/">Addons</a>
                     </li><li>
@@ -813,9 +781,9 @@ a separate mechanism must be used to provide the string to translators, and <cod
                   <a
                     href="/Website/de/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/Website/de/authors/">Autoren</a>
+                        <a href="/Website/de/author/">Autor</a>
                       </li><li>
-                        <a href="/Website/de/categories/">Kategorien</a>
+                        <a href="/Website/de/category/">Kategorie</a>
                       </li><li>
                         <a href="/Website/de/tags/">Tags</a>
                       </li></ul></li><li>
@@ -841,7 +809,12 @@ a separate mechanism must be used to provide the string to translators, and <cod
   </svg></a>
                     </li><li>
                       <a
-                        href="/Website/de/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
@@ -910,6 +883,14 @@ a separate mechanism must be used to provide the string to translators, and <cod
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/bluesky.svg#bluesky"></use>
   </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"

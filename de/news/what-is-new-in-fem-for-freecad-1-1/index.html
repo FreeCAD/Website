@@ -42,8 +42,8 @@
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/Website/css/styles.2cc9d0e001a0d539d26f5e1557d29282ba2d9c71359b224fc1893cdeb81ac2c6.css"
-          integrity="sha256-LMnQ4AGg1TnSb14VV9KSgrotnHE1myJPwYk83rgawsY="
+          href="/Website/css/styles.efbcc322b54e75869cceeda071ddcfc9bd2bbd825e1a9ee2b7ebfc2e2635f178.css"
+          integrity="sha256-77zDIrVOdYaczu2gcd3Pyb0rvYJeGp7it&#43;v8LiY18Xg="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -90,12 +90,12 @@
     href="https://FreeCAD.github.io/Website/de/"><meta property="og:url" content="https://FreeCAD.github.io/Website/de/news/what-is-new-in-fem-for-freecad-1-1/">
   <meta property="og:site_name" content="FreeCAD">
   <meta property="og:title" content="What’s new in FEM for FreeCAD 1.1?">
-  <meta property="og:description" content="Now that the feature freeze for FreeCAD 1.1 is on, and we are not too far off from the final release, let’s summarize the main changes in the FEM workbench. Just like in the case of the revolutionary 1.0 release (see this blog post Major FEM Workbench improvements for FreeCAD 1.0), FEM dominates the release notes . There have been many significant improvements, so let’s go through them.">
+  <meta property="og:description" content="Now that the feature freeze for FreeCAD 1.1 is on, and we are not too far off from the final release, let’s summarize the main changes in the FEM workbench. Just like in the case of the revolutionary 1.0 release (see this blog post Major FEM Workbench improvements for FreeCAD 1.0), FEM dominates the release notes. There have been many significant improvements, so let’s go through them.">
   <meta property="og:locale" content="de_DE">
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2025-09-09T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-05-05T08:11:44+02:00">
+    <meta property="article:modified_time" content="2026-09-23T13:25:40+02:00">
     <meta property="article:tag" content="FEM">
 </head><body
     class="single type-news kind-page "
@@ -112,12 +112,13 @@
     href="/Website/de/"
     accesskey="h"
     title="Home (Alt + H)"
-    aria-label="Home"><svg
+    aria-label="Home">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/Website/wordmark.svg#wordmark"></use>
     </svg></a>
 
   <div class="site-nav"><nav class="menu">
@@ -219,17 +220,17 @@
     focusable="false">
     <use href="/Website/svg/date.svg#date"></use>
   </svg><time datetime="2025-09-09T00:00:00Z">9. September 2025</time>
-  </span><span class="meta authors"><svg
-    class="icon authors"
+  </span><span class="meta author"><svg
+    class="icon author"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/authors.svg#authors"></use>
-  </svg><a href="/Website/de/authors/newjoker/">NewJoker (3)</a></span><span class="meta categories"><svg
-    class="icon categories"
+    <use href="/Website/svg/author.svg#author"></use>
+  </svg><a href="/Website/de/author/newjoker/">NewJoker (3)</a></span><span class="meta category"><svg
+    class="icon category"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/categories.svg#categories"></use>
-  </svg><a href="/Website/de/categories/update/">Update (158)</a></span><span class="meta tags"><svg
+    <use href="/Website/svg/category.svg#category"></use>
+  </svg><a href="/Website/de/category/update/">Update (158)</a></span><span class="meta tags"><svg
     class="icon tags"
     aria-hidden="true"
     focusable="false">
@@ -257,13 +258,8 @@
   href="/Website/de/news/major-fem-workbench-improvements-for-freecad-1-0/"
   class="internal-tooltip">this blog post<span class="tooltip">
         <strong>Major FEM Workbench improvements for FreeCAD 1.0</strong></span></a>), FEM dominates the <a
-  href="https://wiki.freecad.org/Release_notes_1.1/de"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">release notes<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>. There have been many significant improvements, so let&rsquo;s go through them.</p>
+  href="false"
+  class="internal-tooltip">release notes</a>. There have been many significant improvements, so let&rsquo;s go through them.</p>
 <h2
   id="electromagnetics">Electromagnetics<a class="heading-anchor"
      href="#electromagnetics"
@@ -274,20 +270,10 @@
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
 </h2><p>In this release cycle, the main focus was on electromagnetic (EM) analyses, postprocessing, and key missing CalculiX features. The range of supported electromagnetic simulations was extended with the introduction of Elmer&rsquo;s static current conduction solver implemented as <a
-  href="https://wiki.freecad.org/FEM_EquationStaticCurrent/de"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">EquationStaticCurrent<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>. It doesn&rsquo;t just allow direct current (DC) flow simulations: when combined with the Heat equation, it may also be used to model resistive (Joule) heating. There is a dedicated <a
-  href="https://wiki.freecad.org/FEM_Examples/de"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">FEM Example<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> for it, including analytical verification of results.</p>
+  href="false"
+  class="internal-tooltip">EquationStaticCurrent</a>. It doesn&rsquo;t just allow direct current (DC) flow simulations: when combined with the Heat equation, it may also be used to model resistive (Joule) heating. There is a dedicated <a
+  href="false"
+  class="internal-tooltip">FEM Example</a> for it, including analytical verification of results.</p>
 <figure class="image"><button
           aria-label="Bild vergrößern"
           popovertarget="img-001"
@@ -320,13 +306,8 @@
     focusable="false">
     <use href="/Website/svg/cross.svg#cross"></use>
   </svg></button><p>Electromagnetic analysis</p></div><figcaption>Electromagnetic analysis</figcaption></figure><p>Another major change for EM workflows was the addition of the <a
-  href="https://wiki.freecad.org/FEM_ElectricChargeDensity/de"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">electric charge density load<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>. It can be used in electrostatic analyses to prescribe total charge in Coulombs or charge per unit area/volume.</p>
+  href="false"
+  class="internal-tooltip">electric charge density load</a>. It can be used in electrostatic analyses to prescribe total charge in Coulombs or charge per unit area/volume.</p>
 <p>Speaking about electrostatics, this type of analyses is now also possible (even in 2D) with the newly refactored CalculiX solver, which we will cover in more detail below. This implementation utilizes the analogy of differential equations for electrostatics and steady-state heat transfer.</p>
 <figure class="image"><button
           aria-label="Bild vergrößern"
@@ -587,20 +568,10 @@
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
 </h2><p>FEM has been actively developed in the v1.1 development cycle. Such progress wouldn&rsquo;t be possible without the invaluable contributions of <a
-  href="https://github.com/marioalexis84"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">marioalexis84<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> and <a
-  href="https://github.com/ickby"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">ickby<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>, as well as other devs occasionally contributing to FEM. There&rsquo;s still a lot to improve, such as:</p>
+  href="false"
+  class="internal-tooltip">marioalexis84</a> and <a
+  href="false"
+  class="internal-tooltip">ickby</a>, as well as other devs occasionally contributing to FEM. There&rsquo;s still a lot to improve, such as:</p>
 <ul>
 <li>more CalculiX and Elmer features;</li>
 <li>mixed and multiple meshes;</li>
@@ -644,17 +615,9 @@
             href="/Website/de/features/">Funktionen</a><ul></ul></li><li>
           <a
             href="/Website/de/download/">Herunterladen</a><ul><li>
-                      <a
-                        href="/Website/de/download/releases/">Releases</a>
-                    </li><li>
-                      <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
+                  <a
+                    href="/Website/de/releases/">Releases</a>
+                </li><li>
                       <a
                         href="/Website/de/download/addons/">Addons</a>
                     </li><li>
@@ -666,9 +629,9 @@
                   <a
                     href="/Website/de/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/Website/de/authors/">Autoren</a>
+                        <a href="/Website/de/author/">Autor</a>
                       </li><li>
-                        <a href="/Website/de/categories/">Kategorien</a>
+                        <a href="/Website/de/category/">Kategorie</a>
                       </li><li>
                         <a href="/Website/de/tags/">Tags</a>
                       </li></ul></li><li>
@@ -694,7 +657,12 @@
   </svg></a>
                     </li><li>
                       <a
-                        href="/Website/de/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
@@ -763,6 +731,14 @@
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/bluesky.svg#bluesky"></use>
   </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"
@@ -846,9 +822,9 @@
   </svg></a>
 </span>
 <span>
-    Modified: 2026-05-05
+    Modified: 2026-09-23
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/17615c056717da0e1d8134a1316f96bf1c2f37b7">17615c0567<svg
+      Commit: <a href="https://github.com/freecad/website/commit/efdfa08161fa1b81bbff5f770b0baaf19e5deffb">efdfa08161<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

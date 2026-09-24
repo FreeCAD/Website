@@ -103,6 +103,133 @@ collections:
 
   - divider: true
 
+  - name: releases-pages
+    label: Releases
+    description: Releases collection
+    folder: content
+    path: 'releases/{{slug}}/index'
+    media_folder: ""
+    public_folder: ""
+    thumbnail: cover.image
+    icon: update
+    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{author | default('no author')}} · {{locales | upper}}"
+    reorder:
+      key: weight
+    i18n: true
+
+    sortable_fields:
+      fields: [title, date, author]
+      default:
+        field: date
+        direction: descending
+
+    view_groups:
+      groups:
+        - name: year
+          label: Year
+          field: date
+          pattern: '\d{4}'
+        - name: category
+          label: Category
+          field: category
+      default: year
+
+    view_filters:
+      filters:
+        - name: drafts
+          label: Drafts
+          field: draft
+          pattern: true
+        - name: posts_2023
+          label: Posted in 2023
+          field: date
+          pattern: '^2023'
+        - name: posts_2024
+          label: Posted in 2024
+          field: date
+          pattern: '^2024'
+        - name: posts_2025
+          label: Posted in 2025
+          field: date
+          pattern: '^2025'
+        - name: posts_2026
+          label: Posted in 2026
+          field: date
+          pattern: '^2026'
+        
+
+    index_file:
+      label: Releases Index
+      icon: home
+      i18n: true
+      fields:
+        - name: title
+          label: Title
+          widget: string
+          i18n: true
+        - name: description
+          label: Description
+          widget: string
+          i18n: true
+        - name: linkTitle
+          label: Link Title
+          widget: string
+          i18n: true
+          required: false
+        - name: redirect
+          label: Redirect
+          widget: string
+          i18n: duplicate
+          required: false
+        - name: cover
+          label: Cover
+          widget: object
+          i18n: true
+          required: false
+          fields:
+            - { name: image, label: Image, widget: image, i18n: duplicate, required: false }
+            - { name: caption, label: Caption, widget: string, i18n: true, required: false }
+        - name: body
+          label: Body
+          widget: richtext
+          i18n: true
+          required: false
+
+    fields:
+      - name: title
+        label: Title
+        widget: string
+        i18n: true
+      - name: description
+        label: Description
+        widget: string
+        i18n: true
+        required: false
+      - name: date
+        label: Date
+        widget: datetime
+        i18n: duplicate
+      - name: draft
+        label: Draft
+        widget: boolean
+        default: false
+        i18n: duplicate
+        required: false
+      - name: cover
+        label: Cover
+        widget: object
+        i18n: true
+        required: false
+        fields:
+          - { name: image, label: Image, widget: image, i18n: duplicate, required: false }
+          - { name: caption, label: Caption, widget: string, i18n: true, required: false }
+      - name: body
+        label: Body
+        widget: richtext
+        i18n: true
+
+  - divider: true
+
   - name: features-section
     label: Features
     description: Features section
@@ -151,18 +278,18 @@ collections:
     label: Download
     description: Download collection
     folder: content
-    path: 'download/releases/{{slug}}/index'
+    path: 'download/{{slug}}/index'
     media_folder: ""
     public_folder: ""
     thumbnail: cover.image
     icon: download
-    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{authors | default('no authors')}} · {{locales | upper}}"
+    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{author | default('no author')}} · {{locales | upper}}"
     reorder:
       key: weight
     i18n: true
 
     sortable_fields:
-      fields: [title, date, authors]
+      fields: [title, date, author]
       default:
         field: date
         direction: descending
@@ -174,8 +301,8 @@ collections:
           field: date
           pattern: '\d{4}'
         - name: category
-          label: Categories
-          field: categories
+          label: Category
+          field: category
       default: year
 
     view_filters:
@@ -293,13 +420,13 @@ collections:
     public_folder: ""
     thumbnail: cover.image
     icon: brand_awareness
-    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{authors | default('no authors')}} · {{locales | upper}}"
+    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{author | default('no author')}} · {{locales | upper}}"
     reorder:
       key: weight
     i18n: true
 
     sortable_fields:
-      fields: [title, date, authors]
+      fields: [title, date, author]
       default:
         field: date
         direction: descending
@@ -311,8 +438,8 @@ collections:
           field: date
           pattern: '\d{4}'
         - name: category
-          label: Categories
-          field: categories
+          label: Category
+          field: category
       default: year
 
     view_filters:
@@ -339,27 +466,27 @@ collections:
           pattern: '^2026'
         - name: announcement
           label: Announcement
-          field: categories
+          field: category
           pattern: announcement
         - name: event
           label: Event
-          field: categories
+          field: category
           pattern: event
         - name: feature
           label: Feature
-          field: categories
+          field: category
           pattern: feature
         - name: showcase
           label: Showcase
-          field: categories
+          field: category
           pattern: showcase
         - name: tutorial
           label: Tutorial
-          field: categories
+          field: category
           pattern: tutorial
         - name: update
           label: Update
-          field: categories
+          field: category
           pattern: Update
 
     index_file:
@@ -419,13 +546,13 @@ collections:
         default: false
         i18n: duplicate
         required: false
-      - name: authors
-        label: Authors
+      - name: author
+        label: Author
         widget: string
         i18n: duplicate
         required: false
-      - name: categories
-        label: Categories
+      - name: category
+        label: category
         widget: select
         options:
           - { label: Announcement, value: announcement }
@@ -465,13 +592,13 @@ collections:
     public_folder: ""
     thumbnail: cover.image
     icon: groups
-    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{authors | default('no authors')}} · {{locales | upper}}"
+    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{author | default('no author')}} · {{locales | upper}}"
     reorder:
       key: weight
     i18n: true
 
     sortable_fields:
-      fields: [title, date, authors]
+      fields: [title, date, author]
       default:
         field: date
         direction: descending
@@ -483,8 +610,8 @@ collections:
           field: date
           pattern: '\d{4}'
         - name: category
-          label: Categories
-          field: categories
+          label: Category
+          field: category
       default: year
 
     view_filters:
@@ -690,13 +817,13 @@ collections:
     public_folder: ""
     thumbnail: cover.image
     icon: logo_dev
-    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{authors | default('no authors')}} · {{locales | upper}}"
+    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{author | default('no author')}} · {{locales | upper}}"
     reorder:
       key: weight
     i18n: true
 
     sortable_fields:
-      fields: [title, date, authors]
+      fields: [title, date, author]
       default:
         field: date
         direction: descending
@@ -708,8 +835,8 @@ collections:
           field: date
           pattern: '\d{4}'
         - name: category
-          label: Categories
-          field: categories
+          label: Category
+          field: category
       default: year
 
     view_filters:
@@ -906,47 +1033,140 @@ collections:
 
   - divider: true
 
-  - name: thanks-section
-    label: Thanks
-    description: Thanks section
+  - name: about-pages
+    label: About
+    description: About collection
+    folder: content
+    path: 'about/{{slug}}/_index'
     media_folder: ""
     public_folder: ""
     thumbnail: cover.image
-    icon: <no value>
+    icon: info
+    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{author | default('no author')}} · {{locales | upper}}"
+    reorder:
+      key: weight
     i18n: true
-    files:
-      - name: thanks-section-index
-        label: Thanks
-        file: content/{{locale}}/thanks/_index.md
-        icon: <no value>
+
+    sortable_fields:
+      fields: [title, date, author]
+      default:
+        field: date
+        direction: descending
+
+    view_groups:
+      groups:
+        - name: year
+          label: Year
+          field: date
+          pattern: '\d{4}'
+        - name: category
+          label: Category
+          field: category
+      default: year
+
+    view_filters:
+      filters:
+        - name: drafts
+          label: Drafts
+          field: draft
+          pattern: true
+        - name: posts_2023
+          label: Posted in 2023
+          field: date
+          pattern: '^2023'
+        - name: posts_2024
+          label: Posted in 2024
+          field: date
+          pattern: '^2024'
+        - name: posts_2025
+          label: Posted in 2025
+          field: date
+          pattern: '^2025'
+        - name: posts_2026
+          label: Posted in 2026
+          field: date
+          pattern: '^2026'
+        
+
+    index_file:
+      label: About Index
+      icon: home
+      i18n: true
+      fields:
+        - name: title
+          label: Title
+          widget: string
+          i18n: true
+        - name: description
+          label: Description
+          widget: string
+          i18n: true
+        - name: linkTitle
+          label: Link Title
+          widget: string
+          i18n: true
+          required: false
+        - name: redirect
+          label: Redirect
+          widget: string
+          i18n: duplicate
+          required: false
+        - name: cover
+          label: Cover
+          widget: object
+          i18n: true
+          required: false
+          fields:
+            - { name: image, label: Image, widget: image, i18n: duplicate, required: false }
+            - { name: caption, label: Caption, widget: string, i18n: true, required: false }
+        - name: body
+          label: Body
+          widget: richtext
+          i18n: true
+          required: false
+
+    fields:
+      - name: title
+        label: Title
+        widget: string
         i18n: true
+      - name: description
+        label: Description
+        widget: string
+        i18n: true
+        required: false
+      - name: linkTitle
+        label: Link Title
+        widget: string
+        i18n: true
+        required: false
+      - name: redirect
+        label: Redirect
+        widget: string
+        i18n: duplicate
+        required: false
+      - name: date
+        label: Date
+        widget: datetime
+        i18n: duplicate
+      - name: draft
+        label: Draft
+        widget: boolean
+        default: false
+        i18n: duplicate
+        required: false
+      - name: cover
+        label: Cover
+        widget: object
+        i18n: true
+        required: false
         fields:
-          - name: title
-            label: Title
-            widget: string
-            i18n: true
-          - name: description
-            label: Description
-            widget: string
-            i18n: true
-          - name: linkTitle
-            label: Link Title
-            widget: string
-            i18n: true
-            required: false
-          - name: cover
-            label: Cover
-            widget: object
-            i18n: true
-            required: false
-            fields:
-              - { name: image, label: Image, widget: image, i18n: duplicate, required: false }
-              - { name: caption, label: Caption, widget: string, i18n: true, required: false }
-          - name: body
-            label: Body
-            widget: richtext
-            i18n: true
-            required: false
+          - { name: image, label: Image, widget: image, i18n: duplicate, required: false }
+          - { name: caption, label: Caption, widget: string, i18n: true, required: false }
+      - name: body
+        label: Body
+        widget: richtext
+        i18n: true
 
   - divider: true
 
@@ -989,8 +1209,8 @@ singletons:
     file: config/_default/params.yaml
     icon: settings
     fields:
-      - name: site_authors
-        label: Default site authors
+      - name: site_author
+        label: Default site author
         widget: string
       - name: site_keywords
         label: Site keywords and tags

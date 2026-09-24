@@ -42,8 +42,8 @@
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/Website/css/styles.2cc9d0e001a0d539d26f5e1557d29282ba2d9c71359b224fc1893cdeb81ac2c6.css"
-          integrity="sha256-LMnQ4AGg1TnSb14VV9KSgrotnHE1myJPwYk83rgawsY="
+          href="/Website/css/styles.efbcc322b54e75869cceeda071ddcfc9bd2bbd825e1a9ee2b7ebfc2e2635f178.css"
+          integrity="sha256-77zDIrVOdYaczu2gcd3Pyb0rvYJeGp7it&#43;v8LiY18Xg="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -110,12 +110,13 @@
     href="/Website/fr/"
     accesskey="h"
     title="Accueil (Alt + H)"
-    aria-label="Accueil"><svg
+    aria-label="Accueil">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/Website/wordmark.svg#wordmark"></use>
     </svg></a>
 
   <div class="site-nav"><nav class="menu">
@@ -312,21 +313,11 @@
     <use href="/Website/svg/note.svg#note"></use>
   </svg>Remarque<p>Cette page n&rsquo;a pas encore été traduite en français, la version anglaise est donc utilisée. Envie de contribuer à la traduction ?
 <a
-  href="https://github.com/freecad/website"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Contribuer<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></p></blockquote></figure><p>This document aims to provide set of good practices that should be helpful for both developers and code reviewers. They should be treated like food recipes - you can play with them, alter them - but every change should be thoughtful and intentional.</p>
+  href="false"
+  class="internal-tooltip">Contribuer</a></p></blockquote></figure><p>This document aims to provide set of good practices that should be helpful for both developers and code reviewers. They should be treated like food recipes - you can play with them, alter them - but every change should be thoughtful and intentional.</p>
 <p>Just like the C++ practices - this document is <strong>very</strong> much inspired by the <a
-  href="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">C++ Core Guidelines<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>.
+  href="false"
+  class="internal-tooltip">C++ Core Guidelines</a>.
 You can always consult it to learn more useful stuff.</p>
 <p>While points of this guide might not be consistently followed throughout all of the existing codebase, checking if new code follows them is possible and in long term should help us immensely.</p>
 <figure>
@@ -359,13 +350,8 @@ You can always consult it to learn more useful stuff.</p>
 <li>Comments <strong>could</strong> be made to existing comments just to note that other (potentially better) solutions are available and should be used instead when writing new code.</li>
 <li>Reviewer <strong>can</strong> hint to make more changes to the existing code in order to improve the proposed solution (for example, refactor another class so it can be used).</li>
 <li>Code <strong>must</strong> follow the Scout Rule - <a
-  href="https://biratkirat.medium.com/step-8-the-boy-scout-rule-robert-c-martin-uncle-bob-9ac839778385"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://biratkirat.medium.com/step-8-the-boy-scout-rule-robert-c-martin-uncle-bob-9ac839778385<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> - i.e. leave code in better shape than you found it.</li>
+  href="false"
+  class="internal-tooltip">https://biratkirat.medium.com/step-8-the-boy-scout-rule-robert-c-martin-uncle-bob-9ac839778385</a> - i.e. leave code in better shape than you found it.</li>
 <li>If possible, code cleanup done while working on the feature should be split into separate commits or even better PR.</li>
 <li>PRs <strong>must not</strong> contain any remains of development code, like debug statements other than actual logs.</li>
 <li>New code <strong>must not</strong> introduce any new linter warnings</li>
@@ -681,17 +667,9 @@ while checking the code Reviewer should take into account surrounding code and f
             href="/Website/fr/features/">Fonctionnalités</a><ul></ul></li><li>
           <a
             href="/Website/fr/download/">Télécharger</a><ul><li>
-                      <a
-                        href="/Website/fr/download/releases/">Releases</a>
-                    </li><li>
-                      <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
+                  <a
+                    href="/Website/fr/releases/">Releases</a>
+                </li><li>
                       <a
                         href="/Website/fr/download/addons/">Addons</a>
                     </li><li>
@@ -703,9 +681,9 @@ while checking the code Reviewer should take into account surrounding code and f
                   <a
                     href="/Website/fr/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/Website/fr/authors/">Auteurs</a>
+                        <a href="/Website/fr/author/">Auteur</a>
                       </li><li>
-                        <a href="/Website/fr/categories/">Catégories</a>
+                        <a href="/Website/fr/category/">Catégorie</a>
                       </li><li>
                         <a href="/Website/fr/tags/">Mots-clés</a>
                       </li></ul></li><li>
@@ -731,7 +709,12 @@ while checking the code Reviewer should take into account surrounding code and f
   </svg></a>
                     </li><li>
                       <a
-                        href="/Website/fr/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
@@ -800,6 +783,14 @@ while checking the code Reviewer should take into account surrounding code and f
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/bluesky.svg#bluesky"></use>
   </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"

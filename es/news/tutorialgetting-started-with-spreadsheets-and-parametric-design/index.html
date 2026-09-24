@@ -42,8 +42,8 @@
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/Website/css/styles.2cc9d0e001a0d539d26f5e1557d29282ba2d9c71359b224fc1893cdeb81ac2c6.css"
-          integrity="sha256-LMnQ4AGg1TnSb14VV9KSgrotnHE1myJPwYk83rgawsY="
+          href="/Website/css/styles.efbcc322b54e75869cceeda071ddcfc9bd2bbd825e1a9ee2b7ebfc2e2635f178.css"
+          integrity="sha256-77zDIrVOdYaczu2gcd3Pyb0rvYJeGp7it&#43;v8LiY18Xg="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -95,7 +95,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2025-04-08T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-05-05T08:10:07+02:00">
+    <meta property="article:modified_time" content="2026-09-23T13:25:40+02:00">
     <meta property="article:tag" content="Spreadsheet">
 </head><body
     class="single type-news kind-page "
@@ -112,12 +112,13 @@
     href="/Website/es/"
     accesskey="h"
     title="Inicio (Alt + H)"
-    aria-label="Inicio"><svg
+    aria-label="Inicio">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/Website/wordmark.svg#wordmark"></use>
     </svg></a>
 
   <div class="site-nav"><nav class="menu">
@@ -219,17 +220,17 @@
     focusable="false">
     <use href="/Website/svg/date.svg#date"></use>
   </svg><time datetime="2025-04-08T00:00:00Z">8 de abril de 2025</time>
-  </span><span class="meta authors"><svg
-    class="icon authors"
+  </span><span class="meta author"><svg
+    class="icon author"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/authors.svg#authors"></use>
-  </svg><a href="/Website/es/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg
-    class="icon categories"
+    <use href="/Website/svg/author.svg#author"></use>
+  </svg><a href="/Website/es/author/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta category"><svg
+    class="icon category"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/categories.svg#categories"></use>
-  </svg><a href="/Website/es/categories/tutorial/">Tutorial (26)</a></span><span class="meta tags"><svg
+    <use href="/Website/svg/category.svg#category"></use>
+  </svg><a href="/Website/es/category/tutorial/">Tutorial (26)</a></span><span class="meta tags"><svg
     class="icon tags"
     aria-hidden="true"
     focusable="false">
@@ -352,13 +353,8 @@
     <use href="/Website/svg/cross.svg#cross"></use>
   </svg></button><p>Annular spreadsheet input</p></div><figcaption>Annular spreadsheet input</figcaption></figure><p>Below this we&rsquo;ve added a lot of labels for all the different dimensions which are calculated from the two main input parameters. Most of these are just ratios of the Design Diameter parameter or other simple calculations. We can create these simple calculations by adding small expressions to each cell. So for example the height of each gore is a simple ratio of the Design Diameter multiplied by 0.304. To calculate this in cell B6 which we labelled for gore height we insert;</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="o">=</span><span class="n">B1</span> <span class="o">*</span> <span class="mf">0.304</span></span></span></code></pre></div></div><p>We then added similar small formula for the dimensions needed by the sketch, these are the gore panel width at the top and bottom. The other items in the spreadsheet are other dimensions needed to create a parachute of this design such as the various line lengths etc. If you are interested the FreeCAD project is over on <a
-  href="https://github.com/concretedog/annular_parachute_tools"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">this repository<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>.</p>
+  href="false"
+  class="internal-tooltip">this repository</a>.</p>
 <figure class="image"><button
           aria-label="Ampliar imagen"
           popovertarget="img-004"
@@ -428,17 +424,9 @@
             href="/Website/es/features/">Características</a><ul></ul></li><li>
           <a
             href="/Website/es/download/">Descarga</a><ul><li>
-                      <a
-                        href="/Website/es/download/releases/">Releases</a>
-                    </li><li>
-                      <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
+                  <a
+                    href="/Website/es/releases/">Releases</a>
+                </li><li>
                       <a
                         href="/Website/es/download/addons/">Addons</a>
                     </li><li>
@@ -450,9 +438,9 @@
                   <a
                     href="/Website/es/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/Website/es/authors/">Autores</a>
+                        <a href="/Website/es/author/">Autor</a>
                       </li><li>
-                        <a href="/Website/es/categories/">Categorías</a>
+                        <a href="/Website/es/category/">Categoría</a>
                       </li><li>
                         <a href="/Website/es/tags/">Etiquetas</a>
                       </li></ul></li><li>
@@ -478,7 +466,12 @@
   </svg></a>
                     </li><li>
                       <a
-                        href="/Website/es/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
@@ -547,6 +540,14 @@
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/bluesky.svg#bluesky"></use>
   </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"
@@ -630,9 +631,9 @@
   </svg></a>
 </span>
 <span>
-    Modified: 2026-05-05
+    Modified: 2026-09-23
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/ab12b609077875783943636ca2c31feec3421a6a">ab12b60907<svg
+      Commit: <a href="https://github.com/freecad/website/commit/efdfa08161fa1b81bbff5f770b0baaf19e5deffb">efdfa08161<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

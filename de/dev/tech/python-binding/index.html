@@ -42,8 +42,8 @@
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/Website/css/styles.2cc9d0e001a0d539d26f5e1557d29282ba2d9c71359b224fc1893cdeb81ac2c6.css"
-          integrity="sha256-LMnQ4AGg1TnSb14VV9KSgrotnHE1myJPwYk83rgawsY="
+          href="/Website/css/styles.efbcc322b54e75869cceeda071ddcfc9bd2bbd825e1a9ee2b7ebfc2e2635f178.css"
+          integrity="sha256-77zDIrVOdYaczu2gcd3Pyb0rvYJeGp7it&#43;v8LiY18Xg="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -110,12 +110,13 @@
     href="/Website/de/"
     accesskey="h"
     title="Home (Alt + H)"
-    aria-label="Home"><svg
+    aria-label="Home">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/Website/wordmark.svg#wordmark"></use>
     </svg></a>
 
   <div class="site-nav"><nav class="menu">
@@ -351,13 +352,8 @@
     <use href="/Website/svg/note.svg#note"></use>
   </svg>Hinweis<p>Diese Seite wurde noch nicht übersetzt, daher wird stattdessen die englische Version verwendet. Möchtest du mithelfen?
 <a
-  href="https://github.com/freecad/website"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Mitwirken<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></p></blockquote></figure><h2
+  href="false"
+  class="internal-tooltip">Mitwirken</a></p></blockquote></figure><h2
   id="background">Background<a class="heading-anchor"
      href="#background"
      title="Background"><svg
@@ -497,45 +493,25 @@
 <li>return the Py object.</li>
 </ul>
 <p>There are two source files required to implement a new Python binding.  Assuming we wanted to expose some methods from <a
-  href="https://github.com/freecad/freecad/blob/master/src/Mod/Part/App/TopoShape.cpp"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://github.com/freecad/freecad/blob/master/src/Mod/Part/App/TopoShape.cpp<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>, we would need to make:</p>
+  href="false"
+  class="internal-tooltip">https://github.com/freecad/freecad/blob/master/src/Mod/Part/App/TopoShape.cpp</a>, we would need to make:</p>
 <ul>
 <li>TopoShapePy.xml - definitions of the functions for be exposed in XML format.  This file is used to generate header files for our next file&hellip;</li>
 <li>TopoShapePyImp.cpp - the actual C++ code that bridges from Python to C++.</li>
 </ul>
 <p>These 2 files need to be added to ../Mod/yourModule/App/CMakeLists.txt.  See <a
-  href="https://github.com/freecad/freecad/blob/master/src/Mod/Part/App/AppPartPy.cpp"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://github.com/freecad/freecad/blob/master/src/Mod/Part/App/AppPartPy.cpp<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> and FreeCAD/src/Mod/Part/App/CMakeLists.txt for examples.</p>
+  href="false"
+  class="internal-tooltip">https://github.com/freecad/freecad/blob/master/src/Mod/Part/App/AppPartPy.cpp</a> and FreeCAD/src/Mod/Part/App/CMakeLists.txt for examples.</p>
 <p>You can extend the Python version of your module by adding to ../Mod/yourModule/App/AppmyModulePy.cpp (see <a
-  href="https://github.com/freecad/freecad/blob/master/src/Mod/Part/App/AppPartPy.cpp"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://github.com/freecad/freecad/blob/master/src/Mod/Part/App/AppPartPy.cpp<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> and FreeCAD/src/Mod/Part/AppPartPy.cpp). The additions are accessed in Python by &ldquo;import myModule&rdquo;.</p>
+  href="false"
+  class="internal-tooltip">https://github.com/freecad/freecad/blob/master/src/Mod/Part/App/AppPartPy.cpp</a> and FreeCAD/src/Mod/Part/AppPartPy.cpp). The additions are accessed in Python by &ldquo;import myModule&rdquo;.</p>
 <p>Note:</p>
 <p>There is a convention for return values from our C++/Python connections:</p>
 <ul>
 <li>xxxxxPyImp routines return a PyObject* pointer (see TopoShapePyImp.cpp)</li>
 <li>AppmyModulePy.cpp routines return a Py::Object (see <a
-  href="https://github.com/freecad/freecad/blob/master/src/Mod/Part/App/AppPartPy.cpp"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://github.com/freecad/freecad/blob/master/src/Mod/Part/App/AppPartPy.cpp<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> and FreeCAD/src/Mod/Part/AppPartPy.cpp).</li>
+  href="false"
+  class="internal-tooltip">https://github.com/freecad/freecad/blob/master/src/Mod/Part/App/AppPartPy.cpp</a> and FreeCAD/src/Mod/Part/AppPartPy.cpp).</li>
 </ul>
 <h2
   id="see-also">See also<a class="heading-anchor"
@@ -548,38 +524,18 @@
   </svg></a>
 </h2><ul>
 <li><a
-  href="https://forum.freecadweb.org/viewtopic.php?p=14796#p314617"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">A forum thread<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">A forum thread</a></li>
 <li><a
-  href="https://forum.freecadweb.org/viewtopic.php?p=560639#p560639"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Forum discussion: Adding Commands in Python to C++ Workbench<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">Forum discussion: Adding Commands in Python to C++ Workbench</a></li>
 <li><a
-  href="https://forum.freecadweb.org/viewtopic.php?f=10&amp;t=70750"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Another forum thread<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">Another forum thread</a></li>
 <li>Workbench creation</li>
 <li><a
-  href="https://github.com/freecad/freecad/commit/20b86e55b8dd1873f4c19e036d047528c9ff7f4e"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Commit 20b86e5, exposing OCC&rsquo;s precision methods to Python<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">Commit 20b86e5, exposing OCC&rsquo;s precision methods to Python</a></li>
 </ul>
 </div><footer class="single-footer">
     <nav class="pagination"><a
@@ -616,17 +572,9 @@
             href="/Website/de/features/">Funktionen</a><ul></ul></li><li>
           <a
             href="/Website/de/download/">Herunterladen</a><ul><li>
-                      <a
-                        href="/Website/de/download/releases/">Releases</a>
-                    </li><li>
-                      <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
+                  <a
+                    href="/Website/de/releases/">Releases</a>
+                </li><li>
                       <a
                         href="/Website/de/download/addons/">Addons</a>
                     </li><li>
@@ -638,9 +586,9 @@
                   <a
                     href="/Website/de/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/Website/de/authors/">Autoren</a>
+                        <a href="/Website/de/author/">Autor</a>
                       </li><li>
-                        <a href="/Website/de/categories/">Kategorien</a>
+                        <a href="/Website/de/category/">Kategorie</a>
                       </li><li>
                         <a href="/Website/de/tags/">Tags</a>
                       </li></ul></li><li>
@@ -666,7 +614,12 @@
   </svg></a>
                     </li><li>
                       <a
-                        href="/Website/de/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
@@ -735,6 +688,14 @@
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/bluesky.svg#bluesky"></use>
   </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"

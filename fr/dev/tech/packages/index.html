@@ -42,8 +42,8 @@
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/Website/css/styles.2cc9d0e001a0d539d26f5e1557d29282ba2d9c71359b224fc1893cdeb81ac2c6.css"
-          integrity="sha256-LMnQ4AGg1TnSb14VV9KSgrotnHE1myJPwYk83rgawsY="
+          href="/Website/css/styles.efbcc322b54e75869cceeda071ddcfc9bd2bbd825e1a9ee2b7ebfc2e2635f178.css"
+          integrity="sha256-77zDIrVOdYaczu2gcd3Pyb0rvYJeGp7it&#43;v8LiY18Xg="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -110,12 +110,13 @@
     href="/Website/fr/"
     accesskey="h"
     title="Accueil (Alt + H)"
-    aria-label="Accueil"><svg
+    aria-label="Accueil">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/Website/wordmark.svg#wordmark"></use>
     </svg></a>
 
   <div class="site-nav"><nav class="menu">
@@ -357,13 +358,8 @@
     <use href="/Website/svg/note.svg#note"></use>
   </svg>Remarque<p>Cette page n&rsquo;a pas encore été traduite en français, la version anglaise est donc utilisée. Envie de contribuer à la traduction ?
 <a
-  href="https://github.com/freecad/website"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Contribuer<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></p></blockquote></figure><h2
+  href="false"
+  class="internal-tooltip">Contribuer</a></p></blockquote></figure><h2
   id="windows-installer">Windows Installer<a class="heading-anchor"
      href="#windows-installer"
      title="Windows Installer"><svg
@@ -396,41 +392,21 @@ and presume that you have cloned a copy of FreeCAD&rsquo;s source code.</p>
 </h4><p>To set up your system for building an NSIS installer:</p>
 <ol>
 <li>Install the latest version 3.x of NSIS (<a
-  href="https://nsis.sourceforge.io/Download"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://nsis.sourceforge.io/Download<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>)</li>
+  href="false"
+  class="internal-tooltip">https://nsis.sourceforge.io/Download</a>)</li>
 <li>Download these special release files of NSIS that support large strings:</br>
 <a
-  href="https://nsis.sourceforge.io/Special_Builds#Large_strings"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://nsis.sourceforge.io/Special_Builds#Large_strings<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></br>
+  href="false"
+  class="internal-tooltip">https://nsis.sourceforge.io/Special_Builds#Large_strings</a></br>
 and copy the contained files into the corresponding NSIS installation folders</li>
 <li>Download these special release files of NSIS that support logging:</br>
 <a
-  href="https://nsis.sourceforge.io/Special_Builds#Advanced_logging"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://nsis.sourceforge.io/Special_Builds#Advanced_logging<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></br>
+  href="false"
+  class="internal-tooltip">https://nsis.sourceforge.io/Special_Builds#Advanced_logging</a></br>
 and copy the contained files into the corresponding NSIS installation folders</li>
 <li>Download and install the nsProcess plugin from <a
-  href="https://nsis.sourceforge.io/NsProcess_plugin"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://nsis.sourceforge.io/NsProcess_plugin<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> &ndash; you will need the version that supports Unicode, so make sure to follow the appropriate instructions on their site to install that one (as of this writing it involves manually copying and renaming the plugin DLL file).</li>
+  href="false"
+  class="internal-tooltip">https://nsis.sourceforge.io/NsProcess_plugin</a> &ndash; you will need the version that supports Unicode, so make sure to follow the appropriate instructions on their site to install that one (as of this writing it involves manually copying and renaming the plugin DLL file).</li>
 </ol>
 <h4
   id="build-the-installer">Build the installer<a class="heading-anchor"
@@ -466,13 +442,8 @@ and copy the contained files into the corresponding NSIS installation folders</l
 <ul>
 <li>If you are working from an already-compiled version of FreeCAD provided to you by an outside source: in this case, simply ensure that <code>FILES_FREECAD</code> is set to the directory containing those files.</li>
 <li>If you compiled FreeCAD on your own as described <a
-  href="https://wiki.freecad.org/Compile_on_Windows/fr"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">here<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> (and using the Install option outlined there). Then:
+  href="false"
+  class="internal-tooltip">here</a> (and using the Install option outlined there). Then:
 <ul>
 <li>Open the file <em>Settings.nsh</em> as described in step 3. above and set there</br>
 <code>!define FILES_FREECAD</code> to the folder you specified as <code>CMAKE_INSTALL_PREFIX</code></li>
@@ -505,45 +476,20 @@ out the line</p>
 </h2><p>The same system that builds the &ldquo;Development Weekly&rdquo; builds is used to build the release versions of the Linux AppImages, Mac app bundles, and a standalone Windows executable (e.g. a non-installer version).</p>
 <p><strong>To be expanded</strong></p>
 <p>It is also possible to build a FreeCAD package for Windows with <a
-  href="https://conda.io"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">conda<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>. This is produced as a .7z package that can be unzipped and run directly, without installation. The scripts needed to produce such a package are located in a separate Git repository at <a
-  href="https://github.com/freecad/freecad-bundle"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">FreeCAD/FreeCAD-Bundle<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>. The main script to run is <a
-  href="https://github.com/freecad/freecad-bundle/blob/master/conda/win/create_bundle.bat"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">conda/win/create_bundle.bat<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>.</p>
+  href="false"
+  class="internal-tooltip">conda</a>. This is produced as a .7z package that can be unzipped and run directly, without installation. The scripts needed to produce such a package are located in a separate Git repository at <a
+  href="false"
+  class="internal-tooltip">FreeCAD/FreeCAD-Bundle</a>. The main script to run is <a
+  href="false"
+  class="internal-tooltip">conda/win/create_bundle.bat</a>.</p>
 <p>You will need:</p>
 <ol>
 <li><strong>Mambaforge</strong> from <a
-  href="https://github.com/conda-forge/miniforge"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">GitHub - conda-forge/miniforge: A conda-forge distribution.<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">GitHub - conda-forge/miniforge: A conda-forge distribution.</a></li>
 <li><strong>7zip</strong> from <a
-  href="https://www.7-zip.org/"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://www.7-zip.org/<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">https://www.7-zip.org/</a></li>
 </ol>
 <p>To use the script:</p>
 <ol>
@@ -571,13 +517,8 @@ out the line</p>
   </svg></a>
 </h3><p><strong>To be expanded</strong></p>
 <p>MacOS packages are also built with <a
-  href="https://conda.io"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">conda<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>.</p>
+  href="false"
+  class="internal-tooltip">conda</a>.</p>
 <h2
   id="linux">Linux<a class="heading-anchor"
      href="#linux"
@@ -597,54 +538,24 @@ out the line</p>
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
 </h3><p>On Linux, we mostly let distributions produce packages themselves from the FreeCAD source code. However, we also produce an <a
-  href="https://appimage.org/"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">AppImage<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> package, that runs on (hopefully) all Linux distributions. AppImages achieve that by embedding the largest part of the libraries FreeCAD depends on, and rely only on a few very standard system libraries.</p>
+  href="false"
+  class="internal-tooltip">AppImage</a> package, that runs on (hopefully) all Linux distributions. AppImages achieve that by embedding the largest part of the libraries FreeCAD depends on, and rely only on a few very standard system libraries.</p>
 <p>The most complex part, when building an AppImage, is therefore to gather those libraries. FreeCAD therefor uses <a
-  href="https://conda.io"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">conda<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> which is at the same time a build system and a package manager, to locate, download and organize these libraries. After this is done, the official AppImage tool is used to actually build the AppImage. Note that FreeCAD itself is built and made available on conda, so the process of building an AppImage does not compile FreeCAD. It rather uses a compiled version of FreeCAD already available on the conda platform.</p>
+  href="false"
+  class="internal-tooltip">conda</a> which is at the same time a build system and a package manager, to locate, download and organize these libraries. After this is done, the official AppImage tool is used to actually build the AppImage. Note that FreeCAD itself is built and made available on conda, so the process of building an AppImage does not compile FreeCAD. It rather uses a compiled version of FreeCAD already available on the conda platform.</p>
 <p>The main structure used to gather FreeCAD and its dependencies and build appimages is located in a separate Git repository at <a
-  href="https://github.com/freecad/freecad-Bundle"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">FreeCAD/FreeCAD-Bundle<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>. The main script to run is <a
-  href="https://github.com/freecad/freecad-Bundle/blob/master/conda/linux/create_bundle.sh"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">conda/linux/create_bundle.sh<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>. This script will do all the process of assembling and producing an AppImage.</p>
+  href="false"
+  class="internal-tooltip">FreeCAD/FreeCAD-Bundle</a>. The main script to run is <a
+  href="false"
+  class="internal-tooltip">conda/linux/create_bundle.sh</a>. This script will do all the process of assembling and producing an AppImage.</p>
 <p>You will need:</p>
 <ol>
 <li><strong>Mambaforge</strong> from <a
-  href="https://github.com/conda-forge/miniforge"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://github.com/conda-forge/miniforge<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">https://github.com/conda-forge/miniforge</a></li>
 <li><strong>appimagetool</strong> from <a
-  href="https://appimage.github.io/appimagetool/"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://appimage.github.io/appimagetool/<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">https://appimage.github.io/appimagetool/</a></li>
 </ol>
 <p>To use the script:</p>
 <ol>
@@ -689,17 +600,9 @@ out the line</p>
             href="/Website/fr/features/">Fonctionnalités</a><ul></ul></li><li>
           <a
             href="/Website/fr/download/">Télécharger</a><ul><li>
-                      <a
-                        href="/Website/fr/download/releases/">Releases</a>
-                    </li><li>
-                      <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
+                  <a
+                    href="/Website/fr/releases/">Releases</a>
+                </li><li>
                       <a
                         href="/Website/fr/download/addons/">Addons</a>
                     </li><li>
@@ -711,9 +614,9 @@ out the line</p>
                   <a
                     href="/Website/fr/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/Website/fr/authors/">Auteurs</a>
+                        <a href="/Website/fr/author/">Auteur</a>
                       </li><li>
-                        <a href="/Website/fr/categories/">Catégories</a>
+                        <a href="/Website/fr/category/">Catégorie</a>
                       </li><li>
                         <a href="/Website/fr/tags/">Mots-clés</a>
                       </li></ul></li><li>
@@ -739,7 +642,12 @@ out the line</p>
   </svg></a>
                     </li><li>
                       <a
-                        href="/Website/fr/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
@@ -808,6 +716,14 @@ out the line</p>
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/bluesky.svg#bluesky"></use>
   </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"

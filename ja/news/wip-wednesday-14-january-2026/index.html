@@ -42,8 +42,8 @@
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/Website/css/styles.2cc9d0e001a0d539d26f5e1557d29282ba2d9c71359b224fc1893cdeb81ac2c6.css"
-          integrity="sha256-LMnQ4AGg1TnSb14VV9KSgrotnHE1myJPwYk83rgawsY="
+          href="/Website/css/styles.efbcc322b54e75869cceeda071ddcfc9bd2bbd825e1a9ee2b7ebfc2e2635f178.css"
+          integrity="sha256-77zDIrVOdYaczu2gcd3Pyb0rvYJeGp7it&#43;v8LiY18Xg="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -95,7 +95,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2026-01-14T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-05-05T08:06:31+02:00">
+    <meta property="article:modified_time" content="2026-09-23T13:25:40+02:00">
     <meta property="article:tag" content="WIP">
 </head><body
     class="single type-news kind-page "
@@ -112,12 +112,13 @@
     href="/Website/ja/"
     accesskey="h"
     title="ホームページ (Alt + H)"
-    aria-label="ホームページ"><svg
+    aria-label="ホームページ">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/Website/wordmark.svg#wordmark"></use>
     </svg></a>
 
   <div class="site-nav"><nav class="menu">
@@ -219,17 +220,17 @@
     focusable="false">
     <use href="/Website/svg/date.svg#date"></use>
   </svg><time datetime="2026-01-14T00:00:00Z">2026年1月14日</time>
-  </span><span class="meta authors"><svg
-    class="icon authors"
+  </span><span class="meta author"><svg
+    class="icon author"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/authors.svg#authors"></use>
-  </svg><a href="/Website/ja/authors/aleksandr-prokudin/">Aleksandr Prokudin (169)</a></span><span class="meta categories"><svg
-    class="icon categories"
+    <use href="/Website/svg/author.svg#author"></use>
+  </svg><a href="/Website/ja/author/aleksandr-prokudin/">Aleksandr Prokudin (169)</a></span><span class="meta category"><svg
+    class="icon category"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/categories.svg#categories"></use>
-  </svg><a href="/Website/ja/categories/update/">Update (158)</a></span><span class="meta tags"><svg
+    <use href="/Website/svg/category.svg#category"></use>
+  </svg><a href="/Website/ja/category/update/">Update (158)</a></span><span class="meta tags"><svg
     class="icon tags"
     aria-hidden="true"
     focusable="false">
@@ -242,263 +243,113 @@
   </svg>4 分</span></div></section><div class="content"><p>Maintainers have been backporting some of the fixes to the v1.1 branch where possible - 31 backports in the past 7 days. The list of changes in this recap applies to the main development branch (future v1.2).</p>
 <p>This week in FreeCAD development:</p>
 <p><strong>Draft</strong>: Roy-043 fixed the setting of the AutoColor property of sketches to False before applying colors (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/25781"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#25781<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>) and an error on constrained movement in the edit mode (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26868"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26868<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</p>
+  href="false"
+  class="internal-tooltip">PR#25781</a>) and an error on constrained movement in the edit mode (<a
+  href="false"
+  class="internal-tooltip">PR#26868</a>).</p>
 <p><strong>Sketcher</strong>:</p>
 <ul>
 <li>AjinkyaDahale fixed a minor regression introduced by recent refactoring (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26886"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26886<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</li>
+  href="false"
+  class="internal-tooltip">PR#26886</a>).</li>
 <li>PaddleStroke fixed a bug where the equal constraint couldn&rsquo;t be applied to mirrored slot arcs (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26604"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26604<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</li>
+  href="false"
+  class="internal-tooltip">PR#26604</a>).</li>
 <li>tetektoza fixed a crash when applying constraints during selection batching (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26741"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26741<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</li>
+  href="false"
+  class="internal-tooltip">PR#26741</a>).</li>
 <li>saksham-malhotra-27 fixed a sketch redundancy warning (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26064"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26064<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</li>
+  href="false"
+  class="internal-tooltip">PR#26064</a>).</li>
 </ul>
 <p><strong>PartDesign:</strong></p>
 <ul>
 <li>tetektoza fixed a release blocker where the extrusion taper angle of internal faces was reversed (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26781"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26781<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>). He also fixed Refine not working with Boolean operations (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26745"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26745<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</li>
+  href="false"
+  class="internal-tooltip">PR#26781</a>). He also fixed Refine not working with Boolean operations (<a
+  href="false"
+  class="internal-tooltip">PR#26745</a>).</li>
 <li>PaddleStroke fixed a release blocker where extruding up to shape would not recompute the document correctly (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26696"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26696<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</li>
+  href="false"
+  class="internal-tooltip">PR#26696</a>).</li>
 <li>kadet1090 fixed recomputing the previews when recomputes are disabled (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26805"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26805<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>), added the beginnings of scheduling the true recompute of the preview (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26812"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26812<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>), and took another stab at fixing pattern transform previews (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26697"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26697<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</li>
+  href="false"
+  class="internal-tooltip">PR#26805</a>), added the beginnings of scheduling the true recompute of the preview (<a
+  href="false"
+  class="internal-tooltip">PR#26812</a>), and took another stab at fixing pattern transform previews (<a
+  href="false"
+  class="internal-tooltip">PR#26697</a>).</li>
 <li>Lgt2x removed preview updates on property changes (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26803"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26803<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</li>
+  href="false"
+  class="internal-tooltip">PR#26803</a>).</li>
 <li>wwmayer fixed a bug where Polar Pattern would not accept a datum line or a sketch line as a reference (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26722"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26722<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>, cherry-picked by maxwxyz).</li>
+  href="false"
+  class="internal-tooltip">PR#26722</a>, cherry-picked by maxwxyz).</li>
 </ul>
 <p><strong>Assembly</strong>:</p>
 <ul>
 <li>PaddleStroke fixed a release blocker where opening a document in the Insert tool would result in an error (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26896"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26896<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>). He also fixed a bug in radial explosion (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26724"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26724<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>) and updated the ground joint tooltip (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/25852"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#25852<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</li>
+  href="false"
+  class="internal-tooltip">PR#26896</a>). He also fixed a bug in radial explosion (<a
+  href="false"
+  class="internal-tooltip">PR#26724</a>) and updated the ground joint tooltip (<a
+  href="false"
+  class="internal-tooltip">PR#25852</a>).</li>
 <li>wwmayer refactored a small part of the drag mode code (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/25678"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#25678<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>, cherry-picked by 3x380V).</li>
+  href="false"
+  class="internal-tooltip">PR#25678</a>, cherry-picked by 3x380V).</li>
 </ul>
 <p><strong>CAM</strong>:</p>
 <ul>
 <li>
 <p>davidgilkaufman added adaptive automatic picking of the helix entrance diameter (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/23980"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#23980<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</p>
+  href="false"
+  class="internal-tooltip">PR#23980</a>).</p>
 </li>
 <li>
 <p>Sliptonic added retract annotation to drilling commands (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26584"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26584<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</p>
+  href="false"
+  class="internal-tooltip">PR#26584</a>).</p>
 </li>
 <li>
 <p>Dimitris75 fixed the experimental waterline algorithm (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26658"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26658<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>) and fixed the 3D surface rotational scan (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26553"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26553<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</p>
+  href="false"
+  class="internal-tooltip">PR#26658</a>) and fixed the 3D surface rotational scan (<a
+  href="false"
+  class="internal-tooltip">PR#26553</a>).</p>
 </li>
 <li>
 <p>tarman3 delivered the usual slew of changes:</p>
 <ul>
 <li>Removed the duplicated movement to the clearance height at the end of the Slot operation (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/25842"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#25842<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</li>
+  href="false"
+  class="internal-tooltip">PR#25842</a>).</li>
 <li>Used the Job.GeometryTolerance property to set the precision of segmentation complex shapes while creating a path in the Tag, Engrave, and Deburr operations (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26127"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26127<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</li>
+  href="false"
+  class="internal-tooltip">PR#26127</a>).</li>
 <li>Fixed an error that showed up when changing the Radius property in DressupAxisMap (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26321"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26321<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>)</li>
+  href="false"
+  class="internal-tooltip">PR#26321</a>)</li>
 </ul>
 </li>
 <li>
 <p>Improved the Ramp Entry dressup (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26695"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26695<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</p>
+  href="false"
+  class="internal-tooltip">PR#26695</a>).</p>
 </li>
 <li>
 <p>petterreinholdtsen patched the Fanuc post-processor (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26617"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26617<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> and <a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26436"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26436<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</p>
+  href="false"
+  class="internal-tooltip">PR#26617</a> and <a
+  href="false"
+  class="internal-tooltip">PR#26436</a>).</p>
 </li>
 <li>
 <p>Connor added a threshold for treating large-radius arcs as linear in the simulator (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26860"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26860<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>). He added a machine library and editor to the CAM preferences panel (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26533"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26533<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</p>
+  href="false"
+  class="internal-tooltip">PR#26860</a>). He added a machine library and editor to the CAM preferences panel (<a
+  href="false"
+  class="internal-tooltip">PR#26533</a>).</p>
 </li>
 </ul>
 <figure class="image"><button
@@ -535,134 +386,54 @@
   </svg></button></div></figure><p><strong>BIM/Arch</strong>:</p>
 <ul>
 <li>paullee0 patched the code to provide better information for users when Arch_Wall has 0 width or height (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/25878"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#25878<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</li>
+  href="false"
+  class="internal-tooltip">PR#25878</a>).</li>
 <li>furgo16 did the same for when a face&rsquo;s horizontality or verticality cannot be determined (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26231"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26231<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>), implemented baseless (without a base object) wall creation (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/24595"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#24595<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>), and fixed ArchWallGui tests (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26904"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26904<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</li>
+  href="false"
+  class="internal-tooltip">PR#26231</a>), implemented baseless (without a base object) wall creation (<a
+  href="false"
+  class="internal-tooltip">PR#24595</a>), and fixed ArchWallGui tests (<a
+  href="false"
+  class="internal-tooltip">PR#26904</a>).</li>
 <li>YashSuthar983 fixed a bug in BIM Report where the column and line width and height are is reset every time the report result is recalculated (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26736"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26736<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</li>
+  href="false"
+  class="internal-tooltip">PR#26736</a>).</li>
 <li>Roy-043 fixed an edge case where the area was calculated incorrectly (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26779"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26779<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>), updated BIM example files (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26820"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26820<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>), and removed unused ArchStairs Landings code (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/25357"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#25357<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</li>
+  href="false"
+  class="internal-tooltip">PR#26779</a>), updated BIM example files (<a
+  href="false"
+  class="internal-tooltip">PR#26820</a>), and removed unused ArchStairs Landings code (<a
+  href="false"
+  class="internal-tooltip">PR#25357</a>).</li>
 </ul>
 <p><strong>Other changes</strong>:</p>
 <ul>
 <li>wwmayer fixed the orientation of internal shells of a solid in Part (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26717"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26717<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>, cherry-picked by maxwxyz).</li>
+  href="false"
+  class="internal-tooltip">PR#26717</a>, cherry-picked by maxwxyz).</li>
 <li>pieterhijma added a preselection of commonly used types to the Add Property dialog (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26765"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26765<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</li>
+  href="false"
+  class="internal-tooltip">PR#26765</a>).</li>
 <li>ipatch fixed a bug where the workbench selector docked to the menubar would become unusable (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26307"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26307<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</li>
+  href="false"
+  class="internal-tooltip">PR#26307</a>).</li>
 <li>tritao removed Boost-based signals and switched to FastSignals, which should make the same code faster (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/19132"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#19132<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</li>
+  href="false"
+  class="internal-tooltip">PR#19132</a>).</li>
 <li>timpieces fixed shortcuts in the macro editor (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26834"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26834<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</li>
+  href="false"
+  class="internal-tooltip">PR#26834</a>).</li>
 <li>Mr-Rahul-Paul added a &ldquo;Copy&rdquo; button to the Unit Test dialog, allowing users to copy the details of failing tests directly to the clipboard (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/25979"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#25979<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</li>
+  href="false"
+  class="internal-tooltip">PR#25979</a>).</li>
 <li>galou patched the pixi builds to run natively under Wayland on Linux x86_64 by adding a qt6-wayland dependency (<a
-  href="https://github.com/FreeCAD/FreeCAD/pull/26753"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#26753<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>).</li>
+  href="false"
+  class="internal-tooltip">PR#26753</a>).</li>
 </ul>
 <p>Connor, Roy-043, PaddleStroke, efferre79, ipatch, furgo16, adrianinsaval, kadet1090, maxwxyz, and luzpaz contributed additional improvements and fixes.</p>
 <p>If you are interested in testing the latest weekly build, you can grab it <a
-  href="https://github.com/FreeCAD/FreeCAD/releases/tag/weekly-2026.01.14"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">here<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>.</p>
+  href="false"
+  class="internal-tooltip">here</a>.</p>
 <p><strong>PR stats</strong>: since the previous report, 95 pull requests have been merged (including backports to the v1.1 branch), and 38 new pull requests have been opened.</p>
 <p><strong>Issue stats</strong>: overall, there are 3164 open issues in the tracker, up by 18 from last week. There are 6 release blockers for v1.1 currently, up by 2 from last week.</p>
 </div><footer class="single-footer">
@@ -700,17 +471,9 @@
             href="/Website/ja/features/">特徴</a><ul></ul></li><li>
           <a
             href="/Website/ja/download/">ダウンロード</a><ul><li>
-                      <a
-                        href="/Website/ja/download/releases/">Releases</a>
-                    </li><li>
-                      <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
+                  <a
+                    href="/Website/ja/releases/">Releases</a>
+                </li><li>
                       <a
                         href="/Website/ja/download/addons/">Addons</a>
                     </li><li>
@@ -722,9 +485,9 @@
                   <a
                     href="/Website/ja/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/Website/ja/authors/">著者一覧</a>
+                        <a href="/Website/ja/author/">著者</a>
                       </li><li>
-                        <a href="/Website/ja/categories/">カテゴリ一覧</a>
+                        <a href="/Website/ja/category/">カテゴリ</a>
                       </li><li>
                         <a href="/Website/ja/tags/">タグ一覧</a>
                       </li></ul></li><li>
@@ -750,7 +513,12 @@
   </svg></a>
                     </li><li>
                       <a
-                        href="/Website/ja/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
@@ -819,6 +587,14 @@
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/bluesky.svg#bluesky"></use>
   </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"
@@ -902,9 +678,9 @@
   </svg></a>
 </span>
 <span>
-    Modified: 2026-05-05
+    Modified: 2026-09-23
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/b17445f590d892755b51f7f35ced061e6eb392b5">b17445f590<svg
+      Commit: <a href="https://github.com/freecad/website/commit/efdfa08161fa1b81bbff5f770b0baaf19e5deffb">efdfa08161<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

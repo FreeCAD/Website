@@ -42,8 +42,8 @@
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/Website/css/styles.2cc9d0e001a0d539d26f5e1557d29282ba2d9c71359b224fc1893cdeb81ac2c6.css"
-          integrity="sha256-LMnQ4AGg1TnSb14VV9KSgrotnHE1myJPwYk83rgawsY="
+          href="/Website/css/styles.efbcc322b54e75869cceeda071ddcfc9bd2bbd825e1a9ee2b7ebfc2e2635f178.css"
+          integrity="sha256-77zDIrVOdYaczu2gcd3Pyb0rvYJeGp7it&#43;v8LiY18Xg="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -110,12 +110,13 @@
     href="/Website/ja/"
     accesskey="h"
     title="ホームページ (Alt + H)"
-    aria-label="ホームページ"><svg
+    aria-label="ホームページ">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/Website/wordmark.svg#wordmark"></use>
     </svg></a>
 
   <div class="site-nav"><nav class="menu">
@@ -354,13 +355,8 @@
     <use href="/Website/svg/note.svg#note"></use>
   </svg>注記<p>このページはまだ翻訳されていないため、代わりに英語版が表示されます。協力していただけませんか？
 <a
-  href="https://github.com/freecad/website"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">貢献<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></p></blockquote></figure><h2
+  href="false"
+  class="internal-tooltip">貢献</a></p></blockquote></figure><h2
   id="mac-os">Mac OS<a class="heading-anchor"
      href="#mac-os"
      title="Mac OS"><svg
@@ -379,24 +375,14 @@
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
 </h3><p>You must be a member of Apple&rsquo;s Developer program to generate and use signing keys. Information can be found at <a
-  href="https://developer.apple.com"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://developer.apple.com<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></p>
+  href="false"
+  class="internal-tooltip">https://developer.apple.com</a></p>
 <p>To sign an app you must have a &ldquo;Developer ID Application&rdquo; certificate. These can be created on the
 Certificates, Identifiers &amp; Profiles page of your Apple Developer account. Once it is created, download the certificate onto your computer
 and install it into one of your Keychains (double-click on the certificate to open and install it).</p>
 <p>The easiest way to upload an app for notarization is to create an App Store Connect API Key at <a
-  href="https://appstoreconnect.apple.com"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://appstoreconnect.apple.com<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> . This is
+  href="false"
+  class="internal-tooltip">https://appstoreconnect.apple.com</a> . This is
 a file that resides on your computer and can be referenced by the notarization upload tool. Run <code>xcrun notarytool store-credentials</code> to store
 the credentials and allow the signing script to access them when running the notary tool.</p>
 <p>Note that the Intel bundles must be signed on an Intel machine, and the ARM bundles must be signed on an ARM machine.</p>
@@ -434,61 +420,31 @@ the disk image.</li>
 <p>The complete process is:</p>
 <ol>
 <li>Log into your Apple Developer account at <a
-  href="https://developer.apple.com"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://developer.apple.com<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">https://developer.apple.com</a></li>
 <li>Go to your certificates list at <a
-  href="https://developer.apple.com/account/resources/certificates/list"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://developer.apple.com/account/resources/certificates/list<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">https://developer.apple.com/account/resources/certificates/list</a></li>
 <li>If you are using the FPA&rsquo;s certificate, you should see a key for <code>The FreeCAD project association, Developer ID Application, macOS, Yorik van Havre, 2027/02/01</code>. If you don&rsquo;t have access to that certificate you can generate your own to sign the code as yourself instead. Follow Apple&rsquo;s steps to create a macOS Developer ID Application certificate.</li>
 <li>Click on that certificate and download it. In this example that will be referred to as <code>FPA_Cert.cer</code> but you can call it whatever you want.</li>
 <li>On your Mac, double-click on that file and it will load in the <code>Keychain Access</code> app.</li>
 <li>Select it in that app and use the Export command from the File menu to export a <code>*.p12</code> file. This example will use <code>FPA_Cert.p12</code> but again, you can call it anything you want. When exporting you will be prompted to create a password for that exported file: create a new, unique, high-quality password for it and record it, you will need it again when setting up the GitHub actions environment.</li>
 <li>Base64-encode the contents of that file. This is easiest done in a terminal window: <code>base64 -i ~/Downloads/FPA_Cert.p12 -o ~/Downloads/FPA_Cert.p12.base64_encoded</code> &ndash; this is the completed certificate. In some cases this will be the only thing that needs to be updated in the GitHub actions environment and you can skip to step N.</li>
 <li>Now go to <a
-  href="https://developer.apple.com/account/resources/identifiers/list"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://developer.apple.com/account/resources/identifiers/list<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> to see your identifiers</li>
+  href="false"
+  class="internal-tooltip">https://developer.apple.com/account/resources/identifiers/list</a> to see your identifiers</li>
 <li>If an identifier already exists that you want to use, skip this step. Otherwise create a new unique identifier for the app you are building. This is not typically visible to users so its exact name does not make a huge difference. It does not need any additional capabilities, etc.</li>
 <li>Once you have an identifier for the app, go to <a
-  href="https://developer.apple.com/account/resources/profiles/list"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://developer.apple.com/account/resources/profiles/list<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">https://developer.apple.com/account/resources/profiles/list</a></li>
 <li>If no provisioning profile exists for the app you are signing, create a new one. Make a Developer ID profile, associate it with the app you are signing, and then either the FPA&rsquo;s Apple account or your own, depending on circumstances. When you get to the final screen, <strong>download the profile</strong> &ndash; this will be your only opportunity to do so. This example will call it <code>FPA.provisionprofile</code>.</li>
 <li>Base64-encode that profile: <code>base64 -i ~/Downloads/FPA.provisionprofile -o ~/Downloads/FPA.provisionprofile.base64_encoded</code></li>
 <li>At this point it&rsquo;s easiest to log into your GitHub account in another browser tab, and navigate to your project&rsquo;s Actions environment setup page. For FreeCAD this is <a
-  href="https://github.com/FreeCAD/FreeCAD/settings/environments/6267580426/edit"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://github.com/FreeCAD/FreeCAD/settings/environments/6267580426/edit<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">https://github.com/FreeCAD/FreeCAD/settings/environments/6267580426/edit</a></li>
 <li>In another tab, log into your Apple account and create a new &ldquo;app-specific password&rdquo; at <a
-  href="https://account.apple.com/account/manage"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://account.apple.com/account/manage<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> &ndash; call it whatever you want, and either store this value someplace accessible, or leave this browser tab open and switch back to GitHub.</li>
+  href="false"
+  class="internal-tooltip">https://account.apple.com/account/manage</a> &ndash; call it whatever you want, and either store this value someplace accessible, or leave this browser tab open and switch back to GitHub.</li>
 <li>You will need to create the following environment secrets:
 <ul>
 <li><code>APP_SPECIFIC_PASSWORD</code> &ndash; you created this in step 14, just paste it in</li>
@@ -513,25 +469,15 @@ the disk image.</li>
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
 </h2><p>FreeCAD is currently signed using an Azure-based system sponsored by the FreeCAD Project Association (FPA). Signing during the GitHub Actions-based build is done using a combination of the <code>azure/login</code> Action provided by the Azure team and the .NET <code>sign</code> executable that is part of Microsoft&rsquo;s .NET family of tools. To examine the actual signing commands, see <a
-  href="https://github.com/FreeCAD/FreeCAD/blob/main/package/rattler-build/windows/create_bundle.sh"
-  class="external-link" target="_blank" rel="external noreferrer nofollow"><code>create_bundle.sh</code><svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>.</p>
+  href="false"
+  class="internal-tooltip"><code>create_bundle.sh</code></a>.</p>
 <p>To keep the system flexible and make it easier to change to a different signing certificate later on (for example, if a fork wants to set up signing), all Azure signing parameters are stored as either Repository secrets (for sensitive information) or Repository variables (for non-sensitive data). The variables are:</p>
 <ul>
 <li><code>AZURE_TRUSTED_SIGNING_ACCOUNT</code>: &ldquo;FreeCAD-Code-Signing&rdquo; if using the FPA&rsquo;s certificate</li>
 <li><code>AZURE_TRUSTED_SIGNING_CERTIFICATE_PROFILE</code>: &ldquo;FreeCAD&rdquo; (defined when the FPA&rsquo;s certificate was created)</li>
 <li><code>AZURE_TRUSTED_SIGNING_ENDPOINT</code>: &ldquo;<a
-  href="https://neu.codesigning.azure.net"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://neu.codesigning.azure.net<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>&rdquo; (Northern Europe for the FPA&rsquo;s certificate)</li>
+  href="false"
+  class="internal-tooltip">https://neu.codesigning.azure.net</a>&rdquo; (Northern Europe for the FPA&rsquo;s certificate)</li>
 </ul>
 <p>Project administrators configure four GitHub Actions Repository secrets (in FreeCAD&rsquo;s case using credentials controlled by the FPA):</p>
 <ul>
@@ -565,31 +511,16 @@ the disk image.</li>
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
 </h3><p>If you would like to configure a build of FreeCAD to sign with your own certificate, rather than the FPA&rsquo;s, you can follow the instructions in <a
-  href="https://www.hanselman.com/blog/automatically-signing-a-windows-exe-with-azure-trusted-signing-dotnet-sign-and-github-actions"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">this blog post<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> (note that there have been some minor terminology changes since it was written &ndash; in particular, the necessary role is now called &ldquo;Artifact Signing Certificate Profile Signer&rdquo;, not &ldquo;Trusted Signing Certificate Profile Signer&rdquo;). The sequence is:</p>
+  href="false"
+  class="internal-tooltip">this blog post</a> (note that there have been some minor terminology changes since it was written &ndash; in particular, the necessary role is now called &ldquo;Artifact Signing Certificate Profile Signer&rdquo;, not &ldquo;Trusted Signing Certificate Profile Signer&rdquo;). The sequence is:</p>
 <ol>
 <li>Create a paid Azure account (the lowest price option is almost certainly adequate if all you are doing is code signing).</li>
 <li>Install the <a
-  href="https://aka.ms/installazurecliwindows"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Azure CLI<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">Azure CLI</a></li>
 <li>Go to <a
-  href="https://portal.azure.com"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Azure Portal<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> and search for &ldquo;Artifact Signing Account&rdquo;</li>
+  href="false"
+  class="internal-tooltip">Azure Portal</a> and search for &ldquo;Artifact Signing Account&rdquo;</li>
 <li>Create a new account there:</li>
 <li>For the required parameters you can use basically anything you want. If you aren&rsquo;t going to do anything else with Azure it doesn&rsquo;t really matter. Here&rsquo;s what we used for the FPA&rsquo;s account:
 <ul>
@@ -611,13 +542,8 @@ the disk image.</li>
 <li>Account Name: FreeCAD-Code-Signing</li>
 <li>Certificate Profile Name: FreeCAD</li>
 <li>Endpoint URL: <a
-  href="https://neu.codesigning.azure.net/"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://neu.codesigning.azure.net/<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">https://neu.codesigning.azure.net/</a></li>
 <li>Subscription ID: Found in Azure Portal</li>
 <li>Resource Group: FreeCAD_Code_Signing</li>
 </ul>
@@ -662,17 +588,9 @@ the disk image.</li>
             href="/Website/ja/features/">特徴</a><ul></ul></li><li>
           <a
             href="/Website/ja/download/">ダウンロード</a><ul><li>
-                      <a
-                        href="/Website/ja/download/releases/">Releases</a>
-                    </li><li>
-                      <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
+                  <a
+                    href="/Website/ja/releases/">Releases</a>
+                </li><li>
                       <a
                         href="/Website/ja/download/addons/">Addons</a>
                     </li><li>
@@ -684,9 +602,9 @@ the disk image.</li>
                   <a
                     href="/Website/ja/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/Website/ja/authors/">著者一覧</a>
+                        <a href="/Website/ja/author/">著者</a>
                       </li><li>
-                        <a href="/Website/ja/categories/">カテゴリ一覧</a>
+                        <a href="/Website/ja/category/">カテゴリ</a>
                       </li><li>
                         <a href="/Website/ja/tags/">タグ一覧</a>
                       </li></ul></li><li>
@@ -712,7 +630,12 @@ the disk image.</li>
   </svg></a>
                     </li><li>
                       <a
-                        href="/Website/ja/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
@@ -781,6 +704,14 @@ the disk image.</li>
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/bluesky.svg#bluesky"></use>
   </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"

@@ -42,8 +42,8 @@
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/Website/css/styles.2cc9d0e001a0d539d26f5e1557d29282ba2d9c71359b224fc1893cdeb81ac2c6.css"
-          integrity="sha256-LMnQ4AGg1TnSb14VV9KSgrotnHE1myJPwYk83rgawsY="
+          href="/Website/css/styles.efbcc322b54e75869cceeda071ddcfc9bd2bbd825e1a9ee2b7ebfc2e2635f178.css"
+          integrity="sha256-77zDIrVOdYaczu2gcd3Pyb0rvYJeGp7it&#43;v8LiY18Xg="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -110,12 +110,13 @@
     href="/Website/es/"
     accesskey="h"
     title="Inicio (Alt + H)"
-    aria-label="Inicio"><svg
+    aria-label="Inicio">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/Website/wordmark.svg#wordmark"></use>
     </svg></a>
 
   <div class="site-nav"><nav class="menu">
@@ -361,20 +362,10 @@
     <use href="/Website/svg/note.svg#note"></use>
   </svg>Nota<p>Esta página aún no se ha traducido en español, por lo que se utiliza la versión inglesa. Interesado en ayudar?
 <a
-  href="https://github.com/freecad/website"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Contribuir<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></p></blockquote></figure><p>We recognize significant wisdom in the philosophy to <a
-  href="https://en.wikipedia.org/wiki/Release_early,_release_often"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">&ldquo;Release Early and Release Often&rdquo;<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>. However, releases can require significant coordinated work within the community.  FreeCAD aspires to produce a major release every 3-6 months. In order to meet this goal, we will work to make releases more predicatable and automated.</p>
+  href="false"
+  class="internal-tooltip">Contribuir</a></p></blockquote></figure><p>We recognize significant wisdom in the philosophy to <a
+  href="false"
+  class="internal-tooltip">&ldquo;Release Early and Release Often&rdquo;</a>. However, releases can require significant coordinated work within the community.  FreeCAD aspires to produce a major release every 3-6 months. In order to meet this goal, we will work to make releases more predicatable and automated.</p>
 <h2
   id="major-and-minor-releases">Major and Minor Releases<a class="heading-anchor"
      href="#major-and-minor-releases"
@@ -503,7 +494,7 @@ After the PR Merge phase, only bug-fix PRs will be merged.</p>
 <li>Conda builds for all platforms</li>
 <li>Manual compilation of a Windows LibPack-based binary and NSIS-created installer</li>
 <li>Sign and notarize the Mac OS Conda builds once they are complete (See <a
-  href="../signing"
+  href="false"
   class="internal-tooltip">Code signing</a>)</li>
 <li>(Future work) Sign the Windows builds</li>
 </ul>
@@ -511,29 +502,14 @@ After the PR Merge phase, only bug-fix PRs will be merged.</p>
 <li>Create a new release on GitHub, this time marking the &ldquo;Set as latest release&rdquo; box and not marking it as a pre-release, and setting the release to use the tag created above. It&rsquo;s best to ensure all assets are attached prior to publication of the final release, so save the release as a draft as necessary until all builds are completed. The release contains a release announcement text that should be appropriate for the general user audience (not targeted at developers).</li>
 <li>Prepare a packager&rsquo;s release files and alert the packagers.</li>
 <li>Update the website <a
-  href="https://www.freecad.org/downloads.php"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">downloads page<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> to point to the new files</li>
+  href="false"
+  class="internal-tooltip">downloads page</a> to point to the new files</li>
 <li>Update the website <a
-  href="https://www.freecad.org/features.php"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">features page<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> to point to the new release notes</li>
+  href="false"
+  class="internal-tooltip">features page</a> to point to the new release notes</li>
 <li>Update the stable branch of the <a
-  href="https://github.com/freecad/freecad-snap"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Snap package<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> to the new version number by editing snap/snapcraft.yaml</li>
+  href="false"
+  class="internal-tooltip">Snap package</a> to the new version number by editing snap/snapcraft.yaml</li>
 </ul>
 <h3
   id="release-announcement">Release Announcement<a class="heading-anchor"
@@ -547,21 +523,11 @@ After the PR Merge phase, only bug-fix PRs will be merged.</p>
 </h3><p>Once all release files are in place, a release announcement should be posted to all &ldquo;official&rdquo; FreeCAD channels:</p>
 <ul>
 <li>FreeCAD News (<a
-  href="https://blog.freecad.org"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://blog.freecad.org<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>)</li>
+  href="false"
+  class="internal-tooltip">https://blog.freecad.org</a>)</li>
 <li>The FreeCAD Forum (<a
-  href="https://forum.freecad.org"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://forum.freecad.org<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>)</li>
+  href="false"
+  class="internal-tooltip">https://forum.freecad.org</a>)</li>
 <li>Facebook</li>
 <li>X</li>
 <li>Mastodon (automatic from the blog post)</li>
@@ -661,17 +627,9 @@ exposed?</li>
             href="/Website/es/features/">Características</a><ul></ul></li><li>
           <a
             href="/Website/es/download/">Descarga</a><ul><li>
-                      <a
-                        href="/Website/es/download/releases/">Releases</a>
-                    </li><li>
-                      <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
+                  <a
+                    href="/Website/es/releases/">Releases</a>
+                </li><li>
                       <a
                         href="/Website/es/download/addons/">Addons</a>
                     </li><li>
@@ -683,9 +641,9 @@ exposed?</li>
                   <a
                     href="/Website/es/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/Website/es/authors/">Autores</a>
+                        <a href="/Website/es/author/">Autor</a>
                       </li><li>
-                        <a href="/Website/es/categories/">Categorías</a>
+                        <a href="/Website/es/category/">Categoría</a>
                       </li><li>
                         <a href="/Website/es/tags/">Etiquetas</a>
                       </li></ul></li><li>
@@ -711,7 +669,12 @@ exposed?</li>
   </svg></a>
                     </li><li>
                       <a
-                        href="/Website/es/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
@@ -780,6 +743,14 @@ exposed?</li>
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/bluesky.svg#bluesky"></use>
   </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"

@@ -42,8 +42,8 @@
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/Website/css/styles.2cc9d0e001a0d539d26f5e1557d29282ba2d9c71359b224fc1893cdeb81ac2c6.css"
-          integrity="sha256-LMnQ4AGg1TnSb14VV9KSgrotnHE1myJPwYk83rgawsY="
+          href="/Website/css/styles.efbcc322b54e75869cceeda071ddcfc9bd2bbd825e1a9ee2b7ebfc2e2635f178.css"
+          integrity="sha256-77zDIrVOdYaczu2gcd3Pyb0rvYJeGp7it&#43;v8LiY18Xg="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -110,12 +110,13 @@
     href="/Website/fr/"
     accesskey="h"
     title="Accueil (Alt + H)"
-    aria-label="Accueil"><svg
+    aria-label="Accueil">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/Website/wordmark.svg#wordmark"></use>
     </svg></a>
 
   <div class="site-nav"><nav class="menu">
@@ -304,28 +305,13 @@
     <use href="/Website/svg/note.svg#note"></use>
   </svg>Remarque<p>Cette page n&rsquo;a pas encore été traduite en français, la version anglaise est donc utilisée. Envie de contribuer à la traduction ?
 <a
-  href="https://github.com/freecad/website"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">Contribuer<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></p></blockquote></figure><p>A convenient way of working with the FreeCAD source code is to use an IDE or Integrated Development Environment. The FreeCAD repository contains a VSCode configuration which makes it particularly easy to get started with.</p>
+  href="false"
+  class="internal-tooltip">Contribuer</a></p></blockquote></figure><p>A convenient way of working with the FreeCAD source code is to use an IDE or Integrated Development Environment. The FreeCAD repository contains a VSCode configuration which makes it particularly easy to get started with.</p>
 <p>Get VSCode here <a
-  href="https://code.visualstudio.com/download"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://code.visualstudio.com/download<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> and Git here <a
-  href="https://git-scm.com/downloads"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">https://git-scm.com/downloads<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></p>
+  href="false"
+  class="internal-tooltip">https://code.visualstudio.com/download</a> and Git here <a
+  href="false"
+  class="internal-tooltip">https://git-scm.com/downloads</a></p>
 <p>After that go to github and create your own fork of the FreeCAD repository by clicking the fork button. Once that&rsquo;s done, clone your fork to your local computer that you will be using for development.</p>
 <p>Note: if you are using VSCode on an Ubuntu based Linux, please avoid using the snap version - it won&rsquo;t work properly with FreeCAD.</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">git clone https://github.com/user/freecad --recurse-submodules</span></span></code></pre></div></div><p>Open VSCode and select <code>File &gt; Open Folder</code>, then select the folder where you have cloned your fork of the repo.</p>
@@ -384,13 +370,8 @@
 <p>You should see freecad launching and the debugger attaching to the process. If an error pops up the python debugger failed to attach (there&rsquo;s 30 second timeout).
 Close FreeCAD and try launching it again. If it still fails try increasing the timeout located in the file <code>.vscode/scripts/WaitForDebugpy.py</code></p>
 <p>To debug please refer to the <a
-  href="https://code.visualstudio.com/docs/editor/debugging#_debug-actions"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">documentation<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> or search for a tutorial online.</p>
+  href="false"
+  class="internal-tooltip">documentation</a> or search for a tutorial online.</p>
 <p><strong>NOTE:</strong> VSCode has an option called &lsquo;run without debugging&rsquo;. This doesn&rsquo;t work, don&rsquo;t use it. If you just want to run the application launch with <code>F5</code> and ignore the debugger.</p>
 <p><strong>NOTE:</strong> There&rsquo;s actually two debuggers: on the top panel you can see a dropdown to select either the c++ debugger or the python one.</p>
 <p><strong>NOTE:</strong> Don&rsquo;t use the restart button. It only restarts the selected debugger, which definitely is not what you want. Instead press the stop button (which stops both debuggers) and launch again.</p>
@@ -444,29 +425,14 @@ Close FreeCAD and try launching it again. If it still fails try increasing the t
 <p>Read the documentation for more:</p>
 <ul>
 <li><a
-  href="https://code.visualstudio.com/docs/editor/codebasics"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">basic editing<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">basic editing</a></li>
 <li><a
-  href="https://code.visualstudio.com/docs/editor/editingevolved"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">code navigaton<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">code navigaton</a></li>
 <li><a
-  href="https://code.visualstudio.com/docs/editor/refactoring"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">refactoring<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a></li>
+  href="false"
+  class="internal-tooltip">refactoring</a></li>
 </ul>
 <p>Other useful extensions, recommended but not necessary are</p>
 <ul>
@@ -551,17 +517,9 @@ Close FreeCAD and try launching it again. If it still fails try increasing the t
             href="/Website/fr/features/">Fonctionnalités</a><ul></ul></li><li>
           <a
             href="/Website/fr/download/">Télécharger</a><ul><li>
-                      <a
-                        href="/Website/fr/download/releases/">Releases</a>
-                    </li><li>
-                      <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
+                  <a
+                    href="/Website/fr/releases/">Releases</a>
+                </li><li>
                       <a
                         href="/Website/fr/download/addons/">Addons</a>
                     </li><li>
@@ -573,9 +531,9 @@ Close FreeCAD and try launching it again. If it still fails try increasing the t
                   <a
                     href="/Website/fr/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/Website/fr/authors/">Auteurs</a>
+                        <a href="/Website/fr/author/">Auteur</a>
                       </li><li>
-                        <a href="/Website/fr/categories/">Catégories</a>
+                        <a href="/Website/fr/category/">Catégorie</a>
                       </li><li>
                         <a href="/Website/fr/tags/">Mots-clés</a>
                       </li></ul></li><li>
@@ -601,7 +559,12 @@ Close FreeCAD and try launching it again. If it still fails try increasing the t
   </svg></a>
                     </li><li>
                       <a
-                        href="/Website/fr/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
@@ -670,6 +633,14 @@ Close FreeCAD and try launching it again. If it still fails try increasing the t
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/bluesky.svg#bluesky"></use>
   </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"
