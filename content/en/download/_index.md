@@ -92,8 +92,6 @@ Explore the code, understand how it works, contribute improvements, and help sha
 
 {{< button url="https://github.com/FreeCAD/FreeCAD" label="FreeCAD code on GitHub" icon="github" >}}
 
-{{< button url="https://gitlab.com/freecad/FreeCAD" label="FreeCAD code on GitLab" icon="gitlab" >}}
-
 {{< button url="https://codeberg.org/FreeCAD/FreeCAD" label="FreeCAD code on Codeberg" icon="codeberg" >}}
 
 {{< /group >}}

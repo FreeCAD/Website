@@ -23,6 +23,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 {{- $url := urls.Parse .Destination -}}
 {{- $href := $url.String -}}
 {{- $is_fragment := false -}}
+{{- $target := false -}}
 
 {{- if strings.HasPrefix $href "#" -}}
   {{- $href = printf "%s#%s" .PageInner.RelPermalink $url.Fragment -}}
@@ -33,9 +34,13 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   {{- with or
     ($.PageInner.GetPage $path)
     ($.PageInner.Resources.Get $path)
+    (site.GetPage $path)
     (resources.Get $path)
   -}}
-    {{- $href = .RelPermalink -}}
+    {{- if reflect.IsPage . -}}
+      {{- $target = . -}}
+      {{- $href = .RelPermalink -}}
+    {{- end -}}
     {{- with $url.RawQuery -}}
       {{- $href = printf "%s?%s" $href . -}}
     {{- end -}}
@@ -47,7 +52,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 {{- end -}}
 
 {{- $key := partialCached "utils/cache_key.html" $href $href -}}
-{{- $link := partialCached "utils/link_redirect.html" $href $key -}}
+{{- $link := partialCached "utils/link_redirect.html" $target $key -}}
 
 {{- $is_external := partialCached "utils/is_external.html" $link $link -}}
 
