@@ -25,7 +25,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
       {{- with $target -}}
         {{- $link = .RelPermalink -}}
       {{- else -}}
-        {{- if hasPrefix . $wiki_url -}}
+        {{- if and (hasPrefix . $wiki_url) (not site.Language.IsDefault) -}}
           {{- $link = printf "%s/%s" . site.Language.Name -}}
         {{- else -}}
           {{- $link = . -}}
@@ -36,7 +36,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     {{- $link = $page.RelPermalink -}}
   {{- end -}}
 {{- else -}}
-  {{- if hasPrefix $page $wiki_url -}}
+  {{- if and (hasPrefix $page $wiki_url) (not site.Language.IsDefault) -}}
     {{- $link = printf "%s/%s" . site.Language.Name -}}
   {{- else -}}
     {{- $link = . -}}

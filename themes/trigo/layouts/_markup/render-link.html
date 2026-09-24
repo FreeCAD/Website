@@ -33,9 +33,14 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   {{- with or
     ($.PageInner.GetPage $path)
     ($.PageInner.Resources.Get $path)
+    (site.GetPage $path)
     (resources.Get $path)
   -}}
-    {{- $href = .RelPermalink -}}
+    {{- if reflect.IsPage . -}}
+      {{- $href = . -}}
+    {{- else -}}
+      {{- $href = .RelPermalink -}}
+    {{- end -}}
     {{- with $url.RawQuery -}}
       {{- $href = printf "%s?%s" $href . -}}
     {{- end -}}
