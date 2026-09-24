@@ -140,7 +140,7 @@ void ShapeHistory::reset(
 
 {{< block title="Identity Evolution" >}}
 
-![Refreshed FreeCAD logo chosen by the community](FreeCAD-symbol.webp "Refreshed FreeCAD logo chosen by the community")
+![Refreshed FreeCAD logo chosen by the community](symbol.svg "Refreshed FreeCAD logo chosen by the community")
 
 {{< /block >}}
 

@@ -15,12 +15,13 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 {{- with $logo -}}
   {{- if eq .MediaType.SubType "svg" -}}
+    {{- $name := path.BaseName .Name }}
     <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="{{ .RelPermalink }}#logo"></use>
+      <use href="{{ .RelPermalink }}#{{ $name }}"></use>
     </svg>
 
   {{- else if reflect.IsImageResourceProcessable . -}}
