@@ -17,6 +17,21 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 {{- $repo := site.Params.git_repository -}}
 {{- $url := urls.Parse $repo -}}
 
+{{- $locales := slice -}}
+{{- range hugo.Sites -}}
+  {{- $locales = $locales | append .Language.Name -}}
+{{- end -}}
+
+{{- $pages := where site.RegularPages "Date.Year" "gt" 1  -}}
+{{- $pages = where $pages "Section" "eq" (index site.MainSections 0) -}}
+{{- $years := slice -}}
+{{- with $pages -}}
+  {{- $sorted := sort . "Date" "asc" -}}
+  {{- $oldest := (index $sorted 0).Date.Year -}}
+  {{- $latest := (index $sorted (sub (len $sorted) 1)).Date.Year -}}
+  {{- $years = seq $oldest $latest }}
+{{- end -}}
+
 site_url: {{ site.BaseURL }}
 
 app_title: {{ site.Params.cms_app_title | default "Admin CMS" }}
@@ -29,11 +44,20 @@ backend:
   repo: {{ strings.TrimSuffix ".git" (trim $url.Path "/") }}
   branch: {{ site.Params.cms_branch | default "main" }}
   auth_methods: [token]
+  open_authoring: true
+  auth_scope: public_repo
+  cms_label_prefix: cms/
+  squash_merges: true
+  preview_context: pages preview
+  commit_messages:
+    create: '{{ "Create {{collection}} {{slug}} by @{{author-login}}" }}'
+    update: '{{ "Update {{collection}} {{slug}} by @{{author-login}}" }}'
+    delete: '{{ "Delete {{collection}} {{slug}} by @{{author-login}}" }}'
+    uploadMedia: '{{ "Upload {{path}} by @{{author-login}}" }}'
+    deleteMedia: '{{ "Delete {{path}} by @{{author-login}}" }}'
+    openAuthoring: '{{ "{{message}} by @{{author-login}} by @{{author-login}}" }}'
 
-{{/*
-# publish_mode: editorial_workflow # NOTE: not supported yet, see
-# https://sveltiacms.app/en/docs/workflows/editorial
-*/ -}}
+publish_mode: editorial_workflow
 
 media_folder: /static
 public_folder: /
@@ -64,14 +88,14 @@ media_libraries:
 
 i18n:
   structure: multiple_folders
-  locales: [en, zh, es, fr, pt, de, ja]
+  locales: [{{ delimit $locales ", " }}]
   default_locale: en
   initial_locales: default
 
 slug:
   encoding: ascii
   clean_accents: true
-  sanitize_replacement: "-"
+  sanitize_replacement: '-'
   trim: true
   lowercase: true
 
@@ -86,15 +110,15 @@ collections:
 
   - name: homepage
     label: Homepage
-    media_folder: ""
-    public_folder: ""
+    media_folder: ''
+    public_folder: ''
     thumbnail: cover.image
     icon: home
     i18n: true
     files:
       - name: homepage
         label: Homepage
-        file: "{{ "content/{{locale}}/_index.md" }}"
+        file: '{{ "content/{{locale}}/_index.md" }}'
         icon: home
         i18n: true
         fields:
@@ -125,24 +149,26 @@ collections:
             i18n: true
             required: false
 
-{{- range where hugo.Sites.Default.Sections "Section" "!=" "admin" }}
+{{- $sections := where hugo.Sites.Default.Sections "Section" "!=" "admin" -}}
+{{- range $sections.ByWeight -}}
+  {{- $section := .Section -}}
+  {{- $label := humanize $section }}
 
   - divider: true
 
-  {{ if not .Pages -}}
-
-  - name: {{ .Section }}-section
-    label: {{ humanize .Section }}
-    description: {{ humanize .Section }} section
-    media_folder: ""
-    public_folder: ""
-    thumbnail: cover.image
+  {{- if not .Pages }}
+  - name: {{ $section }}-section
+    label: {{ $label }}
+    description: {{ $label }} section
+    media_folder: ''
+    public_folder: ''
+    thumbnail: {{ printf "['/{{slug}}.webp', cover.image]" }}
     icon: {{ .Page.Params.icon_cms }}
     i18n: true
     files:
-      - name: {{ .Section }}-section-index
-        label: {{ humanize .Section }}
-        file: {{ printf "content/{{locale}}/%s/_index.md" .Section }}
+      - name: {{ $section }}-section
+        label: {{ $label }}
+        file: '{{ printf "content/{{locale}}/%s/_index.md" $section }}'
         icon: {{ .Page.Params.icon_cms }}
         i18n: true
         fields:
@@ -173,33 +199,40 @@ collections:
             i18n: true
             required: false
 
-  {{- else -}}
-
-  - name: {{ .Section }}-pages
-    label: {{ humanize .Section }}
-    description: {{ humanize .Section }} collection
-    folder: content
+  {{- else }}
+  - name: {{ $section }}-pages
+    label: {{ $label }}
+    description: {{ $label }} collection
+    folder: '{{ printf "content/{{locale}}/%s" $section }}'
     path: '
-    {{- if eq .Section (index site.MainSections 0) -}}
-      {{- printf "%s/{{year}}/{{month}}/{{slug}}/index" .Section -}}
+    {{- if eq $section (index site.MainSections 0) -}}
+      {{- printf "{{year}}/{{month}}/{{slug}}/index" -}}
     {{- else if .RegularPages -}}
-      {{- printf "%s/{{slug}}/index" .Section -}}
+      {{- printf "{{slug}}/index" -}}
     {{- else if .Sections -}}
-      {{- printf "%s/{{slug}}/_index" .Section -}}
+      {{- printf "{{slug}}/_index" -}}
     {{- else -}}
-      {{- printf "%s/_index" .Section -}}
+      {{- printf "_index" -}}
     {{- end -}}'
-    media_folder: ""
-    public_folder: ""
-    thumbnail: cover.image
+    {{- if and .Sections .RegularPagesRecursive }}
+    nested:
+      depth: 5
+      summary: '{{ printf "{{title}}" }}'
+      subfolders: true
+    meta: {{ printf "{ path: { index_file: _index } }" }}
+    {{- end }}
+    media_folder: ''
+    public_folder: ''
+    thumbnail: {{ printf "['/{{slug}}.webp', cover.image]" }}
     icon: {{ .Page.Params.icon_cms }}
     summary: "{{ "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{author | default('no author')}} · {{locales | upper}}" }}"
     reorder:
       key: weight
     i18n: true
 
+    {{- if eq $section (index site.MainSections 0) }}
     sortable_fields:
-      fields: [title, date, author]
+      fields: [title, date, author, category]
       default:
         field: date
         direction: descending
@@ -214,6 +247,7 @@ collections:
           label: Category
           field: category
       default: year
+    {{- end }}
 
     view_filters:
       filters:
@@ -221,51 +255,21 @@ collections:
           label: Drafts
           field: draft
           pattern: true
-        - name: posts_2023
-          label: Posted in 2023
+        - name: upcoming
+          label: Upcoming date
           field: date
-          pattern: '^2023'
-        - name: posts_2024
-          label: Posted in 2024
+          gte: '{{ printf "{{today}}" }}'
+        {{- if eq $section (index site.MainSections 0) -}}
+        {{- range $years }}
+        - name: posts_{{ . }}
+          label: Posted in {{ . }}
           field: date
-          pattern: '^2024'
-        - name: posts_2025
-          label: Posted in 2025
-          field: date
-          pattern: '^2025'
-        - name: posts_2026
-          label: Posted in 2026
-          field: date
-          pattern: '^2026'
-        {{ if eq .Section (index site.MainSections 0) -}}
-        - name: announcement
-          label: Announcement
-          field: category
-          pattern: announcement
-        - name: event
-          label: Event
-          field: category
-          pattern: event
-        - name: feature
-          label: Feature
-          field: category
-          pattern: feature
-        - name: showcase
-          label: Showcase
-          field: category
-          pattern: showcase
-        - name: tutorial
-          label: Tutorial
-          field: category
-          pattern: tutorial
-        - name: update
-          label: Update
-          field: category
-          pattern: Update
+          pattern: '^{{ . }}'
+        {{- end -}}
         {{- end }}
-
     index_file:
-      label: {{ humanize .Section }} Index
+      name: _index
+      label: {{ $label }} Index
       icon: home
       i18n: true
       fields:
@@ -311,7 +315,8 @@ collections:
         widget: string
         i18n: true
         required: false
-      {{ if .Sections -}}
+
+      {{- if .Sections }}
       - name: linkTitle
         label: Link Title
         widget: string
@@ -322,10 +327,11 @@ collections:
         widget: string
         i18n: duplicate
         required: false
-      {{ end -}}
+      {{- end }}
       - name: date
         label: Date
         widget: datetime
+        type: date
         i18n: duplicate
       - name: draft
         label: Draft
@@ -333,14 +339,14 @@ collections:
         default: false
         i18n: duplicate
         required: false
-      {{ if eq .Section (index site.MainSections 0) -}}
+      {{ if eq $section (index site.MainSections 0) -}}
       - name: author
         label: Author
         widget: string
         i18n: duplicate
         required: false
       - name: category
-        label: category
+        label: Category
         widget: select
         options:
           - { label: Announcement, value: announcement }
@@ -350,13 +356,12 @@ collections:
           - { label: Tutorial, value: tutorial }
           - { label: Update, value: update }
         i18n: duplicate
-        required: false
       - name: tags
         label: Tags
         widget: list
         i18n: duplicate
         required: false
-      {{ end -}}
+      {{- end }}
       - name: cover
         label: Cover
         widget: object
@@ -369,9 +374,7 @@ collections:
         label: Body
         widget: richtext
         i18n: true
-
   {{- end -}}
-
 {{- end }}
 
   - divider: true
@@ -383,7 +386,7 @@ collections:
     files:
       - name: translations
         label: Theme Translations
-        file: "{{ "themes/trigo/i18n/{{locale}}.yaml" }}"
+        file: '{{ "themes/trigo/i18n/{{locale}}.yaml" }}'
         icon: language
         i18n: true
         fields:
@@ -391,13 +394,13 @@ collections:
             label: i18n strings
             widget: list
             root: true
-            summary: "{{ "{{id}} - {{translation}}" }}"
+            summary: '{{ "{{id}} - {{translation}}" }}'
             i18n: true
             allow_add: false
             allow_remove: false
             allow_duplicate: false
             allow_reorder: false
-            hint: "{{ "Template variables such as {{ .Count }} are supported." }}"
+            hint: '{{ "Template variables such as {{ .Count }} are supported." }}'
             fields:
               - name: id
                 label: Translation ID
@@ -437,7 +440,7 @@ singletons:
       - name: socials
         label: Social media links
         widget: list
-        summary: "{{ "{{label}}" }}"
+        summary: '{{ "{{label}}" }}'
         collapsed: auto
         fields:
           - name: label
@@ -464,7 +467,7 @@ singletons:
         label: Sponsors
         label_singular: Sponsor
         widget: list
-        summary: "{{ "{{label}} - {{tier}}" }}"
+        summary: '{{ "{{label}} - {{tier}}" }}'
         thumbnail: logo
         collapsed: auto
         root: true
@@ -472,7 +475,7 @@ singletons:
           - name: id
             label: Sponsor ID
             widget: hidden
-            default: "{{ "{{uuid_shorter}}" }}"
+            default: '{{ "{{index}}" }}'
           - name: label
             label: Label
             widget: string

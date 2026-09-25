@@ -67,7 +67,7 @@ After successful login, the CMS dashboard will open:
 
 ![CMS dashboard](cms-1.webp "CMS dashboard")
 
-The top-left FreeCAD icon links to the public website, followed by the Collections and Assets tabs (1).
+The top-left FreeCAD icon links to the public website, followed by the Collections, Assets, and Editorial Workflow tabs (1).
 The top-center search field (2) looks for entries in the whole repository, with the menus (3) on the top-right.
 
 ![General menus](cms-2.webp "General menus")
@@ -107,11 +107,13 @@ Nested shortcodes can be added as well and their preview is shown on the preview
 
 ![Nested shortcodes](cms-8.webp "Nested shortcodes")
 
-Note the hierarchy between the `Body` field (1), the `Block` shortcodes (2) and the nested `Group` shortcodes (3).
+In the example above, note the hierarchy between the `Body` field (1), the `Block` shortcodes (2) and the nested `Group` shortcodes (3).
 
 Some shortcodes are displayed as compact buttons opening a dialog, such as the `Button` shortcode shown here.
 
 After making changes, use the `Save` button on the top-right.
+
+Changes can be submitted for review or saved as `Draft` for further changes at a later time.
 
 ### Create New Content
 
@@ -141,6 +143,17 @@ New translations can be enabled and the original content copied easily in one go
 Some automatic online translation services are also available via an API key:
 
 ![Automatic translation services](cms-11.webp "Automatic translation services")
+
+### Editorial Workflow
+
+The Editorial Workflow tab allows to manage the content lifecycle: changes can be saved as a `Draft`, submitted for review, or accepted and published to the website.
+
+Usually, writers and editors add and edit content. They then save the changes of the page we are working on as `Draft`.
+This allows to come back at a later time to make more changes.
+When the page is ready for review by reviewers, the `Draft` status is removed and the changes are labelled for review.
+After the page is fully reviewed and validated, it gets published.
+
+More technical details on the Editorial Workflow can be found on the [CMS docs](https://sveltiacms.app/en/docs/)
 
 
 ## Need Help?
