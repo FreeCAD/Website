@@ -178,11 +178,16 @@ cascade:
     target:
       path: /dev/**
 
+mediaTypes:
+  text/nginx:
+    suffixes: nginx
+
 outputs:
   home:
     - html
     - cms_config
     - rss
+    - redirects
   section:
     - html
   taxonomy:
@@ -194,9 +199,16 @@ outputFormats:
   cms_config:
     baseName: cms-config
     mediaType: application/yaml
-    isHTML: false
     isPlainText: true
     notAlternative: true
+  redirects:
+    baseName: .nginx/301
+    mediaType: text/nginx
+    rel: nginx
+    isPlainText: true
+    notAlternative: true
+    root: true
+    ugly: true
 
 # Keep for local dev. Production build uses --minify.
 minify:
@@ -275,3 +287,7 @@ caches:
     dir: :cacheDir/images
 
 disableHugoGeneratorInject: true
+# Aliases are served as nginx 301 redirects from the generated .nginx/301.nginx
+# map (themes/trigo/layouts/home.redirects.nginx), not as HTML redirect pages.
+# Hosts without that nginx config, e.g. GitHub Pages, have no alias redirects.
+disableAliases: true

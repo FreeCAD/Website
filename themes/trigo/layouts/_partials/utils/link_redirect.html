@@ -21,12 +21,12 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
         {{- $link = .RelPermalink -}}
       {{- end -}}
     {{- else -}}
-      {{- $target := site.GetPage . -}}
+      {{- $target := $page.Site.GetPage . -}}
       {{- with $target -}}
         {{- $link = .RelPermalink -}}
       {{- else -}}
-        {{- if and (hasPrefix . $wiki_url) (not site.Language.IsDefault) -}}
-          {{- $link = printf "%s/%s" . site.Language.Name -}}
+        {{- if and (hasPrefix . $wiki_url) (not $page.Site.Language.IsDefault) -}}
+          {{- $link = printf "%s/%s" . $page.Site.Language.Name -}}
         {{- else -}}
           {{- $link = . -}}
         {{- end -}}
