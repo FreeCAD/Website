@@ -2,6 +2,7 @@
 title: Support the FreeCAD project
 linkTitle: Donate
 description: Donate once or sponsor monthly to make FreeCAD even more awesome!
+aliases: ["/sponsor"]
 icon: heart
 icon_cms: favorite
 ---

@@ -1,0 +1,98 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Nginx redirects:
+
+- Get all pages with aliases.
+- Generate nginx redirects map for each alias.
+- Match languages by normalized lang name without locale, e.g. es_CO -> es, zh_TW -> zh.
+
+  /old, /old/, and /old.php -> /new/
+  /old.php?lang=<lang> -> translated /<lang>/new/ or default /new/ page if translation missing
+*/ -}}
+
+
+{{- if site.IsDefault -}}
+
+  {{- $redirects := dict -}}
+  {{- $old_locales := slice
+    "be"
+    "ca"
+    "cs"
+    "de"
+    "el"
+    "en"
+    "es"
+    "es_CO"
+    "eu"
+    "fa"
+    "fi"
+    "fr"
+    "ga"
+    "hr"
+    "hu"
+    "it"
+    "ja"
+    "ka"
+    "ko"
+    "lo"
+    "nl"
+    "pl"
+    "pt_BR"
+    "ru"
+    "sl"
+    "sr"
+    "sv"
+    "ta"
+    "tr"
+    "uk"
+    "zh_CN"
+    "zh_TW"
+  -}}
+
+  {{- range $new_page := hugo.Sites.Default.Pages -}}
+    {{- if .Aliases -}}
+      {{- $new_default := $new_page.RelPermalink -}}
+      {{- $new_langs := dict -}}
+
+      {{- range $translation := $new_page.Translations -}}
+        {{- $normalized := replace (lower $translation.Language.Name) "_" "-" -}}
+        {{- $lang_name := index (split $normalized "-") 0 -}}
+        {{- if not (isset $new_langs $lang_name) -}}
+          {{- $new_langs = merge $new_langs (dict $lang_name $translation.RelPermalink) -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- range $alias := $new_page.Aliases -}}
+        {{- if findRE `\s` $alias -}}
+          {{- errorf "Alias %q on %q contains whitespace" $alias $new_page.String -}}
+        {{- end -}}
+
+        {{- $alias = trim $alias "/" -}}
+        {{- $php_alias := printf "%s.php" $alias -}}
+        {{- range $old_source := slice $alias (printf "%s/" $alias) $php_alias -}}
+          {{- if ne $old_source $new_default -}}
+            {{- $redirects = merge $redirects (dict $old_source $new_default) -}}
+          {{- end -}}
+        {{- end -}}
+
+        {{- range $old_locale := $old_locales -}}
+          {{- $normalized := replace (lower $old_locale) "_" "-" -}}
+          {{- $lang_name := index (split $normalized "-") 0 -}}
+          {{- $new_target := default $new_default (index $new_langs $lang_name) -}}
+          {{- $old_source := printf "%s?lang=%s" $php_alias $old_locale -}}
+          {{- if ne $old_source $new_target -}}
+            {{- $redirects = merge $redirects (dict $old_source $new_target) -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- range $old, $new := $redirects -}}
+    {{- printf "/%s /%s/;\n" $old (trim $new "/") -}}
+  {{- end -}}
+{{- end -}}
