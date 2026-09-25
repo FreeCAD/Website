@@ -315,8 +315,13 @@
     <use href="/Website/svg/note.svg#note"></use>
   </svg>Nota<p>Esta página aún no se ha traducido en español, por lo que se utiliza la versión inglesa. Interesado en ayudar?
 <a
-  href="false"
-  class="internal-tooltip">Contribuir</a></p></blockquote></figure><h2
+  href="https://github.com/freecad/website"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Contribuir<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a></p></blockquote></figure><h2
   id="toolbars">Toolbars<a class="heading-anchor"
      href="#toolbars"
      title="Toolbars"><svg
@@ -326,7 +331,7 @@
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
 </h2><p>Toolbar management in complex technical software such as CAD poses unique challenges as there are often hundreds of potential tools, functions, or features which may require ready access within the GUI. The <a
-  href="false"
+  href="../ux#pareto-principle"
   class="internal-tooltip">Pareto-Principle</a> (80/20 rule) should be the basis for how toolbars are populated. The 80/20 rule states that 20% of the input results in 80% of the output. This would imply that 20% of a set of tools get 80% of the use. While this may not be a perfect correlating principle, it should help guide a critical thought process about which tools go onto a toolbar and also how they are organized.</p>
 <p><strong>Toolbar Organization Guidelines:</strong></p>
 <ul>
@@ -335,7 +340,7 @@
 </li>
 <li>
 <p>In accordance with the <a
-  href="false"
+  href="../ux#pareto-principle"
   class="internal-tooltip">Pareto Principle</a>, where a group of related functions consist of one which covers a majority of cases, a Menu Button should be formed to group those related functions into a single toolbar slot. The most common or likely to be used function should be presented as the default from that group on the toolbar.</p>
 </li>
 <li>
@@ -374,7 +379,7 @@
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
 </h4><p>These panels are a quintessential component of FreeCAD&rsquo;s interface. A task panel is the means by which a user interacts with the current task being performed. Ranging from controlling sketch elements, defining parameters for a feature such as a Chamfer or set up parameters for CNC machining. These critical components <strong>must</strong> be uniform in both layout and sizing. A default width, in accordance with the UI <a
-  href="false"
+  href="../zones"
   class="internal-tooltip">zones and layout</a> definitions is established at 360 pixels.</p>
 <p>Here are general guidelines to be followed for a task panel:</p>
 <ul>
@@ -384,7 +389,7 @@ Alternative button configurations are inconsistent and not acceptable.</p>
 </li>
 <li>
 <p>Minimize the width of the panel as much as possible through good use of space, arrangement of widgets, and <a
-  href="false"
+  href="../naming"
   class="internal-tooltip">naming</a>.</p>
 </li>
 <li>
@@ -392,9 +397,14 @@ Alternative button configurations are inconsistent and not acceptable.</p>
 </li>
 <li>
 <p>Task Panels can potentially include enormous amounts of information and advanced settings/controls. Utilizing FreeCAD&rsquo;s custom <a
-  href="false"
-  class="internal-tooltip">QSInt</a> widget class, which provides a &lsquo;rolling up&rsquo; of portions of the panel, is encouraged. Follow the <a
-  href="false"
+  href="https://freecad.github.io/SourceDoc/d9/d11/namespaceQSint.html"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">QSInt<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a> widget class, which provides a &lsquo;rolling up&rsquo; of portions of the panel, is encouraged. Follow the <a
+  href="../ux#pareto-principle"
   class="internal-tooltip">80/20 rule</a>, and by default only expose the most commonly needed controls/data to avoid overwhelming users with information/settings when they are not needed. This allows the user to expand more advanced settings, controls or information when the need arises.</p>
 </li>
 </ul>

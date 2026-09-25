@@ -242,7 +242,7 @@
     focusable="false">
     <use href="/Website/svg/time.svg#time"></use>
   </svg>9 minutos</span></div></section><div class="content"><p><em>This guest post is by Ed Williams (edwilliams16). Interested in contributing an article? Contact Chris Hennes at <a
-  href="false"
+  href="mailto:chennes@freecad.org"
   class="internal-tooltip">chennes@freecad.org</a> with your idea!</em></p>
 <p>Much of FreeCAD scripting consists of creating objects and then placing them somewhere in 3D. For instance, we can create a default cube with</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">doc</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">ActiveDocument</span>
@@ -387,8 +387,13 @@
         <source
           src="/Website/news/the-rotation-api-in-freecad/rottriad.mp4" type="video/mp4">Seu navegador não suporta a tag de vídeo.</video><figcaption>Fig. (3) zvec and xvec inputs create the zdir xdir rotated normalized directions.</figcaption></figure>
 <p>This rotation method forms the basis of the  <a
-  href="false"
-  class="internal-tooltip">O-Z-X attachment mode</a> for an object in FreeCAD.</p>
+  href="https://wiki.freecad.org/O-X-Y_type_attachment_modes/pt"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">O-Z-X attachment mode<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a> for an object in FreeCAD.</p>
 <h3
   id="approtationyaw-pitch-roll">App.Rotation(yaw, pitch, roll)<a class="heading-anchor"
      href="#approtationyaw-pitch-roll"
@@ -399,8 +404,13 @@
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
 </h3><p>This is described and illustrated in the <a
-  href="false"
-  class="internal-tooltip">wiki</a>. Here a rotation is described as the composite of three successive rotations. First a yaw about the z-axis, then a pitch about the <strong>rotated</strong> y-axis, then a roll about the <strong>rotated</strong> x-axis. More explicitly, here a <strong>rotated</strong> axis means that the axis is not the initial coordinate axis, but the axis that results from the prior rotations acting on the coordinate axis. Thinking of rotations of a body, the successive rotation axes are fixed in the body, not in space.</p>
+  href="https://wiki.freecad.org/Placement#Position_and_Yaw.2C_Pitch_and_Roll/pt"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">wiki<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>. Here a rotation is described as the composite of three successive rotations. First a yaw about the z-axis, then a pitch about the <strong>rotated</strong> y-axis, then a roll about the <strong>rotated</strong> x-axis. More explicitly, here a <strong>rotated</strong> axis means that the axis is not the initial coordinate axis, but the axis that results from the prior rotations acting on the coordinate axis. Thinking of rotations of a body, the successive rotation axes are fixed in the body, not in space.</p>
 <h3
   id="compounding-rotations">Compounding rotations<a class="heading-anchor"
      href="#compounding-rotations"

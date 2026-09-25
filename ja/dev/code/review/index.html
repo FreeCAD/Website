@@ -313,11 +313,21 @@
     <use href="/Website/svg/note.svg#note"></use>
   </svg>注記<p>このページはまだ翻訳されていないため、代わりに英語版が表示されます。協力していただけませんか？
 <a
-  href="false"
-  class="internal-tooltip">貢献</a></p></blockquote></figure><p>This document aims to provide set of good practices that should be helpful for both developers and code reviewers. They should be treated like food recipes - you can play with them, alter them - but every change should be thoughtful and intentional.</p>
+  href="https://github.com/freecad/website"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">貢献<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a></p></blockquote></figure><p>This document aims to provide set of good practices that should be helpful for both developers and code reviewers. They should be treated like food recipes - you can play with them, alter them - but every change should be thoughtful and intentional.</p>
 <p>Just like the C++ practices - this document is <strong>very</strong> much inspired by the <a
-  href="false"
-  class="internal-tooltip">C++ Core Guidelines</a>.
+  href="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">C++ Core Guidelines<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>.
 You can always consult it to learn more useful stuff.</p>
 <p>While points of this guide might not be consistently followed throughout all of the existing codebase, checking if new code follows them is possible and in long term should help us immensely.</p>
 <figure>
@@ -350,8 +360,13 @@ You can always consult it to learn more useful stuff.</p>
 <li>Comments <strong>could</strong> be made to existing comments just to note that other (potentially better) solutions are available and should be used instead when writing new code.</li>
 <li>Reviewer <strong>can</strong> hint to make more changes to the existing code in order to improve the proposed solution (for example, refactor another class so it can be used).</li>
 <li>Code <strong>must</strong> follow the Scout Rule - <a
-  href="false"
-  class="internal-tooltip">https://biratkirat.medium.com/step-8-the-boy-scout-rule-robert-c-martin-uncle-bob-9ac839778385</a> - i.e. leave code in better shape than you found it.</li>
+  href="https://biratkirat.medium.com/step-8-the-boy-scout-rule-robert-c-martin-uncle-bob-9ac839778385"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">https://biratkirat.medium.com/step-8-the-boy-scout-rule-robert-c-martin-uncle-bob-9ac839778385<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a> - i.e. leave code in better shape than you found it.</li>
 <li>If possible, code cleanup done while working on the feature should be split into separate commits or even better PR.</li>
 <li>PRs <strong>must not</strong> contain any remains of development code, like debug statements other than actual logs.</li>
 <li>New code <strong>must not</strong> introduce any new linter warnings</li>

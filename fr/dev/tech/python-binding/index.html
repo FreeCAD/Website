@@ -352,8 +352,13 @@
     <use href="/Website/svg/note.svg#note"></use>
   </svg>Remarque<p>Cette page n&rsquo;a pas encore été traduite en français, la version anglaise est donc utilisée. Envie de contribuer à la traduction ?
 <a
-  href="false"
-  class="internal-tooltip">Contribuer</a></p></blockquote></figure><h2
+  href="https://github.com/freecad/website"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Contribuer<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a></p></blockquote></figure><h2
   id="background">Background<a class="heading-anchor"
      href="#background"
      title="Background"><svg
@@ -493,25 +498,45 @@
 <li>return the Py object.</li>
 </ul>
 <p>There are two source files required to implement a new Python binding.  Assuming we wanted to expose some methods from <a
-  href="false"
-  class="internal-tooltip">https://github.com/freecad/freecad/blob/master/src/Mod/Part/App/TopoShape.cpp</a>, we would need to make:</p>
+  href="https://github.com/freecad/freecad/blob/master/src/Mod/Part/App/TopoShape.cpp"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">https://github.com/freecad/freecad/blob/master/src/Mod/Part/App/TopoShape.cpp<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>, we would need to make:</p>
 <ul>
 <li>TopoShapePy.xml - definitions of the functions for be exposed in XML format.  This file is used to generate header files for our next file&hellip;</li>
 <li>TopoShapePyImp.cpp - the actual C++ code that bridges from Python to C++.</li>
 </ul>
 <p>These 2 files need to be added to ../Mod/yourModule/App/CMakeLists.txt.  See <a
-  href="false"
-  class="internal-tooltip">https://github.com/freecad/freecad/blob/master/src/Mod/Part/App/AppPartPy.cpp</a> and FreeCAD/src/Mod/Part/App/CMakeLists.txt for examples.</p>
+  href="https://github.com/freecad/freecad/blob/master/src/Mod/Part/App/AppPartPy.cpp"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">https://github.com/freecad/freecad/blob/master/src/Mod/Part/App/AppPartPy.cpp<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a> and FreeCAD/src/Mod/Part/App/CMakeLists.txt for examples.</p>
 <p>You can extend the Python version of your module by adding to ../Mod/yourModule/App/AppmyModulePy.cpp (see <a
-  href="false"
-  class="internal-tooltip">https://github.com/freecad/freecad/blob/master/src/Mod/Part/App/AppPartPy.cpp</a> and FreeCAD/src/Mod/Part/AppPartPy.cpp). The additions are accessed in Python by &ldquo;import myModule&rdquo;.</p>
+  href="https://github.com/freecad/freecad/blob/master/src/Mod/Part/App/AppPartPy.cpp"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">https://github.com/freecad/freecad/blob/master/src/Mod/Part/App/AppPartPy.cpp<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a> and FreeCAD/src/Mod/Part/AppPartPy.cpp). The additions are accessed in Python by &ldquo;import myModule&rdquo;.</p>
 <p>Note:</p>
 <p>There is a convention for return values from our C++/Python connections:</p>
 <ul>
 <li>xxxxxPyImp routines return a PyObject* pointer (see TopoShapePyImp.cpp)</li>
 <li>AppmyModulePy.cpp routines return a Py::Object (see <a
-  href="false"
-  class="internal-tooltip">https://github.com/freecad/freecad/blob/master/src/Mod/Part/App/AppPartPy.cpp</a> and FreeCAD/src/Mod/Part/AppPartPy.cpp).</li>
+  href="https://github.com/freecad/freecad/blob/master/src/Mod/Part/App/AppPartPy.cpp"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">https://github.com/freecad/freecad/blob/master/src/Mod/Part/App/AppPartPy.cpp<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a> and FreeCAD/src/Mod/Part/AppPartPy.cpp).</li>
 </ul>
 <h2
   id="see-also">See also<a class="heading-anchor"
@@ -524,18 +549,38 @@
   </svg></a>
 </h2><ul>
 <li><a
-  href="false"
-  class="internal-tooltip">A forum thread</a></li>
+  href="https://forum.freecadweb.org/viewtopic.php?p=14796#p314617"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">A forum thread<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a></li>
 <li><a
-  href="false"
-  class="internal-tooltip">Forum discussion: Adding Commands in Python to C++ Workbench</a></li>
+  href="https://forum.freecadweb.org/viewtopic.php?p=560639#p560639"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Forum discussion: Adding Commands in Python to C++ Workbench<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a></li>
 <li><a
-  href="false"
-  class="internal-tooltip">Another forum thread</a></li>
+  href="https://forum.freecadweb.org/viewtopic.php?f=10&amp;t=70750"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Another forum thread<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a></li>
 <li>Workbench creation</li>
 <li><a
-  href="false"
-  class="internal-tooltip">Commit 20b86e5, exposing OCC&rsquo;s precision methods to Python</a></li>
+  href="https://github.com/freecad/freecad/commit/20b86e55b8dd1873f4c19e036d047528c9ff7f4e"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Commit 20b86e5, exposing OCC&rsquo;s precision methods to Python<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a></li>
 </ul>
 </div><footer class="single-footer">
     <nav class="pagination"><a

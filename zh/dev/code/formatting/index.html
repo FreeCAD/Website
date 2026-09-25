@@ -308,8 +308,13 @@
     <use href="/Website/svg/note.svg#note"></use>
   </svg>注意<p>此页面尚未翻译，因此使用英文版本。有兴趣帮忙吗？
 <a
-  href="false"
-  class="internal-tooltip">贡献</a></p></blockquote></figure><p>FreeCAD is written primarily in C++ and Python (with a few files in other languages such as CMake). To smooth the process of merging new contributions it is desirable to minimize formatting changes to existing code, and to use a uniform code formatting style when writing new code. Eventually we expect to standardize the codebase on specific coding styles using Clang Format for C++ and a Python code-formatter (such as Black), but that is a work-in-progress and <em>should not</em> be applied to existing otherwise-untouched code.</p>
+  href="https://github.com/freecad/website"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">贡献<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a></p></blockquote></figure><p>FreeCAD is written primarily in C++ and Python (with a few files in other languages such as CMake). To smooth the process of merging new contributions it is desirable to minimize formatting changes to existing code, and to use a uniform code formatting style when writing new code. Eventually we expect to standardize the codebase on specific coding styles using Clang Format for C++ and a Python code-formatter (such as Black), but that is a work-in-progress and <em>should not</em> be applied to existing otherwise-untouched code.</p>
 <h2
   id="copyright">Copyright<a class="heading-anchor"
      href="#copyright"
@@ -320,10 +325,10 @@
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
 </h2><p>Every file in the FreeCAD project should contain <a
-  href="false"
+  href="../copyright"
   class="internal-tooltip">SPDX Annotations</a> if possible.</p>
 <p>C++ and Python source files are currently also required to have <a
-  href="false"
+  href="../copyright"
   class="internal-tooltip">Copyright Headers</a>.</p>
 <h2
   id="setting-up-pre-commit">Setting up pre-commit<a class="heading-anchor"
@@ -335,12 +340,27 @@
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
 </h2><p>For the sections of the code that have already been auto-formatted, we use <a
-  href="false"
-  class="internal-tooltip">git pre-commit hooks</a> to enforce that formatting. We use the <a
-  href="false"
-  class="internal-tooltip">pre-commit</a> framework to install and manage our hooks. All developers should install pre-commit following the <a
-  href="false"
-  class="internal-tooltip">instructions here</a>. When making a new commit, the hooks examine your changed files and ensure that they follow the appropriate formatting for the section of code you are working on. You do not need to manually yourself with your code&rsquo;s formatting as you develop, and may code it as you like (or as your IDE likes&hellip;). The hook will ensure that your finished code conforms to project requirements.</p>
+  href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">git pre-commit hooks<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a> to enforce that formatting. We use the <a
+  href="https://pre-commit.com/"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">pre-commit<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a> framework to install and manage our hooks. All developers should install pre-commit following the <a
+  href="https://freecad.github.io/DevelopersHandbook/gettingstarted/"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">instructions here<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>. When making a new commit, the hooks examine your changed files and ensure that they follow the appropriate formatting for the section of code you are working on. You do not need to manually yourself with your code&rsquo;s formatting as you develop, and may code it as you like (or as your IDE likes&hellip;). The hook will ensure that your finished code conforms to project requirements.</p>
 <p>Not all of FreeCAD currently uses these hooks: it is up to the Maintainers in charge of a particular Workbench or subdirectory to work with their development team to migrate their code&rsquo;s formatting to the automated tools, and to then enable the hooks on their subdirectory.</p>
 <p>Currently the following sections of code are covered by pre-commit: <code>src/Mod/AddonManager</code>, <code>src/Tools</code>, and <code>tests/src</code>.</p>
 <h2
@@ -353,10 +373,15 @@
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
 </h2><p>FreeCAD&rsquo;s codebase currently includes a <a
-  href="false"
-  class="internal-tooltip">.clang-format</a> file. Many IDEs will automatically apply these settings when editing files. To minimize disruption of other developers, only new or significantly-refactored code should have the formatting automatically applied. Code not being worked on should not be automatically formatted at this time.</p>
+  href="https://github.com/FreeCAD/FreeCAD/blob/master/.clang-format"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">.clang-format<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a> file. Many IDEs will automatically apply these settings when editing files. To minimize disruption of other developers, only new or significantly-refactored code should have the formatting automatically applied. Code not being worked on should not be automatically formatted at this time.</p>
 <p>For naming conventions, please see <a
-  href="false"
+  href="../review#naming-things"
   class="internal-tooltip">Naming Things</a>.</p>
 <h2
   id="python">Python<a class="heading-anchor"
@@ -378,8 +403,13 @@
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
 </h2><p>You will find a mix of different generations of comment-based inline documentation systems in the code base depending on when the code was written.  As of 2024 it is preferred that you write <a
-  href="false"
-  class="internal-tooltip">doxygen</a> compatible comment documentation.  For methods, including the @param and @return as appropriate is highly recommended.</p>
+  href="https://www.doxygen.nl/manual/docblocks.html"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">doxygen<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a> compatible comment documentation.  For methods, including the @param and @return as appropriate is highly recommended.</p>
 </div><footer class="single-footer">
     <nav class="pagination"><a
             class="button next"

@@ -323,8 +323,13 @@
     <use href="/Website/svg/note.svg#note"></use>
   </svg>Remarque<p>Cette page n&rsquo;a pas encore été traduite en français, la version anglaise est donc utilisée. Envie de contribuer à la traduction ?
 <a
-  href="false"
-  class="internal-tooltip">Contribuer</a></p></blockquote></figure><h2
+  href="https://github.com/freecad/website"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Contribuer<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a></p></blockquote></figure><h2
   id="overview">Overview<a class="heading-anchor"
      href="#overview"
      title="Overview"><svg
@@ -334,8 +339,13 @@
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
 </h2><p>Like most software projects, FreeCAD depends on many other packages. Most critical among these is <a
-  href="false"
-  class="internal-tooltip">OpenCASCADE</a>,
+  href="https://www.opencascade.com/"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">OpenCASCADE<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>,
 the actual CAD kernel that FreeCAD is built upon. Of course, OpenCASCADE itself has its own dependencies. Many of which have <em>their</em> own
 dependencies, etc. The dependency graph quickly become overwhelming if you have to manually install each one. This is where package managers come
 in. Depending on what platform you are developing on, you have a variety of tools at your disposal to resolve these dependencies. A brief overview
@@ -351,10 +361,20 @@ why FreeCAD needs them.</p>
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
 </h2><p>The head of the main branch of FreeCAD, currently used for the development of FreeCAD 1.2, can be compiled from source on systems as old as the oldest currently-supported <a
-  href="false"
-  class="internal-tooltip">Ubuntu LTS</a> at the time of its expected release, Ubuntu 24.04 LTS. This ties FreeCAD development to the C++23 standard, Python 3.11 and later (we plan to swtich to 3.12 or later once Blender updates their dependencies in mid-2026), Qt 6.4, and the versions of the required libraries available on that system. Note that Qt does not support PySide6 <code>pip</code> installation on this system, so use of a PPA is required for that dependency. The decision to stop support for Qt5 was <a
-  href="false"
-  class="internal-tooltip">announced 5 January 2026</a>.</p>
+  href="https://packages.ubuntu.com/"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Ubuntu LTS<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a> at the time of its expected release, Ubuntu 24.04 LTS. This ties FreeCAD development to the C++23 standard, Python 3.11 and later (we plan to swtich to 3.12 or later once Blender updates their dependencies in mid-2026), Qt 6.4, and the versions of the required libraries available on that system. Note that Qt does not support PySide6 <code>pip</code> installation on this system, so use of a PPA is required for that dependency. The decision to stop support for Qt5 was <a
+  href="https://forum.freecad.org/viewtopic.php?t=102292"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">announced 5 January 2026<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>.</p>
 <h2
   id="major-dependencies">Major dependencies<a class="heading-anchor"
      href="#major-dependencies"
@@ -413,8 +433,13 @@ hundreds of thousands of lines of Python code, and all FreeCAD Addons and Macros
 FreeCAD uses this toolkit to draw the interface of the program, as well as to provide some advanced networking functionality
 and translation facilities. FreeCAD currently provides primary support for Qt v5.14 - v5.15, and Qt 6.4 and later.</p>
 <p>Further information about Qt libraries and their programming documentation are available at <a
-  href="false"
-  class="internal-tooltip">Qt Documentation</a>.</p>
+  href="https://doc.qt.io/"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Qt Documentation<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>.</p>
 <h3
   id="pyside-and-shiboken">PySide and Shiboken<a class="heading-anchor"
      href="#pyside-and-shiboken"
@@ -538,8 +563,13 @@ to be installed. It is very common to have to adjust the one-line command below 
 <p>A single command to install the dependencies on 22.04.3 LTS Ubuntu-based systems:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo apt install cmake cmake-gui libboost-date-time-dev libboost-dev libboost-filesystem-dev libboost-graph-dev libboost-iostreams-dev libboost-program-options-dev libboost-python-dev libboost-regex-dev libboost-serialization-dev libboost-thread-dev libcoin-dev libeigen3-dev libgts-bin libgts-dev libkdtree++-dev libmedc-dev libocct-data-exchange-dev libocct-ocaf-dev libocct-visualization-dev libopencv-dev libproj-dev libpyside2-dev libqt5opengl5-dev libqt5svg5-dev qtwebengine5-dev libqt5x11extras5-dev libqt5xmlpatterns5-dev libshiboken2-dev libspnav-dev libvtk7-dev libx11-dev libxerces-c-dev libzipios++-dev occt-draw pyside2-tools python3-dev python3-matplotlib python3-packaging python3-pivy python3-ply python3-pyside2.qtcore python3-pyside2.qtgui python3-pyside2.qtsvg python3-pyside2.qtwidgets python3-pyside2.qtnetwork python3-pyside2.qtwebengine python3-pyside2.qtwebenginecore python3-pyside2.qtwebenginewidgets python3-pyside2.qtwebchannel python3-markdown python3-git qtbase5-dev qttools5-dev swig libyaml-cpp-dev</span></span></code></pre></div></div><p>A single command to install the dependencies on 24.04 LTS Ubuntu-based systems:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo apt install cmake cmake-qt-gui libboost-date-time-dev libboost-dev libboost-filesystem-dev libboost-graph-dev libboost-iostreams-dev libboost-program-options-dev libboost-python-dev libboost-regex-dev libboost-serialization-dev libboost-thread-dev libcoin-dev libeigen3-dev libgts-bin libgts-dev libkdtree++-dev libmedc-dev libocct-data-exchange-dev libocct-ocaf-dev libocct-visualization-dev libopencv-dev libproj-dev libpyside2-dev libqt5opengl5-dev libqt5svg5-dev qtwebengine5-dev libqt5x11extras5-dev libqt5xmlpatterns5-dev libshiboken2-dev libspnav-dev libvtk9-dev libx11-dev libxerces-c-dev libzipios++-dev occt-draw pyside2-tools python3-dev python3-matplotlib python3-packaging python3-pivy python3-ply python3-pyside2.qtcore python3-pyside2.qtgui python3-pyside2.qtsvg python3-pyside2.qtwidgets python3-pyside2.qtnetwork qtbase5-dev qttools5-dev swig libyaml-cpp-dev</span></span></code></pre></div></div><p>To install dependencies on Fedora systems (Derived from the <a
-  href="false"
-  class="internal-tooltip">RPM spec</a>):</p>
+  href="https://src.fedoraproject.org/rpms/freecad"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">RPM spec<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>):</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo dnf install clang cmake gcc-c++ gettext dos2unix doxygen swig graphviz gcc-gfortran desktop-file-utils freeimage-devel libXmu-devel mesa-libGL-devel mesa-libGLU-devel libglvnd-devel opencascade-devel Coin4-devel python3-devel python3-matplotlib python3-pivy boost-devel eigen3-devel tbb-devel qt5-qtbase-devel qt5-qtsvg-devel qt5-qtxmlpatterns-devel qt5-qttools-devel qt5-qttools-static qt5-qtwebengine-devel xerces-c xerces-c-devel libspnav-devel python3-shiboken2-devel python3-pyside2-devel pyside2-tools smesh-devel zipios++-devel python3-pycxx-devel libicu-devel vtk-devel med-devel libkdtree++-devel libappstream-glib python3-pivy python3-matplotlib python3-collada python3-pyside2 qt5-assistant</span></span></code></pre></div></div><p>To install dependencies on Arch Linux based systems:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo pacman -S boost boost-libs cgns cmake coin eigen fmt git glew graphviz jsoncpp libharu liblas libspnav med-openmpi netcdf ninja nlohmann-json openmpi openvdb opencascade openvr ospray pdal pugixml pyside2 pyside2-tools python-gitpython python-markdown python-matplotlib python-mpi4py python-pip python-pivy python-ply python-shiboken2 python-yaml qt5-svg qt5-tools qt5-webengine qt5-x11extras qt5-xmlpatterns shiboken2 swig utf8cpp verdict xerces-c</span></span></code></pre></div></div><h3
   id="windows">Windows<a class="heading-anchor"
@@ -551,8 +581,13 @@ to be installed. It is very common to have to adjust the one-line command below 
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
 </h3><p>By far the easiest way to install the dependencies for Windows is to download the pre-packaged &ldquo;LibPack&rdquo; from <a
-  href="false"
-  class="internal-tooltip">https://github.com/FreeCAD/FreeCAD-LibPack/releases</a>. This
+  href="https://github.com/FreeCAD/FreeCAD-LibPack/releases"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">https://github.com/FreeCAD/FreeCAD-LibPack/releases<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>. This
 download provides a single source for all of FreeCAD&rsquo;s library dependencies.</p>
 <h3
   id="mac-os">Mac OS<a class="heading-anchor"
@@ -564,13 +599,23 @@ download provides a single source for all of FreeCAD&rsquo;s library dependencie
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
 </h3><p>Mac OS does not have a built-in package management system, but it is possible to use <a
-  href="false"
-  class="internal-tooltip">Homebrew</a> to install FreeCAD&rsquo;s dependencies. Note however that
+  href="https://brew.sh"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Homebrew<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a> to install FreeCAD&rsquo;s dependencies. Note however that
 this can be a very challenging process because Homebrew often updates libraries to new versions before downstream packages are updated to accomodate them:
 it is usually necessary for a developer to manually extract an old dependency for installation as a custom &ldquo;tap&rdquo;.</p>
 <p>An alternative is to use Conda to create your Mac OS build system. Documentation of this process is a <a
-  href="false"
-  class="internal-tooltip">work-in-progress by several users on the FreeCAD Forum</a>.</p>
+  href="https://forum.freecad.org/viewtopic.php?t=70038"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">work-in-progress by several users on the FreeCAD Forum<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>.</p>
 </div><footer class="single-footer">
     <nav class="pagination"><a
             class="button next"

@@ -346,8 +346,13 @@
     <use href="/Website/svg/note.svg#note"></use>
   </svg>Remarque<p>Cette page n&rsquo;a pas encore été traduite en français, la version anglaise est donc utilisée. Envie de contribuer à la traduction ?
 <a
-  href="false"
-  class="internal-tooltip">Contribuer</a></p></blockquote></figure><p>FreeCAD uses two different automated testing mechanisms, depending on the language being tested. The oldest, and most well-used test framework is the Python <code>unittest</code> system, which hooks directly into the FreeCAD Test Workbench, but can only test Python code (and Python wrappers to C++ code). The second is the standalone Google Test C++ testing framework, which generates individual executables for each part of the test suite, and is used to directly test C++ code without having to wrap it in Python.</p>
+  href="https://github.com/freecad/website"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Contribuer<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a></p></blockquote></figure><p>FreeCAD uses two different automated testing mechanisms, depending on the language being tested. The oldest, and most well-used test framework is the Python <code>unittest</code> system, which hooks directly into the FreeCAD Test Workbench, but can only test Python code (and Python wrappers to C++ code). The second is the standalone Google Test C++ testing framework, which generates individual executables for each part of the test suite, and is used to directly test C++ code without having to wrap it in Python.</p>
 <h2
   id="references">References<a class="heading-anchor"
      href="#references"
@@ -361,29 +366,64 @@
 <p>Videos:</p>
 <ul>
 <li><a
-  href="false"
-  class="internal-tooltip">Back to Basics: C++ Testing - Amir Kirsh - CppCon 2022 - YouTube.</a></li>
+  href="https://www.youtube.com/watch?v=SAM4rWaIvUQ"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Back to Basics: C++ Testing - Amir Kirsh - CppCon 2022 - YouTube.<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a></li>
 <li><a
-  href="false"
-  class="internal-tooltip">Practical Advice for Maintaining and Migrating Working Code - Brian Ruth - CppCon 2021 - YouTube.</a></li>
+  href="https://www.youtube.com/watch?v=CktRuMALe2A"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Practical Advice for Maintaining and Migrating Working Code - Brian Ruth - CppCon 2021 - YouTube.<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a></li>
 <li><a
-  href="false"
-  class="internal-tooltip">The Science of Unit Tests - Dave Steffen - CppCon 2020 - YouTube.</a></li>
+  href="https://www.youtube.com/watch?v=FjwayiHNI1w"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">The Science of Unit Tests - Dave Steffen - CppCon 2020 - YouTube.<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a></li>
 <li><a
-  href="false"
-  class="internal-tooltip">TDD, Where Did It All Go Wrong (Ian Cooper)</a></li>
+  href="https://www.youtube.com/watch?v=EZ05e7EMOLM"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">TDD, Where Did It All Go Wrong (Ian Cooper)<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a></li>
 </ul>
 <p>Books:</p>
 <ul>
 <li><a
-  href="false"
-  class="internal-tooltip">Kent Beck. Test Driven Development by Example. ISBN 9780321146533</a></li>
+  href="https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Kent Beck. Test Driven Development by Example. ISBN 9780321146533<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a></li>
 <li><a
-  href="false"
-  class="internal-tooltip">Michael Feathers. Working Effectively with Legacy Code. ISBN 0131177052.</a></li>
+  href="https://www.amazon.com/Working-Effectively-Legacy-Michael-Feathers/dp/0131177052"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Michael Feathers. Working Effectively with Legacy Code. ISBN 0131177052.<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a></li>
 <li><a
-  href="false"
-  class="internal-tooltip">Jeff Langr. Modern C++ Programming with Test-Driven Development: Code Better, Sleep Better. ISBN 1937785483.</a></li>
+  href="https://www.amazon.com/Modern-Programming-Test-Driven-Development-Better/dp/1937785483/"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Jeff Langr. Modern C++ Programming with Test-Driven Development: Code Better, Sleep Better. ISBN 1937785483.<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a></li>
 </ul>
 <h2
   id="terminology">Terminology<a class="heading-anchor"
@@ -402,8 +442,13 @@ function, method, or class under test is the &ldquo;unit&rdquo;. Consider that i
 For example, writing tests of code that normally downloads files from an internet location, a Mock class will typically be implemented to fake those returns results so the tests don&rsquo;t require a network connection
 (and run more quickly and reliably). In Python most test writers use the <code>unittest.Mock.MagicMock</code> class to automatically generated any needed mock on the fly. In Google Test you can use the
 <a
-  href="false"
-  class="internal-tooltip"><code>MOCK_METHOD</code></a> macro to achieve some of the same effect.</p>
+  href="https://google.github.io/googletest/reference/mocking.html"
+  class="external-link" target="_blank" rel="external noreferrer nofollow"><code>MOCK_METHOD</code><svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a> macro to achieve some of the same effect.</p>
 <p>A &ldquo;Fake&rdquo; is similar to a mock, but typically doesn&rsquo;t bother with the introspection code, it is there simply to replace the existing class, but the test is not interested in how it is used. Rarely used in Python because
 of the ease of generating a Mock.</p>
 <p>A &ldquo;Stub&rdquo; is a method that simply provides a canned answer for a given input. Sometimes instrumented, but often simply used to replace a more complex function with a simple, predictable response. For example, a random-number
@@ -557,8 +602,13 @@ a workbench that does not have one, a developer should add a new target for thei
 </span></span></span><span class="line"><span class="cl"><span class="nb">add_subdirectory</span><span class="p">(</span><span class="s">src/Mod/Sketcher</span><span class="p">)</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="nb">target_include_directories</span><span class="p">(</span><span class="s">Sketcher_tests_run</span> <span class="s">PUBLIC</span> <span class="o">${</span><span class="nv">EIGEN3_INCLUDE_DIR</span><span class="o">}</span><span class="p">)</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">Sketcher_tests_run</span> <span class="s">gtest_main</span> <span class="o">${</span><span class="nv">Google_Tests_LIBS</span><span class="o">}</span> <span class="s">Sketcher</span><span class="p">)</span></span></span></code></pre></div></div><p>Note that it can be tempting to further group functionality using <a
-  href="false"
-  class="internal-tooltip">value parameterized tests</a>.  A key measure here is to assess whether the grouping benefits the writer or the reader of the tests.  Since a test is for use by a future programmer to figure out why it failed, it&rsquo;s okay and often preferred to be more pedantic and more repetitive rather than super efficient.  The reader should be able to figure out your test just by reading it, and maybe the test fixture.  If more work is required then the test is likely too complex.</p>
+  href="https://google.github.io/googletest/advanced.html#value-parameterized-tests"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">value parameterized tests<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>.  A key measure here is to assess whether the grouping benefits the writer or the reader of the tests.  Since a test is for use by a future programmer to figure out why it failed, it&rsquo;s okay and often preferred to be more pedantic and more repetitive rather than super efficient.  The reader should be able to figure out your test just by reading it, and maybe the test fixture.  If more work is required then the test is likely too complex.</p>
 </div><footer class="single-footer">
     <nav class="pagination"><a
             class="button next"
