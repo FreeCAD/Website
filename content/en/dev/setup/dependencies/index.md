@@ -7,9 +7,9 @@ weight: 3
 
 ## Overview
 
-Like most software projects, FreeCAD depends on many other packages. Most critical among these is [OpenCASCADE](https://www.opencascade.com/),
+Like most software projects, FreeCAD depends on many other packages. Most critical among these is [Open CASCADE Technology](https://occt3d.com/open-cascade-technology/),
 the actual CAD kernel that FreeCAD is built upon. Of course, OpenCASCADE itself has its own dependencies. Many of which have *their* own
-dependencies, etc. The dependency graph quickly become overwhelming if you have to manually install each one. This is where package managers come
+dependencies, etc. The dependency graph quickly becomes overwhelming if you have to manually install each one. This is where package managers come
 in. Depending on what platform you are developing on, you have a variety of tools at your disposal to resolve these dependencies. A brief overview
 of the most common ones is included below. The main purpose of this document is to highlight the primary dependencies and describe what they do and
 why FreeCAD needs them.
@@ -17,7 +17,7 @@ why FreeCAD needs them.
 
 ## Supported versions
 
-The head of the main branch of FreeCAD, currently used for the development of FreeCAD 1.2, can be compiled from source on systems as old as the oldest currently-supported [Ubuntu LTS](https://packages.ubuntu.com/) at the time of its expected release, Ubuntu 24.04 LTS. This ties FreeCAD development to the C++23 standard, Python 3.11 and later (we plan to swtich to 3.12 or later once Blender updates their dependencies in mid-2026), Qt 6.4, and the versions of the required libraries available on that system. Note that Qt does not support PySide6 `pip` installation on this system, so use of a PPA is required for that dependency. The decision to stop support for Qt5 was [announced 5 January 2026](https://forum.freecad.org/viewtopic.php?t=102292).
+The head of the main branch of FreeCAD, currently used for the development of FreeCAD 1.2, can be compiled from source on systems as old as the oldest currently-supported [Ubuntu LTS](https://packages.ubuntu.com/) at the time of its expected release, Ubuntu 24.04 LTS. This ties FreeCAD development to the C++23 standard, Python 3.11 and later (we plan to switch to 3.12 or later once Blender updates their dependencies in mid-2026), Qt 6.4, and the versions of the required libraries available on that system. Note that Qt does not support PySide6 `pip` installation on this system, so use of a PPA is required for that dependency. The decision to stop support for Qt5 was [announced 5 January 2026](https://forum.freecad.org/viewtopic.php?t=102292).
 
 
 ## Major dependencies
@@ -80,7 +80,7 @@ The Boost C++ libraries are collections of peer-reviewed, open source libraries 
 be widely useful across a broad spectrum of applications, and to work well with the C++ Standard Library. The Boost license is designed
 to encourage their use in both open source and closed source projects. Over time, many Boost libraries end up incorporated into the C++ standard
 library itself. As this happens, developers should work to transition their code to the `std::` variant rather than the `boost::` variant. Note
-that exception is made for `boost::regex`, which as of this writing is still considerably faster than its `std::regex` counterpart.
+that an exception is made for `boost::regex`, which as of this writing is still considerably faster than its `std::regex` counterpart.
 
 ### Xerces-C++
 
@@ -124,7 +124,7 @@ also automatically installs all of *its* dependencies, eliminating the need for 
 ### Linux
 
 As a general rule in Linux, you should use your system's package manager to install dependencies, including Python libraries, rather than using `pip`.
-Unfortunately, different distributions use different names for the various packages, so it is sometime challenging to determine exactly what needs
+Unfortunately, different distributions use different names for the various packages, so it is sometimes challenging to determine exactly what needs
 to be installed. It is very common to have to adjust the one-line command below for your system by removing failing packages and locating alternates
 (usually provided under a different name).
 
@@ -153,7 +153,7 @@ download provides a single source for all of FreeCAD's library dependencies.
 ### Mac OS
 
 Mac OS does not have a built-in package management system, but it is possible to use [Homebrew](https://brew.sh) to install FreeCAD's dependencies. Note however that
-this can be a very challenging process because Homebrew often updates libraries to new versions before downstream packages are updated to accomodate them:
+this can be a very challenging process because Homebrew often updates libraries to new versions before downstream packages are updated to accommodate them:
 it is usually necessary for a developer to manually extract an old dependency for installation as a custom "tap".
 
 An alternative is to use Conda to create your Mac OS build system. Documentation of this process is a [work-in-progress by several users on the FreeCAD Forum](https://forum.freecad.org/viewtopic.php?t=70038).

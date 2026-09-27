@@ -9,7 +9,7 @@ weight: 1
 
 - [Qt](https://www.qt.io/): a cross platform development framework
 
-- [OpenCascade](https://www.opencascade.com/open-cascade-technology/): a geometry library
+- [OpenCascade](https://occt3d.com/open-cascade-technology/): a geometry library
 
 - [Coin3d](https://www.coin3d.org/): a [scenegraph](https://wiki.freecad.org/Scenegraph) manager based on OpenInventor that handles drawing in the 3d window.
 
