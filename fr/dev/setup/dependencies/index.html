@@ -94,7 +94,7 @@
   <meta property="og:locale" content="fr_FR">
   <meta property="og:type" content="article">
     <meta property="article:section" content="dev">
-    <meta property="article:modified_time" content="2026-05-05T15:27:52+02:00">
+    <meta property="article:modified_time" content="2026-09-27T22:32:13+02:00">
 </head><body
     class="single type-dev kind-page "
     id="top">
@@ -339,15 +339,15 @@
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
 </h2><p>Like most software projects, FreeCAD depends on many other packages. Most critical among these is <a
-  href="https://www.opencascade.com/"
-  class="external-link" target="_blank" rel="external noreferrer nofollow">OpenCASCADE<svg
+  href="https://occt3d.com/open-cascade-technology/"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Open CASCADE Technology<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/external.svg#external"></use>
   </svg></a>,
 the actual CAD kernel that FreeCAD is built upon. Of course, OpenCASCADE itself has its own dependencies. Many of which have <em>their</em> own
-dependencies, etc. The dependency graph quickly become overwhelming if you have to manually install each one. This is where package managers come
+dependencies, etc. The dependency graph quickly becomes overwhelming if you have to manually install each one. This is where package managers come
 in. Depending on what platform you are developing on, you have a variety of tools at your disposal to resolve these dependencies. A brief overview
 of the most common ones is included below. The main purpose of this document is to highlight the primary dependencies and describe what they do and
 why FreeCAD needs them.</p>
@@ -367,7 +367,7 @@ why FreeCAD needs them.</p>
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/external.svg#external"></use>
-  </svg></a> at the time of its expected release, Ubuntu 24.04 LTS. This ties FreeCAD development to the C++23 standard, Python 3.11 and later (we plan to swtich to 3.12 or later once Blender updates their dependencies in mid-2026), Qt 6.4, and the versions of the required libraries available on that system. Note that Qt does not support PySide6 <code>pip</code> installation on this system, so use of a PPA is required for that dependency. The decision to stop support for Qt5 was <a
+  </svg></a> at the time of its expected release, Ubuntu 24.04 LTS. This ties FreeCAD development to the C++23 standard, Python 3.11 and later (we plan to switch to 3.12 or later once Blender updates their dependencies in mid-2026), Qt 6.4, and the versions of the required libraries available on that system. Note that Qt does not support PySide6 <code>pip</code> installation on this system, so use of a PPA is required for that dependency. The decision to stop support for Qt5 was <a
   href="https://forum.freecad.org/viewtopic.php?t=102292"
   class="external-link" target="_blank" rel="external noreferrer nofollow">announced 5 January 2026<svg
     class="icon external"
@@ -482,7 +482,7 @@ by the OpenCASCADE viewer.</p>
 be widely useful across a broad spectrum of applications, and to work well with the C++ Standard Library. The Boost license is designed
 to encourage their use in both open source and closed source projects. Over time, many Boost libraries end up incorporated into the C++ standard
 library itself. As this happens, developers should work to transition their code to the <code>std::</code> variant rather than the <code>boost::</code> variant. Note
-that exception is made for <code>boost::regex</code>, which as of this writing is still considerably faster than its <code>std::regex</code> counterpart.</p>
+that an exception is made for <code>boost::regex</code>, which as of this writing is still considerably faster than its <code>std::regex</code> counterpart.</p>
 <h3
   id="xerces-c">Xerces-C++<a class="heading-anchor"
      href="#xerces-c"
@@ -557,7 +557,7 @@ also automatically installs all of <em>its</em> dependencies, eliminating the ne
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
 </h3><p>As a general rule in Linux, you should use your system&rsquo;s package manager to install dependencies, including Python libraries, rather than using <code>pip</code>.
-Unfortunately, different distributions use different names for the various packages, so it is sometime challenging to determine exactly what needs
+Unfortunately, different distributions use different names for the various packages, so it is sometimes challenging to determine exactly what needs
 to be installed. It is very common to have to adjust the one-line command below for your system by removing failing packages and locating alternates
 (usually provided under a different name).</p>
 <p>A single command to install the dependencies on 22.04.3 LTS Ubuntu-based systems:</p>
@@ -606,7 +606,7 @@ download provides a single source for all of FreeCAD&rsquo;s library dependencie
     focusable="false">
     <use href="/Website/svg/external.svg#external"></use>
   </svg></a> to install FreeCAD&rsquo;s dependencies. Note however that
-this can be a very challenging process because Homebrew often updates libraries to new versions before downstream packages are updated to accomodate them:
+this can be a very challenging process because Homebrew often updates libraries to new versions before downstream packages are updated to accommodate them:
 it is usually necessary for a developer to manually extract an old dependency for installation as a custom &ldquo;tap&rdquo;.</p>
 <p>An alternative is to use Conda to create your Mac OS build system. Documentation of this process is a <a
   href="https://forum.freecad.org/viewtopic.php?t=70038"
@@ -858,9 +858,9 @@ it is usually necessary for a developer to manually extract an old dependency fo
   </svg></a>
 </span>
 <span>
-    Modified: 2026-05-05
+    Modified: 2026-09-27
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/0ecf4c13f446aea52a7486c8503f448103f5706d">0ecf4c13f4<svg
+      Commit: <a href="https://github.com/freecad/website/commit/1813dc9e4823e2f50a039f61d134454f19d477a9">1813dc9e48<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">
