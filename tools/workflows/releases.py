@@ -37,7 +37,7 @@ MAX_RETRIES: int = 3
 
 SKIPPED_TAGS: set[str] = {"weeklies"}
 PLATFORMS: tuple[str] = ("windows", "linux", "mac")
-IGNORED_ASSETS: tuple[str] = (".txt", ".zsync", ".pdf")
+IGNORED_ASSETS: tuple[str] = ("source", ".txt", ".zsync", ".pdf")
 WINDOWS_PLATFORM: tuple[str] = ("win", "setup", "installer")
 MAC_PLATFORM: tuple[str] = ("mac", "osx")
 ARM_ARCH: tuple[str] = ("aarch64", "arm64")
@@ -207,9 +207,6 @@ def classify_asset(asset: dict[str, Any]) -> tuple[str, str, str] | None:
 
     name = asset["name"].lower()
 
-    if name.endswith(".tar.gz") and "source" in name:
-        return "source", "", ""
-
     if any(t in name for t in WINDOWS_PLATFORM):
         platform = "windows"
     elif "linux" in name or name.endswith(".appimage"):
@@ -265,10 +262,6 @@ def build_release(
     if existing_release:
         existing = existing_release.get("assets", {})
 
-        source = existing.get("source")
-        if source:
-            existing_assets[source["url"]] = source
-
         for platform in PLATFORMS:
             for arch_assets in existing.get(platform, {}).values():
                 for asset in arch_assets.values():
@@ -278,7 +271,7 @@ def build_release(
 
         filename: str = raw_asset["name"]
 
-        if filename.endswith(IGNORED_ASSETS):
+        if any(ignored in filename.lower() for ignored in IGNORED_ASSETS):
             continue
 
         asset_class = classify_asset(raw_asset)
@@ -290,10 +283,6 @@ def build_release(
         asset = build_asset(raw_asset, existing_assets)
 
         platform, arch, package = asset_class
-
-        if platform == "source":
-            assets["source"] = asset
-            continue
 
         assets.setdefault(platform, {})
         assets[platform].setdefault(arch, {})
