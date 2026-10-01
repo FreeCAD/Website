@@ -1,0 +1,90 @@
+name: Preview build
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths-ignore:
+      - "README.md"
+      - "LICENSE"
+      - "CODE_OF_CONDUCT.md"
+      - "CONTRIBUTING.md"
+      - ".editorconfig"
+      - ".gitignore"
+      - ".vscode/settings.json"
+      - ".github/ISSUE_TEMPLATE/**"
+      - ".github/PULL_REQUEST_TEMPLATE/**"
+      - ".github/pull_request_template.md"
+      - ".github/labeler.yml"
+      - "notes/**"
+      - "tools/**"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: preview-build-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.160.0
+      HUGO_ENVIRONMENT: production
+      TZ: Europe/Berlin
+
+    steps:
+      - name: Checkout pull request
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          submodules: recursive
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Install Hugo
+        env:
+          RUNNER_ARCH: ${{ runner.arch }}
+        run: |
+          case "$RUNNER_ARCH" in
+            X64) hugo_arch=amd64 ;;
+            ARM64) hugo_arch=arm64 ;;
+            *) echo "Unsupported runner architecture: $RUNNER_ARCH" >&2; exit 1 ;;
+          esac
+
+          curl --fail --location --silent --show-error \
+            --output "${RUNNER_TEMP}/hugo.tar.gz" \
+            "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-${hugo_arch}.tar.gz"
+          mkdir -p "${RUNNER_TEMP}/hugo/bin"
+          tar -C "${RUNNER_TEMP}/hugo/bin" -xf "${RUNNER_TEMP}/hugo.tar.gz" hugo
+          echo "${RUNNER_TEMP}/hugo/bin" >> "$GITHUB_PATH"
+
+      - name: Set preview URL
+        env:
+          CONFIGURED_BASE_URL: ${{ vars.PREVIEW_BASE_URL }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPOSITORY: ${{ github.repository }}
+          REPOSITORY_OWNER: ${{ github.repository_owner }}
+        run: |
+          repository_name="${REPOSITORY#*/}"
+          base_url="${CONFIGURED_BASE_URL:-https://${REPOSITORY_OWNER}.github.io/${repository_name}/}"
+          echo "PREVIEW_URL=${base_url%/}/pr-${PR_NUMBER}/" >> "$GITHUB_ENV"
+
+      - name: Build preview
+        run: |
+          hugo \
+            --gc \
+            --minify \
+            --enableGitInfo \
+            --environment "$HUGO_ENVIRONMENT" \
+            --baseURL "$PREVIEW_URL" \
+            --destination "${RUNNER_TEMP}/preview-site" \
+            --cacheDir "${RUNNER_TEMP}/hugo-cache"
+
+      - name: Upload preview artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: preview-${{ github.event.pull_request.number }}-${{ github.event.pull_request.head.sha }}
+          path: ${{ runner.temp }}/preview-site
+          if-no-files-found: error
+          retention-days: 3
