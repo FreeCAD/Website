@@ -177,11 +177,16 @@ cascade:
     target:
       path: /dev/**
 
+mediaTypes:
+  text/nginx:
+    suffixes: nginx
+
 outputs:
   home:
     - html
     - cms_config
     - rss
+    - redirects
   section:
     - html
   taxonomy:
@@ -193,9 +198,16 @@ outputFormats:
   cms_config:
     baseName: cms-config
     mediaType: application/yaml
-    isHTML: false
     isPlainText: true
     notAlternative: true
+  redirects:
+    baseName: .nginx/301
+    mediaType: text/nginx
+    rel: nginx
+    isPlainText: true
+    notAlternative: true
+    root: true
+    ugly: true
 
 # Keep for local dev. Production build uses --minify.
 minify:
@@ -272,3 +284,5 @@ caches:
     maxAge: 24h
   images:
     dir: :cacheDir/images
+
+disableAliases: true

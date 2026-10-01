@@ -1,6 +1,7 @@
 ---
 title: Professional Network
 description: The community of professional users shaping the future of FreeCAD
+aliases: ["/professional-network"]
 weight: 4
 draft: true
 icon: fpn
