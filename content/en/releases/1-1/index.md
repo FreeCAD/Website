@@ -107,6 +107,6 @@ This release focuses on making everyday modeling more reliable, faster, and more
 
 And much more, thanks to hundreds of contributions from the community around the world.
 
-**Want to be part of the journey?** Join the [community](/community) and [help shape](/donate) the future of FreeCAD.
+**Want to be part of the journey?** Join the [community](community) and [help shape](donate) the future of FreeCAD.
 
 As always — have fun and keep *FreeCADing*!
