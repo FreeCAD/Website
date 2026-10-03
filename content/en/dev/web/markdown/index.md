@@ -162,7 +162,7 @@ For more advanced functionality, use Hugo's built-in [Figure shortcode](https://
 ```text {file=Markdown}
 [Hugo](https://gohugo.io)
 
-[News Section](/news)
+[News Section](news)
 
 [Heading ID](#custom-id)
 ```
@@ -171,7 +171,7 @@ For more advanced functionality, use Hugo's built-in [Figure shortcode](https://
 
 [Hugo](https://gohugo.io)
 
-[News Section](/news)
+[News Section](news)
 
 [Heading ID](#custom-id)
 
