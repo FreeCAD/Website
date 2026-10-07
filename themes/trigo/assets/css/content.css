@@ -472,19 +472,19 @@ figure .internal-tooltip {
 }
 
 .card-color {
-  --card-hue: calc(120deg + var(--hue) * 1.75deg);
+  --card-hue: calc(var(--accent-hue) + (var(--hue) - 30) * 1deg);
   background: linear-gradient(
     var(--angle),
-    hsl(var(--card-hue), 50%, 75%) 0%,
-    hsl(calc(var(--card-hue) + 30deg), 50%, 75%) 100%
+    hsl(var(--card-hue) 50% 75%),
+    hsl(calc(var(--card-hue) + 30deg) 50% 75%)
   );
 }
 
 .dark .card-color {
   background: linear-gradient(
     var(--angle),
-    hsl(var(--card-hue), 50%, 25%) 0%,
-    hsl(calc(var(--card-hue) + 30deg), 50%, 25%) 100%
+    hsl(var(--card-hue) 50% 25%),
+    hsl(calc(var(--card-hue) + 30deg) 50% 25%)
   );
 }
 

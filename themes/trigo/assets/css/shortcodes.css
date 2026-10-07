@@ -211,13 +211,13 @@ input:checked + .branch :is(+ ul, .branch .open) {
   display: block;
   height: var(--m);
   width: var(--m);
-  border: var(--line) solid var(--entry);
+  border: var(--line) solid var(--tone);
   border-radius: 100%;
   transition: var(--transition);
 }
 
 .carousel .selected a {
-  background: var(--entry);
+  background: var(--backdrop);
   transform: scale(1.5);
 }
 
@@ -311,7 +311,7 @@ input:checked + .branch :is(+ ul, .branch .open) {
   left: 50%;
   transform: translateX(-50%);
   width: var(--line);
-  background: var(--theme);
+  background: var(--backdrop);
   z-index: 4;
   pointer-events: none;
 }
@@ -325,7 +325,7 @@ input:checked + .branch :is(+ ul, .branch .open) {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--theme);
+  color: var(--backdrop);
   touch-action: none;
   pointer-events: none;
   transition: transform 0.2s ease;

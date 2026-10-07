@@ -22,51 +22,53 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
-  color: var(--secondary);
   margin: 0;
   overflow-x: clip;
+  line-height: 1.5;
+  text-wrap: auto;
+  font-family: var(--font-sans);
+  color: var(--secondary);
 }
 
 main {
   white-space: normal;
   background: var(--theme);
   overflow-wrap: break-word;
-  --section-hue: calc(150deg + var(--hue) * 1.75deg);
+  --section-hue: calc(var(--accent-hue) + var(--hue) * 1deg);
   --section:
     radial-gradient(
-      80% 70% at 105% 5%,
-      hsl(var(--section-hue) 80% 75% / 35%),
+      75% 75% at 125% 0%,
+      hsl(var(--section-hue) 75% 90%),
       transparent
     ),
     radial-gradient(
-      70% 60% at -5% 95%,
-      hsl(calc(var(--section-hue) - 30deg) 60% 75% / 25%),
+      75% 75% at -25% 100%,
+      hsl(calc(var(--section-hue) - 15deg) 75% 90%),
       transparent
     ),
     linear-gradient(
       var(--angle),
-      hsl(var(--section-hue) 40% 95%),
-      hsl(var(--section-hue) 20% 90%)
+      hsl(calc(var(--section-hue) - 30deg) 50% 90%),
+      hsl(calc(var(--section-hue) + 30deg) 50% 90%)
     );
 }
 
 .dark main {
   --section:
     radial-gradient(
-      80% 70% at 105% 5%,
-      hsl(var(--section-hue) 80% 25% / 35%),
+      75% 75% at 125% 0%,
+      hsl(var(--section-hue) 75% 10%),
       transparent
     ),
     radial-gradient(
-      70% 60% at -5% 95%,
-      hsl(calc(var(--section-hue) - 30deg) 60% 25% / 25%),
+      75% 75% at -25% 100%,
+      hsl(calc(var(--section-hue) - 15deg) 75% 10%),
       transparent
     ),
     linear-gradient(
       var(--angle),
-      hsl(var(--section-hue) 40% 5%),
-      hsl(var(--section-hue) 20% 10%)
+      hsl(calc(var(--section-hue) - 30deg) 50% 10%),
+      hsl(calc(var(--section-hue) + 30deg) 50% 10%)
     );
 }
 
