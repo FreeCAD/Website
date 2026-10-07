@@ -20,20 +20,8 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   gap: var(--gap);
   text-align: center;
   position: relative;
-  background: linear-gradient(
-    var(--angle),
-    hsl(var(--section-hue) 75% 75% / 25%),
-    hsl(calc(var(--section-hue) + 60deg) 75% 75% / 25%)
-  );
+  background: var(--section);
   transition: var(--transition);
-}
-
-.dark .hero {
-  background: linear-gradient(
-    var(--angle),
-    hsl(var(--section-hue) 75% 25% / 25%),
-    hsl(calc(var(--section-hue) + 60deg) 75% 25% / 25%)
-  );
 }
 
 .hero-column {

@@ -15,7 +15,7 @@ This release focuses on making everyday modeling more reliable, faster, and more
 {{< button url="https://www.youtube.com/watch?v=a9biWv_M8p8" label="Watch the release video" icon="youtube_fill" >}}
 
 
-{{< block title="Your refined user interface and experience" css_class="pastel1" >}}
+{{< block title="Your refined user interface and experience" css_class="accent-1" >}}
 
 {{< group >}}
 
@@ -69,7 +69,7 @@ This release focuses on making everyday modeling more reliable, faster, and more
 {{< /block >}}
 
 
-{{< block title="CAM, FEM and TechDraw flow" css_class="pastel2" >}}
+{{< block title="CAM, FEM and TechDraw flow" css_class="accent-2" >}}
 
 - New toolbit library and editor, better multi-pass support and post-processors introduced in CAM.
 - FEM results now support animations, electrostatic analyses, and glyph filters.
@@ -91,7 +91,7 @@ This release focuses on making everyday modeling more reliable, faster, and more
 {{< /block >}}
 
 
-{{< block title="General performance and stability" css_class="pastel3" >}}
+{{< block title="General performance and stability" css_class="accent-3" >}}
 
 - Continued improvements to topological naming mitigation for greater model stability.
 - Better Wayland support for Linux users.

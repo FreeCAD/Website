@@ -23,16 +23,13 @@ With many quality of life improvements, hundreds of bug fixes, and updated libra
 {{< /block >}}
 
 
-{{< block css_class="pastel4" >}}
+{{< block css_class="accent-1" >}}
 
 {{< card path="examples" >}}
 
 {{< group >}}
 
 ## Examples and Parts Library
-{class="pastel4"}
-
-{{< marker label="Assets" icon="folder_open" >}}
 
 The FreeCAD community provides a wealth of file examples, part libraries, templates and various assets.
 
@@ -41,14 +38,11 @@ The FreeCAD community provides a wealth of file examples, part libraries, templa
 {{< /block >}}
 
 
-{{< block css_class="pastel6" >}}
+{{< block css_class="accent-2" >}}
 
 {{< group >}}
 
 ## Additional modules and macros
-{class="pastel6"}
-
-{{< marker label="Addons" icon="puzzle" >}}
 
 The FreeCAD community provides many additional features, workbenches, macros, and interface themes.
 They can easily be installed directly from within FreeCAD using the Addon Manager.
@@ -60,16 +54,13 @@ They can easily be installed directly from within FreeCAD using the Addon Manage
 {{< /block >}}
 
 
-{{< block css_class="pastel5" >}}
+{{< block css_class="accent-3" >}}
 
 {{< card path="unstable" >}}
 
 {{< group >}}
 
 ## Go experimental
-{class="pastel5"}
-
-{{< marker label="Unstable" icon="test" >}}
 
 FreeCAD evolves every day. Test the very latest changes, fixes, and features.
 

@@ -16,11 +16,7 @@ This release makes FreeCAD more responsive on large models, makes Part Design an
 {{< button url="https://www.youtube.com/watch?v=a9biWv_M8p8" label="Watch the release video" icon="youtube_fill" >}}
 
 
-{{< block title="A core that keeps up with you" css_class="pastel1" >}}
-
-{{< group >}}
-
-{{< carousel "multidoc.webp" "expression.webp" "mass.webp" >}}
+{{< block title="A core that keeps up with you" css_class="gradient" >}}
 
 - Edit multiple documents at the same time, each with its own tasks and undo/redo stack, so two sketches can be open simultaneously.
 - Recomputes run in the background and are fine-grained, keeping the interface responsive even on large models.
@@ -28,12 +24,12 @@ This release makes FreeCAD more responsive on large models, makes Part Design an
 - New ==Mass Properties== command for volume, mass, density, surface area, center of gravity and inertia, with material-aware results and custom reference frames.
 - Box selection by dragging is built into the common navigation styles.
 
-{{< /group >}}
+{{< carousel "multidoc.webp" "expression.webp" "mass.webp" >}}
 
 {{< /block >}}
 
 
-{{< block title="Part Design, more versatile than ever" css_class="gradient" >}}
+{{< block title="Part Design, more versatile than ever" css_class="accent-5" >}}
 
 {{< carousel "defeaturing.webp" "thread.webp" "pattern.webp" "pattern-ovp.webp" "offset.webp" >}}
 
@@ -46,9 +42,11 @@ This release makes FreeCAD more responsive on large models, makes Part Design an
 {{< /block >}}
 
 
-{{< block title="Sketch smarter" css_class="dots" >}}
+{{< block css_class="dots" >}}
 
 {{< group >}}
+
+## Sketch smarter
 
 {{< compare "faces-before.webp" "faces-after.webp" >}}
 
@@ -70,7 +68,7 @@ This release makes FreeCAD more responsive on large models, makes Part Design an
 {{< /block >}}
 
 
-{{< block title="Assembly in motion" css_class="pastel2" >}}
+{{< block title="Assembly in motion" css_class="accent-3" >}}
 
 - ==Snapshots== save and restore the placement and visibility of the whole assembly.
 - A ==Rigid Group== joint fixes any number of components relative to each other.
@@ -81,19 +79,19 @@ This release makes FreeCAD more responsive on large models, makes Part Design an
 {{< /block >}}
 
 
-{{< block title="CAM goes multi-axis" css_class="grid" >}}
-
-{{< carousel "multiaxis.webp" "rotary.webp" >}}
+{{< block title="CAM goes multi-axis" css_class="accent-1" >}}
 
 - 3+2 indexed machining on tilted work planes, with new ==Planar Surface== and ==Rotary Surface== operations for 3D and 4th-axis surfacing.
 - A machine library and editor with toolheads, rotary axes and limits, and a new machine-based post processing pipeline, plus generic and Heidenhain Klartext posts.
 - A feeds and speeds helper calculating from material and tool geometry within the machine's limits.
 - A redesigned Job panel, the simulator as a proper window inside the main interface, and posting only the selected operations.
 
+{{< carousel "multiaxis.webp" "rotary.webp" >}}
+
 {{< /block >}}
 
 
-{{< block title="FEM and TechDraw sharpen up" css_class="pastel3" >}}
+{{< block title="FEM and TechDraw sharpen up" css_class="grid" >}}
 
 {{< group >}}
 
@@ -117,7 +115,7 @@ This release makes FreeCAD more responsive on large models, makes Part Design an
 {{< /block >}}
 
 
-{{< block title="Build with BIM and Draft" css_class="pastel4" >}}
+{{< block title="Build with BIM and Draft" css_class="accent-2" >}}
 
 {{< carousel "trimex.webp" "locking.webp" >}}
 
@@ -129,7 +127,7 @@ This release makes FreeCAD more responsive on large models, makes Part Design an
 {{< /block >}}
 
 
-{{< block title="Under the hood" css_class="section" >}}
+{{< block title="Under the hood" css_class="accent-4" >}}
 
 - Addons can use the toponaming API introduced internally in 1.0, as well as transparent previews.
 - The Addon Manager uses git for very large addons, so updating the Parts Library only fetches what changed.

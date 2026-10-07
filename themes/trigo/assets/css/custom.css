@@ -519,7 +519,7 @@ html.js #donation-form .custom-amount {
   display: flex;
   flex-direction: column;
   gap: var(--gap);
-  background: var(--section);
+  background: var(--muted);
 }
 
 .sponsors-tier {
@@ -614,12 +614,39 @@ a.sponsor-entry:hover {
   color: var(--accent);
 }
 
-:not(h1, h2, h3, h4, h5, h6).accent {
+.button.accent {
+  color: var(--entry);
   background: linear-gradient(
-    var(--gradient-angle),
-    color-mix(in srgb, var(--accent) 25%, var(--header) 75%),
-    color-mix(in srgb, var(--accent-hover) 50%, var(--header) 50%)
+    var(--angle),
+    color-mix(in srgb, var(--accent) 100%, var(--header)),
+    color-mix(in srgb, var(--accent) 75%, var(--header))
   );
+}
+
+.button.accent:hover {
+  color: var(--header);
+  background: linear-gradient(
+    var(--angle),
+    color-mix(in srgb, var(--accent-hover) 100%, var(--header)),
+    color-mix(in srgb, var(--accent-hover) 75%, var(--header))
+  );
+}
+
+.accent.active:focus-visible {
+  outline: var(--outline-focus);
+}
+
+:not(h1, h2, h3, h4, h5, h6).accent {
+  background:
+    radial-gradient(
+      circle at 50% 25%,
+      color-mix(in srgb, var(--accent) 25%, transparent),
+      transparent 50%),
+    linear-gradient(
+      var(--angle),
+      color-mix(in srgb, var(--accent-hover) 20%, transparent),
+      color-mix(in srgb, var(--accent-hover) 10%, transparent)
+      );
 }
 
 :is(h1, h2, h3).accent, .accent > :is(h1, h2, h3) {
@@ -634,19 +661,20 @@ a.sponsor-entry:hover {
   color: transparent;
 }
 
-.pastel1 { --hue: 15; } /* Peach */
-.pastel2 { --hue: 60; } /* Apricot */
-.pastel3 { --hue: 120; } /* Sage */
-.pastel4 { --hue: 180; } /* Water */
-.pastel5 { --hue: 270; } /* Lavender */
-.pastel6 { --hue: 330; } /* Rose */
+.accent-1 { --hue: 0deg; }
+.accent-2 { --hue: 30deg; }
+.accent-3 { --hue: 60deg; }
+.accent-4 { --hue: 90deg; }
+.accent-5 { --hue: 120deg; }
 
-[class*="pastel"] {
-  --bg1: oklch(90% 7.5% var(--hue));
-  --bg2: oklch(95% 2.5% var(--hue));
-  --bg3: oklch(85% 5% var(--hue));
-  --fg1: oklch(40% 30% var(--hue));
-  --fg2: oklch(60% 15% var(--hue));
+
+[class*="accent-"] {
+  --custom-hue: calc(var(--accent-hue) + var(--hue));
+  --bg1: oklch(90% 15% var(--custom-hue));
+  --bg2: oklch(95% 5% var(--custom-hue));
+  --bg3: oklch(85% 10% var(--custom-hue));
+  --fg1: oklch(40% 30% var(--custom-hue));
+  --fg2: oklch(60% 15% var(--custom-hue));
   background: linear-gradient(
     var(--angle),
     var(--bg1),
@@ -655,16 +683,16 @@ a.sponsor-entry:hover {
   );
 }
 
-.dark [class*="pastel"] {
-  --bg1: oklch(20% 7.5% var(--hue));
-  --bg2: oklch(15% 2.5% var(--hue));
-  --bg3: oklch(25% 5% var(--hue));
-  --fg1: oklch(60% 30% var(--hue));
-  --fg2: oklch(80% 15% var(--hue));
+.dark [class*="accent-"] {
+  --bg1: oklch(20% 15% var(--custom-hue));
+  --bg2: oklch(15% 5% var(--custom-hue));
+  --bg3: oklch(25% 10% var(--custom-hue));
+  --fg1: oklch(60% 30% var(--custom-hue));
+  --fg2: oklch(80% 15% var(--custom-hue));
 }
 
-[class*="pastel"] > :is(h1, h2, h3),
-[class*="pastel"]:is(h1, h2, h3) {
+[class*="accent-"] > :is(h1, h2, h3),
+[class*="accent-"]:is(h1, h2, h3) {
   background: linear-gradient(
     var(--angle),
     var(--fg1),

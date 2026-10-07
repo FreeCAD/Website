@@ -25,7 +25,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
   {{- $class := cond (.IsNamedParams) (.Get "css_class") (.Get 1) -}}
 
-  {{- $classes := slice "group" -}}
+  {{- $classes := slice "group-shortcode" -}}
   {{- with $class -}}
     {{- $classes = $classes | append . -}}
   {{- end -}}
