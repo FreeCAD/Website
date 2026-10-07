@@ -67,7 +67,7 @@ This will be hidden by default.
 | Position | Argument| Type | Default | Options | Example value |
 | --- | --- | --- | --- | --- | --- |
 | 0 | summary | string | "Details" | | "Click me" |
-| 1 | open | bool | `true` | | `false` |
+| 1 | open | boolean | `true` | | `false` |
 | 2 | name | string | *optional* | | "name" |
 | 3 | title | string | *optional* | | "title" |
 | 4 | id | string | *optional* | | "id" |
@@ -202,7 +202,7 @@ Trigo shortcode to display a filetree list with inner content/branches/leaves an
   {{< branch label="content" >}}
     {{< leaf label="_index.md" >}}
     {{< branch label="docs" state="closed" >}}
-      {{< leaf label="_index.md" css_class="pastel1" >}}
+      {{< leaf label="_index.md" css_class="accent" >}}
       {{< leaf label="introduction.md" >}}
       {{< leaf label="introduction.fr.md" >}}
     {{< /branch >}}
@@ -217,7 +217,7 @@ Trigo shortcode to display a filetree list with inner content/branches/leaves an
   {{< branch label="content" >}}
     {{< leaf label="_index.md" >}}
     {{< branch label="docs" state="closed" >}}
-      {{< leaf label="_index.md" css_class="pastel1" >}}
+      {{< leaf label="_index.md" css_class="accent" >}}
       {{< leaf label="introduction.md" >}}
       {{< leaf label="introduction.fr.md" >}}
     {{< /branch >}}
@@ -346,7 +346,7 @@ The path is relative to the current page bundle. To use resources in the `static
 Trigo shortcode to add a link as a clickable button with optional icon and label.
 
 ```html {file="markdown"}
-{{</* button url="/news" label="Button label" icon="time" */>}}
+{{</* button url="/news" label="Button label" icon="time"  */>}}
 ```
 
 <u>How it renders:</u>
@@ -360,7 +360,7 @@ Trigo shortcode to add a link as a clickable button with optional icon and label
 | 0 | url | string | **required** | | "/news" |
 | 1 | label | string | *optional* | | "Button label" |
 | 2 | icon | string | *optional* | | "heart" |
-| 3 | css_class | string | *optional* | custom CSS classes | "button-accent" |
+| 3 | css_class | string | *optional* | custom CSS classes | "accent" |
 
 
 ## Marker
@@ -518,46 +518,26 @@ For more information, see [Hugo's Vimeo shortcode](https://gohugo.io/shortcodes/
 
 ## Card
 
-Trigo shortcode to display an internal page card.
+Trigo shortcode to display one or more internal RegularPage, Section, or specific taxonomy Term cards. For Sections or Terms with a `number` specified, their respective children Pages are used instead of the list Page.
+If not nested in another shortcode, a full-width layout block is rendered around the cards.
 
 ```html {file="markdown"}
-{{</* card url="thanks" */>}}
+{{</* card path="dev" number=3 css_class="gradient" */>}}
 ```
 
 <u>How it renders:</u>
 
-{{< card url="thanks" >}}
+{{< card path="dev" number=3 css_class="gradient" >}}
 
 <u>`card` arguments:</u>
 
 | Position | Argument| Type | Default | Options | Example value |
 | --- | --- | --- | --- | --- | --- |
-| 0 | url | string | | | "thanks" |
-
-
-## Collection
-
-Trigo shortcode to display a full-width layout with a collection of pages as cards. These pages come from a section, a specific taxonomy term or are part of a taxonomy.
-
-```html {file="markdown"}
-{{</* collection collection="dev" first=3 css_class="gradient" */>}}
-```
-
-<u>How it renders:</u>
-
-{{< collection collection="dev" first=3 css_class="gradient" >}}
-
-<u>`collection` arguments:</u>
-
-| Position | Argument| Type | Default | Options | Example value |
-| --- | --- | --- | --- | --- | --- |
-| 0 | collection | string | | | "news" |
-| 1 | first | int | 0 | | 1 |
-| 2 | taxonomy | string | *optional* | | "category" |
-| 3 | term | string | *optional* | | "event" |
-| 4 | sort | string | *optional* | | "date" |
-| 5 | reverse | bool | `false` | | `true` |
-| 6 | css_class | string | *optional* | custom CSS classes | "gradient" |
+| 0 | path | string | **required** | | "news" |
+| 1 | number | int | *optional* | | 3 |
+| 2 | sort | string | *optional* | date, weight, title, linktitle, publishdate, lastmod, length | "date" |
+| 3 | reverse | boolean | `false` | | `true` |
+| 4 | css_class | string | *optional* | custom CSS classes | "gradient" |
 
 
 ## Block and group

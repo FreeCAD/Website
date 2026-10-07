@@ -6,29 +6,132 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 {{- /* Card shortcode:
 
-  @param {string} url – Internal page link or name to render card for.
+  - Render one or more internal page cards.
+  - Support comma-separated paths as a pages slice.
+  - Sections and terms without any number return their list page.
 
-  @return {HTML} Render page card.
+  @param {string} path – Path(s) or basename(s) of internal page(s), section(s), or taxonomy term(s) to render cards for.
+  @param {int} [number] – Optional pages number.
+  @param {string} [sort] – Optional sorting order (date, weight, title, linktitle, publishdate, lastmod, length).
+  @param {bool|string} [reverse] – Optional reverse sorting order.
+  @param {string} [css_class] – Optional CSS class for whole cards container.
 
-  @example {{< card url="thanks" >}}
-  @example {{< card thanks >}}
+  @return {HTML} Render one or more page cards.
+
+  @example {{< card path="news" number=3 sort="date" reverse=true >}}
+  @example {{< card news 3 date reverse >}}
+  @example {{< card path=thanks,help,welcome >}}
+  @example {{< card thanks,help,welcome >}}
 
 */ -}}
 
 
-{{- $url := cond (.IsNamedParams) (.Get "url") (.Get 0) -}}
+{{- $path := cond (.IsNamedParams) (.Get "path") (.Get 0) | default slice -}}
+{{- $number := cond (.IsNamedParams) (.Get "number") (.Get 1) | default 0 | int -}}
+{{- $sort := cond (.IsNamedParams) (.Get "sort") (.Get 2) | default "" | lower -}}
+{{- $reverse := cond (.IsNamedParams) (.Get "reverse") (.Get 3) | default false -}}
+{{- $class := cond (.IsNamedParams) (.Get "css_class") (.Get 4) | default "" -}}
 
-{{- $is_external := partialCached "utils/is_external.html" $url $url -}}
-
-{{- if not $is_external -}}
-
-  {{- $page := site.GetPage $url -}}
-  {{- $key := partialCached "utils/cache_key.html" $page $page -}}
-
-  <div class="card-shortcode">
-    {{- partialCached "main/card.html" $page $key -}}
-  </div>
+{{- if not $path -}}
+  {{- warnf "%q shortcode: 'path' argument missing: %s" .Name .Position -}}
 
 {{- else -}}
-  {{- warnf "%q shortcode: 'url' argument is unsupported external link on %s" .Name .Position -}}
+  {{- $pages := slice -}}
+  {{- if in $path "," -}}
+    {{- range (split $path ",") -}}
+      {{- with site.GetPage (strings.TrimSpace .) -}}
+        {{- $pages = $pages | append . -}}
+      {{- end -}}
+    {{- end -}}
+
+  {{- else -}}
+    {{- with site.GetPage (strings.TrimSpace $path) -}}
+      {{- $pages = $pages | append . -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- $valid_sorts := slice
+    "date"
+    "weight"
+    "title"
+    "linktitle"
+    "publishdate"
+    "lastmod"
+    "length"
+  -}}
+  {{- if and $sort (not (in $valid_sorts $sort)) -}}
+    {{- warnf "%q shortcode: unsupported 'sort' %q: %s; valid values: %s" .Name $sort .Position (delimit $valid_sorts ", ") -}}
+  {{- end -}}
+
+  {{- $cards := slice -}}
+  {{- range $pages -}}
+    {{- /* TODO: use .IsBranch in Hugo ≥0.163 */ -}}
+    {{- if and .IsSection (gt $number 0) -}}
+      {{- $cards = $cards | append .Pages -}}
+
+    {{- else if and (eq .Kind "term") (gt $number 0) -}}
+      {{- $cards = $cards | append .Pages -}}
+
+    {{- else if and (eq .Kind "taxonomy") (gt $number 0) -}}
+      {{- $cards = $cards | append .Pages -}}
+
+    {{- else -}}
+      {{- $cards = $cards | append . -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- if $cards -}}
+    {{- $cards = uniq $cards -}}
+
+    {{- if eq $sort "date" -}}
+      {{- $cards = $cards.ByDate -}}
+    {{- else if eq $sort "weight" -}}
+      {{- $cards = $cards.ByWeight -}}
+    {{- else if eq $sort "title" -}}
+      {{- $cards = $cards.ByTitle -}}
+    {{- else if eq $sort "linktitle" -}}
+      {{- $cards = $cards.ByLinkTitle -}}
+    {{- else if eq $sort "publishdate" -}}
+      {{- $cards = $cards.ByPublishDate -}}
+    {{- else if eq $sort "lastmod" -}}
+      {{- $cards = $cards.ByLastmod -}}
+    {{- else if eq $sort "length" -}}
+      {{- $cards = $cards.ByLength -}}
+    {{- end -}}
+
+    {{- if $reverse -}}
+      {{- $cards = $cards.Reverse -}}
+    {{- end -}}
+
+    {{- if gt $number 0 -}}
+      {{- $cards = first $number $cards -}}
+    {{- end -}}
+
+    {{- $classes := slice "card-list" "wide" -}}
+    {{- with $class -}}
+      {{- $classes = $classes | append . -}}
+    {{- end -}}
+
+    {{- if not .Parent -}}
+      <div class="{{ delimit $classes " " }}">
+        <div class="cards">
+          {{- range $cards -}}
+            {{- $key := partialCached "utils/cache_key.html" . . -}}
+            {{- partialCached "main/card.html" . $key -}}
+          {{- end -}}
+        </div>
+      </div>
+
+    {{- else -}}
+      <div class="cards">
+        {{- range $cards -}}
+          {{- $key := partialCached "utils/cache_key.html" . . -}}
+          {{- partialCached "main/card.html" . $key -}}
+        {{- end -}}
+      </div>
+    {{- end -}}
+
+  {{- else -}}
+    {{- warnf "%q shortcode: no pages found for %q: %s" .Name (delimit $path ", ") .Position -}}
+  {{- end -}}
 {{- end -}}

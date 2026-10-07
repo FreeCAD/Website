@@ -18,14 +18,14 @@ With many quality of life improvements, hundreds of bug fixes, and updated libra
 
 {{< /group >}}
 
-{{< collection "releases" 1 >}}
+{{< card path="releases" number=1 >}}
 
 {{< /block >}}
 
 
 {{< block css_class="pastel4" >}}
 
-{{< card url="examples" >}}
+{{< card path="examples" >}}
 
 {{< group >}}
 
@@ -55,14 +55,14 @@ They can easily be installed directly from within FreeCAD using the Addon Manage
 
 {{< /group >}}
 
-{{< card url="addons" >}}
+{{< card path="addons" >}}
 
 {{< /block >}}
 
 
 {{< block css_class="pastel5" >}}
 
-{{< card url="unstable" >}}
+{{< card path="unstable" >}}
 
 {{< group >}}
 

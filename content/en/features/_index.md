@@ -100,7 +100,7 @@ FreeCAD is made for everybody, by everybody. Developed and maintained by a commu
 
 {{< /group >}}
 
-{{< card url="community" >}}
+{{< card path="community" >}}
 
 {{< /block >}}
 
