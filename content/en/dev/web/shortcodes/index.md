@@ -435,22 +435,23 @@ The PDF file can also be located in the project directory and use the relative p
 
 ## Video
 
-Trigo shortcode to display a video with optional poster.
+Trigo shortcode to display a bundled or external video with optional poster and caption.
 
 ```html {file="markdown"}
-{{</* video src="video.mp4" poster="dir/3.webp" */>}}
+{{</* video src="moon.mp4" caption="[A Trip to the Moon (1902)](https://commons.wikimedia.org/wiki/File:Le_Voyage_dans_la_Lune_(1902).webm)" */>}}
 ```
 
 <u>How it renders:</u>
 
-{{< video src="video.mp4" poster="dir/3.webp" >}}
+{{< video src="moon.mp4" caption="[A Trip to the Moon (1902)](https://commons.wikimedia.org/wiki/File:Le_Voyage_dans_la_Lune_(1902).webm)" >}}
 
 <u>`video` arguments:</u>
 
 | Position | Argument| Type | Default | Options | Example value |
 | --- | --- | --- | --- | --- | --- |
 | 0 | src | string | **required** | | "path/to/video.mp4" |
-| 1 | poster | string | | | "poster.webp" |
+| 1 | poster | string | *optional* | | "path/to/poster.webp" |
+| 2 | caption | Markdown | *optional* | | "A video caption" |
 
 
 ## Peertube

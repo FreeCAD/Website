@@ -6,14 +6,14 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 {{- /* Video shortcode:
 
-  @param {string} src – Path to video resource (page bundle).
+  @param {string} src – Path to video resource (page bundle or external url).
   @param {string} [poster] – Optional poster image resource.
   @param {string} [caption] – Optional video caption.
 
   @return {HTML} Render video with optional poster and fallback text if video missing.
 
-  @example {{< video src="video.mp4" poster="cover.jpg" >}}
-  @example {{< video "video.mp4" "cover.jpg" >}}
+  @example {{< video src="path/to/video.mp4" poster="path/to/poster.webp" caption="A video caption" >}}
+  @example {{< video "path/to/video.mp4" "path/to/poster.webp" "A video caption" >}}
 
 */ -}}
 
@@ -75,7 +75,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
       </video>
 
       {{- with $caption -}}
-        <figcaption>{{ . }}</figcaption>
+        <figcaption>{{ . | strings.TrimSpace | $.Page.RenderString (dict "display" "block") }}</figcaption>
       {{- end -}}
     </figure>
 
