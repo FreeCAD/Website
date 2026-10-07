@@ -196,31 +196,24 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     height: calc(var(--width) * 1.5);
   }
 
-  #donation-form {
-    width: var(--width);
-  }
-
-  #donation-type {
+  #donation-type,
+  #donation-amount {
     grid-template-columns: none;
     grid-template-rows: repeat(2, 1fr);
-  }
-
-  #donation-amount {
-    grid-template-rows: calc(2fr + var(--gap)) 1fr;
   }
 
   #donation-amount .tiers {
     grid-template-columns: 1fr 1fr;
   }
 
-  #custom-amount-box,
-  #corporate-sponsor,
+  #donation-form .custom-amount,
   #currency-toggle {
-    grid-column: span 2;
+    grid-column: span 1;
   }
 
   #donation-payment {
-    flex-direction: column;
+    grid-template-columns: none;
+    grid-template-rows: 1fr;
   }
 
   .welcome {

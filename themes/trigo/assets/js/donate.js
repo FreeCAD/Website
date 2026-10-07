@@ -1,204 +1,84 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("donation-form");
-  const customInput = document.getElementById("custom-amount");
-  const currencySelect = document.getElementById("currency-toggle");
-  const donateButton = document.getElementById("donate-checkbox");
-  const customLabel = form.querySelector('label[for="custom-amount"]');
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('donation-form');
 
-  const tierGroups = {
-    "once": document.querySelector(".tiers.once"),
-    "monthly": document.querySelector(".tiers.monthly")
-  };
+  if (!form) return;
 
-  const getType = () =>
-    form.querySelector('input[name="donation-type"]:checked')?.value || "once";
+  const custom = form.querySelector('#custom-input');
+  const currency = form.querySelector('#currency-toggle');
+  const symbols = form.querySelectorAll('.currency-symbol');
+  const types = form.querySelectorAll('#donation-type input');
+  const tiers = form.querySelectorAll('.tiers input[type="radio"]');
 
-  const getTier = () =>
-    tierGroups[getType()].querySelector('input[name="amount"]:checked');
+  if (!custom) return;
 
   const getAmount = () => {
-    const tier = getTier();
-    if (tier) return Number(tier.value);
+    if (!custom.value || !custom.checkValidity()) return null;
 
-    if (getType() === "once") {
-      const val = customInput.value.trim();
-      const amount = Number(val);
-      if (val && Number.isInteger(amount) && amount >= 1) return amount;
-    }
+    const amount = Number(custom.value);
 
-    return null;
+    return Number.isSafeInteger(amount) ? amount : null;
   };
 
-  const updateDonateButton = () => {
-    const isOnce = getType() === "once";
-    const isValid = customInput.checkValidity();
-    const hasValidAmount = getAmount() !== null;
+  const updateTiers = () => {
+    const amount = getAmount();
+    const valid = amount !== null;
+    const isMonthly = form.querySelector('#monthly:checked') !== null;
+    const active = isMonthly ? '.tiers.monthly input[type="radio"]' : '.tiers.once input[type="radio"]';
 
-    donateButton.disabled = (isOnce && !isValid) || !hasValidAmount;
-  };
+    form.classList.toggle('custom-valid', valid);
 
-  const handleTierChange = () => {
-    if (getType() === "once") {
-      const selected = getTier();
-      customInput.value = selected ? selected.value : "";
-      document.getElementById("custom-amount-box").classList.remove("active");
-    }
-    updateDonateButton();
-  };
+    form.querySelectorAll(active).forEach(input => {
+      const min = Number(input.dataset.min);
+      const max = Number(input.dataset.max);
+      const selected = valid && (isMonthly ? amount >= min && amount <= max : amount === min);
 
-  const syncCustomToTier = () => {
-    if (getType() !== "once") return false;
-
-    const val = Number(customInput.value.trim());
-    const tiers = tierGroups["once"].querySelectorAll('input[name="amount"]');
-
-    let matched = false;
-
-    Array.from(tiers).forEach(radio => {
-      const tierValue = Number(radio.value);
-      const isMatch = Number.isInteger(val) && val === tierValue;
-      radio.checked = isMatch;
-      if (isMatch) matched = true;
+      input.checked = selected;
+      input.closest('label')?.classList.toggle('selected', selected);
     });
-
-    updateDonateButton();
-
-    return !matched;
   };
 
-  const handleCustomChange = () => {
-    const isCustom = syncCustomToTier();
-    document.getElementById("custom-amount-box").classList.toggle("active", isCustom);
-    updateDonateButton();
-  };
-
-  const updateCurrency = () => {
-    const symbol = currencySelect.value === "USD" ? "$" : "€";
-    Object.values(tierGroups).forEach(group => {
-      group.querySelectorAll("label").forEach(label => {
-        label.textContent = label.textContent.replace(/^[€$]/, symbol);
-      })
-    });
-    customLabel.textContent = symbol;
-  };
-
-  const handleTypeChange = () => {
-    const newType = getType()
-    const previousType = newType === "once" ? "monthly" : "once";
-    const previousAmount = tierGroups[previousType].querySelector('input[name="amount"]:checked')?.value;
-
-    // Reset amount selection
-    form.querySelectorAll('input[name="amount"]').forEach(radio => (radio.checked = false));
-
-    // Match tier in new selected donation type
-    const match = previousAmount && tierGroups[newType].querySelector(`input[value="${previousAmount}"]`);
-    const fallback = tierGroups[newType].querySelector('input[name="amount"][checked]');
-    (match || fallback)?.click();
-
-    // Sync or reset custom amount
-    if (newType === "once") {
-      const tier = getTier();
-      customInput.value = tier ? tier.value : "";
-      syncCustomToTier();
-    } else {
-      customInput.value = "";
-    }
-
-    // Reset donate checkbox
-    donateButton.checked = false;
-
-    updateCurrency();
-    updateDonateButton();
-  };
-
-  // Function to build URLs for each platform
-  const setPaymentUrl = (button, platform, type, amount, currency) => {
-    let url = button.getAttribute("formaction");
-
-    if (!url || !amount || !currency || !type) {
-      console.error("Missing required parameters for payment platform URL.");
-      return null;
-    }
-
-    const encodedAmount = encodeURIComponent(amount);
-    const encodedCurrency = encodeURIComponent(currency);
-    const encodedType = encodeURIComponent(type);
-
-    switch (platform.toLowerCase()) {
-      case "stripe":
-        url += ``;
-        break;
-
-      case "opencollective":
-        url += `?interval=${encodedType}&amount=${encodedAmount}`;
-        break;
-
-      case "github":
-        let githubType = type === "once" ? "one-time" : type;
-        url += `?frequency=${encodeURIComponent(githubType)}&amount=${encodedAmount}`;
-        break;
-
-      case "paypal":
-        url += ``;
-        break;
-
-      default:
-        console.warn(`No specific URL found for payment platform: ${platform}`);
-        break;
-    }
-
-    return url;
-  };
-
-  // Intercept payment button clicks
-  form.querySelectorAll('#donation-payment button[type="submit"]').forEach(button => {
-    button.addEventListener("click", e => {
-      if (!window.hasOwnProperty("fetch")) {
-        return;
-      }
-
-      e.preventDefault();
-
-      if (!donateButton.checked) {
-        alert("Please check 'Donate' to proceed.");
-        return;
-      }
-
-      const type = getType();
-      const amount = getAmount();
-      const currency = currencySelect.value;
-      const platform = button.id.replace(/^payment-/, '');
-
-      const url = setPaymentUrl(button, platform, type, amount, currency);
-      if (!url) return;
-
-      window.open(url, "_blank");
+  tiers.forEach(input => {
+    input.addEventListener('change', () => {
+      custom.value = input.value;
+      updateTiers();
     });
   });
 
-  // Event Listeners
-  customInput.addEventListener("input", handleCustomChange);
-  customInput.addEventListener("change", handleCustomChange);
+  custom.addEventListener('input', updateTiers);
 
-  currencySelect.addEventListener("change", () => {
-    updateCurrency();
-    updateDonateButton();
-  });
+  types.forEach(input => {
+    input.addEventListener('change', () => {
+      tiers.forEach(tier => {
+        tier.checked = false;
+        tier.closest('label')?.classList.remove('selected');
+      });
 
-  form.querySelectorAll('input[name="donation-type"]').forEach(input => {
-    input.addEventListener("change", () => {
-      handleTypeChange();
+      custom.value = '';
+      updateTiers();
     });
   });
 
-  form.querySelectorAll('input[name="amount"]').forEach(radio => {
-    radio.addEventListener("change", () => {
-      handleTierChange();
+  form.addEventListener('submit', event => {
+    const amount = getAmount();
+    const button = event.submitter;
+    const parameter = button?.dataset.amountParam;
+
+    if (!amount || !parameter) return;
+
+    const url = new URL(button.formAction, location.href);
+    url.searchParams.set(parameter, amount);
+    button.formAction = url;
+  });
+
+  currency?.addEventListener('change', () => {
+    const symbol = currency.selectedOptions[0]?.dataset.symbol;
+
+    if (!symbol) return;
+
+    symbols.forEach(element => {
+      element.textContent = symbol;
     });
   });
 
-  // Init on load
-  handleTypeChange();
-  updateCurrency();
-  updateDonateButton();
+  updateTiers();
 });

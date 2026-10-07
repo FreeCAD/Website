@@ -2,30 +2,10 @@
 title: Support the FreeCAD project
 linkTitle: Donate
 description: Donate once or sponsor monthly to make FreeCAD even more awesome!
-donate:
-  once:
-    label: One-time donation
-    messages:
-      default: Choose the one-time donation amount
-      choice: Make a one-time donation now
-      error: Please choose a natural number of at least 5
-  monthly:
-    label: Sponsor monthly
-    tiers:
-      - type: normal
-        message: Become a sponsor
-      - type: bronze
-        message: Become a Bronze sponsor
-      - type: silver
-        message: Become a Silver sponsor
-      - type: gold
-        message: Become a Gold sponsor
-    messages:
-      default: Choose the monthly sponsorship level
-  corporate_label: Corporate
 icon: heart
 icon_cms: favorite
 ---
+
 
 ### Donations Frequently Asked Questions
 
@@ -40,11 +20,13 @@ FreeCAD is run entirely by community members. All donations go to the non-profit
 
 {{< /details >}}
 
+
 {{< details summary="How is the money spent?" name="faq" >}}
 
 Check out the [FPA Bookkeeping](https://fpa.freecad.org/handbook/process/bookkeeping/overview.html) to see how the resources are allocated.
 
 {{< /details >}}
+
 
 {{< details summary="How to donate?" name="faq" >}}
 
@@ -56,6 +38,7 @@ For more details, visit [Accepting donations](https://fpa.freecad.org/handbook/p
 
 {{< /details >}}
 
+
 {{< details summary="Sponsorship Tiers" name="faq" id="tiers" >}}
 
 | Tier | Minimum amount per month | Feature |
@@ -65,8 +48,8 @@ For more details, visit [Accepting donations](https://fpa.freecad.org/handbook/p
 | **Silver** 🥈 | 100 EUR / 100 USD | Name or company name, link to website, and one-line description listed on this page. |
 | **Gold** 🥇 | 200 EUR / 200 USD | Name or company name, logo, link to website and custom description listed on this page. |
 
-
 {{< /details >}}
+
 
 {{< details summary="Other ways to support" name="faq" >}}
 

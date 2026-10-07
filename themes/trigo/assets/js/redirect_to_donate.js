@@ -9,12 +9,12 @@ Redirect to Donate page:
 */
 
 
-const DONATE_PAGE = '{{ with (site.GetPage "donate") }}{{ .RelPermalink }}{{ else }}#{{ end }}';
+const donate = '{{ with (site.GetPage "donate") }}{{ .RelPermalink }}{{ else }}#{{ end }}';
 
 document.querySelectorAll('.link-donate').forEach(link => {
   link.addEventListener('click', () => {
     setTimeout(() => {
-      window.location.assign(DONATE_PAGE);
+      window.location.assign(donate);
     }, 1500);
   });
 });

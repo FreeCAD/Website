@@ -9,12 +9,12 @@ Redirect to Thanks page:
 */
 
 
-const THANKS_PAGE = '{{ with (site.GetPage "thanks") }}{{ .RelPermalink }}{{ else }}#{{ end }}';
+const thanks = '{{ with (site.GetPage "thanks") }}{{ .RelPermalink }}{{ else }}#{{ end }}';
 
 document.querySelectorAll('.link-thanks').forEach(link => {
   link.addEventListener('click', () => {
     setTimeout(() => {
-      window.location.assign(THANKS_PAGE);
+      window.location.assign(thanks);
     }, 1500);
   });
 });

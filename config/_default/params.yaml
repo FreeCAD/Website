@@ -139,47 +139,57 @@ donate:
     - code: USD
       symbol: $
   once:
-    tiers:
-      - amount: 25
-      - amount: 50
-      - amount: 100
-      - amount: 200
+    - level: 25
+    - level: 50
+    - level: 100
+    - level: 200
   monthly:
-    tiers:
-      - type: normal
-        amount: 5
-      - type: bronze
-        amount: 25
-        color: "#A86A27"
-      - type: silver
-        amount: 100
-        color: "#9A9A9A"
-      - type: gold
-        amount: 200
-        color: "#D4A715"
+    - level: 5
+      color: accent
+    - label: Bronze
+      level: 25
+      color: "#A86A27"
+    - label: Silver
+      level: 100
+      color: "#9A9A9A"
+    - label: Gold
+      level: 200
+      color: "#D4A715"
   payment:
-    - platform: Paypal
+    - platform: SEPA
       weight: 1
-      url: https://www.paypal.com/donate/?hosted_button_id=M3Z8BGW6DB69Q
+      title: SEPA Bank transfer
+      details:
+        - beneficiary: The FreeCAD Project Association
+        - beneficiary_address: Rue Docteur Kuborn 31/46, 1070 Anderlecht, Belgium
+        - IBAN: BE04 0019 2896 4531
+        - BIC-SWIFT: GEBABEBBXXX
+        - bank: BNP Paribas Fortis
+        - bank_address: Rue de la Station 64, 1360 Perwez, Belgium
     - platform: Stripe
       weight: 2
       url: https://donate.stripe.com/14k3ei9TYgwFclq145
-    - platform: GitHub
+      amount_param: false
+      monthly_type: false
+    - platform: Paypal
       weight: 3
-      url: https://github.com/sponsors/freecad
-    - platform: OpenCollective
+      url: https://www.paypal.com/donate/?hosted_button_id=M3Z8BGW6DB69Q
+      amount_param: false
+      monthly_type: true
+    - platform: GitHub
       weight: 4
-      url: https://opencollective.com/freecad/donate
-    - platform: SEPA
+      url: https://github.com/sponsors/freecad
+      type_param: frequency
+      amount_param: amount
+      monthly_value: recurring
+      once_value: one-time
+    - platform: OpenCollective
       weight: 5
-      title: SEPA Bank transfer
-      details:
-        - Beneficiary: The FreeCAD Project Association
-        - Beneficiary_Address: Rue Docteur Kuborn 31/46, 1070 Anderlecht, Belgium
-        - IBAN: BE04 0019 2896 4531
-        - BIC-SWIFT: GEBABEBBXXX
-        - Bank: BNP Paribas Fortis
-        - Bank_Address: Rue de la Station 64, 1360 Perwez, Belgium
+      url: https://opencollective.com/freecad/donate
+      type_param: interval
+      amount_param: amount
+      monthly_value: month
+      once_value: oneTime
 
 # Content Management System
 enable_cms: true

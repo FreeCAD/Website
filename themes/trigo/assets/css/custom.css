@@ -333,121 +333,91 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 #donation-form {
   width: var(--content-width);
-  display: flex;
-  flex-direction: column;
-  gap: calc(var(--gap) * 0.5);
-  padding: var(--gap);
-  align-items: center;
+  padding: 0 calc(var(--gap) * 0.5);
   background: var(--muted);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   z-index: 3;
 }
 
-#donation-type {
+#donation-form fieldset {
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  border: none;
+  border: 0;
   padding: 0;
+  margin: calc(var(--gap) * 0.5) auto;
 }
 
-#donation-amount {
-  width: 100%;
-  display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  border: none;
-  padding: 0;
-}
-
+#donation-form legend,
 #donation-type input,
-#donation-amount input:not([type="number"]),
-#donate-checkbox {
+#donation-amount input[type="radio"] {
   position: absolute;
-  opacity: 0;
   width: 1px;
   height: 1px;
   margin: 0;
+  opacity: 0;
 }
 
 :is(
   #donation-type input,
-  #donation-amount input:not([type="number"]),
-  #donate-checkbox
+  #donation-amount input[type="radio"]
 ):focus-visible + label {
   outline: var(--outline-focus);
 }
 
-#donation-amount .tiers {
-  display: none;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-#donation-amount .custom {
+#donation-type,
+#donation-amount .tiers,
+#donation-amount .custom,
+#donation-payment {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
 }
 
-#donation-type label,
-.tiers label:not([for="custom-amount"]) {
-  flex: 1 1 0;
-}
-
-[id^="message-monthly-"],
-#donation-form:has(#once:checked) :is(#corporate-sponsor, #message-monthly-default),
-#donation-form:has(#once:checked):has(#donate-checkbox:disabled) #message-once-choice,
-#donation-form:has(#once:checked):not(:has(#donate-checkbox:disabled)) #message-once-default,
-#donation-form:has(#once:checked):has(#custom-amount:invalid) :is(#message-once-default, #message-once-choice),
-#message-once-error,
-#donation-form:has(#monthly:checked) :is(#custom-amount-box, #message-once-default, #message-once-choice) {
-  display: none;
-}
-
-#donation-form:has(#monthly:checked):not(:has([id^="monthly-"]:checked)) #message-monthly-default {
-  display: block;
-}
-
-#donation-form:has(#once:checked):has(#custom-amount:invalid) #message-once-error {
-  display: block;
-  background: crimson;
-}
-
-#custom-amount:not(:valid) {
-  color: crimson;
-}
-
-#donation-form:has(#once:checked) .once,
-#donation-form:has(#monthly:checked) .monthly {
-  display: grid;
-}
-
-#custom-amount-box {
-  grid-column: span 3;
+html.js #donation-form .custom-amount {
   display: flex;
+  grid-column: span 3;
+  align-items: center;
   justify-content: center;
-  padding: calc(var(--gap) * 0.25);
+  padding: 0 var(--gap);
 }
 
-#custom-amount-box:focus-within {
+#donation-form .custom-amount:focus-within {
   outline: var(--outline-focus);
 }
 
-#corporate-sponsor {
-  grid-column: span 3;
-  display: flex;
-  justify-content: center;
+#donation-form .custom-amount label {
+  margin: auto;
 }
 
-#custom-amount-box label {
-  margin: auto var(--gap);
-}
-
-#custom-amount {
+#donation-form #custom-input {
   width: 100%;
-  padding: calc(var(--gap) * 0.25);
   color: var(--secondary);
   text-align: center;
   outline: transparent;
+}
+
+#donation-form #custom-input::placeholder {
+  color: var(--backdrop);
+  font-weight: normal;
+}
+
+#donation-form.custom-valid .custom-amount {
+  color: var(--primary);
+  background: var(--header);
+  outline: var(--line) solid var(--tertiary);
+  font-weight: bold;
+}
+
+#donation-form .custom-amount:has(#custom-input:invalid),
+#donation-form #custom-input:invalid {
+  color: crimson;
+}
+
+#donation-form .custom-amount:has(#custom-input:invalid) {
+  outline: var(--line) solid crimson;
+}
+
+#donation-form .custom-amount:focus-within:has(#custom-input:invalid) {
+  outline: calc(var(--line) * 2) solid crimson;
 }
 
 #currency-toggle {
@@ -455,47 +425,63 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   border: none;
 }
 
-#donation-payment {
-  width: 100%;
-  display: flex;
-  border: none;
-  padding: 0;
+#message-once-default,
+#message-monthly-default {
+  color: var(--tertiary);
+  background: transparent;
+  outline: var(--line) solid transparent;
+  font-weight: normal;
+  cursor: not-allowed;
 }
 
-[for="donate-checkbox"], [id^="payment-"] {
-  width: 100%;
-  margin: calc(var(--gap) * 0.5);
-  padding: var(--padding);
-  font-weight: bold;
-  border: none;
-}
-
-[for="donate-checkbox"]:not([id$="default"]), [id^="payment-"] {
-  color: var(--secondary);
-  background: var(--theme);
-  outline: var(--border);
-  border-radius: var(--radius);
-  cursor: pointer;
-}
-
-:is([for="donate-checkbox"]:not([id$="default"]), [id^="payment-"]):hover:not(:disabled) {
-  color: var(--primary);
-  outline: var(--outline-hover);
-  filter: var(--filter);
-}
-
-#donation-payment:has(#donate-checkbox:checked) [id^="payment-"] {
-  display: block;
-}
-
-#donation-payment:has(#donate-checkbox:not(:disabled):checked) [for="donate-checkbox"],
-#donation-payment:has(:is(#donate-checkbox:not(:checked), #donate-checkbox:disabled)) [id^="payment-"],
-#donation-form:has(#monthly:checked) [id="payment-stripe"] {
+#donation-form :is(
+  .custom-amount,
+  .payment,
+  .default,
+  .tiers.once,
+  .tiers.monthly) {
   display: none;
 }
 
-#donation-popover {
-  position: relative;
+#donation-form:has(#once:checked) .tiers.once,
+#donation-form:has(#monthly:checked) .tiers.monthly,
+#donation-form:not(.custom-valid):has(#once:checked) #message-once-default,
+#donation-form:not(.custom-valid):has(#monthly:checked) #message-monthly-default,
+#donation-form:has(#once:checked):has(.tiers.once input:checked) .payment:is(.once, .both),
+#donation-form:has(#monthly:checked):has(.tiers.monthly input:checked) .payment:is(.monthly, .both),
+#donation-form.custom-valid:has(#once:checked) .payment:is(.once, .both),
+#donation-form.custom-valid:has(#monthly:checked) .payment:is(.monthly, .both) {
+  display: grid;
+}
+
+#donation-form:has(#once:checked):has(.tiers.once input:checked) #message-once-default,
+#donation-form:has(#monthly:checked):has(.tiers.monthly input:checked) #message-monthly-default,
+#donation-form:has(#custom-input:invalid) .default,
+#donation-form:has(#custom-input:invalid) .payment {
+  display: none;
+}
+
+#donation-form .tiers.monthly label {
+  color: color-mix(in srgb, var(--color) 50%, var(--primary) 50%);
+  outline: var(--line) solid var(--color);
+  background: color-mix(in srgb, var(--color) 25%, var(--header) 75%);
+}
+
+#donation-form .tiers.monthly :is(input:checked + label, label.selected) {
+  outline: var(--line) solid color-mix(in srgb, var(--color) 75%, var(--primary) 25%);
+  background: color-mix(in srgb, var(--color) 50%, var(--header) 50%);
+}
+
+#donation-form .tiers.monthly :is(label, input:checked + label, label.selected):hover {
+  filter: var(--filter);
+}
+
+#donation-form [popover] {
+  position: fixed;
+  inset: 0;
+  max-width: calc(100vw - var(--gap));
+  max-height: calc(100vh - var(--gap));
+  margin: auto;
   padding: calc(var(--gap) * 2);
   color: var(--secondary);
   background: var(--entry);
@@ -503,26 +489,26 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   border-radius: var(--radius);
 }
 
-#donation-popover::backdrop {
+#donation-form [popover]::backdrop {
   background: var(--backdrop);
 }
 
-#donation-popover .close {
+#donation-form [popover] .close {
   position: absolute;
   top: var(--gap);
   right: var(--gap);
 }
 
-#donation-popover .close svg {
-  width: 2rem;
-  height: 2rem;
-  color: var(--tertiary);
-  background: var(--backdrop);
-  border-radius: calc(var(--radius) * 10);
-  padding: calc(var(--gap) * 0.25);
+#donation-form [popover] .close svg {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: calc(var(--gap) * 0.25);
+  color: var(--tertiary);
+  background: var(--backdrop);
+  border-radius: calc(var(--radius) * 10);
 }
 
 

@@ -18,7 +18,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   {{- end -}}
 {{- end -}}
 
-{{- $tiers := slice "corporate" "gold" "early" "silver" "bronze" -}}
+{{- $tiers := slice "gold" "early" "silver" "bronze" -}}
 
 {{- with $sponsors -}}
   <div class="sponsors">
@@ -35,7 +35,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
           {{- range $sponsor := sort . "label" -}}
 
-            {{- if in (slice "corporate" "gold" "early" "silver") $tier -}}
+            {{- if in (slice "gold" "early" "silver") $tier -}}
               {{- $title := cond $sponsor.description (printf "%s - %s" $sponsor.label $sponsor.description) $sponsor.label -}}
               {{- with $sponsor.link -}}
                 <a
@@ -51,7 +51,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
                   {{- with $title -}} title="{{ . }}"{{ end -}}>
               {{- end -}}
 
-              {{- if in (slice "corporate" "gold" "early") $tier -}}
+              {{- if in (slice "gold" "early") $tier -}}
                 {{- $logo_path := print "sponsors/" $sponsor.logo -}}
                 {{- with resources.Get $logo_path -}}
                   {{- if eq .MediaType.SubType "svg" -}}
