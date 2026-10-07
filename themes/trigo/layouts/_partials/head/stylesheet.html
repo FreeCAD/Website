@@ -1,0 +1,38 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Head stylesheet:
+
+  - Concatenate, minify and fingerprint stylesheets.
+  - Load theme stylesheets in head.
+*/ -}}
+
+
+{{- with resources.Get "css/main.css" -}}
+  {{- $options := dict
+    "loaders" (dict ".png" "dataurl" ".svg" "dataurl")
+    "minify" (not hugo.IsDevelopment)
+    "sourceMap" (cond hugo.IsDevelopment "linked" "none")
+    "targetPath" "css/styles.css"
+    "vars" (site.Params.style | default dict)
+  -}}
+  {{- with . | css.Build $options -}}
+    {{- if hugo.IsDevelopment -}}
+      <link
+        rel="stylesheet"
+        href="{{ .RelPermalink }}">
+
+    {{- else -}}
+      {{- with . | fingerprint -}}
+        <link
+          rel="stylesheet"
+          href="{{ .RelPermalink }}"
+          integrity="{{ .Data.Integrity }}"
+          crossorigin="anonymous">
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

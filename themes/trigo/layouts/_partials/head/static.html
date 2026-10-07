@@ -1,0 +1,26 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Static head:
+
+  - Set charset, viewport, referrer and robots in head.
+  - Load early theme chroma script in head.
+*/ -}}
+
+
+<meta charset="utf-8">
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1">
+<meta
+  name="referrer"
+  content="strict-origin-when-cross-origin">
+<meta
+  name="robots"
+  content="{{ cond hugo.IsProduction "index, follow" "noindex, nofollow" }}">
+
+{{- /* Chroma script to change between light and dark theme. */ -}}
+{{- partialCached "scripts/theme.html" "theme" "theme" -}}

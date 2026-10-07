@@ -1,0 +1,42 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Head assets:
+
+  - Set favicons, RSS feed, and generator meta in head.
+*/ -}}
+
+
+{{- /* Favicons. */ -}}
+{{- if fileExists "static/favicon.svg" -}}
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="{{ "favicon.svg" | relURL }}">
+{{- end -}}
+
+{{- if fileExists "static/favicon.ico" -}}
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="{{ "favicon.ico" | relURL }}">
+{{- end -}}
+
+{{- if fileExists "static/apple-touch-icon.png" -}}
+    <link
+      rel="apple-touch-icon"
+      href="{{ "apple-touch-icon.png" | relURL }}">
+{{- end -}}
+
+{{- with site.Home.OutputFormats.Get "rss" -}}
+  <link
+    rel="{{ .Rel }}"
+    type="{{ .MediaType.Type }}"
+    href="{{ .Permalink }}"
+    title="{{ site.Title }}">
+{{- end -}}
+
+{{- hugo.Generator -}}

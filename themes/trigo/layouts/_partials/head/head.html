@@ -6,8 +6,8 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 {{- /* Page head:
 
-  - Set page meta, title, description, keywords, canonical, and alternate links.
-  - Set analytics and opengraph.
+  - Set page meta, title, description, keywords, canonical, and alternate links in head.
+  - Set analytics and opengraph in head.
 */ -}}
 
 
@@ -16,23 +16,14 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 <head>
 
-  {{- partialCached "head/static_head.html" . "static_head" -}}
+  {{- partialCached "head/static.html" "static" "static" -}}
 
   <title>{{ $title }}</title>
   <meta
     name="description"
     content="{{ $description }}">
 
-  {{- with .Params.tags -}}
-    <meta
-      name="keywords"
-      content="{{ delimit . ", " }}">
-
-  {{- else with site.Params.site_keywords -}}
-    <meta
-      name="keywords"
-      content="{{ delimit . ", " }}">
-  {{- end -}}
+  {{- partialCached "head/stylesheet.html" "stylesheet" "stylesheet" -}}
 
   <link
     rel="canonical"
@@ -49,6 +40,8 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     rel="alternate"
     hreflang="x-default"
     href="{{ site.Home.Permalink }}">
+
+  {{- partialCached "head/assets.html" "assets" "assets" -}}
 
   {{- if hugo.IsProduction -}}
     {{- /* Get google analytics. */ -}}

@@ -30,7 +30,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   lang="{{ site.Language.Locale }}"
   dir="{{ site.Language.Direction | default "auto" }}">
 
-  {{- partial "head/page_head.html" . -}}
+  {{- partial "head/head.html" . -}}
 
   <body
     class="{{ delimit $classes " " }}"
@@ -40,7 +40,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     {{- partialCached "utils/unsupported_browser.html" . -}}
 
     {{- /* Get site top banner header. */ -}}
-    {{- partial "header/page_header.html" . -}}
+    {{- partial "header/header.html" . -}}
 
     {{- /* Debug info for current Page. */ -}}
     {{- if and site.Params.enable_debug (not hugo.IsProduction) -}}

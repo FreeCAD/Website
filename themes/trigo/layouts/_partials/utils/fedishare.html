@@ -21,7 +21,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 <!DOCTYPE html>
 <html lang="{{ site.Language.Locale }}">
   {{- /* Get page head. */ -}}
-  {{- partial "head/page_head.html" . -}}
+  {{- partial "head/head.html" . -}}
 
   {{- /* Load Fedishare JS. */ -}}
   {{- with resources.Get "js/fedishare.js" -}}
@@ -45,7 +45,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     </datalist>
 
     {{- /* Get page header. */ -}}
-    {{- partial "header/page_header.html" . -}}
+    {{- partial "header/header.html" . -}}
 
     {{- /* Debug info for current page. */ -}}
     {{- if and site.Params.enable_debug (not hugo.IsProduction) -}}
