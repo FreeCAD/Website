@@ -4,64 +4,52 @@
   dir="ltr"><head><meta charset="utf-8">
 <meta
   name="viewport"
-  content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+  content="width=device-width, initial-scale=1">
 <meta
   name="referrer"
   content="strict-origin-when-cross-origin">
 <meta
   name="robots"
   content="index, follow"><script>
+  try {
     const pref = localStorage.getItem("pref-theme");
-    if (pref === "dark") {
-      document.documentElement.classList.add('dark');
-    } else if (pref === "light") {
-      document.documentElement.classList.remove('dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.documentElement.classList.add('dark');
-    }
-  </script><noscript>
+    const dark =
+      pref === "dark" ||
+      (pref !== "light" &&
+        
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+        );
+    if (dark) document.documentElement.classList.add("dark");
+  } catch {}
+  document.documentElement.classList.add("js");
+</script><noscript>
   <style>
     #chroma-toggle {
       display: none;
     }
-  </style><style>
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --header: rgb(8, 8, 8);
-          --theme: rgb(16, 16, 16);
-          --entry: rgb(32, 32, 32);
-          --tone: rgb(64, 64, 64);
-          --backdrop: rgba(64, 64, 64, 0.8);
-          --primary: rgb(240, 240, 240);
-          --secondary: rgb(224, 224, 224);
-          --tertiary: rgb(208, 208, 208);
-          --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
-          --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
-          --angle: 315deg;
-        }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --header: rgb(8, 8, 8);
+        --theme: rgb(16, 16, 16);
+        --entry: rgb(32, 32, 32);
+        --tone: rgb(64, 64, 64);
+        --backdrop: rgba(64, 64, 64, 0.8);
+        --primary: rgb(240, 240, 240);
+        --secondary: rgb(224, 224, 224);
+        --tertiary: rgb(208, 208, 208);
+        --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+        --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+        --angle: 315deg;
       }
-    </style></noscript><link
-          rel="stylesheet"
-          href="/Website/css/styles.ba4e0c8246fe032f190f1dac870eb9b1043660e412e761656abaa036a978d511.css"
-          integrity="sha256-uk4Mgkb&#43;Ay8ZDx2shw65sQQ2YOQS52FlarqgNql41RE="
-          crossorigin="anonymous"><link
-      rel="icon"
-      type="image/svg+xml"
-      href="/Website/favicon.svg"><link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="/Website/favicon.ico"><link
-      rel="apple-touch-icon"
-      href="/Website/apple-touch-icon.png"><link
-    rel="alternate"
-    type="application/rss&#43;xml"
-    href="https://FreeCAD.github.io/Website/pt/index.xml"
-    title="FreeCAD"><title>FreeCAD | Download</title>
+    }</style>
+</noscript><title>FreeCAD | Download</title>
   <meta
     name="description"
-    content="Get FreeCAD and start with freedom right away."><meta
-      name="keywords"
-      content="free, open-source, CAD, software, tool, parametric, modeling, model, design, product, engineering, manufacturing, community, workbench, FOSS, 3D, BIM, CAM, FEM, FEA"><link
+    content="Get FreeCAD and start with freedom right away."><link
+          rel="stylesheet"
+          href="/Website/css/styles.605871c39e3239caae125773aaa85661399f19121eb03506d5aa8415ca84a196.css"
+          integrity="sha256-YFhxw54yOcquEldzqqhWYTmfGRIesDUG1aqEFcqEoZY="
+          crossorigin="anonymous"><link
     rel="canonical"
     href="https://FreeCAD.github.io/Website/pt/download/"><link
       rel="alternate"
@@ -87,7 +75,19 @@
       href="https://FreeCAD.github.io/Website/ja/download/"><link
     rel="alternate"
     hreflang="x-default"
-    href="https://FreeCAD.github.io/Website/pt/"><meta property="og:url" content="https://FreeCAD.github.io/Website/pt/download/">
+    href="https://FreeCAD.github.io/Website/pt/"><link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Website/favicon.svg"><link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/Website/favicon.ico"><link
+      rel="apple-touch-icon"
+      href="/Website/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://FreeCAD.github.io/Website/pt/index.xml"
+    title="FreeCAD"><meta name="generator" content="Hugo 0.160.0"><meta property="og:url" content="https://FreeCAD.github.io/Website/pt/download/">
   <meta property="og:site_name" content="FreeCAD">
   <meta property="og:title" content="Launch into design!">
   <meta property="og:description" content="Get FreeCAD and start with freedom right away.">
@@ -429,9 +429,7 @@
 </h2><p>The latest FreeCAD release focuses on refinement and key features to enhance workflows and stability for everyone.
 With many quality of life improvements, hundreds of bug fixes, and updated libraries, designing with FreeCAD is more fun and powerful than ever.</p>
 </div>
-<div>
-    <div
-      class="cards" style="padding: 0;"><a
+<div class="cards"><a
   class="card"
   href="/Website/pt/releases/26-3/"><div class="card-color" style="--hue: 10;"></div><h3 class="card-title">FreeCAD 26.3 Notes</h3><p class="card-description">Fresh release cadence, many improved workflows, same freedom to design.</p><div class="card-metadata"><span class="meta"><svg
     class="icon date"
@@ -439,10 +437,9 @@ With many quality of life improvements, hundreds of bug fixes, and updated libra
     focusable="false">
     <use href="/Website/svg/date.svg#date"></use>
   </svg><time datetime="2026-09-01T00:00:00Z">1 de setembro de 2026</time>
-  </span></div></a></div>
-  </div></div>
+  </span></div></a></div></div>
   </div>
-<div class="block-shortcode wide pastel4"><div class="block-content"><div class="card-shortcode"><a
+<div class="block-shortcode wide pastel4"><div class="block-content"><div class="cards"><a
   class="card"
   href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow"><div class="card-color" style="--hue: 40;"><span class="card-icon"><svg
     class="icon folder_open"
@@ -491,7 +488,7 @@ With many quality of life improvements, hundreds of bug fixes, and updated libra
 <p>The FreeCAD community provides many additional features, workbenches, macros, and interface themes.
 They can easily be installed directly from within FreeCAD using the Addon Manager.</p>
 </div>
-<div class="card-shortcode"><a
+<div class="cards"><a
   class="card"
   href="/Website/pt/download/addons/"><div class="card-color" style="--hue: 50;"><span class="card-icon"><svg
     class="icon puzzle"
@@ -500,7 +497,7 @@ They can easily be installed directly from within FreeCAD using the Addon Manage
     <use href="/Website/svg/puzzle.svg#puzzle"></use>
   </svg></span></div><h3 class="card-title">Addons</h3><p class="card-description">Explore FreeCAD ecosystem and take advantage of specialized tools.</p><div class="card-metadata"></div></a></div></div>
   </div>
-<div class="block-shortcode wide pastel5"><div class="block-content"><div class="card-shortcode"><a
+<div class="block-shortcode wide pastel5"><div class="block-content"><div class="cards"><a
   class="card"
   href="/Website/pt/download/unstable/"><div class="card-color" style="--hue: 60;"><span class="card-icon"><svg
     class="icon test"
@@ -681,6 +678,14 @@ Explore the code, understand how it works, contribute improvements, and help sha
     focusable="false">
     <use href="/Website/svg/forum.svg#forum"></use>
   </svg></a><a
+    href="https://devtalk.freecad.org/"
+    title="DevTalk"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon devtalk"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/devtalk.svg#devtalk"></use>
+  </svg></a><a
     href="https://github.com/freecad"
     title="GitHub"
     target="_blank" rel="external noreferrer nofollow"><svg
@@ -795,9 +800,9 @@ Explore the code, understand how it works, contribute improvements, and help sha
   </svg></a>
 </span>
 <span>
-    Modified: 2026-09-24
+    Modified: 2026-10-07
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/61f966d3e9456cfb79ec6c108ec6d925ef95c5d5">61f966d3e9<svg
+      Commit: <a href="https://github.com/freecad/website/commit/06006ff88c9dfa45d8bb76390cf84ca610668cba">06006ff88c<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">
@@ -813,9 +818,9 @@ Explore the code, understand how it works, contribute improvements, and help sha
     type="text/javascript"
     defer integrity="sha256-WaLijk3JxLvftDKgpPhUE3PlrD3xUjgmCWFl8GR8uvg=" crossorigin="anonymous">
   </script><script
-    src="/Website/js/pt/redirect_to_donate.min.a913f46b6caf04bb9629202bb36810c1d278e89b344326120523c5bf92462586.js"
+    src="/Website/js/pt/redirect_to_donate.min.e248475eb15bdc9b89ee639f0ea281a3663d2ab3a2bb90dc257bb0aa1bff6397.js"
     type="text/javascript"
-    defer integrity="sha256-qRP0a2yvBLuWKSArs2gQwdJ46Js0QyYSBSPFv5JGJYY=" crossorigin="anonymous">
+    defer integrity="sha256-4khHXrFb3JuJ7mOfDqKBo2Y9KrOiu5DcJXuwqhv/Y5c=" crossorigin="anonymous">
   </script></body>
 
 </html>

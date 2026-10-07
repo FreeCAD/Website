@@ -917,114 +917,6 @@ collections:
             required: false
 
   - divider: true
-  - name: about-pages
-    label: About
-    description: About collection
-    folder: 'content/{{locale}}/about'
-    path: '{{slug}}/_index'
-    media_folder: ''
-    public_folder: ''
-    thumbnail: ['/{{slug}}.webp', cover.image]
-    icon: info
-    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{author | default('no author')}} · {{locales | upper}}"
-    reorder:
-      key: weight
-    i18n: true
-
-    view_filters:
-      filters:
-        - name: drafts
-          label: Drafts
-          field: draft
-          pattern: true
-        - name: upcoming
-          label: Upcoming date
-          field: date
-          gte: '{{today}}'
-    index_file:
-      name: _index
-      label: About Index
-      icon: home
-      i18n: true
-      fields:
-        - name: title
-          label: Title
-          widget: string
-          i18n: true
-        - name: description
-          label: Description
-          widget: string
-          i18n: true
-        - name: linkTitle
-          label: Link Title
-          widget: string
-          i18n: true
-          required: false
-        - name: redirect
-          label: Redirect
-          widget: string
-          i18n: duplicate
-          required: false
-        - name: cover
-          label: Cover
-          widget: object
-          i18n: true
-          required: false
-          fields:
-            - { name: image, label: Image, widget: image, i18n: duplicate, required: false }
-            - { name: caption, label: Caption, widget: string, i18n: true, required: false }
-        - name: body
-          label: Body
-          widget: richtext
-          i18n: true
-          required: false
-
-    fields:
-      - name: title
-        label: Title
-        widget: string
-        i18n: true
-      - name: description
-        label: Description
-        widget: string
-        i18n: true
-        required: false
-      - name: linkTitle
-        label: Link Title
-        widget: string
-        i18n: true
-        required: false
-      - name: redirect
-        label: Redirect
-        widget: string
-        i18n: duplicate
-        required: false
-      - name: date
-        label: Date
-        widget: datetime
-        type: date
-        i18n: duplicate
-      - name: draft
-        label: Draft
-        widget: boolean
-        default: false
-        i18n: duplicate
-        required: false
-      
-      - name: cover
-        label: Cover
-        widget: object
-        i18n: true
-        required: false
-        fields:
-          - { name: image, label: Image, widget: image, i18n: duplicate, required: false }
-          - { name: caption, label: Caption, widget: string, i18n: true, required: false }
-      - name: body
-        label: Body
-        widget: richtext
-        i18n: true
-
-  - divider: true
 
   - name: theme
     label: Theme i18n
@@ -1068,9 +960,6 @@ singletons:
       - name: site_author
         label: Default site author
         widget: string
-      - name: site_keywords
-        label: Site keywords and tags
-        widget: list
       - name: site_logo
         label: Site logo
         widget: image
@@ -1144,7 +1033,6 @@ singletons:
             label: Sponsoring tier
             widget: select
             options:
-              - { label: Corporate, value: corporate }
               - { label: Gold, value: gold }
               - { label: Early, value: early }
               - { label: Silver, value: silver }

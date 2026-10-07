@@ -4,64 +4,52 @@
   dir="ltr"><head><meta charset="utf-8">
 <meta
   name="viewport"
-  content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+  content="width=device-width, initial-scale=1">
 <meta
   name="referrer"
   content="strict-origin-when-cross-origin">
 <meta
   name="robots"
   content="index, follow"><script>
+  try {
     const pref = localStorage.getItem("pref-theme");
-    if (pref === "dark") {
-      document.documentElement.classList.add('dark');
-    } else if (pref === "light") {
-      document.documentElement.classList.remove('dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.documentElement.classList.add('dark');
-    }
-  </script><noscript>
+    const dark =
+      pref === "dark" ||
+      (pref !== "light" &&
+        
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+        );
+    if (dark) document.documentElement.classList.add("dark");
+  } catch {}
+  document.documentElement.classList.add("js");
+</script><noscript>
   <style>
     #chroma-toggle {
       display: none;
     }
-  </style><style>
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --header: rgb(8, 8, 8);
-          --theme: rgb(16, 16, 16);
-          --entry: rgb(32, 32, 32);
-          --tone: rgb(64, 64, 64);
-          --backdrop: rgba(64, 64, 64, 0.8);
-          --primary: rgb(240, 240, 240);
-          --secondary: rgb(224, 224, 224);
-          --tertiary: rgb(208, 208, 208);
-          --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
-          --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
-          --angle: 315deg;
-        }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --header: rgb(8, 8, 8);
+        --theme: rgb(16, 16, 16);
+        --entry: rgb(32, 32, 32);
+        --tone: rgb(64, 64, 64);
+        --backdrop: rgba(64, 64, 64, 0.8);
+        --primary: rgb(240, 240, 240);
+        --secondary: rgb(224, 224, 224);
+        --tertiary: rgb(208, 208, 208);
+        --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+        --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+        --angle: 315deg;
       }
-    </style></noscript><link
-          rel="stylesheet"
-          href="/Website/css/styles.ba4e0c8246fe032f190f1dac870eb9b1043660e412e761656abaa036a978d511.css"
-          integrity="sha256-uk4Mgkb&#43;Ay8ZDx2shw65sQQ2YOQS52FlarqgNql41RE="
-          crossorigin="anonymous"><link
-      rel="icon"
-      type="image/svg+xml"
-      href="/Website/favicon.svg"><link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="/Website/favicon.ico"><link
-      rel="apple-touch-icon"
-      href="/Website/apple-touch-icon.png"><link
-    rel="alternate"
-    type="application/rss&#43;xml"
-    href="https://FreeCAD.github.io/Website/es/index.xml"
-    title="FreeCAD"><title>FreeCAD | Shortcodes</title>
+    }</style>
+</noscript><title>FreeCAD | Shortcodes</title>
   <meta
     name="description"
-    content="Bundled Trigo Theme and Hugo shortcodes to enhance content."><meta
-      name="keywords"
-      content="free, open-source, CAD, software, tool, parametric, modeling, model, design, product, engineering, manufacturing, community, workbench, FOSS, 3D, BIM, CAM, FEM, FEA"><link
+    content="Bundled Trigo Theme and Hugo shortcodes to enhance content."><link
+          rel="stylesheet"
+          href="/Website/css/styles.605871c39e3239caae125773aaa85661399f19121eb03506d5aa8415ca84a196.css"
+          integrity="sha256-YFhxw54yOcquEldzqqhWYTmfGRIesDUG1aqEFcqEoZY="
+          crossorigin="anonymous"><link
     rel="canonical"
     href="https://FreeCAD.github.io/Website/es/dev/web/shortcodes/"><link
       rel="alternate"
@@ -87,14 +75,26 @@
       href="https://FreeCAD.github.io/Website/ja/dev/web/shortcodes/"><link
     rel="alternate"
     hreflang="x-default"
-    href="https://FreeCAD.github.io/Website/es/"><meta property="og:url" content="https://FreeCAD.github.io/Website/es/dev/web/shortcodes/">
+    href="https://FreeCAD.github.io/Website/es/"><link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Website/favicon.svg"><link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/Website/favicon.ico"><link
+      rel="apple-touch-icon"
+      href="/Website/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://FreeCAD.github.io/Website/es/index.xml"
+    title="FreeCAD"><meta name="generator" content="Hugo 0.160.0"><meta property="og:url" content="https://FreeCAD.github.io/Website/es/dev/web/shortcodes/">
   <meta property="og:site_name" content="FreeCAD">
   <meta property="og:title" content="Shortcodes">
   <meta property="og:description" content="Bundled Trigo Theme and Hugo shortcodes to enhance content.">
   <meta property="og:locale" content="es_ES">
   <meta property="og:type" content="article">
     <meta property="article:section" content="dev">
-    <meta property="article:modified_time" content="2026-09-24T11:09:56+02:00">
+    <meta property="article:modified_time" content="2026-10-07T16:30:55+02:00">
 </head><body
     class="single type-dev kind-page "
     id="top">
@@ -316,7 +316,6 @@
         <li><a href="#youtube">YouTube</a></li>
         <li><a href="#vimeo">Vimeo</a></li>
         <li><a href="#card">Card</a></li>
-        <li><a href="#collection">Collection</a></li>
         <li><a href="#block-and-group">Block and group</a></li>
       </ul>
     </li>
@@ -436,7 +435,7 @@ Most shortcodes support both named and positional arguments.</p>
       <tr>
           <td>1</td>
           <td>open</td>
-          <td>bool</td>
+          <td>boolean</td>
           <td><code>true</code></td>
           <td></td>
           <td><code>false</code></td>
@@ -674,7 +673,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
 </span></span><span class="line"><span class="cl">  <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">branch</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;content&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
 </span></span><span class="line"><span class="cl">    <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">leaf</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;_index.md&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
 </span></span><span class="line"><span class="cl">    <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">branch</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;docs&#34;</span><span class="w"> </span><span class="nx">state</span><span class="o">=</span><span class="s">&#34;closed&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
-</span></span><span class="line"><span class="cl">      <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">leaf</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;_index.md&#34;</span><span class="w"> </span><span class="nx">css_class</span><span class="o">=</span><span class="s">&#34;pastel1&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">leaf</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;_index.md&#34;</span><span class="w"> </span><span class="nx">css_class</span><span class="o">=</span><span class="s">&#34;accent&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
 </span></span><span class="line"><span class="cl">      <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">leaf</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;introduction.md&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
 </span></span><span class="line"><span class="cl">      <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">leaf</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;introduction.fr.md&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
 </span></span><span class="line"><span class="cl">    <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="nx">branch</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
@@ -737,7 +736,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
   <use href="/Website/svg/folder_closed.svg#folder_closed"></use>
 </svg></span>docs</label><ul>
 <li>
-  <span class="leaf pastel1"><svg
+  <span class="leaf accent"><svg
     class="icon file"
     aria-hidden="true"
     focusable="false">
@@ -1235,7 +1234,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/words.svg#words"></use>
-  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">button</span><span class="w"> </span><span class="nx">url</span><span class="o">=</span><span class="s">&#34;/news&#34;</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;Button label&#34;</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="s">&#34;time&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">button</span><span class="w"> </span><span class="nx">url</span><span class="o">=</span><span class="s">&#34;/news&#34;</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;Button label&#34;</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="s">&#34;time&#34;</span><span class="w">  </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
 <div class="button-shortcode">
     <a
       href="/Website/es/news/"
@@ -1290,7 +1289,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
           <td>string</td>
           <td><em>optional</em></td>
           <td>custom CSS classes</td>
-          <td>&ldquo;button-accent&rdquo;</td>
+          <td>&ldquo;accent&rdquo;</td>
       </tr>
   </tbody>
 </table>
@@ -1505,20 +1504,29 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     focusable="false">
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
-</h2><p>Trigo shortcode to display a video with optional poster.</p>
+</h2><p>Trigo shortcode to display a bundled or external video with optional poster and caption.</p>
 <div class="codeblock"><div class="codeblock-file"><svg
     class="icon words"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/words.svg#words"></use>
-  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">video</span><span class="w"> </span><span class="nx">src</span><span class="o">=</span><span class="s">&#34;video.mp4&#34;</span><span class="w"> </span><span class="nx">poster</span><span class="o">=</span><span class="s">&#34;dir/3.webp&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
-<p><figure>
-  <blockquote class="warning"><svg
-    class="icon warning"
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">video</span><span class="w"> </span><span class="nx">src</span><span class="o">=</span><span class="s">&#34;moon.mp4&#34;</span><span class="w"> </span><span class="nx">caption</span><span class="o">=</span><span class="s">&#34;[A Trip to the Moon (1902)](https://commons.wikimedia.org/wiki/File:Le_Voyage_dans_la_Lune_(1902).webm)&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+<figure>
+      <video
+        preload="metadata"
+        controls
+        playsinline>
+
+        <source
+          src="/Website/dev/web/shortcodes/moon.mp4" type="video/mp4">Tu navegador no admite la etiqueta de vídeo.</video><figcaption><p><a
+  href="https://commons.wikimedia.org/wiki/File:Le_Voyage_dans_la_Lune_%281902%29.webm"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">A Trip to the Moon (1902)<svg
+    class="icon external"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/warning.svg#warning"></use>
-  </svg>Advertencia<p>Video resource &lsquo;video.mp4&rsquo; not found.</p></blockquote></figure></p>
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a></p>
+</figcaption></figure>
 <p><u><code>video</code> arguments:</u></p>
 <table>
   <thead>
@@ -1544,9 +1552,17 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
           <td>1</td>
           <td>poster</td>
           <td>string</td>
+          <td><em>optional</em></td>
           <td></td>
+          <td>&ldquo;path/to/poster.webp&rdquo;</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>caption</td>
+          <td>Markdown</td>
+          <td><em>optional</em></td>
           <td></td>
-          <td>&ldquo;poster.webp&rdquo;</td>
+          <td>&ldquo;A video caption&rdquo;</td>
       </tr>
   </tbody>
 </table>
@@ -1723,58 +1739,16 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     focusable="false">
     <use href="/Website/svg/anchor.svg#anchor"></use>
   </svg></a>
-</h2><p>Trigo shortcode to display an internal page card.</p>
+</h2><p>Trigo shortcode to display one or more internal RegularPage, Section, or specific taxonomy Term cards. For Sections or Terms with a <code>number</code> specified, their respective children Pages are used instead of the list Page.
+If not nested in another shortcode, a full-width layout block is rendered around the cards.</p>
 <div class="codeblock"><div class="codeblock-file"><svg
     class="icon words"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/words.svg#words"></use>
-  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">card</span><span class="w"> </span><span class="nx">url</span><span class="o">=</span><span class="s">&#34;thanks&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
-<div class="card-shortcode"><a
-  class="card"
-  href="/Website/es/thanks/"><div class="card-color" style="--hue: 160;"></div><h3 class="card-title">Thank you!</h3><p class="card-description">Thanks for using and supporting FreeCAD!</p><div class="card-metadata"></div></a></div>
-<p><u><code>card</code> arguments:</u></p>
-<table>
-  <thead>
-      <tr>
-          <th>Position</th>
-          <th>Argument</th>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Options</th>
-          <th>Example value</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>0</td>
-          <td>url</td>
-          <td>string</td>
-          <td></td>
-          <td></td>
-          <td>&ldquo;thanks&rdquo;</td>
-      </tr>
-  </tbody>
-</table>
-<h2
-  id="collection">Collection<a class="heading-anchor"
-     href="#collection"
-     title="Collection"><svg
-    class="icon anchor"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>Trigo shortcode to display a full-width layout with a collection of pages as cards. These pages come from a section, a specific taxonomy term or are part of a taxonomy.</p>
-<div class="codeblock"><div class="codeblock-file"><svg
-    class="icon words"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/Website/svg/words.svg#words"></use>
-  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">collection</span><span class="w"> </span><span class="nx">collection</span><span class="o">=</span><span class="s">&#34;dev&#34;</span><span class="w"> </span><span class="nx">first</span><span class="o">=</span><span class="nx">3</span><span class="w"> </span><span class="nx">css_class</span><span class="o">=</span><span class="s">&#34;gradient&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">card</span><span class="w"> </span><span class="nx">path</span><span class="o">=</span><span class="s">&#34;dev&#34;</span><span class="w"> </span><span class="nx">number</span><span class="o">=</span><span class="nx">3</span><span class="w"> </span><span class="nx">css_class</span><span class="o">=</span><span class="s">&#34;gradient&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
 <div class="card-list wide gradient">
-    <div
-      class="cards"><a
+        <div class="cards"><a
   class="card"
   href="/Website/es/dev/welcome/"><div class="card-color" style="--hue: 90;"><span class="card-icon"><svg
     class="icon directions"
@@ -1796,8 +1770,8 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     focusable="false">
     <use href="/Website/svg/gear.svg#gear"></use>
   </svg></span></div><h3 class="card-title">Development Setup</h3><p class="card-description">Set the development up, build, run, enjoy!</p><div class="card-metadata"></div></a></div>
-  </div>
-<p><u><code>collection</code> arguments:</u></p>
+      </div>
+<p><u><code>card</code> arguments:</u></p>
 <table>
   <thead>
       <tr>
@@ -1812,54 +1786,38 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
   <tbody>
       <tr>
           <td>0</td>
-          <td>collection</td>
+          <td>path</td>
           <td>string</td>
-          <td></td>
+          <td><strong>required</strong></td>
           <td></td>
           <td>&ldquo;news&rdquo;</td>
       </tr>
       <tr>
           <td>1</td>
-          <td>first</td>
+          <td>number</td>
           <td>int</td>
-          <td>0</td>
+          <td><em>optional</em></td>
           <td></td>
-          <td>1</td>
+          <td>3</td>
       </tr>
       <tr>
           <td>2</td>
-          <td>taxonomy</td>
-          <td>string</td>
-          <td><em>optional</em></td>
-          <td></td>
-          <td>&ldquo;category&rdquo;</td>
-      </tr>
-      <tr>
-          <td>3</td>
-          <td>term</td>
-          <td>string</td>
-          <td><em>optional</em></td>
-          <td></td>
-          <td>&ldquo;event&rdquo;</td>
-      </tr>
-      <tr>
-          <td>4</td>
           <td>sort</td>
           <td>string</td>
           <td><em>optional</em></td>
-          <td></td>
+          <td>date, weight, title, linktitle, publishdate, lastmod, length</td>
           <td>&ldquo;date&rdquo;</td>
       </tr>
       <tr>
-          <td>5</td>
+          <td>3</td>
           <td>reverse</td>
-          <td>bool</td>
+          <td>boolean</td>
           <td><code>false</code></td>
           <td></td>
           <td><code>true</code></td>
       </tr>
       <tr>
-          <td>6</td>
+          <td>4</td>
           <td>css_class</td>
           <td>string</td>
           <td><em>optional</em></td>
@@ -2231,6 +2189,14 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     focusable="false">
     <use href="/Website/svg/forum.svg#forum"></use>
   </svg></a><a
+    href="https://devtalk.freecad.org/"
+    title="DevTalk"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon devtalk"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/devtalk.svg#devtalk"></use>
+  </svg></a><a
     href="https://github.com/freecad"
     title="GitHub"
     target="_blank" rel="external noreferrer nofollow"><svg
@@ -2345,9 +2311,9 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
   </svg></a>
 </span>
 <span>
-    Modified: 2026-09-24
+    Modified: 2026-10-07
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/ddd9864106fd1ccc662d31503c82d183d6c29493">ddd9864106<svg
+      Commit: <a href="https://github.com/freecad/website/commit/06006ff88c9dfa45d8bb76390cf84ca610668cba">06006ff88c<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

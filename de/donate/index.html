@@ -4,64 +4,52 @@
   dir="ltr"><head><meta charset="utf-8">
 <meta
   name="viewport"
-  content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+  content="width=device-width, initial-scale=1">
 <meta
   name="referrer"
   content="strict-origin-when-cross-origin">
 <meta
   name="robots"
   content="index, follow"><script>
+  try {
     const pref = localStorage.getItem("pref-theme");
-    if (pref === "dark") {
-      document.documentElement.classList.add('dark');
-    } else if (pref === "light") {
-      document.documentElement.classList.remove('dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.documentElement.classList.add('dark');
-    }
-  </script><noscript>
+    const dark =
+      pref === "dark" ||
+      (pref !== "light" &&
+        
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+        );
+    if (dark) document.documentElement.classList.add("dark");
+  } catch {}
+  document.documentElement.classList.add("js");
+</script><noscript>
   <style>
     #chroma-toggle {
       display: none;
     }
-  </style><style>
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --header: rgb(8, 8, 8);
-          --theme: rgb(16, 16, 16);
-          --entry: rgb(32, 32, 32);
-          --tone: rgb(64, 64, 64);
-          --backdrop: rgba(64, 64, 64, 0.8);
-          --primary: rgb(240, 240, 240);
-          --secondary: rgb(224, 224, 224);
-          --tertiary: rgb(208, 208, 208);
-          --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
-          --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
-          --angle: 315deg;
-        }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --header: rgb(8, 8, 8);
+        --theme: rgb(16, 16, 16);
+        --entry: rgb(32, 32, 32);
+        --tone: rgb(64, 64, 64);
+        --backdrop: rgba(64, 64, 64, 0.8);
+        --primary: rgb(240, 240, 240);
+        --secondary: rgb(224, 224, 224);
+        --tertiary: rgb(208, 208, 208);
+        --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+        --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+        --angle: 315deg;
       }
-    </style></noscript><link
-          rel="stylesheet"
-          href="/Website/css/styles.ba4e0c8246fe032f190f1dac870eb9b1043660e412e761656abaa036a978d511.css"
-          integrity="sha256-uk4Mgkb&#43;Ay8ZDx2shw65sQQ2YOQS52FlarqgNql41RE="
-          crossorigin="anonymous"><link
-      rel="icon"
-      type="image/svg+xml"
-      href="/Website/favicon.svg"><link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="/Website/favicon.ico"><link
-      rel="apple-touch-icon"
-      href="/Website/apple-touch-icon.png"><link
-    rel="alternate"
-    type="application/rss&#43;xml"
-    href="https://FreeCAD.github.io/Website/de/index.xml"
-    title="FreeCAD"><title>FreeCAD | Donate</title>
+    }</style>
+</noscript><title>FreeCAD | Donate</title>
   <meta
     name="description"
-    content="Donate once or sponsor monthly to make FreeCAD even more awesome!"><meta
-      name="keywords"
-      content="free, open-source, CAD, software, tool, parametric, modeling, model, design, product, engineering, manufacturing, community, workbench, FOSS, 3D, BIM, CAM, FEM, FEA"><link
+    content="Donate once or sponsor monthly to make FreeCAD even more awesome!"><link
+          rel="stylesheet"
+          href="/Website/css/styles.605871c39e3239caae125773aaa85661399f19121eb03506d5aa8415ca84a196.css"
+          integrity="sha256-YFhxw54yOcquEldzqqhWYTmfGRIesDUG1aqEFcqEoZY="
+          crossorigin="anonymous"><link
     rel="canonical"
     href="https://FreeCAD.github.io/Website/de/donate/"><link
       rel="alternate"
@@ -87,7 +75,19 @@
       href="https://FreeCAD.github.io/Website/ja/donate/"><link
     rel="alternate"
     hreflang="x-default"
-    href="https://FreeCAD.github.io/Website/de/"><meta property="og:url" content="https://FreeCAD.github.io/Website/de/donate/">
+    href="https://FreeCAD.github.io/Website/de/"><link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Website/favicon.svg"><link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/Website/favicon.ico"><link
+      rel="apple-touch-icon"
+      href="/Website/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://FreeCAD.github.io/Website/de/index.xml"
+    title="FreeCAD"><meta name="generator" content="Hugo 0.160.0"><meta property="og:url" content="https://FreeCAD.github.io/Website/de/donate/">
   <meta property="og:site_name" content="FreeCAD">
   <meta property="og:title" content="Support the FreeCAD project">
   <meta property="og:description" content="Donate once or sponsor monthly to make FreeCAD even more awesome!">
@@ -210,230 +210,236 @@
 </div></div>
 </header><main style="--hue: 100;"><section class="hero">
 
-    <h1 class="title">Support the FreeCAD project</h1><h3 class="description">Donate once or sponsor monthly to make FreeCAD even more awesome!</h3><form id="donation-form" method="get" action="">
+    <h1 class="title">Support the FreeCAD project</h1><h3 class="description">Donate once or sponsor monthly to make FreeCAD even more awesome!</h3><div id="donation-form">
+    <fieldset id="donation-type">
+      <legend>Donation type</legend>
 
-  <fieldset id="donation-type">
-    <input
-      type="radio"
-      id="once"
-      name="donation-type"
-      value="once"
-      checked>
+      <input
+        type="radio"
+        id="once"
+        name="type"
+        checked>
       <label
         class="button"
         for="once">One-time donation</label>
 
-    <input
-      type="radio"
-      id="monthly"
-      name="donation-type"
-      value="monthly">
+      <input
+        type="radio"
+        id="monthly"
+        name="type">
       <label
         class="button"
-        for="monthly">Sponsor monthly</label>
-  </fieldset>
+        for="monthly">Monthly sponsor</label>
+    </fieldset>
 
-  <fieldset id="donation-amount">
-    <div class="tiers once"><input
-          type="radio"
-          id="once-0"
-          name="amount"
-          value="25"
-          >
-        <label
-          class="button"
-          for="once-0">€ 25</label><input
-          type="radio"
-          id="once-1"
-          name="amount"
-          value="50"
-          >
-        <label
-          class="button"
-          for="once-1">€ 50</label><input
-          type="radio"
-          id="once-2"
-          name="amount"
-          value="100"
-          >
-        <label
-          class="button"
-          for="once-2">€ 100</label><input
-          type="radio"
-          id="once-3"
-          name="amount"
-          value="200"
-          >
-        <label
-          class="button"
-          for="once-3">€ 200</label></div>
+    <form
+      method="get"
+      action="">
 
-    <div class="tiers monthly" hidden><input
-          type="radio"
-          id="monthly-0"
-          name="amount"
-          value="5"
-          >
+      <fieldset id="donation-amount">
+        <legend>Donation amount</legend>
+
+        <div class="tiers once"><input
+              type="radio"
+              id="once-25"
+              name="amount"
+              value="25"
+              data-min="25"
+              data-max="49">
+            <label
+              class="button"
+              for="once-25">
+              <span class="currency-symbol">€</span> 25</label><input
+              type="radio"
+              id="once-50"
+              name="amount"
+              value="50"
+              data-min="50"
+              data-max="99">
+            <label
+              class="button"
+              for="once-50">
+              <span class="currency-symbol">€</span> 50</label><input
+              type="radio"
+              id="once-100"
+              name="amount"
+              value="100"
+              data-min="100"
+              data-max="199">
+            <label
+              class="button"
+              for="once-100">
+              <span class="currency-symbol">€</span> 100</label><input
+              type="radio"
+              id="once-200"
+              name="amount"
+              value="200"
+              data-min="200"
+              data-max="1000000">
+            <label
+              class="button"
+              for="once-200">
+              <span class="currency-symbol">€</span> 200</label></div>
+
+        <div class="tiers monthly"><input
+              type="radio"
+              id="monthly-5"
+              name="amount"
+              value="5"
+              data-min="5"
+              data-max="24">
+            <label
+              class="button"
+              for="monthly-5"
+              style="--color: var(--accent)">
+              <span class="currency-symbol">€</span> 5</label><input
+              type="radio"
+              id="monthly-25"
+              name="amount"
+              value="25"
+              data-min="25"
+              data-max="99">
+            <label
+              class="button"
+              for="monthly-25"
+              style="--color: #A86A27">Bronze
+              <span class="currency-symbol">€</span> 25</label><input
+              type="radio"
+              id="monthly-100"
+              name="amount"
+              value="100"
+              data-min="100"
+              data-max="199">
+            <label
+              class="button"
+              for="monthly-100"
+              style="--color: #9A9A9A">Silver
+              <span class="currency-symbol">€</span> 100</label><input
+              type="radio"
+              id="monthly-200"
+              name="amount"
+              value="200"
+              data-min="200"
+              data-max="1000000">
+            <label
+              class="button"
+              for="monthly-200"
+              style="--color: #D4A715">Gold
+              <span class="currency-symbol">€</span> 200</label></div>
+
+        <div class="custom">
+          <div class="button custom-amount">
+            <label for="custom-input">
+              <span class="currency-symbol">€</span>
+            </label><input
+              type="number"
+              id="custom-input"
+              min="5"
+              max="1000000000"
+              step="1"
+              inputmode="numeric"
+              title="Custom whole-number amount (5 or more)"
+              placeholder="Custom whole-number amount (5 or more)"
+              autocomplete="off">
+          </div>
+
+          <select
+            class="button"
+            id="currency-toggle"
+            title="Currency"
+            aria-label="Currency"><option
+                value="EUR"
+                data-symbol="€"
+                selected>€ EUR</option><option
+                value="USD"
+                data-symbol="$"
+                >$ USD</option></select>
+        </div>
+      </fieldset>
+
+      <fieldset id="donation-payment">
+        <legend>Donation payment</legend>
+
         <label
-          class="button"
-          for="monthly-0">€ 5</label><input
-          type="radio"
-          id="monthly-1"
-          name="amount"
-          value="25"
-          >
+          class="button message once default"
+          id="message-once-default">Choose a one-time donation amount</label>
+
         <label
-          class="button"
-          for="monthly-1">€ 25</label><input
-          type="radio"
-          id="monthly-2"
-          name="amount"
-          value="100"
-          >
-        <label
-          class="button"
-          for="monthly-2">€ 100</label><input
-          type="radio"
-          id="monthly-3"
-          name="amount"
-          value="200"
-          >
-        <label
-          class="button"
-          for="monthly-3">€ 200</label></div>
+          class="button messages monthly default"
+          id="message-monthly-default">Choose the monthly sponsorship</label><button
+              type="button"
+              id="payment-sepa"
+              class="button payment both"
+              popovertarget="donation-popover-sepa"
+              popovertargetaction="toggle">SEPA</button>
 
-    <div class="custom">
-      <div
-        class="button"
-        id="custom-amount-box">
-        <label for="custom-amount">€</label>
-        <input
-          type="number"
-          id="custom-amount"
-          min="5"
-          step="1"
-          inputmode="numeric"
-          pattern="[0-9]+"
-          placeholder="Amount">
-      </div>
-
-      <a
-        href="#corporate"
-        class="button"
-        id="corporate-sponsor">Corporate</a>
-
-      <select
-        class="button"
-        id="currency-toggle"
-        name="currency"
-        aria-label="Currency"><option value="EUR" selected>€ EUR</option><option value="USD" >$ USD</option></select>
-    </div>
-  </fieldset>
-
-  <div id="donation-payment">
-    <input
-      type="checkbox"
-      id="donate-checkbox"
-      name="donate"
-      value="donate"
-      required><label
-        for="donate-checkbox"
-        id="message-once-choice">Make a one-time donation now</label><label
-        for="donate-checkbox"
-        id="message-once-default">Choose the one-time donation amount</label><label
-        for="donate-checkbox"
-        id="message-once-error">Please choose a natural number of at least 5</label><label
-        for="donate-checkbox"
-        id="message-monthly-default">Choose the monthly sponsorship level</label><label
-        for="donate-checkbox"
-        id="message-monthly-0">Become a sponsor</label><label
-        for="donate-checkbox"
-        id="message-monthly-1">Become a Bronze sponsor</label><label
-        for="donate-checkbox"
-        id="message-monthly-2">Become a Silver sponsor</label><label
-        for="donate-checkbox"
-        id="message-monthly-3">Become a Gold sponsor</label><button
-          type="submit"
-          id="payment-paypal"
-          class="link-thanks"
-          formaction="https://www.paypal.com/donate/?hosted_button_id=M3Z8BGW6DB69Q"
-          formmethod="get">Paypal</button><button
-          type="submit"
-          id="payment-stripe"
-          class="link-thanks"
-          formaction="https://donate.stripe.com/14k3ei9TYgwFclq145"
-          formmethod="get">Stripe</button><button
-          type="submit"
-          id="payment-github"
-          class="link-thanks"
-          formaction="https://github.com/sponsors/freecad"
-          formmethod="get">GitHub</button><button
-          type="submit"
-          id="payment-opencollective"
-          class="link-thanks"
-          formaction="https://opencollective.com/freecad/donate"
-          formmethod="get">OpenCollective</button><button
-          type="button"
-          id="payment-sepa"
-          popovertarget="donation-popover"
-          popovertargetaction="toggle">SEPA</button>
-
-        <div id="donation-popover" popover><h2>Thanks for using and supporting FreeCAD!</h2><h3>SEPA Bank transfer</h3><p><strong>Beneficiary:</strong> The FreeCAD Project Association</p><p><strong>Beneficiary Address:</strong> Rue Docteur Kuborn 31/46, 1070 Anderlecht, Belgium</p><p><strong>IBAN:</strong> BE04 0019 2896 4531</p><p><strong>BIC-SWIFT:</strong> GEBABEBBXXX</p><p><strong>Bank:</strong> BNP Paribas Fortis</p><p><strong>Bank Address:</strong> Rue de la Station 64, 1360 Perwez, Belgium</p><button
-            class="close"
-            popovertarget="donation-popover"
-            popovertargetaction="hide"><svg
+            <div
+              id="donation-popover-sepa"
+              popover><h2>Thanks for using and supporting FreeCAD!</h2><h3>SEPA Bank transfer</h3><p><strong>Beneficiary:</strong> The FreeCAD Project Association</p><p><strong>Beneficiary Address:</strong> Rue Docteur Kuborn 31/46, 1070 Anderlecht, Belgium</p><p><strong>IBAN:</strong> BE04 0019 2896 4531</p><p><strong>BIC-SWIFT:</strong> GEBABEBBXXX</p><p><strong>Bank:</strong> BNP Paribas Fortis</p><p><strong>Bank Address:</strong> Rue de la Station 64, 1360 Perwez, Belgium</p><button
+                class="close"
+                popovertarget="donation-popover-sepa"
+                popovertargetaction="hide"
+                aria-label="Close"><svg
     class="icon cross"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/cross.svg#cross"></use>
   </svg></button>
-        </div></div>
+            </div><a
+                  class="button payment once link-thanks"
+                  href="https://donate.stripe.com/14k3ei9TYgwFclq145"
+                  target="_blank"
+                  rel="external noreferrer nofollow">Stripe</a><a
+                  class="button payment once link-thanks"
+                  href="https://www.paypal.com/donate/?hosted_button_id=M3Z8BGW6DB69Q"
+                  target="_blank"
+                  rel="external noreferrer nofollow">Paypal</a><a
+                  class="button payment monthly link-thanks"
+                  href="https://www.paypal.com/donate/?hosted_button_id=M3Z8BGW6DB69Q"
+                  target="_blank"
+                  rel="external noreferrer nofollow">Paypal</a><button
+                  type="submit"
+                  id="payment-github-once"
+                  name="frequency"
+                  value="one-time"
+                  data-amount-param="amount"
+                  class="button payment once link-thanks"
+                  formaction="https://github.com/sponsors/freecad"
+                  formmethod="get"
+                  formtarget="_blank">GitHub</button><button
+                  type="submit"
+                  id="payment-github-monthly"
+                  name="frequency"
+                  value="recurring"
+                  data-amount-param="amount"
+                  class="button payment monthly link-thanks"
+                  formaction="https://github.com/sponsors/freecad"
+                  formmethod="get"
+                  formtarget="_blank">GitHub</button><button
+                  type="submit"
+                  id="payment-opencollective-once"
+                  name="interval"
+                  value="oneTime"
+                  data-amount-param="amount"
+                  class="button payment once link-thanks"
+                  formaction="https://opencollective.com/freecad/donate"
+                  formmethod="get"
+                  formtarget="_blank">OpenCollective</button><button
+                  type="submit"
+                  id="payment-opencollective-monthly"
+                  name="interval"
+                  value="month"
+                  data-amount-param="amount"
+                  class="button payment monthly link-thanks"
+                  formaction="https://opencollective.com/freecad/donate"
+                  formmethod="get"
+                  formtarget="_blank">OpenCollective</button></fieldset>
 
-  
-  <noscript>
-    <p>Please enable JavaScript for Donation form validation.</p>
-  </noscript>
-</form>
-
-
-<style>#donation-form label[for="monthly-0"] {
-      
-    }
-    #donation-form label[id="message-monthly-0"] {
-      
-    }
-    #donation-form:has(#monthly-0:checked):not(:has(#donate-checkbox:checked)) #message-monthly-0 {
-      display: block;
-      
-    }#donation-form label[for="monthly-1"] {
-      outline: var(--line) solid #A86A27;
-    }
-    #donation-form label[id="message-monthly-1"] {
-      outline: var(--line) solid #A86A27;
-    }
-    #donation-form:has(#monthly-1:checked):not(:has(#donate-checkbox:checked)) #message-monthly-1 {
-      display: block;
-      background: color-mix(in srgb, #A86A27 75%, var(--header) 25%);
-    }#donation-form label[for="monthly-2"] {
-      outline: var(--line) solid #9A9A9A;
-    }
-    #donation-form label[id="message-monthly-2"] {
-      outline: var(--line) solid #9A9A9A;
-    }
-    #donation-form:has(#monthly-2:checked):not(:has(#donate-checkbox:checked)) #message-monthly-2 {
-      display: block;
-      background: color-mix(in srgb, #9A9A9A 75%, var(--header) 25%);
-    }#donation-form label[for="monthly-3"] {
-      outline: var(--line) solid #D4A715;
-    }
-    #donation-form label[id="message-monthly-3"] {
-      outline: var(--line) solid #D4A715;
-    }
-    #donation-form:has(#monthly-3:checked):not(:has(#donate-checkbox:checked)) #message-monthly-3 {
-      display: block;
-      background: color-mix(in srgb, #D4A715 75%, var(--header) 25%);
-    }</style>
-</section>
+      <noscript>
+        <p>JavaScript is disabled. Choose a predefined tier.</p>
+      </noscript>
+    </form>
+  </div></section>
 
   <div class="sponsors">
     <h2 class="sponsors-title">Current Sponsors</h2><h3>Gold</h3>
@@ -813,6 +819,14 @@
     focusable="false">
     <use href="/Website/svg/forum.svg#forum"></use>
   </svg></a><a
+    href="https://devtalk.freecad.org/"
+    title="DevTalk"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon devtalk"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/devtalk.svg#devtalk"></use>
+  </svg></a><a
     href="https://github.com/freecad"
     title="GitHub"
     target="_blank" rel="external noreferrer nofollow"><svg
@@ -927,9 +941,9 @@
   </svg></a>
 </span>
 <span>
-    Modified: 2026-09-24
+    Modified: 2026-10-07
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/61f966d3e9456cfb79ec6c108ec6d925ef95c5d5">61f966d3e9<svg
+      Commit: <a href="https://github.com/freecad/website/commit/56ec8cc142b45f86f8fbb595352f30eafb37cb5c">56ec8cc142<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">
@@ -945,13 +959,13 @@
     type="text/javascript"
     defer integrity="sha256-sXB3EU5AjfZDs&#43;NizFXKa5FbDM71gyZZeQV1xFllXQU=" crossorigin="anonymous">
   </script><script
-    src="/Website/js/donate.min.57b37379efb071f2fa82c3b47573857848c5e032b2e6272168938542583bae73.js"
+    src="/Website/js/donate.min.0dca5c6e07ed67a27fb74c1c0f633d199a5834a144697649f9701f8d3b4538fd.js"
     type="text/javascript"
-    defer integrity="sha256-V7Nzee&#43;wcfL6gsO0dXOFeEjF4DKy5ichaJOFQlg7rnM=" crossorigin="anonymous">
+    defer integrity="sha256-DcpcbgftZ6J/t0wcD2M9GZpYNKFEaXZJ&#43;XAfjTtFOP0=" crossorigin="anonymous">
   </script><script
-    src="/Website/js/de/redirect_to_thanks.min.414ec3c83799aa774f7c598d38bd64986b5c88a328bc28554c3d70492997dce7.js"
+    src="/Website/js/de/redirect_to_thanks.min.c6b51b50c0649ed9e17621d0b7c1d713c9e20f476c7c7640b2caf5d7fc874fff.js"
     type="text/javascript"
-    defer integrity="sha256-QU7DyDeZqndPfFmNOL1kmGtciKMovChVTD1wSSmX3Oc=" crossorigin="anonymous">
+    defer integrity="sha256-xrUbUMBkntnhdiHQt8HXE8niD0dsfHZAssr11/yHT/8=" crossorigin="anonymous">
   </script></body>
 
 </html>
