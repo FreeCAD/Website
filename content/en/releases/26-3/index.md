@@ -24,7 +24,7 @@ This release makes FreeCAD more responsive on large models, makes Part Design an
 - New ==Mass Properties== command for volume, mass, density, surface area, center of gravity and inertia, with material-aware results and custom reference frames.
 - Box selection by dragging is built into the common navigation styles.
 
-{{< carousel "multidoc.webp" "expression.webp" "mass.webp" >}}
+{{< carousel "multidoc.webp" "expression_static.webp" "mass.webp" >}}
 
 {{< /block >}}
 
@@ -59,7 +59,7 @@ This release makes FreeCAD more responsive on large models, makes Part Design an
 
 {{< group >}}
 
-![Dimensioning against model edges outside the sketch](external.webp "Dimensioning against model edges outside the sketch")
+![Dimensioning against model edges outside the sketch](external_static.webp "Dimensioning against model edges outside the sketch")
 
 ![Text tool (experimental)](text.webp "Text tool (experimental)")
 
@@ -117,7 +117,7 @@ This release makes FreeCAD more responsive on large models, makes Part Design an
 
 {{< block title="Build with BIM and Draft" css_class="accent-2" >}}
 
-{{< carousel "trimex.webp" "locking.webp" >}}
+{{< carousel "trimex_static.webp" "locking_static.webp" >}}
 
 - A ==Report== tool with an SQL-like query language.
 - A ==Covering== tool for finishes and cladding.
