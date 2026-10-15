@@ -6,18 +6,24 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 {{- /* Nginx redirects:
 
-- Get all pages with aliases.
+- Get all pages with aliases. The home page also gets the old /index.php.
 - Generate nginx redirects map for each alias.
+- Resolve targets like site links do, so pages with a `redirect` param point to its target.
 - Match languages by normalized lang name without locale, e.g. es_CO -> es, zh_TW -> zh.
 
-  /old, /old/, and /old.php -> /new/
+  /old, /old/, and /old.php -> /new/ (skipped when /old is /new itself)
   /old.php?lang=<lang> -> translated /<lang>/new/ or default /new/ page if translation missing
+  /?lang=<lang> -> translated home page
+
+- The output is parsed as nginx config, so every line is checked against a safe character set.
 */ -}}
 
 
 {{- if site.IsDefault -}}
 
   {{- $redirects := dict -}}
+  {{- $safe_source := `^/[A-Za-z0-9._~/%-]*(\?lang=[A-Za-z_]+)?$` -}}
+  {{- $safe_target := `^(/|https://)[A-Za-z0-9._~/%:?&=+()-]*$` -}}
   {{- $old_locales := slice
     "be"
     "ca"
@@ -54,38 +60,44 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   -}}
 
   {{- range $new_page := hugo.Sites.Default.Pages -}}
-    {{- if .Aliases -}}
-      {{- $new_default := $new_page.RelPermalink -}}
+    {{- $aliases := $new_page.Aliases -}}
+    {{- if $new_page.IsHome -}}
+      {{- $aliases = $aliases | append "/index" -}}
+    {{- end -}}
+
+    {{- if $aliases -}}
+      {{- $new_default := partial "utils/link_redirect.html" $new_page -}}
       {{- $new_langs := dict -}}
 
       {{- range $translation := $new_page.Translations -}}
         {{- $normalized := replace (lower $translation.Language.Name) "_" "-" -}}
         {{- $lang_name := index (split $normalized "-") 0 -}}
         {{- if not (isset $new_langs $lang_name) -}}
-          {{- $new_langs = merge $new_langs (dict $lang_name $translation.RelPermalink) -}}
+          {{- $new_langs = merge $new_langs (dict $lang_name (partial "utils/link_redirect.html" $translation)) -}}
         {{- end -}}
       {{- end -}}
 
-      {{- range $alias := $new_page.Aliases -}}
-        {{- if findRE `\s` $alias -}}
-          {{- errorf "Alias %q on %q contains whitespace" $alias $new_page.String -}}
-        {{- end -}}
-
+      {{- range $alias := $aliases -}}
         {{- $alias = trim $alias "/" -}}
-        {{- $php_alias := printf "%s.php" $alias -}}
-        {{- range $old_source := slice $alias (printf "%s/" $alias) $php_alias -}}
-          {{- if ne $old_source $new_default -}}
+        {{- $php_alias := printf "/%s.php" $alias -}}
+        {{- range $old_source := slice (printf "/%s" $alias) (printf "/%s/" $alias) $php_alias -}}
+          {{- /* Skip /new and /new/, which would redirect to themselves. */ -}}
+          {{- if ne (trim $old_source "/") (trim $new_default "/") -}}
             {{- $redirects = merge $redirects (dict $old_source $new_default) -}}
           {{- end -}}
+        {{- end -}}
+
+        {{- $lang_sources := slice $php_alias -}}
+        {{- if $new_page.IsHome -}}
+          {{- $lang_sources = $lang_sources | append "/" -}}
         {{- end -}}
 
         {{- range $old_locale := $old_locales -}}
           {{- $normalized := replace (lower $old_locale) "_" "-" -}}
           {{- $lang_name := index (split $normalized "-") 0 -}}
           {{- $new_target := default $new_default (index $new_langs $lang_name) -}}
-          {{- $old_source := printf "%s?lang=%s" $php_alias $old_locale -}}
-          {{- if ne $old_source $new_target -}}
-            {{- $redirects = merge $redirects (dict $old_source $new_target) -}}
+          {{- range $lang_source := $lang_sources -}}
+            {{- $redirects = merge $redirects (dict (printf "%s?lang=%s" $lang_source $old_locale) $new_target) -}}
           {{- end -}}
         {{- end -}}
       {{- end -}}
@@ -93,6 +105,12 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   {{- end -}}
 
   {{- range $old, $new := $redirects -}}
-    {{- printf "/%s /%s/;\n" $old (trim $new "/") -}}
+    {{- if not (findRE $safe_source $old) -}}
+      {{- errorf "Redirect source %q contains characters not allowed in the nginx map" $old -}}
+    {{- end -}}
+    {{- if not (findRE $safe_target $new) -}}
+      {{- errorf "Redirect target %q for %q contains characters not allowed in the nginx map" $new $old -}}
+    {{- end -}}
+    {{- printf "%s %s;\n" $old $new -}}
   {{- end -}}
 {{- end -}}

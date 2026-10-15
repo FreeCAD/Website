@@ -286,4 +286,7 @@ caches:
     dir: :cacheDir/images
 
 disableHugoGeneratorInject: true
+# Aliases are served as nginx 301 redirects from the generated .nginx/301.nginx
+# map (themes/trigo/layouts/home.redirects.nginx), not as HTML redirect pages.
+# Hosts without that nginx config, e.g. GitHub Pages, have no alias redirects.
 disableAliases: true
