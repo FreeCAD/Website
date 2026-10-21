@@ -15,7 +15,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   {{- $social := lower $label -}}
   <a
     href="{{ .url }}"
-    title="{{ i18n $social | default $label }}"
+    title="{{ $label }}"
     target="_blank" rel="external noreferrer nofollow">
 
     {{- partialCached "utils/icon.html" $social $social -}}

@@ -88,7 +88,6 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
         {{- with $json.media_attachments -}}
 
-          {{- $sensitive_content := i18n "sensitive_content" | default "Sensitive content" -}}
           {{- range . -}}
             {{- if eq .type "image" -}}
               {{- $images = $images | append . -}}
@@ -104,12 +103,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
                   src="{{ .url }}"
                   alt="{{ $alt }}"
                   loading="lazy"
-                  class="toot-media-img{{- if $json.sensitive }} toot-sens-blur{{ end -}}"
-                  {{- if $json.sensitive }} onclick="this.classList.toggle('toot-sens-blur-no')"{{ end -}}>
-
-                {{- if $json.sensitive -}}
-                  <div class="blur-text">{{ $sensitive_content }}</div>
-                {{- end -}}
+                  class="toot-media-img">
               {{- end -}}
             </div>
           {{- end -}}
@@ -123,16 +117,11 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
                   muted
                   playsinline
                   controls
-                  class="toot-media-img{{- if $json.sensitive }} toot-sens-blur{{ end -}}"
-                  {{- if eq .type "gifv" }} loop autoplay{{ end -}}
-                  {{- if $json.sensitive }} onclick="this.classList.toggle('toot-sens-blur-no')"{{ end -}}>
+                  class="toot-media-img"
+                  {{- if eq .type "gifv" }} loop autoplay{{ end -}}>
                   <source src="{{ .url }}">
                   {{- $video_fallback -}}
                 </video>
-
-                {{- if $json.sensitive -}}
-                  <div class="blur-text">{{ $sensitive_content }}</div>
-                {{- end -}}
               </div>
             {{- end -}}
           {{- end -}}

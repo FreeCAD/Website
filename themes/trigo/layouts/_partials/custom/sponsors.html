@@ -23,14 +23,14 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 {{- with $sponsors -}}
   <div class="sponsors">
     <h2 class="sponsors-title">
-      {{- i18n "sponsors_title" | default "Current Sponsors" -}}
+      {{- i18n "current_sponsors" | default "Current Sponsors" -}}
     </h2>
 
     {{- range $tier := $tiers -}}
 
       {{- $tier_sponsors := where $sponsors "tier" $tier -}}
       {{- with $tier_sponsors -}}
-        <h3>{{ $tier | title }}</h3>
+        <h3>{{ i18n $tier | default (title $tier) }}</h3>
         <div class="sponsors-tier">
 
           {{- range $sponsor := sort . "label" -}}

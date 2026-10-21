@@ -52,15 +52,17 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
       {{- partial "utils/debug_info.html" . -}}
     {{- end -}}
 
+    {{- $share := i18n "share_fediverse" | default "Share on the Fediverse" -}}
+
     <main class="fedishare">
       <noscript>
         <div class="warning">
-          {{- i18n "javascript_required" | default "Javascript is required" -}}
+          {{- i18n "noscript" | default "Javascript is disabled" -}}
         </div>
       </noscript>
 
       <h2>
-        {{- i18n "share_on" | default "Share on" }} {{ i18n "fediverse" | default "Fediverse" -}}
+        {{- $share -}}
       </h2>
 
       <form id="shareForm">
@@ -136,7 +138,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
           class="button"
           id="submit">
 
-          {{- i18n "share_on" | default "Share on" }} {{ i18n "fediverse" | default "Fediverse" -}}
+          {{- $share -}}
         </button>
       </form>
     </main>

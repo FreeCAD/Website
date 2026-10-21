@@ -32,7 +32,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
       <label
         class="button"
         for="once">
-        {{- i18n "donate_once_label" | default "One-time donation" -}}
+        {{- i18n "donate_once" | default "One-time donation" -}}
       </label>
 
       <input
@@ -42,7 +42,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
       <label
         class="button"
         for="monthly">
-        {{- i18n "donate_monthly_label" | default "Monthly sponsor" -}}
+        {{- i18n "donate_monthly" | default "Monthly sponsor" -}}
       </label>
     </fieldset>
 
@@ -112,7 +112,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
               <span class="currency-symbol">{{ $selected_currency }}</span>
             </label>
 
-            {{- $custom_label := i18n "amount" | default "Custom whole-number amount (5 or more)" -}}
+            {{- $custom_label := i18n "donate_custom" | default "Custom whole-number amount (5 or more)" -}}
             <input
               type="number"
               id="custom-input"
@@ -209,7 +209,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
               {{- end -}}
 
               {{- with $pay.title -}}
-                <h3>{{ i18n "sepa_title" | default . }}</h3>
+                <h3>{{ i18n "donate_sepa" | default . }}</h3>
               {{- end -}}
 
               {{- range $pay.details -}}
@@ -222,8 +222,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
               <button
                 class="close"
                 popovertarget="donation-popover-{{ lower $pay.platform }}"
-                popovertargetaction="hide"
-                aria-label="{{ i18n "close" | default "Close" }}">
+                popovertargetaction="hide">
                 {{- partialCached "utils/icon.html" "cross" "cross" -}}
               </button>
             </div>
@@ -232,7 +231,9 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
       </fieldset>
 
       <noscript>
-        <p>{{ i18n "message_noscript" | default "JavaScript is disabled. Choose a predefined tier." }}</p>
+        <p>
+          {{- i18n "noscript" | default "Javascript is disabled" -}}
+        </p>
       </noscript>
     </form>
   </div>

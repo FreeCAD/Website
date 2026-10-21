@@ -133,12 +133,12 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
           {{- printf "%v %s / %v %s"
             $total_records
             (cond (gt $total_records 1)
-              (i18n "record" 2 | default "records")
-              (i18n "record" 1 | default "record"))
+              (i18n "records" | default "Records")
+              (i18n "record" | default "Record"))
             $total_users
             (cond (gt $total_users 1)
-              (i18n "user" 2 | default "users")
-              (i18n "user" 1 | default "user"))
+              (i18n "users" | default "Users")
+              (i18n "user" | default "User"))
             -}}
         </p>
 

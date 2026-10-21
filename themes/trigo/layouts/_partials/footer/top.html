@@ -7,10 +7,12 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 {{- /* Provide link to Top of the page. */ -}}
 
 
+{{- $title := i18n "go_top" | default "Go to Top" -}}
+
 <a id="top-link"
   href="#top"
   accesskey="g"
-  aria-label="{{ i18n "go_top" | default "Go to Top" }}"
-  title="{{ i18n "go_top" | default "Go to Top" }} (Alt + G)" >
+  aria-label="{{ $title }}"
+  title="{{ $title }} (Alt + G)" >
   {{- partialCached "utils/icon.html" "tri_up" "tri_up" -}}
 </a>

@@ -15,7 +15,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 {{- $image := .image -}}
 {{- $src := $image.RelPermalink -}}
-{{- $desc := .desc | default (i18n "image_description" | default "Missing image description") -}}
+{{- $desc := .desc | default (i18n "missing_description" | default "Missing description") -}}
 {{- $attributes := .attributes | default dict -}}
 {{- $name := .name | default (path.BaseName $image.Name) -}}
 
