@@ -94,7 +94,7 @@
   <meta property="og:locale" content="fr_FR">
   <meta property="og:type" content="article">
     <meta property="article:section" content="dev">
-    <meta property="article:modified_time" content="2026-05-05T15:27:52+02:00">
+    <meta property="article:modified_time" content="2026-10-21T09:10:26+02:00">
 </head><body
     class="single type-dev kind-page "
     id="top">
@@ -678,7 +678,27 @@ a separate mechanism must be used to provide the string to translators, and <cod
 </span></span><span class="line"><span class="cl">    <span class="n">sPixmap</span>       <span class="o">=</span> <span class="s">&#34;MyWorkbench_DoAThing&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p>Note that <code>sGroup</code> should not be translated here (you will still find many counterexamples in older code, however).</p>
 <p>If for any reason you need to manually set the name of the command&rsquo;s menu item or tooltip, you will need to explicitly (and manually) set the context to the name of the class, e.g.:</p>
-<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">action-&gt;setText(QCoreApplication::translate(&#34;MyCommandClass&#34;, &#34;Some text to be translated&#34;));</span></span></code></pre></div></div><h2
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">action-&gt;setText(QCoreApplication::translate(&#34;MyCommandClass&#34;, &#34;Some text to be translated&#34;));</span></span></code></pre></div></div><h4
+  id="python-commands">
+  <a class="heading-anchor"
+    href="#python-commands"
+    title="Python commands"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Python commands</h4><p>For python based commands, the context MUST be equal to the Command&rsquo;s Name.</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">CmdDoAThing</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">GetResources</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;Pixmap&#34;</span><span class="p">:</span> <span class="s2">&#34;:/icons/DoAThing.svg&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;MenuText&#34;</span><span class="p">:</span> <span class="n">QT_TRANSLATE_NOOP</span><span class="p">(</span><span class="s2">&#34;MyWorkbench_DoAThing&#34;</span><span class="p">,</span> <span class="s2">&#34;Do a thing&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;ToolTip&#34;</span><span class="p">:</span> <span class="n">QT_TRANSLATE_NOOP</span><span class="p">(</span><span class="s2">&#34;MyWorkbench_DoAThing&#34;</span><span class="p">,</span> <span class="s2">&#34;A longer explanation of doing a thing&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Gui</span><span class="o">.</span><span class="n">addCommand</span><span class="p">(</span><span class="s2">&#34;MyWorkbench_DoAThing&#34;</span><span class="p">,</span> <span class="n">CmdDoAThing</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#               --------------------</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># &#34;MyWorkbench_DoAThing&#34; is the name of the command and it must be used as context for translation too in this example.</span></span></span></code></pre></div></div><h2
   id="translating-plurals">
   <a class="heading-anchor"
     href="#translating-plurals"
@@ -1007,9 +1027,9 @@ a separate mechanism must be used to provide the string to translators, and <cod
   </svg></a>
 </span>
 <span>
-    Modified: 2026-05-05
+    Modified: 2026-10-21
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/0ecf4c13f446aea52a7486c8503f448103f5706d">0ecf4c13f4<svg
+      Commit: <a href="https://github.com/freecad/website/commit/f87c003e3b989558c3c939dd33b82c804b760d44">f87c003e3b<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">
