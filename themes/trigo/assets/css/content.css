@@ -11,11 +11,10 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   max-width: var(--content-width);
   min-height: calc(var(--width) * 0.25);
   margin: 0 auto;
-  text-align: justify;
-  text-align-last: auto;
+  text-align: start;
 }
 
-.content :is(h1, h2):not(:is(.block-shortcode, .steps) :is(h1, h2)) {
+.content :is(h1, h2):not(:is(.block-shortcode, .steps) :is(h1, h2)):not(:has(+ .card-list)) {
   border-block-end: var(--border);
 }
 
@@ -51,7 +50,7 @@ blockquote {
   margin: var(--gap) 0;
   padding: var(--gap);
   text-align: start;
-  border-inline-start: calc(var(--line) * 2) solid var(--tone);
+  border-inline-start: calc(var(--line) * 2) solid var(--backdrop);
   background: var(--entry);
   border-radius: 0 var(--radius) var(--radius) 0;
 }
@@ -418,20 +417,18 @@ figure .internal-tooltip {
 }
 
 .cards {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: calc(var(--gap) * 2);
   max-width: var(--width);
-  margin: 0 auto;
-  padding: calc(var(--gap) * 2) 0;
+  margin-inline: auto;
+  padding-block: calc(var(--gap) * 2);
   z-index: 2;
 }
 
 .card {
   position: relative;
-  width: var(--card-width);
+  min-width: calc(var(--width) * 0.3);
   padding-bottom: var(--gap);
   display: flex;
   flex-direction: column;
@@ -465,7 +462,7 @@ figure .internal-tooltip {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(var(--card-width) * 0.5);
+  aspect-ratio: 2;
   margin-bottom: var(--gap);
   border-radius: var(--radius);
 }
@@ -495,7 +492,7 @@ figure .internal-tooltip {
 
 .card-icon {
   position: absolute;
-  top: calc(var(--card-width) * 0.25);
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -667,16 +664,14 @@ figure .internal-tooltip {
 /* Pagination links to next and previous pages */
 
 .pagination {
-  margin: 0 auto;
+  margin-inline: auto;
+  padding-block-end: var(--gap);
+  max-width: var(--width);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: var(--gap);
-}
-
-.pagination {
-  padding: var(--gap) calc((100vw - var(--width)) * 0.5);
 }
 
 .pagination svg.icon:not(.external) {

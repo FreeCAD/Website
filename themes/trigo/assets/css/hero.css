@@ -70,15 +70,20 @@ main > :is(.hero:only-child, .not-found) {
   vertical-align: calc(var(--gap) * -0.25);
 }
 
+.buttons {
+  display: flex;
+  gap: var(--gap);
+  margin-block: var(--gap);
+}
+
 .button {
   display: inline-block;
-  margin: calc(var(--gap) * 0.5);
   padding: var(--padding);
   color: var(--secondary);
   font-size: var(--m);
   background: var(--entry);
   border-radius: var(--radius);
-  outline: var(--border);
+  outline: var(--line) solid transparent;
   text-align: center;
   justify-content: center;
   align-content: center;

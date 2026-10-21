@@ -422,20 +422,38 @@ input:checked + .branch :is(+ ul, .branch .open) {
 }
 
 .block-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--gap);
-  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  align-items: stretch;
+  gap: calc(var(--gap) * 2);
+  margin-inline: auto;
   max-width: var(--width);
   border-radius: var(--radius);
 }
 
-.block-content > * {
-  max-width: calc((var(--width) * 0.5) - (var(--gap) * 2));
-  flex: 1 auto;
-  margin: auto;
+.block-content > *,
+.block-content:has(> :nth-child(4)):not(:has(> :nth-child(5))) > * {
+  grid-column: span 3;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.block-content:has(> :only-child) > * {
+  grid-column: 2 / span 4;
+}
+
+.block-content:has(> :nth-child(3)) > * {
+  grid-column: span 2;
+}
+
+.block-content > .cards:last-child {
+  grid-column: 4 / span 2;
+}
+
+.block-content > .cards:first-child {
+  grid-column: 2 /span 2;
 }
 
 
