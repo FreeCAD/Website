@@ -28,11 +28,10 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 <h{{ $level }}
   id="{{ $anchor }}"
   {{- with $class }} class="{{ . }}"{{ end -}}>
-  {{- $text -}}
-
   <a class="heading-anchor"
-     href="#{{ $anchor }}"
-     title="{{ $text }}">
-    {{- partialCached "utils/icon.html" "anchor" "anchor" -}}
+    href="#{{ $anchor }}"
+    title="{{ $text }}">
+    {{- partialCached "utils/icon.html" "hash" "hash" -}}
   </a>
+  {{- $text -}}
 </h{{ $level }}>

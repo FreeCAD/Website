@@ -20,8 +20,8 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 {{- $page := .Page -}}
 {{- $destination := .Destination -}}
-{{- $alt := .PlainText -}}
-{{- $title := .Title | default .PlainText -}}
+{{- $desc := .PlainText -}}
+{{- $title := .Title -}}
 {{- $attributes := .Attributes -}}
 
 {{- /* {{- $id := printf "img-%03d" .Ordinal -}} NOTE: See https://github.com/gohugoio/hugo/issues/14670 */ -}}
@@ -69,7 +69,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
         preload="metadata"
         controls
         playsinline
-        {{- with $alt }} aria-label="{{ . }}"{{- end -}}>
+        {{- with $desc }} aria-label="{{ . }}"{{- end -}}>
 
         <source src="{{ .RelPermalink }}">
         {{- $video_fallback -}}
@@ -84,8 +84,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
     {{- $processed_image := partialCached "utils/process_image.html" (dict
       "image" .
-      "alt" $alt
-      "title" $title
+      "desc" $desc
       "attributes" $attributes
       ) .RelPermalink -}}
 
@@ -119,8 +118,17 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
         </div>
       {{- end -}}
 
+      {{- with $desc -}}
+        <figcaption>
+          <div class="internal-tooltip">
+            {{- partialCached "utils/icon.html" "important" "important" -}}
+            <span class="tooltip">{{ . | $.Page.RenderString }}</span>
+          </div>
+        </figcaption>
+      {{- end -}}
+
       {{- with $title -}}
-        <figcaption>{{ . }}</figcaption>
+        <p>{{ . }}</p>
       {{- end -}}
     </figure>
 

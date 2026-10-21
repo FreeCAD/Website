@@ -75,7 +75,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     <div class="card-metadata">
       {{- partialCached "main/meta_date.html" . $key -}}
 
-      {{- partialCached "main/meta_taxonomy.html" (dict "page" . "taxonomies" (slice "category")) $key -}}
+      {{- partialCached "main/meta_taxonomy.html" (dict "page" . "taxonomies" (slice "category")) $key "category" -}}
     </div>
   {{- end -}}
 </a>

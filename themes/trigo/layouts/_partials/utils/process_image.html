@@ -15,9 +15,8 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 {{- $image := .image -}}
 {{- $src := $image.RelPermalink -}}
-{{- $alt := .alt | default (i18n "image_fallback" | default "Image fallback") -}}
+{{- $desc := .desc | default (i18n "image_description" | default "Missing image description") -}}
 {{- $attributes := .attributes | default dict -}}
-{{- $title := .title -}}
 {{- $name := .name | default (path.BaseName $image.Name) -}}
 
 {{- $resize_format := site.Params.resize_format | default "webp" -}}
@@ -73,22 +72,22 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     {{- $height = $image.Height -}}
   {{- end -}}
 
-  <img
-    class="img {{ $name }}"
-    src="{{ $src }}"
-    alt="{{ $alt }}"
-    loading="{{ $loading }}"
-    fetchpriority="{{ $priority }}"
-    decoding="{{ $decoding }}"
-    {{- with $title }} title="{{ . }}"{{ end -}}
-    {{- with $width }} width="{{ . }}"{{ end -}}
-    {{- with $height }} height="{{ . }}"{{ end -}}
-    {{- with $srcset }} srcset="{{ delimit . ", " }}" sizes="{{ delimit $sizes ", " }}"{{ end -}}
+<img
+  class="img {{ $name }}"
+  src="{{ $src }}"
+  alt="{{ $desc }}"
+  loading="{{ $loading }}"
+  fetchpriority="{{ $priority }}"
+  decoding="{{ $decoding }}"
+  {{- with $desc }} title="{{ . }}"{{ end -}}
+  {{- with $width }} width="{{ . }}"{{ end -}}
+  {{- with $height }} height="{{ . }}"{{ end -}}
+  {{- with $srcset }} srcset="{{ delimit . ", " }}" sizes="{{ delimit $sizes ", " }}"{{ end -}}
 
-    {{- range $attr, $value := $attributes -}}
-      {{- with $value -}}
-        {{- printf " %s=%q" $attr (. | transform.HTMLEscape) | safeHTMLAttr -}}
-      {{- end -}}
-    {{- end -}}>
+  {{- range $attr, $value := $attributes -}}
+    {{- with $value -}}
+      {{- printf " %s=%q" $attr (. | transform.HTMLEscape) | safeHTMLAttr -}}
+    {{- end -}}
+  {{- end -}}>
 
 {{- end -}}

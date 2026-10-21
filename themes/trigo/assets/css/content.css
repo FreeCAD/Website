@@ -25,6 +25,9 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 }
 
 .heading-anchor svg {
+  position: absolute;
+  bottom: 0.2em;
+  right: calc(var(--gap) * -0.25);
   opacity: 0;
 }
 
@@ -259,12 +262,14 @@ sup:target {
 }
 
 .content .image :is(img, svg) {
-  max-height: var(--content-width);
+  max-height: calc(var(--content-width) * 0.75);
 }
 
-.content .image svg {
-  height: calc(var(--content-width) * 0.75);
+.content .image svg:not(.icon) {
   width: var(--content-width);
+  max-width: 100%;
+  min-height: calc(var(--width) * 0.25);
+  max-height: 75%;
 }
 
 .content .image button {
@@ -277,11 +282,11 @@ sup:target {
   right: var(--gap);
   width: 2rem;
   height: 2rem;
-  color: var(--tertiary);
+  color: var(--theme);
   background: var(--backdrop);
   border-radius: 50%;
   padding: calc(var(--gap) * 0.25);
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   z-index: 3;
@@ -289,7 +294,7 @@ sup:target {
 }
 
 .content button[popovertarget]:hover svg.icon {
-  color: var(--accent);
+  display: flex;
 }
 
 figure > figcaption:not(:has(.internal-tooltip)) {
