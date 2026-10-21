@@ -6,31 +6,42 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 {{- /* Homepage template:
 
-  - Render title, description and custom buttons from homepage front matter.
-  - Render hero article with its title and cover (fall back to homepage cover).
+  - Render title, description, buttons, platforms, and hero image from homepage front matter.
   - Render homepage content.
 */ -}}
 
 
 {{- define "main" -}}
 
-  {{- $buttons := .Params.buttons -}}
-  {{- $hero := .Params.hero | default hugo.Sites.Default.Home.Params.hero -}}
+  {{- $params := .Params | default hugo.Sites.Default.Home.Params -}}
+  {{- $buttons := $params.buttons -}}
+  {{- $platforms := $params.platforms -}}
+  {{- $key := partialCached "utils/cache_key.html" . . -}}
 
   <section class="hero">
+    <div>
 
-    <div class="hero-column">
-      <h1 class="title{{ with .Params.title_class }} {{ . }}{{ end -}}">
-        {{- .Title -}}
-      </h1>
+      {{- with .Title -}}
+        {{- $title_classes := slice "title" -}}
+        {{- with $params.title_class -}}
+          {{- $title_classes = $title_classes | append . -}}
+        {{- end -}}
+
+        <h1 class="{{ delimit $title_classes " " }}">
+          {{- . -}}
+        </h1>
+      {{- end -}}
 
       {{- with .Description -}}
-        <h3 class="description{{ with $.Params.description_class }} {{ . }}{{ end -}}">
+        {{- $description_classes := slice "description" -}}
+        {{- with $params.description_class -}}
+          {{- $description_classes = $description_classes | append . -}}
+        {{- end -}}
+
+        <h3 class="{{ delimit $description_classes " " }}">
           {{- . -}}
         </h3>
       {{- end -}}
-
-      <h3>🚧 Work in Progress... Come back soon! 🏗️</h3>
 
       {{- with $buttons -}}
         <div class="buttons">
@@ -40,8 +51,8 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
             {{- $button_label := .label -}}
 
             {{- with site.GetPage $button_link -}}
-              {{- $key := partialCached "utils/cache_key.html" . . -}}
-              {{- $button_link = partialCached "utils/link_redirect.html" . $key -}}
+              {{- $button_key := partialCached "utils/cache_key.html" . . -}}
+              {{- $button_link = partialCached "utils/link_redirect.html" . $button_key -}}
               {{- if not $button_label -}}
                 {{- $button_label = .LinkTitle -}}
               {{- end -}}
@@ -53,8 +64,13 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
               {{- $button_label = i18n "explore" | default "Explore" -}}
             {{- end -}}
 
+            {{- $button_classes := slice "button" -}}
+            {{- with .class -}}
+              {{- $button_classes = $button_classes | append . -}}
+            {{- end -}}
+
             <a href="{{ $button_link }}"
-              class="button{{ with .class }} {{ . }}{{ end }}"
+              class="{{ delimit $button_classes " " }}"
               {{- if $is_external }} target="_blank" rel="external noreferrer nofollow"{{ end -}}>
 
               {{- $button_label -}}
@@ -66,51 +82,20 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
           {{- end -}}
         </div>
       {{- end -}}
-    </div>
 
-    {{- with $hero -}}
-
-      {{- $hero_link := .link -}}
-      {{- $hero_title := .title -}}
-      {{- $hero_cover := .cover -}}
-
-      {{- with site.GetPage $hero_link -}}
-        {{- $key := partialCached "utils/cache_key.html" . . -}}
-        {{- $hero_link = partialCached "utils/link_redirect.html" . $key -}}
-        {{- if not $hero_title -}}
-          {{- $hero_title = .LinkTitle -}}
-        {{- end -}}
-        {{- if not $hero_cover -}}
-          {{- $hero_cover = .Page -}}
-        {{- end -}}
-      {{- end -}}
-
-      {{- $is_external := partialCached "utils/is_external.html" $hero_link $hero_link -}}
-
-      {{- with $hero_link -}}
-        <a
-          class="hero-column"
-          href="{{ . }}"
-          {{- if $is_external }} target="_blank" rel="external noreferrer nofollow"{{ end -}}>
-      {{- end -}}
-
-      {{- with $hero_title -}}
-        <h2 class="title{{ with $hero.class }} {{ . }}{{ end -}}">
-          {{- . -}}
-
-          {{- if $is_external -}}
-            {{- partialCached "utils/icon.html" "external" "external" -}}
+      {{- with $platforms -}}
+        <div class="platforms">
+          {{- range . -}}
+            <span>
+              {{- partialCached "utils/icon.html" .icon .icon -}}
+              {{- .label -}}
+            </span>
           {{- end -}}
-        </h2>
+        </div>
       {{- end -}}
 
-      {{- with $hero_cover -}}
-        {{- partialCached "main/cover.html" . . -}}
-      {{- end -}}
-
-      {{- with $hero_link -}}</a>{{- end -}}
-
-    {{- end -}}
+      {{- partialCached "main/cover.html" . $key -}}
+    </div>
   </section>
 
   {{- partial "main/content.html" . -}}

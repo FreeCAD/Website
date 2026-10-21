@@ -62,7 +62,29 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   /* List and Single pages */
   .kind-home .hero {
     min-height: calc(100vh - var(--header-height));
+  }
+
+  .kind-home .hero > div {
+    flex-wrap: nowrap;
+    gap: 0;
+  }
+
+  .kind-home .hero :is(.title, .description) {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .kind-home .buttons {
     flex-direction: column;
+  }
+
+  .kind-home .cover {
+    order: -1;
+  }
+
+  .kind-home .cover img {
+    width: calc(var(--width) * 0.75);
+    max-height: calc(var(--width) * 0.75);
   }
 
   .hero {

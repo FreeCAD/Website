@@ -1,0 +1,87 @@
+/*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/
+
+/* Homepage CSS stylesheet. */
+
+
+/* Hero. */
+
+.kind-home .hero {
+  isolation: isolate;
+  position: relative;
+  height: calc(var(--width) * 0.5);
+  background: var(--muted);
+}
+
+.kind-home .hero > div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--gap);
+  height: min(100%, calc(var(--width) * 0.5));
+  width: var(--width);
+  text-align: start;
+  color: var(--secondary);
+}
+
+.kind-home .hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image:
+    linear-gradient(
+      color-mix(in srgb, var(--accent) 10%, transparent) var(--line),
+      transparent var(--line)
+    ),
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--accent) 10%, transparent) var(--line),
+      transparent var(--line)
+    );
+  background-size: var(--m) var(--m);
+  mask-image: linear-gradient(var(--angle), black 0%, transparent 50%, black 100%);
+}
+
+.kind-home .cover img {
+  max-height: calc(var(--width) * 0.4);
+}
+
+.kind-home .hero :is(.title, .description) {
+  max-width: calc(var(--width) * 0.5);
+  margin: 0;
+}
+
+.kind-home .title {
+  font-size: var(--xxxl);
+  line-height: 1;
+  transform: translate(calc(var(--gap) * -0.25));
+}
+
+.kind-home .platforms {
+  display: flex;
+  gap: calc(var(--gap) * 0.5);
+  color: var(--tertiary);
+}
+
+.kind-home .platforms span {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--gap) * 0.5);
+}
+
+.kind-home .platforms span:not(:last-of-type):after {
+  content: " · ";
+}
+
+.kind-home .platforms svg {
+  width: var(--l);
+  height: var(--l);
+  margin-inline: 0;
+}
