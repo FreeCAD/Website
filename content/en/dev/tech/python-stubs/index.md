@@ -4,7 +4,6 @@ description: Python stubs.
 weight: 12
 ---
 
-
 Python is a dynamically typed language, so there is no error when compiling
 (Yes, Python can compile).
 Compiling/interpreting is an abstract concept, language independent.
@@ -21,7 +20,6 @@ Using an external tool (type checker like
 
 Also, stub files allow IDE (integrated development environment)
 detect possible names for imported classes or method names.
-
 
 ## Installation
 
@@ -63,7 +61,6 @@ Or manually using cloning repo:
    ```shell
    pip install freecad-stubs
    ```
-
 
 ## False positives in stubs
 

@@ -6,7 +6,6 @@ icon: download
 icon_cms: download
 ---
 
-
 {{< block css_class="dots" >}}
 
 {{< group >}}
@@ -22,7 +21,6 @@ With many quality of life improvements, hundreds of bug fixes, and updated libra
 
 {{< /block >}}
 
-
 {{< block css_class="accent" >}}
 
 {{< card path="examples" >}}
@@ -36,7 +34,6 @@ The FreeCAD community provides a wealth of file examples, part libraries, templa
 {{< /group >}}
 
 {{< /block >}}
-
 
 {{< block css_class="gradient" >}}
 
@@ -53,7 +50,6 @@ They can easily be installed directly from within FreeCAD using the Addon Manage
 
 {{< /block >}}
 
-
 {{< block css_class="accent-4" >}}
 
 {{< card path="unstable" >}}
@@ -64,12 +60,11 @@ They can easily be installed directly from within FreeCAD using the Addon Manage
 
 FreeCAD evolves every day. Test the very latest changes, fixes, and features.
 
-***Not recommended for production!***
+_**Not recommended for production!**_
 
 {{< /group >}}
 
 {{< /block >}}
-
 
 {{< block css_class="section" >}}
 

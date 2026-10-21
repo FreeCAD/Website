@@ -5,11 +5,9 @@ description: How to use basic Markdown syntax and formatting.
 weight: 4
 ---
 
-
 Hugo supports [Markdown](https://en.wikipedia.org/wiki/Markdown) syntax for formatting text, creating lists, and more.
 
 This article offers a sample of basic Markdown syntax that can be used in Hugo content files and its rendered output with the current theme.
-
 
 ## Headings
 
@@ -29,16 +27,20 @@ This article offers a sample of basic Markdown syntax that can be used in Hugo c
 <u>How it renders:</u>
 
 # Heading 1
+
 ## Heading 2
+
 ### Heading 3
+
 #### Heading 4
+
 ##### Heading 5
+
 ###### Heading 6
 
 ### Heading with custom class {class="accent"}
 
 ### Heading with a custom id {#custom-id}
-
 
 ## Emphasis
 
@@ -54,16 +56,15 @@ _You **can** combine them_
 
 <u>How it renders:</u>
 
-*This text will be italic*
+_This text will be italic_
 
 _This will also be italic_
 
 **This text will be bold**
 
-__This will also be bold__
+**This will also be bold**
 
 _You **can** combine them_
-
 
 ## Lists
 
@@ -133,7 +134,6 @@ First Term
 Second Term
 : This is the definition of the second term.
 
-
 ## Images
 
 ```text {file=Markdown}
@@ -156,7 +156,6 @@ With caption:
 
 For more advanced functionality, use Hugo's built-in [Figure shortcode](https://gohugo.io/shortcodes/figure/).
 
-
 ## Links
 
 ```text {file=Markdown}
@@ -175,19 +174,17 @@ For more advanced functionality, use Hugo's built-in [Figure shortcode](https://
 
 [Heading ID](#custom-id)
 
-
 ## Styling Text
 
-| Format      | Syntax          | Example output           |
-| ----------- | --------------- | ------------------------ |
-| Bold        | `**bold**`      | Some **bold** text       |
-| Italic      | `*italic*`      | Some *italic* text       |
-| Mark        | `==mark==`      | Some ==marked== text.    |
-| Deleted     | `~~deleted~~`   | Some ~~deleted~~ text    |
-| Inserted    | `++inserted++`  | Some ++inserted++ text   |
-| Subscript   | `~subscript~`   | Some ~subscript~ text.   |
-| Superscript | `^superscript^` | Some ^superscript^ text. |
-
+| Format      | Syntax          | Example output                                                         |
+| ----------- | --------------- | ---------------------------------------------------------------------- |
+| Bold        | `**bold**`      | Some **bold** text                                                     |
+| Italic      | `*italic*`      | Some _italic_ text                                                     |
+| Mark        | `==mark==`      | Some ==marked== text.                                  |
+| Deleted     | `~~deleted~~`   | Some ~~deleted~~ text                                                  |
+| Inserted    | `++inserted++`  | Some ++inserted++ text                                                 |
+| Subscript   | `~subscript~`   | Some ~subscript~ text. |
+| Superscript | `^superscript^` | Some ^superscript^ text.                               |
 
 ## Blockquotes
 
@@ -228,7 +225,6 @@ For more advanced functionality, use Hugo's built-in [Figure shortcode](https://
 > Programs must be written for people to read, and only incidentally for machines to execute.
 {cite="https://web.mit.edu/6.001/6.037/sicp.pdf" caption="**Harold Abelson & Gerald Jay Sussman**, *Structure and Interpretation of Computer Programs*"}
 
-
 ## Inline Code
 
 ```text {file=Markdown}
@@ -238,7 +234,6 @@ Inline `code` has `back-ticks around` it.
 <u>How it renders:</u>
 
 Inline `code` has `back-ticks around` it.
-
 
 ## Code Blocks
 
@@ -368,7 +363,6 @@ def main():
     hello()
 ```
 
-
 ## Tables
 
 ```text {file=Markdown}
@@ -395,10 +389,9 @@ def main():
 
 <u>How it renders:</u>
 
-| Italics   | Bold     | Code   |
+| Italics   |   Bold   |   Code |
 | :-------- | :------: | -----: |
-| *italics* | **bold** | `code` |
-
+| _italics_ | **bold** | `code` |
 
 ## Alerts
 
@@ -441,7 +434,6 @@ Please make sure you are using [Hugo v0.146.0](https://github.com/gohugoio/hugo/
 > [!CAUTION]
 > Advises about risks or negative outcomes of certain actions.
 
-
 ## Other Elements
 
 HTML is supported in most cases:
@@ -449,8 +441,8 @@ HTML is supported in most cases:
 ```text {file="Markdown abbreviation"}
 <abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
 ```
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
 
+<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
 
 ```text {file="Markdown keyboard"}
 Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
@@ -458,13 +450,11 @@ Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
 
 Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
 
-
 ## Configuration
 
 Hugo uses [Goldmark](https://github.com/yuin/goldmark) for Markdown parsing.
 Markdown rendering can be configured in `hugo.yaml` under `markup.goldmark`.
 See Hugo documentation on [Configure Markup](https://gohugo.io/getting-started/configuration-markup/).
-
 
 ## Learning Resources
 

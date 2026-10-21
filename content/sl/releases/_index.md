@@ -1,0 +1,7 @@
+---
+title: All Release Notes
+linkTitle: Releases
+description: Browse back in time previous releases.
+icon: history
+icon_cms: update
+---

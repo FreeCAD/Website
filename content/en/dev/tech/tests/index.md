@@ -4,30 +4,29 @@ description: Automated Testing.
 weight: 6
 ---
 
-
 FreeCAD uses two different automated testing mechanisms, depending on the language being tested. The oldest, and most well-used test framework is the Python `unittest` system, which hooks directly into the FreeCAD Test Workbench, but can only test Python code (and Python wrappers to C++ code). The second is the standalone Google Test C++ testing framework, which generates individual executables for each part of the test suite, and is used to directly test C++ code without having to wrap it in Python.
-
 
 ## References
 
 Some good references about automated testing...
 
 Videos:
-* [Back to Basics: C++ Testing - Amir Kirsh - CppCon 2022 - YouTube.](https://www.youtube.com/watch?v=SAM4rWaIvUQ)
-* [Practical Advice for Maintaining and Migrating Working Code - Brian Ruth - CppCon 2021 - YouTube.](https://www.youtube.com/watch?v=CktRuMALe2A)
-* [The Science of Unit Tests - Dave Steffen - CppCon 2020 - YouTube.](https://www.youtube.com/watch?v=FjwayiHNI1w)
-* [TDD, Where Did It All Go Wrong (Ian Cooper)](https://www.youtube.com/watch?v=EZ05e7EMOLM)
+
+- [Back to Basics: C++ Testing - Amir Kirsh - CppCon 2022 - YouTube.](https://www.youtube.com/watch?v=SAM4rWaIvUQ)
+- [Practical Advice for Maintaining and Migrating Working Code - Brian Ruth - CppCon 2021 - YouTube.](https://www.youtube.com/watch?v=CktRuMALe2A)
+- [The Science of Unit Tests - Dave Steffen - CppCon 2020 - YouTube.](https://www.youtube.com/watch?v=FjwayiHNI1w)
+- [TDD, Where Did It All Go Wrong (Ian Cooper)](https://www.youtube.com/watch?v=EZ05e7EMOLM)
 
 Books:
-* [Kent Beck. Test Driven Development by Example. ISBN 9780321146533](https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530)
-* [Michael Feathers. Working Effectively with Legacy Code. ISBN 0131177052.](https://www.amazon.com/Working-Effectively-Legacy-Michael-Feathers/dp/0131177052)
-* [Jeff Langr. Modern C++ Programming with Test-Driven Development: Code Better, Sleep Better. ISBN 1937785483.](https://www.amazon.com/Modern-Programming-Test-Driven-Development-Better/dp/1937785483/)
 
+- [Kent Beck. Test Driven Development by Example. ISBN 9780321146533](https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530)
+- [Michael Feathers. Working Effectively with Legacy Code. ISBN 0131177052.](https://www.amazon.com/Working-Effectively-Legacy-Michael-Feathers/dp/0131177052)
+- [Jeff Langr. Modern C++ Programming with Test-Driven Development: Code Better, Sleep Better. ISBN 1937785483.](https://www.amazon.com/Modern-Programming-Test-Driven-Development-Better/dp/1937785483/)
 
 ## Terminology
 
 Test writers have a few terms that are often used, but whose precise definitions aren't well-agreed-upon. The internet is full of arguments about what a "unit" is in
-"unit testing" for example. To Kent Beck, author of Test Driven Development (the seminal book on the subject), the "unit" is *the test itself*. In his concept, every test must be wholly isolated from
+"unit testing" for example. To Kent Beck, author of Test Driven Development (the seminal book on the subject), the "unit" is _the test itself_. In his concept, every test must be wholly isolated from
 every other test. They must be able to be run singly, or as part of an entire suite. While that advice has remained, in later years various TDD advocates have suggested that the
 function, method, or class under test is the "unit". Consider that if you don't feel like getting into a flame war on the internet, just don't use the word "unit" at all!
 
@@ -41,7 +40,6 @@ of the ease of generating a Mock.
 
 A "Stub" is a method that simply provides a canned answer for a given input. Sometimes instrumented, but often simply used to replace a more complex function with a simple, predictable response. For example, a random-number
 generator may be replaced with a function that simply returns "42" every time so that the results are deterministic (and therefore more easily testable).
-
 
 ## Python Testing
 
@@ -98,17 +96,19 @@ FreeCAD -t my_file
 ## C++ Testing
 
 In an ideal world, a C++ test would be perfectly isolated from any external dependencies, which would be replaced with minimal, instrumented "mock" versions of themselves. However,
-this almost always requires that the code under test has been *designed* for testing, which is usually not the case for our existing code. In many cases you must add tests for the existing
+this almost always requires that the code under test has been _designed_ for testing, which is usually not the case for our existing code. In many cases you must add tests for the existing
 functionality and implementation, with all its deficiencies, before you can begin to refactor the code to make the tests better. There are many strategies for doing those "dependency injections",
 and over time we aspire to refactor FreeCAD such that it is possible, but developers are also encouraged to remember that:
-* "A journey of a thousand miles begins with a single step"
-* "How do you eat an elephant? One bite at a time."
-* "Perfect is the enemy of good"
+
+- "A journey of a thousand miles begins with a single step"
+- "How do you eat an elephant? One bite at a time."
+- "Perfect is the enemy of good"
 
 A single not-perfect test is better than no test at all (in nearly 100% of cases). As a general rule, a single test should verify a single piece of functionality
 of the code (though sometimes that "functionality" is encompassed by multiple functions. For example, you will typically test getters and setters in pairs). Because your test functions will not
 themselves be "under test" it is critical that they be as short, simple, and self-explanatory as possible. A common idiom to use is "Arrange-Act-Assert", which in our test
 framework looks like this:
+
 ```c++
 // TEST(ClassName, testMethodName), where "testMethodName" is some desciptive indication
 // of what is being tested. In simple cases in may simply be the name of the method being
@@ -135,6 +135,7 @@ TEST(MappedName, toConstString)
 While you can write a series of standalone tests, it is often more convenient to group them together into a "test fixture." This is a class that your test is derived from, which can
 be used both to do setup and teardown, as well as to easily run all tests in the fixture without running the entire suite. Most IDEs recognize Google Test code and will offer the ability
 to run both individual tests as well as entire fixtures very easily from the IDE's interface. An example test fixture and associated tests:
+
 ```c++
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
@@ -189,6 +190,7 @@ TEST_F(MappedElementTest, moveConstructor)
     EXPECT_EQ(originalIndex, newMappedElement.index);
 }
 ```
+
 To run the tests, either directly run the executables that are generated (they are placed in the `$BUILD_DIR/test` subdirectory), or use your IDE's test discovery functionality to run just the tests for
 the code you are working on. FreeCAD's Continuous Integration (CI) suite will always run the full test suite, but it is advisable that before submitting a PR you run all tests on your local
 machine first.
@@ -196,10 +198,12 @@ machine first.
 The test directory structure exactly matches that of FreeCAD as a whole. To prevent ever having to link the entirety of FreeCAD and all of its tests into a single executable (at some point in the future
 when we have better test coverage!), the breakdown of the test executables mimics that of FreeCAD itself, with individual workbenches being compiled into their own test runners. To add a test runner to
 a workbench that does not have one, a developer should add a new target for their WB to the end of the cMakeLists.txt file at the top of the `tests` directory structure, e.g.
+
 ```cmake
 add_executable(Sketcher_tests_run)
 add_subdirectory(src/Mod/Sketcher)
 target_include_directories(Sketcher_tests_run PUBLIC ${EIGEN3_INCLUDE_DIR})
 target_link_libraries(Sketcher_tests_run gtest_main ${Google_Tests_LIBS} Sketcher)
 ```
+
 Note that it can be tempting to further group functionality using [value parameterized tests](https://google.github.io/googletest/advanced.html#value-parameterized-tests).  A key measure here is to assess whether the grouping benefits the writer or the reader of the tests.  Since a test is for use by a future programmer to figure out why it failed, it's okay and often preferred to be more pedantic and more repetitive rather than super efficient.  The reader should be able to figure out your test just by reading it, and maybe the test fixture.  If more work is required then the test is likely too complex.

@@ -4,7 +4,6 @@ description: Guide for getting started with CLion.
 weight: 5
 ---
 
-
 If you don't already have CLion installed, download it, license it, install it per JetBrains instructions.
 
 ### Checking out FreeCAD
@@ -36,7 +35,6 @@ If you choose to use Pixi to get the dependencies then you need to configure a C
 Note: If CMake does not detect any packages from the .pixi folder then the toolchain script may have failed.
 This may be resolved by using the absolute path to your FreeCAD repository in the `pixi-default.bash` script.
 
-
 ### Building CMake
 
 CLion should automatically refresh the CMake build for the application.  You see results or rerun using the cmake
@@ -56,7 +54,6 @@ a clean full rebuild.
 ### Running Application
 
 Use the Run or Debug Icons from the top bar shown in the prior image.
-
 
 ## Debugging
 
@@ -120,7 +117,7 @@ Now there are three approaches here:
 
 1. Using a recent version of CLion (at least 2024.3), ensure that the `python.debug.use.single.port` is checked in CLion's Registry (Help->Find action...->"Registry"), then in the Python Debugger settings page set the port to 5679. Note that this option will not appear if your registry setting is off (the default starting in 2024.3.1), so if you don't see the option to set the port, go back and double-check the registry setting.
 
-3. Find the attach_pydevd.py file in your CLion installation, and modify it using the contrib/clion/attach_pydevd.py.patch in the source code.  Then use the macro below.
+2. Find the attach_pydevd.py file in your CLion installation, and modify it using the contrib/clion/attach_pydevd.py.patch in the source code.  Then use the macro below.
 
 3. Use this elaborate workaround:
 
@@ -131,7 +128,7 @@ Now there are three approaches here:
 2. Regardless of the starting technique, once FreeCAD is up, if there is no code in your FreeCAD supporting
    CLion debugging, then:
    1. Go to the python console and import pydevd.
-   Then go ahead and pretype in the settrace call, leaving the cursor poised to enter a port name but not executing the line.
+      Then go ahead and pretype in the settrace call, leaving the cursor poised to enter a port name but not executing the line.
    2. Alternatively, go to the Macro -> Attach to remote debugger dialog and switch to the CLion tab.
 
 ![Pict1](CLionPythonDebug6.webp)
@@ -141,49 +138,49 @@ Now there are three approaches here:
 ![Pict1](CLionPythonDebug3.webp)
 
 4. Find the Freecad process, which may be well down at the bottom of the list.  It is the configuration
-from earlier that makes Freecad processes appear in the list as Python debuggable.  Highlight this entry
-and press the Attach with Python Debugger button.
+   from earlier that makes Freecad processes appear in the list as Python debuggable.  Highlight this entry
+   and press the Attach with Python Debugger button.
 
 ![Pict1](CLionPythonDebug4.webp)
 
 5. Now it's time to move FAST.  You have about 10 to 15 seconds to complete the following:
-Scroll to the top of the console window and find the (random) port number that CLion has chosen to listen
-on.  Ignore everything else:
+   Scroll to the top of the console window and find the (random) port number that CLion has chosen to listen
+   on.  Ignore everything else:
 
 ![Pict1](CLionPythonDebug5.webp)
 
 6. Switch to the FreeCAD window and complete the port number in either the console's settrace line or the attach dialog
-and execute it:
+   and execute it:
 
 ![Pict1](CLionPythonDebug6.webp)
 
 7. Note the appearance of a "Connected to pydev debugger" line in the CLion console.  Shortly before or after that
-message, you will also see the timeout of CLion's attempt to use a debugger to trigger an attach.  Ignore this
-error.
+   message, you will also see the timeout of CLion's attempt to use a debugger to trigger an attach.  Ignore this
+   error.
 
 ![Pict1](CLionPythonDebug7.webp)
 
-8.  Proceed to debug normally:  any existing breakpoints you have either in c++ code or python code will be hit, you
-can step, examine variables, the whole deal.
+8. Proceed to debug normally:  any existing breakpoints you have either in c++ code or python code will be hit, you
+   can step, examine variables, the whole deal.
 
 ### Running a python or simultaneous debug using updated CLion or the patched attach_pydevd.py
 
-1.  Start FreeCAD running.  You can do this from any place for just a python debug; or you can launch a c++ debug
-in CLion for simultaneous debugging.
+1. Start FreeCAD running.  You can do this from any place for just a python debug; or you can launch a c++ debug
+   in CLion for simultaneous debugging.
 2. Run the contrib/clion/GetCLionDebugPort.FCMacro in FreeCAD.  The cleanest way to do this is just to add it as
-first parameter of the FreeCAD or FreeCADCmd command line.  Editing your FreeCADMain run/debug configuration in
-CLion is the best way to do this - set it once, and python debugging is always there whether you run a c++ debug
-or not, with no effective performance penalty.
+   first parameter of the FreeCAD or FreeCADCmd command line.  Editing your FreeCADMain run/debug configuration in
+   CLion is the best way to do this - set it once, and python debugging is always there whether you run a c++ debug
+   or not, with no effective performance penalty.
 
 #### Caveats
 
 - Sometimes you may get one spurious breakpoint hit in the python debugger.  Just hit the continue run button to keep
-going.  FreeCAD triggers a python exception during startup, and the default CLion debugger settings are to break on this
+  going.  FreeCAD triggers a python exception during startup, and the default CLion debugger settings are to break on this
 - condition.
 - The python files are copied from the source into the build directory.  You must use these build directory versions
-of the python files if you want to set breakpoints.  So if you're built to `cmake-build-debug` for instance, then you
+  of the python files if you want to set breakpoints.  So if you're built to `cmake-build-debug` for instance, then you
 - want `cmake-debug-build/Mod/BIM/Arch.py` and not `src/Mod/BIM/Arch.py`.  This also means that you need to be careful
-when editing files - anything in the build directory is essentially temporary and will be overwritten on the next build,
-but if you change something in the source directory then you need to run a build on an appropriate target to copy the
-changed python file to the build directory.  CLion does not support specifying mapping directories for this python code,
-and there is no evidence of it changing soon.
+  when editing files - anything in the build directory is essentially temporary and will be overwritten on the next build,
+  but if you change something in the source directory then you need to run a build on an appropriate target to copy the
+  changed python file to the build directory.  CLion does not support specifying mapping directories for this python code,
+  and there is no evidence of it changing soon.

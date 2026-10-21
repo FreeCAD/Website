@@ -4,13 +4,11 @@ description: Python Practices.
 weight: 5
 ---
 
-
 ## Naming conventions - PEP8
 
 Using well known conventions makes easier for other developers to understand your code and maintain it in the future.
 
-* [PEP 8 – Style Guide for Python Code](https://peps.python.org/pep-0008/)
-
+- [PEP 8 – Style Guide for Python Code](https://peps.python.org/pep-0008/)
 
 ## Namespacing
 
@@ -18,7 +16,6 @@ Use proper namespacing to avoid conflicts with existing packages. It is preferre
 
 - [Python Modules Documentation](https://docs.python.org/3/tutorial/modules.html#packages)
 - [Python Packaging Namespace Packages Guide](https://packaging.python.org/en/latest/guides/packaging-namespace-packages/)
-
 
 ## Tooling
 
@@ -34,14 +31,11 @@ Use proper namespacing to avoid conflicts with existing packages. It is preferre
 
   Main FreeCAD repo uses `black` with `--linelength=100` in the pre-commit hook, so if you are submitting code to main, take that into account.
 
-
-
 ### Project management
 
 The modern tooling for python is `uv`, it replaces `pip` and manage dependencies, project metadata, virtual environments, etc... and it is 10x faster than pip.
 
 [uv Documentation](https://docs.astral.sh/uv/)
-
 
 ## Typing
 
@@ -54,7 +48,6 @@ There are many static  type checkers:
 - [mypy](https://mypy-lang.org/) (maybe the most common)
 - [pyright](https://github.com/microsoft/pyright) (Microsoft)
 - [ty](https://github.com/astral-sh/ty) (New and fast)
-
 
 ## Python versions
 

@@ -4,11 +4,9 @@ description: How to profile Python code.
 weight: 13
 ---
 
-
 Profiling an application is a way to understand where it spends time while running code. This page details how to profile Python code running within FreeCAD to generate a flamegraph, which is a visualization of function calls over time. It makes it easier to spot slow or frequently used functions in order to identify bottlenecks.
 
 The instructions outlined here are useful for both built-in Python code and third-party addons.
-
 
 ## Using py-spy
 
@@ -31,10 +29,10 @@ py-spy record -o my_results --pid 123456 -d 15 -f speedscope
 
 Argument explanation:
 
-- --output / -o: output filename
-- --pid: the process ID
-- --duration / -d: duration of profiling, in seconds
-- --format / -f: profile result format
+- \--output / -o: output filename
+- \--pid: the process ID
+- \--duration / -d: duration of profiling, in seconds
+- \--format / -f: profile result format
 
 You may omit the duration parameter to profile indefinitely. Pressing `CTRL+C` to quit the program writes the results to the output file.
 

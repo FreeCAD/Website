@@ -7,14 +7,13 @@ cover:
   caption: FreeCAD 26.3 release
 ---
 
-
 FreeCAD 26.3 is the first release on our new schedule of three releases per year, with calendar-based version numbers.
 
 This release makes FreeCAD more responsive on large models, makes Part Design and the Sketcher more versatile, opens up multi-axis machining in CAM, and polishes workflows across every workbench.
 
 <!-- TODO: replace with the 26.3 release video URL -->
-{{< button url="https://www.youtube.com/watch?v=a9biWv_M8p8" label="Watch the release video" icon="youtube_fill" >}}
 
+{{< button url="https://www.youtube.com/watch?v=a9biWv_M8p8" label="Watch the release video" icon="youtube_fill" >}}
 
 {{< block title="A core that keeps up with you" css_class="gradient" >}}
 
@@ -28,7 +27,6 @@ This release makes FreeCAD more responsive on large models, makes Part Design an
 
 {{< /block >}}
 
-
 {{< block title="Part Design, more versatile than ever" css_class="accent-5" >}}
 
 {{< carousel "defeaturing.webp" "thread.webp" "pattern.webp" "pattern-ovp.webp" "offset.webp" >}}
@@ -40,7 +38,6 @@ This release makes FreeCAD more responsive on large models, makes Part Design an
 - Creating a new sketch opens the attachment dialog unless a planar face or datum plane is already selected.
 
 {{< /block >}}
-
 
 {{< block css_class="dots" >}}
 
@@ -67,17 +64,15 @@ This release makes FreeCAD more responsive on large models, makes Part Design an
 
 {{< /block >}}
 
-
 {{< block title="Assembly in motion" css_class="accent-3" >}}
 
-- ==Snapshots== save and restore the placement and visibility of the whole assembly.
+- \==Snapshots== save and restore the placement and visibility of the whole assembly.
 - A ==Rigid Group== joint fixes any number of components relative to each other.
 - Link arrays for placing repeated components.
 - Export simulations to video.
 - Drag without a grounded component: an ungrounded island moves as a rigid group based on its joints.
 
 {{< /block >}}
-
 
 {{< block title="CAM goes multi-axis" css_class="accent-1" >}}
 
@@ -89,7 +84,6 @@ This release makes FreeCAD more responsive on large models, makes Part Design an
 {{< carousel "multiaxis.webp" "rotary.webp" >}}
 
 {{< /block >}}
-
 
 {{< block title="FEM and TechDraw sharpen up" css_class="grid" >}}
 
@@ -114,18 +108,16 @@ This release makes FreeCAD more responsive on large models, makes Part Design an
 
 {{< /block >}}
 
-
 {{< block title="Build with BIM and Draft" css_class="accent-2" >}}
 
 {{< carousel "trimex_static.webp" "locking_static.webp" >}}
 
 - A ==Report== tool with an SQL-like query language.
 - A ==Covering== tool for finishes and cladding.
-- ==Trimex== trims and extends walls, pipes and structures directly by picking an end face, while extrusion moves to its own command.
+- \==Trimex== trims and extends walls, pipes and structures directly by picking an end face, while extrusion moves to its own command.
 - Typed values in coordinate, length and angle fields are locked, so mouse movements no longer overwrite them.
 
 {{< /block >}}
-
 
 {{< block title="Under the hood" css_class="accent-4" >}}
 
@@ -136,11 +128,10 @@ This release makes FreeCAD more responsive on large models, makes Part Design an
 
 {{< /block >}}
 
-
 {{< button url="https://wiki.freecad.org/Release_notes_26.3" label="Read the complete release notes" >}}
 
 And much more, thanks to hundreds of contributions from the community around the world.
 
 **Want to be part of the journey?** Join the [community](community) and [help shape](donate) the future of FreeCAD.
 
-As always — have fun and keep *FreeCADing*!
+As always — have fun and keep _FreeCADing_!

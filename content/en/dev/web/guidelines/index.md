@@ -4,11 +4,9 @@ description: Guidelines for contributing to the website.
 weight: 2
 ---
 
-
 Is it recommended to use the [Content Management System](cms) to add, edit and delete content, such as pages, translations, and resources, as it provides a user-friendly interface, adequate settings and pre-configured forms that facilitate the contributing workflow.
 
 Nevertheless, please read the few following guidelines to ensure contributions are in line with the project's standards and help make the process easier and efficient for everyone involved.
-
 
 ## Text
 
@@ -19,7 +17,6 @@ Nevertheless, please read the few following guidelines to ensure contributions a
 - Prefer using the active voice when possible (e.g. subject is the agent: "subject does action", instead of passive voice where subject is recipient: "action is done by subject") and break complex ideas into simpler and digestible explanations.
 - Use dedicated Markdown and shortcode features to enhance the content, layout, and text with adequate formant and style.
 - Sometimes an illustration is worth a thousand words.
-
 
 ## Translations
 
@@ -34,7 +31,6 @@ Translations of the Theme are handled by translations tables in `themes/trigo/i1
 Before a new language is enabled, the main navigation pages (Homepage, Features, Download, News, Community, Documentation and Donate) and the Theme strings must be translated. If willing to add a new language, use the provided [feature issue](https://github.com/FreeCAD/Website/issues) template indicating who will translate and who will proof-read/review.
 
 The [CMS](cms#manage-translations) allows to edit and add translated content easily, based on the original English content, and provides automatic online translation services via API keys.
-
 
 ## Illustrations
 
@@ -74,11 +70,9 @@ For simple vector graphics illustrations, style attributes such as `fill`, `stro
 
 It is also recommended to simplify and cleanup the svg code by removing unused document resources, definitions, groups, nodes, and attributes. In most cases, one decimal precision is plenty enough and makes the file significantly lighter.
 
-
 ## Theme and configuration
 
 To tweak the style of the Trigo theme, enhance it by adding new features, fix issues, or deep dive into the FreeCAD website configuration, see the dedicated [setup and theme page](theme).
-
 
 ## Licensing
 

@@ -6,7 +6,6 @@ redirect: https://freecad.github.io/Addon-Academy/
 icon: puzzle
 ---
 
-
 ## WIP
 
 Coming soon...

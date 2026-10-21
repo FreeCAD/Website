@@ -4,9 +4,7 @@ description: High-level overview of the release planning and management process.
 weight: 14
 ---
 
-
 We recognize significant wisdom in the philosophy to ["Release Early and Release Often"](https://en.wikipedia.org/wiki/Release_early,_release_often). However, releases can require significant coordinated work within the community.  FreeCAD aspires to produce a major release every 3-6 months. In order to meet this goal, we will work to make releases more predicatable and automated.
-
 
 ## Major and Minor Releases
 
@@ -16,7 +14,6 @@ Between major releases, bugs are occasionally found and repaired. These fixes ma
 
 Major and minor releases have slightly different processes.
 
-
 ## Major Releases
 
 Each major release goes through the following milestones and stages:
@@ -24,6 +21,7 @@ Each major release goes through the following milestones and stages:
 ### Announcement Preparation
 
 A release may be triggered for several reasons.
+
 - An event or dependency in the development roadmap may require a release.
 - There may be a desire to have a major release included in a major platform release like the next version of Ubuntu.
 - Or it may be that a significant set of features has matured to the point that they are ready for general usage.
@@ -81,13 +79,13 @@ Any problems identified with the release candidate should be addressed via PRs m
 
 - The result of the splash screen contest is announced and the new splash screen is added to the source, if that was not done in earlier stages.
 - Update all versions in a number of source code locations where they are not automatically generated:
-    - README
-    - CMakeLists.txt
+  - README
+  - CMakeLists.txt
 - Manually tag the release on the appropriate branch using semantic versioning for the tag name, e.g. "1.2.3". Launch the various build-creation tasks based on this tag.
-    - Conda builds for all platforms
-    - Manual compilation of a Windows LibPack-based binary and NSIS-created installer
-    - Sign and notarize the Mac OS Conda builds once they are complete (See [Code signing](../signing))
-    - (Future work) Sign the Windows builds
+  - Conda builds for all platforms
+  - Manual compilation of a Windows LibPack-based binary and NSIS-created installer
+  - Sign and notarize the Mac OS Conda builds once they are complete (See [Code signing](../signing))
+  - (Future work) Sign the Windows builds
 - Create a new release on GitHub, this time marking the "Set as latest release" box and not marking it as a pre-release, and setting the release to use the tag created above. It's best to ensure all assets are attached prior to publication of the final release, so save the release as a draft as necessary until all builds are completed. The release contains a release announcement text that should be appropriate for the general user audience (not targeted at developers).
 - Prepare a packager's release files and alert the packagers.
 - Update the website [downloads page](https://www.freecad.org/downloads.php) to point to the new files
@@ -110,7 +108,6 @@ There are also other active communities where FreeCAD does not maintain any sort
 
 - Social medias
 - TBD
-
 
 ## Minor Releases
 

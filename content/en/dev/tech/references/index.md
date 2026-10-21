@@ -4,7 +4,6 @@ description: Reference Library.
 weight: 19
 ---
 
-
 The FPA maintains a small reference library that is available to contributors.
 
 Current Holdings:

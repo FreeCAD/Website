@@ -6,7 +6,6 @@ icon: heart
 icon_cms: favorite
 ---
 
-
 ### Donations Frequently Asked Questions
 
 {{< details summary="Why donate to FreeCAD?" name="faq" >}}
@@ -20,17 +19,15 @@ FreeCAD is run entirely by community members. All donations go to the non-profit
 
 {{< /details >}}
 
-
 {{< details summary="How is the money spent?" name="faq" >}}
 
 Check out the [FPA Bookkeeping](https://fpa.freecad.org/handbook/process/bookkeeping/overview.html) to see how the resources are allocated.
 
 {{< /details >}}
 
-
 {{< details summary="How to donate?" name="faq" >}}
 
-It is possible to commit to monthly donations called *sponsorship* or make one-time donations using the payment methods provided by the form on the top of this page. Monthly *sponsorship* grants a sponsor level depending on the amount.
+It is possible to commit to monthly donations called _sponsorship_ or make one-time donations using the payment methods provided by the form on the top of this page. Monthly _sponsorship_ grants a sponsor level depending on the amount.
 
 The FPA accepts donations from individuals and corporations alike. Donations solely aimed at placing companies' links on the Donate page are not accepted. Sponsors must have some form of relationship with the FreeCAD project.
 
@@ -38,18 +35,16 @@ For more details, visit [Accepting donations](https://fpa.freecad.org/handbook/p
 
 {{< /details >}}
 
-
 {{< details summary="Sponsorship Tiers" name="faq" id="tiers" >}}
 
-| Tier | Minimum amount per month | Feature |
-| --- | --- | --- |
-| **Normal** | 5 EUR / 5 USD | No name listed on this page, but helps the project a lot. |
-| **Bronze** 🥉 | 25 EUR / 25 USD | Name or company name listed on this page. |
-| **Silver** 🥈 | 100 EUR / 100 USD | Name or company name, link to website, and one-line description listed on this page. |
-| **Gold** 🥇 | 200 EUR / 200 USD | Name or company name, logo, link to website and custom description listed on this page. |
+| Tier          | Minimum amount per month | Feature                                                                                                 |
+| ------------- | ------------------------ | ------------------------------------------------------------------------------------------------------- |
+| **Normal**    | 5 EUR / 5 USD            | No name listed on this page, but helps the project a lot.                               |
+| **Bronze** 🥉 | 25 EUR / 25 USD          | Name or company name listed on this page.                                               |
+| **Silver** 🥈 | 100 EUR / 100 USD        | Name or company name, link to website, and one-line description listed on this page.    |
+| **Gold** 🥇   | 200 EUR / 200 USD        | Name or company name, logo, link to website and custom description listed on this page. |
 
 {{< /details >}}
-
 
 {{< details summary="Other ways to support" name="faq" >}}
 

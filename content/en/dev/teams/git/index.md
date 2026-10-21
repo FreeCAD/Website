@@ -4,11 +4,9 @@ description: Git and Github.
 weight: 6
 ---
 
-
 ## Checking out PRs locally for review
 
 Git can [checkout pull requests from a remote repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/checking-out-pull-requests-locally). This makes it easier to review pull requests locally, and to run tests against them.
-
 
 ## Configuring Git to make checkout easier.
 
@@ -27,17 +25,21 @@ Ideally, this remote is named "upstream".  If you don't have this remote defined
 ```
 
 ### add the PR namespace
+
 add a second fetch line to the upstream remote definition.  This line will fetch the PR namespace from the upstream repo.
+
 ```
     fetch = +refs/pull/*/head:refs/remotes/upstream/pr/*
 ```
 
 ### now you can fetch PRs with the command
+
 ```bash
 git fetch upstream
 ```
 
 ### checkout a PR
+
 ```bash
 git checkout upstream/pr/1234
 ```

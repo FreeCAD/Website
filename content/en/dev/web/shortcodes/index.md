@@ -4,7 +4,6 @@ description: Bundled Trigo Theme and Hugo shortcodes to enhance content.
 weight: 5
 ---
 
-
 > Shortcodes are special code snippets inside your Markdown content files calling built-in or custom templates.
 >
 > They allow to add specialized content to pages or format their layout with ease.
@@ -22,7 +21,6 @@ Some shortcodes can even be nested, allowing for complex content and layout.
 Most shortcodes support both named and positional arguments.
 
 See the examples below to understand their use cases, structure, and syntax.
-
 
 ## Details
 
@@ -64,22 +62,21 @@ This will be hidden by default.
 
 <u>`details` arguments:</u>
 
-| Position | Argument| Type | Default | Options | Example value |
-| --- | --- | --- | --- | --- | --- |
-| 0 | summary | string | "Details" | | "Click me" |
-| 1 | open | boolean | `true` | | `false` |
-| 2 | name | string | *optional* | | "name" |
-| 3 | title | string | *optional* | | "title" |
-| 4 | id | string | *optional* | | "id" |
-| 5 | css_class | string | *optional* | | CSS class |
-
+| Position | Argument                       | Type    | Default    | Options | Example value |
+| -------- | ------------------------------ | ------- | ---------- | ------- | ------------- |
+| 0        | summary                        | string  | "Details"  |         | "Click me"    |
+| 1        | open                           | boolean | `true`     |         | `false`       |
+| 2        | name                           | string  | _optional_ |         | "name"        |
+| 3        | title                          | string  | _optional_ |         | "title"       |
+| 4        | id                             | string  | _optional_ |         | "id"          |
+| 5        | css_class | string  | _optional_ |         | CSS class     |
 
 ## Tabs and tab
 
 Trigo shortcode to display content in multiple tabs.
 The `tabs` shortcode renders the inner content with multiple `tab` shortcodes.
 
-````html {file="markdown"}
+```html {file="markdown"}
 {{</* tabs >}}
 
   {{< tab JSON >}}
@@ -102,37 +99,42 @@ The `tabs` shortcode renders the inner content with multiple `tab` shortcodes.
   {{< /tab >}}
 
 {{< /tabs */>}}
-````
+```
 
 <u>How it renders:</u>
 
 {{< tabs >}}
-  {{< tab JSON >}}
-  **JSON**: JavaScript Object Notation (JSON) is a standard text-based format for representing structured data.
+  {{< tab "JSON" >}}
+**JSON**: JavaScript Object Notation (JSON) is a standard text-based format for representing structured data.
+
   ```json
   { "hello": "world" }
   ```
+
   {{< /tab >}}
-  {{< tab YAML >}}
-  **YAML**: YAML is a human-readable data serialization language.
+  {{< tab "YAML" >}}
+**YAML**: YAML is a human-readable data serialization language.
+
   ```yaml
   hello: world
   ```
+
   {{< /tab >}}
-  {{< tab TOML >}}
-  **TOML**: TOML aims to be a minimal configuration file format that's easy to read due to obvious semantics.
+  {{< tab "TOML" >}}
+**TOML**: TOML aims to be a minimal configuration file format that's easy to read due to obvious semantics.
+
   ```toml
   hello = "world"
   ```
+
   {{< /tab >}}
 {{< /tabs >}}
 
 <u>`tab` arguments:</u>
 
-| Position | Argument| Type | Default | Options | Example value |
-| --- | --- | --- | --- | --- | --- |
-| 0 | label | string | "Tab" | | "Tab label" |
-
+| Position | Argument | Type   | Default | Options | Example value |
+| -------- | -------- | ------ | ------- | ------- | ------------- |
+| 0        | label    | string | "Tab"   |         | "Tab label"   |
 
 ## Steps
 
@@ -192,7 +194,6 @@ This will not be counted as a step.
 
 {{< /steps >}}
 
-
 ## Tree, branch and leaf
 
 Trigo shortcode to display a filetree list with inner content/branches/leaves and optional icon and label. Branches are collapsible with nested children (e.g. branches or leaves).
@@ -227,28 +228,27 @@ Trigo shortcode to display a filetree list with inner content/branches/leaves an
 
 <u>`tree` arguments:</u>
 
-| Position | Argument| Type | Default | Options | Example value |
-| --- | --- | --- | --- | --- | --- |
-| 0 | label | string | *optional* | | "Tree label" |
-| 1 | css_class | string | *optional* | custom CSS classes | "accent" |
+| Position | Argument                       | Type   | Default    | Options            | Example value |
+| -------- | ------------------------------ | ------ | ---------- | ------------------ | ------------- |
+| 0        | label                          | string | _optional_ |                    | "Tree label"  |
+| 1        | css_class | string | _optional_ | custom CSS classes | "accent"      |
 
 <u>`branch` arguments:</u>
 
-| Position | Argument| Type | Default | Options | Example value |
-| --- | --- | --- | --- | --- | --- |
-| 0 | label | string | *optional* | | "Branch label" |
-| 1 | icon | string | "folder" | "folder", "document", "container", "group", "part", "assembly", "arrow", "branch", "fork", "pr", or "versions" | "group" |
-| 2 | state | string | "open" | | "state" |
-| 3 | css_class | string | *optional* | custom CSS classes | "accent" |
+| Position | Argument                       | Type   | Default    | Options                                                                                                        | Example value  |
+| -------- | ------------------------------ | ------ | ---------- | -------------------------------------------------------------------------------------------------------------- | -------------- |
+| 0        | label                          | string | _optional_ |                                                                                                                | "Branch label" |
+| 1        | icon                           | string | "folder"   | "folder", "document", "container", "group", "part", "assembly", "arrow", "branch", "fork", "pr", or "versions" | "group"        |
+| 2        | state                          | string | "open"     |                                                                                                                | "state"        |
+| 3        | css_class | string | _optional_ | custom CSS classes                                                                                             | "accent"       |
 
 <u>`leaf` arguments:</u>
 
-| Position | Argument| Type | Default | Options | Example value |
-| --- | --- | --- | --- | --- | --- |
-| 0 | label | string | *optional* | | "Leaf label" |
-| 1 | icon | string | "file" | "file", "body", "feature", "sketch", "item", "element", "leaf", "commit" | "item" |
-| 2 | css_class | string | *optional* | custom CSS classes | "accent" |
-
+| Position | Argument                       | Type   | Default    | Options                                                                  | Example value |
+| -------- | ------------------------------ | ------ | ---------- | ------------------------------------------------------------------------ | ------------- |
+| 0        | label                          | string | _optional_ |                                                                          | "Leaf label"  |
+| 1        | icon                           | string | "file"     | "file", "body", "feature", "sketch", "item", "element", "leaf", "commit" | "item"        |
+| 2        | css_class | string | _optional_ | custom CSS classes                                                       | "accent"      |
 
 ## Carousel
 
@@ -282,14 +282,13 @@ The path is relative to the current page bundle. To use resources in the `static
 
 <u>`carousel` arguments:</u>
 
-| Position | Argument| Type | Default | Options | Example value |
-| --- | --- | --- | --- | --- | --- |
-| | unnamed | string[] | *optional* | | "1.webp" |
-| | images | string | *optional* | | "1.webp, 2.webp" |
-| | dir | string | *optional* | | "path/to/dir" |
-| | mode | string | "fixed" | "fixed" or "auto" | "auto" |
-| | duration | int[ms] | 5000 | | 1000 |
-
+| Position | Argument | Type                                                         | Default    | Options           | Example value                                    |
+| -------- | -------- | ------------------------------------------------------------ | ---------- | ----------------- | ------------------------------------------------ |
+|          | unnamed  | string[] | _optional_ |                   | "1.webp"                         |
+|          | images   | string                                                       | _optional_ |                   | "1.webp, 2.webp" |
+|          | dir      | string                                                       | _optional_ |                   | "path/to/dir"                                    |
+|          | mode     | string                                                       | "fixed"    | "fixed" or "auto" | "auto"                                           |
+|          | duration | int[ms]  | 5000       |                   | 1000                                             |
 
 ## Compare
 
@@ -307,14 +306,12 @@ The path is relative to the current page bundle. To use resources in the `static
 
 {{< compare "dir/1.webp" "dir/3.webp" >}}
 
-
 <u>`compare` arguments:</u>
 
-| Position | Argument| Type | Default | Options | Example value |
-| --- | --- | --- | --- | --- | --- |
-| | before (alias: left) | string | **required** | | "before.webp" |
-| | after (alias: right) | string | **required** | | "after.webp" |
-
+| Position | Argument                                                | Type   | Default      | Options | Example value                 |
+| -------- | ------------------------------------------------------- | ------ | ------------ | ------- | ----------------------------- |
+|          | before (alias: left) | string | **required** |         | "before.webp" |
+|          | after (alias: right) | string | **required** |         | "after.webp"  |
 
 ## Canvas
 
@@ -330,16 +327,15 @@ The path is relative to the current page bundle. To use resources in the `static
 
 <u>How it renders:</u>
 
-{{< canvas path="frames" fps="12" title="Press spacebar to animate me! Or grab, scroll and use keyboard arrows too!" >}}
+{{< canvas path="frames" fps="12" title="" >}}
 
 <u>`canvas` arguments:</u>
 
-| Position | Argument| Type | Default | Options | Example value |
-| --- | --- | --- | --- | --- | --- |
-| 0 | path | string | **required** | | "path/to/dir" |
-| 1 | fps | int[fps] | 12 | | 1 |
-| 2 | title | string | *optional* | | "Canvas title" |
-
+| Position | Argument | Type                                                         | Default      | Options | Example value  |
+| -------- | -------- | ------------------------------------------------------------ | ------------ | ------- | -------------- |
+| 0        | path     | string                                                       | **required** |         | "path/to/dir"  |
+| 1        | fps      | int[fps] | 12           |         | 1              |
+| 2        | title    | string                                                       | _optional_   |         | "Canvas title" |
 
 ## Button
 
@@ -355,13 +351,12 @@ Trigo shortcode to add a link as a clickable button with optional icon and label
 
 <u>`button` arguments:</u>
 
-| Position | Argument| Type | Default | Options | Example value |
-| --- | --- | --- | --- | --- | --- |
-| 0 | url | string | **required** | | "/news" |
-| 1 | label | string | *optional* | | "Button label" |
-| 2 | icon | string | *optional* | | "heart" |
-| 3 | css_class | string | *optional* | custom CSS classes | "accent" |
-
+| Position | Argument                       | Type   | Default      | Options            | Example value  |
+| -------- | ------------------------------ | ------ | ------------ | ------------------ | -------------- |
+| 0        | url                            | string | **required** |                    | "/news"        |
+| 1        | label                          | string | _optional_   |                    | "Button label" |
+| 2        | icon                           | string | _optional_   |                    | "heart"        |
+| 3        | css_class | string | _optional_   | custom CSS classes | "accent"       |
 
 ## Marker
 
@@ -377,12 +372,11 @@ Trigo shortcode to add a marker with optional icon and label.
 
 <u>`button` arguments:</u>
 
-| Position | Argument| Type | Default | Options | Example value |
-| --- | --- | --- | --- | --- | --- |
-| 0 | label | string | *optional* | | "Marker label" |
-| 1 | icon | string | *optional* | | "heart" |
-| 2 | css_class | string | *optional* | custom CSS classes | "accent" |
-
+| Position | Argument                       | Type   | Default    | Options            | Example value  |
+| -------- | ------------------------------ | ------ | ---------- | ------------------ | -------------- |
+| 0        | label                          | string | _optional_ |                    | "Marker label" |
+| 1        | icon                           | string | _optional_ |                    | "heart"        |
+| 2        | css_class | string | _optional_ | custom CSS classes | "accent"       |
 
 ## Git
 
@@ -402,10 +396,9 @@ and a pull request: {{< git url="https://github.com/user/repo/pull/123" >}}.
 
 <u>`merge` arguments:</u>
 
-| Position | Argument| Type | Default | Options | Example value |
-| --- | --- | --- | --- | --- | --- |
-| 0 | url | string | **required** | | "https://github.com/user/repo/pull/123" |
-
+| Position | Argument | Type   | Default      | Options | Example value                                                           |
+| -------- | -------- | ------ | ------------ | ------- | ----------------------------------------------------------------------- |
+| 0        | url      | string | **required** |         | "https://github.com/user/repo/pull/123" |
 
 ## PDF
 
@@ -427,11 +420,10 @@ The PDF file can also be located in the project directory and use the relative p
 
 <u>`pdf` arguments:</u>
 
-| Position | Argument| Type | Default | Options | Example value |
-| --- | --- | --- | --- | --- | --- |
-| 0 | path | string | **required** | | "path/to/file.pdf" |
-| 1 | title | string | *optional* | | "My PDF document" |
-
+| Position | Argument | Type   | Default      | Options | Example value                      |
+| -------- | -------- | ------ | ------------ | ------- | ---------------------------------- |
+| 0        | path     | string | **required** |         | "path/to/file.pdf" |
+| 1        | title    | string | _optional_   |         | "My PDF document"                  |
 
 ## Video
 
@@ -447,12 +439,11 @@ Trigo shortcode to display a bundled or external video with optional poster and 
 
 <u>`video` arguments:</u>
 
-| Position | Argument| Type | Default | Options | Example value |
-| --- | --- | --- | --- | --- | --- |
-| 0 | src | string | **required** | | "path/to/video.mp4" |
-| 1 | poster | string | *optional* | | "path/to/poster.webp" |
-| 2 | caption | Markdown | *optional* | | "A video caption" |
-
+| Position | Argument | Type     | Default      | Options | Example value                         |
+| -------- | -------- | -------- | ------------ | ------- | ------------------------------------- |
+| 0        | src      | string   | **required** |         | "path/to/video.mp4"   |
+| 1        | poster   | string   | _optional_   |         | "path/to/poster.webp" |
+| 2        | caption  | Markdown | _optional_   |         | "A video caption"                     |
 
 ## Peertube
 
@@ -474,17 +465,16 @@ You can optionally specify a start and/or stop time.
 
 <u>`peertube` arguments:</u>
 
-| Position | Argument| Type | Default | Options | Example value |
-| --- | --- | --- | --- | --- | --- |
-| 0 | url | string | **required** | | "https://toobnix.org/w/5jBegFpNbffA1nhmp32kqR" |
-| 1 | start | string  | *optional* | | "30s" |
-| 2 | stop | string  | *optional* | | "2m15s" |
-| 3 | width | int[px] | 0=responsive | | 1280 |
-| 4 | autoplay | boolean | `false` | | `true` |
-| 5 | mute | boolean | `false` | | `true` |
+| Position | Argument | Type                                                        | Default      | Options | Example value                                                                  |
+| -------- | -------- | ----------------------------------------------------------- | ------------ | ------- | ------------------------------------------------------------------------------ |
+| 0        | url      | string                                                      | **required** |         | "https://toobnix.org/w/5jBegFpNbffA1nhmp32kqR" |
+| 1        | start    | string                                                      | _optional_   |         | "30s"                                                                          |
+| 2        | stop     | string                                                      | _optional_   |         | "2m15s"                                                                        |
+| 3        | width    | int[px] | 0=responsive |         | 1280                                                                           |
+| 4        | autoplay | boolean                                                     | `false`      |         | `true`                                                                         |
+| 5        | mute     | boolean                                                     | `false`      |         | `true`                                                                         |
 
 By default, videos are displayed responsively, lazy-loaded, and allow fullscreen playback.
-
 
 ## YouTube
 
@@ -500,7 +490,6 @@ Hugo built-in shortcode to embed a YouTube video.
 
 For more information, see [Hugo's YouTube shortcode](https://gohugo.io/shortcodes/youtube/).
 
-
 ## Vimeo
 
 Hugo built-in shortcode to embed a Vimeo video.
@@ -514,7 +503,6 @@ Hugo built-in shortcode to embed a Vimeo video.
 {{< vimeo id=19899678 loading=lazy title="Barn Owl" >}}
 
 For more information, see [Hugo's Vimeo shortcode](https://gohugo.io/shortcodes/vimeo/).
-
 
 ## Card
 
@@ -531,14 +519,13 @@ If not nested in another shortcode, a full-width layout block is rendered around
 
 <u>`card` arguments:</u>
 
-| Position | Argument| Type | Default | Options | Example value |
-| --- | --- | --- | --- | --- | --- |
-| 0 | path | string | **required** | | "news" |
-| 1 | number | int | *optional* | | 3 |
-| 2 | sort | string | *optional* | date, weight, title, linktitle, publishdate, lastmod, length | "date" |
-| 3 | reverse | boolean | `false` | | `true` |
-| 4 | css_class | string | *optional* | custom CSS classes | "gradient" |
-
+| Position | Argument                       | Type    | Default      | Options                                                      | Example value |
+| -------- | ------------------------------ | ------- | ------------ | ------------------------------------------------------------ | ------------- |
+| 0        | path                           | string  | **required** |                                                              | "news"        |
+| 1        | number                         | int     | _optional_   |                                                              | 3             |
+| 2        | sort                           | string  | _optional_   | date, weight, title, linktitle, publishdate, lastmod, length | "date"        |
+| 3        | reverse                        | boolean | `false`      |                                                              | `true`        |
+| 4        | css_class | string  | _optional_   | custom CSS classes                                           | "gradient"    |
 
 ## Block and group
 
@@ -583,19 +570,20 @@ This is **Markdown** *content* between `block` and `group` shortcode tags.
 
 {{< group >}}
 
-This is **Markdown** *content* between `block` and `group` shortcode tags.
+This is **Markdown** _content_ between `block` and `group` shortcode tags.
 
-| Format      | Syntax          | Example output           |
-| ----------- | --------------- | ------------------------ |
-| Bold        | `**bold**`      | Some **bold** text       |
-| Italic      | `*italic*`      | Some *italic* text       |
-| Mark        | `==mark==`      | Some ==marked== text.    |
-| Deleted     | `~~deleted~~`   | Some ~~deleted~~ text    |
-| Inserted    | `++inserted++`  | Some ++inserted++ text   |
-| Subscript   | `~subscript~`   | Some ~subscript~ text.   |
-| Superscript | `^superscript^` | Some ^superscript^ text. |
+| Format      | Syntax          | Example output                                                         |
+| ----------- | --------------- | ---------------------------------------------------------------------- |
+| Bold        | `**bold**`      | Some **bold** text                                                     |
+| Italic      | `*italic*`      | Some _italic_ text                                                     |
+| Mark        | `==mark==`      | Some ==marked== text.                                  |
+| Deleted     | `~~deleted~~`   | Some ~~deleted~~ text                                                  |
+| Inserted    | `++inserted++`  | Some ++inserted++ text                                                 |
+| Subscript   | `~subscript~`   | Some ~subscript~ text. |
+| Superscript | `^superscript^` | Some ^superscript^ text.                               |
 
 > [!TIP]
+>
 > - Content such as images and other shortcodes can be added as well
 > - Each individual HTML block-level element (e.g. heading, paragraph, figure, list, quote) form a "sub-block" and creates its own vertical layout.
 > - Use the `group` shortcode to group them vertically and control the flow.
@@ -610,17 +598,17 @@ This is **Markdown** *content* between `block` and `group` shortcode tags.
 
 <u>`block` arguments:</u>
 
-| Position | Argument| Type | Default | Options | Example value |
-| --- | --- | --- | --- | --- | --- |
-| 0 | content | string | `InnerDeindent` | | Note: Place **Markdown** *content* inside block tags |
-| 1 | title | string | *optional* | | "Block title" |
-| 2 | css_class | string | *optional* | custom CSS classes | "section" |
-| 3 | title_class | string | *optional* | custom CSS classes | "accent" |
-| 4 | content_class | string | *optional* | custom CSS classes | "accent" |
+| Position | Argument                           | Type   | Default         | Options            | Example value                                                        |
+| -------- | ---------------------------------- | ------ | --------------- | ------------------ | -------------------------------------------------------------------- |
+| 0        | content                            | string | `InnerDeindent` |                    | Note: Place **Markdown** _content_ inside block tags |
+| 1        | title                              | string | _optional_      |                    | "Block title"                                                        |
+| 2        | css_class     | string | _optional_      | custom CSS classes | "section"                                                            |
+| 3        | title_class   | string | _optional_      | custom CSS classes | "accent"                                                             |
+| 4        | content_class | string | _optional_      | custom CSS classes | "accent"                                                             |
 
 <u>`group` arguments:</u>
 
-| Position | Argument| Type | Default | Options | Example value |
-| --- | --- | --- | --- | --- | --- |
-| 0 | content | string | `InnerDeindent` | | Note: Place **Markdown** *content* inside group tags |
-| 1 | css_class | string | *optional* | custom CSS classes | "accent" |
+| Position | Argument                       | Type   | Default         | Options            | Example value                                                        |
+| -------- | ------------------------------ | ------ | --------------- | ------------------ | -------------------------------------------------------------------- |
+| 0        | content                        | string | `InnerDeindent` |                    | Note: Place **Markdown** _content_ inside group tags |
+| 1        | css_class | string | _optional_      | custom CSS classes | "accent"                                                             |

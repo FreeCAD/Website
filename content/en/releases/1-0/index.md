@@ -7,11 +7,9 @@ cover:
   caption: FreeCAD 1.0 release
 ---
 
-
 After more than 20 years of development, the 1.0 release marks a major milestone for the FreeCAD project.
 
 With a strong focus on stability, usability, and long-requested core features, FreeCAD is now more powerful, flexible, extensible, and robust than ever before.
-
 
 {{< block title="Robust Solid Modeling" css_class="accent-1" >}}
 
@@ -45,7 +43,6 @@ void ShapeHistory::reset(
 
 {{< /block >}}
 
-
 {{< block title="Integrated Assembly" css_class="accent-2" >}}
 
 ![Exploded View in the Assembly](exploded-view.webp)
@@ -55,7 +52,6 @@ void ShapeHistory::reset(
 - Designed for real-world multi-part engineering workflows
 
 {{< /block >}}
-
 
 {{< block title="Polished Interface" css_class="dots" >}}
 
@@ -69,7 +65,6 @@ void ShapeHistory::reset(
 
 {{< /block >}}
 
-
 {{< block title="Better Tools for Everyday" css_class="accent-3" >}}
 
 ![Measurement tool](measurement.webp)
@@ -79,7 +74,6 @@ void ShapeHistory::reset(
 - More consistent behavior across tools
 
 {{< /block >}}
-
 
 {{< block title="BIM Upgrade" css_class="grid" >}}
 
@@ -91,7 +85,6 @@ void ShapeHistory::reset(
 
 {{< /block >}}
 
-
 {{< block title="Core Engine and Scripting Power" css_class="accent-4" >}}
 
 - Expressions now support the vector API
@@ -100,7 +93,6 @@ void ShapeHistory::reset(
 - Improved Python editor and scripting workflow
 
 {{< /block >}}
-
 
 {{< block title="Materials and Simulation Improvements" css_class="gradient" >}}
 
@@ -111,13 +103,11 @@ void ShapeHistory::reset(
 
 {{< /block >}}
 
-
 {{< block title="Identity Evolution" css_class="accent-5" >}}
 
 ![Refreshed FreeCAD logo chosen by the community](symbol.svg "Refreshed FreeCAD logo chosen by the community")
 
 {{< /block >}}
-
 
 {{< button url="https://wiki.freecad.org/Release_notes_1.0" label="Read the complete release notes" >}}
 
@@ -125,4 +115,4 @@ And so much more, by hundreds of contributors around the world!
 
 **What to be part of this adventure too?** Join the [community](community) and [support](donate) its development.
 
-As always, have fun and keep *FreeCADing*!
+As always, have fun and keep _FreeCADing_!

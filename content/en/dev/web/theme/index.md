@@ -4,12 +4,10 @@ description: Enhance the website project structure, configuration, and the Trigo
 weight: 9
 ---
 
-
 > [!Note]
 > The following reflects the state of the FreeCAD website as of July 2026.
 >
 > If major changes are made to the structure, this documentation must be updated accordingly.
-
 
 ## Website setup
 
@@ -25,10 +23,9 @@ As explained in the [structure page](structure), the `/content` directory uses a
 The homepage resides at the root of each localized trees, next to the nested directories for each collection sections.
 
 Automatic Continuous Integration (CI) and Continuous Deployment (CD) workflows are set in the `/.github` directory, with a few respository templates.
-Some of these workflow use Python scripts located in the `/tools/workflows/ directory.
+Some of these workflow use Python scripts located in the \`/tools/workflows/ directory.
 
 Finally, development notes are stored in the `/notes` directory to keep track of past decisions and discussions.
-
 
 ## Configuration
 
@@ -44,7 +41,6 @@ The project configuration is split into several files, so it is easier to manage
 - `module.yaml` defines the modules mounts and serves as languages fallback strategy to the default language site (English)
 - `params.yaml` defines all theme-specific and custom parameters
 
-
 ## Trigo Theme for Hugo
 
 Trigo is a custom made theme for the [Hugo Static Side Generator](https://gohugo.io/).
@@ -53,7 +49,7 @@ It is developed specifically for the [FreeCAD website](https://www.freecad.org/)
 Trigo aims for simplicity, ease of use and flexibility.
 Contributions of new features, tweaks and improvements are very much welcome!
 Anyone with basic knowledge of Hugo, web standards, HTML, CSS and a bit of JavaScript will hopefully feel at ease.
-Its architecture, methods and documentation are made simple yet efficient in a *FOSS* spirit.
+Its architecture, methods and documentation are made simple yet efficient in a _FOSS_ spirit.
 
 Trigo is inspired by numerous existing Hugo themes, such as PaperMod, Hextra, the official Hugo docs theme and many more.
 
@@ -103,7 +99,7 @@ Default Layouts use either:
 
 - `term.html` for listing all relevant Pages associated with a specific Term.
 
-To organize the code and avoid duplications, the default Layouts may include **Partials** depending on the context. A Partial is just another piece of code that also performs template actions, to keep the code *DRY*.
+To organize the code and avoid duplications, the default Layouts may include **Partials** depending on the context. A Partial is just another piece of code that also performs template actions, to keep the code _DRY_.
 
 ### Code formatting and syntax
 

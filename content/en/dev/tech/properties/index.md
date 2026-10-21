@@ -4,12 +4,10 @@ description: Dealing with Property Changes. A brief introduction.
 weight: 8
 ---
 
-
 Recommended reading:
 
 - The Application Module
 - [Property in the wiki](https://wiki.freecad.org/Property)
-
 
 ## The App side
 
@@ -28,8 +26,8 @@ void myFeature::onChanged(App::Property property)
     }
 }
 ```
-- The other interesting method involving property changes is mustExecute.   This is where you control whether or not your object participates in the next recompute cycle.
 
+- The other interesting method involving property changes is mustExecute.   This is where you control whether or not your object participates in the next recompute cycle.
 
 ## The Gui side
 

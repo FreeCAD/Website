@@ -4,11 +4,9 @@ description: Guidelines for Maintainers regarding code review and merge procedur
 weight: 1
 ---
 
-
 The most important Team in FreeCAD development is the **Maintainers Team**.
 
 Several working groups assist the maintainers by focusing on key areas. While these groups do not have formal oversight of the FreeCAD code base, the maintainers frequently ask them to review Pull Requests and may defer to the working groups for expert opinion. The working groups are self-governing and generally open to contributors.
-
 
 ## The Current Team of Maintainers
 
@@ -32,7 +30,6 @@ This is the list of **current** maintainers & admins.
 
 `WandererFan` [GitHub][GitHub-WandererFan] [Forum][Forum-WandererFan]
 
-
 ### Admins
 
 `Brad Collette` [GitHub][GitHub-Sliptonic] [Forum][Forum-Sliptonic]
@@ -43,53 +40,48 @@ This is the list of **current** maintainers & admins.
 
 `Yorik van Havre` [GitHub][GitHub-Yorik] [Forum][Forum-Yorik]
 
-[GitHub-AdrianInsAval]: https://github.com/adrianinsaval 'GitHub'
-[GitHub-WandererFan]: https://github.com/WandererFan 'GitHub'
-[GitHub-Sliptonic]: https://github.com/sliptonic 'GitHub'
-[GitHub-Hyarion]: https://github.com/hyarion 'GitHub'
-[GitHub-Chennes]: https://github.com/chennes 'GitHub'
-[GitHub-WMayer]: https://github.com/wwmayer 'GitHub'
-[GitHub-Yorik]: https://github.com/yorikvanhavre 'GitHub'
-[GitHub-Kadet]: https://github.com/kadet1090 'GitHub'
-[GitHub-Roy]: https://github.com/Roy-043 'GitHub'
-[GitHub-Connor9220]: https://github.com/Connor9220 'GitHub'
-[GitHub-PieterHijma]: https://github.com/pieterhijma 'GitHub'
-[GitHub-Lgt2x]: https://github.com/Lgt2x 'GitHub'
-
-[Forum-AdrianInsAval]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=19302 'Forum'
-[Forum-WandererFan]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=1375 'Forum'
-[Forum-Sliptonic]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=708 'Forum'
-[Forum-Hyarion]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=34430 'Forum'
-[Forum-Chennes]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=11959 'Forum'
-[Forum-WMayer]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=69 'Forum'
-[Forum-Kadet]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=60296 'Forum'
-[Forum-Yorik]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=68 'Forum'
-[Forum-Roy]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=22936 'Forum'
-[Forum-Connor]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=53853 'Forum'
-[Forum-pieterhijma]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=49078 'Forum'
-[Forum-lgtx]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=85993 'Forum'
-
+[GitHub-AdrianInsAval]: https://github.com/adrianinsaval "GitHub"
+[GitHub-WandererFan]: https://github.com/WandererFan "GitHub"
+[GitHub-Sliptonic]: https://github.com/sliptonic "GitHub"
+[GitHub-Hyarion]: https://github.com/hyarion "GitHub"
+[GitHub-Chennes]: https://github.com/chennes "GitHub"
+[GitHub-WMayer]: https://github.com/wwmayer "GitHub"
+[GitHub-Yorik]: https://github.com/yorikvanhavre "GitHub"
+[GitHub-Kadet]: https://github.com/kadet1090 "GitHub"
+[GitHub-Roy]: https://github.com/Roy-043 "GitHub"
+[GitHub-Connor9220]: https://github.com/Connor9220 "GitHub"
+[GitHub-PieterHijma]: https://github.com/pieterhijma "GitHub"
+[GitHub-Lgt2x]: https://github.com/Lgt2x "GitHub"
+[Forum-AdrianInsAval]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=19302 "Forum"
+[Forum-WandererFan]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=1375 "Forum"
+[Forum-Sliptonic]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=708 "Forum"
+[Forum-Hyarion]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=34430 "Forum"
+[Forum-Chennes]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=11959 "Forum"
+[Forum-WMayer]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=69 "Forum"
+[Forum-Kadet]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=60296 "Forum"
+[Forum-Yorik]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=68 "Forum"
+[Forum-Roy]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=22936 "Forum"
+[Forum-Connor]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=53853 "Forum"
+[Forum-pieterhijma]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=49078 "Forum"
+[Forum-lgtx]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=85993 "Forum"
 
 ## The Role of a Maintainer
 
 The maintainers group has the ultimate responsibility for determining which contributions are accepted into the FreeCAD source. To perform their duty, maintainers have elevated permission. Maintainers use this authority within the scope and process outlined by the [CONTRIBUTING](https://github.com/freecad/freecad/blob/master/CONTRIBUTING.md) document.
 
-
 ## Contributing document
 
 This document describes the expected process to go from an Issue to a merged piece of code. All Maintainers should be familiar with this document, and work to follow the process that it outlines. In particular, once an Issue has an agreed-upon solution path, then a PR that conforms to that path should be merged without further debate about the merits of the solution: code review focuses solely on whether the PR does indeed follow the agreed-upon path, and on identifying major defects in the code. Minor defects may be included in the review process, but should not prevent the PR from being merged in a timely manner.
-
 
 ## Maintainer Duties
 
 Individual maintainers have two primary duties:
 
- - They participate in Issue discussions to help clarify the Issue and guide the discussion towards a viable solution path. This includes refining, splitting, closing duplicates, and ensuring that all discussion participants are professional, inclusive, and working towards a common goal of improving FreeCAD.
+- They participate in Issue discussions to help clarify the Issue and guide the discussion towards a viable solution path. This includes refining, splitting, closing duplicates, and ensuring that all discussion participants are professional, inclusive, and working towards a common goal of improving FreeCAD.
 
- - Once an Issue has been identified and agreed upon and a PR has been submitted to resolve it, Maintainers participate in the PR discussion to move it towards merge as quickly as possible.  This includes reviewing the code to identify major defects and conflicts with FreeCAD's coding guidelines. Maintainers also work to further the conversation around the PR by clarifying open questions, involving others, and drawing attention to critical concerns. If the PR is by a new Contributor, Maintainers work to onboard that Contributor, ensuring they understand the pocess, feel welcome, and recieve the mentorship they need to succeed.
+- Once an Issue has been identified and agreed upon and a PR has been submitted to resolve it, Maintainers participate in the PR discussion to move it towards merge as quickly as possible.  This includes reviewing the code to identify major defects and conflicts with FreeCAD's coding guidelines. Maintainers also work to further the conversation around the PR by clarifying open questions, involving others, and drawing attention to critical concerns. If the PR is by a new Contributor, Maintainers work to onboard that Contributor, ensuring they understand the pocess, feel welcome, and recieve the mentorship they need to succeed.
 
 All open PRs should have at least one maintainer identified in the 'Assignees' field.  PRs should not be assigned to a maintainer. Instead, maintainers should self-assign PRs. If a PR does not have an assigned maintainer in a reasonable time, the author may comment and ask for a maintainer.
-
 
 ## Code Review Process
 
@@ -113,7 +105,7 @@ Anyone who wishes to participate in the code review process may do so, but all p
 
 The most difficult (and divisive) judgement call a Maintainer must make is, when is imperfect code good enough to merge anyway? In any signficant block of code, it's nearly always possible to identify items that could be improved upon. A Maintainer must decide when it is appropriate to merge code, even if they feel that improvements can be made to it. The judgement rests on several criteria:
 
-1. Does the PR fix an important bug? If it does, then getting the fix into the codebase quickly *may* take precedence over any other factor.
+1. Does the PR fix an important bug? If it does, then getting the fix into the codebase quickly _may_ take precedence over any other factor.
 
 2. Is the code blatantly bad by modern software development standards? For example, in C++, does the code use C-style loops, raw pointers, unmanaged memory allocations, etc.? In Python does it eschew PEP8 coding conventions, use ranges in for loops for simple array access, or fail to handle UTF-8 string conversions? If so, the "code smell" may be so bad that it should not be included, even if it does solve some problem. The infinite-horizon maintainability of the codebase is more important that the immediate fix at hand.
 
@@ -129,7 +121,6 @@ FreeCAD is in a transitional period: eventually we expect all code to be formatt
 
 A major goal during a code review is to provide a good experience for Contributors, and part of that is ensuring consistency across Maintainers. FreeCAD operates predominantly on a consensus basis: if you run into a situation during a code review where you are unsure how to proceed, your first course of action should be to reach out to other Maintainers to see how others have handled such things in the past. Once a course of action has been arrived at, consider documenting the new process here in the Developer's Handbook.
 
-
 ## Onboarding new Contributors
 
 People choose to contribute their time and talents to the FreeCAD project for a variety of reasons: these reasons may or may not align with the strategic goals of the project. When possible, new Contributors should be steered towards projects that address pre-existing Issues, and/or that make progress towards specific Roadmap items. That said, many times a new Contributor develops code to solve a specific problem that they personally encountered when using FreeCAD, and those contributions can still be valuable, even if the Issue is created _after_ the PR.
@@ -142,7 +133,7 @@ There is no one-size-fits-all solution to Maintainer-Contributor relations: diff
 
 2. **Focus on the infinite goal.** The PR in front of you is inherently short-term: it needs work, and part of a Maintainer's job is to get it into shape. But more importantly, a Maintainer's job is to consider the infinite future horizon of the project as a whole: in any interaction with a new Contributor, mentorship and encouragement _must_ take priority over the short-term goal of "fixing" their code. That said, a Contributor who cannot work constructively with a Maintainer to improve their work is unlikely to be a valuable long-term Contributor, so a balance must be found on a case-by-case basis.
 
-3. **Be polite, courteous, and professional.** Even considering the language and cultural differences we face in our communications, simple use of "please" and "thank you" go a long way towards encouraging civil, professional discourse. *Ad hominem* arguments, character criticism, and other forms of disrespect for the human beings participating in this project have no place here.
+3. **Be polite, courteous, and professional.** Even considering the language and cultural differences we face in our communications, simple use of "please" and "thank you" go a long way towards encouraging civil, professional discourse. _Ad hominem_ arguments, character criticism, and other forms of disrespect for the human beings participating in this project have no place here.
 
 4. **Cut your losses.** Your well-being as a Maintainer is valuable too, and you have the right to expect polite, courteous, and professional behavior from those whose code you are reviewing. If you face a situation in which a Contributor refuses to respond or cooperate with your (polite, courteous, and professional) advice, it may be that their contribution does not merit further consideration. You are never obligated to continue a review that you don't feel is proceeding in a constructive way.
 
@@ -150,16 +141,15 @@ There is no one-size-fits-all solution to Maintainer-Contributor relations: diff
 
 The Github CI/CD pipepline will execute for any PR that is created unless the PR comes from a first-time. This is intentional and allow is meant to catch bad actors attempting to slip malicious code into the CI process.  When a PR requires the workflow to be started manually, take extra time to evaluate the PR and ensure that any change to the CI system is expected and desirable.
 
-
 ## Merge Process
 
 When possible Maintainers should use the web-based PR merge system on GitHub to avoid potential git errors and to maintain process consistency. There are three merge strategies available:
+
 1. Create a merge commit. This has the advantage of preserving the cryptographic commit signature of the individual commits created by the Contributor, if included. It demonstrates the history of the process clearly, and provides links back to the original Pull Request automatically. However, it creates one extra commit per PR, and for very small single-commit PRs may needlessly pollute the project's commit history. Nevertheless, this should be considered the default merge strategy.
 
 2. Rebase and merge. The rebase process changes the commits, so eliminates any cryptographic commit signature that had been provided by the Contributor. It directly includes the commits in the main history of the repository, without any intervening merge commit. This arguably results in a "cleaner" commit history for the project as a whole. This is most appropriate for small, single-commit PRs.
 
 3. Squash and merge. In some cases a Contributor may not be comfortable using git, and may be unable to squash their own commit history into a reasonable number of well-defined commits. In those cases Maintainers have the option of squashing all commits into one during the merge process. This is most appropriate when working with those uncomfortable with using git, who have a needlessly complex commit history for a single simple task.
-
 
 ## Merge Meetings
 
@@ -168,7 +158,6 @@ Every Monday, FreeCAD maintainers meet on a Jitsi call for an hour to go through
 The call moderator opens the list of all open PRs, then the team of moderators goes through them in reverse chronological order: they look at submitted patches, discuss whether further changes need to happen, and collectively reach decision on merging or postponing the merge.
 
 This event is open for everybody. Developers whose patches are undergoing review are encouraged to join the call in case maintainers have questions about the code / design decisions.
-
 
 ## Reverting
 

@@ -4,7 +4,6 @@ description: Design Working Group (DWG)
 weight: 3
 ---
 
-
 ### Mission
 
 The Design Working Group provides comment, review, and feedback for interface changes while working with developers and project maintainers proposing solutions to improve the overall consistency, coherence, and flow of FreeCAD's user experience across all platforms.

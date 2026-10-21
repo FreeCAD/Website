@@ -5,9 +5,7 @@ description: Translate content and configure locales for the website.
 weight: 7
 ---
 
-
 The FreeCAD website and the Trigo theme support multiple languages using Hugo's [multilingual mode](https://gohugo.io/content-management/multilingual/).
-
 
 ## Enable multi-language
 
@@ -84,7 +82,6 @@ Hugo also supports managing translations by filename. With a file `content/docs/
   {{< /branch >}}
 {{< /tree >}}
 
-
 ## Theme strings translations
 
 To translate theme strings, i18n translation tables are used. YAML data files for each locale are stored in the `i18n` directory and define the string identifier and the translated value.
@@ -93,7 +90,6 @@ To translate theme strings, i18n translation tables are used. YAML data files fo
 - id: title
   translation: "Titre"
 ```
-
 
 ## Reference
 

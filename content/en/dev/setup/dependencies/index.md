@@ -4,21 +4,18 @@ description: Information about the dependencies in FreeCAD.
 weight: 3
 ---
 
-
 ## Overview
 
 Like most software projects, FreeCAD depends on many other packages. Most critical among these is [Open CASCADE Technology](https://occt3d.com/open-cascade-technology/),
-the actual CAD kernel that FreeCAD is built upon. Of course, OpenCASCADE itself has its own dependencies. Many of which have *their* own
+the actual CAD kernel that FreeCAD is built upon. Of course, OpenCASCADE itself has its own dependencies. Many of which have _their_ own
 dependencies, etc. The dependency graph quickly becomes overwhelming if you have to manually install each one. This is where package managers come
 in. Depending on what platform you are developing on, you have a variety of tools at your disposal to resolve these dependencies. A brief overview
 of the most common ones is included below. The main purpose of this document is to highlight the primary dependencies and describe what they do and
 why FreeCAD needs them.
 
-
 ## Supported versions
 
 The head of the main branch of FreeCAD, currently used for the development of FreeCAD 1.2, can be compiled from source on systems as old as the oldest currently-supported [Ubuntu LTS](https://packages.ubuntu.com/) at the time of its expected release, Ubuntu 24.04 LTS. This ties FreeCAD development to the C++23 standard, Python 3.11 and later (we plan to switch to 3.12 or later once Blender updates their dependencies in mid-2026), Qt 6.4, and the versions of the required libraries available on that system. Note that Qt does not support PySide6 `pip` installation on this system, so use of a PPA is required for that dependency. The decision to stop support for Qt5 was [announced 5 January 2026](https://forum.freecad.org/viewtopic.php?t=102292).
-
 
 ## Major dependencies
 
@@ -31,11 +28,12 @@ CAS.CADE, by Matra Datavision in France for the Strim (Styler) and Euclid Quantu
 source software, and since then it's been called OpenCASCADE.
 
 OCCT is a big and complex set of C++ libraries that provide functionality required by a CAD application:
-* A complete STEP compliant geometry kernel.
-* A topological data model and needed functions to work with shapes (cut, fuse, extrude, and many others).
-* Standard import and export processors for files like STEP, IGES, VRML.
-* A 2D and 3D viewer with selection support.
-* A document and project data structure with support for save and restore, external linking of documents, recalculation of design history (parametric modeling) and a facility to load new data types as an extension package dynamically.
+
+- A complete STEP compliant geometry kernel.
+- A topological data model and needed functions to work with shapes (cut, fuse, extrude, and many others).
+- Standard import and export processors for files like STEP, IGES, VRML.
+- A 2D and 3D viewer with selection support.
+- A document and project data structure with support for save and restore, external linking of documents, recalculation of design history (parametric modeling) and a facility to load new data types as an extension package dynamically.
 
 Note that the "Community Edition" of OpenCASCADE is no longer supported by FreeCAD, you must install the first-party library.
 The current minimum supported version is OCCT 7.3.
@@ -115,11 +113,10 @@ It implements the DEFLATE compression algorithm commonly used in .zip and .gzip 
 
 A copy of this library is included in the source code of FreeCAD so it is compiled together with it.
 
-
 ## Dependency management
 
 Each OS uses different mechanisms to supply dependencies. These mechanisms are typically designed such that installing a single dependency
-also automatically installs all of *its* dependencies, eliminating the need for you to manually install every single dependency by hand.
+also automatically installs all of _its_ dependencies, eliminating the need for you to manually install every single dependency by hand.
 
 ### Linux
 
@@ -129,18 +126,25 @@ to be installed. It is very common to have to adjust the one-line command below 
 (usually provided under a different name).
 
 A single command to install the dependencies on 22.04.3 LTS Ubuntu-based systems:
+
 ```sh
 sudo apt install cmake cmake-gui libboost-date-time-dev libboost-dev libboost-filesystem-dev libboost-graph-dev libboost-iostreams-dev libboost-program-options-dev libboost-python-dev libboost-regex-dev libboost-serialization-dev libboost-thread-dev libcoin-dev libeigen3-dev libgts-bin libgts-dev libkdtree++-dev libmedc-dev libocct-data-exchange-dev libocct-ocaf-dev libocct-visualization-dev libopencv-dev libproj-dev libpyside2-dev libqt5opengl5-dev libqt5svg5-dev qtwebengine5-dev libqt5x11extras5-dev libqt5xmlpatterns5-dev libshiboken2-dev libspnav-dev libvtk7-dev libx11-dev libxerces-c-dev libzipios++-dev occt-draw pyside2-tools python3-dev python3-matplotlib python3-packaging python3-pivy python3-ply python3-pyside2.qtcore python3-pyside2.qtgui python3-pyside2.qtsvg python3-pyside2.qtwidgets python3-pyside2.qtnetwork python3-pyside2.qtwebengine python3-pyside2.qtwebenginecore python3-pyside2.qtwebenginewidgets python3-pyside2.qtwebchannel python3-markdown python3-git qtbase5-dev qttools5-dev swig libyaml-cpp-dev
 ```
+
 A single command to install the dependencies on 24.04 LTS Ubuntu-based systems:
+
 ```sh
 sudo apt install cmake cmake-qt-gui libboost-date-time-dev libboost-dev libboost-filesystem-dev libboost-graph-dev libboost-iostreams-dev libboost-program-options-dev libboost-python-dev libboost-regex-dev libboost-serialization-dev libboost-thread-dev libcoin-dev libeigen3-dev libgts-bin libgts-dev libkdtree++-dev libmedc-dev libocct-data-exchange-dev libocct-ocaf-dev libocct-visualization-dev libopencv-dev libproj-dev libpyside2-dev libqt5opengl5-dev libqt5svg5-dev qtwebengine5-dev libqt5x11extras5-dev libqt5xmlpatterns5-dev libshiboken2-dev libspnav-dev libvtk9-dev libx11-dev libxerces-c-dev libzipios++-dev occt-draw pyside2-tools python3-dev python3-matplotlib python3-packaging python3-pivy python3-ply python3-pyside2.qtcore python3-pyside2.qtgui python3-pyside2.qtsvg python3-pyside2.qtwidgets python3-pyside2.qtnetwork qtbase5-dev qttools5-dev swig libyaml-cpp-dev
 ```
+
 To install dependencies on Fedora systems (Derived from the [RPM spec](https://src.fedoraproject.org/rpms/freecad)):
+
 ```sh
 sudo dnf install clang cmake gcc-c++ gettext dos2unix doxygen swig graphviz gcc-gfortran desktop-file-utils freeimage-devel libXmu-devel mesa-libGL-devel mesa-libGLU-devel libglvnd-devel opencascade-devel Coin4-devel python3-devel python3-matplotlib python3-pivy boost-devel eigen3-devel tbb-devel qt5-qtbase-devel qt5-qtsvg-devel qt5-qtxmlpatterns-devel qt5-qttools-devel qt5-qttools-static qt5-qtwebengine-devel xerces-c xerces-c-devel libspnav-devel python3-shiboken2-devel python3-pyside2-devel pyside2-tools smesh-devel zipios++-devel python3-pycxx-devel libicu-devel vtk-devel med-devel libkdtree++-devel libappstream-glib python3-pivy python3-matplotlib python3-collada python3-pyside2 qt5-assistant
 ```
+
 To install dependencies on Arch Linux based systems:
+
 ```sh
 sudo pacman -S boost boost-libs cgns cmake coin eigen fmt git glew graphviz jsoncpp libharu liblas libspnav med-openmpi netcdf ninja nlohmann-json openmpi openvdb opencascade openvr ospray pdal pugixml pyside2 pyside2-tools python-gitpython python-markdown python-matplotlib python-mpi4py python-pip python-pivy python-ply python-shiboken2 python-yaml qt5-svg qt5-tools qt5-webengine qt5-x11extras qt5-xmlpatterns shiboken2 swig utf8cpp verdict xerces-c
 ```

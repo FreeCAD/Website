@@ -4,7 +4,6 @@ description: Guide for getting started with VSCode.
 weight: 4
 ---
 
-
 A convenient way of working with the FreeCAD source code is to use an IDE or Integrated Development Environment. The FreeCAD repository contains a VSCode configuration which makes it particularly easy to get started with.
 
 Get VSCode here https://code.visualstudio.com/download and Git here https://git-scm.com/downloads
@@ -22,6 +21,7 @@ Open VSCode and select `File > Open Folder`, then select the folder where you ha
 Be sure to copy the `.vscode` folder inside `/contrib` to the root directory of the repo (`/.vscode`)
 
 VSCode will probably ask to install the recommended extensions: say `yes`. If it doesn't you'll need to manually install these extensions
+
 ```
 ms-vscode.cpptools-extension-pack
 ms-python.python
@@ -42,7 +42,6 @@ If you are using conda please select one of the respective ones.
 
 Cmake should automatically configure the project with the selected configuration.
 
-
 ## First build
 
 <video controls muted playsinline loop src="build.mp4" type="video/mp4"></video>
@@ -57,7 +56,6 @@ To build, either:
 **NOTE:** The first build takes a while.
 
 **NOTE:** If you change configuration (see step above) you will have to build again.
-
 
 ## Launching the built executable and debugging
 
@@ -76,7 +74,6 @@ To debug please refer to the [documentation](https://code.visualstudio.com/docs/
 
 **NOTE:** Don't use the restart button. It only restarts the selected debugger, which definitely is not what you want. Instead press the stop button (which stops both debuggers) and launch again.
 
-
 ## Running tests
 
 <video controls muted playsinline loop src="testing.mp4" type="video/mp4"></video>
@@ -90,7 +87,6 @@ The IDE supports running FreeCAD tests as well. On the left panel go to the test
 Alternatively, there are two vscode tasks that can be used to run the cpp and python tests directly.
 
 **NOTE:** The debug tests button does not currently work. More configuration is needed to get that to work.
-
 
 ## General features of VSCode
 
@@ -124,12 +120,12 @@ Read the documentation for more:
 - [refactoring](https://code.visualstudio.com/docs/editor/refactoring)
 
 Other useful extensions, recommended but not necessary are
-- ```gruntfuggly.todo-tree```: Scans all the files and reports where particular keywords appear. For example `TODO`, `FIXME`, `BUG`...
 
-- ```mhutchie.git-graph```: Helps visualize git commits and branches.
+- `gruntfuggly.todo-tree`: Scans all the files and reports where particular keywords appear. For example `TODO`, `FIXME`, `BUG`...
 
-- ```donjayamanne.githistory```: Adds two buttons to the right-click menu: `git: view file history` and `git: view line history`
+- `mhutchie.git-graph`: Helps visualize git commits and branches.
 
+- `donjayamanne.githistory`: Adds two buttons to the right-click menu: `git: view file history` and `git: view line history`
 
 ![VSCode extensions](extensions.webp)
 

@@ -1,0 +1,6 @@
+---
+title: How to help FreeCAD
+linkTitle: Помощ
+draft: true
+redirect: https://wiki.freecad.org/Help_FreeCAD/bg
+---

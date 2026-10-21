@@ -4,12 +4,10 @@ description: Get involved with the FreeCAD website.
 weight: 1
 ---
 
-
 > [!IMPORTANT]
 > The FreeCAD website is still in active development.
 > The following documentation is not yet accurate or up-to-date.
 > Have a question or feedback? Feel free to [open an issue](https://github.com/freecad/Website).
-
 
 ## Contributions
 
@@ -27,7 +25,6 @@ For bug report, use the provided [bug issues](https://github.com/FreeCAD/Website
 
 Thank you!
 
-
 ## Website ecosystem
 
 - [FreeCAD website](https://www.freecad.org/) and [its source](https://github.com/FreeCAD/Website)
@@ -36,7 +33,6 @@ Thank you!
 - [FreeCAD Developers Handbook](https://freecad.github.io/DevelopersHandbook/) and [its source](https://github.com/FreeCAD/DevelopersHandbook)
 - [FreeCAD Forum](https://forum.freecad.org/)
 - [FreeCAD Project Association](https://fpa.freecad.org/) and [its source](https://github.com/FreeCAD/FPA)
-
 
 ## Development
 
@@ -82,7 +78,7 @@ Testing builds deployment to GitHub Pages is done automatically by workflow Acti
 > [!IMPORTANT]
 > Internet Explorer isn't supported.
 
-When using and making changes, keep in mind this website only supports *evergreen browsers*:
+When using and making changes, keep in mind this website only supports _evergreen browsers_:
 
 - Firefox (latest version, N-1 version, and latest ESR version)
 - Chrome (latest version and N-1 version)

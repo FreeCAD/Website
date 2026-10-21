@@ -4,10 +4,9 @@ description: Code Review Guide.
 weight: 2
 ---
 
-
 This document aims to provide set of good practices that should be helpful for both developers and code reviewers. They should be treated like food recipes - you can play with them, alter them - but every change should be thoughtful and intentional.
 
-Just like the C++ practices - this document is __very__ much inspired by the [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines).
+Just like the C++ practices - this document is **very** much inspired by the [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines).
 You can always consult it to learn more useful stuff.
 
 While points of this guide might not be consistently followed throughout all of the existing codebase, checking if new code follows them is possible and in long term should help us immensely.
@@ -16,10 +15,10 @@ While points of this guide might not be consistently followed throughout all of 
 > Remember that code review is a collaborative discussion. Don’t hesitate to ask for clarification or help when needed. Reviewers can also make mistakes, the goal is to work together to refine the code to a point where everyone is satisfied.
 
 In this document the **bolded** text will indicate how important each suggestion is.
- - **must** will be used for fundamental things that should be non-controversial and which you really should follow
- - **should** will be used for important details that will apply for vast majority of cases, there could however be valid reasons to ignore them depending on context
- - **could**/**can** will be used for best practices, things that you should try to follow but not following them is not an error per se
 
+- **must** will be used for fundamental things that should be non-controversial and which you really should follow
+- **should** will be used for important details that will apply for vast majority of cases, there could however be valid reasons to ignore them depending on context
+- **could**/**can** will be used for best practices, things that you should try to follow but not following them is not an error per se
 
 ## Common Rules
 
@@ -34,7 +33,6 @@ In this document the **bolded** text will indicate how important each suggestion
 9. PRs **must not** contain any remains of development code, like debug statements other than actual logs.
 10. New code **must not** introduce any new linter warnings
 11. Developer **should** have `pre-commit` installed and working. `pre-commit-ci` commits should be avoided.
-
 
 ## PRs and Commits
 
@@ -56,17 +54,16 @@ e.g. If applied, this commit will add fillet feature.
 5. Commit message **can** contain additional information after one blank line.
 6. Every PR **should** have description, even if it seems obvious.
 
-
 ## Basic Code Rules
 
 1. (C++ only) New code **must** be formatted with clang-format tool or in a way that is compatible with clang-format result if file is excluded from auto formatting.
-1. (Python only) Code **must** follow the PEP 8 standard and formatted with Black.
+2. (Python only) Code **must** follow the PEP 8 standard and formatted with Black.
 3. Main execution path **should** be the least indented one, i.e. conditions should cover specific cases.
 4. Early-Exit **should** be preferred to prune unwanted execution branches fast.
-7. Global state (global variables, static fields, singletons) **should be** avoided.
-8. (C++ only) `enum class` **should** be preferred over normal enum whenever possible.
-9. (C++ only) C++ libraries/structures **should** be preferred over C ones. i.e. `std::array/vector` should be used instead of C array.
-10. (C++ only) C++ standard library **should** be utilized if possible, especially the `<algorithms>` one.
+5. Global state (global variables, static fields, singletons) **should be** avoided.
+6. (C++ only) `enum class` **should** be preferred over normal enum whenever possible.
+7. (C++ only) C++ libraries/structures **should** be preferred over C ones. i.e. `std::array/vector` should be used instead of C array.
+8. (C++ only) C++ standard library **should** be utilized if possible, especially the `<algorithms>` one.
 
 {{< details summary="Example" open="false" >}}
 
@@ -109,9 +106,9 @@ This way you split the responsibility of computing unique set with result prepar
 11. (C++ only) Return values **should** be preferred over out arguments.
     a. For methods that can fail `std::optional` should be used
     b. For methods that return multiple values it may be better to either provide dedicated struct for result or use `std::tuple` with expression binding.
-13. (C++ only) If dealing with pointers `auto` **must** be suffixed with `*`: `auto*`.
-14. (C++ only) If dealing with references `auto` **must** be suffixed with `&`: `auto&`
-15. (C++ only) `auto` **should** be used if:
+12. (C++ only) If dealing with pointers `auto` **must** be suffixed with `*`: `auto*`.
+13. (C++ only) If dealing with references `auto` **must** be suffixed with `&`: `auto&`
+14. (C++ only) `auto` **should** be used if:
     a. the right-hand side makes clear which type it is, e.g. with `static_cast`, or `new`
     b. the type is long or verbose (iterators, ranges, ...)
     c. it reduces redundancy in code (repeated type)
@@ -143,7 +140,6 @@ levels it is a good signal that it might require splitting into smaller methods.
     a. QObjects should use `qobject_cast`
     b. FreeCAD types (deriving from `BaseClass`) should use `freecad_cast`
 
-
 ## Design / Architecture
 
 1. Each class / method / function **should** be doing only one thing and should do it well.
@@ -160,10 +156,10 @@ Using const modifier ensures that the object will stay unmodified and compiler w
 {{< /details >}}
 
 5. (C++ only) If possible `constexpr` **should** be used for storing constant data.
-5. Long methods **should** be split into smaller, better described ones.
-6. (C++ only) Defining new macros **must** be avoided, unless absolutely necessary.
-7. Integers **must not** be used to express anything other than numbers. For enumerations enums **must** be used.
-8. Code **should** be written in a way that it expresses intent, i.e. what should be done, rather than just how it is done.
+6. Long methods **should** be split into smaller, better described ones.
+7. (C++ only) Defining new macros **must** be avoided, unless absolutely necessary.
+8. Integers **must not** be used to express anything other than numbers. For enumerations enums **must** be used.
+9. Code **should** be written in a way that it expresses intent, i.e. what should be done, rather than just how it is done.
 
 {{< details summary="Example" open="false" >}}
 
@@ -220,6 +216,7 @@ We can refactor it to a new `QWidget* findClosestDockWidget()` method for it to 
         toggleOverlay(dock, m);
     }
 ```
+
 The findClosestDockWidget() could either be implemented as private method or an inner function using lambdas.
 
 ```c++
@@ -257,7 +254,6 @@ Now the intent is clear.
 12. (C++ only) Class member variables **should** be initialized at declaration, not in constructors
 13. Magic numbers or other literals **must** be avoided.
 
-
 ## Naming Things
 
 Naming described in that section of the document refers mostly to newer parts of code. Some modules use different naming conventions,
@@ -270,8 +266,8 @@ while checking the code Reviewer should take into account surrounding code and f
 5. (C++ only) Class/Struct members **should** be written in `camelCase`, underscores are allowed but should be avoided.
 6. (C++ only) Global functions **should** be written in `camelCase`, underscores are allowed but should be avoided.
 7. (C++ only) Enum cases **should** use `PascalCase`
-9. (C++ only) Enums should use singular form (i.e. `enum ObjectState` instead of `enum ObjectStates`)
-8. (C++ only) Local variables **should** use `camelCase`
+8. (C++ only) Enums should use singular form (i.e. `enum ObjectState` instead of `enum ObjectStates`)
+9. (C++ only) Local variables **should** use `camelCase`
 
 ### Naming Conventions
 
@@ -282,7 +278,6 @@ while checking the code Reviewer should take into account surrounding code and f
 5. Task Dialog for Task View **should** be additionally suffixed with `Dialog`, e.g. `TaskTransformDialog`
 6. Preference Pages **should** be prefixed with `DlgSettings`, e.g. `DlgSettingsLights`.
 7. Commands **should** be prefixed with `Cmd` and Workbench name e.g. `CmdPartDesignCreateSketch`
-
 
 ## Commenting the code
 

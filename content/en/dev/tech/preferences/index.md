@@ -4,7 +4,6 @@ description: How to handle, retrieve and update user preferences.
 weight: 10
 ---
 
-
 The `user.cfg` XML file contains a hierarchical list of all the preferences used by FreeCAD.
 
 Each module has its own branch of the hierarchy starting under Preferences/Mod.
@@ -25,7 +24,6 @@ Good examples of retrieving parameters can be found in:
 
 - Python: [get_param()](https://github.com/freecad/freecad/blob/master/src/Mod/Draft/draftutils/utils.py) in /Mod/Draft/draftutils/util.py
 - C++: [various methods](https://github.com/freecad/freecad/blob/master/src/Mod/TechDraw/App/Preferences.cpp) in /Mod/TechDraw/App/Preferences.cpp
-
 
 ## See also
 

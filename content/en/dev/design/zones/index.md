@@ -4,12 +4,11 @@ description: Zones.
 weight: 7
 ---
 
-
 The circle shown in the image below can be considered a 'hot zone' where a user should be able to focus attention on the work/task being performed.
 
 ![Focus](focus.svg)
 
-*Note: the corners have ease of positioning of the mouse cursor. Special use of screen corners should be reserved for global application functionality only and not implemented without careful deliberation.*
+_Note: the corners have ease of positioning of the mouse cursor. Special use of screen corners should be reserved for global application functionality only and not implemented without careful deliberation._
 
 Below is the notional zone layout of the FreeCAD user interface, specific sizes mentioned for each zone are to be considered critical to the goal of reserving 50% of a user's display for the Main 3D View (or document area) while still providing easy access to information, navigation and tools. Each zone is described below.
 

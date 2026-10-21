@@ -4,7 +4,6 @@ description: How to build FreeCAD packages for the different supported platforms
 weight: 15
 ---
 
-
 ## Windows Installer
 
 The main entry point to build a Windows installer is within the FreeCAD sources. To build the installer:
@@ -15,7 +14,9 @@ These are instructions for building an NSIS-based installer for FreeCAD. They we
 and presume that you have cloned a copy of FreeCAD's source code.
 
 #### Install NSIS
+
 To set up your system for building an NSIS installer:
+
 1. Install the latest version 3.x of NSIS (https://nsis.sourceforge.io/Download)
 2. Download these special release files of NSIS that support large strings:</br>
    https://nsis.sourceforge.io/Special_Builds#Large_strings</br>
@@ -26,8 +27,11 @@ To set up your system for building an NSIS installer:
 4. Download and install the nsProcess plugin from https://nsis.sourceforge.io/NsProcess_plugin -- you will need the version that supports Unicode, so make sure to follow the appropriate instructions on their site to install that one (as of this writing it involves manually copying and renaming the plugin DLL file).
 
 #### Build the installer
-Next, update the installer settings for the current version of FreeCAD. Starting from the *src/WindowsInstaller* folder in the FreeCAD source tree:
+
+Next, update the installer settings for the current version of FreeCAD. Starting from the _src/WindowsInstaller_ folder in the FreeCAD source tree:
+
 1. Set the appropriate version strings for the release you are creating. These are used to construct the filename of the installer, among other things. If you have to upload a new version of the installer for the exact same release of FreeCAD, increment `APP_VERSION BUILD` as needed.
+
 ```
 !define APP_VERSION_MAJOR 0
 !define APP_VERSION_MINOR 21
@@ -35,7 +39,9 @@ Next, update the installer settings for the current version of FreeCAD. Starting
 !define APP_VERSION_EMERGENCY "RC1"
 !define APP_VERSION_BUILD 1
 ```
-2. Within the folder *src/WindowsInstaller*, create a new folder called MSVCRedist and copy the following files from your MSVC installation into it:
+
+2. Within the folder _src/WindowsInstaller_, create a new folder called MSVCRedist and copy the following files from your MSVC installation into it:
+
 ```
 vcruntime140.dll
 concrt140.dll
@@ -44,34 +50,37 @@ vcamp140.dll
 vccorlib140.dll
 vcomp140.dll
 ```
-3. Open the file *Settings.nsh* with a text editor (both jEdit and Visual Studio Code are good editors for NSIS files). Edit the following paths to correspond to your system: `FILES_FREECAD` corresponds to your installation directory (e.g. `CMAKE_INSTALL_PREFIX` if you self-compiled) and `FILES_DEPS` is the folder you created with the MSVC redistributable files in it.
+
+3. Open the file _Settings.nsh_ with a text editor (both jEdit and Visual Studio Code are good editors for NSIS files). Edit the following paths to correspond to your system: `FILES_FREECAD` corresponds to your installation directory (e.g. `CMAKE_INSTALL_PREFIX` if you self-compiled) and `FILES_DEPS` is the folder you created with the MSVC redistributable files in it.
+
 ```
 !define FILES_FREECAD "C:\FreeCAD\Installer\FreeCAD"
 !define FILES_DEPS "C:\FreeCAD\Installer\MSVCRedist"
 ```
-4. Ensure the FreeCAD files are in place. Here you have two options:
-   * If you are working from an already-compiled version of FreeCAD provided to you by an outside source: in this case, simply ensure that `FILES_FREECAD` is set to the directory containing those files.
-   * If you compiled FreeCAD on your own as described [here](https://wiki.freecad.org/Compile_on_Windows) (and using the Install option outlined there). Then:
-       * Open the file *Settings.nsh* as described in step 3. above and set there</br>
-        `!define FILES_FREECAD` to the folder you specified as `CMAKE_INSTALL_PREFIX`
-       * Copy into that folder the file *Delete.bat* that is part of the installer
-       * open a command line in Windows and change to the folder
-       * run the comamand</br>
-        `Delete.bat`
-       * (These steps assure that the installer only contains files users need. Moreover it assures that the
-       overall files size is below 2 GB and we can use the most compact compression for the installer.)
-5. Right-click on the file *FreeCAD-installer.nsi* and choose **Compile NSIS script**
-   to compile the installer.
 
+4. Ensure the FreeCAD files are in place. Here you have two options:
+   - If you are working from an already-compiled version of FreeCAD provided to you by an outside source: in this case, simply ensure that `FILES_FREECAD` is set to the directory containing those files.
+   - If you compiled FreeCAD on your own as described [here](https://wiki.freecad.org/Compile_on_Windows) (and using the Install option outlined there). Then:
+     - Open the file _Settings.nsh_ as described in step 3. above and set there</br>
+       `!define FILES_FREECAD` to the folder you specified as `CMAKE_INSTALL_PREFIX`
+     - Copy into that folder the file _Delete.bat_ that is part of the installer
+     - open a command line in Windows and change to the folder
+     - run the comamand</br>
+       `Delete.bat`
+     - (These steps assure that the installer only contains files users need. Moreover it assures that the
+       overall files size is below 2 GB and we can use the most compact compression for the installer.)
+5. Right-click on the file _FreeCAD-installer.nsi_ and choose **Compile NSIS script**
+   to compile the installer.
 
 NOTE: For test builds of the installer you can turn off the LZMA compression and use the much faster default compression. This speeds up
 the build time for the installer but significantly increases the final installer file size. The LZMA compression is turned off by commenting
 out the line
+
 ```
 !SetCompressor lzma
 ```
-in the file *Settings.nsh*.
 
+in the file _Settings.nsh_.
 
 ## Conda builds for Linux, Mac, and Windows
 
@@ -92,7 +101,6 @@ To use the script:
 2. Clone the FreeCAD-Bundle repository
 3. Run the create_bundle.bat script
 
-
 ## MacOS
 
 ### Conda
@@ -100,7 +108,6 @@ To use the script:
 **To be expanded**
 
 MacOS packages are also built with [conda](https://conda.io).
-
 
 ## Linux
 
