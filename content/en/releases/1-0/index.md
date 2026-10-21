@@ -13,7 +13,7 @@ After more than 20 years of development, the 1.0 release marks a major milestone
 With a strong focus on stability, usability, and long-requested core features, FreeCAD is now more powerful, flexible, extensible, and robust than ever before.
 
 
-{{< block title="Robust Solid Modeling" >}}
+{{< block title="Robust Solid Modeling" css_class="accent-1" >}}
 
 {{< group >}}
 
@@ -41,40 +41,14 @@ void ShapeHistory::reset(
     TopTools_IndexedMapOfShape newM, oldM;
     TopExp::MapShapes(newS, type, newM);  // map with all old objects
     TopExp::MapShapes(oldS, type, oldM);  // map with all new objects
-
-// Look all objects in old shape and find modified object in new shape
-    for (int i = 1; i <= oldM.Extent(); i++) {
-        bool found = false;
-        TopTools_ListIteratorOfListOfShape it;
-        // Find all new objects modified from old object (e.g. resized face)
-        for (it.Initialize(mkShape.Modified(oldM(i))); it.More(); it.Next()) {
-            found = true;
-            for (int j = 1; j <= newM.Extent();
-                 j++) {  // one old object might create several new ones!
-                if (newM(j).IsPartner(it.Value())) {
-                    shapeMap[i - 1].push_back(j - 1);
-                    break;
-
-// Find all new objects generated from old object (e.g. face generated from edge)
-        for (it.Initialize(mkShape.Generated(oldM(i))); it.More(); it.Next()) {
-            found = true;
-            for (int j = 1; j <= newM.Extent(); j++) {
-                if (newM(j).IsPartner(it.Value())) {
-                    shapeMap[i - 1].push_back(j - 1);
-                    break;
-
-// Find all old objects that don't exist anymore (e.g. face completely cut away)
-        if (!found) {
-            if (mkShape.IsDeleted(oldM(i))) {
-                shapeMap[i - 1] = std::vector<int>();
 ```
 
 {{< /block >}}
 
 
-{{< block title="Integrated Assembly" >}}
+{{< block title="Integrated Assembly" css_class="accent-2" >}}
 
-![Exploded View in the Assembly](exploded-view.webp "Exploded View in the Assembly")
+![Exploded View in the Assembly](exploded-view.webp)
 
 - A brand-new built-in Assembly workbench powered by a modern solver
 - Define constraints between parts with improved reliability
@@ -83,7 +57,7 @@ void ShapeHistory::reset(
 {{< /block >}}
 
 
-{{< block title="Polished Interface" >}}
+{{< block title="Polished Interface" css_class="dots" >}}
 
 - New light and dark themes for better comfort
 - Smarter selection tools (filter vertices, edges, faces)
@@ -91,14 +65,14 @@ void ShapeHistory::reset(
 - Reworked panels, tabs, and preferences dialog
 - Faster, cleaner start page
 
-![Side panels overlay](assembly.webp "Side panels overlay")
+![Side panels overlay](assembly.webp)
 
 {{< /block >}}
 
 
-{{< block title="Better Tools for Everyday" >}}
+{{< block title="Better Tools for Everyday" css_class="accent-3" >}}
 
-![Measurement tool](measurement.webp "Measurement tool")
+![Measurement tool](measurement.webp)
 
 - Universal measurement tools available across workbenches
 - Improved Sketcher and Part Design workflows
@@ -107,18 +81,18 @@ void ShapeHistory::reset(
 {{< /block >}}
 
 
-{{< block title="BIM Upgrade" >}}
+{{< block title="BIM Upgrade" css_class="grid" >}}
 
 - A unified Building Information Modeling workbench with Native IFC support
 - Better project structure, data handling, and building workflows
 - Improved interoperability with other open BIM tools
 
-![BIM workbench](bim.webp "BIM workbench")
+![BIM workbench](bim.webp "BIM)
 
 {{< /block >}}
 
 
-{{< block title="Core Engine and Scripting Power" >}}
+{{< block title="Core Engine and Scripting Power" css_class="accent-4" >}}
 
 - Expressions now support the vector API
 - New ==App::VarSet== for managing design variations
@@ -128,9 +102,9 @@ void ShapeHistory::reset(
 {{< /block >}}
 
 
-{{< block title="Materials and Simulation Improvements" >}}
+{{< block title="Materials and Simulation Improvements" css_class="gradient" >}}
 
-![FEM workbench](fem.webp "FEM workbench")
+![FEM workbench](fem.webp)
 
 - A new materials system for visual and physical properties
 - Many enhancements across FEM and simulation tools
@@ -138,7 +112,7 @@ void ShapeHistory::reset(
 {{< /block >}}
 
 
-{{< block title="Identity Evolution" >}}
+{{< block title="Identity Evolution" css_class="accent-5" >}}
 
 ![Refreshed FreeCAD logo chosen by the community](symbol.svg "Refreshed FreeCAD logo chosen by the community")
 

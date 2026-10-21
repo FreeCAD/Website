@@ -8,7 +8,7 @@ weight: 3
 The full FreeCAD source tree has many other branches, but most Contributors will
 only need to deal with these:
 
-![Partial View of FreeCAD Source Tree](sourcetree.svg "Partial View of FreeCAD Source Tree")
+![Partial View of FreeCAD Source Tree](sourcetree.svg)
 
 ```mermaid
 graph LR

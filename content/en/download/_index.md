@@ -23,7 +23,7 @@ With many quality of life improvements, hundreds of bug fixes, and updated libra
 {{< /block >}}
 
 
-{{< block css_class="accent-1" >}}
+{{< block css_class="accent" >}}
 
 {{< card path="examples" >}}
 
@@ -38,7 +38,7 @@ The FreeCAD community provides a wealth of file examples, part libraries, templa
 {{< /block >}}
 
 
-{{< block css_class="accent-2" >}}
+{{< block css_class="gradient" >}}
 
 {{< group >}}
 
@@ -54,7 +54,7 @@ They can easily be installed directly from within FreeCAD using the Addon Manage
 {{< /block >}}
 
 
-{{< block css_class="accent-3" >}}
+{{< block css_class="accent-4" >}}
 
 {{< card path="unstable" >}}
 

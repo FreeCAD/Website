@@ -7,7 +7,7 @@ weight: 8
 
 Input Hints is feature that provides user with hints for available actions as part of the status bar.
 
-![Input Hints Preview](input-hints-preview.webp "Input Hints Preview")
+![Input Hints Preview](input-hints-preview.webp)
 
 Technically the hint consists of the displayed message with placeholders (`%1`, `%2`, ...)
 corresponding to each key sequence, and key sequences. One hint can contain one sequence (`[M]

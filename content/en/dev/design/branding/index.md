@@ -80,7 +80,7 @@ You should **not** alter colors, shape, style, or apply any effects such as grad
 
 We have made some examples of what **not** to do when using the logo:
 
-![Guidelines](guidelines.svg "Guidelines")
+![Branding guidelines](guidelines.svg)
 
 
 ## PDF Guidelines

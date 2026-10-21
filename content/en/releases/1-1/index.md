@@ -98,7 +98,7 @@ This release focuses on making everyday modeling more reliable, faster, and more
 - Faster startup and reduced memory usage.
 - Numerous bug fixes across all workbenches.
 
-![CNC lathe model assembly](cnc.webp)
+![Drone - Shrüm](drone.webp)
 
 {{< /block >}}
 

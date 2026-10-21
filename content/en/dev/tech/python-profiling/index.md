@@ -51,8 +51,8 @@ After the profiler starts, run the action that executes the code you want to pro
 
 Below are example outputs from the profiler.
 
-![Flamegraph SVG output](PySpyFlamegraph.svg "Flamegraph SVG output")
+![Flamegraph SVG output](PySpyFlamegraph.svg)
 
-![Speedscope viewer identifies YAML loading as the majority of the 8-second runtime: clear target for optimization!](PySpySpeedscope.webp "Speedscope viewer identifies YAML loading as the majority of the 8-second runtime: clear target for optimization!")
+![Speedscope output](PySpySpeedscope.webp "Speedscope viewer identifies YAML loading as the majority of the 8-second runtime: clear target for optimization!")
 
 For more information about options available and troubleshooting, refer to the `py-spy` documentation.

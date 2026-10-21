@@ -7,7 +7,7 @@ icon_cms: bolt
 ---
 
 
-{{< block title="Made to build for the real world" css_class="accent-5" >}}
+{{< block title="Made to build for the real world" css_class="grid" >}}
 
 {{< group >}}
 
@@ -17,18 +17,18 @@ FreeCAD is made primarily to design objects for the real world. FreeCAD uses rea
 
 {{< /group >}}
 
-![Assembly](assembly.webp "Assembly")
+![Locomotive - Hour_Sell](locomotive.webp)
 
 {{< /block >}}
 
 
-{{< block title="A robust solid-based geometry kernel" css_class="accent-4" >}}
+{{< block title="A robust solid-based geometry kernel" css_class="accent-2" >}}
 
-![Pressure vessels, piping and skids](mep.webp "Pressure vessels, piping and skids")
+![Pressure vessels, piping and skids - Sergio](mep.webp)
 
 {{< group >}}
 
-FreeCAD features an advanced geometry engine based on Open CASCADE Technology. It supports solids, Boundary Representation (BRep) objects, Non-Uniform Rational Basis Spline (NURBS) curves and surfaces, and offers a wide range of tools to create and modify them via complex Boolean operations, fillets, shape cleaning and much more.
+FreeCAD features an advanced geometry engine based on Open CASCADE Technology. It supports solids, Boundary Representation (BRep) objects, Non-Uniform Rational Basis Spline (NURBS) curves and surfaces, and offers a wide range of tools to create and modify them via complex Boolean operations, fillets, shape cleaning and plenty more.
 
 {{< button url="https://en.wikipedia.org/wiki/Boundary_representation" label="Geometric objects for every task" icon="packages" >}}
 
@@ -37,7 +37,7 @@ FreeCAD features an advanced geometry engine based on Open CASCADE Technology. I
 {{< /block >}}
 
 
-{{< block title="A wi(l)dly parametric environment" css_class="accent-3" >}}
+{{< block title="A wi(l)dly parametric environment" css_class="accent-5" >}}
 
 {{< group >}}
 
@@ -47,18 +47,20 @@ All FreeCAD objects are natively parametric, meaning their shape can be based on
 
 {{< /group >}}
 
-![Sketcher](sketch.webp "Sketcher")
+![Sketcher - Pierre-Louis Boyer](sketch.webp)
 
 {{< /block >}}
 
 
-{{< block title="File formats frenzy" css_class="accent-2" >}}
+{{< block title="File formats in focus" css_class="gradient" >}}
 
 {{< group >}}
 
+![DIY colorimeter - Khazuar](colorimeter.webp)
+
 FreeCAD allows to import and export models and data to dozens of different file formats such as STEP, IGES, OBJ, STL, DXF, SVG, SHP, DAE, IFC or OFF, NASTRAN, VRML, OpenSCAD CSG and many more, in addition to FreeCAD's native FCStd file format. Addon workbenches can also add more file formats.
 
-{{< button url="https://wiki.freecad.org/Category:File_Formats" label="Limitless In and Output" icon="file" >}}
+{{< button url="https://wiki.freecad.org/Category:File_Formats" label="Limitless in and output" icon="file" >}}
 
 {{< /group >}}
 
@@ -67,20 +69,20 @@ FreeCAD allows to import and export models and data to dozens of different file 
 
 {{< block title="A large multi-specialty ecosystem" css_class="accent-1" >}}
 
-![Building Information Modeling](bim.webp "Building Information Modeling")
+![House BIM model - ABeton](bim.webp)
 
 {{< group >}}
 
 FreeCAD offers dedicated workbenches for a variety of purposes such as CSG modeling, simple 2D CAD drafting, NURBS surfaces, architectural BIM modeling, 3D printing, CAM and CNC, point clouds, working with OpenSCAD files, designing industrial robot trajectories, doing Finite Element Analyses, and much more. FreeCAD also provides easy tools to install and manage Addon workbenches and macros developed by the users community.
 
-{{< button url="addons" label="External modules" icon="puzzle" >}}
+{{< button url="addons" label="External community addons" icon="puzzle" >}}
 
 {{< /group >}}
 
 {{< /block >}}
 
 
-{{< block title="A Community heart" css_class="section" >}}
+{{< block title="A community heart" css_class="accent-4" >}}
 
 {{< group >}}
 
@@ -91,12 +93,5 @@ FreeCAD is made for everybody, by everybody. Developed and maintained by a commu
 {{< /group >}}
 
 {{< card path="community" >}}
-
-{{< /block >}}
-
-
-{{< block title="Share your passion with the world" css_class="dots" >}}
-
-{{< carousel "1.webp" "2.webp" "3.webp" "4.webp" >}}
 
 {{< /block >}}
