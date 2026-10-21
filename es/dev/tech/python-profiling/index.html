@@ -47,8 +47,8 @@
     name="description"
     content="How to profile Python code."><link
           rel="stylesheet"
-          href="/Website/css/styles.13ef785b8a2a89fd62f5d957e3f45b088e3d0736b22dcf50076d941a54ff4a95.css"
-          integrity="sha256-E&#43;94W4oqif1i9dlX4/RbCI49BzayLc9QB22UGlT/SpU="
+          href="/Website/css/styles.c8181472c178e621a235d763dc77bbba5da508f795fb092eb6dd2cefe2612e3b.css"
+          integrity="sha256-yBgUcsF45iGiNddj3He7ul2lCPeV&#43;wkutt0s7&#43;JhLjs="
           crossorigin="anonymous"><link
     rel="canonical"
     href="https://FreeCAD.github.io/Website/es/dev/tech/python-profiling/"><link
@@ -94,7 +94,7 @@
   <meta property="og:locale" content="es_ES">
   <meta property="og:type" content="article">
     <meta property="article:section" content="dev">
-    <meta property="article:modified_time" content="2026-08-10T15:11:38+02:00">
+    <meta property="article:modified_time" content="2026-10-21T08:21:57+02:00">
 </head><body
     class="single type-dev kind-page "
     id="top">
@@ -352,15 +352,15 @@
   </svg></a></p></blockquote></figure><p>Profiling an application is a way to understand where it spends time while running code. This page details how to profile Python code running within FreeCAD to generate a flamegraph, which is a visualization of function calls over time. It makes it easier to spot slow or frequently used functions in order to identify bottlenecks.</p>
 <p>The instructions outlined here are useful for both built-in Python code and third-party addons.</p>
 <h2
-  id="using-py-spy">Using py-spy<a class="heading-anchor"
-     href="#using-py-spy"
-     title="Using py-spy"><svg
-    class="icon anchor"
+  id="using-py-spy">
+  <a class="heading-anchor"
+    href="#using-py-spy"
+    title="Using py-spy"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p><a
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Using py-spy</h2><p><a
   href="https://github.com/benfred/py-spy"
   class="external-link" target="_blank" rel="external noreferrer nofollow"><code>py-spy</code><svg
     class="icon external"
@@ -436,7 +436,15 @@
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/cross.svg#cross"></use>
-  </svg></button><p>Flamegraph SVG output</p></div><figcaption>Flamegraph SVG output</figcaption></figure><figure class="image"><button
+  </svg></button></div><figcaption>
+          <div class="internal-tooltip"><svg
+    class="icon important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/important.svg#important"></use>
+  </svg><span class="tooltip">Flamegraph SVG output</span>
+          </div>
+        </figcaption></figure><figure class="image"><button
           aria-label="Ampliar imagen"
           popovertarget="img-002"
           popovertargetaction="show"><svg
@@ -445,29 +453,37 @@
     focusable="false">
     <use href="/Website/svg/zoom.svg#zoom"></use>
   </svg><img
-    class="img PySpySpeedscope"
-    src="/Website/dev/tech/python-profiling/PySpySpeedscope.webp"
-    alt="Speedscope viewer identifies YAML loading as the majority of the 8-second runtime: clear target for optimization!"
-    loading="lazy"
-    fetchpriority="low"
-    decoding="async" title="Speedscope viewer identifies YAML loading as the majority of the 8-second runtime: clear target for optimization!" width="2560" height="1620" srcset="/Website/dev/tech/python-profiling/PySpySpeedscope_hu_f2c8cb8846cfddf5.webp 400w, /Website/dev/tech/python-profiling/PySpySpeedscope_hu_ae167dcaa2af32d8.webp 800w, /Website/dev/tech/python-profiling/PySpySpeedscope_hu_62e1b7ee8f1bdcee.webp 1600w, /Website/dev/tech/python-profiling/PySpySpeedscope.webp 2560w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"></button>
+  class="img PySpySpeedscope"
+  src="/Website/dev/tech/python-profiling/PySpySpeedscope.webp"
+  alt="Speedscope output"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Speedscope output" width="2560" height="1620" srcset="/Website/dev/tech/python-profiling/PySpySpeedscope_hu_f2c8cb8846cfddf5.webp 400w, /Website/dev/tech/python-profiling/PySpySpeedscope_hu_ae167dcaa2af32d8.webp 800w, /Website/dev/tech/python-profiling/PySpySpeedscope_hu_62e1b7ee8f1bdcee.webp 1600w, /Website/dev/tech/python-profiling/PySpySpeedscope.webp 2560w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"></button>
         <div id="img-002" popover>
           <button
             class="enlarged"
             popovertarget="img-002"
             popovertargetaction="hide"
             aria-label="Cerrar visor de imágenes"><img
-    class="img PySpySpeedscope"
-    src="/Website/dev/tech/python-profiling/PySpySpeedscope.webp"
-    alt="Speedscope viewer identifies YAML loading as the majority of the 8-second runtime: clear target for optimization!"
-    loading="lazy"
-    fetchpriority="low"
-    decoding="async" title="Speedscope viewer identifies YAML loading as the majority of the 8-second runtime: clear target for optimization!" width="2560" height="1620" srcset="/Website/dev/tech/python-profiling/PySpySpeedscope_hu_f2c8cb8846cfddf5.webp 400w, /Website/dev/tech/python-profiling/PySpySpeedscope_hu_ae167dcaa2af32d8.webp 800w, /Website/dev/tech/python-profiling/PySpySpeedscope_hu_62e1b7ee8f1bdcee.webp 1600w, /Website/dev/tech/python-profiling/PySpySpeedscope.webp 2560w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"><svg
+  class="img PySpySpeedscope"
+  src="/Website/dev/tech/python-profiling/PySpySpeedscope.webp"
+  alt="Speedscope output"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Speedscope output" width="2560" height="1620" srcset="/Website/dev/tech/python-profiling/PySpySpeedscope_hu_f2c8cb8846cfddf5.webp 400w, /Website/dev/tech/python-profiling/PySpySpeedscope_hu_ae167dcaa2af32d8.webp 800w, /Website/dev/tech/python-profiling/PySpySpeedscope_hu_62e1b7ee8f1bdcee.webp 1600w, /Website/dev/tech/python-profiling/PySpySpeedscope.webp 2560w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"><svg
     class="icon cross"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/cross.svg#cross"></use>
-  </svg></button><p>Speedscope viewer identifies YAML loading as the majority of the 8-second runtime: clear target for optimization!</p></div><figcaption>Speedscope viewer identifies YAML loading as the majority of the 8-second runtime: clear target for optimization!</figcaption></figure><p>For more information about options available and troubleshooting, refer to the <code>py-spy</code> documentation.</p>
+  </svg></button><p>Speedscope viewer identifies YAML loading as the majority of the 8-second runtime: clear target for optimization!</p></div><figcaption>
+          <div class="internal-tooltip"><svg
+    class="icon important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/important.svg#important"></use>
+  </svg><span class="tooltip">Speedscope output</span>
+          </div>
+        </figcaption><p>Speedscope viewer identifies YAML loading as the majority of the 8-second runtime: clear target for optimization!</p></figure><p>For more information about options available and troubleshooting, refer to the <code>py-spy</code> documentation.</p>
 </div><footer class="single-footer">
     <nav class="pagination"><a
             class="button next"
@@ -718,9 +734,9 @@
   </svg></a>
 </span>
 <span>
-    Modified: 2026-08-10
+    Modified: 2026-10-21
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/9ad293dc87e4c1b2b4fff6a5d8eda211afd9c576">9ad293dc87<svg
+      Commit: <a href="https://github.com/freecad/website/commit/9f2316ba9ad1e922b4918cba92f68be69b7e9af7">9f2316ba9a<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

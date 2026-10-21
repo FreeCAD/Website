@@ -47,8 +47,8 @@
     name="description"
     content="Maintaining the Snap package."><link
           rel="stylesheet"
-          href="/Website/css/styles.13ef785b8a2a89fd62f5d957e3f45b088e3d0736b22dcf50076d941a54ff4a95.css"
-          integrity="sha256-E&#43;94W4oqif1i9dlX4/RbCI49BzayLc9QB22UGlT/SpU="
+          href="/Website/css/styles.c8181472c178e621a235d763dc77bbba5da508f795fb092eb6dd2cefe2612e3b.css"
+          integrity="sha256-yBgUcsF45iGiNddj3He7ul2lCPeV&#43;wkutt0s7&#43;JhLjs="
           crossorigin="anonymous"><link
     rel="canonical"
     href="https://FreeCAD.github.io/Website/de/dev/tech/snap/"><link
@@ -375,15 +375,15 @@
   </svg></a> on the branch you want to update.</p>
 <p>GitHub actions are used to do the actual building of each of these branches.</p>
 <h2
-  id="routine-maintenance">Routine maintenance<a class="heading-anchor"
-     href="#routine-maintenance"
-     title="Routine maintenance"><svg
-    class="icon anchor"
+  id="routine-maintenance">
+  <a class="heading-anchor"
+    href="#routine-maintenance"
+    title="Routine maintenance"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>The most common thing to break is the KDE Neon extension, which periodically needs to reference an update version of
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Routine maintenance</h2><p>The most common thing to break is the KDE Neon extension, which periodically needs to reference an update version of
 the kde-frameworks (e.g. kde-frameworks-5-99-qt-5-15-7-core20):
 if the snap-building logs contain errors about being unable to locate neon, check for the correct version number at
 <a
@@ -398,27 +398,27 @@ if the snap-building logs contain errors about being unable to locate neon, chec
 we have to update to a new core. The current builds use &ldquo;core22&rdquo;, or Ubuntu 22.04 LTS. Updating the core will likely
 require updating many of the other version numbers in the snap YAML file.</p>
 <h2
-  id="dependencies">Dependencies<a class="heading-anchor"
-     href="#dependencies"
-     title="Dependencies"><svg
-    class="icon anchor"
+  id="dependencies">
+  <a class="heading-anchor"
+    href="#dependencies"
+    title="Dependencies"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>Several of FreeCAD&rsquo;s dependencies take a long time to build and seldomly change: the two largest culprits here are
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Dependencies</h2><p>Several of FreeCAD&rsquo;s dependencies take a long time to build and seldomly change: the two largest culprits here are
 OCCT and GMSH. These two packages have been split into their own &ldquo;unlisted&rdquo; snap, called freecad-deps-core22. To
 update the versions of those libraries, that snap is the one that must be updated, ratheer than freecad-snap itself.</p>
 <h2
-  id="important-links">Important links<a class="heading-anchor"
-     href="#important-links"
-     title="Important links"><svg
-    class="icon anchor"
+  id="important-links">
+  <a class="heading-anchor"
+    href="#important-links"
+    title="Important links"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><ul>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Important links</h2><ul>
 <li><a
   href="https://snapcraft.io/freecad"
   class="external-link" target="_blank" rel="external noreferrer nofollow">https://snapcraft.io/freecad<svg

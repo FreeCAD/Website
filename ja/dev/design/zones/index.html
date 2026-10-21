@@ -47,8 +47,8 @@
     name="description"
     content="Zones."><link
           rel="stylesheet"
-          href="/Website/css/styles.13ef785b8a2a89fd62f5d957e3f45b088e3d0736b22dcf50076d941a54ff4a95.css"
-          integrity="sha256-E&#43;94W4oqif1i9dlX4/RbCI49BzayLc9QB22UGlT/SpU="
+          href="/Website/css/styles.c8181472c178e621a235d763dc77bbba5da508f795fb092eb6dd2cefe2612e3b.css"
+          integrity="sha256-yBgUcsF45iGiNddj3He7ul2lCPeV&#43;wkutt0s7&#43;JhLjs="
           crossorigin="anonymous"><link
     rel="canonical"
     href="https://FreeCAD.github.io/Website/ja/dev/design/zones/"><link
@@ -94,7 +94,7 @@
   <meta property="og:locale" content="ja_JP">
   <meta property="og:type" content="article">
     <meta property="article:section" content="dev">
-    <meta property="article:modified_time" content="2026-07-10T15:14:29+02:00">
+    <meta property="article:modified_time" content="2026-10-21T08:21:57+02:00">
 </head><body
     class="single type-dev kind-page "
     id="top">
@@ -338,7 +338,15 @@
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/cross.svg#cross"></use>
-  </svg></button><p>Focus</p></div><figcaption>Focus</figcaption></figure><p><em>Note: the corners have ease of positioning of the mouse cursor. Special use of screen corners should be reserved for global application functionality only and not implemented without careful deliberation.</em></p>
+  </svg></button></div><figcaption>
+          <div class="internal-tooltip"><svg
+    class="icon important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/important.svg#important"></use>
+  </svg><span class="tooltip">Focus</span>
+          </div>
+        </figcaption></figure><p><em>Note: the corners have ease of positioning of the mouse cursor. Special use of screen corners should be reserved for global application functionality only and not implemented without careful deliberation.</em></p>
 <p>Below is the notional zone layout of the FreeCAD user interface, specific sizes mentioned for each zone are to be considered critical to the goal of reserving 50% of a user&rsquo;s display for the Main 3D View (or document area) while still providing easy access to information, navigation and tools. Each zone is described below.</p>
 <figure class="image"><button
           aria-label="画像を拡大"
@@ -369,7 +377,15 @@
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/cross.svg#cross"></use>
-  </svg></button><p>Zones</p></div><figcaption>Zones</figcaption></figure><p><strong>Title Bar:</strong> Windows 10 standard is a height of 32 pixels. Any modifications to this area has to be carefully considered because of cross-platform compatibility and should only be done in the core of FreeCAD. Individual workbenches should not attempt to modify it.</p>
+  </svg></button></div><figcaption>
+          <div class="internal-tooltip"><svg
+    class="icon important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/important.svg#important"></use>
+  </svg><span class="tooltip">Zones</span>
+          </div>
+        </figcaption></figure><p><strong>Title Bar:</strong> Windows 10 standard is a height of 32 pixels. Any modifications to this area has to be carefully considered because of cross-platform compatibility and should only be done in the core of FreeCAD. Individual workbenches should not attempt to modify it.</p>
 <p><strong>Task Bar:</strong> Windows 10 standard is a height of 48 pixels. This element is a fixed size and follows the same rationale and guidelines provided for the Title Bar.</p>
 <p><strong>Menu Bar:</strong> Standard height is established as 32 pixels in the stylesheet. There shall be no insertion of non-standard elements (ie. QComboBox) in this area by individual workbenches. New menus can be added, however they should ideally be confined to the menu named after your specific workbench. Simple addons should insert entries into a menu titled &ldquo;Accessories&rdquo; if applicable.</p>
 <p><strong>Global Function Toolbar:</strong> By default, FreeCAD uses a height for horizontal toolbars of 40 pixels with icons size of 24px. Total icons displayed on this toolbar shall not exceed a total of 44 in order to prevent clipping on a 1080p display. This toolbar is primarily designated for global functions across any workbench. Unused space can be populated with workbench related settings and controls (ie. grid, snap, unit, controls) rather than work features.</p>
@@ -630,9 +646,9 @@
   </svg></a>
 </span>
 <span>
-    Modified: 2026-07-10
+    Modified: 2026-10-21
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/cbca6c5bd2a0236f0a18154c70952df832e094a8">cbca6c5bd2<svg
+      Commit: <a href="https://github.com/freecad/website/commit/9f2316ba9ad1e922b4918cba92f68be69b7e9af7">9f2316ba9a<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

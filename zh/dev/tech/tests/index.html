@@ -47,8 +47,8 @@
     name="description"
     content="Automated Testing."><link
           rel="stylesheet"
-          href="/Website/css/styles.13ef785b8a2a89fd62f5d957e3f45b088e3d0736b22dcf50076d941a54ff4a95.css"
-          integrity="sha256-E&#43;94W4oqif1i9dlX4/RbCI49BzayLc9QB22UGlT/SpU="
+          href="/Website/css/styles.c8181472c178e621a235d763dc77bbba5da508f795fb092eb6dd2cefe2612e3b.css"
+          integrity="sha256-yBgUcsF45iGiNddj3He7ul2lCPeV&#43;wkutt0s7&#43;JhLjs="
           crossorigin="anonymous"><link
     rel="canonical"
     href="https://FreeCAD.github.io/Website/zh/dev/tech/tests/"><link
@@ -354,15 +354,15 @@
     <use href="/Website/svg/external.svg#external"></use>
   </svg></a></p></blockquote></figure><p>FreeCAD uses two different automated testing mechanisms, depending on the language being tested. The oldest, and most well-used test framework is the Python <code>unittest</code> system, which hooks directly into the FreeCAD Test Workbench, but can only test Python code (and Python wrappers to C++ code). The second is the standalone Google Test C++ testing framework, which generates individual executables for each part of the test suite, and is used to directly test C++ code without having to wrap it in Python.</p>
 <h2
-  id="references">References<a class="heading-anchor"
-     href="#references"
-     title="References"><svg
-    class="icon anchor"
+  id="references">
+  <a class="heading-anchor"
+    href="#references"
+    title="References"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>Some good references about automated testing&hellip;</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>References</h2><p>Some good references about automated testing&hellip;</p>
 <p>Videos:</p>
 <ul>
 <li><a
@@ -426,15 +426,15 @@
   </svg></a></li>
 </ul>
 <h2
-  id="terminology">Terminology<a class="heading-anchor"
-     href="#terminology"
-     title="Terminology"><svg
-    class="icon anchor"
+  id="terminology">
+  <a class="heading-anchor"
+    href="#terminology"
+    title="Terminology"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>Test writers have a few terms that are often used, but whose precise definitions aren&rsquo;t well-agreed-upon. The internet is full of arguments about what a &ldquo;unit&rdquo; is in
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Terminology</h2><p>Test writers have a few terms that are often used, but whose precise definitions aren&rsquo;t well-agreed-upon. The internet is full of arguments about what a &ldquo;unit&rdquo; is in
 &ldquo;unit testing&rdquo; for example. To Kent Beck, author of Test Driven Development (the seminal book on the subject), the &ldquo;unit&rdquo; is <em>the test itself</em>. In his concept, every test must be wholly isolated from
 every other test. They must be able to be run singly, or as part of an entire suite. While that advice has remained, in later years various TDD advocates have suggested that the
 function, method, or class under test is the &ldquo;unit&rdquo;. Consider that if you don&rsquo;t feel like getting into a flame war on the internet, just don&rsquo;t use the word &ldquo;unit&rdquo; at all!</p>
@@ -454,15 +454,15 @@ of the ease of generating a Mock.</p>
 <p>A &ldquo;Stub&rdquo; is a method that simply provides a canned answer for a given input. Sometimes instrumented, but often simply used to replace a more complex function with a simple, predictable response. For example, a random-number
 generator may be replaced with a function that simply returns &ldquo;42&rdquo; every time so that the results are deterministic (and therefore more easily testable).</p>
 <h2
-  id="python-testing">Python Testing<a class="heading-anchor"
-     href="#python-testing"
-     title="Python Testing"><svg
-    class="icon anchor"
+  id="python-testing">
+  <a class="heading-anchor"
+    href="#python-testing"
+    title="Python Testing"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>Most Python workbenches in FreeCAD already have at least a rudimentary test suite, so no additional cMake setup should be required beyond simply adding your test file(s) to the cMakeLists.txt file. In addition, in Python it is very easy
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Python Testing</h2><p>Most Python workbenches in FreeCAD already have at least a rudimentary test suite, so no additional cMake setup should be required beyond simply adding your test file(s) to the cMakeLists.txt file. In addition, in Python it is very easy
 to create Mock functions and objects to reduce the dependency on external code, and/or to ensure you are testing only the isolated bit of code that you mean to. A typical Python test file might look like this:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># SPDX-License-Identifier: LGPL-2.1-or-later</span>
 </span></span><span class="line"><span class="cl">
@@ -498,15 +498,15 @@ to create Mock functions and objects to reduce the dependency on external code, 
 </span></span><span class="line"><span class="cl">            <span class="n">os</span><span class="o">.</span><span class="n">unlink</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">name</span><span class="p">)</span></span></span></code></pre></div></div><p>If you are developing a FreeCAD module, place the above in a file inside your module, and register your test with FreeCAD&rsquo;s Test Workbench by adding this in your Init.py file:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">FreeCAD.__unit_test__ += [&#34;my_file&#34;]</span></span></code></pre></div></div><p>Then you can run your tests either from inside FreeCAD, using the Test workbench and running the &ldquo;Self Test&rdquo; command, or from the command line by issuing:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">FreeCAD -t my_file</span></span></code></pre></div></div><h2
-  id="c-testing">C++ Testing<a class="heading-anchor"
-     href="#c-testing"
-     title="C&#43;&#43; Testing"><svg
-    class="icon anchor"
+  id="c-testing">
+  <a class="heading-anchor"
+    href="#c-testing"
+    title="C&#43;&#43; Testing"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>In an ideal world, a C++ test would be perfectly isolated from any external dependencies, which would be replaced with minimal, instrumented &ldquo;mock&rdquo; versions of themselves. However,
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>C++ Testing</h2><p>In an ideal world, a C++ test would be perfectly isolated from any external dependencies, which would be replaced with minimal, instrumented &ldquo;mock&rdquo; versions of themselves. However,
 this almost always requires that the code under test has been <em>designed</em> for testing, which is usually not the case for our existing code. In many cases you must add tests for the existing
 functionality and implementation, with all its deficiencies, before you can begin to refactor the code to make the tests better. There are many strategies for doing those &ldquo;dependency injections&rdquo;,
 and over time we aspire to refactor FreeCAD such that it is possible, but developers are also encouraged to remember that:</p>

@@ -47,8 +47,8 @@
     name="description"
     content="Dealing with Property Changes. A brief introduction."><link
           rel="stylesheet"
-          href="/Website/css/styles.13ef785b8a2a89fd62f5d957e3f45b088e3d0736b22dcf50076d941a54ff4a95.css"
-          integrity="sha256-E&#43;94W4oqif1i9dlX4/RbCI49BzayLc9QB22UGlT/SpU="
+          href="/Website/css/styles.c8181472c178e621a235d763dc77bbba5da508f795fb092eb6dd2cefe2612e3b.css"
+          integrity="sha256-yBgUcsF45iGiNddj3He7ul2lCPeV&#43;wkutt0s7&#43;JhLjs="
           crossorigin="anonymous"><link
     rel="canonical"
     href="https://FreeCAD.github.io/Website/pt/dev/tech/properties/"><link
@@ -363,15 +363,15 @@
   </svg></a></li>
 </ul>
 <h2
-  id="the-app-side">The App side<a class="heading-anchor"
-     href="#the-app-side"
-     title="The App side"><svg
-    class="icon anchor"
+  id="the-app-side">
+  <a class="heading-anchor"
+    href="#the-app-side"
+    title="The App side"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><ul>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>The App side</h2><ul>
 <li>When a Property&rsquo;s value changes, its PropertyContainer (eventually a DocumentObject) executes the onChanged method with the Property as a parameter.  This is where you will take appropriate action based on the new property value.</li>
 <li>Be cautious when inserting logic into onChanged and execute as it is possible to create a loop.</li>
 </ul>
@@ -388,15 +388,15 @@
 <li>The other interesting method involving property changes is mustExecute.   This is where you control whether or not your object participates in the next recompute cycle.</li>
 </ul>
 <h2
-  id="the-gui-side">The Gui side<a class="heading-anchor"
-     href="#the-gui-side"
-     title="The Gui side"><svg
-    class="icon anchor"
+  id="the-gui-side">
+  <a class="heading-anchor"
+    href="#the-gui-side"
+    title="The Gui side"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><ul>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>The Gui side</h2><ul>
 <li>On the Gui side, we must look first at your derived ViewProvider, which is attached to your DocumentObject.  The ViewProvider is notified of changed properties for both itself and the DocumentObject it belongs to.</li>
 <li>For properties belonging to the ViewProvider (those on the View tab in the PropertyEditor), the relevant method is again onChanged.</li>
 <li>Whenever a DocumentObject Property changes, the updateData method of its attached ViewProvider is called.</li>

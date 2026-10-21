@@ -47,8 +47,8 @@
     name="description"
     content="Code Review Guide."><link
           rel="stylesheet"
-          href="/Website/css/styles.13ef785b8a2a89fd62f5d957e3f45b088e3d0736b22dcf50076d941a54ff4a95.css"
-          integrity="sha256-E&#43;94W4oqif1i9dlX4/RbCI49BzayLc9QB22UGlT/SpU="
+          href="/Website/css/styles.c8181472c178e621a235d763dc77bbba5da508f795fb092eb6dd2cefe2612e3b.css"
+          integrity="sha256-yBgUcsF45iGiNddj3He7ul2lCPeV&#43;wkutt0s7&#43;JhLjs="
           crossorigin="anonymous"><link
     rel="canonical"
     href="https://FreeCAD.github.io/Website/de/dev/code/review/"><link
@@ -344,15 +344,15 @@ You can always consult it to learn more useful stuff.</p>
 <li><strong>could</strong>/<strong>can</strong> will be used for best practices, things that you should try to follow but not following them is not an error per se</li>
 </ul>
 <h2
-  id="common-rules">Common Rules<a class="heading-anchor"
-     href="#common-rules"
-     title="Common Rules"><svg
-    class="icon anchor"
+  id="common-rules">
+  <a class="heading-anchor"
+    href="#common-rules"
+    title="Common Rules"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><ol>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Common Rules</h2><ol>
 <li>Consistency <strong>must</strong> be preferred over strict rule following. If, for example, in a given context code uses different naming scheme - it should be followed instead of one described in that document.</li>
 <li>The aim of Code Review <strong>is not</strong> to find errors in code but to ensure code quality.</li>
 <li>There are no dedicated reviewers, everyone <strong>can</strong> help with the effort!</li>
@@ -373,15 +373,15 @@ You can always consult it to learn more useful stuff.</p>
 <li>Developer <strong>should</strong> have <code>pre-commit</code> installed and working. <code>pre-commit-ci</code> commits should be avoided.</li>
 </ol>
 <h2
-  id="prs-and-commits">PRs and Commits<a class="heading-anchor"
-     href="#prs-and-commits"
-     title="PRs and Commits"><svg
-    class="icon anchor"
+  id="prs-and-commits">
+  <a class="heading-anchor"
+    href="#prs-and-commits"
+    title="PRs and Commits"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><ol>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>PRs and Commits</h2><ol>
 <li>Commit message <strong>should</strong> include prefix with module name, e.g. <code>Part: </code></li>
 <li>Commit message <strong>should</strong> use imperative mode - just like git does, e.g. <code>Part: Add fillet feature</code></li>
 </ol>
@@ -401,15 +401,15 @@ You can always consult it to learn more useful stuff.</p>
 <li>Every PR <strong>should</strong> have description, even if it seems obvious.</li>
 </ol>
 <h2
-  id="basic-code-rules">Basic Code Rules<a class="heading-anchor"
-     href="#basic-code-rules"
-     title="Basic Code Rules"><svg
-    class="icon anchor"
+  id="basic-code-rules">
+  <a class="heading-anchor"
+    href="#basic-code-rules"
+    title="Basic Code Rules"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><ol>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Basic Code Rules</h2><ol>
 <li>(C++ only) New code <strong>must</strong> be formatted with clang-format tool or in a way that is compatible with clang-format result if file is excluded from auto formatting.</li>
 <li>(Python only) Code <strong>must</strong> follow the PEP 8 standard and formatted with Black.</li>
 <li>Main execution path <strong>should</strong> be the least indented one, i.e. conditions should cover specific cases.</li>
@@ -491,15 +491,15 @@ a. QObjects should use <code>qobject_cast</code>
 b. FreeCAD types (deriving from <code>BaseClass</code>) should use <code>freecad_cast</code></li>
 </ol>
 <h2
-  id="design--architecture">Design / Architecture<a class="heading-anchor"
-     href="#design--architecture"
-     title="Design / Architecture"><svg
-    class="icon anchor"
+  id="design--architecture">
+  <a class="heading-anchor"
+    href="#design--architecture"
+    title="Design / Architecture"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><ol>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Design / Architecture</h2><ol>
 <li>Each class / method / function <strong>should</strong> be doing only one thing and should do it well.</li>
 <li>Classes that do provide business logic <strong>should</strong> be stateless. This helps with reusability.</li>
 <li>Functions / Methods <strong>should</strong> be pure i.e. their result should only depend on arguments (and object state in case of method). This helps with reusability, predictability and testing.</li>
@@ -592,15 +592,15 @@ For python boolean arguments are ok, but they <strong>must</strong> forced to be
 <li>Magic numbers or other literals <strong>must</strong> be avoided.</li>
 </ol>
 <h2
-  id="naming-things">Naming Things<a class="heading-anchor"
-     href="#naming-things"
-     title="Naming Things"><svg
-    class="icon anchor"
+  id="naming-things">
+  <a class="heading-anchor"
+    href="#naming-things"
+    title="Naming Things"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>Naming described in that section of the document refers mostly to newer parts of code. Some modules use different naming conventions,
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Naming Things</h2><p>Naming described in that section of the document refers mostly to newer parts of code. Some modules use different naming conventions,
 while checking the code Reviewer should take into account surrounding code and first of all ensure consistency within the closest scope.</p>
 <ol>
 <li>Code symbols (classes, structs, methods, functions, variables&hellip;) <strong>must</strong> have names that are meaningful and grammatically correct.</li>
@@ -614,15 +614,15 @@ while checking the code Reviewer should take into account surrounding code and f
 <li>(C++ only) Local variables <strong>should</strong> use <code>camelCase</code></li>
 </ol>
 <h3
-  id="naming-conventions">Naming Conventions<a class="heading-anchor"
-     href="#naming-conventions"
-     title="Naming Conventions"><svg
-    class="icon anchor"
+  id="naming-conventions">
+  <a class="heading-anchor"
+    href="#naming-conventions"
+    title="Naming Conventions"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h3><ol>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Naming Conventions</h3><ol>
 <li>Coin nodes <strong>should</strong> be prefixed with <code>So</code>, e.g. <code>SoTransformDragger</code>. Reimplementation of existing Coin nodes <strong>should</strong> use <code>SoFC</code> prefix, e.g. <code>SoFCTransform</code>.</li>
 <li>Features in Part and Part Design workbenches <strong>should</strong> be prefixed with <code>Feature</code>, e.g. <code>FeatureHole</code>.</li>
 <li>View Providers corresponding to features / other objects <strong>should</strong> be prefixed <code>ViewProvider</code>, e.g. <code>ViewProviderHole</code></li>
@@ -632,15 +632,15 @@ while checking the code Reviewer should take into account surrounding code and f
 <li>Commands <strong>should</strong> be prefixed with <code>Cmd</code> and Workbench name e.g. <code>CmdPartDesignCreateSketch</code></li>
 </ol>
 <h2
-  id="commenting-the-code">Commenting the code<a class="heading-anchor"
-     href="#commenting-the-code"
-     title="Commenting the code"><svg
-    class="icon anchor"
+  id="commenting-the-code">
+  <a class="heading-anchor"
+    href="#commenting-the-code"
+    title="Commenting the code"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><ol>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Commenting the code</h2><ol>
 <li>Good naming <strong>must</strong> be preferred over commenting the code.</li>
 <li>Comments that describe what code does <strong>should</strong> be avoided, instead comments <strong>should</strong> explain intended result.</li>
 <li>All edge-cases in code <strong>must</strong> be described with comment describing when such edge-case can occur and why it is handled in certain way.</li>

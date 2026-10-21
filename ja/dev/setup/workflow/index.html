@@ -47,8 +47,8 @@
     name="description"
     content="FreeCAD contribution workflow and process."><link
           rel="stylesheet"
-          href="/Website/css/styles.13ef785b8a2a89fd62f5d957e3f45b088e3d0736b22dcf50076d941a54ff4a95.css"
-          integrity="sha256-E&#43;94W4oqif1i9dlX4/RbCI49BzayLc9QB22UGlT/SpU="
+          href="/Website/css/styles.c8181472c178e621a235d763dc77bbba5da508f795fb092eb6dd2cefe2612e3b.css"
+          integrity="sha256-yBgUcsF45iGiNddj3He7ul2lCPeV&#43;wkutt0s7&#43;JhLjs="
           crossorigin="anonymous"><link
     rel="canonical"
     href="https://FreeCAD.github.io/Website/ja/dev/setup/workflow/"><link
@@ -315,15 +315,15 @@
     focusable="false">
     <use href="/Website/svg/external.svg#external"></use>
   </svg></a></p></blockquote></figure><h2
-  id="submitting-a-pr">Submitting a PR<a class="heading-anchor"
-     href="#submitting-a-pr"
-     title="Submitting a PR"><svg
-    class="icon anchor"
+  id="submitting-a-pr">
+  <a class="heading-anchor"
+    href="#submitting-a-pr"
+    title="Submitting a PR"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>The basic process is:</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Submitting a PR</h2><p>The basic process is:</p>
 <ol>
 <li>Write some code (and possibly some unit tests)</li>
 <li><code>git add file1.cpp file2.cpp</code></li>
@@ -352,15 +352,15 @@
     <use href="/Website/svg/hash.svg#hash"></use>
   </svg>Rebasing</a> section.</p>
 <h2
-  id="pr-review-process">PR Review Process<a class="heading-anchor"
-     href="#pr-review-process"
-     title="PR Review Process"><svg
-    class="icon anchor"
+  id="pr-review-process">
+  <a class="heading-anchor"
+    href="#pr-review-process"
+    title="PR Review Process"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>Maintainers review PRs on a rolling basis throughout the week, and also in a more concentrated review meeting on Mondays
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>PR Review Process</h2><p>Maintainers review PRs on a rolling basis throughout the week, and also in a more concentrated review meeting on Mondays
 (see the <a
   href="https://freecad.org/events.php"
   class="external-link" target="_blank" rel="external noreferrer nofollow">FreeCAD Events Calendar<svg
@@ -406,26 +406,26 @@ Maintainers take that feedback into consideration when evaluating PRs. Any time 
   </svg>Rebasing</a> for more information).</li>
 </ol>
 <h2
-  id="rebasing">Rebasing<a class="heading-anchor"
-     href="#rebasing"
-     title="Rebasing"><svg
-    class="icon anchor"
+  id="rebasing">
+  <a class="heading-anchor"
+    href="#rebasing"
+    title="Rebasing"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>The PR queue of FreeCAD can become quite lengthy.  This may mean that it takes some time for reviewers to get to review and merge your PR.  This can be frustrating especially for the larger PRs that consist of multiple commits because after some time those PR can become outdated because of other smaller PR that have been merged.</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Rebasing</h2><p>The PR queue of FreeCAD can become quite lengthy.  This may mean that it takes some time for reviewers to get to review and merge your PR.  This can be frustrating especially for the larger PRs that consist of multiple commits because after some time those PR can become outdated because of other smaller PR that have been merged.</p>
 <p>In this section, we give some do&rsquo;s and don&rsquo;ts for rebasing and to make sure your work can remain up-to-date without much effort.</p>
 <h3
-  id="dos">Do&rsquo;s<a class="heading-anchor"
-     href="#dos"
-     title="Do&rsquo;s"><svg
-    class="icon anchor"
+  id="dos">
+  <a class="heading-anchor"
+    href="#dos"
+    title="Do&rsquo;s"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h3><ol>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Do&rsquo;s</h3><ol>
 <li><strong>Small PRs:</strong> Smaller PRs are much easier to rebase.</li>
 <li><strong>Clean commit history</strong>: A clean and logical commit history not only helps the review process (as mentioned above), it also helps rebasing where the rebase maintains the logic.</li>
 <li><strong>Amend the logical commits</strong>: When rebasing, amend the logical commits updating them in such a way as if they were originally written on the updated main branch.  The benefit is that if you need to do a new rebase, you only need to solve the new conflicts and not the old ones again (see don&rsquo;ts 1 and 2).</li>
@@ -450,15 +450,15 @@ Maintainers take that feedback into consideration when evaluating PRs. Any time 
 </span></span><span class="line"><span class="cl">*  PartDesign: Fix bug #23
 </span></span><span class="line"><span class="cl">*  ...</span></span></code></pre></div></div><p>In this example, all conflicts are resolved and stored in the original logical commits with amends to those commits.  It is as if the PR has been based on the new main.  The command to use is: <code>git rebase -i</code> (interactive).</p>
 <h3
-  id="donts">Don&rsquo;ts<a class="heading-anchor"
-     href="#donts"
-     title="Don&rsquo;ts"><svg
-    class="icon anchor"
+  id="donts">
+  <a class="heading-anchor"
+    href="#donts"
+    title="Don&rsquo;ts"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h3><ol>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Don&rsquo;ts</h3><ol>
 <li><strong>Merge main into your PR branch</strong>: This effectively adds a new (merge) commit that captures an update to your PR given changed circumstances.  This does not follow rule 2. &ldquo;Clean commit history&rdquo; because it is not a &ldquo;logical&rdquo; commit.  The merge commit has nothing to do with your work, but has only to do with changed circumstances.  This means that if you need to rebase the PR on top of main, you need to replay all those commits onto main.  This effectively means that you are rebasing your work multiple times.</li>
 <li><strong>Create commits to update to a new main branch</strong>: This follows the same reasoning as above.  It is not a logical commit belonging to the work, which means that each time you need to do a rebase, you need to solve conflicts again and again for the earlier commits.</li>
 </ol>

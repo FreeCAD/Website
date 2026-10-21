@@ -47,8 +47,8 @@
     name="description"
     content="C&#43;&#43; practices."><link
           rel="stylesheet"
-          href="/Website/css/styles.13ef785b8a2a89fd62f5d957e3f45b088e3d0736b22dcf50076d941a54ff4a95.css"
-          integrity="sha256-E&#43;94W4oqif1i9dlX4/RbCI49BzayLc9QB22UGlT/SpU="
+          href="/Website/css/styles.c8181472c178e621a235d763dc77bbba5da508f795fb092eb6dd2cefe2612e3b.css"
+          integrity="sha256-yBgUcsF45iGiNddj3He7ul2lCPeV&#43;wkutt0s7&#43;JhLjs="
           crossorigin="anonymous"><link
     rel="canonical"
     href="https://FreeCAD.github.io/Website/es/dev/code/cpp/"><link
@@ -364,15 +364,15 @@
   </svg></a>.
 Whenever something is not covered or you are in doubt - don&rsquo;t hesitate to consult it - it is a very good source of information.</p>
 <h2
-  id="avoid-anonymous-namespaces">Avoid anonymous namespaces<a class="heading-anchor"
-     href="#avoid-anonymous-namespaces"
-     title="Avoid anonymous namespaces"><svg
-    class="icon anchor"
+  id="avoid-anonymous-namespaces">
+  <a class="heading-anchor"
+    href="#avoid-anonymous-namespaces"
+    title="Avoid anonymous namespaces"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>Anonymous namespaces are very convenient, but makes code unreachable by tests
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Avoid anonymous namespaces</h2><p>Anonymous namespaces are very convenient, but makes code unreachable by tests
 and other code.
 Some code might only make sense in a given context, but if the functionality
 is generic, it could be put in a library or suchlike.</p>
@@ -381,15 +381,15 @@ This approach ensures better organization and clarity.</p>
 <p>In addition, private static functions do not need to be declared in the header file when moved out of a class.
 This reduces unnecessary exposure of implementation details.</p>
 <h2
-  id="algorithms-and-data-structures">Algorithms and data structures<a class="heading-anchor"
-     href="#algorithms-and-data-structures"
-     title="Algorithms and data structures"><svg
-    class="icon anchor"
+  id="algorithms-and-data-structures">
+  <a class="heading-anchor"
+    href="#algorithms-and-data-structures"
+    title="Algorithms and data structures"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><figure>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Algorithms and data structures</h2><figure>
   <blockquote class="quote"><svg
     class="icon quote"
     aria-hidden="true"
@@ -446,15 +446,15 @@ This reduces unnecessary exposure of implementation details.</p>
 </span></span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">ranges</span><span class="o">::</span><span class="n">for_each</span><span class="p">(</span><span class="n">stuff</span><span class="p">,</span> <span class="n">do_something</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">result</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">ranges</span><span class="o">::</span><span class="n">find_if</span><span class="p">(</span><span class="n">stuff</span><span class="p">,</span> <span class="n">do_something</span><span class="p">);</span></span></span></code></pre></div></div><p>Note, STL <code>&lt;algorithm&gt;</code> library can also use lambdas.</p>
 <h2
-  id="code-comments">Code comments<a class="heading-anchor"
-     href="#code-comments"
-     title="Code comments"><svg
-    class="icon anchor"
+  id="code-comments">
+  <a class="heading-anchor"
+    href="#code-comments"
+    title="Code comments"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><figure>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Code comments</h2><figure>
   <blockquote class="quote"><svg
     class="icon quote"
     aria-hidden="true"
@@ -467,15 +467,15 @@ This reduces unnecessary exposure of implementation details.</p>
 <p>It is preferred that code is self documenting when possible. This can be achieved using good naming and structure.</p>
 <p>In some cases, comments can be necessary, to convey information that cannot be described in code. This can be links to bugs that a workaround describe or why edge cases are needed.</p>
 <h2
-  id="conditionals">Conditionals<a class="heading-anchor"
-     href="#conditionals"
-     title="Conditionals"><svg
-    class="icon anchor"
+  id="conditionals">
+  <a class="heading-anchor"
+    href="#conditionals"
+    title="Conditionals"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>Every branch in code doubles the number of paths and makes the code difficult to debug and maintain.</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Conditionals</h2><p>Every branch in code doubles the number of paths and makes the code difficult to debug and maintain.</p>
 <p>Simple <code>if else</code> may be better expressed as a ternary <code>_ : _ ? _</code>. There are often ways to avoid <code>else</code>, when possible the resulting code will be better without. Ternary is ok though.</p>
 <p>Even modestly complex code in an <code>if</code> or <code>else</code> branch should be
 extracted to a function or lambda.</p>
@@ -484,15 +484,15 @@ code and data conflation.</p>
 <p>Can also apply to <code>switch</code> statements.</p>
 <p>Complicated <code>if else</code> code might benefit from converting to a state machine.</p>
 <h3
-  id="ternary-operator">Ternary operator<a class="heading-anchor"
-     href="#ternary-operator"
-     title="Ternary operator"><svg
-    class="icon anchor"
+  id="ternary-operator">
+  <a class="heading-anchor"
+    href="#ternary-operator"
+    title="Ternary operator"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h3><p>You can reduce six lines:</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Ternary operator</h3><p>You can reduce six lines:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">r</span><span class="p">;</span> <span class="c1">// can’t be const
 </span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
@@ -514,15 +514,15 @@ const option:</p>
 </span></span><span class="line"><span class="cl">}
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">const int r = someConditionalLogic();</span></span></code></pre></div></div><h2
-  id="const-correctness">Const correctness<a class="heading-anchor"
-     href="#const-correctness"
-     title="Const correctness"><svg
-    class="icon anchor"
+  id="const-correctness">
+  <a class="heading-anchor"
+    href="#const-correctness"
+    title="Const correctness"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><figure>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Const correctness</h2><figure>
   <blockquote class="quote"><svg
     class="icon quote"
     aria-hidden="true"
@@ -536,15 +536,15 @@ const option:</p>
 <p>This provides compile-time evaluation. Can increase compile time, but speedup runtime. More errors are caught at compile-time.</p>
 <p><code>constexpr</code> is preferable for everything that can be so represented.</p>
 <h2
-  id="reducing-dependencies">Reducing dependencies<a class="heading-anchor"
-     href="#reducing-dependencies"
-     title="Reducing dependencies"><svg
-    class="icon anchor"
+  id="reducing-dependencies">
+  <a class="heading-anchor"
+    href="#reducing-dependencies"
+    title="Reducing dependencies"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><figure>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Reducing dependencies</h2><figure>
   <blockquote class="quote"><svg
     class="icon quote"
     aria-hidden="true"
@@ -585,15 +585,15 @@ Example:</p>
 code, then there&rsquo;s likely a better overall design that can be used.</p>
 <p><strong>Code that has no hard dependencies is single-purpose, reusable, changeable, and testable. Everything is simpler!</strong></p>
 <h2
-  id="code-design">Code design<a class="heading-anchor"
-     href="#code-design"
-     title="Code design"><svg
-    class="icon anchor"
+  id="code-design">
+  <a class="heading-anchor"
+    href="#code-design"
+    title="Code design"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><figure>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Code design</h2><figure>
   <blockquote class="quote"><svg
     class="icon quote"
     aria-hidden="true"
@@ -611,15 +611,15 @@ circumstances.</p>
 <p>Understandable code can be more easily evaluated for correctness.</p>
 <p>For a novice programmer many of these concepts are probably quite foreign, but with a little study and help from the community and code reviews, better code will ensue.</p>
 <h2
-  id="enums">Enums<a class="heading-anchor"
-     href="#enums"
-     title="Enums"><svg
-    class="icon anchor"
+  id="enums">
+  <a class="heading-anchor"
+    href="#enums"
+    title="Enums"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>Used correctly, enums are invaluable.</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Enums</h2><p>Used correctly, enums are invaluable.</p>
 <p>Using enums:</p>
 <ul>
 <li>&hellip;specifically <code>enum class</code> allows strongly typed and scoped enumeration to be created.</li>
@@ -628,15 +628,15 @@ circumstances.</p>
 </ul>
 <p>Using enums to codify data values is strongly discouraged, as enums are best suited for representing fixed, intrinsic states rather than variable data. Instead, use <code>std::unordered_map&lt;&gt;</code> or other data structures that better represent dynamic or data-driven values, offering flexibility and improving maintainability.</p>
 <h2
-  id="minimize-getters-and-setters">Minimize getters and setters<a class="heading-anchor"
-     href="#minimize-getters-and-setters"
-     title="Minimize getters and setters"><svg
-    class="icon anchor"
+  id="minimize-getters-and-setters">
+  <a class="heading-anchor"
+    href="#minimize-getters-and-setters"
+    title="Minimize getters and setters"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>In object-oriented design, a class should encapsulate behavior, not just data. <strong>Frequent use of getters and setters can limit a class’s ability to fully encapsulate its responsibilities</strong> and may suggest that the data could be handled differently.</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Minimize getters and setters</h2><p>In object-oriented design, a class should encapsulate behavior, not just data. <strong>Frequent use of getters and setters can limit a class’s ability to fully encapsulate its responsibilities</strong> and may suggest that the data could be handled differently.</p>
 <p>Consider:</p>
 <ul>
 <li>Using a struct for simple data containers with public fields.</li>
@@ -644,25 +644,25 @@ circumstances.</p>
 </ul>
 <p>A well-designed class manages its own state and provides behavior, not just access.</p>
 <h2
-  id="appropriate-typing">Appropriate typing<a class="heading-anchor"
-     href="#appropriate-typing"
-     title="Appropriate typing"><svg
-    class="icon anchor"
+  id="appropriate-typing">
+  <a class="heading-anchor"
+    href="#appropriate-typing"
+    title="Appropriate typing"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>Using strings for everything can make code harder to understand and maintain. Use appropriate types to add clarity and structure.</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Appropriate typing</h2><p>Using strings for everything can make code harder to understand and maintain. Use appropriate types to add clarity and structure.</p>
 <h3
-  id="the-use-of-auto">The use of <code>auto</code><a class="heading-anchor"
-     href="#the-use-of-auto"
-     title="The use of auto"><svg
-    class="icon anchor"
+  id="the-use-of-auto">
+  <a class="heading-anchor"
+    href="#the-use-of-auto"
+    title="The use of auto"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h3><p>The use of <code>auto</code> has not yet been discussed in the C++ Core Guidelines (see
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>The use of <code>auto</code></h3><p>The use of <code>auto</code> has not yet been discussed in the C++ Core Guidelines (see
 <a
   href="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#to-do-unclassified-proto-rules"
   class="external-link" target="_blank" rel="external noreferrer nofollow">the to-do
@@ -674,52 +674,52 @@ list<svg
   </svg></a>).
 Below follow general guidelines with examples:</p>
 <h4
-  id="the-use-of-auto-is-ok-if-the-right-hand-side-makes-clear-which-type-it-is">The use of <code>auto</code> is ok if the right-hand side makes clear which type it is<a class="heading-anchor"
-     href="#the-use-of-auto-is-ok-if-the-right-hand-side-makes-clear-which-type-it-is"
-     title="The use of auto is ok if the right-hand side makes clear which type it is"><svg
-    class="icon anchor"
+  id="the-use-of-auto-is-ok-if-the-right-hand-side-makes-clear-which-type-it-is">
+  <a class="heading-anchor"
+    href="#the-use-of-auto-is-ok-if-the-right-hand-side-makes-clear-which-type-it-is"
+    title="The use of auto is ok if the right-hand side makes clear which type it is"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h4><div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">auto</span><span class="o">*</span> <span class="n">xyz</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Xyz</span><span class="p">();</span> <span class="c1">// OK: type is clear from calling the constructor
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>The use of <code>auto</code> is ok if the right-hand side makes clear which type it is</h4><div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">auto</span><span class="o">*</span> <span class="n">xyz</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Xyz</span><span class="p">();</span> <span class="c1">// OK: type is clear from calling the constructor
 </span></span></span></code></pre></div></div><div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">xyz</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">whatever</span><span class="o">&gt;</span><span class="n">_cast</span><span class="o">&lt;</span><span class="n">Xyz</span><span class="o">&gt;</span><span class="p">(...);</span> <span class="c1">// OK: type is clear from the cast
 </span></span></span></code></pre></div></div><div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">xyz</span> <span class="o">=</span> <span class="n">getAnything</span><span class="o">&lt;</span><span class="n">Xyz</span><span class="o">&gt;</span><span class="p">(...);</span> <span class="c1">// OK: type is clear from the context and type parameter
 </span></span></span></code></pre></div></div><div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">value</span> <span class="o">=</span> <span class="n">randomThing</span><span class="p">.</span><span class="n">weirdProperty</span><span class="o">-&gt;</span><span class="n">getValue</span><span class="p">();</span> <span class="c1">// bad: non-obvious type
 </span></span></span></code></pre></div></div><div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">auto</span> <span class="nf">doStuff</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span> <span class="c1">// bad: auto as return type
 </span></span></span></code></pre></div></div><div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">xyz</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// bad: unclear what type of integer
 </span></span></span></code></pre></div></div><h4
-  id="the-use-of-auto-is-ok-if-the-type-is-long-or-verbose">The use of <code>auto</code> is ok if the type is long or verbose<a class="heading-anchor"
-     href="#the-use-of-auto-is-ok-if-the-type-is-long-or-verbose"
-     title="The use of auto is ok if the type is long or verbose"><svg
-    class="icon anchor"
+  id="the-use-of-auto-is-ok-if-the-type-is-long-or-verbose">
+  <a class="heading-anchor"
+    href="#the-use-of-auto-is-ok-if-the-type-is-long-or-verbose"
+    title="The use of auto is ok if the type is long or verbose"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h4><div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">foo</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="c1">// OK: iterator
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>The use of <code>auto</code> is ok if the type is long or verbose</h4><div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">foo</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="c1">// OK: iterator
 </span></span></span></code></pre></div></div><div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">lambda</span> <span class="o">=</span> <span class="p">[](){...};</span> <span class="c1">// OK: function type
 </span></span></span></code></pre></div></div><h4
-  id="the-use-of-auto-is-ok-if-redundancy-is-avoided">The use of <code>auto</code> is ok if redundancy is avoided<a class="heading-anchor"
-     href="#the-use-of-auto-is-ok-if-redundancy-is-avoided"
-     title="The use of auto is ok if redundancy is avoided"><svg
-    class="icon anchor"
+  id="the-use-of-auto-is-ok-if-redundancy-is-avoided">
+  <a class="heading-anchor"
+    href="#the-use-of-auto-is-ok-if-redundancy-is-avoided"
+    title="The use of auto is ok if redundancy is avoided"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h4><div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">map</span><span class="p">;</span>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>The use of <code>auto</code> is ok if redundancy is avoided</h4><div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">map</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="p">[</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">]</span> <span class="o">:</span> <span class="n">map</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span> <span class="c1">// OK: map declaration contains the type
 </span></span></span></code></pre></div></div><h2
-  id="main-code-path-and-indentation">Main code path and indentation<a class="heading-anchor"
-     href="#main-code-path-and-indentation"
-     title="Main code path and indentation"><svg
-    class="icon anchor"
+  id="main-code-path-and-indentation">
+  <a class="heading-anchor"
+    href="#main-code-path-and-indentation"
+    title="Main code path and indentation"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><figure>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Main code path and indentation</h2><figure>
   <blockquote class="quote"><svg
     class="icon quote"
     aria-hidden="true"
@@ -762,15 +762,15 @@ Time to rewrite.
 </span></span><span class="line"><span class="cl">    <span class="k">return</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="n">doThing</span><span class="p">();</span></span></span></code></pre></div></div><h2
-  id="initialization">Initialization<a class="heading-anchor"
-     href="#initialization"
-     title="Initialization"><svg
-    class="icon anchor"
+  id="initialization">
+  <a class="heading-anchor"
+    href="#initialization"
+    title="Initialization"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p><strong>Initialize all objects, and, if possible, use const or better still, constexpr.</strong></p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Initialization</h2><p><strong>Initialize all objects, and, if possible, use const or better still, constexpr.</strong></p>
 <p>Avoid default constructors. If there is not yet a value for an object, then there&rsquo;s no need to create it. Declare variables close to where they are used (there&rsquo;s no need to start the declare variables at the start of the block like in ansi-c). Joining declaration and initialization allows const:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">AType</span> <span class="n">thing</span><span class="p">;</span> <span class="c1">// mutable. Does it have a default constructor?
 </span></span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">AType</span> <span class="n">thing3</span> <span class="p">{</span> <span class="n">calcVal</span><span class="p">()</span> <span class="p">};</span> <span class="c1">// immutable
@@ -793,15 +793,15 @@ need to have the parameter in the surrounding scope. But don’t forget
 mutable if you want to update its value. The variable stays for the lifetime
 of the lambda (think static, but better).</p>
 <h2
-  id="lambdas">Lambdas<a class="heading-anchor"
-     href="#lambdas"
-     title="Lambdas"><svg
-    class="icon anchor"
+  id="lambdas">
+  <a class="heading-anchor"
+    href="#lambdas"
+    title="Lambdas"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><figure>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Lambdas</h2><figure>
   <blockquote class="quote"><svg
     class="icon quote"
     aria-hidden="true"
@@ -857,26 +857,26 @@ to omit const or &amp; as appropriate. Types may be required to help the IDE.</p
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="n">doSomeOtherThing</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"><span class="n">cleanup</span><span class="p">();</span></span></span></code></pre></div></div><h2
-  id="avoid-macros">Avoid macros<a class="heading-anchor"
-     href="#avoid-macros"
-     title="Avoid macros"><svg
-    class="icon anchor"
+  id="avoid-macros">
+  <a class="heading-anchor"
+    href="#avoid-macros"
+    title="Avoid macros"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>While macros was needed back in the days, today with modern C++, that&rsquo;s usually not the case anymore.</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Avoid macros</h2><p>While macros was needed back in the days, today with modern C++, that&rsquo;s usually not the case anymore.</p>
 <p>Macros are global, can be lead to unpredicted side effects and are difficult to debug. Consider replacing with a function. For conditional compilation in templates consider constexpr if.</p>
 <h2
-  id="avoid-magic-literals">Avoid magic literals<a class="heading-anchor"
-     href="#avoid-magic-literals"
-     title="Avoid magic literals"><svg
-    class="icon anchor"
+  id="avoid-magic-literals">
+  <a class="heading-anchor"
+    href="#avoid-magic-literals"
+    title="Avoid magic literals"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>“Magic” literals placed directly in code offer no clue as to what exactly
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Avoid magic literals</h2><p>“Magic” literals placed directly in code offer no clue as to what exactly
 is being specified or its origin, and no clue if the same data is used
 elsewhere. Comprehension and maintenance burden.</p>
 <p>To document what the magic literal is, use a suitable named constant.</p>
@@ -884,15 +884,15 @@ elsewhere. Comprehension and maintenance burden.</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">displayLines</span><span class="p">(</span><span class="mi">80</span><span class="p">);</span></span></span></code></pre></div></div><p>Do the following instead:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">constexpr</span> <span class="kt">unsigned</span> <span class="n">standardScreenLength</span> <span class="p">{</span><span class="mi">80</span><span class="p">};</span>
 </span></span><span class="line"><span class="cl"><span class="n">displayLines</span><span class="p">(</span><span class="n">standardScreenLength</span><span class="p">);</span></span></span></code></pre></div></div><h2
-  id="good-naming">Good naming<a class="heading-anchor"
-     href="#good-naming"
-     title="Good naming"><svg
-    class="icon anchor"
+  id="good-naming">
+  <a class="heading-anchor"
+    href="#good-naming"
+    title="Good naming"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p><strong>Clear, concise, naming makes code understandable</strong>.</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Good naming</h2><p><strong>Clear, concise, naming makes code understandable</strong>.</p>
 <p>For an object whose purpose is to <em>do</em> something (service object), prefer a verb. E.g. <code>renderer</code>.</p>
 <p>For an object that <em>is</em> something (value object), prefer a noun. E.g. <code>drawing</code>.</p>
 <p>Something difficult to name concisely likely does not have a single purpose and needs refactoring.</p>
@@ -907,15 +907,15 @@ elsewhere. Comprehension and maintenance burden.</p>
 </span></span></span><span class="line"><span class="cl"><span class="k">constexpr</span> <span class="k">auto</span> <span class="n">redDogColor</span> <span class="p">{</span><span class="s">&#34;red&#34;</span><span class="p">};</span> <span class="c1">// OK
 </span></span></span></code></pre></div></div><p>See also variable sets.</p>
 <h2
-  id="out-parameters">Out parameters<a class="heading-anchor"
-     href="#out-parameters"
-     title="Out parameters"><svg
-    class="icon anchor"
+  id="out-parameters">
+  <a class="heading-anchor"
+    href="#out-parameters"
+    title="Out parameters"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>Out parameters are <em>non-const, by-reference, or by-pointer</em>, function parameters. These are known to cause hard to find bugs.</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Out parameters</h2><p>Out parameters are <em>non-const, by-reference, or by-pointer</em>, function parameters. These are known to cause hard to find bugs.</p>
 <p>Whether values are updated by the function is not obvious.</p>
 <p><strong>Where possible make function parameters <code>const</code> or <code>const&amp;</code> and return a value, or return a container to return multiple values</strong>.</p>
 <p>Return value optimizations (RVO) simplifies return and usually elides copies.</p>
@@ -924,15 +924,15 @@ elsewhere. Comprehension and maintenance burden.</p>
 </span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div></div><p>Structured binding (since C++17) simplifies reading back the result at the calling side:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">auto</span> <span class="p">[</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="s">&#34;qty&#34;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span></span></span></code></pre></div></div><p>For methods that return multiple values, depending on context, it may be better to provide dedicated struct for result.</p>
 <h2
-  id="code-repetition">Code repetition<a class="heading-anchor"
-     href="#code-repetition"
-     title="Code repetition"><svg
-    class="icon anchor"
+  id="code-repetition">
+  <a class="heading-anchor"
+    href="#code-repetition"
+    title="Code repetition"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><figure>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Code repetition</h2><figure>
   <blockquote class="quote"><svg
     class="icon quote"
     aria-hidden="true"
@@ -957,27 +957,27 @@ engineering, eventually leading to buggy and unmaintainable systems.
 <p>The variant part (the bit that is different between usages) of repeating code is often just one or two items in a long chain of statement.
 The variant parts can be extracted and passed as parameters to a function or lambda executing the common body. A sequence of repeated code likely indicates the underlying data is actually a set and hence should be defined in a container and dealt with accordingly.</p>
 <h2
-  id="static">Static<a class="heading-anchor"
-     href="#static"
-     title="Static"><svg
-    class="icon anchor"
+  id="static">
+  <a class="heading-anchor"
+    href="#static"
+    title="Static"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>Often best avoided. For <code>const</code> variables consider <code>constexpr</code>, or
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Static</h2><p>Often best avoided. For <code>const</code> variables consider <code>constexpr</code>, or
 initialization in lambda capture.</p>
 <p><code>static</code> functions <em>may</em> be better moved out of class into a named namespace or some utility library/file.</p>
 <h2
-  id="automated-testing">Automated testing<a class="heading-anchor"
-     href="#automated-testing"
-     title="Automated testing"><svg
-    class="icon anchor"
+  id="automated-testing">
+  <a class="heading-anchor"
+    href="#automated-testing"
+    title="Automated testing"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><figure>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Automated testing</h2><figure>
   <blockquote class="quote"><svg
     class="icon quote"
     aria-hidden="true"
@@ -998,15 +998,15 @@ initialization in lambda capture.</p>
 <p>Just like good naming is important for variables and functions, naming tests are too. A good test name describes what has been tested. This way, when it fails for someone else, they can easily see what failed.</p>
 <p>If code is difficult to unit test consider if it can be extracted from its surrounds — maybe into some library-like class — where it can be tested in isolation. Is it possible to refactor to remove hard-wired dependencies? Is it trying to do too much? Is it too tightly coupled? See also dependencies.</p>
 <h2
-  id="avoid-variable-sets">Avoid variable sets<a class="heading-anchor"
-     href="#avoid-variable-sets"
-     title="Avoid variable sets"><svg
-    class="icon anchor"
+  id="avoid-variable-sets">
+  <a class="heading-anchor"
+    href="#avoid-variable-sets"
+    title="Avoid variable sets"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>Representing data with code where related variables have names closely coupled to their initial value should be avoided to reduce repetition and make the code easier to understand and maintain.</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Avoid variable sets</h2><p>Representing data with code where related variables have names closely coupled to their initial value should be avoided to reduce repetition and make the code easier to understand and maintain.</p>
 <p>For example, instead of this:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Item</span> <span class="n">fred</span> <span class="p">{</span> <span class="s">&#34;Fred&#34;</span><span class="p">,</span> <span class="mi">20</span> <span class="p">};</span>
 </span></span><span class="line"><span class="cl"><span class="n">Item</span> <span class="n">martha</span> <span class="p">{</span> <span class="s">&#34;Martha&#34;</span><span class="p">,</span> <span class="mi">30</span> <span class="p">};</span>
@@ -1032,40 +1032,40 @@ Pair and tuple should only be used for very short lived data, such as this case:
 </span></span><span class="line"><span class="cl">    <span class="p">{</span> <span class="s">&#34;On your marks&#34;</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">15</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div></div><p>When in doubt, use a struct - it is better to have good names than not.</p>
 <h2
-  id="api-documentation">API Documentation<a class="heading-anchor"
-     href="#api-documentation"
-     title="API Documentation"><svg
-    class="icon anchor"
+  id="api-documentation">
+  <a class="heading-anchor"
+    href="#api-documentation"
+    title="API Documentation"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>API Documentation in FreeCAD consists of two main types of documentation.  <strong>Topics</strong> explain the concepts behind the code and <strong>API documentation strings</strong> explain the code itself.  Both are important but topics are especially valued.</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>API Documentation</h2><p>API Documentation in FreeCAD consists of two main types of documentation.  <strong>Topics</strong> explain the concepts behind the code and <strong>API documentation strings</strong> explain the code itself.  Both are important but topics are especially valued.</p>
 <p>Although it is not strictly required, developers are highly encouraged to write API documentation when applicable.  Note that it <strong>is required</strong> to make current API documentation up-to-date with changes that are made to the code.  This section presents a set of guidelines for that documentation.</p>
 <h3
-  id="general-guidelines">General guidelines<a class="heading-anchor"
-     href="#general-guidelines"
-     title="General guidelines"><svg
-    class="icon anchor"
+  id="general-guidelines">
+  <a class="heading-anchor"
+    href="#general-guidelines"
+    title="General guidelines"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h3><ul>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>General guidelines</h3><ul>
 <li>Be as complete as possible with each item (classes, enums, public and protected members) in a file having a documentation string.</li>
 <li>Minimize the vertical space.  So, when possible, use a single line with <code>///</code> or <code>///&lt;</code> for enum items (see below).</li>
 <li>In general, do not document C++ concepts such as destructors, friends, or constructors, except when there are arguments or if something special happens.</li>
 </ul>
 <h3
-  id="syntax">Syntax<a class="heading-anchor"
-     href="#syntax"
-     title="Syntax"><svg
-    class="icon anchor"
+  id="syntax">
+  <a class="heading-anchor"
+    href="#syntax"
+    title="Syntax"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h3><p>Doxygen supports two different types of syntax for commands, those with a backslash (e.g. <code>\brief</code>) and those with an <code>@</code> symbol (<code>@brief</code>).  The <code>@</code>-prefixed version is more prevalent in the FreeCAD source code and is the preferred style for new documentation.</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Syntax</h3><p>Doxygen supports two different types of syntax for commands, those with a backslash (e.g. <code>\brief</code>) and those with an <code>@</code> symbol (<code>@brief</code>).  The <code>@</code>-prefixed version is more prevalent in the FreeCAD source code and is the preferred style for new documentation.</p>
 <p>For a single line API documentation comment, for example commenting a function, use <code>/// &lt;your comment.</code> without using <code>@brief</code> and ending with a full stop.  Example:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">/// Get the transaction ID of this transaction.
 </span></span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="nf">getID</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span></span></span></code></pre></div></div><p>For multiple lines, use <code>/**</code> to start the docstring.  The documentation starts on the next line with a <code>@brief</code> command that ends with a full stop and then a line break.  In the case below, there are details after which the <code>@param[in]</code> and <code>@return</code> commands document the parameters and return statement, respectively.</p>
@@ -1111,15 +1111,15 @@ Pair and tuple should only be used for very short lived data, such as this case:
 </span></span><span class="line"><span class="cl">        <span class="n">bmi</span><span class="o">::</span><span class="n">indexed_by</span><span class="o">&lt;</span>
 </span></span><span class="line"><span class="cl">		<span class="p">...</span>
 </span></span><span class="line"><span class="cl">    <span class="o">&gt;</span> <span class="n">propertyData</span><span class="p">;</span></span></span></code></pre></div></div><h3
-  id="placing-api-documentation">Placing API documentation<a class="heading-anchor"
-     href="#placing-api-documentation"
-     title="Placing API documentation"><svg
-    class="icon anchor"
+  id="placing-api-documentation">
+  <a class="heading-anchor"
+    href="#placing-api-documentation"
+    title="Placing API documentation"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h3><p>The main page of the API documentation is in <code>src/Doc/mainpage.dox.in</code>.  The most important function of this page is the &ldquo;Organization of the API Documentation&rdquo; section allowing readers to quickly browse important topics.</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Placing API documentation</h3><p>The main page of the API documentation is in <code>src/Doc/mainpage.dox.in</code>.  The most important function of this page is the &ldquo;Organization of the API Documentation&rdquo; section allowing readers to quickly browse important topics.</p>
 <p>Topics should be defined in dedicated <code>.dox</code> files in the main directory of a package.  For example, <code>src/App/core-app.dox</code> defines a group <code>APP</code> that is in group <code>CORE</code> (defined in the main page) and then it defines several topics in <code>APP</code>, such as <code>DocumentGroup</code> (for the concept of a Document in FreeCAD), <code>DocumentObjectGroup</code> (for the concept of a document object), etc.  Below are two excerpts from that file to give an indication:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cm">/**
 </span></span></span><span class="line"><span class="cl"><span class="cm"> * @defgroup APP App
@@ -1159,25 +1159,25 @@ Pair and tuple should only be used for very short lived data, such as this case:
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="p">...</span></span></span></code></pre></div></div><p>Documentation strings can be added to classes, enums, and public and protected members of a class.  This is especially important if a class is at the top of a hierarchy and its methods are reused in many other subclasses.  The documentation should be added in the header file and not in the C++ file.</p>
 <h3
-  id="specific-guidelines">Specific guidelines<a class="heading-anchor"
-     href="#specific-guidelines"
-     title="Specific guidelines"><svg
-    class="icon anchor"
+  id="specific-guidelines">
+  <a class="heading-anchor"
+    href="#specific-guidelines"
+    title="Specific guidelines"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h3><p>This section contains guidelines for specific types of documentation.</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Specific guidelines</h3><p>This section contains guidelines for specific types of documentation.</p>
 <h4
-  id="namespaces">Namespaces<a class="heading-anchor"
-     href="#namespaces"
-     title="Namespaces"><svg
-    class="icon anchor"
+  id="namespaces">
+  <a class="heading-anchor"
+    href="#namespaces"
+    title="Namespaces"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h4><p>Since namespace statements are typically in many files, it is difficult to determine where to put documentation strings.  In most cases a best practice is to add them to the <code>.dox</code> file of the respective module.  For example, in <code>src/App/core-app.dox</code>:</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Namespaces</h4><p>Since namespace statements are typically in many files, it is difficult to determine where to put documentation strings.  In most cases a best practice is to add them to the <code>.dox</code> file of the respective module.  For example, in <code>src/App/core-app.dox</code>:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cm">/**
 </span></span></span><span class="line"><span class="cl"><span class="cm"> * @namespace App
 </span></span></span><span class="line"><span class="cl"><span class="cm"> * @ingroup APP
@@ -1192,15 +1192,15 @@ Pair and tuple should only be used for very short lived data, such as this case:
 </span></span></span><span class="line"><span class="cl"><span class="cm"> *
 </span></span></span><span class="line"><span class="cl"><span class="cm"> * For a more high-level discussion see the topic @ref APP &#34;App&#34;.
 </span></span></span><span class="line"><span class="cl"><span class="cm"> */</span></span></span></code></pre></div></div><h4
-  id="classes">Classes<a class="heading-anchor"
-     href="#classes"
-     title="Classes"><svg
-    class="icon anchor"
+  id="classes">
+  <a class="heading-anchor"
+    href="#classes"
+    title="Classes"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h4><p>For classes use a brief statement and more detailed comments:</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Classes</h4><p>For classes use a brief statement and more detailed comments:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cm">/**
 </span></span></span><span class="line"><span class="cl"><span class="cm"> * @brief A class that represents a FreeCAD document.
 </span></span></span><span class="line"><span class="cl"><span class="cm"> *
@@ -1213,15 +1213,15 @@ Pair and tuple should only be used for very short lived data, such as this case:
 </span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">AppExport</span> <span class="nl">Document</span><span class="p">:</span> <span class="k">public</span> <span class="n">PropertyContainer</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="p">...</span></span></span></code></pre></div></div><h4
-  id="functions">Functions<a class="heading-anchor"
-     href="#functions"
-     title="Functions"><svg
-    class="icon anchor"
+  id="functions">
+  <a class="heading-anchor"
+    href="#functions"
+    title="Functions"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h4><p>For functions, use a brief statement, optionally more detailed comments, and if applicable and the parameters are not trivial, <code>@param</code> statements marking the direction <code>[in]</code>, <code>[out]</code>, or <code>[in,out]</code>, a <code>@return</code> command and <code>@throws</code> command, if applicable.  An example:</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Functions</h4><p>For functions, use a brief statement, optionally more detailed comments, and if applicable and the parameters are not trivial, <code>@param</code> statements marking the direction <code>[in]</code>, <code>[out]</code>, or <code>[in,out]</code>, a <code>@return</code> command and <code>@throws</code> command, if applicable.  An example:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cm">/**
 </span></span></span><span class="line"><span class="cl"><span class="cm">     * @brief Get the value of the property identified by the path.
 </span></span></span><span class="line"><span class="cl"><span class="cm">     *
@@ -1234,15 +1234,15 @@ Pair and tuple should only be used for very short lived data, such as this case:
 </span></span></span><span class="line"><span class="cl"><span class="cm">     * @return The value of the property.
 </span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
 </span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="k">const</span> <span class="n">boost</span><span class="o">::</span><span class="n">any</span> <span class="n">getPathValue</span><span class="p">(</span><span class="k">const</span> <span class="n">App</span><span class="o">::</span><span class="n">ObjectIdentifier</span><span class="o">&amp;</span> <span class="n">path</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span></span></span></code></pre></div></div><h4
-  id="enums-1">Enums<a class="heading-anchor"
-     href="#enums-1"
-     title="Enums"><svg
-    class="icon anchor"
+  id="enums-1">
+  <a class="heading-anchor"
+    href="#enums-1"
+    title="Enums"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h4><p>For enumerations, it often suffices to have a brief statement and a short comment for each item:</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Enums</h4><p>For enumerations, it often suffices to have a brief statement and a short comment for each item:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">/// The status of the transaction object.
 </span></span></span><span class="line"><span class="cl">    <span class="k">enum</span> <span class="nc">Status</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
@@ -1250,15 +1250,15 @@ Pair and tuple should only be used for very short lived data, such as this case:
 </span></span></span><span class="line"><span class="cl">        <span class="n">Del</span><span class="p">,</span> <span class="c1">///&lt; An object is deleted from the document.
 </span></span></span><span class="line"><span class="cl">        <span class="n">Chn</span> <span class="c1">///&lt; An object is changed in the document.
 </span></span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="n">status</span> <span class="p">{</span><span class="n">New</span><span class="p">};</span></span></span></code></pre></div></div><h4
-  id="grouping">Grouping<a class="heading-anchor"
-     href="#grouping"
-     title="Grouping"><svg
-    class="icon anchor"
+  id="grouping">
+  <a class="heading-anchor"
+    href="#grouping"
+    title="Grouping"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h4><p>Special documentation comments can be used to indicate that some group of functions, variables, etc. are all part of some single conceptual grouping. A best practice is to start a group with a documentation block <code>/**</code> with an <code>@name</code> command and an <code>@{</code> grouping command on the next line.  The group is ended with <code>/// @}</code>.</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Grouping</h4><p>Special documentation comments can be used to indicate that some group of functions, variables, etc. are all part of some single conceptual grouping. A best practice is to start a group with a documentation block <code>/**</code> with an <code>@name</code> command and an <code>@{</code> grouping command on the next line.  The group is ended with <code>/// @}</code>.</p>
 <p>Often, FreeCAD source files contain grouping commands with normal comments instead of documentation comments, such as <code>// @{</code> and <code>// @}</code>.  Since these comments are not documentation comments, this usage is incorrect and can lead to issues in rendering the documentation. This usage should be avoided in new code, and corrected when encountered.</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cm">/**
 </span></span></span><span class="line"><span class="cl"><span class="cm">	 * @name Properties
@@ -1277,15 +1277,15 @@ Pair and tuple should only be used for very short lived data, such as this case:
 </span></span></span><span class="line"><span class="cl">    <span class="n">PropertyBool</span> <span class="n">UseHasher</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">/// @}
 </span></span></span></code></pre></div></div><h4
-  id="templates">Templates<a class="heading-anchor"
-     href="#templates"
-     title="Templates"><svg
-    class="icon anchor"
+  id="templates">
+  <a class="heading-anchor"
+    href="#templates"
+    title="Templates"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h4><p>Templates can be document with a <code>@tparam</code> command:</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Templates</h4><p>Templates can be document with a <code>@tparam</code> command:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cm">/**
 </span></span></span><span class="line"><span class="cl"><span class="cm">     * @brief Get all objects of a given type.
 </span></span></span><span class="line"><span class="cl"><span class="cm">     *
@@ -1294,15 +1294,15 @@ Pair and tuple should only be used for very short lived data, such as this case:
 </span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
 </span></span><span class="line"><span class="cl">    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="kr">inline</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">*&gt;</span> <span class="n">getObjectsOfType</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span></span></span></code></pre></div></div><h4
-  id="documentation-with-much-repetition">Documentation with much repetition<a class="heading-anchor"
-     href="#documentation-with-much-repetition"
-     title="Documentation with much repetition"><svg
-    class="icon anchor"
+  id="documentation-with-much-repetition">
+  <a class="heading-anchor"
+    href="#documentation-with-much-repetition"
+    title="Documentation with much repetition"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h4><p>The preferred way to handle code with significant repetition is to use <code>@copydoc</code> or <code>@copydetails</code>.</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Documentation with much repetition</h4><p>The preferred way to handle code with significant repetition is to use <code>@copydoc</code> or <code>@copydetails</code>.</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cm">/**
 </span></span></span><span class="line"><span class="cl"><span class="cm">     * @brief Check if this mapped name starts with the search target.
 </span></span></span><span class="line"><span class="cl"><span class="cm">     *
@@ -1378,25 +1378,25 @@ Pair and tuple should only be used for very short lived data, such as this case:
 </span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="nf">getDocumentation</span><span class="p">(</span><span class="n">OffsetBase</span> <span class="n">offsetBase</span><span class="p">,</span><span class="k">const</span> <span class="n">Property</span><span class="o">*</span> <span class="n">prop</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">/// @}
 </span></span></span></code></pre></div></div><h2
-  id="recommendations-for-concurrency">Recommendations for concurrency<a class="heading-anchor"
-     href="#recommendations-for-concurrency"
-     title="Recommendations for concurrency"><svg
-    class="icon anchor"
+  id="recommendations-for-concurrency">
+  <a class="heading-anchor"
+    href="#recommendations-for-concurrency"
+    title="Recommendations for concurrency"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>In this section we will propose a number of code conventions to make concurrent code easier to maintain, especially for other developers than the author.</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Recommendations for concurrency</h2><p>In this section we will propose a number of code conventions to make concurrent code easier to maintain, especially for other developers than the author.</p>
 <h3
-  id="mark-logically-grouped-variables">Mark logically grouped variables<a class="heading-anchor"
-     href="#mark-logically-grouped-variables"
-     title="Mark logically grouped variables"><svg
-    class="icon anchor"
+  id="mark-logically-grouped-variables">
+  <a class="heading-anchor"
+    href="#mark-logically-grouped-variables"
+    title="Mark logically grouped variables"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h3><p>Often locks or mutexes protect variables that logically belong together (if one changes, another variable is very likely to change as well).  An example is some data structure that has a buffer and it needs to maintain the number of items in the buffer.  If adding to the datastructure can happen concurrently, then both the buffer variable and the number of items variable need to be protected at the same time.  In such cases, it is very helpful to explicitly mark what the lock or mutex is protecting.</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Mark logically grouped variables</h3><p>Often locks or mutexes protect variables that logically belong together (if one changes, another variable is very likely to change as well).  An example is some data structure that has a buffer and it needs to maintain the number of items in the buffer.  If adding to the datastructure can happen concurrently, then both the buffer variable and the number of items variable need to be protected at the same time.  In such cases, it is very helpful to explicitly mark what the lock or mutex is protecting.</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">mutex</span> <span class="n">taskMutex</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// This mutex protects the queue and the active worker count:
 </span></span></span><span class="line"><span class="cl"><span class="c1">// ////////
@@ -1412,15 +1412,15 @@ Pair and tuple should only be used for very short lived data, such as this case:
     <use href="/Website/svg/external.svg#external"></use>
   </svg></a>.</p>
 <h3
-  id="adopt-and-in-function-names-for-atomic-actions">Adopt &ldquo;and&rdquo; in function names for atomic actions<a class="heading-anchor"
-     href="#adopt-and-in-function-names-for-atomic-actions"
-     title="Adopt &ldquo;and&rdquo; in function names for atomic actions"><svg
-    class="icon anchor"
+  id="adopt-and-in-function-names-for-atomic-actions">
+  <a class="heading-anchor"
+    href="#adopt-and-in-function-names-for-atomic-actions"
+    title="Adopt &ldquo;and&rdquo; in function names for atomic actions"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h3><p>Concurrent code often limits composability.  This is often apparent in data structures where each individual public function correctly makes use of locks.  However, often you need to compose these functions for correct operation, for example:</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Adopt &ldquo;and&rdquo; in function names for atomic actions</h3><p>Concurrent code often limits composability.  This is often apparent in data structures where each individual public function correctly makes use of locks.  However, often you need to compose these functions for correct operation, for example:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">stack</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">  <span class="n">stack</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
@@ -1431,28 +1431,28 @@ Pair and tuple should only be used for very short lived data, such as this case:
 <p>This has two benefits: 1) it is easier to find a proper name for what the function does and 2), since this is often regarded bad practice in sequential code, it marks these functions as likely concurrent functions.</p>
 <p>As an example, for the code above, a function that composes those operations could be called:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">checkForEmptyAndProcess</span><span class="p">()</span></span></span></code></pre></div></div><h3
-  id="name-condition-variables-according-to-what-they-wait-for">Name condition variables according to what they wait for<a class="heading-anchor"
-     href="#name-condition-variables-according-to-what-they-wait-for"
-     title="Name condition variables according to what they wait for"><svg
-    class="icon anchor"
+  id="name-condition-variables-according-to-what-they-wait-for">
+  <a class="heading-anchor"
+    href="#name-condition-variables-according-to-what-they-wait-for"
+    title="Name condition variables according to what they wait for"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h3><p>Naming condition variables well can make the code more readable, for example:</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Name condition variables according to what they wait for</h3><p>Naming condition variables well can make the code more readable, for example:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">_recomputeRequestAvailable</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="n">lock</span><span class="p">,</span> <span class="p">[</span><span class="k">this</span><span class="p">]</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="p">...</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="n">_recomputeRequestAvailable</span><span class="p">.</span><span class="n">notify_all</span><span class="p">();</span></span></span></code></pre></div></div><h3
-  id="document-new-concepts-introduced-for-concurrency">Document new concepts introduced for concurrency<a class="heading-anchor"
-     href="#document-new-concepts-introduced-for-concurrency"
-     title="Document new concepts introduced for concurrency"><svg
-    class="icon anchor"
+  id="document-new-concepts-introduced-for-concurrency">
+  <a class="heading-anchor"
+    href="#document-new-concepts-introduced-for-concurrency"
+    title="Document new concepts introduced for concurrency"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h3><p>If new concepts are introduced for concurrency, document the logic well and try to explain the state that needs to be maintained.  Concurrent code has a tendency to accumulate state with counters, booleans, a touched set, etc.  Each new boolean introduced doubles the state-space and you always want to be able to account for all cases.  In these situations, it is very helpful to explain the state machine, the flow, and invariants that help prune that state-space.</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Document new concepts introduced for concurrency</h3><p>If new concepts are introduced for concurrency, document the logic well and try to explain the state that needs to be maintained.  Concurrent code has a tendency to accumulate state with counters, booleans, a touched set, etc.  Each new boolean introduced doubles the state-space and you always want to be able to account for all cases.  In these situations, it is very helpful to explain the state machine, the flow, and invariants that help prune that state-space.</p>
 </div><footer class="single-footer">
     <nav class="pagination"><a
             class="button next"

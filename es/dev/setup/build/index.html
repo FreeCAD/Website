@@ -47,8 +47,8 @@
     name="description"
     content="Set up a build environment for contributing to FreeCAD."><link
           rel="stylesheet"
-          href="/Website/css/styles.13ef785b8a2a89fd62f5d957e3f45b088e3d0736b22dcf50076d941a54ff4a95.css"
-          integrity="sha256-E&#43;94W4oqif1i9dlX4/RbCI49BzayLc9QB22UGlT/SpU="
+          href="/Website/css/styles.c8181472c178e621a235d763dc77bbba5da508f795fb092eb6dd2cefe2612e3b.css"
+          integrity="sha256-yBgUcsF45iGiNddj3He7ul2lCPeV&#43;wkutt0s7&#43;JhLjs="
           crossorigin="anonymous"><link
     rel="canonical"
     href="https://FreeCAD.github.io/Website/es/dev/setup/build/"><link
@@ -323,15 +323,15 @@
     <use href="/Website/svg/external.svg#external"></use>
   </svg></a>.</p>
 <h2
-  id="build-environment">Build Environment<a class="heading-anchor"
-     href="#build-environment"
-     title="Build Environment"><svg
-    class="icon anchor"
+  id="build-environment">
+  <a class="heading-anchor"
+    href="#build-environment"
+    title="Build Environment"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>To work on FreeCAD, you will need CMake, git, a code editor, a C++ compiler, and a Python interpreter. Many different combinations work:</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Build Environment</h2><p>To work on FreeCAD, you will need CMake, git, a code editor, a C++ compiler, and a Python interpreter. Many different combinations work:</p>
 <ul>
 <li>On Linux, it&rsquo;s common to use vim, emacs, KDevelop, or CLion as your editor. Compilation with GCC and Clang is supported.</li>
 <li>On Windows, we support Visual Studio, Visual Studio Code, and CLion for development, all using the MSVC compiler toolchain.</li>
@@ -346,15 +346,15 @@
     <use href="/Website/svg/external.svg#external"></use>
   </svg></a>.</p>
 <h2
-  id="dependencies">Dependencies<a class="heading-anchor"
-     href="#dependencies"
-     title="Dependencies"><svg
-    class="icon anchor"
+  id="dependencies">
+  <a class="heading-anchor"
+    href="#dependencies"
+    title="Dependencies"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>See also <a
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Dependencies</h2><p>See also <a
   href="../dependencies"
   class="internal-tooltip">Dependencies</a></p>
 <p>FreeCAD depends on many other open source projects to provide the basic foundations of the program. There are many ways of installing these dependencies: for details and the complete list, see the following Wiki pages:</p>
@@ -385,15 +385,15 @@
   </svg></a></li>
 </ul>
 <h2
-  id="pixi">Pixi<a class="heading-anchor"
-     href="#pixi"
-     title="Pixi"><svg
-    class="icon anchor"
+  id="pixi">
+  <a class="heading-anchor"
+    href="#pixi"
+    title="Pixi"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>One of the easiest ways of creating a standalone FreeCAD build environment with its dependencies in a way that does not affect the rest of your system is to use
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Pixi</h2><p>One of the easiest ways of creating a standalone FreeCAD build environment with its dependencies in a way that does not affect the rest of your system is to use
 <a
   href="https://pixi.sh/latest/"
   class="external-link" target="_blank" rel="external noreferrer nofollow">Pixi<svg
@@ -427,15 +427,15 @@
 </ol>
 <p>Pixi will take care of all the dependencies. In general, there will be no need to re-run the configure command as it will be automatically run by <code>pixi run build</code> if needed.  However, there may be times when a git submodule is added or updated.  To integrate these changes, the command <code>pixi run initialize</code> will run the commands necessary.</p>
 <h3
-  id="pixi-on-windows">Pixi on Windows<a class="heading-anchor"
-     href="#pixi-on-windows"
-     title="Pixi on Windows"><svg
-    class="icon anchor"
+  id="pixi-on-windows">
+  <a class="heading-anchor"
+    href="#pixi-on-windows"
+    title="Pixi on Windows"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h3><p>Pixi uses the <code>conda-forge</code> packages, including the <code>compilers</code> meta package to bring in the platform-specific compiler support.  On Windows, it is expected that Microsoft Visual C++ has been installed and matches the version used by the <code>conda-forge</code> team, which is <a
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Pixi on Windows</h3><p>Pixi uses the <code>conda-forge</code> packages, including the <code>compilers</code> meta package to bring in the platform-specific compiler support.  On Windows, it is expected that Microsoft Visual C++ has been installed and matches the version used by the <code>conda-forge</code> team, which is <a
   href="https://aka.ms/vs/17/release/vs_community.exe"
   class="external-link" target="_blank" rel="external noreferrer nofollow">Visual Studio Community 2022<svg
     class="icon external"
@@ -459,29 +459,37 @@
     focusable="false">
     <use href="/Website/svg/zoom.svg#zoom"></use>
   </svg><img
-    class="img vs2019-modify"
-    src="/Website/dev/setup/build/vs2019-modify.webp"
-    alt="Visual Studio 2019"
-    loading="lazy"
-    fetchpriority="low"
-    decoding="async" title="Visual Studio 2019" width="1292" height="735" srcset="/Website/dev/setup/build/vs2019-modify_hu_f1af3d53d1eff360.webp 400w, /Website/dev/setup/build/vs2019-modify_hu_6c9792ce39c7e071.webp 800w, /Website/dev/setup/build/vs2019-modify.webp 1292w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+  class="img vs2019-modify"
+  src="/Website/dev/setup/build/vs2019-modify.webp"
+  alt="Visual Studio 2019"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Visual Studio 2019" width="1292" height="735" srcset="/Website/dev/setup/build/vs2019-modify_hu_f1af3d53d1eff360.webp 400w, /Website/dev/setup/build/vs2019-modify_hu_6c9792ce39c7e071.webp 800w, /Website/dev/setup/build/vs2019-modify.webp 1292w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
         <div id="img-001" popover>
           <button
             class="enlarged"
             popovertarget="img-001"
             popovertargetaction="hide"
             aria-label="Cerrar visor de imágenes"><img
-    class="img vs2019-modify"
-    src="/Website/dev/setup/build/vs2019-modify.webp"
-    alt="Visual Studio 2019"
-    loading="lazy"
-    fetchpriority="low"
-    decoding="async" title="Visual Studio 2019" width="1292" height="735" srcset="/Website/dev/setup/build/vs2019-modify_hu_f1af3d53d1eff360.webp 400w, /Website/dev/setup/build/vs2019-modify_hu_6c9792ce39c7e071.webp 800w, /Website/dev/setup/build/vs2019-modify.webp 1292w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg
+  class="img vs2019-modify"
+  src="/Website/dev/setup/build/vs2019-modify.webp"
+  alt="Visual Studio 2019"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Visual Studio 2019" width="1292" height="735" srcset="/Website/dev/setup/build/vs2019-modify_hu_f1af3d53d1eff360.webp 400w, /Website/dev/setup/build/vs2019-modify_hu_6c9792ce39c7e071.webp 800w, /Website/dev/setup/build/vs2019-modify.webp 1292w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg
     class="icon cross"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/cross.svg#cross"></use>
-  </svg></button><p>Visual Studio 2019</p></div><figcaption>Visual Studio 2019</figcaption></figure></li>
+  </svg></button></div><figcaption>
+          <div class="internal-tooltip"><svg
+    class="icon important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/important.svg#important"></use>
+  </svg><span class="tooltip">Visual Studio 2019</span>
+          </div>
+        </figcaption></figure></li>
 <li>
 <p>Make sure to select <code>Desktop development with C++</code> under the <code>Desktop &amp; Mobile</code> section.  Ensure that the necessary optional items are selected on the right.</p>
 <figure class="image"><button
@@ -493,40 +501,48 @@
     focusable="false">
     <use href="/Website/svg/zoom.svg#zoom"></use>
   </svg><img
-    class="img vs2019-cpp"
-    src="/Website/dev/setup/build/vs2019-cpp.webp"
-    alt="vs2019-dev-C&#43;&#43;"
-    loading="lazy"
-    fetchpriority="low"
-    decoding="async" title="vs2019-dev-C&#43;&#43;" width="1289" height="728" srcset="/Website/dev/setup/build/vs2019-cpp_hu_f20e141c2b3f2c34.webp 400w, /Website/dev/setup/build/vs2019-cpp_hu_d64b9cdf42d5a8f8.webp 800w, /Website/dev/setup/build/vs2019-cpp.webp 1289w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+  class="img vs2019-cpp"
+  src="/Website/dev/setup/build/vs2019-cpp.webp"
+  alt="vs2019-dev-C&#43;&#43;"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="vs2019-dev-C&#43;&#43;" width="1289" height="728" srcset="/Website/dev/setup/build/vs2019-cpp_hu_f20e141c2b3f2c34.webp 400w, /Website/dev/setup/build/vs2019-cpp_hu_d64b9cdf42d5a8f8.webp 800w, /Website/dev/setup/build/vs2019-cpp.webp 1289w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
         <div id="img-002" popover>
           <button
             class="enlarged"
             popovertarget="img-002"
             popovertargetaction="hide"
             aria-label="Cerrar visor de imágenes"><img
-    class="img vs2019-cpp"
-    src="/Website/dev/setup/build/vs2019-cpp.webp"
-    alt="vs2019-dev-C&#43;&#43;"
-    loading="lazy"
-    fetchpriority="low"
-    decoding="async" title="vs2019-dev-C&#43;&#43;" width="1289" height="728" srcset="/Website/dev/setup/build/vs2019-cpp_hu_f20e141c2b3f2c34.webp 400w, /Website/dev/setup/build/vs2019-cpp_hu_d64b9cdf42d5a8f8.webp 800w, /Website/dev/setup/build/vs2019-cpp.webp 1289w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg
+  class="img vs2019-cpp"
+  src="/Website/dev/setup/build/vs2019-cpp.webp"
+  alt="vs2019-dev-C&#43;&#43;"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="vs2019-dev-C&#43;&#43;" width="1289" height="728" srcset="/Website/dev/setup/build/vs2019-cpp_hu_f20e141c2b3f2c34.webp 400w, /Website/dev/setup/build/vs2019-cpp_hu_d64b9cdf42d5a8f8.webp 800w, /Website/dev/setup/build/vs2019-cpp.webp 1289w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg
     class="icon cross"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/cross.svg#cross"></use>
-  </svg></button><p>vs2019-dev-C&#43;&#43;</p></div><figcaption>vs2019-dev-C&#43;&#43;</figcaption></figure></li>
-</ol>
-<h2
-  id="setting-up-for-development">Setting up for Development<a class="heading-anchor"
-     href="#setting-up-for-development"
-     title="Setting up for Development"><svg
-    class="icon anchor"
+  </svg></button></div><figcaption>
+          <div class="internal-tooltip"><svg
+    class="icon important"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><ol>
+    <use href="/Website/svg/important.svg#important"></use>
+  </svg><span class="tooltip">vs2019-dev-C++</span>
+          </div>
+        </figcaption></figure></li>
+</ol>
+<h2
+  id="setting-up-for-development">
+  <a class="heading-anchor"
+    href="#setting-up-for-development"
+    title="Setting up for Development"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Setting up for Development</h2><ol>
 <li>
 <p>Fork <a
   href="https://github.com/FreeCAD/FreeCAD"

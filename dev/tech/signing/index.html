@@ -47,8 +47,8 @@
     name="description"
     content="Signing the FreeCAD executables and installers."><link
           rel="stylesheet"
-          href="/Website/css/styles.13ef785b8a2a89fd62f5d957e3f45b088e3d0736b22dcf50076d941a54ff4a95.css"
-          integrity="sha256-E&#43;94W4oqif1i9dlX4/RbCI49BzayLc9QB22UGlT/SpU="
+          href="/Website/css/styles.c8181472c178e621a235d763dc77bbba5da508f795fb092eb6dd2cefe2612e3b.css"
+          integrity="sha256-yBgUcsF45iGiNddj3He7ul2lCPeV&#43;wkutt0s7&#43;JhLjs="
           crossorigin="anonymous"><link
     rel="canonical"
     href="https://FreeCAD.github.io/Website/dev/tech/signing/"><link
@@ -348,24 +348,24 @@
   </ul>
 </nav></div>
 </nav><div class="content"><h2
-  id="mac-os">Mac OS<a class="heading-anchor"
-     href="#mac-os"
-     title="Mac OS"><svg
-    class="icon anchor"
+  id="mac-os">
+  <a class="heading-anchor"
+    href="#mac-os"
+    title="Mac OS"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><h3
-  id="prerequisites">Prerequisites<a class="heading-anchor"
-     href="#prerequisites"
-     title="Prerequisites"><svg
-    class="icon anchor"
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Mac OS</h2><h3
+  id="prerequisites">
+  <a class="heading-anchor"
+    href="#prerequisites"
+    title="Prerequisites"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h3><p>You must be a member of Apple&rsquo;s Developer program to generate and use signing keys. Information can be found at <a
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Prerequisites</h3><p>You must be a member of Apple&rsquo;s Developer program to generate and use signing keys. Information can be found at <a
   href="https://developer.apple.com"
   class="external-link" target="_blank" rel="external noreferrer nofollow">https://developer.apple.com<svg
     class="icon external"
@@ -388,15 +388,15 @@ a file that resides on your computer and can be referenced by the notarization u
 the credentials and allow the signing script to access them when running the notary tool.</p>
 <p>Note that the Intel bundles must be signed on an Intel machine, and the ARM bundles must be signed on an ARM machine.</p>
 <h3
-  id="local-signing-process">Local Signing Process<a class="heading-anchor"
-     href="#local-signing-process"
-     title="Local Signing Process"><svg
-    class="icon anchor"
+  id="local-signing-process">
+  <a class="heading-anchor"
+    href="#local-signing-process"
+    title="Local Signing Process"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h3><p>Once the prerequisites above are met, actually signing the FreeCAD.app bundle is straightforward:</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Local Signing Process</h3><p>Once the prerequisites above are met, actually signing the FreeCAD.app bundle is straightforward:</p>
 <ol>
 <li>Create a folder that represents the final disk image. In general it should have the FreeCAD.app bundle in it, and an alias to /Applications.</li>
 <li>Copy the file <em>src/Tools/macos_sign_and_notarize.sh</em> to the location that contains that folder (not to within the folder itself).</li>
@@ -409,15 +409,15 @@ the disk image.</li>
 </ol>
 <p>Once complete, the disk image is ready for distribution.</p>
 <h3
-  id="github-actions-signing-process">GitHub Actions Signing Process<a class="heading-anchor"
-     href="#github-actions-signing-process"
-     title="GitHub Actions Signing Process"><svg
-    class="icon anchor"
+  id="github-actions-signing-process">
+  <a class="heading-anchor"
+    href="#github-actions-signing-process"
+    title="GitHub Actions Signing Process"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h3><p>The GitHub actions signing process is a bit more involved because of the additional security requirements inherent in a remote build. They also need to be repeated periodically when certificates or agreements expire. Sometimes only the certificate generation needs to be renewed, but sometimes the entire sequence. To perform this sequence you must have a valid Apple Developer account. If you are trying to sign with the FreeCAD project association&rsquo;s certificate you must be a member of that organization on Apple&rsquo;s account system. Talk to an FPA administrator to get such access if you require it. If you are only trying to sign an executable as yourself, using your own Apple account, there is no need, and the steps are the same.</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>GitHub Actions Signing Process</h3><p>The GitHub actions signing process is a bit more involved because of the additional security requirements inherent in a remote build. They also need to be repeated periodically when certificates or agreements expire. Sometimes only the certificate generation needs to be renewed, but sometimes the entire sequence. To perform this sequence you must have a valid Apple Developer account. If you are trying to sign with the FreeCAD project association&rsquo;s certificate you must be a member of that organization on Apple&rsquo;s account system. Talk to an FPA administrator to get such access if you require it. If you are only trying to sign an executable as yourself, using your own Apple account, there is no need, and the steps are the same.</p>
 <p>The complete process is:</p>
 <ol>
 <li>Log into your Apple Developer account at <a
@@ -491,15 +491,15 @@ the disk image.</li>
 <li>Run the &ldquo;Weekly Build&rdquo; GitHub action to generate the signed macOS weeklies based on these settings.</li>
 </ol>
 <h2
-  id="windows">Windows<a class="heading-anchor"
-     href="#windows"
-     title="Windows"><svg
-    class="icon anchor"
+  id="windows">
+  <a class="heading-anchor"
+    href="#windows"
+    title="Windows"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>FreeCAD is currently signed using an Azure-based system sponsored by the FreeCAD Project Association (FPA). Signing during the GitHub Actions-based build is done using a combination of the <code>azure/login</code> Action provided by the Azure team and the .NET <code>sign</code> executable that is part of Microsoft&rsquo;s .NET family of tools. To examine the actual signing commands, see <a
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Windows</h2><p>FreeCAD is currently signed using an Azure-based system sponsored by the FreeCAD Project Association (FPA). Signing during the GitHub Actions-based build is done using a combination of the <code>azure/login</code> Action provided by the Azure team and the .NET <code>sign</code> executable that is part of Microsoft&rsquo;s .NET family of tools. To examine the actual signing commands, see <a
   href="https://github.com/FreeCAD/FreeCAD/blob/main/package/rattler-build/windows/create_bundle.sh"
   class="external-link" target="_blank" rel="external noreferrer nofollow"><code>create_bundle.sh</code><svg
     class="icon external"
@@ -528,30 +528,30 @@ the disk image.</li>
 <li><code>AZURE_TENANT_ID</code></li>
 </ul>
 <h3
-  id="generating-the-fpas-signing-credentials">Generating the FPA&rsquo;s signing credentials<a class="heading-anchor"
-     href="#generating-the-fpas-signing-credentials"
-     title="Generating the FPA&rsquo;s signing credentials"><svg
-    class="icon anchor"
+  id="generating-the-fpas-signing-credentials">
+  <a class="heading-anchor"
+    href="#generating-the-fpas-signing-credentials"
+    title="Generating the FPA&rsquo;s signing credentials"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h3><p>The values for those variables come from the output of the Azure RBAC creation command (run on a local Windows machine, not a CI runner):</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Generating the FPA&rsquo;s signing credentials</h3><p>The values for those variables come from the output of the Azure RBAC creation command (run on a local Windows machine, not a CI runner):</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">az ad sp create-for-rbac --name &#34;FreeCADGitHubActions&#34; \
 </span></span><span class="line"><span class="cl">  --role &#34;Artifact Signing Certificate Profile Signer&#34; \
 </span></span><span class="line"><span class="cl">  --scopes /subscriptions/OUR_SUBSCRIPTION_ID/resourceGroups/FreeCAD_Code_Signing/providers/Microsoft.CodeSigning/codeSigningAccounts/FreeCAD-Code-Signing \
 </span></span><span class="line"><span class="cl">  --json-auth</span></span></code></pre></div></div><p>Here, &ldquo;FreeCADGitHubActions&rdquo; is an arbitrary account name being created by the command, and the FPA&rsquo;s subscription ID is &ldquo;1e441f5e-9283-4984-9b1b-e42f96a7db0f&rdquo;. Using that command requires first logging into the appropriate tenant:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">az login --tenant OUR_TENANT_ID --use-device-code --scope &#34;https://codesigning.azure.net/.default&#34;</span></span></code></pre></div></div><p>where our tenant ID is &ldquo;fa7cd937-4c12-49bd-b500-075147b38022&rdquo;. FPA administrators have login access to this account and can authenticate by following the prompts from the login command. Note that <code>--use-device-code</code> is not the only login option, so administrators are free to use alternative login mechanisms as necessary.</p>
 <h3
-  id="creating-your-own-signing-system">Creating your own signing system<a class="heading-anchor"
-     href="#creating-your-own-signing-system"
-     title="Creating your own signing system"><svg
-    class="icon anchor"
+  id="creating-your-own-signing-system">
+  <a class="heading-anchor"
+    href="#creating-your-own-signing-system"
+    title="Creating your own signing system"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h3><p>If you would like to configure a build of FreeCAD to sign with your own certificate, rather than the FPA&rsquo;s, you can follow the instructions in <a
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Creating your own signing system</h3><p>If you would like to configure a build of FreeCAD to sign with your own certificate, rather than the FPA&rsquo;s, you can follow the instructions in <a
   href="https://www.hanselman.com/blog/automatically-signing-a-windows-exe-with-azure-trusted-signing-dotnet-sign-and-github-actions"
   class="external-link" target="_blank" rel="external noreferrer nofollow">this blog post<svg
     class="icon external"

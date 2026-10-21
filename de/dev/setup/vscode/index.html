@@ -47,8 +47,8 @@
     name="description"
     content="Guide for getting started with VSCode."><link
           rel="stylesheet"
-          href="/Website/css/styles.13ef785b8a2a89fd62f5d957e3f45b088e3d0736b22dcf50076d941a54ff4a95.css"
-          integrity="sha256-E&#43;94W4oqif1i9dlX4/RbCI49BzayLc9QB22UGlT/SpU="
+          href="/Website/css/styles.c8181472c178e621a235d763dc77bbba5da508f795fb092eb6dd2cefe2612e3b.css"
+          integrity="sha256-yBgUcsF45iGiNddj3He7ul2lCPeV&#43;wkutt0s7&#43;JhLjs="
           crossorigin="anonymous"><link
     rel="canonical"
     href="https://FreeCAD.github.io/Website/de/dev/setup/vscode/"><link
@@ -94,7 +94,7 @@
   <meta property="og:locale" content="de_DE">
   <meta property="og:type" content="article">
     <meta property="article:section" content="dev">
-    <meta property="article:modified_time" content="2026-05-05T15:27:52+02:00">
+    <meta property="article:modified_time" content="2026-10-21T08:21:57+02:00">
 </head><body
     class="single type-dev kind-page "
     id="top">
@@ -334,15 +334,15 @@
 <p>VSCode will probably ask to install the recommended extensions: say <code>yes</code>. If it doesn&rsquo;t you&rsquo;ll need to manually install these extensions</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">ms-vscode.cpptools-extension-pack
 </span></span><span class="line"><span class="cl">ms-python.python</span></span></code></pre></div></div><h2
-  id="select-build-configuration">Select build configuration<a class="heading-anchor"
-     href="#select-build-configuration"
-     title="Select build configuration"><svg
-    class="icon anchor"
+  id="select-build-configuration">
+  <a class="heading-anchor"
+    href="#select-build-configuration"
+    title="Select build configuration"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p><video controls muted playsinline loop src="configure.mp4" type="video/mp4"></video></p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Select build configuration</h2><p><video controls muted playsinline loop src="configure.mp4" type="video/mp4"></video></p>
 <p>First on the bottom left corner, in the status bar, select the build type. Options are:</p>
 <ul>
 <li>debug</li>
@@ -353,15 +353,15 @@
 <p>If you are using conda please select one of the respective ones.</p>
 <p>Cmake should automatically configure the project with the selected configuration.</p>
 <h2
-  id="first-build">First build<a class="heading-anchor"
-     href="#first-build"
-     title="First build"><svg
-    class="icon anchor"
+  id="first-build">
+  <a class="heading-anchor"
+    href="#first-build"
+    title="First build"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p><video controls muted playsinline loop src="build.mp4" type="video/mp4"></video></p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>First build</h2><p><video controls muted playsinline loop src="build.mp4" type="video/mp4"></video></p>
 <p>To build, either:</p>
 <ul>
 <li>Run <strong>Pixi</strong>, or</li>
@@ -372,15 +372,15 @@
 <p><strong>NOTE:</strong> The first build takes a while.</p>
 <p><strong>NOTE:</strong> If you change configuration (see step above) you will have to build again.</p>
 <h2
-  id="launching-the-built-executable-and-debugging">Launching the built executable and debugging<a class="heading-anchor"
-     href="#launching-the-built-executable-and-debugging"
-     title="Launching the built executable and debugging"><svg
-    class="icon anchor"
+  id="launching-the-built-executable-and-debugging">
+  <a class="heading-anchor"
+    href="#launching-the-built-executable-and-debugging"
+    title="Launching the built executable and debugging"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p><video controls muted playsinline loop src="debug.mp4" type="video/mp4"></video></p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Launching the built executable and debugging</h2><p><video controls muted playsinline loop src="debug.mp4" type="video/mp4"></video></p>
 <p>On the left panel go to the debug section and click the little green play button. Alternatively press <code>F5</code>. Every time you launch the debugger a build is triggered, to ensure all the latest changes you made to the code are compiled in.</p>
 <p>You should see freecad launching and the debugger attaching to the process. If an error pops up the python debugger failed to attach (there&rsquo;s 30 second timeout).
 Close FreeCAD and try launching it again. If it still fails try increasing the timeout located in the file <code>.vscode/scripts/WaitForDebugpy.py</code></p>
@@ -396,30 +396,30 @@ Close FreeCAD and try launching it again. If it still fails try increasing the t
 <p><strong>NOTE:</strong> There&rsquo;s actually two debuggers: on the top panel you can see a dropdown to select either the c++ debugger or the python one.</p>
 <p><strong>NOTE:</strong> Don&rsquo;t use the restart button. It only restarts the selected debugger, which definitely is not what you want. Instead press the stop button (which stops both debuggers) and launch again.</p>
 <h2
-  id="running-tests">Running tests<a class="heading-anchor"
-     href="#running-tests"
-     title="Running tests"><svg
-    class="icon anchor"
+  id="running-tests">
+  <a class="heading-anchor"
+    href="#running-tests"
+    title="Running tests"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p><video controls muted playsinline loop src="testing.mp4" type="video/mp4"></video></p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Running tests</h2><p><video controls muted playsinline loop src="testing.mp4" type="video/mp4"></video></p>
 <p>The IDE supports running FreeCAD tests as well. On the left panel go to the testing section and click the play button. A build takes place and then all the tests are run and results reported.</p>
 <p><strong>NOTE:</strong> This is much slower than running the <code>Tests_run</code> executable directly (run <code>path/to/the/build-dir/tests/Tests_run</code>). The video above is sped up.</p>
 <p><strong>NOTE:</strong> Only c++ tests are currently integrated. Python tests are run from the <code>Test workbench</code>, or with the command <code>FreeCAD -t 0</code>, or <code>pixi run freecad -t 0</code> if you&rsquo;re using Pixi.</p>
 <p>Alternatively, there are two vscode tasks that can be used to run the cpp and python tests directly.</p>
 <p><strong>NOTE:</strong> The debug tests button does not currently work. More configuration is needed to get that to work.</p>
 <h2
-  id="general-features-of-vscode">General features of VSCode<a class="heading-anchor"
-     href="#general-features-of-vscode"
-     title="General features of VSCode"><svg
-    class="icon anchor"
+  id="general-features-of-vscode">
+  <a class="heading-anchor"
+    href="#general-features-of-vscode"
+    title="General features of VSCode"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>On the left panel you can see the following sections:</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>General features of VSCode</h2><p>On the left panel you can see the following sections:</p>
 <ul>
 <li>File manager: here you can control fils and search them with <code>Ctrl+F</code>. Press <code>F2</code> to rename the selected file.</li>
 <li>Source control: here you can control git from the graphical user interface.</li>
@@ -490,29 +490,37 @@ Close FreeCAD and try launching it again. If it still fails try increasing the t
     focusable="false">
     <use href="/Website/svg/zoom.svg#zoom"></use>
   </svg><img
-    class="img extensions"
-    src="/Website/dev/setup/vscode/extensions.webp"
-    alt="VSCode extensions"
-    loading="lazy"
-    fetchpriority="low"
-    decoding="async" title="VSCode extensions" width="2560" height="1408" srcset="/Website/dev/setup/vscode/extensions_hu_6412c6b82a808c6f.webp 400w, /Website/dev/setup/vscode/extensions_hu_c578c3ec9a2a2ce3.webp 800w, /Website/dev/setup/vscode/extensions_hu_94a91a3f7812a687.webp 1600w, /Website/dev/setup/vscode/extensions.webp 2560w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"></button>
+  class="img extensions"
+  src="/Website/dev/setup/vscode/extensions.webp"
+  alt="VSCode extensions"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="VSCode extensions" width="2560" height="1408" srcset="/Website/dev/setup/vscode/extensions_hu_6412c6b82a808c6f.webp 400w, /Website/dev/setup/vscode/extensions_hu_c578c3ec9a2a2ce3.webp 800w, /Website/dev/setup/vscode/extensions_hu_94a91a3f7812a687.webp 1600w, /Website/dev/setup/vscode/extensions.webp 2560w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"></button>
         <div id="img-001" popover>
           <button
             class="enlarged"
             popovertarget="img-001"
             popovertargetaction="hide"
             aria-label="Bildbetrachter schließen"><img
-    class="img extensions"
-    src="/Website/dev/setup/vscode/extensions.webp"
-    alt="VSCode extensions"
-    loading="lazy"
-    fetchpriority="low"
-    decoding="async" title="VSCode extensions" width="2560" height="1408" srcset="/Website/dev/setup/vscode/extensions_hu_6412c6b82a808c6f.webp 400w, /Website/dev/setup/vscode/extensions_hu_c578c3ec9a2a2ce3.webp 800w, /Website/dev/setup/vscode/extensions_hu_94a91a3f7812a687.webp 1600w, /Website/dev/setup/vscode/extensions.webp 2560w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"><svg
+  class="img extensions"
+  src="/Website/dev/setup/vscode/extensions.webp"
+  alt="VSCode extensions"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="VSCode extensions" width="2560" height="1408" srcset="/Website/dev/setup/vscode/extensions_hu_6412c6b82a808c6f.webp 400w, /Website/dev/setup/vscode/extensions_hu_c578c3ec9a2a2ce3.webp 800w, /Website/dev/setup/vscode/extensions_hu_94a91a3f7812a687.webp 1600w, /Website/dev/setup/vscode/extensions.webp 2560w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"><svg
     class="icon cross"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/cross.svg#cross"></use>
-  </svg></button><p>VSCode extensions</p></div><figcaption>VSCode extensions</figcaption></figure><ul>
+  </svg></button></div><figcaption>
+          <div class="internal-tooltip"><svg
+    class="icon important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/important.svg#important"></use>
+  </svg><span class="tooltip">VSCode extensions</span>
+          </div>
+        </figcaption></figure><ul>
 <li>On the very left you can see the <code>Todo-Tree</code> extension reporting <code>TODO</code>s and <code>FIXME</code></li>
 <li>On the left half you can see the <code>git graph</code> extension showing all the commits on different branches. You can click a commit to see exactly what was modified by it.</li>
 <li>On the right half you can see the <code>git history</code> of the DocumentObject.cpp file.</li>
@@ -767,9 +775,9 @@ Close FreeCAD and try launching it again. If it still fails try increasing the t
   </svg></a>
 </span>
 <span>
-    Modified: 2026-05-05
+    Modified: 2026-10-21
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/0ecf4c13f446aea52a7486c8503f448103f5706d">0ecf4c13f4<svg
+      Commit: <a href="https://github.com/freecad/website/commit/9f2316ba9ad1e922b4918cba92f68be69b7e9af7">9f2316ba9a<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

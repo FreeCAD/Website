@@ -47,8 +47,8 @@
     name="description"
     content="Enhance the website project structure, configuration, and the Trigo Theme."><link
           rel="stylesheet"
-          href="/Website/css/styles.13ef785b8a2a89fd62f5d957e3f45b088e3d0736b22dcf50076d941a54ff4a95.css"
-          integrity="sha256-E&#43;94W4oqif1i9dlX4/RbCI49BzayLc9QB22UGlT/SpU="
+          href="/Website/css/styles.c8181472c178e621a235d763dc77bbba5da508f795fb092eb6dd2cefe2612e3b.css"
+          integrity="sha256-yBgUcsF45iGiNddj3He7ul2lCPeV&#43;wkutt0s7&#43;JhLjs="
           crossorigin="anonymous"><link
     rel="canonical"
     href="https://FreeCAD.github.io/Website/zh/dev/web/theme/"><link
@@ -338,15 +338,15 @@
   </svg>注意<p>The following reflects the state of the FreeCAD website as of July 2026.</p>
 <p>If major changes are made to the structure, this documentation must be updated accordingly.</p></blockquote></figure>
 <h2
-  id="website-setup">Website setup<a class="heading-anchor"
-     href="#website-setup"
-     title="Website setup"><svg
-    class="icon anchor"
+  id="website-setup">
+  <a class="heading-anchor"
+    href="#website-setup"
+    title="Website setup"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>The FreeCAD website is organized in a single git repository. External Hugo or git modules are not used yet.</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Website setup</h2><p>The FreeCAD website is organized in a single git repository. External Hugo or git modules are not used yet.</p>
 <p>The Trigo theme lives in the <code>themes</code> directory and, apart from a few needed configuration parameters, works as a standalone system.</p>
 <p>The FreeCAD website content is developed specifically along the Trigo theme.
 That means that features only provided by the Trigo theme will not be available if using another theme.
@@ -360,15 +360,15 @@ The homepage resides at the root of each localized trees, next to the nested dir
 Some of these workflow use Python scripts located in the `/tools/workflows/ directory.</p>
 <p>Finally, development notes are stored in the <code>/notes</code> directory to keep track of past decisions and discussions.</p>
 <h2
-  id="configuration">Configuration<a class="heading-anchor"
-     href="#configuration"
-     title="Configuration"><svg
-    class="icon anchor"
+  id="configuration">
+  <a class="heading-anchor"
+    href="#configuration"
+    title="Configuration"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>The FreeCAD website has two main environments:</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Configuration</h2><p>The FreeCAD website has two main environments:</p>
 <ul>
 <li>The default development environment whose configuration is defined in <code>/config/_default</code></li>
 <li>The production environment whose configuration is defined in <code>/config/production</code> and overrides the default one</li>
@@ -381,15 +381,15 @@ Some of these workflow use Python scripts located in the `/tools/workflows/ dire
 <li><code>params.yaml</code> defines all theme-specific and custom parameters</li>
 </ul>
 <h2
-  id="trigo-theme-for-hugo">Trigo Theme for Hugo<a class="heading-anchor"
-     href="#trigo-theme-for-hugo"
-     title="Trigo Theme for Hugo"><svg
-    class="icon anchor"
+  id="trigo-theme-for-hugo">
+  <a class="heading-anchor"
+    href="#trigo-theme-for-hugo"
+    title="Trigo Theme for Hugo"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>Trigo is a custom made theme for the <a
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Trigo Theme for Hugo</h2><p>Trigo is a custom made theme for the <a
   href="https://gohugo.io/"
   class="external-link" target="_blank" rel="external noreferrer nofollow">Hugo Static Side Generator<svg
     class="icon external"
@@ -418,27 +418,27 @@ Its architecture, methods and documentation are made simple yet efficient in a <
     <use href="/Website/svg/note.svg#note"></use>
   </svg>注意<p>Capitalized words refer to specific web concepts, or relevant to the Trigo theme used in a FreeCAD website context.</p></blockquote></figure>
 <h3
-  id="theme-overview">Theme Overview<a class="heading-anchor"
-     href="#theme-overview"
-     title="Theme Overview"><svg
-    class="icon anchor"
+  id="theme-overview">
+  <a class="heading-anchor"
+    href="#theme-overview"
+    title="Theme Overview"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h3><p>The Trigo theme is based on a standard Hugo theme structure: it uses a set of HTML wrapping template actions to transform Content, Data and Resources (in <code>layouts</code> directory), some CSS stylesheets and JavaScript (the last two in <code>assets</code>).
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Theme Overview</h3><p>The Trigo theme is based on a standard Hugo theme structure: it uses a set of HTML wrapping template actions to transform Content, Data and Resources (in <code>layouts</code> directory), some CSS stylesheets and JavaScript (the last two in <code>assets</code>).
 Translations tables for theme <code>i18n</code> strings are used as well.
 Bundled icons are available in <code>assets/svg</code>.</p>
 <h3
-  id="style">Style<a class="heading-anchor"
-     href="#style"
-     title="Style"><svg
-    class="icon anchor"
+  id="style">
+  <a class="heading-anchor"
+    href="#style"
+    title="Style"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h3><p>The style of the theme is defined in CSS stylesheets in <code>assets/css</code>.
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Style</h3><p>The style of the theme is defined in CSS stylesheets in <code>assets/css</code>.
 The <code>main.css</code> file defines the stylesheet files to import.
 Reusable variables (e.g. <code>var(--accent)</code>) are found in <code>vars.css</code> in both <strong>Light</strong> and <strong>Dark</strong> chroma variants.
 Some additional project-specific variables are defined the project configuration parameters (<code>/config/_default/params.yaml</code>) under the <code>style</code> key, such as <code>accent-color</code>, <code>font-sans</code>, <code>font-mono</code>, etc.</p>
@@ -450,25 +450,25 @@ The <code>media.css</code> defines the style for different devices and screen si
 The <code>shortcodes.css</code> defines the style for bundled shortcodes.
 Finally, the <code>custom.css</code> defines the style of project-specific custom partials and reusable classes.</p>
 <h3
-  id="custom-classes">Custom classes<a class="heading-anchor"
-     href="#custom-classes"
-     title="Custom classes"><svg
-    class="icon anchor"
+  id="custom-classes">
+  <a class="heading-anchor"
+    href="#custom-classes"
+    title="Custom classes"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h3><p>TODO</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Custom classes</h3><p>TODO</p>
 <h3
-  id="layouts">Layouts<a class="heading-anchor"
-     href="#layouts"
-     title="Layouts"><svg
-    class="icon anchor"
+  id="layouts">
+  <a class="heading-anchor"
+    href="#layouts"
+    title="Layouts"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h3><p>Each Layout inherits from <code>layouts/_default/baseof.html</code> which contains the Main structure of the Page, including the Head.</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Layouts</h3><p>Each Layout inherits from <code>layouts/_default/baseof.html</code> which contains the Main structure of the Page, including the Head.</p>
 <p>Default Layouts use either:</p>
 <ul>
 <li>
@@ -492,15 +492,15 @@ Finally, the <code>custom.css</code> defines the style of project-specific custo
 </ul>
 <p>To organize the code and avoid duplications, the default Layouts may include <strong>Partials</strong> depending on the context. A Partial is just another piece of code that also performs template actions, to keep the code <em>DRY</em>.</p>
 <h3
-  id="code-formatting-and-syntax">Code formatting and syntax<a class="heading-anchor"
-     href="#code-formatting-and-syntax"
-     title="Code formatting and syntax"><svg
-    class="icon anchor"
+  id="code-formatting-and-syntax">
+  <a class="heading-anchor"
+    href="#code-formatting-and-syntax"
+    title="Code formatting and syntax"><svg
+    class="icon hash"
     aria-hidden="true"
     focusable="false">
-    <use href="/Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h3><p>Hugo SSG templates, methods and functions generally use <code>PascalCase</code> formatting (e.g. <code>{{- with .RegularPages -}}</code>) and <code>camelCase</code> for default fields and method aliases (e.g. <code>{{- hasPrefix $foo $bar -}}</code>).</p>
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Code formatting and syntax</h3><p>Hugo SSG templates, methods and functions generally use <code>PascalCase</code> formatting (e.g. <code>{{- with .RegularPages -}}</code>) and <code>camelCase</code> for default fields and method aliases (e.g. <code>{{- hasPrefix $foo $bar -}}</code>).</p>
 <p>Trigo custom naming uses <code>snake_case</code> for <code>custom_param</code>, <code>custom_partial.html</code>, and <code>$local_variables</code>, to help distinguish from official Hugo syntax.</p>
 <p>CSS classes and IDs use hyphens like <code>custom-class</code>.</p>
 <p>Naming should be as short and explicit as possible. A variable assigned from the result of a boolean test should be named <code>$is_test</code>, while numbers, strings, dates, arrays (slice), map (dict), and other types should be named appropriately (e.g. singular vs plural, limits, enable vs disable).</p>
