@@ -6,18 +6,21 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
 {{- /* Nginx redirects:
 
-- Get all pages with aliases. The home page also gets the old /index.php.
-- Generate nginx redirects map for each alias.
-- Resolve targets like site links do, so pages with a `redirect` param point to its target.
+- Get all pages with aliases or redirect param.
+- Homepage also gets the old /index.php.
+- Resolve targets like site links do, so pages with a `redirect` param point to their target.
 - Match languages by normalized lang name without locale, e.g. es_CO -> es, zh_TW -> zh.
+- Do not include equal old and new paths to avoid circular self-redirecting loop.
+- Output is parsed as nginx config, so every line is checked against a safe character set.
+- Generate nginx redirects map for each alias or redirect-only page.
 
-  /old, /old/, and /old.php -> /new/ (skipped when /old is /new itself)
-  /old.php?lang=<lang> -> translated /<lang>/new/ or default /new/ page if translation missing
-  /?lang=<lang> -> translated home page
+  @example /old, /old/, and /old.php -> /new/
+  @example /old.php?lang=<lang> -> translated /<lang>/new/ or default /new/ page if translation missing
+  @example /?lang=<lang> -> translated homepage
+  @example /<lang>/internal -> https://external.org/
+  @example /<lang>/releases/0-17 -> https://wiki.freecad.org/Release_notes_0.17/<lang>
 
-- The output is parsed as nginx config, so every line is checked against a safe character set.
 */ -}}
-
 
 {{- if site.IsDefault -}}
 
@@ -59,47 +62,63 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     "zh_TW"
   -}}
 
-  {{- range $new_page := hugo.Sites.Default.Pages -}}
-    {{- $aliases := $new_page.Aliases -}}
-    {{- if $new_page.IsHome -}}
+  {{- range $page := hugo.Sites.Default.Pages -}}
+    {{- $aliases := $page.Aliases -}}
+
+    {{- if $page.IsHome -}}
       {{- $aliases = $aliases | append "/index" -}}
     {{- end -}}
 
     {{- if $aliases -}}
-      {{- $new_default := partial "utils/link_redirect.html" $new_page -}}
+      {{- $key := partial "utils/cache_key.html" $page -}}
+      {{- $new_redirect := partialCached "utils/link_redirect.html" $page $key -}}
       {{- $new_langs := dict -}}
 
-      {{- range $translation := $new_page.Translations -}}
+      {{- range $translation := $page.Translations -}}
         {{- $normalized := replace (lower $translation.Language.Name) "_" "-" -}}
         {{- $lang_name := index (split $normalized "-") 0 -}}
         {{- if not (isset $new_langs $lang_name) -}}
-          {{- $new_langs = merge $new_langs (dict $lang_name (partial "utils/link_redirect.html" $translation)) -}}
+          {{- $key := partial "utils/cache_key.html" $translation -}}
+          {{- $lang_target := partialCached "utils/link_redirect.html" $translation $key .Language.Name -}}
+          {{- $new_langs = merge $new_langs (dict $lang_name $lang_target) -}}
         {{- end -}}
       {{- end -}}
 
       {{- range $alias := $aliases -}}
         {{- $alias = trim $alias "/" -}}
         {{- $php_alias := printf "/%s.php" $alias -}}
+
         {{- range $old_source := slice (printf "/%s" $alias) (printf "/%s/" $alias) $php_alias -}}
-          {{- /* Skip /new and /new/, which would redirect to themselves. */ -}}
-          {{- if ne (trim $old_source "/") (trim $new_default "/") -}}
-            {{- $redirects = merge $redirects (dict $old_source $new_default) -}}
-          {{- end -}}
+          {{- $redirects = merge $redirects (dict $old_source $new_redirect) -}}
         {{- end -}}
 
         {{- $lang_sources := slice $php_alias -}}
-        {{- if $new_page.IsHome -}}
+        {{- if $page.IsHome -}}
           {{- $lang_sources = $lang_sources | append "/" -}}
         {{- end -}}
 
         {{- range $old_locale := $old_locales -}}
           {{- $normalized := replace (lower $old_locale) "_" "-" -}}
           {{- $lang_name := index (split $normalized "-") 0 -}}
-          {{- $new_target := default $new_default (index $new_langs $lang_name) -}}
+          {{- $new_target := default $new_redirect (index $new_langs $lang_name) -}}
+
           {{- range $lang_source := $lang_sources -}}
             {{- $redirects = merge $redirects (dict (printf "%s?lang=%s" $lang_source $old_locale) $new_target) -}}
           {{- end -}}
         {{- end -}}
+      {{- end -}}
+
+    {{- else if and $page.Params.redirect (ne $page.Params.redirect "auto") -}}
+      {{- $key := partial "utils/cache_key.html" $page -}}
+      {{- $new_redirect := partialCached "utils/link_redirect.html" $page $key -}}
+      {{- $page_source := trim $page.RelPermalink "/" -}}
+      {{- $redirects = merge $redirects (dict (printf "/%s" $page_source) $new_redirect) -}}
+
+      {{- range $translation := $page.Translations -}}
+        {{- $key := partial "utils/cache_key.html" $translation -}}
+        {{- $redirect_target := partialCached "utils/link_redirect.html" $translation $key .Language.Name -}}
+        {{- $translated_source := trim $translation.RelPermalink "/" -}}
+        {{- $redirects = merge $redirects (dict (printf "/%s" $translated_source) $redirect_target) -}}
       {{- end -}}
     {{- end -}}
   {{- end -}}
@@ -108,9 +127,14 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     {{- if not (findRE $safe_source $old) -}}
       {{- errorf "Redirect source %q contains characters not allowed in the nginx map" $old -}}
     {{- end -}}
+
     {{- if not (findRE $safe_target $new) -}}
       {{- errorf "Redirect target %q for %q contains characters not allowed in the nginx map" $new $old -}}
     {{- end -}}
-    {{- printf "%s %s;\n" $old $new -}}
+
+    {{- /* Skip equal old and new paths, which would redirect to themselves. */ -}}
+    {{- if ne (trim $old "/") (trim $new "/") -}}
+      {{- printf "%s %s;\n" $old $new -}}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
