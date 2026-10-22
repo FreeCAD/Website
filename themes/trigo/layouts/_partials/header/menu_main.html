@@ -58,6 +58,8 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
         {{- $class = $class | append . -}}
       {{- end -}}
 
+      {{- $icon := .Params.icon | lower | default "" -}}
+
       {{- if or .Page $is_external -}}
         <li>
           <a
@@ -65,6 +67,11 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
             {{- with $aria }} aria-current="{{ . }}"{{ end -}}
             {{- with $class }} class="{{ delimit . " " }}"{{ end -}}
             {{- if $is_external }} target="_blank" rel="external noreferrer nofollow"{{ end -}}>
+
+            {{- with $icon -}}
+              {{- partialCached "utils/icon.html" . . -}}
+            {{- end -}}
+
             {{- $name -}}
 
             {{- if $is_external -}}
