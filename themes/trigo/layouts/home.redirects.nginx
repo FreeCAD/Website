@@ -17,8 +17,8 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   @example /old, /old/, and /old.php -> /new/
   @example /old.php?lang=<lang> -> translated /<lang>/new/ or default /new/ page if translation missing
   @example /?lang=<lang> -> translated homepage
-  @example /<lang>/internal -> https://external.org/
-  @example /<lang>/releases/0-17 -> https://wiki.freecad.org/Release_notes_0.17/<lang>
+  @example /<lang>/internal and /<lang>/internal/ -> https://external.org/
+  @example /<lang>/releases/0-17 and /<lang>/releases/0-17/ -> https://wiki.freecad.org/Release_notes_0.17/<lang>
 
 */ -}}
 
@@ -112,13 +112,19 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
       {{- $key := partial "utils/cache_key.html" $page -}}
       {{- $new_redirect := partialCached "utils/link_redirect.html" $page $key -}}
       {{- $page_source := trim $page.RelPermalink "/" -}}
-      {{- $redirects = merge $redirects (dict (printf "/%s" $page_source) $new_redirect) -}}
+
+      {{- /* Include the canonical trailing-slash path, which would otherwise serve the placeholder page. */ -}}
+      {{- range $old_source := slice (printf "/%s" $page_source) (printf "/%s/" $page_source) -}}
+        {{- $redirects = merge $redirects (dict $old_source $new_redirect) -}}
+      {{- end -}}
 
       {{- range $translation := $page.Translations -}}
         {{- $key := partial "utils/cache_key.html" $translation -}}
         {{- $redirect_target := partialCached "utils/link_redirect.html" $translation $key .Language.Name -}}
         {{- $translated_source := trim $translation.RelPermalink "/" -}}
-        {{- $redirects = merge $redirects (dict (printf "/%s" $translated_source) $redirect_target) -}}
+        {{- range $old_source := slice (printf "/%s" $translated_source) (printf "/%s/" $translated_source) -}}
+          {{- $redirects = merge $redirects (dict $old_source $redirect_target) -}}
+        {{- end -}}
       {{- end -}}
     {{- end -}}
   {{- end -}}
