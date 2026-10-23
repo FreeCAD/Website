@@ -20,7 +20,7 @@ PUBLIC_DIR="${REPO_DIR}/public"
 LOCK_FILE="${DEPLOY_LOCK_FILE:-/tmp/freecad-website.lock}"
 HUGO_BIN="${HUGO_BIN:-hugo}"
 HUGO_ENVIRONMENT="${HUGO_ENVIRONMENT:-production}"
-BASE_URL="${DEPLOY_BASE_URL:?DEPLOY_BASE_URL must be set to the site's base URL when called by the deployment run script}"
+BASE_URL="${DEPLOY_BASE_URL:?DEPLOY_BASE_URL must be set to the base URL of the site when called by the deployment run script}"
 
 BUILD_DIR=""
 OLD_PUBLIC=""
