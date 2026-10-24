@@ -2,14 +2,38 @@
 # Deploy workflow
 #
 # Website deployment to the FreeCAD staging or production containers.
-# Manual trigger only by workflow_dispatch. The chosen environment supplies the
-# host, account, and key, and its protection rules control the run.
+#
+# Production automatically deploys on every push to main and hourly, so that
+# blog posts dated in the future appear within the hour (the site is built
+# without them until their date).
+#
+# Either environment can also be deployed by workflow_dispatch. The chosen
+# environment supplies the host, account, and key, and its protection rules
+# control the run.
 
 
 name: Deploy
-run-name: Deploy to ${{ inputs.environment }} by @${{ github.triggering_actor }}
+run-name: Deploy to ${{ inputs.environment || 'production' }} by @${{ github.triggering_actor }}
 
 on:
+  push:
+    paths-ignore:
+      - "README.md"
+      - "LICENSE"
+      - "CODE_OF_CONDUCT.md"
+      - "CONTRIBUTING.md"
+      - ".editorconfig"
+      - ".gitignore"
+      - ".vscode/settings.json"
+      - ".github/**"
+      - "notes/**"
+      - "tools/**"
+    branches:
+      - main
+
+  schedule:
+    - cron: "05 * * * *" # Hourly at *:05 UTC (avoiding other stuff at the top of the hour)
+
   workflow_dispatch:
     inputs:
       environment:
@@ -24,13 +48,13 @@ permissions:
   contents: read
 
 concurrency:
-  group: deploy-${{ inputs.environment }}
+  group: deploy-${{ inputs.environment || 'production' }}
   cancel-in-progress: false
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: ${{ inputs.environment }}
+    environment: ${{ inputs.environment || 'production' }}
     timeout-minutes: 10
 
     steps:
