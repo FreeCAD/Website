@@ -27,12 +27,13 @@ Reading the [website guidelines](guidelines) is highly recommended. Thank you!
 
 ## Logging in
 
-Open the [Admin page](admin) or if building locally, open the [localhost admin](http://localhost:1313/admin/) address:
+Open the [Admin page](/admin/) or if building locally, open the [localhost admin](http://localhost:1313/admin/) address:
 
 ![CMS login screen](cms-login-1.webp "CMS login screen")
 
 There are two main workflows: a local one (1) and a git server-based one (2).
 Both workflows require a GitHub account, the main git platform currently used by the FreeCAD project for now.
+Contributors without write access to the repository, including bloggers, sign in with a token as well and work in a fork (3).
 
 ### 1. Local workflow
 
@@ -44,6 +45,8 @@ The local workflow means a standard git-based process with branches, commits and
 
 ### 2. Git server
 
+This workflow needs write access to the `FreeCAD/Website` repository: a token cannot grant more access than its owner has.
+
 - Log into your GitHub account and request a GitHub fine-grained Personal Access Token (PAT) by filling in the form as below:
   - `<your-username>` > `Developers Settings`  > `Fine-grained personal access token` (2)
   - Choose a token name and description
@@ -52,13 +55,18 @@ The local workflow means a standard git-based process with branches, commits and
   - Fill in the request message
   - Select the `FreeCAD/Website` repository for access (4)
   - Choose the `Read and write` access permissions for the `Contents` of the repository (5)
+  - Also choose `Read and write` for `Pull requests`: the CMS saves each change as a pull request (see [Editorial Workflow](#editorial-workflow))
   - Generate the token by requesting access and copy safely the PAT code
 
 ![GitHub PAT request](cms-login-2.webp "GitHub PAT request")
 
-- Once the request is approved (a few days may be needed as it is manually validated by maintainers), click **Sign in using Access Token** on the CMS login page and provide the PAT code:
+- Once the request is approved (a few days may be needed as it is manually validated by the FreeCAD organization owners), click **Sign in using Access Token** on the CMS login page and provide the PAT code:
 
 ![Access Token login](cms-login-3.webp "Access Token login")
+
+### 3. Fork (Open Authoring)
+
+Without write access to the repository, the CMS works in a fork of it under your own GitHub account, and each saved entry becomes a pull request from that fork. Sign in with a classic personal access token with only the `public_repo` scope; no approval by the FreeCAD organization is needed. The steps are on the [Publishing news](news#signing-in) page.
 
 
 ## Using the CMS
@@ -152,6 +160,8 @@ Usually, writers and editors add and edit content. They then save the changes of
 This allows to come back at a later time to make more changes.
 When the page is ready for review by reviewers, the `Draft` status is removed and the changes are labelled for review.
 After the page is fully reviewed and validated, it gets published.
+
+Behind the scenes, each entry with unpublished changes is a branch named `cms/<collection>/<slug>` with a pull request against the `main` branch: `Draft` is a draft pull request, and the review stages are pull request labels. Publishing merges the pull request. The `main` branch requires an approving review from someone other than the author, so a maintainer has to approve the pull request before it can be published. The exception is news posts by bloggers, which publish on their own when they stay within set limits (see [Publishing news](news)). Merged changes appear on the public website and the [testing site](https://freecad.github.io/Website/) within minutes (see [Deployment](start#deployment)).
 
 More technical details on the Editorial Workflow can be found on the [CMS docs](https://sveltiacms.app/en/docs/)
 
