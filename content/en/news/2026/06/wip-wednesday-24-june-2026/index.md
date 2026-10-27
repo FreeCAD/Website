@@ -52,7 +52,7 @@ marioalexis84 added support for 2D geometries to the Transform constraint and Cy
 
 - maxwxyz addex statusbar input hints to BIM ([PR#30511](https://github.com/FreeCAD/FreeCAD/pull/30511)).
 - tritao reduced unnecessary repaint work while zooming in the 3D view by throttling updates to the status bar dimension pane ([PR#30822](https://github.com/FreeCAD/FreeCAD/pull/30822)) and improved the Navicube rendering and home navigation ([PR#30703](https://github.com/FreeCAD/FreeCAD/pull/30703)).
-- wmayer implemented an automatic preselection check to improve the rendering times ([PR#29978](https://github.com/FreeCAD/FreeCAD/pull/29978)), cherry-picked by maxwxyz) and improved annotation label dragging ([PR#29953](https://github.com/FreeCAD/FreeCAD/pull/29953), cherry-picked by maxwxyz).
+- wmayer implemented an automatic preselection check to improve the rendering times ([PR#29978](https://github.com/FreeCAD/FreeCAD/pull/29978), cherry-picked by maxwxyz) and improved annotation label dragging ([PR#29953](https://github.com/FreeCAD/FreeCAD/pull/29953), cherry-picked by maxwxyz).
 - pieterhijma introduced fine-grained recomputes in FreeCAD ([PR#25603](https://github.com/FreeCAD/FreeCAD/pull/25603)). These are recomputes based on dependencies between properties instead of based on objects, as is the case in FreeCAD currently.
 
 Additional improvements and fixes were contributed by awgrover, chennes, ItSaulGoodMan, maxwxyz, moench-tegeder, Roy_043, ryankembrey, simonfrechette-dev, sliptonic, tarman3, tritao, and xtemp09.

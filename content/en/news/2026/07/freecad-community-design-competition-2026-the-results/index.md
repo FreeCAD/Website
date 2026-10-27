@@ -3,7 +3,7 @@ title: FreeCAD Community Design Competition 2026 - The Results!
 date: 2026-07-06
 author: Jo Hinchliffe
 draft: false
-category: showcase
+category: event
 tags:
   - community
   - contest
