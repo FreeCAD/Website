@@ -4,12 +4,17 @@ api_token_env: CROWDIN_PERSONAL_TOKEN
 preserve_hierarchy: true
 
 files:
-  - source: "/content/en/**/*.md"
-    ignore:
-        - "/content/en/news/**/index.md"
-    translation: "/content/%two_letters_code%/**/%original_file_name%"
-    dest: "/Website content/**/%original_file_name%"
+  # Homepage content
+  - source: "/content/en/_index.md"
+    dest: "/Website content/homepage.md"
+    translation: "/content/%two_letters_code%/_index.md"
 
+  # Top Sections' content (disabled for now)
+  # - source: "/content/en/**/_index.md"
+  #  dest: "/Website content/**/%original_file_name%"
+  #  translation: "/content/%two_letters_code%/**/%original_file_name%"
+
+  # Theme UI strings
   - source: "/themes/trigo/i18n/en.yaml"
+    dest: "/Website theme/i18n.yaml"
     translation: "/themes/trigo/i18n/%two_letters_code%.yaml"
-    dest: "/Website i18n/en.yaml"
