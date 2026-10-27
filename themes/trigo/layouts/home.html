@@ -83,11 +83,11 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
         </div>
       {{- end -}}
 
-      {{- with $platforms -}}
+      {{- with site.Params.download -}}
         <div class="platforms">
           {{- range . -}}
             <span>
-              {{- partialCached "utils/icon.html" .icon .icon -}}
+              {{- partialCached "utils/icon.html" .os .os -}}
               {{- .label -}}
             </span>
           {{- end -}}

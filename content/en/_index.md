@@ -1,23 +1,14 @@
 ---
 title: FreeCAD
 description: Your own free and open-source parametric 3D modelling software to design and build the real world.
-title_class: accent
 buttons:
   - link: download
     label: Download FreeCAD
-    class: accent
   - link: 26-3
     label: See what's new
 cover:
   image: fc.webp
   caption: FreeCAD logo with interlocking gears - Chris Rogers
-platforms:
-  - label: Windows
-    icon: windows
-  - label: macOS
-    icon: mac
-  - label: GNU/Linux
-    icon: linux
 ---
 
 
