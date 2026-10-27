@@ -340,6 +340,32 @@ meter::-webkit-meter-optimum-value {
 }
 
 
+/* 404 page. */
+
+.not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.not-found a {
+  color: var(--tertiary);
+  transition: var(--transition);
+  text-align: center;
+}
+
+.not-found svg {
+  height: calc(var(--content-width) * 0.5);
+  width: calc(var(--content-width) * 0.5);
+}
+
+.not-found a:hover {
+  color: var(--accent-hover);
+  transform: var(--transform-hover);
+}
+
+
 /* Unsupported Internet Explorer browsers. */
 
 .unsupported-browser {
