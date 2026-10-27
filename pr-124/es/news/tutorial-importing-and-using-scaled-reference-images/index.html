@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html
+  lang="es-ES"
+  dir="ltr"><head><meta charset="utf-8">
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1">
+<meta
+  name="referrer"
+  content="strict-origin-when-cross-origin">
+<meta
+  name="robots"
+  content="index, follow"><script>
+  try {
+    const pref = localStorage.getItem("pref-theme");
+    const dark =
+      pref === "dark" ||
+      (pref !== "light" &&
+        
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+        );
+    if (dark) document.documentElement.classList.add("dark");
+  } catch {}
+  document.documentElement.classList.add("js");
+</script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --header: rgb(8, 8, 8);
+        --theme: rgb(16, 16, 16);
+        --entry: rgb(32, 32, 32);
+        --tone: rgb(64, 64, 64);
+        --backdrop: rgba(64, 64, 64, 0.8);
+        --primary: rgb(240, 240, 240);
+        --secondary: rgb(224, 224, 224);
+        --tertiary: rgb(208, 208, 208);
+        --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+        --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+        --angle: 315deg;
+      }
+    }</style>
+</noscript><title>FreeCAD | Tutorial - Importing and Using Scaled Reference Images</title>
+  <meta
+    name="description"
+    content="Tu propio modelador paramétrico libre y de código abierto"><link
+          rel="stylesheet"
+          href="/Website/pr-124/css/styles.75a94225473d5b4d301fd76285e755f3ec3029d6e6771a1d889ecd7f1ce74aa7.css"
+          integrity="sha256-dalCJUc9W00wH9dihedV8&#43;wwKdbmdxodiJ7NfxznSqc="
+          crossorigin="anonymous"><link
+    rel="canonical"
+    href="https://FreeCAD.github.io/Website/pr-124/es/news/tutorial-importing-and-using-scaled-reference-images/"><link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://FreeCAD.github.io/Website/pr-124/news/tutorial-importing-and-using-scaled-reference-images/"><link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://FreeCAD.github.io/Website/pr-124/zh/news/tutorial-importing-and-using-scaled-reference-images/"><link
+      rel="alternate"
+      hreflang="es-ES"
+      href="https://FreeCAD.github.io/Website/pr-124/es/news/tutorial-importing-and-using-scaled-reference-images/"><link
+      rel="alternate"
+      hreflang="fr-FR"
+      href="https://FreeCAD.github.io/Website/pr-124/fr/news/tutorial-importing-and-using-scaled-reference-images/"><link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://FreeCAD.github.io/Website/pr-124/pt/news/tutorial-importing-and-using-scaled-reference-images/"><link
+      rel="alternate"
+      hreflang="de-DE"
+      href="https://FreeCAD.github.io/Website/pr-124/de/news/tutorial-importing-and-using-scaled-reference-images/"><link
+      rel="alternate"
+      hreflang="ja-JP"
+      href="https://FreeCAD.github.io/Website/pr-124/ja/news/tutorial-importing-and-using-scaled-reference-images/"><link
+    rel="alternate"
+    hreflang="x-default"
+    href="https://FreeCAD.github.io/Website/pr-124/es/"><link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Website/pr-124/favicon.svg"><link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/Website/pr-124/favicon.ico"><link
+      rel="apple-touch-icon"
+      href="/Website/pr-124/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://FreeCAD.github.io/Website/pr-124/es/index.xml"
+    title="FreeCAD"><meta name="generator" content="Hugo 0.160.0"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-124/es/news/tutorial-importing-and-using-scaled-reference-images/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Tutorial - Importing and Using Scaled Reference Images">
+  <meta property="og:description" content="Often we might need to create geometry to fit real world objects that we don’t have a CAD model for. Whilst we might jump to complex 3D scanning methods and more, sometimes a simple reference image, or images, can really help the process. Even more so if we can accurately scale the image.">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2026-04-12T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-10-27T09:31:12-05:00">
+</head><body
+    class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <a
+    class="logo"
+    href="/Website/pr-124/es/"
+    accesskey="h"
+    title="Inicio (Alt + H)"
+    aria-label="Inicio">
+    <svg
+      class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+
+      <use href="/Website/pr-124/wordmark.svg#wordmark"></use>
+    </svg></a>
+
+  <div class="site-nav"><nav class="menu">
+  <button
+    popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menú"
+    aria-label="Menú"><svg
+    class="icon hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/hamburger.svg#hamburger"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul
+    popover
+    id="menu-list"
+    class="menu-list"><li>
+          <a
+            href="/Website/pr-124/es/features/">Características</a>
+        </li><li>
+          <a
+            href="/Website/pr-124/es/download/">Descarga</a>
+        </li><li>
+          <a
+            href="/Website/pr-124/es/news/" aria-current="page" class="active">Actualidad</a>
+        </li><li>
+          <a
+            href="/Website/pr-124/es/community/">Comunidad</a>
+        </li><li>
+          <a
+            href="/Website/pr-124/es/docs/">Documentación</a>
+        </li><li>
+          <a
+            href="/Website/pr-124/es/donate/" class="button accent"><svg
+    class="icon heart"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/heart.svg#heart"></use>
+  </svg>Donar</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button
+          popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Elegir idioma (Alt + L)"
+          aria-label="Elegir idioma"><svg
+    class="icon language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul
+          popover
+          id="lang-list"
+          class="language-list"><li>
+              <a href="/Website/pr-124/news/tutorial-importing-and-using-scaled-reference-images/" title="Tutorial - Importing and Using Scaled Reference Images">English 🇬🇧</a>
+            </li><li>
+              <a href="/Website/pr-124/zh/news/tutorial-importing-and-using-scaled-reference-images/" title="Tutorial - Importing and Using Scaled Reference Images">中文 🇨🇳</a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-124/es/news/tutorial-importing-and-using-scaled-reference-images/" title="Tutorial - Importing and Using Scaled Reference Images">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/pr-124/fr/news/tutorial-importing-and-using-scaled-reference-images/" title="Tutorial - Importing and Using Scaled Reference Images">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pr-124/pt/news/tutorial-importing-and-using-scaled-reference-images/" title="Tutorial - Importing and Using Scaled Reference Images">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a href="/Website/pr-124/de/news/tutorial-importing-and-using-scaled-reference-images/" title="Tutorial - Importing and Using Scaled Reference Images">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/pr-124/ja/news/tutorial-importing-and-using-scaled-reference-images/" title="Tutorial - Importing and Using Scaled Reference Images">日本語 🇯🇵</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Cambiar tema chroma (Alt + T)"
+    aria-label="Cambiar tema chroma"><svg
+    class="icon dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/dark.svg#dark"></use>
+  </svg><svg
+    class="icon light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main style="--hue: 100;"><section class="hero">
+
+    <h2 class="title">Tutorial - Importing and Using Scaled Reference Images</h1><div class="metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/date.svg#date"></use>
+  </svg><time datetime="2026-04-12T00:00:00Z">12 de abril de 2026</time>
+  </span><span class="meta author"><svg
+    class="icon author"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/author.svg#author"></use>
+  </svg><a href="/Website/pr-124/es/author/jo-hinchliffe/">Jo Hinchliffe (99)</a></span><span class="meta category"><svg
+    class="icon category"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/category.svg#category"></use>
+  </svg><a href="/Website/pr-124/es/category/tutorial/">Tutorial (30)</a></span><span class="meta"><svg
+    class="icon time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/time.svg#time"></use>
+  </svg>3 min</span></div><figure class="cover"><img
+  class="img drawing"
+  src="/Website/pr-124/news/tutorial-importing-and-using-scaled-reference-images/drawing.webp"
+  alt="Descripción no disponible"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Descripción no disponible" width="1895" height="1001" srcset="/Website/pr-124/news/tutorial-importing-and-using-scaled-reference-images/drawing_hu_290bf476c5a0ec45.webp 400w, /Website/pr-124/news/tutorial-importing-and-using-scaled-reference-images/drawing_hu_453dc8c3c16ce638.webp 800w, /Website/pr-124/news/tutorial-importing-and-using-scaled-reference-images/drawing_hu_66132c5e20cdad1.webp 1600w, /Website/pr-124/news/tutorial-importing-and-using-scaled-reference-images/drawing.webp 1895w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"></figure></section><div class="content"><p>Often we might need to create geometry to fit real world objects that we don&rsquo;t have a CAD model for. Whilst we might jump to complex 3D scanning methods and more, sometimes a simple reference image, or images, can really help the process. Even more so if we can accurately scale the image.</p>
+<p>In this mini tutorial we are using version 1.1.0 and as a reminder in all our tutorials we refer to tools using the &ldquo;tool tip&rdquo; text which is the text that appears when you hover over a tool icon. First of all, launch FreeCAD and from the start page select &ldquo;Create an Empty Project&rdquo; to begin.</p>
+<p>Next we need a reference image for our object. It&rsquo;s also really useful to have a known dimension within the image. This might just be that you measure a particular section of your target object, but if possible, adding some form of scale, a ruler or such, to your image can be really handy. As an example we grabbed a BBQ lighter as our object and placed it on our sewing table which has a handy measure on it! Also of note with photographs, it&rsquo;s a really good idea to make sure your image is parallel to the camera. In this instance we did this by eye, but it isn&rsquo;t unknown to break out a tripod and a spirit level. Finally, it doesn&rsquo;t have to be a photograph, importing images of plans or technical diagrams can be really powerful also.</p>
+<figure class="image"><button
+          aria-label="Ampliar imagen"
+          popovertarget="img-001"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/zoom.svg#zoom"></use>
+  </svg><img
+  class="img scale_for_fc"
+  src="/Website/pr-124/news/tutorial-importing-and-using-scaled-reference-images/scale_for_fc.webp"
+  alt="Descripción no disponible"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Descripción no disponible" width="1692" height="951" srcset="/Website/pr-124/news/tutorial-importing-and-using-scaled-reference-images/scale_for_fc_hu_b3df6a9985a8d6ef.webp 400w, /Website/pr-124/news/tutorial-importing-and-using-scaled-reference-images/scale_for_fc_hu_3ba2b286221b026b.webp 800w, /Website/pr-124/news/tutorial-importing-and-using-scaled-reference-images/scale_for_fc_hu_152075261ab07d4c.webp 1600w, /Website/pr-124/news/tutorial-importing-and-using-scaled-reference-images/scale_for_fc.webp 1692w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"></button>
+        <div id="img-001" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes"><img
+  class="img scale_for_fc"
+  src="/Website/pr-124/news/tutorial-importing-and-using-scaled-reference-images/scale_for_fc.webp"
+  alt="Descripción no disponible"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Descripción no disponible" width="1692" height="951" srcset="/Website/pr-124/news/tutorial-importing-and-using-scaled-reference-images/scale_for_fc_hu_b3df6a9985a8d6ef.webp 400w, /Website/pr-124/news/tutorial-importing-and-using-scaled-reference-images/scale_for_fc_hu_3ba2b286221b026b.webp 800w, /Website/pr-124/news/tutorial-importing-and-using-scaled-reference-images/scale_for_fc_hu_152075261ab07d4c.webp 1600w, /Website/pr-124/news/tutorial-importing-and-using-scaled-reference-images/scale_for_fc.webp 1692w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/cross.svg#cross"></use>
+  </svg></button></div></figure><p>With our reference image created we can import it into our empty FreeCAD project in a couple of different ways. We can use &ldquo;File &gt; Import&rdquo; and then navigate to the image, or we can also just drag and drop the image file onto the preview window.</p>
+<p>Once imported you&rsquo;ll see the image in the preview window and see an image item in the model tree view. You can switch the view to &ldquo;Top&rdquo; noting that by default an image is loaded onto the XY plane. If we double click on the image item in the model tree we launch the &ldquo;Image Plane Settings&rdquo; dialogue.</p>
+<p>First task in the dialogue is to slightly adjust the position of the image. We are going to leave it in the XY plane (note we can swap it to other planes using this dialogue) but we are going to apply a very small negative offset. In the Offset input box we are going to set it to -0.1mm. This moves the image very slightly below the XY plane meaning that if we then create a sketch on the XY plane we will sketch over the image and not into the image which can create conflicts.</p>
+<figure class="image"><button
+          aria-label="Ampliar imagen"
+          popovertarget="img-002"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/zoom.svg#zoom"></use>
+  </svg><img
+  class="img calibrate"
+  src="/Website/pr-124/news/tutorial-importing-and-using-scaled-reference-images/calibrate.webp"
+  alt="Descripción no disponible"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Descripción no disponible" width="1094" height="650" srcset="/Website/pr-124/news/tutorial-importing-and-using-scaled-reference-images/calibrate_hu_683e373514787ce4.webp 400w, /Website/pr-124/news/tutorial-importing-and-using-scaled-reference-images/calibrate_hu_5bb44289e6c2eca0.webp 800w, /Website/pr-124/news/tutorial-importing-and-using-scaled-reference-images/calibrate.webp 1094w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+        <div id="img-002" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes"><img
+  class="img calibrate"
+  src="/Website/pr-124/news/tutorial-importing-and-using-scaled-reference-images/calibrate.webp"
+  alt="Descripción no disponible"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Descripción no disponible" width="1094" height="650" srcset="/Website/pr-124/news/tutorial-importing-and-using-scaled-reference-images/calibrate_hu_683e373514787ce4.webp 400w, /Website/pr-124/news/tutorial-importing-and-using-scaled-reference-images/calibrate_hu_5bb44289e6c2eca0.webp 800w, /Website/pr-124/news/tutorial-importing-and-using-scaled-reference-images/calibrate.webp 1094w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/cross.svg#cross"></use>
+  </svg></button></div></figure><p>Next, still in the Image Plane Settings dialogue, let&rsquo;s click the &ldquo;Calibrate&rdquo; button at the bottom. Once clicked we can move across to the image and click 2 points at either end of a know distance. We opted to click on the 5cm and 10cm marks of the rule and then we set this calibration distance to 50mm. Notice this changes the dimensions of the image to match the calibrated size.</p>
+<p>That&rsquo;s our reference image set up. We can now Okay the Image Plane Settings dialogue. We can then move to the Part Design workbench, click to create a new body and then click to create a new sketch in the XY plane and begin to use the sketch tools to draw geometry sized to our target object.</p>
+<p>This simple example should be enough to get you going with this technique, you can also explore importing multiple images on multiple planes. This is incredibly useful when you have multi view technical drawings of objects you can set up on each plane for example.</p>
+</div><footer class="single-footer">
+    <nav class="pagination"><a
+            class="button next"
+            href="/Website/pr-124/es/news/wip-wednesday-15-april-2026/"
+            title="Artículo siguiente"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday, 15 April 2026</a><a
+            class="button prev"
+            href="/Website/pr-124/es/news/wip-wednesday-8-april-2026/"
+            title="Artículo anterior">WIP Wednesday, 8 April 2026<svg
+    class="icon tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Ir al inicio"
+  title="Ir al inicio (Alt + G)" ><svg
+    class="icon tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a
+            href="/Website/pr-124/es/">Inicio</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-124/es/features/">Características</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-124/es/download/">Descarga</a><ul><li>
+                  <a
+                    href="/Website/pr-124/es/releases/">Releases</a>
+                </li><li>
+                      <a
+                        href="/Website/pr-124/es/download/addons/">Addons</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-124/es/download/unstable/">Unstable</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-124/es/news/" aria-current="page" class="active">Actualidad</a><ul><li>
+                  <a
+                    href="/Website/pr-124/es/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/pr-124/es/author/">Autor</a>
+                      </li><li>
+                        <a href="/Website/pr-124/es/category/">Categoría</a>
+                      </li><li>
+                        <a href="/Website/pr-124/es/tags/">Etiquetas</a>
+                      </li></ul></li><li>
+          <a
+            href="/Website/pr-124/es/community/">Comunidad</a><ul><li>
+                      <a
+                        href="/Website/pr-124/es/community/calendar/">Calendar</a>
+                    </li><li>
+                      <a
+                        href="https://events.freecad.org/" target="_blank" rel="external noreferrer nofollow">Events<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://fpa.freecad.org" target="_blank" rel="external noreferrer nofollow">Association<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swag shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-124/es/community/telemetry/">Telemetry</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-124/es/docs/">Documentación</a><ul><li>
+                  <a
+                    href="https://wiki.freecad.org/User_hub/es" target="_blank" rel="external noreferrer nofollow">User manual<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+                </li><li>
+                  <a
+                    href="/Website/pr-124/es/dev/">Development Handbook</a>
+                </li><li>
+                  <a
+                    href="https://freecad.github.io/SourceDoc/" target="_blank" rel="external noreferrer nofollow">FreeCAD API<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+                </li></ul></li><li>
+          <a
+            href="/Website/pr-124/es/donate/">Donar</a><ul></ul></li></ul>
+</nav>
+<div class="share-links"><a
+    href="https://forum.freecad.org"
+    title="Forum"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/forum.svg#forum"></use>
+  </svg></a><a
+    href="https://devtalk.freecad.org/"
+    title="DevTalk"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon devtalk"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/devtalk.svg#devtalk"></use>
+  </svg></a><a
+    href="https://github.com/freecad"
+    title="GitHub"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/github.svg#github"></use>
+  </svg></a><a
+    href="https://codeberg.org/freecad"
+    title="Codeberg"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a
+    href="https://social.freecad.org/@freecad"
+    title="Mastodon"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/bluesky.svg#bluesky"></use>
+  </svg></a><a
+    href="https://www.reddit.com/r/freecad"
+    title="Reddit"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/reddit.svg#reddit"></use>
+  </svg></a><a
+    href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+    title="Matrix"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/matrix.svg#matrix"></use>
+  </svg></a><a
+    href="https://discord.gg/w2cTKGzccC"
+    title="Discord"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/discord.svg#discord"></use>
+  </svg></a><a
+    href="https://www.linkedin.com/groups/4295230"
+    title="LinkedIn"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+    href="https://FreeCAD.github.io/Website/pr-124/es/index.xml"
+    type="application/rss&#43;xml"
+    title="Canal RSS"><svg
+    class="icon rss"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/rss.svg#rss"></use>
+  </svg></a><a
+  href="/Website/pr-124/es/fedishare.html#title=Tutorial&#43;-&#43;Importing&#43;and&#43;Using&#43;Scaled&#43;Reference&#43;Images&amp;description=Often%20we%20might%20need%20to%20create%20geometry%20to%20fit%20real%20world%20objects%20that%20we%20don%e2%80%99t%20have%20a%20CAD%20model%20for.%20Whilst%20we%20might%20jump%20to%20complex%203D%20scanning%20methods%20and%20more,%20sometimes%20a%20simple%20reference%20image,%20%e2%80%a6&amp;url=https://FreeCAD.github.io/Website/pr-124/es/news/tutorial-importing-and-using-scaled-reference-images/"
+  title="Publicar en el Fediverso"
+  target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026
+    <a
+      href="/Website/pr-124/es/"
+      title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a
+    href="https://creativecommons.org/licenses/by-sa/4.0/"
+    title="Creative Commons"
+    target="_blank" rel="license external noreferrer nofollow">
+
+    CC BY-SA<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to
+  <a
+    href="https://gohugo.io/"
+    title="Hugo SSG"
+    target="_blank" rel="external noreferrer nofollow">
+
+    Hugo<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-10-27
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/8c1db5fe8fee0cfc7b55af0d90b36c1c381fee2c">8c1db5fe8f<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script
+    src="/Website/pr-124/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script></body>
+
+</html>

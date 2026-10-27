@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html
+  lang="es-ES"
+  dir="ltr"><head><meta charset="utf-8">
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1">
+<meta
+  name="referrer"
+  content="strict-origin-when-cross-origin">
+<meta
+  name="robots"
+  content="index, follow"><script>
+  try {
+    const pref = localStorage.getItem("pref-theme");
+    const dark =
+      pref === "dark" ||
+      (pref !== "light" &&
+        
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+        );
+    if (dark) document.documentElement.classList.add("dark");
+  } catch {}
+  document.documentElement.classList.add("js");
+</script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --header: rgb(8, 8, 8);
+        --theme: rgb(16, 16, 16);
+        --entry: rgb(32, 32, 32);
+        --tone: rgb(64, 64, 64);
+        --backdrop: rgba(64, 64, 64, 0.8);
+        --primary: rgb(240, 240, 240);
+        --secondary: rgb(224, 224, 224);
+        --tertiary: rgb(208, 208, 208);
+        --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+        --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+        --angle: 315deg;
+      }
+    }</style>
+</noscript><title>FreeCAD | Machine Optimised Flying Wing Design With FreeCAD</title>
+  <meta
+    name="description"
+    content="Tu propio modelador paramétrico libre y de código abierto"><link
+          rel="stylesheet"
+          href="/Website/pr-124/css/styles.75a94225473d5b4d301fd76285e755f3ec3029d6e6771a1d889ecd7f1ce74aa7.css"
+          integrity="sha256-dalCJUc9W00wH9dihedV8&#43;wwKdbmdxodiJ7NfxznSqc="
+          crossorigin="anonymous"><link
+    rel="canonical"
+    href="https://FreeCAD.github.io/Website/pr-124/es/news/machine-optimised-flying-wing-design-with-freecad/"><link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://FreeCAD.github.io/Website/pr-124/news/machine-optimised-flying-wing-design-with-freecad/"><link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://FreeCAD.github.io/Website/pr-124/zh/news/machine-optimised-flying-wing-design-with-freecad/"><link
+      rel="alternate"
+      hreflang="es-ES"
+      href="https://FreeCAD.github.io/Website/pr-124/es/news/machine-optimised-flying-wing-design-with-freecad/"><link
+      rel="alternate"
+      hreflang="fr-FR"
+      href="https://FreeCAD.github.io/Website/pr-124/fr/news/machine-optimised-flying-wing-design-with-freecad/"><link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://FreeCAD.github.io/Website/pr-124/pt/news/machine-optimised-flying-wing-design-with-freecad/"><link
+      rel="alternate"
+      hreflang="de-DE"
+      href="https://FreeCAD.github.io/Website/pr-124/de/news/machine-optimised-flying-wing-design-with-freecad/"><link
+      rel="alternate"
+      hreflang="ja-JP"
+      href="https://FreeCAD.github.io/Website/pr-124/ja/news/machine-optimised-flying-wing-design-with-freecad/"><link
+    rel="alternate"
+    hreflang="x-default"
+    href="https://FreeCAD.github.io/Website/pr-124/es/"><link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Website/pr-124/favicon.svg"><link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/Website/pr-124/favicon.ico"><link
+      rel="apple-touch-icon"
+      href="/Website/pr-124/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://FreeCAD.github.io/Website/pr-124/es/index.xml"
+    title="FreeCAD"><meta name="generator" content="Hugo 0.160.0"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-124/es/news/machine-optimised-flying-wing-design-with-freecad/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Machine Optimised Flying Wing Design With FreeCAD">
+  <meta property="og:description" content="As FreeCAD is completely open it often gets used for really interesting experiments and academic research. Recently we became aware of this excellent paper, “Machine-optimized parametric computer assisted design (CAD) of a stable flying wing UAV glider ”.">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2026-10-13T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-10-27T09:39:07-05:00">
+    <meta property="article:tag" content="Research">
+    <meta property="article:tag" content="User Story">
+</head><body
+    class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <a
+    class="logo"
+    href="/Website/pr-124/es/"
+    accesskey="h"
+    title="Inicio (Alt + H)"
+    aria-label="Inicio">
+    <svg
+      class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+
+      <use href="/Website/pr-124/wordmark.svg#wordmark"></use>
+    </svg></a>
+
+  <div class="site-nav"><nav class="menu">
+  <button
+    popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menú"
+    aria-label="Menú"><svg
+    class="icon hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/hamburger.svg#hamburger"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul
+    popover
+    id="menu-list"
+    class="menu-list"><li>
+          <a
+            href="/Website/pr-124/es/features/">Características</a>
+        </li><li>
+          <a
+            href="/Website/pr-124/es/download/">Descarga</a>
+        </li><li>
+          <a
+            href="/Website/pr-124/es/news/" aria-current="page" class="active">Actualidad</a>
+        </li><li>
+          <a
+            href="/Website/pr-124/es/community/">Comunidad</a>
+        </li><li>
+          <a
+            href="/Website/pr-124/es/docs/">Documentación</a>
+        </li><li>
+          <a
+            href="/Website/pr-124/es/donate/" class="button accent"><svg
+    class="icon heart"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/heart.svg#heart"></use>
+  </svg>Donar</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button
+          popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Elegir idioma (Alt + L)"
+          aria-label="Elegir idioma"><svg
+    class="icon language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul
+          popover
+          id="lang-list"
+          class="language-list"><li>
+              <a href="/Website/pr-124/news/machine-optimised-flying-wing-design-with-freecad/" title="Machine Optimised Flying Wing Design With FreeCAD">English 🇬🇧</a>
+            </li><li>
+              <a href="/Website/pr-124/zh/news/machine-optimised-flying-wing-design-with-freecad/" title="Machine Optimised Flying Wing Design With FreeCAD">中文 🇨🇳</a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-124/es/news/machine-optimised-flying-wing-design-with-freecad/" title="Machine Optimised Flying Wing Design With FreeCAD">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/pr-124/fr/news/machine-optimised-flying-wing-design-with-freecad/" title="Machine Optimised Flying Wing Design With FreeCAD">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pr-124/pt/news/machine-optimised-flying-wing-design-with-freecad/" title="Machine Optimised Flying Wing Design With FreeCAD">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a href="/Website/pr-124/de/news/machine-optimised-flying-wing-design-with-freecad/" title="Machine Optimised Flying Wing Design With FreeCAD">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/pr-124/ja/news/machine-optimised-flying-wing-design-with-freecad/" title="Machine Optimised Flying Wing Design With FreeCAD">日本語 🇯🇵</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Cambiar tema chroma (Alt + T)"
+    aria-label="Cambiar tema chroma"><svg
+    class="icon dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/dark.svg#dark"></use>
+  </svg><svg
+    class="icon light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main style="--hue: 80;"><section class="hero">
+
+    <h2 class="title">Machine Optimised Flying Wing Design With FreeCAD</h1><div class="metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/date.svg#date"></use>
+  </svg><time datetime="2026-10-13T00:00:00Z">13 de octubre de 2026</time>
+  </span><span class="meta author"><svg
+    class="icon author"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/author.svg#author"></use>
+  </svg><a href="/Website/pr-124/es/author/jo-hinchliffe/">Jo Hinchliffe (99)</a></span><span class="meta category"><svg
+    class="icon category"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/category.svg#category"></use>
+  </svg><a href="/Website/pr-124/es/category/showcase/">Showcase (37)</a></span><span class="meta tags"><svg
+    class="icon tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-124/es/tags/research/">Research (5)</a><a href="/Website/pr-124/es/tags/user-story/">User Story (24)</a></span><span class="meta"><svg
+    class="icon time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/time.svg#time"></use>
+  </svg>2 min</span></div><figure class="cover"><img
+  class="img domain_versus_real"
+  src="/Website/pr-124/news/machine-optimised-flying-wing-design-with-freecad/domain_versus_real.webp"
+  alt="Descripción no disponible"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Descripción no disponible" width="1263" height="790" srcset="/Website/pr-124/news/machine-optimised-flying-wing-design-with-freecad/domain_versus_real_hu_1d1645369ff5bacd.webp 400w, /Website/pr-124/news/machine-optimised-flying-wing-design-with-freecad/domain_versus_real_hu_592777025675d14f.webp 800w, /Website/pr-124/news/machine-optimised-flying-wing-design-with-freecad/domain_versus_real.webp 1263w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></figure></section><div class="content"><p>As FreeCAD is completely open it often gets used for really interesting experiments and academic research. Recently we became aware of this excellent paper, &ldquo;<a
+  href="https://link.springer.com/article/10.1007/s42401-026-00530-w"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Machine-optimized parametric computer assisted design (CAD) of a stable flying wing UAV glider<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>&rdquo;.</p>
+<p>It&rsquo;s a fascinating piece of work, a flying wing uncrewed aerial vehicle (UAV) is designed parametrically in FreeCAD. Eleven parameters are broken out which control the wing geometry and these are automatically adjusted. Each wing iteration then is converted into a mesh and subjected to testing using computational fluid dynamics (CFD) via the CFDOF workbench. The CFD workbench is an excellent FreeCAD workbench that collates a lot of open source tools and solvers, most notably OpenFoam, together in an easy to set up, GUI driven environment.</p>
+<figure class="image"><button
+          aria-label="Ampliar imagen"
+          popovertarget="img-001"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/zoom.svg#zoom"></use>
+  </svg><img
+  class="img table_one_optiwing"
+  src="/Website/pr-124/news/machine-optimised-flying-wing-design-with-freecad/table_one_optiwing.webp"
+  alt="Descripción no disponible"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Descripción no disponible" width="458" height="378" srcset="/Website/pr-124/news/machine-optimised-flying-wing-design-with-freecad/table_one_optiwing_hu_35af04c9db76eeb1.webp 400w, /Website/pr-124/news/machine-optimised-flying-wing-design-with-freecad/table_one_optiwing.webp 458w" sizes="(max-width: 400px) 400px, 95vw"></button>
+        <div id="img-001" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes"><img
+  class="img table_one_optiwing"
+  src="/Website/pr-124/news/machine-optimised-flying-wing-design-with-freecad/table_one_optiwing.webp"
+  alt="Descripción no disponible"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Descripción no disponible" width="458" height="378" srcset="/Website/pr-124/news/machine-optimised-flying-wing-design-with-freecad/table_one_optiwing_hu_35af04c9db76eeb1.webp 400w, /Website/pr-124/news/machine-optimised-flying-wing-design-with-freecad/table_one_optiwing.webp 458w" sizes="(max-width: 400px) 400px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/cross.svg#cross"></use>
+  </svg></button></div></figure><p>As each wing iteration is meshed and in turn analysed, the macros run to adjust the parameters in response to the results, dialling in the optimisation of the wing design. <a
+  href="https://github.com/robot-perception-group/MachineOptimizedWingDesign"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">All the scripts and macro are available on this repository<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a> but do note that they indicate that this is only running well on version 1.0. It would be great to see others pick up on this work aiming for compatibility with newer versions. It also requires pretty serious machines to run well, think lots and lots of cores!</p>
+<figure class="image"><button
+          aria-label="Ampliar imagen"
+          popovertarget="img-002"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/zoom.svg#zoom"></use>
+  </svg><img
+  class="img foamcutter"
+  src="/Website/pr-124/news/machine-optimised-flying-wing-design-with-freecad/foamcutter.webp"
+  alt="Descripción no disponible"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Descripción no disponible" width="1233" height="712" srcset="/Website/pr-124/news/machine-optimised-flying-wing-design-with-freecad/foamcutter_hu_6f82dc201e703b7.webp 400w, /Website/pr-124/news/machine-optimised-flying-wing-design-with-freecad/foamcutter_hu_2d27b525200e7afb.webp 800w, /Website/pr-124/news/machine-optimised-flying-wing-design-with-freecad/foamcutter.webp 1233w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+        <div id="img-002" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes"><img
+  class="img foamcutter"
+  src="/Website/pr-124/news/machine-optimised-flying-wing-design-with-freecad/foamcutter.webp"
+  alt="Descripción no disponible"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Descripción no disponible" width="1233" height="712" srcset="/Website/pr-124/news/machine-optimised-flying-wing-design-with-freecad/foamcutter_hu_6f82dc201e703b7.webp 400w, /Website/pr-124/news/machine-optimised-flying-wing-design-with-freecad/foamcutter_hu_2d27b525200e7afb.webp 800w, /Website/pr-124/news/machine-optimised-flying-wing-design-with-freecad/foamcutter.webp 1233w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/cross.svg#cross"></use>
+  </svg></button></div></figure><p>Also mentioned in the excellent paper, which is freely available for all here, is that the optimised wing design was then made in real life and test flown by an experienced UAV pilot. The wing was made from foam which was cut and formed with a hot wire cutter. Interestingly elsewhere in the FreeCAD community there is the <a
+  href="https://forum.freecad.org/viewtopic.php?t=91419"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">amazing Foamcut workbench<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a> which creates CAM files/Toolpaths for hot wire cutting machines, of which there are many open source designs. One can&rsquo;t help but think that FreeCAD is becoming the go to CAD solution for fixed wing UAV!</p>
+</div><footer class="single-footer">
+    <nav class="pagination"><a
+            class="button next"
+            href="/Website/pr-124/es/news/wip-wednesday-14-october-2026/"
+            title="Artículo siguiente"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday, 14 October 2026</a><a
+            class="button prev"
+            href="/Website/pr-124/es/news/announcing-freecad-bim-meetups/"
+            title="Artículo anterior">Announcing FreeCAD BIM meetups<svg
+    class="icon tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Ir al inicio"
+  title="Ir al inicio (Alt + G)" ><svg
+    class="icon tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a
+            href="/Website/pr-124/es/">Inicio</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-124/es/features/">Características</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-124/es/download/">Descarga</a><ul><li>
+                  <a
+                    href="/Website/pr-124/es/releases/">Releases</a>
+                </li><li>
+                      <a
+                        href="/Website/pr-124/es/download/addons/">Addons</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-124/es/download/unstable/">Unstable</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-124/es/news/" aria-current="page" class="active">Actualidad</a><ul><li>
+                  <a
+                    href="/Website/pr-124/es/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/pr-124/es/author/">Autor</a>
+                      </li><li>
+                        <a href="/Website/pr-124/es/category/">Categoría</a>
+                      </li><li>
+                        <a href="/Website/pr-124/es/tags/">Etiquetas</a>
+                      </li></ul></li><li>
+          <a
+            href="/Website/pr-124/es/community/">Comunidad</a><ul><li>
+                      <a
+                        href="/Website/pr-124/es/community/calendar/">Calendar</a>
+                    </li><li>
+                      <a
+                        href="https://events.freecad.org/" target="_blank" rel="external noreferrer nofollow">Events<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://fpa.freecad.org" target="_blank" rel="external noreferrer nofollow">Association<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swag shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-124/es/community/telemetry/">Telemetry</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-124/es/docs/">Documentación</a><ul><li>
+                  <a
+                    href="https://wiki.freecad.org/User_hub/es" target="_blank" rel="external noreferrer nofollow">User manual<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+                </li><li>
+                  <a
+                    href="/Website/pr-124/es/dev/">Development Handbook</a>
+                </li><li>
+                  <a
+                    href="https://freecad.github.io/SourceDoc/" target="_blank" rel="external noreferrer nofollow">FreeCAD API<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+                </li></ul></li><li>
+          <a
+            href="/Website/pr-124/es/donate/">Donar</a><ul></ul></li></ul>
+</nav>
+<div class="share-links"><a
+    href="https://forum.freecad.org"
+    title="Forum"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/forum.svg#forum"></use>
+  </svg></a><a
+    href="https://devtalk.freecad.org/"
+    title="DevTalk"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon devtalk"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/devtalk.svg#devtalk"></use>
+  </svg></a><a
+    href="https://github.com/freecad"
+    title="GitHub"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/github.svg#github"></use>
+  </svg></a><a
+    href="https://codeberg.org/freecad"
+    title="Codeberg"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a
+    href="https://social.freecad.org/@freecad"
+    title="Mastodon"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/bluesky.svg#bluesky"></use>
+  </svg></a><a
+    href="https://www.reddit.com/r/freecad"
+    title="Reddit"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/reddit.svg#reddit"></use>
+  </svg></a><a
+    href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+    title="Matrix"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/matrix.svg#matrix"></use>
+  </svg></a><a
+    href="https://discord.gg/w2cTKGzccC"
+    title="Discord"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/discord.svg#discord"></use>
+  </svg></a><a
+    href="https://www.linkedin.com/groups/4295230"
+    title="LinkedIn"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+    href="https://FreeCAD.github.io/Website/pr-124/es/index.xml"
+    type="application/rss&#43;xml"
+    title="Canal RSS"><svg
+    class="icon rss"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/rss.svg#rss"></use>
+  </svg></a><a
+  href="/Website/pr-124/es/fedishare.html#title=Machine&#43;Optimised&#43;Flying&#43;Wing&#43;Design&#43;With&#43;FreeCAD&amp;description=As&#43;FreeCAD&#43;is&#43;completely&#43;open&#43;it&#43;often&#43;gets&#43;used&#43;for&#43;really&#43;interesting&#43;experiments&#43;and&#43;academic&#43;research.&#43;Recently&#43;we&#43;became&#43;aware&#43;of&#43;this&#43;excellent&#43;paper%2C&#43;%E2%80%9CMachine-optimized&#43;parametric&#43;computer&#43;%E2%80%A6%0A%23research&#43;%23user-story&amp;url=https://FreeCAD.github.io/Website/pr-124/es/news/machine-optimised-flying-wing-design-with-freecad/"
+  title="Publicar en el Fediverso"
+  target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026
+    <a
+      href="/Website/pr-124/es/"
+      title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a
+    href="https://creativecommons.org/licenses/by-sa/4.0/"
+    title="Creative Commons"
+    target="_blank" rel="license external noreferrer nofollow">
+
+    CC BY-SA<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to
+  <a
+    href="https://gohugo.io/"
+    title="Hugo SSG"
+    target="_blank" rel="external noreferrer nofollow">
+
+    Hugo<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-10-27
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/099a3d3ef4a00dcd126c55c4b89f1d46109f80f2">099a3d3ef4<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script
+    src="/Website/pr-124/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script></body>
+
+</html>

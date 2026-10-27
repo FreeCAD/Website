@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html
+  lang="es-ES"
+  dir="ltr"><head><meta charset="utf-8">
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1">
+<meta
+  name="referrer"
+  content="strict-origin-when-cross-origin">
+<meta
+  name="robots"
+  content="index, follow"><script>
+  try {
+    const pref = localStorage.getItem("pref-theme");
+    const dark =
+      pref === "dark" ||
+      (pref !== "light" &&
+        
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+        );
+    if (dark) document.documentElement.classList.add("dark");
+  } catch {}
+  document.documentElement.classList.add("js");
+</script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --header: rgb(8, 8, 8);
+        --theme: rgb(16, 16, 16);
+        --entry: rgb(32, 32, 32);
+        --tone: rgb(64, 64, 64);
+        --backdrop: rgba(64, 64, 64, 0.8);
+        --primary: rgb(240, 240, 240);
+        --secondary: rgb(224, 224, 224);
+        --tertiary: rgb(208, 208, 208);
+        --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+        --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+        --angle: 315deg;
+      }
+    }</style>
+</noscript><title>FreeCAD</title>
+  <meta
+    name="description"
+    content="Your own free and open-source parametric 3D modelling software to design and build the real world."><link
+          rel="stylesheet"
+          href="/Website/pr-124/css/styles.75a94225473d5b4d301fd76285e755f3ec3029d6e6771a1d889ecd7f1ce74aa7.css"
+          integrity="sha256-dalCJUc9W00wH9dihedV8&#43;wwKdbmdxodiJ7NfxznSqc="
+          crossorigin="anonymous"><link
+    rel="canonical"
+    href="https://FreeCAD.github.io/Website/pr-124/es/"><link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://FreeCAD.github.io/Website/pr-124/"><link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://FreeCAD.github.io/Website/pr-124/zh/"><link
+      rel="alternate"
+      hreflang="es-ES"
+      href="https://FreeCAD.github.io/Website/pr-124/es/"><link
+      rel="alternate"
+      hreflang="fr-FR"
+      href="https://FreeCAD.github.io/Website/pr-124/fr/"><link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://FreeCAD.github.io/Website/pr-124/pt/"><link
+      rel="alternate"
+      hreflang="de-DE"
+      href="https://FreeCAD.github.io/Website/pr-124/de/"><link
+      rel="alternate"
+      hreflang="ja-JP"
+      href="https://FreeCAD.github.io/Website/pr-124/ja/"><link
+    rel="alternate"
+    hreflang="x-default"
+    href="https://FreeCAD.github.io/Website/pr-124/es/"><link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Website/pr-124/favicon.svg"><link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/Website/pr-124/favicon.ico"><link
+      rel="apple-touch-icon"
+      href="/Website/pr-124/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://FreeCAD.github.io/Website/pr-124/es/index.xml"
+    title="FreeCAD"><meta name="generator" content="Hugo 0.160.0"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-124/es/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="FreeCAD">
+  <meta property="og:description" content="Your own free and open-source parametric 3D modelling software to design and build the real world.">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:type" content="website">
+</head><body
+    class="list type-page kind-home "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <a
+    class="logo active"
+    href="/Website/pr-124/es/"
+    accesskey="h"
+    title="Inicio (Alt + H)"
+    aria-label="Inicio">
+    <svg
+      class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+
+      <use href="/Website/pr-124/wordmark.svg#wordmark"></use>
+    </svg></a>
+
+  <div class="site-nav"><nav class="menu">
+  <button
+    popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menú"
+    aria-label="Menú"><svg
+    class="icon hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/hamburger.svg#hamburger"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul
+    popover
+    id="menu-list"
+    class="menu-list"><li>
+          <a
+            href="/Website/pr-124/es/features/">Características</a>
+        </li><li>
+          <a
+            href="/Website/pr-124/es/download/">Descarga</a>
+        </li><li>
+          <a
+            href="/Website/pr-124/es/news/">Actualidad</a>
+        </li><li>
+          <a
+            href="/Website/pr-124/es/community/">Comunidad</a>
+        </li><li>
+          <a
+            href="/Website/pr-124/es/docs/">Documentación</a>
+        </li><li>
+          <a
+            href="/Website/pr-124/es/donate/" class="button accent"><svg
+    class="icon heart"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/heart.svg#heart"></use>
+  </svg>Donar</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button
+          popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Elegir idioma (Alt + L)"
+          aria-label="Elegir idioma"><svg
+    class="icon language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul
+          popover
+          id="lang-list"
+          class="language-list"><li>
+              <a href="/Website/pr-124/" title="FreeCAD">English 🇬🇧</a>
+            </li><li>
+              <a href="/Website/pr-124/zh/" title="FreeCAD">中文 🇨🇳</a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-124/es/" title="FreeCAD">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/pr-124/fr/" title="FreeCAD">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pr-124/pt/" title="FreeCAD">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a href="/Website/pr-124/de/" title="FreeCAD">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/pr-124/ja/" title="FreeCAD">日本語 🇯🇵</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Cambiar tema chroma (Alt + T)"
+    aria-label="Cambiar tema chroma"><svg
+    class="icon dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/dark.svg#dark"></use>
+  </svg><svg
+    class="icon light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main style="--hue: 1;"><section class="hero">
+    <div><h1 class="title">FreeCAD</h1><h3 class="description">Your own free and open-source parametric 3D modelling software to design and build the real world.</h3><div class="buttons"><a href="/Website/pr-124/es/download/"
+              class="button">Download FreeCAD</a><a href="/Website/pr-124/es/releases/26-3/"
+              class="button">See what&#39;s new</a></div><div class="platforms"><span><svg
+    class="icon windows"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/windows.svg#windows"></use>
+  </svg>Windows</span><span><svg
+    class="icon mac"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/mac.svg#mac"></use>
+  </svg>macOS</span><span><svg
+    class="icon linux"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/linux.svg#linux"></use>
+  </svg>GNU/Linux</span></div><figure class="cover"><img
+  class="img fc"
+  src="/Website/pr-124/fc.webp"
+  alt="FreeCAD logo with interlocking gears - Chris Rogers"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="FreeCAD logo with interlocking gears - Chris Rogers" width="2000" height="1800" srcset="/Website/pr-124/fc_hu_7d70b3f83a36084c.webp 400w, /Website/pr-124/fc_hu_92c7488fd8eb671b.webp 800w, /Website/pr-124/fc_hu_91c9c1da2db9de3c.webp 1600w, /Website/pr-124/fc.webp 2000w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"><figcaption>
+        <div class="internal-tooltip"><svg
+    class="icon important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/important.svg#important"></use>
+  </svg><span class="tooltip">FreeCAD logo with interlocking gears - Chris Rogers</span>
+        </div>
+      </figcaption></figure></div>
+  </section><div class="content"><figure>
+  <blockquote class="note"><svg
+    class="icon note"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/note.svg#note"></use>
+  </svg>Nota<p>Esta página aún no se ha traducido en español, por lo que se utiliza la versión inglesa. Interesado en ayudar?
+<a
+  href="https://github.com/freecad/website"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Contribuir<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a></p></blockquote></figure><div class="block-shortcode wide accent"><h2 class="block-title">Your ideas made real</h2><div class="block-content"><div class="group-shortcode group-card"><figure class="image"><button
+          aria-label="Ampliar imagen"
+          popovertarget="img-001"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/zoom.svg#zoom"></use>
+  </svg><svg
+    class="svg arrow"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/arrow.svg#arrow"></use>
+  </svg></button>
+        <div id="img-001" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes"><svg
+    class="svg arrow"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/arrow.svg#arrow"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/cross.svg#cross"></use>
+  </svg></button></div><figcaption>
+          <div class="internal-tooltip"><svg
+    class="icon important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/important.svg#important"></use>
+  </svg><span class="tooltip">Download FreeCAD - Chris Rogers</span>
+          </div>
+        </figcaption></figure><h3
+  id="download-and-start-right-away">
+  <a class="heading-anchor"
+    href="#download-and-start-right-away"
+    title="Download and start right away"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/hash.svg#hash"></use>
+  </svg></a>Download and start right away</h3><p>Install the latest stable release for Windows, macOS, or GNU/Linux and start designing.</p>
+<div class="button-shortcode">
+    <a
+      href="/Website/pr-124/es/download/"
+      title="Browse downloads"
+      class="button accent"><svg
+    class="icon download"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/download.svg#download"></use>
+  </svg>Browse downloads</a>
+  </div></div>
+<div class="group-shortcode group-card"><figure class="image"><button
+          aria-label="Ampliar imagen"
+          popovertarget="img-002"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/zoom.svg#zoom"></use>
+  </svg><svg
+    class="svg lens"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/lens.svg#lens"></use>
+  </svg></button>
+        <div id="img-002" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes"><svg
+    class="svg lens"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/lens.svg#lens"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/cross.svg#cross"></use>
+  </svg></button></div><figcaption>
+          <div class="internal-tooltip"><svg
+    class="icon important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/important.svg#important"></use>
+  </svg><span class="tooltip">Explore FreeCAD - Chris Rogers</span>
+          </div>
+        </figcaption></figure><h3
+  id="discover-and-get-inspired">
+  <a class="heading-anchor"
+    href="#discover-and-get-inspired"
+    title="Discover and get inspired"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/hash.svg#hash"></use>
+  </svg></a>Discover and get inspired</h3><p>From engineering, product design, and BIM to manufacturing, simulation, and much more.</p>
+<div class="button-shortcode">
+    <a
+      href="/Website/pr-124/es/features/"
+      title="Explore features"
+      class="button accent"><svg
+    class="icon stars"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/stars.svg#stars"></use>
+  </svg>Explore features</a>
+  </div></div>
+<div class="group-shortcode group-card"><figure class="image"><button
+          aria-label="Ampliar imagen"
+          popovertarget="img-003"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/zoom.svg#zoom"></use>
+  </svg><svg
+    class="svg book"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/book.svg#book"></use>
+  </svg></button>
+        <div id="img-003" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-003"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes"><svg
+    class="svg book"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/book.svg#book"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/cross.svg#cross"></use>
+  </svg></button></div><figcaption>
+          <div class="internal-tooltip"><svg
+    class="icon important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/important.svg#important"></use>
+  </svg><span class="tooltip">Learn FreeCAD - Chris Rogers</span>
+          </div>
+        </figcaption></figure><h3
+  id="learn-refine-and-share">
+  <a class="heading-anchor"
+    href="#learn-refine-and-share"
+    title="Learn, refine, and share"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/hash.svg#hash"></use>
+  </svg></a>Learn, refine, and share</h3><p>Find documentation, tutorials, and community resources to build skills and improve workflows.</p>
+<div class="button-shortcode">
+    <a
+      href="/Website/pr-124/es/docs/"
+      title="Start learning"
+      class="button accent"><svg
+    class="icon manual"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/manual.svg#manual"></use>
+  </svg>Start learning</a>
+  </div></div></div>
+  </div>
+<div class="block-shortcode wide gradient"><h2 class="block-title">One platform, many workflows</h2><div class="block-content"><div class="group-shortcode group-card"><div class="marker">
+    <span><svg
+    class="icon gear"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/gear.svg#gear"></use>
+  </svg>Engineering</span>
+  </div>
+<figure class="image"><button
+          aria-label="Ampliar imagen"
+          popovertarget="img-004"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/zoom.svg#zoom"></use>
+  </svg><img
+  class="img lathe"
+  src="/Website/pr-124/lathe.webp"
+  alt="CNC Lathe assembly - Nelson Stoldt"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="CNC Lathe assembly - Nelson Stoldt" width="2000" height="2000" srcset="/Website/pr-124/lathe_hu_db8e25a555ad8766.webp 400w, /Website/pr-124/lathe_hu_2aac4f99874a04b5.webp 800w, /Website/pr-124/lathe_hu_c5c09183d6eff6af.webp 1600w, /Website/pr-124/lathe.webp 2000w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"></button>
+        <div id="img-004" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-004"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes"><img
+  class="img lathe"
+  src="/Website/pr-124/lathe.webp"
+  alt="CNC Lathe assembly - Nelson Stoldt"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="CNC Lathe assembly - Nelson Stoldt" width="2000" height="2000" srcset="/Website/pr-124/lathe_hu_db8e25a555ad8766.webp 400w, /Website/pr-124/lathe_hu_2aac4f99874a04b5.webp 800w, /Website/pr-124/lathe_hu_c5c09183d6eff6af.webp 1600w, /Website/pr-124/lathe.webp 2000w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/cross.svg#cross"></use>
+  </svg></button></div><figcaption>
+          <div class="internal-tooltip"><svg
+    class="icon important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/important.svg#important"></use>
+  </svg><span class="tooltip">CNC Lathe assembly - Nelson Stoldt</span>
+          </div>
+        </figcaption></figure><h3
+  id="robust-parts-and-assemblies">
+  <a class="heading-anchor"
+    href="#robust-parts-and-assemblies"
+    title="Robust parts and assemblies"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/hash.svg#hash"></use>
+  </svg></a>Robust parts and assemblies</h3><p>Create precise parametric solid models, reusable components, and assemblies.</p>
+</div>
+<div class="group-shortcode group-card"><div class="marker">
+    <span><svg
+    class="icon packages"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/packages.svg#packages"></use>
+  </svg>Architecture</span>
+  </div>
+<figure class="image"><button
+          aria-label="Ampliar imagen"
+          popovertarget="img-005"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/zoom.svg#zoom"></use>
+  </svg><img
+  class="img bim"
+  src="/Website/pr-124/bim.webp"
+  alt="House BIM model - Benoit Flaig"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="House BIM model - Benoit Flaig" width="1500" height="1500" srcset="/Website/pr-124/bim_hu_2b162e0372ae1a47.webp 400w, /Website/pr-124/bim_hu_c5f303ddf1df8d18.webp 800w, /Website/pr-124/bim.webp 1500w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+        <div id="img-005" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-005"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes"><img
+  class="img bim"
+  src="/Website/pr-124/bim.webp"
+  alt="House BIM model - Benoit Flaig"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="House BIM model - Benoit Flaig" width="1500" height="1500" srcset="/Website/pr-124/bim_hu_2b162e0372ae1a47.webp 400w, /Website/pr-124/bim_hu_c5f303ddf1df8d18.webp 800w, /Website/pr-124/bim.webp 1500w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/cross.svg#cross"></use>
+  </svg></button></div><figcaption>
+          <div class="internal-tooltip"><svg
+    class="icon important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/important.svg#important"></use>
+  </svg><span class="tooltip">House BIM model - Benoit Flaig</span>
+          </div>
+        </figcaption></figure><h3
+  id="bim-for-the-built-environment">
+  <a class="heading-anchor"
+    href="#bim-for-the-built-environment"
+    title="BIM for the built environment"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/hash.svg#hash"></use>
+  </svg></a>BIM for the built environment</h3><p>Model buildings and detailed construction with open IFC workflows.</p>
+</div>
+<div class="group-shortcode group-card"><div class="marker">
+    <span><svg
+    class="icon directions"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/directions.svg#directions"></use>
+  </svg>Manufacturing</span>
+  </div>
+<figure class="image"><button
+          aria-label="Ampliar imagen"
+          popovertarget="img-006"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/zoom.svg#zoom"></use>
+  </svg><img
+  class="img sprocket"
+  src="/Website/pr-124/sprocket.webp"
+  alt="Bike sprocket CAM toolpath - Deltahedra"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Bike sprocket CAM toolpath - Deltahedra" width="2000" height="2000" srcset="/Website/pr-124/sprocket_hu_1f1c881eaefb7ba2.webp 400w, /Website/pr-124/sprocket_hu_79ac1f0c68009f1b.webp 800w, /Website/pr-124/sprocket_hu_4a974641571092df.webp 1600w, /Website/pr-124/sprocket.webp 2000w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"></button>
+        <div id="img-006" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-006"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes"><img
+  class="img sprocket"
+  src="/Website/pr-124/sprocket.webp"
+  alt="Bike sprocket CAM toolpath - Deltahedra"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Bike sprocket CAM toolpath - Deltahedra" width="2000" height="2000" srcset="/Website/pr-124/sprocket_hu_1f1c881eaefb7ba2.webp 400w, /Website/pr-124/sprocket_hu_79ac1f0c68009f1b.webp 800w, /Website/pr-124/sprocket_hu_4a974641571092df.webp 1600w, /Website/pr-124/sprocket.webp 2000w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/cross.svg#cross"></use>
+  </svg></button></div><figcaption>
+          <div class="internal-tooltip"><svg
+    class="icon important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/important.svg#important"></use>
+  </svg><span class="tooltip">Bike sprocket CAM toolpath - Deltahedra</span>
+          </div>
+        </figcaption></figure><h3
+  id="from-model-to-machine">
+  <a class="heading-anchor"
+    href="#from-model-to-machine"
+    title="From model to machine"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/hash.svg#hash"></use>
+  </svg></a>From model to machine</h3><p>Prepare technical drawings, 3D-printable files, toolpaths for machining, and production-ready outputs.</p>
+</div>
+<div class="group-shortcode group-card"><div class="marker">
+    <span><svg
+    class="icon barplot"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/barplot.svg#barplot"></use>
+  </svg>Analysis</span>
+  </div>
+<figure class="image"><button
+          aria-label="Ampliar imagen"
+          popovertarget="img-007"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/zoom.svg#zoom"></use>
+  </svg><img
+  class="img analysis"
+  src="/Website/pr-124/analysis.webp"
+  alt="Wheel FEM analysis - NewJoker"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Wheel FEM analysis - NewJoker" width="700" height="700" srcset="/Website/pr-124/analysis_hu_269461fdfe9c09fa.webp 400w, /Website/pr-124/analysis.webp 700w" sizes="(max-width: 400px) 400px, 95vw"></button>
+        <div id="img-007" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-007"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes"><img
+  class="img analysis"
+  src="/Website/pr-124/analysis.webp"
+  alt="Wheel FEM analysis - NewJoker"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Wheel FEM analysis - NewJoker" width="700" height="700" srcset="/Website/pr-124/analysis_hu_269461fdfe9c09fa.webp 400w, /Website/pr-124/analysis.webp 700w" sizes="(max-width: 400px) 400px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/cross.svg#cross"></use>
+  </svg></button></div><figcaption>
+          <div class="internal-tooltip"><svg
+    class="icon important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/important.svg#important"></use>
+  </svg><span class="tooltip">Wheel FEM analysis - NewJoker</span>
+          </div>
+        </figcaption></figure><h3
+  id="test-analyze-iterate-and-optimize">
+  <a class="heading-anchor"
+    href="#test-analyze-iterate-and-optimize"
+    title="Test, analyze, iterate, and optimize"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/hash.svg#hash"></use>
+  </svg></a>Test, analyze, iterate, and optimize</h3><p>Connect geometry to simulations and engineering workflows, including Finite Element Analysis.</p>
+</div></div>
+  </div>
+<div class="block-shortcode wide accent-2"><h2 class="block-title">Free to use. Open to contribute.</h2><div class="block-content"><div class="group-shortcode group-card"><h3
+  id="join-the-community">
+  <a class="heading-anchor"
+    href="#join-the-community"
+    title="Join the community"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/hash.svg#hash"></use>
+  </svg></a>Join the community</h3><p>Ask questions, exchange ideas, and meet FreeCAD users and contributors around the world.</p>
+<div class="button-shortcode">
+    <a
+      href="/Website/pr-124/es/community/"
+      title="Meet the community"
+      class="button accent"><svg
+    class="icon people"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/people.svg#people"></use>
+  </svg>Meet the community</a>
+  </div></div>
+<div class="group-shortcode group-card"><h3
+  id="share-in-the-open">
+  <a class="heading-anchor"
+    href="#share-in-the-open"
+    title="Share in the open"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/hash.svg#hash"></use>
+  </svg></a>Share in the open</h3><p>Explore the code, report issues, collaborate on improvements, and help shape what comes next.</p>
+<div class="button-shortcode">
+    <a
+      href="https://github.com/freecad"
+      title="Browse the source"
+      class="button accent" target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon code"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/code.svg#code"></use>
+  </svg>Browse the source<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+  </div></div>
+<div class="group-shortcode group-card"><h3
+  id="support-the-project">
+  <a class="heading-anchor"
+    href="#support-the-project"
+    title="Support the project"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/hash.svg#hash"></use>
+  </svg></a>Support the project</h3><p>Help fund development, infrastructure, community events, and long-term maintenance.</p>
+<div class="button-shortcode">
+    <a
+      href="/Website/pr-124/es/donate/"
+      title="Donate to FreeCAD"
+      class="button accent"><svg
+    class="icon heart"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/heart.svg#heart"></use>
+  </svg>Donate to FreeCAD</a>
+  </div></div></div>
+  </div>
+<h2
+  id="latest-news-from-freecad" class="center">
+  <a class="heading-anchor"
+    href="#latest-news-from-freecad"
+    title="Latest news from FreeCAD"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/hash.svg#hash"></use>
+  </svg></a>Latest news from FreeCAD</h2><div class="card-list wide">
+        <div class="cards"><a
+  class="card"
+  href="/Website/pr-124/es/news/wip-wednesday-21-october-2026/"><div class="card-color" style="--hue: 120;"></div><h3 class="card-title">WIP Wednesday, 21 October 2026</h3><div class="card-metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/date.svg#date"></use>
+  </svg><time datetime="2026-10-21T00:00:00Z">21 de octubre de 2026</time>
+  </span><span class="meta category"><svg
+    class="icon category"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/category.svg#category"></use>
+  </svg>Update (189)</span></div></a><a
+  class="card"
+  href="/Website/pr-124/es/news/freecad-26-3-release-candidate-2/"><figure class="thumbnail"><img
+  class="img rc2"
+  src="/Website/pr-124/news/freecad-26-3-release-candidate-2/rc2.webp"
+  alt="FreeCAD 26.3 Release Candidate 2"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="FreeCAD 26.3 Release Candidate 2" width="537" height="632" srcset="/Website/pr-124/news/freecad-26-3-release-candidate-2/rc2_hu_575bd26a32222bd3.webp 400w, /Website/pr-124/news/freecad-26-3-release-candidate-2/rc2.webp 537w" sizes="(max-width: 400px) 400px, 95vw"></figure><h3 class="card-title">FreeCAD 26.3 Release Candidate 2</h3><div class="card-metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/date.svg#date"></use>
+  </svg><time datetime="2026-10-18T00:00:00Z">18 de octubre de 2026</time>
+  </span><span class="meta category"><svg
+    class="icon category"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/category.svg#category"></use>
+  </svg>Announcement (115)</span></div></a><a
+  class="card"
+  href="/Website/pr-124/es/news/wip-wednesday-14-october-2026/"><div class="card-color" style="--hue: 120;"></div><h3 class="card-title">WIP Wednesday, 14 October 2026</h3><div class="card-metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/date.svg#date"></use>
+  </svg><time datetime="2026-10-14T00:00:00Z">14 de octubre de 2026</time>
+  </span><span class="meta category"><svg
+    class="icon category"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/category.svg#category"></use>
+  </svg>Update (189)</span></div></a></div>
+      </div>
+<div class="button-shortcode">
+    <a
+      href="/Website/pr-124/es/news/"
+      title="Read all news"
+      class="button"><svg
+    class="icon news"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/news.svg#news"></use>
+  </svg>Read all news</a>
+  </div>
+<div class="block-shortcode wide accent-5"><div class="block-content"><div class="group-shortcode"><h2
+  id="ready-to-start-designing">
+  <a class="heading-anchor"
+    href="#ready-to-start-designing"
+    title="Ready to start designing?"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/hash.svg#hash"></use>
+  </svg></a>Ready to start designing?</h2><p>Download FreeCAD and learn at your own pace with documentation created by the community.</p>
+<div class="button-shortcode">
+    <a
+      href="/Website/pr-124/es/download/"
+      title="Download FreeCAD"
+      class="button accent"><svg
+    class="icon download"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/download.svg#download"></use>
+  </svg>Download FreeCAD</a>
+  </div>
+<div class="button-shortcode">
+    <a
+      href="/Website/pr-124/es/docs/"
+      title="Read the documentation"
+      class="button"><svg
+    class="icon manual"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/manual.svg#manual"></use>
+  </svg>Read the documentation</a>
+  </div></div></div>
+  </div>
+</div></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Ir al inicio"
+  title="Ir al inicio (Alt + G)" ><svg
+    class="icon tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a
+            href="/Website/pr-124/es/" aria-current="page" class="active">Inicio</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-124/es/features/">Características</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-124/es/download/">Descarga</a><ul><li>
+                  <a
+                    href="/Website/pr-124/es/releases/">Releases</a>
+                </li><li>
+                      <a
+                        href="/Website/pr-124/es/download/addons/">Addons</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-124/es/download/unstable/">Unstable</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-124/es/news/">Actualidad</a><ul><li>
+                  <a
+                    href="/Website/pr-124/es/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/pr-124/es/author/">Autor</a>
+                      </li><li>
+                        <a href="/Website/pr-124/es/category/">Categoría</a>
+                      </li><li>
+                        <a href="/Website/pr-124/es/tags/">Etiquetas</a>
+                      </li></ul></li><li>
+          <a
+            href="/Website/pr-124/es/community/">Comunidad</a><ul><li>
+                      <a
+                        href="/Website/pr-124/es/community/calendar/">Calendar</a>
+                    </li><li>
+                      <a
+                        href="https://events.freecad.org/" target="_blank" rel="external noreferrer nofollow">Events<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://fpa.freecad.org" target="_blank" rel="external noreferrer nofollow">Association<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swag shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-124/es/community/telemetry/">Telemetry</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-124/es/docs/">Documentación</a><ul><li>
+                  <a
+                    href="https://wiki.freecad.org/User_hub/es" target="_blank" rel="external noreferrer nofollow">User manual<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+                </li><li>
+                  <a
+                    href="/Website/pr-124/es/dev/">Development Handbook</a>
+                </li><li>
+                  <a
+                    href="https://freecad.github.io/SourceDoc/" target="_blank" rel="external noreferrer nofollow">FreeCAD API<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+                </li></ul></li><li>
+          <a
+            href="/Website/pr-124/es/donate/">Donar</a><ul></ul></li></ul>
+</nav>
+<div class="share-links"><a
+    href="https://forum.freecad.org"
+    title="Forum"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/forum.svg#forum"></use>
+  </svg></a><a
+    href="https://devtalk.freecad.org/"
+    title="DevTalk"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon devtalk"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/devtalk.svg#devtalk"></use>
+  </svg></a><a
+    href="https://github.com/freecad"
+    title="GitHub"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/github.svg#github"></use>
+  </svg></a><a
+    href="https://codeberg.org/freecad"
+    title="Codeberg"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a
+    href="https://social.freecad.org/@freecad"
+    title="Mastodon"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/bluesky.svg#bluesky"></use>
+  </svg></a><a
+    href="https://www.reddit.com/r/freecad"
+    title="Reddit"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/reddit.svg#reddit"></use>
+  </svg></a><a
+    href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+    title="Matrix"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/matrix.svg#matrix"></use>
+  </svg></a><a
+    href="https://discord.gg/w2cTKGzccC"
+    title="Discord"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/discord.svg#discord"></use>
+  </svg></a><a
+    href="https://www.linkedin.com/groups/4295230"
+    title="LinkedIn"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+    href="https://FreeCAD.github.io/Website/pr-124/es/index.xml"
+    type="application/rss&#43;xml"
+    title="Canal RSS"><svg
+    class="icon rss"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/rss.svg#rss"></use>
+  </svg></a></div><div class="copyright"><span>
+    &copy; 2026
+    <a
+      href="/Website/pr-124/es/"
+      title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a
+    href="https://creativecommons.org/licenses/by-sa/4.0/"
+    title="Creative Commons"
+    target="_blank" rel="license external noreferrer nofollow">
+
+    CC BY-SA<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to
+  <a
+    href="https://gohugo.io/"
+    title="Hugo SSG"
+    target="_blank" rel="external noreferrer nofollow">
+
+    Hugo<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-10-27
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/fa452cc1c806a9666d4264d8101651677d81ea75">fa452cc1c8<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script
+    src="/Website/pr-124/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script></body>
+
+</html>

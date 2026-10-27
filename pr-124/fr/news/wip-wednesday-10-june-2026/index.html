@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html
+  lang="fr-FR"
+  dir="ltr"><head><meta charset="utf-8">
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1">
+<meta
+  name="referrer"
+  content="strict-origin-when-cross-origin">
+<meta
+  name="robots"
+  content="index, follow"><script>
+  try {
+    const pref = localStorage.getItem("pref-theme");
+    const dark =
+      pref === "dark" ||
+      (pref !== "light" &&
+        
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+        );
+    if (dark) document.documentElement.classList.add("dark");
+  } catch {}
+  document.documentElement.classList.add("js");
+</script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --header: rgb(8, 8, 8);
+        --theme: rgb(16, 16, 16);
+        --entry: rgb(32, 32, 32);
+        --tone: rgb(64, 64, 64);
+        --backdrop: rgba(64, 64, 64, 0.8);
+        --primary: rgb(240, 240, 240);
+        --secondary: rgb(224, 224, 224);
+        --tertiary: rgb(208, 208, 208);
+        --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+        --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+        --angle: 315deg;
+      }
+    }</style>
+</noscript><title>FreeCAD | WIP Wednesday, 10 June 2026</title>
+  <meta
+    name="description"
+    content="Votre modeleur paramétrique libre et open-source"><link
+          rel="stylesheet"
+          href="/Website/pr-124/css/styles.75a94225473d5b4d301fd76285e755f3ec3029d6e6771a1d889ecd7f1ce74aa7.css"
+          integrity="sha256-dalCJUc9W00wH9dihedV8&#43;wwKdbmdxodiJ7NfxznSqc="
+          crossorigin="anonymous"><link
+    rel="canonical"
+    href="https://FreeCAD.github.io/Website/pr-124/fr/news/wip-wednesday-10-june-2026/"><link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://FreeCAD.github.io/Website/pr-124/news/wip-wednesday-10-june-2026/"><link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://FreeCAD.github.io/Website/pr-124/zh/news/wip-wednesday-10-june-2026/"><link
+      rel="alternate"
+      hreflang="es-ES"
+      href="https://FreeCAD.github.io/Website/pr-124/es/news/wip-wednesday-10-june-2026/"><link
+      rel="alternate"
+      hreflang="fr-FR"
+      href="https://FreeCAD.github.io/Website/pr-124/fr/news/wip-wednesday-10-june-2026/"><link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://FreeCAD.github.io/Website/pr-124/pt/news/wip-wednesday-10-june-2026/"><link
+      rel="alternate"
+      hreflang="de-DE"
+      href="https://FreeCAD.github.io/Website/pr-124/de/news/wip-wednesday-10-june-2026/"><link
+      rel="alternate"
+      hreflang="ja-JP"
+      href="https://FreeCAD.github.io/Website/pr-124/ja/news/wip-wednesday-10-june-2026/"><link
+    rel="alternate"
+    hreflang="x-default"
+    href="https://FreeCAD.github.io/Website/pr-124/fr/"><link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Website/pr-124/favicon.svg"><link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/Website/pr-124/favicon.ico"><link
+      rel="apple-touch-icon"
+      href="/Website/pr-124/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://FreeCAD.github.io/Website/pr-124/fr/index.xml"
+    title="FreeCAD"><meta name="generator" content="Hugo 0.160.0"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-124/fr/news/wip-wednesday-10-june-2026/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="WIP Wednesday, 10 June 2026">
+  <meta property="og:description" content="This week in FreeCAD development:
+Draftmaxwxyz added input hints to the statusbar for the Edit tool and modification tools (PR#30436 and PR#30437 ).">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2026-06-10T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-10-27T09:30:30-05:00">
+    <meta property="article:tag" content="WIP">
+</head><body
+    class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <a
+    class="logo"
+    href="/Website/pr-124/fr/"
+    accesskey="h"
+    title="Accueil (Alt + H)"
+    aria-label="Accueil">
+    <svg
+      class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+
+      <use href="/Website/pr-124/wordmark.svg#wordmark"></use>
+    </svg></a>
+
+  <div class="site-nav"><nav class="menu">
+  <button
+    popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg
+    class="icon hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/hamburger.svg#hamburger"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul
+    popover
+    id="menu-list"
+    class="menu-list"><li>
+          <a
+            href="/Website/pr-124/fr/features/">Fonctionnalités</a>
+        </li><li>
+          <a
+            href="/Website/pr-124/fr/download/">Télécharger</a>
+        </li><li>
+          <a
+            href="/Website/pr-124/fr/news/" aria-current="page" class="active">Actualités</a>
+        </li><li>
+          <a
+            href="/Website/pr-124/fr/community/">Communauté</a>
+        </li><li>
+          <a
+            href="/Website/pr-124/fr/docs/">Documentation</a>
+        </li><li>
+          <a
+            href="/Website/pr-124/fr/donate/" class="button accent"><svg
+    class="icon heart"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/heart.svg#heart"></use>
+  </svg>Faire un don</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button
+          popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choisir la langue (Alt + L)"
+          aria-label="Choisir la langue"><svg
+    class="icon language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul
+          popover
+          id="lang-list"
+          class="language-list"><li>
+              <a href="/Website/pr-124/news/wip-wednesday-10-june-2026/" title="WIP Wednesday, 10 June 2026">English 🇬🇧</a>
+            </li><li>
+              <a href="/Website/pr-124/zh/news/wip-wednesday-10-june-2026/" title="WIP Wednesday, 10 June 2026">中文 🇨🇳</a>
+            </li><li>
+              <a href="/Website/pr-124/es/news/wip-wednesday-10-june-2026/" title="WIP Wednesday, 10 June 2026">Español 🇪🇸</a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-124/fr/news/wip-wednesday-10-june-2026/" title="WIP Wednesday, 10 June 2026">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pr-124/pt/news/wip-wednesday-10-june-2026/" title="WIP Wednesday, 10 June 2026">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a href="/Website/pr-124/de/news/wip-wednesday-10-june-2026/" title="WIP Wednesday, 10 June 2026">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/pr-124/ja/news/wip-wednesday-10-june-2026/" title="WIP Wednesday, 10 June 2026">日本語 🇯🇵</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Changer le thème (Alt + T)"
+    aria-label="Changer le thème"><svg
+    class="icon dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/dark.svg#dark"></use>
+  </svg><svg
+    class="icon light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main style="--hue: 120;"><section class="hero">
+
+    <h2 class="title">WIP Wednesday, 10 June 2026</h1><div class="metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/date.svg#date"></use>
+  </svg><time datetime="2026-06-10T00:00:00Z">10 juin 2026</time>
+  </span><span class="meta author"><svg
+    class="icon author"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/author.svg#author"></use>
+  </svg><a href="/Website/pr-124/fr/author/aleksandr-prokudin/">Aleksandr Prokudin (215)</a></span><span class="meta category"><svg
+    class="icon category"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/category.svg#category"></use>
+  </svg><a href="/Website/pr-124/fr/category/update/">Update (189)</a></span><span class="meta tags"><svg
+    class="icon tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/pr-124/fr/tags/wip/">WIP (184)</a></span><span class="meta"><svg
+    class="icon time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/time.svg#time"></use>
+  </svg>3 min</span></div></section><div class="content"><p>This week in FreeCAD development:</p>
+<h2
+  id="draft">
+  <a class="heading-anchor"
+    href="#draft"
+    title="Draft"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/hash.svg#hash"></use>
+  </svg></a>Draft</h2><p>maxwxyz added input hints to the statusbar for the Edit tool and modification tools (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/30436"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#30436<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a> and <a
+  href="https://github.com/FreeCAD/FreeCAD/pull/30437"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#30437<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>).</p>
+<figure class="image"><button
+          aria-label="Agrandir limage"
+          popovertarget="img-001"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/zoom.svg#zoom"></use>
+  </svg><img
+  class="img image-2"
+  src="/Website/pr-124/news/wip-wednesday-10-june-2026/image-2.webp"
+  alt="Description manquante"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Description manquante" width="2048" height="1152" srcset="/Website/pr-124/news/wip-wednesday-10-june-2026/image-2_hu_7c39b1e79d8b5a19.webp 400w, /Website/pr-124/news/wip-wednesday-10-june-2026/image-2_hu_2da9e1d48084fc8c.webp 800w, /Website/pr-124/news/wip-wednesday-10-june-2026/image-2_hu_7e80b7a10f038087.webp 1600w, /Website/pr-124/news/wip-wednesday-10-june-2026/image-2.webp 2048w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"></button>
+        <div id="img-001" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages"><img
+  class="img image-2"
+  src="/Website/pr-124/news/wip-wednesday-10-june-2026/image-2.webp"
+  alt="Description manquante"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Description manquante" width="2048" height="1152" srcset="/Website/pr-124/news/wip-wednesday-10-june-2026/image-2_hu_7c39b1e79d8b5a19.webp 400w, /Website/pr-124/news/wip-wednesday-10-june-2026/image-2_hu_2da9e1d48084fc8c.webp 800w, /Website/pr-124/news/wip-wednesday-10-june-2026/image-2_hu_7e80b7a10f038087.webp 1600w, /Website/pr-124/news/wip-wednesday-10-june-2026/image-2.webp 2048w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/cross.svg#cross"></use>
+  </svg></button></div></figure><h2
+  id="sketcher">
+  <a class="heading-anchor"
+    href="#sketcher"
+    title="Sketcher"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/hash.svg#hash"></use>
+  </svg></a>Sketcher</h2><ul>
+<li>wmayer fixed several memory leaks (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/29986"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#29986<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>, cherry-picked by maxwxyz), added input hints to the Dimension tool (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/30630"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#30630<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>) and the B-Spline tool (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/30628"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#30628<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>PaddleStroke fixed a bug where the new polyline undo with R would keep undone segments as real geometry (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/30630"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#30630<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>) and another bug where it was impossible to start a polyline at the bottom of a circle (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/30666"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#30666<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>Reqrefusion patched the autoconstraint to make point-on-line constraints applicable along lines, not just above lines (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/30332"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#30332<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>Lokestrom added on-view parameters to arcs of ellipse, hyperbola, and parabola (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/29318"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#29318<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>ItSaulGoodMan patched the Trim tool to preserve ellipses&rsquo; internal geometry (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/30138"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#30138<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>matthiasdanner fixed a bug where the sketch couldn&rsquo;t be exited with Escape when the bottom overlay is hidden (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/29873"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#29873<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>).</li>
+</ul>
+<h2
+  id="part-and-partdesign">
+  <a class="heading-anchor"
+    href="#part-and-partdesign"
+    title="Part and PartDesign"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/hash.svg#hash"></use>
+  </svg></a>Part and PartDesign</h2><ul>
+<li>ItSaulGoodMan fixed the compound deletion to prevent orphan objects from being left behind (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/29856"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#29856<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>PaddleStroke moved the linear and polar pattern logic out of PartDesign to make it reusable across the application (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/30417"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#30417<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>). This is part of his grant work to <a
+  href="https://github.com/FreeCAD/FPA-grant-proposals/issues/38"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">refactor pattern tools<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>.</li>
+<li>maxwxyz fixed a toponaming occurring upon deleting a feature (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/30403"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#30403<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>depthoffocus fixed Unicode filename issues in Loft and Sweep (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/29728"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#29728<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>tritao ported the remaining Gui and PartGui overlay/highlight nodes off direct legacy OpenGL calls into Coin scenegraph geometry/state (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/29030"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#29030<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>). This is part of his <a
+  href="https://github.com/FreeCAD/FPA-grant-proposals/issues/35"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">grant work<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>.</li>
+</ul>
+<h2
+  id="assembly">
+  <a class="heading-anchor"
+    href="#assembly"
+    title="Assembly"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/hash.svg#hash"></use>
+  </svg></a>Assembly</h2><p>PaddleStroke made the Insert Part command respect the active selection (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/30041"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#30041<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>). He also fixed several bugs:</p>
+<ul>
+<li>where subassembly flexible joints would be ignored when applying a joint to a rigid subassembly, and then turning it flexible (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/30679"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#30679<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>where a joint would become visible again after selection by a user and then hide again (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/30598"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#30598<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>where Insert New Part wouldn&rsquo;t create the specified joints (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/30600"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#30600<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>where FreeCAD would crash on double-clicking an assembly link (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/30037"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#30037<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>).</li>
+</ul>
+<h2
+  id="cam">
+  <a class="heading-anchor"
+    href="#cam"
+    title="CAM"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/hash.svg#hash"></use>
+  </svg></a>CAM</h2><p>The big news here is the patch by sliptonic to add workplane-driven 3+2 (indexed) toolpath generation across most CAM ops: Profile, Pocket/PocketShape, MillFacing, Drilling, CircularHole, Engrave, Vcarve, Adaptive, and Deburr (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/30106"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#30106<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>).</p>
+<figure class="image"><button
+          aria-label="Agrandir limage"
+          popovertarget="img-002"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/zoom.svg#zoom"></use>
+  </svg><img
+  class="img image-3"
+  src="/Website/pr-124/news/wip-wednesday-10-june-2026/image-3.webp"
+  alt="Description manquante"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Description manquante" width="1088" height="1026" srcset="/Website/pr-124/news/wip-wednesday-10-june-2026/image-3_hu_d6a159769c05dec4.webp 400w, /Website/pr-124/news/wip-wednesday-10-june-2026/image-3_hu_a0acd6f450e1c226.webp 800w, /Website/pr-124/news/wip-wednesday-10-june-2026/image-3.webp 1088w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+        <div id="img-002" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Fermer la visionneuse dimages"><img
+  class="img image-3"
+  src="/Website/pr-124/news/wip-wednesday-10-june-2026/image-3.webp"
+  alt="Description manquante"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Description manquante" width="1088" height="1026" srcset="/Website/pr-124/news/wip-wednesday-10-june-2026/image-3_hu_d6a159769c05dec4.webp 400w, /Website/pr-124/news/wip-wednesday-10-june-2026/image-3_hu_a0acd6f450e1c226.webp 800w, /Website/pr-124/news/wip-wednesday-10-june-2026/image-3.webp 1088w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/cross.svg#cross"></use>
+  </svg></button></div></figure><p>Additional changes:</p>
+<ul>
+<li>tarman3 fixed wire checks when the start/target positions touch the model (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/30385"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#30385<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>Dimitris75 improved the Step Over consistency across operations (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/27038"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#27038<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>).</li>
+</ul>
+<h2
+  id="bim">
+  <a class="heading-anchor"
+    href="#bim"
+    title="BIM:"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/hash.svg#hash"></use>
+  </svg></a>BIM:</h2><ul>
+<li>tritao fixed a regression in sketch-based walls where some left-aligned wall traces could lose large parts of their shape during base face generation (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/29703"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#29703<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>maxwxyz improved the BIM Views Manager user interface and optimized the new level creation workflow (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/30420"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#30420<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>Roy_043 fixed import issues that occurred when using the Strict IFC mode (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/30001"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#30001<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>) and the fills of shaft-like objects in Draft_Shape2DView (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/29539"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#29539<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>).</li>
+</ul>
+<h2
+  id="other-changes">
+  <a class="heading-anchor"
+    href="#other-changes"
+    title="Other changes"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/hash.svg#hash"></use>
+  </svg></a>Other changes</h2><ul>
+<li>wmayer fixed B-spline curve fitting in Reverse Engineering (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/29985"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#29985<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>, cherry-picked by maxwxyz).</li>
+<li>WandererFan fixed a bug in TechDraw where a shallow curve would be depicted as a line (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/30388"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#30388<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>marioalexis84 improved the error message in FEM for cases when solvers run from the task panel without a mesh or with more than one mesh (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/29186"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#29186<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>pieterhijma a context menu item in the Property View that allows you to report in which expressions these properties are used (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/23989"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#23989<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>Dan-Crane fixed UTF-8 encoding for non-ASCII names in the Expression Editor and property links (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/29875"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#29875<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>).</li>
+<li>tritato added navigation controls for locked view orientations (<a
+  href="https://github.com/FreeCAD/FreeCAD/pull/29200"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PR#29200<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>).</li>
+</ul>
+<p>Additional improvements and fixes were contributed by chennes, ElementW, ItSaulGoodMan, Lgt2x, luzpaz, maxwxyz, mnesarco, PaddleStroke, and ypsvlq.</p>
+<p>If you are interested in testing the latest weekly build, you can grab it <a
+  href="https://github.com/FreeCAD/FreeCAD/releases/tag/weekly-2026.06.10"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">here<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>.</p>
+<h2
+  id="activity-stats">
+  <a class="heading-anchor"
+    href="#activity-stats"
+    title="Activity stats"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/hash.svg#hash"></use>
+  </svg></a>Activity stats</h2><p><strong>PR stats</strong>: since the previous report, 62 pull requests have been merged, and 35 new pull requests have been opened.</p>
+<p><strong>Issue stats</strong>: overall, there are 3470 open issues in the tracker, same as last week.</p>
+</div><footer class="single-footer">
+    <nav class="pagination"><a
+            class="button next"
+            href="/Website/pr-124/fr/news/wip-wednesday-17-june-2026/"
+            title="Article suivant"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/tri_left.svg#tri_left"></use>
+  </svg>WIP Wednesday, 17 June 2026</a><a
+            class="button prev"
+            href="/Website/pr-124/fr/news/register-for-north-america-freecad-meetup/"
+            title="Article précédent">Register for North America FreeCAD Meetup!<svg
+    class="icon tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Aller au sommet de la page"
+  title="Aller au sommet de la page (Alt + G)" ><svg
+    class="icon tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a
+            href="/Website/pr-124/fr/">Accueil</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-124/fr/features/">Fonctionnalités</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-124/fr/download/">Télécharger</a><ul><li>
+                  <a
+                    href="/Website/pr-124/fr/releases/">Releases</a>
+                </li><li>
+                      <a
+                        href="/Website/pr-124/fr/download/addons/">Addons</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-124/fr/download/unstable/">Unstable</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-124/fr/news/" aria-current="page" class="active">Actualités</a><ul><li>
+                  <a
+                    href="/Website/pr-124/fr/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/pr-124/fr/author/">Auteur</a>
+                      </li><li>
+                        <a href="/Website/pr-124/fr/category/">Catégorie</a>
+                      </li><li>
+                        <a href="/Website/pr-124/fr/tags/">Mots-clés</a>
+                      </li></ul></li><li>
+          <a
+            href="/Website/pr-124/fr/community/">Communauté</a><ul><li>
+                      <a
+                        href="/Website/pr-124/fr/community/calendar/">Calendar</a>
+                    </li><li>
+                      <a
+                        href="https://events.freecad.org/" target="_blank" rel="external noreferrer nofollow">Events<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://fpa.freecad.org" target="_blank" rel="external noreferrer nofollow">Association<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swag shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-124/fr/community/telemetry/">Telemetry</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-124/fr/docs/">Documentation</a><ul><li>
+                  <a
+                    href="https://wiki.freecad.org/User_hub/fr" target="_blank" rel="external noreferrer nofollow">User manual<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+                </li><li>
+                  <a
+                    href="/Website/pr-124/fr/dev/">Development Handbook</a>
+                </li><li>
+                  <a
+                    href="https://freecad.github.io/SourceDoc/" target="_blank" rel="external noreferrer nofollow">FreeCAD API<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+                </li></ul></li><li>
+          <a
+            href="/Website/pr-124/fr/donate/">Faire un don</a><ul></ul></li></ul>
+</nav>
+<div class="share-links"><a
+    href="https://forum.freecad.org"
+    title="Forum"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/forum.svg#forum"></use>
+  </svg></a><a
+    href="https://devtalk.freecad.org/"
+    title="DevTalk"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon devtalk"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/devtalk.svg#devtalk"></use>
+  </svg></a><a
+    href="https://github.com/freecad"
+    title="GitHub"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/github.svg#github"></use>
+  </svg></a><a
+    href="https://codeberg.org/freecad"
+    title="Codeberg"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a
+    href="https://social.freecad.org/@freecad"
+    title="Mastodon"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/bluesky.svg#bluesky"></use>
+  </svg></a><a
+    href="https://www.reddit.com/r/freecad"
+    title="Reddit"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/reddit.svg#reddit"></use>
+  </svg></a><a
+    href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+    title="Matrix"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/matrix.svg#matrix"></use>
+  </svg></a><a
+    href="https://discord.gg/w2cTKGzccC"
+    title="Discord"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/discord.svg#discord"></use>
+  </svg></a><a
+    href="https://www.linkedin.com/groups/4295230"
+    title="LinkedIn"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+    href="https://FreeCAD.github.io/Website/pr-124/fr/index.xml"
+    type="application/rss&#43;xml"
+    title="Flux RSS"><svg
+    class="icon rss"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/rss.svg#rss"></use>
+  </svg></a><a
+  href="/Website/pr-124/fr/fedishare.html#title=WIP&#43;Wednesday%2C&#43;10&#43;June&#43;2026&amp;description=This&#43;week&#43;in&#43;FreeCAD&#43;development%3A%0ADraftmaxwxyz&#43;added&#43;input&#43;hints&#43;to&#43;the&#43;statusbar&#43;for&#43;the&#43;Edit&#43;tool&#43;and&#43;modification&#43;tools&#43;%28PR%2330436&#43;and&#43;PR%2330437&#43;%29.%0ASketcher&#43;wmayer&#43;fixed&#43;several&#43;memory&#43;leaks&#43;%E2%80%A6%0A%23wip&amp;url=https://FreeCAD.github.io/Website/pr-124/fr/news/wip-wednesday-10-june-2026/"
+  title="Publier sur le Fediverse"
+  target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026
+    <a
+      href="/Website/pr-124/fr/"
+      title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a
+    href="https://creativecommons.org/licenses/by-sa/4.0/"
+    title="Creative Commons"
+    target="_blank" rel="license external noreferrer nofollow">
+
+    CC BY-SA<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to
+  <a
+    href="https://gohugo.io/"
+    title="Hugo SSG"
+    target="_blank" rel="external noreferrer nofollow">
+
+    Hugo<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-10-27
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/bd3a9301fd4e80342c05e5efbc1989c0d27dcc85">bd3a9301fd<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-124/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script
+    src="/Website/pr-124/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script></body>
+
+</html>

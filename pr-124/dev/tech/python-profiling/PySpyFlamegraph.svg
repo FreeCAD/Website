@@ -1,0 +1,871 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:ns1="http://github.com/jonhoo/inferno"
+  version="1.1"
+  id="PySpyFlamegraph"
+  viewBox="0 0 1200 506">
+  <style>
+    text { font-family:monospace; font-size:12px; }
+    #title { text-anchor:middle; font-size:17px; }
+    #frames > *:hover { stroke:var(--entry); stroke-width:0.5; cursor:pointer; }
+  </style>
+  <rect x="0" y="0" width="100%" height="100%" fill="var(--entry)" />
+  <text id="title" fill="var(--secondary)" x="50%" y="24">py-spy record -o output1 -f flamegraph --pid 873907</text>
+  <g id="frames" x="10" width="1180" total_samples="264">
+    <g>
+      <title>__init__ (yaml/nodes.py:33) (1 samples, 0.38%)</title>
+      <rect x="27.65%" y="324" width="0.37%" height="15" fill="rgb(227,0,7)" ns1:x="73" ns1:w="1" />
+      <text x="27.90%" y="334.5" />
+    </g>
+    <g>
+      <title>ascend_resolver (yaml/resolver.py:115) (1 samples, 0.38%)</title>
+      <rect x="28.03%" y="324" width="0.37%" height="15" fill="rgb(217,0,24)" ns1:x="74" ns1:w="1" />
+      <text x="28.28%" y="334.5" />
+    </g>
+    <g>
+      <title>descend_resolver (yaml/resolver.py:92) (1 samples, 0.38%)</title>
+      <rect x="28.40%" y="324" width="0.37%" height="15" fill="rgb(221,193,54)" ns1:x="75" ns1:w="1" />
+      <text x="28.65%" y="334.5" />
+    </g>
+    <g>
+      <title>resolve (yaml/resolver.py:144) (2 samples, 0.76%)</title>
+      <rect x="28.78%" y="324" width="0.75%" height="15" fill="rgb(248,212,6)" ns1:x="76" ns1:w="2" />
+      <text x="29.03%" y="334.5" />
+    </g>
+    <g>
+      <title>resolve (yaml/resolver.py:150) (7 samples, 2.65%)</title>
+      <rect x="29.54%" y="324" width="2.65%" height="15" fill="rgb(208,68,35)" ns1:x="78" ns1:w="7" />
+      <text x="29.79%" y="334.5">re..</text>
+    </g>
+    <g>
+      <title>resolve (yaml/resolver.py:151) (2 samples, 0.76%)</title>
+      <rect x="32.19%" y="324" width="0.75%" height="15" fill="rgb(232,128,0)" ns1:x="85" ns1:w="2" />
+      <text x="32.44%" y="334.5" />
+    </g>
+    <g>
+      <title>get_single_data (yaml/constructor.py:49) (86 samples, 32.58%)</title>
+      <rect x="0.75%" y="308" width="32.57%" height="15" fill="rgb(207,160,47)" ns1:x="2" ns1:w="86" />
+      <text x="1.00%" y="318.5">get_single_data (yaml/constructor.py:49)</text>
+    </g>
+    <g>
+      <title>resolve (yaml/resolver.py:154) (1 samples, 0.38%)</title>
+      <rect x="32.95%" y="324" width="0.37%" height="15" fill="rgb(228,23,34)" ns1:x="87" ns1:w="1" />
+      <text x="33.20%" y="334.5" />
+    </g>
+    <g>
+      <title>flatten_mapping (yaml/constructor.py:183) (2 samples, 0.76%)</title>
+      <rect x="33.33%" y="372" width="0.75%" height="15" fill="rgb(218,30,26)" ns1:x="88" ns1:w="2" />
+      <text x="33.58%" y="382.5" />
+    </g>
+    <g>
+      <title>construct_mapping (yaml/constructor.py:217) (3 samples, 1.14%)</title>
+      <rect x="33.33%" y="356" width="1.13%" height="15" fill="rgb(220,122,19)" ns1:x="88" ns1:w="3" />
+      <text x="33.58%" y="366.5" />
+    </g>
+    <g>
+      <title>flatten_mapping (yaml/constructor.py:211) (1 samples, 0.38%)</title>
+      <rect x="34.09%" y="372" width="0.37%" height="15" fill="rgb(250,228,42)" ns1:x="90" ns1:w="1" />
+      <text x="34.34%" y="382.5" />
+    </g>
+    <g>
+      <title>construct_object (yaml/constructor.py:100) (1 samples, 0.38%)</title>
+      <rect x="35.22%" y="388" width="0.37%" height="15" fill="rgb(240,193,28)" ns1:x="93" ns1:w="1" />
+      <text x="35.47%" y="398.5" />
+    </g>
+    <g>
+      <title>construct_yaml_str (yaml/constructor.py:403) (1 samples, 0.38%)</title>
+      <rect x="35.22%" y="404" width="0.37%" height="15" fill="rgb(216,20,37)" ns1:x="93" ns1:w="1" />
+      <text x="35.47%" y="414.5" />
+    </g>
+    <g>
+      <title>construct_object (yaml/constructor.py:103) (1 samples, 0.38%)</title>
+      <rect x="35.60%" y="388" width="0.37%" height="15" fill="rgb(206,188,39)" ns1:x="94" ns1:w="1" />
+      <text x="35.85%" y="398.5" />
+    </g>
+    <g>
+      <title>construct_object (yaml/constructor.py:68) (1 samples, 0.38%)</title>
+      <rect x="35.98%" y="388" width="0.37%" height="15" fill="rgb(217,207,13)" ns1:x="95" ns1:w="1" />
+      <text x="36.23%" y="398.5" />
+    </g>
+    <g>
+      <title>construct_object (yaml/constructor.py:76) (2 samples, 0.76%)</title>
+      <rect x="36.36%" y="388" width="0.75%" height="15" fill="rgb(231,73,38)" ns1:x="96" ns1:w="2" />
+      <text x="36.61%" y="398.5" />
+    </g>
+    <g>
+      <title>construct_mapping (yaml/constructor.py:139) (8 samples, 3.03%)</title>
+      <rect x="34.46%" y="372" width="3.03%" height="15" fill="rgb(225,20,46)" ns1:x="91" ns1:w="8" />
+      <text x="34.71%" y="382.5">con..</text>
+    </g>
+    <g>
+      <title>construct_object (yaml/constructor.py:79) (1 samples, 0.38%)</title>
+      <rect x="37.12%" y="388" width="0.37%" height="15" fill="rgb(210,31,41)" ns1:x="98" ns1:w="1" />
+      <text x="37.37%" y="398.5" />
+    </g>
+    <g>
+      <title>construct_mapping (yaml/constructor.py:140) (1 samples, 0.38%)</title>
+      <rect x="37.50%" y="372" width="0.37%" height="15" fill="rgb(221,200,47)" ns1:x="99" ns1:w="1" />
+      <text x="37.75%" y="382.5" />
+    </g>
+    <g>
+      <title>__instancecheck__ (&lt;frozen abc&gt;:117) (1 samples, 0.38%)</title>
+      <rect x="37.50%" y="388" width="0.37%" height="15" fill="rgb(226,26,5)" ns1:x="99" ns1:w="1" />
+      <text x="37.75%" y="398.5" />
+    </g>
+    <g>
+      <title>construct_object (yaml/constructor.py:100) (3 samples, 1.14%)</title>
+      <rect x="37.87%" y="388" width="1.13%" height="15" fill="rgb(249,33,26)" ns1:x="100" ns1:w="3" />
+      <text x="38.12%" y="398.5" />
+    </g>
+    <g>
+      <title>construct_yaml_str (yaml/constructor.py:403) (2 samples, 0.76%)</title>
+      <rect x="38.25%" y="404" width="0.75%" height="15" fill="rgb(235,183,28)" ns1:x="101" ns1:w="2" />
+      <text x="38.50%" y="414.5" />
+    </g>
+    <g>
+      <title>construct_scalar (yaml/constructor.py:178) (2 samples, 0.76%)</title>
+      <rect x="38.25%" y="420" width="0.75%" height="15" fill="rgb(221,5,38)" ns1:x="101" ns1:w="2" />
+      <text x="38.50%" y="430.5" />
+    </g>
+    <g>
+      <title>construct_object (yaml/constructor.py:103) (1 samples, 0.38%)</title>
+      <rect x="39.01%" y="388" width="0.37%" height="15" fill="rgb(247,18,42)" ns1:x="103" ns1:w="1" />
+      <text x="39.26%" y="398.5" />
+    </g>
+    <g>
+      <title>construct_object (yaml/constructor.py:112) (1 samples, 0.38%)</title>
+      <rect x="39.39%" y="388" width="0.37%" height="15" fill="rgb(241,131,45)" ns1:x="104" ns1:w="1" />
+      <text x="39.64%" y="398.5" />
+    </g>
+    <g>
+      <title>construct_object (yaml/constructor.py:68) (1 samples, 0.38%)</title>
+      <rect x="39.77%" y="388" width="0.37%" height="15" fill="rgb(249,31,29)" ns1:x="105" ns1:w="1" />
+      <text x="40.02%" y="398.5" />
+    </g>
+    <g>
+      <title>construct_yaml_map (yaml/constructor.py:413) (19 samples, 7.20%)</title>
+      <rect x="33.33%" y="340" width="7.19%" height="15" fill="rgb(225,111,53)" ns1:x="88" ns1:w="19" />
+      <text x="33.58%" y="350.5">construct_..</text>
+    </g>
+    <g>
+      <title>construct_mapping (yaml/constructor.py:218) (16 samples, 6.06%)</title>
+      <rect x="34.46%" y="356" width="6.06%" height="15" fill="rgb(238,160,17)" ns1:x="91" ns1:w="16" />
+      <text x="34.71%" y="366.5">construc..</text>
+    </g>
+    <g>
+      <title>construct_mapping (yaml/constructor.py:143) (7 samples, 2.65%)</title>
+      <rect x="37.87%" y="372" width="2.65%" height="15" fill="rgb(214,148,48)" ns1:x="100" ns1:w="7" />
+      <text x="38.12%" y="382.5">co..</text>
+    </g>
+    <g>
+      <title>construct_object (yaml/constructor.py:80) (1 samples, 0.38%)</title>
+      <rect x="40.15%" y="388" width="0.37%" height="15" fill="rgb(232,36,49)" ns1:x="106" ns1:w="1" />
+      <text x="40.40%" y="398.5" />
+    </g>
+    <g>
+      <title>construct_object (yaml/constructor.py:105) (1 samples, 0.38%)</title>
+      <rect x="40.53%" y="388" width="0.37%" height="15" fill="rgb(209,103,24)" ns1:x="107" ns1:w="1" />
+      <text x="40.78%" y="398.5" />
+    </g>
+    <g>
+      <title>construct_yaml_map (yaml/constructor.py:410) (1 samples, 0.38%)</title>
+      <rect x="40.53%" y="404" width="0.37%" height="15" fill="rgb(229,88,8)" ns1:x="107" ns1:w="1" />
+      <text x="40.78%" y="414.5" />
+    </g>
+    <g>
+      <title>from_yaml (history_wb/infrastructure/persistence/snapshot_yaml.py:104) (109 samples, 41.29%)</title>
+      <rect x="0.00%" y="260" width="41.28%" height="15" fill="rgb(213,181,19)" ns1:x="0" ns1:w="109" />
+      <text x="0.25%" y="270.5">from_yaml (history_wb/infrastructure/persistence/snapshot_yaml.py:1..</text>
+    </g>
+    <g>
+      <title>_load_yaml (history_wb/infrastructure/persistence/snapshot_yaml.py:21) (109 samples, 41.29%)</title>
+      <rect x="0.00%" y="276" width="41.28%" height="15" fill="rgb(254,191,54)" ns1:x="0" ns1:w="109" />
+      <text x="0.25%" y="286.5">_load_yaml (history_wb/infrastructure/persistence/snapshot_yaml.py:..</text>
+    </g>
+    <g>
+      <title>load (yaml/__init__.py:81) (109 samples, 41.29%)</title>
+      <rect x="0.00%" y="292" width="41.28%" height="15" fill="rgb(241,83,37)" ns1:x="0" ns1:w="109" />
+      <text x="0.25%" y="302.5">load (yaml/__init__.py:81)</text>
+    </g>
+    <g>
+      <title>get_single_data (yaml/constructor.py:51) (21 samples, 7.95%)</title>
+      <rect x="33.33%" y="308" width="7.95%" height="15" fill="rgb(233,36,39)" ns1:x="88" ns1:w="21" />
+      <text x="33.58%" y="318.5">get_single_..</text>
+    </g>
+    <g>
+      <title>construct_document (yaml/constructor.py:60) (21 samples, 7.95%)</title>
+      <rect x="33.33%" y="324" width="7.95%" height="15" fill="rgb(226,3,54)" ns1:x="88" ns1:w="21" />
+      <text x="33.58%" y="334.5">construct_d..</text>
+    </g>
+    <g>
+      <title>construct_yaml_seq (yaml/constructor.py:408) (2 samples, 0.76%)</title>
+      <rect x="40.53%" y="340" width="0.75%" height="15" fill="rgb(245,192,40)" ns1:x="107" ns1:w="2" />
+      <text x="40.78%" y="350.5" />
+    </g>
+    <g>
+      <title>construct_sequence (yaml/constructor.py:129) (2 samples, 0.76%)</title>
+      <rect x="40.53%" y="356" width="0.75%" height="15" fill="rgb(238,167,29)" ns1:x="107" ns1:w="2" />
+      <text x="40.78%" y="366.5" />
+    </g>
+    <g>
+      <title>&lt;listcomp&gt; (yaml/constructor.py:129) (2 samples, 0.76%)</title>
+      <rect x="40.53%" y="372" width="0.75%" height="15" fill="rgb(232,182,51)" ns1:x="107" ns1:w="2" />
+      <text x="40.78%" y="382.5" />
+    </g>
+    <g>
+      <title>construct_object (yaml/constructor.py:73) (1 samples, 0.38%)</title>
+      <rect x="40.90%" y="388" width="0.37%" height="15" fill="rgb(231,60,39)" ns1:x="108" ns1:w="1" />
+      <text x="41.15%" y="398.5" />
+    </g>
+    <g>
+      <title>_deserialize_path_entries (history_wb/domain/tree/data_path.py:210) (8 samples, 3.03%)</title>
+      <rect x="41.28%" y="372" width="3.03%" height="15" fill="rgb(208,69,12)" ns1:x="109" ns1:w="8" />
+      <text x="41.53%" y="382.5">_de..</text>
+    </g>
+    <g>
+      <title>from_serialized_value (history_wb/domain/tree/data_path.py:364) (9 samples, 3.41%)</title>
+      <rect x="41.28%" y="356" width="3.40%" height="15" fill="rgb(235,93,37)" ns1:x="109" ns1:w="9" />
+      <text x="41.53%" y="366.5">fro..</text>
+    </g>
+    <g>
+      <title>_deserialize_path_entries (history_wb/domain/tree/data_path.py:222) (1 samples, 0.38%)</title>
+      <rect x="44.31%" y="372" width="0.37%" height="15" fill="rgb(213,116,39)" ns1:x="117" ns1:w="1" />
+      <text x="44.56%" y="382.5" />
+    </g>
+    <g>
+      <title>__init__ (&lt;string&gt;:2) (1 samples, 0.38%)</title>
+      <rect x="44.31%" y="388" width="0.37%" height="15" fill="rgb(222,207,29)" ns1:x="117" ns1:w="1" />
+      <text x="44.56%" y="398.5" />
+    </g>
+    <g>
+      <title>from_serialized_value (history_wb/domain/tree/data_path.py:546) (1 samples, 0.38%)</title>
+      <rect x="44.69%" y="356" width="0.37%" height="15" fill="rgb(206,96,30)" ns1:x="118" ns1:w="1" />
+      <text x="44.94%" y="366.5" />
+    </g>
+    <g>
+      <title>_deserialize_path_entries (history_wb/domain/tree/data_path.py:222) (1 samples, 0.38%)</title>
+      <rect x="44.69%" y="372" width="0.37%" height="15" fill="rgb(218,138,4)" ns1:x="118" ns1:w="1" />
+      <text x="44.94%" y="382.5" />
+    </g>
+    <g>
+      <title>__init__ (&lt;string&gt;:4) (1 samples, 0.38%)</title>
+      <rect x="44.69%" y="388" width="0.37%" height="15" fill="rgb(250,191,14)" ns1:x="118" ns1:w="1" />
+      <text x="44.94%" y="398.5" />
+    </g>
+    <g>
+      <title>_deserialize_path_entries (history_wb/domain/tree/data_path.py:215) (1 samples, 0.38%)</title>
+      <rect x="45.07%" y="420" width="0.37%" height="15" fill="rgb(239,60,40)" ns1:x="119" ns1:w="1" />
+      <text x="45.32%" y="430.5" />
+    </g>
+    <g>
+      <title>__call__ (enum.py:714) (1 samples, 0.38%)</title>
+      <rect x="45.07%" y="436" width="0.37%" height="15" fill="rgb(206,27,48)" ns1:x="119" ns1:w="1" />
+      <text x="45.32%" y="446.5" />
+    </g>
+    <g>
+      <title>__new__ (enum.py:1105) (1 samples, 0.38%)</title>
+      <rect x="45.07%" y="452" width="0.37%" height="15" fill="rgb(225,35,8)" ns1:x="119" ns1:w="1" />
+      <text x="45.32%" y="462.5" />
+    </g>
+    <g>
+      <title>_compute_for_paths (history_wb/application/actions/diffs/create_document_diffs.py:229) (121 samples, 45.83%)</title>
+      <rect x="0.00%" y="196" width="45.83%" height="15" fill="rgb(250,213,24)" ns1:x="0" ns1:w="121" />
+      <text x="0.25%" y="206.5">_compute_for_paths (history_wb/application/actions/diffs/create_document_di..</text>
+    </g>
+    <g>
+      <title>_load_snapshot (history_wb/application/actions/diffs/create_document_diffs.py:244) (121 samples, 45.83%)</title>
+      <rect x="0.00%" y="212" width="45.83%" height="15" fill="rgb(247,123,22)" ns1:x="0" ns1:w="121" />
+      <text x="0.25%" y="222.5">_load_snapshot (history_wb/application/actions/diffs/create_document_diffs...</text>
+    </g>
+    <g>
+      <title>execute (history_wb/application/actions/snapshots/create_document_snapshot_commit.py:76) (121 samples, 45.83%)</title>
+      <rect x="0.00%" y="228" width="45.83%" height="15" fill="rgb(231,138,38)" ns1:x="0" ns1:w="121" />
+      <text x="0.25%" y="238.5">execute (history_wb/application/actions/snapshots/create_document_snapshot_..</text>
+    </g>
+    <g>
+      <title>from_yaml (history_wb/infrastructure/persistence/snapshot_yaml_deserializer.py:14) (121 samples, 45.83%)</title>
+      <rect x="0.00%" y="244" width="45.83%" height="15" fill="rgb(231,145,46)" ns1:x="0" ns1:w="121" />
+      <text x="0.25%" y="254.5">from_yaml (history_wb/infrastructure/persistence/snapshot_yaml_deserializer..</text>
+    </g>
+    <g>
+      <title>from_yaml (history_wb/infrastructure/persistence/snapshot_yaml.py:105) (12 samples, 4.55%)</title>
+      <rect x="41.28%" y="260" width="4.54%" height="15" fill="rgb(251,118,11)" ns1:x="109" ns1:w="12" />
+      <text x="41.53%" y="270.5">from_..</text>
+    </g>
+    <g>
+      <title>_from_data (history_wb/infrastructure/persistence/snapshot_yaml.py:128) (12 samples, 4.55%)</title>
+      <rect x="41.28%" y="276" width="4.54%" height="15" fill="rgb(217,147,25)" ns1:x="109" ns1:w="12" />
+      <text x="41.53%" y="286.5">_from..</text>
+    </g>
+    <g>
+      <title>_deserialize_properties (history_wb/infrastructure/persistence/snapshot_yaml.py:185) (12 samples, 4.55%)</title>
+      <rect x="41.28%" y="292" width="4.54%" height="15" fill="rgb(247,81,37)" ns1:x="109" ns1:w="12" />
+      <text x="41.53%" y="302.5">_dese..</text>
+    </g>
+    <g>
+      <title>&lt;dictcomp&gt; (history_wb/infrastructure/persistence/snapshot_yaml.py:185) (12 samples, 4.55%)</title>
+      <rect x="41.28%" y="308" width="4.54%" height="15" fill="rgb(209,12,38)" ns1:x="109" ns1:w="12" />
+      <text x="41.53%" y="318.5">&lt;dict..</text>
+    </g>
+    <g>
+      <title>from_serialized (history_wb/domain/tree/property.py:71) (12 samples, 4.55%)</title>
+      <rect x="41.28%" y="324" width="4.54%" height="15" fill="rgb(227,1,9)" ns1:x="109" ns1:w="12" />
+      <text x="41.53%" y="334.5">from_..</text>
+    </g>
+    <g>
+      <title>data_path_from_serialized (history_wb/domain/tree/data_path.py:832) (12 samples, 4.55%)</title>
+      <rect x="41.28%" y="340" width="4.54%" height="15" fill="rgb(248,47,43)" ns1:x="109" ns1:w="12" />
+      <text x="41.53%" y="350.5">data_..</text>
+    </g>
+    <g>
+      <title>from_serialized_value (history_wb/domain/tree/data_path.py:739) (2 samples, 0.76%)</title>
+      <rect x="45.07%" y="356" width="0.75%" height="15" fill="rgb(221,10,30)" ns1:x="119" ns1:w="2" />
+      <text x="45.32%" y="366.5" />
+    </g>
+    <g>
+      <title>&lt;listcomp&gt; (history_wb/domain/tree/data_path.py:739) (2 samples, 0.76%)</title>
+      <rect x="45.07%" y="372" width="0.75%" height="15" fill="rgb(210,229,1)" ns1:x="119" ns1:w="2" />
+      <text x="45.32%" y="382.5" />
+    </g>
+    <g>
+      <title>data_path_from_serialized (history_wb/domain/tree/data_path.py:832) (2 samples, 0.76%)</title>
+      <rect x="45.07%" y="388" width="0.75%" height="15" fill="rgb(222,148,37)" ns1:x="119" ns1:w="2" />
+      <text x="45.32%" y="398.5" />
+    </g>
+    <g>
+      <title>from_serialized_value (history_wb/domain/tree/data_path.py:623) (2 samples, 0.76%)</title>
+      <rect x="45.07%" y="404" width="0.75%" height="15" fill="rgb(234,67,33)" ns1:x="119" ns1:w="2" />
+      <text x="45.32%" y="414.5" />
+    </g>
+    <g>
+      <title>_deserialize_path_entries (history_wb/domain/tree/data_path.py:222) (1 samples, 0.38%)</title>
+      <rect x="45.45%" y="420" width="0.37%" height="15" fill="rgb(247,98,35)" ns1:x="120" ns1:w="1" />
+      <text x="45.70%" y="430.5" />
+    </g>
+    <g>
+      <title>__init__ (&lt;string&gt;:5) (1 samples, 0.38%)</title>
+      <rect x="45.45%" y="436" width="0.37%" height="15" fill="rgb(247,138,52)" ns1:x="120" ns1:w="1" />
+      <text x="45.70%" y="446.5" />
+    </g>
+    <g>
+      <title>execute (history_wb/application/actions/snapshots/create_document_snapshot_commit.py:63) (1 samples, 0.38%)</title>
+      <rect x="45.83%" y="228" width="0.37%" height="15" fill="rgb(213,79,30)" ns1:x="121" ns1:w="1" />
+      <text x="46.08%" y="238.5" />
+    </g>
+    <g>
+      <title>file_exists (history_wb/domain/git/git_service.py:175) (1 samples, 0.38%)</title>
+      <rect x="45.83%" y="244" width="0.37%" height="15" fill="rgb(246,177,23)" ns1:x="121" ns1:w="1" />
+      <text x="46.08%" y="254.5" />
+    </g>
+    <g>
+      <title>file_exists (history_wb/infrastructure/git/git_port_adapter.py:832) (1 samples, 0.38%)</title>
+      <rect x="45.83%" y="260" width="0.37%" height="15" fill="rgb(230,62,27)" ns1:x="121" ns1:w="1" />
+      <text x="46.08%" y="270.5" />
+    </g>
+    <g>
+      <title>_run_git (history_wb/infrastructure/git/git_port_adapter.py:87) (1 samples, 0.38%)</title>
+      <rect x="45.83%" y="276" width="0.37%" height="15" fill="rgb(216,154,8)" ns1:x="121" ns1:w="1" />
+      <text x="46.08%" y="286.5" />
+    </g>
+    <g>
+      <title>run (subprocess.py:548) (1 samples, 0.38%)</title>
+      <rect x="45.83%" y="292" width="0.37%" height="15" fill="rgb(244,35,45)" ns1:x="121" ns1:w="1" />
+      <text x="46.08%" y="302.5" />
+    </g>
+    <g>
+      <title>__init__ (subprocess.py:1026) (1 samples, 0.38%)</title>
+      <rect x="45.83%" y="308" width="0.37%" height="15" fill="rgb(251,115,12)" ns1:x="121" ns1:w="1" />
+      <text x="46.08%" y="318.5" />
+    </g>
+    <g>
+      <title>_execute_child (subprocess.py:1914) (1 samples, 0.38%)</title>
+      <rect x="45.83%" y="324" width="0.37%" height="15" fill="rgb(240,54,50)" ns1:x="121" ns1:w="1" />
+      <text x="46.08%" y="334.5" />
+    </g>
+    <g>
+      <title>__init__ (yaml/nodes.py:29) (1 samples, 0.38%)</title>
+      <rect x="67.80%" y="324" width="0.37%" height="15" fill="rgb(233,84,52)" ns1:x="179" ns1:w="1" />
+      <text x="68.05%" y="334.5" />
+    </g>
+    <g>
+      <title>__init__ (yaml/nodes.py:33) (1 samples, 0.38%)</title>
+      <rect x="68.18%" y="324" width="0.37%" height="15" fill="rgb(207,117,47)" ns1:x="180" ns1:w="1" />
+      <text x="68.43%" y="334.5" />
+    </g>
+    <g>
+      <title>resolve (yaml/resolver.py:148) (3 samples, 1.14%)</title>
+      <rect x="68.56%" y="324" width="1.13%" height="15" fill="rgb(249,43,39)" ns1:x="181" ns1:w="3" />
+      <text x="68.81%" y="334.5" />
+    </g>
+    <g>
+      <title>resolve (yaml/resolver.py:150) (14 samples, 5.30%)</title>
+      <rect x="69.69%" y="324" width="5.30%" height="15" fill="rgb(209,38,44)" ns1:x="184" ns1:w="14" />
+      <text x="69.94%" y="334.5">resolv..</text>
+    </g>
+    <g>
+      <title>get_single_data (yaml/constructor.py:49) (73 samples, 27.65%)</title>
+      <rect x="47.72%" y="308" width="27.65%" height="15" fill="rgb(236,212,23)" ns1:x="126" ns1:w="73" />
+      <text x="47.97%" y="318.5">get_single_data (yaml/constructor.py:49)</text>
+    </g>
+    <g>
+      <title>resolve (yaml/resolver.py:151) (1 samples, 0.38%)</title>
+      <rect x="75.00%" y="324" width="0.37%" height="15" fill="rgb(242,79,21)" ns1:x="198" ns1:w="1" />
+      <text x="75.25%" y="334.5" />
+    </g>
+    <g>
+      <title>construct_mapping (yaml/constructor.py:217) (2 samples, 0.76%)</title>
+      <rect x="75.37%" y="356" width="0.75%" height="15" fill="rgb(211,96,35)" ns1:x="199" ns1:w="2" />
+      <text x="75.62%" y="366.5" />
+    </g>
+    <g>
+      <title>flatten_mapping (yaml/constructor.py:183) (1 samples, 0.38%)</title>
+      <rect x="75.75%" y="372" width="0.37%" height="15" fill="rgb(253,215,40)" ns1:x="200" ns1:w="1" />
+      <text x="76.00%" y="382.5" />
+    </g>
+    <g>
+      <title>construct_scalar (yaml/constructor.py:173) (2 samples, 0.76%)</title>
+      <rect x="77.27%" y="420" width="0.75%" height="15" fill="rgb(211,81,21)" ns1:x="204" ns1:w="2" />
+      <text x="77.52%" y="430.5" />
+    </g>
+    <g>
+      <title>construct_object (yaml/constructor.py:100) (31 samples, 11.74%)</title>
+      <rect x="77.27%" y="388" width="11.74%" height="15" fill="rgb(208,190,38)" ns1:x="204" ns1:w="31" />
+      <text x="77.52%" y="398.5">construct_object ..</text>
+    </g>
+    <g>
+      <title>construct_yaml_str (yaml/constructor.py:403) (31 samples, 11.74%)</title>
+      <rect x="77.27%" y="404" width="11.74%" height="15" fill="rgb(235,213,38)" ns1:x="204" ns1:w="31" />
+      <text x="77.52%" y="414.5">construct_yaml_st..</text>
+    </g>
+    <g>
+      <title>construct_scalar (yaml/constructor.py:178) (29 samples, 10.98%)</title>
+      <rect x="78.03%" y="420" width="10.98%" height="15" fill="rgb(237,122,38)" ns1:x="206" ns1:w="29" />
+      <text x="78.28%" y="430.5">construct_scalar..</text>
+    </g>
+    <g>
+      <title>construct_object (yaml/constructor.py:68) (1 samples, 0.38%)</title>
+      <rect x="89.01%" y="388" width="0.37%" height="15" fill="rgb(244,218,35)" ns1:x="235" ns1:w="1" />
+      <text x="89.26%" y="398.5" />
+    </g>
+    <g>
+      <title>construct_mapping (yaml/constructor.py:139) (35 samples, 13.26%)</title>
+      <rect x="76.51%" y="372" width="13.25%" height="15" fill="rgb(240,68,47)" ns1:x="202" ns1:w="35" />
+      <text x="76.76%" y="382.5">construct_mapping (y..</text>
+    </g>
+    <g>
+      <title>construct_object (yaml/constructor.py:79) (1 samples, 0.38%)</title>
+      <rect x="89.39%" y="388" width="0.37%" height="15" fill="rgb(210,16,53)" ns1:x="236" ns1:w="1" />
+      <text x="89.64%" y="398.5" />
+    </g>
+    <g>
+      <title>construct_mapping (yaml/constructor.py:140) (1 samples, 0.38%)</title>
+      <rect x="89.77%" y="372" width="0.37%" height="15" fill="rgb(235,124,12)" ns1:x="237" ns1:w="1" />
+      <text x="90.02%" y="382.5" />
+    </g>
+    <g>
+      <title>__instancecheck__ (&lt;frozen abc&gt;:117) (1 samples, 0.38%)</title>
+      <rect x="89.77%" y="388" width="0.37%" height="15" fill="rgb(224,169,11)" ns1:x="237" ns1:w="1" />
+      <text x="90.02%" y="398.5" />
+    </g>
+    <g>
+      <title>construct_mapping (yaml/constructor.py:141) (1 samples, 0.38%)</title>
+      <rect x="90.15%" y="372" width="0.37%" height="15" fill="rgb(250,166,2)" ns1:x="238" ns1:w="1" />
+      <text x="90.40%" y="382.5" />
+    </g>
+    <g>
+      <title>construct_object (yaml/constructor.py:100) (2 samples, 0.76%)</title>
+      <rect x="90.53%" y="388" width="0.75%" height="15" fill="rgb(242,216,29)" ns1:x="239" ns1:w="2" />
+      <text x="90.78%" y="398.5" />
+    </g>
+    <g>
+      <title>construct_yaml_str (yaml/constructor.py:403) (1 samples, 0.38%)</title>
+      <rect x="90.90%" y="404" width="0.37%" height="15" fill="rgb(230,116,27)" ns1:x="240" ns1:w="1" />
+      <text x="91.15%" y="414.5" />
+    </g>
+    <g>
+      <title>construct_scalar (yaml/constructor.py:178) (1 samples, 0.38%)</title>
+      <rect x="90.90%" y="420" width="0.37%" height="15" fill="rgb(228,99,48)" ns1:x="240" ns1:w="1" />
+      <text x="91.15%" y="430.5" />
+    </g>
+    <g>
+      <title>construct_scalar (yaml/constructor.py:122) (1 samples, 0.38%)</title>
+      <rect x="90.90%" y="436" width="0.37%" height="15" fill="rgb(253,11,6)" ns1:x="240" ns1:w="1" />
+      <text x="91.15%" y="446.5" />
+    </g>
+    <g>
+      <title>construct_object (yaml/constructor.py:103) (1 samples, 0.38%)</title>
+      <rect x="91.28%" y="388" width="0.37%" height="15" fill="rgb(247,143,39)" ns1:x="241" ns1:w="1" />
+      <text x="91.53%" y="398.5" />
+    </g>
+    <g>
+      <title>construct_object (yaml/constructor.py:113) (1 samples, 0.38%)</title>
+      <rect x="91.66%" y="388" width="0.37%" height="15" fill="rgb(236,97,10)" ns1:x="242" ns1:w="1" />
+      <text x="91.91%" y="398.5" />
+    </g>
+    <g>
+      <title>construct_object (yaml/constructor.py:67) (1 samples, 0.38%)</title>
+      <rect x="92.04%" y="388" width="0.37%" height="15" fill="rgb(233,208,19)" ns1:x="243" ns1:w="1" />
+      <text x="92.29%" y="398.5" />
+    </g>
+    <g>
+      <title>construct_yaml_map (yaml/constructor.py:413) (46 samples, 17.42%)</title>
+      <rect x="75.37%" y="340" width="17.42%" height="15" fill="rgb(216,164,2)" ns1:x="199" ns1:w="46" />
+      <text x="75.62%" y="350.5">construct_yaml_map (yaml/co..</text>
+    </g>
+    <g>
+      <title>construct_mapping (yaml/constructor.py:218) (44 samples, 16.67%)</title>
+      <rect x="76.13%" y="356" width="16.66%" height="15" fill="rgb(220,129,5)" ns1:x="201" ns1:w="44" />
+      <text x="76.38%" y="366.5">construct_mapping (yaml/co..</text>
+    </g>
+    <g>
+      <title>construct_mapping (yaml/constructor.py:143) (6 samples, 2.27%)</title>
+      <rect x="90.53%" y="372" width="2.27%" height="15" fill="rgb(242,17,10)" ns1:x="239" ns1:w="6" />
+      <text x="90.78%" y="382.5">c..</text>
+    </g>
+    <g>
+      <title>construct_object (yaml/constructor.py:68) (1 samples, 0.38%)</title>
+      <rect x="92.42%" y="388" width="0.37%" height="15" fill="rgb(242,107,0)" ns1:x="244" ns1:w="1" />
+      <text x="92.67%" y="398.5" />
+    </g>
+    <g>
+      <title>construct_yaml_map (yaml/constructor.py:414) (1 samples, 0.38%)</title>
+      <rect x="92.80%" y="340" width="0.37%" height="15" fill="rgb(251,28,31)" ns1:x="245" ns1:w="1" />
+      <text x="93.05%" y="350.5" />
+    </g>
+    <g>
+      <title>from_yaml (history_wb/infrastructure/persistence/snapshot_yaml.py:104) (125 samples, 47.35%)</title>
+      <rect x="46.21%" y="260" width="47.34%" height="15" fill="rgb(233,223,10)" ns1:x="122" ns1:w="125" />
+      <text x="46.46%" y="270.5">from_yaml (history_wb/infrastructure/persistence/snapshot_yaml.py:104)</text>
+    </g>
+    <g>
+      <title>_load_yaml (history_wb/infrastructure/persistence/snapshot_yaml.py:21) (125 samples, 47.35%)</title>
+      <rect x="46.21%" y="276" width="47.34%" height="15" fill="rgb(215,21,27)" ns1:x="122" ns1:w="125" />
+      <text x="46.46%" y="286.5">_load_yaml (history_wb/infrastructure/persistence/snapshot_yaml.py:21)</text>
+    </g>
+    <g>
+      <title>load (yaml/__init__.py:81) (125 samples, 47.35%)</title>
+      <rect x="46.21%" y="292" width="47.34%" height="15" fill="rgb(232,23,21)" ns1:x="122" ns1:w="125" />
+      <text x="46.46%" y="302.5">load (yaml/__init__.py:81)</text>
+    </g>
+    <g>
+      <title>get_single_data (yaml/constructor.py:51) (48 samples, 18.18%)</title>
+      <rect x="75.37%" y="308" width="18.18%" height="15" fill="rgb(244,5,23)" ns1:x="199" ns1:w="48" />
+      <text x="75.62%" y="318.5">get_single_data (yaml/constr..</text>
+    </g>
+    <g>
+      <title>construct_document (yaml/constructor.py:60) (48 samples, 18.18%)</title>
+      <rect x="75.37%" y="324" width="18.18%" height="15" fill="rgb(226,81,46)" ns1:x="199" ns1:w="48" />
+      <text x="75.62%" y="334.5">construct_document (yaml/con..</text>
+    </g>
+    <g>
+      <title>construct_yaml_seq (yaml/constructor.py:408) (1 samples, 0.38%)</title>
+      <rect x="93.18%" y="340" width="0.37%" height="15" fill="rgb(247,70,30)" ns1:x="246" ns1:w="1" />
+      <text x="93.43%" y="350.5" />
+    </g>
+    <g>
+      <title>construct_sequence (yaml/constructor.py:129) (1 samples, 0.38%)</title>
+      <rect x="93.18%" y="356" width="0.37%" height="15" fill="rgb(212,68,19)" ns1:x="246" ns1:w="1" />
+      <text x="93.43%" y="366.5" />
+    </g>
+    <g>
+      <title>&lt;listcomp&gt; (yaml/constructor.py:129) (1 samples, 0.38%)</title>
+      <rect x="93.18%" y="372" width="0.37%" height="15" fill="rgb(240,187,13)" ns1:x="246" ns1:w="1" />
+      <text x="93.43%" y="382.5" />
+    </g>
+    <g>
+      <title>construct_object (yaml/constructor.py:111) (1 samples, 0.38%)</title>
+      <rect x="93.18%" y="388" width="0.37%" height="15" fill="rgb(223,113,26)" ns1:x="246" ns1:w="1" />
+      <text x="93.43%" y="398.5" />
+    </g>
+    <g>
+      <title>data_path_from_serialized (history_wb/domain/tree/data_path.py:828) (1 samples, 0.38%)</title>
+      <rect x="93.56%" y="340" width="0.37%" height="15" fill="rgb(206,192,2)" ns1:x="247" ns1:w="1" />
+      <text x="93.81%" y="350.5" />
+    </g>
+    <g>
+      <title>_deserialize_path_entries (history_wb/domain/tree/data_path.py:210) (1 samples, 0.38%)</title>
+      <rect x="93.93%" y="372" width="0.37%" height="15" fill="rgb(241,108,4)" ns1:x="248" ns1:w="1" />
+      <text x="94.18%" y="382.5" />
+    </g>
+    <g>
+      <title>from_serialized_value (history_wb/domain/tree/data_path.py:364) (2 samples, 0.76%)</title>
+      <rect x="93.93%" y="356" width="0.75%" height="15" fill="rgb(247,173,49)" ns1:x="248" ns1:w="2" />
+      <text x="94.18%" y="366.5" />
+    </g>
+    <g>
+      <title>_deserialize_path_entries (history_wb/domain/tree/data_path.py:211) (1 samples, 0.38%)</title>
+      <rect x="94.31%" y="372" width="0.37%" height="15" fill="rgb(224,114,35)" ns1:x="249" ns1:w="1" />
+      <text x="94.56%" y="382.5" />
+    </g>
+    <g>
+      <title>_deserialize_path_entries (history_wb/domain/tree/data_path.py:222) (1 samples, 0.38%)</title>
+      <rect x="94.69%" y="420" width="0.37%" height="15" fill="rgb(245,159,27)" ns1:x="250" ns1:w="1" />
+      <text x="94.94%" y="430.5" />
+    </g>
+    <g>
+      <title>__init__ (&lt;string&gt;:6) (1 samples, 0.38%)</title>
+      <rect x="94.69%" y="436" width="0.37%" height="15" fill="rgb(245,172,44)" ns1:x="250" ns1:w="1" />
+      <text x="94.94%" y="446.5" />
+    </g>
+    <g>
+      <title>_from_data (history_wb/infrastructure/persistence/snapshot_yaml.py:128) (5 samples, 1.89%)</title>
+      <rect x="93.56%" y="276" width="1.89%" height="15" fill="rgb(236,23,11)" ns1:x="247" ns1:w="5" />
+      <text x="93.81%" y="286.5">_..</text>
+    </g>
+    <g>
+      <title>_deserialize_properties (history_wb/infrastructure/persistence/snapshot_yaml.py:185) (5 samples, 1.89%)</title>
+      <rect x="93.56%" y="292" width="1.89%" height="15" fill="rgb(205,117,38)" ns1:x="247" ns1:w="5" />
+      <text x="93.81%" y="302.5">_..</text>
+    </g>
+    <g>
+      <title>&lt;dictcomp&gt; (history_wb/infrastructure/persistence/snapshot_yaml.py:185) (5 samples, 1.89%)</title>
+      <rect x="93.56%" y="308" width="1.89%" height="15" fill="rgb(237,72,25)" ns1:x="247" ns1:w="5" />
+      <text x="93.81%" y="318.5">&lt;..</text>
+    </g>
+    <g>
+      <title>from_serialized (history_wb/domain/tree/property.py:71) (5 samples, 1.89%)</title>
+      <rect x="93.56%" y="324" width="1.89%" height="15" fill="rgb(244,70,9)" ns1:x="247" ns1:w="5" />
+      <text x="93.81%" y="334.5">f..</text>
+    </g>
+    <g>
+      <title>data_path_from_serialized (history_wb/domain/tree/data_path.py:832) (4 samples, 1.52%)</title>
+      <rect x="93.93%" y="340" width="1.51%" height="15" fill="rgb(217,125,39)" ns1:x="248" ns1:w="4" />
+      <text x="94.18%" y="350.5" />
+    </g>
+    <g>
+      <title>from_serialized_value (history_wb/domain/tree/data_path.py:739) (2 samples, 0.76%)</title>
+      <rect x="94.69%" y="356" width="0.75%" height="15" fill="rgb(235,36,10)" ns1:x="250" ns1:w="2" />
+      <text x="94.94%" y="366.5" />
+    </g>
+    <g>
+      <title>&lt;listcomp&gt; (history_wb/domain/tree/data_path.py:739) (2 samples, 0.76%)</title>
+      <rect x="94.69%" y="372" width="0.75%" height="15" fill="rgb(251,123,47)" ns1:x="250" ns1:w="2" />
+      <text x="94.94%" y="382.5" />
+    </g>
+    <g>
+      <title>data_path_from_serialized (history_wb/domain/tree/data_path.py:832) (2 samples, 0.76%)</title>
+      <rect x="94.69%" y="388" width="0.75%" height="15" fill="rgb(221,13,13)" ns1:x="250" ns1:w="2" />
+      <text x="94.94%" y="398.5" />
+    </g>
+    <g>
+      <title>from_serialized_value (history_wb/domain/tree/data_path.py:623) (2 samples, 0.76%)</title>
+      <rect x="94.69%" y="404" width="0.75%" height="15" fill="rgb(238,131,9)" ns1:x="250" ns1:w="2" />
+      <text x="94.94%" y="414.5" />
+    </g>
+    <g>
+      <title>_deserialize_path_entries (history_wb/domain/tree/data_path.py:225) (1 samples, 0.38%)</title>
+      <rect x="95.07%" y="420" width="0.37%" height="15" fill="rgb(211,50,8)" ns1:x="251" ns1:w="1" />
+      <text x="95.32%" y="430.5" />
+    </g>
+    <g>
+      <title>_compute_for_paths (history_wb/application/actions/diffs/create_document_diffs.py:230) (132 samples, 50.00%)</title>
+      <rect x="45.83%" y="196" width="50.00%" height="15" fill="rgb(245,182,24)" ns1:x="121" ns1:w="132" />
+      <text x="46.08%" y="206.5">_compute_for_paths (history_wb/application/actions/diffs/create_document_diffs.py:..</text>
+    </g>
+    <g>
+      <title>_load_snapshot (history_wb/application/actions/diffs/create_document_diffs.py:244) (132 samples, 50.00%)</title>
+      <rect x="45.83%" y="212" width="50.00%" height="15" fill="rgb(242,14,37)" ns1:x="121" ns1:w="132" />
+      <text x="46.08%" y="222.5">_load_snapshot (history_wb/application/actions/diffs/create_document_diffs.py:244)</text>
+    </g>
+    <g>
+      <title>execute (history_wb/application/actions/snapshots/create_document_snapshot_commit.py:76) (131 samples, 49.62%)</title>
+      <rect x="46.21%" y="228" width="49.62%" height="15" fill="rgb(246,228,12)" ns1:x="122" ns1:w="131" />
+      <text x="46.46%" y="238.5">execute (history_wb/application/actions/snapshots/create_document_snapshot_commit...</text>
+    </g>
+    <g>
+      <title>from_yaml (history_wb/infrastructure/persistence/snapshot_yaml_deserializer.py:14) (131 samples, 49.62%)</title>
+      <rect x="46.21%" y="244" width="49.62%" height="15" fill="rgb(213,55,15)" ns1:x="122" ns1:w="131" />
+      <text x="46.46%" y="254.5">from_yaml (history_wb/infrastructure/persistence/snapshot_yaml_deserializer.py:14)</text>
+    </g>
+    <g>
+      <title>from_yaml (history_wb/infrastructure/persistence/snapshot_yaml.py:105) (6 samples, 2.27%)</title>
+      <rect x="93.56%" y="260" width="2.27%" height="15" fill="rgb(209,9,3)" ns1:x="247" ns1:w="6" />
+      <text x="93.81%" y="270.5">f..</text>
+    </g>
+    <g>
+      <title>_from_data (history_wb/infrastructure/persistence/snapshot_yaml.py:133) (1 samples, 0.38%)</title>
+      <rect x="95.45%" y="276" width="0.37%" height="15" fill="rgb(230,59,30)" ns1:x="252" ns1:w="1" />
+      <text x="95.70%" y="286.5" />
+    </g>
+    <g>
+      <title>__init__ (&lt;string&gt;:3) (1 samples, 0.38%)</title>
+      <rect x="96.21%" y="340" width="0.37%" height="15" fill="rgb(209,121,21)" ns1:x="254" ns1:w="1" />
+      <text x="96.46%" y="350.5" />
+    </g>
+    <g>
+      <title>_flatten_data_path (history_wb/domain/diff/models.py:158) (1 samples, 0.38%)</title>
+      <rect x="96.59%" y="388" width="0.37%" height="15" fill="rgb(220,109,13)" ns1:x="255" ns1:w="1" />
+      <text x="96.84%" y="398.5" />
+    </g>
+    <g>
+      <title>_build_path_diffs (history_wb/domain/diff/models.py:316) (2 samples, 0.76%)</title>
+      <rect x="96.59%" y="372" width="0.75%" height="15" fill="rgb(232,18,1)" ns1:x="255" ns1:w="2" />
+      <text x="96.84%" y="382.5" />
+    </g>
+    <g>
+      <title>_flatten_data_path (history_wb/domain/diff/models.py:185) (1 samples, 0.38%)</title>
+      <rect x="96.96%" y="388" width="0.37%" height="15" fill="rgb(215,41,42)" ns1:x="256" ns1:w="1" />
+      <text x="97.21%" y="398.5" />
+    </g>
+    <g>
+      <title>_build_path_diffs (history_wb/domain/diff/models.py:318) (1 samples, 0.38%)</title>
+      <rect x="97.34%" y="372" width="0.37%" height="15" fill="rgb(224,123,36)" ns1:x="257" ns1:w="1" />
+      <text x="97.59%" y="382.5" />
+    </g>
+    <g>
+      <title>_path_sort_key (history_wb/domain/diff/models.py:233) (1 samples, 0.38%)</title>
+      <rect x="97.34%" y="388" width="0.37%" height="15" fill="rgb(240,125,3)" ns1:x="257" ns1:w="1" />
+      <text x="97.59%" y="398.5" />
+    </g>
+    <g>
+      <title>_split_path_for_sort (history_wb/domain/diff/models.py:262) (1 samples, 0.38%)</title>
+      <rect x="97.34%" y="404" width="0.37%" height="15" fill="rgb(205,98,50)" ns1:x="257" ns1:w="1" />
+      <text x="97.59%" y="414.5" />
+    </g>
+    <g>
+      <title>__init__ (&lt;string&gt;:5) (1 samples, 0.38%)</title>
+      <rect x="98.10%" y="404" width="0.37%" height="15" fill="rgb(205,185,37)" ns1:x="259" ns1:w="1" />
+      <text x="98.35%" y="414.5" />
+    </g>
+    <g>
+      <title>_path_values_equal (history_wb/domain/diff/models.py:146) (1 samples, 0.38%)</title>
+      <rect x="98.48%" y="452" width="0.37%" height="15" fill="rgb(238,207,15)" ns1:x="260" ns1:w="1" />
+      <text x="98.73%" y="462.5" />
+    </g>
+    <g>
+      <title>all (264 samples, 100%)</title>
+      <rect x="0.00%" y="52" width="100.00%" height="15" fill="rgb(213,199,42)" ns1:x="0" ns1:w="264" />
+      <text x="0.25%" y="62.5" />
+    </g>
+    <g>
+      <title>_on_item_clicked (history_wb/ui/views/history/history_list.py:86) (264 samples, 100.00%)</title>
+      <rect x="0.00%" y="68" width="100.00%" height="15" fill="rgb(235,201,11)" ns1:x="0" ns1:w="264" />
+      <text x="0.25%" y="78.5">_on_item_clicked (history_wb/ui/views/history/history_list.py:86)</text>
+    </g>
+    <g>
+      <title>_on_user_history_selection_requested (history_wb/ui/views/history/panel.py:116) (264 samples, 100.00%)</title>
+      <rect x="0.00%" y="84" width="100.00%" height="15" fill="rgb(207,46,11)" ns1:x="0" ns1:w="264" />
+      <text x="0.25%" y="94.5">_on_user_history_selection_requested (history_wb/ui/views/history/panel.py:116)</text>
+    </g>
+    <g>
+      <title>select_history_item (history_wb/ui/presenters/diff_presenter.py:165) (264 samples, 100.00%)</title>
+      <rect x="0.00%" y="100" width="100.00%" height="15" fill="rgb(241,35,35)" ns1:x="0" ns1:w="264" />
+      <text x="0.25%" y="110.5">select_history_item (history_wb/ui/presenters/diff_presenter.py:165)</text>
+    </g>
+    <g>
+      <title>_on_commit_selected (history_wb/ui/presenters/diff_presenter.py:241) (264 samples, 100.00%)</title>
+      <rect x="0.00%" y="116" width="100.00%" height="15" fill="rgb(243,32,47)" ns1:x="0" ns1:w="264" />
+      <text x="0.25%" y="126.5">_on_commit_selected (history_wb/ui/presenters/diff_presenter.py:241)</text>
+    </g>
+    <g>
+      <title>load_commit (history_wb/ui/presenters/document_diff/diff_loader.py:48) (264 samples, 100.00%)</title>
+      <rect x="0.00%" y="132" width="100.00%" height="15" fill="rgb(247,202,23)" ns1:x="0" ns1:w="264" />
+      <text x="0.25%" y="142.5">load_commit (history_wb/ui/presenters/document_diff/diff_loader.py:48)</text>
+    </g>
+    <g>
+      <title>_load_diffs (history_wb/ui/presenters/document_diff/diff_loader.py:63) (264 samples, 100.00%)</title>
+      <rect x="0.00%" y="148" width="100.00%" height="15" fill="rgb(219,102,11)" ns1:x="0" ns1:w="264" />
+      <text x="0.25%" y="158.5">_load_diffs (history_wb/ui/presenters/document_diff/diff_loader.py:63)</text>
+    </g>
+    <g>
+      <title>execute (history_wb/application/actions/diffs/create_document_diffs.py:51) (264 samples, 100.00%)</title>
+      <rect x="0.00%" y="164" width="100.00%" height="15" fill="rgb(243,110,44)" ns1:x="0" ns1:w="264" />
+      <text x="0.25%" y="174.5">execute (history_wb/application/actions/diffs/create_document_diffs.py:51)</text>
+    </g>
+    <g>
+      <title>_compute_commit_diffs (history_wb/application/actions/diffs/create_document_diffs.py:66) (264 samples, 100.00%)</title>
+      <rect x="0.00%" y="180" width="100.00%" height="15" fill="rgb(222,74,54)" ns1:x="0" ns1:w="264" />
+      <text x="0.25%" y="190.5">_compute_commit_diffs (history_wb/application/actions/diffs/create_document_diffs.py:66)</text>
+    </g>
+    <g>
+      <title>_compute_for_paths (history_wb/application/actions/diffs/create_document_diffs.py:232) (11 samples, 4.17%)</title>
+      <rect x="95.83%" y="196" width="4.16%" height="15" fill="rgb(216,99,12)" ns1:x="253" ns1:w="11" />
+      <text x="96.08%" y="206.5">_comp..</text>
+    </g>
+    <g>
+      <title>_build_document_diff_result (history_wb/application/actions/diffs/create_document_diffs.py:417) (11 samples, 4.17%)</title>
+      <rect x="95.83%" y="212" width="4.16%" height="15" fill="rgb(226,22,26)" ns1:x="253" ns1:w="11" />
+      <text x="96.08%" y="222.5">_buil..</text>
+    </g>
+    <g>
+      <title>_compute_diff_result (history_wb/application/actions/diffs/create_document_diffs.py:354) (11 samples, 4.17%)</title>
+      <rect x="95.83%" y="228" width="4.16%" height="15" fill="rgb(217,163,10)" ns1:x="253" ns1:w="11" />
+      <text x="96.08%" y="238.5">_comp..</text>
+    </g>
+    <g>
+      <title>execute (history_wb/application/actions/diffs/create_diff.py:40) (11 samples, 4.17%)</title>
+      <rect x="95.83%" y="244" width="4.16%" height="15" fill="rgb(213,25,53)" ns1:x="253" ns1:w="11" />
+      <text x="96.08%" y="254.5">execu..</text>
+    </g>
+    <g>
+      <title>compute_diff (history_wb/domain/diff/engine.py:141) (11 samples, 4.17%)</title>
+      <rect x="95.83%" y="260" width="4.16%" height="15" fill="rgb(252,105,26)" ns1:x="253" ns1:w="11" />
+      <text x="96.08%" y="270.5">compu..</text>
+    </g>
+    <g>
+      <title>compare_snapshots (history_wb/domain/diff/comparator.py:604) (11 samples, 4.17%)</title>
+      <rect x="95.83%" y="276" width="4.16%" height="15" fill="rgb(220,39,43)" ns1:x="253" ns1:w="11" />
+      <text x="96.08%" y="286.5">compa..</text>
+    </g>
+    <g>
+      <title>_collect_old_pass_diffs (history_wb/domain/diff/comparator.py:405) (11 samples, 4.17%)</title>
+      <rect x="95.83%" y="292" width="4.16%" height="15" fill="rgb(229,68,48)" ns1:x="253" ns1:w="11" />
+      <text x="96.08%" y="302.5">_coll..</text>
+    </g>
+    <g>
+      <title>_compare_node_pair (history_wb/domain/diff/comparator.py:318) (11 samples, 4.17%)</title>
+      <rect x="95.83%" y="308" width="4.16%" height="15" fill="rgb(252,8,32)" ns1:x="253" ns1:w="11" />
+      <text x="96.08%" y="318.5">_comp..</text>
+    </g>
+    <g>
+      <title>compare_properties (history_wb/domain/diff/comparator.py:687) (11 samples, 4.17%)</title>
+      <rect x="95.83%" y="324" width="4.16%" height="15" fill="rgb(223,20,43)" ns1:x="253" ns1:w="11" />
+      <text x="96.08%" y="334.5">compa..</text>
+    </g>
+    <g>
+      <title>__init__ (&lt;string&gt;:7) (9 samples, 3.41%)</title>
+      <rect x="96.59%" y="340" width="3.40%" height="15" fill="rgb(229,81,49)" ns1:x="255" ns1:w="9" />
+      <text x="96.84%" y="350.5">__i..</text>
+    </g>
+    <g>
+      <title>__post_init__ (history_wb/domain/diff/models.py:309) (9 samples, 3.41%)</title>
+      <rect x="96.59%" y="356" width="3.40%" height="15" fill="rgb(236,28,36)" ns1:x="255" ns1:w="9" />
+      <text x="96.84%" y="366.5">__p..</text>
+    </g>
+    <g>
+      <title>_build_path_diffs (history_wb/domain/diff/models.py:319) (6 samples, 2.27%)</title>
+      <rect x="97.72%" y="372" width="2.27%" height="15" fill="rgb(249,185,26)" ns1:x="258" ns1:w="6" />
+      <text x="97.97%" y="382.5">_..</text>
+    </g>
+    <g>
+      <title>&lt;listcomp&gt; (history_wb/domain/diff/models.py:320) (6 samples, 2.27%)</title>
+      <rect x="97.72%" y="388" width="2.27%" height="15" fill="rgb(249,174,33)" ns1:x="258" ns1:w="6" />
+      <text x="97.97%" y="398.5">&lt;..</text>
+    </g>
+    <g>
+      <title>__init__ (&lt;string&gt;:7) (4 samples, 1.52%)</title>
+      <rect x="98.48%" y="404" width="1.51%" height="15" fill="rgb(233,201,37)" ns1:x="260" ns1:w="4" />
+      <text x="98.73%" y="414.5" />
+    </g>
+    <g>
+      <title>__post_init__ (history_wb/domain/diff/models.py:77) (4 samples, 1.52%)</title>
+      <rect x="98.48%" y="420" width="1.51%" height="15" fill="rgb(221,78,26)" ns1:x="260" ns1:w="4" />
+      <text x="98.73%" y="430.5" />
+    </g>
+    <g>
+      <title>_calc_value_state (history_wb/domain/diff/models.py:109) (4 samples, 1.52%)</title>
+      <rect x="98.48%" y="436" width="1.51%" height="15" fill="rgb(250,127,30)" ns1:x="260" ns1:w="4" />
+      <text x="98.73%" y="446.5" />
+    </g>
+    <g>
+      <title>_path_values_equal (history_wb/domain/diff/models.py:154) (3 samples, 1.14%)</title>
+      <rect x="98.86%" y="452" width="1.13%" height="15" fill="rgb(230,49,44)" ns1:x="261" ns1:w="3" />
+      <text x="99.11%" y="462.5" />
+    </g>
+    <g>
+      <title>float_values_equal (history_wb/utils.py:183) (3 samples, 1.14%)</title>
+      <rect x="98.86%" y="468" width="1.13%" height="15" fill="rgb(229,67,23)" ns1:x="261" ns1:w="3" />
+      <text x="99.11%" y="478.5" />
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,5 @@
+/*!
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/(()=>{const n=document.querySelector(".cards"),t=document.querySelectorAll(".addons-sort button");if(!n||!t.length)return;const r=new Set(["date","downloads"]),s=[...t].find(e=>e.getAttribute("aria-pressed")==="true")||t[0];let e={key:s.dataset.sort,order:s.dataset.order};const o=(e,t)=>{const n=e.dataset[t]??"";return r.has(t)?Number(n)||0:n.toLowerCase()},i=({key:e,order:t})=>{const s=t==="asc"?1:-1;[...n.children].sort((t,n)=>{const i=o(t,e),a=o(n,e);return i<a?-1*s:i>a?1*s:0}).forEach(e=>n.append(e))},a=(e,n)=>{t.forEach(t=>{const s=t.dataset.sort===e;t.classList.toggle("active",s),t.setAttribute("aria-pressed",s),s&&(t.dataset.order=n)})};t.forEach(t=>{t.addEventListener("click",()=>{const n=t.dataset.sort;e={key:n,order:e.key===n&&e.order==="asc"?"desc":"asc"},i(e),a(e.key,e.order)})}),i(e),a(e.key,e.order)})()
