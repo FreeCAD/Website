@@ -31,4 +31,4 @@ A final note would not be complete without mentioning the excellent catering pro
 
 Many thanks to the JdLL organizers, volunteers, and attendees for a successful event, and we look forward to future opportunities to present FreeCAD to new audiences!
 
-For those who could not attend, the presentation recording is available on [videos-libr.es](https://videos-libr.es/w/eoXZ8mRPC277z9WgRfy4GV). You can find the slides here: [https://slides.f4mkg.fr/jdll26/](https://slides.f4mkg.fr/jdll26/).
+For those who could not attend, the presentation recording is available on [videos-libr.es](https://videos-libr.es/w/eoXZ8mRPC277z9WgRfy4GV). You can find the [slides here](https://slides.f4mkg.fr/jdll26/).

@@ -3,7 +3,7 @@ title: GSoC2026 projects announced
 date: 2026-05-02
 author: Aleksandr Prokudin
 draft: false
-category: feature
+category: announcement
 tags:
   - GSOC
 cover:

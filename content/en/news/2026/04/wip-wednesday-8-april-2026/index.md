@@ -46,14 +46,14 @@ PaddleStroke added MP4 video exporting to the simulation feature, currently with
 
 ## CAM
 
-- sliptonic fixed a bug where the new post-processing dialog would show for legacy post-processors as well ([PR#29065](https://github.com/FreeCAD/FreeCAD/pull/29065). He also added a guard against invalid or deprecated post-processor names in job templates ([PR#28870](https://github.com/FreeCAD/FreeCAD/pull/28870)).
+- sliptonic fixed a bug where the new post-processing dialog would show for legacy post-processors as well ([PR#29065](https://github.com/FreeCAD/FreeCAD/pull/29065)). He also added a guard against invalid or deprecated post-processor names in job templates ([PR#28870](https://github.com/FreeCAD/FreeCAD/pull/28870)).
 - tarman3 added a RestMachining property to the Boundary dressup to allow skipping areas excluded by the boundary path ([PR#22994](https://github.com/FreeCAD/FreeCAD/pull/22994)). He also refactored the context menu for geometry, jobs, and profiles in the project tree to show more relevant options depending on what is selected ([PR#26492](https://github.com/FreeCAD/FreeCAD/pull/26492)).
 - davidgilkaufman made the pocket offset stepover adaptive as needed to ensure it fully clears the region ([PR#28707](https://github.com/FreeCAD/FreeCAD/pull/28707)).
 
 ## BIM
 
 - czarflix fixed a bug where native IFC objects would have a limited list of available IfcClass options ([PR#28994](https://github.com/FreeCAD/FreeCAD/pull/28994)).
-- Roy-043 fixed invalid generation of BimLibrary URLs on Windows ([PR#28875](https://github.com/FreeCAD/FreeCAD/pull/28875) and renamed OutDiameter to OutsideDiameter and the Draft property group to Profile in ArchProfile ([PR#27856](https://github.com/FreeCAD/FreeCAD/pull/27856)).
+- Roy-043 fixed invalid generation of BimLibrary URLs on Windows ([PR#28875](https://github.com/FreeCAD/FreeCAD/pull/28875)) and renamed OutDiameter to OutsideDiameter and the Draft property group to Profile in ArchProfile ([PR#27856](https://github.com/FreeCAD/FreeCAD/pull/27856)).
 - furgo16 contributed several changes:
   - Migrated ArchStructure API functions to the Arch module for consistency with the rest of objects ([PR#28893](https://github.com/FreeCAD/FreeCAD/pull/28893)).
   - Fixed Beam task panel crash when changing category after the first point ([PR#29050](https://github.com/FreeCAD/FreeCAD/pull/29050)). -Fixed MakeBlocks not working for baseless walls ([PR#28720](https://github.com/FreeCAD/FreeCAD/pull/28720)).
@@ -72,7 +72,7 @@ marioalexis84 contributed several changes:
 
 - slendidev added configurable snapping for gizmos ([PR#28384](https://github.com/FreeCAD/FreeCAD/pull/28384)).
 - czarflix restored live size updates in Image Plane settings ([PR#28820](https://github.com/FreeCAD/FreeCAD/pull/28820)).
-- tritao recently resumed his work on the rendering system; some of the results are: the NaviCube now works correctly on factional scaling ([PR#29128](https://github.com/FreeCAD/FreeCAD/pull/29128) and is now isolated and excluded from scene captures such as thumbnail generation ([PR#28943](https://github.com/FreeCAD/FreeCAD/pull/28943).
+- tritao recently resumed his work on the rendering system; some of the results are: the NaviCube now works correctly on factional scaling ([PR#29128](https://github.com/FreeCAD/FreeCAD/pull/29128)) and is now isolated and excluded from scene captures such as thumbnail generation ([PR#28943](https://github.com/FreeCAD/FreeCAD/pull/28943)).
 - ElementW fixed the file type filters in Open/Save dialog being too long ([PR#23209](https://github.com/FreeCAD/FreeCAD/pull/23209)).
 - andershol patched the task panel to drop background transparency ([PR#29018](https://github.com/FreeCAD/FreeCAD/pull/29018)).
 

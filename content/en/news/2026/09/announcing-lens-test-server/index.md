@@ -20,9 +20,9 @@ The underlying technology, [Ondsel Lens](https://github.com/FreeCAD/Ondsel-Serve
 
 There is also a [Lens Addon](https://github.com/FreeCAD/Ondsel-Lens-Addon/blob/develop/README.md) you can use to interact with the Lens server directly within FreeCAD.
 
-Please give it a try! You can file bug reports and feature ideas for the server (and website) at [https://github.com/FreeCAD/Ondsel-Server](https://github.com/FreeCAD/Ondsel-Server). For the addon, please file them at [https://github.com/FreeCAD/Ondsel-Lens-Addon/](https://github.com/FreeCAD/Ondsel-Lens-Addon/).
+Please give it a try! You can file bug reports and feature ideas for the server (and website) in the [Ondsel-Server repository](https://github.com/FreeCAD/Ondsel-Server). For the addon, please file them in the [Ondsel-Lens-Addon repository](https://github.com/FreeCAD/Ondsel-Lens-Addon/).
 
-Online documentation is available at [https://freecad.github.io/lens-docs/](https://freecad.github.io/lens-docs/).
+Online [documentation](https://freecad.github.io/lens-docs/) is available.
 
 Work on Ondsel Lens hasn't stopped after Ondsel folded in late 2024. An anonymous sponsor contacted the FPA to offer a 5-figure donation towards further development of the service for the FreeCAD community. This has been known as Ondsel Onwards Fund ever since.
 
