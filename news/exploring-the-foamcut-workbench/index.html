@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html
+  lang="en-US"
+  dir="ltr"><head><meta charset="utf-8">
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1">
+<meta
+  name="referrer"
+  content="strict-origin-when-cross-origin">
+<meta
+  name="robots"
+  content="index, follow"><script>
+  try {
+    const pref = localStorage.getItem("pref-theme");
+    const dark =
+      pref === "dark" ||
+      (pref !== "light" &&
+        
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+        );
+    if (dark) document.documentElement.classList.add("dark");
+  } catch {}
+  document.documentElement.classList.add("js");
+</script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --header: rgb(8, 8, 8);
+        --theme: rgb(16, 16, 16);
+        --entry: rgb(32, 32, 32);
+        --tone: rgb(64, 64, 64);
+        --backdrop: rgba(64, 64, 64, 0.8);
+        --primary: rgb(240, 240, 240);
+        --secondary: rgb(224, 224, 224);
+        --tertiary: rgb(208, 208, 208);
+        --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+        --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+        --angle: 315deg;
+      }
+    }</style>
+</noscript><title>FreeCAD | Exploring the FoamCut Workbench</title>
+  <meta
+    name="description"
+    content="Your own free and open-source parametric modeler"><link
+          rel="stylesheet"
+          href="/Website/css/styles.75a94225473d5b4d301fd76285e755f3ec3029d6e6771a1d889ecd7f1ce74aa7.css"
+          integrity="sha256-dalCJUc9W00wH9dihedV8&#43;wwKdbmdxodiJ7NfxznSqc="
+          crossorigin="anonymous"><link
+    rel="canonical"
+    href="https://FreeCAD.github.io/Website/news/exploring-the-foamcut-workbench/"><link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://FreeCAD.github.io/Website/news/exploring-the-foamcut-workbench/"><link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://FreeCAD.github.io/Website/zh/news/exploring-the-foamcut-workbench/"><link
+      rel="alternate"
+      hreflang="es-ES"
+      href="https://FreeCAD.github.io/Website/es/news/exploring-the-foamcut-workbench/"><link
+      rel="alternate"
+      hreflang="fr-FR"
+      href="https://FreeCAD.github.io/Website/fr/news/exploring-the-foamcut-workbench/"><link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://FreeCAD.github.io/Website/pt/news/exploring-the-foamcut-workbench/"><link
+      rel="alternate"
+      hreflang="de-DE"
+      href="https://FreeCAD.github.io/Website/de/news/exploring-the-foamcut-workbench/"><link
+      rel="alternate"
+      hreflang="ja-JP"
+      href="https://FreeCAD.github.io/Website/ja/news/exploring-the-foamcut-workbench/"><link
+    rel="alternate"
+    hreflang="x-default"
+    href="https://FreeCAD.github.io/Website/"><link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Website/favicon.svg"><link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/Website/favicon.ico"><link
+      rel="apple-touch-icon"
+      href="/Website/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://FreeCAD.github.io/Website/index.xml"
+    title="FreeCAD"><meta name="generator" content="Hugo 0.160.0"><meta property="og:url" content="https://FreeCAD.github.io/Website/news/exploring-the-foamcut-workbench/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Exploring the FoamCut Workbench">
+  <meta property="og:description" content="The author of this blog is quite interested in designing and building open source machines and tools. Recently a, designed in FreeCAD, 4 axis CNC hot wire foam cutter has been a great project. It’s fabulous that not only can we design such a machine in FreeCAD, but also FreeCAD, via the FoamCut workbench, provides a way to create g-code files to cut out foam parts. Of course, we can also design those parts in FreeCAD, Perfect!">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="news">
+    <meta property="article:published_time" content="2026-06-19T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-10-27T09:31:12-05:00">
+    <meta property="article:tag" content="Addon">
+    <meta property="article:tag" content="Community">
+</head><body
+    class="single type-news kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <a
+    class="logo"
+    href="/Website/"
+    accesskey="h"
+    title="Homepage (Alt + H)"
+    aria-label="Homepage">
+    <svg
+      class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+
+      <use href="/Website/wordmark.svg#wordmark"></use>
+    </svg></a>
+
+  <div class="site-nav"><nav class="menu">
+  <button
+    popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg
+    class="icon hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/hamburger.svg#hamburger"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul
+    popover
+    id="menu-list"
+    class="menu-list"><li>
+          <a
+            href="/Website/features/">Features</a>
+        </li><li>
+          <a
+            href="/Website/download/">Download</a>
+        </li><li>
+          <a
+            href="/Website/news/" aria-current="page" class="active">News</a>
+        </li><li>
+          <a
+            href="/Website/community/">Community</a>
+        </li><li>
+          <a
+            href="/Website/docs/">Documentation</a>
+        </li><li>
+          <a
+            href="/Website/donate/" class="button accent"><svg
+    class="icon heart"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/heart.svg#heart"></use>
+  </svg>Donate</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button
+          popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choose language (Alt + L)"
+          aria-label="Choose language"><svg
+    class="icon language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul
+          popover
+          id="lang-list"
+          class="language-list"><li>
+              <a aria-current="page" class="active" href="/Website/news/exploring-the-foamcut-workbench/" title="Exploring the FoamCut Workbench">English 🇬🇧</a>
+            </li><li>
+              <a href="/Website/zh/news/exploring-the-foamcut-workbench/" title="Exploring the FoamCut Workbench">中文 🇨🇳</a>
+            </li><li>
+              <a href="/Website/es/news/exploring-the-foamcut-workbench/" title="Exploring the FoamCut Workbench">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/fr/news/exploring-the-foamcut-workbench/" title="Exploring the FoamCut Workbench">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pt/news/exploring-the-foamcut-workbench/" title="Exploring the FoamCut Workbench">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a href="/Website/de/news/exploring-the-foamcut-workbench/" title="Exploring the FoamCut Workbench">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/ja/news/exploring-the-foamcut-workbench/" title="Exploring the FoamCut Workbench">日本語 🇯🇵</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Switch theme chroma (Alt + T)"
+    aria-label="Switch theme chroma"><svg
+    class="icon dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/dark.svg#dark"></use>
+  </svg><svg
+    class="icon light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main style="--hue: 80;"><section class="hero">
+
+    <h2 class="title">Exploring the FoamCut Workbench</h1><div class="metadata"><span class="meta"><svg
+    class="icon date"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/date.svg#date"></use>
+  </svg><time datetime="2026-06-19T00:00:00Z">June 19, 2026</time>
+  </span><span class="meta author"><svg
+    class="icon author"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/author.svg#author"></use>
+  </svg><a href="/Website/author/jo-hinchliffe/">Jo Hinchliffe (99)</a></span><span class="meta category"><svg
+    class="icon category"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/category.svg#category"></use>
+  </svg><a href="/Website/category/showcase/">Showcase (37)</a></span><span class="meta tags"><svg
+    class="icon tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/tags.svg#tags"></use>
+  </svg><a href="/Website/tags/addon/">Addon (11)</a><a href="/Website/tags/community/">Community (21)</a></span><span class="meta"><svg
+    class="icon time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/time.svg#time"></use>
+  </svg>3 min</span></div><figure class="cover"><img
+  class="img foamcut_main"
+  src="/Website/news/exploring-the-foamcut-workbench/foamcut_main.webp"
+  alt="Missing description"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Missing description" width="1233" height="712" srcset="/Website/news/exploring-the-foamcut-workbench/foamcut_main_hu_6f82dc201e703b7.webp 400w, /Website/news/exploring-the-foamcut-workbench/foamcut_main_hu_2d27b525200e7afb.webp 800w, /Website/news/exploring-the-foamcut-workbench/foamcut_main.webp 1233w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></figure></section><div class="content"><p>The author of this blog is quite interested in designing and building open source machines and tools. Recently a, designed in FreeCAD, 4 axis CNC hot wire foam cutter has been a great project. It&rsquo;s fabulous that not only can we design such a machine in FreeCAD, but also FreeCAD, via the FoamCut workbench, provides a way to create g-code files to cut out foam parts. Of course, we can also design those parts in FreeCAD, Perfect!</p>
+<p>Often used for cutting wing sections and other components there are a lot of applications for RC plane builders to design and create g-code for wings. The FoamCut workbench enables a much wider variety of parts to to be able to be cut. It is available via the Addon manager, it&rsquo;s also worth reading through the notes in the addon manager listing, or directly on the <a
+  href="https://github.com/Shkolik/Foamcut"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Github repository<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a> as they provide a great overview of the included tools, operations and procedures.</p>
+<p>The workbenches primary developer is Andrew Shkolik but is founded in the work of Andrei Beborodov who created and shared a set of macro&rsquo;s for creating foam cutter g-codes in the FreeCAD community.</p>
+<figure class="image"><button
+          aria-label="Zoom image"
+          popovertarget="img-001"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/zoom.svg#zoom"></use>
+  </svg><img
+  class="img machine_config"
+  src="/Website/news/exploring-the-foamcut-workbench/machine_config.webp"
+  alt="Missing description"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Missing description" width="1914" height="941" srcset="/Website/news/exploring-the-foamcut-workbench/machine_config_hu_915ced903aada0ea.webp 400w, /Website/news/exploring-the-foamcut-workbench/machine_config_hu_6611dcc0cd1ebdb2.webp 800w, /Website/news/exploring-the-foamcut-workbench/machine_config_hu_f4305a6f6d89088c.webp 1600w, /Website/news/exploring-the-foamcut-workbench/machine_config.webp 1914w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"></button>
+        <div id="img-001" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Close image viewer"><img
+  class="img machine_config"
+  src="/Website/news/exploring-the-foamcut-workbench/machine_config.webp"
+  alt="Missing description"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Missing description" width="1914" height="941" srcset="/Website/news/exploring-the-foamcut-workbench/machine_config_hu_915ced903aada0ea.webp 400w, /Website/news/exploring-the-foamcut-workbench/machine_config_hu_6611dcc0cd1ebdb2.webp 800w, /Website/news/exploring-the-foamcut-workbench/machine_config_hu_f4305a6f6d89088c.webp 1600w, /Website/news/exploring-the-foamcut-workbench/machine_config.webp 1914w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/cross.svg#cross"></use>
+  </svg></button></div></figure><p>Once installed the workflow is laid out in a reasonable and straightforward structure. With a target part created you move to the FoamCut workbench. Highlighting the part in the model tree and then clicking the first FoamCut wb icon &ldquo;Init machine&rdquo; initialises a machine and a job. You can use the Config element to match the machine parameters, the axis labels, the wire length, the axis dimensions etc to your real world machine. You can also do this via the tools _edit parameters drop down menu finding the Workbench section with the FoamCut workbench machine configuration settings. Here you can add these details which will become the default each time you initialise the machine making it match your real world set up perfectly.</p>
+<figure class="image"><button
+          aria-label="Zoom image"
+          popovertarget="img-002"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/zoom.svg#zoom"></use>
+  </svg><img
+  class="img parameters"
+  src="/Website/news/exploring-the-foamcut-workbench/parameters.webp"
+  alt="Missing description"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Missing description" width="809" height="635" srcset="/Website/news/exploring-the-foamcut-workbench/parameters_hu_fa3ab975194ff9d2.webp 400w, /Website/news/exploring-the-foamcut-workbench/parameters_hu_e05c6d9d506b5f5e.webp 800w, /Website/news/exploring-the-foamcut-workbench/parameters.webp 809w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+        <div id="img-002" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="Close image viewer"><img
+  class="img parameters"
+  src="/Website/news/exploring-the-foamcut-workbench/parameters.webp"
+  alt="Missing description"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Missing description" width="809" height="635" srcset="/Website/news/exploring-the-foamcut-workbench/parameters_hu_fa3ab975194ff9d2.webp 400w, /Website/news/exploring-the-foamcut-workbench/parameters_hu_e05c6d9d506b5f5e.webp 800w, /Website/news/exploring-the-foamcut-workbench/parameters.webp 809w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/cross.svg#cross"></use>
+  </svg></button></div></figure><p>You can then either use the &ldquo;Create path&rdquo; tool or the &ldquo;Create Projection&rdquo; tool to create paths on the side working plane of the emulated machine from selected faces or edges of your part. The projection tool creates the same symmetric paths on each side of the machine essentially makes a doubled 2 axis operation where each side of your machine will be moving along the same paths. The Path tool can be used in this way, but also allows for true 4 axis operation where you are making some form of tapering part.</p>
+<figure class="image"><button
+          aria-label="Zoom image"
+          popovertarget="img-003"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/zoom.svg#zoom"></use>
+  </svg><img
+  class="img pathing"
+  src="/Website/news/exploring-the-foamcut-workbench/pathing.webp"
+  alt="Missing description"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Missing description" width="1466" height="714" srcset="/Website/news/exploring-the-foamcut-workbench/pathing_hu_814e9a1b6b112c11.webp 400w, /Website/news/exploring-the-foamcut-workbench/pathing_hu_37285e227f171c4.webp 800w, /Website/news/exploring-the-foamcut-workbench/pathing.webp 1466w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+        <div id="img-003" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-003"
+            popovertargetaction="hide"
+            aria-label="Close image viewer"><img
+  class="img pathing"
+  src="/Website/news/exploring-the-foamcut-workbench/pathing.webp"
+  alt="Missing description"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Missing description" width="1466" height="714" srcset="/Website/news/exploring-the-foamcut-workbench/pathing_hu_814e9a1b6b112c11.webp 400w, /Website/news/exploring-the-foamcut-workbench/pathing_hu_37285e227f171c4.webp 800w, /Website/news/exploring-the-foamcut-workbench/pathing.webp 1466w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/cross.svg#cross"></use>
+  </svg></button></div></figure><p>You can then select paths, or vertices on the projected elements and add entry or exit paths for your hot wire to follow. In turn you then multi select the paths in the preview window in the order and direction you want the wire to follow. So this would usually begin with the &ldquo;Entry Path&rdquo; then perhaps, path, path001, path002, path002 etc and then the &ldquo;Exit Path&rdquo;. With the paths selected in the correct order you can then click the &ldquo;Route&rdquo; tool icon which groups the paths and their order into a new route object. You can have multiple routes and again you can then select the routes in the order you wish each route operation to take place on the machine. With one or more routes selected you can then click the G-Code tool icon and save the G-code ready to be run on the machine.</p>
+<figure class="image"><button
+          aria-label="Zoom image"
+          popovertarget="img-004"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/zoom.svg#zoom"></use>
+  </svg><img
+  class="img model_tree_route"
+  src="/Website/news/exploring-the-foamcut-workbench/model_tree_route.webp"
+  alt="Missing description"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Missing description" width="542" height="416" srcset="/Website/news/exploring-the-foamcut-workbench/model_tree_route_hu_39d304dc97556c4d.webp 400w, /Website/news/exploring-the-foamcut-workbench/model_tree_route.webp 542w" sizes="(max-width: 400px) 400px, 95vw"></button>
+        <div id="img-004" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-004"
+            popovertargetaction="hide"
+            aria-label="Close image viewer"><img
+  class="img model_tree_route"
+  src="/Website/news/exploring-the-foamcut-workbench/model_tree_route.webp"
+  alt="Missing description"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Missing description" width="542" height="416" srcset="/Website/news/exploring-the-foamcut-workbench/model_tree_route_hu_39d304dc97556c4d.webp 400w, /Website/news/exploring-the-foamcut-workbench/model_tree_route.webp 542w" sizes="(max-width: 400px) 400px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/cross.svg#cross"></use>
+  </svg></button></div></figure><p>If you are interested in watching a basic walk through of the workflow of the FoamCut workbench there are a couple of videos online, one from <a
+  href="https://youtu.be/15t2KHbIPVY?si=4G6LLl7ybJyuD1Ch"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">the workbench author<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a> and <a
+  href="https://makertube.net/w/hq6bREpXDAAZBgWffKkb8i"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">one from myself<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>.</p>
+<p>There&rsquo;s also an <a
+  href="https://forum.freecad.org/viewtopic.php?t=91419"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">excellent forum thread with lots of discussion as well as lots of usage tips and tricks here<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>.</p>
+</div><footer class="single-footer">
+    <nav class="pagination"><a
+            class="button next"
+            href="/Website/news/freecad-at-jdll-2026-in-lyon/"
+            title="Next article"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/tri_left.svg#tri_left"></use>
+  </svg>FreeCAD at JdLL 2026 in Lyon</a><a
+            class="button prev"
+            href="/Website/news/wip-wednesday-17-june-2026/"
+            title="Previous article">WIP Wednesday, 17 June 2026<svg
+    class="icon tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Go to Top"
+  title="Go to Top (Alt + G)" ><svg
+    class="icon tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a
+            href="/Website/">Homepage</a><ul></ul></li><li>
+          <a
+            href="/Website/features/">Features</a><ul></ul></li><li>
+          <a
+            href="/Website/download/">Download</a><ul><li>
+                  <a
+                    href="/Website/releases/">Releases</a>
+                </li><li>
+                      <a
+                        href="/Website/download/addons/">Addons</a>
+                    </li><li>
+                      <a
+                        href="/Website/download/unstable/">Unstable</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/news/" aria-current="page" class="active">News</a><ul><li>
+                  <a
+                    href="/Website/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/author/">Author</a>
+                      </li><li>
+                        <a href="/Website/category/">Category</a>
+                      </li><li>
+                        <a href="/Website/tags/">Tags</a>
+                      </li></ul></li><li>
+          <a
+            href="/Website/community/">Community</a><ul><li>
+                      <a
+                        href="/Website/community/calendar/">Calendar</a>
+                    </li><li>
+                      <a
+                        href="https://events.freecad.org/" target="_blank" rel="external noreferrer nofollow">Events<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://fpa.freecad.org" target="_blank" rel="external noreferrer nofollow">Association<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swag shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/community/telemetry/">Telemetry</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/docs/">Documentation</a><ul><li>
+                  <a
+                    href="https://wiki.freecad.org/User_hub" target="_blank" rel="external noreferrer nofollow">User manual<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+                </li><li>
+                  <a
+                    href="/Website/dev/">Development Handbook</a>
+                </li><li>
+                  <a
+                    href="https://freecad.github.io/SourceDoc/" target="_blank" rel="external noreferrer nofollow">FreeCAD API<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+                </li></ul></li><li>
+          <a
+            href="/Website/donate/">Donate</a><ul></ul></li></ul>
+</nav>
+<div class="share-links"><a
+    href="https://forum.freecad.org"
+    title="Forum"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/forum.svg#forum"></use>
+  </svg></a><a
+    href="https://devtalk.freecad.org/"
+    title="DevTalk"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon devtalk"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/devtalk.svg#devtalk"></use>
+  </svg></a><a
+    href="https://github.com/freecad"
+    title="GitHub"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/github.svg#github"></use>
+  </svg></a><a
+    href="https://codeberg.org/freecad"
+    title="Codeberg"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a
+    href="https://social.freecad.org/@freecad"
+    title="Mastodon"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/bluesky.svg#bluesky"></use>
+  </svg></a><a
+    href="https://www.reddit.com/r/freecad"
+    title="Reddit"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/reddit.svg#reddit"></use>
+  </svg></a><a
+    href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+    title="Matrix"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/matrix.svg#matrix"></use>
+  </svg></a><a
+    href="https://discord.gg/w2cTKGzccC"
+    title="Discord"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/discord.svg#discord"></use>
+  </svg></a><a
+    href="https://www.linkedin.com/groups/4295230"
+    title="LinkedIn"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+    href="https://FreeCAD.github.io/Website/index.xml"
+    type="application/rss&#43;xml"
+    title="RSS feed"><svg
+    class="icon rss"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/rss.svg#rss"></use>
+  </svg></a><a
+  href="/Website/fedishare.html#title=Exploring&#43;the&#43;FoamCut&#43;Workbench&amp;description=The&#43;author&#43;of&#43;this&#43;blog&#43;is&#43;quite&#43;interested&#43;in&#43;designing&#43;and&#43;building&#43;open&#43;source&#43;machines&#43;and&#43;tools.&#43;Recently&#43;a%2C&#43;designed&#43;in&#43;FreeCAD%2C&#43;4&#43;axis&#43;CNC&#43;hot&#43;wire&#43;foam&#43;cutter&#43;has&#43;been&#43;a&#43;great&#43;project.&#43;It%E2%80%99s&#43;%E2%80%A6%0A%23addon&#43;%23community&amp;url=https://FreeCAD.github.io/Website/news/exploring-the-foamcut-workbench/"
+  title="Share on the Fediverse"
+  target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026
+    <a
+      href="/Website/"
+      title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a
+    href="https://creativecommons.org/licenses/by-sa/4.0/"
+    title="Creative Commons"
+    target="_blank" rel="license external noreferrer nofollow">
+
+    CC BY-SA<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to
+  <a
+    href="https://gohugo.io/"
+    title="Hugo SSG"
+    target="_blank" rel="external noreferrer nofollow">
+
+    Hugo<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-10-27
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/025e4471c6dd3cf8111a33e3876ecb97fad8bf10">025e4471c6<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script
+    src="/Website/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script></body>
+
+</html>
