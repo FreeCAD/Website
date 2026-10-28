@@ -1,5 +1,0 @@
-/*!
-SPDX-License-Identifier: MIT
-SPDX-FileCopyrightText: 2026 FreeCAD
-SPDX-FileNotice: Part of the Trigo theme for Hugo.
-*/const LABEL_COPY="Copy",LABEL_COPIED="Copied!";document.querySelectorAll("pre > code").forEach(e=>{const n=e.closest("pre");if(!n||n.querySelector(".copy"))return;const s=n.parentNode,t=document.createElement("button");t.className="copy",t.type="button",t.innerText=LABEL_COPY,t.setAttribute("aria-label",LABEL_COPY);const i=()=>{t.innerText=LABEL_COPIED,t.setAttribute("aria-label",LABEL_COPIED),setTimeout(()=>{t.innerText=LABEL_COPY,t.setAttribute("aria-label",LABEL_COPY)},2e3)};function a(e){const t=document.createElement("textarea");t.value=e,document.body.appendChild(t),t.select(),document.execCommand("copy"),document.body.removeChild(t)}t.addEventListener("click",async()=>{const t=e.textContent.trim();try{navigator.clipboard?await navigator.clipboard.writeText(t):a(t),i()}catch(e){console.error("Copy failed:",e)}});const o=s.closest("table");s.classList.contains("highlight")?s.appendChild(t):o?o.appendChild(t):n.appendChild(t)})
