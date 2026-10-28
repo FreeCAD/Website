@@ -17,7 +17,7 @@ EMF Camp has recently taken place in the UK. This, every two year, festival/hack
 
 Amongst all this the fabulous Chia, Kliment and Carston pulled together an amazing E-Sport style FreeCAD speed run challenge in the hardware hacking tent.
 
-![](challlenge.webp)
+![](challenge.webp)
 
 This event saw a group of people get together and compete in 3 ten minute rounds each having a unique small FreeCAD project challenge. The idea was that people had to replicate a FreeCAD project from a technical drawing. Round one was a small box with radial fillets on all external and internal edges, round two was a "hexpansion" which is the term for a hexagonal add on for the official EMF badge and the final round was to replicate a Club Mate bottle!
 
