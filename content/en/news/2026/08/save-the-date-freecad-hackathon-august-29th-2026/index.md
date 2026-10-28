@@ -8,7 +8,7 @@ tags:
   - community
   - hackathon
 cover:
-  image: FreeCAD-symbol.webp
+  image: symbol.svg
   caption:
 ---
 
