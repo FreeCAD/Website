@@ -12,7 +12,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 */ -}}
 
 
-{{- if site.Params.enable_cms -}}
+{{- if and site.Params.enable_cms site.IsDefault -}}
 
 {{- $repo := site.Params.git_repository -}}
 {{- $url := urls.Parse $repo -}}

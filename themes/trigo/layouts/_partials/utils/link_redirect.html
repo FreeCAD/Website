@@ -12,32 +12,47 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 {{- $page := . -}}
 {{- $link := "" -}}
 {{- $wiki_url := "https://wiki.freecad.org" -}}
+{{- $admin := "/admin" -}}
 
 {{- if reflect.IsPage $page -}}
   {{- with $page.Params.redirect -}}
+
     {{- if and $page.IsSection (eq . "auto") -}}
       {{- $pages := sort $page.Pages -}}
       {{- with index $pages 0 -}}
         {{- $link = .RelPermalink -}}
       {{- end -}}
+
     {{- else -}}
       {{- $target := $page.Site.GetPage . -}}
       {{- with $target -}}
         {{- $link = .RelPermalink -}}
+
       {{- else -}}
         {{- if and (hasPrefix . $wiki_url) (not $page.Site.Language.IsDefault) -}}
           {{- $link = printf "%s/%s" . $page.Site.Language.Name -}}
+
         {{- else -}}
           {{- $link = . -}}
         {{- end -}}
       {{- end -}}
     {{- end -}}
+
   {{- else -}}
-    {{- $link = $page.RelPermalink -}}
+    {{- if eq $page.Path $admin -}}
+      {{- with hugo.Sites.Default.GetPage $admin -}}
+        {{- $link = .RelPermalink -}}
+      {{- end -}}
+
+    {{- else -}}
+      {{- $link = $page.RelPermalink -}}
+    {{- end -}}
   {{- end -}}
+
 {{- else -}}
   {{- if and (hasPrefix $page $wiki_url) (not site.Language.IsDefault) -}}
     {{- $link = printf "%s/%s" . site.Language.Name -}}
+
   {{- else -}}
     {{- $link = . -}}
   {{- end -}}
