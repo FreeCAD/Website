@@ -95,7 +95,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2023-01-16T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-09-23T13:25:40+02:00">
+    <meta property="article:modified_time" content="2026-10-30T17:09:14+01:00">
     <meta property="article:tag" content="Code">
     <meta property="article:tag" content="API">
 </head><body
@@ -231,7 +231,7 @@
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/author.svg#author"></use>
-  </svg><a href="/Website/de/author/ed-williams/">Ed Williams (1)</a></span><span class="meta category"><svg
+  </svg><a href="/Website/de/author/edwilliams16/">Ed Williams (1)</a></span><span class="meta category"><svg
     class="icon category"
     aria-hidden="true"
     focusable="false">
@@ -550,7 +550,7 @@
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/hash.svg#hash"></use>
-  </svg></a>Inverse</h3><p>Both rotations (<code>rot</code>) and placements (<code>pl</code>) have inverses, <code>rot<sup>-1</sup></code> and <code>pl<sup>-1</sup></code> which reverse their effect. These satisfy</p>
+  </svg></a>Inverse</h3><p>Both rotations (<code>rot</code>) and placements (<code>pl</code>) have inverses, <code>rot⁻¹</code> and <code>pl⁻¹</code> which reverse their effect. These satisfy</p>
 <figure class="image"><button
           aria-label="Bild vergrößern"
           popovertarget="img-004"
@@ -591,8 +591,8 @@
   </svg><span class="tooltip">Inverse equations</span>
           </div>
         </figcaption><p>Inverse equations</p></figure><p>where <code>I</code> is the identity rotation or placement, respectively.</p>
-<p>Recall from the compound placement section, we found that <code>R' * S = S * R</code>. We could use the algebra of rotations to compute <code>R'</code> explicitly. Multiply both sides of the equation on the right by <code>S<sup>-1</sup></code>, obtaining:</p>
-<p><code>R&rsquo; * S * S<sup>-1</sup> = <em>R&rsquo; </em> = S * R * S<sup>-1</sup></code> In code, this becomes:</p>
+<p>Recall from the compound placement section, we found that <code>R' * S = S * R</code>. We could use the algebra of rotations to compute <code>R'</code> explicitly. Multiply both sides of the equation on the right by <code>S⁻¹</code>, obtaining:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">R&#39; * S * S⁻¹ = R&#39; = S * R * S¹</span></span></code></pre></div></div><p>In code, this becomes:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">FreeCAD</span> <span class="kn">import</span> <span class="n">Vector</span> <span class="k">as</span> <span class="n">V</span>
 </span></span><span class="line"><span class="cl"><span class="n">R</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Rotation</span><span class="p">(</span><span class="n">V</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mi">90</span><span class="p">)</span> <span class="c1"># 90° around x</span>
 </span></span><span class="line"><span class="cl"><span class="n">S</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">Rotation</span><span class="p">(</span><span class="n">V</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="mi">90</span><span class="p">)</span> <span class="c1"># 90° around z</span>
@@ -639,7 +639,7 @@
     <use href="/Website/svg/important.svg#important"></use>
   </svg><span class="tooltip">Nested placements</span>
           </div>
-        </figcaption><p>Nested placements</p></figure><p>The global placement of the Cube is the product of the placements that contain it. Referring to the Placements of Part, Part001, Part002, Part003 and Cube as <code>pl<sub>0</sub>, pl<sub>1</sub>, pl<sub>2</sub>, pl<sub>3</sub></code> and <code>pl<sub>4</sub></code> respectively, the global placement of the Cube is <code>pl<sub>0</sub> * pl<sub>1</sub> * pl<sub>2</sub> * pl<sub>3</sub> * pl<sub>4</sub></code>. Suppose we want to change the global Placement of the cube to <code>gpl</code> by altering the placement of the Part001 sub-assembly, say by changing <code>pl<sub>1</sub></code> to <code>pl<sub>1</sub>&rsquo;</code>. Then we know that</p>
+        </figcaption><p>Nested placements</p></figure><p>The global placement of the Cube is the product of the placements that contain it. Referring to the Placements of Part, Part001, Part002, Part003 and Cube as <code>pl₀</code>, <code>pl₁</code>, <code>pl₂</code>, <code>pl₃</code> and <code>pl₄</code> respectively, the global placement of the Cube is <code>pl₀ * pl₁ * pl₂ * pl₃ * pl₄</code>. Suppose we want to change the global Placement of the cube to <code>gpl</code> by altering the placement of the Part001 sub-assembly, say by changing <code>pl₁</code> to <code>pl₁'</code>. Then we know that</p>
 <figure class="image"><button
           aria-label="Bild vergrößern"
           popovertarget="img-006"
@@ -679,7 +679,7 @@
     <use href="/Website/svg/important.svg#important"></use>
   </svg><span class="tooltip">Solving placement equation</span>
           </div>
-        </figcaption><p>Solving placement equation</p></figure><p>solving for the unknown placement <code>pl<sub>1</sub>&rsquo;</code> by pre- and post-multiplying by the appropriate inverses.</p>
+        </figcaption><p>Solving placement equation</p></figure><p>solving for the unknown placement <code>pl₁'</code> by pre- and post-multiplying by the appropriate inverses.</p>
 </div><footer class="single-footer">
     <nav class="pagination"><a
             class="button next"
@@ -930,9 +930,9 @@
   </svg></a>
 </span>
 <span>
-    Modified: 2026-09-23
+    Modified: 2026-10-30
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/efdfa08161fa1b81bbff5f770b0baaf19e5deffb">efdfa08161<svg
+      Commit: <a href="https://github.com/freecad/website/commit/c1226a062b9ca14999098c894db56f231f03c49a">c1226a062b<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

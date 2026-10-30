@@ -94,7 +94,7 @@
   <meta property="og:locale" content="de_DE">
   <meta property="og:type" content="article">
     <meta property="article:section" content="dev">
-    <meta property="article:modified_time" content="2026-10-21T08:21:57+02:00">
+    <meta property="article:modified_time" content="2026-10-30T17:07:09+01:00">
 </head><body
     class="single type-dev kind-page "
     id="top">
@@ -347,7 +347,14 @@
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/hash.svg#hash"></use>
-  </svg></a>Select build configuration</h2><p><video controls muted playsinline loop src="configure.mp4" type="video/mp4"></video></p>
+  </svg></a>Select build configuration</h2><figure>
+      <video
+        preload="metadata"
+        controls
+        playsinline>
+
+        <source
+          src="/Website/dev/setup/vscode/configure.mp4" type="video/mp4">Dein Browser unterstützt das video-Tag nicht.</video></figure>
 <p>First on the bottom left corner, in the status bar, select the build type. Options are:</p>
 <ul>
 <li>debug</li>
@@ -366,7 +373,14 @@
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/hash.svg#hash"></use>
-  </svg></a>First build</h2><p><video controls muted playsinline loop src="build.mp4" type="video/mp4"></video></p>
+  </svg></a>First build</h2><figure>
+      <video
+        preload="metadata"
+        controls
+        playsinline>
+
+        <source
+          src="/Website/dev/setup/vscode/build.mp4" type="video/mp4">Dein Browser unterstützt das video-Tag nicht.</video></figure>
 <p>To build, either:</p>
 <ul>
 <li>Run <strong>Pixi</strong>, or</li>
@@ -385,7 +399,14 @@
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/hash.svg#hash"></use>
-  </svg></a>Launching the built executable and debugging</h2><p><video controls muted playsinline loop src="debug.mp4" type="video/mp4"></video></p>
+  </svg></a>Launching the built executable and debugging</h2><figure>
+      <video
+        preload="metadata"
+        controls
+        playsinline>
+
+        <source
+          src="/Website/dev/setup/vscode/debug.mp4" type="video/mp4">Dein Browser unterstützt das video-Tag nicht.</video></figure>
 <p>On the left panel go to the debug section and click the little green play button. Alternatively press <code>F5</code>. Every time you launch the debugger a build is triggered, to ensure all the latest changes you made to the code are compiled in.</p>
 <p>You should see freecad launching and the debugger attaching to the process. If an error pops up the python debugger failed to attach (there&rsquo;s 30 second timeout).
 Close FreeCAD and try launching it again. If it still fails try increasing the timeout located in the file <code>.vscode/scripts/WaitForDebugpy.py</code></p>
@@ -409,7 +430,14 @@ Close FreeCAD and try launching it again. If it still fails try increasing the t
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/hash.svg#hash"></use>
-  </svg></a>Running tests</h2><p><video controls muted playsinline loop src="testing.mp4" type="video/mp4"></video></p>
+  </svg></a>Running tests</h2><figure>
+      <video
+        preload="metadata"
+        controls
+        playsinline>
+
+        <source
+          src="/Website/dev/setup/vscode/testing.mp4" type="video/mp4">Dein Browser unterstützt das video-Tag nicht.</video></figure>
 <p>The IDE supports running FreeCAD tests as well. On the left panel go to the testing section and click the play button. A build takes place and then all the tests are run and results reported.</p>
 <p><strong>NOTE:</strong> This is much slower than running the <code>Tests_run</code> executable directly (run <code>path/to/the/build-dir/tests/Tests_run</code>). The video above is sped up.</p>
 <p><strong>NOTE:</strong> Only c++ tests are currently integrated. Python tests are run from the <code>Test workbench</code>, or with the command <code>FreeCAD -t 0</code>, or <code>pixi run freecad -t 0</code> if you&rsquo;re using Pixi.</p>
@@ -780,9 +808,9 @@ Close FreeCAD and try launching it again. If it still fails try increasing the t
   </svg></a>
 </span>
 <span>
-    Modified: 2026-10-21
+    Modified: 2026-10-30
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/9f2316ba9ad1e922b4918cba92f68be69b7e9af7">9f2316ba9a<svg
+      Commit: <a href="https://github.com/freecad/website/commit/ef292426072e8447171c5e68cec6978df2f3f6ff">ef29242607<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

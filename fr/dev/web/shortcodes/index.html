@@ -94,7 +94,7 @@
   <meta property="og:locale" content="fr_FR">
   <meta property="og:type" content="article">
     <meta property="article:section" content="dev">
-    <meta property="article:modified_time" content="2026-10-07T16:30:55+02:00">
+    <meta property="article:modified_time" content="2026-10-30T17:09:14+01:00">
 </head><body
     class="single type-dev kind-page "
     id="top">
@@ -276,7 +276,7 @@
                 href="/Website/fr/dev/web/structure/">Structure</a>
             </li><li>
               <a
-                href="/Website/fr/dev/web/markdown/">Markdown</a>
+                href="/Website/fr/dev/web/markdown/">Markdown Syntax Guide</a>
             </li><li>
               <a
                 href="/Website/fr/dev/web/shortcodes/" id="current-page" class="active" aria-current="page">Shortcodes</a>
@@ -285,10 +285,10 @@
                 href="/Website/fr/dev/web/front-matter/">Front matter</a>
             </li><li>
               <a
-                href="/Website/fr/dev/web/locales/">Translations</a>
+                href="/Website/fr/dev/web/locales/">Translations and languages</a>
             </li><li>
               <a
-                href="/Website/fr/dev/web/cms/">CMS</a>
+                href="/Website/fr/dev/web/cms/">Content Management System</a>
             </li><li>
               <a
                 href="/Website/fr/dev/web/theme/">Setup and Theme</a>
@@ -314,6 +314,8 @@
         <li><a href="#canvas">Canvas</a></li>
         <li><a href="#button">Button</a></li>
         <li><a href="#marker">Marker</a></li>
+        <li><a href="#abbreviation">Abbreviation</a></li>
+        <li><a href="#keyboard-shortcut-or-key-sequence">Keyboard shortcut or key sequence</a></li>
         <li><a href="#git">Git</a></li>
         <li><a href="#pdf">PDF</a></li>
         <li><a href="#video">Video</a></li>
@@ -400,7 +402,7 @@ Most shortcodes support both named and positional arguments.</p>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">This will be hidden by default.
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="nx">details</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+</span></span><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="nx">details</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><em><strong>How it renders:</strong></em></p>
 <details open>
 
     <summary>Details</summary>
@@ -416,7 +418,7 @@ Most shortcodes support both named and positional arguments.</p>
     <div><p>This will be hidden by default.</p>
 </div>
   </details>
-<p><u><code>details</code> arguments:</u></p>
+<p><em><strong><code>details</code> arguments:</strong></em></p>
 <table>
   <thead>
       <tr>
@@ -516,7 +518,7 @@ The <code>tabs</code> shortcode renders the inner content with multiple <code>ta
 </span></span><span class="line"><span class="cl">  ```
 </span></span><span class="line"><span class="cl">  <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="nx">tab</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="nx">tabs</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+</span></span><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="nx">tabs</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><em><strong>How it renders:</strong></em></p>
 <div class="tabs">
   <input
     type="radio"
@@ -546,7 +548,7 @@ The <code>tabs</code> shortcode renders the inner content with multiple <code>ta
   <div class="tab-content"><p><strong>TOML</strong>: TOML aims to be a minimal configuration file format that&rsquo;s easy to read due to obvious semantics.</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">hello</span> <span class="p">=</span> <span class="s2">&#34;world&#34;</span></span></span></code></pre></div></div></div>
 </div>
-<p><u><code>tab</code> arguments:</u></p>
+<p><em><strong><code>tab</code> arguments:</strong></em></p>
 <table>
   <thead>
       <tr>
@@ -613,7 +615,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
 </span></span><span class="line"><span class="cl">- Item 2
 </span></span><span class="line"><span class="cl">- Item 3
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="nx">steps</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+</span></span><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="nx">steps</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><em><strong>How it renders:</strong></em></p>
 <div class="steps"><h2
   id="step-1">
   <a class="heading-anchor"
@@ -684,7 +686,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
 </span></span><span class="line"><span class="cl">    <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="nx">branch</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
 </span></span><span class="line"><span class="cl">  <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="nx">branch</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
 </span></span><span class="line"><span class="cl">  <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">leaf</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;hugo.toml&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
-</span></span><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="nx">tree</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+</span></span><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="nx">tree</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><em><strong>How it renders:</strong></em></p>
 <ul class="tree">
   <li>
   <input
@@ -775,7 +777,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     </svg>hugo.toml</span>
   </li>
 <li class="tree-label">example</li></ul>
-<p><u><code>tree</code> arguments:</u></p>
+<p><em><strong><code>tree</code> arguments:</strong></em></p>
 <table>
   <thead>
       <tr>
@@ -806,7 +808,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
       </tr>
   </tbody>
 </table>
-<p><u><code>branch</code> arguments:</u></p>
+<p><em><strong><code>branch</code> arguments:</strong></em></p>
 <table>
   <thead>
       <tr>
@@ -853,7 +855,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
       </tr>
   </tbody>
 </table>
-<p><u><code>leaf</code> arguments:</u></p>
+<p><em><strong><code>leaf</code> arguments:</strong></em></p>
 <table>
   <thead>
       <tr>
@@ -922,7 +924,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     focusable="false">
     <use href="/Website/svg/words.svg#words"></use>
   </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">carousel</span><span class="w"> </span><span class="s">&#34;1.webp&#34;</span><span class="w"> </span><span class="s">&#34;2.webp&#34;</span><span class="w"> </span><span class="s">&#34;3.webp&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p>The path is relative to the current page bundle. To use resources in the <code>static</code> or <code>assets</code> directories of the site, prefix the path with a <code>/</code> slash. External image URLs are also supported.</p>
-<p><u>How it renders:</u></p>
+<p><em><strong>How it renders:</strong></em></p>
 <div
     id="carousel5"
     class="carousel"
@@ -973,7 +975,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     <use href="/Website/svg/tri_right.svg#tri_right"></use>
   </svg></div>
   </div>
-<p><u><code>carousel</code> arguments:</u></p>
+<p><em><strong><code>carousel</code> arguments:</strong></em></p>
 <table>
   <thead>
       <tr>
@@ -1044,8 +1046,8 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/words.svg#words"></use>
-  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">compare</span><span class="w"> </span><span class="s">&#34;1.webp&#34;</span><span class="w"> </span><span class="s">&#34;2.webp&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p>The path is relative to the current page bundle. To use resources in the <code>static</code> directory of the site, prefix the path with a <code>/</code> slash. External image URLs are also supported.</p>
-<p><u>How it renders:</u></p>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">compare</span><span class="w"> </span><span class="nx">before</span><span class="o">=</span><span class="s">&#34;dir/1.webp&#34;</span><span class="w"> </span><span class="nx">after</span><span class="o">=</span><span class="s">&#34;dir/3.webp&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p>The path is relative to the current page bundle. To use resources in the <code>static</code> directory of the site, prefix the path with a <code>/</code> slash. External image URLs are also supported.</p>
+<p><em><strong>How it renders:</strong></em></p>
 <div id="compare6" class="compare"><img
             class="before"
             srcset="/Website/dev/web/shortcodes/dir/1_hu_b2b4d89bc7f12b36.webp 400w, /Website/dev/web/shortcodes/dir/1.webp 600w"
@@ -1077,7 +1079,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     <use href="/Website/svg/tri_right.svg#tri_right"></use>
   </svg></div>
     </div>
-<p><u><code>compare</code> arguments:</u></p>
+<p><em><strong><code>compare</code> arguments:</strong></em></p>
 <table>
   <thead>
       <tr>
@@ -1125,7 +1127,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     focusable="false">
     <use href="/Website/svg/words.svg#words"></use>
   </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">canvas</span><span class="w"> </span><span class="nx">path</span><span class="o">=</span><span class="s">&#34;frames-dir&#34;</span><span class="w"> </span><span class="nx">fps</span><span class="o">=</span><span class="s">&#34;12&#34;</span><span class="w"> </span><span class="nx">title</span><span class="o">=</span><span class="s">&#34;Animation title&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p>The path is relative to the current page bundle. To use resources in the <code>static</code> directory of the site, prefix the path with a <code>/</code> slash. External resources (defined from a URL) are not supported at this time. Frames are ordered lexicographically by filename, e.g. <code>001.webp</code>, <code>002.webp</code>.</p>
-<p><u>How it renders:</u></p>
+<p><em><strong>How it renders:</strong></em></p>
 <div
   class="canvas"
   id="canvas-7" title="Press spacebar to animate me! Or grab, scroll and use keyboard arrows too!">
@@ -1185,7 +1187,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     </figure>
   </noscript>
 </div>
-<p><u><code>canvas</code> arguments:</u></p>
+<p><em><strong><code>canvas</code> arguments:</strong></em></p>
 <table>
   <thead>
       <tr>
@@ -1239,7 +1241,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/words.svg#words"></use>
-  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">button</span><span class="w"> </span><span class="nx">url</span><span class="o">=</span><span class="s">&#34;/news&#34;</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;Button label&#34;</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="s">&#34;time&#34;</span><span class="w">  </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">button</span><span class="w"> </span><span class="nx">url</span><span class="o">=</span><span class="s">&#34;/news&#34;</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;Button label&#34;</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="s">&#34;time&#34;</span><span class="w">  </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><em><strong>How it renders:</strong></em></p>
 <div class="button-shortcode">
     <a
       href="/Website/fr/news/"
@@ -1251,7 +1253,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     <use href="/Website/svg/time.svg#time"></use>
   </svg>Button label</a>
   </div>
-<p><u><code>button</code> arguments:</u></p>
+<p><em><strong><code>button</code> arguments:</strong></em></p>
 <table>
   <thead>
       <tr>
@@ -1313,7 +1315,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/words.svg#words"></use>
-  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">marker</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;Marker label&#34;</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="s">&#34;heart&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">marker</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;Marker label&#34;</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="s">&#34;heart&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><em><strong>How it renders:</strong></em></p>
 <div class="marker">
     <span><svg
     class="icon heart"
@@ -1322,7 +1324,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     <use href="/Website/svg/heart.svg#heart"></use>
   </svg>Marker label</span>
   </div>
-<p><u><code>button</code> arguments:</u></p>
+<p><em><strong><code>marker</code> arguments:</strong></em></p>
 <table>
   <thead>
       <tr>
@@ -1362,6 +1364,110 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
   </tbody>
 </table>
 <h2
+  id="abbreviation">
+  <a class="heading-anchor"
+    href="#abbreviation"
+    title="Abbreviation"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Abbreviation</h2><p>Trigo shortcode to add an abbreviation with optional title.</p>
+<div class="codeblock"><div class="codeblock-file"><svg
+    class="icon words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/words.svg#words"></use>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl">Web pages are written in <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">abbr</span><span class="w"> </span><span class="nx">text</span><span class="o">=</span><span class="s">&#34;HTML&#34;</span><span class="w"> </span><span class="nx">title</span><span class="o">=</span><span class="s">&#34;HyperText Markup Language&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>.</span></span></code></pre></div></div><p><em><strong>How it renders:</strong></em></p>
+<p>Web pages are written in <abbr title="HyperText Markup Language">HTML</abbr>.</p>
+<p><em><strong><code>abbr</code> arguments:</strong></em></p>
+<table>
+  <thead>
+      <tr>
+          <th>Position</th>
+          <th>Argument</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Options</th>
+          <th>Example value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>text</td>
+          <td>string</td>
+          <td></td>
+          <td></td>
+          <td>&ldquo;HTML&rdquo;</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>title</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td></td>
+          <td>&ldquo;HyperText Markup Language&rdquo;</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>css_class</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td>custom CSS classes</td>
+          <td>&ldquo;accent&rdquo;</td>
+      </tr>
+  </tbody>
+</table>
+<h2
+  id="keyboard-shortcut-or-key-sequence">
+  <a class="heading-anchor"
+    href="#keyboard-shortcut-or-key-sequence"
+    title="Keyboard shortcut or key sequence"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/hash.svg#hash"></use>
+  </svg></a>Keyboard shortcut or key sequence</h2><p>Trigo shortcode to add a keyboard shortcut or key sequence.</p>
+<div class="codeblock"><div class="codeblock-file"><svg
+    class="icon words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/svg/words.svg#words"></use>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl">Press <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">kbd</span><span class="w"> </span><span class="nx">key</span><span class="o">=</span><span class="s">&#34;CTRL+ALT+Delete&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span> to end the session.</span></span></code></pre></div></div><p><em><strong>How it renders:</strong></em></p>
+<p>Press <kbd>CTRL</kbd> &#43; <kbd>ALT</kbd> &#43; <kbd>DELETE</kbd> to end the session.</p>
+<p><em><strong><code>kbd</code> arguments:</strong></em></p>
+<table>
+  <thead>
+      <tr>
+          <th>Position</th>
+          <th>Argument</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Options</th>
+          <th>Example value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>key</td>
+          <td>string</td>
+          <td></td>
+          <td></td>
+          <td>&ldquo;ABC&rdquo;, &ldquo;SHIFT F12&rdquo;</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>css_class</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td>custom CSS classes</td>
+          <td>&ldquo;accent&rdquo;</td>
+      </tr>
+  </tbody>
+</table>
+<h2
   id="git">
   <a class="heading-anchor"
     href="#git"
@@ -1378,7 +1484,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     <use href="/Website/svg/words.svg#words"></use>
   </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl">A git commit: <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">git</span><span class="w"> </span><span class="s">&#34;https://gitlab.com/user/repo/-/commit/abcdef123456&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>,
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">and a pull request: <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">git</span><span class="w"> </span><span class="nx">url</span><span class="o">=</span><span class="s">&#34;https://github.com/user/repo/pull/123&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>.</span></span></code></pre></div></div><p><u>How it renders:</u></p>
+</span></span><span class="line"><span class="cl">and a pull request: <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">git</span><span class="w"> </span><span class="nx">url</span><span class="o">=</span><span class="s">&#34;https://github.com/user/repo/pull/123&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>.</span></span></code></pre></div></div><p><em><strong>How it renders:</strong></em></p>
 <p>A commit: <a
         href="https://gitlab.com/user/repo/-/commit/abcdef123456"
         class="git"
@@ -1411,7 +1517,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     focusable="false">
     <use href="/Website/svg/external.svg#external"></use>
   </svg></a>.</p>
-<p><u><code>merge</code> arguments:</u></p>
+<p><em><strong><code>git</code> arguments:</strong></em></p>
 <table>
   <thead>
       <tr>
@@ -1462,7 +1568,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/words.svg#words"></use>
-  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">pdf</span><span class="w"> </span><span class="s">&#34;path/to/file.pdf&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">pdf</span><span class="w"> </span><span class="s">&#34;path/to/file.pdf&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><em><strong>How it renders:</strong></em></p>
 <div class="pdf">
     <iframe
       src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Wikimedia_Commons_web_en.pdf"
@@ -1471,7 +1577,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
       allowfullscreen>
     </iframe>
   </div>
-<p><u><code>pdf</code> arguments:</u></p>
+<p><em><strong><code>pdf</code> arguments:</strong></em></p>
 <table>
   <thead>
       <tr>
@@ -1517,7 +1623,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/words.svg#words"></use>
-  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">video</span><span class="w"> </span><span class="nx">src</span><span class="o">=</span><span class="s">&#34;moon.mp4&#34;</span><span class="w"> </span><span class="nx">caption</span><span class="o">=</span><span class="s">&#34;[A Trip to the Moon (1902)](https://commons.wikimedia.org/wiki/File:Le_Voyage_dans_la_Lune_(1902).webm)&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">video</span><span class="w"> </span><span class="nx">src</span><span class="o">=</span><span class="s">&#34;moon.mp4&#34;</span><span class="w"> </span><span class="nx">caption</span><span class="o">=</span><span class="s">&#34;[A Trip to the Moon (1902)](https://commons.wikimedia.org/wiki/File:Le_Voyage_dans_la_Lune_(1902).webm)&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><em><strong>How it renders:</strong></em></p>
 <figure>
       <video
         preload="metadata"
@@ -1534,7 +1640,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     <use href="/Website/svg/external.svg#external"></use>
   </svg></a></p>
 </figcaption></figure>
-<p><u><code>video</code> arguments:</u></p>
+<p><em><strong><code>video</code> arguments:</strong></em></p>
 <table>
   <thead>
       <tr>
@@ -1594,7 +1700,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/words.svg#words"></use>
-  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">peertube</span><span class="w"> </span><span class="nx">url</span><span class="o">=</span><span class="s">&#34;https://toobnix.org/w/5jBegFpNbffA1nhmp32kqR&#34;</span><span class="w"> </span><span class="nx">start</span><span class="o">=</span><span class="s">&#34;30s&#34;</span><span class="w"> </span><span class="nx">stop</span><span class="o">=</span><span class="s">&#34;2m15s&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">peertube</span><span class="w"> </span><span class="nx">url</span><span class="o">=</span><span class="s">&#34;https://toobnix.org/w/5jBegFpNbffA1nhmp32kqR&#34;</span><span class="w"> </span><span class="nx">start</span><span class="o">=</span><span class="s">&#34;30s&#34;</span><span class="w"> </span><span class="nx">stop</span><span class="o">=</span><span class="s">&#34;2m15s&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><em><strong>How it renders:</strong></em></p>
 <div style="position: relative; aspect-ratio: 1.7778;">
         <iframe
           title="BUNNY ENCOUNTER!"
@@ -1605,7 +1711,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
           referrerpolicy="strict-origin-when-cross-origin" allow="fullscreen;">
         </iframe>
       </div>
-<p><u><code>peertube</code> arguments:</u></p>
+<p><em><strong><code>peertube</code> arguments:</strong></em></p>
 <table>
   <thead>
       <tr>
@@ -1691,7 +1797,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/words.svg#words"></use>
-  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">youtube</span><span class="w"> </span><span class="nx">id</span><span class="o">=</span><span class="nx">a9biWv_M8p8</span><span class="w"> </span><span class="nx">title</span><span class="o">=</span><span class="s">&#34;My video title&#34;</span><span class="w"> </span><span class="nx">start</span><span class="o">=</span><span class="nx">30</span><span class="w"> </span><span class="nx">loading</span><span class="o">=</span><span class="nx">lazy</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">youtube</span><span class="w"> </span><span class="nx">id</span><span class="o">=</span><span class="nx">a9biWv_M8p8</span><span class="w"> </span><span class="nx">title</span><span class="o">=</span><span class="s">&#34;My video title&#34;</span><span class="w"> </span><span class="nx">start</span><span class="o">=</span><span class="nx">30</span><span class="w"> </span><span class="nx">loading</span><span class="o">=</span><span class="nx">lazy</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><em><strong>How it renders:</strong></em></p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
       <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/a9biWv_M8p8?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=30" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="My video title"></iframe>
     </div>
@@ -1719,7 +1825,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/words.svg#words"></use>
-  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">vimeo</span><span class="w"> </span><span class="nx">id</span><span class="o">=</span><span class="nx">19899678</span><span class="w"> </span><span class="nx">loading</span><span class="o">=</span><span class="nx">lazy</span><span class="w"> </span><span class="nx">title</span><span class="o">=</span><span class="s">&#34;Barn Owl&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">vimeo</span><span class="w"> </span><span class="nx">id</span><span class="o">=</span><span class="nx">19899678</span><span class="w"> </span><span class="nx">loading</span><span class="o">=</span><span class="nx">lazy</span><span class="w"> </span><span class="nx">title</span><span class="o">=</span><span class="s">&#34;Barn Owl&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><em><strong>How it renders:</strong></em></p>
 
       <div
           style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
@@ -1753,7 +1859,7 @@ If not nested in another shortcode, a full-width layout block is rendered around
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/words.svg#words"></use>
-  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">card</span><span class="w"> </span><span class="nx">path</span><span class="o">=</span><span class="s">&#34;dev&#34;</span><span class="w"> </span><span class="nx">number</span><span class="o">=</span><span class="nx">3</span><span class="w"> </span><span class="nx">css_class</span><span class="o">=</span><span class="s">&#34;gradient&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">card</span><span class="w"> </span><span class="nx">path</span><span class="o">=</span><span class="s">&#34;dev&#34;</span><span class="w"> </span><span class="nx">number</span><span class="o">=</span><span class="nx">3</span><span class="w"> </span><span class="nx">css_class</span><span class="o">=</span><span class="s">&#34;gradient&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><em><strong>How it renders:</strong></em></p>
 <div class="card-list wide gradient">
         <div class="cards"><a
   class="card"
@@ -1778,7 +1884,7 @@ If not nested in another shortcode, a full-width layout block is rendered around
     <use href="/Website/svg/gear.svg#gear"></use>
   </svg></span></div><h3 class="card-title">Development Setup</h3><p class="card-description">Set the development up, build, run, enjoy!</p><div class="card-metadata"></div></a></div>
       </div>
-<p><u><code>card</code> arguments:</u></p>
+<p><em><strong><code>card</code> arguments:</strong></em></p>
 <table>
   <thead>
       <tr>
@@ -1876,7 +1982,7 @@ If not nested in another shortcode, a full-width layout block is rendered around
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">![](symbol.svg)
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="k">block</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+</span></span><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="k">block</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><em><strong>How it renders:</strong></em></p>
 <div class="block-shortcode wide section"><h2 class="block-title">My Title</h2><div class="block-content"><div class="group-shortcode"><p>This is <strong>Markdown</strong> <em>content</em> between <code>block</code> and <code>group</code> shortcode tags.</p>
 <table>
   <thead>
@@ -1982,7 +2088,7 @@ If not nested in another shortcode, a full-width layout block is rendered around
     <use href="/Website/svg/cross.svg#cross"></use>
   </svg></button></div></figure></div>
   </div>
-<p><u><code>block</code> arguments:</u></p>
+<p><em><strong><code>block</code> arguments:</strong></em></p>
 <table>
   <thead>
       <tr>
@@ -2037,7 +2143,7 @@ If not nested in another shortcode, a full-width layout block is rendered around
       </tr>
   </tbody>
 </table>
-<p><u><code>group</code> arguments:</u></p>
+<p><em><strong><code>group</code> arguments:</strong></em></p>
 <table>
   <thead>
       <tr>
@@ -2077,7 +2183,7 @@ If not nested in another shortcode, a full-width layout block is rendered around
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/tri_left.svg#tri_left"></use>
-  </svg>Markdown</a><a
+  </svg>Markdown Syntax Guide</a><a
             class="button prev"
             href="/Website/fr/dev/web/front-matter/"
             title="Article précédent">Front matter<svg
@@ -2318,9 +2424,9 @@ If not nested in another shortcode, a full-width layout block is rendered around
   </svg></a>
 </span>
 <span>
-    Modified: 2026-10-07
+    Modified: 2026-10-30
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/06006ff88c9dfa45d8bb76390cf84ca610668cba">06006ff88c<svg
+      Commit: <a href="https://github.com/freecad/website/commit/c1226a062b9ca14999098c894db56f231f03c49a">c1226a062b<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

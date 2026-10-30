@@ -21,7 +21,7 @@ backend:
     delete: 'Delete {{collection}} {{slug}} by @{{author-login}}'
     uploadMedia: 'Upload {{path}} by @{{author-login}}'
     deleteMedia: 'Delete {{path}} by @{{author-login}}'
-    openAuthoring: '{{message}} by @{{author-login}} by @{{author-login}}'
+    openAuthoring: '{{message}} by @{{author-login}}'
 
 publish_mode: editorial_workflow
 
@@ -96,11 +96,14 @@ collections:
             label: Description
             widget: string
             i18n: true
-          - name: linkTitle
-            label: Link Title
-            widget: string
+          - name: buttons
+            label: Buttons
+            widget: list
             i18n: true
             required: false
+            fields:
+              - { name: link, label: Button link, widget: string, i18n: duplicate }
+              - { name: label, label: Button label, widget: string, i18n: true, required: false }
           - name: cover
             label: Cover
             widget: object
@@ -121,7 +124,7 @@ collections:
     description: Features section
     media_folder: ''
     public_folder: ''
-    thumbnail: ['/{{slug}}.webp', cover.image]
+    thumbnail: ['/{{slug}}.webp', 'cover.image']
     icon: bolt
     i18n: true
     files:
@@ -129,6 +132,7 @@ collections:
         label: Features
         file: 'content/{{locale}}/features/_index.md'
         icon: bolt
+        summary: "**{{title}}** · {{locales | upper}}"
         i18n: true
         fields:
           - name: title
@@ -171,7 +175,7 @@ collections:
     meta: { path: { index_file: _index } }
     media_folder: ''
     public_folder: ''
-    thumbnail: ['/{{slug}}.webp', cover.image]
+    thumbnail: ['/{{slug}}.webp', 'cover.image']
     icon: download
     summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{author | default('no author')}} · {{locales | upper}}"
     reorder:
@@ -191,7 +195,8 @@ collections:
     index_file:
       name: _index
       label: Download Index
-      icon: home
+      icon: download
+      summary: "**{{title}}** · {{locales | upper}}"
       i18n: true
       fields:
         - name: title
@@ -208,10 +213,8 @@ collections:
           i18n: true
           required: false
         - name: redirect
-          label: Redirect
-          widget: string
+          widget: hidden
           i18n: duplicate
-          required: false
         - name: cover
           label: Cover
           widget: object
@@ -242,10 +245,8 @@ collections:
         i18n: true
         required: false
       - name: redirect
-        label: Redirect
-        widget: string
+        widget: hidden
         i18n: duplicate
-        required: false
       - name: date
         label: Date
         widget: datetime
@@ -279,7 +280,7 @@ collections:
     path: '{{slug}}/index'
     media_folder: ''
     public_folder: ''
-    thumbnail: ['/{{slug}}.webp', cover.image]
+    thumbnail: ['/{{slug}}.webp', 'cover.image']
     icon: update
     summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{author | default('no author')}} · {{locales | upper}}"
     reorder:
@@ -299,7 +300,8 @@ collections:
     index_file:
       name: _index
       label: Releases Index
-      icon: home
+      icon: update
+      summary: "**{{title}}** · {{locales | upper}}"
       i18n: true
       fields:
         - name: title
@@ -316,10 +318,8 @@ collections:
           i18n: true
           required: false
         - name: redirect
-          label: Redirect
-          widget: string
+          widget: hidden
           i18n: duplicate
-          required: false
         - name: cover
           label: Cover
           widget: object
@@ -377,7 +377,7 @@ collections:
     path: '{{year}}/{{month}}/{{slug}}/index'
     media_folder: ''
     public_folder: ''
-    thumbnail: ['/{{slug}}.webp', cover.image]
+    thumbnail: ['/{{slug}}.webp', 'cover.image']
     icon: brand_awareness
     summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{author | default('no author')}} · {{locales | upper}}"
     reorder:
@@ -433,7 +433,8 @@ collections:
     index_file:
       name: _index
       label: News Index
-      icon: home
+      icon: brand_awareness
+      summary: "**{{title}}** · {{locales | upper}}"
       i18n: true
       fields:
         - name: title
@@ -450,10 +451,8 @@ collections:
           i18n: true
           required: false
         - name: redirect
-          label: Redirect
-          widget: string
+          widget: hidden
           i18n: duplicate
-          required: false
         - name: cover
           label: Cover
           widget: object
@@ -491,19 +490,20 @@ collections:
         required: false
       - name: author
         label: Author
-        widget: string
+        widget: relation
+        collection: author
+        search_fields: [title]
+        display_fields: [title]
+        value_field: '{{slug}}'
         i18n: duplicate
         required: false
       - name: category
         label: Category
-        widget: select
-        options:
-          - { label: Announcement, value: announcement }
-          - { label: Event, value: event }
-          - { label: Feature, value: feature }
-          - { label: Showcase, value: showcase }
-          - { label: Tutorial, value: tutorial }
-          - { label: Update, value: update }
+        widget: relation
+        collection: category
+        search_fields: [title]
+        display_fields: [title]
+        value_field: '{{slug}}'
         i18n: duplicate
       - name: tags
         label: Tags
@@ -531,7 +531,7 @@ collections:
     path: '{{slug}}/_index'
     media_folder: ''
     public_folder: ''
-    thumbnail: ['/{{slug}}.webp', cover.image]
+    thumbnail: ['/{{slug}}.webp', 'cover.image']
     icon: groups
     summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{author | default('no author')}} · {{locales | upper}}"
     reorder:
@@ -551,7 +551,8 @@ collections:
     index_file:
       name: _index
       label: Community Index
-      icon: home
+      icon: groups
+      summary: "**{{title}}** · {{locales | upper}}"
       i18n: true
       fields:
         - name: title
@@ -568,10 +569,8 @@ collections:
           i18n: true
           required: false
         - name: redirect
-          label: Redirect
-          widget: string
+          widget: hidden
           i18n: duplicate
-          required: false
         - name: cover
           label: Cover
           widget: object
@@ -602,10 +601,8 @@ collections:
         i18n: true
         required: false
       - name: redirect
-        label: Redirect
-        widget: string
+        widget: hidden
         i18n: duplicate
-        required: false
       - name: date
         label: Date
         widget: datetime
@@ -637,7 +634,7 @@ collections:
     description: Docs section
     media_folder: ''
     public_folder: ''
-    thumbnail: ['/{{slug}}.webp', cover.image]
+    thumbnail: ['/{{slug}}.webp', 'cover.image']
     icon: docs
     i18n: true
     files:
@@ -645,6 +642,7 @@ collections:
         label: Docs
         file: 'content/{{locale}}/docs/_index.md'
         icon: docs
+        summary: "**{{title}}** · {{locales | upper}}"
         i18n: true
         fields:
           - name: title
@@ -680,7 +678,7 @@ collections:
     description: Manual section
     media_folder: ''
     public_folder: ''
-    thumbnail: ['/{{slug}}.webp', cover.image]
+    thumbnail: ['/{{slug}}.webp', 'cover.image']
     icon: menu_book
     i18n: true
     files:
@@ -688,6 +686,7 @@ collections:
         label: Manual
         file: 'content/{{locale}}/manual/_index.md'
         icon: menu_book
+        summary: "**{{title}}** · {{locales | upper}}"
         i18n: true
         fields:
           - name: title
@@ -730,7 +729,7 @@ collections:
     meta: { path: { index_file: _index } }
     media_folder: ''
     public_folder: ''
-    thumbnail: ['/{{slug}}.webp', cover.image]
+    thumbnail: ['/{{slug}}.webp', 'cover.image']
     icon: logo_dev
     summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{author | default('no author')}} · {{locales | upper}}"
     reorder:
@@ -750,7 +749,8 @@ collections:
     index_file:
       name: _index
       label: Dev Index
-      icon: home
+      icon: logo_dev
+      summary: "**{{title}}** · {{locales | upper}}"
       i18n: true
       fields:
         - name: title
@@ -767,10 +767,8 @@ collections:
           i18n: true
           required: false
         - name: redirect
-          label: Redirect
-          widget: string
+          widget: hidden
           i18n: duplicate
-          required: false
         - name: cover
           label: Cover
           widget: object
@@ -801,10 +799,8 @@ collections:
         i18n: true
         required: false
       - name: redirect
-        label: Redirect
-        widget: string
+        widget: hidden
         i18n: duplicate
-        required: false
       - name: date
         label: Date
         widget: datetime
@@ -836,7 +832,7 @@ collections:
     description: API section
     media_folder: ''
     public_folder: ''
-    thumbnail: ['/{{slug}}.webp', cover.image]
+    thumbnail: ['/{{slug}}.webp', 'cover.image']
     icon: code_xml
     i18n: true
     files:
@@ -844,6 +840,7 @@ collections:
         label: API
         file: 'content/{{locale}}/api/_index.md'
         icon: code_xml
+        summary: "**{{title}}** · {{locales | upper}}"
         i18n: true
         fields:
           - name: title
@@ -879,7 +876,7 @@ collections:
     description: Donate section
     media_folder: ''
     public_folder: ''
-    thumbnail: ['/{{slug}}.webp', cover.image]
+    thumbnail: ['/{{slug}}.webp', 'cover.image']
     icon: favorite
     i18n: true
     files:
@@ -887,6 +884,7 @@ collections:
         label: Donate
         file: 'content/{{locale}}/donate/_index.md'
         icon: favorite
+        summary: "**{{title}}** · {{locales | upper}}"
         i18n: true
         fields:
           - name: title
@@ -915,6 +913,49 @@ collections:
             widget: richtext
             i18n: true
             required: false
+
+  - divider: true
+
+  - name: author
+    label: Author taxonomy
+    folder: 'content/{{locale}}/author'
+    path: '{{slug}}/_index'
+    delete: false
+    icon: article_person
+    summary: '**{{title}}** · {{locales | upper}}'
+    i18n: true
+    fields:
+      - name: title
+        label: Author name
+        widget: string
+        i18n: duplicate
+      - name: description
+        label: Author description
+        widget: string
+        required: false
+        i18n: true
+
+  - divider: true
+
+  - name: category
+    label: Category taxonomy
+    folder: 'content/{{locale}}/category'
+    path: '{{slug}}/_index'
+    create: false
+    delete: false
+    icon: category
+    summary: '**{{title}}** · {{locales | upper}}'
+    i18n: true
+    fields:
+      - name: title
+        label: Category label
+        widget: string
+        i18n: true
+      - name: description
+        label: Category description
+        widget: string
+        required: false
+        i18n: true
 
   - divider: true
 
