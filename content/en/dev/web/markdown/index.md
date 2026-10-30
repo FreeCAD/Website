@@ -442,23 +442,6 @@ Please make sure you are using [Hugo v0.146.0](https://github.com/gohugoio/hugo/
 > Advises about risks or negative outcomes of certain actions.
 
 
-## Other Elements
-
-HTML is supported in most cases:
-
-```text {file="Markdown abbreviation"}
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
-```
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
-
-
-```text {file="Markdown keyboard"}
-Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
-```
-
-Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
-
-
 ## Configuration
 
 Hugo uses [Goldmark](https://github.com/yuin/goldmark) for Markdown parsing.

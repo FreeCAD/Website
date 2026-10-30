@@ -384,6 +384,47 @@ Trigo shortcode to add a marker with optional icon and label.
 | 2 | css_class | string | *optional* | custom CSS classes | "accent" |
 
 
+## Abbreviation
+
+Trigo shortcode to add an abbreviation with optional title.
+
+```html {file="markdown"}
+Web pages are written in {{</* abbr text="HTML" title="HyperText Markup Language" */>}}.
+```
+
+***How it renders:***
+
+Web pages are written in {{< abbr text="HTML" title="HyperText Markup Language" >}}.
+
+***`abbr` arguments:***
+
+| Position | Argument| Type | Default | Options | Example value |
+| --- | --- | --- | --- | --- | --- |
+| 0 | text | string | | | "HTML" |
+| 1 | title | string | *optional* | | "HyperText Markup Language" |
+| 2 | css_class | string | *optional* | custom CSS classes | "accent" |
+
+
+## Keyboard shortcut or key sequence
+
+Trigo shortcode to add a keyboard shortcut or key sequence.
+
+```html {file="markdown"}
+Press {{</* kbd key="CTRL+ALT+Delete" */>}} to end the session.
+```
+
+***How it renders:***
+
+Press {{< kbd key="CTRL+ALT+Delete" >}} to end the session.
+
+***`kbd` arguments:***
+
+| Position | Argument| Type | Default | Options | Example value |
+| --- | --- | --- | --- | --- | --- |
+| 0 | key | string | | | "ABC", "SHIFT F12" |
+| 1 | css_class | string | *optional* | custom CSS classes | "accent" |
+
+
 ## Git
 
 Trigo shortcode to link to a git commit or pull request (short commit hash or #id respectively).

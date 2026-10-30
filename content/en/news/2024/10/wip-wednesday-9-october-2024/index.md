@@ -37,8 +37,8 @@ This week in FreeCAD development:
 
 **GUI**:
 
-- Rexbas fixed a regression where entering edit mode for a sketch with TouchPad navigation style enabled would result in camera rotation when the <kbd>Shift</kbd> button is pressed.
-- Benj5378 fixed font size scaling in the Pythion console by using <kbd>Ctrl</kbd> + mouse scrolling.
+- Rexbas fixed a regression where entering edit mode for a sketch with TouchPad navigation style enabled would result in camera rotation when the {{< kbd key="SHIFT" >}} button is pressed.
+- Benj5378 fixed font size scaling in the Pythion console by using {{< kbd key="CTRL" >}} + mouse scrolling.
 
 Among other changes:
 

@@ -23,11 +23,11 @@ This week in FreeCAD development:
 **Spreadsheet**:
 
 - hyarion implemented double-clicking on separator/handle to resize the column to content.
-- snow-faerie added <kbd>Ctrl</kbd> + {B,I,U} shortcuts for cell formatting to Spreadsheet. Since <kbd>Ctrl</kbd> + </kbd>I</kbd> was taken by File/Import, they also remapped that command to <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd>.
+- snow-faerie added {{< kbd key="CTRL+B" >}}, {{< kbd key="CTRL+I" >}}, {{< kbd key="CTRL+U" >}} shortcuts for cell formatting to Spreadsheet. Since {{< kbd key="CTRL+I" >}} was taken by File/Import, they also remapped that command to {{< kbd key="CTRL+SHIFT+I" >}}.
 
 **Addon Manager**: hasecilu patched the dialog to show the repository URL if it exists in the metadata; and now when you switch to a different branch of an addon, the Addon Manager will show you the names of both involved branches.
 
-**GUI**: benj5378 centered the method icon in calltips vertically, and snow-faerie mapped the Preferences dialog to the <kbd>Ctrl</kbd> + <kbd>;</kbd> shortcut by default.
+**GUI**: benj5378 centered the method icon in calltips vertically, and snow-faerie mapped the Preferences dialog to the {{< kbd key="CTRL+;" >}} shortcut by default.
 
 Among other changes:
 

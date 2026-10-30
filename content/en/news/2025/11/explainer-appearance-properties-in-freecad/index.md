@@ -24,7 +24,7 @@ There are six appearance properties, which you can find in the **View** properti
 - Shininess
 - Transparency
 
-Another way to access the appearance properties of an object is by opening the **Appearance** task panel (<kbd>Ctrl</kbd> + <kbd>D</kbd>) and clicking the **Appearance** button, which opens the **Material Properties** dialog.
+Another way to access the appearance properties of an object is by opening the **Appearance** task panel ({{< kbd key="CTRL+D" >}}) and clicking the **Appearance** button, which opens the **Material Properties** dialog.
 
 ![Fig 02 material properties dialogue](FIG-02-material-properties-dialogue.webp "Fig 02 material properties dialogue")
 

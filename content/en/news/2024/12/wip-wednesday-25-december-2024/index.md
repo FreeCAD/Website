@@ -26,7 +26,7 @@ This week in FreeCAD development:
 
 **Addon Manager**: chennes fixed a few issues.
 
-**GUI**: hyarion, wwmayer, and marcuspollio fixed a few issues in the UI code, but most noticeably, Rexbas fixed navigation issues with the <kbd>Shift</kbd> key in Sketcher while using Blender or Revit navigation styles.
+**GUI**: hyarion, wwmayer, and marcuspollio fixed a few issues in the UI code, but most noticeably, Rexbas fixed navigation issues with the {{< kbd key="SHIFT" >}} key in Sketcher while using Blender or Revit navigation styles.
 
 **Add-ons**: rostskadat improved the SweetHome 3D importer to import elements such as 'pieceOfFurniture', 'light', 'camera', etc.
 

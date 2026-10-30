@@ -1,0 +1,34 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Abbreviation shortcode:
+
+  @param {string} text – Abbreviation.
+  @param {string} [title] – Optional full expansion/description of the abbreviation.
+  @param {string} [css_class] – Optional CSS class.
+
+  @return {HTML} Inline HTML <abbr> element.
+
+  @example {{< abbr text="HTML" title="HyperText Markup Language" >}}
+  @example {{< abbr "HTML" "HyperText Markup Language" >}}
+
+*/ -}}
+
+
+{{- $text := cond .IsNamedParams (.Get "text") (.Get 0) -}}
+{{- $title := cond .IsNamedParams (.Get "title") (.Get 1) -}}
+{{- $class := cond .IsNamedParams (.Get "css_class") (.Get 2) -}}
+
+{{- with $text -}}
+  <abbr
+    {{- with $title }} title="{{ . }}"{{ end -}}
+    {{- with $class }} class="{{ . | lower }}"{{ end -}}>
+    {{- strings.TrimSpace . -}}
+  </abbr>
+
+{{- else -}}
+  {{- warnf "%q shortcode: missing required 'text' argument on %s" .Name .Position -}}
+{{- end -}}

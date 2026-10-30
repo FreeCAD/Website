@@ -1,0 +1,83 @@
+{{- /*
+SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 FreeCAD
+SPDX-FileNotice: Part of the Trigo theme for Hugo.
+*/ -}}
+
+{{- /* Keyboard shortcut shortcode:
+
+  @param {string} key – Keyboard shortcut or key sequence.
+  @param {string} [css_class] – Optional CSS class applied to each key.
+
+  @return {HTML} Inline HTML <kbd> elements.
+
+  @example {{< kbd key="CTRL+ALT+Delete" >}}
+  @example {{< kbd key="ABC" >}}
+  @example {{< kbd key="ctrl++,-delete" >}}
+  @example {{< kbd key="SHIFT F12" >}}
+
+*/ -}}
+
+
+{{- $key := cond .IsNamedParams (.Get "key") (.Get 0) -}}
+{{- $class := cond .IsNamedParams (.Get "css_class") (.Get 1) -}}
+
+{{- if $key  -}}
+  {{- $text := replaceRE `[ +,-]+` " " (strings.TrimSpace $key | upper) -}}
+  {{- $parts := split $text " " -}}
+  {{- $keys := slice -}}
+  {{- $has_modifier := false -}}
+  {{- $modifiers := slice
+      "CTRL" "CONTROL"
+      "ALT" "ALTERNATE" "ALTGR"
+      "SHIFT"
+      "CMD" "COMMAND" "OPT" "OPTION"
+      "SUPER" "WIN" "WINDOWS"
+      "FN" "FUNCTION"
+  -}}
+  {{- $named_keys := slice
+      "DEL" "DELETE"
+      "ENTER" "ESC" "ESCAPE"
+      "SPACE" "TAB"
+      "BACK" "BACKSPACE"
+      "INS" "INSERT"
+      "LOCK" "CAPS" "NUMLOCK" "CAPSLOCK"
+      "MENU" "PRTSCR"
+      "HOME" "END"
+      "PAGEUP" "PGUP"
+      "PAGEDOWN" "PGDN"
+      "UP" "ARROWUP"
+      "DOWN" "ARROWDOWN"
+      "LEFT" "ARROWLEFT"
+      "RIGHT" "ARROWRIGHT"
+  -}}
+
+  {{- range $part := $parts -}}
+    {{- $part = strings.TrimSpace $part -}}
+
+    {{- if or (in $modifiers $part) (in $named_keys $part) (findRE `^F([1-9]|1[0-2])$` $part) -}}
+      {{- $keys = $keys | append $part -}}
+      {{- if in $modifiers $part -}}
+        {{- $has_modifier = true -}}
+      {{- end -}}
+
+    {{- else -}}
+      {{- range $char := split $part "" -}}
+        {{- $keys = $keys | append $char -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- range $i, $k := $keys -}}
+    {{- if $i -}}
+      {{- if $has_modifier }}{{ " + " }}{{ else }}{{ " " }}{{ end -}}
+    {{- end -}}
+
+    <kbd{{ with $class }} class="{{ . | lower }}"{{ end }}>
+      {{- $k -}}
+    </kbd>
+  {{- end -}}
+
+{{- else -}}
+  {{- warnf "%q shortcode: missing required 'key' argument on %s" .Name .Position -}}
+{{- end -}}
