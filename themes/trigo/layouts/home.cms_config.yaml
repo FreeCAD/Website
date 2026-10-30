@@ -332,7 +332,13 @@ collections:
       - name: date
         label: Date
         widget: datetime
+        {{- if eq $section (index site.MainSections 0) }}
+        {{- /* Posts can be scheduled: picked in the editor's local time,
+          stored in UTC. */}}
+        output_utc: true
+        {{- else }}
         type: date
+        {{- end }}
         i18n: duplicate
       - name: draft
         label: Draft
