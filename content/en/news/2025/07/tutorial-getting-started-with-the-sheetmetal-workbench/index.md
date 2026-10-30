@@ -1,7 +1,7 @@
 ---
 title: Tutorial - Getting Started With the SheetMetal Workbench
 date: 2025-07-11
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: tutorial
 tags:

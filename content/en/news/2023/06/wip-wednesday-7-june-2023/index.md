@@ -1,7 +1,7 @@
 ---
 title: WIP Wednesday - 7 June 2023
 date: 2023-06-07
-author: Chris Hennes
+author: chennes
 draft: false
 category: update
 tags:

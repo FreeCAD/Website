@@ -1,7 +1,7 @@
 ---
 title: Tutorial - Getting started with the Assembly Workbench
 date: 2024-09-30
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: tutorial
 tags:

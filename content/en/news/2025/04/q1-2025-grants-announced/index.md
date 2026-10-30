@@ -1,7 +1,7 @@
 ---
 title: Q1 2025 Grants announced
 date: 2025-04-07
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: announcement
 tags:

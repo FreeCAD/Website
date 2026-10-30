@@ -1,7 +1,7 @@
 ---
 title: Tutorial - Importing and Using Scaled Reference Images
 date: 2026-04-12
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: tutorial
 tags:

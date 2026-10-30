@@ -1,7 +1,7 @@
 ---
 title: Tutorial - Using the Measure Tool in Version 1.0
 date: 2025-01-20
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: tutorial
 tags: []

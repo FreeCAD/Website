@@ -1,6 +1,4 @@
 ---
-title: News archives
-linkTitle: Archives
+title: Archives
 layout: archives
 ---
-

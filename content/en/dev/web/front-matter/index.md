@@ -36,7 +36,7 @@ By default, a `title` front matter field must be provided for each page. Additio
 | `icon_cms` | string | bolt |
 | `lastmod` | date | 2021-02-03 |
 | `layout` | string | archives |
-| `linkTitle` | string | Admin |
+| `linkTitle` | string | Guide |
 | `redirect` | string | auto |
 | `tags` | list[string] | [code, python] (can be inline or block array) |
 | `title` | string | A great title |

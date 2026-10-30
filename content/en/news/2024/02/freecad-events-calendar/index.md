@@ -1,7 +1,7 @@
 ---
 title: FreeCAD Events Calendar
 date: 2024-02-02
-author: Brad Collette
+author: sliptonic
 draft: false
 category: announcement
 tags: []

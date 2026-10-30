@@ -1,7 +1,7 @@
 ---
 title: WIP Wednesday - 3 May 2023
 date: 2023-05-03
-author: Chris Hennes
+author: chennes
 draft: false
 category: update
 tags:

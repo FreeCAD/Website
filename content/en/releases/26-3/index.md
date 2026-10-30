@@ -24,14 +24,14 @@ This release makes FreeCAD more responsive on large models, makes Part Design an
 - New ==Mass Properties== command for volume, mass, density, surface area, center of gravity and inertia, with material-aware results and custom reference frames.
 - Box selection by dragging is built into the common navigation styles.
 
-{{< carousel "multidoc.webp" "expression_static.webp" "mass.webp" >}}
+{{< carousel images="multidoc.webp, expression_static.webp, mass.webp" >}}
 
 {{< /block >}}
 
 
 {{< block title="Part Design, more versatile than ever" css_class="accent-5" >}}
 
-{{< carousel "defeaturing.webp" "thread.webp" "pattern.webp" "pattern-ovp.webp" "offset.webp" >}}
+{{< carousel images="defeaturing.webp, thread.webp, pattern.webp, pattern-ovp.webp, offset.webp" >}}
 
 - Parametric ==Defeaturing== tool and cosmetic threads on holes.
 - Point, path and circular pattern types, suppression of individual pattern instances, and on-view parameters for custom spacing.
@@ -48,7 +48,7 @@ This release makes FreeCAD more responsive on large models, makes Part Design an
 
 ## Sketch smarter
 
-{{< compare "faces-before.webp" "faces-after.webp" >}}
+{{< compare before="faces-before.webp" after="faces-after.webp" >}}
 
 - Reliable internal faces for complex overlapping geometry, now on by default for new sketches.
 - Dimension and constraint tools pick model edges outside the sketch directly, creating the external reference automatically.
@@ -86,7 +86,7 @@ This release makes FreeCAD more responsive on large models, makes Part Design an
 - A feeds and speeds helper calculating from material and tool geometry within the machine's limits.
 - A redesigned Job panel, the simulator as a proper window inside the main interface, and posting only the selected operations.
 
-{{< carousel "multiaxis.webp" "rotary.webp" >}}
+{{< carousel images="multiaxis.webp, rotary.webp" >}}
 
 {{< /block >}}
 
@@ -108,7 +108,7 @@ This release makes FreeCAD more responsive on large models, makes Part Design an
 - Right-click context menus adapt to what is selected.
 - A new ==Screen Mode== scales edges, vertices and annotations with the zoom level so they no longer obscure geometry in complex drawings.
 
-{{< compare "screenmode-before.webp" "screenmode-after.webp" >}}
+{{< compare before="screenmode-before.webp" after="screenmode-after.webp" >}}
 
 {{< /group >}}
 
@@ -117,7 +117,7 @@ This release makes FreeCAD more responsive on large models, makes Part Design an
 
 {{< block title="Build with BIM and Draft" css_class="accent-2" >}}
 
-{{< carousel "trimex_static.webp" "locking_static.webp" >}}
+{{< carousel images="trimex_static.webp, locking_static.webp" >}}
 
 - A ==Report== tool with an SQL-like query language.
 - A ==Covering== tool for finishes and cladding.

@@ -1,7 +1,7 @@
 ---
 title: Announcing Lens test server
 date: 2026-09-18
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: announcement
 tags:

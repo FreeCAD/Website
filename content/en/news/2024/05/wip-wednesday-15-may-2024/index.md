@@ -1,7 +1,7 @@
 ---
 title: WIP Wednesday - 15 May 2024
 date: 2024-05-15
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: update
 tags:

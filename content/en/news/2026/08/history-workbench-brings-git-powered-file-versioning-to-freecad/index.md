@@ -1,7 +1,7 @@
 ---
 title: History Workbench brings Git powered File Versioning to FreeCAD
 date: 2026-08-28
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: showcase
 tags:

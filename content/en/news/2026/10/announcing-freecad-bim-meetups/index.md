@@ -1,7 +1,7 @@
 ---
 title: Announcing FreeCAD BIM meetups
 date: 2026-10-09
-author: Tomas Polak
+author: semhustej
 draft: false
 category: announcement
 tags:

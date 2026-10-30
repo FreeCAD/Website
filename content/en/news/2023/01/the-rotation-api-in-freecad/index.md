@@ -1,7 +1,7 @@
 ---
 title: The Rotation API in FreeCAD
 date: 2023-01-16
-author: Ed Williams
+author: edwilliams16
 draft: false
 category: feature
 tags:

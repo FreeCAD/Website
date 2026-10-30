@@ -1,7 +1,7 @@
 ---
 title: Good bye GSoC 2023, Hello GSoC 2024
 date: 2024-02-29
-author: Yorik van Havre
+author: yorikvanhavre
 draft: false
 category: announcement
 tags: []

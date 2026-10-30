@@ -1,7 +1,7 @@
 ---
 title: FreeCAD - It IS Rocket Science!
 date: 2026-04-03
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: showcase
 tags:

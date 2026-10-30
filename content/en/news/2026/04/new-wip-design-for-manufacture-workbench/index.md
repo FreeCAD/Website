@@ -1,7 +1,7 @@
 ---
 title: New WIP Design for Manufacture Workbench
 date: 2026-04-21
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: showcase
 tags:

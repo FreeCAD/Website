@@ -1,7 +1,7 @@
 ---
 title: Expression Autocomplete Improvements
 date: 2023-01-30
-author: Chris Hennes
+author: chennes
 draft: false
 category: feature
 tags:

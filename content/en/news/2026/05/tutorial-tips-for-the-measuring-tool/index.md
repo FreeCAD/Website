@@ -1,7 +1,7 @@
 ---
 title: Tutorial - Tips for the Measuring Tool
 date: 2026-05-15
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: tutorial
 tags:

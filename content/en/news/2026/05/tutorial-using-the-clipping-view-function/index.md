@@ -1,7 +1,7 @@
 ---
 title: Tutorial - Using the Clipping View function
 date: 2026-05-28
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: tutorial
 tags:

@@ -1,7 +1,7 @@
 ---
 title: WandererFan is retiring
 date: 2025-07-03
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: announcement
 tags:

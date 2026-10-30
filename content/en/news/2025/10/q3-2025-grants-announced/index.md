@@ -1,7 +1,7 @@
 ---
 title: Q3 2025 grants announced
 date: 2025-10-03
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: announcement
 tags:

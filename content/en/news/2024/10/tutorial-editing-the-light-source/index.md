@@ -1,7 +1,7 @@
 ---
 title: Tutorial - Editing the Light Source
 date: 2024-10-28
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: tutorial
 tags:

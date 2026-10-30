@@ -1,7 +1,7 @@
 ---
 title: FPA Grant Program 2025 year-in-review
 date: 2026-03-01
-author: Chris Hennes
+author: chennes
 draft: false
 category: announcement
 tags:

@@ -1,7 +1,7 @@
 ---
 title: WIP Wednesday - 2 April 2025
 date: 2025-04-02
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: update
 tags:

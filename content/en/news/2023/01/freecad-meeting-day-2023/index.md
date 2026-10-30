@@ -1,7 +1,7 @@
 ---
 title: FreeCAD Meeting Day 2023
 date: 2023-01-04
-author: Yorik van Havre
+author: yorikvanhavre
 draft: false
 category: event
 tags: []

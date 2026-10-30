@@ -1,7 +1,7 @@
 ---
 title: The bug bounty program has been renewed
 date: 2026-03-21
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: announcement
 tags:

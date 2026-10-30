@@ -1,7 +1,7 @@
 ---
 title: New Feature Merged - Cosmetic Threads
 date: 2026-03-20
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: feature
 tags:

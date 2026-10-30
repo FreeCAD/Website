@@ -1,7 +1,7 @@
 ---
 title: Forged in FreeCAD (and KiCad) - Community Bike Sound System Solutions!
 date: 2025-09-11
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: showcase
 tags:

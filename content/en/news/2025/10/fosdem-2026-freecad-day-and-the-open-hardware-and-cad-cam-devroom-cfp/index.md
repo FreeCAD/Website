@@ -1,7 +1,7 @@
 ---
 title: FOSDEM 2026, FreeCAD Day and the Open Hardware and CAD/CAM Devroom Cfp
 date: 2025-10-28
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: event
 tags:

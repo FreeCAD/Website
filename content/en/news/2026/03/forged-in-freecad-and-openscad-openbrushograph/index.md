@@ -1,7 +1,7 @@
 ---
 title: Forged in FreeCAD (and OpenSCAD) - OpenBrushoGraph
 date: 2026-03-09
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: showcase
 tags:

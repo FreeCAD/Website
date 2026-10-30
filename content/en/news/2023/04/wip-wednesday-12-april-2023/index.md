@@ -1,7 +1,7 @@
 ---
 title: WIP Wednesday - 12 April 2023
 date: 2023-04-12
-author: Chris Hennes
+author: chennes
 draft: false
 category: update
 tags:

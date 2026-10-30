@@ -1,7 +1,7 @@
 ---
 title: Google Summer of Code 2023
 date: 2023-05-04
-author: Yorik van Havre
+author: yorikvanhavre
 draft: false
 category: announcement
 tags: []

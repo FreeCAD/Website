@@ -1,7 +1,7 @@
 ---
 title: WIP Wednesday, 27 August 2025
 date: 2025-08-27
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: update
 tags:

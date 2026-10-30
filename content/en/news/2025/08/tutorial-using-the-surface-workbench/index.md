@@ -1,7 +1,7 @@
 ---
 title: Tutorial - Using the Surface Workbench
 date: 2025-08-22
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: tutorial
 tags:

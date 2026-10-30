@@ -1,7 +1,7 @@
 ---
 title: GSoC2026 projects announced
 date: 2026-05-02
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: announcement
 tags:

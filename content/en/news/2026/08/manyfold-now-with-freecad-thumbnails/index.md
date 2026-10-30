@@ -1,7 +1,7 @@
 ---
 title: Manyfold - Now with FreeCAD Thumbnails
 date: 2026-08-06
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: showcase
 tags:

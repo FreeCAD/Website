@@ -1,7 +1,7 @@
 ---
 title: Tutorial - Using the Additive Pipe Tool
 date: 2025-07-31
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: tutorial
 tags:

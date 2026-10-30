@@ -1,7 +1,7 @@
 ---
 title: 2026 Q3 grant program - funded projects
 date: 2026-10-02
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: announcement
 tags:

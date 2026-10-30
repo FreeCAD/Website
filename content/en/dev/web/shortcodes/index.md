@@ -298,14 +298,14 @@ Trigo shortcode to display two stacked images with a movable vertical clipping p
 Specify two image paths:
 
 ```html {file="markdown"}
-{{</* compare "1.webp" "2.webp" */>}}
+{{</* compare before="dir/1.webp" after="dir/3.webp" */>}}
 ```
 
 The path is relative to the current page bundle. To use resources in the `static` directory of the site, prefix the path with a `/` slash. External image URLs are also supported.
 
 ***How it renders:***
 
-{{< compare "dir/1.webp" "dir/3.webp" >}}
+{{< compare before="dir/1.webp" after="dir/3.webp" >}}
 
 
 ***`compare` arguments:***

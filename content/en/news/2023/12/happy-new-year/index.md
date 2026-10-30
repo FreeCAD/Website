@@ -1,7 +1,7 @@
 ---
 title: Happy New Year!
 date: 2023-12-31
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: announcement
 tags: []

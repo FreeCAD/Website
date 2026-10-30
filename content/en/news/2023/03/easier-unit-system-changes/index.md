@@ -1,7 +1,7 @@
 ---
 title: Easier Unit System Changes
 date: 2023-03-20
-author: Chris Hennes
+author: chennes
 draft: false
 category: feature
 tags:

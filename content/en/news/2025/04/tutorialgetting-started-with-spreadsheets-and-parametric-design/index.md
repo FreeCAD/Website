@@ -1,7 +1,7 @@
 ---
 title: Tutorial - Getting started with Spreadsheets and Parametric Design
 date: 2025-04-08
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: tutorial
 tags:

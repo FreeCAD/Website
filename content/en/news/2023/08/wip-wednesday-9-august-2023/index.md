@@ -1,7 +1,7 @@
 ---
 title: WIP Wednesday - 9 August 2023
 date: 2023-08-09
-author: Chris Hennes
+author: chennes
 draft: false
 category: update
 tags:

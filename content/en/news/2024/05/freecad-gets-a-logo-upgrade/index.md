@@ -1,7 +1,7 @@
 ---
 title: FreeCAD gets a Logo Upgrade
 date: 2024-05-22
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: announcement
 tags:

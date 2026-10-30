@@ -1,7 +1,7 @@
 ---
 title: Image Import Refactored
 date: 2023-04-24
-author: Chris Hennes
+author: chennes
 draft: false
 category: feature
 tags:

@@ -1,7 +1,7 @@
 ---
 title: FreeCAD at FOSSASIA
 date: 2024-04-22
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: announcement
 tags: []

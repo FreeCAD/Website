@@ -1,7 +1,7 @@
 ---
 title: FreeCAD 26.3 Release Candidate 1
 date: 2026-10-08
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: announcement
 tags:

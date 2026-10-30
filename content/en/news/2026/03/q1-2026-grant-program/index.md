@@ -1,7 +1,7 @@
 ---
 title: Q1 2026 Grant Program
 date: 2026-03-02
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: announcement
 tags:

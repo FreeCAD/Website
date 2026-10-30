@@ -1,7 +1,7 @@
 ---
 title: Amazing Multibody Dynamics with FEM
 date: 2026-02-27
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: showcase
 tags:

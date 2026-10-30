@@ -1,7 +1,7 @@
 ---
 title: Forged in FreeCAD - Avian Hang Gliders
 date: 2024-07-30
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: showcase
 tags:

@@ -1,7 +1,7 @@
 ---
 title: Machine Optimised Flying Wing Design With FreeCAD
 date: 2026-10-13
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: showcase
 tags:

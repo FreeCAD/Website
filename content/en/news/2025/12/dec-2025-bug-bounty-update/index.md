@@ -1,7 +1,7 @@
 ---
 title: Dec 2025 bug bounty update
 date: 2025-12-19
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: update
 tags:

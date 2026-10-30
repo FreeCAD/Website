@@ -1,6 +1,5 @@
 ---
 title: Markdown Syntax Guide
-linkTitle: Markdown
 description: How to use basic Markdown syntax and formatting.
 weight: 4
 ---

@@ -1,7 +1,7 @@
 ---
 title: Guest Post, Turan at the Google Summer of Code Summit
 date: 2025-12-18
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: event
 tags:

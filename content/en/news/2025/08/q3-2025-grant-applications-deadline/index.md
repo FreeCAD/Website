@@ -1,7 +1,7 @@
 ---
 title: The Q3 2025 grant applications deadline is near
 date: 2025-08-07
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: announcement
 tags:

@@ -1,7 +1,7 @@
 ---
 title: Explainer - Appearance Properties in FreeCAD
 date: 2025-11-09
-author: Tomas Polak
+author: semhustej
 draft: false
 category: tutorial
 tags:

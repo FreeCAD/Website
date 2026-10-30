@@ -1,7 +1,7 @@
 ---
 title: Google Summer of Code 2025 recap
 date: 2025-10-17
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: update
 tags:

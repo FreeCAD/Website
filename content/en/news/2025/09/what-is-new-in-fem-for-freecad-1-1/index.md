@@ -1,7 +1,7 @@
 ---
 title: What’s new in FEM for FreeCAD 1.1?
 date: 2025-09-09
-author: NewJoker
+author: fea-eng
 draft: false
 category: update
 tags:

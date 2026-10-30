@@ -19,7 +19,7 @@ This release focuses on making everyday modeling more reliable, faster, and more
 
 {{< group >}}
 
-{{< carousel "transform.webp" "transform2.webp" >}}
+{{< carousel images="transform.webp, transform2.webp" >}}
 
 - Three-point lighting improving rendering of models in the 3D view.
 - Transform tool overhaul, with draggers, precise input, alignment, snapping, and target features.
@@ -58,7 +58,7 @@ This release focuses on making everyday modeling more reliable, faster, and more
 
 {{< group >}}
 
-{{< compare "sketcher.webp" "pad.webp" >}}
+{{< compare before="sketcher.webp" after="pad.webp" >}}
 
 - Projection, intersection, and external geometry in the Sketcher.
 - Improved master sketch workflow via make internals for closed contours.

@@ -1,7 +1,7 @@
 ---
 title: Q2 2026 grants announced
 date: 2026-07-04
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: announcement
 tags:

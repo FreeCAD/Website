@@ -1,7 +1,7 @@
 ---
 title: MangoJelly Solutions latest playlist explores Version 1.0 Features
 date: 2024-08-27
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: tutorial
 tags:

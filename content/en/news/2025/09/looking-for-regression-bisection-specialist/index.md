@@ -1,7 +1,7 @@
 ---
 title: We are looking for a regression bisection specialist
 date: 2025-09-04
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: announcement
 tags:

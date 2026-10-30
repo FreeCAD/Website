@@ -1,7 +1,7 @@
 ---
 title: FreeCAD Hackathon 11-13 August, 2023
 date: 2023-05-24
-author: Chris Hennes
+author: chennes
 draft: false
 category: announcement
 tags: []

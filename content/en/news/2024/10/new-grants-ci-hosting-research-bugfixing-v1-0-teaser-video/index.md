@@ -1,7 +1,7 @@
 ---
 title: New Grants - CI hosting research, bugfixing, v1.0 teaser video
 date: 2024-10-15
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: announcement
 tags:

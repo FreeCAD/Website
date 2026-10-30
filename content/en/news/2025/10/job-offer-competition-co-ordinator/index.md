@@ -1,7 +1,7 @@
 ---
 title: Job Offer - Competition Co-ordinator
 date: 2025-10-12
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: announcement
 tags:

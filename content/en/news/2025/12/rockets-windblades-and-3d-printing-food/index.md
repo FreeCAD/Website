@@ -1,7 +1,7 @@
 ---
 title: Rockets, windblades, and 3D-printing food, with Matt Thomas aka LT72884
 date: 2025-12-12
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: showcase
 tags:

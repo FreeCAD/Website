@@ -1,7 +1,7 @@
 ---
 title: FreeCAD Forum performance issues
 date: 2025-01-30
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: announcement
 tags: []

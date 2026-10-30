@@ -1,7 +1,7 @@
 ---
 title: Forged In FreeCAD - Juze Crailsheim Summer RC Boat Workshops
 date: 2025-08-25
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: showcase
 tags:

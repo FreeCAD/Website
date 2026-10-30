@@ -1,7 +1,7 @@
 ---
 title: Register for North America FreeCAD Meetup!
 date: 2026-06-08
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: announcement
 tags:

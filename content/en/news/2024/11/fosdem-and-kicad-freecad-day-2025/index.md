@@ -1,7 +1,7 @@
 ---
 title: FOSDEM and KiCAD + FreeCAD day 2025
 date: 2024-11-04
-author: Yorik van Havre
+author: yorikvanhavre
 draft: false
 category: event
 tags:

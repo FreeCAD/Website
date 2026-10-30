@@ -1,7 +1,7 @@
 ---
 title: New Grants - Variant Parts, debugging with CLion and VSCode, Homebrew build update
 date: 2024-09-24
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: announcement
 tags:

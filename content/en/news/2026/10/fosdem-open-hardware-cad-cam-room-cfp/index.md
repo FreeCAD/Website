@@ -1,7 +1,7 @@
 ---
 title: FOSDEM, Open Hardware CAD/CAM Room CFP
 date: 2026-10-29
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: event
 tags:

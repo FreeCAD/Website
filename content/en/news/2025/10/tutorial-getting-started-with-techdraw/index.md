@@ -1,7 +1,7 @@
 ---
 title: Tutorial - Getting Started with TechDraw
 date: 2025-10-10
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: tutorial
 tags:

@@ -1,7 +1,7 @@
 ---
 title: First bugfix program payouts done
 date: 2025-10-02
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: announcement
 tags:

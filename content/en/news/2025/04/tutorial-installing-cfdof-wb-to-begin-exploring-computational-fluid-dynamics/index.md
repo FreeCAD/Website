@@ -1,7 +1,7 @@
 ---
 title: Tutorial - Installing CfdOF WB to begin exploring Computational Fluid Dynamics
 date: 2025-04-24
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: tutorial
 tags: []

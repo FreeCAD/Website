@@ -1,7 +1,7 @@
 ---
 title: FreeCAD 1.1.4 released
 date: 2026-09-28
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: announcement
 tags:

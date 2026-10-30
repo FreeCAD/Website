@@ -1,7 +1,7 @@
 ---
 title: Forged in FreeCAD - IO Rodeo's Open Colorimeter
 date: 2025-06-23
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: showcase
 tags:

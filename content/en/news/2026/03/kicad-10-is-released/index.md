@@ -1,7 +1,7 @@
 ---
 title: KiCad 10 is released!
 date: 2026-03-23
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: showcase
 tags:

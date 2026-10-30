@@ -1,7 +1,7 @@
 ---
 title: FreeCAD 1.1rc3
 date: 2026-02-28
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: announcement
 tags:

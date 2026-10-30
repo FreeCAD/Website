@@ -1,7 +1,7 @@
 ---
 title: New Grants - VarSets, Mediawiki, artwork guidelines and icons
 date: 2024-11-18
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: announcement
 tags:

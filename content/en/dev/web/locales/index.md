@@ -1,6 +1,5 @@
 ---
 title: Translations and languages
-linkTitle: Translations
 description: Translate content and configure locales for the website.
 weight: 7
 ---

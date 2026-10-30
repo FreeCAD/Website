@@ -1,7 +1,7 @@
 ---
 title: Save the date - FreeCAD Hackathon August 29th 2026
 date: 2026-08-10
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: event
 tags:

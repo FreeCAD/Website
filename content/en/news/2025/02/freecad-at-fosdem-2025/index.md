@@ -1,7 +1,7 @@
 ---
 title: FreeCAD at FOSDEM 2025
 date: 2025-02-10
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: event
 tags: []

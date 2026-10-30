@@ -1,7 +1,7 @@
 ---
 title: FreeCAD Community Design Contest 2026 - Open Science
 date: 2026-05-01
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: announcement
 tags:

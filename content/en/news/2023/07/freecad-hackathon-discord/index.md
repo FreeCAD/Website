@@ -1,7 +1,7 @@
 ---
 title: FreeCAD Hackathon Discord
 date: 2023-07-27
-author: Chris Hennes
+author: chennes
 draft: false
 category: announcement
 tags: []

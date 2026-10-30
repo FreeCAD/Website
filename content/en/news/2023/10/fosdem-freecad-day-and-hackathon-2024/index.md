@@ -1,7 +1,7 @@
 ---
 title: FOSDEM, FreeCAD day and hackathon 2024
 date: 2023-10-31
-author: Yorik van Havre
+author: yorikvanhavre
 draft: false
 category: event
 tags: []

@@ -1,7 +1,7 @@
 ---
 title: FreeCAD at JdLL 2026 in Lyon
 date: 2026-06-22
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: event
 tags:

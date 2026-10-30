@@ -1,7 +1,7 @@
 ---
 title: Announcing the FreeCAD 2024 North American Meetup
 date: 2024-06-14
-author: Kurt Kremitzki
+author: kkremitzki
 draft: false
 category: announcement
 tags: []

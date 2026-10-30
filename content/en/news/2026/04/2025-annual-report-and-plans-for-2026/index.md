@@ -1,7 +1,7 @@
 ---
 title: 2025 annual report and plans for 2026
 date: 2026-04-24
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: announcement
 tags:

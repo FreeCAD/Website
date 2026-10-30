@@ -1,7 +1,7 @@
 ---
 title: New FreeCAD versioning scheme and development cycle
 date: 2026-06-26
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: announcement
 tags:

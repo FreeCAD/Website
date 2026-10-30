@@ -1,7 +1,7 @@
 ---
 title: FPA Grant Program 2025
 date: 2025-02-20
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: announcement
 tags:

@@ -1,7 +1,7 @@
 ---
 title: New Grants - Sketcher work, Toponaming, components for FreeCAD Library, User Manual Update
 date: 2024-06-09
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: announcement
 tags:

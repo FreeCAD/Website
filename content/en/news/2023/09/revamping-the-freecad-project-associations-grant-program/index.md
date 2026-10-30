@@ -1,7 +1,7 @@
 ---
 title: Revamping the FreeCAD Project Association’s Grant program
 date: 2023-09-28
-author: Chris Hennes
+author: chennes
 draft: false
 category: announcement
 tags:

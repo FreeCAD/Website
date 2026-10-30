@@ -1,7 +1,7 @@
 ---
 title: Exploring the FoamCut Workbench
 date: 2026-06-19
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: showcase
 tags:

@@ -1,7 +1,7 @@
 ---
 title: FreeCAD Friday! Get involved!
 date: 2026-01-16
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: showcase
 tags:

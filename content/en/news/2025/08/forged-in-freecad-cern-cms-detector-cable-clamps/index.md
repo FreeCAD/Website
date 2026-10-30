@@ -1,7 +1,7 @@
 ---
 title: Forged in FreeCAD - CERN CMS Detector Cable Clamps
 date: 2025-08-11
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: showcase
 tags:

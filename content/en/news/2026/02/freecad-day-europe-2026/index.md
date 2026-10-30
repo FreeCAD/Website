@@ -1,7 +1,7 @@
 ---
 title: FreeCAD Day 2026
 date: 2026-02-06
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: event
 tags:

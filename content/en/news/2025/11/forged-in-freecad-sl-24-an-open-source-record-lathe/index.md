@@ -1,7 +1,7 @@
 ---
 title: Forged in FreeCAD - SL-24, An Open Source Record Lathe
 date: 2025-11-11
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: showcase
 tags:

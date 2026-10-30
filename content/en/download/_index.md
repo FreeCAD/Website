@@ -77,7 +77,6 @@ FreeCAD evolves every day. Test the very latest changes, fixes, and features.
 {{< group >}}
 
 ## See the source code, it's open!
-{class="accent"}
 
 FreeCAD is free and open source software under the LGPL-2.0-or-later license.
 Explore the code, understand how it works, contribute improvements, and help shape the future of free, open, and parametric 3D design.

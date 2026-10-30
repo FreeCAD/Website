@@ -1,7 +1,7 @@
 ---
 title: Forged In FreeCAD - A beginners Keyring and Candlestick
 date: 2025-03-27
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: showcase
 tags:

@@ -1,7 +1,7 @@
 ---
 title: Upcoming Feature freeze and UI freeze for FreeCAD 1.0
 date: 2024-05-15
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: announcement
 tags:

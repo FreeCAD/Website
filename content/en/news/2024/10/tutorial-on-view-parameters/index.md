@@ -1,7 +1,7 @@
 ---
 title: Tutorial - On View Parameters
 date: 2024-10-20
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: tutorial
 tags:

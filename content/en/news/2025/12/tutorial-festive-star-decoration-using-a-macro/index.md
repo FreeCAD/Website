@@ -1,7 +1,7 @@
 ---
 title: Tutorial - Festive Star Decoration using a Macro
 date: 2025-12-22
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: tutorial
 tags:

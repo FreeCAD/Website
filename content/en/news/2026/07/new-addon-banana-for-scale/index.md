@@ -1,7 +1,7 @@
 ---
 title: New Addon - Banana For Scale!
 date: 2026-07-12
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: showcase
 tags:

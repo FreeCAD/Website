@@ -1,7 +1,7 @@
 ---
 title: WIP Wednesday - 9 October 2024
 date: 2024-10-09
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: update
 tags:

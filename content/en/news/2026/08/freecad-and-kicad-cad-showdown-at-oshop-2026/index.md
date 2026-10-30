@@ -1,7 +1,7 @@
 ---
 title: FreeCAD and KiCad - CAD showdown at OSHOP 2026
 date: 2026-08-21
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: event
 tags:

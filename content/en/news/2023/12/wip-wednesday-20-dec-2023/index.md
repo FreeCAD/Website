@@ -1,7 +1,7 @@
 ---
 title: WIP Wednesday - 20 Dec 2023
 date: 2023-12-20
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: update
 tags:

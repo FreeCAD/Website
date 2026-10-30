@@ -1,7 +1,7 @@
 ---
 title: FreeCAD at FAB25
 date: 2025-07-18
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: event
 tags:

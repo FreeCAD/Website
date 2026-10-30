@@ -1,7 +1,7 @@
 ---
 title: Coming Soon - FreeCAD 0.21
 date: 2023-04-28
-author: Chris Hennes
+author: chennes
 draft: false
 category: announcement
 tags:

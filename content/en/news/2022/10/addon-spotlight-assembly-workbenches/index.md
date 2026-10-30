@@ -1,7 +1,7 @@
 ---
 title: Addon Spotlight - Assembly Workbenches
 date: 2022-10-19
-author: Chris Hennes
+author: chennes
 draft: false
 category: feature
 tags:

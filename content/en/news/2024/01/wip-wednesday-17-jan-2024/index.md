@@ -1,7 +1,7 @@
 ---
 title: WIP Wednesday - 17 Jan 2024
 date: 2024-01-17
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: update
 tags:

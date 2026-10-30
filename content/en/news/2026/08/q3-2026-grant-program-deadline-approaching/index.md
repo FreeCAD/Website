@@ -1,7 +1,7 @@
 ---
 title: Q3 2026 grant program deadline approaching
 date: 2026-08-20
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: announcement
 tags:

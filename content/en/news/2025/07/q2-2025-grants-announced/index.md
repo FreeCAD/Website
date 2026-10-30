@@ -1,7 +1,7 @@
 ---
 title: Q2 2025 grants announced
 date: 2025-07-10
-author: Aleksandr Prokudin
+author: prokoudine
 category: announcement
 draft: false
 tags:

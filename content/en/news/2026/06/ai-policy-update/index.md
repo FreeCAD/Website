@@ -1,7 +1,7 @@
 ---
 title: AI policy update
 date: 2026-06-29
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: announcement
 tags:

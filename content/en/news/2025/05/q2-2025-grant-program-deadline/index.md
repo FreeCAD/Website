@@ -1,7 +1,7 @@
 ---
 title: Q2 2025 Grant program deadline
 date: 2025-05-09
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: announcement
 tags:

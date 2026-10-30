@@ -1,7 +1,7 @@
 ---
 title: RIP Bradley “bgbsww” McLean
 date: 2024-10-08
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: announcement
 tags: []

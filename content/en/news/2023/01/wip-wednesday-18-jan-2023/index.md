@@ -1,7 +1,7 @@
 ---
 title: WIP Wednesday - 18 Jan 2023
 date: 2023-01-18
-author: Chris Hennes
+author: chennes
 draft: false
 category: update
 tags:

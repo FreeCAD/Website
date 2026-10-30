@@ -1,7 +1,7 @@
 ---
 title: WIP Wednesday - 15 Nov 2023
 date: 2023-11-16
-author: Chris Hennes
+author: chennes
 draft: false
 category: update
 tags:

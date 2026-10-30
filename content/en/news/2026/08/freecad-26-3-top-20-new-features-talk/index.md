@@ -1,7 +1,7 @@
 ---
 title: FreeCAD 26.3 - Top 20 New Features talk
 date: 2026-08-14
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: event
 tags:

@@ -1,7 +1,7 @@
 ---
 title: WIP Wednesday - 31 July 2024
 date: 2024-07-31
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: update
 tags:

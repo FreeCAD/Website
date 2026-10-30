@@ -1,7 +1,7 @@
 ---
 title: Forged in FreeCAD - Thor, an Opensource robotic arm
 date: 2024-03-05
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: announcement
 tags:

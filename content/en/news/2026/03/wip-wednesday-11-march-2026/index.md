@@ -1,7 +1,7 @@
 ---
 title: WIP Wednesday, 11 March 2026
 date: 2026-03-11
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: update
 tags:

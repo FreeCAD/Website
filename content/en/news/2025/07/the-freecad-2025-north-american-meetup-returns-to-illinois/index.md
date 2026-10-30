@@ -1,7 +1,7 @@
 ---
 title: The FreeCAD 2025 North American Meetup Returns to Illinois
 date: 2025-07-04
-author: Kurt Kremitzki
+author: kkremitzki
 draft: false
 category: event
 tags:

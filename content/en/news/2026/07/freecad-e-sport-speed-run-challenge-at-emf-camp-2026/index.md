@@ -1,7 +1,7 @@
 ---
 title: FreeCAD E-Sport Speed Run Challenge at EMF camp 2026
 date: 2026-07-27
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: event
 tags:

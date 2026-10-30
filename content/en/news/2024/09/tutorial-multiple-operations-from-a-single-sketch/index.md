@@ -1,7 +1,7 @@
 ---
 title: Tutorial - Multiple operations from a single Sketch
 date: 2024-09-20
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: tutorial
 tags:

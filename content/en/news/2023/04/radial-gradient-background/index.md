@@ -1,7 +1,7 @@
 ---
 title: Radial Gradient Background
 date: 2023-04-10
-author: Chris Hennes
+author: chennes
 draft: false
 category: feature
 tags:

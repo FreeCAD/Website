@@ -1,7 +1,7 @@
 ---
 title: Q4 2025 grants selected
 date: 2025-12-25
-author: Aleksandr Prokudin
+author: prokoudine
 draft: false
 category: announcement
 tags:

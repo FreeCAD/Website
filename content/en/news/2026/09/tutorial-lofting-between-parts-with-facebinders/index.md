@@ -1,7 +1,7 @@
 ---
 title: Tutorial - Lofting between Parts with Facebinders
 date: 2026-09-21
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: tutorial
 tags:

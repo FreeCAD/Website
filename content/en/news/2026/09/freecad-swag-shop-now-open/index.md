@@ -1,7 +1,7 @@
 ---
 title: FreeCAD Swag Shop Now Open!
 date: 2026-09-11
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: announcement
 tags:

@@ -1,7 +1,7 @@
 ---
 title: FreeCAD 26.3 Release Candidate 2
 date: 2026-10-18
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: announcement
 tags:

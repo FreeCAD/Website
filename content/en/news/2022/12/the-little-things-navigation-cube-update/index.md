@@ -1,7 +1,7 @@
 ---
 title: The Little Things - Navigation Cube Update
 date: 2022-12-21
-author: Chris Hennes
+author: chennes
 draft: false
 category: feature
 tags:

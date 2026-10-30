@@ -1,7 +1,7 @@
 ---
 title: WIP Wednesday - 21 Mar 2023
 date: 2023-03-22
-author: Chris Hennes
+author: chennes
 draft: false
 category: update
 tags:

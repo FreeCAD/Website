@@ -1,7 +1,7 @@
 ---
 title: A New Materials System
 date: 2023-06-11
-author: Chris Hennes
+author: chennes
 draft: false
 category: update
 tags: []

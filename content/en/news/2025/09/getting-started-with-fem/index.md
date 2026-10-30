@@ -1,7 +1,7 @@
 ---
 title: Getting started with FEM
 date: 2025-09-16
-author: NewJoker
+author: fea-eng
 draft: false
 category: tutorial
 tags:

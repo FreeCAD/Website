@@ -1,7 +1,7 @@
 ---
 title: FreeCAD 1.1.1 released
 date: 2026-04-15
-author: Jo Hinchliffe
+author: concretedog
 draft: false
 category: announcement
 tags:
