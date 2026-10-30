@@ -17,7 +17,7 @@ In the past week we continued merging translation fixes, plus a significant visu
 In this upcoming week:
 
 - yorik is busy killing NativeIFC issues and attacking Draft per-view working planes.
-- jonasb is working on the doc-strings of Sketcher's Python-API, i.e. the various <UserDocu> in the "src/Mod/Sketcher/App/*Py.xml" files.
+- jonasb is working on the doc-strings of Sketcher's Python-API, i.e. the various `<UserDocu>` in the "src/Mod/Sketcher/App/*Py.xml" files.
 - wandererfan is working in issue #9365: accented characters, investigating a complaint about spreadsheet fields not working, and doing v0.21 release prep.
 - Kunda1 is doing triage and packaging.
 - jnxd is working on general tangency and investigating requirements for a unified user property feature.

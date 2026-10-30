@@ -129,7 +129,7 @@ The need for a minor release is triggered by a PR or commit which is deemed wort
   exposed?
 - Does the bug create a significant inconvenience for the user?
 
-When a PR or commit is found worth backporting, a maintainer will create a new issue. The issue should have suitable title like  [BACKPORT REQUEST] <some description>
+When a PR or commit is found worth backporting, a maintainer will create a new issue. The issue should have suitable title like  [BACKPORT REQUEST] `<some description>`
 
 The issue should link to the PR in question.
 

@@ -46,7 +46,7 @@ This will be hidden by default.
 {{< /details */>}}
 ```
 
-<u>How it renders:</u>
+***How it renders:***
 
 {{< details summary="Details" >}}
 
@@ -62,7 +62,7 @@ This will be hidden by default.
 
 {{< /details >}}
 
-<u>`details` arguments:</u>
+***`details` arguments:***
 
 | Position | Argument| Type | Default | Options | Example value |
 | --- | --- | --- | --- | --- | --- |
@@ -104,7 +104,7 @@ The `tabs` shortcode renders the inner content with multiple `tab` shortcodes.
 {{< /tabs */>}}
 ````
 
-<u>How it renders:</u>
+***How it renders:***
 
 {{< tabs >}}
   {{< tab JSON >}}
@@ -127,7 +127,7 @@ The `tabs` shortcode renders the inner content with multiple `tab` shortcodes.
   {{< /tab >}}
 {{< /tabs >}}
 
-<u>`tab` arguments:</u>
+***`tab` arguments:***
 
 | Position | Argument| Type | Default | Options | Example value |
 | --- | --- | --- | --- | --- | --- |
@@ -168,7 +168,7 @@ This will not be counted as a step.
 {{< /steps */>}}
 ```
 
-<u>How it renders:</u>
+***How it renders:***
 
 {{< steps >}}
 
@@ -211,7 +211,7 @@ Trigo shortcode to display a filetree list with inner content/branches/leaves an
 {{< /tree */>}}
 ```
 
-<u>How it renders:</u>
+***How it renders:***
 
 {{< tree label="example" >}}
   {{< branch label="content" >}}
@@ -225,14 +225,14 @@ Trigo shortcode to display a filetree list with inner content/branches/leaves an
   {{< leaf label="hugo.toml" >}}
 {{< /tree >}}
 
-<u>`tree` arguments:</u>
+***`tree` arguments:***
 
 | Position | Argument| Type | Default | Options | Example value |
 | --- | --- | --- | --- | --- | --- |
 | 0 | label | string | *optional* | | "Tree label" |
 | 1 | css_class | string | *optional* | custom CSS classes | "accent" |
 
-<u>`branch` arguments:</u>
+***`branch` arguments:***
 
 | Position | Argument| Type | Default | Options | Example value |
 | --- | --- | --- | --- | --- | --- |
@@ -241,7 +241,7 @@ Trigo shortcode to display a filetree list with inner content/branches/leaves an
 | 2 | state | string | "open" | | "state" |
 | 3 | css_class | string | *optional* | custom CSS classes | "accent" |
 
-<u>`leaf` arguments:</u>
+***`leaf` arguments:***
 
 | Position | Argument| Type | Default | Options | Example value |
 | --- | --- | --- | --- | --- | --- |
@@ -276,11 +276,11 @@ Images as positional arguments:
 
 The path is relative to the current page bundle. To use resources in the `static` or `assets` directories of the site, prefix the path with a `/` slash. External image URLs are also supported.
 
-<u>How it renders:</u>
+***How it renders:***
 
 {{< carousel dir="dir" mode="auto" >}}
 
-<u>`carousel` arguments:</u>
+***`carousel` arguments:***
 
 | Position | Argument| Type | Default | Options | Example value |
 | --- | --- | --- | --- | --- | --- |
@@ -303,12 +303,12 @@ Specify two image paths:
 
 The path is relative to the current page bundle. To use resources in the `static` directory of the site, prefix the path with a `/` slash. External image URLs are also supported.
 
-<u>How it renders:</u>
+***How it renders:***
 
 {{< compare "dir/1.webp" "dir/3.webp" >}}
 
 
-<u>`compare` arguments:</u>
+***`compare` arguments:***
 
 | Position | Argument| Type | Default | Options | Example value |
 | --- | --- | --- | --- | --- | --- |
@@ -328,11 +328,11 @@ Specify a directory path with the sequence of named images, optionally the anima
 
 The path is relative to the current page bundle. To use resources in the `static` directory of the site, prefix the path with a `/` slash. External resources (defined from a URL) are not supported at this time. Frames are ordered lexicographically by filename, e.g. `001.webp`, `002.webp`.
 
-<u>How it renders:</u>
+***How it renders:***
 
 {{< canvas path="frames" fps="12" title="Press spacebar to animate me! Or grab, scroll and use keyboard arrows too!" >}}
 
-<u>`canvas` arguments:</u>
+***`canvas` arguments:***
 
 | Position | Argument| Type | Default | Options | Example value |
 | --- | --- | --- | --- | --- | --- |
@@ -349,11 +349,11 @@ Trigo shortcode to add a link as a clickable button with optional icon and label
 {{</* button url="/news" label="Button label" icon="time"  */>}}
 ```
 
-<u>How it renders:</u>
+***How it renders:***
 
 {{< button url="/news" label="Button label" icon="time" >}}
 
-<u>`button` arguments:</u>
+***`button` arguments:***
 
 | Position | Argument| Type | Default | Options | Example value |
 | --- | --- | --- | --- | --- | --- |
@@ -371,11 +371,11 @@ Trigo shortcode to add a marker with optional icon and label.
 {{</* marker label="Marker label" icon="heart" */>}}
 ```
 
-<u>How it renders:</u>
+***How it renders:***
 
 {{< marker label="Marker label" icon="heart" >}}
 
-<u>`button` arguments:</u>
+***`marker` arguments:***
 
 | Position | Argument| Type | Default | Options | Example value |
 | --- | --- | --- | --- | --- | --- |
@@ -394,13 +394,13 @@ A git commit: {{</* git "https://gitlab.com/user/repo/-/commit/abcdef123456" */>
 and a pull request: {{</* git url="https://github.com/user/repo/pull/123" */>}}.
 ```
 
-<u>How it renders:</u>
+***How it renders:***
 
 A commit: {{< git "https://gitlab.com/user/repo/-/commit/abcdef123456" >}},
 
 and a pull request: {{< git url="https://github.com/user/repo/pull/123" >}}.
 
-<u>`merge` arguments:</u>
+***`git` arguments:***
 
 | Position | Argument| Type | Default | Options | Example value |
 | --- | --- | --- | --- | --- | --- |
@@ -421,11 +421,11 @@ The PDF file can also be located in the project directory and use the relative p
 {{</* pdf "path/to/file.pdf" */>}}
 ```
 
-<u>How it renders:</u>
+***How it renders:***
 
 {{< pdf "https://upload.wikimedia.org/wikipedia/commons/0/0c/Wikimedia_Commons_web_en.pdf" >}}
 
-<u>`pdf` arguments:</u>
+***`pdf` arguments:***
 
 | Position | Argument| Type | Default | Options | Example value |
 | --- | --- | --- | --- | --- | --- |
@@ -441,11 +441,11 @@ Trigo shortcode to display a bundled or external video with optional poster and 
 {{</* video src="moon.mp4" caption="[A Trip to the Moon (1902)](https://commons.wikimedia.org/wiki/File:Le_Voyage_dans_la_Lune_(1902).webm)" */>}}
 ```
 
-<u>How it renders:</u>
+***How it renders:***
 
 {{< video src="moon.mp4" caption="[A Trip to the Moon (1902)](https://commons.wikimedia.org/wiki/File:Le_Voyage_dans_la_Lune_(1902).webm)" >}}
 
-<u>`video` arguments:</u>
+***`video` arguments:***
 
 | Position | Argument| Type | Default | Options | Example value |
 | --- | --- | --- | --- | --- | --- |
@@ -468,11 +468,11 @@ You can optionally specify a start and/or stop time.
 {{</* peertube url="https://toobnix.org/w/5jBegFpNbffA1nhmp32kqR" start="30s" stop="2m15s" */>}}
 ```
 
-<u>How it renders:</u>
+***How it renders:***
 
 {{< peertube url="https://toobnix.org/w/5jBegFpNbffA1nhmp32kqR" >}}
 
-<u>`peertube` arguments:</u>
+***`peertube` arguments:***
 
 | Position | Argument| Type | Default | Options | Example value |
 | --- | --- | --- | --- | --- | --- |
@@ -494,7 +494,7 @@ Hugo built-in shortcode to embed a YouTube video.
 {{</* youtube id=a9biWv_M8p8 title="My video title" start=30 loading=lazy */>}}
 ```
 
-<u>How it renders:</u>
+***How it renders:***
 
 {{< youtube id=a9biWv_M8p8 title="My video title" start=30 loading=lazy >}}
 
@@ -509,7 +509,7 @@ Hugo built-in shortcode to embed a Vimeo video.
 {{</* vimeo id=19899678 loading=lazy title="Barn Owl" */>}}
 ```
 
-<u>How it renders:</u>
+***How it renders:***
 
 {{< vimeo id=19899678 loading=lazy title="Barn Owl" >}}
 
@@ -525,11 +525,11 @@ If not nested in another shortcode, a full-width layout block is rendered around
 {{</* card path="dev" number=3 css_class="gradient" */>}}
 ```
 
-<u>How it renders:</u>
+***How it renders:***
 
 {{< card path="dev" number=3 css_class="gradient" >}}
 
-<u>`card` arguments:</u>
+***`card` arguments:***
 
 | Position | Argument| Type | Default | Options | Example value |
 | --- | --- | --- | --- | --- | --- |
@@ -577,7 +577,7 @@ This is **Markdown** *content* between `block` and `group` shortcode tags.
 {{</* /block */>}}
 ```
 
-<u>How it renders:</u>
+***How it renders:***
 
 {{< block title="My Title" css_class="section" >}}
 
@@ -608,7 +608,7 @@ This is **Markdown** *content* between `block` and `group` shortcode tags.
 
 {{< /block >}}
 
-<u>`block` arguments:</u>
+***`block` arguments:***
 
 | Position | Argument| Type | Default | Options | Example value |
 | --- | --- | --- | --- | --- | --- |
@@ -618,7 +618,7 @@ This is **Markdown** *content* between `block` and `group` shortcode tags.
 | 3 | title_class | string | *optional* | custom CSS classes | "accent" |
 | 4 | content_class | string | *optional* | custom CSS classes | "accent" |
 
-<u>`group` arguments:</u>
+***`group` arguments:***
 
 | Position | Argument| Type | Default | Options | Example value |
 | --- | --- | --- | --- | --- | --- |

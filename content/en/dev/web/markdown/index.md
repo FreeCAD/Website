@@ -26,7 +26,7 @@ This article offers a sample of basic Markdown syntax that can be used in Hugo c
 ### Heading with a custom id {#custom-id}
 ```
 
-<u>How it renders:</u>
+***How it renders:***
 
 # Heading 1
 ## Heading 2
@@ -52,7 +52,7 @@ __This will also be bold__
 _You **can** combine them_
 ```
 
-<u>How it renders:</u>
+***How it renders:***
 
 *This text will be italic*
 
@@ -76,7 +76,7 @@ _You **can** combine them_
   - Item 2b
 ```
 
-<u>How it renders:</u>
+***How it renders:***
 
 - Item 1
 - Item 2
@@ -93,7 +93,7 @@ _You **can** combine them_
    2. Item 3b
 ```
 
-<u>How it renders:</u>
+***How it renders:***
 
 1. Item 1
 2. Item 2
@@ -109,7 +109,7 @@ _You **can** combine them_
 - [ ] Deploy changes
 ```
 
-<u>How it renders:</u>
+***How it renders:***
 
 - [x] Write documentation
 - [ ] Review code
@@ -125,7 +125,7 @@ Second Term
 : This is the definition of the second term.
 ```
 
-<u>How it renders:</u>
+***How it renders:***
 
 First Term
 : Lorem est tota propiore conpellat pectoribus de pectora summo. Redit teque digerit hominumque toris verebor lumina non cervice subde tollit usus habet Arctonque, furores quas nec ferunt. Quoque montibus nunc caluere tempus inhospita parcite confusaque translucet patri vestro qui optatis lumine cognoscere flos nubis! Fronde ipsamque patulos Dryopen deorum.
@@ -140,7 +140,7 @@ Second Term
 ![](symbol.svg)
 ```
 
-<u>How it renders:</u>
+***How it renders:***
 
 ![](symbol.svg)
 
@@ -150,7 +150,7 @@ With caption:
 ![Alternative text](PartDesign.webp "Caption text")
 ```
 
-<u>How it renders:</u>
+***How it renders:***
 
 ![Alternative text](PartDesign.webp "Caption text")
 
@@ -167,7 +167,7 @@ For more advanced functionality, use Hugo's built-in [Figure shortcode](https://
 [Heading ID](#custom-id)
 ```
 
-<u>How it renders:</u>
+***How it renders:***
 
 [Hugo](https://gohugo.io)
 
@@ -197,7 +197,7 @@ For more advanced functionality, use Hugo's built-in [Figure shortcode](https://
 > If I have seen further it is by standing on the shoulders of Giants.
 ```
 
-<u>How it renders:</u>
+***How it renders:***
 
 > As Newton said:
 >
@@ -217,7 +217,7 @@ For more advanced functionality, use Hugo's built-in [Figure shortcode](https://
 {cite="https://web.mit.edu/6.001/6.037/sicp.pdf" caption="**Harold Abelson & Gerald Jay Sussman**, *Structure and Interpretation of Computer Programs*"}
 ```
 
-<u>How it renders:</u>
+***How it renders:***
 
 > Don't communicate by sharing memory, share memory by communicating.
 >
@@ -235,7 +235,7 @@ For more advanced functionality, use Hugo's built-in [Figure shortcode](https://
 Inline `code` has `back-ticks around` it.
 ```
 
-<u>How it renders:</u>
+***How it renders:***
 
 Inline `code` has `back-ticks around` it.
 
@@ -263,7 +263,7 @@ func main() {
 ```
 ````
 
-<u>How it renders:</u>
+***How it renders:***
 
 ```python
 def hello():
@@ -305,7 +305,7 @@ def hello():
 ```
 ````
 
-<u>How it renders:</u>
+***How it renders:***
 
 ```python {linenos=inline,linenostart=42}
 def hello():
@@ -337,7 +337,7 @@ def hello():
 ```
 ````
 
-<u>How it renders:</u>
+***How it renders:***
 
 ```python {file="hello.py"}
 def hello():
@@ -358,7 +358,7 @@ def main():
 ```
 ````
 
-<u>How it renders:</u>
+***How it renders:***
 
 ```python {linenos=inline,linenostart=1,hl_lines=[2,"4-5"],file="hello.py"}
 def hello():
@@ -378,7 +378,7 @@ def main():
 | Paragraph | Text        |
 ```
 
-<u>How it renders:</u>
+***How it renders:***
 
 | Syntax    | Description |
 | --------- | ----------- |
@@ -393,7 +393,7 @@ def main():
 | *italics* | **bold** | `code` |
 ```
 
-<u>How it renders:</u>
+***How it renders:***
 
 | Italics   | Bold     | Code   |
 | :-------- | :------: | -----: |
@@ -424,7 +424,7 @@ Please make sure you are using [Hugo v0.146.0](https://github.com/gohugoio/hugo/
 > Advises about risks or negative outcomes of certain actions.
 ```
 
-<u>How it renders:</u>
+***How it renders:***
 
 > [!NOTE]
 > Useful information that users should know, even when skimming content.

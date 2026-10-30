@@ -210,15 +210,19 @@ offsetrot.isSame(offsetrot_direct) #=> True
 
 ### Inverse
 
-Both rotations (`rot`) and placements (`pl`) have inverses, <code>rot<sup>-1</sup></code> and <code>pl<sup>-1</sup></code> which reverse their effect. These satisfy
+Both rotations (`rot`) and placements (`pl`) have inverses, `rot⁻¹` and `pl⁻¹` which reverse their effect. These satisfy
 
 ![Inverse equations](equationsinverse.webp "Inverse equations")
 
 where `I` is the identity rotation or placement, respectively.
 
-Recall from the compound placement section, we found that `R' * S = S * R`. We could use the algebra of rotations to compute `R'` explicitly. Multiply both sides of the equation on the right by <code>S<sup>-1</sup></code>, obtaining:
+Recall from the compound placement section, we found that `R' * S = S * R`. We could use the algebra of rotations to compute `R'` explicitly. Multiply both sides of the equation on the right by `S⁻¹`, obtaining:
 
-<code>R' * S * S<sup>-1</sup> = <em>R' </em> = S * R * S<sup>-1</sup></code> In code, this becomes:
+```
+R' * S * S⁻¹ = R' = S * R * S¹
+```
+
+In code, this becomes:
 
 ```py
 from FreeCAD import Vector as V
@@ -239,8 +243,8 @@ Being able to manipulate rotations (and placements) symbolically in this manner 
 
 ![Nested placements](nestedplacements.webp "Nested placements")
 
-The global placement of the Cube is the product of the placements that contain it. Referring to the Placements of Part, Part001, Part002, Part003 and Cube as <code>pl<sub>0</sub>, pl<sub>1</sub>, pl<sub>2</sub>, pl<sub>3</sub></code> and <code>pl<sub>4</sub></code> respectively, the global placement of the Cube is <code>pl<sub>0</sub> * pl<sub>1</sub> * pl<sub>2</sub> * pl<sub>3</sub> * pl<sub>4</sub></code>. Suppose we want to change the global Placement of the cube to <code>gpl</code> by altering the placement of the Part001 sub-assembly, say by changing <code>pl<sub>1</sub></code> to <code>pl<sub>1</sub>'</code>. Then we know that
+The global placement of the Cube is the product of the placements that contain it. Referring to the Placements of Part, Part001, Part002, Part003 and Cube as `pl₀`, `pl₁`, `pl₂`, `pl₃` and `pl₄` respectively, the global placement of the Cube is `pl₀ * pl₁ * pl₂ * pl₃ * pl₄`. Suppose we want to change the global Placement of the cube to `gpl` by altering the placement of the Part001 sub-assembly, say by changing `pl₁` to `pl₁'`. Then we know that
 
 ![Solving placement equation](solveforplacement.webp "Solving placement equation")
 
-solving for the unknown placement <code>pl<sub>1</sub>'</code> by pre- and post-multiplying by the appropriate inverses.
+solving for the unknown placement `pl₁'` by pre- and post-multiplying by the appropriate inverses.
