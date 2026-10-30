@@ -55,7 +55,7 @@ backend:
     delete: '{{ "Delete {{collection}} {{slug}} by @{{author-login}}" }}'
     uploadMedia: '{{ "Upload {{path}} by @{{author-login}}" }}'
     deleteMedia: '{{ "Delete {{path}} by @{{author-login}}" }}'
-    openAuthoring: '{{ "{{message}} by @{{author-login}} by @{{author-login}}" }}'
+    openAuthoring: '{{ "{{message}} by @{{author-login}}" }}'
 
 publish_mode: editorial_workflow
 
@@ -130,11 +130,14 @@ collections:
             label: Description
             widget: string
             i18n: true
-          - name: linkTitle
-            label: Link Title
-            widget: string
+          - name: buttons
+            label: Buttons
+            widget: list
             i18n: true
             required: false
+            fields:
+              - { name: link, label: Button link, widget: string, i18n: duplicate }
+              - { name: label, label: Button label, widget: string, i18n: true, required: false }
           - name: cover
             label: Cover
             widget: object
@@ -162,7 +165,7 @@ collections:
     description: {{ $label }} section
     media_folder: ''
     public_folder: ''
-    thumbnail: {{ printf "['/{{slug}}.webp', cover.image]" }}
+    thumbnail: {{ "['/{{slug}}.webp', 'cover.image']" }}
     icon: {{ .Page.Params.icon_cms }}
     i18n: true
     files:
@@ -170,6 +173,7 @@ collections:
         label: {{ $label }}
         file: '{{ printf "content/{{locale}}/%s/_index.md" $section }}'
         icon: {{ .Page.Params.icon_cms }}
+        summary: "{{ "**{{title}}** · {{locales | upper}}" }}"
         i18n: true
         fields:
           - name: title
@@ -206,24 +210,24 @@ collections:
     folder: '{{ printf "content/{{locale}}/%s" $section }}'
     path: '
     {{- if eq $section (index site.MainSections 0) -}}
-      {{- printf "{{year}}/{{month}}/{{slug}}/index" -}}
+      {{- "{{year}}/{{month}}/{{slug}}/index" -}}
     {{- else if .RegularPages -}}
-      {{- printf "{{slug}}/index" -}}
+      {{- "{{slug}}/index" -}}
     {{- else if .Sections -}}
-      {{- printf "{{slug}}/_index" -}}
+      {{- "{{slug}}/_index" -}}
     {{- else -}}
-      {{- printf "_index" -}}
+      {{- "_index" -}}
     {{- end -}}'
     {{- if and .Sections .RegularPagesRecursive }}
     nested:
       depth: 5
-      summary: '{{ printf "{{title}}" }}'
+      summary: '{{ "{{title}}" }}'
       subfolders: true
-    meta: {{ printf "{ path: { index_file: _index } }" }}
+    meta: {{ "{ path: { index_file: _index } }" }}
     {{- end }}
     media_folder: ''
     public_folder: ''
-    thumbnail: {{ printf "['/{{slug}}.webp', cover.image]" }}
+    thumbnail: {{ "['/{{slug}}.webp', 'cover.image']" }}
     icon: {{ .Page.Params.icon_cms }}
     summary: "{{ "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{author | default('no author')}} · {{locales | upper}}" }}"
     reorder:
@@ -258,7 +262,7 @@ collections:
         - name: upcoming
           label: Upcoming date
           field: date
-          gte: '{{ printf "{{today}}" }}'
+          gte: '{{ "{{today}}" }}'
         {{- if eq $section (index site.MainSections 0) -}}
         {{- range $years }}
         - name: posts_{{ . }}
@@ -270,7 +274,8 @@ collections:
     index_file:
       name: _index
       label: {{ $label }} Index
-      icon: home
+      icon: {{ .Page.Params.icon_cms }}
+      summary: "{{ "**{{title}}** · {{locales | upper}}" }}"
       i18n: true
       fields:
         - name: title
@@ -287,10 +292,8 @@ collections:
           i18n: true
           required: false
         - name: redirect
-          label: Redirect
-          widget: string
+          widget: hidden
           i18n: duplicate
-          required: false
         - name: cover
           label: Cover
           widget: object
@@ -323,10 +326,8 @@ collections:
         i18n: true
         required: false
       - name: redirect
-        label: Redirect
-        widget: string
+        widget: hidden
         i18n: duplicate
-        required: false
       {{- end }}
       - name: date
         label: Date
@@ -342,19 +343,20 @@ collections:
       {{ if eq $section (index site.MainSections 0) -}}
       - name: author
         label: Author
-        widget: string
+        widget: relation
+        collection: author
+        search_fields: [title]
+        display_fields: [title]
+        value_field: '{{ "{{slug}}" }}'
         i18n: duplicate
         required: false
       - name: category
         label: Category
-        widget: select
-        options:
-          - { label: Announcement, value: announcement }
-          - { label: Event, value: event }
-          - { label: Feature, value: feature }
-          - { label: Showcase, value: showcase }
-          - { label: Tutorial, value: tutorial }
-          - { label: Update, value: update }
+        widget: relation
+        collection: category
+        search_fields: [title]
+        display_fields: [title]
+        value_field: '{{ "{{slug}}" }}'
         i18n: duplicate
       - name: tags
         label: Tags
@@ -376,6 +378,49 @@ collections:
         i18n: true
   {{- end -}}
 {{- end }}
+
+  - divider: true
+
+  - name: author
+    label: Author taxonomy
+    folder: '{{ "content/{{locale}}/author" }}'
+    path: '{{ "{{slug}}/_index" }}'
+    delete: false
+    icon: article_person
+    summary: '{{ "**{{title}}** · {{locales | upper}}" }}'
+    i18n: true
+    fields:
+      - name: title
+        label: Author name
+        widget: string
+        i18n: duplicate
+      - name: description
+        label: Author description
+        widget: string
+        required: false
+        i18n: true
+
+  - divider: true
+
+  - name: category
+    label: Category taxonomy
+    folder: '{{ "content/{{locale}}/category" }}'
+    path: '{{ "{{slug}}/_index" }}'
+    create: false
+    delete: false
+    icon: category
+    summary: '{{ "**{{title}}** · {{locales | upper}}" }}'
+    i18n: true
+    fields:
+      - name: title
+        label: Category label
+        widget: string
+        i18n: true
+      - name: description
+        label: Category description
+        widget: string
+        required: false
+        i18n: true
 
   - divider: true
 
