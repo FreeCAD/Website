@@ -1,16 +1,15 @@
 ---
-title: FreeCAD
-description: Your own free and open-source parametric 3D modelling software to design and build the real world.
+title: "FreeCAD"
+description: "Your own free and open-source parametric 3D modelling software to design and build the real world."
 buttons:
-  - link: download
-    label: Download FreeCAD
-  - link: 26-3
-    label: See what's new
+  - link: "download"
+    label: "Download FreeCAD"
+  - link: "26-3"
+    label: "See what's new"
 cover:
-  image: fc.webp
-  caption: FreeCAD logo with interlocking gears - Chris Rogers
+  image: "fc.webp"
+  caption: "FreeCAD logo with interlocking gears - Chris Rogers"
 ---
-
 
 {{< block title="Your ideas made real" css_class="accent" >}}
 
@@ -51,7 +50,6 @@ Find documentation, tutorials, and community resources to build skills and impro
 {{< /group >}}
 
 {{< /block >}}
-
 
 {{< block title="One platform, many workflows" css_class="gradient" >}}
 
@@ -105,8 +103,7 @@ Connect geometry to simulations and engineering workflows, including Finite Elem
 
 {{< /block >}}
 
-
-{{< block title="Free to use. Open to contribute." css_class="accent-2" >}}
+{{< block title="" css_class="accent-2" >}}
 
 {{< group css_class="group-card" >}}
 
@@ -140,13 +137,11 @@ Help fund development, infrastructure, community events, and long-term maintenan
 
 {{< /block >}}
 
-
 ## Latest news from FreeCAD {.center}
 
 {{< card path="news" number=3 >}}
 
 {{< button url="news" label="Read all news" icon="news" >}}
-
 
 {{< block css_class="accent-5" >}}
 
