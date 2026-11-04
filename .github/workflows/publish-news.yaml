@@ -1,0 +1,139 @@
+
+# Publish news workflow
+#
+# Merges a news post without review when its author is listed in
+# .github/bloggers.yml, the pull request changes only news content within the
+# limits in tools/workflows/publish_news.py, and the site builds with it.
+# Anything else is left for review, with a comment saying why.
+#
+# Runs on pull_request_target, from main's copy of this workflow, so that it
+# works for pull requests from forks (the CMS's Open Authoring). It never
+# checks out or runs the pull request's code: its files are read through the
+# API and checked before they are written into the build tree. Only the
+# publish job can use the News publisher app's key, through the
+# news-publisher environment.
+
+
+name: Publish news
+run-name: Publish news check for PR #${{ github.event.pull_request.number }}
+
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize, ready_for_review]
+    branches:
+      - main
+
+permissions: {}
+
+# A new push supersedes a check in progress; the merge is pinned to the
+# commit that was checked.
+concurrency:
+  group: publish-news-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  check:
+    if: ${{ !github.event.pull_request.draft }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pull-requests: read
+    env:
+      HUGO_VERSION: 0.160.0
+      HUGO_ENVIRONMENT: production
+      TZ: Europe/Berlin
+    outputs:
+      eligible: ${{ steps.check.outputs.eligible }}
+      notify: ${{ steps.check.outputs.notify }}
+      head_sha: ${{ steps.check.outputs.head_sha }}
+      reasons: ${{ steps.check.outputs.reasons }}
+
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Check pull request
+        id: check
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: python3 tools/workflows/publish_news.py check
+
+      - name: Install Hugo
+        if: steps.check.outputs.eligible == 'true'
+        run: |
+          curl -sLJO "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-amd64.tar.gz"
+          mkdir -p "${HOME}/.local/hugo"
+          tar -C "${HOME}/.local/hugo" -xf "hugo_${HUGO_VERSION}_linux-amd64.tar.gz"
+          rm "hugo_${HUGO_VERSION}_linux-amd64.tar.gz"
+          echo "${HOME}/.local/hugo" >> $GITHUB_PATH
+
+      # Fails the job, and so blocks the merge, if the post breaks the build.
+      - name: Build site with the post
+        if: steps.check.outputs.eligible == 'true'
+        run: |
+          hugo \
+            --gc \
+            --environment "$HUGO_ENVIRONMENT" \
+            --baseURL "https://www.freecad.org/" \
+            --destination "${{ runner.temp }}/public"
+
+  publish:
+    needs: check
+    if: needs.check.outputs.eligible == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment: news-publisher
+    permissions: {}
+
+    steps:
+      - name: Get News publisher token
+        id: app-token
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ vars.NEWS_PUBLISHER_CLIENT_ID }}
+          private-key: ${{ secrets.NEWS_PUBLISHER_PRIVATE_KEY }}
+          permission-contents: write
+          permission-pull-requests: write
+
+      # The merge's push to main starts the production deploy.
+      - name: Merge pull request
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          HEAD_SHA: ${{ needs.check.outputs.head_sha }}
+        run: |
+          gh api --method PUT \
+            "repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}/merge" \
+            -f merge_method=squash \
+            -f sha="$HEAD_SHA"
+
+  explain:
+    needs: check
+    if: needs.check.outputs.notify == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          sparse-checkout: tools/workflows
+
+      - name: Comment on pull request
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REASONS: ${{ needs.check.outputs.reasons }}
+        run: python3 tools/workflows/publish_news.py comment

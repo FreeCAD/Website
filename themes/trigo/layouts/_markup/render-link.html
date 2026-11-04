@@ -37,7 +37,9 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     (resources.Get $path)
   -}}
     {{- if reflect.IsPage . -}}
-      {{- $href = . -}}
+      {{- /* A page prints as its file path, so take its URL when a query or
+        fragment is appended below. */ -}}
+      {{- $href = cond (or $url.RawQuery $url.Fragment) .RelPermalink . -}}
     {{- else -}}
       {{- $href = .RelPermalink -}}
     {{- end -}}
