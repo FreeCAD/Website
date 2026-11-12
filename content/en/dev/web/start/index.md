@@ -65,17 +65,21 @@ hugo server
 
 Building should be relatively fast (about 10 seconds) and without errors.
 
-To view the website locally, open the web browser at the indicated address, by default `https://localhost:1313/`.
+To view the website locally, open the web browser at the indicated address, by default `http://localhost:1313/`.
 
 ### Deployment
 
-This project uses a `development` > `testing` > `production` environments logic:
+Changes reach the public website through pull requests to the `main` branch, which require an approving review, except for bloggers' news posts within set limits (see [Publishing news](news)). Every environment is built from `main`:
 
-- The `development` environment is the local clone. The result can be seen on the web browser after following the [Building instructions above](#building).
-- The `testing` environment is the `main` branch of this `website` repository. The result can be seen on [GitHub Pages](https://freecad.github.io/Website/).
-- The `production` environment is hosted on FreeCAD's server. The result can be seen on [FreeCAD website](https://www.freecad.org).
+- **Development:** your local clone. The result can be seen on the web browser after following the [Building instructions above](#building).
+- **Testing:** [GitHub Pages](https://freecad.github.io/Website/), rebuilt automatically by the `Main build & deploy` workflow whenever `main` receives a new commit. The built site is stored in the `pages` branch. Maintainers can also publish a preview of a pull request at `https://freecad.github.io/Website/pr-<number>/` with the `Preview` workflow; it is removed when the pull request is closed.
+- **Staging:** [staging.freecad.org](https://staging.freecad.org/), on FreeCAD's server. Same server setup as production, but hidden from search engines.
+- **Production:** [www.freecad.org](https://www.freecad.org/), on FreeCAD's server.
 
-Testing builds deployment to GitHub Pages is done automatically by workflow Actions whenever the `main` branch receives a new commit. The built artifacts are stored in the `pages` branch (extracted from the `public` dir when the `hugo` command is run). The official website version is built from the `prod` branch instead.
+Staging and production are updated by the `Deploy` workflow. It deploys production on every new commit on `main` and every hour, so that posts dated in the future appear within an hour of their date. Staging is deployed by starting the workflow by hand from the repository's Actions tab, and a maintainer must approve the run; production can be deployed the same way. The server then fetches `main`, builds it with Hugo, and switches the site to the new build only if the build succeeds.
+
+> [!NOTE]
+> Until the new website replaces the current one, www.freecad.org still serves the previous website from the [FreeCAD-Homepage](https://github.com/FreeCAD/FreeCAD-Homepage) repository.
 
 ### Browser support
 
