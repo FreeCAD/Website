@@ -10,7 +10,6 @@ cover:
   caption: CfdOF WB
 ---
 
-
 FreeCAD does many amazing things, allows us to create all kinds of geometries and assemblies, but we can also use FreeCAD for analysis of the things we make. One fascinating approach is Computational Fluid Dynamics or CFD.
 
 CFD is essentially a tool to show how fluids interact with objects. You could model and assess water flowing through a pipe, or a boat in the sea, or for flying objects, airflow over a part and much more. Of course CFD can also help analyse and perform complex calculations on data so it's not uncommon to use CFD to work out the drag coefficient of an object or it's centre of pressure and much more.

@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 FreeCAD 1.1 is now out, maintainers will keep backporting some changes from the main development branch to the 1.1 branch for future bugfix releases.
 
 This week in FreeCAD development:

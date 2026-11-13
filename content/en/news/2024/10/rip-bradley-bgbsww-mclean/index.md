@@ -10,7 +10,6 @@ cover:
   caption:
 ---
 
-
 We are sad to announce that last week, Bradley McLean passed away due to unforeseen health complications.
 
 Brad joined the project a little less than a year ago. Like many contributors, he started with small patches here and there. Building on these early contributions, Brad worked his way up to tackle one of the most serious challenges in the history of the project: porting and revamping toponaming fixes developed by RealThunder.

@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 The UI and code cleanup continued this week, but the real excitement is that work has begun on an integrated Assembly workbench.
 
 - obelisk has published a [proposed color palette](https://forum.freecad.org/viewtopic.php?p=700988#p700988) that improves the contrast of the default theme throughout FreeCAD

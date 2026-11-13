@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 The FPA is seeking applicants to help identify and document code regressions in FreeCAD.
 
 Key responsibilities:

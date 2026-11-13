@@ -4,9 +4,7 @@ description: How to organize the website files.
 weight: 3
 ---
 
-
 The website is structured and managed in a [git](https://git-scm.com/) version-controlled repository. The files are organized in main root directories, such as `/content` for the website content (list and single pages, translations, resources such as illustrations), `/config`, `/data`, `/themes`, etc.
-
 
 ## Directory Structure
 
@@ -48,7 +46,6 @@ Content files are mostly written with Markdown and contain a metadata header cal
 
 By default, the root `/content` directory is used by Hugo to build the site.
 If you need to use a different directory for content, for example `/docs`, this can be done by setting the [`contentDir`](https://gohugo.io/getting-started/configuration/#contentdir) parameter in the site configuration `hugo.yaml`.
-
 
 ## Resources
 

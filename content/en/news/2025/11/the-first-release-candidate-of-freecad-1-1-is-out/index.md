@@ -13,7 +13,6 @@ cover:
   caption:
 ---
 
-
 The team has just published builds of the first candidate of FreeCAD 1.1, you can download them [on GitHub](https://github.com/FreeCAD/FreeCAD/releases/tag/1.1rc1). Here is what it means and what's going to happen next.
 
 The release candidates are basically preliminary builds of the final version. They are aimed at a particular demographic: people who want to help the team make a final check for major regressions before the final release can be published. If you are one of those people, please download a build for your operating system, test it, and [report](https://github.com/FreeCAD/FreeCAD/issues) any new issues you run into.

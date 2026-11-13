@@ -4,10 +4,8 @@ description: C++ practices.
 weight: 4
 ---
 
-
 Most rules presented here cover the same things as the very good [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines).
 Whenever something is not covered or you are in doubt - don't hesitate to consult it - it is a very good source of information.
-
 
 ## Avoid anonymous namespaces
 
@@ -21,7 +19,6 @@ This approach ensures better organization and clarity.
 
 In addition, private static functions do not need to be declared in the header file when moved out of a class.
 This reduces unnecessary exposure of implementation details.
-
 
 ## Algorithms and data structures
 
@@ -77,7 +74,6 @@ auto result = std::ranges::find_if(stuff, do_something);
 
 Note, STL `<algorithm>` library can also use lambdas.
 
-
 ## Code comments
 
 > Don’t comment bad code—rewrite it.
@@ -88,7 +84,6 @@ Comments are a piece of the program that the computer doesn't execute. While the
 It is preferred that code is self documenting when possible. This can be achieved using good naming and structure.
 
 In some cases, comments can be necessary, to convey information that cannot be described in code. This can be links to bugs that a workaround describe or why edge cases are needed.
-
 
 ## Conditionals
 
@@ -105,7 +100,6 @@ code and data conflation.
 Can also apply to `switch` statements.
 
 Complicated `if else` code might benefit from converting to a state machine.
-
 
 ### Ternary operator
 
@@ -146,7 +140,6 @@ auto someConditionalLogic = []() {
 const int r = someConditionalLogic();
 ```
 
-
 ## Const correctness
 
 > const all of the things.
@@ -158,7 +151,6 @@ const int r = someConditionalLogic();
 This provides compile-time evaluation. Can increase compile time, but speedup runtime. More errors are caught at compile-time.
 
 `constexpr` is preferable for everything that can be so represented.
-
 
 ## Reducing dependencies
 
@@ -215,7 +207,6 @@ code, then there's likely a better overall design that can be used.
 
 **Code that has no hard dependencies is single-purpose, reusable, changeable, and testable. Everything is simpler!**
 
-
 ## Code design
 
 > Any fool can write code that a computer can understand. Good programmers write code that humans can understand
@@ -234,7 +225,6 @@ Understandable code can be more easily evaluated for correctness.
 
 For a novice programmer many of these concepts are probably quite foreign, but with a little study and help from the community and code reviews, better code will ensue.
 
-
 ## Enums
 
 Used correctly, enums are invaluable.
@@ -247,7 +237,6 @@ Using enums:
 
 Using enums to codify data values is strongly discouraged, as enums are best suited for representing fixed, intrinsic states rather than variable data. Instead, use `std::unordered_map<>` or other data structures that better represent dynamic or data-driven values, offering flexibility and improving maintainability.
 
-
 ## Minimize getters and setters
 
 In object-oriented design, a class should encapsulate behavior, not just data. **Frequent use of getters and setters can limit a class’s ability to fully encapsulate its responsibilities** and may suggest that the data could be handled differently.
@@ -258,7 +247,6 @@ Consider:
 * Focusing on methods that represent meaningful actions rather than exposing raw data.
 
 A well-designed class manages its own state and provides behavior, not just access.
-
 
 ## Appropriate typing
 
@@ -314,7 +302,6 @@ std::unordered_map<std::string, int> map;
 for (const auto& [key, value] : map) { ... } // OK: map declaration contains the type
 ```
 
-
 ## Main code path and indentation
 
 > If you are past three indents you are basically screwed.
@@ -365,7 +352,6 @@ if (!somethingElseAgain) {
 doThing();
 ```
 
-
 ## Initialization
 
 **Initialize all objects, and, if possible, use const or better still, constexpr.**
@@ -404,7 +390,6 @@ Lambdas can create and initialize variables in the capture, removing the
 need to have the parameter in the surrounding scope. But don’t forget
 mutable if you want to update its value. The variable stays for the lifetime
 of the lambda (think static, but better).
-
 
 ## Lambdas
 
@@ -470,13 +455,11 @@ doSomeOtherThing();
 cleanup();
 ```
 
-
 ## Avoid macros
 
 While macros was needed back in the days, today with modern C++, that's usually not the case anymore.
 
 Macros are global, can be lead to unpredicted side effects and are difficult to debug. Consider replacing with a function. For conditional compilation in templates consider constexpr if.
-
 
 ## Avoid magic literals
 
@@ -498,7 +481,6 @@ Do the following instead:
 constexpr unsigned standardScreenLength {80};
 displayLines(standardScreenLength);
 ```
-
 
 ## Good naming
 
@@ -526,7 +508,6 @@ constexpr auto redDogColor {"red"}; // OK
 
 See also variable sets.
 
-
 ## Out parameters
 
 Out parameters are _non-const, by-reference, or by-pointer_, function parameters. These are known to cause hard to find bugs.
@@ -551,7 +532,6 @@ auto [name, value] = func("qty", 2);
 
 For methods that return multiple values, depending on context, it may be better to provide dedicated struct for result.
 
-
 ## Code repetition
 
 > One of the things I've been trying to do is look for simpler or rules underpinning good or bad design. I think one of the most valuable rules is to avoid duplication
@@ -570,14 +550,12 @@ Change requires finding every usage (difficult) and replicating the change (erro
 The variant part (the bit that is different between usages) of repeating code is often just one or two items in a long chain of statement.
 The variant parts can be extracted and passed as parameters to a function or lambda executing the common body. A sequence of repeated code likely indicates the underlying data is actually a set and hence should be defined in a container and dealt with accordingly.
 
-
 ## Static
 
 Often best avoided. For `const` variables consider `constexpr`, or
 initialization in lambda capture.
 
 `static` functions _may_ be better moved out of class into a named namespace or some utility library/file.
-
 
 ## Automated testing
 
@@ -599,7 +577,6 @@ Gui code is often classified as untestable because there are good tools to verif
 Just like good naming is important for variables and functions, naming tests are too. A good test name describes what has been tested. This way, when it fails for someone else, they can easily see what failed.
 
 If code is difficult to unit test consider if it can be extracted from its surrounds — maybe into some library-like class — where it can be tested in isolation. Is it possible to refactor to remove hard-wired dependencies? Is it trying to do too much? Is it too tightly coupled? See also dependencies.
-
 
 ## Avoid variable sets
 
@@ -645,7 +622,6 @@ constexpr std::initializer_list<Button> buttonDefs {
 ```
 
 When in doubt, use a struct - it is better to have good names than not.
-
 
 ## API Documentation
 
@@ -877,7 +853,6 @@ Special documentation comments can be used to indicate that some group of functi
 
 Often, FreeCAD source files contain grouping commands with normal comments instead of documentation comments, such as `// @{` and `// @}`.  Since these comments are not documentation comments, this usage is incorrect and can lead to issues in rendering the documentation. This usage should be avoided in new code, and corrected when encountered.
 
-
 ```cpp
     /**
 	 * @name Properties
@@ -1007,7 +982,6 @@ Another way to handle documentation with a high degree of repetition is by group
   const char* getDocumentation(OffsetBase offsetBase,const Property* prop) const;
   /// @}
 ```
-
 
 ## Recommendations for concurrency
 

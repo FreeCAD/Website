@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 ![Freecad openhardware cad cam room schedule](freecad_openhardware_cad_cam_room_schedule.webp "Freecad openhardware cad cam room schedule")
 
 We recently posted about the planned [FreeCAD activities around FOSDEM 2026](https://blog.freecad.org/2025/10/28/fosdem-2026-freecad-day-and-the-open-hardware-and-cad-cam-devroom-cfp/). These include the FreeCAD Day on the 30^th^ January and the joint KiCad/FreeCAD booth at FOSDEM itself on the 31^st^ and 1^st^. We also mentioned that Chris Hennes (chennes) and Jo Hinchliffe (concretedog) are co-ordinating the Open Hardware CAD/CAM room talk track at FOSDEM on Sunday the 1^st^ February.

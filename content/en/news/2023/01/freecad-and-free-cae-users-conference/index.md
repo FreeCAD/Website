@@ -10,7 +10,6 @@ cover:
   caption:
 ---
 
-
 *This guest post is by Varnu01. Editor's note: The User's Conference is an independent event and is not run by or affiliated with the FreeCAD Project Association, but we are happy to spread the word about opportunities for FreeCAD users to meet up and collaborate!*
 
 Join the revolution of open-source software at the **first Annual FreeCAD (and free CAE) Users Conference**! From March 1st to 3rd, come together with a community of creators and users on the Hopin platform to share knowledge, network, and learn about the latest developments in the world of FreeCAD and CAE. You can click on the [registration link](https://hopin.com/events/freecad-and-free-cae-users-conference), [speaker list](https://drive.google.com/file/d/11N1uI21M5MBU44JqO8Ex2s6uMxiLDujh/view?usp=share_link) and [schedule here](https://drive.google.com/file/d/11NYdRz3KvgKyCVkVlSrcb1ndx7Tsj5H-/view?usp=share_link).

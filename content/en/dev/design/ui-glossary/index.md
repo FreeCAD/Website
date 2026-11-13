@@ -4,7 +4,6 @@ description: Glossary of Terms.
 weight: 5
 ---
 
-
 - **Widget:** Widgets are the individual components for creating user interfaces in FreeCAD. Widgets can display data and status information, receive user input, and provide a container for other widgets that should be grouped together. FreeCAD uses the QtWidget toolkit.
 
 - **Element:** A primary component of the FreeCAD User Interface consisting of a combination of widgets to support navigation and feature execution providing a means for user interaction.

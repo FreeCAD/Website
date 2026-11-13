@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 The FPA general assembly approved the funding of three more grants.
 
 **Pieter Hijma** will be working on research for variant parts. There's a number of FreeCAD features that require inserting copy-on-change links, such as referencing external geometry in a body for which SubShapeBinders are used in Part Design. The architecture behind the current implementation involves hidden parts and temporary files and is fragile. The workflow imposed by this architecture isn't great either. Another domain where a better implementation is required are assemblies where you might want inserting a variation of a linked part.

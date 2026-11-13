@@ -4,7 +4,6 @@ description: A picture of the most commonly encountered branches of the FreeCAD 
 weight: 3
 ---
 
-
 The full FreeCAD source tree has many other branches, but most Contributors will
 only need to deal with these:
 

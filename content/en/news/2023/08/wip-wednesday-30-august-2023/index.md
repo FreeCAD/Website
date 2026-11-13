@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 As the new development cycle begins in earnest, there are *many* projects going on in the FreeCAD world that will soon be making their way into the development builds:
 
 - FlachyJoe finally saw the merge of [PR 9559 -- Sketcher: Point to Circle Distance Constraints](https://github.com/freecad/freecad/pull/9559)

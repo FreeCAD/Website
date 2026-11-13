@@ -10,7 +10,6 @@ cover:
   caption:
 ---
 
-
 In a new initiative aimed at improving the quantity and quality of online writing about FreeCAD, the FreeCAD Project Association is happy to announce that honoraria are now available for article writers here on FreeCAD News.
 
 - The FPA will allocate $5000/yr to pay for original blog content.

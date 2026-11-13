@@ -4,9 +4,7 @@ description: Automated Testing.
 weight: 6
 ---
 
-
 FreeCAD uses two different automated testing mechanisms, depending on the language being tested. The oldest, and most well-used test framework is the Python `unittest` system, which hooks directly into the FreeCAD Test Workbench, but can only test Python code (and Python wrappers to C++ code). The second is the standalone Google Test C++ testing framework, which generates individual executables for each part of the test suite, and is used to directly test C++ code without having to wrap it in Python.
-
 
 ## References
 
@@ -22,7 +20,6 @@ Books:
 * [Kent Beck. Test Driven Development by Example. ISBN 9780321146533](https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530)
 * [Michael Feathers. Working Effectively with Legacy Code. ISBN 0131177052.](https://www.amazon.com/Working-Effectively-Legacy-Michael-Feathers/dp/0131177052)
 * [Jeff Langr. Modern C++ Programming with Test-Driven Development: Code Better, Sleep Better. ISBN 1937785483.](https://www.amazon.com/Modern-Programming-Test-Driven-Development-Better/dp/1937785483/)
-
 
 ## Terminology
 
@@ -41,7 +38,6 @@ of the ease of generating a Mock.
 
 A "Stub" is a method that simply provides a canned answer for a given input. Sometimes instrumented, but often simply used to replace a more complex function with a simple, predictable response. For example, a random-number
 generator may be replaced with a function that simply returns "42" every time so that the results are deterministic (and therefore more easily testable).
-
 
 ## Python Testing
 

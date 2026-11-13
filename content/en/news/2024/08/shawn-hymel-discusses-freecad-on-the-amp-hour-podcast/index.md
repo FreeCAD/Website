@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 ![Shawn Hymel](675-ShawnHymel.webp "Shawn Hymel")
 
 Shawn Hymel recently appeared on the excellent Amp Hour podcast discussing some changes in direction in his work. Shawn is currently moving from his role in developer relations at Edge Impulse back towards creating training and educative content and course.

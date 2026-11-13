@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **Draft**: Roy_043 fixed several bugs, including Draft's fillet not working the first time you try it, as well as incorrect snapping behavior. He also implemented a new Dim Auto Flip Text option to disable automatic text orientation based on where you click first.

@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 Take a seat, mark the time and remember where you were for this announcement of our most important new feature to date. Indeed, whilst making excellent technical drawings on the TechDraw workbench, or having the instant automated Measure tool features at our fingertips, we have been missing a key part of high end metrology within FreeCAD, until now. It's therefore with great delight we announce the addition of Banana For Scale to the Addon Manager!
 
 ![](banana_soda_tool_icons.webp)

@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **Toponaming**: bgsbww added missing bits of toponaming code to core, Part Design, and Sketcher.

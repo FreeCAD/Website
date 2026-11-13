@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 _REMINDER_: The first-Sunday-of-the-month FreeCAD Developer's Meeting is this Sunday. Check out [the calendar in your timezone here](https://www.freecad.org/events.php). It's open to anyone interested in FreeCAD development.
 
 This week in GitHub:

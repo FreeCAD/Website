@@ -11,7 +11,6 @@ cover:
   caption: "[Releasing JAXA's HTV7 cargo vehicle from the ISS](https://www.flickr.com/photos/72482589@N07/45052467584) by [Astro_Alex](https://www.flickr.com/photos/72482589@N07) licensed under [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/?ref=openverse)"
 ---
 
-
 Last week a group of FreeCAD administrators, maintainers, and developers met to discuss the next release of FreeCAD. We decided to begin the process of creating our next release now. The timing is appropriate because:
 
 1. It has been almost a year since the 0.20, which was released on 13 June 2022, and many new features have been added in the interim.

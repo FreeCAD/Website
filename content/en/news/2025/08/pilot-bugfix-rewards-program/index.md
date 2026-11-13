@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 The FreeCAD Project Association (FPA) is introducing an experimental rewards program to thank contributors who improve the reliability and stability of FreeCAD.
 
 The rules are simple: fix 5 confirmed issues from the [FreeCAD GitHub issue tracker](https://github.com/FreeCAD/FreeCAD/issues) and receive a reward of €250. The initial fund is limited to €5,000 and will be reevaluated by the FPA upon depletion.

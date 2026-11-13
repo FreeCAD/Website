@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 - wandererfan is wrapping up the cosmetic circle command, doing more GSOC Unified Measurement Facility review & testing, and preparing for the grand TechDraw code reformat event.

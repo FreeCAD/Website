@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **BIM**: furgo16 and Roy_043 fixed several bugs including incorrect profile creation, color issues in ArchFence, and incorrect transparency of glass panels in windows and doors.

@@ -10,7 +10,6 @@ cover:
   caption:
 ---
 
-
 As I write this it is 10:15pm here in Brussels. I'm at a bar surrounded by crazy FOSDEM people. It is fantastic, and that's not just the beer, fries, and waffles talking. Well, maybe a little...
 
 FreeCAD Day 2023 was a smashing success, with over 50 FreeCAD users and developers gathering in Brussels for a FOSDEM pre-conference. We heard 14 presentations/discussions on a suite of topics, ranging from Hang-glider design for laser cutting, to a proposal for how to merge the Topological Naming Problem mitigation branch into the main development trunk.

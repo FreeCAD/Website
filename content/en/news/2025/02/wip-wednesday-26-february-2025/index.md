@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **Sketcher**: Shkolik fixed a bug in Sketcher where it wouldn't be able to project a BSpline from another sketch.

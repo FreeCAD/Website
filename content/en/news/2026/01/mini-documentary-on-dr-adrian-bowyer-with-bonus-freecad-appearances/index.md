@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 {{< youtube id=tKq33qlHenM title="About Rep-rap and open-source with Adrian Bowyer" loading=lazy >}}
 
 Spotted in the wild is this excellent mini documentary with Dr Adrian Bowyer. If the name is unfamiliar, Dr Adrian Bowyer founded the opensource [RepRap project](https://reprap.org/wiki/RepRap) with the idea of self replicating 3D printers. The RepRap project has a very real claim that it was the catalyst and driver that led to many of us have 3D printers in our homes and workshops.

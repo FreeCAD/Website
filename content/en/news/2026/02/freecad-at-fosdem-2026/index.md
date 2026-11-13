@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 ![Fosdem booth 26 chennes shot](fosdem_booth_26_chennes_shot.webp "Fosdem booth 26 chennes shot")
 
 FOSDEM fell on the 31^st^ January and the 1^st^ of February this year and, as ever, FreeCAD had a presence at the excellent event in numerous ways.

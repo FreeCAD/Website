@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 Lots of small pull requests merged in this past week (which is as it should be!). Nothing Earth-shattering, just continued incremental improvement. In the next week:
 
 - yorik is working on performance enhancements and code cleaning in NativeIFC, and hooking it to FreeCAD's document saving so saving the files saver all the IFC contents too.

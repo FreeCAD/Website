@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 The FreeCAD Project Association now has three open positions, each with a 1-year long contract and a compensation of up to $500 a month:
 
 - **OpenCASCADE Liaison**. You will coordinate bug reports and patches with the OpenCASCADE development team.

@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 The FPA members have voted for Q4 2025 grants.
 
 tetektoza will [revamp and enhance the selection system](https://github.com/FreeCAD/FPA-grant-proposals/issues/65) around specific bug reports listed in the grant application. He will be awarded a grant of 3,000 EUR.

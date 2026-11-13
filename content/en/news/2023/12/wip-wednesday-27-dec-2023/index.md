@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 - abdullahtahiriyo activated new icon for optional unified coincident constraint.

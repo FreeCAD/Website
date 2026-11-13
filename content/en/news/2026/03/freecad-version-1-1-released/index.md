@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 {{< youtube id=a9biWv_M8p8 title="FreeCAD 1.1 is released!" loading=lazy >}}
 
 After an enormous amount of work and dedication from FreeCAD contributors we are delighted to announce that FreeCAD Version 1.1 is now released and available for [download](https://www.freecad.org/downloads).

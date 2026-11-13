@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 ![CAD workshop](CAD_1.webp "CAD workshop")
 
 There's a great phrase about education used in various communities "Each One Teach One". Funnily enough I first noticed the phrase as it got used in the FreeCAD Twitter/X account as a hashtag. It's rooted in African culture and initial usage was amongst enslaved people in America who, denied any education, would share what skills they had with their community.

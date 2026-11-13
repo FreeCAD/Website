@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **Toponaming**: bgbsww finished transferring the code to solve the save/restore errors with objects with element maps, this did away with 3 release blockers.

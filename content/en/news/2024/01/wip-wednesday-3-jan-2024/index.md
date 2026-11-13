@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development wasn't very active due to holidays, and yet:
 
 - chennes added a TopoShapeCache class based on RealThunder's implementation. This is an important step towards the end of Phase 3 of the toponaming project.

@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 *This guest post is by Ed Williams (edwilliams16). Interested in contributing an article? Contact Chris Hennes at chennes@freecad.org with your idea!*
 
 Much of FreeCAD scripting consists of creating objects and then placing them somewhere in 3D. For instance, we can create a default cube with

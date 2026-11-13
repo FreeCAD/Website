@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 The past week saw a lot of refactoring and developer-oriented work (including the activation of pre-commit hooks that we expect will begin the process of unifying our disparate code formatting styles, and a new CI workflow running on Windows 11).
 
 In this upcoming week:

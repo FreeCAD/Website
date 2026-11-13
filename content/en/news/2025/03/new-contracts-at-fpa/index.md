@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 The FreeCAD project association has filled three [previously announced](https://blog.freecad.org/2025/01/24/job-openings-at-the-fpa/) developer-support roles:
 
 - Pieter Hijma will take the role of OpenCASCADE Liaison. He will coordinate bug reports and patches with the upstream development team.

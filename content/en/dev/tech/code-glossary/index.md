@@ -4,7 +4,6 @@ description: Some terms that a developer may run across.
 weight: 2
 ---
 
-
 Note that there may be subtle differences in how some terms are used by developers vs how they are used by users.
 
 * Binding: the mechanism for linking C++ functionality to and from Python.
@@ -15,7 +14,6 @@ Note that there may be subtle differences in how some terms are used by develope
 * Quarter: a widget which uses the Qt QGraphicsView to display Coin3d scenegraphs.
 * Pull Request: how a contributor indicates that they have a change to be merged
 * ViewProvider: an object that provides painting services for a Feature.  The ViewProvider is notified of changes in a Features properties and, if the change affects the visual representation of the Feature, updates the display.  Note that in some modules (ex TechDraw with the Qt GraphicsFramework) there is another layer of functionality that manages the painting.
-
 
 ## See Also
 

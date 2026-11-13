@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 The FreeCAD team is organizing an online Hackathon on August 29th starting at 12PM UTC.\
 This event is open to everyone. It's a great opportunity for anyone interested to start contributing to the project. There'll help from experienced developers, you can learn how to open bug reports, discuss feature requests and share your experience with FreeCAD and much more!
 

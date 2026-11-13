@@ -4,7 +4,6 @@ description: FreeCAD contribution workflow and process.
 weight: 2
 ---
 
-
 ## Submitting a PR
 
 The basic process is:
@@ -17,7 +16,6 @@ The basic process is:
 5. Visit https://github.com/freecad/freecad -- at the top of the screen you should see a yellow banner suggesting you create a Pull Request. Follow the instructions on the site to get the process started.
 
 For PRs that are larger and consist of multiple commits and are larger of size, see the [Rebasing](#rebasing) section.
-
 
 ## PR Review Process
 
@@ -38,7 +36,6 @@ To expedite the PR review process, consider the following guidelines:
 5. A good description in your PR's submission text helps Maintainers determine who is best suited to evaluate a PR, and prevents wasting time sorting through the code itself to figure out who should be looking at it.
 6. FreeCAD's Maintainer team is currently quite small, and sometimes the Maintainer responsible for a certain part of the code is unable to attend the review meeting: this sometimes unavoidably delays the merge process through no fault of the submitter. We ask for your patience as we work to grow our team.
 7. It helps the merge process if you can ensure you have a clean commit history in your PR, squashing any intermediate work and only retaining separate commits for logically separate parts of the PR and not merging the main branch into your branch PR (in most cases, we hope that this is only a single commit, see [Rebasing](#rebasing) for more information).
-
 
 ## Rebasing
 

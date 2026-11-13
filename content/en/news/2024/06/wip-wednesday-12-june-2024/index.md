@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **BIM**: paullee0 made small improvements in ArchWall, Roy-043 fixed image plane imports and updated the BIM WP commands to use the new Draft code, Syres916 added fallback IfcOpenShell installation fix for Python 3.10, 3.11, and 3.12 systems, furgo16 fixed the Cut Plane command, and DeniseBryson fixed incorrect computed dimensions in ArchSpace (floor area and perimeter length).

@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 We've just released FreeCAD 1.0rc2, builds are already available for [downloading on GitHub](https://github.com/freecad/freecad/releases/tag/1.0rc2). The update is coming with just bugfixes.
 
 The number of issues blocking the final release has been circling around 6-8 for the past few weeks and only went as high as 13 after we released rc1. We are currently at just 8 blockers.

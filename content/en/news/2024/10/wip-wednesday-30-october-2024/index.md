@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **Sketcher**: PaddleStroke fixed several bugs, including one release blocker, all related to constraints and transformations / arrays.

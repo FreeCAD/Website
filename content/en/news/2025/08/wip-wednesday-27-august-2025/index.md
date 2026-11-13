@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **Draft**: Roy-043 added hints for the tools in the Draft Creation toolbar. He also added support for relative paths for hatch patterns and fixed a couple of issues.

@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 (The post has been backdated due to traveling.)
 
 This week in FreeCAD development:

@@ -4,7 +4,6 @@ description: Guide for getting started with CLion.
 weight: 5
 ---
 
-
 If you don't already have CLion installed, download it, license it, install it per JetBrains instructions.
 
 ### Checking out FreeCAD
@@ -36,7 +35,6 @@ If you choose to use Pixi to get the dependencies then you need to configure a C
 Note: If CMake does not detect any packages from the .pixi folder then the toolchain script may have failed.
 This may be resolved by using the absolute path to your FreeCAD repository in the `pixi-default.bash` script.
 
-
 ### Building CMake
 
 CLion should automatically refresh the CMake build for the application.  You see results or rerun using the cmake
@@ -56,7 +54,6 @@ a clean full rebuild.
 ### Running Application
 
 Use the Run or Debug Icons from the top bar shown in the prior image.
-
 
 ## Debugging
 

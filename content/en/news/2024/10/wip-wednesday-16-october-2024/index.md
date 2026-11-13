@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **PartDesign**: wwmayer and FlachyJoe fixed 4 issues including two release blockers.

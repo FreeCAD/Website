@@ -4,7 +4,6 @@ description: Overview of application module structure.
 weight: 4
 ---
 
-
 The functionality of FreeCAD is separated into Modules. Some Modules are built into FreeCAD and some are Extension Modules (a form of plug-in). Once installed, Extension Modules behave exactly as built-in Modules.
 
 Application Modules provide specialized functions and may store specialized data. Examples of Application Modules are Arch (for buildings) and Sketcher (for drawing Sketches).

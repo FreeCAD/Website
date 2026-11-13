@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 One of the most fantastic things about FreeCAD is the constant flow of people making brilliant add on collections of tools. One work in progress that has caught our eye is the [FreeCAD DFM Workbench.](https://github.com/ryankembrey/FreeCAD-DFM-Workbench)
 
 The Design For Manufacture (DFM) workbench aims to perform analysis of your FreeCAD models against user configurable sets of rules to identify potential problems in manufacturing. It currently contains analysis for injection moulding where draft angles and overhangs and sharp internal geometries may cost a project dearly if these issues get through to the factory and production.

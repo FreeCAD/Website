@@ -4,7 +4,6 @@ description: Interface Primary Elements.
 weight: 6
 ---
 
-
 ## Toolbars
 
 Toolbar management in complex technical software such as CAD poses unique challenges as there are often hundreds of potential tools, functions, or features which may require ready access within the GUI. The [Pareto-Principle](../ux#pareto-principle) (80/20 rule) should be the basis for how toolbars are populated. The 80/20 rule states that 20% of the input results in 80% of the output. This would imply that 20% of a set of tools get 80% of the use. While this may not be a perfect correlating principle, it should help guide a critical thought process about which tools go onto a toolbar and also how they are organized.
@@ -24,7 +23,6 @@ Toolbar management in complex technical software such as CAD poses unique challe
 - Toolbars which toggle/indicate a funtional state can do so via change in icon (color or inclusion of an indicator)
 
 - Deviations in prescribed widget types allocated to a tool bar must only be accepted after consensus is reached between applicable developers and a thorough review by the design team.
-
 
 ## Dock Windows
 

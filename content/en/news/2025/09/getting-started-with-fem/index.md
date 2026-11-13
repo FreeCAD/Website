@@ -11,7 +11,6 @@ cover:
   caption: FEM workbench
 ---
 
-
 FEM is a highly specialized workbench used to simulate various physical phenomena with the finite element method. The workbench is very actively developed, and thus it's recommended to always use the newest available FreeCAD version (possibly up-to-date [weekly builds](https://github.com/FreeCAD/FreeCAD/releases)).
 
 The FEM workbench supports two main solvers:
@@ -20,7 +19,6 @@ The FEM workbench supports two main solvers:
 - Elmer is the best choice for electromagnetic, flow, and thermal, as well as coupled (multiphysics) simulations.
 
 CalculiX is provided with the Windows version, other solvers require [installation](https://wiki.freecad.org/FEM_Install).
-
 
 ## Geometry preparation
 
@@ -33,7 +31,6 @@ Before proceeding to run FEM simulations on your design, you should prepare the 
 For the purpose of this tutorial, go to the Part workbench, add **Cube** (**Part_Box**), and only change the **Length** property to 100 mm. We will use this geometry to simulate bending and torsion of a cantilever beam with a square cross-section.
 
 ![](image-16.webp)
-
 
 ## Analysis container, meshing, and material assignment
 
@@ -64,7 +61,6 @@ Optionally, you can use the task panel to change the properties used in analyses
 To account for permanent (non-elastic) deformation, you can add a Non-Linear Mechanical Material object to the existing MaterialSolid and define plasticity using points from the material's stress-strain curve specified according to CalculiX's syntax.
 
 Simulations with surface geometries (shell or 2D elements) also require thickness definition (the **FEM_ElementGeometry2D** tool), while for line geometries (beam elements), you need to define a profile (the **FEM_ElementGeometry1D** tool).
-
 
 ## Boundary conditions and loads
 
@@ -103,7 +99,6 @@ In the case of assemblies, you may have to define tie constraints (perfectly bon
 
 There are also several boundary conditions and loads for thermal (initial temperature, prescribed temperature, heat flux, and body heat source) and electromagnetic analyses, but let's skip those for now.
 
-
 ## Running an analysis and post-processing the results
 
 If you need to change the analysis type or some solver settings, select the CalculiX solver's object in the tree and use the **Property** view to access the appropriate **Data** properties. Many analysis features also have additional options in their Property view.
@@ -125,7 +120,6 @@ Note that the older ccx solver has displacements in meters and stresses in Pasca
 _The displacement should be around 0.381 mm, according to hand calculations._
 
 You can also select the results pipeline and add the **Warp** filter to visualize the deformation with a given scale factor (or use the slider in **CCX_Results**). Other filter types (e.g., for section cuts or probing results at the selected points) are also available.
-
 
 ## Rerunning the simulation with torsion
 
@@ -160,7 +154,6 @@ The reference point's coordinates can be specified. With this feature, it's poss
 ![](image-23.webp)
 
 _The maximum shear stress result should be around 48.08 MPa, according to hand calculations._
-
 
 ## What's next?
 

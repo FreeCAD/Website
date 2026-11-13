@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 This is a quick reminder that the submission deadline for Q3 2026 grant applications is September 1. If you are interested in improving FreeCAD and its ecosystem, please [read more](https://fpa.freecad.org/programs/fpadf-announcement) about the program and [apply](https://github.com/FreeCAD/FPA-grant-proposals/issues).
 
 Please keep in mind that typically there are multiple grant requests every time, and the quarterly budget for the program is 10K euro.

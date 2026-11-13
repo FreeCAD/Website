@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 During the planned online developers meeting today, we agreed on the following plan towards FreeCAD 1.0.
 
 The development branch will enter **feature freeze on June 3**, at the PR merge meeting. Here is what it means to contributors:

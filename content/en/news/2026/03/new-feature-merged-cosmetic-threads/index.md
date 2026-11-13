@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 ![Cosmetic threads](cosmetic_threads.webp "Cosmetic threads")
 
 We don't always write individual blog posts about single new features that have been merged into the weekly development versions of FreeCAD, but this one, deserves a special mention.

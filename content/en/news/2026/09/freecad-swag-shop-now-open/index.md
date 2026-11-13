@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 We are super pleased to announce that the [FreeCAD official swag store is now open](https://shop.freecad.org/en-gbp)! All the designs in there are made in FreeCAD and we have tee, hoodies, mugs, water bottles and more. Feel free to take a look.
 
 ![](swag2.webp)

@@ -10,7 +10,6 @@ cover:
   caption: Crowdin FreeCAD dashboard
 ---
 
-
 In case you didn't know FreeCAD is available in lots of different languages. If you want to check out the list, launch FreeCAD and click "edit - preferences" and you'll see a language dropdown at the top of the window and you can scroll to see lots of different language packs that FreeCAD contains. So how do these translations happen?
 
 ![FreeCAD language dropdown](fc_language_dropdown.webp "FreeCAD language dropdown")

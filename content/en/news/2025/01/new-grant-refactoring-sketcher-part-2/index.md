@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 The FPA General Assembly approved another grant application.
 
 Ajinkya Dahale will continue refactoring Sketcher. The main deliverables are the same as the last time: more methods simplification, testing, and documentation. This will not direct affect features or usability, but it will help other developers contribute to the program.

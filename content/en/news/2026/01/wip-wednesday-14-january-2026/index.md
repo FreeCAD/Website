@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 Maintainers have been backporting some of the fixes to the v1.1 branch where possible - 31 backports in the past 7 days. The list of changes in this recap applies to the main development branch (future v1.2).
 
 This week in FreeCAD development:
@@ -47,7 +46,6 @@ This week in FreeCAD development:
   - Removed the duplicated movement to the clearance height at the end of the Slot operation ([PR#25842](https://github.com/FreeCAD/FreeCAD/pull/25842)).
   - Used the Job.GeometryTolerance property to set the precision of segmentation complex shapes while creating a path in the Tag, Engrave, and Deburr operations ([PR#26127](https://github.com/FreeCAD/FreeCAD/pull/26127)).
   - Fixed an error that showed up when changing the Radius property in DressupAxisMap ([PR#26321](https://github.com/FreeCAD/FreeCAD/pull/26321))
-
 
 - Improved the Ramp Entry dressup ([PR#26695](https://github.com/FreeCAD/FreeCAD/pull/26695)).
 - petterreinholdtsen patched the Fanuc post-processor ([PR#26617](https://github.com/FreeCAD/FreeCAD/pull/26617) and [PR#26436](https://github.com/FreeCAD/FreeCAD/pull/26436)).

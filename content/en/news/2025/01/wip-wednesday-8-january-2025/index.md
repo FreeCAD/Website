@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **Sketcher**: wwmayer introduced a new option to to always add external geometry as a reference so that the old workflow was still possible.

@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 Chris Hennes developed an *opt-in* [Telemetry addon](https://github.com/freecad/freecad-Telemetry) to help the development team make good decisions and help answer questions like:
 
 - How many people are affected by a given bug?
@@ -28,7 +27,6 @@ To assist with that, the addon transmits select information about your copy of F
 The addon recently passed initial beta testing. If you are interested in helping developers gain more actionable data, please install it. That's all you need to do.
 
 {{< youtube id=OluDQYR9HlQ title="Enable Telemetry Addon to Help with FreeCAD Development" loading=lazy >}}
-
 
 ## FAQ
 

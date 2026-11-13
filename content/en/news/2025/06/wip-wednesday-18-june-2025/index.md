@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **Draft**: Roy-043 specified units of spinboxes in UI files for arrays and ShapeString and made minor improvements in the OrthoArray task panel.

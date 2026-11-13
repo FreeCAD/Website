@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **Sketcher**: PaddleStroke fixed two regressions, including one where Symmetry didn't work on arcs with constrained centers.

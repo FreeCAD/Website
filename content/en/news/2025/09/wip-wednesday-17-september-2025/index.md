@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 The main development branch of FreeCAD entered the hard feature freeze on Monday, so we are now pretty much in bugfix mode until the release of v1.1. There is no schedule for the release other than "we do it when we hit zero release blockers".
 
 For v1.0, we entered the feature freeze in June 2024 with approx. 40 release blockers and released the final version five months later, in mid-November. You probably should not expect exactly the same gap. However, the ETA ultimately depends on how many blockers we end up fixing and how many people participate in fixing them. Incidentally, the FPA now has a pilot [bugfix rewards program](https://blog.freecad.org/2025/08/14/pilot-bugfix-rewards-program/) you could be part of.

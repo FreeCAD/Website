@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **Toponaming**: bgbsww fixed a blocker bug in the toponaming code, refactored all element name pairs into clearer struct names, and contributed several patches transferring RealThunder's code to solve the save/restore errors with objects with element maps.

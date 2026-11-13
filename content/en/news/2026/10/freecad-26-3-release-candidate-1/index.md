@@ -13,7 +13,6 @@ cover:
   caption:
 ---
 
-
 The FreeCAD team has just announced the first release candidate for FreeCAD 26.3. If you've been waiting to get your hands on [new features](https://wiki.freecad.org/Release_notes_26.3/en) and help by reporting bugs, this is a great time to start.
 
 What we need from you:

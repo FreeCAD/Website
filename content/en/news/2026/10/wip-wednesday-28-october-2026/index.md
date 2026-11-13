@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 The FreeCAD team has been eliminating blocking issues in preparation for the v26.3 release.
 
 Of 44 pull requests merged in the last 7 days, 15 were backports from the main development branch to the dedicated 26.3 release branch. This overview focuses on the work in the main branch only.
@@ -28,7 +27,6 @@ UnKabaraQuiDev fixed three path pattern issues in PartDesign ([PR#33865](https:/
 ## TechDraw
 
 WandererFan fixed a bug where it was impossible to create an angle dimension on a chamfer of a cylinder ([PR#33820](https://github.com/FreeCAD/FreeCAD/pull/33820)). He also fixed an unwanted rotation of detail geometry in axonometric view ([PR#33833](https://github.com/FreeCAD/FreeCAD/pull/33833)) and two issues related to cosmetic object deletion ([PR#33880](https://github.com/FreeCAD/FreeCAD/pull/33880)).
-
 
 ## Other changes
 

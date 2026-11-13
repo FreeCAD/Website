@@ -4,7 +4,6 @@ description: Maintaining the FreeCAD LibPack for Windows.
 weight: 17
 ---
 
-
 To create a new LibPack for Windows, begin by creating an empty directory. The suggested naming scheme
 is to name it "LibPack-XX-YY-ARCH" where XX is the release of FreeCAD the pack is intended to work with,
 YY is a version number of the LibPack itself, and ARCH is the architecture the LibPack was build for

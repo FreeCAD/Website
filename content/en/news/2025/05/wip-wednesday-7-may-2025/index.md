@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **Draft**: Roy_043 simplified using an actual font file from the OS as the default for ShapeString objects.

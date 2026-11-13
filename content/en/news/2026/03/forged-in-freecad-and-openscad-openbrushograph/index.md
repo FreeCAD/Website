@@ -13,7 +13,6 @@ cover:
   caption:
 ---
 
-
 ![Open Brushograph flyer](openBrushograph_flyer.webp "Open Brushograph flyer")
 
 Pen plotters are cool and there are plenty of open designs to choose from. What if we want to experiment beyond pens? Well then perhaps brushes and paint are fun to play with! The [openBrushograph](https://github.com/openBrushograph/openBrushograph_hardware) is exactly this, an XYZ style pen plotter with additional paint dishes and some pretty cool design and control systems to allow for multi colour painting.

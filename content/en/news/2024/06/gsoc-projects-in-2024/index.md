@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This year, we have two students working on FreeCAD as part of the annual Google Summer of Code program.
 
 **Harshita Saraswat** is creating a command-line tool to manage and manipulate FreeCAD preferences from outside the FreeCAD application. This tool is intended to be used for installing and configuring FreeCAD with scripts. Harshita is mentored by Ajinkya Dahale and Pieter Hijma.

@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 The FreeCAD Project Association has awarded a grant of EURO 5,000 to the CAD Working Group (CWG) for allocation towards bounty projects.
 
 Most of the deliverables are TechDraw improvements, such as adding support for labeling symbols from ISO 129-1:2022 and workpiece edge symbols from ISO 13715, adding broken-out section views to the Complex Section tool, etc. You can find the full list of deliverables in the [grant application](https://github.com/freecad/fpa-grant-proposals/issues/37).

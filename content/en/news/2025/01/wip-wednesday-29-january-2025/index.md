@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **Draft**: Roy-043 fixed several bugs and changed the Draft_Layer icon to look different from the LayerContainer one.

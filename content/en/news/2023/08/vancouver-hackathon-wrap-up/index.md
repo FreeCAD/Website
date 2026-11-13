@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 As I write this we are just wrapping up the [FreeCAD Hackathon 2023](https://blog.freecad.org/2023/05/24/freecad-hackathon-11-13-august-2023/) in Vancouver, BC. The coffee is gone, the laptop batteries are drained, and everyone present (physically and virtually) is winding up their weekend projects.
 
 The weekend featured a variety of different activities, ranging from presentations from **Dr. Aik-Siong Koh** about his recent work on [a new LGPL'ed 3D constraints solver for assemblies](https://github.com/Ondsel-Development/OndselSolver) and from **Ajinkya Dahale** on his work towards a [custom properties system](https://ondsel.com/blog/build-system-for-custom-data-elements/), to audio conferences via [the Discord channel](https://discord.gg/w2cTKGzccC) with FreeCAD users and developers from across the world, to just a bunch of devs sitting around hacking on FreeCAD and occasionally asking each other for help or input.

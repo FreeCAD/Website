@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **Measurement**: hlorus and AIRCAP fixed several issues including one release blocker, and PaddleStroke fixed Quick Measure to work on bodies in assemblies correctly.

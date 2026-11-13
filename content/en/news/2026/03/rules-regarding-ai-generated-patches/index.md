@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 Big and small free/open-source projects have been facing an avalanche of AI-generated patches lately. Some patches are more or less OK, others have convoluted, badly designed code. The net effect is that code review becomes more difficult, to the point where numerous projects give up and introduce some form of protection against AI slop.
 
 The team started with a [discussion on GitHub](https://github.com/FreeCAD/FreeCAD/pull/24126) and had a further conversation at a [recent bi-weekly dev call](https://github.com/FreeCAD/FreeCAD-developer-meetings/blob/main/Minutes/minutes-2025-12-20.md). Following that, Reqrefusion updated the contribution guidelines to include two new clauses around AI-generated code. Here they are:

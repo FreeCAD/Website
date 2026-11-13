@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 The past week saw developers working on a large number of UI improvement projects, as well as quite a bit of behind-the-scenes code updating and cleanup.
 
 - wwmayer has been working on modernizing our C++ codebase, bringing various things up to the C++17 standard (which is our current target)

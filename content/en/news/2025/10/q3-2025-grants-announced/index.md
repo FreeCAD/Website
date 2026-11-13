@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 The FPA members have voted on grant proposals based on feedback from the Technical Grant Review Committee.
 
 Here are the confirmed grants:

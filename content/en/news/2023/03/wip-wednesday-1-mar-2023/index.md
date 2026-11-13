@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This past week saw the epic grid system merge in Sketcher, plus many other smaller projects (by my count this was the largest number of FreeCAD pull requests *ever* merged in a single week!). In the coming week:
 
 - The FreeCAD User's Conference is March 1-3, online. [Register here](https://hopin.com/events/freecad-and-free-cae-users-conference/registration).

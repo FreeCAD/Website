@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 The FPA recently approved three more grants:
 
 **Jackson Oursland** will research various options for FreeCAD to get fast CI runners. Currently, we have free runners from GitHub, but they are relatively slow and concurrency-limited. So Jackson will look into three general options: paid runners on GitHub, self-hosted runners in the cloud (AWS, Azure, GCS, maybe others), and self-hosted runners on premise. Jackson was awarded $500 for the research.

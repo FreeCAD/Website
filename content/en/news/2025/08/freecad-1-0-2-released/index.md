@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 We've just released an update with over 30 bugfixes and small improvements, [go get it here](https://www.freecad.org/downloads.php). As a reminder, these 1.0.X releases bring added stability to version 1.0 of FreeCAD, whereas new features in development will be released in version 1.1. Here are the main changes in v1.0.2:
 
 **Draft**: Roy_043 fixed a bug where a dimension would show up with inward-pointing arrows, whereas all others would have outward-pointing arrows.

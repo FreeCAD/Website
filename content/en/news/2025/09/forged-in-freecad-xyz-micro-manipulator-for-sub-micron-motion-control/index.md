@@ -13,7 +13,6 @@ cover:
   caption: Micro Manipulator FreeCAD model
 ---
 
-
 It's a wonderful thing when you see a very cool opensource hardware project and then a further delight when you see that the toolchain to build the device is also completely open.
 
 Using FreeCAD, KiCad and other opensource projects like Python and GRBL this XYZ micro manipulator is fascinating in multiple aspects.

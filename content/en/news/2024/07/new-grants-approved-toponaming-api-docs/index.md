@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 The FreeCAD Project Association has just approved several more grants:
 
 **Bradley McLean** will continue his work on the TNP migration. He will develop new code to address portions of [SubShapeBinder](https://wiki.freecad.org/PartDesign_SubShapeBinder) and Sketcher that vary from both the code base at the time of the original TNP branch and from the current LinkStage3 branch. When no bugs are present, he will refactor code in Part and PartDesign based on discoveries during the toponaming project. This is a time commitment project with 100 hours of work scheduled. Bradley was awarded $5000 for the entire project.

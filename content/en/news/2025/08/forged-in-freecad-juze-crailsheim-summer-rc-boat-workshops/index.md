@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 ![Main boat hull](main_boat_hull.webp "Main boat hull")
 
 A couple of weeks ago on the #FreeCADFriday hashtag over on [Fosstodon](https://fosstodon.org/@FreeCAD), Hanser posted a lovely bit of FreeCAD design work for a RC boat hull. It was a great looking design, but even more wonderful was the story that unfolded in the thread that followed.

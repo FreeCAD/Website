@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **Part and PartDesign**: the unsung hero this week was AIRCAP who single-handedly wrestled with a huge amount of bugs and came out on top:

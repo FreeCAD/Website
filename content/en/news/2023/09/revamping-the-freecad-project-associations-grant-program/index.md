@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 _TL;DR: the FreeCAD Project Association studied best practices of other organizations that have grant programs and is now working towards improving its own program._
 
 In 2022, the FreeCAD Project Association announced a grant program and issued several grants to people actively contributing to the well-being of FreeCAD and its ecosystem: to RealThunder for his work on the toponaming problem mitigation, to Ajinkya Dahale for his work on Sketcher, and to Adrián Insaurralde Avalos for managing FreeCAD releases. Several more grants are in process or are currently being discussed.
@@ -37,7 +36,6 @@ To do that Alexandre studied what the FPA has done so far with its grant program
 
 [You can read the full report on the research here](https://github.com/freecad/fpa/blob/main/reports/2023_09_27_Prokoudine.md). Let's briefly discuss its key findings.
 
-
 ## FPA's activity
 
 So far, most grants have been more like gifts to people who were already doing great work for FreeCAD. There was neither planning, nor budget estimation, and no supervision was done.
@@ -47,7 +45,6 @@ All payouts were $1,000 single-time ones, done 100% upfront, no strings attached
 The program communication has been rather scarce so far: very few posts in this blog and on social media, not much discussion on the forum. The [development fund](https://fpa.freecad.org/programs/fpadf-announcement) page has a number of ambiguities that are easy to fix.
 
 Overall, the research finds that the FPA "hesitates to go big on its grant program while having sufficient funds to do so".
-
 
 ## What other organizations do
 
@@ -70,7 +67,6 @@ The research focused on QGIS, GRASS GIS, Cesium, Blender, Godot, and Open Toolch
 **Public communication.** This is one aspect where organizations differ the most. Some actively post about the program on social media and publish announcements and recaps in their respective blogs, others don't even have a single place of entry for people willing to learn more about the program.
 
 One question that the research was unable to answer directly based on studying other organizations was how to increase the amount of grant applications. This is in part due to a relatively small sampling in the study, but also because FreeCAD has very specific challenges. However, Alexandre pointed out that, so far, there hasn't been a lot of public communication about the program. And while this blog posts updates on donations, it's possible that potential applicants are mostly unaware that the FPA does have a substantial budget for grants.
-
 
 ## What's next
 

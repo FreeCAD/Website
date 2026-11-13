@@ -10,7 +10,6 @@ cover:
   caption:
 ---
 
-
 FreeCAD is a already long-term participant to the [Google Summer of Code](https://summerofcode.withgoogle.com/) (GSoC) program, which is Google's program to fund students to work on Free and Open-Source Software (FOSS) projects. Each year, students submit proposals to work on their favorite FOSS project during the school holidays, and Google awards them a grant.
 
 FreeCAD has been participating since 2016, together with some other FOSS CAD projects like [OpenSCAD](https://openscad.org/), [BRL-CAD](https://brlcad.org) or [KiCAD](https://kicad.org) under a same umbrella. Last year, we decided we're old enough to try, and participated on our own. It was a great experience, we got no less than four awarded students working on FreeCAD. All of them produced good results, and got to know and interact with the FreeCAD family.

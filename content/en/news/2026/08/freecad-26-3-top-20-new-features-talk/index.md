@@ -10,7 +10,6 @@ cover:
   caption:
 ---
 
-
 {{< youtube id=W1fwOODNYZQ title="FreeCAD North American Meetup 2026 - FreeCAD 26.3: What's New" loading=lazy >}}
 
 The [FreeCAD](https://www.freecad.org/) North America Meetup event happened last weekend and was kindly hosted in the fantastic [Knox Makers](https://knoxmakers.org/about/) in Knoxville Tennessee.

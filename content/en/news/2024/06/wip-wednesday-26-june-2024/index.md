@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 The development of new features is pretty much done. Some larger changes, such as the BOM tool in Assembly last week, are still landing to the main development branch. But they are simply patches that were submitted prior to feature freeze a few weeks back and finally passed review.
 
 This Monday, maintainers agreed to delay the proposed UI freeze by 1 week. So any *fixes* that affect the user interface and change translatable strings should be submitted by the time the [next PR merge meeting](https://www.freecad.org/events.php) starts.

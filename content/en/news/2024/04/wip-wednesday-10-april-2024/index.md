@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 In the *toponaming project*, **bgbsww** added more tests and updated existing ones, and **CalligaroV** fixed two bugs.
 
 In *Arch*, **yorikvanhavre** upgraded the reference tool, so that it could work with DXF and IFC files ([NativeIFC](https://github.com/yorikvanhavre/freecad-nativeifc) is required for the latter), and **paullee0** fixed a regression that occured when making a block from a DraftWire.

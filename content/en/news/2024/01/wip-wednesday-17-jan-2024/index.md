@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 - **WandererFan** committed several fixes and improvements to TechDraw, and **edi271** contributed API extensions to the same workbench and fixed a bug in VertexAtIntersection.

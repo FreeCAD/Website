@@ -11,7 +11,6 @@ cover:
   caption: FreeCAD TechDraw Workbench
 ---
 
-
 Sometimes we might need to share a 3D design in the form of a 2D technical drawing. FreeCAD has an entire workbench, TechDraw, with a collection of tools to help you do this.
 
 To explore TechDraw we need to have an object that we want to make a technical drawing of. Let's just quickly create an object. On the FreeCAD start page click the "Parametric Part" option from the "New File" window. This creates a new file and jumps to the Part Design workbench and creates an active body. Click the "tasks" tab and select to "Create sketch" or click the "Create sketch icon". Let's select to draw our sketch in the XY plane.

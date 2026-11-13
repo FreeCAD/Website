@@ -10,7 +10,6 @@ cover:
   caption:
 ---
 
-
 ![Custom tb header](custom_tb_header.webp "Custom tb header")
 
 When you use any tool for a while you often build a more personal connection to it. Perhaps you have that old screwdriver in a drawer that's become polished with years of use and fits your hand perfectly. We've looked previously at [changing the appearance of FreeCAD using themes and also different workbench listing options](https://blog.freecad.org/2024/12/03/tutorial-themes-and-workbench-layout/) as a method of personalising our FreeCAD, in this tutorial though we'll look at toolbars and tool icons.

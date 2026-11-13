@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 Recently we ran our first [FreeCAD Community Design competition](https://forum.freecad.org/viewtopic.php?p=886426#p886426). Our idea was to challenge people to use FreeCAD to design something useful for another open source community. We chose the theme of Open Science and partnered with [LabCrafter](https://labcrafter.co.uk/) who identified that numerous open science/open hardware projects would benefit from a low voltage pinch valve design for automating the flow of gasses and liquids. As such we designed a brief and offered some cash prizes.
 
 ![](mikeventor_techdraw.webp)

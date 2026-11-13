@@ -4,7 +4,6 @@ description: Addons Coordinators
 weight: 5
 ---
 
-
 ## Unmaintained Addons
 
 To keep the addon ecosystem in a healthy state, it is vital to handle addons that haven't been maintained in a while.

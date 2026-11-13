@@ -11,7 +11,6 @@ cover:
   caption: Turan talk at the GSOC Summit 2025 in Munich
 ---
 
-
 *The following text is a guest post from Turan Furkan Topak reporting on their trip to the GSOC Summit. Many thanks for taking the time to write this report. /Jo*
 
 When I applied to be a mentor for GSoC, my intention was actually just to mentor in my own area of interest. That was how the process worked anyway: you were, in a way, a candidate candidate. But because we didn't have many mentors, I ended up serving as a second mentor on all the projects. And there wasn't even a project related to documentation, which is my area of interest.

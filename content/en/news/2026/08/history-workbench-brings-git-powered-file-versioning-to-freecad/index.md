@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 {{< youtube id=VZJsxJS-CTQ title="FreeCAD North American Meetup 2026 - Version Control for Beginners" loading=lazy >}}
 
 We recently posted [Chris Hennes excellent talk at the FreeCAD](/news/freecad-26-3-top-20-new-features-talk/) North American meetup 2026 which is well worth checking out to see a snapshot of upcoming developments at FreeCAD. The above video is another talk from that day from Ephi who has developed the excellent [History Workbench](https://github.com/eblanshey/HistoryWorkbench).

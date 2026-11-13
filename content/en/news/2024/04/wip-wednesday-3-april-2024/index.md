@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development, the most actively worked-on parts of FreeCAD have been the toponaming project, Sketcher, FEM, and UI/UX.
 
 Toponaming:

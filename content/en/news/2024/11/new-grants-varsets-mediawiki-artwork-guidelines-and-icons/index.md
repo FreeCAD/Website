@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 The FPA General Assembly approved three new grant applications.
 
 **Pieter Hijma** will work on improving the user experience of VarSets. The work will include guiding the discussion on the more complicated topics, adding new features that are requested from users, and improving on various small issues. The work is scheduled to be done between January and April 2025. Pieter was awarded EUR 8,000 for the work.

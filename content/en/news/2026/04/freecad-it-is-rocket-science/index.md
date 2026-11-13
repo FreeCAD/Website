@@ -13,7 +13,6 @@ cover:
   caption:
 ---
 
-
 {{< youtube id=IgRgFM0k-M0 title="Assessing the Accuracy of Aerodynamics Simulation Through CFD and Flight Testing-Karbon" loading=lazy >}}
 
 In full disclosure the author of this post is involved in model, amateur and high power rocketry so forgive their over excitement!

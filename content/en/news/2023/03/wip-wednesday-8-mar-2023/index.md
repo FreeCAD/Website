@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 During this past week work continued on getting FreeCAD ready for Qt6, plus some bug fixes to OpenSCAD file import, UI tweaks to the Workbenches preferences page, and the File and Clipboard toolbars were split to improve customization. In the upcoming week:
 
 - From sliptonic: "[Toponaming](https://github.com/freecad/freecad/issues/8432) is moving forward. First four units of work (cards) have been created. Remember, this isn't an Ondsel project. It's a FreeCAD project. We'll be looking for help on each of these, including unit test code. Please get involved."

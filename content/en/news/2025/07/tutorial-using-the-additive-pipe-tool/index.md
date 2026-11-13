@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 ![Additive pipe complete](additive_pipe_complete.webp "Additive pipe complete")
 
 The additive pipe tool is an excellent tool that allows a sketch or sketches to be swept along a series of edges to create a solid pipe with the profile of the original sketch. It can also be used to create more complex geometric pipes that flow through a variety of profiles along their length. As a reminder in these tutorials we use the tool tip text that appears when you hover over a tool icon to describe tools, which is a good way to explore FreeCAD!

@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 ![Chennes fab 25 the future beckons](chennes_fab25_the_future_beckons.webp "Chennes fab 25 the future beckons")
 
 Between July 4th and 11th split between Brno and Prague, [FAB25](https://fab25.fabevent.org/), the latest iteration of the annual Fab Lab travelling conference, took place. Excellently we had representation from the FreeCAD community speaking at the event.

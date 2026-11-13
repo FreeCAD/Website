@@ -4,11 +4,9 @@ description: Git and Github.
 weight: 6
 ---
 
-
 ## Checking out PRs locally for review
 
 Git can [checkout pull requests from a remote repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/checking-out-pull-requests-locally). This makes it easier to review pull requests locally, and to run tests against them.
-
 
 ## Configuring Git to make checkout easier.
 

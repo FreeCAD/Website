@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **Assembly** got support for the new toponaming routines and per-limit checkboxes when setting joints. Moreover, when a checkbox for a limit is disabled, the value is still updated as you drag or rotate a part. This makes it easy to visually set limits: drag a part to a position where the min value should be, enable the checkbox, repeat for the max value. Both patches were contributed by PaddleStroke. He also fixed a crash that was occurring when using Gear, Belt, and Rack/Pinion joints.

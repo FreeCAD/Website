@@ -13,7 +13,6 @@ cover:
   caption: FOSDEM 2026
 ---
 
-
 Every year there's lot's of FreeCAD activity centred around the fantastic FOSDEM event in Brussels. This year as well as the usual [FreeCAD Day](https://events.freecad.org/), Chris Hennes (chennes) and Jo Hinchliffe (concretedog) are coordinating the Open Hardware and CAD/CAM devroom. Chris has just posted the [text below on the FreeCAD Forum](https://forum.freecad.org/viewtopic.php?t=100741), but we include it here to help spread the word. We hope to see lots of wonderful applications for the devroom and also meeting up with friends in the FreeCAD community on FreeCAD Day.
 
 Chris' text:

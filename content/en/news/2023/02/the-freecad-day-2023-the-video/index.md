@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This is a small glimpse to what happened on the FreeCAD meeting day 2023 in Brussels in February. Captions available under the gear icon.
 
 {{< youtube id=C0u1FBUsILE title="FreeCAD day 2023" loading=lazy >}}

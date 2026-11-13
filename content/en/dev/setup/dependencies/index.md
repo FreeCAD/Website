@@ -4,7 +4,6 @@ description: Information about the dependencies in FreeCAD.
 weight: 3
 ---
 
-
 ## Overview
 
 Like most software projects, FreeCAD depends on many other packages. Most critical among these is [Open CASCADE Technology](https://occt3d.com/open-cascade-technology/),
@@ -14,11 +13,9 @@ in. Depending on what platform you are developing on, you have a variety of tool
 of the most common ones is included below. The main purpose of this document is to highlight the primary dependencies and describe what they do and
 why FreeCAD needs them.
 
-
 ## Supported versions
 
 The head of the main branch of FreeCAD, currently used for the development of FreeCAD 1.2, can be compiled from source on systems as old as the oldest currently-supported [Ubuntu LTS](https://packages.ubuntu.com/) at the time of its expected release, Ubuntu 24.04 LTS. This ties FreeCAD development to the C++23 standard, Python 3.11 and later (we plan to switch to 3.12 or later once Blender updates their dependencies in mid-2026), Qt 6.4, and the versions of the required libraries available on that system. Note that Qt does not support PySide6 `pip` installation on this system, so use of a PPA is required for that dependency. The decision to stop support for Qt5 was [announced 5 January 2026](https://forum.freecad.org/viewtopic.php?t=102292).
-
 
 ## Major dependencies
 
@@ -114,7 +111,6 @@ Zlib is designed to be a free, general-purpose, lossless data-compression librar
 It implements the DEFLATE compression algorithm commonly used in .zip and .gzip files.
 
 A copy of this library is included in the source code of FreeCAD so it is compiled together with it.
-
 
 ## Dependency management
 

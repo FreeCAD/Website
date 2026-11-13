@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **Toponaming:** bgbsww added some missing code (there will be more to add, it seems) and started performance testing. So far, things don't look bad at all performance-wise.

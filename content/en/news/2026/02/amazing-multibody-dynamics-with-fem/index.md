@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 {{< video src="four_views_FEM_stress_final.mp4" >}}
 
 It's incredible that we have free and open source CAD, then even more amazing we have the capability to create complex assemblies. On top of this, tools like Finite Element Methods and analysis make FreeCAD hugely capable. Therefore the sight of the above video from [MbDFEM](https://mbdfem.com/index.html) where they are combining and applying Finite Element Methods in dynamic Multibody assemblies is frankly jaw dropping.

@@ -4,10 +4,8 @@ description: FreeCAD Brand guidelines.
 weight: 9
 ---
 
-
 The brand guidelines describe the proper use of the FreeCAD logo and other FPA branded resources.
 This is an excerpt of the official [FPA site for the FreeCAD brand guidelines](https://fpa.freecad.org/handbook/process/logo.html).
-
 
 ## Logos
 
@@ -34,7 +32,6 @@ The symbol has two versions:
 1. Full color (primary) which is the preferred version
 2. Mono / 1C (secondary) as fallback and only used in the color *Tufts Blue*, *Light Red*, *Off Black*, or *White*. No other colors or gradients and effects should be used
 
-
 ## Colors
 
 The FreeCAD logos must always appear as one of the primary brand colors. This includes *Tufts Blue*, *Light Red*, *Dark Red*, *Off Black*, and *White*. These colors should also be used for other branded applications.
@@ -48,7 +45,6 @@ Regardless of the used symbol, the wordmark *FreeCAD* must always be used in eit
 
 - **Off Black**, [#212529, RGBA(33,37,41,1), CMYK(20,10,0,84), PMS BLACK C](https://encycolorpedia.com/212529)
 
-
 ## Uses
 
 The FreeCAD logo is provided in several distinct flavors for the following applications:
@@ -61,7 +57,6 @@ Each of the 1C (mono) variants consists of one solid color, with the *F* as nega
 
 When using other text elements in association with FreeCAD, use the [Evolventa](https://evolventa.github.io/) font family, but don't recreate the wordmark manually.
 
-
 ## Scale and Whitespace
 
 To retain legibility and integrity, the primary and secondary FreeCAD logo should be displayed not smaller than 32px and 16px, respectively.
@@ -72,7 +67,6 @@ Don't add text directly next to the logo and don't use a slogan next or under th
 
 When used with other logos and partner brands, all logos should be of equal size and have enough distance to each other.
 
-
 ## Do nots
 
 To maintain consistency, the FreeCAD logo should only be used as suggested above and provided in the logo kit.
@@ -81,7 +75,6 @@ You should **not** alter colors, shape, style, or apply any effects such as grad
 We have made some examples of what **not** to do when using the logo:
 
 ![Branding guidelines](guidelines.svg)
-
 
 ## PDF Guidelines
 

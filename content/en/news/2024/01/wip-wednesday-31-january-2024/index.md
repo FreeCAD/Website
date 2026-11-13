@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 - **bgbsww**, **chennes**, and **CalligaroV** ported and further improved various changes from **RealThunder**'s branch towards mitigating the toponaming problem.

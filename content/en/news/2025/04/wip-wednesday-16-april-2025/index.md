@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **Sketcher**: PaddleStroke and AjinkyaDahale refactored some parts of the code. Additionally, Ajinkya fixed half a dozen trimming issues.

@@ -13,7 +13,6 @@ cover:
   caption:
 ---
 
-
 Last week, our very own regular blog contributor Jo Hinchliffe, AKA Concretedog, was spotted on the Open Source Hardware Association (OSHWA) monthly 'show and tell' livestream.
 
 {{< youtube id=gIyE2An_tcY title="Show & Tell Monthly: September 2025" loading=lazy >}}

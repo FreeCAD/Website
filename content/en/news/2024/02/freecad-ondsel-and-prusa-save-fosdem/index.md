@@ -11,7 +11,6 @@ cover:
   caption: FreeCAD, Ondsel and Prusa Save FOSDEM!
 ---
 
-
 Whilst there was enough toilet paper, there was an issue in deploying it. We were approached at the FreeCAD/Ondsel, KiCad booth by a FOSDEM volunteer who was worried. The team only had one key that unlocked the toilet paper dispensers and they were struggling to keep the flow of paper steady. A crisis was emerging!
 
 ![Let's print keys!](IMG_20240204_114434.webp "Let's print keys!")

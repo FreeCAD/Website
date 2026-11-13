@@ -4,7 +4,6 @@ description: Guide for getting started with VSCode.
 weight: 4
 ---
 
-
 A convenient way of working with the FreeCAD source code is to use an IDE or Integrated Development Environment. The FreeCAD repository contains a VSCode configuration which makes it particularly easy to get started with.
 
 Get VSCode here https://code.visualstudio.com/download and Git here https://git-scm.com/downloads
@@ -42,7 +41,6 @@ If you are using conda please select one of the respective ones.
 
 Cmake should automatically configure the project with the selected configuration.
 
-
 ## First build
 
 {{< video src="build.mp4" >}}
@@ -57,7 +55,6 @@ To build, either:
 **NOTE:** The first build takes a while.
 
 **NOTE:** If you change configuration (see step above) you will have to build again.
-
 
 ## Launching the built executable and debugging
 
@@ -76,7 +73,6 @@ To debug please refer to the [documentation](https://code.visualstudio.com/docs/
 
 **NOTE:** Don't use the restart button. It only restarts the selected debugger, which definitely is not what you want. Instead press the stop button (which stops both debuggers) and launch again.
 
-
 ## Running tests
 
 {{< video src="testing.mp4" >}}
@@ -90,7 +86,6 @@ The IDE supports running FreeCAD tests as well. On the left panel go to the test
 Alternatively, there are two vscode tasks that can be used to run the cpp and python tests directly.
 
 **NOTE:** The debug tests button does not currently work. More configuration is needed to get that to work.
-
 
 ## General features of VSCode
 
@@ -129,7 +124,6 @@ Other useful extensions, recommended but not necessary are
 - ```mhutchie.git-graph```: Helps visualize git commits and branches.
 
 - ```donjayamanne.githistory```: Adds two buttons to the right-click menu: `git: view file history` and `git: view line history`
-
 
 ![VSCode extensions](extensions.webp)
 

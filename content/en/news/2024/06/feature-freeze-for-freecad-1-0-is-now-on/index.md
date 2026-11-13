@@ -10,7 +10,6 @@ cover:
   caption:
 ---
 
-
 Since the pull request merge meeting yesterday we are in feature freeze. Here are the general rules:
 
 - All the open pull requests with new features that had been submitted prior to the start of the PR merge meeting *will be reviewed* for inclusion in v1.0.

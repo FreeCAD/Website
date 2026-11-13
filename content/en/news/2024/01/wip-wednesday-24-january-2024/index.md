@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 - **Roy-043** fixed a few bugs in the Arch workbench, improved layer functions and made further improvements in Draft.

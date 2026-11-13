@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 The FPA is launching an annual grant program following [last year's research](https://blog.freecad.org/2023/09/28/revamping-the-freecad-project-associations-grant-program/). The goal is to foster rapid development of FreeCAD. To do that, the FPA will use the community's donations to pay developers and non-programming contributors. We reserved a fund of 50,000 EUR for this in 2024. We aso encourage work on items from the [general roadmap](https://freecad.github.io/DevelopersHandbook/roadmap/), but are also interested in grant applications exploring other possibilities.
 
 The program has some similarities to Google Summer of Code, but it's targeted at contributors who are more experienced and don't need much mentoring (if any at all). We also recognize that projects will vary in complexity. Some projects will take two months to complete, some - half a year or more. So there will be no universal 'pencils down' deadline. We will, however, batch the reviewing of grant applications.

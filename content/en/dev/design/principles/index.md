@@ -4,7 +4,6 @@ description: Design Principles and UI/UX conventions.
 weight: 2
 ---
 
-
 The following guiding principles are based on various established UI/UX conventions or *laws*.
 
 - Aesthetics - Not a replacement for good design, but helps compensate for minor flaws. Poor aesthetics can ruin an otherwise well designed functional flow.\
@@ -44,9 +43,7 @@ The following guiding principles are based on various established UI/UX conventi
 Related elements/functions should share similar visual symbology\
 ([*Law of Proximity*](#law-of-proximity) / [*Law of Uniform Connectedness*](#law-of-uniform-connectedness))
 
-
 *Understand that UI/UX is closely linked to human psychology and tendencies*
-
 
 ## Aesthetic-Usability Effect
 
@@ -67,13 +64,11 @@ Related elements/functions should share similar visual symbology\
 
 - **Takeaway:** Aesthetically pleasing interfaces are worth the investment. Visual designs that appeal to your users have the side effects of making your site appear orderly, well designed, and professional. Users are more likely to want to try a visually appealing site, and they're more patient with minor issues.
 
-
 ## Doherty Threshold
 
 - Summarized as user interactions and software response time hits a psychological 'addictive' state when response is roughly 400ms or slightly less.
 
 - In the case of FreeCAD, appears to be less relevant, and is incredibly difficult to quantify.
-
 
 ## Fitt's Law
 
@@ -95,13 +90,11 @@ Related elements/functions should share similar visual symbology\
 
   - Minimizing travel distance to relevant targets also reduces the incidence of errors.
 
-
 ## Goal-Gradient Effect
 
 - This effect implies that giving users a sense of progress through visual indicators increases productivity.
 
 - Seems to apply to linear task type applications and is not likely to be applicable to most work done in CAD.
-
 
 ## Hick-Hyman Law
 
@@ -119,7 +112,6 @@ Related elements/functions should share similar visual symbology\
 
 - **Takeaway:** K.I.S.S. - Keep it Simple, Stupid
 
-
 ## Jakob's Law
 
 - Effectively states users spend most of their time using other software (or websites/web apps) This means that users prefer to work within established conventions that they are already used to.
@@ -135,7 +127,6 @@ Related elements/functions should share similar visual symbology\
   - Consistency in behavior and element location is paramount to good UI/UX design
 
   - When making major changes, minimize discontent by empowering users to continue using a familiar version for a limited time.
-
 
 ## Law of Common Region
 
@@ -155,7 +146,6 @@ Related elements/functions should share similar visual symbology\
 
   - Connectedness
 
-
 ## Law of Proximity
 
 - Proximity helps to establish a relationship with nearby objects.
@@ -163,7 +153,6 @@ Related elements/functions should share similar visual symbology\
 - Elements in close proximity are perceived to share similar functionality or traits.
 
 - Proximity helps users understand and organize information faster and more efficiently.
-
 
 ## Law of Pragnanz
 
@@ -175,7 +164,6 @@ Related elements/functions should share similar visual symbology\
 
 - **Takeaway:** Icons should be reviewed with this principle in mind.
 
-
 ## Law of Similarity
 
 - Elements that are visually similar will be perceived as related
@@ -183,7 +171,6 @@ Related elements/functions should share similar visual symbology\
 - Color, shape, size, orientation and movement can signal that elements belong to the same group and likely share a common meaning or functionality.
 
 - Ensure that links and navigation systems are visually differentiated from normal text elements.
-
 
 ## Law of Uniform Connectedness
 
@@ -194,7 +181,6 @@ Related elements/functions should share similar visual symbology\
   - Use uniform connectedness to show context or to emphasize the relationship between similar items.
 
   - Use tangible connecting reference (line, arrow, etc) from one element to the next to also create a visual connection
-
 
 ## Miller's Law
 
@@ -208,7 +194,6 @@ Related elements/functions should share similar visual symbology\
 
   - Short Term memory capacity will vary per individual based on prior knowledge and contextual understanding
 
-
 ## Occam's Razor
 
 - Among competing hypothesis that predict equally well, the one with the fewest assumptions should be selected
@@ -220,7 +205,6 @@ Related elements/functions should share similar visual symbology\
   - Consider completion only when no additional items can be removed
 
   - Analyze each element and remove as many as possible, without compromising the overall function
-
 
 ## Pareto Principle
 
@@ -234,7 +218,6 @@ Related elements/functions should share similar visual symbology\
 
   - Focus the majority of effort on the areas that will be the largest benefits to the most users.
 
-
 ## Parkinson's Law
 
 - Any task will inflate until all of the available time is spent
@@ -247,7 +230,6 @@ Related elements/functions should share similar visual symbology\
 
   - Leveraging types of features such as autofill to save the user time allows for quick completion of tasks
 
-
 ## Peak-End Rule
 
 - People judge an experience largely based on how they felt at its peak and at its end rather than the total sum or average of every moment of the experience.
@@ -259,7 +241,6 @@ Related elements/functions should share similar visual symbology\
   - Identify the moments when your product is the most helpful, valuable or entertaining and design to delight the end user.
 
   - Remember that users recall negative experiences more vividly than positive ones
-
 
 ## Additional Resources:
 

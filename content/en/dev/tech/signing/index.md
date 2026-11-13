@@ -4,7 +4,6 @@ description: Signing the FreeCAD executables and installers.
 weight: 16
 ---
 
-
 ## Mac OS
 
 ### Prerequisites
@@ -64,7 +63,6 @@ The complete process is:
     * `P12_PASSWORD` -- The password you set when exporting the certificate to the `*.p12` file.
     * `SIGNING_KEY_ID` -- The ID of the certificate associated with `BUILD_PROVISION_PROFILE_BASE64`. Obtained by running `security find-identity -v -p codesigning` on a machine with the key installed. It is the SHA hash of the selected key in the displayed list.
 16. Run the "Weekly Build" GitHub action to generate the signed macOS weeklies based on these settings.
-
 
 ## Windows
 

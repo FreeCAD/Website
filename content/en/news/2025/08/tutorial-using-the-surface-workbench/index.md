@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 ![Curve section surfaces complete](curve_section_surfaces_complete.webp "Curve section surfaces complete")
 
 The surface workbench has some fantastic tools that simplify making surfaces allowing for complex parts to be made. Let's have a quick walk through some of it's basic approaches. As a reminder in these tutorials we always refer to tools using the names that appear in the tool tips when you hover over the tool icons. This encourages everyone to look around and discover more tools!

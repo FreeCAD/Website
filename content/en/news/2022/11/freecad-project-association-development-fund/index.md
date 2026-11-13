@@ -11,7 +11,6 @@ cover:
   caption: Monedas Varias
 ---
 
-
 The FPA development fund won't pay in a pile of coins. But you could always buy them yourself! (Image courtesy of [ViajeroExtraviado](https://commons.wikimedia.org/wiki/File:Monedas_Varias.webp))
 
 The FreeCAD Project Association is pleased to announce the creation of the [FPA Development Fund](https://fpa.freecad.org/programs/fpadf-announcement) (FPADF). The FPADF offers grants to individuals for contributions to FreeCAD. Grants are currently capped at US$1000 and will be awarded only for work on the FreeCAD code base.

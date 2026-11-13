@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 - Roy-043 continued his work on the new 'get_param' function to help having all defaults in one place to avoid inconsistencies.

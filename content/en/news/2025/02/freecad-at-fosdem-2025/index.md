@@ -10,7 +10,6 @@ cover:
   caption: FOSDEM 2025
 ---
 
-
 ![FreeCAD stand at FOSDEM 2025](IMG_20250202_163750.webp "FreeCAD stand at FOSDEM 2025")
 
 Last weekend was [FOSDEM](https://fosdem.org/2025/) where a huge cohort of the opensource community descend on Brussels and take over the Solbosch campus of the *Université Libre de Bruxelles*. It's a fantastic event and, of course, FreeCAD had a stand alongside our friends and colleagues [KiCad](https://www.kicad.org/), as well a numerous FreeCAD related speakers and talks.

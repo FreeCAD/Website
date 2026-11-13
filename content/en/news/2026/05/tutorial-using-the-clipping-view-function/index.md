@@ -10,7 +10,6 @@ cover:
   caption:
 ---
 
-
 There are lots of ways to adjust the view of objects in the preview window but a simple one, that is often overlooked, is the Clipping View tool.
 
 ![](view_clipping_view.webp)

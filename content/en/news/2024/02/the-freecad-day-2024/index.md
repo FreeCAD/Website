@@ -13,7 +13,6 @@ cover:
   caption: The FreeCAD day 2024
 ---
 
-
 This year again, the [FPA](https://fpa.freecad.org) organized a FreeCAD day and a hackathon (and [much more](https://blog.freecad.org/2023/10/31/fosdem-freecad-day-and-hackathon-2024/)!) together with [FOSDEM](https://fosdem.org), in Brussels. We had an incredible, epic week of events (which you'll know all about later on this blog). I'll describe here briefly what happened during the hackathon and the FreeCAD day.
 
 ### The hackathon

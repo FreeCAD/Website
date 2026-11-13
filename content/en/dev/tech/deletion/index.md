@@ -4,11 +4,9 @@ description: How to control object deletion.
 weight: 9
 ---
 
-
 It is possible for a user to attempt to delete a DocumentObject while a Task
 Dialog is attempting to update that object.  Handling this in a Task Dialog
 is not tidy.
-
 
 ## Recommended reading:
 

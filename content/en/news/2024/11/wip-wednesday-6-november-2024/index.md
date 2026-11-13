@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **Sketcher**: mwganson defractalized the workbench by disallowing a sketch to be attached to itself.

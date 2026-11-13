@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 - The [first PR of the new Assembly workbench](https://github.com/freecad/freecad/pull/10427) was merged -- kudos to PaddleStroke and the team at [Ondsel](https://ondsel.com) for beginning that process.

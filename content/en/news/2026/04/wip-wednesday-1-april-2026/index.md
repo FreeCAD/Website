@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 Now that FreeCAD 1.1 is out, maintainers will keep backporting some changes from the main development branch to the 1.1 branch for future bugfix releases. There have been 37 such backports these last 7 days.
 
 We've also accumulated a backlog of 400+ open pull requests, and we keep getting new ones, so the next several weeks will be pretty busy. Expect a lot of pull requests to be merged.

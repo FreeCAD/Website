@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 - obelisk79 is spearheading the formation of a UI/UX working group -- more details coming soon! If you are interested in participating, consider joining the [FreeCAD Discord](https://discord.gg/w2cTKGzccC) and checking out the #ui-ux-themes channel.

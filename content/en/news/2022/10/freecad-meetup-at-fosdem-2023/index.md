@@ -10,7 +10,6 @@ cover:
   caption: Grand Place Brussels
 ---
 
-
 The [Free and Open Source Developers' European Meeting (FOSDEM) 2023](https://fosdem.org/2023/) is being held on 4 & 5 February 2023 in Brussels: many FreeCAD developers and users are meeting at the event, and a dedicated FreeCAD meetup is planned for the preceding Friday, 3 February 2023.
 
 ![Grand Place Brussels](Grand_Place_Bruselas_2.webp "Grand Place Brussels")

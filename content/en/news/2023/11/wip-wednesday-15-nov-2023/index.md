@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 - The new Assembly solver, [OndselSolver](https://github.com/Ondsel-Development/OndselSolver/), was added as a git submodule. This is a major step towards having a working version of an integrated assembly workbench.

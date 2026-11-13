@@ -12,7 +12,6 @@ cover:
   caption: STEMFIE
 ---
 
-
 [STEMFIE](https://www.stemfie.org/) is an amazing, unique project that feels a little like an imaginative 3D printed hybrid of LEGO Mindstorms and Meccano. All the part designs are freely shared and available. This means people can 3D print locally building their own part collection, it's mind boggling how many parts and projects there are!
 
 ![STEMFIE Catapult](SPS-000003_Desktop_Catapult_Boxshot_Title_stemfie.webp "STEMFIE Catapult")

@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **FEM**: marioalexis84 rewrote meshing with Netgen to use Netgen's Python bindings rather than a broken plugin in salomemesh. He also rewrote the way meshing with Gmsh is executed, so it's now possible to cancel the entire process thanks to running it in a separate thread.

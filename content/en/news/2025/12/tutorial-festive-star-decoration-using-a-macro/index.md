@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 ![Starmain](starmain.webp "Starmain")
 
 Around this time last year we created a [small tutorial to make a festive tree decoration](https://blog.freecad.org/2024/12/13/tutorial-festive-tree-decoration-using-the-revolution-tool/), shamelessly using the winter holidays to actually write a tutorial that, whilst pretending to be festive, really explained the use of the revolve tool! This year we are aiming for similar, we are going to create a star shaped decoration suitable for 3D printing, but we are going to learn how to use a community created macro.

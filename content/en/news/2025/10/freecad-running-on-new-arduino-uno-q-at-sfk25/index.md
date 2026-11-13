@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 {{< peertube url="https://makertube.net/w/dpuuB512sSwDvV32fV1YBo" >}}
 
 The author of this post has been out representing FreeCAD and other open source projects at the fantastic [SFK25 Conference](https://flossk.org/events/software-freedom-kosova-2025/). Arranged by the dedicated Free Libre Open Source Software Kosova [(FLOSSK) team](https://flossk.org/) this has been a vibrant international conference with a great array of talks and workshops over 2 days.

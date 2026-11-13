@@ -12,7 +12,6 @@ cover:
   caption: FreeCAD BIM Meetups
 ---
 
-
 As the number of contributors to the FreeCAD BIM Workbench grows over time, a need for better coordination has arisen this year. Marcuspollio initiated a BIM meetup session, which has become a weekly occurrence. Developers and active users discuss the current development status, future development plans, and the roadmap.
 
 The September meetups were dedicated to setting up the agenda, managing meeting notes, and planning near-term goals for the FreeCAD 26.3 feature freeze. A large part of the discussion focused on the roadmap, setting midterm goals and trying to establish unified goals for 2D drawing creation, floor plan modeling workflows, and improvements to door and window tool. Developers also share and coordinate their current development focus. Meeting notes from the past meetups and rolling agenda are published in this [public document](https://cloud.freecad.org/s/Ndz4teRNANWztMy).

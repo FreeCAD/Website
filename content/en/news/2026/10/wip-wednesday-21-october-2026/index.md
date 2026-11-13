@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 The FreeCAD team has been hard at work eliminating blocking issues in preparation for the v26.3 release.
 
 Out of 89 pull requests merged in the last 7 days, 38 have been backports from the main development branch to the dedicated 26.3 release branch. This overview focuses on the work in the main branch only.

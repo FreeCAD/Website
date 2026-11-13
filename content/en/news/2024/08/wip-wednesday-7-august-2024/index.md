@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **Toponaming**: bgbsww added more missing TNP code and fixed several bugs including one blocker.

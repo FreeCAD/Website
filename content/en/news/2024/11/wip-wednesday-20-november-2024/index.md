@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **BIM**: yorikvanhavre fixed several issues and added a new ArchDetail example file compatible with modern FreeCAD and tools.

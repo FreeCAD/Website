@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **Assembly**: PaddleStroke fixed a bug where an existing part would shift when inserting a new one.

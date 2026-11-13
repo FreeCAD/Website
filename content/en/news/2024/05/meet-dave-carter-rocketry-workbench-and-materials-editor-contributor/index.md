@@ -11,7 +11,6 @@ cover:
   caption: Rocket WB
 ---
 
-
 ![Dave saturn](dave_saturn.webp "Dave saturn")
 
 Dave is a rocketeer!

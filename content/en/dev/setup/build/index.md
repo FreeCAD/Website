@@ -4,9 +4,7 @@ description: Set up a build environment for contributing to FreeCAD.
 weight: 1
 ---
 
-
 Working on FreeCAD is similar to working on many other open-source projects. This guide provides a short overview of the process. Much more information can be found at https://wiki.freecad.org.
-
 
 ## Build Environment
 
@@ -18,7 +16,6 @@ To work on FreeCAD, you will need CMake, git, a code editor, a C++ compiler, and
 
 Other combinations may work as well; these are just the ones that you will be able to get help with most readily on the [FreeCAD Forum](https://forum.freecad.org).
 
-
 ## Dependencies
 
 See also [Dependencies](../dependencies)
@@ -28,7 +25,6 @@ FreeCAD depends on many other open source projects to provide the basic foundati
 - Linux: [https://wiki.freecad.org/Compile_on_Linux](https://wiki.freecad.org/Compile_on_Linux)
 - Windows: [https://wiki.freecad.org/Compile_on_Windows](https://wiki.freecad.org/Compile_on_Windows)
 - Mac: [https://wiki.freecad.org/Compile_on_MacOS](https://wiki.freecad.org/Compile_on_MacOS)
-
 
 ## Pixi
 
@@ -72,7 +68,6 @@ The Visual Studio Installer may be used to install Visual Studio Community 2022 
 3. Make sure to select `Desktop development with C++` under the `Desktop & Mobile` section.  Ensure that the necessary optional items are selected on the right.
 
     ![vs2019-dev-C++](vs2019-cpp.webp)
-
 
 ## Setting up for Development
 

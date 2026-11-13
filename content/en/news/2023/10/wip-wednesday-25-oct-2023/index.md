@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 - adrianinsaval improved the layout of [several task boxes in FEM](https://github.com/freecad/freecad/pull/11066).

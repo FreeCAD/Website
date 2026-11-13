@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 The FreeCAD Project Association is beginning to accept applications for the second grant review wave in 2026. If you are interested in improving FreeCAD and its ecosystem, please [read more](https://fpa.freecad.org/programs/fpadf-announcement) about the program and [apply](https://github.com/FreeCAD/FPA-grant-proposals/issues).
 
 In 2026, we introduced several changes to the grant program, including these:

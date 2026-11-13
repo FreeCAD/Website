@@ -10,7 +10,6 @@ cover:
   caption: Lyon
 ---
 
-
 *Two active FreeCAD contributors, Louis Gombert (Lgt2x) and Thomas Duchesne (pierreporte), recently attended the Journées du Logiciel Libre conference in Lyon to give a talk about FreeCAD. This is their report.*
 
 On May 30th and 31st, the Journées du Logiciel Libre (Free Software Days) or JdLL, one of France's longest-running Free and Open Source Software events, took place on the campus of the prestigious École Normale Supérieure. The event brought together dozens of projects, associations, and speakers dedicated to open-source software, technology, and digital commons.

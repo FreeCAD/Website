@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 As everyone makes their way back home from FreeCAD Day 2023, we still have a few things going on in the FreeCAD development world:
 
 - uwestoehr has worked to clean up the rendering of the navigation cube ([PR #8266](https://github.com/freecad/freecad/pull/8266)) and is working to extend the SectionCutting feature for intersecting objects ([PR #8252](https://github.com/freecad/freecad/pull/8252)).

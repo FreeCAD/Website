@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week's edition of WIP Wednesday is coming to you live from Brussels, Belgium -- home of the world's best waffles, beer, and open-source software developers! It's [FOSDEM](https://fosdem.org/2023/) week, so many developers from around the world are gathering in Brussels to join various hackathons, conference sessions, and of course, [FreeCAD Day 2023](https://blog.freecad.org/2023/01/04/freecad-meeting-day-2023/).
 
 Here's what devs tell me they are working on this week:

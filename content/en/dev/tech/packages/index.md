@@ -4,7 +4,6 @@ description: How to build FreeCAD packages for the different supported platforms
 weight: 15
 ---
 
-
 ## Windows Installer
 
 The main entry point to build a Windows installer is within the FreeCAD sources. To build the installer:
@@ -60,7 +59,6 @@ vcomp140.dll
 5. Right-click on the file *FreeCAD-installer.nsi* and choose **Compile NSIS script**
    to compile the installer.
 
-
 NOTE: For test builds of the installer you can turn off the LZMA compression and use the much faster default compression. This speeds up
 the build time for the installer but significantly increases the final installer file size. The LZMA compression is turned off by commenting
 out the line
@@ -68,7 +66,6 @@ out the line
 !SetCompressor lzma
 ```
 in the file *Settings.nsh*.
-
 
 ## Conda builds for Linux, Mac, and Windows
 
@@ -89,7 +86,6 @@ To use the script:
 2. Clone the FreeCAD-Bundle repository
 3. Run the create_bundle.bat script
 
-
 ## MacOS
 
 ### Conda
@@ -97,7 +93,6 @@ To use the script:
 **To be expanded**
 
 MacOS packages are also built with [conda](https://conda.io).
-
 
 ## Linux
 

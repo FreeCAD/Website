@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 Maintainers have been backporting some of the fixes to the v1.1 branch where possible - 5 backports in the past 7 days. The list of changes in this recap applies to the main development branch (future v1.2).
 
 This week in FreeCAD development:
@@ -32,7 +31,6 @@ This week in FreeCAD development:
   - A fix for the coincidence constraint not set and shown ([PR#28120](https://github.com/FreeCAD/FreeCAD/pull/28120)).
   - Refactoring of removeAxesAlignment ([PR#27451](https://github.com/FreeCAD/FreeCAD/pull/27451)).
   - New parametric Text object controlled by a text constraint ([PR#22217](https://github.com/FreeCAD/FreeCAD/pull/22217)).
-
 
 
 {{< youtube id=nmLSNaO1YXE title="Sketcher: Text tool" loading=lazy >}}

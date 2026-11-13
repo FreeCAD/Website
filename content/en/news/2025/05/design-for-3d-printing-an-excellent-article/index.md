@@ -11,7 +11,6 @@ cover:
   caption: Rahix Design for 3D Printing, an Excellent Article.
 ---
 
-
 It's wonderful when people take the time to share the expertise they've developed. Even more so when the resulting article is filled with FreeCAD screenshots.
 
 Fabulous FreeCAD user Rahix has put together this [impressive long read (80 mins)](https://blog.rahix.de/design-for-3d-printing/) over on their blog. It's a collection of knowledge relating to various areas of 3D printing including designing for part strength, functional integration challenges and practice, process optimisation and more.

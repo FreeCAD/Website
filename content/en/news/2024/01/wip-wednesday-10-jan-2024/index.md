@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 The team accelerated after the winter holidays and did a serious PR queue cleanup:
 
 - Roy-043 merged some improvements to Draft and fixed several bugs in Arch.

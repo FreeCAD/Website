@@ -12,7 +12,6 @@ cover:
   caption: Matrix image courtesy of [Mavaddat](https://commons.wikimedia.org/wiki/File:MatrixLabelled.svg)
 ---
 
-
 In now-merged [PR 8603](https://github.com/freecad/freecad/pull/8603) new FreeCAD contributor Daniel-Khodabakhsh developed a new set of matrix-construction convenience functions that are provide a much nicer API than the original matrix creation methods.
 
 The following functions were added which are shorthand for the `create` function:

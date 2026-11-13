@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **Toponaming**: mostly bugfixing and code refactoring. 8 pull requests from bgbsww and chennes fixed 9 reported issues including 3 release blockers. The toponaming PRs queue has been largely cleaned up. Currently, there are just 3 PRs from bgbsww and CalligaroV left in draft, that could be completed before v1.0 is out.

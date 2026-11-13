@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **Draft**: tetektoza implemented a 1-axis mode in Ortho Array to modify only one axis at a time.

@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 In the **toponaming project**, bgbsww and chennes are getting really close to finalizing the port of RealThunder's patches to upstream FreeCAD. There is probably a week more of work, then the planned performance evaluation and improvements can begin.
 
 **TechDraw:**

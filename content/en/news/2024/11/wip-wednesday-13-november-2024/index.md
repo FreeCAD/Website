@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **Assembly**: PaddleStroke fixed a handful of Exploded View bugs, improved the offset UI for joints, and fixed a few more bugs. Another fix to the workbench was contributed by wwmayer.

@@ -4,7 +4,6 @@ description: Create a Python Binding for C++.
 weight: 11
 ---
 
-
 ## Background
 
 It becomes necessary at times to expand the FreeCAD API further by exposing functions that are available in the source code in c++ to the python. This process is generally referred to as creating a binding.
@@ -18,7 +17,6 @@ You must create:
 Edit the appropriate CMakeLists.txt file to add references to these two files. From the XML file, the build system will then create:
 * YourClassPy.cpp
 * YourClassPy.h
-
 
 ## Class Description XML File
 
@@ -154,7 +152,6 @@ Note:
 There is a convention for return values from our C++/Python connections:
 * xxxxxPyImp routines return a PyObject* pointer (see TopoShapePyImp.cpp)
 * AppmyModulePy.cpp routines return a Py::Object (see https://github.com/freecad/freecad/blob/master/src/Mod/Part/App/AppPartPy.cpp and FreeCAD/src/Mod/Part/AppPartPy.cpp).
-
 
 ## See also
 

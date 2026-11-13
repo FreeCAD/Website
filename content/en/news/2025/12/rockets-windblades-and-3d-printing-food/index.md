@@ -14,7 +14,6 @@ cover:
   caption:
 ---
 
-
 People have been using FreeCAD in academia and research for many years, and the range of these research projects is surprisingly broad.
 
 Today, we are talking to Matt Thomas aka LT72884, who has a great [YouTube channel](https://www.youtube.com/user/LT72884/) where he explains how to use free and open-source engineering software for rocket design, CfD simulation, FEM, and data analysis.

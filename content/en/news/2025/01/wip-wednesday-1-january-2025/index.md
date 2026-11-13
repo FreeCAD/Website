@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week not much has been happening in FreeCAD development due to the winter holiday season. Nevertheless:
 
 **Core**: PaddleStroke improved the new LCS style to address [concerns](https://github.com/freecad/freecad/issues/18337) raised by users who rely on the weekly builds.

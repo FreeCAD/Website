@@ -13,7 +13,6 @@ cover:
   caption: Sl 24 Record Lathe
 ---
 
-
 It's a given that the FreeCAD community is awesome and make amazing things. Every now and again though a project really stops us in our tracks. None more so than this, the [SL-24, an open source record lathe](https://git.sr.ht/~slyka/SL-24).
 
 Part CNC and part high end DIY record deck this project allows people to experiment with cutting grooves to create their own records. Whilst more complex than home taping or digital copying, vinyl has a special place in audiophiles hearts, why shouldn't we create our own?!

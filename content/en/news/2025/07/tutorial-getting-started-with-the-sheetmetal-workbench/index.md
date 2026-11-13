@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 ![Test assembly sheet metal](test_assembly_sheet_metal.webp "Test assembly sheet metal")
 
 FreeCAD is excellent in that it can be used for design projects for all manner of fabrication approaches. A really interesting fabrication approach is cutting, bending and joining sheet metal. As such FreeCAD has a dedicated addon workbench that's incredibly helpful in designing for flat sheet materials. Let's run through some super simple examples to show off some of it's features. Remember that in these tutorials we always use the tooltip text name to describe a tool icon, so you can find tools mentioned by hovering over tool icons and reading the tooltip, coincidentally this is a great way to discover and learn about other tools!

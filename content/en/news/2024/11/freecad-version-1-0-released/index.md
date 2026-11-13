@@ -12,7 +12,6 @@ cover:
   caption: a cover caption
 ---
 
-
 After more than twenty years of intense and sustained development, the FreeCAD community is proud to announce the release of version 1.0. FreeCAD 1.0 is now [available for download on all platforms](https://www.freecad.org/downloads.php).
 
 {{< youtube id=x5oXSGhK7EY title="FreeCAD 1.0 release trailer" loading=lazy >}}

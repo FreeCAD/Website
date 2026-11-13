@@ -7,13 +7,11 @@ cover:
   caption: FreeCAD 1.1 release
 ---
 
-
 After one year and a half of continuous development, FreeCAD 1.1 builds on the 1.0 milestone with meaningful new tools and improved workflows across the board.
 
 This release focuses on making everyday modeling more reliable, faster, and more intuitive — while expanding capabilities for hobbyists, advanced users and professionals alike.
 
 {{< button url="https://www.youtube.com/watch?v=a9biWv_M8p8" label="Watch the release video" icon="youtube_fill" >}}
-
 
 {{< block title="Your refined user interface and experience" css_class="accent-1" >}}
 
@@ -41,7 +39,6 @@ This release focuses on making everyday modeling more reliable, faster, and more
 
 {{< /block >}}
 
-
 {{< block title="Part Design and Assembly on the move" css_class="background: var(--gradient);" >}}
 
 ![Feature preview and adjustments by gizmos](pd.webp)
@@ -52,7 +49,6 @@ This release focuses on making everyday modeling more reliable, faster, and more
 - New part insertion, simulation for joints motion and animations, and Bill of Materials for Assemblies.
 
 {{< /block >}}
-
 
 {{< block title="Born to Sketch" css_class="dots" >}}
 
@@ -68,7 +64,6 @@ This release focuses on making everyday modeling more reliable, faster, and more
 
 {{< /block >}}
 
-
 {{< block title="CAM, FEM and TechDraw flow" css_class="accent-2" >}}
 
 - New toolbit library and editor, better multi-pass support and post-processors introduced in CAM.
@@ -78,7 +73,6 @@ This release focuses on making everyday modeling more reliable, faster, and more
 ![Forces visualization for glyph filters](glyph.webp)
 
 {{< /block >}}
-
 
 {{< block title="Build on BIM and Draft" css_class="grid" >}}
 
@@ -90,7 +84,6 @@ This release focuses on making everyday modeling more reliable, faster, and more
 
 {{< /block >}}
 
-
 {{< block title="General performance and stability" css_class="accent-3" >}}
 
 - Continued improvements to topological naming mitigation for greater model stability.
@@ -101,7 +94,6 @@ This release focuses on making everyday modeling more reliable, faster, and more
 ![Drone - Shrüm](drone.webp)
 
 {{< /block >}}
-
 
 {{< button url="https://wiki.freecad.org/Release_notes_1.1" label="Read the complete release notes" >}}
 

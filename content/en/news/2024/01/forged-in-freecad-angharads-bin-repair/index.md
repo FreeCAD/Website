@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 It's wonderful to see people taking their first steps in CAD using FreeCAD and it's even better when someone's first project is to create something useful. In this case, new to FreeCAD Angharad, was motivated to learn to mend a faulty kitchen bin which she really liked.
 
 ![Hinge screenshot](hinge-screenshot.webp "Hinge screenshot")

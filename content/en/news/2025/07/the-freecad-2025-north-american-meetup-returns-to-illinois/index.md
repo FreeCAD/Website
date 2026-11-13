@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 [Sign up now](https://cloud.freecad.org/apps/forms/s/SKB9wfjMYEeiSwZYA6PksRzY)!
 
 The annual FreeCAD North American Meetup is taking place in [Springfield, Illinois](https://en.wikipedia.org/wiki/Springfield,_Illinois), on August 8-10, 2025.

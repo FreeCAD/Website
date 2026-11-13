@@ -12,9 +12,7 @@ cover:
   caption:
 ---
 
-
 Let's talk about the 2025 FPA grant program: what projects were voted for, what projects weren't, and what we think needs to change for this year's program.
-
 
 ## 2025 grants
 
@@ -84,13 +82,11 @@ Here is the breakdown by quarters, with conversion to EUR where applicable:
 
 The total allocated budget was EUR 95,505. Note that this includes EUR 17,125 drawn from the separate, privately sponsored Ondsel Onwards fund, as opposed to the general fund built from community donations. This makes the total budget allocation under the planned EUR80K cap.
 
-
 ## Grants completion
 
 Out of 31 grants approved in 2025, work on 11 has been completed. Please note that Q4 2025 grants were approved in mid-December, so we expected at least some of the work to be completed in 2026.
 
 For detailed information on the status of approved grants, please see [the respective GitHub project](https://github.com/orgs/FreeCAD/projects/42) managed by Reqrefusion, the grant program's communication manager.
-
 
 ## Program Analysis
 
@@ -109,7 +105,6 @@ With over two-thirds of grants funded, we applied little "selection pressure". I
 Another problem the grant program experienced was a grant review team that provided very little feedback. In many cases, reviewers provided simple yes/no comments on grant applications. Further, even when provided with committee feedback, FPA voters seemed to find little value in it, instead forming their own opinions independent of any comment from the committee.
 
 Recruiting reviewers also proved difficult: despite several vocal individuals on the forums expressing opinions about how the FPA spends the grant money, none of those people volunteered to serve on the committee.
-
 
 ## 2026 Program Modifications
 

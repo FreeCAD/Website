@@ -10,7 +10,6 @@ cover:
   caption: Forum
 ---
 
-
 You may have noticed that recently there have been intermittent issues with the FreeCAD forum. The main reason for this is that the forum is being repeatedly overwhelmed by AI scrapers. Obviously the FreeCAD forum is a valuable resource and we aim to make it as robust as possible.
 
 We have taken several measures to mitigate these issues, such as user agent blocking. However this approach only works if the scraper reports as something other than a web browser.

@@ -4,12 +4,10 @@ description: Enhance the website project structure, configuration, and the Trigo
 weight: 9
 ---
 
-
 > [!Note]
 > The following reflects the state of the FreeCAD website as of July 2026.
 >
 > If major changes are made to the structure, this documentation must be updated accordingly.
-
 
 ## Website setup
 
@@ -29,7 +27,6 @@ Some of these workflow use Python scripts located in the `/tools/workflows/ dire
 
 Finally, development notes are stored in the `/notes` directory to keep track of past decisions and discussions.
 
-
 ## Configuration
 
 The FreeCAD website has two main environments:
@@ -43,7 +40,6 @@ The project configuration is split into several files, so it is easier to manage
 - `languages.yaml` defines the multilingual locales and if they are enabled or disabled
 - `module.yaml` defines the modules mounts and serves as languages fallback strategy to the default language site (English)
 - `params.yaml` defines all theme-specific and custom parameters
-
 
 ## Trigo Theme for Hugo
 

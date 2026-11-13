@@ -7,7 +7,6 @@ icon: heart
 icon_cms: favorite
 ---
 
-
 ### Donations Frequently Asked Questions
 
 {{< details summary="Why donate to FreeCAD?" name="faq" >}}
@@ -21,13 +20,11 @@ FreeCAD is run entirely by community members. All donations go to the non-profit
 
 {{< /details >}}
 
-
 {{< details summary="How is the money spent?" name="faq" >}}
 
 Check out the [FPA Bookkeeping](https://fpa.freecad.org/handbook/process/bookkeeping/overview.html) to see how the resources are allocated.
 
 {{< /details >}}
-
 
 {{< details summary="How to donate?" name="faq" >}}
 
@@ -39,7 +36,6 @@ For more details, visit [Accepting donations](https://fpa.freecad.org/handbook/p
 
 {{< /details >}}
 
-
 {{< details summary="Sponsorship Tiers" name="faq" id="tiers" >}}
 
 | Tier | Minimum amount per month | Feature |
@@ -50,7 +46,6 @@ For more details, visit [Accepting donations](https://fpa.freecad.org/handbook/p
 | **Gold** 🥇 | 200 EUR / 200 USD | Name or company name, logo, link to website and custom description listed on this page. |
 
 {{< /details >}}
-
 
 {{< details summary="Other ways to support" name="faq" >}}
 

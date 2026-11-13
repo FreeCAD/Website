@@ -4,7 +4,6 @@ description: Bundled Trigo Theme and Hugo shortcodes to enhance content.
 weight: 5
 ---
 
-
 > Shortcodes are special code snippets inside your Markdown content files calling built-in or custom templates.
 >
 > They allow to add specialized content to pages or format their layout with ease.
@@ -22,7 +21,6 @@ Some shortcodes can even be nested, allowing for complex content and layout.
 Most shortcodes support both named and positional arguments.
 
 See the examples below to understand their use cases, structure, and syntax.
-
 
 ## Details
 
@@ -72,7 +70,6 @@ This will be hidden by default.
 | 3 | title | string | *optional* | | "title" |
 | 4 | id | string | *optional* | | "id" |
 | 5 | css_class | string | *optional* | | CSS class |
-
 
 ## Tabs and tab
 
@@ -133,7 +130,6 @@ The `tabs` shortcode renders the inner content with multiple `tab` shortcodes.
 | --- | --- | --- | --- | --- | --- |
 | 0 | label | string | "Tab" | | "Tab label" |
 
-
 ## Steps
 
 Trigo shortcode to display a series of numbered steps based on headings.
@@ -192,7 +188,6 @@ This will not be counted as a step.
 
 {{< /steps >}}
 
-
 ## Tree, branch and leaf
 
 Trigo shortcode to display a filetree list with inner content/branches/leaves and optional icon and label. Branches are collapsible with nested children (e.g. branches or leaves).
@@ -249,7 +244,6 @@ Trigo shortcode to display a filetree list with inner content/branches/leaves an
 | 1 | icon | string | "file" | "file", "body", "feature", "sketch", "item", "element", "leaf", "commit" | "item" |
 | 2 | css_class | string | *optional* | custom CSS classes | "accent" |
 
-
 ## Carousel
 
 Trigo shortcode to display a carousel of images with drag, scroll support and optional automatic mode.
@@ -290,7 +284,6 @@ The path is relative to the current page bundle. To use resources in the `static
 | | mode | string | "fixed" | "fixed" or "auto" | "auto" |
 | | duration | int[ms] | 5000 | | 1000 |
 
-
 ## Compare
 
 Trigo shortcode to display two stacked images with a movable vertical clipping path.
@@ -307,14 +300,12 @@ The path is relative to the current page bundle. To use resources in the `static
 
 {{< compare before="dir/1.webp" after="dir/3.webp" >}}
 
-
 ***`compare` arguments:***
 
 | Position | Argument| Type | Default | Options | Example value |
 | --- | --- | --- | --- | --- | --- |
 | | before (alias: left) | string | **required** | | "before.webp" |
 | | after (alias: right) | string | **required** | | "after.webp" |
-
 
 ## Canvas
 
@@ -340,7 +331,6 @@ The path is relative to the current page bundle. To use resources in the `static
 | 1 | fps | int[fps] | 12 | | 1 |
 | 2 | title | string | *optional* | | "Canvas title" |
 
-
 ## Button
 
 Trigo shortcode to add a link as a clickable button with optional icon and label.
@@ -362,7 +352,6 @@ Trigo shortcode to add a link as a clickable button with optional icon and label
 | 2 | icon | string | *optional* | | "heart" |
 | 3 | css_class | string | *optional* | custom CSS classes | "accent" |
 
-
 ## Marker
 
 Trigo shortcode to add a marker with optional icon and label.
@@ -382,7 +371,6 @@ Trigo shortcode to add a marker with optional icon and label.
 | 0 | label | string | *optional* | | "Marker label" |
 | 1 | icon | string | *optional* | | "heart" |
 | 2 | css_class | string | *optional* | custom CSS classes | "accent" |
-
 
 ## Abbreviation
 
@@ -404,7 +392,6 @@ Web pages are written in {{< abbr text="HTML" title="HyperText Markup Language" 
 | 1 | title | string | *optional* | | "HyperText Markup Language" |
 | 2 | css_class | string | *optional* | custom CSS classes | "accent" |
 
-
 ## Keyboard shortcut or key sequence
 
 Trigo shortcode to add a keyboard shortcut or key sequence.
@@ -423,7 +410,6 @@ Press {{< kbd key="CTRL+ALT+Delete" >}} to end the session.
 | --- | --- | --- | --- | --- | --- |
 | 0 | key | string | | | "ABC", "SHIFT F12" |
 | 1 | css_class | string | *optional* | custom CSS classes | "accent" |
-
 
 ## Git
 
@@ -446,7 +432,6 @@ and a pull request: {{< git url="https://github.com/user/repo/pull/123" >}}.
 | Position | Argument| Type | Default | Options | Example value |
 | --- | --- | --- | --- | --- | --- |
 | 0 | url | string | **required** | | "https://github.com/user/repo/pull/123" |
-
 
 ## PDF
 
@@ -473,7 +458,6 @@ The PDF file can also be located in the project directory and use the relative p
 | 0 | path | string | **required** | | "path/to/file.pdf" |
 | 1 | title | string | *optional* | | "My PDF document" |
 
-
 ## Video
 
 Trigo shortcode to display a bundled or external video with optional poster and caption.
@@ -493,7 +477,6 @@ Trigo shortcode to display a bundled or external video with optional poster and 
 | 0 | src | string | **required** | | "path/to/video.mp4" |
 | 1 | poster | string | *optional* | | "path/to/poster.webp" |
 | 2 | caption | Markdown | *optional* | | "A video caption" |
-
 
 ## Peertube
 
@@ -526,7 +509,6 @@ You can optionally specify a start and/or stop time.
 
 By default, videos are displayed responsively, lazy-loaded, and allow fullscreen playback.
 
-
 ## YouTube
 
 Hugo built-in shortcode to embed a YouTube video.
@@ -541,7 +523,6 @@ Hugo built-in shortcode to embed a YouTube video.
 
 For more information, see [Hugo's YouTube shortcode](https://gohugo.io/shortcodes/youtube/).
 
-
 ## Vimeo
 
 Hugo built-in shortcode to embed a Vimeo video.
@@ -555,7 +536,6 @@ Hugo built-in shortcode to embed a Vimeo video.
 {{< vimeo id=19899678 loading=lazy title="Barn Owl" >}}
 
 For more information, see [Hugo's Vimeo shortcode](https://gohugo.io/shortcodes/vimeo/).
-
 
 ## Card
 
@@ -579,7 +559,6 @@ If not nested in another shortcode, a full-width layout block is rendered around
 | 2 | sort | string | *optional* | date, weight, title, linktitle, publishdate, lastmod, length | "date" |
 | 3 | reverse | boolean | `false` | | `true` |
 | 4 | css_class | string | *optional* | custom CSS classes | "gradient" |
-
 
 ## Block and group
 

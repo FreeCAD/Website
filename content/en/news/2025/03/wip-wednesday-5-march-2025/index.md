@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **Draft**: Roy_043 fixed numerous issues and regressions, including ones where the Trimex command would change the visibility of an object or extend to the wrong face.

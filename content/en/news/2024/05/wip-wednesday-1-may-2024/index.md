@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **Toponaming:** most work porting RT's patches is now done except just one piece of code that was mysteriously overlooked. Both CalligaroV, chennes, and bgbsww contributed to the TNP effort last week. bgbsww also started looking into performance regressions due to toponaming changes and found surprisingly few issues.

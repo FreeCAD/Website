@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week, FreeCAD has entered feature freeze for upcoming v1.0. This means no new patches adding features will be merged until the new version is released.
 
 Major changes this week:

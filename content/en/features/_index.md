@@ -7,7 +7,6 @@ icon: stars
 icon_cms: bolt
 ---
 
-
 {{< block title="Made to build for the real world" css_class="grid" >}}
 
 {{< group >}}
@@ -21,7 +20,6 @@ FreeCAD is made primarily to design objects for the real world. FreeCAD uses rea
 ![Locomotive - Hour_Sell](locomotive.webp)
 
 {{< /block >}}
-
 
 {{< block title="A robust solid-based geometry kernel" css_class="accent-2" >}}
 
@@ -37,7 +35,6 @@ FreeCAD features an advanced geometry engine based on Open CASCADE Technology. I
 
 {{< /block >}}
 
-
 {{< block title="A wi(l)dly parametric environment" css_class="accent-5" >}}
 
 {{< group >}}
@@ -51,7 +48,6 @@ All FreeCAD objects are natively parametric, meaning their shape can be based on
 ![Sketcher - Pierre-Louis Boyer](sketch.webp)
 
 {{< /block >}}
-
 
 {{< block title="File formats in focus" css_class="gradient" >}}
 
@@ -67,7 +63,6 @@ FreeCAD allows to import and export models and data to dozens of different file 
 
 {{< /block >}}
 
-
 {{< block title="A large multi-specialty ecosystem" css_class="accent-1" >}}
 
 ![House BIM model - ABeton](bim.webp)
@@ -81,7 +76,6 @@ FreeCAD offers dedicated workbenches for a variety of purposes such as CSG model
 {{< /group >}}
 
 {{< /block >}}
-
 
 {{< block title="A community heart" css_class="accent-4" >}}
 

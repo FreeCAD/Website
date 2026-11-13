@@ -13,7 +13,6 @@ cover:
   caption: Bjørn's Vacuum Cleaner Repair
 ---
 
-
 There's all kinds of reasons to learn and use FreeCAD and we probably should never get into saying that one use case is better than any other. That said, it's always awesome to see FreeCAD combined with 3D printing for repair. Spotted over in the FreeCAD Facebook community it's great to see that Bjørn Birkeland managed to get their vacuum back up and running after some very excellent CAD work.
 
 ![CAD model of replaced part](FB_IMG_1749481903552.webp "CAD model of replaced part")

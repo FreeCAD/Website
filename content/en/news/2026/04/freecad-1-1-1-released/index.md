@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 Hot on the heals of version 1.1.0 we are pleased to [announce the release of version 1.1.1.](https://github.com/FreeCAD/FreeCAD/releases/tag/1.1.1)
 
 You can check out the release notes and the full change log on the repository, it's fair to say that there are a LOT of small fixes to enhance your experiences with FreeCAD.

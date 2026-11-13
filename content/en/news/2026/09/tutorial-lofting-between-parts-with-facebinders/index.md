@@ -10,7 +10,6 @@ cover:
   caption:
 ---
 
-
 The Draft Workbench has an interesting tool called Facebinder which can be used to perform actions like lofting or extruding from faces rather than from sketch geometry or wires. Whilst a somewhat niche tool, it can be incredibly useful when needed.
 
 ![](facebinder_icon.webp)

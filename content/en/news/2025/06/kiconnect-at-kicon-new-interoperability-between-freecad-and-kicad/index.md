@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 {{< youtube id=v2uiwDnLGx8 title="KiCon North America 2025 - Day 1" start=1913 loading=lazy >}}
 
 What better way to round off the week than to take a little time to look at an interesting workbench that promotes interaction between FreeCAD and KiCad PCB's.

@@ -13,7 +13,6 @@ cover:
   caption: Wireless microphone transmitter and receiver unit model in FreeCAD
 ---
 
-
 It feels fitting to write a KiCad related story this week as [KiCon Europe](https://kicon.kicad.org/europe2025/) is currently underway in Bochum Germany. We send best wishes to our KiCad friends and colleagues and hope they are having a wonderful time.
 
 Meanwhile, in Liverpool UK, there's a great Friday night social bike ride community where people get together and, well, ride bikes.

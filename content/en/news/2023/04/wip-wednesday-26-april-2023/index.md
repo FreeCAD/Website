@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 In the past week we continued merging translation fixes, plus a significant visual cleanup of the Navigation Cube.
 
 In this upcoming week:

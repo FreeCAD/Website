@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 The FreeCAD Project Association general assembly has voted for Q2 grants based on recommendations from the grant technical review committee.
 
 Here are the projects we are allocating available money for (in order of submission):

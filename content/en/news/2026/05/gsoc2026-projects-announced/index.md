@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 Google announced the projects that will be part of the Summer of Code 2026 project. Here is what our GSoC students will be working on this year.
 
 Aymi will be adding support for [animated multibody dynamics visualizations](https://forum.freecad.org/viewtopic.php?t=104219). The project will be built on top of the 3rd-party Motion workbench (by Jose Gabriel Egas Ortuño) and the native FEM workbench. It's an extremely challenging project to tackle alone for anyone, but Aymi won't be alone. Her mentors are long-time FEM contributor marioalexis84 and multi-body dynamics expert [Aik-Siong Koh](https://mbdfem.com/).

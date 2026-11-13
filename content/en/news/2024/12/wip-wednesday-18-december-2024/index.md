@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **FEM**: marioalexis84 added an electrostatic constraint symbol to the 3D view. He also made it possible to run CalculiX on one core and added an optional Laplacian smoothing filter to the contour filter to get a smoother result when the generated isosurfaces are too coarse.

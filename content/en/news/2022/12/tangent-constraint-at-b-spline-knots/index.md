@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This past week marked the merge of a feature that's been in development since October: the ability to apply a tangency constraint to a line segment at B-spline knot points. In addition, the B-Spline knots themselves can now be constrained as any other point in Sketcher.
 
 Developer Ajinkya Dahale has been working to develop this new feature as part of the [B-Spline Constraint Project](https://forum.freecad.org/viewtopic.php?f=9&t=71130). Many thanks to Ajinkya, as well as to Sketcher Lead Maintainer Abdullah Tahiri, for their hard work on this project.

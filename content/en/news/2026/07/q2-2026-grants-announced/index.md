@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 The FPA has voted to approve three grants in the 2026 Q2 wave of the program.
 
 1. [BIM Plan Edit and Supporting BIM Workflow Improvements](https://github.com/FreeCAD/FPA-grant-proposals/issues/98) in FreeCAD by tritao. João Matos will implement a new BIM authoring workflow for FreeCAD that will let users work directly in a building level's floor plan, similar in intent to the plan-based workflows in Revit and Archicad. Plan Edit will provide a focused 2D editing context for a selected storey: walls, openings, spaces, and symbols. João will be awarded a grant of EUR 4,000 for the project.

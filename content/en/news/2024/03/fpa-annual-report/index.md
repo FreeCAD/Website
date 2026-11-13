@@ -10,7 +10,6 @@ cover:
   caption:
 ---
 
-
 The FreeCAD project association is proud to present its annual report of the year 2023, and its plans for 2024. Find the report here:
 
 [https://fpa.freecad.org/annualreports/2024.html](https://fpa.freecad.org/annualreports/2024.html)

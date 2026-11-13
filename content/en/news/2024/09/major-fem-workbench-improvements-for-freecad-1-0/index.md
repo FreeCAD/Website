@@ -11,7 +11,6 @@ cover:
   caption: FEM workbench
 ---
 
-
 FreeCAD 1.0 brings a true revolution. But apart from the TNP mitigation, built-in Assembly workbench, material handling rework, and major Sketcher improvements, there's a less common module that received many updates - **FEM**.
 
 In fact, it's one of the workbenches that changed the most. Over 80 issues from the [FEM Roadmap](https://github.com/orgs/freecad/projects/19) were fixed. This includes many bugs - some of them serious and long-standing - but also completely new features and various small usability improvements. I've been maintaining the FEM workbench for almost a year. In this post, I'd like to outline some of the most important new features coming in FreeCAD 1.0 soon.

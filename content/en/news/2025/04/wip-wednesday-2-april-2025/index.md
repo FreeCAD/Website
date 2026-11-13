@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **Draft**: paullee0 and Roy_043 fixed several issues. Additionally, Roy_043 added a font name dropdown list to Preferences.

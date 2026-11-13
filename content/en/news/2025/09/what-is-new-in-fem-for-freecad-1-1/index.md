@@ -11,9 +11,7 @@ cover:
   caption: FEM workbench
 ---
 
-
 Now that the feature freeze for FreeCAD 1.1 is on, and we are not too far off from the final release, let's summarize the main changes in the FEM workbench. Just like in the case of the revolutionary 1.0 release (see [this blog post](news/2024/09/major-fem-workbench-improvements-for-freecad-1-0)), FEM dominates the [release notes](https://wiki.freecad.org/Release_notes_1.1). There have been many significant improvements, so let's go through them.
-
 
 ## Electromagnetics
 
@@ -28,7 +26,6 @@ Speaking about electrostatics, this type of analyses is now also possible (even 
 ![Electromagnetic analysis in 2D](image-5.webp "Electromagnetic analysis in 2D")
 
 We improved the existing EM boundary conditions and loads. There are two modes for the current density boundary condition (Custom and Normal), while the electrostatic potential boundary condition can be used to prescribe electric flux density in C/m^2. These two constraints now have symbols too. Also, we overhauled the task panel for the magnetization boundary condition.
-
 
 ## Postprocessing
 
@@ -53,7 +50,6 @@ There is also a new Data and Extractions widget for pipelines and three tools al
 
 Finally, the legacy CCX_Results objects now have a task panel option enabling simple animations of the deformed result shapes. There is also a Python function Fem.frdToVTK which can be used to convert CalculiX results to the ParaView format.
 
-
 ## CalculiX features
 
 We added several useful CalculiX keywords and options to further extend the support of FreeCAD FEM for its main solver. This includes, among others:
@@ -75,7 +71,6 @@ We added several useful CalculiX keywords and options to further extend the supp
 
 ![Pressure in 2D analysis](image-7.webp "Pressure in 2D analysis")
 
-
 ## Other improvements
 
 Among other major features, there are some mesher enhancements, such as support for simple extruded hexahedral-dominated meshes with Netgen.
@@ -89,7 +84,6 @@ We made it possible to suppress (deactivate) not only constraints but also other
 Another handy new feature is a pop-up menu to select the proper solid of a CompSolid when picking its face belonging to both solids. This facilitates material assignment.
 
 ![Multiple solids selection menu](image-8.webp "Multiple solids selection menu")
-
 
 ## Summary
 

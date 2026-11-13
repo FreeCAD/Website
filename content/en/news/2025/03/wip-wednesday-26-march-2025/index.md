@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **Draft**: Roy_043 contributed several improvements and bugfixes including one for the bug where Near Snap would not obey the Always Snap setting.

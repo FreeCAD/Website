@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This past week was a very busy one for code merges, with almost 80 pull requests completed. Developers plan on continuing the high pace this next week:
 
 - JohnD/[Ondsel](https://ondsel.com) is surveying the [toponaming branch](https://github.com/freecad/freecad/tree/development/toponaming) and consolidating a list of affected classes and intent.

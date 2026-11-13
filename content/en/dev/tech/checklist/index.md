@@ -4,7 +4,6 @@ description: Checklist for adding a new feature to an existing workbench in C++.
 weight: 5
 ---
 
-
 The checklist itemizes the tasks involved in adding a wholly new feature to an
 existing module (workbench). It assumes that the existing workbench (myModule)
 and the new feature are written in C++.
@@ -49,7 +48,6 @@ FreeCAD/src
   + add include(s) for new objects
   + add init calls for new objects
 
-
 ## Gui changes
 
 - new myModule/Gui/ViewProvidermyFeature.cpp
@@ -71,7 +69,6 @@ FreeCAD/src
 - new myModule/Gui/Resources/icons/myModule_myFeature.svg
 - edit myModule/Gui/Resources/myModule.qrc
   + add icon to list
-
 
 ## Test changes
 

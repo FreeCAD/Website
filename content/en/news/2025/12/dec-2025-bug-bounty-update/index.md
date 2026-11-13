@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 We are currently at 17 release blockers for FreeCAD 1.1, so the FPA members have raised the price per fixed release blocker from $50 to $100.
 
 Meanwhile, two more people have collected bugfix rewards:

@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 Last week in FreeCAD development:
 
 **Toponaming**: bgbsww added more missing TNP code (this time, to PartDesign::Body) and fixed a couple of issues, shaise contributed a partial fix for long TNP names still visible in the 'Subelement' column of the Properties panel.

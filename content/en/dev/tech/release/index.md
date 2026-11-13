@@ -4,9 +4,7 @@ description: High-level overview of the release planning and management process.
 weight: 14
 ---
 
-
 We recognize significant wisdom in the philosophy to ["Release Early and Release Often"](https://en.wikipedia.org/wiki/Release_early,_release_often). However, releases can require significant coordinated work within the community.  FreeCAD aspires to produce a major release every 3-6 months. In order to meet this goal, we will work to make releases more predicatable and automated.
-
 
 ## Major and Minor Releases
 
@@ -15,7 +13,6 @@ A major release introduces new features and introduces key improvements.  Major 
 Between major releases, bugs are occasionally found and repaired. These fixes may be urgent enough or isolated enough that applying them incrementally to the existing 'stable' version is both possible and desirable.  A set of such changes may be grouped together and released as a 'minor' version.
 
 Major and minor releases have slightly different processes.
-
 
 ## Major Releases
 
@@ -110,7 +107,6 @@ There are also other active communities where FreeCAD does not maintain any sort
 
 - Social medias
 - TBD
-
 
 ## Minor Releases
 

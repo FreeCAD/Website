@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 Just in time for upcoming FreeCAD 1.0, the project got a major logo refresh.
 
 ![](image-3.webp)

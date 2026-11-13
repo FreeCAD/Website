@@ -10,7 +10,6 @@ cover:
   caption:
 ---
 
-
 Thanks to the work of contributors we have made really good progress fixing blockers, we are down to just 14. That's why early next week we are planning to create a Git branch for the v1.0 release and issue the first release candidate.
 
 Right now, we expect that there will be at least a couple of release candidates, with one or two weeks of development between each of them. This largely depends on how many blockers the community discovers and reports, and how fast we can fix those.

@@ -10,7 +10,6 @@ cover:
   caption:
 ---
 
-
 Often we might need to create geometry to fit real world objects that we don't have a CAD model for. Whilst we might jump to complex 3D scanning methods and more, sometimes a simple reference image, or images, can really help the process. Even more so if we can accurately scale the image.
 
 In this mini tutorial we are using version 1.1.0 and as a reminder in all our tutorials we refer to tools using the "tool tip" text which is the text that appears when you hover over a tool icon. First of all, launch FreeCAD and from the start page select "Create an Empty Project" to begin.

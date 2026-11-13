@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 We will soon wrap up accepting grant applications for the third quarter of 2025. If you are interested in participating, **please submit your application by September 1**. Any applications submitted after the deadline will be reviewed in the fourth wave in November/December. For general information about the grant program, please refer to [this handbook page](https://fpa.freecad.org/programs/fpadf-announcement).
 
 Please note that our budget for the third quarter is $20,000. There may be some competition for the funds. Proposals with a clearly defined scope and realistic price/time estimations have a better chance of being funded.

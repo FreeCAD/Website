@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 The FreeCAD Project Association is now accepting grant applications for the first quarter of 2026. If you are interested in participating, [please submit your application](https://github.com/FreeCAD/FPA-grant-proposals/issues) by March 10. We will announce the results by March 31.
 
 Please note that we've changed the program rules in several ways:

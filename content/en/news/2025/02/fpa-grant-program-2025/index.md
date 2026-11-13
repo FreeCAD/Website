@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 The FreeCAD Project Association collects corporate and personal donations and distributes the funds to contributors who improve FreeCAD and its ecosystem.
 
 In 2025, we are switching to quarterly waves of grant application reviews. Here are the submission deadlines:

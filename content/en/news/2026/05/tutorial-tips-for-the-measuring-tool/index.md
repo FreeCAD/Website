@@ -10,7 +10,6 @@ cover:
   caption:
 ---
 
-
 Since version 1.0 FreeCAD has had the Measure tool, a persistent tool available across all workbenches. Let's take a quick look through it in use using version 1.1.1.
 
 We've got a project that is a small flat part with fillets in the corners and a collection of holes and slots, but you can play with the Measure tool using any objects to explore it. To begin we are going to simply left click to select a point on one edge of the object and then control left click to select another point on the same edge. If we then left click the Measure tool we will see the "Measurement" tool dialogue appear in the Task panel and we will see some measurement values appear in the preview window.

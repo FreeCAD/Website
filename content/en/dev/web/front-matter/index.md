@@ -4,18 +4,15 @@ description: Define content metadata and parameters.
 weight: 6
 ---
 
-
 > [!NOTE]
 > The FreeCAD website uses the `yaml` format for its configuration, front matter and examples, as it is easier to read than `toml` or `json`.
 > Converters from YAML to TOML or JSON and vice-versa are available online if necessary.
-
 
 ## What is a front matter?
 
 Content pages can store custom metadata to enhance their semantics. In most Static Site Generator like Hugo, this is achieved via the **front matter** fields. The front matter is defined at the top of every content text file such as Markdown in between tags, e.g. `---` for YAML.
 
 By default, a `title` front matter field must be provided for each page. Additionally, many more fields can be specified. Field values can be rather minimal, such as a single string, number, boolean, but can also contain lists (also called slices), maps (also called dictionaries), or even a combination of different nested types.
-
 
 ## Front matter fields and values
 
@@ -73,7 +70,6 @@ By default, a `title` front matter field must be provided for each page. Additio
 | Glob slice | `matrix: ["! en", "v1.*.*", "{fr, de}"]` | ✅ Yes | Negation, single, list and range |
 
 See [Hugo Glob patterns docs](https://gohugo.io/quick-reference/glob-patterns).
-
 
 ### Sveltia CMS config
 

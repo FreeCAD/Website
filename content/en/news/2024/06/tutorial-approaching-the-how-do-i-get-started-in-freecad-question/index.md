@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 ![Freecad header](freecad_header.webp "Freecad header")
 
 There are so many community areas around FreeCAD. Apart from the excellent official [FreeCAD forum](https://forum.freecad.org/) almost every conceivable messaging platform or social media camp has a FreeCAD presence. From Facebook and X, through Discord, Matrix and Fosstodon there are lots of places with FreeCAD discussion. Whilst we all might have our favoured places to chat FreeCAD it's interesting to look across a few of these community areas and see what unites them. On a daily basis looking across a few of these sites will reveal that "How do I get started in FreeCAD?" is possibly the most common enquiry.

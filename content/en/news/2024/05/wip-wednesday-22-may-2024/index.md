@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **Toponaming**: the main phases of the project have now been officially completed. The patchset was enabled in the main development branch by default this Monday, weekly builds now ship with the fixes. For more information, please see [this forum post](https://forum.freecad.org/viewtopic.php?t=87791). Kudos to everyone involved: RealThunder, chennes, Pesc0, bgbsww, CalligaroV, JohnAD.

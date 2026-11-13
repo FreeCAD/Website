@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 - davesrocketshop pushed an update to the new materials system adding new data types (in particular, for the Render workbench), a new appearance preview UI based on the Coin library, and changes in the array data types.

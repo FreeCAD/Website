@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 Of all the [new features](https://wiki.freecad.org/Release_notes_0.20) in the recently-released [FreeCAD 0.20](https://github.com/freecad/freecad/releases/tag/0.20), it's likely that the ones that will affect the most users are the improved tools in the [Sketcher workbench](https://wiki.freecad.org/Sketcher_Workbench).
 
 ### New Tools: Rounded Rectangles, Centered Rectangles, and Split

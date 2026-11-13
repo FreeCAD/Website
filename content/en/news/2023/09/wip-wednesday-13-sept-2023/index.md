@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 - PaddleStroke is working on an assembly constraining system. He posted a draft PR to share advancement if anyone wants to follow along: [https://github.com/freecad/freecad/pull/10611](https://github.com/freecad/freecad/pull/10611).

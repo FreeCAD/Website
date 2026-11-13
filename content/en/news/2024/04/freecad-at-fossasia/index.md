@@ -10,7 +10,6 @@ cover:
   caption: FreeCAD at FOSSASIA
 ---
 
-
 Recently Hanoi was the location of [FOSSASIA](https://fossasia.org/)'s latest feature event, the FOSSASIA Summit. Wonderfully 3 members of the FreeCAD community went along to crew a FreeCAD booth promoting our work and community. Ajinkya, Amulya and Harshita made the journey over to Vietnam from India, Amulya and Harshita taking time out from their schedules at Chandigarh University and Ajinkya travelling from Mumbai.
 
 ![FreeCAD at FOSSASIA](437937216_965977032198150_4048136392505921749_n.webp "FreeCAD at FOSSASIA")

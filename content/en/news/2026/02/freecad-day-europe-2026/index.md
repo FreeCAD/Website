@@ -12,7 +12,6 @@ cover:
   caption: Group photo of people present at FreeCAD Day 2026
 ---
 
-
 On the 30^th^ January 2026 we once again held our pre FOSDEM fringe meet up event FreeCAD Day. Once again we met at the fabulous Les Ateliers des Tanneurs venue, where, fuelled with plenty of coffee and tea, we had an excellent day of talks and discussions.
 
 ![Design token talk by Kadet](IMG_20260130_112626.webp "Design token talk by Kadet")

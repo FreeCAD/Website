@@ -4,9 +4,7 @@ description: How to use the Sveltia CMS for the FreeCAD website.
 weight: 8
 ---
 
-
 The FreeCAD website takes advantage of a headless Content Management System (CMS). It is intended for content editors, translators, and contributors to ease the process of adding and editing the website content. For detailed CMS features, refer to the official [Sveltia CMS documentation](https://sveltiacms.app/en/docs/intro).
-
 
 ## CMS overview
 
@@ -22,7 +20,6 @@ Reading the [website guidelines](guidelines) is highly recommended. Thank you!
 > [!NOTE]
 > Changes made in the CMS are saved in the website git repository.
 > Depending on the workflow chosen below, some additional steps and review time are required before the changes appear on the public website.
-
 
 ## Logging in
 
@@ -58,7 +55,6 @@ The local workflow means a standard git-based process with branches, commits and
 - Once the request is approved (a few days may be needed as it is manually validated by maintainers), click **Sign in using Access Token** on the CMS login page and provide the PAT code:
 
 ![Access Token login](cms-login-3.webp "Access Token login")
-
 
 ## Using the CMS
 
@@ -153,7 +149,6 @@ When the page is ready for review by reviewers, the `Draft` status is removed an
 After the page is fully reviewed and validated, it gets published.
 
 More technical details on the Editorial Workflow can be found on the [CMS docs](https://sveltiacms.app/en/docs/)
-
 
 ## Need Help?
 

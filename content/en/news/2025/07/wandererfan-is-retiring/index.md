@@ -13,7 +13,6 @@ cover:
   caption:
 ---
 
-
 WandererFan, AKA Chris has recently [announced](https://forum.freecad.org/viewtopic.php?p=832519) his retirement from two roles at FreeCAD: Maintainer of the TechDraw workbench and member of the FreeCAD Project Association (FPA) board, responsible for all accounting and budgeting work.
 
 Chris is a retired IT engineer in the transportation industry. He joined FreeCAD in 2013 to submit various Unicode-related fixes and add some new tools to Draft (Path Array, Bezier Curve). In 2016, he contributed patches to resolve merge conflicts in TechDraw without guessing he would eventually become the Maintainer of the entire workbench. With time, the original TechDraw developer stepped away, and Chris gradually became more involved and took over the development of this core workbench. This made it the workbench we know and use today.

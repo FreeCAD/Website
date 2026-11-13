@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 The FreeCAD Project Association (FPA) has just published the [2024 annual report](https://fpa.freecad.org/annualreports/2025.html).
 
 Here are some of the report's highlights:

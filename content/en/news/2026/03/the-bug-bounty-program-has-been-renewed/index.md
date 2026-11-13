@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 The FreeCAD Project Association has renewed the bug bounty program it launched last year. The budget is once again €5,000.
 
 The rules are simple: fix 5 confirmed issues from the FreeCAD GitHub issue tracker and receive a reward of €250.

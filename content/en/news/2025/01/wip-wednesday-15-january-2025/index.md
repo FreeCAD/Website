@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 A major user-visible change is the introduction of the Transform task panel that simplifies precise translation and rotation of objects in 3D space:

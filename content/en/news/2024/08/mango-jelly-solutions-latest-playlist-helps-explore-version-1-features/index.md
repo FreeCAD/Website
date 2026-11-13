@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 {{< youtube id=g-olVnKbdvU title="Game Changing FreeCAD 0.22 Sketcher Features" loading=lazy >}}
 
 With version 1 of FreeCAD approaching it's excellent to see people picking up on the new and improved features and workflows via the weekly developmental 0.22 versions. It's also particularly excellent to see those who produce tutorial content beginning to use version 0.22 so that those who pick up FreeCAD version 1 will have some support.

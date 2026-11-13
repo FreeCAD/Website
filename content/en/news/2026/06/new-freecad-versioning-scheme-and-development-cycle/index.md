@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 FreeCAD is switching to the CalVer scheme for versioning releases and a new development cycle that introduces time-based releases. Here is a quick explainer on why the team is doing that and how this will affect users.
 
 ## Why the switch?

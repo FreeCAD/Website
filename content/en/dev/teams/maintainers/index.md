@@ -4,11 +4,9 @@ description: Guidelines for Maintainers regarding code review and merge procedur
 weight: 1
 ---
 
-
 The most important Team in FreeCAD development is the **Maintainers Team**.
 
 Several working groups assist the maintainers by focusing on key areas. While these groups do not have formal oversight of the FreeCAD code base, the maintainers frequently ask them to review Pull Requests and may defer to the working groups for expert opinion. The working groups are self-governing and generally open to contributors.
-
 
 ## The Current Team of Maintainers
 
@@ -31,7 +29,6 @@ This is the list of **current** maintainers & admins.
 `Roy-043` [GitHub][GitHub-Roy] [Forum][Forum-Roy]
 
 `WandererFan` [GitHub][GitHub-WandererFan] [Forum][Forum-WandererFan]
-
 
 ### Admins
 
@@ -69,16 +66,13 @@ This is the list of **current** maintainers & admins.
 [Forum-pieterhijma]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=49078 'Forum'
 [Forum-lgtx]: https://forum.freecad.org/memberlist.php?mode=viewprofile&u=85993 'Forum'
 
-
 ## The Role of a Maintainer
 
 The maintainers group has the ultimate responsibility for determining which contributions are accepted into the FreeCAD source. To perform their duty, maintainers have elevated permission. Maintainers use this authority within the scope and process outlined by the [CONTRIBUTING](https://github.com/freecad/freecad/blob/master/CONTRIBUTING.md) document.
 
-
 ## Contributing document
 
 This document describes the expected process to go from an Issue to a merged piece of code. All Maintainers should be familiar with this document, and work to follow the process that it outlines. In particular, once an Issue has an agreed-upon solution path, then a PR that conforms to that path should be merged without further debate about the merits of the solution: code review focuses solely on whether the PR does indeed follow the agreed-upon path, and on identifying major defects in the code. Minor defects may be included in the review process, but should not prevent the PR from being merged in a timely manner.
-
 
 ## Maintainer Duties
 
@@ -89,7 +83,6 @@ Individual maintainers have two primary duties:
  - Once an Issue has been identified and agreed upon and a PR has been submitted to resolve it, Maintainers participate in the PR discussion to move it towards merge as quickly as possible.  This includes reviewing the code to identify major defects and conflicts with FreeCAD's coding guidelines. Maintainers also work to further the conversation around the PR by clarifying open questions, involving others, and drawing attention to critical concerns. If the PR is by a new Contributor, Maintainers work to onboard that Contributor, ensuring they understand the pocess, feel welcome, and recieve the mentorship they need to succeed.
 
 All open PRs should have at least one maintainer identified in the 'Assignees' field.  PRs should not be assigned to a maintainer. Instead, maintainers should self-assign PRs. If a PR does not have an assigned maintainer in a reasonable time, the author may comment and ask for a maintainer.
-
 
 ## Code Review Process
 
@@ -129,7 +122,6 @@ FreeCAD is in a transitional period: eventually we expect all code to be formatt
 
 A major goal during a code review is to provide a good experience for Contributors, and part of that is ensuring consistency across Maintainers. FreeCAD operates predominantly on a consensus basis: if you run into a situation during a code review where you are unsure how to proceed, your first course of action should be to reach out to other Maintainers to see how others have handled such things in the past. Once a course of action has been arrived at, consider documenting the new process here in the Developer's Handbook.
 
-
 ## Onboarding new Contributors
 
 People choose to contribute their time and talents to the FreeCAD project for a variety of reasons: these reasons may or may not align with the strategic goals of the project. When possible, new Contributors should be steered towards projects that address pre-existing Issues, and/or that make progress towards specific Roadmap items. That said, many times a new Contributor develops code to solve a specific problem that they personally encountered when using FreeCAD, and those contributions can still be valuable, even if the Issue is created _after_ the PR.
@@ -150,7 +142,6 @@ There is no one-size-fits-all solution to Maintainer-Contributor relations: diff
 
 The Github CI/CD pipepline will execute for any PR that is created unless the PR comes from a first-time. This is intentional and allow is meant to catch bad actors attempting to slip malicious code into the CI process.  When a PR requires the workflow to be started manually, take extra time to evaluate the PR and ensure that any change to the CI system is expected and desirable.
 
-
 ## Merge Process
 
 When possible Maintainers should use the web-based PR merge system on GitHub to avoid potential git errors and to maintain process consistency. There are three merge strategies available:
@@ -160,7 +151,6 @@ When possible Maintainers should use the web-based PR merge system on GitHub to 
 
 3. Squash and merge. In some cases a Contributor may not be comfortable using git, and may be unable to squash their own commit history into a reasonable number of well-defined commits. In those cases Maintainers have the option of squashing all commits into one during the merge process. This is most appropriate when working with those uncomfortable with using git, who have a needlessly complex commit history for a single simple task.
 
-
 ## Merge Meetings
 
 Every Monday, FreeCAD maintainers meet on a Jitsi call for an hour to go through the list of open pull requests and apply the ones that are ready for merging. The recurring event is [available in the FPA calendar](https://www.freecad.org/events.php).
@@ -168,7 +158,6 @@ Every Monday, FreeCAD maintainers meet on a Jitsi call for an hour to go through
 The call moderator opens the list of all open PRs, then the team of moderators goes through them in reverse chronological order: they look at submitted patches, discuss whether further changes need to happen, and collectively reach decision on merging or postponing the merge.
 
 This event is open for everybody. Developers whose patches are undergoing review are encouraged to join the call in case maintainers have questions about the code / design decisions.
-
 
 ## Reverting
 

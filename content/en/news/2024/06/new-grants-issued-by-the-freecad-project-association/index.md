@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 The FPA has issued several more grants. The first three are part of the new annual program.
 
 **Ajinkya Dahale** is resuming his work on Sketcher and is making it more manageable to maintain and extend. His project has three deliverables:

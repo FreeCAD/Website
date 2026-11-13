@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 The author of this blog is quite interested in designing and building open source machines and tools. Recently a, designed in FreeCAD, 4 axis CNC hot wire foam cutter has been a great project. It's fabulous that not only can we design such a machine in FreeCAD, but also FreeCAD, via the FoamCut workbench, provides a way to create g-code files to cut out foam parts. Of course, we can also design those parts in FreeCAD, Perfect!
 
 Often used for cutting wing sections and other components there are a lot of applications for RC plane builders to design and create g-code for wings. The FoamCut workbench enables a much wider variety of parts to to be able to be cut. It is available via the Addon manager, it's also worth reading through the notes in the addon manager listing, or directly on the [Github repository](https://github.com/Shkolik/Foamcut) as they provide a great overview of the included tools, operations and procedures.

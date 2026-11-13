@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 - yorik merged the Help Module into main so that an external mod is no longer required to view the new Help system.

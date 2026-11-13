@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 Ajinkya Dahale and Yorik van Havre recently did a live introduction to FreeCAD programming for participants of [FOSS Hack 2024](https://fossunited.org/fosshack/2024), an upcoming hackathon that aims to promote conribution to FOSS software.
 
 The video covers various topics like FreeCAD modules, building the program from source code, a walk through the source code structure, writings tests, etc.

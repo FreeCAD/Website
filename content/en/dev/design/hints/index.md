@@ -4,7 +4,6 @@ description: Input Hints Guidelines.
 weight: 8
 ---
 
-
 Input Hints is feature that provides user with hints for available actions as part of the status bar.
 
 ![Input Hints Preview](input-hints-preview.webp)

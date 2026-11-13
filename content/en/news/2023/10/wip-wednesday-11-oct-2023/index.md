@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 - We merged the realthunder PR that adds a transparency to the sidebars. There is still some work to do with the themes to smooth things out, but the basic feature is present now.

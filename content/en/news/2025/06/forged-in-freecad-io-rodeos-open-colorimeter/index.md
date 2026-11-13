@@ -13,7 +13,6 @@ cover:
   caption:
 ---
 
-
 ![Opencolorimeter](opencolorimeter.webp "Opencolorimeter")
 
 It's always fabulous to see open hardware, even more wonderful when the tool chain to make the hardware is open, and lastly, great when people have used FreeCAD as part of their fascinating projects.

@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 The FreeCAD Project Association is excited to announce the launch of [lens.freecad.org](https://lens.freecad.org/), a test server for collaborating on FreeCAD projects.
 
 The underlying technology, [Ondsel Lens](https://github.com/FreeCAD/Ondsel-Server), is a product data management (PDM) system developed in 2023-2024 by Ondsel, a US-based startup. It supports creating organizations, adding new members, versioning FreeCAD projects, sharing them with optional password protection, and more. It also supports generating the code for embedding it into posts on the FreeCAD forum.

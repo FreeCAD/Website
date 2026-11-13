@@ -4,11 +4,9 @@ description: How to use basic Markdown syntax and formatting.
 weight: 4
 ---
 
-
 Hugo supports [Markdown](https://en.wikipedia.org/wiki/Markdown) syntax for formatting text, creating lists, and more.
 
 This article offers a sample of basic Markdown syntax that can be used in Hugo content files and its rendered output with the current theme.
-
 
 ## Headings
 
@@ -38,7 +36,6 @@ This article offers a sample of basic Markdown syntax that can be used in Hugo c
 
 ### Heading with a custom id {#custom-id}
 
-
 ## Emphasis
 
 ```text {file=Markdown}
@@ -62,7 +59,6 @@ _This will also be italic_
 __This will also be bold__
 
 _You **can** combine them_
-
 
 ## Lists
 
@@ -132,7 +128,6 @@ First Term
 Second Term
 : This is the definition of the second term.
 
-
 ## Images
 
 ```text {file=Markdown}
@@ -155,7 +150,6 @@ With caption:
 
 For more advanced functionality, use Hugo's built-in [Figure shortcode](https://gohugo.io/shortcodes/figure/).
 
-
 ## Links
 
 ```text {file=Markdown}
@@ -174,7 +168,6 @@ For more advanced functionality, use Hugo's built-in [Figure shortcode](https://
 
 [Heading ID](#custom-id)
 
-
 ## Styling Text
 
 | Format      | Syntax          | Example output           |
@@ -186,7 +179,6 @@ For more advanced functionality, use Hugo's built-in [Figure shortcode](https://
 | Inserted    | `++inserted++`  | Some ++inserted++ text   |
 | Subscript   | `~subscript~`   | Some ~subscript~ text.   |
 | Superscript | `^superscript^` | Some ^superscript^ text. |
-
 
 ## Blockquotes
 
@@ -227,7 +219,6 @@ For more advanced functionality, use Hugo's built-in [Figure shortcode](https://
 > Programs must be written for people to read, and only incidentally for machines to execute.
 {cite="https://web.mit.edu/6.001/6.037/sicp.pdf" caption="**Harold Abelson & Gerald Jay Sussman**, *Structure and Interpretation of Computer Programs*"}
 
-
 ## Inline Code
 
 ```text {file=Markdown}
@@ -237,7 +228,6 @@ Inline `code` has `back-ticks around` it.
 ***How it renders:***
 
 Inline `code` has `back-ticks around` it.
-
 
 ## Code Blocks
 
@@ -367,7 +357,6 @@ def main():
     hello()
 ```
 
-
 ## Tables
 
 ```text {file=Markdown}
@@ -397,7 +386,6 @@ def main():
 | Italics   | Bold     | Code   |
 | :-------- | :------: | -----: |
 | *italics* | **bold** | `code` |
-
 
 ## Alerts
 
@@ -440,13 +428,11 @@ Please make sure you are using [Hugo v0.146.0](https://github.com/gohugoio/hugo/
 > [!CAUTION]
 > Advises about risks or negative outcomes of certain actions.
 
-
 ## Configuration
 
 Hugo uses [Goldmark](https://github.com/yuin/goldmark) for Markdown parsing.
 Markdown rendering can be configured in `hugo.yaml` under `markup.goldmark`.
 See Hugo documentation on [Configure Markup](https://gohugo.io/getting-started/configuration-markup/).
-
 
 ## Learning Resources
 

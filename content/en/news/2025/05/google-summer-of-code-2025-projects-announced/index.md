@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 The FreeCAD project got three students in this year's Google Summer of Code program.
 
 Here are the projects:

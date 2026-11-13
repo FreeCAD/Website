@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 The FreeCAD team has switched to preparing for the release of FreeCAD 26.3, the first one under the new versioning scheme. They are now focused on polishing the release branch and preparing the first release candidate. There will be a separate announcement about that.
 
 Out of 93 pull requests merged in the last 7 days, 36 have been backports from the main development branch to the dedicated 26.3 release branch. This overview focuses on the work in the main branch only,

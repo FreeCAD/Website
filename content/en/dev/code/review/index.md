@@ -4,7 +4,6 @@ description: Code Review Guide.
 weight: 2
 ---
 
-
 This document aims to provide set of good practices that should be helpful for both developers and code reviewers. They should be treated like food recipes - you can play with them, alter them - but every change should be thoughtful and intentional.
 
 Just like the C++ practices - this document is __very__ much inspired by the [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines).
@@ -20,7 +19,6 @@ In this document the **bolded** text will indicate how important each suggestion
  - **should** will be used for important details that will apply for vast majority of cases, there could however be valid reasons to ignore them depending on context
  - **could**/**can** will be used for best practices, things that you should try to follow but not following them is not an error per se
 
-
 ## Common Rules
 
 1. Consistency **must** be preferred over strict rule following. If, for example, in a given context code uses different naming scheme - it should be followed instead of one described in that document.
@@ -34,7 +32,6 @@ In this document the **bolded** text will indicate how important each suggestion
 9. PRs **must not** contain any remains of development code, like debug statements other than actual logs.
 10. New code **must not** introduce any new linter warnings
 11. Developer **should** have `pre-commit` installed and working. `pre-commit-ci` commits should be avoided.
-
 
 ## PRs and Commits
 
@@ -55,7 +52,6 @@ e.g. If applied, this commit will add fillet feature.
 4. Every commit in the PR **must** compile and run properly. `git bisect` workflow does not work if some commits are not possible to compile.
 5. Commit message **can** contain additional information after one blank line.
 6. Every PR **should** have description, even if it seems obvious.
-
 
 ## Basic Code Rules
 
@@ -97,7 +93,6 @@ You can rewrite it in a following way:
             vertexSet.insert(vertexId);
         }
     }
-
 
     std::copy(vertexSet.begin(), vertexSet.end(), std::back_inserter(vertices));
 ```
@@ -142,7 +137,6 @@ levels it is a good signal that it might require splitting into smaller methods.
 20. (C++ only) dedicated casts should be preferred over `dynamic_cast` due to performance
     a. QObjects should use `qobject_cast`
     b. FreeCAD types (deriving from `BaseClass`) should use `freecad_cast`
-
 
 ## Design / Architecture
 
@@ -257,7 +251,6 @@ Now the intent is clear.
 12. (C++ only) Class member variables **should** be initialized at declaration, not in constructors
 13. Magic numbers or other literals **must** be avoided.
 
-
 ## Naming Things
 
 Naming described in that section of the document refers mostly to newer parts of code. Some modules use different naming conventions,
@@ -282,7 +275,6 @@ while checking the code Reviewer should take into account surrounding code and f
 5. Task Dialog for Task View **should** be additionally suffixed with `Dialog`, e.g. `TaskTransformDialog`
 6. Preference Pages **should** be prefixed with `DlgSettings`, e.g. `DlgSettingsLights`.
 7. Commands **should** be prefixed with `Cmd` and Workbench name e.g. `CmdPartDesignCreateSketch`
-
 
 ## Commenting the code
 

@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 *It looks like the original post didn't show up on Wed/Thu here on the blog, but* [*was posted on the forum*](https://forum.freecad.org/viewtopic.php?p=882798#p882798)*. Not sure what the glitch was, but here is the post in its entirety on the blog as well, backdated for accuracy.*
 
 Now that FreeCAD 1.1 is out, maintainers will keep backporting some changes from the main development branch to the 1.1 branch for future bugfix releases. There have been 12 such backports these last 7 days.

@@ -10,7 +10,6 @@ cover:
   caption:
 ---
 
-
 The chosen projects of [Google Summer of Code](https://summerofcode.withgoogle.com) have just been announced, and we are excited to announce that, although it is the first time FreeCAD is participating on its own to the program, we have been awarded no less than 4 slots this year!
 
 The four projects that will happen this summer are:

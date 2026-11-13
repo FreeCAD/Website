@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development, the four most actively worked-on parts of FreeCAD have been the toponaming project, TechDraw, Sketcher, and FEM.
 
 Toponaming: **bgbsww** and **chennes** are now actively adding history support. Think extrusion, feature mirroring and offset. And tests - that's really important too.

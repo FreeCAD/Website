@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 - yorik continues to work on the NativeIFC new document system (one FreeCAD document = one IFC document), which is almost ready.

@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 The FreeCAD Project Association issued two more grants.
 
 **Mario Passaglia** is now working on bugfixing and electromagnetic system simulations using CalculiX in the FEM workbench. Expected new features will provide the resolution of:

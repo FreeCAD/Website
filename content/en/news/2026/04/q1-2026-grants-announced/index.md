@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 The FPA members have voted for Q1 2026 grants.
 
 The following work will be paid for once completed:

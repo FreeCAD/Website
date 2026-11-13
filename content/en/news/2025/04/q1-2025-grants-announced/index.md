@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 The FPA General Assembly has finalized the list of approved grant applications for the first quarter of 2025.
 
 **Ajinkya Dahale** (AjinkyaDahale) will develop [two new types of curves](https://github.com/freecad/fpa-grant-proposals/issues/33) in Sketcher: restricted and offset curves. Restricted curves are useful when we only need a portion of an external curve that can change. Offset curves are dependent on a parent curve to allow offset for a larger set of curves (independent offset curves already exist in FreeCAD, this is different). Ajinkya was awarded a grant of EUR 2000 for the project.

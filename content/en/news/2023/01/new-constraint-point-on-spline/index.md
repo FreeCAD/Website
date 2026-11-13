@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 In very exciting Sketcher news, Ajinkya Dahale's (jnxd) work on a the new [point-on-spline constraint](https://github.com/freecad/freecad/pull/7782) was merged late last week and is now available the main development trunk: it will be available in the next weekly development builds as they become available over the next several days.
 
 This B-Spline project has been many months in the making, and is thanks to the hard work and persistence not just of Ajinkya, but also Sketcher Maintainer abdullah and many other alpha-testers on the FreeCAD Forums. Thanks to all the developers and testers who made this excellent addition possible.

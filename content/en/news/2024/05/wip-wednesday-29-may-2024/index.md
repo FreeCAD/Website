@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development, major changes have been in Assembly, CAM, and TechDraw workbenches, as well as in the new materials system.
 
 **Assembly** got three new joint types: 'Angle', 'Perpendicular', and 'Parallel', all added by PaddleStroke.

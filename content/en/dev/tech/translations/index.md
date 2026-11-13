@@ -4,7 +4,6 @@ description: How to write code with strings that should be translated.
 weight: 7
 ---
 
-
 In most cases, any user-visible text in FreeCAD should be made translatable. Exceptions to this general rule are:
 1. Text that only appears as log-level messages in the Report View
 2. Names of Python commands, etc.
@@ -19,7 +18,6 @@ Some general guidelines when constructing strings for translation:
 Important technical details:
 * The NOOP-versions of the Qt translation functions extract the string for translation purposes, but *do not* replace the string in place with its translated equivalent. A later call to `tr()` or `translate()` is always required in these cases. See more detail below.
 * In a non-QObject-derived class, use `Q_DECLARE_TR_FUNCTIONS(MyClass)` to give your class access to the `tr()` function. See also [the Qt documentation](https://doc.qt.io/qt-5/i18n-source-translation.html).
-
 
 ## Basic Usage
 
@@ -280,7 +278,6 @@ Gui.addCommand("MyWorkbench_DoAThing", CmdDoAThing())
 # "MyWorkbench_DoAThing" is the name of the command and it must be used as context for translation too in this example.
 ```
 
-
 ## Translating plurals
 
 Many languages have more complex pluralization rules than English. To support this, you can write strings that are designed for pluralization, including in English, by specifying a parameter that indicates how many of a thing there are. The translation system will dynamically select the correct translation (assuming translators wrote one), even for English. For example:
@@ -299,7 +296,6 @@ There were 2 errors.
 ```
 
 In other languages there might be more than two variants, the sentence structure might change completely, etc. Qt and the CrowdIn translation platform support this structure. Note that as of this writing the English strings are unused: English translations are not actually used. Future work on the FreeCAD project includes enabling these English "translations" so that we can easily provide the plural forms.
-
 
 ## Testing your strings
 
@@ -340,7 +336,6 @@ Edit this to eliminate the "unfinished" and to add a translation, e.g.
 ```
 
 Next, this file must be converted to a `*.qm` file using the `lrelease` tool (distributed with Qt). Finally, place the generated QM file in the same location as your user.cfg file, in a subdirectory called "translations", then switch FreeCAD to the language you chose to test with. Your translated string should appear.
-
 
 ## Manually Synchronizing Translations with CrowdIn
 

@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 As FreeCAD is completely open it often gets used for really interesting experiments and academic research. Recently we became aware of this excellent paper, "[Machine-optimized parametric computer assisted design (CAD) of a stable flying wing UAV glider](https://link.springer.com/article/10.1007/s42401-026-00530-w)".
 
 It's a fascinating piece of work, a flying wing uncrewed aerial vehicle (UAV) is designed parametrically in FreeCAD. Eleven parameters are broken out which control the wing geometry and these are automatically adjusted. Each wing iteration then is converted into a mesh and subjected to testing using computational fluid dynamics (CFD) via the CFDOF workbench. The CFD workbench is an excellent FreeCAD workbench that collates a lot of open source tools and solvers, most notably OpenFoam, together in an easy to set up, GUI driven environment.

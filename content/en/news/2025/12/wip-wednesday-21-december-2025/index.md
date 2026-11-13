@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 Maintainers have been backporting some of the fixes to the v1.1 branch where possible - 21 backports in the past 7 days. The list of changes in this recap applies to the main development branch (future v1.2).
 
 This week in FreeCAD development:

@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This year, we had three students working on FreeCAD. All projects have been successful. Here is a quick recap.
 
 chiragsingh1711 implemented 3D PDF exporting in the TechDraw workbench and added an exporter to the general list of exporting options. The code is [mostly complete](https://github.com/FreeCAD/FreeCAD/pull/23335) and requires some fixes to bring it closer to our coding standards. The maintainers team scheduled this feature for inclusion in v1.2.

@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 EMF Camp has recently taken place in the UK. This, every two year, festival/hacker camp sees around 4000 people descend on the grounds of Eastnor Castle UK. It's an amazing event with all manner of talks, art installations, workshops and indeed partying in Null Sector.
 
 Amongst all this the fabulous Chia, Kliment and Carston pulled together an amazing E-Sport style FreeCAD speed run challenge in the hardware hacking tent.

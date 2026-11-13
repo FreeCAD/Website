@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 - **CalligaroV**, **bgbsww**, and **chennes** made further changes towards mitigating the toponaming issue.

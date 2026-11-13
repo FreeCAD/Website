@@ -12,7 +12,6 @@ cover:
   caption: Material appearance properties in FreeCAD
 ---
 
-
 FreeCAD 1.0 introduced a new, refactored [material system](https://wiki.freecad.org/Material_Workbench), which includes updated appearance properties of FreeCAD objects. What was previously one property **Shape color** is now six new properties in the **Shape Appearance** group of properties. This article explains how to set up these properties to achieve the desired surface look.
 
 There are six appearance properties, which you can find in the **View** properties → **Object Style** group under the **Shape Appearance** umbrella. These properties are:

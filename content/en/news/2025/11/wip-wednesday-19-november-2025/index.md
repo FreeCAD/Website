@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 Quick disclaimer: maintainers have created a branch for the upcoming v1.1 release and started reviewing and merging patches for v1.2. They have also been backporting some of the fixes to the v1.1 branch where possible - 36 backports in the past 7 days. The list of changes in this recap applies to the main development branch.
 
 This week in FreeCAD development:

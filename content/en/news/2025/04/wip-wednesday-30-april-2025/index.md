@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **Draft**: Roy_043 added a global mode to the ShapeString task panel so that coordinates could be relative to the global coordinate system.

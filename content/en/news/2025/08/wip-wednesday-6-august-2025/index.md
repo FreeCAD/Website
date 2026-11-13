@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 This week in FreeCAD development:
 
 **Draft**: Roy_043 fixed an issue where splitting a line would move that line. He also fixed the file button size in the Hatch task panel and the display of the cross-shaped cursor.

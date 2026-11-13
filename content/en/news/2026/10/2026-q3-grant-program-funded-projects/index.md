@@ -12,7 +12,6 @@ cover:
   caption:
 ---
 
-
 The FPA members have voted to fund three projects in the third quarter.
 
 **Morten Vajhøj** will work on [topological naming and feature identification in TechDraw](https://github.com/FreeCAD/FPA-grant-proposals/issues/108). Morten will focus on four deliverables: HLR toponaming, attaching callouts to geometry rather the view location, automatic feature identification, and a dozen new features, such as automatic BOM and balloons in assemblies, and automatic hole/thread callouts. Morten joined the project in early 2026, his [contributions](https://github.com/FreeCAD/FreeCAD/pulls?q=is%3Apr+state%3Aclosed+author%3AMortenVajhoj) are all in/around TechDraw and the Measurement tool. He is one of our GSoC students this year, working on a post-selection rewrite of TechDraw. Morten will be awarded a grant of EUR 2,000 upon the successful completion of the project.

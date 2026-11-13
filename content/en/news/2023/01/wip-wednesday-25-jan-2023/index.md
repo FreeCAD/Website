@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 Lots of interesting development happening this week as everyone gets ready for [FreeCAD Day 2023](https://blog.freecad.org/2023/01/04/freecad-meeting-day-2023/) in Brussels next week.
 
 - sliptonic announced the [launch of a new company, Ondsel](https://opencoreventures.com/blog/2023-01-ondsel-freecad-launch/), focused on cloud deployment and collaboration using FreeCAD.

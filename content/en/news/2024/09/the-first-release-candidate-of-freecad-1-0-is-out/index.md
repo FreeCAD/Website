@@ -11,7 +11,6 @@ cover:
   caption:
 ---
 
-
 We've just published builds of the first release candidate for FreeCAD 1.0. You can download them [here](https://github.com/freecad/freecad-Bundle/releases/tag/1.0rc1).
 
 So far, we've enjoyed the contributions of users who are happy to be living on the edge with our weekly builds and reporting whatever bugs they run into. That really helped us make the proverbial edge less edgy.
