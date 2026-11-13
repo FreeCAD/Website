@@ -24,7 +24,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 {{- $href := $url.String -}}
 {{- $is_fragment := false -}}
 
-{{- if strings.HasPrefix $href "#" -}}
+{{- if hasPrefix $href "#" -}}
   {{- $href = printf "%s#%s" .PageInner.RelPermalink $url.Fragment -}}
   {{- $is_fragment = true -}}
 
@@ -36,14 +36,12 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     (site.GetPage $path)
     (resources.Get $path)
   -}}
-    {{- if reflect.IsPage . -}}
-      {{- $href = . -}}
-    {{- else -}}
-      {{- $href = .RelPermalink -}}
-    {{- end -}}
+
+    {{- $href = .RelPermalink -}}
     {{- with $url.RawQuery -}}
       {{- $href = printf "%s?%s" $href . -}}
     {{- end -}}
+
     {{- with $url.Fragment -}}
       {{- $href = printf "%s#%s" $href . -}}
       {{- $is_fragment = true -}}
