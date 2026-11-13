@@ -10,11 +10,8 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 /* Download box */
 
 .download-box {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-content: space-evenly;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
   gap: var(--gap);
   width: var(--width);
   margin: var(--gap) auto;
