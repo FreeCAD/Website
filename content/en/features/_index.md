@@ -1,8 +1,9 @@
 ---
 title: Innovate without limits
-linkTitle: Features
 description: Powerful and open parametric design for everyone.
-aliases: ["/features"]
+linkTitle: Features
+aliases:
+  - /features
 icon: stars
 icon_cms: bolt
 ---
