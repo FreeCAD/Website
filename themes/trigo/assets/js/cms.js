@@ -16,13 +16,15 @@ TODO: investigate and fix <video> and PDF <iframe> as the preview does not work 
 
 CMS.init();
 
+const trimNewlines = (content = '') => String(content).replace(/^(?:[ \t]*\r?\n)+/, '').replace(/(?:\r?\n[ \t]*)+$/, '');
+
 CMS.registerEditorComponent({
   id: 'video',
   label: 'Video file',
   icon: 'video_file',
   fields: [
-    { name: 'src', label: 'Video file', widget: 'file' },
-    { name: 'poster', label: 'Poster image (optional)', widget: 'image', required: false },
+    { name: 'src', label: 'Video file', widget: 'file', i18n: 'duplicate' },
+    { name: 'poster', label: 'Poster image (optional)', widget: 'image', required: false, i18n: 'duplicate' },
     { name: 'caption', label: 'Caption (optional)', widget: 'string', required: false },
   ],
   pattern: /{{< video src="(?<src>.*?)"(?: poster="(?<poster>.*?)")?(?: caption="(?<caption>.*?)")? >}}/m,
@@ -51,7 +53,7 @@ CMS.registerEditorComponent({
   mode: 'dialog',
   summary: 'YouTube: {{ id }}',
   fields: [
-    { name: 'id', label: 'Youtube ID', widget: 'string' },
+    { name: 'id', label: 'Youtube ID', widget: 'string', i18n: 'duplicate' },
   ],
   pattern: /{{< youtube id="(?<id>.*?)" >}}/m,
 
@@ -72,9 +74,9 @@ CMS.registerEditorComponent({
   mode: 'dialog',
   summary: 'PeerTube: {{ url }}',
   fields: [
-    { name: 'url', label: 'PeerTube URL', widget: 'string' },
-    { name: 'start', label: 'Start time (optional)', widget: 'string', required: false, hint: 'E.g. 42s, 1m10s' },
-    { name: 'stop', label: 'Stop time (optional)', widget: 'string', required: false, hint: 'E.g. 90s, 2m30s' },
+    { name: 'url', label: 'PeerTube URL', widget: 'string', i18n: 'duplicate' },
+    { name: 'start', label: 'Start time (optional)', widget: 'string', required: false, i18n: 'duplicate', hint: 'E.g. 42s, 1m10s' },
+    { name: 'stop', label: 'Stop time (optional)', widget: 'string', required: false, i18n: 'duplicate', hint: 'E.g. 90s, 2m30s' },
   ],
   pattern: /{{< peertube url="(?<url>.*?)"(?: start="(?<start>.*?)")?(?: stop="(?<stop>.*?)")? >}}/m,
 
@@ -99,10 +101,10 @@ CMS.registerEditorComponent({
   mode: 'dialog',
   summary: 'Button: {{ label }}',
   fields: [
-    { name: 'url', label: 'URL', widget: 'string' },
+    { name: 'url', label: 'URL', widget: 'string', i18n: 'duplicate' },
     { name: 'label', label: 'Label', widget: 'string' },
-    { name: 'icon', label: 'Icon (optional)', widget: 'image', accept: 'image/svg+xml', required: false },
-    { name: 'css_class', label: 'CSS class (optional)', widget: 'string', required: false },
+    { name: 'icon', label: 'Icon (optional)', widget: 'image', accept: 'image/svg+xml', required: false, i18n: 'duplicate' },
+    { name: 'css_class', label: 'CSS class (optional)', widget: 'string', required: false, i18n: 'duplicate' },
   ],
   pattern: /{{< button url="(?<url>.*?)"(?: label="(?<label>.*?)")?(?: icon="(?<icon>.*?)")?(?: css_class="(?<css_class>.*?)")? >}}/m,
 
@@ -118,7 +120,7 @@ CMS.registerEditorComponent({
     return `{{< button url="${url}" label="${label}"${iconName ? ` icon="${iconName}"` : ''}${css_class ? ` css_class="${css_class}"` : ''} >}}`;
   },
 
-  toPreview: ({ url, label, icon }) => `${icon ? `<img class="icon" width="24" height="24" src="${icon}"> ` : ''}[${label}](${url})`
+  toPreview: ({ url, label, icon }) => `\n${icon ? `<img class="icon" width="24" height="24" src="${icon}"> ` : ''}[${label}](${url})\n`
 });
 
 CMS.registerEditorComponent({
@@ -129,8 +131,8 @@ CMS.registerEditorComponent({
   summary: 'Marker: {{ label }}',
   fields: [
     { name: 'label', label: 'Label (optional)', widget: 'string', required: false },
-    { name: 'icon', label: 'Icon (optional)', widget: 'image', accept: 'image/svg+xml', required: false },
-    { name: 'css_class', label: 'CSS class (optional)', widget: 'string', required: false },
+    { name: 'icon', label: 'Icon (optional)', widget: 'image', accept: 'image/svg+xml', required: false, i18n: 'duplicate' },
+    { name: 'css_class', label: 'CSS class (optional)', widget: 'string', required: false, i18n: 'duplicate' },
   ],
   pattern: /{{< marker(?: label="(?<label>.*?)")?(?: icon="(?<icon>.*?)")?(?: css_class="(?<css_class>.*?)")? >}}/m,
 
@@ -158,7 +160,7 @@ CMS.registerEditorComponent({
   summary: 'Keyboard: {{ key }}',
   fields: [
     { name: 'key', label: 'Key combination', widget: 'string', hint: 'Enter a keyboard shortcut, e.g. CTRL+ALT+Delete, SHIFT+F12 or A+B.' },
-    { name: 'css_class', label: 'CSS class (optional)', widget: 'string', required: false },
+    { name: 'css_class', label: 'CSS class (optional)', widget: 'string', required: false, i18n: 'duplicate' },
   ],
   pattern: /{{< kbd key="(?<key>.*?)"(?: css_class="(?<css_class>.*?)")? >}}/m,
 
@@ -182,7 +184,7 @@ CMS.registerEditorComponent({
   fields: [
     { name: 'text', label: 'Abbreviation', widget: 'string', hint: 'Enter the abbreviation, e.g. HTML.' },
     { name: 'title', label: 'Full name / Description (optional)', widget: 'string', required: false, hint: 'Enter the full expansion or description, e.g. HyperText Markup Language.' },
-    { name: 'css_class', label: 'CSS class (optional)', widget: 'string', required: false },
+    { name: 'css_class', label: 'CSS class (optional)', widget: 'string', required: false, i18n: 'duplicate' },
   ],
   pattern: /{{< abbr text="(?<text>.*?)"(?: title="(?<title>.*?)")?(?: css_class="(?<css_class>.*?)")? >}}/m,
 
@@ -205,7 +207,7 @@ CMS.registerEditorComponent({
   mode: 'dialog',
   summary: 'Git: {{ url }}',
   fields: [
-    { name: 'url', label: 'Git URL', widget: 'string', hint: 'Enter a URL to a Git commit or pull/merge request.' },
+    { name: 'url', label: 'Git URL', widget: 'string', i18n: 'duplicate', hint: 'Enter a URL to a Git commit or pull/merge request.' },
   ],
   pattern: /{{< git url="(?<url>.*?)" >}}/m,
 
@@ -225,18 +227,14 @@ CMS.registerEditorComponent({
   icon: 'top_panel_open',
   fields: [
     { name: 'summary', label: 'Summary', widget: 'string', default: 'Details' },
-    { name: 'open', label: 'Open', widget: 'boolean', default: true },
+    { name: 'open', label: 'Open', widget: 'boolean', default: true, i18n: 'duplicate' },
     { name: 'content', label: 'Content', widget: 'richtext' },
   ],
-  pattern: /{{< details summary="(?<summary>.*?)"(?: open="(?<open>.*?)")? >}}\s*(?<content>[\s\S]+?)\s*{{< \/details >}}/m,
+  pattern: /{{< details summary="(?<summary>.*?)"(?: open="(?<open>.*?)")? >}}(?:\r?\n)?(?<content>[\s\S]*?)(?:\r?\n)?{{< \/details >}}/m,
 
-  toBlock: ({ summary, open, content }) => `{{< details summary="${summary}"${open ? ` open="true"` : ''} >}}${content}{{< /details >}}`,
+  toBlock: ({ summary, open, content = '' }) => `{{< details summary="${summary}"${open ? ' open="true"' : ''} >}}\n${content}\n{{< /details >}}`,
 
-  toPreview: ({ summary, open, content }) =>
-    `<details ${open ? 'open' : ''}>
-      <summary>${summary || '(no summary)'}</summary>
-      \n${content}\n
-    </details>`,
+  toPreview: ({ summary, open, content = '' }) => `<details ${open ? 'open' : ''}><summary>${summary || '(no summary)'}</summary>${content}</details>`,
 });
 
 CMS.registerEditorComponent({
@@ -246,7 +244,7 @@ CMS.registerEditorComponent({
   mode: 'dialog',
   summary: 'PDF: {{ path }}',
   fields: [
-    { name: 'path', label: 'PDF File', widget: 'file' },
+    { name: 'path', label: 'PDF File', widget: 'file', i18n: 'duplicate' },
     { name: 'title', label: 'Title (optional)', widget: 'string', required: false },
   ],
   pattern: /{{<\s*pdf(?:\s+path="(?<path>.*?)")?(?:\s+title="(?<title>.*?)")?\s*>}}/m,
@@ -271,8 +269,8 @@ CMS.registerEditorComponent({
   mode: 'dialog',
   summary: 'Compare: {{ before }} / {{ after }}',
   fields: [
-    { name: 'before', label: 'Before / Left image', widget: 'image', required: true },
-    { name: 'after', label: 'After / Right image', widget: 'image', required: true },
+    { name: 'before', label: 'Before / Left image', widget: 'image', required: true, i18n: 'duplicate' },
+    { name: 'after', label: 'After / Right image', widget: 'image', required: true, i18n: 'duplicate' },
   ],
   pattern: /{{< compare before="(?<before>.*?)" after="(?<after>.*?)" >}}/m,
 
@@ -293,8 +291,8 @@ CMS.registerEditorComponent({
   mode: 'dialog',
   summary: 'Carousel: {{ images }}{{ dir }}',
   fields: [
-    { name: 'images', label: 'Images (optional)', widget: 'image', multiple: true, min: 1, max: 10, required: false },
-    { name: 'dir', label: 'Directory (optional)', widget: 'string', required: false, hint: 'Directory containing images.' },
+    { name: 'images', label: 'Images (optional)', widget: 'image', multiple: true, min: 1, max: 10, required: false, i18n: 'duplicate' },
+    { name: 'dir', label: 'Directory (optional)', widget: 'string', required: false, i18n: 'duplicate', hint: 'Directory containing images.' },
   ],
   pattern: /{{< carousel(?: images="(?<images>.*?)")?(?: dir="(?<dir>.*?)")? >}}/m,
 
@@ -310,19 +308,19 @@ CMS.registerEditorComponent({
 
   toPreview: ({ images }) => {
     const firstImage = Array.isArray(images) ? images[0] : undefined;
-    return `<img src="${firstImage}" style="max-width: 100%; height: auto;">`;
+    return `<img src="${firstImage}" style="max-width: 80%; height: auto;">`;
   },
 });
 
 CMS.registerEditorComponent({
   id: 'card',
-  label: 'Page card',
+  label: 'Page/collection card',
   icon: 'cards_stack',
   mode: 'dialog',
-  summary: 'Cards: {{ path }}',
+  summary: 'Page/collection card: {{ path }}',
   fields: [
-    { name: 'path', label: 'Page path(s)', widget: 'string', hint: 'Enter one or more page paths or basenames, separated by commas (e.g. news, thanks, help).'},
-    { name: 'number', label: 'Number of cards (optional)', widget: 'number', value_type: 'int', min: 1, required: false, hint: 'Maximum number of pages to display.' },
+    { name: 'path', label: 'Page path(s)', widget: 'string', i18n: 'duplicate', hint: 'Enter one or more page paths or basenames, separated by commas (e.g. news, thanks, help).'},
+    { name: 'number', label: 'Number of cards (optional)', widget: 'number', value_type: 'int', min: 1, required: false, i18n: 'duplicate', hint: 'Maximum number of pages to display.' },
   ],
   pattern: /{{< card path="(?<path>.*?)"(?: number=(?<number>\d+))? >}}/m,
 
@@ -333,7 +331,7 @@ CMS.registerEditorComponent({
 
   toBlock: ({ path, number }) => `{{< card path="${path}"${number ? ` number=${number}` : ''} >}}`,
 
-  toPreview: ({ path, number }) => `\n${(path || '').split(',').map(item => item.trim()).filter(Boolean).map(item => `\n<img class="icon" width="24" height="24" src="/svg/folder_open.svg"> Collection: ${item}\n`).join('')}${number ? `<small>${number} card(s)</small>` : ''}\n`,
+  toPreview: ({ path, number }) => `\n${(path || '').split(',').map(item => item.trim()).filter(Boolean).map(item => `\n<img class="icon" width="24" height="24" src="/svg/folder_open.svg"> Page/collection card: ${item}\n`).join('')}${number ? `<small>${number} card(s)</small>` : ''}\n`,
 });
 
 CMS.registerEditorComponent({
@@ -343,16 +341,16 @@ CMS.registerEditorComponent({
   fields: [
     { name: 'title', label: 'Title (optional)', widget: 'string', required: false },
     { name: 'content', label: 'Content', widget: 'richtext' },
-    { name: 'css_class', label: 'CSS class (optional)', widget: 'string', required: false },
-    { name: 'title_class', label: 'Title CSS class (optional)', widget: 'string', required: false },
-    { name: 'content_class', label: 'Content CSS class (optional)', widget: 'string', required: false },
+    { name: 'css_class', label: 'CSS class (optional)', widget: 'string', required: false, i18n: 'duplicate' },
+    { name: 'title_class', label: 'Title CSS class (optional)', widget: 'string', required: false, i18n: 'duplicate' },
+    { name: 'content_class', label: 'Content CSS class (optional)', widget: 'string', required: false, i18n: 'duplicate' },
   ],
-  pattern: /{{< block(?: title="(?<title>.*?)")?(?: css_class="(?<css_class>.*?)")?(?: title_class="(?<title_class>.*?)")?(?: content_class="(?<content_class>.*?)")? >}}\s*(?<content>[\s\S]+?)\s*{{< \/block >}}/m,
+  pattern: /{{< block(?: title="(?<title>.*?)")?(?: css_class="(?<css_class>.*?)")?(?: title_class="(?<title_class>.*?)")?(?: content_class="(?<content_class>.*?)")? >}}(?:\r?\n)?(?<content>[\s\S]*?)(?:\r?\n)?{{< \/block >}}/m,
 
-  toBlock: ({ title, content, css_class, title_class, content_class }) =>
-    `{{< block${title ? ` title="${title}"` : ''}${css_class ? ` css_class="${css_class}"` : ''}${title_class ? ` title_class="${title_class}"` : ''}${content_class ? ` content_class="${content_class}"` : ''} >}}${content}{{< /block >}}`,
+  toBlock: ({ title, content = '', css_class, title_class, content_class }) =>
+    `{{< block${title ? ` title="${title}"` : ''}${css_class ? ` css_class="${css_class}"` : ''}${title_class ? ` title_class="${title_class}"` : ''}${content_class ? ` content_class="${content_class}"` : ''} >}}\n\n${trimNewlines(content)}\n\n{{< /block >}}`,
 
-  toPreview: ({ title, content }) => `\n${title ? `### ${title}\n\n` : ''}${content}\n`,
+  toPreview: ({ title, content = '' }) => `\n${title ? `### ${title}\n\n` : ''}${content}\n`,
 });
 
 CMS.registerEditorComponent({
@@ -361,13 +359,12 @@ CMS.registerEditorComponent({
   icon: 'cards',
   fields: [
     { name: 'content', label: 'Content', widget: 'richtext' },
-    { name: 'css_class', label: 'CSS class (optional)', widget: 'string', required: false },
+    { name: 'css_class', label: 'CSS class (optional)', widget: 'string', required: false, i18n: 'duplicate' },
   ],
-  pattern:
-    /{{< group(?: css_class="(?<css_class>.*?)")? >}}\s*(?<content>[\s\S]+?)\s*{{< \/group >}}/m,
+  pattern: /{{< group(?: css_class="(?<css_class>.*?)")? >}}(?:\r?\n)?(?<content>[\s\S]*?)(?:\r?\n)?{{< \/group >}}/m,
 
-  toBlock: ({ content, css_class }) =>
-    `{{< group${css_class ? ` css_class="${css_class}"` : ''} >}}${content}{{< /group >}}`,
+  toBlock: ({ content = '', css_class }) =>
+    `{{< group${css_class ? ` css_class="${css_class}"` : ''} >}}\n\n${trimNewlines(content)}\n\n{{< /group >}}`,
 
-  toPreview: ({ content }) => `\n${content}\n`,
+  toPreview: ({ content = '' }) => `\n${content}\n`,
 });
