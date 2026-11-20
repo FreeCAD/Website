@@ -97,7 +97,7 @@
   <meta property="og:locale" content="fr_FR">
   <meta property="og:type" content="article">
     <meta property="article:section" content="dev">
-    <meta property="article:modified_time" content="2026-11-13T12:16:55+01:00">
+    <meta property="article:modified_time" content="2026-11-20T16:59:22+01:00">
 </head><body
     class="single type-dev kind-page "
     id="top">
@@ -504,19 +504,19 @@ The <code>tabs</code> shortcode renders the inner content with multiple <code>ta
     <use href="/Website/svg/words.svg#words"></use>
   </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">tabs</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">tab</span><span class="w"> </span><span class="nx">JSON</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">tab</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;JSON&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
 </span></span><span class="line"><span class="cl">  **JSON**: JavaScript Object Notation (JSON) is a standard text-based format for representing structured data.
 </span></span><span class="line"><span class="cl">  ```json
 </span></span><span class="line"><span class="cl">  { &#34;hello&#34;: &#34;world&#34; }
 </span></span><span class="line"><span class="cl">  ```
 </span></span><span class="line"><span class="cl">  <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="nx">tab</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
-</span></span><span class="line"><span class="cl">  <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">tab</span><span class="w"> </span><span class="nx">YAML</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">tab</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;YAML&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
 </span></span><span class="line"><span class="cl">  **YAML**: YAML is a human-readable data serialization language.
 </span></span><span class="line"><span class="cl">  ```yaml
 </span></span><span class="line"><span class="cl">  hello: world
 </span></span><span class="line"><span class="cl">  ```
 </span></span><span class="line"><span class="cl">  <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="nx">tab</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
-</span></span><span class="line"><span class="cl">  <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">tab</span><span class="w"> </span><span class="nx">TOML</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">tab</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;TOML&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
 </span></span><span class="line"><span class="cl">  **TOML**: TOML aims to be a minimal configuration file format that&#39;s easy to read due to obvious semantics.
 </span></span><span class="line"><span class="cl">  ```toml
 </span></span><span class="line"><span class="cl">  hello = &#34;world&#34;
@@ -909,20 +909,20 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     focusable="false">
     <use href="/Website/svg/hash.svg#hash"></use>
   </svg></a>Carousel</h2><p>Trigo shortcode to display a carousel of images with drag, scroll support and optional automatic mode.</p>
-<p>Use either <code>dir</code>, <code>images</code>, or positional image arguments. Do not combine them.</p>
-<p>Directory where all image resources are used for the carousel:</p>
+<p>Use either <code>images</code>, <code>path</code> or positional image arguments. Do not combine them!</p>
+<p>List of images to use with an <code>images</code> parameter:</p>
 <div class="codeblock"><div class="codeblock-file"><svg
     class="icon words"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/words.svg#words"></use>
-  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">carousel</span><span class="w"> </span><span class="nx">dir</span><span class="o">=</span><span class="s">&#34;path/to/directory&#34;</span><span class="w"> </span><span class="nx">mode</span><span class="o">=</span><span class="s">&#34;auto&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p>List of images to use with an <code>images</code> parameter:</p>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">carousel</span><span class="w"> </span><span class="nx">images</span><span class="o">=</span><span class="s">&#34;1.webp, 2.webp, 3.webp&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p>Directory path where all image resources are used for the carousel:</p>
 <div class="codeblock"><div class="codeblock-file"><svg
     class="icon words"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/words.svg#words"></use>
-  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">carousel</span><span class="w"> </span><span class="nx">images</span><span class="o">=</span><span class="s">&#34;1.webp, 2.webp, 3.webp&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p>Images as positional arguments:</p>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">carousel</span><span class="w"> </span><span class="nx">path</span><span class="o">=</span><span class="s">&#34;path/to/directory&#34;</span><span class="w"> </span><span class="nx">mode</span><span class="o">=</span><span class="s">&#34;auto&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p>Images as positional arguments:</p>
 <div class="codeblock"><div class="codeblock-file"><svg
     class="icon words"
     aria-hidden="true"
@@ -955,18 +955,8 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
               alt="Slide-1"
               loading="lazy"
               fetchpriority="low">
-          </li><li id="carousel5-slide2">
-            <img
-              srcset="/Website/dev/web/shortcodes/dir/3_hu_7ed47b1a12e456b5.webp 400w, /Website/dev/web/shortcodes/dir/3.webp 600w"
-              sizes="(max-width: 400px) 400px, 75vw"
-              src="/Website/dev/web/shortcodes/dir/3.webp"
-              width="600"
-              height="600"
-              alt="Slide-2"
-              loading="lazy"
-              fetchpriority="low">
           </li></ul>
-    <ol><li><a href="#carousel5-slide0"></a></li><li><a href="#carousel5-slide1"></a></li><li><a href="#carousel5-slide2"></a></li></ol>
+    <ol><li><a href="#carousel5-slide0"></a></li><li><a href="#carousel5-slide1"></a></li></ol>
     <div class="prev"><svg
     class="icon tri_left"
     aria-hidden="true"
@@ -1011,7 +1001,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
       </tr>
       <tr>
           <td></td>
-          <td>dir</td>
+          <td>path</td>
           <td>string</td>
           <td><em>optional</em></td>
           <td></td>
@@ -1098,7 +1088,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
   </thead>
   <tbody>
       <tr>
-          <td></td>
+          <td>0</td>
           <td>before (alias: left)</td>
           <td>string</td>
           <td><strong>required</strong></td>
@@ -1106,7 +1096,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
           <td>&ldquo;before.webp&rdquo;</td>
       </tr>
       <tr>
-          <td></td>
+          <td>1</td>
           <td>after (alias: right)</td>
           <td>string</td>
           <td><strong>required</strong></td>
@@ -1131,7 +1121,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/words.svg#words"></use>
-  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">canvas</span><span class="w"> </span><span class="nx">path</span><span class="o">=</span><span class="s">&#34;frames-dir&#34;</span><span class="w"> </span><span class="nx">fps</span><span class="o">=</span><span class="s">&#34;12&#34;</span><span class="w"> </span><span class="nx">title</span><span class="o">=</span><span class="s">&#34;Animation title&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p>The path is relative to the current page bundle. To use resources in the <code>static</code> directory of the site, prefix the path with a <code>/</code> slash. External resources (defined from a URL) are not supported at this time. Frames are ordered lexicographically by filename, e.g. <code>001.webp</code>, <code>002.webp</code>.</p>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">canvas</span><span class="w"> </span><span class="nx">path</span><span class="o">=</span><span class="s">&#34;frames-dir&#34;</span><span class="w"> </span><span class="nx">fps</span><span class="o">=</span><span class="nx">12</span><span class="w"> </span><span class="nx">title</span><span class="o">=</span><span class="s">&#34;Animation title&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p>The path is relative to the current page bundle. To use resources in the <code>static</code> directory of the site, prefix the path with a <code>/</code> slash. External resources (defined from a URL) are not supported at this time. Frames are ordered lexicographically by filename, e.g. <code>001.webp</code>, <code>002.webp</code>.</p>
 <p><em><strong>How it renders:</strong></em></p>
 <div
   class="canvas"
@@ -1246,7 +1236,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/words.svg#words"></use>
-  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">button</span><span class="w"> </span><span class="nx">url</span><span class="o">=</span><span class="s">&#34;/news&#34;</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;Button label&#34;</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="s">&#34;time&#34;</span><span class="w">  </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><em><strong>How it renders:</strong></em></p>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">button</span><span class="w"> </span><span class="nx">url</span><span class="o">=</span><span class="s">&#34;news&#34;</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;Button label&#34;</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="s">&#34;time&#34;</span><span class="w">  </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><em><strong>How it renders:</strong></em></p>
 <div class="button-shortcode">
     <a
       href="/Website/fr/news/"
@@ -1277,7 +1267,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
           <td>string</td>
           <td><strong>required</strong></td>
           <td></td>
-          <td>&ldquo;/news&rdquo;</td>
+          <td>&ldquo;news&rdquo;</td>
       </tr>
       <tr>
           <td>1</td>
@@ -1567,13 +1557,13 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/words.svg#words"></use>
-  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">pdf</span><span class="w"> </span><span class="s">&#34;https://example.com/sample.pdf&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p>The PDF file can also be located in the project directory and use the relative path.</p>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">pdf</span><span class="w"> </span><span class="nx">path</span><span class="o">=</span><span class="s">&#34;https://example.com/sample.pdf&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p>The PDF file can also be located in the project directory and use the relative path.</p>
 <div class="codeblock"><div class="codeblock-file"><svg
     class="icon words"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/svg/words.svg#words"></use>
-  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">pdf</span><span class="w"> </span><span class="s">&#34;path/to/file.pdf&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><em><strong>How it renders:</strong></em></p>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">pdf</span><span class="w"> </span><span class="nx">path</span><span class="o">=</span><span class="s">&#34;path/to/file.pdf&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><em><strong>How it renders:</strong></em></p>
 <div class="pdf">
     <iframe
       src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Wikimedia_Commons_web_en.pdf"
@@ -1803,8 +1793,9 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     focusable="false">
     <use href="/Website/svg/words.svg#words"></use>
   </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">youtube</span><span class="w"> </span><span class="nx">id</span><span class="o">=</span><span class="nx">a9biWv_M8p8</span><span class="w"> </span><span class="nx">title</span><span class="o">=</span><span class="s">&#34;My video title&#34;</span><span class="w"> </span><span class="nx">start</span><span class="o">=</span><span class="nx">30</span><span class="w"> </span><span class="nx">loading</span><span class="o">=</span><span class="nx">lazy</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><em><strong>How it renders:</strong></em></p>
+<p>{{&lt; youtube id=a9biWv_M8p8 title=&ldquo;My video title&rdquo; start=30 loading=lazy &gt;}}</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/a9biWv_M8p8?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=30" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="My video title"></iframe>
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/a9biWv_M8p8?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
     </div>
 
 <p>For more information, see <a
@@ -2429,9 +2420,9 @@ If not nested in another shortcode, a full-width layout block is rendered around
   </svg></a>
 </span>
 <span>
-    Modified: 2026-11-13
+    Modified: 2026-11-20
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/b095e31107d31e1cba72e64722df5f462efb916c">b095e31107<svg
+      Commit: <a href="https://github.com/freecad/website/commit/51b20f2d6cf6706c186c7d8ced47005e75fa2abc">51b20f2d6c<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

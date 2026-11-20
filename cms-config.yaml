@@ -72,6 +72,34 @@ output:
 field_defaults:
   richtext:
     linked_images: false
+    captioned_images: false
+    editor_components:
+      - image
+      - table
+      - code-block
+      - hr
+      - video
+      - youtube
+      - peertube
+      - button
+      - marker
+      - kbd
+      - abbr
+      - git
+      - mark
+      - ins
+      - del
+      - details
+      - steps
+      - tab
+      - tabs
+      - pdf
+      - compare
+      - carousel
+      - canvas
+      - card
+      - block
+      - group
 
 collections:
 
@@ -87,7 +115,7 @@ collections:
         label: Homepage
         file: 'content/{{locale}}/_index.md'
         icon: home
-        summary: "Homepage - **{{title}}** · {{locales | upper}}"
+        summary: 'Homepage - **{{title}}** · {{locales | upper}}'
         i18n: true
         fields:
           - name: title
@@ -134,7 +162,7 @@ collections:
         label: Features
         file: 'content/{{locale}}/features/_index.md'
         icon: bolt
-        summary: "Features - **{{title}}** · {{locales | upper}}"
+        summary: 'Features - **{{title}}** · {{locales | upper}}'
         i18n: true
         fields:
           - name: title
@@ -172,18 +200,23 @@ collections:
     path: '{{slug}}/index'
     nested:
       depth: 5
-      summary: '{{title}}'
+      summary: '**{{title}}**'
       subfolders: true
     meta: { path: { index_file: _index } }
     media_folder: ''
     public_folder: ''
     thumbnail: ['/{{slug}}.webp', 'cover.image']
     icon: download
-    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{author | default('no author')}} · {{locales | upper}}"
+    summary: '**{{title}}**'
     reorder:
       key: weight
     i18n: true
-
+    table_columns:
+      - { field: '_summary', label: Title }
+      - { field: '{{locales | upper}}', label: Languages }
+      - draft
+    sortable_fields:
+      fields: [title, draft]
     view_filters:
       filters:
         - name: drafts
@@ -198,7 +231,7 @@ collections:
       name: _index
       label: Download Index
       icon: download
-      summary: "Download Index - **{{title}}** · {{locales | upper}}"
+      summary: 'Download Index - **{{title}}**'
       i18n: true
       fields:
         - name: title
@@ -230,7 +263,6 @@ collections:
           widget: richtext
           i18n: true
           required: false
-
     fields:
       - name: title
         label: Title
@@ -254,13 +286,13 @@ collections:
         widget: datetime
         type: date
         i18n: duplicate
+        required: false
       - name: draft
         label: Draft
         widget: boolean
         default: false
         i18n: duplicate
         required: false
-      
       - name: cover
         label: Cover
         widget: object
@@ -284,11 +316,23 @@ collections:
     public_folder: ''
     thumbnail: ['/{{slug}}.webp', 'cover.image']
     icon: update
-    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{author | default('no author')}} · {{locales | upper}}"
+    summary: '**{{title}}**'
     reorder:
       key: weight
     i18n: true
-
+    table_columns:
+      - { field: '_summary', label: Title }
+      - date
+      - { field: '{{locales | upper}}', label: Languages }
+      - draft
+    sortable_fields:
+      fields: [title, date, draft]
+    view_groups:
+      groups:
+        - name: year
+          label: Year
+          field: date
+          pattern: '\d{4}'
     view_filters:
       filters:
         - name: drafts
@@ -303,7 +347,7 @@ collections:
       name: _index
       label: Releases Index
       icon: update
-      summary: "Releases Index - **{{title}}** · {{locales | upper}}"
+      summary: 'Releases Index - **{{title}}**'
       i18n: true
       fields:
         - name: title
@@ -335,7 +379,6 @@ collections:
           widget: richtext
           i18n: true
           required: false
-
     fields:
       - name: title
         label: Title
@@ -351,13 +394,13 @@ collections:
         widget: datetime
         type: date
         i18n: duplicate
+        required: true
       - name: draft
         label: Draft
         widget: boolean
         default: false
         i18n: duplicate
         required: false
-      
       - name: cover
         label: Cover
         widget: object
@@ -381,16 +424,19 @@ collections:
     public_folder: ''
     thumbnail: ['/{{slug}}.webp', 'cover.image']
     icon: brand_awareness
-    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{author | default('no author')}} · {{locales | upper}}"
+    summary: '**{{title}}**'
     reorder:
       key: weight
     i18n: true
+    table_columns:
+      - { field: '_summary', label: Title }
+      - date
+      - author
+      - category
+      - { field: '{{locales | upper}}', label: Languages }
+      - draft
     sortable_fields:
-      fields: [title, date, author, category]
-      default:
-        field: date
-        direction: descending
-
+      fields: [title, date, author, category, draft]
     view_groups:
       groups:
         - name: year
@@ -401,7 +447,6 @@ collections:
           label: Category
           field: category
       default: year
-
     view_filters:
       filters:
         - name: drafts
@@ -436,7 +481,7 @@ collections:
       name: _index
       label: News Index
       icon: brand_awareness
-      summary: "News Index - **{{title}}** · {{locales | upper}}"
+      summary: 'News Index - **{{title}}**'
       i18n: true
       fields:
         - name: title
@@ -468,7 +513,6 @@ collections:
           widget: richtext
           i18n: true
           required: false
-
     fields:
       - name: title
         label: Title
@@ -484,6 +528,7 @@ collections:
         widget: datetime
         type: date
         i18n: duplicate
+        required: true
       - name: draft
         label: Draft
         widget: boolean
@@ -535,11 +580,16 @@ collections:
     public_folder: ''
     thumbnail: ['/{{slug}}.webp', 'cover.image']
     icon: groups
-    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{author | default('no author')}} · {{locales | upper}}"
+    summary: '**{{title}}**'
     reorder:
       key: weight
     i18n: true
-
+    table_columns:
+      - { field: '_summary', label: Title }
+      - { field: '{{locales | upper}}', label: Languages }
+      - draft
+    sortable_fields:
+      fields: [title, draft]
     view_filters:
       filters:
         - name: drafts
@@ -554,7 +604,7 @@ collections:
       name: _index
       label: Community Index
       icon: groups
-      summary: "Community Index - **{{title}}** · {{locales | upper}}"
+      summary: 'Community Index - **{{title}}**'
       i18n: true
       fields:
         - name: title
@@ -586,7 +636,6 @@ collections:
           widget: richtext
           i18n: true
           required: false
-
     fields:
       - name: title
         label: Title
@@ -610,13 +659,13 @@ collections:
         widget: datetime
         type: date
         i18n: duplicate
+        required: false
       - name: draft
         label: Draft
         widget: boolean
         default: false
         i18n: duplicate
         required: false
-      
       - name: cover
         label: Cover
         widget: object
@@ -644,7 +693,7 @@ collections:
         label: Docs
         file: 'content/{{locale}}/docs/_index.md'
         icon: docs
-        summary: "Docs - **{{title}}** · {{locales | upper}}"
+        summary: 'Docs - **{{title}}** · {{locales | upper}}'
         i18n: true
         fields:
           - name: title
@@ -688,7 +737,7 @@ collections:
         label: Manual
         file: 'content/{{locale}}/manual/_index.md'
         icon: menu_book
-        summary: "Manual - **{{title}}** · {{locales | upper}}"
+        summary: 'Manual - **{{title}}** · {{locales | upper}}'
         i18n: true
         fields:
           - name: title
@@ -726,18 +775,23 @@ collections:
     path: '{{slug}}/index'
     nested:
       depth: 5
-      summary: '{{title}}'
+      summary: '**{{title}}**'
       subfolders: true
     meta: { path: { index_file: _index } }
     media_folder: ''
     public_folder: ''
     thumbnail: ['/{{slug}}.webp', 'cover.image']
     icon: logo_dev
-    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{author | default('no author')}} · {{locales | upper}}"
+    summary: '**{{title}}**'
     reorder:
       key: weight
     i18n: true
-
+    table_columns:
+      - { field: '_summary', label: Title }
+      - { field: '{{locales | upper}}', label: Languages }
+      - draft
+    sortable_fields:
+      fields: [title, draft]
     view_filters:
       filters:
         - name: drafts
@@ -752,7 +806,7 @@ collections:
       name: _index
       label: Dev Index
       icon: logo_dev
-      summary: "Dev Index - **{{title}}** · {{locales | upper}}"
+      summary: 'Dev Index - **{{title}}**'
       i18n: true
       fields:
         - name: title
@@ -784,7 +838,6 @@ collections:
           widget: richtext
           i18n: true
           required: false
-
     fields:
       - name: title
         label: Title
@@ -808,13 +861,13 @@ collections:
         widget: datetime
         type: date
         i18n: duplicate
+        required: false
       - name: draft
         label: Draft
         widget: boolean
         default: false
         i18n: duplicate
         required: false
-      
       - name: cover
         label: Cover
         widget: object
@@ -842,7 +895,7 @@ collections:
         label: API
         file: 'content/{{locale}}/api/_index.md'
         icon: code_xml
-        summary: "API - **{{title}}** · {{locales | upper}}"
+        summary: 'API - **{{title}}** · {{locales | upper}}'
         i18n: true
         fields:
           - name: title
@@ -886,7 +939,7 @@ collections:
         label: Donate
         file: 'content/{{locale}}/donate/_index.md'
         icon: favorite
-        summary: "Donate - **{{title}}** · {{locales | upper}}"
+        summary: 'Donate - **{{title}}** · {{locales | upper}}'
         i18n: true
         fields:
           - name: title
@@ -917,7 +970,6 @@ collections:
             required: false
 
   - divider: true
-
   - name: author
     label: Author taxonomy
     folder: 'content/{{locale}}/author'
@@ -938,7 +990,6 @@ collections:
         i18n: true
 
   - divider: true
-
   - name: category
     label: Category taxonomy
     folder: 'content/{{locale}}/category'
@@ -960,7 +1011,6 @@ collections:
         i18n: true
 
   - divider: true
-
   - name: theme
     label: Theme i18n
     icon: language
@@ -1036,7 +1086,6 @@ singletons:
         value_label: CSS value
 
   - divider: true
-
   - name: sponsors
     label: Sponsors list
     file: data/sponsors.yaml
