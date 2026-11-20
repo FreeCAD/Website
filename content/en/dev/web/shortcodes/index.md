@@ -79,19 +79,19 @@ The `tabs` shortcode renders the inner content with multiple `tab` shortcodes.
 ````html {file="markdown"}
 {{</* tabs >}}
 
-  {{< tab JSON >}}
+  {{< tab label="JSON" >}}
   **JSON**: JavaScript Object Notation (JSON) is a standard text-based format for representing structured data.
   ```json
   { "hello": "world" }
   ```
   {{< /tab >}}
-  {{< tab YAML >}}
+  {{< tab label="YAML" >}}
   **YAML**: YAML is a human-readable data serialization language.
   ```yaml
   hello: world
   ```
   {{< /tab >}}
-  {{< tab TOML >}}
+  {{< tab label="TOML" >}}
   **TOML**: TOML aims to be a minimal configuration file format that's easy to read due to obvious semantics.
   ```toml
   hello = "world"
@@ -104,19 +104,19 @@ The `tabs` shortcode renders the inner content with multiple `tab` shortcodes.
 ***How it renders:***
 
 {{< tabs >}}
-  {{< tab JSON >}}
+  {{< tab label="JSON" >}}
   **JSON**: JavaScript Object Notation (JSON) is a standard text-based format for representing structured data.
   ```json
   { "hello": "world" }
   ```
   {{< /tab >}}
-  {{< tab YAML >}}
+  {{< tab label="YAML" >}}
   **YAML**: YAML is a human-readable data serialization language.
   ```yaml
   hello: world
   ```
   {{< /tab >}}
-  {{< tab TOML >}}
+  {{< tab label="TOML" >}}
   **TOML**: TOML aims to be a minimal configuration file format that's easy to read due to obvious semantics.
   ```toml
   hello = "world"
@@ -248,18 +248,18 @@ Trigo shortcode to display a filetree list with inner content/branches/leaves an
 
 Trigo shortcode to display a carousel of images with drag, scroll support and optional automatic mode.
 
-Use either `dir`, `images`, or positional image arguments. Do not combine them.
-
-Directory where all image resources are used for the carousel:
-
-```html {file="markdown"}
-{{</* carousel dir="path/to/directory" mode="auto" */>}}
-```
+Use either `images`, `path` or positional image arguments. Do not combine them!
 
 List of images to use with an `images` parameter:
 
 ```html {file="markdown"}
 {{</* carousel images="1.webp, 2.webp, 3.webp" */>}}
+```
+
+Directory path where all image resources are used for the carousel:
+
+```html {file="markdown"}
+{{</* carousel path="path/to/directory" mode="auto" */>}}
 ```
 
 Images as positional arguments:
@@ -272,7 +272,7 @@ The path is relative to the current page bundle. To use resources in the `static
 
 ***How it renders:***
 
-{{< carousel dir="dir" mode="auto" >}}
+{{< carousel images="dir/1.webp, dir/2.webp" mode="auto" >}}
 
 ***`carousel` arguments:***
 
@@ -280,7 +280,7 @@ The path is relative to the current page bundle. To use resources in the `static
 | --- | --- | --- | --- | --- | --- |
 | | unnamed | string[] | *optional* | | "1.webp" |
 | | images | string | *optional* | | "1.webp, 2.webp" |
-| | dir | string | *optional* | | "path/to/dir" |
+| | path | string | *optional* | | "path/to/dir" |
 | | mode | string | "fixed" | "fixed" or "auto" | "auto" |
 | | duration | int[ms] | 5000 | | 1000 |
 
@@ -304,8 +304,8 @@ The path is relative to the current page bundle. To use resources in the `static
 
 | Position | Argument| Type | Default | Options | Example value |
 | --- | --- | --- | --- | --- | --- |
-| | before (alias: left) | string | **required** | | "before.webp" |
-| | after (alias: right) | string | **required** | | "after.webp" |
+| 0 | before (alias: left) | string | **required** | | "before.webp" |
+| 1 | after (alias: right) | string | **required** | | "after.webp" |
 
 ## Canvas
 
@@ -314,14 +314,14 @@ Trigo shortcode to display an animated canvas based on a sequence of images with
 Specify a directory path with the sequence of named images, optionally the animation speed as FPS and a title.
 
 ```html {file="markdown"}
-{{</* canvas path="frames-dir" fps="12" title="Animation title" */>}}
+{{</* canvas path="frames-dir" fps=12 title="Animation title" */>}}
 ```
 
 The path is relative to the current page bundle. To use resources in the `static` directory of the site, prefix the path with a `/` slash. External resources (defined from a URL) are not supported at this time. Frames are ordered lexicographically by filename, e.g. `001.webp`, `002.webp`.
 
 ***How it renders:***
 
-{{< canvas path="frames" fps="12" title="Press spacebar to animate me! Or grab, scroll and use keyboard arrows too!" >}}
+{{< canvas path="frames" fps=12 title="Press spacebar to animate me! Or grab, scroll and use keyboard arrows too!" >}}
 
 ***`canvas` arguments:***
 
@@ -336,18 +336,18 @@ The path is relative to the current page bundle. To use resources in the `static
 Trigo shortcode to add a link as a clickable button with optional icon and label.
 
 ```html {file="markdown"}
-{{</* button url="/news" label="Button label" icon="time"  */>}}
+{{</* button url="news" label="Button label" icon="time"  */>}}
 ```
 
 ***How it renders:***
 
-{{< button url="/news" label="Button label" icon="time" >}}
+{{< button url="news" label="Button label" icon="time" >}}
 
 ***`button` arguments:***
 
 | Position | Argument| Type | Default | Options | Example value |
 | --- | --- | --- | --- | --- | --- |
-| 0 | url | string | **required** | | "/news" |
+| 0 | url | string | **required** | | "news" |
 | 1 | label | string | *optional* | | "Button label" |
 | 2 | icon | string | *optional* | | "heart" |
 | 3 | css_class | string | *optional* | custom CSS classes | "accent" |
@@ -438,18 +438,18 @@ and a pull request: {{< git url="https://github.com/user/repo/pull/123" >}}.
 Trigo shortcode to display an embedded PDF file.
 
 ```html {file="markdown"}
-{{</* pdf "https://example.com/sample.pdf" */>}}
+{{</* pdf path="https://example.com/sample.pdf" */>}}
 ```
 
 The PDF file can also be located in the project directory and use the relative path.
 
 ```html {file="markdown"}
-{{</* pdf "path/to/file.pdf" */>}}
+{{</* pdf path="path/to/file.pdf" */>}}
 ```
 
 ***How it renders:***
 
-{{< pdf "https://upload.wikimedia.org/wikipedia/commons/0/0c/Wikimedia_Commons_web_en.pdf" >}}
+{{< pdf path="https://upload.wikimedia.org/wikipedia/commons/0/0c/Wikimedia_Commons_web_en.pdf" >}}
 
 ***`pdf` arguments:***
 
@@ -519,7 +519,9 @@ Hugo built-in shortcode to embed a YouTube video.
 
 ***How it renders:***
 
-{{< youtube id=a9biWv_M8p8 title="My video title" start=30 loading=lazy >}}
+{{</* youtube id=a9biWv_M8p8 title="My video title" start=30 loading=lazy */>}}
+
+{{< youtube id=a9biWv_M8p8 >}}
 
 For more information, see [Hugo's YouTube shortcode](https://gohugo.io/shortcodes/youtube/).
 
