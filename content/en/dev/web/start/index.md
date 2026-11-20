@@ -65,7 +65,7 @@ To view the website locally, open the web browser at the indicated address, by d
 
 ### Deployment
 
-Changes reach the public website through pull requests to the `main` branch, which require an approving review, except for bloggers' news posts within set limits (see [Publishing news](news)). Every environment is built from `main`:
+Changes reach the public website through pull requests to the `main` branch, which require an approving review, except for bloggers' news posts within set limits (see [Publishing news](publish)). Every environment is built from `main`:
 
 - **Development:** your local clone. The result can be seen on the web browser after following the [Building instructions above](#building).
 - **Testing:** [GitHub Pages](https://freecad.github.io/Website/), rebuilt automatically by the `Main build & deploy` workflow whenever `main` receives a new commit. The built site is stored in the `pages` branch. Maintainers can also publish a preview of a pull request at `https://freecad.github.io/Website/pr-<number>/` with the `Preview` workflow; it is removed when the pull request is closed.

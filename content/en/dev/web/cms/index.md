@@ -66,7 +66,7 @@ This workflow needs write access to the `FreeCAD/Website` repository: a token ca
 
 ### 3. Fork (Open Authoring)
 
-Without write access to the repository, the CMS works in a fork of it under your own GitHub account, and each saved entry becomes a pull request from that fork. Sign in with a classic personal access token with only the `public_repo` scope; no approval by the FreeCAD organization is needed. The steps are on the [Publishing news](news#signing-in) page.
+Without write access to the repository, the CMS works in a fork of it under your own GitHub account, and each saved entry becomes a pull request from that fork. Sign in with a classic personal access token with only the `public_repo` scope; no approval by the FreeCAD organization is needed. The steps are on the [Publishing news](publish#signing-in) page.
 
 
 ## Using the CMS
@@ -161,7 +161,7 @@ This allows to come back at a later time to make more changes.
 When the page is ready for review by reviewers, the `Draft` status is removed and the changes are labelled for review.
 After the page is fully reviewed and validated, it gets published.
 
-Behind the scenes, each entry with unpublished changes is a branch named `cms/<collection>/<slug>` with a pull request against the `main` branch: `Draft` is a draft pull request, and the review stages are pull request labels. Publishing merges the pull request. The `main` branch requires an approving review from someone other than the author, so a maintainer has to approve the pull request before it can be published. The exception is news posts by bloggers, which publish on their own when they stay within set limits (see [Publishing news](news)). Merged changes appear on the public website and the [testing site](https://freecad.github.io/Website/) within minutes (see [Deployment](start#deployment)).
+Behind the scenes, each entry with unpublished changes is a branch named `cms/<collection>/<slug>` with a pull request against the `main` branch: `Draft` is a draft pull request, and the review stages are pull request labels. Publishing merges the pull request. The `main` branch requires an approving review from someone other than the author, so a maintainer has to approve the pull request before it can be published. The exception is news posts by bloggers, which publish on their own when they stay within set limits (see [Publishing news](publish)). Merged changes appear on the public website and the [testing site](https://freecad.github.io/Website/) within minutes (see [Deployment](start#deployment)).
 
 More technical details on the Editorial Workflow can be found on the [CMS docs](https://sveltiacms.app/en/docs/)
 

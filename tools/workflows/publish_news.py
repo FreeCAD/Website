@@ -31,7 +31,7 @@ import yaml
 
 API: Final = os.environ.get("GITHUB_API_URL", "https://api.github.com")
 BLOGGERS_FILE: Final = Path(".github/bloggers.yml")
-DOCS_URL: Final = "https://www.freecad.org/dev/web/news/"
+DOCS_URL: Final = "https://www.freecad.org/dev/web/publish/"
 MARKER: Final = "<!-- publish-news -->"
 RAW: Final = "application/vnd.github.raw"
 

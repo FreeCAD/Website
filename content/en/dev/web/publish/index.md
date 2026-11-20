@@ -1,6 +1,6 @@
 ---
 title: Publishing news
-linkTitle: News
+linkTitle: Publishing
 description: How bloggers write and publish news posts on the FreeCAD website.
 weight: 10
 ---
