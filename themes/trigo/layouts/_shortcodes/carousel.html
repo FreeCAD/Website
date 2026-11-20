@@ -13,14 +13,14 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 
   @param {string[]} [unnamed] – List of image paths or URLs.
   @param {string} [images] – Comma-separated list of image paths or URLs.
-  @param {string} [dir] – Directory to load images from. Can be page bundle or static/assets directories.
+  @param {string} [path] – Directory path to load images from. Can be page bundle or static/assets directories.
   @param {string} [mode="fixed"] – Carousel mode: "fixed" (manual) or "auto" (automatic rotation).
   @param {int} [duration=5000] – Slide rotation time in milliseconds (only for auto mode).
 
   @return {HTML} Render carousel of images with controls and interaction.
 
   @example {{< carousel images="img1.jpg, img2.jpg, img3.jpg" mode="auto" duration="3000" >}}
-  @example {{< carousel dir="gallery" >}}
+  @example {{< carousel path="gallery" >}}
   @example {{< carousel "image1.jpg" "image2.jpg" >}}
 
 */ -}}
@@ -35,7 +35,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 {{- $format := site.Params.resize_format | default "webp" -}}
 {{- $resize_dimensions := site.Params.resize_dimensions | default (slice 400 800) -}}
 
-{{- if and (not .IsNamedParams) (not (.Get "dir")) (gt (len .Params) 0) -}}
+{{- if and (not .IsNamedParams) (not (.Get "path")) (gt (len .Params) 0) -}}
   {{- range .Params -}}
     {{- $images = $images | append . -}}
   {{- end -}}
@@ -49,18 +49,18 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   {{- end -}}
 {{- end -}}
 
-{{- with .Get "dir" -}}
-  {{- $dir := trim . " \t\r\n/" -}}
+{{- with .Get "path" -}}
+  {{- $path := trim . " \t\r\n/" -}}
   {{- $files := slice -}}
-  {{- $bundle := try ($page.Resources.Match (printf "%s/*" $dir)) -}}
+  {{- $bundle := try ($page.Resources.Match (printf "%s/*" $path)) -}}
   {{- if not $bundle.Err -}}
     {{- $files = $bundle.Value -}}
   {{- else -}}
-    {{- $global = try (resources.Match (printf "%s/*" $dir)) -}}
+    {{- $global = try (resources.Match (printf "%s/*" $path)) -}}
     {{- if not $global.Err -}}
       {{- $files = $global.Value -}}
     {{- else -}}
-      {{- warnf "%q shortcode: no images found for dir %q on page %s" $.Name $dir $page.File.Path -}}
+      {{- warnf "%q shortcode: no images found for directory path %q on page %s" $.Name $path $page.File.Path -}}
     {{- end -}}
   {{- end -}}
 

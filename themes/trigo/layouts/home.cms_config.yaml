@@ -106,6 +106,34 @@ output:
 field_defaults:
   richtext:
     linked_images: false
+    captioned_images: false
+    editor_components:
+      - image
+      - table
+      - code-block
+      - hr
+      - video
+      - youtube
+      - peertube
+      - button
+      - marker
+      - kbd
+      - abbr
+      - git
+      - mark
+      - ins
+      - del
+      - details
+      - steps
+      - tab
+      - tabs
+      - pdf
+      - compare
+      - carousel
+      - canvas
+      - card
+      - block
+      - group
 
 collections:
 
@@ -121,7 +149,7 @@ collections:
         label: Homepage
         file: '{{ "content/{{locale}}/_index.md" }}'
         icon: home
-        summary: "{{ "Homepage - **{{title}}** · {{locales | upper}}" }}"
+        summary: '{{ "Homepage - **{{title}}** · {{locales | upper}}" }}'
         i18n: true
         fields:
           - name: title
@@ -175,7 +203,7 @@ collections:
         label: {{ $label }}
         file: '{{ printf "content/{{locale}}/%s/_index.md" $section }}'
         icon: {{ .Page.Params.icon_cms }}
-        summary: "{{ printf "%s - **{{title}}** · {{locales | upper}}" $label }}"
+        summary: '{{ printf "%s - **{{title}}** · {{locales | upper}}" $label }}'
         i18n: true
         fields:
           - name: title
@@ -223,7 +251,7 @@ collections:
     {{- if and .Sections .RegularPagesRecursive }}
     nested:
       depth: 5
-      summary: '{{ "{{title}}" }}'
+      summary: '{{ "**{{title}}**" }}'
       subfolders: true
     meta: {{ "{ path: { index_file: _index } }" }}
     {{- end }}
@@ -231,18 +259,20 @@ collections:
     public_folder: ''
     thumbnail: {{ "['/{{slug}}.webp', 'cover.image']" }}
     icon: {{ .Page.Params.icon_cms }}
-    summary: "{{ "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{author | default('no author')}} · {{locales | upper}}" }}"
+    summary: '{{ "**{{title}}**" }}'
     reorder:
       key: weight
     i18n: true
-
     {{- if eq $section (index site.MainSections 0) }}
+    table_columns:
+      - { field: '_summary', label: Title }
+      - date
+      - author
+      - category
+      - { field: '{{ "{{locales | upper}}" }}', label: Languages }
+      - draft
     sortable_fields:
-      fields: [title, date, author, category]
-      default:
-        field: date
-        direction: descending
-
+      fields: [title, date, author, category, draft]
     view_groups:
       groups:
         - name: year
@@ -253,8 +283,28 @@ collections:
           label: Category
           field: category
       default: year
+    {{- else if eq $section (index site.MainSections 3) }}
+    table_columns:
+      - { field: '_summary', label: Title }
+      - date
+      - { field: '{{ "{{locales | upper}}" }}', label: Languages }
+      - draft
+    sortable_fields:
+      fields: [title, date, draft]
+    view_groups:
+      groups:
+        - name: year
+          label: Year
+          field: date
+          pattern: '\d{4}'
+    {{- else }}
+    table_columns:
+      - { field: '_summary', label: Title }
+      - { field: '{{ "{{locales | upper}}" }}', label: Languages }
+      - draft
+    sortable_fields:
+      fields: [title, draft]
     {{- end }}
-
     view_filters:
       filters:
         - name: drafts
@@ -277,7 +327,7 @@ collections:
       name: _index
       label: {{ $label }} Index
       icon: {{ .Page.Params.icon_cms }}
-      summary: "{{ printf "%s Index - **{{title}}** · {{locales | upper}}" $label }}"
+      summary: '{{ printf "%s Index - **{{title}}**" $label }}'
       i18n: true
       fields:
         - name: title
@@ -309,7 +359,6 @@ collections:
           widget: richtext
           i18n: true
           required: false
-
     fields:
       - name: title
         label: Title
@@ -320,7 +369,6 @@ collections:
         widget: string
         i18n: true
         required: false
-
       {{- if .Sections }}
       - name: linkTitle
         label: Link Title
@@ -336,13 +384,14 @@ collections:
         widget: datetime
         type: date
         i18n: duplicate
+        required: {{ or (eq $section (index site.MainSections 0)) (eq $section (index site.MainSections 3)) }}
       - name: draft
         label: Draft
         widget: boolean
         default: false
         i18n: duplicate
         required: false
-      {{ if eq $section (index site.MainSections 0) -}}
+      {{- if eq $section (index site.MainSections 0) }}
       - name: author
         label: Author
         widget: relation
@@ -382,7 +431,6 @@ collections:
 {{- end }}
 
   - divider: true
-
   - name: author
     label: Author taxonomy
     folder: '{{ "content/{{locale}}/author" }}'
@@ -403,7 +451,6 @@ collections:
         i18n: true
 
   - divider: true
-
   - name: category
     label: Category taxonomy
     folder: '{{ "content/{{locale}}/category" }}'
@@ -425,7 +472,6 @@ collections:
         i18n: true
 
   - divider: true
-
   - name: theme
     label: Theme i18n
     icon: language
@@ -501,7 +547,6 @@ singletons:
         value_label: CSS value
 
   - divider: true
-
   - name: sponsors
     label: Sponsors list
     file: data/sponsors.yaml
