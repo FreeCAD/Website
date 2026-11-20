@@ -72,7 +72,7 @@ Changes reach the public website through pull requests to the `main` branch, whi
 - **Staging:** [staging.freecad.org](https://staging.freecad.org/), on FreeCAD's server. Same server setup as production, but hidden from search engines.
 - **Production:** [www.freecad.org](https://www.freecad.org/), on FreeCAD's server.
 
-Staging and production are updated by the `Deploy` workflow. It deploys production on every new commit on `main` and every hour, so that posts dated in the future appear within an hour of their date. Staging is deployed by starting the workflow by hand from the repository's Actions tab, and a maintainer must approve the run; production can be deployed the same way. The server then fetches `main`, builds it with Hugo, and switches the site to the new build only if the build succeeds.
+Staging and production are updated by the `Deploy` workflow. It deploys production on every new commit on `main` and every day, so that posts dated in the future appear within the next day. Staging is deployed by starting the workflow by hand from the repository's Actions tab, and a maintainer must approve the run; production can be deployed the same way. The server then fetches `main`, builds it with Hugo, and switches the site to the new build only if the build succeeds.
 
 > [!NOTE]
 > Until the new website replaces the current one, www.freecad.org still serves the previous website from the [FreeCAD-Homepage](https://github.com/FreeCAD/FreeCAD-Homepage) repository.
