@@ -14,9 +14,11 @@ Usage:
 Environment: GITHUB_TOKEN, GITHUB_REPOSITORY, PR_NUMBER, and GITHUB_OUTPUT (check) or REASONS (comment).
 """
 
+import html
 import json
 import os
 import re
+import subprocess
 import sys
 import urllib.error
 import urllib.parse
@@ -24,6 +26,8 @@ import urllib.request
 import uuid
 from pathlib import Path
 from typing import Any, Final
+
+import yaml
 
 API: Final = os.environ.get("GITHUB_API_URL", "https://api.github.com")
 BLOGGERS_FILE: Final = Path(".github/bloggers.yml")
@@ -37,7 +41,7 @@ BASE_BRANCH: Final = "main"
 # they just flag it for review, so keep them relatively conservative. As of this writing, the largest blog post ever was
 # 15 files.
 MAX_FILES: Final = 25
-MAX_FILE_BYTES: Final = 20 * 1024 * 1024
+MAX_FILE_BYTES: Final = 5 * 1024 * 1024
 
 # content/<lang>/news/<anything>.<ext>, but NOT a section page, e.g. _index.md.
 PATH_RE: Final = re.compile(
@@ -52,12 +56,56 @@ ALLOWED_KEYS: Final = frozenset({
     "author", "category", "tags", "cover",
 })
 EMPTY_ONLY_KEYS: Final = frozenset({"redirect"})
-EMPTY_VALUES: Final = frozenset({"", '""', "''", "null", "~"})
+EMPTY_VALUES: Final = frozenset({"", None})
 
 # Raw HTML is rendered by the site as-is (markup.goldmark.renderer.unsafe), so only basic formatting tags are accepted,
 # and no attributes are allowed.
 ALLOWED_TAGS: Final = frozenset({"sub", "sup", "kbd", "code", "em", "strong", "br"})
-ALLOWED_SHORTCODES: Final = frozenset({"youtube", "video", "peertube"})
+ALLOWED_SHORTCODES: Final = frozenset({
+    "abbr",
+    "block",
+    "branch",
+    "button",
+    "canvas",
+    "card",
+    "carousel",
+    "compare",
+    "details",
+    "git",
+    "group",
+    "kbd",
+    "leaf",
+    "marker",
+    "pdf",
+    "peertube",
+    "steps",
+    "tab",
+    "tabs",
+    "toot",
+    "tree",
+    "video",
+})
+
+
+class UniqueKey(yaml.SafeLoader):
+    """Safe YAML loader that rejects duplicate map keys."""
+
+
+def unique(loader: UniqueKey, node: yaml.MappingNode, deep: bool = False) -> dict:
+    mapping = {}
+    for key_node, value_node in node.value:
+        key = loader.construct_object(key_node, deep=deep)
+        if key in mapping:
+            raise yaml.constructor.ConstructorError(
+                "while constructing a mapping",
+                node.start_mark,
+                f"duplicate key {key!r}",
+                key_node.start_mark)
+        mapping[key] = loader.construct_object(value_node, deep=deep)
+    return mapping
+
+
+UniqueKey.add_constructor(yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, unique)
 
 
 def github_request(path: str, method: str = "GET", data: Any = None,
@@ -90,19 +138,12 @@ def paginate(path: str) -> list[Any]:
 
 
 def load_bloggers() -> set[str]:
-    logins: set[str] = set()
-    in_list = False
-    for line in BLOGGERS_FILE.read_text(encoding="utf-8").splitlines():
-        line = line.split("#", 1)[0].rstrip()
-        if not line:
-            continue
-        if re.fullmatch(r"bloggers:", line):
-            in_list = True
-        elif in_list and (m := re.fullmatch(r"\s*-\s*([A-Za-z0-9-]+)", line)):
-            logins.add(m[1].lower())
-        else:
-            in_list = False
-    return logins
+    data = yaml.safe_load(BLOGGERS_FILE.read_text(encoding="utf-8"))
+    if not isinstance(data, dict) or not isinstance(data.get("bloggers"), list):
+        raise ValueError("bloggers.yml must contain a bloggers list")
+    if not all(isinstance(login, str) and re.fullmatch(r"[A-Za-z0-9-]+", login) for login in data["bloggers"]):
+        raise ValueError("bloggers.yml contains an invalid username")
+    return {login.lower() for login in data["bloggers"]}
 
 
 def check_path(path: str) -> str | None:
@@ -127,20 +168,22 @@ def check_markdown(path: str, text: str) -> list[str]:
         return [f"`{path}`: no YAML front matter between `---` lines"]
     front, body = m[1], m[2]
 
-    for line in front.split("\n"):
-        if not line.strip() or line.lstrip().startswith("#"):
+    try:
+        fields = yaml.load(front, Loader=UniqueKey)
+        if not isinstance(fields, dict):
+            raise ValueError("front matter must be a YAML mapping")
+    except (yaml.YAMLError, ValueError, TypeError) as e:
+        return [f"`{path}`: invalid YAML front matter ({str(e).splitlines()[0]})"]
+
+    for key, value in fields.items():
+        if not isinstance(key, str):
+            reasons.append(f"`{path}`: front matter contains invalid non-string key")
+        elif key in ALLOWED_KEYS:
             continue
-        if line[0] in " \t-":
-            continue  # part of the previous field's value
-        km = re.match(r"([a-z][A-Za-z]*):(?:\s(.*)|$)", line)
-        key: str | None = km[1] if km else None
-        value: str | None = (km[2] or "").strip() if km else None
-        if key in ALLOWED_KEYS:
+        elif key in EMPTY_ONLY_KEYS and value in EMPTY_VALUES:
             continue
-        if key in EMPTY_ONLY_KEYS and value in EMPTY_VALUES:
-            continue
-        shown = key if key else line.strip()[:40]
-        reasons.append(f"`{path}`: front matter `{shown}` needs review")
+        else:
+            reasons.append(f"`{path}`: front matter `{key}` needs review")
 
     # Shortcodes run even inside code blocks: check the whole body
     for sc in re.finditer(r"\{\{\s*[<%]", body):
@@ -168,11 +211,22 @@ def check_markdown(path: str, text: str) -> list[str]:
     if re.search(r"<[A-Za-z/!?]", rest):
         reasons.append(f"`{path}`: raw HTML needs review")
 
-    scheme = r"<?\s*(?:javascript|vbscript|data):"
-    if (re.search(r"\]\(\s*" + scheme, prose, flags=re.I)
-            or re.search(r"^ {0,3}\[[^\]]+\]:\s*" + scheme, prose,
-                         flags=re.I | re.M)):
-        reasons.append(f"`{path}`: link scheme needs review")
+    # Decode character references and normalize ASCII before checking URL.
+    decoded = html.unescape(prose)
+
+    def unsafe_url(url: str) -> bool:
+        normalized = re.sub(r"[\x00-\x20\x7f]+", "", html.unescape(url))
+        return bool(re.match(r"^(?:javascript|vbscript|data):", normalized, flags=re.I))
+
+    # Inline Markdown links, including angle-bracket destinations.
+    for link in re.finditer(r"\]\(\s*(?:<([^>]*)>|([^\s)]+))", decoded):
+        if unsafe_url(link[1] or link[2]):
+            reasons.append(f"`{path}`: link scheme needs review")
+
+    # Markdown reference link definitions.
+    for link in re.finditer(r"^ {0,3}\[[^\]]+\]:\s*(?:<([^>]*)>|([^\s]+))", decoded, flags=re.M):
+        if unsafe_url(link[1] or link[2]):
+            reasons.append(f"`{path}`: link scheme needs review")
 
     return sorted(set(reasons))
 
@@ -189,8 +243,14 @@ def check() -> None:
     pr = github_request(f"/repos/{repo}/pulls/{number}")
     author: str = pr["user"]["login"]
     head_sha: str = pr["head"]["sha"]
+    base_sha: str = pr["base"]["sha"]
     is_blogger = author.lower() in load_bloggers()
     reasons: list[str] = []
+
+    # Make sure checked-out tree is same base commit.
+    checkout_sha = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
+    if checkout_sha != base_sha:
+        reasons.append("the base branch changed since the workflow checked it out")
 
     if not is_blogger:
         reasons.append(f"@{author} is not in `.github/bloggers.yml`")
@@ -249,8 +309,12 @@ def check() -> None:
 
     # A comment is only useful to a listed blogger whose post is ready for review
     notify = is_blogger and not pr["draft"] and not eligible
-    set_output(eligible=str(eligible).lower(), notify=str(notify).lower(),
-               head_sha=head_sha, reasons=json.dumps(reasons))
+    set_output(
+        eligible=str(eligible).lower(),
+        notify=str(notify).lower(),
+        head_sha=head_sha,
+        base_sha=base_sha,
+        reasons=json.dumps(reasons))
     print(f"PR #{number} by @{author} at {head_sha}: "
           + ("eligible" if eligible else "not eligible"))
     for reason in reasons:
