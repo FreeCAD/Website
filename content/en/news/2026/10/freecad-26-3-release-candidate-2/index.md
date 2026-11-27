@@ -9,7 +9,7 @@ tags:
   - release
   - "26.3"
 cover:
-  image: rc2.webp
+  image: 26-3rc2.webp
   caption:
 ---
 

@@ -9,7 +9,7 @@ tags:
   - release
   - "26.3"
 cover:
-  image: freecad-26-3-rc1.webp
+  image: 26-3rc1.webp
   caption:
 ---
 
