@@ -28,9 +28,9 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   --secondary: rgb(64, 64, 64);
   --tertiary: rgb(96, 96, 96);
 
-  --accent-color: hsl(var(--accent-hue) var(--accent-saturation) var(--accent-lightness));
-  --accent: color-mix(in srgb, var(--accent-color) 75%, black 5%);
-  --accent-hover: color-mix(in srgb, var(--accent-color) 90%, black 10%);
+  --accent: oklch(from var(--accent-color) calc(l - 0.08) c h);
+  --accent-hover: oklch(from var(--accent-color) calc(l + 0.04) c h);
+  --accent-hero: oklch(from var(--accent-color) l c h / 0.12);
 
   --border: var(--line) solid var(--tone);
   --outline-hover: var(--line) solid var(--accent-hover);
@@ -65,8 +65,9 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   --primary: rgb(240, 240, 240);
   --secondary: rgb(224, 224, 224);
   --tertiary: rgb(208, 208, 208);
-  --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
-  --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+  --accent: oklch(from var(--accent-color) calc(l + 0.12) c h);
+  --accent-hover: oklch(from var(--accent-color) calc(l - 0.04) c h);
+  --accent-hero: oklch(from var(--accent-color) calc(l + 0.08) c h / 0.16);
   --angle: 315deg;
   --filter: brightness(90%) saturate(90%);
 }

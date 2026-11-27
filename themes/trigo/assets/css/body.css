@@ -34,42 +34,7 @@ main {
   white-space: normal;
   background: var(--theme);
   overflow-wrap: break-word;
-  --section-hue: calc(var(--accent-hue) + var(--hue) * 1deg);
-  --section:
-    radial-gradient(
-      75% 75% at 125% 0%,
-      hsl(var(--section-hue) 75% 90%),
-      transparent
-    ),
-    radial-gradient(
-      75% 50% at -25% 100%,
-      hsl(calc(var(--section-hue) - 15deg) 50% 90%),
-      transparent
-    ),
-    linear-gradient(
-      var(--angle),
-      hsl(calc(var(--section-hue) - 30deg) 50% 90%),
-      hsl(calc(var(--section-hue) + 30deg) 50% 90%)
-    );
-}
-
-.dark main {
-  --section:
-    radial-gradient(
-      75% 75% at 125% 0%,
-      hsl(var(--section-hue) 75% 10%),
-      transparent
-    ),
-    radial-gradient(
-      75% 50% at -25% 100%,
-      hsl(calc(var(--section-hue) - 15deg) 50% 10%),
-      transparent
-    ),
-    linear-gradient(
-      var(--angle),
-      hsl(calc(var(--section-hue) - 30deg) 50% 10%),
-      hsl(calc(var(--section-hue) + 30deg) 50% 10%)
-    );
+  --hero: radial-gradient( circle at 50% 50%, transparent, var(--accent-hero));
 }
 
 h1 {
@@ -210,7 +175,7 @@ dl, ol, ul {
 
 li,
 li > :is(ol, ul) {
-  margin: 0.25rem 0;
+  margin: calc(var(--gap) * 0.25) 0;
 }
 
 li:has(input[type="checkbox"]) {

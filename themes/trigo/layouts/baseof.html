@@ -19,12 +19,6 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   (cond .Layout (printf "layout-%s" .Layout) "")
   | uniq -}}
 
-{{- $hue := 0 -}}
-{{- if site.Params.enable_hue -}}
-  {{- $key := partialCached "utils/cache_key.html" . . -}}
-  {{- $hue = partialCached "utils/color_hue.html" . $key -}}
-{{- end -}}
-
 <!DOCTYPE html>
 <html
   lang="{{ site.Language.Locale }}"
@@ -48,7 +42,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     {{- end -}}
 
     {{- /* Define main block for standard and kind templates. */ -}}
-    <main {{- with $hue }} style="--hue: {{ . }};"{{ end -}}>
+    <main>
       {{- block "main" . -}}
       {{- end -}}
     </main>

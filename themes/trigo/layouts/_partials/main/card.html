@@ -38,8 +38,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     {{- . -}}
 
   {{- else -}}
-    <div class="card-color"
-      {{- with (partialCached "utils/color_hue.html" $page $key) }} style="--hue: {{ . }};"{{ end -}}>
+    <div class="card-color">
 
       {{- with $params.icon -}}
         <span class="card-icon">

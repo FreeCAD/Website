@@ -588,7 +588,7 @@ a.sponsor-entry:hover {
 /* Custom content classes */
 
 .section {
-  background: var(--section);
+  background: var(--hero);
 }
 
 .gradient {
@@ -631,8 +631,7 @@ a.sponsor-entry:hover {
   );
 }
 
-.kind-home .hero .button:first-of-type:hover,
-.button.accent:hover {
+:is(.kind-home .hero .button:first-of-type, .button.accent):hover {
   color: var(--header);
   outline: var(--outline-hover);
   background: linear-gradient(
@@ -642,34 +641,31 @@ a.sponsor-entry:hover {
   );
 }
 
-.accent.active:focus-visible {
+:is(.button.accent, .accent.active, .kind-home .hero .button:first-of-type):focus-visible {
+  color: var(--header);
   outline: var(--outline-focus);
+  background: linear-gradient(
+    var(--angle),
+    color-mix(in srgb, var(--accent-hover) 100%, var(--header)),
+    color-mix(in srgb, var(--accent-hover) 75%, var(--header) 25%)
+  );
 }
 
-.accent { --custom-hue: var(--accent-hue) }
-.accent-1 { --custom-hue: calc(var(--accent-hue) + 15deg); }
-.accent-2 { --custom-hue: calc(var(--accent-hue) + 30deg); }
-.accent-3 { --custom-hue: calc(var(--accent-hue) + 45deg); }
-.accent-4 { --custom-hue: calc(var(--accent-hue) + 60deg); }
-.accent-5 { --custom-hue: calc(var(--accent-hue) + 75deg); }
+.accent { --bg: var(--accent-color);}
+.accent-1 { --bg: oklch(from var(--accent-color) calc(l - 0.025) c calc(h - 12));}
+.accent-2 { --bg: oklch(from var(--accent-color) calc(l + 0.015) c calc(h - 6));}
+.accent-3 { --bg: oklch(from var(--accent-color) calc(l - 0.015) c h);}
+.accent-4 { --bg: oklch(from var(--accent-color) calc(l + 0.025) c calc(h + 6));}
+.accent-5 { --bg: oklch(from var(--accent-color) calc(l - 0.03) c calc(h + 12));}
+
+.dark .accent,
+.dark [class*="accent-"] {
+  --bg: oklch(from var(--bg) calc(l + 0.08) c h);
+}
 
 .accent,
 [class*="accent-"] {
-  --bg: hsl(var(--custom-hue) var(--accent-saturation) var(--accent-lightness));
-}
-
-.dark [class*="accent-"] {
-  --bg: color-mix(in srgb, hsl(var(--custom-hue) var(--accent-saturation) var(--accent-lightness)) 50%, white 15%);
-}
-
-:not(h1, h2, h3, h4, h5, h6).accent,
-[class*="accent-"] {
-  background:
-    radial-gradient(
-      circle at 50% 50%,
-      transparent,
-      color-mix(in srgb, var(--bg) 25%, transparent) 100%
-      );
+  background: radial-gradient(circle at 50% 50%, transparent 0%, color-mix(in oklch, var(--bg) 25%, transparent) 100%);
 }
 
 .center {

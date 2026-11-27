@@ -47,8 +47,8 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
     {{- end -}}
 
     {{- if and site.Params.enable_debug (not hugo.IsProduction) -}}
-      {{- with .Page.Menus.main -}}
-        <h2 style="color: crimson; z-index:2;">Weight: {{ .Weight }}</h2>
+      {{- with .Weight -}}
+        <h2 style="color: crimson; z-index:2;">Weight: {{ . }}</h2>
       {{- end -}}
     {{- end -}}
 
@@ -108,7 +108,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
   {{/* Dynamically include custom content partials. */}}
 
   {{- /* Get Table Of Contents. */ -}}
-  {{- if and .Params.toc .Content (not .Pages) -}}
+  {{- if and .Params.toc .Content (not .Parent.IsHome) -}}
     {{- partial "main/table_contents.html" . -}}
   {{- end -}}
 
