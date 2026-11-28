@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html
+  lang="de-DE"
+  dir="ltr"><head><meta charset="utf-8">
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1">
+<meta
+  name="referrer"
+  content="strict-origin-when-cross-origin">
+<meta
+  name="robots"
+  content="index, follow"><script>
+  try {
+    const pref = localStorage.getItem("pref-theme");
+    const dark =
+      pref === "dark" ||
+      (pref !== "light" &&
+        
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+        );
+    if (dark) document.documentElement.classList.add("dark");
+  } catch {}
+  document.documentElement.classList.add("js");
+</script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --header: rgb(8, 8, 8);
+        --theme: rgb(16, 16, 16);
+        --entry: rgb(32, 32, 32);
+        --tone: rgb(64, 64, 64);
+        --backdrop: rgba(64, 64, 64, 0.8);
+        --primary: rgb(240, 240, 240);
+        --secondary: rgb(224, 224, 224);
+        --tertiary: rgb(208, 208, 208);
+        --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+        --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+        --angle: 315deg;
+      }
+    }</style>
+</noscript><title>FreeCAD | Dependencies</title>
+  <meta
+    name="description"
+    content="How addons declare, install, and ship third-party code."><link
+          rel="stylesheet"
+          href="/Website/pr-146/css/styles.620a776c0a5bd62061f0a7760ffb36ec9abdfb6503ff52a674fb042a06a92bfa.css"
+          integrity="sha256-Ygp3bApb1iBh8Kd2D/s27Jq9&#43;2UD/1KmdPsEKgapK/o="
+          crossorigin="anonymous"><link
+    rel="canonical"
+    href="https://FreeCAD.github.io/Website/pr-146/de/dev/academy/topics/dependencies/"><link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://FreeCAD.github.io/Website/pr-146/dev/academy/topics/dependencies/"><link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://FreeCAD.github.io/Website/pr-146/zh/dev/academy/topics/dependencies/"><link
+      rel="alternate"
+      hreflang="es-ES"
+      href="https://FreeCAD.github.io/Website/pr-146/es/dev/academy/topics/dependencies/"><link
+      rel="alternate"
+      hreflang="fr-FR"
+      href="https://FreeCAD.github.io/Website/pr-146/fr/dev/academy/topics/dependencies/"><link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://FreeCAD.github.io/Website/pr-146/pt/dev/academy/topics/dependencies/"><link
+      rel="alternate"
+      hreflang="de-DE"
+      href="https://FreeCAD.github.io/Website/pr-146/de/dev/academy/topics/dependencies/"><link
+      rel="alternate"
+      hreflang="ja-JP"
+      href="https://FreeCAD.github.io/Website/pr-146/ja/dev/academy/topics/dependencies/"><link
+      rel="alternate"
+      hreflang="pl-PL"
+      href="https://FreeCAD.github.io/Website/pr-146/pl/dev/academy/topics/dependencies/"><link
+    rel="alternate"
+    hreflang="x-default"
+    href="https://FreeCAD.github.io/Website/pr-146/de/"><link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Website/pr-146/favicon.svg"><link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/Website/pr-146/favicon.ico"><link
+      rel="apple-touch-icon"
+      href="/Website/pr-146/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://FreeCAD.github.io/Website/pr-146/de/index.xml"
+    title="FreeCAD"><meta name="generator" content="Hugo 0.160.0"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-146/de/dev/academy/topics/dependencies/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Dependencies">
+  <meta property="og:description" content="How addons declare, install, and ship third-party code.">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dev">
+    <meta property="article:modified_time" content="2026-11-27T17:14:57+01:00">
+</head><body
+    class="single type-dev kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <a
+    class="logo"
+    href="/Website/pr-146/de/"
+    accesskey="h"
+    title="Home (Alt + H)"
+    aria-label="Home">
+    <svg
+      class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+
+      <use href="/Website/pr-146/wordmark.svg#wordmark"></use>
+    </svg></a>
+
+  <div class="site-nav"><nav class="menu">
+  <button
+    popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menü"
+    aria-label="Menü"><svg
+    class="icon hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hamburger.svg#hamburger"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul
+    popover
+    id="menu-list"
+    class="menu-list"><li>
+          <a
+            href="/Website/pr-146/de/features/">Funktionen</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/de/download/">Herunterladen</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/de/news/">Aktuelles</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/de/community/">Community</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/de/docs/" aria-current="page" class="active">Dokumentation</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/de/donate/" class="button accent"><svg
+    class="icon heart"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/heart.svg#heart"></use>
+  </svg>Spenden</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button
+          popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Sprache auswählen (Alt + L)"
+          aria-label="Sprache auswählen"><svg
+    class="icon language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul
+          popover
+          id="lang-list"
+          class="language-list"><li>
+              <a href="/Website/pr-146/dev/academy/topics/dependencies/" title="Dependencies">English 🇬🇧</a>
+            </li><li>
+              <a href="/Website/pr-146/zh/dev/academy/topics/dependencies/" title="Dependencies">中文 🇨🇳</a>
+            </li><li>
+              <a href="/Website/pr-146/es/dev/academy/topics/dependencies/" title="Dependencies">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/pr-146/fr/dev/academy/topics/dependencies/" title="Dependencies">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pr-146/pt/dev/academy/topics/dependencies/" title="Dependencies">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-146/de/dev/academy/topics/dependencies/" title="Dependencies">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/pr-146/ja/dev/academy/topics/dependencies/" title="Dependencies">日本語 🇯🇵</a>
+            </li><li>
+              <a href="/Website/pr-146/pl/dev/academy/topics/dependencies/" title="Dependencies">Polski 🇵🇱</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Design wechseln (Alt + T)"
+    aria-label="Design wechseln"><svg
+    class="icon dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/dark.svg#dark"></use>
+  </svg><svg
+    class="icon light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero">
+
+    <h2 class="title">Dependencies</h1><h3 class="description">How addons declare, install, and ship third-party code.</h3><div class="metadata"><span class="meta"><svg
+    class="icon time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/time.svg#time"></use>
+  </svg>9 Minuten</span></div></section><nav class="toc">
+  <input
+    type="checkbox"
+    id="toc-checkbox"
+    class="toc-checkbox">
+  <label
+    for="toc-checkbox"
+    class="toc-toggle button"
+    title="Table of Contents"><svg
+    class="icon expand"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/expand.svg#expand"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/cross.svg#cross"></use>
+  </svg><span>Inhaltsverzeichnis</span>
+  </label>
+
+  <div
+    id="toc-content"
+    class="toc-content">
+    <ul class="section-nav"><li>
+          <a
+            href="/Website/pr-146/de/dev/"
+            class="current-section"><svg
+    class="icon tri_tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_tri_left.svg#tri_tri_left"></use>
+  </svg> Development Handbook</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/de/dev/academy/"
+            class="current-section"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_left.svg#tri_left"></use>
+  </svg> Addon Academy</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/de/dev/academy/topics/"
+            class="current-section"><svg
+    class="icon folder_closed"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/folder_closed.svg#folder_closed"></use>
+  </svg> Topics</a>
+        </li><li>
+        <ul><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/topics/types/">Types of Addon</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/topics/themes/">Themes</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/topics/machines/">Machines</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/topics/structure/">Structuring</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/topics/manifest/">Addon Manifest</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/topics/dependencies/" id="current-page" class="active" aria-current="page">Dependencies</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/topics/license/">Licensing</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/topics/index/">Addon Index</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/topics/removed/">Removed Addons</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/topics/glossary/">Glossary</a>
+            </li></ul>
+      </li>
+    </ul><p class="toc-label"><svg
+    class="icon file"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/file.svg#file"></use>
+  </svg>
+        <span>Auf dieser Seite</span>
+      </p><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#the-python-allow-list">The Python allow-list</a>
+          <ul>
+            <li><a href="#what-it-is-and-why">What it is, and why</a></li>
+            <li><a href="#where-the-list-lives">Where the list lives</a></li>
+            <li><a href="#format">Format</a></li>
+            <li><a href="#what-happens-when-a-dependency-is-not-on-the-list">What happens when a dependency is not on the list</a></li>
+            <li><a href="#requesting-a-new-package">Requesting a new package</a></li>
+          </ul>
+        </li>
+        <li><a href="#vendoring">Vendoring</a>
+          <ul>
+            <li><a href="#the-default-answer-is-do-not-vendor">The default answer is &ldquo;do not vendor&rdquo;</a></li>
+            <li><a href="#when-vendoring-is-acceptable">When vendoring is acceptable</a></li>
+            <li><a href="#when-vendoring-is-not-acceptable">When vendoring is not acceptable</a></li>
+            <li><a href="#license-requirements">License requirements</a></li>
+            <li><a href="#decision-tree">Decision tree</a></li>
+            <li><a href="#how-to-vendor">How to vendor</a></li>
+            <li><a href="#maintenance">Maintenance</a></li>
+          </ul>
+        </li>
+        <li><a href="#see-also">See also</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+</nav><div class="content"><figure>
+  <blockquote class="note"><svg
+    class="icon note"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/note.svg#note"></use>
+  </svg>Hinweis<p>Diese Seite wurde noch nicht übersetzt, daher wird stattdessen die englische Version verwendet. Möchtest du mithelfen?
+<a
+  href="https://github.com/freecad/website"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Mitwirken<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a></p></blockquote></figure><p>FreeCAD addons can also take advantage of third-party Python libraries. There are two main way to deal with such dependencies: the <a
+  href="/Website/pr-146/de/dev/academy/topics/dependencies/#the-python-allow-list"
+  class="internal-tooltip hash-link"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg>allow-list</a> and <a
+  href="/Website/pr-146/de/dev/academy/topics/dependencies/#vendoring"
+  class="internal-tooltip hash-link"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg>vendoring</a>.</p>
+<h2
+  id="the-python-allow-list">
+  <a class="heading-anchor"
+    href="#the-python-allow-list"
+    title="The Python allow-list"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>The Python allow-list</h2><p>FreeCAD&rsquo;s Addon Manager will only install Python packages that appear on a curated allow-list. This page describes what that list is, where it lives, what format it uses, and how to get a new package added.</p>
+<h3
+  id="what-it-is-and-why">
+  <a class="heading-anchor"
+    href="#what-it-is-and-why"
+    title="What it is, and why"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>What it is, and why</h3><p>When your addon declares a Python package as a <code>&lt;depend&gt;</code> in its <a
+  href="topics/manifest"
+  class="internal-tooltip">Manifest</a>, the Addon Manager looks that package up in a list of explicitly allowed Python dependencies. Packages on the list are installed automatically when a user installs your addon. Packages not on the list are not installed automatically.</p>
+<p>The allow-list exists for several reasons:</p>
+<ul>
+<li><strong>Security.</strong> Arbitrary <code>pip install</code> from PyPI is a common supply-chain attack vector. Gating dependencies behind a reviewed list reduces the chance of an addon silently pulling in malicious code.</li>
+<li><strong>Version consistency.</strong> Different addons often depend on the same library (numpy, scipy, etc.). If each addon pinned its own version, the user&rsquo;s FreeCAD Python environment would end up with conflicting installs. A shared, version-controlled list lets the ecosystem coordinate. No addon&rsquo;s package requirements conflict with another&rsquo;s, by construction.</li>
+<li><strong>Quality control.</strong> Packages that are unmaintained, abandoned, or require compiling against specific system libraries can be kept off the list entirely.</li>
+</ul>
+<h3
+  id="where-the-list-lives">
+  <a class="heading-anchor"
+    href="#where-the-list-lives"
+    title="Where the list lives"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Where the list lives</h3><p>Two lists are maintained in parallel, corresponding to the two supported versions of the Addon Manager currently in the field.</p>
+<h4
+  id="freecad-v11-and-later-or-addon-manager-2026219-and-later">
+  <a class="heading-anchor"
+    href="#freecad-v11-and-later-or-addon-manager-2026219-and-later"
+    title="FreeCAD v1.1 and later (or Addon Manager 2026.2.19 and later)"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>FreeCAD v1.1 and later (or Addon Manager 2026.2.19 and later)</h4><p>The current list lives in the <a
+  href="https://github.com/FreeCAD/Addons"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">FreeCAD/Addons<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a> repository, split by Python version:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Data/Python/&lt;python-version&gt;/Allowed-Packages</span></span></code></pre></div></div><p>For example, <code>Data/Python/3.11/Allowed-Packages</code>. A companion <code>constraints.txt</code> in the same directory pins each allowed package to a specific version, so every user gets a consistent install regardless of when they run the Addon Manager. Constraints is generated automatically from the Allowed-Packages file, and is updated automatically by a Dependabot process.</p>
+<h4
+  id="pre-v11-legacy">
+  <a class="heading-anchor"
+    href="#pre-v11-legacy"
+    title="Pre-v1.1 (legacy)"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Pre-v1.1 (legacy)</h4><p>Older FreeCAD builds read <code>ALLOWED_PYTHON_PACKAGES.txt</code> from the root of the <a
+  href="https://github.com/FreeCAD/FreeCAD-addons"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">FreeCAD/FreeCAD-addons<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a> repository. That file is still maintained so older FreeCAD versions keep working, but new package requests should go to the new repository above.</p>
+<h3
+  id="format">
+  <a class="heading-anchor"
+    href="#format"
+    title="Format"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Format</h3><p>Both files are plain text. Each non-empty, non-comment line is the PyPI package handle:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">numpy
+</span></span><span class="line"><span class="cl">matplotlib
+</span></span><span class="line"><span class="cl">lxml</span></span></code></pre></div></div><p>Version specifiers and wildcards are not supported in the allow-list itself. Version pinning happens in the companion <code>constraints.txt</code>, which the infrastructure maintains centrally so addon authors do not need to 9and indeed, <em>cannot</em>) specify versions themselves.</p>
+<h3
+  id="what-happens-when-a-dependency-is-not-on-the-list">
+  <a class="heading-anchor"
+    href="#what-happens-when-a-dependency-is-not-on-the-list"
+    title="What happens when a dependency is not on the list"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>What happens when a dependency is not on the list</h3><p>The Addon Manager will not automatically install a Python package that is not on the allow-list. In practice this means:</p>
+<ul>
+<li>Your addon&rsquo;s manifest can still declare the dependency.</li>
+<li>Users who already have the package installed in FreeCAD&rsquo;s Python environment will see the addon work normally.</li>
+<li>Users who do not have the package will see the dependency flagged as unavailable. They can install it manually through their system&rsquo;s Python package manager, but this is awkward and error-prone, and often not an option for users who are not comfortable at a command line.</li>
+</ul>
+<p>If your addon requires a Python package that is not on the allow-list, most users will not be able to install the addon successfully. Getting the package added is usually the appropriate next step. If that fails, see <a
+  href="/Website/pr-146/de/dev/academy/topics/dependencies/#vendoring"
+  class="internal-tooltip hash-link"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg>Vendoring</a> for when it might be appropriate to ship a copy of the package with your addon instead.</p>
+<h3
+  id="requesting-a-new-package">
+  <a class="heading-anchor"
+    href="#requesting-a-new-package"
+    title="Requesting a new package"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Requesting a new package</h3><p>Open an issue in the <a
+  href="https://github.com/FreeCAD/Addons"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">FreeCAD/Addons<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a> repository using the <strong>Package - Addition</strong> template. You will be asked for:</p>
+<ul>
+<li>The package handle as it appears on <a
+  href="https://pypi.org/"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">PyPI<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a> (e.g. <code>numpy</code>, not the display name &ldquo;NumPy&rdquo;).</li>
+<li>A short reason for the request. A normal answer is &ldquo;my addon <em>X</em> needs this package to do <em>Y</em>.&rdquo;</li>
+</ul>
+<p>Similar issue templates exist for requesting removal of a package from the list (<code>Package - Removal</code>) and for requesting that one package be replaced by another (<code>Package - Replace</code>).</p>
+<p>There is no formal review SLA. Requests for well-known, well-maintained packages tend to move quickly; more obscure packages may need additional discussion. Ultimate responsibility for the curation of the allow-list falls to the <a
+  href="https://freecad.github.io/DevelopersHandbook/maintainersguide"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">FreeCAD Maintainers team<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>.</p>
+<h2
+  id="vendoring">
+  <a class="heading-anchor"
+    href="#vendoring"
+    title="Vendoring"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Vendoring</h2><p>Vendoring means shipping a copy of a third-party Python library inside your addon&rsquo;s source tree, rather than declaring it as a dependency for the Addon Manager to install. This page describes when vendoring is appropriate, when it is not, and how to do it correctly when it is. TL;DR? Basically, don&rsquo;t.</p>
+<h3
+  id="the-default-answer-is-do-not-vendor">
+  <a class="heading-anchor"
+    href="#the-default-answer-is-do-not-vendor"
+    title="The default answer is &ldquo;do not vendor&rdquo;"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>The default answer is &ldquo;do not vendor&rdquo;</h3><p>FreeCAD&rsquo;s addon ecosystem coordinates Python dependencies through the <a
+  href="/Website/pr-146/de/dev/academy/topics/dependencies/#the-python-allow-list"
+  class="internal-tooltip hash-link"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg>allow-list</a>. That coordination provides basic security review, version pinning across addons, and a single point of update. Vendoring opts your addon out of all of those benefits.</p>
+<p>The <a
+  href="topics/index"
+  class="internal-tooltip">quality requirements</a> for inclusion in the Addon Index reflect this directly: an addon should &ldquo;only vendor dependencies when technically necessary and not attempt to circumvent the package allow list.&rdquo; Vendoring a package that could be on the allow-list works against the ecosystem.</p>
+<p>Before vendoring, consider the alternatives:</p>
+<ol>
+<li><strong>Is the package on the allow-list?</strong> If yes, declare it as a <code>&lt;depend&gt;</code> in your <a
+  href="topics/manifest"
+  class="internal-tooltip">Manifest</a>. This is the standard path and by far the most common method for including a dependency.</li>
+<li><strong>Could the package reasonably be added to the allow-list?</strong> If it is well-maintained, generally useful, and available on PyPI, request its addition. See <a
+  href="/Website/pr-146/de/dev/academy/topics/dependencies/#the-python-allow-list"
+  class="internal-tooltip hash-link"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg>The Python allow-list</a> for the procedure.</li>
+<li><strong>Could you avoid the dependency?</strong> Reimplementing a small piece of functionality in-house is sometimes simpler than carrying a third-party library through your addon&rsquo;s lifetime.</li>
+</ol>
+<p>Only if none of the above applies should vendoring enter the discussion.</p>
+<h3
+  id="when-vendoring-is-acceptable">
+  <a class="heading-anchor"
+    href="#when-vendoring-is-acceptable"
+    title="When vendoring is acceptable"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>When vendoring is acceptable</h3><p>Roughly in order of strength:</p>
+<ul>
+<li><strong>The package is too niche to belong on the allow-list.</strong> A small, single-purpose utility that no other addon in the ecosystem is likely to need.</li>
+<li><strong>You need only a small fraction of the package.</strong> When one or two functions are all you actually use, copying just those (with attribution per the upstream license) is often cleaner than vendoring the whole package.</li>
+<li><strong>You have forked and modified the upstream.</strong> A modified copy is your addon&rsquo;s code, not a dependency, and treating it as such is appropriate.</li>
+<li><strong>You need a specific pinned version that conflicts with the allow-list pin.</strong> Rare, since the allow-list pins versions centrally, but possible.</li>
+</ul>
+<h3
+  id="when-vendoring-is-not-acceptable">
+  <a class="heading-anchor"
+    href="#when-vendoring-is-not-acceptable"
+    title="When vendoring is not acceptable"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>When vendoring is not acceptable</h3><ul>
+<li><strong>The package is on the allow-list.</strong> Declaring the dependency is correct. Vendoring duplicates the install footprint across every addon that does it, and your vendored copy will drift from the version the allow-list pins, leading to inconsistent behavior across addons in the same FreeCAD installation.</li>
+<li><strong>The package could reasonably be added to the allow-list.</strong> Request the addition; do not work around the process.</li>
+<li><strong>The package has compiled extensions</strong> (numpy, scipy, lxml, Pillow, and similar). Vendoring binary wheels across every Python version, operating system, and architecture FreeCAD ships on is a significant maintenance burden. Which is to say: basically infeasible.</li>
+<li><strong>The license is restrictive or unclear.</strong> Without explicit redistribution rights, vendoring may not be legal. See the licensing requirements below.</li>
+<li><strong>The package is large or rapidly evolving.</strong> A multi-megabyte vendored library bloats your repository, and a fast-moving upstream means you will perpetually trail behind, inheriting bugs that have already been fixed.</li>
+</ul>
+<h3
+  id="license-requirements">
+  <a class="heading-anchor"
+    href="#license-requirements"
+    title="License requirements"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>License requirements</h3><p>You may only vendor code whose license permits redistribution. Common permissive licenses (MIT, BSD-2-Clause, BSD-3-Clause, Apache-2.0, MPL-2.0) all allow vendoring with attribution. The LGPL family allows vendoring as long as the user can replace the LGPL component, which a vendored Python library generally satisfies.</p>
+<p>The GPL is more restrictive: vendoring GPL-licensed code into a non-GPL addon makes the combined work GPL. If your addon is itself GPL-licensed, this is fine; otherwise it is not.</p>
+<p>Proprietary, custom, or unclear licenses are usually unsuitable for vendoring. When in doubt, consult the upstream package&rsquo;s <code>LICENSE</code> file and, if necessary, the package authors. See <a
+  href="topics/license"
+  class="internal-tooltip">Licensing</a> for broader license guidance.</p>
+<p>Whatever the upstream license, you must:</p>
+<ul>
+<li>Preserve the upstream <code>LICENSE</code> file inside your vendored copy.</li>
+<li>Acknowledge the vendored package in your addon&rsquo;s documentation or <code>README</code>.</li>
+<li>Comply with any other terms the upstream license imposes (e.g., notice files for Apache-2.0).</li>
+</ul>
+<h3
+  id="decision-tree">
+  <a class="heading-anchor"
+    href="#decision-tree"
+    title="Decision tree"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Decision tree</h3><div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Need a Python package?
+</span></span><span class="line"><span class="cl">│
+</span></span><span class="line"><span class="cl">├─ On the allow-list?
+</span></span><span class="line"><span class="cl">│  └─ Yes ─► declare &lt;depend&gt; in package.xml.
+</span></span><span class="line"><span class="cl">│
+</span></span><span class="line"><span class="cl">├─ Could reasonably be added to the allow-list?
+</span></span><span class="line"><span class="cl">│  └─ Yes ─► request addition.
+</span></span><span class="line"><span class="cl">│
+</span></span><span class="line"><span class="cl">└─ Neither, AND
+</span></span><span class="line"><span class="cl">   ├─ pure Python (no compiled extensions)
+</span></span><span class="line"><span class="cl">   ├─ permissively licensed
+</span></span><span class="line"><span class="cl">   ├─ small or used only fragmentarily
+</span></span><span class="line"><span class="cl">   ├─ relatively stable upstream
+</span></span><span class="line"><span class="cl">   └─ all yes ─► vendor with care (see below).
+</span></span><span class="line"><span class="cl">      any no  ─► rework your addon to avoid the dependency.</span></span></code></pre></div></div><h3
+  id="how-to-vendor">
+  <a class="heading-anchor"
+    href="#how-to-vendor"
+    title="How to vendor"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>How to vendor</h3><p>Place the vendored code under a clearly internal subdirectory of your namespace package:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">freecad/MyAddon/
+</span></span><span class="line"><span class="cl">├─ __init__.py
+</span></span><span class="line"><span class="cl">├─ init_gui.py
+</span></span><span class="line"><span class="cl">├─ ...
+</span></span><span class="line"><span class="cl">└─ _vendor/
+</span></span><span class="line"><span class="cl">   └─ somepkg/
+</span></span><span class="line"><span class="cl">      ├─ LICENSE       (preserved from upstream)
+</span></span><span class="line"><span class="cl">      ├─ README.md     (your notes on version, source URL, modifications)
+</span></span><span class="line"><span class="cl">      ├─ __init__.py
+</span></span><span class="line"><span class="cl">      └─ ...</span></span></code></pre></div></div><p>The leading underscore on <code>_vendor</code> signals &ldquo;internal; do not depend on this from outside the addon.&rdquo; This is a Python convention, not enforced by the language, but readers (and future maintainers) recognize it.</p>
+<p>Import vendored code through your addon&rsquo;s namespace, not the original package name:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="c1"># Good: clear that this is your vendored copy.</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">freecad.MyAddon._vendor.somepkg</span> <span class="kn">import</span> <span class="n">thing</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Bad: looks like a system-installed dependency, and may clash with one.</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">somepkg</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">somepkg</span> <span class="kn">import</span> <span class="n">thing</span></span></span></code></pre></div></div><p>Importing through your namespace prevents your vendored copy from interfering with a system-installed version of the same package, and prevents another addon&rsquo;s vendored or system-installed <code>somepkg</code> from interfering with yours.</p>
+<p>Document what you vendored, where it came from, and which version. A short <code>_vendor/README.md</code> is the conventional place. At minimum, record:</p>
+<ul>
+<li>The upstream package name and PyPI link.</li>
+<li>The exact version vendored (commit SHA if vendored from a repository).</li>
+<li>Any modifications made to the upstream code.</li>
+<li>The reason vendoring was chosen rather than declaring a dependency.</li>
+</ul>
+<h3
+  id="maintenance">
+  <a class="heading-anchor"
+    href="#maintenance"
+    title="Maintenance"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Maintenance</h3><p>Vendored code freezes at the version you ship. Each subsequent upstream release, including security fixes, is your responsibility to track and re-vendor. Practical mitigations:</p>
+<ul>
+<li><strong>Pin the upstream version explicitly</strong> in <code>_vendor/README.md</code> so a future maintainer (or you, in a year) can compare against current upstream.</li>
+<li><strong>Watch the upstream repository</strong> for releases, especially security advisories.</li>
+<li><strong>Avoid modifying the vendored code.</strong> A clean copy is easy to update; a heavily-patched copy means every upstream update requires re-applying patches.</li>
+<li><strong>Re-evaluate periodically</strong> whether vendoring is still appropriate. If the package has since been added to the allow-list, switch.</li>
+</ul>
+<h2
+  id="see-also">
+  <a class="heading-anchor"
+    href="#see-also"
+    title="See also"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>See also</h2><ul>
+<li><a
+  href="topics/manifest#depend"
+  class="internal-tooltip">Manifest: <code>&lt;depend&gt;</code></a>: how to declare a dependency in <code>package.xml</code>.</li>
+<li><a
+  href="topics/license"
+  class="internal-tooltip">Licensing</a>: license guidance, including what licenses are compatible with redistribution.</li>
+<li><a
+  href="topics/index"
+  class="internal-tooltip">Quality requirements for indexed addons</a>: the rules an indexed addon must meet, including the vendoring guidance.</li>
+</ul>
+</div><footer class="single-footer">
+    <nav class="pagination"><a
+            class="button next"
+            href="/Website/pr-146/de/dev/academy/topics/manifest/"
+            title="Nächster Artikel"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_left.svg#tri_left"></use>
+  </svg>Addon Manifest</a><a
+            class="button prev"
+            href="/Website/pr-146/de/dev/academy/topics/license/"
+            title="Vorheriger Artikel">Licensing<svg
+    class="icon tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Nach oben"
+  title="Nach oben (Alt + G)" ><svg
+    class="icon tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a
+            href="/Website/pr-146/de/">Home</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-146/de/features/">Funktionen</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-146/de/download/">Herunterladen</a><ul><li>
+                  <a
+                    href="/Website/pr-146/de/releases/">Releases</a>
+                </li><li>
+                      <a
+                        href="/Website/pr-146/de/download/addons/">Addons</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-146/de/download/unstable/">Unstable</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-146/de/news/">Aktuelles</a><ul><li>
+                  <a
+                    href="/Website/pr-146/de/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/pr-146/de/author/">Autor</a>
+                      </li><li>
+                        <a href="/Website/pr-146/de/category/">Kategorie</a>
+                      </li><li>
+                        <a href="/Website/pr-146/de/tags/">Tags</a>
+                      </li></ul></li><li>
+          <a
+            href="/Website/pr-146/de/community/">Community</a><ul><li>
+                      <a
+                        href="/Website/pr-146/de/community/calendar/">Calendar</a>
+                    </li><li>
+                      <a
+                        href="https://events.freecad.org/" target="_blank" rel="external noreferrer nofollow">Events<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://fpa.freecad.org" target="_blank" rel="external noreferrer nofollow">Association<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swag shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-146/de/community/telemetry/">Telemetry</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-146/de/docs/" aria-current="page" class="active">Dokumentation</a><ul><li>
+                  <a
+                    href="https://wiki.freecad.org/User_hub/de" target="_blank" rel="external noreferrer nofollow">User manual<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                </li><li>
+                  <a
+                    href="/Website/pr-146/de/dev/">Development Handbook</a>
+                </li><li>
+                  <a
+                    href="https://freecad.github.io/SourceDoc/" target="_blank" rel="external noreferrer nofollow">FreeCAD API<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                </li></ul></li><li>
+          <a
+            href="/Website/pr-146/de/donate/">Spenden</a><ul></ul></li></ul>
+</nav>
+<div class="share-links"><a
+    href="https://forum.freecad.org"
+    title="Forum"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/forum.svg#forum"></use>
+  </svg></a><a
+    href="https://devtalk.freecad.org/"
+    title="DevTalk"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon devtalk"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/devtalk.svg#devtalk"></use>
+  </svg></a><a
+    href="https://github.com/freecad"
+    title="GitHub"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/github.svg#github"></use>
+  </svg></a><a
+    href="https://codeberg.org/freecad"
+    title="Codeberg"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a
+    href="https://social.freecad.org/@freecad"
+    title="Mastodon"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/bluesky.svg#bluesky"></use>
+  </svg></a><a
+    href="https://www.reddit.com/r/freecad"
+    title="Reddit"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/reddit.svg#reddit"></use>
+  </svg></a><a
+    href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+    title="Matrix"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/matrix.svg#matrix"></use>
+  </svg></a><a
+    href="https://discord.gg/w2cTKGzccC"
+    title="Discord"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/discord.svg#discord"></use>
+  </svg></a><a
+    href="https://www.linkedin.com/groups/4295230"
+    title="LinkedIn"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+    href="https://FreeCAD.github.io/Website/pr-146/de/index.xml"
+    type="application/rss&#43;xml"
+    title="RSS-Feed"><svg
+    class="icon rss"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/rss.svg#rss"></use>
+  </svg></a><a
+  href="/Website/pr-146/de/fedishare.html#title=Dependencies&amp;description=How%20addons%20declare,%20install,%20and%20ship%20third-party%20code.&amp;url=https://FreeCAD.github.io/Website/pr-146/de/dev/academy/topics/dependencies/"
+  title="Im Fediverse veröffentlichen"
+  target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026
+    <a
+      href="/Website/pr-146/de/"
+      title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a
+    href="https://creativecommons.org/licenses/by-sa/4.0/"
+    title="Creative Commons"
+    target="_blank" rel="license external noreferrer nofollow">
+
+    CC BY-SA<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to
+  <a
+    href="https://gohugo.io/"
+    title="Hugo SSG"
+    target="_blank" rel="external noreferrer nofollow">
+
+    Hugo<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-11-27
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/3b9aaaf78139eae2a69bacc13828975fc955b356">3b9aaaf781<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script
+    src="/Website/pr-146/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-146/js/de/copy.min.ce482923bd28ee86b91e2de37a7cd711f1df682c7518f02d717f97e8029a1f32.js"
+    type="text/javascript"
+    defer integrity="sha256-zkgpI70o7oa5Hi3jenzXEfHfaCx1GPAtcX&#43;X6AKaHzI=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-146/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    defer integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous">
+  </script></body>
+
+</html>

@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html
+  lang="ja-JP"
+  dir="ltr"><head><meta charset="utf-8">
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1">
+<meta
+  name="referrer"
+  content="strict-origin-when-cross-origin">
+<meta
+  name="robots"
+  content="index, follow"><script>
+  try {
+    const pref = localStorage.getItem("pref-theme");
+    const dark =
+      pref === "dark" ||
+      (pref !== "light" &&
+        
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+        );
+    if (dark) document.documentElement.classList.add("dark");
+  } catch {}
+  document.documentElement.classList.add("js");
+</script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --header: rgb(8, 8, 8);
+        --theme: rgb(16, 16, 16);
+        --entry: rgb(32, 32, 32);
+        --tone: rgb(64, 64, 64);
+        --backdrop: rgba(64, 64, 64, 0.8);
+        --primary: rgb(240, 240, 240);
+        --secondary: rgb(224, 224, 224);
+        --tertiary: rgb(208, 208, 208);
+        --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+        --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+        --angle: 315deg;
+      }
+    }</style>
+</noscript><title>FreeCAD | Code - Workbench registration</title>
+  <meta
+    name="description"
+    content="あなた自身の自由でオープンソースのパラメトリックモデラー"><link
+          rel="stylesheet"
+          href="/Website/pr-146/css/styles.620a776c0a5bd62061f0a7760ffb36ec9abdfb6503ff52a674fb042a06a92bfa.css"
+          integrity="sha256-Ygp3bApb1iBh8Kd2D/s27Jq9&#43;2UD/1KmdPsEKgapK/o="
+          crossorigin="anonymous"><link
+    rel="canonical"
+    href="https://FreeCAD.github.io/Website/pr-146/ja/dev/academy/guides/workbenches/"><link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://FreeCAD.github.io/Website/pr-146/dev/academy/guides/workbenches/"><link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://FreeCAD.github.io/Website/pr-146/zh/dev/academy/guides/workbenches/"><link
+      rel="alternate"
+      hreflang="es-ES"
+      href="https://FreeCAD.github.io/Website/pr-146/es/dev/academy/guides/workbenches/"><link
+      rel="alternate"
+      hreflang="fr-FR"
+      href="https://FreeCAD.github.io/Website/pr-146/fr/dev/academy/guides/workbenches/"><link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://FreeCAD.github.io/Website/pr-146/pt/dev/academy/guides/workbenches/"><link
+      rel="alternate"
+      hreflang="de-DE"
+      href="https://FreeCAD.github.io/Website/pr-146/de/dev/academy/guides/workbenches/"><link
+      rel="alternate"
+      hreflang="ja-JP"
+      href="https://FreeCAD.github.io/Website/pr-146/ja/dev/academy/guides/workbenches/"><link
+      rel="alternate"
+      hreflang="pl-PL"
+      href="https://FreeCAD.github.io/Website/pr-146/pl/dev/academy/guides/workbenches/"><link
+    rel="alternate"
+    hreflang="x-default"
+    href="https://FreeCAD.github.io/Website/pr-146/ja/"><link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Website/pr-146/favicon.svg"><link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/Website/pr-146/favicon.ico"><link
+      rel="apple-touch-icon"
+      href="/Website/pr-146/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://FreeCAD.github.io/Website/pr-146/ja/index.xml"
+    title="FreeCAD"><meta name="generator" content="Hugo 0.160.0"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-146/ja/dev/academy/guides/workbenches/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Code - Workbench registration">
+  <meta property="og:description" content="One of the best ways of adding large-scale new functionality to FreeCAD is to create a custom Workbench. In FreeCAD terminology, a Workbench is a collection of commands, menus, toolbars, and task panels all oriented towards a specific task. Within FreeCAD itself these are things like Sketcher, Part, CAM, BIM, FEM, etc. In terms of structuring your Addon, you can think of it as a sort of “container” for your addon’s user interface: the entry that appears in FreeCAD’s Workbench selector and owns any toolbars and menus your addon contributes.">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dev">
+    <meta property="article:modified_time" content="2026-11-27T17:14:57+01:00">
+</head><body
+    class="single type-dev kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <a
+    class="logo"
+    href="/Website/pr-146/ja/"
+    accesskey="h"
+    title="ホームページ (Alt + H)"
+    aria-label="ホームページ">
+    <svg
+      class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+
+      <use href="/Website/pr-146/wordmark.svg#wordmark"></use>
+    </svg></a>
+
+  <div class="site-nav"><nav class="menu">
+  <button
+    popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="メニュー"
+    aria-label="メニュー"><svg
+    class="icon hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hamburger.svg#hamburger"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul
+    popover
+    id="menu-list"
+    class="menu-list"><li>
+          <a
+            href="/Website/pr-146/ja/features/">特徴</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/ja/download/">ダウンロード</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/ja/news/">ニュース</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/ja/community/">コミュニティ</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/ja/docs/" aria-current="page" class="active">ドキュメント</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/ja/donate/" class="button accent"><svg
+    class="icon heart"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/heart.svg#heart"></use>
+  </svg>寄付する</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button
+          popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="言語を選択 (Alt + L)"
+          aria-label="言語を選択"><svg
+    class="icon language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul
+          popover
+          id="lang-list"
+          class="language-list"><li>
+              <a href="/Website/pr-146/dev/academy/guides/workbenches/" title="Code - Workbench registration">English 🇬🇧</a>
+            </li><li>
+              <a href="/Website/pr-146/zh/dev/academy/guides/workbenches/" title="Code - Workbench registration">中文 🇨🇳</a>
+            </li><li>
+              <a href="/Website/pr-146/es/dev/academy/guides/workbenches/" title="Code - Workbench registration">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/pr-146/fr/dev/academy/guides/workbenches/" title="Code - Workbench registration">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pr-146/pt/dev/academy/guides/workbenches/" title="Code - Workbench registration">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a href="/Website/pr-146/de/dev/academy/guides/workbenches/" title="Code - Workbench registration">Deutsch 🇩🇪</a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-146/ja/dev/academy/guides/workbenches/" title="Code - Workbench registration">日本語 🇯🇵</a>
+            </li><li>
+              <a href="/Website/pr-146/pl/dev/academy/guides/workbenches/" title="Code - Workbench registration">Polski 🇵🇱</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="テーマchromaに切り替える (Alt + T)"
+    aria-label="テーマchromaに切り替える"><svg
+    class="icon dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/dark.svg#dark"></use>
+  </svg><svg
+    class="icon light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero">
+
+    <h2 class="title">Code - Workbench registration</h1><div class="metadata"><span class="meta"><svg
+    class="icon time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/time.svg#time"></use>
+  </svg>7 分</span></div></section><nav class="toc">
+  <input
+    type="checkbox"
+    id="toc-checkbox"
+    class="toc-checkbox">
+  <label
+    for="toc-checkbox"
+    class="toc-toggle button"
+    title="Table of Contents"><svg
+    class="icon expand"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/expand.svg#expand"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/cross.svg#cross"></use>
+  </svg><span>目次</span>
+  </label>
+
+  <div
+    id="toc-content"
+    class="toc-content">
+    <ul class="section-nav"><li>
+          <a
+            href="/Website/pr-146/ja/dev/"
+            class="current-section"><svg
+    class="icon tri_tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_tri_left.svg#tri_tri_left"></use>
+  </svg> Development Handbook</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/ja/dev/academy/"
+            class="current-section"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_left.svg#tri_left"></use>
+  </svg> Addon Academy</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/ja/dev/academy/guides/"
+            class="current-section"><svg
+    class="icon folder_closed"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/folder_closed.svg#folder_closed"></use>
+  </svg> Guides</a>
+        </li><li>
+        <ul><li>
+              <a
+                href="/Website/pr-146/ja/dev/academy/guides/create/">Creating an Addon</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/ja/dev/academy/guides/workbenches/" id="current-page" class="active" aria-current="page">Code - Workbench registration</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/ja/dev/academy/guides/commands/">Code - Gui Commands</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/ja/dev/academy/guides/manipulators/">Code - Workbench manipulators</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/ja/dev/academy/guides/qt/">Code - Qt &amp; PySide</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/ja/dev/academy/guides/preferences/">Code - Preferences pages</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/ja/dev/academy/guides/objects/">Code - Custom document objects</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/ja/dev/academy/guides/icons/">Code - Icons &amp; Resources</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/ja/dev/academy/guides/translations/">Code - Translations (i18n)</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/ja/dev/academy/guides/log/">Code - Logging &amp; Console</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/ja/dev/academy/guides/install/">Develop - Installing your addon locally</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/ja/dev/academy/guides/debug/">Develop - Debugging</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/ja/dev/academy/guides/test/">Develop - Testing</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/ja/dev/academy/guides/security/">Develop - Security scanning with Bandit</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/ja/dev/academy/guides/portable/">Publish - Portable</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/ja/dev/academy/guides/reference/">Publish - Reference</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/ja/dev/academy/guides/indexed/">Publish - Indexed</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/ja/dev/academy/guides/overview/">Polish - Addon Manager overview page</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/ja/dev/academy/guides/metadata/">Polish - Metadata &amp; discoverability</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/ja/dev/academy/guides/compatibility/">Maintain - FreeCAD version compatibility</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/ja/dev/academy/guides/migrations/">Maintain - Data &amp; schema migrations</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/ja/dev/academy/guides/update/">Maintain - Updating</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/ja/dev/academy/guides/handoff/">Maintain - Maintainer handoff</a>
+            </li></ul>
+      </li>
+    </ul><p class="toc-label"><svg
+    class="icon file"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/file.svg#file"></use>
+  </svg>
+        <span>このページの内容</span>
+      </p><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#where-init_guipy-lives">Where <code>init_gui.py</code> lives</a></li>
+        <li><a href="#the-workbench-class">The Workbench class</a>
+          <ul>
+            <li><a href="#class-attributes">Class attributes</a></li>
+            <li><a href="#initialize"><code>Initialize()</code></a></li>
+            <li><a href="#activated-and-deactivated"><code>Activated()</code> and <code>Deactivated()</code></a></li>
+            <li><a href="#contextmenurecipient"><code>ContextMenu(recipient)</code></a></li>
+            <li><a href="#getclassname"><code>GetClassName()</code></a></li>
+          </ul>
+        </li>
+        <li><a href="#registering-the-workbench">Registering the workbench</a></li>
+        <li><a href="#the-classname-manifest-entry">The <code>&lt;classname&gt;</code> manifest entry</a></li>
+        <li><a href="#populating-the-workbench">Populating the workbench</a></li>
+        <li><a href="#keeping-startup-fast">Keeping startup fast</a></li>
+        <li><a href="#common-problems">Common problems</a></li>
+        <li><a href="#see-also">See also</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+</nav><div class="content"><figure>
+  <blockquote class="note"><svg
+    class="icon note"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/note.svg#note"></use>
+  </svg>注記<p>このページはまだ翻訳されていないため、代わりに英語版が表示されます。協力していただけませんか？
+<a
+  href="https://github.com/freecad/website"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">貢献<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a></p></blockquote></figure><p>One of the best ways of adding large-scale new functionality to FreeCAD is to create a custom Workbench. In FreeCAD terminology, a Workbench is a collection of commands, menus, toolbars, and task panels all oriented towards a specific task. Within FreeCAD itself these are things like Sketcher, Part, CAM, BIM, FEM, etc. In terms of structuring your Addon, you can think of it as a sort of &ldquo;container&rdquo; for your addon&rsquo;s user interface: the entry that appears in FreeCAD&rsquo;s Workbench selector and owns any toolbars and menus your addon contributes.</p>
+<figure class="image"><button
+          aria-label="画像を拡大"
+          popovertarget="img-001"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/zoom.svg#zoom"></use>
+  </svg><img
+  class="img workbench-selector"
+  src="/Website/pr-146/dev/academy/guides/workbenches/workbench-selector.webp"
+  alt="Parametric Feature workbench in the Workbench selector dropdown, alongside the built-in workbenches and another addon (Transmogrifier)"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Parametric Feature workbench in the Workbench selector dropdown, alongside the built-in workbenches and another addon (Transmogrifier)" width="888" height="760" srcset="/Website/pr-146/dev/academy/guides/workbenches/workbench-selector_hu_4edbdba6eb545cc8.webp 400w, /Website/pr-146/dev/academy/guides/workbenches/workbench-selector_hu_a519891b2c36945a.webp 800w, /Website/pr-146/dev/academy/guides/workbenches/workbench-selector.webp 888w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+        <div id="img-001" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="画像ビューアを閉じる"><img
+  class="img workbench-selector"
+  src="/Website/pr-146/dev/academy/guides/workbenches/workbench-selector.webp"
+  alt="Parametric Feature workbench in the Workbench selector dropdown, alongside the built-in workbenches and another addon (Transmogrifier)"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Parametric Feature workbench in the Workbench selector dropdown, alongside the built-in workbenches and another addon (Transmogrifier)" width="888" height="760" srcset="/Website/pr-146/dev/academy/guides/workbenches/workbench-selector_hu_4edbdba6eb545cc8.webp 400w, /Website/pr-146/dev/academy/guides/workbenches/workbench-selector_hu_a519891b2c36945a.webp 800w, /Website/pr-146/dev/academy/guides/workbenches/workbench-selector.webp 888w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/cross.svg#cross"></use>
+  </svg></button></div><figcaption>
+          <div class="internal-tooltip"><svg
+    class="icon important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/important.svg#important"></use>
+  </svg><span class="tooltip">Parametric Feature workbench in the Workbench selector dropdown, alongside the built-in workbenches and another addon (Transmogrifier)</span>
+          </div>
+        </figcaption></figure><p>This page walks through the Workbench class, the <code>init_gui.py</code> file that defines it, and how FreeCAD discovers and activates your workbench at runtime. For a complete working example, see the <a
+  href="demos/workbench"
+  class="internal-tooltip">Minimal Workbench demo</a>. This page details the patterns shown there.</p>
+<h2
+  id="where-init_guipy-lives">
+  <a class="heading-anchor"
+    href="#where-init_guipy-lives"
+    title="Where init_gui.py lives"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Where <code>init_gui.py</code> lives</h2><p>In a Modern namespaced addon (see <a
+  href="topics/structure"
+  class="internal-tooltip">Structuring</a>), <code>init_gui.py</code> lives inside your addon&rsquo;s namespace package:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">MyAddon/
+</span></span><span class="line"><span class="cl">├─ package.xml
+</span></span><span class="line"><span class="cl">└─ freecad/
+</span></span><span class="line"><span class="cl">   └─ MyAddon/
+</span></span><span class="line"><span class="cl">      ├─ __init__.py
+</span></span><span class="line"><span class="cl">      └─ init_gui.py</span></span></code></pre></div></div><p>FreeCAD loads every addon&rsquo;s <code>init_gui.py</code> once at startup, before the user has had a chance to activate any particular workbench. Two consequences:</p>
+<ul>
+<li>Module-level code in <code>init_gui.py</code> runs for every user at every FreeCAD launch, whether they ever use your workbench or not. As a best practice this should be kept minimal: class definitions and one registration call.</li>
+<li>In the Modern layout the <code>__file__</code> module attribute is available and points at the deployed path. That is the normal way to locate your addon&rsquo;s resources (see <a
+  href="guides/icons"
+  class="internal-tooltip">Icons &amp; resources</a>). If you find older examples of the <code>InitGui.py</code>-based structure you may see various workarounds for a lack of <code>__file__</code>, but those are not necessary if using the Modern layout.</li>
+</ul>
+<h2
+  id="the-workbench-class">
+  <a class="heading-anchor"
+    href="#the-workbench-class"
+    title="The Workbench class"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>The Workbench class</h2><p>Your workbench is a class that inherits from <code>FreeCADGui.Workbench</code>:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="c1"># freecad/MyAddon/init_gui.py</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">FreeCADGui</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">MyWorkbench</span><span class="p">(</span><span class="n">FreeCADGui</span><span class="o">.</span><span class="n">Workbench</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MenuText</span> <span class="o">=</span> <span class="s2">&#34;Destroyer of Things&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ToolTip</span> <span class="o">=</span> <span class="s2">&#34;Basically just ruins everything. You&#39;ve been warned.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Icon</span> <span class="o">=</span> <span class="n">_ICON</span>  <span class="c1"># see below</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">Initialize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="o">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">GetClassName</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s2">&#34;Gui::PythonWorkbench&#34;</span></span></span></code></pre></div></div><p>In practice you will set at least <code>MenuText</code>, <code>Icon</code>, <code>Initialize</code>, and <code>GetClassName</code>, but there are several other optional entries, plus of course any custom code for your class itself.</p>
+<h3
+  id="class-attributes">
+  <a class="heading-anchor"
+    href="#class-attributes"
+    title="Class attributes"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Class attributes</h3><p><strong><code>MenuText</code></strong>: the label shown in the Workbench selector. Keep it short; it has to fit in the selector combobox.</p>
+<p><strong><code>ToolTip</code></strong>: the hover text. Generally one sentence describing the workbench&rsquo;s purpose.</p>
+<p><strong><code>Icon</code></strong>: the icon shown next to <code>MenuText</code> in the selector. It must be set before the workbench is registered (before <code>FreeCADGui.addWorkbench()</code> is called), which in practice means setting it as a class attribute using an absolute filesystem path. The idiomatic pattern within the FreeCAD addon ecosystem derives the path from <code>__file__</code>:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="c1"># freecad/MyAddon/init_gui.py</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">FreeCADGui</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">_ADDON_ROOT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl"><span class="n">_ICON</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_ADDON_ROOT</span><span class="p">,</span> <span class="s2">&#34;Resources&#34;</span><span class="p">,</span> <span class="s2">&#34;Icons&#34;</span><span class="p">,</span> <span class="s2">&#34;Logo.svg&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">MyWorkbench</span><span class="p">(</span><span class="n">FreeCADGui</span><span class="o">.</span><span class="n">Workbench</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Icon</span> <span class="o">=</span> <span class="n">_ICON</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span></span></span></code></pre></div></div><p>Three <code>dirname()</code> calls because <code>init_gui.py</code> is at <code>&lt;addon-root&gt;/freecad/&lt;ModName&gt;/init_gui.py</code>, which is three directories deep.</p>
+<h3
+  id="initialize">
+  <a class="heading-anchor"
+    href="#initialize"
+    title="Initialize()"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a><code>Initialize()</code></h3><p>Called once, the first time the user <em>activates</em> the workbench (<em>not</em> during startup, so this cost is only incurred by someone actually selecting your Workbench). This is where you:</p>
+<ol>
+<li>Import your command modules. Their top-level <code>FreeCADGui.addCommand(...)</code> calls register the commands by name <strong>as a side effect of import</strong>. The linter doesn&rsquo;t love this, so consider a <code># noqa: F401</code> (flake8) or <code># pylint: disable=unused-import</code> (pylint) if you are using one.</li>
+<li>Append those commands to toolbars and menus via <code>self.appendToolbar</code> and <code>self.appendMenu</code>.</li>
+</ol>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">Initialize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">Commands</span>  <span class="c1"># registers commands at import time</span>
+</span></span><span class="line"><span class="cl">    <span class="bp">self</span><span class="o">.</span><span class="n">appendToolbar</span><span class="p">(</span><span class="s2">&#34;My tools&#34;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&#34;MyAddon_First_Command&#34;</span><span class="p">,</span> <span class="s2">&#34;MyAddon_Second_Command&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="bp">self</span><span class="o">.</span><span class="n">appendMenu</span><span class="p">(</span><span class="s2">&#34;My Addon&#34;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&#34;MyAddon_First_Command&#34;</span><span class="p">,</span> <span class="s2">&#34;MyAddon_Second_Command&#34;</span><span class="p">])</span></span></span></code></pre></div></div><p>Deferring the <code>Commands</code> import to inside <code>Initialize()</code> (rather than at the top of <code>init_gui.py</code>) means the command-module code does not run for users who never activate your workbench. On a FreeCAD installation with many addons, this matters.</p>
+<h3
+  id="activated-and-deactivated">
+  <a class="heading-anchor"
+    href="#activated-and-deactivated"
+    title="Activated() and Deactivated()"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a><code>Activated()</code> and <code>Deactivated()</code></h3><p>Called every time the user switches <em>into</em> or <em>out of</em> your workbench, including the first time. Most workbenches leave these empty. Use them for setup and teardown that is scoped to being the active workbench: opening a dock, switching the coordinate system display, and so on.</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">Activated</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Run every time the user switches to this workbench.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">Deactivated</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Run every time the user switches away from this workbench.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span></span></span></code></pre></div></div><p>Avoid expensive work in <code>Activated</code> unless it is genuinely scoped to &ldquo;workbench is currently visible&rdquo;; this method runs on every switch, not just the first time.</p>
+<h3
+  id="contextmenurecipient">
+  <a class="heading-anchor"
+    href="#contextmenurecipient"
+    title="ContextMenu(recipient)"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a><code>ContextMenu(recipient)</code></h3><p>Called whenever the user right-clicks inside FreeCAD&rsquo;s main window. The <code>recipient</code> argument identifies where the click happened, and is one of three capitalized strings:</p>
+<table>
+  <thead>
+      <tr>
+          <th><code>recipient</code></th>
+          <th>Where the click happened</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>&quot;Tree&quot;</code></td>
+          <td>The model tree</td>
+      </tr>
+      <tr>
+          <td><code>&quot;View&quot;</code></td>
+          <td>The 3D view</td>
+      </tr>
+      <tr>
+          <td><code>&quot;Sketch&quot;</code></td>
+          <td>The Sketcher editor</td>
+      </tr>
+  </tbody>
+</table>
+<p>Use <code>self.appendContextMenu</code> to add commands:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">ContextMenu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">recipient</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">recipient</span> <span class="o">==</span> <span class="s2">&#34;View&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">appendContextMenu</span><span class="p">(</span><span class="s2">&#34;My actions&#34;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&#34;MyAddon_Another_Command&#34;</span><span class="p">])</span></span></span></code></pre></div></div><p>The capitalization matters. Comparing against <code>&quot;view&quot;</code> matches nothing, and does so silently.</p>
+<p><code>ContextMenu</code> is optional. Most workbenches do not implement it.</p>
+<h3
+  id="getclassname">
+  <a class="heading-anchor"
+    href="#getclassname"
+    title="GetClassName()"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a><code>GetClassName()</code></h3><p>Python workbenches must return the literal string <code>&quot;Gui::PythonWorkbench&quot;</code> from <code>GetClassName</code>. This tells FreeCAD&rsquo;s C++ core that the workbench is implemented in Python:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">GetClassName</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s2">&#34;Gui::PythonWorkbench&#34;</span></span></span></code></pre></div></div><p>Do not change this return value. Changing it will break workbench discovery.</p>
+<h2
+  id="registering-the-workbench">
+  <a class="heading-anchor"
+    href="#registering-the-workbench"
+    title="Registering the workbench"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Registering the workbench</h2><p>At the bottom of <code>init_gui.py</code>, create an instance of your class and pass it to <code>FreeCADGui.addWorkbench</code>:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">FreeCADGui</span><span class="o">.</span><span class="n">addWorkbench</span><span class="p">(</span><span class="n">MyWorkbench</span><span class="p">())</span></span></span></code></pre></div></div><p>This line runs when FreeCAD imports <code>init_gui.py</code> at startup. It must come after the class definition.</p>
+<h2
+  id="the-classname-manifest-entry">
+  <a class="heading-anchor"
+    href="#the-classname-manifest-entry"
+    title="The &lt;classname&gt; manifest entry"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>The <code>&lt;classname&gt;</code> manifest entry</h2><p>Your <a
+  href="topics/manifest"
+  class="internal-tooltip"><code>package.xml</code></a> must declare a <code>&lt;workbench&gt;</code> content item whose <code>&lt;classname&gt;</code> matches your Python class:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;content&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;workbench&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;classname&gt;</span>MyWorkbench<span class="nt">&lt;/classname&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/workbench&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/content&gt;</span></span></span></code></pre></div></div><p>FreeCAD uses <code>&lt;classname&gt;</code> to dynamically create your workbench&rsquo;s icon from its <code>Icon</code> attribute. If the name in the manifest does not match the class name in <code>init_gui.py</code>, your workbench will still load, but its icon will not.</p>
+<h2
+  id="populating-the-workbench">
+  <a class="heading-anchor"
+    href="#populating-the-workbench"
+    title="Populating the workbench"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Populating the workbench</h2><p>Two methods from the Workbench class create its UI, both normally called in the <code>Initialize()</code> method.</p>
+<p><strong><code>self.appendToolbar(title, command_names)</code></strong> creates a new toolbar with the given title and populates it with the named commands. Command names are the strings you passed to <code>FreeCADGui.addCommand()</code>. See <a
+  href="guides/commands"
+  class="internal-tooltip">Gui Commands</a> for how commands are defined and registered.</p>
+<figure class="image"><button
+          aria-label="画像を拡大"
+          popovertarget="img-002"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/zoom.svg#zoom"></use>
+  </svg><img
+  class="img toolbar-item"
+  src="/Website/pr-146/dev/academy/guides/workbenches/toolbar-item.webp"
+  alt="The “Create Parametric Box” command appearing in its own toolbar after the workbench is activated"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="The “Create Parametric Box” command appearing in its own toolbar after the workbench is activated" width="409" height="450" srcset="/Website/pr-146/dev/academy/guides/workbenches/toolbar-item_hu_1b5007ce5651e192.webp 400w, /Website/pr-146/dev/academy/guides/workbenches/toolbar-item.webp 409w" sizes="(max-width: 400px) 400px, 95vw"></button>
+        <div id="img-002" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="画像ビューアを閉じる"><img
+  class="img toolbar-item"
+  src="/Website/pr-146/dev/academy/guides/workbenches/toolbar-item.webp"
+  alt="The “Create Parametric Box” command appearing in its own toolbar after the workbench is activated"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="The “Create Parametric Box” command appearing in its own toolbar after the workbench is activated" width="409" height="450" srcset="/Website/pr-146/dev/academy/guides/workbenches/toolbar-item_hu_1b5007ce5651e192.webp 400w, /Website/pr-146/dev/academy/guides/workbenches/toolbar-item.webp 409w" sizes="(max-width: 400px) 400px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/cross.svg#cross"></use>
+  </svg></button></div><figcaption>
+          <div class="internal-tooltip"><svg
+    class="icon important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/important.svg#important"></use>
+  </svg><span class="tooltip">The “Create Parametric Box” command appearing in its own toolbar after the workbench is activated</span>
+          </div>
+        </figcaption></figure><p><strong><code>self.appendMenu(menu_path, command_names)</code></strong> creates a menu entry. <code>menu_path</code> is either a string (for a top-level menu) or a list of strings (for a submenu path):</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="bp">self</span><span class="o">.</span><span class="n">appendMenu</span><span class="p">(</span><span class="s2">&#34;My Addon&#34;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&#34;MyAddon_BreakThings&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="bp">self</span><span class="o">.</span><span class="n">appendMenu</span><span class="p">([</span><span class="s2">&#34;File&#34;</span><span class="p">,</span> <span class="s2">&#34;Export&#34;</span><span class="p">,</span> <span class="s2">&#34;My formats&#34;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&#34;MyAddon_ExportXYZ&#34;</span><span class="p">])</span></span></span></code></pre></div></div><p>Both methods expect the referenced commands to already be registered by the time they run. Importing your <code>Commands</code> module at the top of <code>Initialize()</code> takes care of that.</p>
+<h2
+  id="keeping-startup-fast">
+  <a class="heading-anchor"
+    href="#keeping-startup-fast"
+    title="Keeping startup fast"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Keeping startup fast</h2><p>FreeCAD users expect the application to launch quickly, and you can help with that goal. Every module imported at the top of every addon&rsquo;s <code>init_gui.py</code> delays that launch. Rules of thumb:</p>
+<ul>
+<li>In <code>init_gui.py</code> itself, <em>only</em> import what you need to define the class and compute paths: <code>FreeCADGui</code> and the <code>os</code>/<code>sys</code> stdlib. Do not import <code>FreeCAD</code>, <code>numpy</code>, or anything heavy unless it is genuinely needed at class-definition time.</li>
+<li>Defer imports of your own <code>Commands</code> module (and anything it pulls in) to inside <code>Initialize()</code>.</li>
+<li><code>Initialize()</code> itself should also seek to be reasonably fast. Expensive setup should be guarded by <code>IsActive()</code> checks inside individual commands, or inside <code>Activated()</code> if it only matters when your workbench is the visible one.</li>
+</ul>
+<h2
+  id="common-problems">
+  <a class="heading-anchor"
+    href="#common-problems"
+    title="Common problems"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Common problems</h2><p><strong><code>Icon</code> set too late.</strong> If you set <code>self.Icon = ...</code> inside <code>Initialize</code> (rather than on the class body), it is too late: FreeCAD has already read <code>Icon</code> by the time <code>Initialize</code> runs, and you will see the default icon instead of yours. Set <code>Icon</code> as a class attribute.</p>
+<p><strong>Commands referenced before they are registered.</strong> <code>self.appendToolbar(&quot;MyTB&quot;, [&quot;MyAddon_Hello&quot;])</code> will silently do nothing useful if <code>&quot;MyAddon_Hello&quot;</code> has not yet been registered via <code>FreeCADGui.addCommand</code>. Import the module that registers the command before calling <code>appendToolbar</code>.</p>
+<p><strong>Heavy top-level imports.</strong> If your <code>init_gui.py</code> imports <code>numpy</code> or <code>scipy</code> at the top of the file, every FreeCAD user pays for those imports at launch, whether or not they ever switch to your workbench. Please don&rsquo;t.</p>
+<p><strong>Workbench discovered but nothing happens on activation.</strong> If switching to your workbench does nothing visible, check the Report view. A traceback raised from inside <code>Initialize</code> is the most common cause, and FreeCAD will have logged it there.</p>
+<h2
+  id="see-also">
+  <a class="heading-anchor"
+    href="#see-also"
+    title="See also"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>See also</h2><ul>
+<li><a
+  href="demos/workbench"
+  class="internal-tooltip">Minimal Workbench demo</a>: a complete working workbench with SPDX headers.</li>
+<li><a
+  href="guides/commands"
+  class="internal-tooltip">Gui Commands</a>: what the command-name strings in <code>appendToolbar</code> and <code>appendMenu</code> refer to.</li>
+<li><a
+  href="guides/manipulators"
+  class="internal-tooltip">Workbench manipulators</a>: how to contribute toolbars and menus to workbenches you do not own, including without defining a workbench at all.</li>
+<li><a
+  href="guides/icons"
+  class="internal-tooltip">Icons &amp; resources</a>: detail on the <code>Icon</code> path and addon icon directories.</li>
+<li><a
+  href="topics/structure"
+  class="internal-tooltip">Structuring</a>: the addon directory layout <code>init_gui.py</code> lives inside.</li>
+<li><a
+  href="topics/manifest"
+  class="internal-tooltip">Manifest</a>: the <code>&lt;classname&gt;</code> element in <code>package.xml</code>.</li>
+<li><a
+  href="guides/install"
+  class="internal-tooltip">Installing your addon locally</a>: how to get your addon into a running FreeCAD to test.</li>
+</ul>
+</div><footer class="single-footer">
+    <nav class="pagination"><a
+            class="button next"
+            href="/Website/pr-146/ja/dev/academy/guides/create/"
+            title="次の記事"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_left.svg#tri_left"></use>
+  </svg>Creating an Addon</a><a
+            class="button prev"
+            href="/Website/pr-146/ja/dev/academy/guides/commands/"
+            title="前の記事">Code - Gui Commands<svg
+    class="icon tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="トップへ"
+  title="トップへ (Alt + G)" ><svg
+    class="icon tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a
+            href="/Website/pr-146/ja/">ホームページ</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-146/ja/features/">特徴</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-146/ja/download/">ダウンロード</a><ul><li>
+                  <a
+                    href="/Website/pr-146/ja/releases/">Releases</a>
+                </li><li>
+                      <a
+                        href="/Website/pr-146/ja/download/addons/">Addons</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-146/ja/download/unstable/">Unstable</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-146/ja/news/">ニュース</a><ul><li>
+                  <a
+                    href="/Website/pr-146/ja/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/pr-146/ja/author/">著者</a>
+                      </li><li>
+                        <a href="/Website/pr-146/ja/category/">カテゴリ</a>
+                      </li><li>
+                        <a href="/Website/pr-146/ja/tags/">タグ一覧</a>
+                      </li></ul></li><li>
+          <a
+            href="/Website/pr-146/ja/community/">コミュニティ</a><ul><li>
+                      <a
+                        href="/Website/pr-146/ja/community/calendar/">Calendar</a>
+                    </li><li>
+                      <a
+                        href="https://events.freecad.org/" target="_blank" rel="external noreferrer nofollow">Events<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://fpa.freecad.org" target="_blank" rel="external noreferrer nofollow">Association<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swag shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-146/ja/community/telemetry/">Telemetry</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-146/ja/docs/" aria-current="page" class="active">ドキュメント</a><ul><li>
+                  <a
+                    href="https://wiki.freecad.org/User_hub/ja" target="_blank" rel="external noreferrer nofollow">User manual<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                </li><li>
+                  <a
+                    href="/Website/pr-146/ja/dev/">Development Handbook</a>
+                </li><li>
+                  <a
+                    href="https://freecad.github.io/SourceDoc/" target="_blank" rel="external noreferrer nofollow">FreeCAD API<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                </li></ul></li><li>
+          <a
+            href="/Website/pr-146/ja/donate/">寄付する</a><ul></ul></li></ul>
+</nav>
+<div class="share-links"><a
+    href="https://forum.freecad.org"
+    title="Forum"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/forum.svg#forum"></use>
+  </svg></a><a
+    href="https://devtalk.freecad.org/"
+    title="DevTalk"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon devtalk"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/devtalk.svg#devtalk"></use>
+  </svg></a><a
+    href="https://github.com/freecad"
+    title="GitHub"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/github.svg#github"></use>
+  </svg></a><a
+    href="https://codeberg.org/freecad"
+    title="Codeberg"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a
+    href="https://social.freecad.org/@freecad"
+    title="Mastodon"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/bluesky.svg#bluesky"></use>
+  </svg></a><a
+    href="https://www.reddit.com/r/freecad"
+    title="Reddit"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/reddit.svg#reddit"></use>
+  </svg></a><a
+    href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+    title="Matrix"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/matrix.svg#matrix"></use>
+  </svg></a><a
+    href="https://discord.gg/w2cTKGzccC"
+    title="Discord"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/discord.svg#discord"></use>
+  </svg></a><a
+    href="https://www.linkedin.com/groups/4295230"
+    title="LinkedIn"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+    href="https://FreeCAD.github.io/Website/pr-146/ja/index.xml"
+    type="application/rss&#43;xml"
+    title="RSSフィード"><svg
+    class="icon rss"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/rss.svg#rss"></use>
+  </svg></a><a
+  href="/Website/pr-146/ja/fedishare.html#title=Code&#43;-&#43;Workbench&#43;registration&amp;description=One%20of%20the%20best%20ways%20of%20adding%20large-scale%20new%20functionality%20to%20FreeCAD%20is%20to%20create%20a%20custom%20Workbench.%20In%20FreeCAD%20terminology,%20a%20Workbench%20is%20a%20collection%20of%20commands,%20menus,%20toolbars,%20and%20task%20%e2%80%a6&amp;url=https://FreeCAD.github.io/Website/pr-146/ja/dev/academy/guides/workbenches/"
+  title="Fediverseに公開する"
+  target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026
+    <a
+      href="/Website/pr-146/ja/"
+      title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a
+    href="https://creativecommons.org/licenses/by-sa/4.0/"
+    title="Creative Commons"
+    target="_blank" rel="license external noreferrer nofollow">
+
+    CC BY-SA<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to
+  <a
+    href="https://gohugo.io/"
+    title="Hugo SSG"
+    target="_blank" rel="external noreferrer nofollow">
+
+    Hugo<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-11-27
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/3b9aaaf78139eae2a69bacc13828975fc955b356">3b9aaaf781<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script
+    src="/Website/pr-146/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-146/js/ja/copy.min.e7ab35b3b37313890aa15f142aa21cb58542130b29698e68073d3c793c462fe3.js"
+    type="text/javascript"
+    defer integrity="sha256-56s1s7NzE4kKoV8UKqIctYVCEwspaY5oBz08eTxGL&#43;M=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-146/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    defer integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous">
+  </script></body>
+
+</html>

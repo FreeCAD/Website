@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html
+  lang="pl-PL"
+  dir="ltr"><head><meta charset="utf-8">
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1">
+<meta
+  name="referrer"
+  content="strict-origin-when-cross-origin">
+<meta
+  name="robots"
+  content="index, follow"><script>
+  try {
+    const pref = localStorage.getItem("pref-theme");
+    const dark =
+      pref === "dark" ||
+      (pref !== "light" &&
+        
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+        );
+    if (dark) document.documentElement.classList.add("dark");
+  } catch {}
+  document.documentElement.classList.add("js");
+</script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --header: rgb(8, 8, 8);
+        --theme: rgb(16, 16, 16);
+        --entry: rgb(32, 32, 32);
+        --tone: rgb(64, 64, 64);
+        --backdrop: rgba(64, 64, 64, 0.8);
+        --primary: rgb(240, 240, 240);
+        --secondary: rgb(224, 224, 224);
+        --tertiary: rgb(208, 208, 208);
+        --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+        --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+        --angle: 315deg;
+      }
+    }</style>
+</noscript><title>FreeCAD | Demo - Preferences Page</title>
+  <meta
+    name="description"
+    content="Twój własny program do parametrycznego modelowania wolne i otwarte"><link
+          rel="stylesheet"
+          href="/Website/pr-146/css/styles.620a776c0a5bd62061f0a7760ffb36ec9abdfb6503ff52a674fb042a06a92bfa.css"
+          integrity="sha256-Ygp3bApb1iBh8Kd2D/s27Jq9&#43;2UD/1KmdPsEKgapK/o="
+          crossorigin="anonymous"><link
+    rel="canonical"
+    href="https://FreeCAD.github.io/Website/pr-146/pl/dev/academy/demos/preference/"><link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://FreeCAD.github.io/Website/pr-146/dev/academy/demos/preference/"><link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://FreeCAD.github.io/Website/pr-146/zh/dev/academy/demos/preference/"><link
+      rel="alternate"
+      hreflang="es-ES"
+      href="https://FreeCAD.github.io/Website/pr-146/es/dev/academy/demos/preference/"><link
+      rel="alternate"
+      hreflang="fr-FR"
+      href="https://FreeCAD.github.io/Website/pr-146/fr/dev/academy/demos/preference/"><link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://FreeCAD.github.io/Website/pr-146/pt/dev/academy/demos/preference/"><link
+      rel="alternate"
+      hreflang="de-DE"
+      href="https://FreeCAD.github.io/Website/pr-146/de/dev/academy/demos/preference/"><link
+      rel="alternate"
+      hreflang="ja-JP"
+      href="https://FreeCAD.github.io/Website/pr-146/ja/dev/academy/demos/preference/"><link
+      rel="alternate"
+      hreflang="pl-PL"
+      href="https://FreeCAD.github.io/Website/pr-146/pl/dev/academy/demos/preference/"><link
+    rel="alternate"
+    hreflang="x-default"
+    href="https://FreeCAD.github.io/Website/pr-146/pl/"><link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Website/pr-146/favicon.svg"><link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/Website/pr-146/favicon.ico"><link
+      rel="apple-touch-icon"
+      href="/Website/pr-146/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://FreeCAD.github.io/Website/pr-146/pl/index.xml"
+    title="FreeCAD"><meta name="generator" content="Hugo 0.160.0"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-146/pl/dev/academy/demos/preference/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Demo - Preferences Page">
+  <meta property="og:description" content="A workbench that registers a preferences page in FreeCAD’s preferences dialog. The page exposes six controls (combo box, line edit, spin box, double spin box, two check boxes) for configuring a Transmogrifier. A single command reads the current preferences and reports the configured operation in the Report view and a dialog.">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dev">
+    <meta property="article:modified_time" content="2026-11-27T17:14:57+01:00">
+</head><body
+    class="single type-dev kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <a
+    class="logo"
+    href="/Website/pr-146/pl/"
+    accesskey="h"
+    title="Strona Główna (Alt + H)"
+    aria-label="Strona Główna">
+    <svg
+      class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+
+      <use href="/Website/pr-146/wordmark.svg#wordmark"></use>
+    </svg></a>
+
+  <div class="site-nav"><nav class="menu">
+  <button
+    popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg
+    class="icon hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hamburger.svg#hamburger"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul
+    popover
+    id="menu-list"
+    class="menu-list"><li>
+          <a
+            href="/Website/pr-146/pl/features/">Funkcje</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/pl/download/">Pobierz</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/pl/news/">Aktualności</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/pl/community/">Społeczność</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/pl/docs/" aria-current="page" class="active">Dokumentacja</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/pl/donate/" class="button accent"><svg
+    class="icon heart"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/heart.svg#heart"></use>
+  </svg>Przekaż darowiznę</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button
+          popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Wybierz język (Alt + L)"
+          aria-label="Wybierz język"><svg
+    class="icon language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul
+          popover
+          id="lang-list"
+          class="language-list"><li>
+              <a href="/Website/pr-146/dev/academy/demos/preference/" title="Demo - Preferences Page">English 🇬🇧</a>
+            </li><li>
+              <a href="/Website/pr-146/zh/dev/academy/demos/preference/" title="Demo - Preferences Page">中文 🇨🇳</a>
+            </li><li>
+              <a href="/Website/pr-146/es/dev/academy/demos/preference/" title="Demo - Preferences Page">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/pr-146/fr/dev/academy/demos/preference/" title="Demo - Preferences Page">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pr-146/pt/dev/academy/demos/preference/" title="Demo - Preferences Page">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a href="/Website/pr-146/de/dev/academy/demos/preference/" title="Demo - Preferences Page">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/pr-146/ja/dev/academy/demos/preference/" title="Demo - Preferences Page">日本語 🇯🇵</a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-146/pl/dev/academy/demos/preference/" title="Demo - Preferences Page">Polski 🇵🇱</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Zmień motyw chroma (Alt + T)"
+    aria-label="Zmień motyw chroma"><svg
+    class="icon dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/dark.svg#dark"></use>
+  </svg><svg
+    class="icon light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero">
+
+    <h2 class="title">Demo - Preferences Page</h1><div class="metadata"><span class="meta"><svg
+    class="icon time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/time.svg#time"></use>
+  </svg>3 min</span></div></section><nav class="toc">
+  <input
+    type="checkbox"
+    id="toc-checkbox"
+    class="toc-checkbox">
+  <label
+    for="toc-checkbox"
+    class="toc-toggle button"
+    title="Table of Contents"><svg
+    class="icon expand"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/expand.svg#expand"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/cross.svg#cross"></use>
+  </svg><span>Spis treści</span>
+  </label>
+
+  <div
+    id="toc-content"
+    class="toc-content">
+    <ul class="section-nav"><li>
+          <a
+            href="/Website/pr-146/pl/dev/"
+            class="current-section"><svg
+    class="icon tri_tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_tri_left.svg#tri_tri_left"></use>
+  </svg> Development Handbook</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/pl/dev/academy/"
+            class="current-section"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_left.svg#tri_left"></use>
+  </svg> Addon Academy</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/pl/dev/academy/demos/"
+            class="current-section"><svg
+    class="icon folder_closed"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/folder_closed.svg#folder_closed"></use>
+  </svg> Demos</a>
+        </li><li>
+        <ul><li>
+              <a
+                href="/Website/pr-146/pl/dev/academy/demos/toolbar/">Demo - Extend Toolbar &amp; New Toolbar</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/pl/dev/academy/demos/workbench/">Demo - Minimal Workbench</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/pl/dev/academy/demos/feature/">Demo - Parametric Feature</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/pl/dev/academy/demos/preference/" id="current-page" class="active" aria-current="page">Demo - Preferences Page</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/pl/dev/academy/demos/macro/">Demo - Macro</a>
+            </li></ul>
+      </li>
+    </ul><p class="toc-label"><svg
+    class="icon file"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/file.svg#file"></use>
+  </svg>
+        <span>Na tej stronie</span>
+      </p><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#directory-layout">Directory layout</a></li>
+        <li><a href="#the-files">The files</a>
+          <ul>
+            <li><a href="#packagexml"><code>package.xml</code></a></li>
+            <li><a href="#resourcespanelstransmogrifierprefsui"><code>resources/panels/TransmogrifierPrefs.ui</code></a></li>
+            <li><a href="#freecadtransmogrifierinit_guipy"><code>freecad/Transmogrifier/init_gui.py</code></a></li>
+            <li><a href="#freecadtransmogrifiercommandspy"><code>freecad/Transmogrifier/commands.py</code></a></li>
+            <li><a href="#freecadtransmogrifier__init__py"><code>freecad/Transmogrifier/__init__.py</code></a></li>
+          </ul>
+        </li>
+        <li><a href="#trying-it-out">Trying it out</a></li>
+        <li><a href="#where-to-go-next">Where to go next</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+</nav><div class="content"><figure>
+  <blockquote class="note"><svg
+    class="icon note"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/note.svg#note"></use>
+  </svg>Uwaga<p>Ta strona nie została jeszcze przetłumaczona, więc wyświetlana jest wersja angielska. Chcesz pomóc?
+<a
+  href="https://github.com/freecad/website"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Współtworzenie<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a></p></blockquote></figure><p>A workbench that registers a preferences page in FreeCAD&rsquo;s preferences dialog. The page exposes six controls (combo box, line edit, spin box, double spin box, two check boxes) for configuring a Transmogrifier. A single command reads the current preferences and reports the configured operation in the Report view and a dialog.</p>
+<figure class="image"><button
+          aria-label="Powiększ obraz"
+          popovertarget="img-001"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/zoom.svg#zoom"></use>
+  </svg><img
+  class="img preferences-page"
+  src="/Website/pr-146/dev/academy/demos/preference/preferences-page.webp"
+  alt="Transmogrifier preferences page in FreeCAD’s preferences dialog"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Transmogrifier preferences page in FreeCAD’s preferences dialog" width="1087" height="900" srcset="/Website/pr-146/dev/academy/demos/preference/preferences-page_hu_a600571f160be9cf.webp 400w, /Website/pr-146/dev/academy/demos/preference/preferences-page_hu_e435c2eecd18da8c.webp 800w, /Website/pr-146/dev/academy/demos/preference/preferences-page.webp 1087w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+        <div id="img-001" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Zamknij przeglądarkę obrazów"><img
+  class="img preferences-page"
+  src="/Website/pr-146/dev/academy/demos/preference/preferences-page.webp"
+  alt="Transmogrifier preferences page in FreeCAD’s preferences dialog"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Transmogrifier preferences page in FreeCAD’s preferences dialog" width="1087" height="900" srcset="/Website/pr-146/dev/academy/demos/preference/preferences-page_hu_a600571f160be9cf.webp 400w, /Website/pr-146/dev/academy/demos/preference/preferences-page_hu_e435c2eecd18da8c.webp 800w, /Website/pr-146/dev/academy/demos/preference/preferences-page.webp 1087w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/cross.svg#cross"></use>
+  </svg></button></div><figcaption>
+          <div class="internal-tooltip"><svg
+    class="icon important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/important.svg#important"></use>
+  </svg><span class="tooltip">Transmogrifier preferences page in FreeCAD’s preferences dialog</span>
+          </div>
+        </figcaption></figure><p>This demo is the runnable companion to the <a
+  href="guides/preferences"
+  class="internal-tooltip">Preferences pages</a> guide. Every file is dedicated to the public domain under <a
+  href="https://creativecommons.org/publicdomain/zero/1.0/"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">CC0-1.0<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>; copy and adapt freely. Many thanks to Bill Watterson for the invention of the transmogrifier in the first place.</p>
+<h2
+  id="directory-layout">
+  <a class="heading-anchor"
+    href="#directory-layout"
+    title="Directory layout"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Directory layout</h2><div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Transmogrifier/
+</span></span><span class="line"><span class="cl">├─ package.xml
+</span></span><span class="line"><span class="cl">└─ freecad/
+</span></span><span class="line"><span class="cl">   └─ Transmogrifier/
+</span></span><span class="line"><span class="cl">      ├─ resources/
+</span></span><span class="line"><span class="cl">      │  ├─ icons/
+</span></span><span class="line"><span class="cl">      │  │  ├─ Logo.svg
+</span></span><span class="line"><span class="cl">      │  │  └─ preferences-transmogrifier.svg
+</span></span><span class="line"><span class="cl">      │  └─ panels/
+</span></span><span class="line"><span class="cl">      │     └─ TransmogrifierPrefs.ui
+</span></span><span class="line"><span class="cl">      ├─ __init__.py
+</span></span><span class="line"><span class="cl">      ├─ init_gui.py
+</span></span><span class="line"><span class="cl">      └─ commands.py</span></span></code></pre></div></div><p>The <code>.ui</code> file lives in submodule <code>resources/panels/</code>.</p>
+<h2
+  id="the-files">
+  <a class="heading-anchor"
+    href="#the-files"
+    title="The files"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>The files</h2><h3
+  id="packagexml">
+  <a class="heading-anchor"
+    href="#packagexml"
+    title="package.xml"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a><code>package.xml</code></h3><p>The <a
+  href="topics/structuring/manifest"
+  class="internal-tooltip">Addon Manifest</a> declares the workbench. The preferences page is not declared in the manifest; FreeCAD discovers it via <code>addPreferencePage</code> calls at workbench startup.</p>
+<p>Source: <a
+  href="/Website/pr-146/dev/academy/demos/preference/Source/package.xml"
+  class="internal-tooltip"><code>package.xml</code></a></p>
+<h3
+  id="resourcespanelstransmogrifierprefsui">
+  <a class="heading-anchor"
+    href="#resourcespanelstransmogrifierprefsui"
+    title="resources/panels/TransmogrifierPrefs.ui"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a><code>resources/panels/TransmogrifierPrefs.ui</code></h3><p>The Qt Designer form. The file is hand-written XML for this demo, but in production you would create it visually in Qt Designer (with FreeCAD&rsquo;s plugin loaded) and have it generate the same XML.</p>
+<p>Each input control is one of FreeCAD&rsquo;s <code>Gui::Pref*</code> widgets, with <code>prefEntry</code> and <code>prefPath</code> properties that name the parameter key and storage path. FreeCAD reads stored values into these widgets when the preferences dialog opens, and writes their final values back when the user clicks OK.</p>
+<p>Source: <a
+  href="Source/freecad/Transmogrifier/resources/panels/TransmogrifierPrefs.ui"
+  class="internal-tooltip"><code>TransmogrifierPrefs.ui</code></a></p>
+<h3
+  id="freecadtransmogrifierinit_guipy">
+  <a class="heading-anchor"
+    href="#freecadtransmogrifierinit_guipy"
+    title="freecad/Transmogrifier/init_gui.py"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a><code>freecad/Transmogrifier/init_gui.py</code></h3><p>Defines <code>TransmogrifierWorkbench</code>. After defining the class, the file:</p>
+<ol>
+<li>Calls <code>FreeCADGui.addIconPath</code> so FreeCAD can locate <code>preferences-transmogrifier.svg</code> for the preferences sidebar.</li>
+<li>Registers the workbench.</li>
+<li>Calls <code>FreeCADGui.addPreferencePage</code> with the path to the <code>.ui</code> file and the group name <code>&quot;Transmogrifier&quot;</code> for the sidebar.</li>
+</ol>
+<p>Source: <a
+  href="/Website/pr-146/dev/academy/demos/preference/Source/freecad/Transmogrifier/init_gui.py"
+  class="internal-tooltip"><code>init_gui.py</code></a></p>
+<h3
+  id="freecadtransmogrifiercommandspy">
+  <a class="heading-anchor"
+    href="#freecadtransmogrifiercommandspy"
+    title="freecad/Transmogrifier/commands.py"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a><code>freecad/Transmogrifier/commands.py</code></h3><p>Defines <code>EngageCommand</code>. Its <code>Activated()</code> method reads each preference from <code>FreeCAD.ParamGet(&quot;User parameter:BaseApp/Preferences/Mod/Transmogrifier&quot;)</code> and reports the configured operation in the Report view and a <code>QMessageBox</code>.</p>
+<p>Source: <a
+  href="/Website/pr-146/dev/academy/demos/preference/Source/freecad/Transmogrifier/commands.py"
+  class="internal-tooltip"><code>commands.py</code></a></p>
+<h3
+  id="freecadtransmogrifier__init__py">
+  <a class="heading-anchor"
+    href="#freecadtransmogrifier__init__py"
+    title="freecad/Transmogrifier/__init__.py"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a><code>freecad/Transmogrifier/__init__.py</code></h3><p>Empty namespace-package marker.</p>
+<p>Source: <a
+  href="/Website/pr-146/dev/academy/demos/preference/Source/freecad/Transmogrifier/__init__.py"
+  class="internal-tooltip"><code>__init__.py</code></a></p>
+<h2
+  id="trying-it-out">
+  <a class="heading-anchor"
+    href="#trying-it-out"
+    title="Trying it out"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Trying it out</h2><ol>
+<li>Install the addon by downloading <a
+  href="/Website/pr-146/dev/academy/demos/preference/Transmogrifier.zip"
+  class="internal-tooltip"><code>Transmogrifier.zip</code></a> and extracting it into your FreeCAD user <code>Mod/</code> directory. To install from source instead, or to symlink for live edits, follow <a
+  href="guides/install"
+  class="internal-tooltip">Installing your addon locally</a> using the <a
+  href="./Source"
+  class="internal-tooltip"><code>Source/</code></a> directory next to this page.</li>
+<li>Restart FreeCAD.</li>
+<li>Open <strong>Edit → Preferences</strong>. The Transmogrifier group should appear in the sidebar.</li>
+<li>Adjust the values and click OK to save them.</li>
+<li>Switch to the Transmogrifier workbench and click the Engage Transmogrifier toolbar button. The Report view and a dialog show the values that were saved.</li>
+<li>Reopen the preferences dialog. The values from step 4 are restored into the form.</li>
+</ol>
+<h2
+  id="where-to-go-next">
+  <a class="heading-anchor"
+    href="#where-to-go-next"
+    title="Where to go next"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Where to go next</h2><ul>
+<li><a
+  href="guides/preferences"
+  class="internal-tooltip">Preferences pages</a> for the full pattern: <code>Gui::Pref*</code> widgets, <code>prefEntry</code> / <code>prefPath</code>, and <code>ParamGet</code> reads.</li>
+<li><a
+  href="guides/workbenches"
+  class="internal-tooltip">Workbench registration</a> for the <code>init_gui.py</code> walk-through.</li>
+<li><a
+  href="guides/commands"
+  class="internal-tooltip">Gui Commands</a> for the command pattern.</li>
+</ul>
+</div><footer class="single-footer">
+    <nav class="pagination"><a
+            class="button next"
+            href="/Website/pr-146/pl/dev/academy/demos/feature/"
+            title="Następny artykuł"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_left.svg#tri_left"></use>
+  </svg>Demo - Parametric Feature</a><a
+            class="button prev"
+            href="/Website/pr-146/pl/dev/academy/demos/macro/"
+            title="Poprzedni artykuł">Demo - Macro<svg
+    class="icon tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Przejdź do góry"
+  title="Przejdź do góry (Alt + G)" ><svg
+    class="icon tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a
+            href="/Website/pr-146/pl/">Strona Główna</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-146/pl/features/">Funkcje</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-146/pl/download/">Pobierz</a><ul><li>
+                  <a
+                    href="/Website/pr-146/pl/releases/">Releases</a>
+                </li><li>
+                      <a
+                        href="/Website/pr-146/pl/download/addons/">Addons</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-146/pl/download/unstable/">Unstable</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-146/pl/news/">Aktualności</a><ul><li>
+                  <a
+                    href="/Website/pr-146/pl/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/pr-146/pl/author/">Autor</a>
+                      </li><li>
+                        <a href="/Website/pr-146/pl/category/">Kategoria</a>
+                      </li><li>
+                        <a href="/Website/pr-146/pl/tags/">Tagi</a>
+                      </li></ul></li><li>
+          <a
+            href="/Website/pr-146/pl/community/">Społeczność</a><ul><li>
+                      <a
+                        href="/Website/pr-146/pl/community/calendar/">Calendar</a>
+                    </li><li>
+                      <a
+                        href="https://events.freecad.org/" target="_blank" rel="external noreferrer nofollow">Events<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://fpa.freecad.org" target="_blank" rel="external noreferrer nofollow">Association<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swag shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-146/pl/community/telemetry/">Telemetry</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-146/pl/docs/" aria-current="page" class="active">Dokumentacja</a><ul><li>
+                  <a
+                    href="https://wiki.freecad.org/User_hub/pl" target="_blank" rel="external noreferrer nofollow">User manual<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                </li><li>
+                  <a
+                    href="/Website/pr-146/pl/dev/">Development Handbook</a>
+                </li><li>
+                  <a
+                    href="https://freecad.github.io/SourceDoc/" target="_blank" rel="external noreferrer nofollow">FreeCAD API<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                </li></ul></li><li>
+          <a
+            href="/Website/pr-146/pl/donate/">Przekaż darowiznę</a><ul></ul></li></ul>
+</nav>
+<div class="share-links"><a
+    href="https://forum.freecad.org"
+    title="Forum"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/forum.svg#forum"></use>
+  </svg></a><a
+    href="https://devtalk.freecad.org/"
+    title="DevTalk"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon devtalk"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/devtalk.svg#devtalk"></use>
+  </svg></a><a
+    href="https://github.com/freecad"
+    title="GitHub"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/github.svg#github"></use>
+  </svg></a><a
+    href="https://codeberg.org/freecad"
+    title="Codeberg"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a
+    href="https://social.freecad.org/@freecad"
+    title="Mastodon"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/bluesky.svg#bluesky"></use>
+  </svg></a><a
+    href="https://www.reddit.com/r/freecad"
+    title="Reddit"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/reddit.svg#reddit"></use>
+  </svg></a><a
+    href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+    title="Matrix"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/matrix.svg#matrix"></use>
+  </svg></a><a
+    href="https://discord.gg/w2cTKGzccC"
+    title="Discord"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/discord.svg#discord"></use>
+  </svg></a><a
+    href="https://www.linkedin.com/groups/4295230"
+    title="LinkedIn"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+    href="https://FreeCAD.github.io/Website/pr-146/pl/index.xml"
+    type="application/rss&#43;xml"
+    title="Kanał RSS"><svg
+    class="icon rss"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/rss.svg#rss"></use>
+  </svg></a><a
+  href="/Website/pr-146/pl/fedishare.html#title=Demo&#43;-&#43;Preferences&#43;Page&amp;description=A%20workbench%20that%20registers%20a%20preferences%20page%20in%20FreeCAD%e2%80%99s%20preferences%20dialog.%20The%20page%20exposes%20six%20controls%20%28combo%20box,%20line%20edit,%20spin%20box,%20double%20spin%20box,%20two%20check%20boxes%29%20for%20configuring%20a%20%e2%80%a6&amp;url=https://FreeCAD.github.io/Website/pr-146/pl/dev/academy/demos/preference/"
+  title="Opublikuj w Fediverse"
+  target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026
+    <a
+      href="/Website/pr-146/pl/"
+      title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a
+    href="https://creativecommons.org/licenses/by-sa/4.0/"
+    title="Creative Commons"
+    target="_blank" rel="license external noreferrer nofollow">
+
+    CC BY-SA<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to
+  <a
+    href="https://gohugo.io/"
+    title="Hugo SSG"
+    target="_blank" rel="external noreferrer nofollow">
+
+    Hugo<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-11-27
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/3b9aaaf78139eae2a69bacc13828975fc955b356">3b9aaaf781<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script
+    src="/Website/pr-146/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-146/js/pl/copy.min.34de6d2e04584ab9c84f7055d21e673a7a35479b36384a0a34ce53c5b336c681.js"
+    type="text/javascript"
+    defer integrity="sha256-NN5tLgRYSrnIT3BV0h5nOno1R5s2OEoKNM5TxbM2xoE=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-146/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    defer integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous">
+  </script></body>
+
+</html>

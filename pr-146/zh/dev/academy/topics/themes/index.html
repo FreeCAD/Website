@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html
+  lang="zh-CN"
+  dir="ltr"><head><meta charset="utf-8">
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1">
+<meta
+  name="referrer"
+  content="strict-origin-when-cross-origin">
+<meta
+  name="robots"
+  content="index, follow"><script>
+  try {
+    const pref = localStorage.getItem("pref-theme");
+    const dark =
+      pref === "dark" ||
+      (pref !== "light" &&
+        
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+        );
+    if (dark) document.documentElement.classList.add("dark");
+  } catch {}
+  document.documentElement.classList.add("js");
+</script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --header: rgb(8, 8, 8);
+        --theme: rgb(16, 16, 16);
+        --entry: rgb(32, 32, 32);
+        --tone: rgb(64, 64, 64);
+        --backdrop: rgba(64, 64, 64, 0.8);
+        --primary: rgb(240, 240, 240);
+        --secondary: rgb(224, 224, 224);
+        --tertiary: rgb(208, 208, 208);
+        --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+        --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+        --angle: 315deg;
+      }
+    }</style>
+</noscript><title>FreeCAD | Themes</title>
+  <meta
+    name="description"
+    content="FreeCAD interface themes as Preference pack Addons."><link
+          rel="stylesheet"
+          href="/Website/pr-146/css/styles.620a776c0a5bd62061f0a7760ffb36ec9abdfb6503ff52a674fb042a06a92bfa.css"
+          integrity="sha256-Ygp3bApb1iBh8Kd2D/s27Jq9&#43;2UD/1KmdPsEKgapK/o="
+          crossorigin="anonymous"><link
+    rel="canonical"
+    href="https://FreeCAD.github.io/Website/pr-146/zh/dev/academy/topics/themes/"><link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://FreeCAD.github.io/Website/pr-146/dev/academy/topics/themes/"><link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://FreeCAD.github.io/Website/pr-146/zh/dev/academy/topics/themes/"><link
+      rel="alternate"
+      hreflang="es-ES"
+      href="https://FreeCAD.github.io/Website/pr-146/es/dev/academy/topics/themes/"><link
+      rel="alternate"
+      hreflang="fr-FR"
+      href="https://FreeCAD.github.io/Website/pr-146/fr/dev/academy/topics/themes/"><link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://FreeCAD.github.io/Website/pr-146/pt/dev/academy/topics/themes/"><link
+      rel="alternate"
+      hreflang="de-DE"
+      href="https://FreeCAD.github.io/Website/pr-146/de/dev/academy/topics/themes/"><link
+      rel="alternate"
+      hreflang="ja-JP"
+      href="https://FreeCAD.github.io/Website/pr-146/ja/dev/academy/topics/themes/"><link
+      rel="alternate"
+      hreflang="pl-PL"
+      href="https://FreeCAD.github.io/Website/pr-146/pl/dev/academy/topics/themes/"><link
+    rel="alternate"
+    hreflang="x-default"
+    href="https://FreeCAD.github.io/Website/pr-146/zh/"><link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Website/pr-146/favicon.svg"><link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/Website/pr-146/favicon.ico"><link
+      rel="apple-touch-icon"
+      href="/Website/pr-146/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://FreeCAD.github.io/Website/pr-146/zh/index.xml"
+    title="FreeCAD"><meta name="generator" content="Hugo 0.160.0"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-146/zh/dev/academy/topics/themes/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Themes">
+  <meta property="og:description" content="FreeCAD interface themes as Preference pack Addons.">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dev">
+    <meta property="article:modified_time" content="2026-11-27T17:14:57+01:00">
+</head><body
+    class="single type-dev kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <a
+    class="logo"
+    href="/Website/pr-146/zh/"
+    accesskey="h"
+    title="主页 (Alt + H)"
+    aria-label="主页">
+    <svg
+      class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+
+      <use href="/Website/pr-146/wordmark.svg#wordmark"></use>
+    </svg></a>
+
+  <div class="site-nav"><nav class="menu">
+  <button
+    popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="菜单"
+    aria-label="菜单"><svg
+    class="icon hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hamburger.svg#hamburger"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul
+    popover
+    id="menu-list"
+    class="menu-list"><li>
+          <a
+            href="/Website/pr-146/zh/features/">功能</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/zh/download/">下载</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/zh/news/">新闻</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/zh/community/">社区</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/zh/docs/" aria-current="page" class="active">文档</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/zh/donate/" class="button accent"><svg
+    class="icon heart"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/heart.svg#heart"></use>
+  </svg>赞助</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button
+          popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="选择语言 (Alt + L)"
+          aria-label="选择语言"><svg
+    class="icon language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul
+          popover
+          id="lang-list"
+          class="language-list"><li>
+              <a href="/Website/pr-146/dev/academy/topics/themes/" title="Themes">English 🇬🇧</a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-146/zh/dev/academy/topics/themes/" title="Themes">中文 🇨🇳</a>
+            </li><li>
+              <a href="/Website/pr-146/es/dev/academy/topics/themes/" title="Themes">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/pr-146/fr/dev/academy/topics/themes/" title="Themes">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pr-146/pt/dev/academy/topics/themes/" title="Themes">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a href="/Website/pr-146/de/dev/academy/topics/themes/" title="Themes">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/pr-146/ja/dev/academy/topics/themes/" title="Themes">日本語 🇯🇵</a>
+            </li><li>
+              <a href="/Website/pr-146/pl/dev/academy/topics/themes/" title="Themes">Polski 🇵🇱</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="切换主题配色 (Alt + T)"
+    aria-label="切换主题配色"><svg
+    class="icon dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/dark.svg#dark"></use>
+  </svg><svg
+    class="icon light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero">
+
+    <h2 class="title">Themes</h1><h3 class="description">FreeCAD interface themes as Preference pack Addons.</h3><div class="metadata"><span class="meta"><svg
+    class="icon time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/time.svg#time"></use>
+  </svg>5 分钟</span></div></section><nav class="toc">
+  <input
+    type="checkbox"
+    id="toc-checkbox"
+    class="toc-checkbox">
+  <label
+    for="toc-checkbox"
+    class="toc-toggle button"
+    title="Table of Contents"><svg
+    class="icon expand"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/expand.svg#expand"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/cross.svg#cross"></use>
+  </svg><span>目录</span>
+  </label>
+
+  <div
+    id="toc-content"
+    class="toc-content">
+    <ul class="section-nav"><li>
+          <a
+            href="/Website/pr-146/zh/dev/"
+            class="current-section"><svg
+    class="icon tri_tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_tri_left.svg#tri_tri_left"></use>
+  </svg> Development Handbook</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/zh/dev/academy/"
+            class="current-section"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_left.svg#tri_left"></use>
+  </svg> Addon Academy</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/zh/dev/academy/topics/"
+            class="current-section"><svg
+    class="icon folder_closed"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/folder_closed.svg#folder_closed"></use>
+  </svg> Topics</a>
+        </li><li>
+        <ul><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/topics/types/">Types of Addon</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/topics/themes/" id="current-page" class="active" aria-current="page">Themes</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/topics/machines/">Machines</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/topics/structure/">Structuring</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/topics/manifest/">Addon Manifest</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/topics/dependencies/">Dependencies</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/topics/license/">Licensing</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/topics/index/">Addon Index</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/topics/removed/">Removed Addons</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/topics/glossary/">Glossary</a>
+            </li></ul>
+      </li>
+    </ul><p class="toc-label"><svg
+    class="icon file"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/file.svg#file"></use>
+  </svg>
+        <span>本页内容</span>
+      </p><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#anatomy-of-a-theme">Anatomy of a theme</a></li>
+        <li><a href="#directory-layout">Directory layout</a></li>
+        <li><a href="#the-packagexml-declaration">The <code>package.xml</code> declaration</a></li>
+        <li><a href="#qt-stylesheet-qss">Qt stylesheet (<code>.qss</code>)</a></li>
+        <li><a href="#overlay-stylesheet">Overlay stylesheet</a></li>
+        <li><a href="#preference-values-cfg">Preference values (<code>.cfg</code>)</a></li>
+        <li><a href="#shipping-multiple-themes-in-one-addon">Shipping multiple themes in one addon</a></li>
+        <li><a href="#tagging-and-discovery">Tagging and discovery</a></li>
+        <li><a href="#related">Related</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+</nav><div class="content"><figure>
+  <blockquote class="note"><svg
+    class="icon note"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/note.svg#note"></use>
+  </svg>注意<p>此页面尚未翻译，因此使用英文版本。有兴趣帮忙吗？
+<a
+  href="https://github.com/freecad/website"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">贡献<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a></p></blockquote></figure><p>A theme is a specialized <a
+  href=""
+  class="internal-tooltip">Preference pack<span class="tooltip">
+        <strong>FreeCAD</strong><span>Your own free and open-source parametric 3D modelling software to design and build the real world.</span></span></a> that ships a Qt stylesheet and (typically) a matching set of preference values, overlay icons, and a stylesheet for FreeCAD&rsquo;s overlay panels. Applying a theme switches FreeCAD&rsquo;s entire visual appearance with a single click. Mechanically, a theme is a <code>&lt;preferencepack&gt;</code> content item in <code>package.xml</code> with and added <code>&lt;type&gt;Theme&lt;/type&gt;</code> XML tag. This <code>&lt;type&gt;</code> element is what makes the pack appear in FreeCAD&rsquo;s theme selector (rather than only in the plain Preference-pack list).</p>
+<p>The same Part Design example with two different themes from the OpenTheme addon applied:</p>
+<figure class="image"><button
+          aria-label="放大图片"
+          popovertarget="img-001"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/zoom.svg#zoom"></use>
+  </svg><img
+  class="img open-light"
+  src="/Website/pr-146/dev/academy/topics/themes/open-light.webp"
+  alt="OpenLight theme applied to a Part Design example"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="OpenLight theme applied to a Part Design example" width="2226" height="1570" srcset="/Website/pr-146/dev/academy/topics/themes/open-light_hu_e8cd72f036e8ca36.webp 400w, /Website/pr-146/dev/academy/topics/themes/open-light_hu_fa7049f143333a08.webp 800w, /Website/pr-146/dev/academy/topics/themes/open-light_hu_7e1a71bf424df485.webp 1600w, /Website/pr-146/dev/academy/topics/themes/open-light.webp 2226w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"></button>
+        <div id="img-001" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="关闭图片查看器"><img
+  class="img open-light"
+  src="/Website/pr-146/dev/academy/topics/themes/open-light.webp"
+  alt="OpenLight theme applied to a Part Design example"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="OpenLight theme applied to a Part Design example" width="2226" height="1570" srcset="/Website/pr-146/dev/academy/topics/themes/open-light_hu_e8cd72f036e8ca36.webp 400w, /Website/pr-146/dev/academy/topics/themes/open-light_hu_fa7049f143333a08.webp 800w, /Website/pr-146/dev/academy/topics/themes/open-light_hu_7e1a71bf424df485.webp 1600w, /Website/pr-146/dev/academy/topics/themes/open-light.webp 2226w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/cross.svg#cross"></use>
+  </svg></button></div><figcaption>
+          <div class="internal-tooltip"><svg
+    class="icon important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/important.svg#important"></use>
+  </svg><span class="tooltip">OpenLight theme applied to a Part Design example</span>
+          </div>
+        </figcaption></figure><figure class="image"><button
+          aria-label="放大图片"
+          popovertarget="img-002"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/zoom.svg#zoom"></use>
+  </svg><img
+  class="img open-dark"
+  src="/Website/pr-146/dev/academy/topics/themes/open-dark.webp"
+  alt="OpenDark theme applied to the same Part Design example"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="OpenDark theme applied to the same Part Design example" width="2226" height="1570" srcset="/Website/pr-146/dev/academy/topics/themes/open-dark_hu_b475fbbc07b69fcb.webp 400w, /Website/pr-146/dev/academy/topics/themes/open-dark_hu_c46857cdc1b6cd17.webp 800w, /Website/pr-146/dev/academy/topics/themes/open-dark_hu_3e161df475ce483a.webp 1600w, /Website/pr-146/dev/academy/topics/themes/open-dark.webp 2226w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"></button>
+        <div id="img-002" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-002"
+            popovertargetaction="hide"
+            aria-label="关闭图片查看器"><img
+  class="img open-dark"
+  src="/Website/pr-146/dev/academy/topics/themes/open-dark.webp"
+  alt="OpenDark theme applied to the same Part Design example"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="OpenDark theme applied to the same Part Design example" width="2226" height="1570" srcset="/Website/pr-146/dev/academy/topics/themes/open-dark_hu_b475fbbc07b69fcb.webp 400w, /Website/pr-146/dev/academy/topics/themes/open-dark_hu_c46857cdc1b6cd17.webp 800w, /Website/pr-146/dev/academy/topics/themes/open-dark_hu_3e161df475ce483a.webp 1600w, /Website/pr-146/dev/academy/topics/themes/open-dark.webp 2226w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/cross.svg#cross"></use>
+  </svg></button></div><figcaption>
+          <div class="internal-tooltip"><svg
+    class="icon important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/important.svg#important"></use>
+  </svg><span class="tooltip">OpenDark theme applied to the same Part Design example</span>
+          </div>
+        </figcaption></figure><h2
+  id="anatomy-of-a-theme">
+  <a class="heading-anchor"
+    href="#anatomy-of-a-theme"
+    title="Anatomy of a theme"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Anatomy of a theme</h2><p>A complete theme typically ships:</p>
+<ul>
+<li>A <strong>Qt stylesheet</strong> (<code>.qss</code>) defining the look of FreeCAD&rsquo;s widgets: backgrounds, button states, scrollbars, dock-panel chrome.</li>
+<li>An <strong>overlay stylesheet</strong> (<code>*-overlay.qss</code>) for FreeCAD&rsquo;s translucent overlay panels (the floating Tasks, Tree, and Properties views). Without one, the overlays default to FreeCAD&rsquo;s built-in overlay style and can clash with the rest of the theme.</li>
+<li>A <strong>preference values file</strong> (<code>.cfg</code>) carrying the matching color and font defaults that the stylesheet alone cannot set: 3D-view background, Sketcher edge colors, document-tree font sizes, and similar parameters. The <code>.cfg</code> is an <code>FCParameters</code> XML export of the relevant subtree of <code>User parameter:BaseApp/Preferences/</code>.</li>
+<li>Optional <strong>overlay icons</strong> (<code>.svg</code>) for the close, float, mode, and transparency controls on overlay panels, when the default icons do not read well against the theme&rsquo;s background.</li>
+</ul>
+<p>Some themes also ship a YAML overlay-config or a companion plain preference pack that bundles &ldquo;recommended settings&rdquo; (font sizes, autoload modules, default workbench) without claiming to be a theme.</p>
+<h2
+  id="directory-layout">
+  <a class="heading-anchor"
+    href="#directory-layout"
+    title="Directory layout"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Directory layout</h2><p>A multi-theme addon typically organizes each theme into its own subdirectory:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">MyThemes/
+</span></span><span class="line"><span class="cl">├─ package.xml
+</span></span><span class="line"><span class="cl">├─ README.md
+</span></span><span class="line"><span class="cl">├─ LICENSE
+</span></span><span class="line"><span class="cl">├─ Behave-dark/
+</span></span><span class="line"><span class="cl">│  ├─ Behave-dark.qss
+</span></span><span class="line"><span class="cl">│  ├─ Behave-dark.cfg
+</span></span><span class="line"><span class="cl">│  └─ overlay/
+</span></span><span class="line"><span class="cl">│     ├─ Behave-dark-overlay.qss
+</span></span><span class="line"><span class="cl">│     └─ behave-dark-icons/
+</span></span><span class="line"><span class="cl">│        └─ ...svg
+</span></span><span class="line"><span class="cl">└─ Light-modern/
+</span></span><span class="line"><span class="cl">   ├─ Light-modern.qss
+</span></span><span class="line"><span class="cl">   ├─ Light-modern.cfg
+</span></span><span class="line"><span class="cl">   └─ overlay/
+</span></span><span class="line"><span class="cl">      └─ Light-modern-overlay.qss</span></span></code></pre></div></div><p>A single-theme addon can flatten this if it only ever ships one theme.</p>
+<h2
+  id="the-packagexml-declaration">
+  <a class="heading-anchor"
+    href="#the-packagexml-declaration"
+    title="The package.xml declaration"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>The <code>package.xml</code> declaration</h2><p>Each theme is a <code>&lt;preferencepack&gt;</code> content item with <code>&lt;type&gt;Theme&lt;/type&gt;</code> and one or more <code>&lt;file&gt;</code> references:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;content&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;preferencepack&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;name&gt;</span>Behave-dark<span class="nt">&lt;/name&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;type&gt;</span>Theme<span class="nt">&lt;/type&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;tag&gt;</span>dark<span class="nt">&lt;/tag&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;file&gt;</span>Behave-dark.qss<span class="nt">&lt;/file&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;file&gt;</span>Behave-dark-overlay.qss<span class="nt">&lt;/file&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/preferencepack&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/content&gt;</span></span></span></code></pre></div></div><p>If the theme files live in a subdirectory of the addon root, declare it with <code>&lt;subdirectory&gt;</code>:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;preferencepack&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;name&gt;</span>OpenDark<span class="nt">&lt;/name&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;type&gt;</span>Theme<span class="nt">&lt;/type&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;tag&gt;</span>dark<span class="nt">&lt;/tag&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;subdirectory&gt;</span>./OpenDark/<span class="nt">&lt;/subdirectory&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;file&gt;</span>OpenDark.qss<span class="nt">&lt;/file&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/preferencepack&gt;</span></span></span></code></pre></div></div><p><code>&lt;file&gt;</code> paths are resolved relative to the declared <code>&lt;subdirectory&gt;</code> if one is present, and relative to the addon root otherwise.</p>
+<h2
+  id="qt-stylesheet-qss">
+  <a class="heading-anchor"
+    href="#qt-stylesheet-qss"
+    title="Qt stylesheet (.qss)"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Qt stylesheet (<code>.qss</code>)</h2><p>The main <code>.qss</code> is a Qt stylesheet using standard Qt selectors against FreeCAD&rsquo;s widget tree. The bulk of theming work happens here: panel backgrounds, button and toolbar styling, tab and splitter chrome, scrollbar appearance, and tree- and table-view rules. FreeCAD&rsquo;s Qt widget tree exposes both standard Qt classes (<code>QPushButton</code>, <code>QToolBar</code>, <code>QDockWidget</code>) and FreeCAD-specific classes that themes can target. The most reliable way to discover selectors is to start from an existing theme&rsquo;s <code>.qss</code> and adjust; the <code>FreeCAD-themes</code> repo is a good reference.</p>
+<h2
+  id="overlay-stylesheet">
+  <a class="heading-anchor"
+    href="#overlay-stylesheet"
+    title="Overlay stylesheet"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Overlay stylesheet</h2><p>FreeCAD&rsquo;s overlay panels are translucent floating versions of the standard docked panels (Tree, Properties, Tasks). They use a separate stylesheet so the translucent-background mode can be styled independently of the regular panels. The overlay stylesheet conventionally lives in an <code>overlay/</code> subdirectory next to the main stylesheet, named <code>&lt;ThemeName&gt;-overlay.qss</code>. If the overlay icons (close, float, mode, transparency) need to match the theme, ship custom SVGs in the same <code>overlay/</code> subdirectory and reference them from the overlay <code>.qss</code> via <code>image: url(...)</code> rules.</p>
+<figure class="image"><button
+          aria-label="放大图片"
+          popovertarget="img-003"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/zoom.svg#zoom"></use>
+  </svg><img
+  class="img overlay"
+  src="/Website/pr-146/dev/academy/topics/themes/overlay.webp"
+  alt="FreeCAD’s main panels in overlay mode, showing the translucent floating tree that the overlay stylesheet targets"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="FreeCAD’s main panels in overlay mode, showing the translucent floating tree that the overlay stylesheet targets" width="2226" height="1570" srcset="/Website/pr-146/dev/academy/topics/themes/overlay_hu_d9724e6b9234f43a.webp 400w, /Website/pr-146/dev/academy/topics/themes/overlay_hu_8fa7b040bb819b09.webp 800w, /Website/pr-146/dev/academy/topics/themes/overlay_hu_f0417f740b32c5bc.webp 1600w, /Website/pr-146/dev/academy/topics/themes/overlay.webp 2226w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"></button>
+        <div id="img-003" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-003"
+            popovertargetaction="hide"
+            aria-label="关闭图片查看器"><img
+  class="img overlay"
+  src="/Website/pr-146/dev/academy/topics/themes/overlay.webp"
+  alt="FreeCAD’s main panels in overlay mode, showing the translucent floating tree that the overlay stylesheet targets"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="FreeCAD’s main panels in overlay mode, showing the translucent floating tree that the overlay stylesheet targets" width="2226" height="1570" srcset="/Website/pr-146/dev/academy/topics/themes/overlay_hu_d9724e6b9234f43a.webp 400w, /Website/pr-146/dev/academy/topics/themes/overlay_hu_8fa7b040bb819b09.webp 800w, /Website/pr-146/dev/academy/topics/themes/overlay_hu_f0417f740b32c5bc.webp 1600w, /Website/pr-146/dev/academy/topics/themes/overlay.webp 2226w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1600px) 1600px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/cross.svg#cross"></use>
+  </svg></button></div><figcaption>
+          <div class="internal-tooltip"><svg
+    class="icon important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/important.svg#important"></use>
+  </svg><span class="tooltip">FreeCAD’s main panels in overlay mode, showing the translucent floating tree that the overlay stylesheet targets</span>
+          </div>
+        </figcaption></figure><h2
+  id="preference-values-cfg">
+  <a class="heading-anchor"
+    href="#preference-values-cfg"
+    title="Preference values (.cfg)"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Preference values (<code>.cfg</code>)</h2><p>The companion <code>.cfg</code> is a slice of FreeCAD&rsquo;s preference store, in the same XML format that <code>User parameter:BaseApp</code> exports to. The simplest way to produce one is to set the colors and defaults in FreeCAD interactively, then use the <strong>Preference Pack</strong> export feature to dump the relevant subtree. Trim the export to only the keys you intend the theme to set; including unrelated keys means the theme will overwrite a user&rsquo;s unrelated settings on apply.</p>
+<figure class="image"><button
+          aria-label="放大图片"
+          popovertarget="img-004"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/zoom.svg#zoom"></use>
+  </svg><img
+  class="img preference-pack"
+  src="/Website/pr-146/dev/academy/topics/themes/preference-pack.webp"
+  alt="FreeCAD’s Save New Preference Pack dialog, where the .cfg is exported"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="FreeCAD’s Save New Preference Pack dialog, where the .cfg is exported" width="463" height="664" srcset="/Website/pr-146/dev/academy/topics/themes/preference-pack_hu_423be3e38d007d5d.webp 400w, /Website/pr-146/dev/academy/topics/themes/preference-pack.webp 463w" sizes="(max-width: 400px) 400px, 95vw"></button>
+        <div id="img-004" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-004"
+            popovertargetaction="hide"
+            aria-label="关闭图片查看器"><img
+  class="img preference-pack"
+  src="/Website/pr-146/dev/academy/topics/themes/preference-pack.webp"
+  alt="FreeCAD’s Save New Preference Pack dialog, where the .cfg is exported"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="FreeCAD’s Save New Preference Pack dialog, where the .cfg is exported" width="463" height="664" srcset="/Website/pr-146/dev/academy/topics/themes/preference-pack_hu_423be3e38d007d5d.webp 400w, /Website/pr-146/dev/academy/topics/themes/preference-pack.webp 463w" sizes="(max-width: 400px) 400px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/cross.svg#cross"></use>
+  </svg></button></div><figcaption>
+          <div class="internal-tooltip"><svg
+    class="icon important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/important.svg#important"></use>
+  </svg><span class="tooltip">FreeCAD’s Save New Preference Pack dialog, where the .cfg is exported</span>
+          </div>
+        </figcaption></figure><p>A typical theme <code>.cfg</code> covers entries under:</p>
+<ul>
+<li><code>BaseApp/Preferences/View</code>: 3D view background, navigation cube colors, default light.</li>
+<li><code>BaseApp/Preferences/Mod/Sketcher</code>: sketch edge, vertex, and constraint colors.</li>
+<li><code>BaseApp/Preferences/Mod/Draft</code>, <code>BaseApp/Preferences/Mod/Arch</code>, etc.: workbench-specific colors.</li>
+<li><code>BaseApp/Preferences/General</code>: toolbar icon size, default Qt style.</li>
+</ul>
+<h2
+  id="shipping-multiple-themes-in-one-addon">
+  <a class="heading-anchor"
+    href="#shipping-multiple-themes-in-one-addon"
+    title="Shipping multiple themes in one addon"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Shipping multiple themes in one addon</h2><p>The convention is to put each theme in its own subdirectory and declare each as a separate <code>&lt;preferencepack&gt;</code> in <code>package.xml</code>. The user sees each one as a separate entry in the theme picker:</p>
+<figure class="image"><button
+          aria-label="放大图片"
+          popovertarget="img-005"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/zoom.svg#zoom"></use>
+  </svg><img
+  class="img theme-picker"
+  src="/Website/pr-146/dev/academy/topics/themes/theme-picker.webp"
+  alt="FreeCAD’s theme picker showing multiple themes from installed addons"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="FreeCAD’s theme picker showing multiple themes from installed addons" width="1371" height="1066" srcset="/Website/pr-146/dev/academy/topics/themes/theme-picker_hu_4d46fea377d946db.webp 400w, /Website/pr-146/dev/academy/topics/themes/theme-picker_hu_641c9ff99c1b0eae.webp 800w, /Website/pr-146/dev/academy/topics/themes/theme-picker.webp 1371w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+        <div id="img-005" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-005"
+            popovertargetaction="hide"
+            aria-label="关闭图片查看器"><img
+  class="img theme-picker"
+  src="/Website/pr-146/dev/academy/topics/themes/theme-picker.webp"
+  alt="FreeCAD’s theme picker showing multiple themes from installed addons"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="FreeCAD’s theme picker showing multiple themes from installed addons" width="1371" height="1066" srcset="/Website/pr-146/dev/academy/topics/themes/theme-picker_hu_4d46fea377d946db.webp 400w, /Website/pr-146/dev/academy/topics/themes/theme-picker_hu_641c9ff99c1b0eae.webp 800w, /Website/pr-146/dev/academy/topics/themes/theme-picker.webp 1371w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/cross.svg#cross"></use>
+  </svg></button></div><figcaption>
+          <div class="internal-tooltip"><svg
+    class="icon important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/important.svg#important"></use>
+  </svg><span class="tooltip">FreeCAD’s theme picker showing multiple themes from installed addons</span>
+          </div>
+        </figcaption></figure><p>Current addons show two different patterns:</p>
+<ul>
+<li><strong><code>FreeCAD-themes</code></strong> ships seven themes (Behave-dark, Dark-contrast, Darker, ProDark, Dark-modern, Light-modern, Behave-dark_1_1_Plus) from a single repo, one subdirectory per theme.</li>
+<li><strong><code>OpenTheme</code></strong> ships two <code>&lt;type&gt;Theme&lt;/type&gt;</code> packs (OpenDark, OpenLight) plus a third plain preference pack (<code>OpenPreferences</code>) of recommended companion settings without <code>&lt;type&gt;Theme&lt;/type&gt;</code>. This pattern lets a user adopt the look without the opinionated settings, or vice versa.</li>
+</ul>
+<h2
+  id="tagging-and-discovery">
+  <a class="heading-anchor"
+    href="#tagging-and-discovery"
+    title="Tagging and discovery"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Tagging and discovery</h2><p>Two tag conventions for theme addons:</p>
+<ul>
+<li><code>dark</code> or <code>light</code> on each <code>&lt;preferencepack&gt;</code> so users can filter by visual style in the theme picker.</li>
+<li><code>theme</code>, <code>stylesheet</code>, or <code>built-in</code> on the addon-wide tags in <code>&lt;package&gt;</code> for searchability in the Addon Manager.</li>
+</ul>
+<p>The <code>&lt;type&gt;Theme&lt;/type&gt;</code> element is the one that determines whether the pack appears in the theme picker. Tags are used to help a user search for your addon, but don&rsquo;t affect functionality.</p>
+<h2
+  id="related">
+  <a class="heading-anchor"
+    href="#related"
+    title="Related"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Related</h2><ul>
+<li><a
+  href="topics/manifest"
+  class="internal-tooltip">Manifest</a>: the <code>package.xml</code> schema, including all <code>&lt;type&gt;</code> values.</li>
+<li><a
+  href="guides/metadata"
+  class="internal-tooltip">Metadata &amp; discoverability</a>: the <code>theme</code>, <code>stylesheet</code>, <code>dark</code>, <code>light</code> tag conventions.</li>
+</ul>
+</div><footer class="single-footer">
+    <nav class="pagination"><a
+            class="button next"
+            href="/Website/pr-146/zh/dev/academy/topics/types/"
+            title="下一篇"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_left.svg#tri_left"></use>
+  </svg>Types of Addon</a><a
+            class="button prev"
+            href="/Website/pr-146/zh/dev/academy/topics/machines/"
+            title="上一篇">Machines<svg
+    class="icon tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="返回顶部"
+  title="返回顶部 (Alt + G)" ><svg
+    class="icon tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a
+            href="/Website/pr-146/zh/">主页</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-146/zh/features/">功能</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-146/zh/download/">下载</a><ul><li>
+                  <a
+                    href="/Website/pr-146/zh/releases/">Releases</a>
+                </li><li>
+                      <a
+                        href="/Website/pr-146/zh/download/addons/">Addons</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-146/zh/download/unstable/">Unstable</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-146/zh/news/">新闻</a><ul><li>
+                  <a
+                    href="/Website/pr-146/zh/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/pr-146/zh/author/">作者</a>
+                      </li><li>
+                        <a href="/Website/pr-146/zh/category/">分类</a>
+                      </li><li>
+                        <a href="/Website/pr-146/zh/tags/">标签列表</a>
+                      </li></ul></li><li>
+          <a
+            href="/Website/pr-146/zh/community/">社区</a><ul><li>
+                      <a
+                        href="/Website/pr-146/zh/community/calendar/">Calendar</a>
+                    </li><li>
+                      <a
+                        href="https://events.freecad.org/" target="_blank" rel="external noreferrer nofollow">Events<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://fpa.freecad.org" target="_blank" rel="external noreferrer nofollow">Association<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swag shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-146/zh/community/telemetry/">Telemetry</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-146/zh/docs/" aria-current="page" class="active">文档</a><ul><li>
+                  <a
+                    href="https://wiki.freecad.org/User_hub/zh" target="_blank" rel="external noreferrer nofollow">User manual<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                </li><li>
+                  <a
+                    href="/Website/pr-146/zh/dev/">Development Handbook</a>
+                </li><li>
+                  <a
+                    href="https://freecad.github.io/SourceDoc/" target="_blank" rel="external noreferrer nofollow">FreeCAD API<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                </li></ul></li><li>
+          <a
+            href="/Website/pr-146/zh/donate/">赞助</a><ul></ul></li></ul>
+</nav>
+<div class="share-links"><a
+    href="https://forum.freecad.org"
+    title="Forum"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/forum.svg#forum"></use>
+  </svg></a><a
+    href="https://devtalk.freecad.org/"
+    title="DevTalk"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon devtalk"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/devtalk.svg#devtalk"></use>
+  </svg></a><a
+    href="https://github.com/freecad"
+    title="GitHub"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/github.svg#github"></use>
+  </svg></a><a
+    href="https://codeberg.org/freecad"
+    title="Codeberg"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a
+    href="https://social.freecad.org/@freecad"
+    title="Mastodon"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/bluesky.svg#bluesky"></use>
+  </svg></a><a
+    href="https://www.reddit.com/r/freecad"
+    title="Reddit"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/reddit.svg#reddit"></use>
+  </svg></a><a
+    href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+    title="Matrix"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/matrix.svg#matrix"></use>
+  </svg></a><a
+    href="https://discord.gg/w2cTKGzccC"
+    title="Discord"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/discord.svg#discord"></use>
+  </svg></a><a
+    href="https://www.linkedin.com/groups/4295230"
+    title="LinkedIn"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+    href="https://FreeCAD.github.io/Website/pr-146/zh/index.xml"
+    type="application/rss&#43;xml"
+    title="RSS 订阅源"><svg
+    class="icon rss"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/rss.svg#rss"></use>
+  </svg></a><a
+  href="/Website/pr-146/zh/fedishare.html#title=Themes&amp;description=FreeCAD%20interface%20themes%20as%20Preference%20pack%20Addons.&amp;url=https://FreeCAD.github.io/Website/pr-146/zh/dev/academy/topics/themes/"
+  title="发布到 Fediverse"
+  target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026
+    <a
+      href="/Website/pr-146/zh/"
+      title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a
+    href="https://creativecommons.org/licenses/by-sa/4.0/"
+    title="Creative Commons"
+    target="_blank" rel="license external noreferrer nofollow">
+
+    CC BY-SA<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to
+  <a
+    href="https://gohugo.io/"
+    title="Hugo SSG"
+    target="_blank" rel="external noreferrer nofollow">
+
+    Hugo<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-11-27
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/3b9aaaf78139eae2a69bacc13828975fc955b356">3b9aaaf781<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script
+    src="/Website/pr-146/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-146/js/zh/copy.min.57c093ec71dcdb38c069f157cd427ffcde6aa69884ed3da8e43df4acea5a3187.js"
+    type="text/javascript"
+    defer integrity="sha256-V8CT7HHc2zjAafFXzUJ//N5qppiE7T2o5D30rOpaMYc=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-146/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    defer integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous">
+  </script></body>
+
+</html>

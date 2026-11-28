@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html
+  lang="zh-CN"
+  dir="ltr"><head><meta charset="utf-8">
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1">
+<meta
+  name="referrer"
+  content="strict-origin-when-cross-origin">
+<meta
+  name="robots"
+  content="index, follow"><script>
+  try {
+    const pref = localStorage.getItem("pref-theme");
+    const dark =
+      pref === "dark" ||
+      (pref !== "light" &&
+        
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+        );
+    if (dark) document.documentElement.classList.add("dark");
+  } catch {}
+  document.documentElement.classList.add("js");
+</script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --header: rgb(8, 8, 8);
+        --theme: rgb(16, 16, 16);
+        --entry: rgb(32, 32, 32);
+        --tone: rgb(64, 64, 64);
+        --backdrop: rgba(64, 64, 64, 0.8);
+        --primary: rgb(240, 240, 240);
+        --secondary: rgb(224, 224, 224);
+        --tertiary: rgb(208, 208, 208);
+        --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+        --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+        --angle: 315deg;
+      }
+    }</style>
+</noscript><title>FreeCAD | Develop - Installing your addon locally</title>
+  <meta
+    name="description"
+    content="你自己的自由开源参数化建模器"><link
+          rel="stylesheet"
+          href="/Website/pr-146/css/styles.620a776c0a5bd62061f0a7760ffb36ec9abdfb6503ff52a674fb042a06a92bfa.css"
+          integrity="sha256-Ygp3bApb1iBh8Kd2D/s27Jq9&#43;2UD/1KmdPsEKgapK/o="
+          crossorigin="anonymous"><link
+    rel="canonical"
+    href="https://FreeCAD.github.io/Website/pr-146/zh/dev/academy/guides/install/"><link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://FreeCAD.github.io/Website/pr-146/dev/academy/guides/install/"><link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://FreeCAD.github.io/Website/pr-146/zh/dev/academy/guides/install/"><link
+      rel="alternate"
+      hreflang="es-ES"
+      href="https://FreeCAD.github.io/Website/pr-146/es/dev/academy/guides/install/"><link
+      rel="alternate"
+      hreflang="fr-FR"
+      href="https://FreeCAD.github.io/Website/pr-146/fr/dev/academy/guides/install/"><link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://FreeCAD.github.io/Website/pr-146/pt/dev/academy/guides/install/"><link
+      rel="alternate"
+      hreflang="de-DE"
+      href="https://FreeCAD.github.io/Website/pr-146/de/dev/academy/guides/install/"><link
+      rel="alternate"
+      hreflang="ja-JP"
+      href="https://FreeCAD.github.io/Website/pr-146/ja/dev/academy/guides/install/"><link
+      rel="alternate"
+      hreflang="pl-PL"
+      href="https://FreeCAD.github.io/Website/pr-146/pl/dev/academy/guides/install/"><link
+    rel="alternate"
+    hreflang="x-default"
+    href="https://FreeCAD.github.io/Website/pr-146/zh/"><link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Website/pr-146/favicon.svg"><link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/Website/pr-146/favicon.ico"><link
+      rel="apple-touch-icon"
+      href="/Website/pr-146/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://FreeCAD.github.io/Website/pr-146/zh/index.xml"
+    title="FreeCAD"><meta name="generator" content="Hugo 0.160.0"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-146/zh/dev/academy/guides/install/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Develop - Installing your addon locally">
+  <meta property="og:description" content="Once you have an addon scaffold and some code, you need to get it into a running FreeCAD to test it. This page covers how to find the correct directory, how to install the addon there (copy or symlink), and how to iterate on it.">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dev">
+    <meta property="article:modified_time" content="2026-11-27T17:14:57+01:00">
+</head><body
+    class="single type-dev kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <a
+    class="logo"
+    href="/Website/pr-146/zh/"
+    accesskey="h"
+    title="主页 (Alt + H)"
+    aria-label="主页">
+    <svg
+      class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+
+      <use href="/Website/pr-146/wordmark.svg#wordmark"></use>
+    </svg></a>
+
+  <div class="site-nav"><nav class="menu">
+  <button
+    popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="菜单"
+    aria-label="菜单"><svg
+    class="icon hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hamburger.svg#hamburger"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul
+    popover
+    id="menu-list"
+    class="menu-list"><li>
+          <a
+            href="/Website/pr-146/zh/features/">功能</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/zh/download/">下载</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/zh/news/">新闻</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/zh/community/">社区</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/zh/docs/" aria-current="page" class="active">文档</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/zh/donate/" class="button accent"><svg
+    class="icon heart"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/heart.svg#heart"></use>
+  </svg>赞助</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button
+          popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="选择语言 (Alt + L)"
+          aria-label="选择语言"><svg
+    class="icon language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul
+          popover
+          id="lang-list"
+          class="language-list"><li>
+              <a href="/Website/pr-146/dev/academy/guides/install/" title="Develop - Installing your addon locally">English 🇬🇧</a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-146/zh/dev/academy/guides/install/" title="Develop - Installing your addon locally">中文 🇨🇳</a>
+            </li><li>
+              <a href="/Website/pr-146/es/dev/academy/guides/install/" title="Develop - Installing your addon locally">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/pr-146/fr/dev/academy/guides/install/" title="Develop - Installing your addon locally">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pr-146/pt/dev/academy/guides/install/" title="Develop - Installing your addon locally">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a href="/Website/pr-146/de/dev/academy/guides/install/" title="Develop - Installing your addon locally">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/pr-146/ja/dev/academy/guides/install/" title="Develop - Installing your addon locally">日本語 🇯🇵</a>
+            </li><li>
+              <a href="/Website/pr-146/pl/dev/academy/guides/install/" title="Develop - Installing your addon locally">Polski 🇵🇱</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="切换主题配色 (Alt + T)"
+    aria-label="切换主题配色"><svg
+    class="icon dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/dark.svg#dark"></use>
+  </svg><svg
+    class="icon light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero">
+
+    <h2 class="title">Develop - Installing your addon locally</h1><div class="metadata"><span class="meta"><svg
+    class="icon time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/time.svg#time"></use>
+  </svg>4 分钟</span></div></section><nav class="toc">
+  <input
+    type="checkbox"
+    id="toc-checkbox"
+    class="toc-checkbox">
+  <label
+    for="toc-checkbox"
+    class="toc-toggle button"
+    title="Table of Contents"><svg
+    class="icon expand"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/expand.svg#expand"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/cross.svg#cross"></use>
+  </svg><span>目录</span>
+  </label>
+
+  <div
+    id="toc-content"
+    class="toc-content">
+    <ul class="section-nav"><li>
+          <a
+            href="/Website/pr-146/zh/dev/"
+            class="current-section"><svg
+    class="icon tri_tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_tri_left.svg#tri_tri_left"></use>
+  </svg> Development Handbook</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/zh/dev/academy/"
+            class="current-section"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_left.svg#tri_left"></use>
+  </svg> Addon Academy</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/zh/dev/academy/guides/"
+            class="current-section"><svg
+    class="icon folder_closed"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/folder_closed.svg#folder_closed"></use>
+  </svg> Guides</a>
+        </li><li>
+        <ul><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/guides/create/">Creating an Addon</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/guides/workbenches/">Code - Workbench registration</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/guides/commands/">Code - Gui Commands</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/guides/manipulators/">Code - Workbench manipulators</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/guides/qt/">Code - Qt &amp; PySide</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/guides/preferences/">Code - Preferences pages</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/guides/objects/">Code - Custom document objects</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/guides/icons/">Code - Icons &amp; Resources</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/guides/translations/">Code - Translations (i18n)</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/guides/log/">Code - Logging &amp; Console</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/guides/install/" id="current-page" class="active" aria-current="page">Develop - Installing your addon locally</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/guides/debug/">Develop - Debugging</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/guides/test/">Develop - Testing</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/guides/security/">Develop - Security scanning with Bandit</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/guides/portable/">Publish - Portable</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/guides/reference/">Publish - Reference</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/guides/indexed/">Publish - Indexed</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/guides/overview/">Polish - Addon Manager overview page</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/guides/metadata/">Polish - Metadata &amp; discoverability</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/guides/compatibility/">Maintain - FreeCAD version compatibility</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/guides/migrations/">Maintain - Data &amp; schema migrations</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/guides/update/">Maintain - Updating</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/zh/dev/academy/guides/handoff/">Maintain - Maintainer handoff</a>
+            </li></ul>
+      </li>
+    </ul><p class="toc-label"><svg
+    class="icon file"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/file.svg#file"></use>
+  </svg>
+        <span>本页内容</span>
+      </p><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#finding-the-user-mod-directory">Finding the user Mod directory</a></li>
+        <li><a href="#installing">Installing</a>
+          <ul>
+            <li><a href="#option-1-copy">Option 1: Copy</a></li>
+            <li><a href="#option-2-symlink-recommended-for-development">Option 2: Symlink (recommended for development)</a></li>
+          </ul>
+        </li>
+        <li><a href="#testing-the-install">Testing the install</a></li>
+        <li><a href="#iterating-on-your-code">Iterating on your code</a></li>
+        <li><a href="#common-pitfalls">Common pitfalls</a></li>
+        <li><a href="#uninstalling">Uninstalling</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+</nav><div class="content"><figure>
+  <blockquote class="note"><svg
+    class="icon note"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/note.svg#note"></use>
+  </svg>注意<p>此页面尚未翻译，因此使用英文版本。有兴趣帮忙吗？
+<a
+  href="https://github.com/freecad/website"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">贡献<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a></p></blockquote></figure><p>Once you have an addon scaffold and some code, you need to get it into a running FreeCAD to test it. This page covers how to find the correct directory, how to install the addon there (copy or symlink), and how to iterate on it.</p>
+<h2
+  id="finding-the-user-mod-directory">
+  <a class="heading-anchor"
+    href="#finding-the-user-mod-directory"
+    title="Finding the user Mod directory"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Finding the user Mod directory</h2><p>The simplest way to find the correct path is to ask FreeCAD. In the Python console (<strong>View → Panels → Python console</strong>), run:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">FreeCAD</span><span class="o">,</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">FreeCAD</span><span class="o">.</span><span class="n">getUserAppDataDir</span><span class="p">(),</span> <span class="s2">&#34;Mod&#34;</span><span class="p">))</span></span></span></code></pre></div></div><p>This is the authoritative path for the running FreeCAD version. Install your addon as a subdirectory of whatever it prints.</p>
+<p>If you need the path without a running FreeCAD, the conventions for v1.x releases are:</p>
+<table>
+  <thead>
+      <tr>
+          <th>OS</th>
+          <th>Path</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Windows</td>
+          <td><code>%APPDATA%\FreeCAD\v&lt;MAJOR&gt;-&lt;MINOR&gt;\Mod\</code></td>
+      </tr>
+      <tr>
+          <td>Linux</td>
+          <td><code>~/.local/share/FreeCAD/v&lt;MAJOR&gt;-&lt;MINOR&gt;/Mod/</code></td>
+      </tr>
+      <tr>
+          <td>macOS</td>
+          <td><code>~/Library/Application Support/FreeCAD/v&lt;MAJOR&gt;-&lt;MINOR&gt;/Mod/</code></td>
+      </tr>
+  </tbody>
+</table>
+<p>The version segment uses a <strong>dash</strong>, not a dot: FreeCAD 26.3 lives at <code>v26-3</code>, not <code>26.3</code>. (An unversioned <code>Mod/</code> sibling also exists at some of these paths for legacy reasons, but new work should use the versioned directory matching the FreeCAD build you are testing against.) This versioning scheme was added in FreeCAD 1.1.</p>
+<h2
+  id="installing">
+  <a class="heading-anchor"
+    href="#installing"
+    title="Installing"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Installing</h2><p>Your addon is a directory with a <code>package.xml</code> at its top level. To install it, put that directory inside the user <code>Mod/</code> folder. You have two options.</p>
+<h3
+  id="option-1-copy">
+  <a class="heading-anchor"
+    href="#option-1-copy"
+    title="Option 1: Copy"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Option 1: Copy</h3><p>Simple, no special permissions needed, works the same everywhere.</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">cp -r MyAddon/ <span class="s2">&#34;&lt;user-mod-dir&gt;/&#34;</span></span></span></code></pre></div></div><p>The downside is that every change you make has to be copied over again, which is tedious during development.</p>
+<h3
+  id="option-2-symlink-recommended-for-development">
+  <a class="heading-anchor"
+    href="#option-2-symlink-recommended-for-development"
+    title="Option 2: Symlink (recommended for development)"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Option 2: Symlink (recommended for development)</h3><p>A symbolic link in <code>Mod/</code> pointing back at your working tree lets you edit code in place and have FreeCAD see the changes immediately.</p>
+<p><strong>Linux and macOS:</strong></p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ln -s <span class="s2">&#34;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">/MyAddon&#34;</span> <span class="s2">&#34;&lt;user-mod-dir&gt;/MyAddon&#34;</span></span></span></code></pre></div></div><p><strong>Windows</strong> (from an elevated Command Prompt):</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="k">mklink</span> /D <span class="s2">&#34;&lt;user-mod-dir&gt;\MyAddon&#34;</span> <span class="s2">&#34;C:\path\to\MyAddon&#34;</span></span></span></code></pre></div></div><p>Or from PowerShell:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">New-Item</span> <span class="n">-ItemType</span> <span class="n">SymbolicLink</span> <span class="n">-Path</span> <span class="s2">&#34;&lt;user-mod-dir&gt;\MyAddon&#34;</span> <span class="n">-Target</span> <span class="s2">&#34;C:\path\to\MyAddon&#34;</span></span></span></code></pre></div></div><p>On Windows, creating symlinks requires either an elevated shell or <strong>Developer Mode</strong> enabled in Windows Settings (<strong>Settings → Privacy &amp; security → For developers</strong>). Without one of those, <code>mklink</code> will fail with <em>&ldquo;You do not have sufficient privilege&hellip;&rdquo;</em>.</p>
+<h2
+  id="testing-the-install">
+  <a class="heading-anchor"
+    href="#testing-the-install"
+    title="Testing the install"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Testing the install</h2><ol>
+<li>Start (or restart) FreeCAD. FreeCAD scans <code>Mod/</code> only at startup.</li>
+<li>If your Addon is a workbench, look for it in the <strong>Workbench selector</strong>.</li>
+<li>If your addon has a preferences page, verify it shows up under <strong>Edit → Preferences</strong>.</li>
+<li>Check the <strong>Report view</strong> (<strong>View → Panels → Report view</strong>) for any startup errors.</li>
+</ol>
+<p>For a concrete end-to-end test, see the <a
+  href="demos/workbench"
+  class="internal-tooltip">Minimal Workbench demo</a>.</p>
+<h2
+  id="iterating-on-your-code">
+  <a class="heading-anchor"
+    href="#iterating-on-your-code"
+    title="Iterating on your code"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Iterating on your code</h2><p>FreeCAD runs every addon&rsquo;s <code>init_gui.py</code> once at startup. Most changes you make after that point require a restart to take effect:</p>
+<ul>
+<li>Changes to <code>init_gui.py</code> (Workbench class, toolbars, menus).</li>
+<li>Changes to command registration.</li>
+<li>Changes to <code>package.xml</code> (rarely affects the running code).</li>
+</ul>
+<p>A few cases can be reloaded without a restart, but the mechanism is fragile. Restarting is almost always the faster path:</p>
+<ul>
+<li>Small changes inside a command&rsquo;s <code>Activated()</code> method <strong>might</strong> pick up on the next invocation if the module has already been imported and you manually <code>importlib.reload()</code> it from the Python console. Most addon code holds references that survive the reload, so this often leaves you in an inconsistent state.</li>
+<li>Changes to non-GUI helper modules that are only imported inside <code>Activated()</code> at call time are the easiest case.</li>
+</ul>
+<p>Generally speaking, you should probably just restart FreeCAD. It can be slow, but no slower than debugging why your change isn&rsquo;t appearing!</p>
+<h2
+  id="common-pitfalls">
+  <a class="heading-anchor"
+    href="#common-pitfalls"
+    title="Common pitfalls"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Common pitfalls</h2><p><strong>Stale <code>__pycache__</code> files.</strong> Python caches compiled bytecode in <code>__pycache__</code> directories next to your source files. After a large refactor (renamed classes, restructured imports), clear them out.</p>
+<p><strong>Windows symlinks and Git.</strong> If your working tree is a git clone, symlinking the clone into <code>Mod/</code> works fine. But if you switch branches, FreeCAD may end up looking at a very different addon state than you expect. When debugging, note which branch is checked out.</p>
+<p><strong>Multiple FreeCAD versions.</strong> Each FreeCAD version has its own <code>v&lt;MAJOR&gt;-&lt;MINOR&gt;/Mod/</code> directory. An addon installed in the v1.1 Mod directory is invisible to FreeCAD 26.3, and vice versa. For cross-version testing, either install into each version&rsquo;s Mod directory separately, or symlink once per version pointing at the same working tree.</p>
+<p><strong><code>package.xml</code> errors.</strong> If the Addon Manager reports your addon as broken a missing required tag or a bad SPDX license identifier is the usual cause.</p>
+<h2
+  id="uninstalling">
+  <a class="heading-anchor"
+    href="#uninstalling"
+    title="Uninstalling"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Uninstalling</h2><p>Remove the directory (or the symlink) from <code>Mod/</code> and restart FreeCAD.</p>
+<p>Preferences stored under <code>User parameter:BaseApp/Preferences/Mod/MyAddon</code> are not removed by this; clear them through <strong>Tools → Edit parameters</strong> if you want a clean slate.</p>
+</div><footer class="single-footer">
+    <nav class="pagination"><a
+            class="button next"
+            href="/Website/pr-146/zh/dev/academy/guides/log/"
+            title="下一篇"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_left.svg#tri_left"></use>
+  </svg>Code - Logging &amp; Console</a><a
+            class="button prev"
+            href="/Website/pr-146/zh/dev/academy/guides/debug/"
+            title="上一篇">Develop - Debugging<svg
+    class="icon tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="返回顶部"
+  title="返回顶部 (Alt + G)" ><svg
+    class="icon tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a
+            href="/Website/pr-146/zh/">主页</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-146/zh/features/">功能</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-146/zh/download/">下载</a><ul><li>
+                  <a
+                    href="/Website/pr-146/zh/releases/">Releases</a>
+                </li><li>
+                      <a
+                        href="/Website/pr-146/zh/download/addons/">Addons</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-146/zh/download/unstable/">Unstable</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-146/zh/news/">新闻</a><ul><li>
+                  <a
+                    href="/Website/pr-146/zh/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/pr-146/zh/author/">作者</a>
+                      </li><li>
+                        <a href="/Website/pr-146/zh/category/">分类</a>
+                      </li><li>
+                        <a href="/Website/pr-146/zh/tags/">标签列表</a>
+                      </li></ul></li><li>
+          <a
+            href="/Website/pr-146/zh/community/">社区</a><ul><li>
+                      <a
+                        href="/Website/pr-146/zh/community/calendar/">Calendar</a>
+                    </li><li>
+                      <a
+                        href="https://events.freecad.org/" target="_blank" rel="external noreferrer nofollow">Events<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://fpa.freecad.org" target="_blank" rel="external noreferrer nofollow">Association<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swag shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-146/zh/community/telemetry/">Telemetry</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-146/zh/docs/" aria-current="page" class="active">文档</a><ul><li>
+                  <a
+                    href="https://wiki.freecad.org/User_hub/zh" target="_blank" rel="external noreferrer nofollow">User manual<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                </li><li>
+                  <a
+                    href="/Website/pr-146/zh/dev/">Development Handbook</a>
+                </li><li>
+                  <a
+                    href="https://freecad.github.io/SourceDoc/" target="_blank" rel="external noreferrer nofollow">FreeCAD API<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                </li></ul></li><li>
+          <a
+            href="/Website/pr-146/zh/donate/">赞助</a><ul></ul></li></ul>
+</nav>
+<div class="share-links"><a
+    href="https://forum.freecad.org"
+    title="Forum"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/forum.svg#forum"></use>
+  </svg></a><a
+    href="https://devtalk.freecad.org/"
+    title="DevTalk"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon devtalk"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/devtalk.svg#devtalk"></use>
+  </svg></a><a
+    href="https://github.com/freecad"
+    title="GitHub"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/github.svg#github"></use>
+  </svg></a><a
+    href="https://codeberg.org/freecad"
+    title="Codeberg"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a
+    href="https://social.freecad.org/@freecad"
+    title="Mastodon"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/bluesky.svg#bluesky"></use>
+  </svg></a><a
+    href="https://www.reddit.com/r/freecad"
+    title="Reddit"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/reddit.svg#reddit"></use>
+  </svg></a><a
+    href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+    title="Matrix"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/matrix.svg#matrix"></use>
+  </svg></a><a
+    href="https://discord.gg/w2cTKGzccC"
+    title="Discord"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/discord.svg#discord"></use>
+  </svg></a><a
+    href="https://www.linkedin.com/groups/4295230"
+    title="LinkedIn"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+    href="https://FreeCAD.github.io/Website/pr-146/zh/index.xml"
+    type="application/rss&#43;xml"
+    title="RSS 订阅源"><svg
+    class="icon rss"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/rss.svg#rss"></use>
+  </svg></a><a
+  href="/Website/pr-146/zh/fedishare.html#title=Develop&#43;-&#43;Installing&#43;your&#43;addon&#43;locally&amp;description=Once%20you%20have%20an%20addon%20scaffold%20and%20some%20code,%20you%20need%20to%20get%20it%20into%20a%20running%20FreeCAD%20to%20test%20it.%20This%20page%20covers%20how%20to%20find%20the%20correct%20directory,%20how%20to%20install%20the%20addon%20there%20%28copy%20or%20%e2%80%a6&amp;url=https://FreeCAD.github.io/Website/pr-146/zh/dev/academy/guides/install/"
+  title="发布到 Fediverse"
+  target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026
+    <a
+      href="/Website/pr-146/zh/"
+      title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a
+    href="https://creativecommons.org/licenses/by-sa/4.0/"
+    title="Creative Commons"
+    target="_blank" rel="license external noreferrer nofollow">
+
+    CC BY-SA<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to
+  <a
+    href="https://gohugo.io/"
+    title="Hugo SSG"
+    target="_blank" rel="external noreferrer nofollow">
+
+    Hugo<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-11-27
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/3b9aaaf78139eae2a69bacc13828975fc955b356">3b9aaaf781<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script
+    src="/Website/pr-146/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-146/js/zh/copy.min.57c093ec71dcdb38c069f157cd427ffcde6aa69884ed3da8e43df4acea5a3187.js"
+    type="text/javascript"
+    defer integrity="sha256-V8CT7HHc2zjAafFXzUJ//N5qppiE7T2o5D30rOpaMYc=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-146/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    defer integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous">
+  </script></body>
+
+</html>

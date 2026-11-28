@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html
+  lang="de-DE"
+  dir="ltr"><head><meta charset="utf-8">
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1">
+<meta
+  name="referrer"
+  content="strict-origin-when-cross-origin">
+<meta
+  name="robots"
+  content="index, follow"><script>
+  try {
+    const pref = localStorage.getItem("pref-theme");
+    const dark =
+      pref === "dark" ||
+      (pref !== "light" &&
+        
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+        );
+    if (dark) document.documentElement.classList.add("dark");
+  } catch {}
+  document.documentElement.classList.add("js");
+</script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --header: rgb(8, 8, 8);
+        --theme: rgb(16, 16, 16);
+        --entry: rgb(32, 32, 32);
+        --tone: rgb(64, 64, 64);
+        --backdrop: rgba(64, 64, 64, 0.8);
+        --primary: rgb(240, 240, 240);
+        --secondary: rgb(224, 224, 224);
+        --tertiary: rgb(208, 208, 208);
+        --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+        --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+        --angle: 315deg;
+      }
+    }</style>
+</noscript><title>FreeCAD | Code - Gui Commands</title>
+  <meta
+    name="description"
+    content="Dein eigener freier und Open-Source parametrischer Modellierer"><link
+          rel="stylesheet"
+          href="/Website/pr-146/css/styles.620a776c0a5bd62061f0a7760ffb36ec9abdfb6503ff52a674fb042a06a92bfa.css"
+          integrity="sha256-Ygp3bApb1iBh8Kd2D/s27Jq9&#43;2UD/1KmdPsEKgapK/o="
+          crossorigin="anonymous"><link
+    rel="canonical"
+    href="https://FreeCAD.github.io/Website/pr-146/de/dev/academy/guides/commands/"><link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://FreeCAD.github.io/Website/pr-146/dev/academy/guides/commands/"><link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://FreeCAD.github.io/Website/pr-146/zh/dev/academy/guides/commands/"><link
+      rel="alternate"
+      hreflang="es-ES"
+      href="https://FreeCAD.github.io/Website/pr-146/es/dev/academy/guides/commands/"><link
+      rel="alternate"
+      hreflang="fr-FR"
+      href="https://FreeCAD.github.io/Website/pr-146/fr/dev/academy/guides/commands/"><link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://FreeCAD.github.io/Website/pr-146/pt/dev/academy/guides/commands/"><link
+      rel="alternate"
+      hreflang="de-DE"
+      href="https://FreeCAD.github.io/Website/pr-146/de/dev/academy/guides/commands/"><link
+      rel="alternate"
+      hreflang="ja-JP"
+      href="https://FreeCAD.github.io/Website/pr-146/ja/dev/academy/guides/commands/"><link
+      rel="alternate"
+      hreflang="pl-PL"
+      href="https://FreeCAD.github.io/Website/pr-146/pl/dev/academy/guides/commands/"><link
+    rel="alternate"
+    hreflang="x-default"
+    href="https://FreeCAD.github.io/Website/pr-146/de/"><link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Website/pr-146/favicon.svg"><link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/Website/pr-146/favicon.ico"><link
+      rel="apple-touch-icon"
+      href="/Website/pr-146/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://FreeCAD.github.io/Website/pr-146/de/index.xml"
+    title="FreeCAD"><meta name="generator" content="Hugo 0.160.0"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-146/de/dev/academy/guides/commands/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Code - Gui Commands">
+  <meta property="og:description" content="A Command is a single user-invocable action, bound to a toolbar button, menu item, context-menu entry, or keyboard shortcut. Commands are the granular building blocks of an addon’s user interface; a Workbench bundles them into toolbars and menus. This page covers how to write and register a command.">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dev">
+    <meta property="article:modified_time" content="2026-11-27T17:14:57+01:00">
+</head><body
+    class="single type-dev kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <a
+    class="logo"
+    href="/Website/pr-146/de/"
+    accesskey="h"
+    title="Home (Alt + H)"
+    aria-label="Home">
+    <svg
+      class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+
+      <use href="/Website/pr-146/wordmark.svg#wordmark"></use>
+    </svg></a>
+
+  <div class="site-nav"><nav class="menu">
+  <button
+    popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menü"
+    aria-label="Menü"><svg
+    class="icon hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hamburger.svg#hamburger"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul
+    popover
+    id="menu-list"
+    class="menu-list"><li>
+          <a
+            href="/Website/pr-146/de/features/">Funktionen</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/de/download/">Herunterladen</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/de/news/">Aktuelles</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/de/community/">Community</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/de/docs/" aria-current="page" class="active">Dokumentation</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/de/donate/" class="button accent"><svg
+    class="icon heart"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/heart.svg#heart"></use>
+  </svg>Spenden</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button
+          popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Sprache auswählen (Alt + L)"
+          aria-label="Sprache auswählen"><svg
+    class="icon language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul
+          popover
+          id="lang-list"
+          class="language-list"><li>
+              <a href="/Website/pr-146/dev/academy/guides/commands/" title="Code - Gui Commands">English 🇬🇧</a>
+            </li><li>
+              <a href="/Website/pr-146/zh/dev/academy/guides/commands/" title="Code - Gui Commands">中文 🇨🇳</a>
+            </li><li>
+              <a href="/Website/pr-146/es/dev/academy/guides/commands/" title="Code - Gui Commands">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/pr-146/fr/dev/academy/guides/commands/" title="Code - Gui Commands">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pr-146/pt/dev/academy/guides/commands/" title="Code - Gui Commands">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-146/de/dev/academy/guides/commands/" title="Code - Gui Commands">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/pr-146/ja/dev/academy/guides/commands/" title="Code - Gui Commands">日本語 🇯🇵</a>
+            </li><li>
+              <a href="/Website/pr-146/pl/dev/academy/guides/commands/" title="Code - Gui Commands">Polski 🇵🇱</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Design wechseln (Alt + T)"
+    aria-label="Design wechseln"><svg
+    class="icon dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/dark.svg#dark"></use>
+  </svg><svg
+    class="icon light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero">
+
+    <h2 class="title">Code - Gui Commands</h1><div class="metadata"><span class="meta"><svg
+    class="icon time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/time.svg#time"></use>
+  </svg>8 Minuten</span></div></section><nav class="toc">
+  <input
+    type="checkbox"
+    id="toc-checkbox"
+    class="toc-checkbox">
+  <label
+    for="toc-checkbox"
+    class="toc-toggle button"
+    title="Table of Contents"><svg
+    class="icon expand"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/expand.svg#expand"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/cross.svg#cross"></use>
+  </svg><span>Inhaltsverzeichnis</span>
+  </label>
+
+  <div
+    id="toc-content"
+    class="toc-content">
+    <ul class="section-nav"><li>
+          <a
+            href="/Website/pr-146/de/dev/"
+            class="current-section"><svg
+    class="icon tri_tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_tri_left.svg#tri_tri_left"></use>
+  </svg> Development Handbook</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/de/dev/academy/"
+            class="current-section"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_left.svg#tri_left"></use>
+  </svg> Addon Academy</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/de/dev/academy/guides/"
+            class="current-section"><svg
+    class="icon folder_closed"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/folder_closed.svg#folder_closed"></use>
+  </svg> Guides</a>
+        </li><li>
+        <ul><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/guides/create/">Creating an Addon</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/guides/workbenches/">Code - Workbench registration</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/guides/commands/" id="current-page" class="active" aria-current="page">Code - Gui Commands</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/guides/manipulators/">Code - Workbench manipulators</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/guides/qt/">Code - Qt &amp; PySide</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/guides/preferences/">Code - Preferences pages</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/guides/objects/">Code - Custom document objects</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/guides/icons/">Code - Icons &amp; Resources</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/guides/translations/">Code - Translations (i18n)</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/guides/log/">Code - Logging &amp; Console</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/guides/install/">Develop - Installing your addon locally</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/guides/debug/">Develop - Debugging</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/guides/test/">Develop - Testing</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/guides/security/">Develop - Security scanning with Bandit</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/guides/portable/">Publish - Portable</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/guides/reference/">Publish - Reference</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/guides/indexed/">Publish - Indexed</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/guides/overview/">Polish - Addon Manager overview page</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/guides/metadata/">Polish - Metadata &amp; discoverability</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/guides/compatibility/">Maintain - FreeCAD version compatibility</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/guides/migrations/">Maintain - Data &amp; schema migrations</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/guides/update/">Maintain - Updating</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/de/dev/academy/guides/handoff/">Maintain - Maintainer handoff</a>
+            </li></ul>
+      </li>
+    </ul><p class="toc-label"><svg
+    class="icon file"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/file.svg#file"></use>
+  </svg>
+        <span>Auf dieser Seite</span>
+      </p><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#where-commands-live">Where commands live</a></li>
+        <li><a href="#the-command-class">The command class</a>
+          <ul>
+            <li><a href="#getresources"><code>GetResources()</code></a></li>
+            <li><a href="#cmdtype"><code>CmdType</code></a></li>
+            <li><a href="#isactive"><code>IsActive()</code></a></li>
+            <li><a href="#activated"><code>Activated()</code></a></li>
+          </ul>
+        </li>
+        <li><a href="#registering-the-command">Registering the command</a></li>
+        <li><a href="#command-naming">Command naming</a></li>
+        <li><a href="#placing-commands-in-the-ui">Placing commands in the UI</a></li>
+        <li><a href="#separators">Separators</a></li>
+        <li><a href="#translation">Translation</a></li>
+        <li><a href="#see-also">See also</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+</nav><div class="content"><figure>
+  <blockquote class="note"><svg
+    class="icon note"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/note.svg#note"></use>
+  </svg>Hinweis<p>Diese Seite wurde noch nicht übersetzt, daher wird stattdessen die englische Version verwendet. Möchtest du mithelfen?
+<a
+  href="https://github.com/freecad/website"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Mitwirken<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a></p></blockquote></figure><p>A Command is a single user-invocable action, bound to a toolbar button, menu item, context-menu entry, or keyboard shortcut. Commands are the granular building blocks of an addon&rsquo;s user interface; a <a
+  href="guides/workbench"
+  class="internal-tooltip">Workbench</a> bundles them into toolbars and menus. This page covers how to write and register a command.</p>
+<p>For a complete working example, see the <a
+  href="demos/workbench"
+  class="internal-tooltip">Minimal Workbench demo</a>.</p>
+<h2
+  id="where-commands-live">
+  <a class="heading-anchor"
+    href="#where-commands-live"
+    title="Where commands live"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Where commands live</h2><p>Convention is to put commands in a <code>commands.py</code> module inside your addon&rsquo;s namespace package, alongside <code>init_gui.py</code>:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">freecad/MyAddon/
+</span></span><span class="line"><span class="cl">├─ __init__.py
+</span></span><span class="line"><span class="cl">├─ init_gui.py
+</span></span><span class="line"><span class="cl">└─ commands.py</span></span></code></pre></div></div><p>For larger addons, split into multiple files (<code>commands_foo.py</code>, <code>commands_bar.py</code>) or a <code>commands/</code> subpackage. Each file registers its commands with <code>FreeCADGui.addCommand(...)</code> at module scope, so that importing the file has the side effect of making the commands available.</p>
+<h2
+  id="the-command-class">
+  <a class="heading-anchor"
+    href="#the-command-class"
+    title="The command class"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>The command class</h2><p>A command is a plain Python class (not a subclass of anything) with three methods that FreeCAD looks up by name via duck typing (Python&rsquo;s most delightfully-named thing):</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="c1"># freecad/MyAddon/commands.py</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">FreeCAD</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">FreeCADGui</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">RuinThingsCommand</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">GetResources</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;MenuText&#34;</span><span class="p">:</span> <span class="s2">&#34;Ruin things&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;ToolTip&#34;</span><span class="p">:</span>  <span class="s2">&#34;Deletes a randomly-selected set of edges from your model&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;Pixmap&#34;</span><span class="p">:</span>   <span class="s2">&#34;MyAddon_Explosion.svg&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;Accel&#34;</span><span class="p">:</span>    <span class="s2">&#34;Ctrl+Alt+Shift+R&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">IsActive</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">Activated</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">FreeCAD</span><span class="o">.</span><span class="n">Console</span><span class="o">.</span><span class="n">PrintMessage</span><span class="p">(</span><span class="s2">&#34;This was probably a mistake...</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">FreeCADGui</span><span class="o">.</span><span class="n">addCommand</span><span class="p">(</span><span class="s2">&#34;MyAddon_Ruin&#34;</span><span class="p">,</span> <span class="n">RuinThingsCommand</span><span class="p">())</span></span></span></code></pre></div></div><h3
+  id="getresources">
+  <a class="heading-anchor"
+    href="#getresources"
+    title="GetResources()"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a><code>GetResources()</code></h3><p>Returns a dictionary describing how the command appears in the UI. Recognized keys:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Key</th>
+          <th>Required</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>MenuText</code></td>
+          <td>Yes</td>
+          <td>The command&rsquo;s label in menus and its default button tooltip.</td>
+      </tr>
+      <tr>
+          <td><code>ToolTip</code></td>
+          <td>No</td>
+          <td>A longer description shown on hover over toolbar buttons.</td>
+      </tr>
+      <tr>
+          <td><code>Pixmap</code></td>
+          <td>No</td>
+          <td>A filename for the button icon, resolved against registered icon paths. See <a
+  href="guides/icons"
+  class="internal-tooltip">Icons &amp; resources</a>.</td>
+      </tr>
+      <tr>
+          <td><code>Accel</code></td>
+          <td>No</td>
+          <td>A keyboard shortcut string such as <code>&quot;Ctrl+Shift+H&quot;</code> or <code>&quot;Shift+A&quot;</code>.</td>
+      </tr>
+      <tr>
+          <td><code>StatusTip</code></td>
+          <td>No</td>
+          <td>Text shown in the status bar when the command is highlighted. Falls back to <code>ToolTip</code> if absent.</td>
+      </tr>
+      <tr>
+          <td><code>WhatsThis</code></td>
+          <td>No</td>
+          <td>Text shown by the &ldquo;What&rsquo;s this?&rdquo; help mechanism.</td>
+      </tr>
+      <tr>
+          <td><code>CmdType</code></td>
+          <td>No</td>
+          <td>Declares what the command alters. Governs availability while a task dialog is open; see below.</td>
+      </tr>
+  </tbody>
+</table>
+<p>A command missing <code>GetResources</code> will technically still be registered, but it cannot be placed into a menu or toolbar because FreeCAD will have no label to display. In practice, every command class should provide a <code>GetResources</code> method.</p>
+<h3
+  id="cmdtype">
+  <a class="heading-anchor"
+    href="#cmdtype"
+    title="CmdType"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a><code>CmdType</code></h3><p>An optional string in <code>GetResources()</code> declaring what the command changes. FreeCAD uses the declaration to decide whether the command stays available while a <em>task dialog</em> is open.</p>
+<p>Five values are recognized:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Value</th>
+          <th>Meaning</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>AlterDoc</code></td>
+          <td>The command modifies the document.</td>
+      </tr>
+      <tr>
+          <td><code>Alter3DView</code></td>
+          <td>The command modifies the 3D view.</td>
+      </tr>
+      <tr>
+          <td><code>AlterSelection</code></td>
+          <td>The command modifies the selection.</td>
+      </tr>
+      <tr>
+          <td><code>ForEdit</code></td>
+          <td>The command remains available while a task dialog is open.</td>
+      </tr>
+      <tr>
+          <td><code>NoTransaction</code></td>
+          <td>Do not set up an automatic transaction. Currently has no effect on addon commands, see below.</td>
+      </tr>
+  </tbody>
+</table>
+<p>Several values may be combined in the one string. FreeCAD searches the string for each value as a substring, so the separator is irrelevant and <code>&quot;ForEdit AlterDoc&quot;</code>, <code>&quot;ForEdit, AlterDoc&quot;</code>, and <code>&quot;ForEditAlterDoc&quot;</code> are all equivalent. A space-separated list is the conventional form:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">GetResources</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;MenuText&#34;</span><span class="p">:</span> <span class="s2">&#34;Add construction line&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;CmdType&#34;</span><span class="p">:</span>  <span class="s2">&#34;ForEdit AlterDoc&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span></span></span></code></pre></div></div><p>Because matching is by substring, a misspelled value is not reported as an error. <code>&quot;Foredit&quot;</code> matches nothing and leaves the command with no declared type at all.</p>
+<h4
+  id="why-a-command-stops-working-in-sketcher">
+  <a class="heading-anchor"
+    href="#why-a-command-stops-working-in-sketcher"
+    title="Why a command stops working in Sketcher"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Why a command stops working in Sketcher</h4><p>When <code>GetResources()</code> omits <code>CmdType</code>, the command keeps the default that FreeCAD&rsquo;s <code>Command</code> constructor assigns, which is <code>AlterDoc | Alter3DView | AlterSelection</code>. Every plain Python command therefore declares that it modifies the document if it doesn&rsquo;t otherwise specify a <code>CmdType</code>.</p>
+<p>Before enabling a command&rsquo;s toolbar button or menu entry, FreeCAD asks the active task dialog whether each declared alteration is permitted. The base <code>TaskDialog</code> class permits view and selection changes but <strong>not</strong> document changes. Individual dialogs may override that, and a handful in core do permit document changes, but the great majority either inherit the default or explicitly reaffirm it; Sketcher&rsquo;s edit dialog is in the latter group. A command carrying the default type is consequently disabled the moment such a dialog opens, with nothing in the addon&rsquo;s own code to suggest why. This is a frequent source of confusion, because the symptom (a button that greys out on entering Sketcher edit mode) has no visible connection to a resource key the addon never set.</p>
+<p>Measured button states for three otherwise identical commands:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Situation</th>
+          <th>Default <code>CmdType</code></th>
+          <th><code>&quot;ForEdit&quot;</code></th>
+          <th><code>&quot;Alter3DView&quot;</code></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>No task dialog open</td>
+          <td>Enabled</td>
+          <td>Enabled</td>
+          <td>Enabled</td>
+      </tr>
+      <tr>
+          <td>Sketch edit mode open</td>
+          <td><strong>Disabled</strong></td>
+          <td>Enabled</td>
+          <td>Enabled</td>
+      </tr>
+      <tr>
+          <td>After leaving edit mode</td>
+          <td>Enabled</td>
+          <td>Enabled</td>
+          <td>Enabled</td>
+      </tr>
+  </tbody>
+</table>
+<p><code>ForEdit</code> skips the permission check entirely, which is why adding it resolves the problem. It is not the only remedy, and often not the most appropriate one. A command that declares its actual scope accurately also stays available whenever that scope excludes the document: the third column above is a command that only changes the 3D view, and task dialogs permit view changes by default. Declare the alterations the command genuinely performs, and reserve <code>ForEdit</code> for commands that really do need to modify the document from inside an edit session.</p>
+<p><code>CmdType</code> does not replace <code>IsActive()</code>. The two checks are independent and both must pass: FreeCAD applies the task-dialog check first, then calls <code>IsActive()</code>.</p>
+<h4
+  id="notransaction">
+  <a class="heading-anchor"
+    href="#notransaction"
+    title="NoTransaction"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a><code>NoTransaction</code></h4><p><code>NoTransaction</code> is listed above for completeness. FreeCAD parses the value for Python commands, but nothing then consults it for them: the only code that reads the flag is the built-in <code>Std_Refresh</code> command. Setting it on an addon command currently has no effect. Note also that <code>PythonGroupCommand</code>, the class behind grouped drop-down commands, parses only the first four values and ignores <code>NoTransaction</code> outright.</p>
+<h3
+  id="isactive">
+  <a class="heading-anchor"
+    href="#isactive"
+    title="IsActive()"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a><code>IsActive()</code></h3><p>Returns a boolean indicating whether the command is currently available. A <code>False</code> return disables the toolbar button and menu entry. Typical uses:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">IsActive</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">FreeCAD</span><span class="o">.</span><span class="n">ActiveDocument</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span></span></span></code></pre></div></div><div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">IsActive</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sel</span> <span class="o">=</span> <span class="n">FreeCADGui</span><span class="o">.</span><span class="n">Selection</span><span class="o">.</span><span class="n">getSelection</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">sel</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span></span></span></code></pre></div></div><p><code>IsActive</code> should be kept fast: prefer no disk access, no network calls, no walking a large document graph. If you need an expensive check, consider caching the result (of course, proper cache invalidation is left as an exercise to the reader…).</p>
+<p>If your command has no availability requirements, either return <code>True</code> unconditionally or omit <code>IsActive</code> entirely.</p>
+<p><code>IsActive()</code> is your addon&rsquo;s own availability logic, and it is not the only thing that can disable a command. FreeCAD applies a separate check based on the <a
+  href="/Website/pr-146/de/dev/academy/guides/commands/#cmdtype"
+  class="internal-tooltip hash-link"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg><code>CmdType</code></a> resource, which governs whether the command survives while a task dialog is open. A command returning <code>True</code> from <code>IsActive()</code> can still appear greyed out if its <code>CmdType</code> declaration fails that check.</p>
+<h3
+  id="activated">
+  <a class="heading-anchor"
+    href="#activated"
+    title="Activated()"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a><code>Activated()</code></h3><p>The method FreeCAD calls when the user triggers the command (clicking a toolbar button, selecting a menu item, or typing the shortcut). This is where your command actually does its work:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">Activated</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">doc</span> <span class="o">=</span> <span class="n">FreeCAD</span><span class="o">.</span><span class="n">ActiveDocument</span>
+</span></span><span class="line"><span class="cl">    <span class="n">doc</span><span class="o">.</span><span class="n">openTransaction</span><span class="p">(</span><span class="s2">&#34;Ruin everything&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># ... your work here ...</span>
+</span></span><span class="line"><span class="cl">        <span class="n">doc</span><span class="o">.</span><span class="n">commitTransaction</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">doc</span><span class="o">.</span><span class="n">abortTransaction</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="k">raise</span></span></span></code></pre></div></div><p>Wrap document-modifying work in <code>openTransaction</code> / <code>commitTransaction</code> so the user can undo it with a single Ctrl+Z. The argument to <code>openTransaction</code> is the label that appears in the Undo menu.</p>
+<h2
+  id="registering-the-command">
+  <a class="heading-anchor"
+    href="#registering-the-command"
+    title="Registering the command"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Registering the command</h2><p>At the bottom of the module that defines the command class, call <code>FreeCADGui.addCommand</code>:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">FreeCADGui</span><span class="o">.</span><span class="n">addCommand</span><span class="p">(</span><span class="s2">&#34;MyAddon_Ruin&#34;</span><span class="p">,</span> <span class="n">RuinThingsCommand</span><span class="p">())</span></span></span></code></pre></div></div><p>The first argument is the <strong>command name</strong>, a string identifier used to refer to the command from toolbars, menus, and other places. The second is an <strong>instance of the class</strong> (not the class itself).</p>
+<p>Once registered, the command is available to every workbench within FreeCAD, not only your own. Prefixing it with your addon&rsquo;s name is a basic &ldquo;poor man&rsquo;s namespace&rdquo; mechanism (see below).</p>
+<h2
+  id="command-naming">
+  <a class="heading-anchor"
+    href="#command-naming"
+    title="Command naming"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Command naming</h2><p>Command names are a flat, global namespace across FreeCAD. Convention is to prefix with your addon&rsquo;s name and an underscore:</p>
+<ul>
+<li><code>MyAddon_DoSomething</code></li>
+<li><code>MyAddon_OpenDialog</code></li>
+<li><code>MyAddon_Export_XYZ</code></li>
+</ul>
+<p>Avoid collisions with core FreeCAD commands, which use <code>Std_*</code>, <code>Part_*</code>, <code>Sketcher_*</code>, and similar prefixes. Giving every command your addon&rsquo;s prefix makes it visually obvious which addon owns a given command and prevents silent clobbering if two addons pick the same command name. Of course, if two addons pick the same <em>prefix</em>, all bets are off. So try to make yours unique. Like a snowflake❄️.</p>
+<h2
+  id="placing-commands-in-the-ui">
+  <a class="heading-anchor"
+    href="#placing-commands-in-the-ui"
+    title="Placing commands in the UI"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Placing commands in the UI</h2><p>Commands are registered once and then referenced by name wherever you want them to appear. The workbench methods <code>appendToolbar</code>, <code>appendMenu</code>, and <code>appendContextMenu</code> take lists of command names. See <a
+  href="guides/workbench"
+  class="internal-tooltip">Workbench registration</a> for the full description.</p>
+<p>Short version:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="c1"># freecad/MyAddon/init_gui.py, inside your Workbench class&#39;s Initialize(self):</span>
+</span></span><span class="line"><span class="cl"><span class="bp">self</span><span class="o">.</span><span class="n">appendToolbar</span><span class="p">(</span><span class="s2">&#34;My tools&#34;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&#34;MyAddon_Ruin&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="bp">self</span><span class="o">.</span><span class="n">appendMenu</span><span class="p">(</span><span class="s2">&#34;My Addon&#34;</span><span class="p">,</span>    <span class="p">[</span><span class="s2">&#34;MyAddon_Ruin&#34;</span><span class="p">])</span></span></span></code></pre></div></div><p>You can also reference core FreeCAD commands from your own toolbars and menus, since all registered commands share the same global namespace:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="c1"># inside Initialize(self):</span>
+</span></span><span class="line"><span class="cl"><span class="bp">self</span><span class="o">.</span><span class="n">appendToolbar</span><span class="p">(</span><span class="s2">&#34;My tools&#34;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&#34;Std_New&#34;</span><span class="p">,</span> <span class="s2">&#34;MyAddon_Ruin&#34;</span><span class="p">])</span></span></span></code></pre></div></div><p>Useful built-ins include <code>Std_New</code>, <code>Std_Open</code>, <code>Std_Save</code>, <code>Std_Undo</code>, <code>Std_Redo</code>, and <code>Std_SelectAll</code>.</p>
+<h2
+  id="separators">
+  <a class="heading-anchor"
+    href="#separators"
+    title="Separators"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Separators</h2><p>To insert a separator between groups of commands in a toolbar or menu, use the special string <code>&quot;Separator&quot;</code>:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="c1"># inside Initialize(self):</span>
+</span></span><span class="line"><span class="cl"><span class="bp">self</span><span class="o">.</span><span class="n">appendToolbar</span><span class="p">(</span><span class="s2">&#34;My tools&#34;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&#34;MyAddon_One&#34;</span><span class="p">,</span> <span class="s2">&#34;Separator&#34;</span><span class="p">,</span> <span class="s2">&#34;MyAddon_Two&#34;</span><span class="p">])</span></span></span></code></pre></div></div><p><em>Don&rsquo;t translate &ldquo;Separator&rdquo;</em>, it&rsquo;s hard-coded into FreeCAD&rsquo;s source as a special name, parsed during menu and toolbar creation.</p>
+<h2
+  id="translation">
+  <a class="heading-anchor"
+    href="#translation"
+    title="Translation"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Translation</h2><p>User-visible strings in <code>GetResources</code> should be wrapped with <code>QT_TRANSLATE_NOOP</code>, using the command name as the context:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">PySide.QtCore</span> <span class="kn">import</span> <span class="n">QT_TRANSLATE_NOOP</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">HelloCommand</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">GetResources</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;MenuText&#34;</span><span class="p">:</span> <span class="n">QT_TRANSLATE_NOOP</span><span class="p">(</span><span class="s2">&#34;MyAddon_Hello&#34;</span><span class="p">,</span> <span class="s2">&#34;Hello&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;ToolTip&#34;</span><span class="p">:</span>  <span class="n">QT_TRANSLATE_NOOP</span><span class="p">(</span><span class="s2">&#34;MyAddon_Hello&#34;</span><span class="p">,</span> <span class="s2">&#34;Print a hello message.&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span></span></span></code></pre></div></div><p>See <a
+  href="guides/translations"
+  class="internal-tooltip">Translations</a> for why <code>QT_TRANSLATE_NOOP</code> rather than <code>translate()</code>, and for the broader translation workflow.</p>
+<h2
+  id="see-also">
+  <a class="heading-anchor"
+    href="#see-also"
+    title="See also"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>See also</h2><ul>
+<li><a
+  href="demos/workbench"
+  class="internal-tooltip">Minimal Workbench demo</a>: a complete working workbench with a single command.</li>
+<li><a
+  href="guides/workbench"
+  class="internal-tooltip">Workbench registration</a>: how to place commands into toolbars, menus, and context menus.</li>
+<li><a
+  href="guides/icons"
+  class="internal-tooltip">Icons &amp; resources</a>: how <code>Pixmap</code> filenames are resolved at runtime.</li>
+<li><a
+  href="guides/translations"
+  class="internal-tooltip">Translations</a>: wrapping <code>GetResources</code> strings for translation.</li>
+<li><a
+  href="guides/log"
+  class="internal-tooltip">Logging &amp; console</a>: how to report progress or errors from <code>Activated</code>.</li>
+</ul>
+</div><footer class="single-footer">
+    <nav class="pagination"><a
+            class="button next"
+            href="/Website/pr-146/de/dev/academy/guides/workbenches/"
+            title="Nächster Artikel"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_left.svg#tri_left"></use>
+  </svg>Code - Workbench registration</a><a
+            class="button prev"
+            href="/Website/pr-146/de/dev/academy/guides/manipulators/"
+            title="Vorheriger Artikel">Code - Workbench manipulators<svg
+    class="icon tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Nach oben"
+  title="Nach oben (Alt + G)" ><svg
+    class="icon tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a
+            href="/Website/pr-146/de/">Home</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-146/de/features/">Funktionen</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-146/de/download/">Herunterladen</a><ul><li>
+                  <a
+                    href="/Website/pr-146/de/releases/">Releases</a>
+                </li><li>
+                      <a
+                        href="/Website/pr-146/de/download/addons/">Addons</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-146/de/download/unstable/">Unstable</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-146/de/news/">Aktuelles</a><ul><li>
+                  <a
+                    href="/Website/pr-146/de/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/pr-146/de/author/">Autor</a>
+                      </li><li>
+                        <a href="/Website/pr-146/de/category/">Kategorie</a>
+                      </li><li>
+                        <a href="/Website/pr-146/de/tags/">Tags</a>
+                      </li></ul></li><li>
+          <a
+            href="/Website/pr-146/de/community/">Community</a><ul><li>
+                      <a
+                        href="/Website/pr-146/de/community/calendar/">Calendar</a>
+                    </li><li>
+                      <a
+                        href="https://events.freecad.org/" target="_blank" rel="external noreferrer nofollow">Events<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://fpa.freecad.org" target="_blank" rel="external noreferrer nofollow">Association<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swag shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-146/de/community/telemetry/">Telemetry</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-146/de/docs/" aria-current="page" class="active">Dokumentation</a><ul><li>
+                  <a
+                    href="https://wiki.freecad.org/User_hub/de" target="_blank" rel="external noreferrer nofollow">User manual<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                </li><li>
+                  <a
+                    href="/Website/pr-146/de/dev/">Development Handbook</a>
+                </li><li>
+                  <a
+                    href="https://freecad.github.io/SourceDoc/" target="_blank" rel="external noreferrer nofollow">FreeCAD API<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                </li></ul></li><li>
+          <a
+            href="/Website/pr-146/de/donate/">Spenden</a><ul></ul></li></ul>
+</nav>
+<div class="share-links"><a
+    href="https://forum.freecad.org"
+    title="Forum"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/forum.svg#forum"></use>
+  </svg></a><a
+    href="https://devtalk.freecad.org/"
+    title="DevTalk"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon devtalk"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/devtalk.svg#devtalk"></use>
+  </svg></a><a
+    href="https://github.com/freecad"
+    title="GitHub"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/github.svg#github"></use>
+  </svg></a><a
+    href="https://codeberg.org/freecad"
+    title="Codeberg"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a
+    href="https://social.freecad.org/@freecad"
+    title="Mastodon"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/bluesky.svg#bluesky"></use>
+  </svg></a><a
+    href="https://www.reddit.com/r/freecad"
+    title="Reddit"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/reddit.svg#reddit"></use>
+  </svg></a><a
+    href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+    title="Matrix"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/matrix.svg#matrix"></use>
+  </svg></a><a
+    href="https://discord.gg/w2cTKGzccC"
+    title="Discord"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/discord.svg#discord"></use>
+  </svg></a><a
+    href="https://www.linkedin.com/groups/4295230"
+    title="LinkedIn"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+    href="https://FreeCAD.github.io/Website/pr-146/de/index.xml"
+    type="application/rss&#43;xml"
+    title="RSS-Feed"><svg
+    class="icon rss"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/rss.svg#rss"></use>
+  </svg></a><a
+  href="/Website/pr-146/de/fedishare.html#title=Code&#43;-&#43;Gui&#43;Commands&amp;description=A%20Command%20is%20a%20single%20user-invocable%20action,%20bound%20to%20a%20toolbar%20button,%20menu%20item,%20context-menu%20entry,%20or%20keyboard%20shortcut.%20Commands%20are%20the%20granular%20building%20blocks%20of%20an%20addon%e2%80%99s%20user%20interface;%20a%20%e2%80%a6&amp;url=https://FreeCAD.github.io/Website/pr-146/de/dev/academy/guides/commands/"
+  title="Im Fediverse veröffentlichen"
+  target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026
+    <a
+      href="/Website/pr-146/de/"
+      title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a
+    href="https://creativecommons.org/licenses/by-sa/4.0/"
+    title="Creative Commons"
+    target="_blank" rel="license external noreferrer nofollow">
+
+    CC BY-SA<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to
+  <a
+    href="https://gohugo.io/"
+    title="Hugo SSG"
+    target="_blank" rel="external noreferrer nofollow">
+
+    Hugo<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-11-27
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/3b9aaaf78139eae2a69bacc13828975fc955b356">3b9aaaf781<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script
+    src="/Website/pr-146/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-146/js/de/copy.min.ce482923bd28ee86b91e2de37a7cd711f1df682c7518f02d717f97e8029a1f32.js"
+    type="text/javascript"
+    defer integrity="sha256-zkgpI70o7oa5Hi3jenzXEfHfaCx1GPAtcX&#43;X6AKaHzI=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-146/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    defer integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous">
+  </script></body>
+
+</html>

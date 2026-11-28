@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html
+  lang="pl-PL"
+  dir="ltr"><head><meta charset="utf-8">
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1">
+<meta
+  name="referrer"
+  content="strict-origin-when-cross-origin">
+<meta
+  name="robots"
+  content="index, follow"><script>
+  try {
+    const pref = localStorage.getItem("pref-theme");
+    const dark =
+      pref === "dark" ||
+      (pref !== "light" &&
+        
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+        );
+    if (dark) document.documentElement.classList.add("dark");
+  } catch {}
+  document.documentElement.classList.add("js");
+</script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --header: rgb(8, 8, 8);
+        --theme: rgb(16, 16, 16);
+        --entry: rgb(32, 32, 32);
+        --tone: rgb(64, 64, 64);
+        --backdrop: rgba(64, 64, 64, 0.8);
+        --primary: rgb(240, 240, 240);
+        --secondary: rgb(224, 224, 224);
+        --tertiary: rgb(208, 208, 208);
+        --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+        --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+        --angle: 315deg;
+      }
+    }</style>
+</noscript><title>FreeCAD | Code - Custom document objects</title>
+  <meta
+    name="description"
+    content="Twój własny program do parametrycznego modelowania wolne i otwarte"><link
+          rel="stylesheet"
+          href="/Website/pr-146/css/styles.620a776c0a5bd62061f0a7760ffb36ec9abdfb6503ff52a674fb042a06a92bfa.css"
+          integrity="sha256-Ygp3bApb1iBh8Kd2D/s27Jq9&#43;2UD/1KmdPsEKgapK/o="
+          crossorigin="anonymous"><link
+    rel="canonical"
+    href="https://FreeCAD.github.io/Website/pr-146/pl/dev/academy/guides/objects/"><link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://FreeCAD.github.io/Website/pr-146/dev/academy/guides/objects/"><link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://FreeCAD.github.io/Website/pr-146/zh/dev/academy/guides/objects/"><link
+      rel="alternate"
+      hreflang="es-ES"
+      href="https://FreeCAD.github.io/Website/pr-146/es/dev/academy/guides/objects/"><link
+      rel="alternate"
+      hreflang="fr-FR"
+      href="https://FreeCAD.github.io/Website/pr-146/fr/dev/academy/guides/objects/"><link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://FreeCAD.github.io/Website/pr-146/pt/dev/academy/guides/objects/"><link
+      rel="alternate"
+      hreflang="de-DE"
+      href="https://FreeCAD.github.io/Website/pr-146/de/dev/academy/guides/objects/"><link
+      rel="alternate"
+      hreflang="ja-JP"
+      href="https://FreeCAD.github.io/Website/pr-146/ja/dev/academy/guides/objects/"><link
+      rel="alternate"
+      hreflang="pl-PL"
+      href="https://FreeCAD.github.io/Website/pr-146/pl/dev/academy/guides/objects/"><link
+    rel="alternate"
+    hreflang="x-default"
+    href="https://FreeCAD.github.io/Website/pr-146/pl/"><link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Website/pr-146/favicon.svg"><link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/Website/pr-146/favicon.ico"><link
+      rel="apple-touch-icon"
+      href="/Website/pr-146/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://FreeCAD.github.io/Website/pr-146/pl/index.xml"
+    title="FreeCAD"><meta name="generator" content="Hugo 0.160.0"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-146/pl/dev/academy/guides/objects/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Code - Custom document objects">
+  <meta property="og:description" content="A document object is anything stored inside a FreeCAD document (.FCStd file): a Part feature, a Sketch, an annotation, a group, etc. Most document objects are implemented in C&#43;&#43; as part of FreeCAD core. An addon can extend the set of available object types by defining FeaturePython objects: document objects whose parametric behavior is written in Python.">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dev">
+    <meta property="article:modified_time" content="2026-11-27T17:14:57+01:00">
+</head><body
+    class="single type-dev kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <a
+    class="logo"
+    href="/Website/pr-146/pl/"
+    accesskey="h"
+    title="Strona Główna (Alt + H)"
+    aria-label="Strona Główna">
+    <svg
+      class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+
+      <use href="/Website/pr-146/wordmark.svg#wordmark"></use>
+    </svg></a>
+
+  <div class="site-nav"><nav class="menu">
+  <button
+    popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg
+    class="icon hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hamburger.svg#hamburger"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul
+    popover
+    id="menu-list"
+    class="menu-list"><li>
+          <a
+            href="/Website/pr-146/pl/features/">Funkcje</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/pl/download/">Pobierz</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/pl/news/">Aktualności</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/pl/community/">Społeczność</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/pl/docs/" aria-current="page" class="active">Dokumentacja</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/pl/donate/" class="button accent"><svg
+    class="icon heart"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/heart.svg#heart"></use>
+  </svg>Przekaż darowiznę</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button
+          popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Wybierz język (Alt + L)"
+          aria-label="Wybierz język"><svg
+    class="icon language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul
+          popover
+          id="lang-list"
+          class="language-list"><li>
+              <a href="/Website/pr-146/dev/academy/guides/objects/" title="Code - Custom document objects">English 🇬🇧</a>
+            </li><li>
+              <a href="/Website/pr-146/zh/dev/academy/guides/objects/" title="Code - Custom document objects">中文 🇨🇳</a>
+            </li><li>
+              <a href="/Website/pr-146/es/dev/academy/guides/objects/" title="Code - Custom document objects">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/pr-146/fr/dev/academy/guides/objects/" title="Code - Custom document objects">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pr-146/pt/dev/academy/guides/objects/" title="Code - Custom document objects">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a href="/Website/pr-146/de/dev/academy/guides/objects/" title="Code - Custom document objects">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/pr-146/ja/dev/academy/guides/objects/" title="Code - Custom document objects">日本語 🇯🇵</a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-146/pl/dev/academy/guides/objects/" title="Code - Custom document objects">Polski 🇵🇱</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Zmień motyw chroma (Alt + T)"
+    aria-label="Zmień motyw chroma"><svg
+    class="icon dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/dark.svg#dark"></use>
+  </svg><svg
+    class="icon light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero">
+
+    <h2 class="title">Code - Custom document objects</h1><div class="metadata"><span class="meta"><svg
+    class="icon time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/time.svg#time"></use>
+  </svg>9 min</span></div></section><nav class="toc">
+  <input
+    type="checkbox"
+    id="toc-checkbox"
+    class="toc-checkbox">
+  <label
+    for="toc-checkbox"
+    class="toc-toggle button"
+    title="Table of Contents"><svg
+    class="icon expand"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/expand.svg#expand"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/cross.svg#cross"></use>
+  </svg><span>Spis treści</span>
+  </label>
+
+  <div
+    id="toc-content"
+    class="toc-content">
+    <ul class="section-nav"><li>
+          <a
+            href="/Website/pr-146/pl/dev/"
+            class="current-section"><svg
+    class="icon tri_tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_tri_left.svg#tri_tri_left"></use>
+  </svg> Development Handbook</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/pl/dev/academy/"
+            class="current-section"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_left.svg#tri_left"></use>
+  </svg> Addon Academy</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/pl/dev/academy/guides/"
+            class="current-section"><svg
+    class="icon folder_closed"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/folder_closed.svg#folder_closed"></use>
+  </svg> Guides</a>
+        </li><li>
+        <ul><li>
+              <a
+                href="/Website/pr-146/pl/dev/academy/guides/create/">Creating an Addon</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/pl/dev/academy/guides/workbenches/">Code - Workbench registration</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/pl/dev/academy/guides/commands/">Code - Gui Commands</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/pl/dev/academy/guides/manipulators/">Code - Workbench manipulators</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/pl/dev/academy/guides/qt/">Code - Qt &amp; PySide</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/pl/dev/academy/guides/preferences/">Code - Preferences pages</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/pl/dev/academy/guides/objects/" id="current-page" class="active" aria-current="page">Code - Custom document objects</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/pl/dev/academy/guides/icons/">Code - Icons &amp; Resources</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/pl/dev/academy/guides/translations/">Code - Translations (i18n)</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/pl/dev/academy/guides/log/">Code - Logging &amp; Console</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/pl/dev/academy/guides/install/">Develop - Installing your addon locally</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/pl/dev/academy/guides/debug/">Develop - Debugging</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/pl/dev/academy/guides/test/">Develop - Testing</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/pl/dev/academy/guides/security/">Develop - Security scanning with Bandit</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/pl/dev/academy/guides/portable/">Publish - Portable</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/pl/dev/academy/guides/reference/">Publish - Reference</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/pl/dev/academy/guides/indexed/">Publish - Indexed</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/pl/dev/academy/guides/overview/">Polish - Addon Manager overview page</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/pl/dev/academy/guides/metadata/">Polish - Metadata &amp; discoverability</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/pl/dev/academy/guides/compatibility/">Maintain - FreeCAD version compatibility</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/pl/dev/academy/guides/migrations/">Maintain - Data &amp; schema migrations</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/pl/dev/academy/guides/update/">Maintain - Updating</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/pl/dev/academy/guides/handoff/">Maintain - Maintainer handoff</a>
+            </li></ul>
+      </li>
+    </ul><p class="toc-label"><svg
+    class="icon file"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/file.svg#file"></use>
+  </svg>
+        <span>Na tej stronie</span>
+      </p><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#important-your-python-code-is-not-saved-in-the-file">Important: your Python code is not saved in the file</a></li>
+        <li><a href="#the-minimal-pattern">The minimal pattern</a></li>
+        <li><a href="#properties">Properties</a></li>
+        <li><a href="#the-execute-method">The <code>execute()</code> method</a></li>
+        <li><a href="#the-onchanged-callback">The <code>onChanged()</code> callback</a></li>
+        <li><a href="#viewproviders">ViewProviders</a></li>
+        <li><a href="#claiming-children">Claiming children</a></li>
+        <li><a href="#serialization-and-load">Serialization and load</a>
+          <ul>
+            <li><a href="#planning-for-class-renames">Planning for class renames</a></li>
+          </ul>
+        </li>
+        <li><a href="#see-also">See also</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+</nav><div class="content"><figure>
+  <blockquote class="note"><svg
+    class="icon note"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/note.svg#note"></use>
+  </svg>Uwaga<p>Ta strona nie została jeszcze przetłumaczona, więc wyświetlana jest wersja angielska. Chcesz pomóc?
+<a
+  href="https://github.com/freecad/website"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Współtworzenie<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a></p></blockquote></figure><p>A <strong>document object</strong> is anything stored inside a FreeCAD document (<code>.FCStd</code> file): a Part feature, a Sketch, an annotation, a group, etc. Most document objects are implemented in C++ as part of FreeCAD core. An addon can extend the set of available object types by defining <strong>FeaturePython</strong> objects: document objects whose parametric behavior is written in Python.</p>
+<p>This is more sophisticated than the basic Workbench that simply provides a new GUI to features that already fundamentally exist. In this case you develop a true Python parametric object. For example, a user adjusts a length on the property panel; your <code>execute()</code> method regenerates the geometry; FreeCAD redraws the 3D view. The logic for that generation is completely part of your addon; FreeCAD handles everything else.</p>
+<h2
+  id="important-your-python-code-is-not-saved-in-the-file">
+  <a class="heading-anchor"
+    href="#important-your-python-code-is-not-saved-in-the-file"
+    title="Important: your Python code is not saved in the file"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Important: your Python code is not saved in the file</h2><p><code>.FCStd</code> files do not carry embedded Python code. The file stores the <em>object</em> (its name, its property values, its type string, its serialized state) but not the <em>class</em> that defines its behavior. When a user opens the file, FreeCAD looks up the class by name and instantiates it.</p>
+<p>There are two main consequences of this process:</p>
+<ul>
+<li><strong>Anyone opening a file that contains your custom objects needs your addon installed</strong> to get their parametric behavior back. Without the addon, FreeCAD will load a stripped-down placeholder that shows the last-computed geometry but cannot be edited.</li>
+<li><strong>Renaming or moving your class breaks existing files.</strong> If you ship a version where your class was <code>my_addon.ponies.Widget</code> and then in the next version move it to <code>my_addon.unicorns.Widget</code>, every file created with the old version will fail to locate the class on load. Plan for this (see Serialization below).</li>
+</ul>
+<h2
+  id="the-minimal-pattern">
+  <a class="heading-anchor"
+    href="#the-minimal-pattern"
+    title="The minimal pattern"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>The minimal pattern</h2><p>A FeaturePython object is two pieces wired together:</p>
+<ol>
+<li><strong>A document object</strong> created by FreeCAD, typed something like <code>Part::FeaturePython</code> or <code>App::FeaturePython</code>.</li>
+<li><strong>A Python &ldquo;proxy&rdquo; class</strong> whose instance is attached to the document object via <code>obj.Proxy = self</code>. FreeCAD calls methods on the proxy at lifecycle moments (property change, recompute, load, etc.).</li>
+</ol>
+<p>Here is a complete minimal parametric box (<em>not</em> the one that exists in FreeCAD, a new one we&rsquo;re making in our sample Addon). The proxy class goes in its own module inside your addon&rsquo;s namespace package:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="c1"># freecad/MyAddon/parametric_box.py</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">Part</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ParametricBox</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;A box defined by length, width, and height.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">obj</span><span class="o">.</span><span class="n">Proxy</span> <span class="o">=</span> <span class="bp">self</span>
+</span></span><span class="line"><span class="cl">        <span class="n">obj</span><span class="o">.</span><span class="n">addProperty</span><span class="p">(</span><span class="s2">&#34;App::PropertyLength&#34;</span><span class="p">,</span> <span class="s2">&#34;Length&#34;</span><span class="p">,</span> <span class="s2">&#34;Box&#34;</span><span class="p">,</span> <span class="s2">&#34;Length of the box&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">Length</span> <span class="o">=</span> <span class="mf">10.0</span>
+</span></span><span class="line"><span class="cl">        <span class="n">obj</span><span class="o">.</span><span class="n">addProperty</span><span class="p">(</span><span class="s2">&#34;App::PropertyLength&#34;</span><span class="p">,</span> <span class="s2">&#34;Width&#34;</span><span class="p">,</span>  <span class="s2">&#34;Box&#34;</span><span class="p">,</span> <span class="s2">&#34;Width of the box&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">Width</span>  <span class="o">=</span> <span class="mf">10.0</span>
+</span></span><span class="line"><span class="cl">        <span class="n">obj</span><span class="o">.</span><span class="n">addProperty</span><span class="p">(</span><span class="s2">&#34;App::PropertyLength&#34;</span><span class="p">,</span> <span class="s2">&#34;Height&#34;</span><span class="p">,</span> <span class="s2">&#34;Box&#34;</span><span class="p">,</span> <span class="s2">&#34;Height of the box&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">Height</span> <span class="o">=</span> <span class="mf">10.0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">obj</span><span class="o">.</span><span class="n">Shape</span> <span class="o">=</span> <span class="n">Part</span><span class="o">.</span><span class="n">makeBox</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">float</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">Length</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">float</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">Width</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">float</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">Height</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span></span></span></code></pre></div></div><p>Code elsewhere in the addon, usually a command&rsquo;s <code>Activated()</code> method (see <a
+  href="guides/commands"
+  class="internal-tooltip">Gui Commands</a>), imports the class to create instances:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="c1"># freecad/MyAddon/commands.py</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">FreeCAD</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">.parametric_box</span> <span class="kn">import</span> <span class="n">ParametricBox</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># ... inside a command&#39;s Activated(self):</span>
+</span></span><span class="line"><span class="cl"><span class="n">doc</span> <span class="o">=</span> <span class="n">FreeCAD</span><span class="o">.</span><span class="n">ActiveDocument</span>
+</span></span><span class="line"><span class="cl"><span class="n">obj</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">addObject</span><span class="p">(</span><span class="s2">&#34;Part::FeaturePython&#34;</span><span class="p">,</span> <span class="s2">&#34;MyBox&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ParametricBox</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">obj</span><span class="o">.</span><span class="n">ViewObject</span><span class="o">.</span><span class="n">Proxy</span> <span class="o">=</span> <span class="mi">0</span>   <span class="c1"># use the default ViewProvider</span>
+</span></span><span class="line"><span class="cl"><span class="n">doc</span><span class="o">.</span><span class="n">recompute</span><span class="p">()</span></span></span></code></pre></div></div><p>The proxy class <em>must</em> be in a dedicated module. When a user reopens a saved file, FreeCAD locates the class by its module and class name (see Serialization below), so the class must be in an importable location that does not depend on any command or GUI code having run yet.</p>
+<p>Notes on the details:</p>
+<ul>
+<li><strong><code>addObject(&quot;Part::FeaturePython&quot;, ...)</code></strong> asks FreeCAD to create a document object of type <code>Part::FeaturePython</code>. The type string determines which C++ class FreeCAD uses as the backing object. <code>Part::FeaturePython</code> gives you a <code>Shape</code> property (for BRep geometry); <code>App::FeaturePython</code> is the minimal form with no geometry; there are several other variants.</li>
+<li><strong><code>obj.Proxy = self</code></strong> tells FreeCAD &ldquo;when you need to call parametric-behavior methods on this object, find them on this Python instance.&rdquo; This is the single line that turns a  basic C++ container into a Python-parametric feature.</li>
+<li><strong><code>obj.ViewObject.Proxy = 0</code></strong> says &ldquo;use FreeCAD&rsquo;s default ViewProvider for Part features.&rdquo; Setting <code>Proxy</code> to anything else (including an instance of your own class) lets you customize the visual representation; see ViewProviders below.</li>
+</ul>
+<h2
+  id="properties">
+  <a class="heading-anchor"
+    href="#properties"
+    title="Properties"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Properties</h2><p>Every user-editable value on a document object is a <strong>property</strong>, added via <code>addProperty</code>. The call signature is:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">obj</span><span class="o">.</span><span class="n">addProperty</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">doc</span><span class="p">)</span></span></span></code></pre></div></div><table>
+  <thead>
+      <tr>
+          <th>Argument</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>type</code></td>
+          <td>The property&rsquo;s type, as a string. See the table below.</td>
+      </tr>
+      <tr>
+          <td><code>name</code></td>
+          <td>The attribute name on the document object (e.g. <code>&quot;Length&quot;</code>). Must be a valid identifier.</td>
+      </tr>
+      <tr>
+          <td><code>group</code></td>
+          <td>The group name shown in the property panel, used for visual grouping.</td>
+      </tr>
+      <tr>
+          <td><code>doc</code></td>
+          <td>A human-readable description shown as tooltip text.</td>
+      </tr>
+  </tbody>
+</table>
+<p><code>addProperty</code> returns the document object itself, so you can chain an initial-value assignment on the end:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">obj</span><span class="o">.</span><span class="n">addProperty</span><span class="p">(</span><span class="s2">&#34;App::PropertyLength&#34;</span><span class="p">,</span> <span class="s2">&#34;Length&#34;</span><span class="p">,</span> <span class="s2">&#34;Box&#34;</span><span class="p">,</span> <span class="s2">&#34;Length of the box&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">Length</span> <span class="o">=</span> <span class="mf">10.0</span></span></span></code></pre></div></div><p>Commonly-used property types:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Type</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>App::PropertyBool</code></td>
+          <td>Checkbox.</td>
+      </tr>
+      <tr>
+          <td><code>App::PropertyInteger</code></td>
+          <td>Integer with a spinner.</td>
+      </tr>
+      <tr>
+          <td><code>App::PropertyFloat</code></td>
+          <td>Unitless number.</td>
+      </tr>
+      <tr>
+          <td><code>App::PropertyLength</code></td>
+          <td>Length, with units. Cannot be negative.</td>
+      </tr>
+      <tr>
+          <td><code>App::PropertyDistance</code></td>
+          <td>Length, with units. Can be negative.</td>
+      </tr>
+      <tr>
+          <td><code>App::PropertyAngle</code></td>
+          <td>Angle in degrees.</td>
+      </tr>
+      <tr>
+          <td><code>App::PropertyString</code></td>
+          <td>Free-form text.</td>
+      </tr>
+      <tr>
+          <td><code>App::PropertyEnumeration</code></td>
+          <td>Dropdown of string values; set the allowed values on the attribute.</td>
+      </tr>
+      <tr>
+          <td><code>App::PropertyColor</code></td>
+          <td>RGB color picker.</td>
+      </tr>
+      <tr>
+          <td><code>App::PropertyVector</code></td>
+          <td>3D vector.</td>
+      </tr>
+      <tr>
+          <td><code>App::PropertyPlacement</code></td>
+          <td>Position and rotation (a full <code>App::Placement</code>).</td>
+      </tr>
+      <tr>
+          <td><code>App::PropertyLink</code></td>
+          <td>Reference to another document object.</td>
+      </tr>
+      <tr>
+          <td><code>App::PropertyLinkList</code></td>
+          <td>List of references.</td>
+      </tr>
+  </tbody>
+</table>
+<p>The full list is long; see FreeCAD&rsquo;s <a
+  href="https://wiki.freecad.org/Property/pl"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Property wiki page<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a> for the complete catalog.</p>
+<p>For properties whose description string should be translated, wrap it in <code>QT_TRANSLATE_NOOP</code> using the context <code>&quot;App::Property&quot;</code> (see <a
+  href="guides/translations"
+  class="internal-tooltip">Translations</a> for why).</p>
+<p>Consider your property&rsquo;s name and type carefully before releasing your Addon. If you change your mind later and want to rename it (or re-type it, etc.) you will have to deal with backwards compatibility: the property&rsquo;s name is stored in the FCStd file and users with old files generally expect them to load in newer versions. This poses significant challenges if you want to change things later on.</p>
+<h2
+  id="the-execute-method">
+  <a class="heading-anchor"
+    href="#the-execute-method"
+    title="The execute() method"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>The <code>execute()</code> method</h2><p>Called whenever the document object is recomputed. This is where you regenerate whatever derived state depends on the current property values:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">obj</span><span class="o">.</span><span class="n">Shape</span> <span class="o">=</span> <span class="n">Part</span><span class="o">.</span><span class="n">makeBox</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">float</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">Length</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">float</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">Width</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">float</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">Height</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span></span></span></code></pre></div></div><p>FreeCAD triggers recomputes on document load, on explicit <code>doc.recompute()</code> calls, and whenever a property the object depends on has been touched. Your job in <code>execute</code> is to update the object&rsquo;s derived properties (typically <code>Shape</code> for a geometry feature) based on its input properties.</p>
+<p>Keep <code>execute</code> idempotent and side-effect-free: it should produce the same output for the same inputs, and should not modify other document objects directly. FreeCAD&rsquo;s dependency graph assumes this.</p>
+<h2
+  id="the-onchanged-callback">
+  <a class="heading-anchor"
+    href="#the-onchanged-callback"
+    title="The onChanged() callback"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>The <code>onChanged()</code> callback</h2><p>Optional. Called whenever a property on the document object changes:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">onChanged</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">prop</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Called on every property change.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">prop</span> <span class="o">==</span> <span class="s2">&#34;Length&#34;</span> <span class="ow">and</span> <span class="n">obj</span><span class="o">.</span><span class="n">Length</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">obj</span><span class="o">.</span><span class="n">Length</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># e.g. clamp to non-negative</span></span></span></code></pre></div></div><p>Useful for input validation, for maintaining invariants between properties, and for lazy recomputation triggers. <code>onChanged</code> is called much more often than <code>execute</code>, so keep it fast.</p>
+<p><strong>NOTE:</strong> <code>onChanged</code> is also called during initial property setup in <code>__init__</code>, before properties have their final values. If your <code>onChanged</code> assumes a property exists, guard against it not being there yet:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">onChanged</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">prop</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s2">&#34;Length&#34;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span>  <span class="c1"># still being initialized</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># ...</span></span></span></code></pre></div></div><h2
+  id="viewproviders">
+  <a class="heading-anchor"
+    href="#viewproviders"
+    title="ViewProviders"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>ViewProviders</h2><p>A ViewProvider is the visual half of a FeaturePython object: it controls the icon, tree-view display, 3D-view appearance, context menu, and double-click behavior. For most parametric features you do not need to write one at all; setting <code>obj.ViewObject.Proxy = 0</code> hands the visual side to FreeCAD&rsquo;s default Part ViewProvider, and your <code>execute()</code> method&rsquo;s <code>Shape</code> assignment drives what the user sees.</p>
+<p>Write a custom ViewProvider when you need any of:</p>
+<ul>
+<li>A custom icon for your feature type in the tree view.</li>
+<li>Custom 3D graphics (non-BRep rendering, annotations, overlays).</li>
+<li>Tree-view children that are conceptually part of your feature.</li>
+<li>Custom double-click behavior (opening a task panel, for example).</li>
+</ul>
+<p>The minimal pattern is a second proxy class attached to <code>obj.ViewObject</code>. It should be in its own file, separate from the document-object class, so that GUI code is not loaded in the module FreeCAD imports when a file is opened:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="c1"># freecad/MyAddon/viewprovider_parametric_box.py</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ParametricBoxViewProvider</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vobj</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">vobj</span><span class="o">.</span><span class="n">Proxy</span> <span class="o">=</span> <span class="bp">self</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">attach</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vobj</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;Called when the ViewProvider is first wired up.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">Object</span> <span class="o">=</span> <span class="n">vobj</span><span class="o">.</span><span class="n">Object</span>   <span class="c1"># the document object we&#39;re visualizing</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">getIcon</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;Path to the icon file, or inline XPM string.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s2">&#34;/absolute/path/to/icon.svg&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">updateData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">prop</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;Called when a property on the document object changes.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">pass</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">onChanged</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vobj</span><span class="p">,</span> <span class="n">prop</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;Called when a property on the ViewObject changes.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">pass</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">__getstate__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">__setstate__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">None</span></span></span></code></pre></div></div><p>Then, when creating the object, attach an instance of it in place of <code>obj.ViewObject.Proxy = 0</code>:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="c1"># freecad/MyAddon/commands.py</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">FreeCAD</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">.parametric_box</span> <span class="kn">import</span> <span class="n">ParametricBox</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">.viewprovider_parametric_box</span> <span class="kn">import</span> <span class="n">ParametricBoxViewProvider</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># ... inside a command&#39;s Activated(self):</span>
+</span></span><span class="line"><span class="cl"><span class="n">doc</span> <span class="o">=</span> <span class="n">FreeCAD</span><span class="o">.</span><span class="n">ActiveDocument</span>
+</span></span><span class="line"><span class="cl"><span class="n">obj</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">addObject</span><span class="p">(</span><span class="s2">&#34;Part::FeaturePython&#34;</span><span class="p">,</span> <span class="s2">&#34;MyBox&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ParametricBox</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ParametricBoxViewProvider</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">ViewObject</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">doc</span><span class="o">.</span><span class="n">recompute</span><span class="p">()</span></span></span></code></pre></div></div><p>The ViewProvider has its own set of properties (on <code>obj.ViewObject</code>, added the same way as document-object properties). Visual settings (color, transparency, display mode) usually live on the ViewObject rather than the document object.</p>
+<h2
+  id="claiming-children">
+  <a class="heading-anchor"
+    href="#claiming-children"
+    title="Claiming children"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Claiming children</h2><p>If your feature conceptually contains other document objects (a pattern feature that owns the sketch it is based on, for example), implement <code>claimChildren</code> on the ViewProvider. FreeCAD&rsquo;s tree view will nest the claimed objects under yours:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">claimChildren</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">Object</span><span class="o">.</span><span class="n">BaseSketch</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Object</span><span class="o">.</span><span class="n">Profile</span><span class="p">]</span></span></span></code></pre></div></div><p>Claiming children does not change ownership in the document; it only affects how the tree is displayed.</p>
+<h2
+  id="serialization-and-load">
+  <a class="heading-anchor"
+    href="#serialization-and-load"
+    title="Serialization and load"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Serialization and load</h2><p>When the user saves a document, FreeCAD serializes each document object&rsquo;s properties (types, names, values) into the file. It also serializes a minimal representation of the Python Proxy: typically just the module and class name.</p>
+<p>On load, FreeCAD:</p>
+<ol>
+<li>Recreates the document objects in their saved types (<code>Part::FeaturePython</code>, etc.) with their saved property values.</li>
+<li>Looks up your Proxy class by the saved module+class name.</li>
+<li>Instantiates the proxy and calls <code>__setstate__(state)</code> on it, where <code>state</code> is whatever you returned from <code>__getstate__</code>.</li>
+</ol>
+<p>If any of those steps fail (e.g. the module cannot be imported because the user does not have your addon installed), FreeCAD retains the property values and last-computed <code>Shape</code> but cannot recompute the object, and the parametric behavior is effectively gone until the addon is installed and the file is reopened.</p>
+<p><code>__getstate__</code> and <code>__setstate__</code> let you control what transient data gets saved. For most parametric features, returning <code>None</code> from both is fine:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">__getstate__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">__setstate__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">None</span></span></span></code></pre></div></div><p>Return something non-trivial only if your Proxy carries runtime state that is not already captured in document-object properties. The general rule is: <strong>put data in properties, not in the Proxy.</strong> Properties are saved and inspected by FreeCAD&rsquo;s native machinery; Proxy state is a side channel that is easy to get wrong.</p>
+<h3
+  id="planning-for-class-renames">
+  <a class="heading-anchor"
+    href="#planning-for-class-renames"
+    title="Planning for class renames"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Planning for class renames</h3><p>Because FreeCAD locates your Proxy by module+class name, renaming or moving the class breaks existing files. Mitigations:</p>
+<ul>
+<li><strong>Don&rsquo;t rename.</strong> Pick a class name early and stick with it.</li>
+<li><strong>If you have to rename, keep an alias.</strong> Leave a stub in the old module that re-exports the class so old files continue to find it.</li>
+<li><strong>Add a <code>migrationVersion</code> property</strong> to your objects, incremented whenever the schema changes. Check it in <code>__setstate__</code> or <code>onDocumentRestored</code> and run any necessary upgrade logic.</li>
+</ul>
+<p>See <a
+  href="maintain/migrations"
+  class="internal-tooltip">Data &amp; schema migrations</a> for more information.</p>
+<h2
+  id="see-also">
+  <a class="heading-anchor"
+    href="#see-also"
+    title="See also"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>See also</h2><ul>
+<li><a
+  href="demos/feature"
+  class="internal-tooltip">Parametric Feature demo</a>: a complete runnable <code>FeaturePython</code> example.</li>
+<li><a
+  href="guides/commands"
+  class="internal-tooltip">Gui Commands</a>: how a command creates a document object from the user&rsquo;s action.</li>
+<li><a
+  href="guides/translations"
+  class="internal-tooltip">Translations</a>: wrapping property descriptions for translation.</li>
+<li><a
+  href="maintain/migrations"
+  class="internal-tooltip">Data &amp; schema migrations</a>: evolving your document-object schema across addon releases.</li>
+<li><a
+  href="https://wiki.freecad.org/Scripted_objects/pl"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">FreeCAD wiki: Scripted objects<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>: the upstream reference, with deeper coverage of ViewProviders and Coin3D.</li>
+</ul>
+</div><footer class="single-footer">
+    <nav class="pagination"><a
+            class="button next"
+            href="/Website/pr-146/pl/dev/academy/guides/preferences/"
+            title="Następny artykuł"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_left.svg#tri_left"></use>
+  </svg>Code - Preferences pages</a><a
+            class="button prev"
+            href="/Website/pr-146/pl/dev/academy/guides/icons/"
+            title="Poprzedni artykuł">Code - Icons &amp; Resources<svg
+    class="icon tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Przejdź do góry"
+  title="Przejdź do góry (Alt + G)" ><svg
+    class="icon tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a
+            href="/Website/pr-146/pl/">Strona Główna</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-146/pl/features/">Funkcje</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-146/pl/download/">Pobierz</a><ul><li>
+                  <a
+                    href="/Website/pr-146/pl/releases/">Releases</a>
+                </li><li>
+                      <a
+                        href="/Website/pr-146/pl/download/addons/">Addons</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-146/pl/download/unstable/">Unstable</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-146/pl/news/">Aktualności</a><ul><li>
+                  <a
+                    href="/Website/pr-146/pl/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/pr-146/pl/author/">Autor</a>
+                      </li><li>
+                        <a href="/Website/pr-146/pl/category/">Kategoria</a>
+                      </li><li>
+                        <a href="/Website/pr-146/pl/tags/">Tagi</a>
+                      </li></ul></li><li>
+          <a
+            href="/Website/pr-146/pl/community/">Społeczność</a><ul><li>
+                      <a
+                        href="/Website/pr-146/pl/community/calendar/">Calendar</a>
+                    </li><li>
+                      <a
+                        href="https://events.freecad.org/" target="_blank" rel="external noreferrer nofollow">Events<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://fpa.freecad.org" target="_blank" rel="external noreferrer nofollow">Association<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swag shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-146/pl/community/telemetry/">Telemetry</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-146/pl/docs/" aria-current="page" class="active">Dokumentacja</a><ul><li>
+                  <a
+                    href="https://wiki.freecad.org/User_hub/pl" target="_blank" rel="external noreferrer nofollow">User manual<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                </li><li>
+                  <a
+                    href="/Website/pr-146/pl/dev/">Development Handbook</a>
+                </li><li>
+                  <a
+                    href="https://freecad.github.io/SourceDoc/" target="_blank" rel="external noreferrer nofollow">FreeCAD API<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                </li></ul></li><li>
+          <a
+            href="/Website/pr-146/pl/donate/">Przekaż darowiznę</a><ul></ul></li></ul>
+</nav>
+<div class="share-links"><a
+    href="https://forum.freecad.org"
+    title="Forum"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/forum.svg#forum"></use>
+  </svg></a><a
+    href="https://devtalk.freecad.org/"
+    title="DevTalk"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon devtalk"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/devtalk.svg#devtalk"></use>
+  </svg></a><a
+    href="https://github.com/freecad"
+    title="GitHub"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/github.svg#github"></use>
+  </svg></a><a
+    href="https://codeberg.org/freecad"
+    title="Codeberg"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a
+    href="https://social.freecad.org/@freecad"
+    title="Mastodon"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/bluesky.svg#bluesky"></use>
+  </svg></a><a
+    href="https://www.reddit.com/r/freecad"
+    title="Reddit"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/reddit.svg#reddit"></use>
+  </svg></a><a
+    href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+    title="Matrix"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/matrix.svg#matrix"></use>
+  </svg></a><a
+    href="https://discord.gg/w2cTKGzccC"
+    title="Discord"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/discord.svg#discord"></use>
+  </svg></a><a
+    href="https://www.linkedin.com/groups/4295230"
+    title="LinkedIn"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+    href="https://FreeCAD.github.io/Website/pr-146/pl/index.xml"
+    type="application/rss&#43;xml"
+    title="Kanał RSS"><svg
+    class="icon rss"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/rss.svg#rss"></use>
+  </svg></a><a
+  href="/Website/pr-146/pl/fedishare.html#title=Code&#43;-&#43;Custom&#43;document&#43;objects&amp;description=A%20document%20object%20is%20anything%20stored%20inside%20a%20FreeCAD%20document%20%28.FCStd%20file%29:%20a%20Part%20feature,%20a%20Sketch,%20an%20annotation,%20a%20group,%20etc.%20Most%20document%20objects%20are%20implemented%20in%20C&#43;&#43;%20as%20part%20of%20FreeCAD%20%e2%80%a6&amp;url=https://FreeCAD.github.io/Website/pr-146/pl/dev/academy/guides/objects/"
+  title="Opublikuj w Fediverse"
+  target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026
+    <a
+      href="/Website/pr-146/pl/"
+      title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a
+    href="https://creativecommons.org/licenses/by-sa/4.0/"
+    title="Creative Commons"
+    target="_blank" rel="license external noreferrer nofollow">
+
+    CC BY-SA<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to
+  <a
+    href="https://gohugo.io/"
+    title="Hugo SSG"
+    target="_blank" rel="external noreferrer nofollow">
+
+    Hugo<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-11-27
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/3b9aaaf78139eae2a69bacc13828975fc955b356">3b9aaaf781<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script
+    src="/Website/pr-146/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-146/js/pl/copy.min.34de6d2e04584ab9c84f7055d21e673a7a35479b36384a0a34ce53c5b336c681.js"
+    type="text/javascript"
+    defer integrity="sha256-NN5tLgRYSrnIT3BV0h5nOno1R5s2OEoKNM5TxbM2xoE=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-146/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    defer integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous">
+  </script></body>
+
+</html>

@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html
+  lang="en-US"
+  dir="ltr"><head><meta charset="utf-8">
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1">
+<meta
+  name="referrer"
+  content="strict-origin-when-cross-origin">
+<meta
+  name="robots"
+  content="index, follow"><script>
+  try {
+    const pref = localStorage.getItem("pref-theme");
+    const dark =
+      pref === "dark" ||
+      (pref !== "light" &&
+        
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+        );
+    if (dark) document.documentElement.classList.add("dark");
+  } catch {}
+  document.documentElement.classList.add("js");
+</script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --header: rgb(8, 8, 8);
+        --theme: rgb(16, 16, 16);
+        --entry: rgb(32, 32, 32);
+        --tone: rgb(64, 64, 64);
+        --backdrop: rgba(64, 64, 64, 0.8);
+        --primary: rgb(240, 240, 240);
+        --secondary: rgb(224, 224, 224);
+        --tertiary: rgb(208, 208, 208);
+        --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+        --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+        --angle: 315deg;
+      }
+    }</style>
+</noscript><title>FreeCAD | Develop - Security scanning with Bandit</title>
+  <meta
+    name="description"
+    content="Your own free and open-source parametric modeler"><link
+          rel="stylesheet"
+          href="/Website/pr-146/css/styles.620a776c0a5bd62061f0a7760ffb36ec9abdfb6503ff52a674fb042a06a92bfa.css"
+          integrity="sha256-Ygp3bApb1iBh8Kd2D/s27Jq9&#43;2UD/1KmdPsEKgapK/o="
+          crossorigin="anonymous"><link
+    rel="canonical"
+    href="https://FreeCAD.github.io/Website/pr-146/dev/academy/guides/security/"><link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://FreeCAD.github.io/Website/pr-146/dev/academy/guides/security/"><link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://FreeCAD.github.io/Website/pr-146/zh/dev/academy/guides/security/"><link
+      rel="alternate"
+      hreflang="es-ES"
+      href="https://FreeCAD.github.io/Website/pr-146/es/dev/academy/guides/security/"><link
+      rel="alternate"
+      hreflang="fr-FR"
+      href="https://FreeCAD.github.io/Website/pr-146/fr/dev/academy/guides/security/"><link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://FreeCAD.github.io/Website/pr-146/pt/dev/academy/guides/security/"><link
+      rel="alternate"
+      hreflang="de-DE"
+      href="https://FreeCAD.github.io/Website/pr-146/de/dev/academy/guides/security/"><link
+      rel="alternate"
+      hreflang="ja-JP"
+      href="https://FreeCAD.github.io/Website/pr-146/ja/dev/academy/guides/security/"><link
+      rel="alternate"
+      hreflang="pl-PL"
+      href="https://FreeCAD.github.io/Website/pr-146/pl/dev/academy/guides/security/"><link
+    rel="alternate"
+    hreflang="x-default"
+    href="https://FreeCAD.github.io/Website/pr-146/"><link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Website/pr-146/favicon.svg"><link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/Website/pr-146/favicon.ico"><link
+      rel="apple-touch-icon"
+      href="/Website/pr-146/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://FreeCAD.github.io/Website/pr-146/index.xml"
+    title="FreeCAD"><meta name="generator" content="Hugo 0.160.0"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-146/dev/academy/guides/security/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Develop - Security scanning with Bandit">
+  <meta property="og:description" content="Bandit is a static analyzer that reads Python source and reports code patterns that are commonly involved in security problems: shelling out with user-controlled strings, parsing untrusted XML with the standard library, exec and eval, unsafe deserialization, and so on. It does not run your code, and it does not know what your addon means to do, so its output is a list of places to look rather than a list of bugs. That still makes it valuable: most of the findings are quick to fix, and the remainder become documented, deliberate decisions instead of accidents.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dev">
+    <meta property="article:modified_time" content="2026-11-27T17:14:57+01:00">
+</head><body
+    class="single type-dev kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <a
+    class="logo"
+    href="/Website/pr-146/"
+    accesskey="h"
+    title="Homepage (Alt + H)"
+    aria-label="Homepage">
+    <svg
+      class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+
+      <use href="/Website/pr-146/wordmark.svg#wordmark"></use>
+    </svg></a>
+
+  <div class="site-nav"><nav class="menu">
+  <button
+    popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menu"
+    aria-label="Menu"><svg
+    class="icon hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hamburger.svg#hamburger"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul
+    popover
+    id="menu-list"
+    class="menu-list"><li>
+          <a
+            href="/Website/pr-146/features/">Features</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/download/">Download</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/news/">News</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/community/">Community</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/docs/" aria-current="page" class="active">Documentation</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/donate/" class="button accent"><svg
+    class="icon heart"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/heart.svg#heart"></use>
+  </svg>Donate</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button
+          popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Choose language (Alt + L)"
+          aria-label="Choose language"><svg
+    class="icon language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul
+          popover
+          id="lang-list"
+          class="language-list"><li>
+              <a aria-current="page" class="active" href="/Website/pr-146/dev/academy/guides/security/" title="Develop - Security scanning with Bandit">English 🇬🇧</a>
+            </li><li>
+              <a href="/Website/pr-146/zh/dev/academy/guides/security/" title="Develop - Security scanning with Bandit">中文 🇨🇳</a>
+            </li><li>
+              <a href="/Website/pr-146/es/dev/academy/guides/security/" title="Develop - Security scanning with Bandit">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/pr-146/fr/dev/academy/guides/security/" title="Develop - Security scanning with Bandit">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pr-146/pt/dev/academy/guides/security/" title="Develop - Security scanning with Bandit">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a href="/Website/pr-146/de/dev/academy/guides/security/" title="Develop - Security scanning with Bandit">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/pr-146/ja/dev/academy/guides/security/" title="Develop - Security scanning with Bandit">日本語 🇯🇵</a>
+            </li><li>
+              <a href="/Website/pr-146/pl/dev/academy/guides/security/" title="Develop - Security scanning with Bandit">Polski 🇵🇱</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Switch theme chroma (Alt + T)"
+    aria-label="Switch theme chroma"><svg
+    class="icon dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/dark.svg#dark"></use>
+  </svg><svg
+    class="icon light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero">
+
+    <h2 class="title">Develop - Security scanning with Bandit</h1><div class="metadata"><span class="meta"><svg
+    class="icon time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/time.svg#time"></use>
+  </svg>15 min</span></div></section><nav class="toc">
+  <input
+    type="checkbox"
+    id="toc-checkbox"
+    class="toc-checkbox">
+  <label
+    for="toc-checkbox"
+    class="toc-toggle button"
+    title="Table of Contents"><svg
+    class="icon expand"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/expand.svg#expand"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/cross.svg#cross"></use>
+  </svg><span>Table of Contents</span>
+  </label>
+
+  <div
+    id="toc-content"
+    class="toc-content">
+    <ul class="section-nav"><li>
+          <a
+            href="/Website/pr-146/dev/"
+            class="current-section"><svg
+    class="icon tri_tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_tri_left.svg#tri_tri_left"></use>
+  </svg> Development Handbook</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/dev/academy/"
+            class="current-section"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_left.svg#tri_left"></use>
+  </svg> Addon Academy</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/dev/academy/guides/"
+            class="current-section"><svg
+    class="icon folder_closed"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/folder_closed.svg#folder_closed"></use>
+  </svg> Guides</a>
+        </li><li>
+        <ul><li>
+              <a
+                href="/Website/pr-146/dev/academy/guides/create/">Creating an Addon</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/dev/academy/guides/workbenches/">Code - Workbench registration</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/dev/academy/guides/commands/">Code - Gui Commands</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/dev/academy/guides/manipulators/">Code - Workbench manipulators</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/dev/academy/guides/qt/">Code - Qt &amp; PySide</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/dev/academy/guides/preferences/">Code - Preferences pages</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/dev/academy/guides/objects/">Code - Custom document objects</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/dev/academy/guides/icons/">Code - Icons &amp; Resources</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/dev/academy/guides/translations/">Code - Translations (i18n)</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/dev/academy/guides/log/">Code - Logging &amp; Console</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/dev/academy/guides/install/">Develop - Installing your addon locally</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/dev/academy/guides/debug/">Develop - Debugging</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/dev/academy/guides/test/">Develop - Testing</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/dev/academy/guides/security/" id="current-page" class="active" aria-current="page">Develop - Security scanning with Bandit</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/dev/academy/guides/portable/">Publish - Portable</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/dev/academy/guides/reference/">Publish - Reference</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/dev/academy/guides/indexed/">Publish - Indexed</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/dev/academy/guides/overview/">Polish - Addon Manager overview page</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/dev/academy/guides/metadata/">Polish - Metadata &amp; discoverability</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/dev/academy/guides/compatibility/">Maintain - FreeCAD version compatibility</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/dev/academy/guides/migrations/">Maintain - Data &amp; schema migrations</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/dev/academy/guides/update/">Maintain - Updating</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/dev/academy/guides/handoff/">Maintain - Maintainer handoff</a>
+            </li></ul>
+      </li>
+    </ul><p class="toc-label"><svg
+    class="icon file"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/file.svg#file"></use>
+  </svg>
+        <span>On this page</span>
+      </p><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#running-bandit-locally">Running Bandit locally</a>
+          <ul>
+            <li><a href="#severity-and-confidence">Severity and confidence</a></li>
+            <li><a href="#configuration-file">Configuration file</a></li>
+          </ul>
+        </li>
+        <li><a href="#running-bandit-as-a-pre-commit-hook">Running Bandit as a pre-commit hook</a></li>
+        <li><a href="#running-bandit-in-ci">Running Bandit in CI</a></li>
+        <li><a href="#suppressing-a-finding-with-nosec">Suppressing a finding with <code>nosec</code></a></li>
+        <li><a href="#resolving-common-findings">Resolving common findings</a>
+          <ul>
+            <li><a href="#subprocess-and-shell-commands-b404-b602-b603-b605-b606-b607">Subprocess and shell commands: B404, B602, B603, B605, B606, B607</a></li>
+            <li><a href="#opening-urls-b310-b113">Opening URLs: B310, B113</a></li>
+            <li><a href="#xml-parsing-b405-b314-and-friends">XML parsing: B405, B314 and friends</a></li>
+            <li><a href="#exec-and-eval-b102-b307"><code>exec</code> and <code>eval</code>: B102, B307</a></li>
+            <li><a href="#deserialization-b301-b403-b506">Deserialization: B301, B403, B506</a></li>
+            <li><a href="#hashing-and-randomness-b324-b311">Hashing and randomness: B324, B311</a></li>
+            <li><a href="#temporary-files-b108">Temporary files: B108</a></li>
+            <li><a href="#hardcoded-passwords-b105-b106-b107">Hardcoded passwords: B105, B106, B107</a></li>
+            <li><a href="#style-checks-b101-b110-b112">Style checks: B101, B110, B112</a></li>
+          </ul>
+        </li>
+        <li><a href="#putting-it-together">Putting it together</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+</nav><div class="content"><p><a
+  href="https://bandit.readthedocs.io/"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Bandit<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a> is a static analyzer that reads Python source and reports code patterns that are commonly involved in security problems: shelling out with user-controlled strings, parsing untrusted XML with the standard library, <code>exec</code> and <code>eval</code>, unsafe deserialization, and so on. It does not run your code, and it does not know what your addon <em>means</em> to do, so its output is a list of places to look rather than a list of bugs. That still makes it valuable: most of the findings are quick to fix, and the remainder become documented, deliberate decisions instead of accidents.</p>
+<p>Bandit is also the security check used by the FreeCAD <a
+  href="https://freecad.github.io/Addon-Reports/"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Addon Report<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>, a monthly quality report generated for every addon in the <a
+  href="topics/index"
+  class="internal-tooltip">Addon Index</a>. Running the same scan yourself, with the same settings, means nothing in that report will surprise you.</p>
+<h2
+  id="running-bandit-locally">
+  <a class="heading-anchor"
+    href="#running-bandit-locally"
+    title="Running Bandit locally"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Running Bandit locally</h2><p>Bandit is an ordinary Python package. Install it outside of FreeCAD&rsquo;s Python, in whatever environment you use for development tooling.</p>
+<p>Using <code>pip</code>, that looks like:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">pip install bandit</span></span></code></pre></div></div><p>Or using <code>uv</code>:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">uv tool install bandit</span></span></code></pre></div></div><p>Then run it over your addon&rsquo;s source tree, starting from the repository root:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">bandit -r .</span></span></code></pre></div></div><p>Each finding is printed with a test ID, a severity, a confidence, a link to the documentation for that check, and the offending lines:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">&gt;&gt; Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+</span></span><span class="line"><span class="cl">   Severity: Low   Confidence: High
+</span></span><span class="line"><span class="cl">   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+</span></span><span class="line"><span class="cl">   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
+</span></span><span class="line"><span class="cl">   Location: ./freecad/Midvale/tools.py:188:8
+</span></span><span class="line"><span class="cl">187	    try:
+</span></span><span class="line"><span class="cl">188	        subprocess.run(
+</span></span><span class="line"><span class="cl">189	            [
+</span></span><span class="line"><span class="cl">190	                &#34;lrelease&#34;,</span></span></code></pre></div></div><h3
+  id="severity-and-confidence">
+  <a class="heading-anchor"
+    href="#severity-and-confidence"
+    title="Severity and confidence"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Severity and confidence</h3><p>Every finding has two independent ratings. <strong>Severity</strong> (Low, Medium, High) is how bad the problem would be if it is real. <strong>Confidence</strong> (Low, Medium, High) is how sure Bandit is that the pattern it matched is actually the problematic one. A <code>shell=True</code> call is High/High: it is certainly a shell invocation and shell injection is serious. A bare <code>import subprocess</code> is Low/High: Bandit is certain you imported it, and importing it is not itself a problem.</p>
+<p>The Addon Report converts severity into a score penalty, so High findings cost far more than Low ones:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Severity</th>
+          <th>Penalty per finding</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>High</td>
+          <td>3 points</td>
+      </tr>
+      <tr>
+          <td>Medium</td>
+          <td>1 point</td>
+      </tr>
+      <tr>
+          <td>Low</td>
+          <td>0.1 point</td>
+      </tr>
+  </tbody>
+</table>
+<p>You can filter the local output with <code>-l</code> (Low and up, the default), <code>-ll</code> (Medium and up), or <code>-lll</code> (High only), and similarly <code>-i</code>, <code>-ii</code>, <code>-iii</code> for confidence. Filtering is useful for triage, but the goal should be a clean run at the default level. See the section below on how to address findings, including false-positives and &ldquo;that&rsquo;s a dumb thing to flag&rdquo;-type issues.</p>
+<h3
+  id="configuration-file">
+  <a class="heading-anchor"
+    href="#configuration-file"
+    title="Configuration file"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Configuration file</h3><p>Rather than remembering command-line flags, put the settings in a <code>bandit.yaml</code> at the root of your repository and pass it with <code>-c</code>:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">bandit -c bandit.yaml -r .</span></span></code></pre></div></div><p>The Addon Report uses this configuration, so matching it exactly gives you the same results the report will see:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># Configuration for Bandit static security analysis. Run locally with:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c">#   bandit -c bandit.yaml -r .</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">exclude_dirs</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="s2">&#34;*/.venv/*&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">skips</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">B101  </span><span class="w"> </span><span class="c"># assert_used</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">B110  </span><span class="w"> </span><span class="c"># try_except_pass</span></span></span></code></pre></div></div><p><code>exclude_dirs</code> keeps Bandit out of directories that are not your code (though note that the Addons Report doesn&rsquo;t know anything about these, so if you&rsquo;ve chosen to vendor some library with a zillion warnings, those are going to show up in your score. Pro Tip: don&rsquo;t vendor.). Each entry is matched as a glob against the <em>full</em> path of every file, so anchor the pattern with path separators: a bare <code>CatalogCache</code> would also match a file named <code>CatalogCacheCreator.py</code>. Add entries for any vendored dependencies or generated output in your tree.</p>
+<p><code>skips</code> disables a test everywhere in the project. B101 (<code>assert</code> statements) and B110 (<code>try</code>/<code>except</code>/<code>pass</code>) are stylistic checks rather than security defects, and the report skips them too. Resist the temptation to add anything else here: a skipped test cannot catch a real problem introduced later, and just because <em>you</em> skip it doesn&rsquo;t mean the Addons Report does. If you want to match the report, leave just the two shown here. Per-line suppression, described below, is almost always the right tool instead.</p>
+<p>Bandit also accepts a <code>[tool.bandit]</code> table in <code>pyproject.toml</code> (install <code>bandit[toml]</code>) or a <code>.bandit</code> INI file, but a YAML file is the simplest option and is what the rest of this page assumes.</p>
+<h2
+  id="running-bandit-as-a-pre-commit-hook">
+  <a class="heading-anchor"
+    href="#running-bandit-as-a-pre-commit-hook"
+    title="Running Bandit as a pre-commit hook"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Running Bandit as a pre-commit hook</h2><p><a
+  href="https://pre-commit.com/"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">pre-commit<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a> runs checks against the files in each commit before the commit is created. Bandit ships a hook definition, so adding it to your <code>.pre-commit-config.yaml</code> is a few lines:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">repos</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">repo </span><span class="p">:</span><span class="w"> </span><span class="l">https://github.com/PyCQA/bandit</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">rev </span><span class="p">:</span><span class="w"> </span><span class="m">1.9.4</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">hooks</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">id </span><span class="p">:</span><span class="w"> </span><span class="l">bandit</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">args </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s1">&#39;-c&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;bandit.yaml&#39;</span><span class="w"> </span><span class="p">]</span></span></span></code></pre></div></div><p>Pin <code>rev</code> to a release tag, and let <code>pre-commit autoupdate</code> bump it. Pre-commit passes the staged Python files to Bandit as explicit targets, so <code>-r</code> is not needed and <code>exclude_dirs</code> in the config file has no effect here; use pre-commit&rsquo;s own <code>exclude:</code> pattern on the hook if you need to keep files out.</p>
+<p>After adding the hook, your addon&rsquo;s contributors run <code>pre-commit install</code> once per clone, and the scan runs on every commit from then on. You can also run it against the whole repository on demand:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">pre-commit run bandit --all-files</span></span></code></pre></div></div><p>Note that <code>pre-commit run --all-files</code> is what pre-commit.ci and most CI configurations execute, so the Bandit hook covers the whole tree there even though it only checks changed files locally.</p>
+<h2
+  id="running-bandit-in-ci">
+  <a class="heading-anchor"
+    href="#running-bandit-in-ci"
+    title="Running Bandit in CI"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Running Bandit in CI</h2><p>A dedicated GitHub Actions workflow keeps the security scan visible as its own check on every pull request, independent of your unit tests. Save this as <code>.github/workflows/bandit.yml</code>, adjusting the branch names to match your repository:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Bandit security scan</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">permissions</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l">read</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">on</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">main</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">pull_request</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">main</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">jobs</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">bandit</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Bandit</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l">ubuntu-latest</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Check out repository</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">actions/checkout@v4</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Set up Python</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">actions/setup-python@v5</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;3.13&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Install Bandit</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">          python -m pip install --upgrade pip
+</span></span></span><span class="line"><span class="cl"><span class="sd">          pip install bandit</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Run Bandit</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">bandit -c bandit.yaml -r .</span></span></span></code></pre></div></div><p>The job fails whenever Bandit reports a finding. That is the behavior you want: a finding must either be fixed or deliberately suppressed before the pull request merges. If you are adding Bandit to an existing addon with a backlog of findings and cannot clear them all at once, <code>--exit-zero</code> makes the step advisory until you are ready to enforce it. Do not leave it that way for long, since an advisory check is quickly ignored.</p>
+<p>If your addon already has a workflow that runs <code>pre-commit run --all-files</code>, the hook from the previous section is exercised there and a separate workflow is optional. A separate job still has one advantage: the finding appears under its own name in the pull request checks, where reviewers are more likely to read it.</p>
+<h2
+  id="suppressing-a-finding-with-nosec">
+  <a class="heading-anchor"
+    href="#suppressing-a-finding-with-nosec"
+    title="Suppressing a finding with nosec"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Suppressing a finding with <code>nosec</code></h2><p>When a finding is a false positive, or the flagged pattern is safe in context, add a <code># nosec 1234</code> comment on the line it reported. The line that matters is the one in the <code>Location:</code> field. For a call that spans several lines, that is the line containing the opening of the call, e.g.</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>  <span class="c1"># nosec B603 B607</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s2">&#34;lrelease&#34;</span><span class="p">,</span> <span class="n">ts_path</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span></span></span></code></pre></div></div><p>Follow these guidelines for every suppression:</p>
+<ul>
+<li>
+<p><strong>Always name the test IDs.</strong> A bare <code># nosec</code> silences every check on that line, including ones that do not exist yet. <code># nosec B603 B607</code> silences exactly the two findings you audited and nothing else. Multiple IDs are separated by spaces or commas.</p>
+</li>
+<li>
+<p><strong>Tell humans why it is safe.</strong> The <code>nosec</code> comment tells Bandit to be quiet; a second comment tells the <em>next developer</em> (probably your future self) why that was the case. You won&rsquo;t remember, trust me. The convention used by FreeCAD&rsquo;s addons is an <code>Audited:</code> comment that ends by listing the IDs added:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="c1"># Audited: fixed arguments, no shell; lrelease is expected on PATH (added nosec B603, B607)</span>
+</span></span><span class="line"><span class="cl"><span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>  <span class="c1"># nosec B603 B607</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s2">&#34;lrelease&#34;</span><span class="p">,</span> <span class="n">ts_path</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span></span></span></code></pre></div></div><p>Leaving that line out just leaves a strange mystery for the next developer to track down. And remember, the next developer is probably you!</p>
+</li>
+<li>
+<p><strong>Suppress narrowly, fix exapansively.</strong> If a finding is a real problem, fix the code. Reserve <code>nosec</code> for patterns that are safe <em>because of the surrounding code</em>, and describe that surrounding code in the audit comment so that a later change to it prompts a re-check.</p>
+</li>
+</ul>
+<p>Note that Bandit&rsquo;s summary reports how many lines were skipped and how many findings were suppressed by specific IDs, so suppressions never disappear entirely from view. Running with <code>--ignore-nosec</code> lists every suppressed finding, which is a useful periodic audit of the audits. While right now the Addons Report does not employ this, it may do so in the future to help catch developers trying to &ldquo;game the system.&rdquo; Please, take care of your users: fix the problems, don&rsquo;t just hide them.</p>
+<h2
+  id="resolving-common-findings">
+  <a class="heading-anchor"
+    href="#resolving-common-findings"
+    title="Resolving common findings"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Resolving common findings</h2><p>The checks below account for nearly all findings in FreeCAD addons, so they are documented here so you don&rsquo;t have to develop the appropriate remediation yourself. For each, the preferred fix comes first, and the audited <code>nosec</code> pattern is the fallback for cases where the code is correct as written.</p>
+<h3
+  id="subprocess-and-shell-commands-b404-b602-b603-b605-b606-b607">
+  <a class="heading-anchor"
+    href="#subprocess-and-shell-commands-b404-b602-b603-b605-b606-b607"
+    title="Subprocess and shell commands: B404, B602, B603, B605, B606, B607"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Subprocess and shell commands: B404, B602, B603, B605, B606, B607</h3><p>Addons frequently launch external tools: Qt&rsquo;s <code>lrelease</code>, a slicer, <code>git</code>, or the system&rsquo;s file opener. Bandit reports every step of that.</p>
+<p><strong><code>import subprocess</code> (B404, Low).</strong> Bandit warns on the import so you remember to audit each use. Once the call sites are audited (but not until then!), suppress the import with a comment that summarizes the policy:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="c1"># Audited: subprocess calls use fixed argument lists and no shell (added nosec B404)</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">subprocess</span>  <span class="c1"># nosec B404</span></span></span></code></pre></div></div><p>Of course, this can become stale over time, but it&rsquo;s useful as a first pass while you&rsquo;re getting started with Bandit.</p>
+<p><strong><code>shell=True</code> or <code>os.system</code> (B602, B605, High).</strong> These are the ones to actually fix. Passing a string to a shell means every space, quote, semicolon, and <code>$</code> in that string is interpreted, so any part of it that came from a filename, a preference, or a user is a potential injection. Replace the string with an argument list and drop <code>shell=True</code>:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="c1"># Before</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&#34;lrelease &#34;</span> <span class="o">+</span> <span class="n">ts_path</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;lrelease </span><span class="si">{</span><span class="n">ts_path</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># After</span>
+</span></span><span class="line"><span class="cl"><span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&#34;lrelease&#34;</span><span class="p">,</span> <span class="n">ts_path</span><span class="p">],</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span></span></span></code></pre></div></div><p>With a list, <code>ts_path</code> is delivered to the program as a single argument no matter what characters it contains. Shell features like pipes and globbing are lost, but those are almost never needed from an addon and can be reproduced in Python when they are.</p>
+<p><strong>Subprocess without a shell (B603, Low).</strong> This fires on every <code>subprocess.run</code>, <code>Popen</code>, or <code>check_output</code> call, even the safe ones, because Bandit cannot see where the arguments come from. First, audit it: confirm the arguments are either literals or values you control. Only after auditing, suppress with a comment that says so. If any argument is user input, validate it first (for example, check that a path resolves inside the directory you expect).</p>
+<p><strong>Partial executable path (B607, Low).</strong> Starting <code>[&quot;lrelease&quot;, ...]</code> rather than <code>[&quot;/usr/bin/lrelease&quot;, ...]</code> means the program is found via <code>PATH</code>, and a malicious directory earlier in <code>PATH</code> could substitute its own <code>lrelease</code>. For a developer tool run by the developer, this is an accepted risk; document that and suppress. For a program run on the user&rsquo;s machine, consider resolving it once with <code>shutil.which()</code> and failing clearly when it is not found, which also gives you a better error message than a <code>FileNotFoundError</code> from deep inside <code>subprocess</code>.</p>
+<p><strong><code>os.startfile</code> (B606, Low).</strong> Windows-only; opens a file with its associated application. Bandit rates this Low/Medium. It is safe when the path is one your addon created or the user just chose. Audit and suppress.</p>
+<p>A fully audited helper looks like this:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="c1"># Audited: subprocess calls use fixed argument lists and no shell (added nosec B404)</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">subprocess</span>  <span class="c1"># nosec B404</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">open_in_editor</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Open `path` in the platform&#39;s default text editor.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Audited: `path` is a file this addon just wrote; fixed arguments, no shell</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># (added nosec B606, B603, B607)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&#34;Windows&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">os</span><span class="o">.</span><span class="n">startfile</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&#34;edit&#34;</span><span class="p">)</span>  <span class="c1"># nosec B606</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&#34;Darwin&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s2">&#34;open&#34;</span><span class="p">,</span> <span class="s2">&#34;-t&#34;</span><span class="p">,</span> <span class="n">path</span><span class="p">])</span>  <span class="c1"># nosec B603 B607</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s2">&#34;xdg-open&#34;</span><span class="p">,</span> <span class="n">path</span><span class="p">])</span>  <span class="c1"># nosec B603 B607</span></span></span></code></pre></div></div><h3
+  id="opening-urls-b310-b113">
+  <a class="heading-anchor"
+    href="#opening-urls-b310-b113"
+    title="Opening URLs: B310, B113"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Opening URLs: B310, B113</h3><p><strong><code>urllib.request.urlopen</code> (B310, Medium).</strong> <code>urlopen</code> accepts <code>file://</code> and other schemes as well as <code>http(s)://</code>. If the URL is built from anything other than a hardcoded constant, a caller could point it at a local file. The fix is to check the scheme before opening, then suppress with a comment pointing at the check:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">download_url</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="s2">&#34;url&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="ow">not</span> <span class="n">download_url</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&#34;https://&#34;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Refusing to download from non-HTTPS URL </span><span class="si">{</span><span class="n">download_url</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Audited: only HTTPS URLs reach this point (added nosec B310)</span>
+</span></span><span class="line"><span class="cl"><span class="n">urlretrieve</span><span class="p">(</span><span class="n">download_url</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>  <span class="c1"># nosec B310</span></span></span></code></pre></div></div><p>When the URL is a literal <code>https://...</code> string, the check is unnecessary and the audit comment can simply say the URL is hardcoded.</p>
+<p><strong><code>requests</code> without a timeout (B113, Medium).</strong> If you use the <a
+  href="https://requests.readthedocs.io/"
+  class="external-link" target="_blank" rel="external noreferrer nofollow"><code>requests</code><svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a> package Bandit does not report B310, but it <em>does</em> insist on a <code>timeout=</code> argument, because a hung connection otherwise blocks FreeCAD&rsquo;s GUI thread forever. Always pass one. For GUI code, prefer Qt&rsquo;s <code>QNetworkAccessManager</code> or a worker thread over <em>any</em> blocking network call, even one with a timeout.</p>
+<h3
+  id="xml-parsing-b405-b314-and-friends">
+  <a class="heading-anchor"
+    href="#xml-parsing-b405-b314-and-friends"
+    title="XML parsing: B405, B314 and friends"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>XML parsing: B405, B314 and friends</h3><p>FreeCAD addons parse XML often: <code>package.xml</code> manifests, Qt <code>.ui</code> files, SVG icons, exported data. The standard library&rsquo;s <code>xml.etree.ElementTree</code>, <code>xml.dom.minidom</code>, and <code>xml.sax</code> are all vulnerable to entity-expansion attacks (&ldquo;billion laughs&rdquo;) when given hostile input. Bandit flags the import (B405, B406, B408, &hellip;) and each parse call (B313 through B320).</p>
+<p>The fix is to parse with <a
+  href="https://pypi.org/project/defusedxml/"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">defusedxml<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>, which wraps the standard parsers with the dangerous features disabled and is on the <a
+  href="topics/dependencies#the-python-allow-list"
+  class="internal-tooltip">allow-list</a>, so you can declare it as a dependency:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="c1"># Before</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">xml.etree.ElementTree</span> <span class="k">as</span> <span class="nn">ET</span>
+</span></span><span class="line"><span class="cl"><span class="n">root</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># After</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">defusedxml.ElementTree</span> <span class="k">as</span> <span class="nn">ET</span>
+</span></span><span class="line"><span class="cl"><span class="n">root</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></span></span></code></pre></div></div><p>The class and function names are the same, so the change is usually just the import. One possible &ldquo;gotcha&rdquo;: exception classes are not re-exported by every defusedxml module, so you may still need one standard-library import for <code>except ParseError:</code>. That import only warns on B405 and is a legitimate suppression:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="c1"># Audited: only the exception class is imported; all parsing is done by defusedxml (added nosec B405)</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">xml.etree.ElementTree</span> <span class="kn">import</span> <span class="n">ParseError</span>  <span class="c1"># nosec B405</span></span></span></code></pre></div></div><h3
+  id="exec-and-eval-b102-b307">
+  <a class="heading-anchor"
+    href="#exec-and-eval-b102-b307"
+    title="exec and eval: B102, B307"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a><code>exec</code> and <code>eval</code>: B102, B307</h3><p>Executing strings as code is High or Medium severity depending on the form, and there is rarely a good reason for it. The common cases and their replacements:</p>
+<ul>
+<li>Parsing a literal from a string: use <code>ast.literal_eval</code>, which evaluates only Python literals and cannot call functions.</li>
+<li>Reading a config or data file: use <code>json</code>, or <code>configparser</code>, or <code>tomllib</code>.</li>
+<li>Building a name dynamically: use <code>getattr</code>, a dictionary of callables, or <code>importlib.import_module</code>.</li>
+</ul>
+<p>The one legitimate FreeCAD case is deliberately running a macro or script <em>at the user&rsquo;s explicit request</em>, for example an uninstall script an addon provides. Even then, put the action behind a confirmation dialog and document that in the audit comment:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="c1"># This use of exec() is behind an explicit user opt-in dialog (added nosec B102)</span>
+</span></span><span class="line"><span class="cl"><span class="n">exec</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>  <span class="c1"># nosec B102</span></span></span></code></pre></div></div><p>Never, ever, <strong>ever</strong> run <code>eval()</code> on something you read in from a user-controlled file, including (especially!!) an <code>FCStd</code> file. An attacker could provide an innocent-looking FreeCAD file that your addon then executes arbitrary code when loading. This can do literally anything that user&rsquo;s permission level allows. Never, ever do this.</p>
+<h3
+  id="deserialization-b301-b403-b506">
+  <a class="heading-anchor"
+    href="#deserialization-b301-b403-b506"
+    title="Deserialization: B301, B403, B506"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Deserialization: B301, B403, B506</h3><p><strong><code>pickle</code> (B301, B403).</strong> A pickle file can execute arbitrary code when loaded, so loading one from disk means trusting whoever wrote that file. Store addon state as JSON instead, or in FreeCAD&rsquo;s parameter system. If you inherit pickle usage from older code, migrate the on-disk format rather than suppressing.</p>
+<p><strong><code>yaml.load</code> (B506).</strong> Without an explicit safe loader, PyYAML can instantiate arbitrary Python objects. Replace <code>yaml.load(data)</code> with <code>yaml.safe_load(data)</code>. There is no reason to suppress this one: just fix it.</p>
+<h3
+  id="hashing-and-randomness-b324-b311">
+  <a class="heading-anchor"
+    href="#hashing-and-randomness-b324-b311"
+    title="Hashing and randomness: B324, B311"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Hashing and randomness: B324, B311</h3><p><strong>Weak hash (B324, High).</strong> <code>hashlib.md5()</code> and <code>hashlib.sha1()</code> are flagged because they are unsuitable for anything security-related. Addons rarely use them that way: the typical purpose is a cache key or a change detector. Tell both Bandit and the reader that by passing <code>usedforsecurity=False</code>, which also clears the finding:</p>
+<div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">digest</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">usedforsecurity</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span></span></span></code></pre></div></div><p><strong><code>random</code> (B311, Low).</strong> The <code>random</code> module is not cryptographically secure. If you are generating tokens, IDs that must be unguessable, or anything an attacker would benefit from predicting, use <code>secrets</code> instead. For jitter, sample data, or picking a placeholder color, <code>random</code> is fine (and probably the right choice); audit, then suppress.</p>
+<h3
+  id="temporary-files-b108">
+  <a class="heading-anchor"
+    href="#temporary-files-b108"
+    title="Temporary files: B108"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Temporary files: B108</h3><p>Hardcoding <code>/tmp/something</code> (B108) is both a security problem (another user can pre-create the file) and a portability problem (Windows has no <code>/tmp</code>). Use <code>tempfile.mkdtemp()</code> or <code>tempfile.NamedTemporaryFile()</code>, which create unique, correctly permissioned paths on every platform.</p>
+<h3
+  id="hardcoded-passwords-b105-b106-b107">
+  <a class="heading-anchor"
+    href="#hardcoded-passwords-b105-b106-b107"
+    title="Hardcoded passwords: B105, B106, B107"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Hardcoded passwords: B105, B106, B107</h3><p>Bandit guesses that any string assigned to a variable or parameter whose name contains &ldquo;password&rdquo;, &ldquo;token&rdquo;, &ldquo;secret&rdquo;, or similar is a hardcoded credential. It is right often enough to be worth keeping, and wrong often enough that you will see it on code like <code>password = &quot;&quot;</code> or <code>def connect(host, token=None)</code>. When it is a false positive, the audit comment is trivially short. When it is <em>not</em> a false positive, remove the secret from the source, rotate it, and read it from the environment or the user&rsquo;s system keyring at runtime.</p>
+<h3
+  id="style-checks-b101-b110-b112">
+  <a class="heading-anchor"
+    href="#style-checks-b101-b110-b112"
+    title="Style checks: B101, B110, B112"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Style checks: B101, B110, B112</h3><p><code>assert</code> (B101), <code>try</code>/<code>except</code>/<code>pass</code> (B110), and <code>try</code>/<code>except</code>/<code>continue</code> (B112) are not security defects, and the Addon Report skips B101 and B110 entirely. If you enable them anyway, the usual fixes are to replace <code>assert</code> with an explicit <code>if</code>/<code>raise</code> in non-test code (asserts are stripped under <code>python -O</code>), and to at least log something in an <code>except</code> block rather than discarding the exception silently. See <a
+  href="guides/log"
+  class="internal-tooltip">Logging &amp; console</a> for how to do that in FreeCAD.</p>
+<h2
+  id="putting-it-together">
+  <a class="heading-anchor"
+    href="#putting-it-together"
+    title="Putting it together"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Putting it together</h2><p>A reasonable order of operations for an existing addon:</p>
+<ol>
+<li>Add <code>bandit.yaml</code> with the report&rsquo;s settings and run <code>bandit -c bandit.yaml -r .</code> locally.</li>
+<li>Fix every High finding. These are almost always <code>shell=True</code>, <code>os.system</code>, or a weak hash, and the fixes are simple and documented above.</li>
+<li>Over time, go through the Medium and Low findings, fixing the code where a real fix exists and adding audited <code>nosec</code> markers where it doesn&rsquo;t.</li>
+<li>Consider adding the CI workflow so the report stays clear going forward.</li>
+<li>Consider adding a pre-commit hook so developers see findings before even opening a pull request.</li>
+</ol>
+</div><footer class="single-footer">
+    <nav class="pagination"><a
+            class="button next"
+            href="/Website/pr-146/dev/academy/guides/test/"
+            title="Next article"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_left.svg#tri_left"></use>
+  </svg>Develop - Testing</a><a
+            class="button prev"
+            href="/Website/pr-146/dev/academy/guides/portable/"
+            title="Previous article">Publish - Portable<svg
+    class="icon tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Go to Top"
+  title="Go to Top (Alt + G)" ><svg
+    class="icon tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a
+            href="/Website/pr-146/">Homepage</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-146/features/">Features</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-146/download/">Download</a><ul><li>
+                  <a
+                    href="/Website/pr-146/releases/">Releases</a>
+                </li><li>
+                      <a
+                        href="/Website/pr-146/download/addons/">Addons</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-146/download/unstable/">Unstable</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-146/news/">News</a><ul><li>
+                  <a
+                    href="/Website/pr-146/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/pr-146/author/">Author</a>
+                      </li><li>
+                        <a href="/Website/pr-146/category/">Category</a>
+                      </li><li>
+                        <a href="/Website/pr-146/tags/">Tags</a>
+                      </li></ul></li><li>
+          <a
+            href="/Website/pr-146/community/">Community</a><ul><li>
+                      <a
+                        href="/Website/pr-146/community/calendar/">Calendar</a>
+                    </li><li>
+                      <a
+                        href="https://events.freecad.org/" target="_blank" rel="external noreferrer nofollow">Events<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://fpa.freecad.org" target="_blank" rel="external noreferrer nofollow">Association<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swag shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-146/community/telemetry/">Telemetry</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-146/docs/" aria-current="page" class="active">Documentation</a><ul><li>
+                  <a
+                    href="https://wiki.freecad.org/User_hub" target="_blank" rel="external noreferrer nofollow">User manual<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                </li><li>
+                  <a
+                    href="/Website/pr-146/dev/">Development Handbook</a>
+                </li><li>
+                  <a
+                    href="https://freecad.github.io/SourceDoc/" target="_blank" rel="external noreferrer nofollow">FreeCAD API<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                </li></ul></li><li>
+          <a
+            href="/Website/pr-146/donate/">Donate</a><ul></ul></li></ul>
+</nav>
+<div class="share-links"><a
+    href="https://forum.freecad.org"
+    title="Forum"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/forum.svg#forum"></use>
+  </svg></a><a
+    href="https://devtalk.freecad.org/"
+    title="DevTalk"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon devtalk"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/devtalk.svg#devtalk"></use>
+  </svg></a><a
+    href="https://github.com/freecad"
+    title="GitHub"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/github.svg#github"></use>
+  </svg></a><a
+    href="https://codeberg.org/freecad"
+    title="Codeberg"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a
+    href="https://social.freecad.org/@freecad"
+    title="Mastodon"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/bluesky.svg#bluesky"></use>
+  </svg></a><a
+    href="https://www.reddit.com/r/freecad"
+    title="Reddit"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/reddit.svg#reddit"></use>
+  </svg></a><a
+    href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+    title="Matrix"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/matrix.svg#matrix"></use>
+  </svg></a><a
+    href="https://discord.gg/w2cTKGzccC"
+    title="Discord"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/discord.svg#discord"></use>
+  </svg></a><a
+    href="https://www.linkedin.com/groups/4295230"
+    title="LinkedIn"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+    href="https://FreeCAD.github.io/Website/pr-146/index.xml"
+    type="application/rss&#43;xml"
+    title="RSS feed"><svg
+    class="icon rss"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/rss.svg#rss"></use>
+  </svg></a><a
+  href="/Website/pr-146/fedishare.html#title=Develop&#43;-&#43;Security&#43;scanning&#43;with&#43;Bandit&amp;description=Bandit%20is%20a%20static%20analyzer%20that%20reads%20Python%20source%20and%20reports%20code%20patterns%20that%20are%20commonly%20involved%20in%20security%20problems:%20shelling%20out%20with%20user-controlled%20strings,%20parsing%20untrusted%20XML%20with%20%e2%80%a6&amp;url=https://FreeCAD.github.io/Website/pr-146/dev/academy/guides/security/"
+  title="Share on the Fediverse"
+  target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026
+    <a
+      href="/Website/pr-146/"
+      title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a
+    href="https://creativecommons.org/licenses/by-sa/4.0/"
+    title="Creative Commons"
+    target="_blank" rel="license external noreferrer nofollow">
+
+    CC BY-SA<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to
+  <a
+    href="https://gohugo.io/"
+    title="Hugo SSG"
+    target="_blank" rel="external noreferrer nofollow">
+
+    Hugo<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-11-27
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/3b9aaaf78139eae2a69bacc13828975fc955b356">3b9aaaf781<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script
+    src="/Website/pr-146/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-146/js/en/copy.min.69a371d83ee262fd517433098dcaa164b000451aa967741968d521a55f6e9409.js"
+    type="text/javascript"
+    defer integrity="sha256-aaNx2D7iYv1RdDMJjcqhZLAARRqpZ3QZaNUhpV9ulAk=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-146/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    defer integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous">
+  </script></body>
+
+</html>
