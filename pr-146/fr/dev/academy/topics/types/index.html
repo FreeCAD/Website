@@ -97,7 +97,7 @@
   <meta property="og:locale" content="fr_FR">
   <meta property="og:type" content="article">
     <meta property="article:section" content="dev">
-    <meta property="article:modified_time" content="2026-11-27T17:14:57+01:00">
+    <meta property="article:modified_time" content="2026-11-28T13:11:28+01:00">
 </head><body
     class="single type-dev kind-page "
     id="top">
@@ -290,19 +290,19 @@
                 href="/Website/pr-146/fr/dev/academy/topics/machines/">Machines</a>
             </li><li>
               <a
-                href="/Website/pr-146/fr/dev/academy/topics/structure/">Structuring</a>
+                href="/Website/pr-146/fr/dev/academy/topics/layout/">Addon layout</a>
             </li><li>
               <a
                 href="/Website/pr-146/fr/dev/academy/topics/manifest/">Addon Manifest</a>
             </li><li>
               <a
-                href="/Website/pr-146/fr/dev/academy/topics/dependencies/">Dependencies</a>
+                href="/Website/pr-146/fr/dev/academy/topics/dependency/">Dependencies</a>
             </li><li>
               <a
                 href="/Website/pr-146/fr/dev/academy/topics/license/">Licensing</a>
             </li><li>
               <a
-                href="/Website/pr-146/fr/dev/academy/topics/index/">Addon Index</a>
+                href="/Website/pr-146/fr/dev/academy/topics/addons-index/">Addons Index</a>
             </li><li>
               <a
                 href="/Website/pr-146/fr/dev/academy/topics/removed/">Removed Addons</a>
@@ -322,7 +322,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#workbench">Workbench</a></li>
+        <li><a href="#workbench-addon">Workbench addon</a></li>
         <li><a href="#macro">Macro</a></li>
         <li><a href="#preference-pack">Preference pack</a></li>
         <li><a href="#bundle">Bundle</a></li>
@@ -348,15 +348,15 @@
     <use href="/Website/pr-146/svg/external.svg#external"></use>
   </svg></a></p></blockquote></figure><p>FreeCAD supports many different types of Addon, with more types added with each subsequent version. The following sections cover each type supported by FreeCAD v1.1, plus the new Machine type forthcoming in v26.3. Where a type has substantive details of its own, this page links to a dedicated detail page. Note that on this page the &ldquo;type&rdquo; corresponds to the various XML tags available in the Manifest file: where appropriate, the more &ldquo;conceptual&rdquo; types are discussed separately (e.g. there is no &ldquo;theme&rdquo; XML tag, but a theme is indeed a conceptually-specific type of Preference Pack).</p>
 <h2
-  id="workbench">
+  id="workbench-addon">
   <a class="heading-anchor"
-    href="#workbench"
-    title="Workbench"><svg
+    href="#workbench-addon"
+    title="Workbench addon"><svg
     class="icon hash"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/pr-146/svg/hash.svg#hash"></use>
-  </svg></a>Workbench</h2><p>Adds a set of related tools centered on a particular topic (architecture, sheet metal, boat design, etc.). A Workbench generally has its own toolbars and menus when activated, and is added to the Workbenches menu in FreeCAD. This is the most complex and sophisticated Addon type, and one of the original addon types. In many cases older addons are labeled &ldquo;workbenches&rdquo; even if they do no actually implement a FreeCAD Workbench in the technical sense of a class that derives from <code>Workbench</code>.</p>
+  </svg></a>Workbench addon</h2><p>Adds a set of related tools centered on a particular topic (architecture, sheet metal, boat design, etc.). A Workbench generally has its own toolbars and menus when activated, and is added to the Workbenches menu in FreeCAD. This is the most complex and sophisticated Addon type, and one of the original addon types. In many cases older addons are labeled &ldquo;workbenches&rdquo; even if they do no actually implement a FreeCAD Workbench in the technical sense of a class that derives from <code>Workbench</code>.</p>
 <h2
   id="macro">
   <a class="heading-anchor"
@@ -385,8 +385,9 @@
     focusable="false">
     <use href="/Website/pr-146/svg/hash.svg#hash"></use>
   </svg></a>Preference pack</h2><p>A distributable bundle of FreeCAD user preferences that other users can apply in one click. Themes and stylesheets are distributed as a specialized kind of preference pack; see <a
-  href="topics/themes"
-  class="internal-tooltip">Themes</a> for the full pattern.</p>
+  href="/Website/pr-146/fr/dev/academy/topics/themes/"
+  class="internal-tooltip">Themes<span class="tooltip">
+        <strong>Themes</strong><span>FreeCAD interface themes as Preference pack Addons.</span></span></a> for the full pattern.</p>
 <h2
   id="bundle">
   <a class="heading-anchor"
@@ -414,8 +415,9 @@
     focusable="false">
     <use href="/Website/pr-146/svg/external.svg#external"></use>
   </svg></a> repository. See <a
-  href="topics/machines"
-  class="internal-tooltip">Machines</a> for the full pattern.</p>
+  href="/Website/pr-146/fr/dev/academy/topics/machines/"
+  class="internal-tooltip">Machines<span class="tooltip">
+        <strong>Machines</strong><span>CAM Machine definitions as Addons.</span></span></a> for the full pattern.</p>
 <h2
   id="other">
   <a class="heading-anchor"
@@ -676,9 +678,9 @@
   </svg></a>
 </span>
 <span>
-    Modified: 2026-11-27
+    Modified: 2026-11-28
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/3b9aaaf78139eae2a69bacc13828975fc955b356">3b9aaaf781<svg
+      Commit: <a href="https://github.com/freecad/website/commit/c90b31bb9edbb62297caf32411dcc8ac8ba531ea">c90b31bb9e<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

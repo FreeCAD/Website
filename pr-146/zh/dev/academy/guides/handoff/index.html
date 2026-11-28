@@ -97,7 +97,7 @@
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="dev">
-    <meta property="article:modified_time" content="2026-11-27T17:14:57+01:00">
+    <meta property="article:modified_time" content="2026-11-28T13:11:28+01:00">
 </head><body
     class="single type-dev kind-page "
     id="top">
@@ -296,7 +296,7 @@
                 href="/Website/pr-146/zh/dev/academy/guides/qt/">Code - Qt &amp; PySide</a>
             </li><li>
               <a
-                href="/Website/pr-146/zh/dev/academy/guides/preferences/">Code - Preferences pages</a>
+                href="/Website/pr-146/zh/dev/academy/guides/preference/">Code - Preferences pages</a>
             </li><li>
               <a
                 href="/Website/pr-146/zh/dev/academy/guides/objects/">Code - Custom document objects</a>
@@ -305,7 +305,7 @@
                 href="/Website/pr-146/zh/dev/academy/guides/icons/">Code - Icons &amp; Resources</a>
             </li><li>
               <a
-                href="/Website/pr-146/zh/dev/academy/guides/translations/">Code - Translations (i18n)</a>
+                href="/Website/pr-146/zh/dev/academy/guides/translate/">Code - Translations (i18n)</a>
             </li><li>
               <a
                 href="/Website/pr-146/zh/dev/academy/guides/log/">Code - Logging &amp; Console</a>
@@ -344,7 +344,7 @@
                 href="/Website/pr-146/zh/dev/academy/guides/migrations/">Maintain - Data &amp; schema migrations</a>
             </li><li>
               <a
-                href="/Website/pr-146/zh/dev/academy/guides/update/">Maintain - Updating</a>
+                href="/Website/pr-146/zh/dev/academy/guides/updates/">Maintain - Addon updates</a>
             </li><li>
               <a
                 href="/Website/pr-146/zh/dev/academy/guides/handoff/" id="current-page" class="active" aria-current="page">Maintain - Maintainer handoff</a>
@@ -388,7 +388,7 @@
     <use href="/Website/pr-146/svg/external.svg#external"></use>
   </svg></a></p></blockquote></figure><p>Addons usually outlast the original maintainer&rsquo;s interest in them. This page covers the orderly steps to either transfer maintenance to a new person or mark the addon as orphaned in a way the ecosystem can detect and handle.</p>
 <p>The <a
-  href="topics/index"
+  href="/Website/pr-146/zh/dev/academy/topics/addons-index/"
   class="internal-tooltip">quality requirements</a> for inclusion in the Addon Index require an addon to have &ldquo;at least one active maintainer or [be] in the process of finding a new maintainer.&rdquo; Once an addon stops meeting that bar without an attempted handoff, the FreeCAD addons team may remove it from the Index. The procedures here are how to avoid that outcome.</p>
 <h2
   id="recognizing-that-handoff-is-needed">
@@ -437,7 +437,7 @@
 <li><strong>Find the new maintainer.</strong> Reach out via the FreeCAD forum, the addon&rsquo;s existing user community, recent contributors to the repository, or the FreeCAD addons team.</li>
 <li><strong>Hand off repository ownership.</strong> Either transfer the repository to the new maintainer&rsquo;s account, or add them as an owner with full administrative rights. GitHub&rsquo;s &ldquo;Transfer ownership&rdquo; feature handles the URL redirect automatically.</li>
 <li><strong>Update the <a
-  href="topics/structuring/manifest"
+  href="/Website/pr-146/zh/dev/academy/topics/manifest/"
   class="internal-tooltip">Manifest</a>.</strong> In <code>package.xml</code>:
 <ul>
 <li>Update <code>&lt;maintainer&gt;</code> to the new maintainer&rsquo;s name and email.</li>
@@ -488,7 +488,7 @@
     focusable="false">
     <use href="/Website/pr-146/svg/hash.svg#hash"></use>
   </svg></a>Marking an addon as orphaned</h2><p>When no successor is available and the addon is still useful enough to leave in place, mark it as orphaned in the manifest. The convention is documented in the <a
-  href="topics/structuring/manifest"
+  href="/Website/pr-146/zh/dev/academy/topics/manifest/"
   class="internal-tooltip">Manifest</a>:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;maintainer</span> <span class="na">email=</span><span class="s">&#34;no-one@freecad.org&#34;</span><span class="nt">&gt;</span>No current maintainer<span class="nt">&lt;/maintainer&gt;</span></span></span></code></pre></div></div><p>This is a recognized signal to the Addon Manager and to other contributors that the addon is looking for a new owner. Combine it with:</p>
 <ul>
@@ -507,7 +507,7 @@
     focusable="false">
     <use href="/Website/pr-146/svg/hash.svg#hash"></use>
   </svg></a>Removal from the Addon Index</h2><p>If the addon is broken on current FreeCAD and no maintainer is forthcoming, removal from the Addon Index is the eventual outcome. Removed addons are listed in the <a
-  href="topics/removed"
+  href="/Website/pr-146/zh/dev/academy/topics/removed/"
   class="internal-tooltip">Removed Addons</a> page so future authors can pick up the work. Users who already have an installed copy can keep using it; new users simply will not discover it.</p>
 <p>Removal is not deletion of the repository: the source remains available, and a future maintainer can request reinstatement after fixing the issues that led to removal.</p>
 <h2
@@ -521,25 +521,30 @@
     <use href="/Website/pr-146/svg/hash.svg#hash"></use>
   </svg></a>See also</h2><ul>
 <li><a
-  href="topics/structuring/manifest#maintainer"
-  class="internal-tooltip">Manifest: <code>&lt;maintainer&gt;</code></a>: the syntax for declaring maintainers, including the orphaned-addon convention.</li>
+  href="/Website/pr-146/zh/dev/academy/topics/manifest/#maintainer"
+  class="internal-tooltip hash-link"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg>Manifest: <code>&lt;maintainer&gt;</code></a>: the syntax for declaring maintainers, including the orphaned-addon convention.</li>
 <li><a
-  href="topics/index"
+  href="/Website/pr-146/zh/dev/academy/topics/addons-index/"
   class="internal-tooltip">Quality requirements for indexed addons</a>: the rules an indexed addon must meet, including maintainer presence.</li>
 <li><a
-  href="topics/removed"
+  href="/Website/pr-146/zh/dev/academy/topics/removed/"
   class="internal-tooltip">Removed Addons</a>: addons previously removed from the Index.</li>
 </ul>
 </div><footer class="single-footer">
     <nav class="pagination"><a
             class="button next"
-            href="/Website/pr-146/zh/dev/academy/guides/update/"
+            href="/Website/pr-146/zh/dev/academy/guides/updates/"
             title="下一篇"><svg
     class="icon tri_left"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/pr-146/svg/tri_left.svg#tri_left"></use>
-  </svg>Maintain - Updating</a><a
+  </svg>Maintain - Addon updates</a><a
             class="button prev"
             href="/Website/pr-146/zh/dev/academy/topics/types/"
             title="Prev section">Topics<svg
@@ -780,9 +785,9 @@
   </svg></a>
 </span>
 <span>
-    Modified: 2026-11-27
+    Modified: 2026-11-28
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/3b9aaaf78139eae2a69bacc13828975fc955b356">3b9aaaf781<svg
+      Commit: <a href="https://github.com/freecad/website/commit/c90b31bb9edbb62297caf32411dcc8ac8ba531ea">c90b31bb9e<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

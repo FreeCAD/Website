@@ -97,7 +97,7 @@
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="dev">
-    <meta property="article:modified_time" content="2026-11-27T17:14:57+01:00">
+    <meta property="article:modified_time" content="2026-11-28T13:11:28+01:00">
 </head><body
     class="single type-dev kind-page "
     id="top">
@@ -296,7 +296,7 @@
                 href="/Website/pr-146/zh/dev/academy/guides/qt/">Code - Qt &amp; PySide</a>
             </li><li>
               <a
-                href="/Website/pr-146/zh/dev/academy/guides/preferences/">Code - Preferences pages</a>
+                href="/Website/pr-146/zh/dev/academy/guides/preference/">Code - Preferences pages</a>
             </li><li>
               <a
                 href="/Website/pr-146/zh/dev/academy/guides/objects/">Code - Custom document objects</a>
@@ -305,7 +305,7 @@
                 href="/Website/pr-146/zh/dev/academy/guides/icons/">Code - Icons &amp; Resources</a>
             </li><li>
               <a
-                href="/Website/pr-146/zh/dev/academy/guides/translations/">Code - Translations (i18n)</a>
+                href="/Website/pr-146/zh/dev/academy/guides/translate/">Code - Translations (i18n)</a>
             </li><li>
               <a
                 href="/Website/pr-146/zh/dev/academy/guides/log/">Code - Logging &amp; Console</a>
@@ -344,7 +344,7 @@
                 href="/Website/pr-146/zh/dev/academy/guides/migrations/">Maintain - Data &amp; schema migrations</a>
             </li><li>
               <a
-                href="/Website/pr-146/zh/dev/academy/guides/update/">Maintain - Updating</a>
+                href="/Website/pr-146/zh/dev/academy/guides/updates/">Maintain - Addon updates</a>
             </li><li>
               <a
                 href="/Website/pr-146/zh/dev/academy/guides/handoff/">Maintain - Maintainer handoff</a>
@@ -436,7 +436,7 @@
   </svg><span class="tooltip">Parametric Feature workbench in the Workbench selector dropdown, alongside the built-in workbenches and another addon (Transmogrifier)</span>
           </div>
         </figcaption></figure><p>This page walks through the Workbench class, the <code>init_gui.py</code> file that defines it, and how FreeCAD discovers and activates your workbench at runtime. For a complete working example, see the <a
-  href="demos/workbench"
+  href="/Website/pr-146/zh/dev/academy/demos/workbench-demo/"
   class="internal-tooltip">Minimal Workbench demo</a>. This page details the patterns shown there.</p>
 <h2
   id="where-init_guipy-lives">
@@ -448,8 +448,8 @@
     focusable="false">
     <use href="/Website/pr-146/svg/hash.svg#hash"></use>
   </svg></a>Where <code>init_gui.py</code> lives</h2><p>In a Modern namespaced addon (see <a
-  href="topics/structure"
-  class="internal-tooltip">Structuring</a>), <code>init_gui.py</code> lives inside your addon&rsquo;s namespace package:</p>
+  href="/Website/pr-146/zh/dev/academy/topics/layout/"
+  class="internal-tooltip">Addon layout</a>), <code>init_gui.py</code> lives inside your addon&rsquo;s namespace package:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">MyAddon/
 </span></span><span class="line"><span class="cl">├─ package.xml
 </span></span><span class="line"><span class="cl">└─ freecad/
@@ -459,8 +459,9 @@
 <ul>
 <li>Module-level code in <code>init_gui.py</code> runs for every user at every FreeCAD launch, whether they ever use your workbench or not. As a best practice this should be kept minimal: class definitions and one registration call.</li>
 <li>In the Modern layout the <code>__file__</code> module attribute is available and points at the deployed path. That is the normal way to locate your addon&rsquo;s resources (see <a
-  href="guides/icons"
-  class="internal-tooltip">Icons &amp; resources</a>). If you find older examples of the <code>InitGui.py</code>-based structure you may see various workarounds for a lack of <code>__file__</code>, but those are not necessary if using the Modern layout.</li>
+  href="/Website/pr-146/zh/dev/academy/guides/icons/"
+  class="internal-tooltip">Icons &amp; resources<span class="tooltip">
+        <strong>Code - Icons &amp; Resources</strong></span></a>). If you find older examples of the <code>InitGui.py</code>-based structure you may see various workarounds for a lack of <code>__file__</code>, but those are not necessary if using the Modern layout.</li>
 </ul>
 <h2
   id="the-workbench-class">
@@ -615,7 +616,7 @@
     focusable="false">
     <use href="/Website/pr-146/svg/hash.svg#hash"></use>
   </svg></a>The <code>&lt;classname&gt;</code> manifest entry</h2><p>Your <a
-  href="topics/manifest"
+  href="/Website/pr-146/zh/dev/academy/topics/manifest/"
   class="internal-tooltip"><code>package.xml</code></a> must declare a <code>&lt;workbench&gt;</code> content item whose <code>&lt;classname&gt;</code> matches your Python class:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;content&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&lt;workbench&gt;</span>
@@ -633,8 +634,9 @@
     <use href="/Website/pr-146/svg/hash.svg#hash"></use>
   </svg></a>Populating the workbench</h2><p>Two methods from the Workbench class create its UI, both normally called in the <code>Initialize()</code> method.</p>
 <p><strong><code>self.appendToolbar(title, command_names)</code></strong> creates a new toolbar with the given title and populates it with the named commands. Command names are the strings you passed to <code>FreeCADGui.addCommand()</code>. See <a
-  href="guides/commands"
-  class="internal-tooltip">Gui Commands</a> for how commands are defined and registered.</p>
+  href="/Website/pr-146/zh/dev/academy/guides/commands/"
+  class="internal-tooltip">Gui Commands<span class="tooltip">
+        <strong>Code - Gui Commands</strong></span></a> for how commands are defined and registered.</p>
 <figure class="image"><button
           aria-label="放大图片"
           popovertarget="img-002"
@@ -716,26 +718,30 @@
     <use href="/Website/pr-146/svg/hash.svg#hash"></use>
   </svg></a>See also</h2><ul>
 <li><a
-  href="demos/workbench"
+  href="/Website/pr-146/zh/dev/academy/demos/workbench-demo/"
   class="internal-tooltip">Minimal Workbench demo</a>: a complete working workbench with SPDX headers.</li>
 <li><a
-  href="guides/commands"
-  class="internal-tooltip">Gui Commands</a>: what the command-name strings in <code>appendToolbar</code> and <code>appendMenu</code> refer to.</li>
+  href="/Website/pr-146/zh/dev/academy/guides/commands/"
+  class="internal-tooltip">Gui Commands<span class="tooltip">
+        <strong>Code - Gui Commands</strong></span></a>: what the command-name strings in <code>appendToolbar</code> and <code>appendMenu</code> refer to.</li>
 <li><a
-  href="guides/manipulators"
-  class="internal-tooltip">Workbench manipulators</a>: how to contribute toolbars and menus to workbenches you do not own, including without defining a workbench at all.</li>
+  href="/Website/pr-146/zh/dev/academy/guides/manipulators/"
+  class="internal-tooltip">Workbench manipulators<span class="tooltip">
+        <strong>Code - Workbench manipulators</strong></span></a>: how to contribute toolbars and menus to workbenches you do not own, including without defining a workbench at all.</li>
 <li><a
-  href="guides/icons"
-  class="internal-tooltip">Icons &amp; resources</a>: detail on the <code>Icon</code> path and addon icon directories.</li>
+  href="/Website/pr-146/zh/dev/academy/guides/icons/"
+  class="internal-tooltip">Icons &amp; resources<span class="tooltip">
+        <strong>Code - Icons &amp; Resources</strong></span></a>: detail on the <code>Icon</code> path and addon icon directories.</li>
 <li><a
-  href="topics/structure"
-  class="internal-tooltip">Structuring</a>: the addon directory layout <code>init_gui.py</code> lives inside.</li>
+  href="/Website/pr-146/zh/dev/academy/topics/layout/"
+  class="internal-tooltip">Addon layout</a>: the addon directory layout <code>init_gui.py</code> lives inside.</li>
 <li><a
-  href="topics/manifest"
+  href="/Website/pr-146/zh/dev/academy/topics/manifest/"
   class="internal-tooltip">Manifest</a>: the <code>&lt;classname&gt;</code> element in <code>package.xml</code>.</li>
 <li><a
-  href="guides/install"
-  class="internal-tooltip">Installing your addon locally</a>: how to get your addon into a running FreeCAD to test.</li>
+  href="/Website/pr-146/zh/dev/academy/guides/install/"
+  class="internal-tooltip">Installing your addon locally<span class="tooltip">
+        <strong>Develop - Installing your addon locally</strong></span></a>: how to get your addon into a running FreeCAD to test.</li>
 </ul>
 </div><footer class="single-footer">
     <nav class="pagination"><a
@@ -987,9 +993,9 @@
   </svg></a>
 </span>
 <span>
-    Modified: 2026-11-27
+    Modified: 2026-11-28
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/3b9aaaf78139eae2a69bacc13828975fc955b356">3b9aaaf781<svg
+      Commit: <a href="https://github.com/freecad/website/commit/c90b31bb9edbb62297caf32411dcc8ac8ba531ea">c90b31bb9e<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

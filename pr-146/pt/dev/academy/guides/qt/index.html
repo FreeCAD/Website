@@ -97,7 +97,7 @@
   <meta property="og:locale" content="pt_BR">
   <meta property="og:type" content="article">
     <meta property="article:section" content="dev">
-    <meta property="article:modified_time" content="2026-11-27T17:14:57+01:00">
+    <meta property="article:modified_time" content="2026-11-28T13:11:28+01:00">
 </head><body
     class="single type-dev kind-page "
     id="top">
@@ -296,7 +296,7 @@
                 href="/Website/pr-146/pt/dev/academy/guides/qt/" id="current-page" class="active" aria-current="page">Code - Qt &amp; PySide</a>
             </li><li>
               <a
-                href="/Website/pr-146/pt/dev/academy/guides/preferences/">Code - Preferences pages</a>
+                href="/Website/pr-146/pt/dev/academy/guides/preference/">Code - Preferences pages</a>
             </li><li>
               <a
                 href="/Website/pr-146/pt/dev/academy/guides/objects/">Code - Custom document objects</a>
@@ -305,7 +305,7 @@
                 href="/Website/pr-146/pt/dev/academy/guides/icons/">Code - Icons &amp; Resources</a>
             </li><li>
               <a
-                href="/Website/pr-146/pt/dev/academy/guides/translations/">Code - Translations (i18n)</a>
+                href="/Website/pr-146/pt/dev/academy/guides/translate/">Code - Translations (i18n)</a>
             </li><li>
               <a
                 href="/Website/pr-146/pt/dev/academy/guides/log/">Code - Logging &amp; Console</a>
@@ -344,7 +344,7 @@
                 href="/Website/pr-146/pt/dev/academy/guides/migrations/">Maintain - Data &amp; schema migrations</a>
             </li><li>
               <a
-                href="/Website/pr-146/pt/dev/academy/guides/update/">Maintain - Updating</a>
+                href="/Website/pr-146/pt/dev/academy/guides/updates/">Maintain - Addon updates</a>
             </li><li>
               <a
                 href="/Website/pr-146/pt/dev/academy/guides/handoff/">Maintain - Maintainer handoff</a>
@@ -455,8 +455,9 @@
 </span></span><span class="line"><span class="cl">        <span class="c1"># ...</span>
 </span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></span></span></code></pre></div></div><p><code>loadUi</code> returns the top-level widget from the <code>.ui</code> file. Child widgets defined in Qt Designer are accessible as attributes of that top-level widget using the <code>objectName</code> you set in Qt Designer.</p>
 <p><strong>Do not put <code>:/...</code> resource-path icon references into your <code>.ui</code> file.</strong> Those assume a compiled <code>.rcc</code> resource is loaded. FreeCAD addons do not ship compiled resources (see <a
-  href="guides/icons"
-  class="internal-tooltip">Icons &amp; resources</a> for why). Either omit icons from the <code>.ui</code> and set them in Python code after loading, or use plain filesystem paths.</p>
+  href="/Website/pr-146/pt/dev/academy/guides/icons/"
+  class="internal-tooltip">Icons &amp; resources<span class="tooltip">
+        <strong>Code - Icons &amp; Resources</strong></span></a> for why). Either omit icons from the <code>.ui</code> and set them in Python code after loading, or use plain filesystem paths.</p>
 <h2
   id="creating-widgets-programmatically">
   <a class="heading-anchor"
@@ -491,8 +492,9 @@
 </span></span><span class="line"><span class="cl">    <span class="n">value</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">    <span class="c1"># ...</span></span></span></code></pre></div></div><p>Programmatic dialogs are easier to diff in version control and easier to translate programmatically, but harder to tweak visually. Most real addons use a mix: <code>.ui</code> files for anything with multiple inputs or a complex layout, programmatic dialogs for simple confirmations and single-input prompts.</p>
 <p><code>QMessageBox.information</code>, <code>QMessageBox.warning</code>, <code>QMessageBox.question</code>, and <code>QMessageBox.critical</code> cover most simple cases without needing to build anything yourself. See <a
-  href="guides/log"
-  class="internal-tooltip">Logging &amp; console</a> for when to use a message box versus the Report view.</p>
+  href="/Website/pr-146/pt/dev/academy/guides/log/"
+  class="internal-tooltip">Logging &amp; console<span class="tooltip">
+        <strong>Code - Logging &amp; Console</strong></span></a> for when to use a message box versus the Report view.</p>
 <h2
   id="task-panels">
   <a class="heading-anchor"
@@ -583,8 +585,9 @@
   </svg></a>HiDPI and themes</h2><p>FreeCAD 1.x with Qt6 is HiDPI-aware by default. As an addon author you mostly do not need to think about this, provided you:</p>
 <ul>
 <li>Use SVG for icons (see <a
-  href="guides/icons"
-  class="internal-tooltip">Icons &amp; resources</a>). Bitmaps at a fixed pixel size will look blurry on HiDPI screens.</li>
+  href="/Website/pr-146/pt/dev/academy/guides/icons/"
+  class="internal-tooltip">Icons &amp; resources<span class="tooltip">
+        <strong>Code - Icons &amp; Resources</strong></span></a>). Bitmaps at a fixed pixel size will look blurry on HiDPI screens.</li>
 <li>Let Qt lay out your widgets rather than hard-coding pixel widths. <code>QLayout</code> subclasses scale correctly with DPI and user font-size settings; fixed <code>setFixedWidth(200)</code> calls do not.</li>
 </ul>
 <p>Dark-mode and custom stylesheets are applied globally by FreeCAD at startup. Your widgets inherit whatever theme the user has selected, as long as you do not override colors explicitly. Avoid hardcoding colors (<code>widget.setStyleSheet(&quot;color: black&quot;)</code>) unless you really mean it; let Qt&rsquo;s palette system handle appearance.</p>
@@ -599,17 +602,21 @@
     <use href="/Website/pr-146/svg/hash.svg#hash"></use>
   </svg></a>See also</h2><ul>
 <li><a
-  href="guides/preferences"
-  class="internal-tooltip">Preferences pages</a>: the specific pattern for addon settings, which uses <code>Gui::Pref*</code> widgets in a <code>.ui</code> file.</li>
+  href="/Website/pr-146/pt/dev/academy/guides/preference/"
+  class="internal-tooltip">Preferences pages<span class="tooltip">
+        <strong>Code - Preferences pages</strong></span></a>: the specific pattern for addon settings, which uses <code>Gui::Pref*</code> widgets in a <code>.ui</code> file.</li>
 <li><a
-  href="guides/icons"
-  class="internal-tooltip">Icons &amp; resources</a>: why addons should not ship compiled Qt resources.</li>
+  href="/Website/pr-146/pt/dev/academy/guides/icons/"
+  class="internal-tooltip">Icons &amp; resources<span class="tooltip">
+        <strong>Code - Icons &amp; Resources</strong></span></a>: why addons should not ship compiled Qt resources.</li>
 <li><a
-  href="guides/log"
-  class="internal-tooltip">Logging &amp; console</a>: when to use <code>QMessageBox</code> versus the Report view.</li>
+  href="/Website/pr-146/pt/dev/academy/guides/log/"
+  class="internal-tooltip">Logging &amp; console<span class="tooltip">
+        <strong>Code - Logging &amp; Console</strong></span></a>: when to use <code>QMessageBox</code> versus the Report view.</li>
 <li><a
-  href="guides/translations"
-  class="internal-tooltip">Translations</a>: wrapping user-visible strings in <code>QMessageBox</code>, form labels, and button text.</li>
+  href="/Website/pr-146/pt/dev/academy/guides/translate/"
+  class="internal-tooltip">Translations<span class="tooltip">
+        <strong>Code - Translations (i18n)</strong></span></a>: wrapping user-visible strings in <code>QMessageBox</code>, form labels, and button text.</li>
 </ul>
 </div><footer class="single-footer">
     <nav class="pagination"><a
@@ -622,7 +629,7 @@
     <use href="/Website/pr-146/svg/tri_left.svg#tri_left"></use>
   </svg>Code - Workbench manipulators</a><a
             class="button prev"
-            href="/Website/pr-146/pt/dev/academy/guides/preferences/"
+            href="/Website/pr-146/pt/dev/academy/guides/preference/"
             title="Artigo anterior">Code - Preferences pages<svg
     class="icon tri_right"
     aria-hidden="true"
@@ -861,9 +868,9 @@
   </svg></a>
 </span>
 <span>
-    Modified: 2026-11-27
+    Modified: 2026-11-28
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/3b9aaaf78139eae2a69bacc13828975fc955b356">3b9aaaf781<svg
+      Commit: <a href="https://github.com/freecad/website/commit/c90b31bb9edbb62297caf32411dcc8ac8ba531ea">c90b31bb9e<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

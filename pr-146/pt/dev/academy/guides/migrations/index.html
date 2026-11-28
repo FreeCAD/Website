@@ -97,7 +97,7 @@
   <meta property="og:locale" content="pt_BR">
   <meta property="og:type" content="article">
     <meta property="article:section" content="dev">
-    <meta property="article:modified_time" content="2026-11-27T17:14:57+01:00">
+    <meta property="article:modified_time" content="2026-11-28T13:11:28+01:00">
 </head><body
     class="single type-dev kind-page "
     id="top">
@@ -296,7 +296,7 @@
                 href="/Website/pr-146/pt/dev/academy/guides/qt/">Code - Qt &amp; PySide</a>
             </li><li>
               <a
-                href="/Website/pr-146/pt/dev/academy/guides/preferences/">Code - Preferences pages</a>
+                href="/Website/pr-146/pt/dev/academy/guides/preference/">Code - Preferences pages</a>
             </li><li>
               <a
                 href="/Website/pr-146/pt/dev/academy/guides/objects/">Code - Custom document objects</a>
@@ -305,7 +305,7 @@
                 href="/Website/pr-146/pt/dev/academy/guides/icons/">Code - Icons &amp; Resources</a>
             </li><li>
               <a
-                href="/Website/pr-146/pt/dev/academy/guides/translations/">Code - Translations (i18n)</a>
+                href="/Website/pr-146/pt/dev/academy/guides/translate/">Code - Translations (i18n)</a>
             </li><li>
               <a
                 href="/Website/pr-146/pt/dev/academy/guides/log/">Code - Logging &amp; Console</a>
@@ -344,7 +344,7 @@
                 href="/Website/pr-146/pt/dev/academy/guides/migrations/" id="current-page" class="active" aria-current="page">Maintain - Data &amp; schema migrations</a>
             </li><li>
               <a
-                href="/Website/pr-146/pt/dev/academy/guides/update/">Maintain - Updating</a>
+                href="/Website/pr-146/pt/dev/academy/guides/updates/">Maintain - Addon updates</a>
             </li><li>
               <a
                 href="/Website/pr-146/pt/dev/academy/guides/handoff/">Maintain - Maintainer handoff</a>
@@ -394,8 +394,9 @@
     <use href="/Website/pr-146/svg/external.svg#external"></use>
   </svg></a></p></blockquote></figure><p>When your addon defines <code>FeaturePython</code> document objects, your code&rsquo;s class names and property schemas become part of any document a user saves with those objects in it. Subsequent changes to your addon ripple back into the user&rsquo;s saved files: a renamed property, a removed class, a changed property type can all break documents that worked under the previous version.</p>
 <p>This page covers how to evolve a <code>FeaturePython</code> schema across addon releases without breaking older documents. Read <a
-  href="guides/objects"
-  class="internal-tooltip">Custom document objects</a> first; this page assumes the patterns introduced there.</p>
+  href="/Website/pr-146/pt/dev/academy/guides/objects/"
+  class="internal-tooltip">Custom document objects<span class="tooltip">
+        <strong>Code - Custom document objects</strong></span></a> first; this page assumes the patterns introduced there.</p>
 <h2
   id="what-gets-included-in-a-saved-document">
   <a class="heading-anchor"
@@ -559,13 +560,15 @@
     <use href="/Website/pr-146/svg/hash.svg#hash"></use>
   </svg></a>See also</h2><ul>
 <li><a
-  href="guides/objects"
-  class="internal-tooltip">Custom document objects</a>: the underlying <code>FeaturePython</code> patterns.</li>
+  href="/Website/pr-146/pt/dev/academy/guides/objects/"
+  class="internal-tooltip">Custom document objects<span class="tooltip">
+        <strong>Code - Custom document objects</strong></span></a>: the underlying <code>FeaturePython</code> patterns.</li>
 <li><a
-  href="guides/compatibility"
-  class="internal-tooltip">FreeCAD version compatibility</a>: the analogous concern for FreeCAD-version differences (rather than addon-version differences).</li>
+  href="/Website/pr-146/pt/dev/academy/guides/compatibility/"
+  class="internal-tooltip">FreeCAD version compatibility<span class="tooltip">
+        <strong>Maintain - FreeCAD version compatibility</strong></span></a>: the analogous concern for FreeCAD-version differences (rather than addon-version differences).</li>
 <li><a
-  href="demos/feature"
+  href="/Website/pr-146/pt/dev/academy/demos/feature-demo/"
   class="internal-tooltip">Parametric Feature demo</a>: a runnable starting point for experimenting with schema changes.</li>
 </ul>
 </div><footer class="single-footer">
@@ -579,8 +582,8 @@
     <use href="/Website/pr-146/svg/tri_left.svg#tri_left"></use>
   </svg>Maintain - FreeCAD version compatibility</a><a
             class="button prev"
-            href="/Website/pr-146/pt/dev/academy/guides/update/"
-            title="Artigo anterior">Maintain - Updating<svg
+            href="/Website/pr-146/pt/dev/academy/guides/updates/"
+            title="Artigo anterior">Maintain - Addon updates<svg
     class="icon tri_right"
     aria-hidden="true"
     focusable="false">
@@ -818,9 +821,9 @@
   </svg></a>
 </span>
 <span>
-    Modified: 2026-11-27
+    Modified: 2026-11-28
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/3b9aaaf78139eae2a69bacc13828975fc955b356">3b9aaaf781<svg
+      Commit: <a href="https://github.com/freecad/website/commit/c90b31bb9edbb62297caf32411dcc8ac8ba531ea">c90b31bb9e<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

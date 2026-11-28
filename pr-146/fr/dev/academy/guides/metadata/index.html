@@ -97,7 +97,7 @@
   <meta property="og:locale" content="fr_FR">
   <meta property="og:type" content="article">
     <meta property="article:section" content="dev">
-    <meta property="article:modified_time" content="2026-11-27T17:14:57+01:00">
+    <meta property="article:modified_time" content="2026-11-28T13:11:28+01:00">
 </head><body
     class="single type-dev kind-page "
     id="top">
@@ -296,7 +296,7 @@
                 href="/Website/pr-146/fr/dev/academy/guides/qt/">Code - Qt &amp; PySide</a>
             </li><li>
               <a
-                href="/Website/pr-146/fr/dev/academy/guides/preferences/">Code - Preferences pages</a>
+                href="/Website/pr-146/fr/dev/academy/guides/preference/">Code - Preferences pages</a>
             </li><li>
               <a
                 href="/Website/pr-146/fr/dev/academy/guides/objects/">Code - Custom document objects</a>
@@ -305,7 +305,7 @@
                 href="/Website/pr-146/fr/dev/academy/guides/icons/">Code - Icons &amp; Resources</a>
             </li><li>
               <a
-                href="/Website/pr-146/fr/dev/academy/guides/translations/">Code - Translations (i18n)</a>
+                href="/Website/pr-146/fr/dev/academy/guides/translate/">Code - Translations (i18n)</a>
             </li><li>
               <a
                 href="/Website/pr-146/fr/dev/academy/guides/log/">Code - Logging &amp; Console</a>
@@ -344,7 +344,7 @@
                 href="/Website/pr-146/fr/dev/academy/guides/migrations/">Maintain - Data &amp; schema migrations</a>
             </li><li>
               <a
-                href="/Website/pr-146/fr/dev/academy/guides/update/">Maintain - Updating</a>
+                href="/Website/pr-146/fr/dev/academy/guides/updates/">Maintain - Addon updates</a>
             </li><li>
               <a
                 href="/Website/pr-146/fr/dev/academy/guides/handoff/">Maintain - Maintainer handoff</a>
@@ -385,7 +385,7 @@
     focusable="false">
     <use href="/Website/pr-146/svg/external.svg#external"></use>
   </svg></a></p></blockquote></figure><p>Your Manifest file contains metadata about your addon intended for use by the Addon Manager and by FreeCAD itself. See the <a
-  href="topics/structuring/manifest"
+  href="/Website/pr-146/fr/dev/academy/topics/manifest/"
   class="internal-tooltip">Manifest</a> documentation for complete details: this page is focused on creating the best possible user-facing metadata, including how to craft a good description, how to select appropriate tags, etc.</p>
 <h2
   id="name">
@@ -543,8 +543,9 @@
   </svg><span class="tooltip">Addon Manager in Composite view</span>
           </div>
         </figcaption></figure><p>Once you&rsquo;re past the first sentence you have more flexibility. The Addon Manager truncates the display to a very small amount of text in Compact mode and to an excerpt in Expanded mode, while Composite mode hands off to the Overview document. It&rsquo;s not a good practice to have more than a couple hundred words in <code>&lt;description&gt;</code>; users will be annoyed at you occupying so much screen real estate, and the team reviewing your addon might ask you to shorten it. Remember your primary location for telling users about your addon is in your <a
-  href="guides/overview"
-  class="internal-tooltip">Overview</a> file.</p>
+  href="/Website/pr-146/fr/dev/academy/guides/overview/"
+  class="internal-tooltip">Overview<span class="tooltip">
+        <strong>Polish - Addon Manager overview page</strong></span></a> file.</p>
 <h2
   id="tags">
   <a class="heading-anchor"
@@ -585,8 +586,9 @@
   </svg></a>Screenshots and media</h2><p>Visual examples carry significant weight in the Addon Manager. A single well-chosen screenshot communicates more than several paragraphs of text in the seconds a user spends deciding whether to install.</p>
 <p><strong>Format.</strong> Use PNG for screenshots; the format handles UI text and high-contrast elements without compression artifacts. Use GIF for short workflow animations, kept under several seconds and several megabytes. Avoid JPEG for screenshots: visible compression artifacts on text and on UI edges. Avoid WebP entirely: the Qt plugin that decodes it is not universally present in FreeCAD installations.</p>
 <p><strong>Location.</strong> The recommended path is <code>Resources/Media/</code> at the repository root, matching the convention that the <a
-  href="guides/overview"
-  class="internal-tooltip">Overview</a> page uses. The wider ecosystem is not strict about this path; consistency within a single repository matters more than alignment with any one location.</p>
+  href="/Website/pr-146/fr/dev/academy/guides/overview/"
+  class="internal-tooltip">Overview<span class="tooltip">
+        <strong>Polish - Addon Manager overview page</strong></span></a> page uses. The wider ecosystem is not strict about this path; consistency within a single repository matters more than alignment with any one location.</p>
 <p><strong>Reference style.</strong> Images displayed in the Addon Manager must be referenced by absolute URL. The Addon Manager fetches the markdown over HTTP and resolves relative paths against the URL it fetched, which generally does not produce a working link to the image. The canonical form for GitHub-hosted images is:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">![Toolbar layout](https://raw.githubusercontent.com/&lt;account&gt;/&lt;repo&gt;/&lt;branch&gt;/Resources/Media/toolbar.png)</span></span></code></pre></div></div><p>Avoid two patterns that appear in some existing addons:</p>
 <ul>
@@ -874,9 +876,9 @@
   </svg></a>
 </span>
 <span>
-    Modified: 2026-11-27
+    Modified: 2026-11-28
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/3b9aaaf78139eae2a69bacc13828975fc955b356">3b9aaaf781<svg
+      Commit: <a href="https://github.com/freecad/website/commit/c90b31bb9edbb62297caf32411dcc8ac8ba531ea">c90b31bb9e<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

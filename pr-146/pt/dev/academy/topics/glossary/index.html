@@ -97,7 +97,7 @@
   <meta property="og:locale" content="pt_BR">
   <meta property="og:type" content="article">
     <meta property="article:section" content="dev">
-    <meta property="article:modified_time" content="2026-11-27T17:14:57+01:00">
+    <meta property="article:modified_time" content="2026-11-28T13:11:28+01:00">
 </head><body
     class="single type-dev kind-page "
     id="top">
@@ -290,19 +290,19 @@
                 href="/Website/pr-146/pt/dev/academy/topics/machines/">Machines</a>
             </li><li>
               <a
-                href="/Website/pr-146/pt/dev/academy/topics/structure/">Structuring</a>
+                href="/Website/pr-146/pt/dev/academy/topics/layout/">Addon layout</a>
             </li><li>
               <a
                 href="/Website/pr-146/pt/dev/academy/topics/manifest/">Addon Manifest</a>
             </li><li>
               <a
-                href="/Website/pr-146/pt/dev/academy/topics/dependencies/">Dependencies</a>
+                href="/Website/pr-146/pt/dev/academy/topics/dependency/">Dependencies</a>
             </li><li>
               <a
                 href="/Website/pr-146/pt/dev/academy/topics/license/">Licensing</a>
             </li><li>
               <a
-                href="/Website/pr-146/pt/dev/academy/topics/index/">Addon Index</a>
+                href="/Website/pr-146/pt/dev/academy/topics/addons-index/">Addons Index</a>
             </li><li>
               <a
                 href="/Website/pr-146/pt/dev/academy/topics/removed/">Removed Addons</a>
@@ -411,8 +411,9 @@
 <dd>The visual representation of a DocumentObject in the 3D view and tree. Paired with a FeaturePython object to define how it&rsquo;s drawn, iconified, and interacted with.</dd>
 <dt id="workbench">Workbench</dt>
 <dd>Formally, a Python class that derives from FreeCAD&rsquo;s Workbench class. Informally, a collection of related tools (usually a toolbar + menu) focused on a particular task or domain. Activated via FreeCAD&rsquo;s Workbench selector. See <a
-  href="topics/types"
-  class="internal-tooltip">Types of Addon</a>.</dd>
+  href="/Website/pr-146/pt/dev/academy/topics/types/"
+  class="internal-tooltip">Types of Addon<span class="tooltip">
+        <strong>Types of Addon</strong><span>All the different types of FreeCAD Addons.</span></span></a>.</dd>
 </dl>
 <h2
   id="freecad-internals">
@@ -469,7 +470,7 @@
     focusable="false">
     <use href="/Website/pr-146/svg/external.svg#external"></use>
   </svg></a>. See <a
-  href="guides/create"
+  href="/Website/pr-146/pt/dev/academy/guides/create/"
   class="internal-tooltip">Creating</a>.</dd>
 <dt id="github-template">GitHub Template</dt>
 <dd>GitHub&rsquo;s built-in feature for turning a repository into a one-click template for new repos. The <a
@@ -484,12 +485,14 @@
 <dd>The older addon layout with <code>Init.py</code> / <code>InitGui.py</code> at the top level of the addon folder. Deprecated, but still supported.</dd>
 <dt id="manifest-packagexml">Manifest (package.xml)</dt>
 <dd>The XML metadata file at the root of an addon describing its contents, dependencies, license, and presentation metadata. See <a
-  href="topics/manifest"
-  class="internal-tooltip">Addon Manifest</a>.</dd>
+  href="/Website/pr-146/pt/dev/academy/topics/manifest/"
+  class="internal-tooltip">Addon Manifest<span class="tooltip">
+        <strong>Addon Manifest</strong><span>Manifest file to describe Addons metadata.</span></span></a>.</dd>
 <dt id="namespaced-addon">Namespaced addon</dt>
 <dd>The modern addon layout where Python code lives under <code>freecad/&lt;ModName&gt;/</code> rather than at the top level. Allows installation via <code>pip</code> and avoids polluting FreeCAD&rsquo;s global namespace. See <a
-  href="topics/structure"
-  class="internal-tooltip">Structuring</a>. Recommended for new Addons.</dd>
+  href="/Website/pr-146/pt/dev/academy/topics/layout/"
+  class="internal-tooltip">Addon layout<span class="tooltip">
+        <strong>Addon layout</strong><span>How to structure an Addon directory.</span></span></a>. Recommended for new Addons.</dd>
 <dt id="orphaned-addon">Orphaned addon</dt>
 <dd>An addon with no active maintainer, marked in the manifest with <code>&lt;maintainer email=&quot;no-one@freecad.org&quot;&gt;No current maintainer&lt;/maintainer&gt;</code>.</dd>
 <dt id="semver">SemVer</dt>
@@ -512,7 +515,7 @@
   </svg></a> (e.g. <code>LGPL-2.1-or-later</code>, <code>MIT</code>). Used in the manifest&rsquo;s <code>&lt;license&gt;</code> tag.</dd>
 <dt id="vendoring">Vendoring</dt>
 <dd>Shipping a copy of a third-party library inside your addon rather than declaring it as a dependency. See <a
-  href="/Website/pr-146/pt/dev/academy/topics/dependencies/#vendoring"
+  href="/Website/pr-146/pt/dev/academy/topics/dependency/#vendoring"
   class="internal-tooltip hash-link"><svg
     class="icon hash"
     aria-hidden="true"
@@ -608,7 +611,7 @@
     <use href="/Website/pr-146/svg/tri_left.svg#tri_left"></use>
   </svg>Removed Addons</a><a
             class="button prev"
-            href="/Website/pr-146/pt/dev/academy/demos/toolbar/"
+            href="/Website/pr-146/pt/dev/academy/demos/toolbar-demo/"
             title="Prev section">Demos<svg
     class="icon folder_closed"
     aria-hidden="true"
@@ -847,9 +850,9 @@
   </svg></a>
 </span>
 <span>
-    Modified: 2026-11-27
+    Modified: 2026-11-28
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/3b9aaaf78139eae2a69bacc13828975fc955b356">3b9aaaf781<svg
+      Commit: <a href="https://github.com/freecad/website/commit/c90b31bb9edbb62297caf32411dcc8ac8ba531ea">c90b31bb9e<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

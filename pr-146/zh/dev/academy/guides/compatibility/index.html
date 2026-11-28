@@ -97,7 +97,7 @@
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="dev">
-    <meta property="article:modified_time" content="2026-11-27T17:14:57+01:00">
+    <meta property="article:modified_time" content="2026-11-28T13:11:28+01:00">
 </head><body
     class="single type-dev kind-page "
     id="top">
@@ -296,7 +296,7 @@
                 href="/Website/pr-146/zh/dev/academy/guides/qt/">Code - Qt &amp; PySide</a>
             </li><li>
               <a
-                href="/Website/pr-146/zh/dev/academy/guides/preferences/">Code - Preferences pages</a>
+                href="/Website/pr-146/zh/dev/academy/guides/preference/">Code - Preferences pages</a>
             </li><li>
               <a
                 href="/Website/pr-146/zh/dev/academy/guides/objects/">Code - Custom document objects</a>
@@ -305,7 +305,7 @@
                 href="/Website/pr-146/zh/dev/academy/guides/icons/">Code - Icons &amp; Resources</a>
             </li><li>
               <a
-                href="/Website/pr-146/zh/dev/academy/guides/translations/">Code - Translations (i18n)</a>
+                href="/Website/pr-146/zh/dev/academy/guides/translate/">Code - Translations (i18n)</a>
             </li><li>
               <a
                 href="/Website/pr-146/zh/dev/academy/guides/log/">Code - Logging &amp; Console</a>
@@ -344,7 +344,7 @@
                 href="/Website/pr-146/zh/dev/academy/guides/migrations/">Maintain - Data &amp; schema migrations</a>
             </li><li>
               <a
-                href="/Website/pr-146/zh/dev/academy/guides/update/">Maintain - Updating</a>
+                href="/Website/pr-146/zh/dev/academy/guides/updates/">Maintain - Addon updates</a>
             </li><li>
               <a
                 href="/Website/pr-146/zh/dev/academy/guides/handoff/">Maintain - Maintainer handoff</a>
@@ -397,7 +397,7 @@
     focusable="false">
     <use href="/Website/pr-146/svg/hash.svg#hash"></use>
   </svg></a>Declaring version requirements in the manifest</h2><p>The simplest compatibility tool is the pair of <code>&lt;freecadmin&gt;</code> and <code>&lt;freecadmax&gt;</code> tags in the <a
-  href="topics/manifest"
+  href="/Website/pr-146/zh/dev/academy/topics/manifest/"
   class="internal-tooltip">Manifest</a>. They tell the Addon Manager the range of FreeCAD versions an addon supports, expressed as <code>MAJOR.MINOR.PATCH</code>:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;freecadmin&gt;</span>1.1.0<span class="nt">&lt;/freecadmin&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;freecadmax&gt;</span>1.99.99<span class="nt">&lt;/freecadmax&gt;</span></span></span></code></pre></div></div><p>The Addon Manager filters out incompatible addons before showing them to the user, so a user running FreeCAD 1.0 will not see an addon whose <code>&lt;freecadmin&gt;</code> is <code>1.1.0</code>. Both tags are optional; omitting them means &ldquo;no lower bound&rdquo; or &ldquo;no upper bound&rdquo; respectively.</p>
@@ -534,8 +534,9 @@
 <li>When a contributor reports a bug specific to one FreeCAD version, reproduce on that version before spending your time hunting it down and fixing.</li>
 </ul>
 <p>For more rigorous testing, see <a
-  href="guides/test"
-  class="internal-tooltip">Testing</a>.</p>
+  href="/Website/pr-146/zh/dev/academy/guides/test/"
+  class="internal-tooltip">Testing<span class="tooltip">
+        <strong>Develop - Testing</strong></span></a>.</p>
 <h2
   id="see-also">
   <a class="heading-anchor"
@@ -547,20 +548,33 @@
     <use href="/Website/pr-146/svg/hash.svg#hash"></use>
   </svg></a>See also</h2><ul>
 <li><a
-  href="topics/manifest#freecadmin"
-  class="internal-tooltip">Manifest: <code>&lt;freecadmin&gt;</code>, <code>&lt;freecadmax&gt;</code></a>: the manifest tags this page is built around.</li>
+  href="/Website/pr-146/zh/dev/academy/topics/manifest/#freecadmin"
+  class="internal-tooltip hash-link"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg>Manifest: <code>&lt;freecadmin&gt;</code>, <code>&lt;freecadmax&gt;</code></a>: the manifest tags this page is built around.</li>
 <li><a
-  href="topics/manifest#availability"
-  class="internal-tooltip">Manifest: feature availability by FreeCAD version</a>: which manifest tags exist in which FreeCAD release, and what older versions do with the ones they do not recognize.</li>
+  href="/Website/pr-146/zh/dev/academy/topics/manifest/#availability"
+  class="internal-tooltip hash-link"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg>Manifest: feature availability by FreeCAD version</a>: which manifest tags exist in which FreeCAD release, and what older versions do with the ones they do not recognize.</li>
 <li><a
-  href="guides/migrations"
-  class="internal-tooltip">Data &amp; schema migrations</a>: the corresponding concern for <code>FeaturePython</code> document objects when their schema changes.</li>
+  href="/Website/pr-146/zh/dev/academy/guides/migrations/"
+  class="internal-tooltip">Data &amp; schema migrations<span class="tooltip">
+        <strong>Maintain - Data &amp; schema migrations</strong></span></a>: the corresponding concern for <code>FeaturePython</code> document objects when their schema changes.</li>
 <li><a
-  href="guides/objects"
-  class="internal-tooltip">Custom document objects</a>: the schema-evolution side of compatibility.</li>
+  href="/Website/pr-146/zh/dev/academy/guides/objects/"
+  class="internal-tooltip">Custom document objects<span class="tooltip">
+        <strong>Code - Custom document objects</strong></span></a>: the schema-evolution side of compatibility.</li>
 <li><a
-  href="guides/test"
-  class="internal-tooltip">Testing</a>: strategies for testing across FreeCAD versions.</li>
+  href="/Website/pr-146/zh/dev/academy/guides/test/"
+  class="internal-tooltip">Testing<span class="tooltip">
+        <strong>Develop - Testing</strong></span></a>: strategies for testing across FreeCAD versions.</li>
 </ul>
 </div><footer class="single-footer">
     <nav class="pagination"><a
@@ -812,9 +826,9 @@
   </svg></a>
 </span>
 <span>
-    Modified: 2026-11-27
+    Modified: 2026-11-28
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/3b9aaaf78139eae2a69bacc13828975fc955b356">3b9aaaf781<svg
+      Commit: <a href="https://github.com/freecad/website/commit/c90b31bb9edbb62297caf32411dcc8ac8ba531ea">c90b31bb9e<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

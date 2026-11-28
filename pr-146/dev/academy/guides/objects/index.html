@@ -97,7 +97,7 @@
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="article">
     <meta property="article:section" content="dev">
-    <meta property="article:modified_time" content="2026-11-27T17:14:57+01:00">
+    <meta property="article:modified_time" content="2026-11-28T13:11:28+01:00">
 </head><body
     class="single type-dev kind-page "
     id="top">
@@ -296,7 +296,7 @@
                 href="/Website/pr-146/dev/academy/guides/qt/">Code - Qt &amp; PySide</a>
             </li><li>
               <a
-                href="/Website/pr-146/dev/academy/guides/preferences/">Code - Preferences pages</a>
+                href="/Website/pr-146/dev/academy/guides/preference/">Code - Preferences pages</a>
             </li><li>
               <a
                 href="/Website/pr-146/dev/academy/guides/objects/" id="current-page" class="active" aria-current="page">Code - Custom document objects</a>
@@ -305,7 +305,7 @@
                 href="/Website/pr-146/dev/academy/guides/icons/">Code - Icons &amp; Resources</a>
             </li><li>
               <a
-                href="/Website/pr-146/dev/academy/guides/translations/">Code - Translations (i18n)</a>
+                href="/Website/pr-146/dev/academy/guides/translate/">Code - Translations (i18n)</a>
             </li><li>
               <a
                 href="/Website/pr-146/dev/academy/guides/log/">Code - Logging &amp; Console</a>
@@ -344,7 +344,7 @@
                 href="/Website/pr-146/dev/academy/guides/migrations/">Maintain - Data &amp; schema migrations</a>
             </li><li>
               <a
-                href="/Website/pr-146/dev/academy/guides/update/">Maintain - Updating</a>
+                href="/Website/pr-146/dev/academy/guides/updates/">Maintain - Addon updates</a>
             </li><li>
               <a
                 href="/Website/pr-146/dev/academy/guides/handoff/">Maintain - Maintainer handoff</a>
@@ -429,8 +429,9 @@
 </span></span><span class="line"><span class="cl">            <span class="nb">float</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">Width</span><span class="p">),</span>
 </span></span><span class="line"><span class="cl">            <span class="nb">float</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">Height</span><span class="p">),</span>
 </span></span><span class="line"><span class="cl">        <span class="p">)</span></span></span></code></pre></div></div><p>Code elsewhere in the addon, usually a command&rsquo;s <code>Activated()</code> method (see <a
-  href="guides/commands"
-  class="internal-tooltip">Gui Commands</a>), imports the class to create instances:</p>
+  href="/Website/pr-146/dev/academy/guides/commands/"
+  class="internal-tooltip">Gui Commands<span class="tooltip">
+        <strong>Code - Gui Commands</strong></span></a>), imports the class to create instances:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="c1"># freecad/MyAddon/commands.py</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">FreeCAD</span>
 </span></span><span class="line"><span class="cl">
@@ -557,8 +558,9 @@
     <use href="/Website/pr-146/svg/external.svg#external"></use>
   </svg></a> for the complete catalog.</p>
 <p>For properties whose description string should be translated, wrap it in <code>QT_TRANSLATE_NOOP</code> using the context <code>&quot;App::Property&quot;</code> (see <a
-  href="guides/translations"
-  class="internal-tooltip">Translations</a> for why).</p>
+  href="/Website/pr-146/dev/academy/guides/translate/"
+  class="internal-tooltip">Translations<span class="tooltip">
+        <strong>Code - Translations (i18n)</strong></span></a> for why).</p>
 <p>Consider your property&rsquo;s name and type carefully before releasing your Addon. If you change your mind later and want to rename it (or re-type it, etc.) you will have to deal with backwards compatibility: the property&rsquo;s name is stored in the FCStd file and users with old files generally expect them to load in newer versions. This poses significant challenges if you want to change things later on.</p>
 <h2
   id="the-execute-method">
@@ -702,8 +704,9 @@
 <li><strong>Add a <code>migrationVersion</code> property</strong> to your objects, incremented whenever the schema changes. Check it in <code>__setstate__</code> or <code>onDocumentRestored</code> and run any necessary upgrade logic.</li>
 </ul>
 <p>See <a
-  href="maintain/migrations"
-  class="internal-tooltip">Data &amp; schema migrations</a> for more information.</p>
+  href="/Website/pr-146/dev/academy/guides/migrations/"
+  class="internal-tooltip">Data &amp; schema migrations<span class="tooltip">
+        <strong>Maintain - Data &amp; schema migrations</strong></span></a> for more information.</p>
 <h2
   id="see-also">
   <a class="heading-anchor"
@@ -715,17 +718,20 @@
     <use href="/Website/pr-146/svg/hash.svg#hash"></use>
   </svg></a>See also</h2><ul>
 <li><a
-  href="demos/feature"
+  href="/Website/pr-146/dev/academy/demos/feature-demo/"
   class="internal-tooltip">Parametric Feature demo</a>: a complete runnable <code>FeaturePython</code> example.</li>
 <li><a
-  href="guides/commands"
-  class="internal-tooltip">Gui Commands</a>: how a command creates a document object from the user&rsquo;s action.</li>
+  href="/Website/pr-146/dev/academy/guides/commands/"
+  class="internal-tooltip">Gui Commands<span class="tooltip">
+        <strong>Code - Gui Commands</strong></span></a>: how a command creates a document object from the user&rsquo;s action.</li>
 <li><a
-  href="guides/translations"
-  class="internal-tooltip">Translations</a>: wrapping property descriptions for translation.</li>
+  href="/Website/pr-146/dev/academy/guides/translate/"
+  class="internal-tooltip">Translations<span class="tooltip">
+        <strong>Code - Translations (i18n)</strong></span></a>: wrapping property descriptions for translation.</li>
 <li><a
-  href="maintain/migrations"
-  class="internal-tooltip">Data &amp; schema migrations</a>: evolving your document-object schema across addon releases.</li>
+  href="/Website/pr-146/dev/academy/guides/migrations/"
+  class="internal-tooltip">Data &amp; schema migrations<span class="tooltip">
+        <strong>Maintain - Data &amp; schema migrations</strong></span></a>: evolving your document-object schema across addon releases.</li>
 <li><a
   href="https://wiki.freecad.org/Scripted_objects"
   class="external-link" target="_blank" rel="external noreferrer nofollow">FreeCAD wiki: Scripted objects<svg
@@ -738,7 +744,7 @@
 </div><footer class="single-footer">
     <nav class="pagination"><a
             class="button next"
-            href="/Website/pr-146/dev/academy/guides/preferences/"
+            href="/Website/pr-146/dev/academy/guides/preference/"
             title="Next article"><svg
     class="icon tri_left"
     aria-hidden="true"
@@ -985,9 +991,9 @@
   </svg></a>
 </span>
 <span>
-    Modified: 2026-11-27
+    Modified: 2026-11-28
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/3b9aaaf78139eae2a69bacc13828975fc955b356">3b9aaaf781<svg
+      Commit: <a href="https://github.com/freecad/website/commit/c90b31bb9edbb62297caf32411dcc8ac8ba531ea">c90b31bb9e<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

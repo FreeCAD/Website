@@ -97,7 +97,7 @@
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="article">
     <meta property="article:section" content="dev">
-    <meta property="article:modified_time" content="2026-11-27T17:14:57+01:00">
+    <meta property="article:modified_time" content="2026-11-28T13:11:28+01:00">
 </head><body
     class="single type-dev kind-page "
     id="top">
@@ -290,19 +290,19 @@
                 href="/Website/pr-146/dev/academy/topics/machines/">Machines</a>
             </li><li>
               <a
-                href="/Website/pr-146/dev/academy/topics/structure/">Structuring</a>
+                href="/Website/pr-146/dev/academy/topics/layout/">Addon layout</a>
             </li><li>
               <a
                 href="/Website/pr-146/dev/academy/topics/manifest/" id="current-page" class="active" aria-current="page">Addon Manifest</a>
             </li><li>
               <a
-                href="/Website/pr-146/dev/academy/topics/dependencies/">Dependencies</a>
+                href="/Website/pr-146/dev/academy/topics/dependency/">Dependencies</a>
             </li><li>
               <a
                 href="/Website/pr-146/dev/academy/topics/license/">Licensing</a>
             </li><li>
               <a
-                href="/Website/pr-146/dev/academy/topics/index/">Addon Index</a>
+                href="/Website/pr-146/dev/academy/topics/addons-index/">Addons Index</a>
             </li><li>
               <a
                 href="/Website/pr-146/dev/academy/topics/removed/">Removed Addons</a>
@@ -323,7 +323,7 @@
     <li>
       <ul>
         <li><a href="#overall-file-format">Overall file format</a></li>
-        <li><a href="#availability">Feature availability by FreeCAD version</a></li>
+        <li><a href="#feature-availability-by-freecad-version">Feature availability by FreeCAD version</a></li>
         <li><a href="#tags">Tags</a>
           <ul>
             <li><a href="#package"><code>&lt;package&gt;</code></a></li>
@@ -394,9 +394,9 @@
   </svg></a>) in its git repository. Each branch is expected to contain an independent <code>package.xml</code> file that pertains specifically to that branch (e.g. a &ldquo;development&rdquo; branch should specify a version number that makes it clear it is a development branch, etc.). All understood XML tags are in lowercase, but unrecognized tags are <strong>not</strong> an error. Most tags are optional, and some only apply to certain types of package contents (for example, only Workbenches currently provide a <code>classname</code> element). Unneeded or unrecognized elements are ignored.</p>
 <p>Any file path specified in <code>package.xml</code> must use the slash (<code>/</code>) as the directory separator: on systems that expect a different separator during execution (e.g. Windows) FreeCAD will automatically convert to the correct separator.</p>
 <h2
-  id="availability">
+  id="feature-availability-by-freecad-version">
   <a class="heading-anchor"
-    href="#availability"
+    href="#feature-availability-by-freecad-version"
     title="Feature availability by FreeCAD version"><svg
     class="icon hash"
     aria-hidden="true"
@@ -503,7 +503,7 @@
     focusable="false">
     <use href="/Website/pr-146/svg/hash.svg#hash"></use>
   </svg><code>&lt;freecadmin&gt;</code></a> rather than relying on a tag being ignored. See <a
-  href="guides/compatibility"
+  href="/Website/pr-146/dev/academy/guides/compatibility/"
   class="internal-tooltip">FreeCAD version compatibility</a> for the full set of version-targeting strategies.</p>
 <h2
   id="tags">
@@ -860,8 +860,9 @@
 </span></span><span class="line"><span class="cl">    Unicorn Sparkles Theme.qss
 </span></span><span class="line"><span class="cl">    Unicorn Sparkles Theme.cfg
 </span></span><span class="line"><span class="cl">    sparkles.svg</span></span></code></pre></div></div><p>See <a
-  href="types/themes"
-  class="internal-tooltip">Themes</a> for complete theme-authoring instructions, including overlay stylesheets and the layout of multi-theme addons.</p>
+  href="/Website/pr-146/dev/academy/topics/themes/"
+  class="internal-tooltip">Themes<span class="tooltip">
+        <strong>Themes</strong><span>FreeCAD interface themes as Preference pack Addons.</span></span></a> for complete theme-authoring instructions, including overlay stylesheets and the layout of multi-theme addons.</p>
 <p>In addition to the other elements of <code>&lt;package&gt;</code>, content items can optionally provide information in <code>&lt;icon&gt;</code>, <code>&lt;classname&gt;</code>, <code>&lt;file&gt;</code>, <code>&lt;subdirectory&gt;</code>, and <code>&lt;type&gt;</code> tags (technically these can be provided to the root <code>&lt;package&gt;</code> tag as well, but they are generally unused there).</p>
 <p><strong>Backwards-compatibility note:</strong> to avoid having to restructure packages that pre-date this metadata standard, the optional <a
   href="/Website/pr-146/dev/academy/topics/manifest/#subdirectory"
@@ -935,8 +936,9 @@
     <use href="/Website/pr-146/svg/hash.svg#hash"></use>
   </svg></a><code>&lt;type&gt;</code></h4><p><strong>Optional</strong></p>
 <p>Specifies a specialized sub-type of a content item. The most important use is <code>&lt;type&gt;Theme&lt;/type&gt;</code> on a <code>&lt;preferencepack&gt;</code> content item: it causes FreeCAD to display the pack in the theme picker rather than only in the plain Preference-pack list. Without this tag, a preference pack containing theme files (a <code>.qss</code> stylesheet, color <code>.cfg</code>, etc.) is treated as a plain preference pack and is not offered as a theme. The theme picker began honoring this value in FreeCAD 1.0; on 0.21 and earlier the tag parses without error, but the pack is only ever offered as a plain preference pack. See <a
-  href="types/themes"
-  class="internal-tooltip">Themes</a> for the full theme-authoring pattern.</p>
+  href="/Website/pr-146/dev/academy/topics/themes/"
+  class="internal-tooltip">Themes<span class="tooltip">
+        <strong>Themes</strong><span>FreeCAD interface themes as Preference pack Addons.</span></span></a> for the full theme-authoring pattern.</p>
 <h3
   id="url">
   <a class="heading-anchor"
@@ -1292,8 +1294,8 @@
     focusable="false">
     <use href="/Website/pr-146/svg/hash.svg#hash"></use>
   </svg></a>Workbench addon</h3><p>A complete <code>package.xml</code> for a workbench-style addon, formatted in the Academy&rsquo;s preferred style: <a
-  href="/Website/pr-146/dev/academy/topics/manifest/Workbench.xml"
-  class="internal-tooltip">Workbench.xml</a></p>
+  href="/Website/pr-146/dev/academy/topics/manifest/Package.xml"
+  class="internal-tooltip">Package.xml</a></p>
 <h3
   id="toolbar-extension">
   <a class="heading-anchor"
@@ -1309,15 +1311,15 @@
 </div><footer class="single-footer">
     <nav class="pagination"><a
             class="button next"
-            href="/Website/pr-146/dev/academy/topics/structure/"
+            href="/Website/pr-146/dev/academy/topics/layout/"
             title="Next article"><svg
     class="icon tri_left"
     aria-hidden="true"
     focusable="false">
     <use href="/Website/pr-146/svg/tri_left.svg#tri_left"></use>
-  </svg>Structuring</a><a
+  </svg>Addon layout</a><a
             class="button prev"
-            href="/Website/pr-146/dev/academy/topics/dependencies/"
+            href="/Website/pr-146/dev/academy/topics/dependency/"
             title="Previous article">Dependencies<svg
     class="icon tri_right"
     aria-hidden="true"
@@ -1556,9 +1558,9 @@
   </svg></a>
 </span>
 <span>
-    Modified: 2026-11-27
+    Modified: 2026-11-28
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/3b9aaaf78139eae2a69bacc13828975fc955b356">3b9aaaf781<svg
+      Commit: <a href="https://github.com/freecad/website/commit/c90b31bb9edbb62297caf32411dcc8ac8ba531ea">c90b31bb9e<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

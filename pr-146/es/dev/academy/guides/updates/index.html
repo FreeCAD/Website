@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html
+  lang="es-ES"
+  dir="ltr"><head><meta charset="utf-8">
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1">
+<meta
+  name="referrer"
+  content="strict-origin-when-cross-origin">
+<meta
+  name="robots"
+  content="index, follow"><script>
+  try {
+    const pref = localStorage.getItem("pref-theme");
+    const dark =
+      pref === "dark" ||
+      (pref !== "light" &&
+        
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+        );
+    if (dark) document.documentElement.classList.add("dark");
+  } catch {}
+  document.documentElement.classList.add("js");
+</script><noscript>
+  <style>
+    #chroma-toggle {
+      display: none;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --header: rgb(8, 8, 8);
+        --theme: rgb(16, 16, 16);
+        --entry: rgb(32, 32, 32);
+        --tone: rgb(64, 64, 64);
+        --backdrop: rgba(64, 64, 64, 0.8);
+        --primary: rgb(240, 240, 240);
+        --secondary: rgb(224, 224, 224);
+        --tertiary: rgb(208, 208, 208);
+        --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+        --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+        --angle: 315deg;
+      }
+    }</style>
+</noscript><title>FreeCAD | Maintain - Addon updates</title>
+  <meta
+    name="description"
+    content="Tu propio modelador paramétrico libre y de código abierto"><link
+          rel="stylesheet"
+          href="/Website/pr-146/css/styles.620a776c0a5bd62061f0a7760ffb36ec9abdfb6503ff52a674fb042a06a92bfa.css"
+          integrity="sha256-Ygp3bApb1iBh8Kd2D/s27Jq9&#43;2UD/1KmdPsEKgapK/o="
+          crossorigin="anonymous"><link
+    rel="canonical"
+    href="https://FreeCAD.github.io/Website/pr-146/es/dev/academy/guides/updates/"><link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://FreeCAD.github.io/Website/pr-146/dev/academy/guides/updates/"><link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://FreeCAD.github.io/Website/pr-146/zh/dev/academy/guides/updates/"><link
+      rel="alternate"
+      hreflang="es-ES"
+      href="https://FreeCAD.github.io/Website/pr-146/es/dev/academy/guides/updates/"><link
+      rel="alternate"
+      hreflang="fr-FR"
+      href="https://FreeCAD.github.io/Website/pr-146/fr/dev/academy/guides/updates/"><link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://FreeCAD.github.io/Website/pr-146/pt/dev/academy/guides/updates/"><link
+      rel="alternate"
+      hreflang="de-DE"
+      href="https://FreeCAD.github.io/Website/pr-146/de/dev/academy/guides/updates/"><link
+      rel="alternate"
+      hreflang="ja-JP"
+      href="https://FreeCAD.github.io/Website/pr-146/ja/dev/academy/guides/updates/"><link
+      rel="alternate"
+      hreflang="pl-PL"
+      href="https://FreeCAD.github.io/Website/pr-146/pl/dev/academy/guides/updates/"><link
+    rel="alternate"
+    hreflang="x-default"
+    href="https://FreeCAD.github.io/Website/pr-146/es/"><link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Website/pr-146/favicon.svg"><link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/Website/pr-146/favicon.ico"><link
+      rel="apple-touch-icon"
+      href="/Website/pr-146/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://FreeCAD.github.io/Website/pr-146/es/index.xml"
+    title="FreeCAD"><meta name="generator" content="Hugo 0.160.0"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-146/es/dev/academy/guides/updates/">
+  <meta property="og:site_name" content="FreeCAD">
+  <meta property="og:title" content="Maintain - Addon updates">
+  <meta property="og:description" content="Once your Addon is published in the Index, you have complete control over the update process. There are several different strategies depending on your preference as a developer, and the maturity of your addon.">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dev">
+    <meta property="article:modified_time" content="2026-11-28T13:11:28+01:00">
+</head><body
+    class="single type-dev kind-page "
+    id="top">
+
+<div class="unsupported-browser">
+  <h3>Hi there! Internet Explorer is no longer supported.</h3>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
+</div>
+<header class="site-header">
+
+  <a
+    class="logo"
+    href="/Website/pr-146/es/"
+    accesskey="h"
+    title="Inicio (Alt + H)"
+    aria-label="Inicio">
+    <svg
+      class="logo-svg"
+      aria-hidden="true"
+      focusable="false">
+
+      <use href="/Website/pr-146/wordmark.svg#wordmark"></use>
+    </svg></a>
+
+  <div class="site-nav"><nav class="menu">
+  <button
+    popovertarget="menu-list"
+    popovertargetaction="toggle"
+    class="menu-toggle"
+    aria-controls="menu-list"
+    aria-haspopup="menu"
+    title="Menú"
+    aria-label="Menú"><svg
+    class="icon hamburger"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hamburger.svg#hamburger"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/cross.svg#cross"></use>
+  </svg></button>
+
+  <ul
+    popover
+    id="menu-list"
+    class="menu-list"><li>
+          <a
+            href="/Website/pr-146/es/features/">Características</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/es/download/">Descarga</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/es/news/">Actualidad</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/es/community/">Comunidad</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/es/docs/" aria-current="page" class="active">Documentación</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/es/donate/" class="button accent"><svg
+    class="icon heart"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/heart.svg#heart"></use>
+  </svg>Donar</a>
+        </li></ul>
+</nav>
+<div class="language-dropdown">
+        <button
+          popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="Elegir idioma (Alt + L)"
+          aria-label="Elegir idioma"><svg
+    class="icon language"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/language.svg#language"></use>
+  </svg></button>
+
+        <ul
+          popover
+          id="lang-list"
+          class="language-list"><li>
+              <a href="/Website/pr-146/dev/academy/guides/updates/" title="Maintain - Addon updates">English 🇬🇧</a>
+            </li><li>
+              <a href="/Website/pr-146/zh/dev/academy/guides/updates/" title="Maintain - Addon updates">中文 🇨🇳</a>
+            </li><li>
+              <a aria-current="page" class="active" href="/Website/pr-146/es/dev/academy/guides/updates/" title="Maintain - Addon updates">Español 🇪🇸</a>
+            </li><li>
+              <a href="/Website/pr-146/fr/dev/academy/guides/updates/" title="Maintain - Addon updates">Français 🇫🇷</a>
+            </li><li>
+              <a href="/Website/pr-146/pt/dev/academy/guides/updates/" title="Maintain - Addon updates">Português brasileiro 🇧🇷</a>
+            </li><li>
+              <a href="/Website/pr-146/de/dev/academy/guides/updates/" title="Maintain - Addon updates">Deutsch 🇩🇪</a>
+            </li><li>
+              <a href="/Website/pr-146/ja/dev/academy/guides/updates/" title="Maintain - Addon updates">日本語 🇯🇵</a>
+            </li><li>
+              <a href="/Website/pr-146/pl/dev/academy/guides/updates/" title="Maintain - Addon updates">Polski 🇵🇱</a>
+            </li></ul>
+      </div><div class="chroma-toggle">
+  <button id="chroma-toggle"
+    accesskey="t"
+    title="Cambiar tema chroma (Alt + T)"
+    aria-label="Cambiar tema chroma"><svg
+    class="icon dark"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/dark.svg#dark"></use>
+  </svg><svg
+    class="icon light"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/light.svg#light"></use>
+  </svg></button>
+</div></div>
+</header><main><section class="hero">
+
+    <h2 class="title">Maintain - Addon updates</h1><div class="metadata"><span class="meta"><svg
+    class="icon time"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/time.svg#time"></use>
+  </svg>2 min</span></div></section><nav class="toc">
+  <input
+    type="checkbox"
+    id="toc-checkbox"
+    class="toc-checkbox">
+  <label
+    for="toc-checkbox"
+    class="toc-toggle button"
+    title="Table of Contents"><svg
+    class="icon expand"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/expand.svg#expand"></use>
+  </svg><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/cross.svg#cross"></use>
+  </svg><span>Tabla de Contenidos</span>
+  </label>
+
+  <div
+    id="toc-content"
+    class="toc-content">
+    <ul class="section-nav"><li>
+          <a
+            href="/Website/pr-146/es/dev/"
+            class="current-section"><svg
+    class="icon tri_tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_tri_left.svg#tri_tri_left"></use>
+  </svg> Development Handbook</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/es/dev/academy/"
+            class="current-section"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_left.svg#tri_left"></use>
+  </svg> Addon Academy</a>
+        </li><li>
+          <a
+            href="/Website/pr-146/es/dev/academy/guides/"
+            class="current-section"><svg
+    class="icon folder_closed"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/folder_closed.svg#folder_closed"></use>
+  </svg> Guides</a>
+        </li><li>
+        <ul><li>
+              <a
+                href="/Website/pr-146/es/dev/academy/guides/create/">Creating an Addon</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/es/dev/academy/guides/workbenches/">Code - Workbench registration</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/es/dev/academy/guides/commands/">Code - Gui Commands</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/es/dev/academy/guides/manipulators/">Code - Workbench manipulators</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/es/dev/academy/guides/qt/">Code - Qt &amp; PySide</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/es/dev/academy/guides/preference/">Code - Preferences pages</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/es/dev/academy/guides/objects/">Code - Custom document objects</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/es/dev/academy/guides/icons/">Code - Icons &amp; Resources</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/es/dev/academy/guides/translate/">Code - Translations (i18n)</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/es/dev/academy/guides/log/">Code - Logging &amp; Console</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/es/dev/academy/guides/install/">Develop - Installing your addon locally</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/es/dev/academy/guides/debug/">Develop - Debugging</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/es/dev/academy/guides/test/">Develop - Testing</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/es/dev/academy/guides/security/">Develop - Security scanning with Bandit</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/es/dev/academy/guides/portable/">Publish - Portable</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/es/dev/academy/guides/reference/">Publish - Reference</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/es/dev/academy/guides/indexed/">Publish - Indexed</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/es/dev/academy/guides/overview/">Polish - Addon Manager overview page</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/es/dev/academy/guides/metadata/">Polish - Metadata &amp; discoverability</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/es/dev/academy/guides/compatibility/">Maintain - FreeCAD version compatibility</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/es/dev/academy/guides/migrations/">Maintain - Data &amp; schema migrations</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/es/dev/academy/guides/updates/" id="current-page" class="active" aria-current="page">Maintain - Addon updates</a>
+            </li><li>
+              <a
+                href="/Website/pr-146/es/dev/academy/guides/handoff/">Maintain - Maintainer handoff</a>
+            </li></ul>
+      </li>
+    </ul><p class="toc-label"><svg
+    class="icon file"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/file.svg#file"></use>
+  </svg>
+        <span>En esta página</span>
+      </p><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#best-practice-releases-in-their-own-branch">Best Practice: Releases in their own Branch</a></li>
+        <li><a href="#alternative-1-tagged-releases">Alternative 1: Tagged Releases</a></li>
+        <li><a href="#alternative-2-rolling-releases">Alternative 2: Rolling Releases</a></li>
+        <li><a href="#behind-the-scenes-the-addon-cache">Behind-the-Scenes: The Addon Cache</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+</nav><div class="content"><figure>
+  <blockquote class="note"><svg
+    class="icon note"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/note.svg#note"></use>
+  </svg>Nota<p>Esta página aún no se ha traducido en español, por lo que se utiliza la versión inglesa. Interesado en ayudar?
+<a
+  href="https://github.com/freecad/website"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Contribuir<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a></p></blockquote></figure><p>Once your Addon is published in the Index, you have complete control over the update process. There are several different strategies depending on your preference as a developer, and the maturity of your addon.</p>
+<h2
+  id="best-practice-releases-in-their-own-branch">
+  <a class="heading-anchor"
+    href="#best-practice-releases-in-their-own-branch"
+    title="Best Practice: Releases in their own Branch"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Best Practice: Releases in their own Branch</h2><p>For most Addon authors, the best long-term release strategy is to do all active  development on a branch that is not made available via the Addon Manager, and to periodically sync that branch with a &ldquo;release&rdquo; branch anytime you want to update the version number. It&rsquo;s important that you update the version number and date in the <code>package.xml</code> file on that branch anytime you update the code: the Addon Manager will display <em>any changes</em> as an available update, and if the version number doesn&rsquo;t change, this appears to users as an update from one version <em>to the same version</em>.</p>
+<figure class="image"><button
+          aria-label="Ampliar imagen"
+          popovertarget="img-001"
+          popovertargetaction="show"><svg
+    class="icon zoom"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/zoom.svg#zoom"></use>
+  </svg><img
+  class="img version-update"
+  src="/Website/pr-146/dev/academy/guides/updates/version-update.webp"
+  alt="Addon Manager showing an available update where the installed and available versions are identical"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Addon Manager showing an available update where the installed and available versions are identical" width="1224" height="1194" srcset="/Website/pr-146/dev/academy/guides/updates/version-update_hu_1518c5c92ee1c0b4.webp 400w, /Website/pr-146/dev/academy/guides/updates/version-update_hu_6a23b68154a2791d.webp 800w, /Website/pr-146/dev/academy/guides/updates/version-update.webp 1224w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></button>
+        <div id="img-001" popover>
+          <button
+            class="enlarged"
+            popovertarget="img-001"
+            popovertargetaction="hide"
+            aria-label="Cerrar visor de imágenes"><img
+  class="img version-update"
+  src="/Website/pr-146/dev/academy/guides/updates/version-update.webp"
+  alt="Addon Manager showing an available update where the installed and available versions are identical"
+  loading="lazy"
+  fetchpriority="low"
+  decoding="async" title="Addon Manager showing an available update where the installed and available versions are identical" width="1224" height="1194" srcset="/Website/pr-146/dev/academy/guides/updates/version-update_hu_1518c5c92ee1c0b4.webp 400w, /Website/pr-146/dev/academy/guides/updates/version-update_hu_6a23b68154a2791d.webp 800w, /Website/pr-146/dev/academy/guides/updates/version-update.webp 1224w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"><svg
+    class="icon cross"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/cross.svg#cross"></use>
+  </svg></button></div><figcaption>
+          <div class="internal-tooltip"><svg
+    class="icon important"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/important.svg#important"></use>
+  </svg><span class="tooltip">Addon Manager showing an available update where the installed and available versions are identical</span>
+          </div>
+        </figcaption></figure><h2
+  id="alternative-1-tagged-releases">
+  <a class="heading-anchor"
+    href="#alternative-1-tagged-releases"
+    title="Alternative 1: Tagged Releases"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Alternative 1: Tagged Releases</h2><p>For Addons that are mature and rarely release new versions, or that want very strict control over the release process, an alternative is to have the main Addon Index list a specific git tag for the Addon Manager to fetch, and to update the Index itself when a new release is made. The Addon Manager will then never display work-in-progress from the git repo, regardless of any changes on any branches there. To make a new release, you would create a new tag on your repo, and then submit a PR to the Addons Index changing the available release tag.</p>
+<h2
+  id="alternative-2-rolling-releases">
+  <a class="heading-anchor"
+    href="#alternative-2-rolling-releases"
+    title="Alternative 2: Rolling Releases"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Alternative 2: Rolling Releases</h2><p>For addons that are still in the early stages of development, it&rsquo;s possible to do all work on a single branch, and simply make frequent updates to the version listed in <code>package.xml</code>. Care should be taken to explain this to users in your README documentation, however, so users know to expect updates regularly, and expect occasionally broken code.</p>
+<h2
+  id="behind-the-scenes-the-addon-cache">
+  <a class="heading-anchor"
+    href="#behind-the-scenes-the-addon-cache"
+    title="Behind-the-Scenes: The Addon Cache"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg></a>Behind-the-Scenes: The Addon Cache</h2><p>The FreeCAD project maintains a server at <a
+  href="https://addons.freecad.org"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">addons.freecad.org<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a> that hosts a cached copy of all addons&rsquo; git repos. This cache is updated every four hours, and forms the basis of the data that the Addon Manager displays to users. The consequence of this is that updates to your indexed addon can take up to four hours to be available to end users via the Addon Manager.</p>
+</div><footer class="single-footer">
+    <nav class="pagination"><a
+            class="button next"
+            href="/Website/pr-146/es/dev/academy/guides/migrations/"
+            title="Artículo siguiente"><svg
+    class="icon tri_left"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_left.svg#tri_left"></use>
+  </svg>Maintain - Data &amp; schema migrations</a><a
+            class="button prev"
+            href="/Website/pr-146/es/dev/academy/guides/handoff/"
+            title="Artículo anterior">Maintain - Maintainer handoff<svg
+    class="icon tri_right"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_right.svg#tri_right"></use>
+  </svg></a></nav>
+  </footer></main><footer class="site-footer"><a id="top-link"
+  href="#top"
+  accesskey="g"
+  aria-label="Ir al inicio"
+  title="Ir al inicio (Alt + G)" ><svg
+    class="icon tri_up"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/tri_up.svg#tri_up"></use>
+  </svg></a><nav class="footer-menu">
+  <ul><li>
+          <a
+            href="/Website/pr-146/es/">Inicio</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-146/es/features/">Características</a><ul></ul></li><li>
+          <a
+            href="/Website/pr-146/es/download/">Descarga</a><ul><li>
+                  <a
+                    href="/Website/pr-146/es/releases/">Releases</a>
+                </li><li>
+                      <a
+                        href="/Website/pr-146/es/download/addons/">Addons</a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-146/es/download/unstable/">Unstable</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-146/es/news/">Actualidad</a><ul><li>
+                  <a
+                    href="/Website/pr-146/es/news/archives/">Archives</a>
+                </li><li>
+                        <a href="/Website/pr-146/es/author/">Autor</a>
+                      </li><li>
+                        <a href="/Website/pr-146/es/category/">Categoría</a>
+                      </li><li>
+                        <a href="/Website/pr-146/es/tags/">Etiquetas</a>
+                      </li></ul></li><li>
+          <a
+            href="/Website/pr-146/es/community/">Comunidad</a><ul><li>
+                      <a
+                        href="/Website/pr-146/es/community/calendar/">Calendar</a>
+                    </li><li>
+                      <a
+                        href="https://events.freecad.org/" target="_blank" rel="external noreferrer nofollow">Events<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://fpa.freecad.org" target="_blank" rel="external noreferrer nofollow">Association<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swag shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                    </li><li>
+                      <a
+                        href="/Website/pr-146/es/community/telemetry/">Telemetry</a>
+                    </li></ul></li><li>
+          <a
+            href="/Website/pr-146/es/docs/" aria-current="page" class="active">Documentación</a><ul><li>
+                  <a
+                    href="https://wiki.freecad.org/User_hub/es" target="_blank" rel="external noreferrer nofollow">User manual<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                </li><li>
+                  <a
+                    href="/Website/pr-146/es/dev/">Development Handbook</a>
+                </li><li>
+                  <a
+                    href="https://freecad.github.io/SourceDoc/" target="_blank" rel="external noreferrer nofollow">FreeCAD API<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+                </li></ul></li><li>
+          <a
+            href="/Website/pr-146/es/donate/">Donar</a><ul></ul></li></ul>
+</nav>
+<div class="share-links"><a
+    href="https://forum.freecad.org"
+    title="Forum"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon forum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/forum.svg#forum"></use>
+  </svg></a><a
+    href="https://devtalk.freecad.org/"
+    title="DevTalk"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon devtalk"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/devtalk.svg#devtalk"></use>
+  </svg></a><a
+    href="https://github.com/freecad"
+    title="GitHub"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon github"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/github.svg#github"></use>
+  </svg></a><a
+    href="https://codeberg.org/freecad"
+    title="Codeberg"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/codeberg.svg#codeberg"></use>
+  </svg></a><a
+    href="https://social.freecad.org/@freecad"
+    title="Mastodon"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon mastodon"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/mastodon.svg#mastodon"></use>
+  </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/bluesky.svg#bluesky"></use>
+  </svg></a><a
+    href="https://www.reddit.com/r/freecad"
+    title="Reddit"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon reddit"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/reddit.svg#reddit"></use>
+  </svg></a><a
+    href="https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im"
+    title="Matrix"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon matrix"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/matrix.svg#matrix"></use>
+  </svg></a><a
+    href="https://discord.gg/w2cTKGzccC"
+    title="Discord"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon discord"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/discord.svg#discord"></use>
+  </svg></a><a
+    href="https://www.linkedin.com/groups/4295230"
+    title="LinkedIn"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon linkedin"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+    href="https://FreeCAD.github.io/Website/pr-146/es/index.xml"
+    type="application/rss&#43;xml"
+    title="Canal RSS"><svg
+    class="icon rss"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/rss.svg#rss"></use>
+  </svg></a><a
+  href="/Website/pr-146/es/fedishare.html#title=Maintain&#43;-&#43;Addon&#43;updates&amp;description=Once%20your%20Addon%20is%20published%20in%20the%20Index,%20you%20have%20complete%20control%20over%20the%20update%20process.%20There%20are%20several%20different%20strategies%20depending%20on%20your%20preference%20as%20a%20developer,%20and%20the%20maturity%20of%20%e2%80%a6&amp;url=https://FreeCAD.github.io/Website/pr-146/es/dev/academy/guides/updates/"
+  title="Publicar en el Fediverso"
+  target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon fediverse"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/fediverse.svg#fediverse"></use>
+  </svg></a>
+</div><div class="copyright"><span>
+    &copy; 2026
+    <a
+      href="/Website/pr-146/es/"
+      title="FreeCAD">FreeCAD</a>
+  </span><span>
+  <a
+    href="https://creativecommons.org/licenses/by-sa/4.0/"
+    title="Creative Commons"
+    target="_blank" rel="license external noreferrer nofollow">
+
+    CC BY-SA<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+
+<span>
+  Made with ♥︎ thanks to
+  <a
+    href="https://gohugo.io/"
+    title="Hugo SSG"
+    target="_blank" rel="external noreferrer nofollow">
+
+    Hugo<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+</span>
+<span>
+    Modified: 2026-11-28
+  </span><span>
+      Commit: <a href="https://github.com/freecad/website/commit/c90b31bb9edbb62297caf32411dcc8ac8ba531ea">c90b31bb9e<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/external.svg#external"></use>
+  </svg></a>
+    </span></div>
+</footer><script
+    src="/Website/pr-146/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
+    type="text/javascript"
+    defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-146/js/es/copy.min.4352077bd376c0fa652c23733a44a84d7b971232620cabd39f339a5f1b2bb913.js"
+    type="text/javascript"
+    defer integrity="sha256-Q1IHe9N2wPplLCNzOkSoTXuXEjJiDKvTnzOaXxsruRM=" crossorigin="anonymous">
+  </script><script
+    src="/Website/pr-146/js/toc.min.5a299bdad6ec07b3eb9654a70e505a32e3cdba2d571221cb928e1e55cbf22eb0.js"
+    type="text/javascript"
+    defer integrity="sha256-Wimb2tbsB7PrllSnDlBaMuPNui1XEiHLko4eVcvyLrA=" crossorigin="anonymous">
+  </script></body>
+
+</html>

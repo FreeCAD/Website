@@ -97,7 +97,7 @@
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="article">
     <meta property="article:section" content="dev">
-    <meta property="article:modified_time" content="2026-11-27T17:14:57+01:00">
+    <meta property="article:modified_time" content="2026-11-28T13:11:28+01:00">
 </head><body
     class="single type-dev kind-page "
     id="top">
@@ -296,7 +296,7 @@
                 href="/Website/pr-146/dev/academy/guides/qt/">Code - Qt &amp; PySide</a>
             </li><li>
               <a
-                href="/Website/pr-146/dev/academy/guides/preferences/">Code - Preferences pages</a>
+                href="/Website/pr-146/dev/academy/guides/preference/">Code - Preferences pages</a>
             </li><li>
               <a
                 href="/Website/pr-146/dev/academy/guides/objects/">Code - Custom document objects</a>
@@ -305,7 +305,7 @@
                 href="/Website/pr-146/dev/academy/guides/icons/">Code - Icons &amp; Resources</a>
             </li><li>
               <a
-                href="/Website/pr-146/dev/academy/guides/translations/">Code - Translations (i18n)</a>
+                href="/Website/pr-146/dev/academy/guides/translate/">Code - Translations (i18n)</a>
             </li><li>
               <a
                 href="/Website/pr-146/dev/academy/guides/log/">Code - Logging &amp; Console</a>
@@ -344,7 +344,7 @@
                 href="/Website/pr-146/dev/academy/guides/migrations/">Maintain - Data &amp; schema migrations</a>
             </li><li>
               <a
-                href="/Website/pr-146/dev/academy/guides/update/">Maintain - Updating</a>
+                href="/Website/pr-146/dev/academy/guides/updates/">Maintain - Addon updates</a>
             </li><li>
               <a
                 href="/Website/pr-146/dev/academy/guides/handoff/">Maintain - Maintainer handoff</a>
@@ -381,10 +381,10 @@
   </ul>
 </nav></div>
 </nav><div class="content"><p>A Command is a single user-invocable action, bound to a toolbar button, menu item, context-menu entry, or keyboard shortcut. Commands are the granular building blocks of an addon&rsquo;s user interface; a <a
-  href="guides/workbench"
+  href="/Website/pr-146/dev/academy/demos/workbench-demo/"
   class="internal-tooltip">Workbench</a> bundles them into toolbars and menus. This page covers how to write and register a command.</p>
 <p>For a complete working example, see the <a
-  href="demos/workbench"
+  href="/Website/pr-146/dev/academy/demos/workbench-demo/"
   class="internal-tooltip">Minimal Workbench demo</a>.</p>
 <h2
   id="where-commands-live">
@@ -465,8 +465,9 @@
           <td><code>Pixmap</code></td>
           <td>No</td>
           <td>A filename for the button icon, resolved against registered icon paths. See <a
-  href="guides/icons"
-  class="internal-tooltip">Icons &amp; resources</a>.</td>
+  href="/Website/pr-146/dev/academy/guides/icons/"
+  class="internal-tooltip">Icons &amp; resources<span class="tooltip">
+        <strong>Code - Icons &amp; Resources</strong></span></a>.</td>
       </tr>
       <tr>
           <td><code>Accel</code></td>
@@ -672,7 +673,7 @@
     focusable="false">
     <use href="/Website/pr-146/svg/hash.svg#hash"></use>
   </svg></a>Placing commands in the UI</h2><p>Commands are registered once and then referenced by name wherever you want them to appear. The workbench methods <code>appendToolbar</code>, <code>appendMenu</code>, and <code>appendContextMenu</code> take lists of command names. See <a
-  href="guides/workbench"
+  href="/Website/pr-146/dev/academy/demos/workbench-demo/"
   class="internal-tooltip">Workbench registration</a> for the full description.</p>
 <p>Short version:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="c1"># freecad/MyAddon/init_gui.py, inside your Workbench class&#39;s Initialize(self):</span>
@@ -710,8 +711,9 @@
 </span></span><span class="line"><span class="cl">            <span class="s2">&#34;MenuText&#34;</span><span class="p">:</span> <span class="n">QT_TRANSLATE_NOOP</span><span class="p">(</span><span class="s2">&#34;MyAddon_Hello&#34;</span><span class="p">,</span> <span class="s2">&#34;Hello&#34;</span><span class="p">),</span>
 </span></span><span class="line"><span class="cl">            <span class="s2">&#34;ToolTip&#34;</span><span class="p">:</span>  <span class="n">QT_TRANSLATE_NOOP</span><span class="p">(</span><span class="s2">&#34;MyAddon_Hello&#34;</span><span class="p">,</span> <span class="s2">&#34;Print a hello message.&#34;</span><span class="p">),</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span></span></span></code></pre></div></div><p>See <a
-  href="guides/translations"
-  class="internal-tooltip">Translations</a> for why <code>QT_TRANSLATE_NOOP</code> rather than <code>translate()</code>, and for the broader translation workflow.</p>
+  href="/Website/pr-146/dev/academy/guides/translate/"
+  class="internal-tooltip">Translations<span class="tooltip">
+        <strong>Code - Translations (i18n)</strong></span></a> for why <code>QT_TRANSLATE_NOOP</code> rather than <code>translate()</code>, and for the broader translation workflow.</p>
 <h2
   id="see-also">
   <a class="heading-anchor"
@@ -723,20 +725,23 @@
     <use href="/Website/pr-146/svg/hash.svg#hash"></use>
   </svg></a>See also</h2><ul>
 <li><a
-  href="demos/workbench"
+  href="/Website/pr-146/dev/academy/demos/workbench-demo/"
   class="internal-tooltip">Minimal Workbench demo</a>: a complete working workbench with a single command.</li>
 <li><a
-  href="guides/workbench"
+  href="/Website/pr-146/dev/academy/demos/workbench-demo/"
   class="internal-tooltip">Workbench registration</a>: how to place commands into toolbars, menus, and context menus.</li>
 <li><a
-  href="guides/icons"
-  class="internal-tooltip">Icons &amp; resources</a>: how <code>Pixmap</code> filenames are resolved at runtime.</li>
+  href="/Website/pr-146/dev/academy/guides/icons/"
+  class="internal-tooltip">Icons &amp; resources<span class="tooltip">
+        <strong>Code - Icons &amp; Resources</strong></span></a>: how <code>Pixmap</code> filenames are resolved at runtime.</li>
 <li><a
-  href="guides/translations"
-  class="internal-tooltip">Translations</a>: wrapping <code>GetResources</code> strings for translation.</li>
+  href="/Website/pr-146/dev/academy/guides/translate/"
+  class="internal-tooltip">Translations<span class="tooltip">
+        <strong>Code - Translations (i18n)</strong></span></a>: wrapping <code>GetResources</code> strings for translation.</li>
 <li><a
-  href="guides/log"
-  class="internal-tooltip">Logging &amp; console</a>: how to report progress or errors from <code>Activated</code>.</li>
+  href="/Website/pr-146/dev/academy/guides/log/"
+  class="internal-tooltip">Logging &amp; console<span class="tooltip">
+        <strong>Code - Logging &amp; Console</strong></span></a>: how to report progress or errors from <code>Activated</code>.</li>
 </ul>
 </div><footer class="single-footer">
     <nav class="pagination"><a
@@ -988,9 +993,9 @@
   </svg></a>
 </span>
 <span>
-    Modified: 2026-11-27
+    Modified: 2026-11-28
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/3b9aaaf78139eae2a69bacc13828975fc955b356">3b9aaaf781<svg
+      Commit: <a href="https://github.com/freecad/website/commit/c90b31bb9edbb62297caf32411dcc8ac8ba531ea">c90b31bb9e<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

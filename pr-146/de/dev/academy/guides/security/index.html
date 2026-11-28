@@ -97,7 +97,7 @@
   <meta property="og:locale" content="de_DE">
   <meta property="og:type" content="article">
     <meta property="article:section" content="dev">
-    <meta property="article:modified_time" content="2026-11-27T17:14:57+01:00">
+    <meta property="article:modified_time" content="2026-11-28T13:11:28+01:00">
 </head><body
     class="single type-dev kind-page "
     id="top">
@@ -296,7 +296,7 @@
                 href="/Website/pr-146/de/dev/academy/guides/qt/">Code - Qt &amp; PySide</a>
             </li><li>
               <a
-                href="/Website/pr-146/de/dev/academy/guides/preferences/">Code - Preferences pages</a>
+                href="/Website/pr-146/de/dev/academy/guides/preference/">Code - Preferences pages</a>
             </li><li>
               <a
                 href="/Website/pr-146/de/dev/academy/guides/objects/">Code - Custom document objects</a>
@@ -305,7 +305,7 @@
                 href="/Website/pr-146/de/dev/academy/guides/icons/">Code - Icons &amp; Resources</a>
             </li><li>
               <a
-                href="/Website/pr-146/de/dev/academy/guides/translations/">Code - Translations (i18n)</a>
+                href="/Website/pr-146/de/dev/academy/guides/translate/">Code - Translations (i18n)</a>
             </li><li>
               <a
                 href="/Website/pr-146/de/dev/academy/guides/log/">Code - Logging &amp; Console</a>
@@ -344,7 +344,7 @@
                 href="/Website/pr-146/de/dev/academy/guides/migrations/">Maintain - Data &amp; schema migrations</a>
             </li><li>
               <a
-                href="/Website/pr-146/de/dev/academy/guides/update/">Maintain - Updating</a>
+                href="/Website/pr-146/de/dev/academy/guides/updates/">Maintain - Addon updates</a>
             </li><li>
               <a
                 href="/Website/pr-146/de/dev/academy/guides/handoff/">Maintain - Maintainer handoff</a>
@@ -418,7 +418,7 @@
     focusable="false">
     <use href="/Website/pr-146/svg/external.svg#external"></use>
   </svg></a>, a monthly quality report generated for every addon in the <a
-  href="topics/index"
+  href="/Website/pr-146/de/dev/academy/topics/addons-index/"
   class="internal-tooltip">Addon Index</a>. Running the same scan yourself, with the same settings, means nothing in that report will surprise you.</p>
 <h2
   id="running-bandit-locally">
@@ -687,8 +687,13 @@
     focusable="false">
     <use href="/Website/pr-146/svg/external.svg#external"></use>
   </svg></a>, which wraps the standard parsers with the dangerous features disabled and is on the <a
-  href="topics/dependencies#the-python-allow-list"
-  class="internal-tooltip">allow-list</a>, so you can declare it as a dependency:</p>
+  href="/Website/pr-146/de/dev/academy/topics/dependency/#the-python-allow-list"
+  class="internal-tooltip hash-link"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg>allow-list</a>, so you can declare it as a dependency:</p>
 <div class="codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="c1"># Before</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">xml.etree.ElementTree</span> <span class="k">as</span> <span class="nn">ET</span>
 </span></span><span class="line"><span class="cl"><span class="n">root</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
@@ -767,8 +772,9 @@
     focusable="false">
     <use href="/Website/pr-146/svg/hash.svg#hash"></use>
   </svg></a>Style checks: B101, B110, B112</h3><p><code>assert</code> (B101), <code>try</code>/<code>except</code>/<code>pass</code> (B110), and <code>try</code>/<code>except</code>/<code>continue</code> (B112) are not security defects, and the Addon Report skips B101 and B110 entirely. If you enable them anyway, the usual fixes are to replace <code>assert</code> with an explicit <code>if</code>/<code>raise</code> in non-test code (asserts are stripped under <code>python -O</code>), and to at least log something in an <code>except</code> block rather than discarding the exception silently. See <a
-  href="guides/log"
-  class="internal-tooltip">Logging &amp; console</a> for how to do that in FreeCAD.</p>
+  href="/Website/pr-146/de/dev/academy/guides/log/"
+  class="internal-tooltip">Logging &amp; console<span class="tooltip">
+        <strong>Code - Logging &amp; Console</strong></span></a> for how to do that in FreeCAD.</p>
 <h2
   id="putting-it-together">
   <a class="heading-anchor"
@@ -1036,9 +1042,9 @@
   </svg></a>
 </span>
 <span>
-    Modified: 2026-11-27
+    Modified: 2026-11-28
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/3b9aaaf78139eae2a69bacc13828975fc955b356">3b9aaaf781<svg
+      Commit: <a href="https://github.com/freecad/website/commit/c90b31bb9edbb62297caf32411dcc8ac8ba531ea">c90b31bb9e<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

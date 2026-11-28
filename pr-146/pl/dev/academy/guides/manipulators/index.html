@@ -93,11 +93,11 @@
     title="FreeCAD"><meta name="generator" content="Hugo 0.160.0"><meta property="og:url" content="https://FreeCAD.github.io/Website/pr-146/pl/dev/academy/guides/manipulators/">
   <meta property="og:site_name" content="FreeCAD">
   <meta property="og:title" content="Code - Workbench manipulators">
-  <meta property="og:description" content="A workbench manipulator is an object that edits FreeCAD’s toolbars, menus, and context menus as each workbench is set up. It is the mechanism used for contributing user interface elements to workbenches your addon does not own, including the case of an addon that defines no workbench at all.">
+  <meta property="og:description" content="A workbench manipulator is an object that edits FreeCAD’s toolbars, menus, and context menus as each workbench is set up. It is the mechanism used for contributing user interface elements to workbenches your addon does not own, including the case of an addon that defines no workbench Code - Workbench registration at all.">
   <meta property="og:locale" content="pl_PL">
   <meta property="og:type" content="article">
     <meta property="article:section" content="dev">
-    <meta property="article:modified_time" content="2026-11-27T17:14:57+01:00">
+    <meta property="article:modified_time" content="2026-11-28T13:11:28+01:00">
 </head><body
     class="single type-dev kind-page "
     id="top">
@@ -227,7 +227,7 @@
     aria-hidden="true"
     focusable="false">
     <use href="/Website/pr-146/svg/time.svg#time"></use>
-  </svg>10 min</span></div></section><nav class="toc">
+  </svg>11 min</span></div></section><nav class="toc">
   <input
     type="checkbox"
     id="toc-checkbox"
@@ -296,7 +296,7 @@
                 href="/Website/pr-146/pl/dev/academy/guides/qt/">Code - Qt &amp; PySide</a>
             </li><li>
               <a
-                href="/Website/pr-146/pl/dev/academy/guides/preferences/">Code - Preferences pages</a>
+                href="/Website/pr-146/pl/dev/academy/guides/preference/">Code - Preferences pages</a>
             </li><li>
               <a
                 href="/Website/pr-146/pl/dev/academy/guides/objects/">Code - Custom document objects</a>
@@ -305,7 +305,7 @@
                 href="/Website/pr-146/pl/dev/academy/guides/icons/">Code - Icons &amp; Resources</a>
             </li><li>
               <a
-                href="/Website/pr-146/pl/dev/academy/guides/translations/">Code - Translations (i18n)</a>
+                href="/Website/pr-146/pl/dev/academy/guides/translate/">Code - Translations (i18n)</a>
             </li><li>
               <a
                 href="/Website/pr-146/pl/dev/academy/guides/log/">Code - Logging &amp; Console</a>
@@ -344,7 +344,7 @@
                 href="/Website/pr-146/pl/dev/academy/guides/migrations/">Maintain - Data &amp; schema migrations</a>
             </li><li>
               <a
-                href="/Website/pr-146/pl/dev/academy/guides/update/">Maintain - Updating</a>
+                href="/Website/pr-146/pl/dev/academy/guides/updates/">Maintain - Addon updates</a>
             </li><li>
               <a
                 href="/Website/pr-146/pl/dev/academy/guides/handoff/">Maintain - Maintainer handoff</a>
@@ -368,9 +368,9 @@
         <li><a href="#modifymenubar"><code>modifyMenuBar()</code></a></li>
         <li><a href="#modifycontextmenurecipient"><code>modifyContextMenu(recipient)</code></a></li>
         <li><a href="#modifydockwindows"><code>modifyDockWindows()</code></a></li>
-        <li><a href="#new-toolbar">Creating a new toolbar</a></li>
-        <li><a href="#scoping">Scoping to one workbench</a></li>
-        <li><a href="#edit-mode">Toolbars that appear only in edit mode</a>
+        <li><a href="#creating-a-new-toolbar">Creating a new toolbar</a></li>
+        <li><a href="#scoping-to-one-workbench">Scoping to one workbench</a></li>
+        <li><a href="#toolbars-that-appear-only-in-edit-mode">Toolbars that appear only in edit mode</a>
           <ul>
             <li><a href="#driving-visibility-from-a-document-observer">Driving visibility from a document observer</a></li>
           </ul>
@@ -396,13 +396,14 @@
     focusable="false">
     <use href="/Website/pr-146/svg/external.svg#external"></use>
   </svg></a></p></blockquote></figure><p>A workbench manipulator is an object that edits FreeCAD&rsquo;s toolbars, menus, and context menus as each workbench is set up. It is the mechanism used for contributing user interface elements to workbenches your addon does not own, including the case of an addon that defines no <a
-  href="guides/workbench"
-  class="internal-tooltip">workbench</a> at all.</p>
+  href="/Website/pr-146/pl/dev/academy/guides/workbenches/"
+  class="internal-tooltip">workbench<span class="tooltip">
+        <strong>Code - Workbench registration</strong></span></a> at all.</p>
 <p>Manipulators are available beginning in FreeCAD 1.0.</p>
 <p>For complete working examples, see the <a
-  href="demos/toolbar"
+  href="/Website/pr-146/pl/dev/academy/demos/toolbar-demo/"
   class="internal-tooltip">Extend Toolbar demo</a>, which adds one command to an existing toolbar, and the <a
-  href="demos/toolbar"
+  href="/Website/pr-146/pl/dev/academy/demos/toolbar-demo/"
   class="internal-tooltip">New Toolbar demo</a>, which builds a new toolbar in an existing workbench.</p>
 <h2
   id="registering-a-manipulator">
@@ -630,9 +631,9 @@
     <use href="/Website/pr-146/svg/hash.svg#hash"></use>
   </svg></a><code>modifyDockWindows()</code></h2><p>Reserved, and currently a no-op. FreeCAD calls the method and parses its return value, then discards the result: the function that would apply the changes is currently unimplemented. Do not rely on it, or its absence. To contribute a dock widget today, add it directly through Qt with <code>FreeCADGui.getMainWindow().addDockWidget(...)</code>.</p>
 <h2
-  id="new-toolbar">
+  id="creating-a-new-toolbar">
   <a class="heading-anchor"
-    href="#new-toolbar"
+    href="#creating-a-new-toolbar"
     title="Creating a new toolbar"><svg
     class="icon hash"
     aria-hidden="true"
@@ -647,9 +648,9 @@
 </span></span><span class="line"><span class="cl">    <span class="p">]</span></span></span></code></pre></div></div><p>The first dictionary creates the toolbar. The rest fill it, and <strong>must come afterwards</strong>: the toolbar has to exist as a named child before a lookup can find it. Reversing the order produces no error and no toolbar.</p>
 <p>The new toolbar behaves in every respect like a core one. It is visible by default, it gets an entry in the toolbar visibility menu, and the user can move, hide, or restore it normally.</p>
 <h2
-  id="scoping">
+  id="scoping-to-one-workbench">
   <a class="heading-anchor"
-    href="#scoping"
+    href="#scoping-to-one-workbench"
     title="Scoping to one workbench"><svg
     class="icon hash"
     aria-hidden="true"
@@ -702,9 +703,9 @@
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">[]</span>
 </span></span><span class="line"><span class="cl">    <span class="o">...</span></span></span></code></pre></div></div><p>Returning an empty list for other workbenches gives exactly the behavior core workbenches get: the toolbar object persists but is hidden, and its entry in the visibility menu is hidden with it.</p>
 <h2
-  id="edit-mode">
+  id="toolbars-that-appear-only-in-edit-mode">
   <a class="heading-anchor"
-    href="#edit-mode"
+    href="#toolbars-that-appear-only-in-edit-mode"
     title="Toolbars that appear only in edit mode"><svg
     class="icon hash"
     aria-hidden="true"
@@ -772,8 +773,13 @@ A manipulator alone cannot express &ldquo;hidden unless editing&rdquo;. Adding y
 <li><strong>Filter on the view provider.</strong> <code>slotInEdit</code> fires for <em>every</em> object that enters edit mode, not only sketches. Without the <code>isDerivedFrom</code> guard the toolbar would also appear for PartDesign features, mesh dialogs, and anything else that opens an edit session.</li>
 </ul>
 <p>Note that a command that lives on an edit-mode toolbar needs an appropriate <a
-  href="guides/commands#cmdtype"
-  class="internal-tooltip"><code>CmdType</code></a>. With the default type, the button is disabled for exactly as long as a task dialog is open, which is exactly when this toolbar is visible. Set <code>CmdType</code> explicitly if you use this technique.</p>
+  href="/Website/pr-146/pl/dev/academy/guides/commands/#cmdtype"
+  class="internal-tooltip hash-link"><svg
+    class="icon hash"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/Website/pr-146/svg/hash.svg#hash"></use>
+  </svg><code>CmdType</code></a>. With the default type, the button is disabled for exactly as long as a task dialog is open, which is exactly when this toolbar is visible. Set <code>CmdType</code> explicitly if you use this technique.</p>
 <h2
   id="pitfalls">
   <a class="heading-anchor"
@@ -784,15 +790,18 @@ A manipulator alone cannot express &ldquo;hidden unless editing&rdquo;. Adding y
     focusable="false">
     <use href="/Website/pr-146/svg/hash.svg#hash"></use>
   </svg></a>Pitfalls</h2><p><strong>Toolbar and menu names are a global namespace.</strong> There are no identifiers, only names, and yours share one namespace with every core toolbar and every other addon&rsquo;s. Prefix new toolbar names with your addon&rsquo;s name for the same reason you prefix <a
-  href="guides/commands"
-  class="internal-tooltip">command names</a>.</p>
+  href="/Website/pr-146/pl/dev/academy/guides/commands/"
+  class="internal-tooltip">command names<span class="tooltip">
+        <strong>Code - Gui Commands</strong></span></a>.</p>
 <p><strong>A toolbar&rsquo;s name is also a preference key.</strong> FreeCAD records whether the user has hidden a toolbar under its name, in <code>BaseApp/MainWindow/Toolbars</code>. Renaming a toolbar in a later release silently discards that preference, and the toolbar reappears for everyone who had hidden it.</p>
 <p><strong>Toolbar titles are translated.</strong> The name is passed through Qt translation in the <code>Workbench</code> context before being shown, so a name that collides with a core toolbar name may be displayed translated in ways you did not intend. See <a
-  href="guides/translations"
-  class="internal-tooltip">Translations</a>.</p>
+  href="/Website/pr-146/pl/dev/academy/guides/translate/"
+  class="internal-tooltip">Translations<span class="tooltip">
+        <strong>Code - Translations (i18n)</strong></span></a>.</p>
 <p><strong>Core toolbar and menu names change between FreeCAD versions.</strong> Targeting <code>&quot;File&quot;</code> or <code>&quot;Std_Open&quot;</code> is a version-coupling that nothing will warn you about; the change simply stops happening. Test against every FreeCAD version your manifest claims to support, and see <a
-  href="maintain/compatibility"
-  class="internal-tooltip">FreeCAD version compatibility</a>.</p>
+  href="/Website/pr-146/pl/dev/academy/guides/compatibility/"
+  class="internal-tooltip">FreeCAD version compatibility<span class="tooltip">
+        <strong>Maintain - FreeCAD version compatibility</strong></span></a>.</p>
 <p><strong>Nothing tells you a name was wrong.</strong> Every operation here fails silently when its target cannot be found. If a change does not appear, the first thing to check is the spelling of the target name, and the second is the Report view.</p>
 <p><strong>Toolbar visibility policy is C++ only.</strong> A manipulator can create a toolbar but cannot say anything about when it should be shown. Every toolbar it creates is visible by default and user-toggleable. Conditional visibility has to be arranged separately; see <a
   href="/Website/pr-146/pl/dev/academy/guides/manipulators/#edit-mode"
@@ -813,20 +822,23 @@ A manipulator alone cannot express &ldquo;hidden unless editing&rdquo;. Adding y
     <use href="/Website/pr-146/svg/hash.svg#hash"></use>
   </svg></a>See also</h2><ul>
 <li><a
-  href="demos/toolbar"
+  href="/Website/pr-146/pl/dev/academy/demos/toolbar-demo/"
   class="internal-tooltip">New Toolbar demo</a>: a complete workbench-less addon that builds a toolbar in the Part workbench.</li>
 <li><a
-  href="demos/toolbar"
+  href="/Website/pr-146/pl/dev/academy/demos/toolbar-demo/"
   class="internal-tooltip">Extend Toolbar demo</a>: the smaller case of adding one command to a toolbar that already exists.</li>
 <li><a
-  href="guides/commands"
-  class="internal-tooltip">Gui Commands</a>: how the command names used throughout this page are defined and registered.</li>
+  href="/Website/pr-146/pl/dev/academy/guides/commands/"
+  class="internal-tooltip">Gui Commands<span class="tooltip">
+        <strong>Code - Gui Commands</strong></span></a>: how the command names used throughout this page are defined and registered.</li>
 <li><a
-  href="guides/workbench"
-  class="internal-tooltip">Workbench registration</a>: the other way to contribute a toolbar, when your addon does own a workbench.</li>
+  href="/Website/pr-146/pl/dev/academy/guides/workbenches/"
+  class="internal-tooltip">Workbench registration<span class="tooltip">
+        <strong>Code - Workbench registration</strong></span></a>: the other way to contribute a toolbar, when your addon does own a workbench.</li>
 <li><a
-  href="guides/icons"
-  class="internal-tooltip">Icons &amp; resources</a>: how the buttons on your new toolbar get their icons.</li>
+  href="/Website/pr-146/pl/dev/academy/guides/icons/"
+  class="internal-tooltip">Icons &amp; resources<span class="tooltip">
+        <strong>Code - Icons &amp; Resources</strong></span></a>: how the buttons on your new toolbar get their icons.</li>
 </ul>
 </div><footer class="single-footer">
     <nav class="pagination"><a
@@ -1078,9 +1090,9 @@ A manipulator alone cannot express &ldquo;hidden unless editing&rdquo;. Adding y
   </svg></a>
 </span>
 <span>
-    Modified: 2026-11-27
+    Modified: 2026-11-28
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/3b9aaaf78139eae2a69bacc13828975fc955b356">3b9aaaf781<svg
+      Commit: <a href="https://github.com/freecad/website/commit/c90b31bb9edbb62297caf32411dcc8ac8ba531ea">c90b31bb9e<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">
