@@ -18,7 +18,7 @@ Other combinations may work as well; these are just the ones that you will be ab
 
 ## Dependencies
 
-See also [Dependencies](../dependencies)
+See also [Dependencies](dependencies)
 
 FreeCAD depends on many other open source projects to provide the basic foundations of the program. There are many ways of installing these dependencies: for details and the complete list, see the following Wiki pages:
 

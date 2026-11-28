@@ -63,7 +63,7 @@ The roadmap is, in a sense, a living document.  It should be frequently reviewed
 
 ## The "Next" Release
 
-These objectives described here are very broad. Some of them are very ambitious and will take a long time to achieve.  Others will never be fully achieved or 'done'.  For that reason, it's helpful to pick a specific set of goals to focus on for the next release.  [This page](next) broadly describes the major goals for the next release.
+These objectives described here are very broad. Some of them are very ambitious and will take a long time to achieve.  Others will never be fully achieved or 'done'.  For that reason, it's helpful to pick a specific set of goals to focus on for the next release.
 
 Releasing an official 1.0 release is a major milestone as well as a psychologically important event for the project. It is a signal to the world that FreeCAD is ready for production use, and that it is a mature, stable, and reliable tool for the job.
 

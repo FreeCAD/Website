@@ -23,4 +23,4 @@ Parag Debnath will make it possible to search and apply international classifica
 
 YashSuthar983 will add [3D parametric sketching](https://forum.freecad.org/viewtopic.php?t=104125). This work will involve adding new primitives and spatial constraints to the PlaneGCS solver. The plan right now is to create a temporary new workbench as a testbed and then merge it into the unified Sketcher workbench.
 
-We also received multiple applications for improving the Measure tool. This is a great indication of how important this functionality is and how much more work needs to happen there. While neither application made the cut for GSoC this year, we encourage contributors interested in improving the Measure tool to [submit applications for an FPA grant](/news/q2-2026-grant-program/).
+We also received multiple applications for improving the Measure tool. This is a great indication of how important this functionality is and how much more work needs to happen there. While neither application made the cut for GSoC this year, we encourage contributors interested in improving the Measure tool to [submit applications for an FPA grant](q2-2026-grant-program).

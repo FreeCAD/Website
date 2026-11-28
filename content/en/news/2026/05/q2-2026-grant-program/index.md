@@ -19,4 +19,4 @@ In 2026, we introduced several changes to the grant program, including these:
 - Only one grant application per developer per quarter is possible now.
 - Focus on documentation, testing, and improving the release cycle.
 
-Please [see here](/news/q1-2026-grant-program/) for more information.
+Please [see here](q1-2026-grant-program) for more information.

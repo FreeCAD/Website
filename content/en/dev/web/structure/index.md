@@ -60,7 +60,7 @@ In addition to text content, Hugo supports a wide range of additional resources,
 
 To add linked resources for a specific page, the easiest way is to place these files together in the same folder as the page Markdown file.
 
-The method called [page bundles][page-bundles] is a Hugo feature that allows to organize content and resource files neatly and makes relative links easy. To achieve that, turn the `my-page.md` file into a directory `my-page`, put the content into a Markdown file named `index.md`, and put the resource files inside the `my-page` directory.
+The method called [page bundles][https://gohugo.io/content-management/page-bundles/#leaf-bundles] is a Hugo feature that allows to organize content and resource files neatly and makes relative links easy. To achieve that, turn the `my-page.md` file into a directory `my-page`, put the content into a Markdown file named `index.md`, and put the resource files inside the `my-page` directory.
 
 For example, add an image file `image.webp` alongside the `my-page.md` file:
 
@@ -102,5 +102,3 @@ Alternatively, it is possible to place resources in the `static` and `assets` ro
 ```markdown {file="content/section/my-page.md"}
 ![alt](/images/image.webp "title")
 ```
-
-[page-bundles]: https://gohugo.io/content-management/page-bundles/#leaf-bundles

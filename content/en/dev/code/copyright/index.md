@@ -27,7 +27,7 @@ Some file formats or file content may prevent this, for example shebang declarat
 
 ### License
 
-To declare what license a file falls under, specify the appropriate [License Id] in the following way:
+To declare what license a file falls under, specify the appropriate [License Id](https://spdx.org/licenses/) in the following way:
 
 ```
 SPDX-License-Identifier: ‹License Id›
@@ -255,5 +255,3 @@ Below you will find some snippets of the commonly used SPDX annotations / copyri
 @REM SPDX-FileCopyrightText: ‹Year› ‹Entity›
 @REM SPDX-FileNotice: Part of the FreeCAD project.
 ```
-
-[License Id]: https://spdx.org/licenses/

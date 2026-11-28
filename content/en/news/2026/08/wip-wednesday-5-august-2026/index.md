@@ -58,7 +58,7 @@ Additional improvements and fixes were contributed by bcherrington, chennes, dav
 
 If you are interested in testing the latest weekly build, you can grab it [here](https://github.com/FreeCAD/FreeCAD/releases/tag/weekly-2026.08.05).
 
-Fun fact: chennes used files from the [recent competition](/news/freecad-community-design-competition-2026-the-results/) in unit tests, discovered two regressions, and fixed them immediately. If you hear him say that competitions help improve free software, know that he means it!
+Fun fact: chennes used files from the [recent competition](freecad-community-design-competition-2026-the-results) in unit tests, discovered two regressions, and fixed them immediately. If you hear him say that competitions help improve free software, know that he means it!
 
 ## Activity stats
 

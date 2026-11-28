@@ -16,9 +16,9 @@ as inspiration for the better future.
 If you are a developer and want to read what we consider as good code please consult practices mentioned below. These guidelines
 try to define what the good code is and how it should be written.
 
-- For C++ see [C++ practices](../cpp)
-- For Python see [Python practices](../python)
+- For C++ see [C++ practices](cpp)
+- For Python see [Python practices](python)
 
 ## For Reviewers
 For reviews it is good to have a set of concrete rules that are easy to follow. If you want to learn how to review code, or
-simply want to learn how we check code please consult the [reviewer guide](../review).
+simply want to learn how we check code please consult the [reviewer guide](review).
