@@ -23,6 +23,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 {{- $url := urls.Parse .Destination -}}
 {{- $href := $url.String -}}
 {{- $is_fragment := false -}}
+{{- $is_external := false -}}
 
 {{- if hasPrefix $href "#" -}}
   {{- $href = printf "%s#%s" .PageInner.RelPermalink $url.Fragment -}}
@@ -46,13 +47,16 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
       {{- $href = printf "%s#%s" $href . -}}
       {{- $is_fragment = true -}}
     {{- end -}}
+  {{- else -}}
+    {{- warnf "No link target found for %q in page %q" $path $.PageInner.LinkTitle -}}
   {{- end -}}
 {{- end -}}
 
-{{- $key := partialCached "utils/cache_key.html" $href $href -}}
-{{- $link := partialCached "utils/link_redirect.html" $href $key -}}
-
-{{- $is_external := partialCached "utils/is_external.html" $link $link -}}
+{{- if not $is_fragment -}}
+  {{- $key := partialCached "utils/cache_key.html" $href $href -}}
+  {{- $href = partialCached "utils/link_redirect.html" $href $key -}}
+  {{- $is_external = partialCached "utils/is_external.html" $href $href -}}
+{{- end -}}
 
 {{- $classes := slice (cond $is_external "external-link" "internal-tooltip") -}}
 {{- if $is_fragment -}}
@@ -60,7 +64,7 @@ SPDX-FileNotice: Part of the Trigo theme for Hugo.
 {{- end -}}
 
 <a
-  href="{{ $link }}"
+  href="{{ $href }}"
   class="{{ delimit $classes " " }}"
   {{- with .Title }} title="{{ . | plainify }}"{{ end -}}
   {{- if $is_external }} target="_blank" rel="external noreferrer nofollow"{{ end -}}>
